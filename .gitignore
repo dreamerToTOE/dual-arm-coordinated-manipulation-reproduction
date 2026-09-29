@@ -1,0 +1,40 @@
+# Build
+build/
+install/
+log/
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Python
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# ROS/Isaac/MuJoCo generated
+.omniverse/
+*.usd~
+*.mjb
+
+# Results: keep structure and summaries, ignore heavy raw artifacts
+results/**/videos/
+results/**/raw/
+results/**/*.bag
+results/**/*.db3
+results/**/*.mp4
+results/**/*.avi
+
+# Local environment
+.env
+*.local.yaml
+
+# OS
+.DS_Store
+Thumbs.db
