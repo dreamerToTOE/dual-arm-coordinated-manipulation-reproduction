@@ -1,0 +1,113 @@
+# Dual-Arm Coordinated Manipulation Reproduction
+
+面向双 FR3 紧协调搬运与受限空间协同推进任务的**论文复现、统一对标与后续方法研究仓库**。
+
+本仓库不是原 `dual-arm-embodied-palletizing` 工程的继续堆叠，而是一个独立的 SCI baseline/reproduction 工程。目标是在统一实验规范下复现并比较 5 类代表方法：
+
+1. **P4 — Closed-chain constrained motion planning**：闭链约束投影 + 受约束 RRT/RRTConnect。
+2. **P2 — Cooperative pose/force control**：共享物体位姿控制 + internal wrench 调节。
+3. **P3 — Hybrid force/position insertion**：位置推进 baseline、力位混合、搜索/对准/卡滞恢复。
+4. **P5 — QP coordinated multi-arm control**：集中式 QP-IK + 在线碰撞/关节约束。
+5. **P1 — Two-stage sampling MPC**：双阶段采样 MPC + null-space equality constraint + GPU。
+
+最终所有可横向比较的正式结果，原则上统一落到 **Isaac Sim + ROS 2 + 双 FR3 + Cube + 车厢** 场景；MuJoCo 仅作为 P2/P3 的接触/力控快速验证平台。
+
+## 总体架构
+
+```text
+Papers / reproduction specs
+            |
+            v
+     Platform-independent core
+  kinematics / grasp / collision /
+       metrics / logging
+      /                 \
+     v                   v
+Planning & QP       Force & Contact
+ P4 / P5 / P1        P2 / P3
+ OMPL/FCL/QP           MuJoCo
+      \                 /
+       \               /
+        v             v
+          Isaac Sim + ROS 2
+     Dual FR3 + Cube + Carriage
+                 |
+                 v
+          Unified Benchmark
+                 |
+                 v
+           Baseline Freeze
+                 |
+                 v
+              OURS
+```
+
+## 推荐执行顺序
+
+```text
+Phase 0  Foundation
+  TASK00 Environment Audit
+  TASK01 Benchmark Freeze
+  TASK02 Common Interface / Logger / Metrics
+
+Phase 1  P4 Closed-chain planning
+  TASK03 Closure Constraint
+  TASK04 Newton-Raphson Projection
+  TASK05 Constrained Local Connection
+  TASK06 Constrained RRTConnect
+
+Phase 2  P2 Pose / Internal Force
+  TASK07-MJ Grasp Matrix + Internal Wrench
+  TASK08-MJ Object Pose Controller
+  TASK09-MJ Pose + Internal Force
+  TASK10-IS Isaac Migration
+
+Phase 3  P3 Constrained Insertion
+  TASK11-MJ Position-only Push
+  TASK12-MJ Hybrid Force/Position
+  TASK13-MJ Jam Detection
+  TASK14-MJ Search / Align Recovery
+  TASK15-IS Isaac Migration
+
+Phase 4  P5 QP Coordination
+  TASK16 QP IK Core
+  TASK17 Joint Constraints
+  TASK18 Collision Constraints
+  TASK19 Isaac Real-time Execution
+
+Phase 5  P1 Sampling MPC
+  TASK20 Upstream Reproduction
+  TASK21 Dual-FR3 Adapter
+  TASK22 Equality Constraint / Null Space
+  TASK23 Stage-1 Exploration
+  TASK24 Stage-2 Refinement
+  TASK25 GPU Benchmark
+  TASK26 Isaac Integration
+
+Phase 6  Unified evaluation
+  TASK27 Unified Benchmark
+  TASK28 Ablation
+  TASK29 Failure Case Analysis
+  TASK30 Baseline Freeze
+
+Phase 7  Post-reproduction
+  TASK31 Ours v0 Design
+```
+
+## 两个统一 Benchmark
+
+### Benchmark A — TIGHT_TRANSPORT
+从“双臂已稳定抓住同一 Cube”开始，到达车厢入口前的 PRE_PUSH。主要指标：success rate、compute/execute time、object pose RMSE、relative-pose RMSE、minimum distance、smoothness、internal wrench。
+
+### Benchmark B — CONSTRAINED_INSERTION
+从 PRE_PUSH 开始，经历 CONTACT → PUSH → SEARCH/ALIGN → INSERT。主要指标：success rate、insertion time、contact force RMS/max、左右作用力差、横向/姿态误差、jam rate、recovery count。
+
+详见：
+- [Codex 必读](CODEX_START_HERE.md)
+- [Agent 规则](AGENTS.md)
+- [系统架构](docs/ARCHITECTURE.md)
+- [复现路线](docs/REPRODUCTION_ROADMAP.md)
+- [Benchmark 规范](docs/BENCHMARK_SPEC.md)
+- [当前状态](docs/STATUS.md)
+
+> **重要：** 在 TASK30 Baseline Freeze 之前，`ours/` 不实现新算法。先把 baseline 做清楚，再基于失败案例和统一对标结果决定自己的方法。
