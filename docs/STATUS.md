@@ -8,7 +8,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Source-parameter comparison and benchmark_v1 candidate drafting; user review required |
+| TASK01 Benchmark Freeze | IN_PROGRESS | Task27 geometric starting point confirmed; benchmark_v1 DRAFT and static geometry check available; 30 fields and Isaac validation remain open |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

@@ -25,3 +25,9 @@ Append-only project work log.
 - No benchmark values have been frozen; paper algorithms remain untouched.
 - Added reports/TASK01_SOURCE_PARAMETER_MATRIX.md: source-grounded Task27 geometry/material/robot values, dimensional checks and explicit decisions still needed before any benchmark_v1 freeze.
 - Isaac/MoveIt runtime had exited before TASK01 validation; no fresh physical benchmark was run.
+
+## 2026-09-30 — TASK01 Task27-derived draft assembled
+- Recorded user confirmation of Task27 as the geometric starting point in D003.
+- Added `configs/benchmark/benchmark_v1.yaml` with source hashes, frames, dual-FR3/rail/L-tool geometry, cube/carriage coordinates, nominal side TCP transforms and explicit nulls for unapproved values.
+- Added an analytic checker for internal dimension, handoff, wall-flush and nominal grasp consistency. It passed and enumerated 30 unresolved fields.
+- No fresh Isaac simulation was run: no Isaac process was active during this iteration. TASK01 remains IN_PROGRESS; do not interpret the static pass as physics or paper-method validation.

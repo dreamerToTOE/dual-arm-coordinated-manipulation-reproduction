@@ -2,6 +2,12 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## Current progress (2026-09-30)
+- User confirmed the existing Task27 dual-FR3, L-side-suction and truck-box scene as the **geometric starting point**, not as a wholesale approval of its numerical parameters or thresholds.
+- Draft candidate: `configs/benchmark/benchmark_v1.yaml`; analytic checker: `scripts/validate_benchmark_candidate.py`.
+- Static geometry passed. The file still has 30 unresolved null fields. Fresh Isaac contact/geometry validation has not been run in this repository.
+- The benchmark remains **DRAFT / IN_PROGRESS**. No paper baseline may use it as a frozen common test yet.
+
 ## Goal
 Freeze one common dual-FR3 Cube/carriage benchmark before tuning any paper method.
 

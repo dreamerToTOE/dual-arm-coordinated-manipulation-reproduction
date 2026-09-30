@@ -2,6 +2,8 @@
 
 Status: **DRAFT until TASK01, then FROZEN as benchmark_v1.**
 
+TASK01 candidate configuration: `configs/benchmark/benchmark_v1.yaml` (DRAFT). Its source-derived geometry is a starting point only; the null fields, contact topology, sensor contract, physics timing, perturbations and thresholds must be resolved and user-reviewed before any FROZEN claim.
+
 ## Benchmark A — TIGHT_TRANSPORT
 ### Start
 Both FR3 end-effectors have already established the shared-object grasp/contact configuration.

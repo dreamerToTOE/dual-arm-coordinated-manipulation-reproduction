@@ -1,7 +1,9 @@
 # TASK01 — Candidate source-parameter matrix
 
 Date: 2026-09-30
-Status: SOURCE STUDY ONLY — NOT benchmark_v1, NOT frozen, NOT validated in this repository.
+Status: Source study feeding a DRAFT candidate — NOT frozen or physically validated in this repository.
+
+User decision (2026-09-30): Task27 is the geometric starting point for benchmark_v1. This resolves the **scene-choice** question only; it does not approve all legacy values.
 
 ## Provenance
 
@@ -48,7 +50,7 @@ Simple geometry calculation from these source values: 5 × 0.120 + 4 × 0.001 + 
 
 ## Choices that must precede benchmark_v1 freeze
 
-1. Choose whether Task27's existing L-tool, rails and truck are the starting geometry or whether this scientific benchmark gets a new independent scene. User review requested.
+1. **Resolved for drafting:** Task27's existing L-tool, rails and truck are the starting geometry. The scientific benchmark still needs a separately versioned scene and validation before freeze.
 2. Define Benchmark A's exact initial shared-grasp pose and start robot state. The source scene begins before grasp; the repository spec begins after stable shared contact.
 3. Define Benchmark B's start mode: released Cube with a pushing arm and side-support arm, or another dual-arm contact topology. The old demo's mode transitions cannot be silently substituted for a paper benchmark.
 4. Freeze full left/right object-to-TCP SE(3) transforms and a common world, carriage and entrance frame convention.

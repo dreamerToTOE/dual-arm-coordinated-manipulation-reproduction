@@ -17,6 +17,19 @@ Key metrics: MuJoCo 3.13.0; one mj_step advanced simulation time to 0.002 s
 Artifacts: results/20260930_TASK00_mujoco_smoke/
 Notes: This is not a dual-arm force-control or paper-reproduction experiment.
 
+## 2026-09-30 20260930_TASK01_static_geometry
+Task: TASK01
+Baseline: none; candidate geometry check only
+Platform: system Python 3 + PyYAML; analytic validation (not Isaac)
+Commit at probe: ca2b1f75a85c32bcad87b193328cbe7424680183
+Seed: not applicable
+Command: `python3 scripts/validate_benchmark_candidate.py`
+Config: `configs/benchmark/benchmark_v1.yaml` (DRAFT)
+Result: PASS for internal analytic geometry; TASK01 itself remains IN_PROGRESS
+Key metrics: 0 failed dimension checks; 30 unresolved/null configuration fields
+Artifacts: `results/20260930_TASK01_static_geometry/`
+Notes: No physical contact, collision, sensing or timing validation was performed.
+
 Recommended entry:
 ```text
 ## <date> <run_id>

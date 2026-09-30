@@ -1,0 +1,146 @@
+# TASK01 candidate only. Do not use for formal comparisons until all null gates are resolved.
+schema_version: 1
+benchmark_id: benchmark_v1
+status: DRAFT
+scientific_classification: ADAPTATION
+units: {length: m, mass: kg, time: s, angle: rad}
+source:
+  repository: dreamerToTOE/dual-arm-embodied-palletizing
+  revision_observed: d93f2858ec5345d2234fb3a8b1ec018b9ca5a0de
+  scenario: Task27 mode of Task26 scene and bridge
+  # File hashes, rather than the revision alone, identify the observed source
+  # because the source worktree contained untracked files during this audit.
+  sha256:
+    isaac/scripts/task26_truck_box_scene.py: 43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7
+    isaac/scripts/task26_truck_box_bridge.py: 13b5f88d1e7563a37ecafbf571d8ef93015b57059b8912ba9f3399e21e339644
+    ros_ws/src/fr3_dual_side_suction_description/urdf/dual_side_suction.xacro: a0630156df03502e6624f593041db3e5f281f52958512672049b60b31ed49f1d
+    ros_ws/src/fr3_dual_palletize/src/task26_truck_box_push_in.cpp: 04b6157bcacac71b981d4b9307a2d8266e6dbbe0598a5ba129a23a12c07635b5
+
+frames:
+  world: world  # Legacy MoveIt model frame; verify against fresh /tf in TASK01.
+  cube: cube_center
+  carriage_entrance:
+    # Proposed convention: origin at opening center on the support plane;
+    # +X is insertion, +Y is width, +Z is up. Requires TF publication.
+    name: carriage_entrance
+    origin_world_m: [0.910, 0.000, 0.200]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    approval: PENDING
+
+robots:
+  model: dual_fr3_side_suction
+  left:
+    base_at_rest_world_m: [0.650, -0.600, 0.000]
+    rail_axis_world: [1.0, 0.0, 0.0]
+    rail_x_limits_world_m: [0.450, 1.050]
+    tcp_link: left_fr3_side_suction_tcp
+  right:
+    base_at_rest_world_m: [0.650, 0.600, 0.000]
+    rail_axis_world: [1.0, 0.0, 0.0]
+    rail_x_limits_world_m: [0.450, 1.050]
+    tcp_link: right_fr3_side_suction_tcp
+  rail_pose_at_benchmark_a_start_world_x_m: null
+  rail_pose_at_benchmark_b_start_world_x_m: null
+
+table:
+  center_world_m: [0.550, 0.000, 0.100]
+  size_m: [1.500, 0.800, 0.200]
+  top_world_z_m: 0.200
+
+cube:
+  size_m: [0.120, 0.120, 0.120]
+  mass_kg: 0.800
+  nominal_first_layer_center_world_z_m: 0.260
+  material_authored:
+    static_friction: 0.90
+    dynamic_friction: 0.75
+    restitution: 0.0
+  effective_contact_material_rule: null  # Verify PhysX combine mode and other collider materials.
+
+tool:
+  type: fixed_L_side_suction_2x2
+  vertical_drop_m: 0.080
+  lateral_standoff_m: 0.130
+  tcp_lateral_offset_from_link8_m: 0.155
+  capture_threshold_m: 0.003
+  break_force_limit_n: 1000000.0
+  break_torque_limit_nm: 1000000.0
+  stiffness: 10000.0
+  damping: 1000.0
+  bend_angle_rad: 0.0
+  review_warning: Near-unbreakable suction can bias force and grasp-stability results.
+
+grasp:
+  # Nominal cube-to-TCP transforms derived analytically from Task27 sidePose
+  # for an axis-aligned cube. They include a 1-mm commanded surface gap.
+  # They are not measured contact transforms or validated closed-chain poses.
+  object_to_left_tcp:
+    translation_m: [0.000, -0.061, 0.000]
+    quaternion_xyzw: [0.7071067811865476, 0.7071067811865476, 0.0, 0.0]
+  object_to_right_tcp:
+    translation_m: [0.000, 0.061, 0.000]
+    quaternion_xyzw: [0.7071067811865476, -0.7071067811865476, 0.0, 0.0]
+  contact_transform_physical_validation: PENDING
+
+carriage:
+  opening_side: -X
+  insertion_axis_world: [1.0, 0.0, 0.0]
+  interior_x_world_m: [0.910, 1.160]
+  interior_y_world_m: [-0.303, 0.303]
+  wall_thickness_m: 0.020
+  wall_height_m: 0.150
+  wall_top_world_z_m: 0.350
+  lane_centers_world_y_m: [-0.242, -0.121, 0.000, 0.121, 0.242]
+  # Task27's final cells are intentionally different from nominal lane centers:
+  # outer cubes are pressed flush to the wall; inner cubes retain center clearance.
+  final_cell_centers_world_y_m: [-0.243, -0.1215, 0.000, 0.1215, 0.243]
+
+benchmarks:
+  A_tight_transport:
+    start_mode: both_side_suctions_closed_and_cube_stably_grasped
+    initial_cube_center_world_m: null
+    initial_robot_joint_state_rad: null
+    target_cube_center_world_m: [0.790, 0.000, 0.260]
+    final_pose_tolerance_m: null
+    final_orientation_tolerance_rad: null
+    max_relative_tcp_error_m: null
+    timeout_s: null
+  B_constrained_insertion:
+    start_cube_center_world_m: [0.790, 0.000, 0.260]
+    target_cube_center_world_m: [1.100, 0.000, 0.260]
+    commanded_cube_translation_world_m: [0.310, 0.000, 0.000]
+    neighboring_inner_cube_centers_world_y_m: [-0.1215, 0.1215]
+    start_contact_topology: null
+    side_support_policy: null
+    final_pose_tolerance_m: null
+    final_orientation_tolerance_rad: null
+    max_contact_force_n: null
+    jam_detection_thresholds: null
+    timeout_s: null
+    cases:
+      C0_perfect_alignment: {lateral_offset_m: 0.0, yaw_error_rad: 0.0, friction_scale: 1.0}
+      C1_small_lateral: {lateral_offset_m: null, yaw_error_rad: 0.0, friction_scale: 1.0}
+      C2_larger_lateral: {lateral_offset_m: null, yaw_error_rad: 0.0, friction_scale: 1.0}
+      C3_yaw: {lateral_offset_m: 0.0, yaw_error_rad: null, friction_scale: 1.0}
+      C4_lateral_and_yaw: {lateral_offset_m: null, yaw_error_rad: null, friction_scale: 1.0}
+      C5_contact_perturbation: {lateral_offset_m: 0.0, yaw_error_rad: 0.0, friction_scale: null}
+
+timing_and_trials:
+  physics_dt_s: null  # Not explicitly authored by the legacy Task27 scene.
+  controller_command_period_s: 0.010  # Legacy kDualCommandPeriod; candidate only.
+  ros_time_policy: null  # Mixed simulation/wall timestamps were observed in TASK00.
+  seed_policy: null
+  seeds: null
+  trial_count_per_case: null
+  tuning_budget: null
+
+measurement:
+  contact_wrench_interface: null  # JointState effort is not contact wrench.
+  collision_distance_interface: null
+  geometry_validated_in_isaac: false
+  geometry_validated_in_mujoco: false
+
+approval:
+  task27_as_geometric_starting_point: CONFIRMED_2026-09-30
+  all_numeric_values_and_thresholds: PENDING
+  benchmark_freeze: PENDING

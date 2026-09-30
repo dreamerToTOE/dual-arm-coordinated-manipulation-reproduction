@@ -10,3 +10,4 @@ Persistent user decisions/feedback that must influence future work.
 ## 2026-09-30
 - Advance tasks in repository order and persist process records to GitHub as work proceeds.
 - MuJoCo is already installed in a .venv belonging to the existing force-control project; locate and reuse that environment for audits instead of assuming the system Python import result means MuJoCo is absent.
+- Confirmed Task27 as the geometric starting point for TASK01 benchmark_v1; no approval was given to freeze every old numerical setting or acceptance threshold.
