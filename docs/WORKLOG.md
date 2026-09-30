@@ -18,3 +18,8 @@ Append-only project work log.
 - Corrected the initial system-Python-only MuJoCo finding: MuJoCo 3.13.0 works in the existing isolated .venv; its minimal step was logged under results/.
 - Expanded the legacy dual-FR3 URDF/SRDF, sampled live ROS interfaces while available, and marked unavailable or untested scientific interfaces explicitly.
 - TASK00 PASS is an audit result, not a claim of benchmark readiness. TASK01 is READY but cannot be FROZEN before user review.
+
+## 2026-09-30 — TASK01 benchmark candidate study started
+- Compared the repository benchmark requirements with the existing Task27 Cube/side-suction/carriage geometry and control constants.
+- Asked whether the frozen benchmark should use that validated scene as its geometric starting point or a separately designed scene.
+- No benchmark values have been frozen; paper algorithms remain untouched.
