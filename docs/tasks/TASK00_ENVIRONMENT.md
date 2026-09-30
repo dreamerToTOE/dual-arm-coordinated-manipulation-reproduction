@@ -1,6 +1,6 @@
 # TASK00 — Environment Audit
 
-Status: READY
+Status: PASS (2026-09-30)
 
 ## Goal
 Record the exact software/hardware/runtime environment before reproducing any paper.
@@ -20,3 +20,5 @@ Record the exact software/hardware/runtime environment before reproducing any pa
 
 ## PASS
 Environment report is reproducible and identifies all blockers for TASK01/TASK02.
+
+Evidence: reports/TASK00_ENVIRONMENT.md; results/20260930_TASK00_mujoco_smoke.

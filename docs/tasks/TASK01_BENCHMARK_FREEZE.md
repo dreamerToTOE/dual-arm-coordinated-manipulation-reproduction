@@ -1,6 +1,6 @@
 # TASK01 — Freeze Benchmark V1
 
-Status: TODO
+Status: READY (TASK00 complete; benchmark_v1 not yet reviewed or frozen)
 
 ## Goal
 Freeze one common dual-FR3 Cube/carriage benchmark before tuning any paper method.

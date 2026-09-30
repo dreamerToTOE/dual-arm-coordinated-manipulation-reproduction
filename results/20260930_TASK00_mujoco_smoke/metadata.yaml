@@ -1,0 +1,15 @@
+task: TASK00
+baseline: none
+platform: MuJoCo isolated legacy virtual environment
+git_commit_at_probe: 9f71e0a78a9d852d060b4e7e4c3225558d1d9bb1
+seed: null
+config_path: scripts/task00_mujoco_smoke.py (inline XML)
+command: /home/ubuntu2004/lmy/dual-arm-force-control-mujoco-isaacsim/dual-arm-force-control-mujoco-isaacsim/.venv/bin/python scripts/task00_mujoco_smoke.py
+status: PASS
+metrics:
+  python_version: 3.10.12
+  mujoco_version: 3.13.0
+  stepped_time_s: 0.002
+artifacts:
+  - results/20260930_TASK00_mujoco_smoke/stdout.log
+  - results/20260930_TASK00_mujoco_smoke/metrics.json
