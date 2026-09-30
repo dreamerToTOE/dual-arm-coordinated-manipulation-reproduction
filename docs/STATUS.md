@@ -1,13 +1,13 @@
 # STATUS
 
-Last update: 2026-09-29
+Last update: 2026-09-30
 
 ## Project state
 Repository initialized. No baseline implementation has started.
 
 | Task | Status | Notes |
 |---|---|---|
-| TASK00 Environment Audit | READY | First Codex task |
+| TASK00 Environment Audit | IN_PROGRESS | Host/runtime/interface audit in progress on `task00-environment-audit` |
 | TASK01 Benchmark Freeze | TODO | Depends on TASK00 |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
@@ -19,4 +19,4 @@ Repository initialized. No baseline implementation has started.
 | TASK31 Ours v0 | TODO | Must wait for TASK30 |
 
 ## Current gate
-**Do not implement paper algorithms yet. Execute TASK00 first.**
+**Do not implement paper algorithms yet. Complete TASK00 first.**

@@ -6,3 +6,6 @@ Persistent user decisions/feedback that must influence future work.
 - Keep detailed records and feedback during Codex work.
 - Use a separate reproduction repository instead of mixing baselines into the palletizing repository.
 - Use MuJoCo as an auxiliary force/contact platform where useful, but keep Isaac Sim as the final unified benchmark.
+
+## 2026-09-30
+- Advance tasks in repository order and persist process records to GitHub as work proceeds.
