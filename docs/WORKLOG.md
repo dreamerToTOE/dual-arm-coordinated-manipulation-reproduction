@@ -23,3 +23,5 @@ Append-only project work log.
 - Compared the repository benchmark requirements with the existing Task27 Cube/side-suction/carriage geometry and control constants.
 - Asked whether the frozen benchmark should use that validated scene as its geometric starting point or a separately designed scene.
 - No benchmark values have been frozen; paper algorithms remain untouched.
+- Added reports/TASK01_SOURCE_PARAMETER_MATRIX.md: source-grounded Task27 geometry/material/robot values, dimensional checks and explicit decisions still needed before any benchmark_v1 freeze.
+- Isaac/MoveIt runtime had exited before TASK01 validation; no fresh physical benchmark was run.
