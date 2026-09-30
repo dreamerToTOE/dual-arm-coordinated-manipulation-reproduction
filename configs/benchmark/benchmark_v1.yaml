@@ -106,12 +106,49 @@ benchmarks:
     max_relative_tcp_error_m: null
     timeout_s: null
   B_constrained_insertion:
+    # Two different contact tasks share the five-cube Task27 layout. Do not
+    # aggregate their success rates as if they were one dual-arm experiment.
+    fixture_preparation_cubes_01_to_04:
+      purpose: build_the_four_cube_side_constraints_before_center_insertion
+      sequence: [cube_01_plus_outer, cube_02_minus_outer, cube_03_plus_inner, cube_04_minus_inner]
+      nominal_pre_push_centers_world_m:
+        - [0.790, 0.060, 0.260]
+        - [0.790, -0.060, 0.260]
+        - [0.790, 0.1215, 0.260]
+        - [0.790, -0.1215, 0.260]
+      final_cell_centers_world_m:
+        - [1.100, 0.243, 0.260]
+        - [1.100, -0.243, 0.260]
+        - [1.100, 0.1215, 0.260]
+        - [1.100, -0.1215, 0.260]
+      initial_staging_policy: coarse_safe_pre_push_pose_then_dual_arm_correction
+      initial_staging_safety_tolerance_m: null
+      deep_push:
+        primary_arm: suction_on_minus_x_face_pushes_toward_plus_x_deep_wall
+        secondary_arm: suction_on_side_face_constrains_lateral_and_yaw_error
+      after_deep_wall_contact:
+        former_side_arm: becomes_primary_and_presses_toward_side_wall_or_previously_placed_cube
+        former_rear_arm: maintains_deep_wall_contact_and_prevents_x_rebound
+      dual_contact_force_policy: null
+      fixture_final_pose_tolerance_m: null
+      fixture_settle_policy: null
+    center_cube_05:
+      initial_staging_policy: precisely_align_at_pre_push_before_single_arm_insertion
+      pre_push_lateral_tolerance_m: null
+      pre_push_yaw_tolerance_rad: null
+      pre_push_x_tolerance_m: null
+      pusher_arm: null
+      contact_topology: one_arm_suction_on_minus_x_face_other_arm_no_cube_contact
+      non_pushing_arm_policy: clear_of_cube_and_insertion_corridor
+      push_axis_world: [1.0, 0.0, 0.0]
+      side_correction_during_push: none_by_second_arm
+      note: C1_to_C5_are_deliberate_perturbations_of_a_frozen_C0_start_not_random_staging_errors
     start_cube_center_world_m: [0.790, 0.000, 0.260]
     target_cube_center_world_m: [1.100, 0.000, 0.260]
     commanded_cube_translation_world_m: [0.310, 0.000, 0.000]
     neighboring_inner_cube_centers_world_y_m: [-0.1215, 0.1215]
-    start_contact_topology: null
-    side_support_policy: null
+    start_contact_topology: single_arm_rear_suction_for_cube_05
+    side_support_policy: none_for_cube_05
     final_pose_tolerance_m: null
     final_orientation_tolerance_rad: null
     max_contact_force_n: null

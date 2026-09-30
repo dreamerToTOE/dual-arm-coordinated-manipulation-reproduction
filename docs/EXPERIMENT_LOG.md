@@ -30,6 +30,19 @@ Key metrics: 0 failed dimension checks; 30 unresolved/null configuration fields
 Artifacts: `results/20260930_TASK01_static_geometry/`
 Notes: No physical contact, collision, sensing or timing validation was performed.
 
+## 2026-09-30 20260930_TASK01_contact_protocol
+Task: TASK01
+Baseline: none; candidate protocol and geometry check only
+Platform: system Python 3 + PyYAML; analytic validation (not Isaac)
+Commit at probe: 93e7e54 (parent of uncommitted draft)
+Seed: not applicable
+Command: `python3 scripts/validate_benchmark_candidate.py`
+Config: `configs/benchmark/benchmark_v1.yaml` (DRAFT)
+Result: PASS for internal analytic geometry/protocol; TASK01 itself remains IN_PROGRESS
+Key metrics: 0 failed checks; 36 unresolved/null configuration fields; 1° yaw consumes 1.038 mm nominal center clearance
+Artifacts: `results/20260930_TASK01_contact_protocol/`
+Notes: No physical contact, collision, sensing or timing validation was performed.
+
 Recommended entry:
 ```text
 ## <date> <run_id>

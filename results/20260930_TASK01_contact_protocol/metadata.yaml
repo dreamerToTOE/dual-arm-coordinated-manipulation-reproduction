@@ -1,0 +1,16 @@
+task: TASK01
+baseline: none
+platform: system_python_static_geometry
+git_commit_at_probe: 93e7e54
+seed: not_applicable
+config_path: configs/benchmark/benchmark_v1.yaml
+config_sha256: a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8
+command: python3 scripts/validate_benchmark_candidate.py
+status: PASS_ANALYTIC_ONLY
+metrics:
+  failed_geometry_or_protocol_checks: 0
+  unresolved_null_fields: 36
+  yaw_1_deg_projected_extra_half_width_mm: 1.038006
+artifact_paths:
+  - results/20260930_TASK01_contact_protocol/summary.md
+notes: Config was uncommitted at probe; git_commit_at_probe identifies parent, config_sha256 identifies input. No Isaac simulation was run.

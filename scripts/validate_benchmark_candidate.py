@@ -49,6 +49,25 @@ def main(path: Path) -> int:
     for y in b["neighboring_inner_cube_centers_world_y_m"]:
         near(abs(y) - size[1], 0.0015, "center side gap")
 
+    fixture = b["fixture_preparation_cubes_01_to_04"]
+    pre_push = fixture["nominal_pre_push_centers_world_m"]
+    final_cells = fixture["final_cell_centers_world_m"]
+    if len(fixture["sequence"]) != 4 or len(pre_push) != 4 or len(final_cells) != 4:
+        raise ValueError("Fixture preparation must specify four cubes in order")
+    for index, (start, goal) in enumerate(zip(pre_push, final_cells), start=1):
+        near(start[0], b["start_cube_center_world_m"][0], f"cube {index} PRE_PUSH x")
+        near(goal[0], b["target_cube_center_world_m"][0], f"cube {index} final x")
+        near(start[2], b["start_cube_center_world_m"][2], f"cube {index} PRE_PUSH z")
+        near(goal[2], b["target_cube_center_world_m"][2], f"cube {index} final z")
+    near(final_cells[0][1], carriage["final_cell_centers_world_y_m"][-1], "positive outer cell")
+    near(final_cells[1][1], carriage["final_cell_centers_world_y_m"][0], "negative outer cell")
+    near(final_cells[2][1], carriage["final_cell_centers_world_y_m"][-2], "positive inner cell")
+    near(final_cells[3][1], carriage["final_cell_centers_world_y_m"][1], "negative inner cell")
+    if b["center_cube_05"]["contact_topology"] != "one_arm_suction_on_minus_x_face_other_arm_no_cube_contact":
+        raise ValueError("Cube 05 must use single-arm rear-suction insertion")
+    if b["side_support_policy"] != "none_for_cube_05":
+        raise ValueError("Cube 05 cannot have a second-arm side constraint")
+
     pending = []
     def find_null(value, prefix=""):
         if isinstance(value, dict):
