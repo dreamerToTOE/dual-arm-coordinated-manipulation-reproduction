@@ -40,6 +40,18 @@ Workaround: None for a transferable common benchmark.
 Resolution: Define carriage and entrance frames in TASK01 and expose them through the TASK02 adapter.
 Related commit/run: TASK00 environment audit.
 
+## BUG-004 — MoveIt shutdown segmentation fault after completed Task01 probes
+Date: 2026-09-30
+Task: TASK01
+Status: OPEN
+Symptom: After both Cube 05 physical runs had exited normally and the MoveIt launch was interrupted with Ctrl-C, `move_group` exited with code -11 during `rclcpp::CallbackGroup` destruction.
+Reproduction: Launch `moveit_dual_side_suction.launch.py use_rviz:=false`, run the Task01 probe, then send Ctrl-C to launch. It has been seen once; repeatability unknown.
+Suspected cause: Shutdown lifetime/race in the installed MoveIt/ROS stack; unconfirmed.
+Evidence: Launch output from 2026-09-30; the two Task27 node logs both contain `batch 5 PASS` before shutdown.
+Workaround: None required for completed trajectory execution, but do not classify launch teardown as clean.
+Resolution: Reproduce under a standalone shutdown check before declaring the runtime harness reliable; do not change the manipulation planner based on this single observation.
+Related commit/run: TASK01 center right/left physical probes.
+
 Template:
 ```text
 ## BUG-XXX

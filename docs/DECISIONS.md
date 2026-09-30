@@ -28,3 +28,11 @@ Append-only architectural and scientific decisions.
 - User input: Explicitly distinguished the first four dual-arm adjustable placements from the fifth single-arm precision insertion.
 - Scientific boundary: Cube 05 is not a two-arm insertion test and must not be reported as evidence for a reproduced cooperative insertion controller. Cross-method results must distinguish the dual-arm fixture phase from the single-arm center phase.
 - Still open: pre-push tolerances, primary arm assignment, contact-force limits, B-case perturbations and physical validation. No values are frozen by this decision.
+
+## D005 — Isolated Cube 05 arm-symmetry probe, not a benchmark shortcut
+- Date: 2026-09-30
+- Classification: [EXPERIMENTAL] test fixture and [ENGINEERING] test-only arm selector.
+- Decision: For the arm-symmetry feasibility probe only, directly place Cubes 01–04 at their final cells, require actual Isaac physics settle, then feed and execute only Cube 05. Run left and right from separate clean scenes. Keep the legacy controller's default `center_pusher_arm=right`; choosing left requires an explicit parameter.
+- Reason: Compare whether either arm can physically perform the fifth-Cube single-arm push without spending four prior cycles on each test. This does not validate first-four placement or freeze the benchmark.
+- Numerical implementation: 100 nm comparison guard at the 1.5 mm inner-side-gap boundary only, to absorb an observed 38 nm float32 serialization excess; neither the target geometry nor the material threshold changes at meaningful precision.
+- Impact: Results are labeled [EXPERIMENTAL], with separate run metadata and raw log pointers. TASK01 remains IN_PROGRESS.

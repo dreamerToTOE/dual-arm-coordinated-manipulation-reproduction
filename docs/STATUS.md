@@ -8,7 +8,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Task27 geometry and Cube 01–04 dual-arm / Cube 05 single-arm contact sequence recorded; draft has 36 unresolved fields; Isaac validation remains open |
+| TASK01 Benchmark Freeze | IN_PROGRESS | Draft has 36 unresolved fields. Four pre-placed fixture cubes and Cube 05 right/left physical insert probes each passed once in Isaac; full fixture, repeatability, force sensing and freeze remain open |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

@@ -1,0 +1,29 @@
+task: TASK01
+baseline: none_experimental_task27_probe
+platform: Isaac_Sim_4.5_ROS2_Humble_MoveIt2_FCL
+git_commit_at_probe: 76d24dc9226141e761ad779c0d25b4e22f2ed10b
+legacy_git_commit_at_probe: d93f2858ec5345d2234fb3a8b1ec018b9ca5a0de
+legacy_test_patch_committed_as: 631b1f6
+seed: not_fixed_legacy_ompl
+config_path: configs/benchmark/benchmark_v1.yaml
+config_sha256: a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8
+scene_command: /home/ubuntu2004/isaacsim-4.5.0/python.sh platforms/isaac_ros2/probes/task01_center_headless.py --duration-sec 900
+moveit_command: ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false
+command: ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=5 -p max_batches:=1 -p center_pusher_arm:=right -p execution_time_scale:=3.0
+status: PASS_SINGLE_RUN_EXPERIMENTAL
+metrics:
+  fixture_cube_01_to_04_settled_pose_error_mm: [0.000, 0.000, 0.000, 0.000]
+  final_cube_05_center_error_mm: 0.603
+  final_deep_wall_gap_mm: 0.586
+  final_plus_y_inner_gap_mm: 1.361
+  final_minus_y_inner_gap_mm: 1.639
+  peak_joint_torque_during_push_nm: 35.96
+  push_slices: 16
+  both_arms_home_afterward: true
+artifact_paths:
+  - reports/TASK01_CENTER_ARM_SYMMETRY.md
+  - /home/ubuntu2004/.ros/log/task27_five_cube_center_insert_170389_1790768859580.log
+  - platforms/isaac_ros2/probes/task01_center_fixture_scene.py
+  - platforms/isaac_ros2/probes/task01_center_fixture_bridge.py
+  - platforms/isaac_ros2/probes/task01_center_headless.py
+notes: The four fixture cubes were pre-placed; this does not validate their physical palletizing. The source commit fields are pre-patch HEADs; the small test patch was committed unchanged after the run as 631b1f6.

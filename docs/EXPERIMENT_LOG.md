@@ -43,6 +43,30 @@ Key metrics: 0 failed checks; 36 unresolved/null configuration fields; 1° yaw c
 Artifacts: `results/20260930_TASK01_contact_protocol/`
 Notes: No physical contact, collision, sensing or timing validation was performed.
 
+## 2026-09-30 20260930_TASK01_center_right_physical
+Task: TASK01
+Baseline: none; experimental Task27 fifth-Cube probe
+Platform: Isaac Sim 4.5 + ROS2 Humble + MoveIt2/FCL
+Commit at probe: 76d24dc (new repo), d93f285 (legacy repo), with working-tree test patch later committed unchanged as 631b1f6
+Seed: not fixed in legacy OMPL
+Command/config: `results/20260930_TASK01_center_right_physical/metadata.yaml`
+Result: PASS, one physical run; four fixtures pre-placed
+Key metrics: Cube 05 final center 0.603 mm; +X wall gap 0.586 mm; +Y/-Y side gaps 1.361/1.639 mm; peak joint torque 35.96 Nm
+Artifacts: metadata, `reports/TASK01_CENTER_ARM_SYMMETRY.md`, external raw ROS log listed therein
+Notes: Both arms HOME. Not a reproducibility or statistical symmetry result.
+
+## 2026-09-30 20260930_TASK01_center_left_physical
+Task: TASK01
+Baseline: none; experimental Task27 fifth-Cube probe
+Platform: Isaac Sim 4.5 + ROS2 Humble + MoveIt2/FCL
+Commit at probe: 76d24dc (new repo), d93f285 (legacy repo), with working-tree test patch later committed unchanged as 631b1f6
+Seed: not fixed in legacy OMPL
+Command/config: `results/20260930_TASK01_center_left_physical/metadata.yaml`
+Result: PASS, one independent physical run; four fixtures pre-placed
+Key metrics: Cube 05 final center 0.669 mm; +X wall gap 0.633 mm; +Y/-Y side gaps 1.719/1.281 mm; peak joint torque 35.87 Nm; one pre-close reacquire
+Artifacts: metadata, `reports/TASK01_CENTER_ARM_SYMMETRY.md`, external raw ROS log listed therein
+Notes: Both arms HOME. Left and right results differ; no statistical equivalence is claimed.
+
 Recommended entry:
 ```text
 ## <date> <run_id>
