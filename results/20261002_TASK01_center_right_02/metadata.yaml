@@ -1,0 +1,26 @@
+task: TASK01
+baseline: none_experimental_task27_probe
+platform: Isaac_Sim_4.5_ROS2_Humble_MoveIt2_FCL
+git_commit_at_probe: ad7e70d2c31907e3199b7a0af06db1eca95d9ae4
+probe_code_status: read_only_instrumentation_uncommitted_during_run_then_committed_with_report
+legacy_git_commit_at_probe: 631b1f65656d025c1bb2173e874192f3fe4d355a
+seed: uncontrolled_legacy_ompl
+config_path: configs/benchmark/benchmark_v1.yaml
+config_sha256: a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8
+scene_command: RMW_IMPLEMENTATION=rmw_fastrtps_cpp LD_LIBRARY_PATH=/home/ubuntu2004/isaacsim-4.5.0/exts/isaacsim.ros2.bridge/humble/lib /home/ubuntu2004/isaacsim-4.5.0/python.sh platforms/isaac_ros2/probes/task01_center_headless.py --duration-sec 600
+moveit_command: ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false
+command: ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=5 -p max_batches:=1 -p center_pusher_arm:=right -p execution_time_scale:=3.0
+status: PASS_SINGLE_RUN_EXPERIMENTAL
+metrics:
+  final_cube_05_center_error_mm: 0.429
+  final_deep_wall_gap_mm: 0.315
+  final_plus_y_inner_gap_mm: 1.209
+  final_minus_y_inner_gap_mm: 1.791
+  peak_joint_torque_during_push_nm: 37.02
+  push_slices: 16
+  both_arms_home_afterward: true
+  final_cube_05_pose_xyz_m: [1.099684596, 0.000290925, 0.260000020]
+artifact_paths:
+  - reports/TASK01_CENTER_ARM_SYMMETRY.md
+  - /home/ubuntu2004/.ros/log/task27_five_cube_center_insert_84692_1790936257591.log
+notes: Four fixture cubes were pre-placed. Final pose is the Isaac Bridge USD pose, not an independent metrology measurement. MoveIt segfaulted only on subsequent Ctrl-C shutdown.

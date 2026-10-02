@@ -45,12 +45,24 @@ Date: 2026-09-30
 Task: TASK01
 Status: OPEN
 Symptom: After both Cube 05 physical runs had exited normally and the MoveIt launch was interrupted with Ctrl-C, `move_group` exited with code -11 during `rclcpp::CallbackGroup` destruction.
-Reproduction: Launch `moveit_dual_side_suction.launch.py use_rviz:=false`, run the Task01 probe, then send Ctrl-C to launch. It has been seen once; repeatability unknown.
+Reproduction: Launch `moveit_dual_side_suction.launch.py use_rviz:=false`, run the Task01 probe, then send Ctrl-C to launch. Reproduced after every one of the four additional completed runs on 2026-10-02; `move_group` exit code -11 and stack ends in `rclcpp::CallbackGroup::~CallbackGroup()`.
 Suspected cause: Shutdown lifetime/race in the installed MoveIt/ROS stack; unconfirmed.
-Evidence: Launch output from 2026-09-30; the two Task27 node logs both contain `batch 5 PASS` before shutdown.
+Evidence: Launch output from 2026-09-30 and 2026-10-02; all six Task27 node logs contain `batch 5 PASS` before shutdown. The controller process exited 0 in each new trial.
 Workaround: None required for completed trajectory execution, but do not classify launch teardown as clean.
-Resolution: Reproduce under a standalone shutdown check before declaring the runtime harness reliable; do not change the manipulation planner based on this single observation.
+Resolution: Isolate the MoveIt/ROS shutdown lifetime issue under a standalone shutdown check before declaring the runtime harness reliable; do not change the manipulation planner to mask this teardown defect.
 Related commit/run: TASK01 center right/left physical probes.
+
+## BUG-005 — Motion-time PhysX and USD Cube pose sources are not synchronized
+Date: 2026-10-02
+Task: TASK01
+Status: OPEN
+Symptom: During Cube 05 pushing, a read-only same-loop comparison of the Isaac `RigidPrim.get_world_pose()` result and the USD transform used by the legacy Bridge's `/task27/cube_poses` sometimes differed by 0.4–2.8 mm in position. After Cube settle, the positional difference printed as 0.000 mm. Orientation-source difference in observed samples was around 0.02–0.15 deg.
+Reproduction: Run `platforms/isaac_ros2/probes/task01_center_headless.py` with the bundled Humble ROS environment, execute the Cube 05 probe, and inspect `[TASK01 pose-source-check]` lines during motion and after settle.
+Suspected cause: A physics/USD update or read timing mismatch is possible but not established. This instrumentation alone cannot distinguish timing from transform or caching issues.
+Evidence: Headless stdout from left/right repeat runs on 2026-10-02; e.g. left 3 had a 2.840 mm transient sample during push, then 0.000 mm after settle. Final Bridge pose samples and Task27 ROS logs are recorded in `reports/TASK01_CENTER_ARM_SYMMETRY.md`.
+Workaround: Use only settled final Bridge pose for current exploratory static placement metrics; do not treat instantaneous Bridge pose as a synchronized contact/velocity measurement.
+Resolution: Define one timestamped physics pose pipeline, compare against USD and ROS with a common simulation time, then freeze the TASK01/TASK02 measurement contract.
+Related commit/run: TASK01 center repeatability probes.
 
 Template:
 ```text

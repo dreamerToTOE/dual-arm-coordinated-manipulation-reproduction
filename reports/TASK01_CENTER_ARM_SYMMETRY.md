@@ -1,6 +1,6 @@
 # TASK01 Cube 05 单臂推进对称性探针（2026-09-30）
 
-状态：**左右单臂各一次 Isaac 物理探针通过；不是 benchmark_v1 冻结或 P2/P3 复现结果**。
+状态：**左右单臂各三次 Isaac 物理探针通过；不是 benchmark_v1 冻结或 P2/P3 复现结果**。
 
 ## 目的与范围
 
@@ -14,6 +14,8 @@
 
 ```bash
 cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
+RMW_IMPLEMENTATION=rmw_fastrtps_cpp \
+LD_LIBRARY_PATH=/home/ubuntu2004/isaacsim-4.5.0/exts/isaacsim.ros2.bridge/humble/lib \
 /home/ubuntu2004/isaacsim-4.5.0/python.sh \
   platforms/isaac_ros2/probes/task01_center_headless.py --duration-sec 900
 ```
@@ -37,7 +39,9 @@ ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args \
   -p center_pusher_arm:=right -p execution_time_scale:=3.0
 ```
 
-将 `right` 改为 `left` 做第二次。只规划检查可额外传 `-p planning_only:=true`，此模式不发布机械臂、吸盘或到料命令。
+将 `right` 改为 `left` 可做另一臂的独立试验。只规划检查可额外传 `-p planning_only:=true`，此模式不发布机械臂、吸盘或到料命令。
+
+每次重复试验都重启终端 A、B，等待新的 READY，然后运行终端 C。当前 Isaac 4.5 独立 `python.sh` 在干净终端下没有自动设置 ROS Bridge 的 RMW/库搜索路径；上面的两个环境变量指定 Isaac 自带的 Humble 库，没有依赖系统 `rclpy`。省略它们时，本轮首次空场景尝试在 Bridge 启动阶段失败，未发送机器人命令。
 
 ## 运行条件与结果
 
@@ -58,10 +62,29 @@ ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args \
 | 两侧间隙不对称量 | 0.278 mm | 0.438 mm |
 | 推入最大关节驱动力矩 | 35.96 Nm | 35.87 Nm |
 
-这两次结果支持**固定场景下两臂都能执行第五块**，而非统计意义上的等效；左右结果存在实际差异。
+## 2026-10-02 重复物理试验
+
+在四块预置相同几何、每次全新场景/MoveIt 进程的条件下，追加右、左各两次，合计每臂三次。每次控制节点均记录 `Task27 batch 5 PASS`，并完成 16 片单臂推进、双臂 HOME。下表来自只读解析器 `scripts/summarize_task01_center_trials.py`；位姿来自 Isaac Bridge 的 `/task27/cube_poses`，不是外部测量。
+
+| 推进臂/次序 | 中心误差 mm | 后墙间隙 mm | +Y / -Y 间隙 mm | 峰值关节扭矩 Nm | 原始 ROS 日志文件名 |
+|---|---:|---:|---:|---:|---|
+| 右 1 | 0.603 | 0.586 | 1.361 / 1.639 | 35.96 | `task27_five_cube_center_insert_170389_1790768859580.log` |
+| 右 2 | 0.429 | 0.315 | 1.209 / 1.791 | 37.02 | `task27_five_cube_center_insert_84692_1790936257591.log` |
+| 右 3 | 0.374 | 0.360 | 1.402 / 1.598 | 35.47 | `task27_five_cube_center_insert_91674_1790937182531.log` |
+| 左 1 | 0.669 | 0.633 | 1.719 / 1.281 | 35.87 | `task27_five_cube_center_insert_175723_1790769635313.log` |
+| 左 2 | 0.408 | 0.407 | 1.486 / 1.514 | 35.70 | `task27_five_cube_center_insert_88719_1790936801303.log` |
+| 左 3 | 0.561 | 0.392 | 1.099 / 1.901 | 34.63 | `task27_five_cube_center_insert_94437_1790937539749.log` |
+
+原始日志均位于 `/home/ubuntu2004/.ros/log/`。右臂中心误差均值 `0.469 mm`、最大 `0.603 mm`；左臂均值 `0.546 mm`、最大 `0.669 mm`。左右各 `3/3` 通过只能说明这个固定场景的小样本可重复执行，不能推出故障率或统计等效。两侧间隙的最大不对称量右臂 `0.582 mm`、左臂 `0.802 mm`；左 3 的两侧间隙为 `1.099 / 1.901 mm`，因此最终居中程度并非每次相同。左 1 发生过一次 `PRE_CLOSE_REACQUIRE`，其余五次未发生。
+
+新增只读最终位姿采样得到本轮四次的 Cube 05 最终中心分别约为右 2 `(1.099685, 0.000291, 0.260000)`、左 2 `(1.099593, 0.000014, 0.260000)`、右 3 `(1.099640, 0.000098, 0.260000)`、左 3 `(1.099608, 0.000401, 0.260000)` m；右 3/左 3 的最终 yaw 约 `0.020° / 0.014°`。这些是 Bridge 发布的 USD 位姿；没有独立六自由度标定。运行时只读对照发现运动中的 PhysX 刚体位姿与同一步所读 USD 位姿偶有约 `2.8 mm` 的瞬时差值，落稳后位置差为 `0.000 mm`（打印精度）。其原因尚未确定，不能将运动中瞬时 Bridge 位姿直接视为同步接触测量，见 BUG-005。
+
+六次控制任务均成功，但本轮每次在完成后用 Ctrl-C 停止 MoveIt launch，`move_group` 的 `rclcpp::CallbackGroup` 析构过程均再次报 -11；这属于可重复的退出缺陷，不是码垛动作失败，见 BUG-004。OMPL 随机种子未固定；多次成功不是严格同随机种子重复性实验。
+
+这些结果支持**固定场景下两臂都能执行第五块**，而非统计意义上的等效；左右结果存在实际差异。
 
 ## 科学边界与待办
 
-这是一轮两臂可行性探针；一次成功不能证明稳定性、长期可靠性或左右在统计上等效。还需要相同初始条件下左臂物理结果、重复试验、实际六自由度 Cube 位姿及接触力/力矩记录。当前桥没有末端接触 wrench，不能把关节驱动力矩当作吸盘接触力。TASK01 仍为 `IN_PROGRESS`；36 个未定字段也尚未冻结。
+这是小样本可行性探针，不能证明长期可靠性或左右在统计上等效。仍需固定种子策略、完成前四块真实放置、带时间基准的六自由度 Ground Truth 与末端接触力/力矩记录。当前桥没有末端接触 wrench，不能把关节驱动力矩当作吸盘接触力。TASK01 仍为 `IN_PROGRESS`；36 个未定字段也尚未冻结。
 
-源码：`platforms/isaac_ros2/probes/`；旧工程测试补丁：`ros_ws/src/fr3_dual_palletize/src/task26_truck_box_push_in.cpp`。运行元数据见 `results/20260930_TASK01_center_right_physical/` 与 `results/20260930_TASK01_center_left_physical/`。
+源码：`platforms/isaac_ros2/probes/`；旧工程测试补丁：`ros_ws/src/fr3_dual_palletize/src/task26_truck_box_push_in.cpp`。运行元数据见 `results/20260930_TASK01_center_right_physical/`、`results/20260930_TASK01_center_left_physical/` 与 `results/20261002_TASK01_center_repeatability/`。

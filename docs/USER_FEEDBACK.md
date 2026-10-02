@@ -13,3 +13,6 @@ Persistent user decisions/feedback that must influence future work.
 - Confirmed Task27 as the geometric starting point for TASK01 benchmark_v1; no approval was given to freeze every old numerical setting or acceptance threshold.
 - Clarified Benchmark B: first four cubes use dual-arm suction with one arm pushing toward the deep wall and the other constraining lateral/yaw error, then swap push/hold roles for lateral pressing; Cube 05 must be aligned accurately at PRE_PUSH and pushed inward by one suction arm without second-arm Cube contact.
 - Expected the fifth Cube's left/right single-arm insertion to be geometrically symmetric, and requested direct Isaac comparison without repeating the full process: place the first four Cubes at their intended final cells and test only Cube 05. Keep the two runs separate so feasibility is not mistaken for proof of equivalence.
+
+## 2026-10-02
+- User requested continuation of the same Cube 05 left/right experimental validation. This did not authorize freezing TASK01 or changing the benchmark geometry; repeated fresh-scene trials and evidence recording were kept within the existing probe scope.
