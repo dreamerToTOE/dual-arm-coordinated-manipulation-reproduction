@@ -1,0 +1,33 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_full_fixture_record_audit",
+  "platform": "Python3_JSONL_offline",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "seed": "not_applicable",
+  "config_path": "results/20261003_TASK01_full_five_physical_v2/raw/physics_contact_samples.jsonl",
+  "command": "python3 - <<'PY'\nimport json,math\nfrom pathlib import Path\np=Path('results/20261003_TASK01_full_five_physical_v2/raw/physics_contact_samples.jsonl')\ncount=0;last=None;missing=0;nonmonotonic=0;stamp_mismatches=0;nonfinite=0;matrix_error=0.;dt_min=float('inf');dt_max=0.;quat_error=0.\ndef finite(v):\n if isinstance(v,list):return all(finite(x) for x in v)\n return isinstance(v,(float,int)) and math.isfinite(v)\nwith p.open() as f:\n for line in f:\n  r=json.loads(line);s=r['physics'];count+=1\n  if last:\n   missing+=max(0,s['physics_step']-last[0]-1)\n   nonmonotonic+=int(s['physics_step']<=last[0] or s['stamp_ns']<=last[1])\n  last=(s['physics_step'],s['stamp_ns'])\n  for c in r['contacts']:\n   stamp_mismatches+=int(c['stamp_ns']!=s['stamp_ns'] or c['physics_step']!=s['physics_step'])\n   dt_min=min(dt_min,c['physics_dt_s']);dt_max=max(dt_max,c['physics_dt_s'])\n   for pair in c['pairs']:\n    matrix_error=max(matrix_error,pair['matrix_vs_normal_error_n'])\n    nonfinite+=int(not finite(pair['collision_force_world_n']+pair['collision_torque_about_sensor_origin_world_nm']))\n  for a in r['articulations'].values():\n   nonfinite+=int(not finite(a['link_poses_world_xyzw']))\n   key='incoming_joint_wrench_child_frame_raw' if 'incoming_joint_wrench_child_frame_raw' in a else 'incoming_joint_wrench_raw'\n   nonfinite+=int(not finite(a[key]))\n  for b in s['bodies']:\n   quat_error=max(quat_error,abs(sum(x*x for x in b['quaternion_xyzw'])-1))\nsummary={'status':'PASS_RECORD_INTEGRITY','rows':count,'missing_steps':missing,'nonmonotonic_steps_or_stamps':nonmonotonic,'contact_snapshot_stamp_step_mismatches':stamp_mismatches,'nonfinite_contact_or_articulation_arrays':nonfinite,'max_force_matrix_vs_normal_reconstruction_error_n':matrix_error,'physics_dt_min_max_s':[dt_min,dt_max],'max_cube_quaternion_norm_squared_error':quat_error,'last_step_stamp':last}\nassert count==37236 and missing==nonmonotonic==stamp_mismatches==nonfinite==0 and matrix_error<1e-4 and quat_error<1e-8,summary\nprint(json.dumps(summary))\nPY",
+  "status": "PASS_RECORD_INTEGRITY",
+  "metrics": {
+    "status": "PASS_RECORD_INTEGRITY",
+    "rows": 37236,
+    "missing_steps": 0,
+    "nonmonotonic_steps_or_stamps": 0,
+    "contact_snapshot_stamp_step_mismatches": 0,
+    "nonfinite_contact_or_articulation_arrays": 0,
+    "max_force_matrix_vs_normal_reconstruction_error_n": 0.0000152587890625,
+    "physics_dt_min_max_s": [
+      0.01666666753590107,
+      0.01666666753590107
+    ],
+    "max_cube_quaternion_norm_squared_error": 4.440892098500626e-16,
+    "last_step_stamp": [
+      37349,
+      622483365798
+    ]
+  },
+  "artifact_paths": [
+    "summary.json",
+    "../20261003_TASK01_full_five_physical_v2/raw/physics_contact_samples.jsonl"
+  ],
+  "notes": "Read-only integrity audit of full recorded stream; no physical task PASS implied, no force-safety threshold or event-time alignment asserted."
+}

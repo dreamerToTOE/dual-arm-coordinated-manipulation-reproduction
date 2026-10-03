@@ -1,0 +1,60 @@
+{
+  "checks": {
+    "incoming_force_matches_child_frame_within_0_05_n": true,
+    "incoming_torque_matches_child_frame_within_0_005_nm": true,
+    "payload_held_within_1_mm": true,
+    "suction_closed_through_load_window": true,
+    "timestamps_increasing": true
+  },
+  "expected_delta_local": [
+    0,
+    7.848000000000001,
+    4.805514039854215e-16,
+    0,
+    -7.688822463766744e-17,
+    1.2556800000000001
+  ],
+  "expected_delta_world": [
+    0,
+    0,
+    7.848000000000001,
+    0,
+    -1.2556800000000001,
+    0
+  ],
+  "link_paths": [
+    [
+      "/World/Carrier/Base",
+      "/World/Carrier/Tool"
+    ]
+  ],
+  "loaded_mean": [
+    1.7252729713618244e-11,
+    8.829002189636231,
+    0.0000010524989439394025,
+    -4.558550168476617e-14,
+    -1.4968868597975415e-7,
+    1.2556798458099365
+  ],
+  "measured_delta_local": [
+    1.7252729713618244e-11,
+    7.848002004623414,
+    9.355546230456943e-7,
+    -4.558550168476617e-14,
+    -1.4968868597975415e-7,
+    1.2556798458099365
+  ],
+  "notes": "Isolated experimental mount reaction; NOT calibrated FR3 TCP wrench or paper force control.",
+  "physics_dt_s": 0.016666666666666666,
+  "roll_deg": 90,
+  "status": "PASS_MOUNT_CALIBRATION",
+  "tool_index": 1,
+  "unloaded_mean": [
+    0,
+    0.9810001850128174,
+    1.1694432089370821e-7,
+    0,
+    0,
+    0
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Isaac_Sim_4.5_PhysX_CPU_numpy",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "code_variant": "Startup readout PASS; no TCP-composition/carriage fields in this early version; no external robot command.",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "config_path": "platforms/isaac_ros2/probes/task01_full_fixture_headless.py",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --verify-only --duration-sec 45 --output-dir results/20261003_TASK01_full_fixture_readout_v2/raw",
+  "status": "PASS_READOUT_STARTUP",
+  "metrics": {
+    "snapshots": 14,
+    "errors": []
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/summary.json",
+    "raw/physics_contact_samples.jsonl",
+    "reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md",
+    "raw/kit.log"
+  ],
+  "notes": "Success requires saved checks/summary, not process exit code. No paper baseline or frozen benchmark; raw FR3 reactions remain uncompensated.",
+  "legacy_git_commit": "631b1f65656d025c1bb2173e874192f3fe4d355a"
+}

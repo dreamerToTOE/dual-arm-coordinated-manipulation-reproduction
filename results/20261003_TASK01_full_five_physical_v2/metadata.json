@@ -1,0 +1,86 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_legacy_full_fixture",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2_FCL",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "legacy_OMPL_uncontrolled_no_fixed_seed_claim",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "legacy_git_commit": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "code_variant": "Five raw contact views, physical TCP transform and normal feed; no preplacement. Legacy control unchanged. Predates latest authored incoming-joint-frame annotation.",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --duration-sec 1800 --output-dir results/20261003_TASK01_full_five_physical_v2/raw",
+  "supporting_commands": [
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; export ROS_LOCALHOST_ONLY=0 (legacy ros_ws)",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=3.0"
+  ],
+  "status": "FAIL_FULL_FIXTURE_EXECUTION",
+  "metrics": {
+    "status": "FAIL_FULL_FIXTURE_EXECUTION",
+    "controller_exit_code": 1,
+    "placed_cubes": 1,
+    "requested_cubes": 5,
+    "planning_only_batches_passed": 5,
+    "measurement_status": "MEASUREMENT_COMPLETE",
+    "measurement_snapshots": 37236,
+    "measurement_errors": [],
+    "final_feed_state": [
+      2,
+      2,
+      0,
+      0,
+      0
+    ],
+    "preclose_gap_delta_mm": [
+      0.968,
+      0.315,
+      0.339
+    ],
+    "preclose_gap_delta_gate_mm": 0.3,
+    "min_correction_step_mm": 0.65,
+    "physx_final_cube01_center_m": [
+      1.0988003015518188,
+      0.2416684627532959,
+      0.2600000202655792
+    ],
+    "physx_final_cube01_quaternion_xyzw": [
+      7.7539272777389e-7,
+      -1.2546936613702238e-7,
+      -0.009559591157509094,
+      0.9999543060641743
+    ],
+    "physx_final_cube01_yaw_deg": -1.09546513982453,
+    "physx_final_cube01_nearest_deep_wall_gap_mm": 0.06355027597833,
+    "physx_final_cube01_nearest_plus_y_wall_gap_mm": 0.19531212073336,
+    "physx_final_cube02_left_gap_mm": 1.1534728159,
+    "physx_final_cube02_right_gap_mm": 0.8145313701,
+    "physx_final_cube02_gap_difference_mm": 0.3389414457,
+    "peak_cube01_deep_wall_collision_force_norm_n": 139.09779709626767,
+    "peak_cube01_table_collision_force_norm_n": 213.447429753858,
+    "move_group_shutdown_exit_code": -11,
+    "notes": [
+      "Feed ARRIVED flags do not establish placement.",
+      "Nearest oriented-geometry gap is not whole-face flush.",
+      "Collision resultant does not include suction D6 reaction, is not internal wrench, and has no frozen force gate.",
+      "Old raw key incoming_joint_wrench_child_frame_raw means incoming JOINT frame, not rigid-link frame; authored FR3 joint audit/compensation not yet validated."
+    ]
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/summary.json",
+    "raw/controller.log",
+    "raw/moveit.log",
+    "raw/kit.log",
+    "raw/topology.json",
+    "raw/physics_contact_samples.jsonl",
+    "reports/TASK01_FULL_FIXTURE_CONTACT_PROBE.md"
+  ],
+  "notes": "37,236 error-free measurement snapshots do not imply a complete physical task. Safely stopped before Cube 02 suction; later tasks not commanded. Independent joint-reference calibration and FR3 gravity compensation are separate."
+}

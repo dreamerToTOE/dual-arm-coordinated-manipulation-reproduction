@@ -1,0 +1,30 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Isaac_Sim_4.5_PhysX_CPU_numpy",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "config_path": "platforms/isaac_ros2/probes/task01_full_fixture_headless.py",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --verify-only --duration-sec 45 --output-dir results/20261003_TASK01_full_fixture_frame_audit/raw",
+  "status": "FAIL_ASSET_ROOT_STARTUP",
+  "code_variant": "Latest full runner with authored inbound joint frames; asset-root lookup failed before this readout ran.",
+  "metrics": {
+    "error": "RuntimeError('Could not find assets root folder')",
+    "robot_commands_sent": false
+  },
+  "artifact_paths": [
+    "failure.json",
+    "raw/failure.json",
+    "raw/kit.log",
+    "reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md"
+  ],
+  "notes": "Fast-shutdown process exit 0 does not mean startup passed. No robot or suction commands. FR3 authored-frame audit remains unverified."
+}

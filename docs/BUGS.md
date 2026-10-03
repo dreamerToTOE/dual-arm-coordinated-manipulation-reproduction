@@ -92,6 +92,22 @@ Workaround: Use live PhysX quaternion in the new measurement channel. Do not rei
 Resolution needed: Migrate the final common adapter's pose consumers with an explicit tested frame/time contract. This iteration does not modify legacy control code.
 Related report: reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
 
+## 2026-10-03 — BUG-001 follow-up: collision channel calibrated, suction gap remains
+Status: PARTIAL WORKAROUND; FR3 TCP contact-wrench contract still OPEN
+Evidence: Independent known-load normal/friction/torque calibration passes at 60/120 Hz. A dual-suction-held 0.8 kg object produces 0 N collision telemetry: D6 reaction is excluded. Independent articulated-mount reaction captures the known suction load and identifies the raw link-axis/link-origin convention, but is not a FR3 compensation calibration.
+Next: Validate the actual link8 branch gravity/inertia compensation, action/reaction sign and moment shift to TCP before publishing a contact estimator. Do not treat old JointState.effort, new collision wrench, or uncorrected incoming joint wrench as interchangeable.
+Related report: reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md
+
+## BUG-007 — Hidden tool-body mass / contact-force compensation ambiguity
+Date: 2026-10-03
+Task: TASK01
+Status: OPEN (model audit finding; no model change authorized)
+Symptom: Disabling old hand/finger visual and collision does not remove their rigid-body masses. Actual articulation topology has 13 links, with about 1.946277 kg in the link8+hand+fingers+hand_tcp branch; static support is about 19.093 N before grasping any Cube.
+Evidence: Full-scene readout topology.json; independent mount calibration proves that incoming reactions include downstream gravitational load. Actual link8 raw reactions also show roughly this support after world-frame rotation.
+Risk: Calling raw incoming force a suction contact wrench gives biased force/internal-stress metrics. Invisible bodies also influence the physical dynamics and must be included in the benchmark model description.
+Resolution needed: Audit/record model masses and inertias; calibrate compensation. Any removal/replacement of masses changes the benchmark physics and requires explicit user review; not done here.
+Related report: reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md
+
 Template:
 ```text
 ## BUG-XXX
@@ -106,3 +122,23 @@ Workaround:
 Resolution:
 Related commit/run:
 ```
+
+## 2026-10-03 — BUG-001/007 reference-convention correction
+Status: OPEN / independently calibrated channel only
+Correction: Earlier follow-up's link-axis/link-origin identification is INVALIDATED due to scaled authored COM/anchors. Final unscaled nine-hypothesis test identifies incoming joint axes/about joint anchor (3.436e-6 N / 4.430e-7 Nm errors), with physics COM checked. Raw prior PASS retained; metadata explicitly invalidated for reference inference. Do not transform FR3 raw incoming by link pose alone or ignore the moment reference.
+BUG-007 qualification: 1.946277 kg and 19.092980 N are topology/analytic facts. The temporary about-19.10 N link-pose rotation is only an uncalibrated magnitude observation, not FR3 joint mapping proof. Added authored-frame audit failed on asset-root lookup; mapping/compensation stay unverified.
+Evidence: results/20261003_TASK01_mount_joint_reference_final/ and reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md.
+
+## BUG-008 — Pre-close minimum correction overshoots symmetry gate
+Date: 2026-10-03
+Task: TASK01
+Status: OPEN
+Symptom: Normal-feed run places Cube 01 then fails Cube 02 before suction. Gap difference 0.968 -> 0.315 -> 0.339 mm never meets original 0.300 mm gate; controller exits 1, no later cube commanded.
+Evidence-supported cause: Legacy effective_step clamps nonzero correction to at least 0.650 mm. Near the gate it overshoots the acceptable interval. Last x/z mismatches are within original 2.5 mm gate and not the failure. Final independent physics TCP/body pose confirms 0.338941 mm difference.
+Evidence: results/20261003_TASK01_full_five_physical_v2/raw/controller.log; reports/TASK01_FULL_FIXTURE_CONTACT_PROBE.md.
+Resolution needed: Fix quantization/deadband with endpoint FK/tracking feedback, retain the 0.300 mm geometry gate and three-attempt stop. Rerun five normal-feed cubes; no ACM/physics change. Not fixed in this metrology scope.
+
+## 2026-10-03 — BUG-004/006 full-flow reproduction
+BUG-004: move_group again exits -11 at rclcpp::CallbackGroup destruction after stopping the incomplete run. Execution and shutdown failures are separate; no clean-lifecycle claim.
+BUG-006: Cube 01 final physical yaw -1.095465 deg versus legacy scaled-USD near-zero yaw. Oriented nearest-wall gap differs from center/axis-aligned gap; no physical orientation PASS from old telemetry.
+Evidence: results/20261003_TASK01_full_five_physical_v2/raw/{controller,moveit}.log and physics_contact_samples.jsonl; report above.

@@ -1,0 +1,5 @@
+{
+  "status": "FAIL",
+  "error": "AttributeError(\"'PhysicsContext' object has no attribute 'get_physics_scene_prim'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/probes/task01_contact_force_probe.py\", line 50, in main\n    stabilization_before = world.get_physics_context().get_physics_scene_prim().GetAttribute(\nAttributeError: 'PhysicsContext' object has no attribute 'get_physics_scene_prim'\n"
+}

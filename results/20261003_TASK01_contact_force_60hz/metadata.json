@@ -1,0 +1,31 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Isaac_Sim_4.5_PhysX_CPU_numpy",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "code_variant": "Initial PhysicsContext getter mismatch; startup FAIL before robot commands.",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "config_path": "platforms/isaac_ros2/probes/task01_contact_force_probe.py",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_contact_force_probe.py --output-dir results/20261003_TASK01_contact_force_60hz/raw",
+  "status": "FAIL",
+  "metrics": {
+    "startup_failure": "AttributeError(\"'PhysicsContext' object has no attribute 'get_physics_scene_prim'\")",
+    "external_robot_commands": 0
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/failure.json",
+    "raw/contact_samples.jsonl",
+    "reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md",
+    "/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261003_141352.log"
+  ],
+  "notes": "Success requires saved checks/summary, not process exit code. No paper baseline or frozen benchmark; raw FR3 reactions remain uncompensated."
+}

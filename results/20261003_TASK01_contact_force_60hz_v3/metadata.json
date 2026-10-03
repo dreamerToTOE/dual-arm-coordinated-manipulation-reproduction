@@ -1,0 +1,149 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Isaac_Sim_4.5_PhysX_CPU_numpy",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "code_variant": "11 checks; support/friction/wall/suction calibration, no nonzero torque phase yet.",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "config_path": "platforms/isaac_ros2/probes/task01_contact_force_probe.py",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_contact_force_probe.py --output-dir results/20261003_TASK01_contact_force_60hz_v3/raw",
+  "status": "PASS_CONTACT_CALIBRATION",
+  "metrics": {
+    "dual_suction_hold": {
+      "last_position_m": [
+        0,
+        0,
+        0.5
+      ],
+      "max_collision_force_norm_n": 0,
+      "mean_collision_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_torque_world_nm": [
+        0,
+        0,
+        0
+      ],
+      "samples": 60
+    },
+    "free_fall": {
+      "last_position_m": [
+        0,
+        0,
+        0.7138749361038208
+      ],
+      "max_collision_force_norm_n": 0,
+      "mean_collision_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_torque_world_nm": [
+        0,
+        0,
+        0
+      ],
+      "samples": 12
+    },
+    "static_friction": {
+      "last_position_m": [
+        -0.0000011291967894067056,
+        -0.0000020658576431742404,
+        0.0599997378885746
+      ],
+      "max_collision_force_norm_n": 8.098834527321126,
+      "mean_collision_force_world_n": [
+        -1.9999999105930328,
+        -8.81652037302653e-9,
+        7.847999652226766
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        7.847999652226766
+      ],
+      "mean_torque_world_nm": [
+        1.816879421358622e-7,
+        0.0000016077268841193279,
+        -1.9893868095690232e-8
+      ],
+      "samples": 60
+    },
+    "table_static": {
+      "last_position_m": [
+        -0.0000011291967894067056,
+        -0.0000020658576431742404,
+        0.0599997378885746
+      ],
+      "max_collision_force_norm_n": 7.848000526428224,
+      "mean_collision_force_world_n": [
+        -6.504706107079983e-9,
+        6.28642737865448e-9,
+        7.848000240325928
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        7.848000240325928
+      ],
+      "mean_torque_world_nm": [
+        -4.807381109595281e-8,
+        1.7609502988476526e-7,
+        1.1655409597570424e-9
+      ],
+      "samples": 60
+    },
+    "wall_static": {
+      "last_position_m": [
+        1.9150002002716064,
+        -6.234952252270887e-7,
+        0.4999988377094269
+      ],
+      "max_collision_force_norm_n": 4,
+      "mean_collision_force_world_n": [
+        -4,
+        -3.601599019020796e-9,
+        -9.276845958083868e-10
+      ],
+      "mean_normal_force_world_n": [
+        -4,
+        0,
+        0
+      ],
+      "mean_torque_world_nm": [
+        2.782899756479656e-10,
+        6.86558925039511e-9,
+        -7.64034642107889e-8
+      ],
+      "samples": 60
+    }
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/summary.json",
+    "raw/contact_samples.jsonl",
+    "reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md",
+    "raw/kit.log"
+  ],
+  "notes": "Success requires saved checks/summary, not process exit code. No paper baseline or frozen benchmark; raw FR3 reactions remain uncompensated."
+}

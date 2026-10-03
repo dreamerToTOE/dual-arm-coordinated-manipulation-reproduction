@@ -1,0 +1,194 @@
+{
+  "checks": {
+    "free_fall_collision_signal_zero": true,
+    "known_torque_balance_within_0_001_nm": true,
+    "known_wall_load_balance_within_0_05_n": true,
+    "normal_matrix_reconstruction": true,
+    "same_step_pose_contact_stamp": true,
+    "stabilization_not_changed_by_measurement": true,
+    "static_friction_force_balance_within_0_05_n": true,
+    "static_torque_force_balance_within_0_05_n": true,
+    "suction_closed_entire_hold": true,
+    "suction_collision_signal_does_not_include_constraint_load": true,
+    "suction_held_height_within_1_mm": true,
+    "table_support_matches_mg_within_0_05_n": true,
+    "timestamps_increasing": true
+  },
+  "collision_wrench_validated": true,
+  "filter_paths": [
+    [
+      "/World/Floor",
+      "/World/Wall",
+      "/World/LeftCarrier",
+      "/World/RightCarrier"
+    ]
+  ],
+  "gravity_m_s2": 9.81,
+  "mass_kg": 0.8,
+  "metrics": {
+    "dual_suction_hold": {
+      "last_position_m": [
+        0,
+        0,
+        0.5
+      ],
+      "max_collision_force_norm_n": 0,
+      "mean_collision_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_torque_world_nm": [
+        0,
+        0,
+        0
+      ],
+      "samples": 120
+    },
+    "free_fall": {
+      "last_position_m": [
+        0,
+        0,
+        0.7608811855316162
+      ],
+      "max_collision_force_norm_n": 0,
+      "mean_collision_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        0
+      ],
+      "mean_torque_world_nm": [
+        0,
+        0,
+        0
+      ],
+      "samples": 24
+    },
+    "static_friction": {
+      "last_position_m": [
+        -2.694151817195234e-7,
+        -4.961823947269295e-7,
+        0.059999942779541016
+      ],
+      "max_collision_force_norm_n": 8.098834065252358,
+      "mean_collision_force_world_n": [
+        -2.000000027815501,
+        -2.1109978357950846e-9,
+        7.8480002562205
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        7.8480002562205
+      ],
+      "mean_torque_world_nm": [
+        9.485947520824004e-8,
+        7.573582800707301e-7,
+        -5.035110021226382e-9
+      ],
+      "samples": 120
+    },
+    "static_torque": {
+      "last_position_m": [
+        -2.694151817195234e-7,
+        -4.961823947269295e-7,
+        0.059999942779541016
+      ],
+      "max_collision_force_norm_n": 8.098834124129628,
+      "mean_collision_force_world_n": [
+        -2.000000336766243,
+        -2.8808911641438802e-8,
+        7.847999958197276
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        7.847999958197276
+      ],
+      "mean_torque_world_nm": [
+        7.767714299234882e-8,
+        7.761124176805061e-7,
+        -0.039983343246705334
+      ],
+      "samples": 120
+    },
+    "table_static": {
+      "last_position_m": [
+        -2.694151817195234e-7,
+        -4.961823947269295e-7,
+        0.059999942779541016
+      ],
+      "max_collision_force_norm_n": 7.8480005264282235,
+      "mean_collision_force_world_n": [
+        -6.002712401217044e-10,
+        6.457459752103508e-10,
+        7.847999691963196
+      ],
+      "mean_normal_force_world_n": [
+        0,
+        0,
+        7.847999691963196
+      ],
+      "mean_torque_world_nm": [
+        -4.658613411676406e-9,
+        7.375453386043501e-8,
+        5.156759058170626e-10
+      ],
+      "samples": 120
+    },
+    "wall_static": {
+      "last_position_m": [
+        1.9263880252838135,
+        -0.04250001534819603,
+        0.4999997913837433
+      ],
+      "max_collision_force_norm_n": 3.9999996800741147,
+      "mean_collision_force_world_n": [
+        -3.464101219177246,
+        -1.9999999284744263,
+        -3.3527612686157227e-9
+      ],
+      "mean_normal_force_world_n": [
+        -3.4641010761260986,
+        -2.000000238418579,
+        0
+      ],
+      "mean_torque_world_nm": [
+        4.778917833681007e-9,
+        -1.8761191258875877e-8,
+        -1.8983898580557378e-8
+      ],
+      "samples": 120
+    }
+  },
+  "notes": "This is collision wrench about Cube origin, NOT left/right suction wrench or force-control reproduction.",
+  "physics_dt_s": 0.008333333333333333,
+  "physx_force_or_constraint_methods": [
+    "apply_force_at_pos",
+    "force_load_physics_from_usd"
+  ],
+  "sensor_paths": [
+    "/World/CalibrationCube"
+  ],
+  "status": "PASS_CONTACT_CALIBRATION",
+  "suction_constraint_wrench_measured": false,
+  "surface_gripper_public_methods": [
+    "close",
+    "initialize",
+    "is_attempting_close",
+    "is_closed",
+    "open",
+    "update"
+  ],
+  "wall_yaw_deg": 30
+}

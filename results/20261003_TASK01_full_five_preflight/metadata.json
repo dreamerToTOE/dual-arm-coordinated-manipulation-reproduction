@@ -1,0 +1,33 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_legacy_full_fixture",
+  "platform": "ROS2_Humble_MoveIt2_FCL_with_Isaac_initial_state",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "legacy_OMPL_uncontrolled_no_fixed_seed_claim",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "legacy_git_commit": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "code_variant": "Unchanged legacy Task27 planning-only five batches against normal initial scene.",
+  "command": "ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p planning_only:=true -p first_batch:=1 -p max_batches:=5",
+  "status": "PASS_PLANNING_ONLY",
+  "metrics": {
+    "batches_passed": 5,
+    "robot_commands_sent": false,
+    "suction_commands_sent": false,
+    "feed_commands_sent": false,
+    "physical_execution_proven": false
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/planning.log",
+    "reports/TASK01_FULL_FIXTURE_CONTACT_PROBE.md"
+  ],
+  "notes": "Planning-only is not physical full-fixture completion; subsequently actual run failed at Cube 02."
+}

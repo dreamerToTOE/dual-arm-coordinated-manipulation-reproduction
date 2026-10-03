@@ -19,3 +19,4 @@ Persistent user decisions/feedback that must influence future work.
 
 ## 2026-10-03
 - User requested continuation. Advanced TASK01 measurement diagnosis within the existing Task27-derived draft rather than starting paper baselines before the freeze gate. No new numeric benchmark approval or permission to modify the protected reinforcement_stair-test directory was inferred.
+- User approved continuing the proposed order: force-measurement feasibility/calibration, synchronized frames/time, then a full five-Cube nominal probe and benchmark parameter review. This is not permission to alter hidden-body masses, freeze success gates, skip TASK01, or start paper force controllers; the protected directory remains untouched.

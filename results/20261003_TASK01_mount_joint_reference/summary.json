@@ -1,0 +1,181 @@
+{
+  "checks": {
+    "incoming_wrench_matches_known_load_hypothesis": true,
+    "payload_held_within_1_mm": true,
+    "suction_closed_through_load_window": true,
+    "timestamps_increasing": true
+  },
+  "expected_delta_local": [
+    0,
+    7.848000000000001,
+    4.805514039854215e-16,
+    0,
+    -7.688822463766744e-17,
+    1.2556800000000001
+  ],
+  "expected_delta_world": [
+    0,
+    0,
+    7.848000000000001,
+    0,
+    -1.2556800000000001,
+    0
+  ],
+  "joint_anchor_and_axes_identifying_test": true,
+  "joint_child_anchor_x_m": 0.003,
+  "joint_roll_deg": 30,
+  "link_paths": [
+    [
+      "/World/Carrier/Base",
+      "/World/Carrier/Tool"
+    ]
+  ],
+  "loaded_mean": [
+    -4.6518936850740525e-12,
+    7.646141735712687,
+    -4.414498456319174,
+    -2.6995528315710296e-14,
+    0.6273883789777756,
+    1.0866694410641988
+  ],
+  "matching_hypotheses": [
+    "joint_axes_about_link_origin"
+  ],
+  "measured_delta_local": [
+    -4.6518936850740525e-12,
+    6.796570448080699,
+    -3.9239986618359888,
+    -2.6995528315710296e-14,
+    0.6273687589815381,
+    1.0866354582057587
+  ],
+  "notes": "Isolated experimental mount reaction; NOT calibrated FR3 TCP wrench or paper force control.",
+  "physics_dt_s": 0.016666666666666666,
+  "principal_roll_deg": 45,
+  "reference_hypotheses": {
+    "joint_axes_about_com": {
+      "expected_delta": [
+        0,
+        6.796567368900275,
+        -3.9239999999999995,
+        0,
+        0.60822,
+        1.0534679421795428
+      ],
+      "force_error_n": 0.0000033573851432644384,
+      "torque_error_nm": 0.038298290952499786
+    },
+    "joint_axes_about_joint_anchor": {
+      "expected_delta": [
+        0,
+        6.796567368900275,
+        -3.9239999999999995,
+        0,
+        0.616068,
+        1.0670610769173432
+      ],
+      "force_error_n": 0.0000033573851432644384,
+      "torque_error_nm": 0.022602290954305618
+    },
+    "joint_axes_about_link_origin": {
+      "expected_delta": [
+        0,
+        6.796567368900275,
+        -3.9239999999999995,
+        0,
+        0.62784,
+        1.0874507790240442
+      ],
+      "force_error_n": 0.0000033573851432644384,
+      "torque_error_nm": 0.000941709155849463
+    },
+    "link_axes_about_com": {
+      "expected_delta": [
+        0,
+        7.848000000000001,
+        4.805514039854215e-16,
+        0,
+        -7.448546761774033e-17,
+        1.2164400000000002
+      ],
+      "force_error_n": 4.062421642412301,
+      "torque_error_nm": 0.6406565217153793
+    },
+    "link_axes_about_joint_anchor": {
+      "expected_delta": [
+        0,
+        7.848000000000001,
+        4.805514039854215e-16,
+        0,
+        -7.544657042571117e-17,
+        1.2321360000000001
+      ],
+      "force_error_n": 4.062421642412301,
+      "torque_error_nm": 0.6440201607158375
+    },
+    "link_axes_about_link_origin": {
+      "expected_delta": [
+        0,
+        7.848000000000001,
+        4.805514039854215e-16,
+        0,
+        -7.688822463766744e-17,
+        1.2556800000000001
+      ],
+      "force_error_n": 4.062421642412301,
+      "torque_error_nm": 0.6497442703529293
+    },
+    "principal_axes_about_com": {
+      "expected_delta": [
+        0,
+        5.549374018752026,
+        -5.549374018752025,
+        0,
+        0.8601529729065639,
+        0.8601529729065641
+      ],
+      "force_error_n": 2.0487420492097397,
+      "torque_error_nm": 0.32478116694166864
+    },
+    "principal_axes_about_joint_anchor": {
+      "expected_delta": [
+        0,
+        5.549374018752026,
+        -5.549374018752025,
+        0,
+        0.8712517209440679,
+        0.8712517209440681
+      ],
+      "force_error_n": 2.0487420492097397,
+      "torque_error_nm": 0.3253752501534647
+    },
+    "principal_axes_about_link_origin": {
+      "expected_delta": [
+        0,
+        5.549374018752026,
+        -5.549374018752025,
+        0,
+        0.887899843000324,
+        0.8878998430003241
+      ],
+      "force_error_n": 2.0487420492097397,
+      "torque_error_nm": 0.32767711316337955
+    }
+  },
+  "reference_point_and_axes_identifying_test": true,
+  "roll_deg": 90,
+  "status": "PASS_MOUNT_CALIBRATION",
+  "tool_com_x_m": 0.005,
+  "tool_index": 1,
+  "unloaded_mean": [
+    0,
+    0.8495712876319885,
+    -0.4904997944831848,
+    0,
+    0.000019619996237452142,
+    0.00003398285844014026
+  ],
+  "reviewed_status": "PARTIAL_REFERENCE_MODEL_INVALIDATED",
+  "reference_identification_valid": false,
+  "superseded_by": "20261003_TASK01_mount_joint_reference_final"
+}

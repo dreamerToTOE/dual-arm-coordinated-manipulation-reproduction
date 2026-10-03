@@ -1,0 +1,44 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Isaac_Sim_4.5_PhysX_CPU_numpy",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "code_variant": "Initial static reaction gates; zero COM/principal axes cannot distinguish moment reference.",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "config_path": "platforms/isaac_ros2/probes/task01_mount_reaction_probe.py",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_mount_reaction_probe.py --output-dir results/20261003_TASK01_mount_reaction_identity/raw",
+  "status": "PASS_MOUNT_CALIBRATION",
+  "metrics": {
+    "checks": {
+      "incoming_force_matches_child_frame_within_0_05_n": true,
+      "incoming_torque_matches_child_frame_within_0_005_nm": true,
+      "payload_held_within_1_mm": true,
+      "suction_closed_through_load_window": true,
+      "timestamps_increasing": true
+    },
+    "measured_delta_local": [
+      -5.4569543617618194e-12,
+      0,
+      7.848000407218933,
+      0,
+      -1.2556798299153646,
+      0
+    ]
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/summary.json",
+    "raw/mount_samples.jsonl",
+    "reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md",
+    "raw/kit.log"
+  ],
+  "notes": "Success requires saved checks/summary, not process exit code. No paper baseline or frozen benchmark; raw FR3 reactions remain uncompensated."
+}

@@ -1,0 +1,28 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Python3_numpy_offline",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "config_path": "platforms/isaac_ros2/probes/test_physics_contact_sampler.py",
+  "command": "python3 platforms/isaac_ros2/probes/test_physics_contact_sampler.py",
+  "code_variant": "Final eight sampler tests, including shared-buffer copy, sign/reference shift, path/dt/buffer/finite-data guards.",
+  "status": "PASS_UNIT_TESTS",
+  "metrics": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0
+  },
+  "artifact_paths": [
+    "summary.json"
+  ],
+  "notes": "Offline guard/algebra tests; physics validation recorded separately."
+}

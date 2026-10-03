@@ -51,3 +51,19 @@ Append-only architectural and scientific decisions.
 - Reason: USD callback positions lag the physical state; quaternion extraction from the scaled Cube transform is independently wrong. Dynamic contact metrics cannot be validated from these old measurements.
 - Validation: External ROS known-motion calibration at 60 Hz physics with 30/20 Hz frame updates, without contact. Explicit zero damping applies only to that calibration body, never to the Task27 scene.
 - Impact: Old exploratory settled position metrics remain traceable; old yaw metrics are marked invalid for physical 6D claims. TASK01 remains IN_PROGRESS, TASK02 interfaces remain unfrozen, and no contact-force or paper fidelity claim is introduced.
+
+## D008 — Separate collision wrench, mount reaction and contact estimation
+- Date: 2026-10-03
+- Classification: [ENGINEERING] same-step telemetry/buffer handling; [ADAPTATION] Isaac impulses to world N/Nm; [EXPERIMENTAL] known-load calibration fixtures and nominal full five-Cube probe.
+- Decision: Calibrate collision normal/friction forces and moments separately from suction D6 loads. Use an isolated articulated mount to test reaction availability and frame/reference-point conventions, not to silently insert a new FR3 load-cell joint. Keep real FR3 raw reactions explicitly raw until gravity/inertia compensation, sign and TCP moment shift are validated.
+- Reason: Suction can support 7.848 N while collision signals are zero. Actual FR3 has retained hidden-body mass; raw reactions are therefore not end-effector contact estimates.
+- Numerical boundary: Calibration gates/known loads belong to the independent metrology fixture, not benchmark acceptance thresholds. No TASK01 numeric field is frozen from these experiments, and no legacy model mass or control parameter changes.
+- Full-flow boundary: Normal-feed Task27 five-Cube probe uses the existing controller without pre-placing the fixture. Controller log alone establishes its actual physical completion; five feed ARRIVED flags do not prove five placements. Paper fidelity/contact topology still needs separate review.
+
+## D009 — Validate physical reference; retain negative full-flow results
+- Date: 2026-10-03
+- Classification: [ENGINEERING] raw naming/model checks/metadata; [EXPERIMENTAL] axes/anchor fixture; [ADAPTATION] eventual TCP wrench mapping.
+- Decision: Verify actual physics COM, no rigid-body scale in reference fixture. Test link/principal/joint axes crossed with link origin/COM/joint anchor. Final result is joint axes/about joint anchor. Explicitly invalidate earlier scaled-body inferences, preserve raw software PASS.
+- Impact: Real FR3 reactions stay raw until actual joint frame/anchor, gravity/inertia and TCP shift checks. Failed asset-root startup is not a successful frame audit.
+- Full flow: Record 5/5 planning-only but 1/5 physical completion, Cube 02 pre-close overshoot separately. Never widen the 0.300 mm gate to accommodate minimum 0.650 mm correction. No legacy controller fix in this read-only scope.
+- Freeze: 36-field checklist is a review queue, not approved values. Keep YAML/hash unchanged, TASK01 IN_PROGRESS, TASK02 TODO; no early paper algorithm/model mass changes.

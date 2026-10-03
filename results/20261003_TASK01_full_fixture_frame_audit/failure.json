@@ -1,0 +1,5 @@
+{
+  "status": "FAIL",
+  "error": "RuntimeError('Could not find assets root folder')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/probes/task01_full_fixture_headless.py\", line 54, in main\n    exec(compile(source.read_text(encoding=\"utf-8\"), str(source), \"exec\"), namespace, namespace)\n  File \"/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py\", line 761, in <module>\n    _add_fr3(LEFT_ROOT, LEFT_BASE)\n  File \"/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py\", line 323, in _add_fr3\n    robot.GetReferences().AddReference(_asset_url())\n  File \"/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py\", line 296, in _asset_url\n    root = get_assets_root_path()\n  File \"/home/ubuntu2004/isaacsim-4.5.0/exts/isaacsim.storage.native/isaacsim/storage/native/nucleus.py\", line 480, in get_assets_root_path\n    raise RuntimeError(\"Could not find assets root folder\")\nRuntimeError: Could not find assets root folder\n"
+}

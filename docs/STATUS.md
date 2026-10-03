@@ -8,7 +8,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Draft has 36 unresolved fields. Right/left Cube 05 exploratory probes passed 3/3; an additional right-arm measurement-integration run passed with 0.520 mm center error. New PhysX/simulation-time channel passed external ROS calibration at 30/20 Hz frame updates and recorded 14,295 contiguous real-scene snapshots. Legacy USD timing/scaled-rotation defects are diagnosed, not globally patched. Full fixture, force sensing, frame contracts and user review remain open |
+| TASK01 Benchmark Freeze | IN_PROGRESS | Draft has 36 unresolved fields. Collision-force/torque calibration passes at 60/120 Hz; final unscaled mount test identifies joint axes / joint anchor, not link axes/origin. Actual FR3 contact compensation remains unvalidated. Full five-batch planning passes but physical execution stops at Cube 02 pre-close (1/5 placed): 0.65 mm minimum correction overshoots the 0.30 mm symmetry gate. Legacy yaw defect and MoveIt teardown segfault also remain open. No benchmark freeze or paper baseline |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

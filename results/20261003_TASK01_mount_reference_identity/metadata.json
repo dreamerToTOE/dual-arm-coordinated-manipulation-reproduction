@@ -1,0 +1,50 @@
+{
+  "task": "TASK01",
+  "baseline": "none_experimental_measurement_fixture",
+  "platform": "Isaac_Sim_4.5_PhysX_CPU_numpy",
+  "git_commit": "32ccb2b902ab23cd5f60c191d579ff7e2ccc7fe6",
+  "code_state": "uncommitted_probe_variants_committed_with_this_report",
+  "code_variant": "Early four-hypothesis trial with authored COM=5 mm and principal roll=45 deg, but scaled body. Reference-point inference later INVALIDATED; this is not the final calibration.",
+  "scientific_classification": [
+    "EXPERIMENTAL",
+    "ENGINEERING",
+    "ADAPTATION"
+  ],
+  "seed": "not_applicable_no_random_sampling",
+  "config_path": "platforms/isaac_ros2/probes/task01_mount_reaction_probe.py",
+  "benchmark_config_path_read_only": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_config_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_mount_reaction_probe.py --roll-deg 90 --tool-com-x 0.005 --principal-roll-deg 45 --output-dir results/20261003_TASK01_mount_reference_identity/raw",
+  "status": "PARTIAL_REFERENCE_MODEL_INVALIDATED",
+  "original_software_status": "PASS_MOUNT_CALIBRATION",
+  "reference_identification_valid": false,
+  "invalidation_reason": "Body scale changed authored COM/joint-anchor offsets; hypothesis comparison used unscaled offsets. Raw PASS summary preserved, not counted as reference calibration evidence.",
+  "superseded_by": "20261003_TASK01_mount_joint_reference_final",
+  "metrics": {
+    "checks": {
+      "incoming_wrench_matches_known_load_hypothesis": true,
+      "payload_held_within_1_mm": true,
+      "suction_closed_through_load_window": true,
+      "timestamps_increasing": true
+    },
+    "measured_delta_local": [
+      -1.489022603588334e-7,
+      7.8480031808217365,
+      0.0000037422179995398134,
+      -1.6864292080864817e-13,
+      -5.987548098674208e-7,
+      1.2556803337506912
+    ],
+    "matching_hypotheses": [
+      "link_axes_about_link_origin"
+    ]
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/summary.json",
+    "raw/mount_samples.jsonl",
+    "reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md",
+    "raw/kit.log"
+  ],
+  "notes": "Success requires saved checks/summary, not process exit code. No paper baseline or frozen benchmark; raw FR3 reactions remain uncompensated."
+}
