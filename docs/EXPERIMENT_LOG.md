@@ -1,5 +1,10 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — Final Cube04 variant physical result: PARTIAL
+- `_03`: PARTIAL_CUBE04_PASS_CUBE05_EMPTY_RETREAT_PLANNING_ABORT. Exact final source `7be3659`, binary `daec912…`, time_scale=5. Actual batch4 PASS (neighbor 0.227 mm, deep 0.413 mm); batch5 transport/drop done, empty retreat invalid FK path rejected, no fifth rear push. Controller exit 1, move_group teardown -11.
+- 8,985 sparse post-step snapshots, 0 sampler/integrity errors; fourth helper closed inside=0, inner trim commands=0; fourth lateral span 0.205 mm/yaw max 0.053 deg, max raw push joint torque 24.29 Nm. Not calibrated contact wrench. First three pre-placed: not full-five proof or stable-success estimate. Both test processes stopped.
+- Python regression 19/19 PASS; C++ policy/syntax/diff checks PASS; unchanged benchmark analytic checker PASS with 36 nulls/hash `a49d60…`. No paper/TASK02 implementation.
+
 ## 2026-10-03 — Cube04 precise staging is not sufficient in first physical trial
 - `_02`: FAIL_CUBE04_FINAL_NEIGHBOR_GAP_SAFE_STOP, controller exit 1, zero completed new batches. Initial Y error 0.046 mm / oriented clearance 0.454 mm; final original axis-gap acceptance 1.827 mm, oriented projected gap 1.607 mm. Cube05 not executed. Raw push torque max 23.0 Nm. 6,036 sparse samples, zero integrity errors, no helper-side suction/inner trim. MoveIt teardown -11 retained separately.
 - `_03`: FINAL_BUILD_REPETITION_RUNNING, time_scale=5 instead of 3, clean original physics, same original gates; not a new force/feedback algorithm. Exact source/binary identity will be recorded.

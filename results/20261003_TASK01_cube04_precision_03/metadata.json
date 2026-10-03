@@ -13,8 +13,20 @@
     "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=4 -p max_batches:=2 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
   ],
-  "status": "RUNNING_FINAL_BINARY_REPEAT",
-  "metrics": {"controller_result": "pending", "python_unit_tests_passed": 19},
-  "artifact_paths": ["analysis.json (pending)", "raw/controller.log", "raw/kit.log", "raw/moveit.log", "raw/physics_pose_samples.jsonl", "raw/summary.json (pending)", "raw/model_audit.json", "raw/python_tests.log"],
+  "status": "PARTIAL_CUBE04_PASS_CUBE05_EMPTY_RETREAT_PLANNING_ABORT",
+  "metrics": {"controller_exit_code": 1, "completed_batches": [4], "requested_batches": [4, 5],
+    "cube04_initial_y_error_mm": 0.040, "cube04_initial_oriented_neighbor_clearance_mm": 0.460,
+    "cube04_final_neighbor_gap_mm": 0.227, "cube04_final_deep_wall_gap_mm": 0.413,
+    "cube04_final_cell_error_mm": 1.339, "cube04_insertion_y_span_mm": 0.205472,
+    "cube04_insertion_abs_yaw_max_deg": 0.053251,
+    "cube04_later_physics_neighbor_axis_gap_mm": 0.226607,
+    "cube04_later_physics_neighbor_projected_gap_mm": 0.169262,
+    "peak_push_joint_torque_nm_raw": 24.29, "cube04_helper_closed_inside_samples": 0,
+    "cube04_inner_trim_commands": 0, "python_unit_tests_passed": 19,
+    "snapshots": 8985, "sampler_and_integrity_errors": 0,
+    "sampler_wall_s": 921.923534, "cube05_pushed": false,
+    "cube05_empty_retreat_worst_fk_line_deviation_mm": 450.1,
+    "original_max_fk_line_deviation_mm": 5.0, "moveit_teardown_exit_code": -11},
+  "artifact_paths": ["analysis.json", "raw/controller.log", "raw/kit.log", "raw/moveit.log", "raw/physics_pose_samples.jsonl", "raw/summary.json", "raw/model_audit.json", "raw/python_tests.log"],
   "boundary": "Only actual Cube04/05 tasks counted; first three preplaced. Low speed experimental run, not efficiency optimization, reliability/force/benchmark-freeze proof. No scene/material/ACM/gate relaxation."
 }

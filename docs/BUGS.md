@@ -1,5 +1,13 @@
 # BUGS
 
+## BUG-014 — Fifth empty retreat can switch to a large off-line IK branch
+- Date: 2026-10-03; TASK01; OPEN_ENGINEERING_ROBUSTNESS.
+- In final Cube04→05 test, fourth passes and fifth carries/drops, but actual PREPLANNED_COMMON_RETREAT left trajectories show 289.3–450.1 mm FK deviation from the requested line. Original 5-mm guard correctly refuses execution; controller opens both cups and exits 1. No collision/line threshold widened. Candidate preflight alone does not ensure actual later replanning remains on the same branch.
+- Evidence: `_03/raw/controller.log`, analysis/metadata. This is after Cube05 release, not Cube04 side-rod collision. Need inspect measured start state/IK branch and safe empty-arm exit candidates before claiming continuous reliable execution; do not enable arbitrary unsafe Cartesian fraction-only acceptance.
+
+## BUG-013 follow-up — one low-speed pass, not resolved reliability
+- `_03` fourth passes 0.227-mm neighbor gate; `_02` remains failure at 1.827 mm. Different random IK/RRT branches and speed prevent causal attribution to slowdown alone. Keep repeatability risk OPEN; no new force/lateral-feedback controller authorized or silently added.
+
 ## BUG-013 — Cube04 pure single-arm insertion drifts despite precise initial placement
 - Date: 2026-10-03; TASK01; OPEN_PHYSICAL_VALIDATION.
 - First variant test starts with Y error 0.046 mm yet ends at 1.827-mm neighbor gap (> unchanged 1.5 mm), safe stop and no Cube05. Sparse physical insertion Y span about 1.089 mm, yaw up to 0.210 deg. This shows initial precision alone does not guarantee tracking, not proof of physical impossibility.

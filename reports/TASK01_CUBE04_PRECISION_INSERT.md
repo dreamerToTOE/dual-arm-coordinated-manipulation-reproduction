@@ -1,6 +1,6 @@
 # TASK01 — 第四件复用第五件精准单臂直推
 
-2026-10-03；状态：实现/编译通过，首轮物理验收失败，最终二进制低速复测进行中；不是 TASK01 冻结。
+2026-10-03；状态：**PARTIAL** — 实现/编译通过；第四件一轮慢速实测 PASS，第四→第五连续实测未通过；不是稳定版或 TASK01 冻结。
 
 ## 用户批准范围与方法
 
@@ -78,6 +78,18 @@ ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args \
 - `_02` 第四件实际执行至推入/短退，但最终邻件间隙 1.827 mm 超过原 1.5 mm，controller exit 1；第5件未执行。暂放 Y 误差 0.046 mm / 初始旋转投影余隙 0.454 mm；推进期间稀疏物理 Y 范围 1.089 mm，yaw 最大 0.210 deg，原门限没有放宽。6036 个有效稀疏采样；实际辅助吸盘 CLOSED=0、INNER_SIDE_TRIM 命令=0。
 - `_02` controller 启动早于最后一次重编译完成；其二进制 SHA 已记录（缺最后的非有限输入门控保护/日志宏可移植性改动，物理流程相同），不能作为最终交付二进制验证。`_03` 单独清场复测最终 SHA，time_scale=5，未增加力控/横向反馈。
 - `_03` 中间检查：第四件暂放 Y 误差 0.040 mm，通过最终原门限，邻件间隙 0.227 mm / 深墙间隙 0.413 mm；短退后 RRT 到第五件上方，batch4 PASS。第五件仍在执行。不能把不同随机冗余构型+不同速度的两次试验解释为“减速必然解决”。
+- `_03` 最终：第四件 batch4 PASS；第五件实际搬运/落桌完成，但空载共同退出左臂路径 FK 偏离直线 289.3–450.1 mm（原上限 5 mm），严格拒绝并打开两杯停机，controller exit 1，**第5件没有后吸推进**。这不是第四件侧杆碰撞，也不能算整体 PASS。最终时刻第四件物理轴向邻件间隙 0.226607 mm / 旋转投影间隙 0.169262 mm；8,985 个有效稀疏物理采样，推进 Y 范围 0.205472 mm，yaw 最大 0.053251°，辅助吸盘 CLOSED=0，INNER_SIDE_TRIM 命令=0。最大记录的原始关节推入力矩 24.29 Nm，不冒充 TCP wrench。
 - 所有物理负证据保留；无稳定性、多次重复或完整五件通过声明。
 - [ORIGINAL] 本次未实现论文算法；[ADAPTATION] 第四件用户批准的后吸直推协议；[ENGINEERING] 宏隔离/策略测试/门控；[DEVIATION] 第四件不再遵循旧 D004 双吸盘插入；[EXPERIMENTAL] 前三件预置缩短测试准备。
 - 未开始 TASK02；未解决原始力/时间标定、前三件 D004、MoveIt teardown 问题。
+
+## Post-task report
+
+- Task: TASK01 Cube04 contact-protocol variant; Status: PARTIAL (implementation + one fourth physical PASS, continuous fourth/fifth FAIL).
+- Completed/files: independent wrapper/policy/build target, guarded shared-source reuse, add-only physical probe/analyzer/unit regression; source pins/results listed above. Old Isaac sources untouched; protected directory untouched.
+- Commands/tests: colcon final build PASS; `ros2 pkg executables` has old/new nodes; standalone `c++ -std=c++17 -Wall -Wextra -Werror ...` policy PASS; `python3 -m unittest discover -s platforms/isaac_ros2/probes -p 'test_*.py' -v` 19/19 PASS; Python compile / git diff checks PASS; draft analytic check PASS, 36 nulls / original YAML hash unchanged.
+- Key metrics: slow trial fourth gap 0.227 mm / deep gap 0.413 mm / cell error 1.339 mm; faster trial fourth gap 1.827 mm FAIL; slow follow-on fifth safe abort, no insertion PASS.
+- Fidelity: [ORIGINAL] no paper algorithm implemented; [ADAPTATION] user-approved fourth single-rear protocol; [ENGINEERING] macro isolation, stricter gate, tests/logger; [DEVIATION] fourth exception to D004, explicit user approval; [EXPERIMENTAL] preplaced first three, unseeded speed-varied trials. No unchanged-physics claim about PRE_PUSH control target: that Y command changes 1 mm, explicitly documented.
+- Records updated: STATUS / WORKLOG / EXPERIMENT_LOG / BUGS / DECISIONS / USER_FEEDBACK plus task/spec/report/metadata. Raw heavy data ignored; summaries tracked.
+- Risks/next: fix safe empty-retreat IK/start-state selection, then repeat fourth→fifth; no reliability/full-five proof, no lateral/force control silently added. MoveIt teardown still -11; all owned runtimes stopped.
+- Git: legacy `task01-runtime-fixes` / `7be3659`; reproduction `task01-benchmark-draft` (latest final-record commit via GitHub history). No tracked code dirty at handoff; pre-existing untracked legacy artifacts preserved.

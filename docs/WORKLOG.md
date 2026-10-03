@@ -1,5 +1,10 @@
 # WORKLOG
 
+## 2026-10-03 — Cube04 variant physical handoff / tests stopped
+- Final `7be3659` binary time_scale=5 passes fourth: precise staging 0.040 mm, final neighbor 0.227 mm, deep gap 0.413 mm, cell error 1.339 mm. No helper-side suction or inner trim; short-clearance/RRT transition to fifth completes.
+- Fifth actually dual-carried/dropped, but actual empty Cartesian retreat fails original 5-mm line-deviation guard (up to 450.1 mm), safely opens both cups and exits 1. Only fourth physically completed. No ignored constraint/fallback/extra feedback implemented; original fifth controller behavior remains preserved.
+- 8,985 sparse samples, zero integrity/sampler errors; fourth insertion Y span 0.205 mm/yaw max 0.053 deg. Later actual material/mass unchanged. Python 19/19 plus standalone C++ policy PASS. MoveIt stop again -11, both owned runtimes stopped. Report/metadata/negative evidence uploaded; no benchmark freeze.
+
 ## 2026-10-03 — Cube04 first physical failure retained
 - Actual first three settled, fourth normal-fed/dual-carried/staged/rear-regrasped/pushed. PRE_PUSH precision error 0.046 mm passes, but lateral drift produces final gap 1.827 mm, exceeding unchanged 1.5-mm gate; controller exit 1, no fifth command.
 - 6,036 sparse PhysX samples, no integrity/readout errors; fourth helper CLOSED count inside carriage=0, no inner trim; peak raw joint torque 23.0 Nm. No force calibration claim.

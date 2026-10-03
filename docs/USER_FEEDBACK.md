@@ -1,5 +1,8 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — Final boundary for the approved fourth change
+- Implemented exactly the approved contact split: fourth now precision-staged/single rear push, not helper side suction or post-seat trim; first three and old nodes retained. One fourth physical PASS and a fifth follow-on failure are recorded separately. No approval for additional online compensation, force control, scene editing or benchmark freeze inferred from this request.
+
 ## 2026-10-03 — Scope remains single-rear insertion, no hidden fallback
 - No new user instruction authorizes restoring Cube04 side pressing or adding online lateral/force correction after a failed pure single-arm test. Preserve initial request and report negative outcomes explicitly; low-speed repetition is not permission to freeze the benchmark.
 

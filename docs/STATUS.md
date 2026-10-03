@@ -2,6 +2,10 @@
 
 Last update: 2026-10-03
 
+## Latest Cube04 variant handoff — PARTIAL, physical tests stopped
+
+Independent `task01_cube04_precision_insert` implemented/pushed (legacy `7be3659`). Final-binary slow trial passes actual Cube04, final neighbor gap 0.227 mm / deep gap 0.413 mm, no side trim/helper side suction. Subsequent Cube05 transport/drop succeeds but empty Cartesian retreat rejected at up to 450.1-mm FK deviation; controller safely exits 1, only batch4 PASS. First faster trial failed Cube04 neighbor gate. No stable/full-five claim. 19 Python + standalone C++ policy tests PASS. All owned test processes stopped; MoveIt teardown -11 persists. Six records/results/report updated. TASK01 IN_PROGRESS; TASK02 TODO.
+
 ## Cube04 final-binary slow trial — fourth passed, fifth running
 
 Clean time_scale=5 trial passes Cube04 original final gates: neighbor 0.227 mm, deep-wall 0.413 mm, precise staging Y error 0.040 mm. No inner trim/helper side suction; short-clearance/RRT handoff to Cube05 completes (batch4 PASS). Cube05 actual transport/insert now running. Previous time_scale=3 trial failed; do not infer stable repeatability or causal speed-only fix.
@@ -20,7 +24,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Inherited normal-feed physical demo 5/5 PASS, 70,434 valid snapshots; NOT D004/freeze PASS. Required inner side helper pose intersects neighbor (BUG-009). Controlled hold completes but raw wrench/velocity remain uncalibrated (BUG-011). Actual Cube friction=0.5/0.5: declared material deleted by cleanup (BUG-012). 36 nulls, model/protocol review, time/frames and MoveIt teardown remain open; see latest runtime review |
+| TASK01 Benchmark Freeze | IN_PROGRESS | Inherited demo 5/5 distinct from protocol/freeze. D014 Cube04 single-rear variant: one slow physical PASS, earlier drift FAIL; Cube05 continuous trial empty-retreat FAIL. First-three D004/model/force/time/36 nulls/teardown pending. Reports TASK01_CUBE04_PRECISION_INSERT and TASK01_RUNTIME_REVIEW_20261003 |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

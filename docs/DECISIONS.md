@@ -1,5 +1,9 @@
 # DECISIONS
 
+## 2026-10-03 — D014/D015 validation boundary
+- Final slow trial validates actual fourth single-rear protocol once with original gates; preceding faster trial failed. Report limited feasibility, not stable/five-Cube reproduction. Fifth empty Cartesian exit is independently refused by existing geometric guard. Do not change fifth protocol or hide this negative by calling fourth batch PASS whole-process PASS.
+- Recommended next engineering step: safe empty-retreat start-state/IK candidate diagnosis, then repeated fourth→fifth tests. No scene/tool/material/gate change, force controller, research-baseline shortcut or numeric freeze.
+
 ## D015 — Retain failed pure single-arm test before considering feedback
 - Date: 2026-10-03; [ENGINEERING]/[EXPERIMENTAL]. Cube04 precise-stage variant fails final 1.5-mm neighbor gate at 1.827 mm; do not restore inner trim, widen gates or declare physical impossibility after one sample. Repeat clean physics using final built binary and slower unchanged motion protocol.
 - An online lateral-tracking controller would be additional method work, not simply reusing Cube05. Ask before changing that research protocol; all frozen/numeric questions stay pending.

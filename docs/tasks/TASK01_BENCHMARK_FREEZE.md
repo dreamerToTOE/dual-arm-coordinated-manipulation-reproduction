@@ -6,6 +6,8 @@ Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
 User explicitly asks Cube04 to use Cube05 precision single-rear insertion. Independent engineering controller target, no scene/model/gate changes; new PRE_PUSH Y control target is the old pressed 0.5-mm gap. Physical Cube04/05 probe uses only first three pre-placed/settled. See `reports/TASK01_CUBE04_PRECISION_INSERT.md` and D014; old D004 no longer applies to Cube04 in this variant, not blanket first-three approval. No numeric YAML freeze or TASK02 advance.
 
+Final experimental handoff: one slow Cube04 PASS (neighbor 0.227 mm, deep 0.413 mm), earlier faster Cube04 drift failure. Cube05 follow-on empty retreat refused unsafe off-line IK branch; whole run exit 1. No stable/full-five PASS and no TASK01 freeze. Next engineering diagnostic is empty-retreat branch selection while original guards remain enforced.
+
 ## Current progress (2026-10-02)
 - User confirmed the existing Task27 dual-FR3, L-side-suction and truck-box scene as the **geometric starting point**, not as a wholesale approval of its numerical parameters or thresholds.
 - Draft candidate: `configs/benchmark/benchmark_v1.yaml`; analytic checker: `scripts/validate_benchmark_candidate.py`.
