@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-03 — Final empty retreat validation / review stop
+
+Clean Cube04→05 trial exits0, batches4/5 actual PASS: fourth neighbor0.375mm/deepgap0.244mm, fifth position0.530mm/deepgap0.476mm. Macro-scoped live-start ordinary Cartesian succeeds with currentCube strictFCL (540/287 samples), fallback not physically triggered; separate long no-command replay proves seeded solver feasibility. Fourth no trim, helperOPEN; short clear/RRT next-object transition preserved. 7778 sparse samples0errors; independent fifth4691 samples0errors andexit0. All owned runtimes stopped, MoveIt teardown-11 repeats. Exact metadata/raw/summary in three empty_retreat run dirs; final report complete. No reliability/full-five-new-variant/force/paper/freeze claim. Six records updated, protected folder/old scene/material/ACM untouched; stop before model/contact/numeric decisions needing user review.
+
 ## 2026-10-03 — Empty retreat repair checkpoint
 
 Added macro-isolated measured-state empty retreat / fresh released-Cube FCL world / bounded seed-continuation fallback, reusing existing fine IK rather than changing loaded/contact control. Added read-only real RobotModel FK/FCL probe and pure C++ guards; added optional four-preplaced fixture mode. colcon final completion 57.2 s, policy PASS, Python19/19, unchanged YAML/36 nulls. Physical results pending; negative prior fourth/fifth results retained.

@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — End-of-turn boundary respected
+
+Autonomous engineering continuation completed real FK/FCL and isolated/continuous Cube04/05physicaltests, all finalcontrollers exit0. No new approval for numericfreeze, model/material/contactmethod changes was inferred. Test processes stopped and findings saved/pushed so user can review tomorrow; originalscene/protectedfolder/thresholds preserved. This does not erase earlier failures or claim TASK01finished.
+
 ## 2026-10-03 — Autonomy boundary for next repair
 
 User: “如果你可以自己继续就继续，如果需要我来做硬性决断，就停下来等我明天来”. Continue safe engineering diagnosis, tests and records; do not infer permission to change physics/model/contact methods or freeze numeric benchmark values. Empty-retreat IK/start-state reliability is in scope. Material decisions will be recorded for tomorrow without requiring immediate response.

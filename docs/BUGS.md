@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-03 — Empty retreat WORKAROUND validated narrowly
+
+Independent approved precision variant now passes one isolated fifth and one actual fourth→fifth continuation, using measured starts with releasedcurrentCube strictFCL. Final ordinary pathsmax0.002mm printed deviation; local-seed fallbacklong replaypasses withoutcommands. This is a verified narrow engineering workaround, not proof all random IKbranches/repeatedtrials work; fallbackphysicallynottriggered. OlderfourthdriftFAIL and fifthIKabortretained. BUG-004 MoveItteardown-11 repeats bothnewphysicalruns; actual0.5/0.5 versusdocument0.90/0.75, hiddenmass and D004contacttopology remainopen. BUG-006 rotation is already fixed for Task27 by prior Gf.Transform patch; historical Task26 branch remains untouched. USD motion-time synchronization/metrology still needs review. Report TASK01_EMPTY_RETREAT_REPAIR.
+
 ## 2026-10-03 — Cube05 empty retreat IK branch defect follow-up
 
 Status: OPEN / engineering patch built, not physically verified. Prior Cube04/05 slow run safely rejects Cube05 retreat at 289–450 mm FK deviation despite fraction=1. New independent precision variant uses actual measured start state, then bounded seeded local IK if ordinary candidates fail; released current Cube included in strict FCL. No collision exemptions; real starting collision will stop, not be hidden. Report: TASK01_EMPTY_RETREAT_REPAIR.md. Cube04 drift/model/force/teardown issues remain separate and open.

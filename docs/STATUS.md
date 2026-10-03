@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-03 final — empty-retreat engineering PASS, benchmark review pending
+
+Final report: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. Real-model FK/FCL basic and long replay PASS; isolated Cube05 physical exit0; clean actual Cube04→Cube05 continuous physical exit0. Fourth neighbor gap0.375mm/deepgap0.244mm; fifth center error0.530mm/deepgap0.476mm. Released Cube included in actual retreat FCL; fallback not physically triggered. 7778+4691 sparse valid samples; no full-five-new-variant/reliability claim. All owned runtimes stopped; MoveIt teardown-11 remains. Code/results pushed. TASK01 IN_PROGRESS with36nulls; model/material/D004/freeze decisions remain for user review; TASK02 TODO.
+
 ## 2026-10-03 latest — empty retreat engineering repair, tests pending
 
 New precision-variant empty retreat uses measured joint seed and bounded continuous-seed fallback, with released Cube included in strict FCL. Build + policy +19 Python tests PASS; real RobotModel / physical verification next. No scene/model/material/ACM/gate change. Report: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. TASK01 IN_PROGRESS, TASK02 TODO; 36 nulls unchanged.
@@ -30,7 +34,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Inherited demo 5/5 distinct from protocol/freeze. D014 Cube04 single-rear variant: one slow physical PASS, earlier drift FAIL; Cube05 continuous trial empty-retreat FAIL. First-three D004/model/force/time/36 nulls/teardown pending. Reports TASK01_CUBE04_PRECISION_INSERT and TASK01_RUNTIME_REVIEW_20261003 |
+| TASK01 Benchmark Freeze | IN_PROGRESS | Inherited demo5/5 distinct from protocol/freeze. D014/D015 variant: isolated fifth and actual fourth→fifth engineering PASS after empty-retreat fix; previous drift/IK failures retained. First-three D004/model/force/time/36nulls/teardown pending. Latest report TASK01_EMPTY_RETREAT_REPAIR |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

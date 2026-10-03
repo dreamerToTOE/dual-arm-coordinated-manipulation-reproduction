@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## Latest engineering validation / user-review boundary (2026-10-03)
+
+Later than the historical failure checkpoints below: measured empty-retreat start / releasedCube strictFCL / bounded local-seed fallback implemented in independent approved precision variant. Basic and long no-command FK/FCL PASS; isolated actual Cube05 and fresh actual Cube04→05 pair both exit0/PASS. Fourth neighbor0.375mm/deep0.244mm; fifth error0.530mm/deep0.476mm. First3/4preplaced are not executed/full-five proof, fallback not physically triggered, no repeatability claim. Exact sources/commands/negative evidence: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. Task27 rotation fix from prior iteration preserved; USD dynamic timing still uncalibrated. Actualfriction0.5/0.5, hiddenmass, first-three D004 and36numericfields require review before benchmarkfreeze/paperalgorithms. All owned runtimes stopped; teardown-11 persists. No YAML/hash/scene/model/ACM/gate change.
+
 ## Authorized Cube04 protocol experiment (2026-10-03)
 
 User explicitly asks Cube04 to use Cube05 precision single-rear insertion. Independent engineering controller target, no scene/model/gate changes; new PRE_PUSH Y control target is the old pressed 0.5-mm gap. Physical Cube04/05 probe uses only first three pre-placed/settled. See `reports/TASK01_CUBE04_PRECISION_INSERT.md` and D014; old D004 no longer applies to Cube04 in this variant, not blanket first-three approval. No numeric YAML freeze or TASK02 advance.

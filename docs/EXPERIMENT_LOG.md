@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — Final actual fourth/fifth continuous run
+
+Task TASK01 / EXPERIMENTAL Cube04 precision + engineering empty retreat. Legacy3ee42d2/controller binary77b4f499..., reproduction5c72a1a atlaunch; uncontrolledOMPL, originalslots/cells/time_scale5. Exact commands/config/pins in `results/20261003_TASK01_empty_retreat_pair_01/metadata.json`. Controllerexit0, actual batches[4,5]PASS (first3preplaced). Fourthgap0.375/deep0.244mm, fifthcenter0.530/deep0.476mm; 7778 valid sparse poses/0errors; rawpeakjoint torque34.21Nm. ReleasedcurrentCube FCL540/287samples passes, no fallbacktrigger. Simulatorstopped successfully; MoveItteardown-11 separately. Basic/long no-command FK/FCL and isolated fifthalsoPASS; final report TASK01_EMPTY_RETREAT_REPAIR. No YAML freeze/full-five/reliability proof; all prior failures preserved.
+
 ## 2026-10-03 — TASK01 empty retreat software regression
 
 Result: PASS software only. Commands: `colcon build --packages-select fr3_dual_palletize --symlink-install --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release`, C++ policy -Wall/-Wextra/-Werror, Python unittest19/19, benchmark draft analytic checker PASS/36nulls. No robot commands yet in this iteration. Report: TASK01_EMPTY_RETREAT_REPAIR.md. Real RobotModel and physical trials next.

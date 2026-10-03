@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D015 validation / hard-decision boundary
+
+2026-10-03; [ENGINEERING] scoped repair physically verified by isolated fifth and fourth/fifth pair, no currentCube exemption. [EXPERIMENTAL] first3/4preplaced; no full-five or stable benchmark assertion. Stop before choosing effective-friction baseline, modifying retained hidden mass, changing first-three D004 protocol, or approving36numericfields. These are material user decisions, not inferred from the instruction to continue independently. Preserve0.5/0.5 actualphysics and originalscene/gates tonight. TASK01 IN_PROGRESS, TASK02 TODO.
+
 ## D015 — Engineering continuation limited to already-released empty arms
 
 - Date: 2026-10-03.
