@@ -43,3 +43,11 @@ Append-only architectural and scientific decisions.
 - Decision: Record right/left 3/3 physical passes as a small-sample feasibility result only. Do not freeze a reliability number, arm-equivalence claim, or contact-dynamics metric from these trials: OMPL seed is uncontrolled, four fixture Cubes were pre-placed, and contact wrench is absent.
 - Measurement rule: Final settled `/task27/cube_poses` is usable as Isaac Bridge Ground Truth for this exploratory position report, but motion-time USD and PhysX poses are not yet a synchronized measurement contract. Keep their discrepancy open as BUG-005.
 - Impact: TASK01 remains IN_PROGRESS with 36 unresolved configuration fields; no benchmark thresholds, geometry or Task27 control logic changed.
+
+## D007 — Diagnose and isolate measurement errors before benchmark freeze
+- Date: 2026-10-03
+- Classification: [ENGINEERING] read-only sampler/environment launcher; [EXPERIMENTAL] deterministic free-body calibration; [ADAPTATION] Isaac Ground Truth to ROS.
+- Decision: Add a separate optional PhysX post-step pose/velocity channel with one simulation stamp and step number per snapshot. Reject invalid physics handles rather than falling back to USD. Keep Task27 control and legacy topics unchanged while documenting their defects.
+- Reason: USD callback positions lag the physical state; quaternion extraction from the scaled Cube transform is independently wrong. Dynamic contact metrics cannot be validated from these old measurements.
+- Validation: External ROS known-motion calibration at 60 Hz physics with 30/20 Hz frame updates, without contact. Explicit zero damping applies only to that calibration body, never to the Task27 scene.
+- Impact: Old exploratory settled position metrics remain traceable; old yaw metrics are marked invalid for physical 6D claims. TASK01 remains IN_PROGRESS, TASK02 interfaces remain unfrozen, and no contact-force or paper fidelity claim is introduced.

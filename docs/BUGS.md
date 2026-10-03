@@ -64,6 +64,34 @@ Workaround: Use only settled final Bridge pose for current exploratory static pl
 Resolution: Define one timestamped physics pose pipeline, compare against USD and ROS with a common simulation time, then freeze the TASK01/TASK02 measurement contract.
 Related commit/run: TASK01 center repeatability probes.
 
+## 2026-10-03 — BUG-002 follow-up: new channel workaround only
+Status: WORKAROUND for TASK01 probe; legacy interface remains OPEN
+Evidence: Legacy `_publish()` stamps poses with `node.get_clock().now()` in wall-time while the scene publishes simulation `/clock`. New `PhysicsObjectSampler` reads Isaac core simulation time in a completed physics step. External ROS calibration verifies that new poses, snapshots and `/clock` share the simulation time domain.
+Boundary: `/task01/physics/cube_poses` is separate from `/task27/cube_poses`. TCP, effort and legacy consumers have not been migrated; this is not a global resolution or a frozen synchronization contract.
+Related report: reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+
+## 2026-10-03 — BUG-004 follow-up: not reproduced on today's interrupt paths
+Status: OPEN
+Observation: One idle MoveIt startup interrupted before robot execution and one launch interrupted after a successful 215-s Cube 05 task both exited move_group with SIGINT code -2, not -11. The joint-state bridge also showed KeyboardInterrupt. This differs from the prior repeatable callback-group teardown stack, but no shutdown fix was implemented and these interrupt paths are not proof of resolution.
+Related run: results/20261003_TASK01_fixture_physics_channel/
+
+## 2026-10-03 — BUG-005 follow-up: frame-update lag reproduced
+Status: WORKAROUND for new PhysX channel; legacy USD motion measurement remains OPEN
+Confirmed cause: At 0.2 m/s and 60 Hz physics, legacy/post-step callbacks see stale USD position up to 6.667 mm with 30 Hz application frames or 10.000 mm with 20 Hz frames. After application update, positional difference is zero. The independent known-motion ROS probe directly sampling PhysX passed at both frame rates.
+Workaround: New read-only live-physics snapshot, one simulation stamp/step per sample, rejecting USD fallback. Do not compute dynamic contact/velocity metrics from legacy USD callback data.
+Related report/runs: reports/TASK01_PHYSICS_POSE_MEASUREMENT.md; results/20261003_TASK01_physics_ros_zero_damping_{30hz,20hz}/
+
+## BUG-006 — Scaled USD matrix corrupts legacy Cube orientation
+Date: 2026-10-03
+Task: TASK01
+Status: WORKAROUND for new physics measurement; legacy Bridge remains OPEN
+Symptom: Legacy `_pose()` extracts a quaternion directly from the Cube world transform containing scale=(0.12,0.12,0.12), then normalizes it. This underestimates the actual angle; normalization does not remove scale from the rotation matrix.
+Reproduction: Run task01_pose_timing_probe.py; inspect raw_usd_rotation_error_deg versus scale_removed_usd_rotation_error_deg after app.update().
+Confirmed cause: ExtractRotationQuat requires a rotation matrix; applying it before removing scaling violates the OpenUSD API contract. In the corrected zero-damping calibration, raw extraction error reaches 27.464 deg while scale-removed extraction differs from PhysX by at most 0.000154 deg after app update.
+Workaround: Use live PhysX quaternion in the new measurement channel. Do not reinterpret old Bridge yaw as physical 6D Ground Truth. Correct only the historical report's validity statement; retain original numbers.
+Resolution needed: Migrate the final common adapter's pose consumers with an explicit tested frame/time contract. This iteration does not modify legacy control code.
+Related report: reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+
 Template:
 ```text
 ## BUG-XXX

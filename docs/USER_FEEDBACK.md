@@ -16,3 +16,6 @@ Persistent user decisions/feedback that must influence future work.
 
 ## 2026-10-02
 - User requested continuation of the same Cube 05 left/right experimental validation. This did not authorize freezing TASK01 or changing the benchmark geometry; repeated fresh-scene trials and evidence recording were kept within the existing probe scope.
+
+## 2026-10-03
+- User requested continuation. Advanced TASK01 measurement diagnosis within the existing Task27-derived draft rather than starting paper baselines before the freeze gate. No new numeric benchmark approval or permission to modify the protected reinforcement_stair-test directory was inferred.

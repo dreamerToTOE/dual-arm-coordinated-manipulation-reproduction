@@ -1,0 +1,32 @@
+task: TASK01
+baseline: none_experimental_sensor_calibration
+platform: Isaac_Sim_4.5_ROS2_Humble
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: final_working_tree_sampler_and_stricter_position_quaternion_validator
+seed: no_random_sampling
+config_path: platforms/isaac_ros2/probes/task01_pose_timing_probe.py
+command: ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_pose_timing_probe.py --enable-ros --output-dir results/20261003_TASK01_final_calibration_30hz/raw
+observer_command: python3 platforms/isaac_ros2/probes/task01_validate_physics_stream.py --timeout-sec 120 --output-dir results/20261003_TASK01_final_calibration_30hz/raw
+status: PASS_SENSOR_CALIBRATION
+metrics:
+  physics_dt_s: 0.016666666666666666
+  rendering_dt_s: 0.03333333333333333
+  motion_samples_received: 120
+  pose_samples_received: 150
+  snapshots_published: 150
+  callback_errors: 0
+  max_position_error_mm: 0.0003129457839534666
+  max_rotation_error_deg: 0.0008647374209420074
+  max_nearest_clock_stamp_difference_s: 0.016666668
+  clock_samples_received: 104
+  pose_snapshot_position_and_quaternion_identical: true
+  all_observer_checks_passed: true
+  isaac_process_exit_code: 0
+  observer_exit_code: 0
+artifact_paths:
+  - raw/pose_samples.jsonl
+  - raw/summary.json
+  - raw/observer_summary.json
+  - /home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261003_135043.log
+  - reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+notes: Final regression also checks quaternion equality between PoseArray and JSON snapshot. Deterministic no-contact calibration, not manipulation benchmark acceptance.

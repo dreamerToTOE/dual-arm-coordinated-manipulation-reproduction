@@ -1,0 +1,22 @@
+task: TASK01
+baseline: none_experimental_sensor_diagnosis
+platform: Isaac_Sim_4.5
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: working_tree_probe_before_explicit_zero_damping_patch
+seed: no_random_sampling
+config_path: platforms/isaac_ros2/probes/task01_pose_timing_probe.py
+command: /home/ubuntu2004/isaacsim-4.5.0/python.sh platforms/isaac_ros2/probes/task01_pose_timing_probe.py --output-dir results/20261003_TASK01_pose_timing/raw --motion-steps 120
+status: PASS_DIAGNOSIS_ONLY
+metrics:
+  physics_dt_s: 0.016666666666666666
+  rendering_dt_s: 0.03333333333333333
+  samples: 525
+  max_callback_physx_usd_position_difference_mm: 6.66667521
+  max_after_update_position_difference_mm: 0.0
+  max_after_update_raw_rotation_error_deg: 26.29723051
+  max_after_update_scale_removed_rotation_error_deg: 0.000133145
+artifact_paths:
+  - raw/pose_samples.jsonl
+  - raw/summary.json
+  - /home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261003_132322.log
+notes: Free no-gravity moving rigid body, no contact or robot control. Default angular damping was still present; this run diagnoses pose sources rather than validating constant angular speed.

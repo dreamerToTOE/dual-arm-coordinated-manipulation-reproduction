@@ -14,9 +14,7 @@
 
 ```bash
 cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
-RMW_IMPLEMENTATION=rmw_fastrtps_cpp \
-LD_LIBRARY_PATH=/home/ubuntu2004/isaacsim-4.5.0/exts/isaacsim.ros2.bridge/humble/lib \
-/home/ubuntu2004/isaacsim-4.5.0/python.sh \
+ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh \
   platforms/isaac_ros2/probes/task01_center_headless.py --duration-sec 900
 ```
 
@@ -84,6 +82,12 @@ ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args \
 这些结果支持**固定场景下两臂都能执行第五块**，而非统计意义上的等效；左右结果存在实际差异。
 
 ## 科学边界与待办
+
+### 2026-10-03 测量诊断更正
+
+上述历史 Bridge yaw 数值保留用于原始记录追溯，**不能视为准确的物理转角或六自由度测量**。本轮最小校准确认旧桥直接从带 Cube 缩放的 USD 矩阵提取旋转，所得四元数有确定性尺度污染；同时，运动中的 USD 位置在应用帧更新前滞后于 PhysX。落稳后的位置数值不因旋转提取错误而失效，但运动时刻的姿态/时间指标必须改用经校准的物理通路。详见 `TASK01_PHYSICS_POSE_MEASUREMENT.md`。
+
+上面的启动命令已替换为新干净环境脚本，避免父终端继承的系统 ROS Python 路径污染 Isaac 内部 Humble。可选 `--physics-measurements` 发布新的只读 `/task01/physics/cube_poses`；不改变控制流程。该通路是 TASK01 的测量辅助，不是已冻结的 TASK02 完整公共接口。
 
 这是小样本可行性探针，不能证明长期可靠性或左右在统计上等效。仍需固定种子策略、完成前四块真实放置、带时间基准的六自由度 Ground Truth 与末端接触力/力矩记录。当前桥没有末端接触 wrench，不能把关节驱动力矩当作吸盘接触力。TASK01 仍为 `IN_PROGRESS`；36 个未定字段也尚未冻结。
 

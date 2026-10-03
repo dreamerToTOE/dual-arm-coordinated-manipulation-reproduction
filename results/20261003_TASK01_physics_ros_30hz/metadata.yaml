@@ -1,0 +1,15 @@
+task: TASK01
+baseline: none_experimental_sensor_calibration
+platform: Isaac_Sim_4.5_ROS2_Humble
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: working_tree_probe_before_failure_traceback_patch
+seed: no_random_sampling
+config_path: platforms/isaac_ros2/probes/task01_pose_timing_probe.py
+command: ROS_LOCALHOST_ONLY=0 RMW_IMPLEMENTATION=rmw_fastrtps_cpp LD_LIBRARY_PATH=/home/ubuntu2004/isaacsim-4.5.0/exts/isaacsim.ros2.bridge/humble/lib /home/ubuntu2004/isaacsim-4.5.0/python.sh platforms/isaac_ros2/probes/task01_pose_timing_probe.py --enable-ros --output-dir results/20261003_TASK01_physics_ros_30hz/raw
+status: FAIL_NO_SENSOR_RESULT
+metrics:
+  summary_artifact_created: false
+  fast_shutdown_process_exit_code: 0
+artifact_paths:
+  - /home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261003_132822.log
+notes: Parent process inherited system ROS Python paths. Kit fast shutdown hid the pending failure; absence of a summary is not a PASS. Replayed with explicit failure logging in the debug run below.

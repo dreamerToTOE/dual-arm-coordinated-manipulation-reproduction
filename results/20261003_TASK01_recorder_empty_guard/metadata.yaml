@@ -1,0 +1,19 @@
+task: TASK01
+baseline: none_engineering_negative_input_guard
+platform: system_ROS2_Humble_without_Isaac_publisher
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: final_working_tree_recorder_empty_input_guard
+seed: not_applicable
+config_path: platforms/isaac_ros2/probes/task01_record_physics_stream.py
+command: python3 platforms/isaac_ros2/probes/task01_record_physics_stream.py --duration-sec 1 --startup-timeout-sec 2 --output-dir results/20261003_TASK01_recorder_empty_guard/raw
+status: PASS_EXPECTED_FAILURE_GUARD
+metrics:
+  sensor_samples: 0
+  clock_samples: 0
+  recorder_summary_status: FAIL
+  process_exit_code: 1
+  failure_summary_saved: true
+artifact_paths:
+  - raw/recorder_summary.json
+  - reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+notes: This is a negative test, not a sensor or robot PASS. No Isaac/command publisher was active; empty data produced a saved failure summary and nonzero exit, as required.

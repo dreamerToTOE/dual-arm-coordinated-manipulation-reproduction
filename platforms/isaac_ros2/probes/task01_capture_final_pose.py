@@ -15,10 +15,10 @@ from rclpy.node import Node
 
 
 class PoseCapture(Node):
-    def __init__(self):
+    def __init__(self, topic):
         super().__init__("task01_cube05_final_pose_capture")
         self.samples = []
-        self.create_subscription(PoseArray, "/task27/cube_poses", self._on_poses, 10)
+        self.create_subscription(PoseArray, topic, self._on_poses, 10)
 
     def _on_poses(self, message):
         if len(message.poses) < 5:
@@ -42,12 +42,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--samples", type=int, default=5)
     parser.add_argument("--timeout-sec", type=float, default=10.0)
+    parser.add_argument("--topic", default="/task27/cube_poses")
     args = parser.parse_args()
     if args.samples < 1 or args.timeout_sec <= 0:
         parser.error("samples and timeout-sec must be positive")
 
     rclpy.init()
-    capture = PoseCapture()
+    capture = PoseCapture(args.topic)
     try:
         deadline = time.monotonic() + args.timeout_sec
         while len(capture.samples) < args.samples and time.monotonic() < deadline:
@@ -68,7 +69,7 @@ def main():
             math.dist(row, mean_position) * 1000.0 for row in positions
         )
         print(json.dumps({
-            "topic": "/task27/cube_poses",
+            "topic": args.topic,
             "cube_index_0_based": 4,
             "samples": len(capture.samples),
             "last_position_m": positions[-1],
@@ -80,7 +81,8 @@ def main():
         }, ensure_ascii=False, sort_keys=True))
     finally:
         capture.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == "__main__":

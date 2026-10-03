@@ -1,0 +1,20 @@
+task: TASK01
+baseline: none_experimental_sensor_calibration
+platform: Isaac_Sim_4.5_ROS2_Humble
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: working_tree_probe_before_explicit_zero_damping_patch
+seed: no_random_sampling
+config_path: platforms/isaac_ros2/probes/task01_pose_timing_probe.py
+command: ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_pose_timing_probe.py --enable-ros --output-dir results/20261003_TASK01_physics_ros_clean_30hz/raw
+observer_command: python3 platforms/isaac_ros2/probes/task01_validate_physics_stream.py --timeout-sec 120 --output-dir results/20261003_TASK01_physics_ros_clean_30hz/raw
+status: FAIL_CALIBRATION_MODEL_OMITTED_ANGULAR_DAMPING
+metrics:
+  motion_samples_received: 119
+  max_position_error_mm: 0.000309500
+  max_rotation_error_deg: 1.648927867
+  pose_and_snapshot_identical: true
+  sim_time_domain_valid: true
+artifact_paths:
+  - raw/summary.json
+  - raw/observer_summary.json
+notes: ROS source and timestamps were correct, but a constant-angular-speed expectation ignored default angular damping. Zero damping is explicitly authored only on this free-body calibration fixture in subsequent runs; no Task27 damping or acceptance gate was changed.

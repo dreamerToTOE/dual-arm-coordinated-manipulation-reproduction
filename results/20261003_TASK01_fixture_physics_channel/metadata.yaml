@@ -1,0 +1,48 @@
+task: TASK01
+baseline: none_experimental_task27_measurement_integration
+platform: Isaac_Sim_4.5_ROS2_Humble_MoveIt2_FCL
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: working_tree_physics_sampler_and_fixture_probe_committed_with_report
+legacy_git_commit: 631b1f65656d025c1bb2173e874192f3fe4d355a
+seed: uncontrolled_legacy_ompl
+config_path: configs/benchmark/benchmark_v1.yaml
+config_sha256: a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8
+scene_command: ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_center_headless.py --physics-measurements --duration-sec 600
+moveit_command: ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false
+command: ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=5 -p max_batches:=1 -p center_pusher_arm:=right -p execution_time_scale:=3.0
+observer_command: python3 platforms/isaac_ros2/probes/task01_record_physics_stream.py --duration-sec 250 --output-dir results/20261003_TASK01_fixture_physics_channel/raw
+status: PASS_SINGLE_RUN_EXPERIMENTAL_AND_PHYSICS_RECORDING
+metrics:
+  final_center_error_mm: 0.520
+  final_deep_wall_gap_mm: 0.505
+  final_plus_y_inner_gap_mm: 1.374
+  final_minus_y_inner_gap_mm: 1.626
+  peak_joint_torque_nm: 35.41
+  push_slices: 16
+  both_arms_home: true
+  controller_exit_code: 0
+  logged_task_duration_s: 215.142
+  pre_close_reacquire: false
+  physics_snapshots_received: 14295
+  missing_physics_steps: 0
+  first_physics_step: 15766
+  last_physics_step: 30060
+  first_simulation_stamp_ns: 262766680371
+  last_simulation_stamp_ns: 501000026129
+  record_errors: 0
+  max_quaternion_norm_error: 2.220446049250313e-16
+  clock_samples: 11554
+  max_nearest_clock_stamp_difference_s: 0.066666670
+  physics_final_position_m: [1.0994954109191895, 0.00012617904576472938, 0.2600000202655792]
+  physics_final_yaw_deg: 0.026334035473421776
+  legacy_bridge_final_yaw_deg: 0.0
+  isaac_interrupt_exit_code: 0
+  move_group_interrupt_exit_code: -2
+artifact_paths:
+  - summary.json
+  - raw/physics_snapshots.jsonl
+  - raw/recorder_summary.json
+  - /home/ubuntu2004/.ros/log/task27_five_cube_center_insert_32050_1791006079693.log
+  - /home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261003_133640.log
+  - reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+notes: Four fixtures pre-placed; no paper baseline. Controller still uses legacy Bridge; new channel is read-only. SIGINT stopped the harness without its final publisher-cleanup count, so exit 0 alone is not a clean-lifecycle claim. Today's move_group -2 does not resolve previous -11. Recorder subsequently gained empty-input failure summary and step-gap fields; reported gap values were also computed directly from this raw JSONL.

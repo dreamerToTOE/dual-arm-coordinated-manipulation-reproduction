@@ -1,0 +1,30 @@
+task: TASK01
+baseline: none_experimental_sensor_calibration
+platform: Isaac_Sim_4.5_ROS2_Humble
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: working_tree_measurement_adapter_committed_with_report
+seed: no_random_sampling
+config_path: platforms/isaac_ros2/probes/task01_pose_timing_probe.py
+command: ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_pose_timing_probe.py --enable-ros --output-dir results/20261003_TASK01_physics_ros_zero_damping_30hz/raw
+observer_command: python3 platforms/isaac_ros2/probes/task01_validate_physics_stream.py --timeout-sec 120 --output-dir results/20261003_TASK01_physics_ros_zero_damping_30hz/raw
+status: PASS_SENSOR_CALIBRATION
+metrics:
+  physics_dt_s: 0.016666666666666666
+  rendering_dt_s: 0.03333333333333333
+  motion_samples_received: 120
+  snapshots_published: 150
+  callback_errors: 0
+  max_position_error_mm: 0.000312946
+  max_rotation_error_deg: 0.000864737
+  max_nearest_clock_stamp_difference_s: 0.016666668
+  max_callback_physx_usd_position_difference_mm: 6.666675210
+  max_after_update_raw_rotation_error_deg: 27.463783672
+  max_after_update_scale_removed_rotation_error_deg: 0.000153299
+  pose_and_snapshot_identical: true
+  isaac_bundled_rclpy_and_geometry_msgs_verified: true
+artifact_paths:
+  - raw/pose_samples.jsonl
+  - raw/summary.json
+  - raw/observer_summary.json
+  - reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+notes: This deterministic no-contact calibration does not alter or freeze the manipulation benchmark.

@@ -1,0 +1,17 @@
+task: TASK01
+baseline: none_experimental_fixture_measurement
+platform: Isaac_Sim_4.5_ROS2_Humble
+git_commit: b442ecb22c635e9eb90453fff61bcffa45103ce1
+code_state: working_tree_fixture_probe_before_tuple_to_list_patch
+seed: no_robot_or_random_sampler_execution
+config_path: platforms/isaac_ros2/probes/task01_center_headless.py
+command: ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_center_headless.py --physics-measurements --duration-sec 600
+status: FAIL_UNSUPPORTED_VIEW_ARGUMENT
+metrics:
+  process_exit_code: 1
+  robot_controller_started: false
+  physics_channel_started: false
+artifact_paths:
+  - /home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261003_133528.log
+  - reports/TASK01_PHYSICS_POSE_MEASUREMENT.md
+notes: Isaac 4.5 RigidPrim accepts str or list, not tuple. Changed bridge.cube_paths argument to list in the subsequent fresh run; no scene/control changes. Idle MoveIt interrupted with SIGINT -2, not prior teardown -11.

@@ -12,6 +12,13 @@
 
 最终所有可横向比较的正式结果，原则上统一落到 **Isaac Sim + ROS 2 + 双 FR3 + Cube + 车厢** 场景；MuJoCo 仅作为 P2/P3 的接触/力控快速验证平台。
 
+## 当前进度（2026-10-03）
+
+- TASK00 环境审计已通过；TASK01 benchmark 草案仍在评审，有 36 项未定值，尚未冻结。
+- 左右臂各三次第五块物理探针通过；新只读 PhysX 位姿通路已通过外部 ROS 匀速校准，并随一次完整第五块任务记录 14,295 个连续物理快照。
+- 这些是工程/可行性验证，**不是论文算法复现结果**。先解决力测量、坐标/时间契约与参数评审，再推进 TASK02。
+- [第五块探针报告](reports/TASK01_CENTER_ARM_SYMMETRY.md) · [测量诊断、结果与完整启动命令](reports/TASK01_PHYSICS_POSE_MEASUREMENT.md) · [状态表](docs/STATUS.md)
+
 ## 总体架构
 
 ```text
