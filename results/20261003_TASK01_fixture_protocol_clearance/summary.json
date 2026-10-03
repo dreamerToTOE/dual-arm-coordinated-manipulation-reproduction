@@ -1,0 +1,133 @@
+{
+  "status": "REQUIRED_SIDE_POSE_INTERFERES",
+  "source_xacro": "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/urdf/dual_side_suction.xacro",
+  "source_sha256": "a0630156df03502e6624f593041db3e5f281f52958512672049b60b31ed49f1d",
+  "requested_stage": "Cube04 +Y-face-centered right side helper after Cube01/02/03 seated",
+  "tcp_world_m": [
+    1.1,
+    -0.0605,
+    0.26
+  ],
+  "tcp_quaternion_xyzw": [
+    0.7071067811865476,
+    -0.7071067811865476,
+    0,
+    0
+  ],
+  "link8_world_m": [
+    1.100000000000759,
+    0.09450000000000003,
+    0.3400000000000001
+  ],
+  "tool_box_primitives": [
+    {
+      "name": "vertical_support_collision",
+      "world_center_m": [
+        1.100000000000759,
+        0.09450000000000003,
+        0.30000000000000004
+      ],
+      "size_m": [
+        0.028,
+        0.028,
+        0.08
+      ],
+      "world_rotation": [
+        [
+          1.0000000000000002,
+          -4.896810904751673e-12,
+          0.0
+        ],
+        [
+          -4.896366815541823e-12,
+          -1.0000000000000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0000000000000004
+        ]
+      ]
+    },
+    {
+      "name": "lateral_support_collision",
+      "world_center_m": [
+        1.1000000000004408,
+        0.029500000000000012,
+        0.26
+      ],
+      "size_m": [
+        0.018,
+        0.13,
+        0.018
+      ],
+      "world_rotation": [
+        [
+          1.0000000000000002,
+          -4.896810904751673e-12,
+          0.0
+        ],
+        [
+          -4.896366815541823e-12,
+          -1.0000000000000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0000000000000004
+        ]
+      ]
+    },
+    {
+      "name": "manifold_collision",
+      "world_center_m": [
+        1.1000000000000834,
+        -0.04350000000000001,
+        0.26
+      ],
+      "size_m": [
+        0.07,
+        0.014,
+        0.07
+      ],
+      "world_rotation": [
+        [
+          1.0000000000000002,
+          -4.896810904751673e-12,
+          0.0
+        ],
+        [
+          -4.896366815541823e-12,
+          -1.0000000000000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0000000000000004
+        ]
+      ]
+    }
+  ],
+  "collisions": [
+    {
+      "tool_primitive": "vertical_support_collision",
+      "neighbor": "/World/Task27/Supply/Cube_03",
+      "minimum_SAT_axis_overlap_mm": 47.524380740203036
+    },
+    {
+      "tool_primitive": "lateral_support_collision",
+      "neighbor": "/World/Task27/Supply/Cube_03",
+      "minimum_SAT_axis_overlap_mm": 33.524301638342955
+    }
+  ],
+  "boundaries": [
+    "Existing sidePose family and required face-center contact; not arbitrary tool-roll search",
+    "Exact OBB box intersections, not reported PhysX penetration depth",
+    "Cup cylinders, arm reachability and arm/wall collisions not needed to establish these box intersections",
+    "No physics, geometry, ACM or benchmark gate modified",
+    "This diagnostic is not a fixture-protocol PASS; changing tool/contact/order requires explicit review"
+  ]
+}

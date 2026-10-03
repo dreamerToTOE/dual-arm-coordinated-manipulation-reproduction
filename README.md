@@ -16,12 +16,13 @@
 
 - TASK00 环境审计已通过；TASK01 benchmark 草案仍在评审，有 36 项未定值，尚未冻结。
 - 左右臂各三次第五块物理探针通过；新只读 PhysX 位姿通路已通过外部 ROS 匀速校准，并随一次完整第五块任务记录 14,295 个连续物理快照。
-- 碰撞接触力/力矩在 60/120 Hz 已知载荷校准中通过；最终无缩放安装座辨识出 incoming joint 坐标/anchor。实际 FR3 的 TCP wrench 仍需补偿。五块规划预检通过，但完整物理流程在第二块预吸附微调中过冲停下（只完成 1/5）；不放宽门限、不宣称五块成功。
+- 碰撞接触力/力矩在 60/120 Hz 已知载荷校准中通过；最终无缩放安装座辨识出 incoming joint 坐标/anchor。预吸附微调过冲修正后，正常供料的旧工程五块物理流程 **5/5 完成**，双臂 HOME，记录 70,434 个完整快照；未放宽门限或改物理模型。但旧流程前四块的 helper 停放/单臂内件微调与用户确认的 rear+side 双吸主从推压不一致（BUG-009），不能据此冻结 TASK01。真实 FR3 动态 TCP wrench 补偿仍待验证。
 - 这些是工程/可行性验证，**不是论文算法复现结果**。先解决力测量、坐标/时间契约与参数评审，再推进 TASK02。
 - [第五块探针报告](reports/TASK01_CENTER_ARM_SYMMETRY.md) · [测量诊断、结果与完整启动命令](reports/TASK01_PHYSICS_POSE_MEASUREMENT.md) · [状态表](docs/STATUS.md)
 - [力测量可行性、校准证据与复现命令](reports/TASK01_FORCE_MEASUREMENT_FEASIBILITY.md)
 - [完整五块物理探针与未解决缺陷](reports/TASK01_FULL_FIXTURE_CONTACT_PROBE.md)
 - [冻结前 36 项评审清单（尚未批准）](reports/TASK01_FREEZE_REVIEW_CHECKLIST.md)
+- [本次完整结果与必须确认的阻塞](reports/TASK01_RUNTIME_REVIEW_20261003.md)：当前面中心 helper 的支架碰邻 Cube；真实 Cube 摩擦为 0.5/0.5 而非源码声明的 0.90/0.75；受控 hold 的平均承重正确不等于瞬时 wrench 标定通过。没有静默改工具/材料或冻结基准。
 
 ## 总体架构
 

@@ -1,5 +1,16 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — Further continuation while recording
+- User again asked to continue until TASK01 works and then said “继续”. Continued safe fixed-contact geometry alternatives and record upload. This remains persistence authority, not approval to change physical material, teacher-approved tool, contact protocol or benchmark gates.
+
+## 2026-10-03 — Requested persistence completed to scientific review boundary
+- Normal five-object inherited physical manipulation has actually passed, not just offline plans; controlled hold also completes. User-confirmed D004 is preserved as distinct requirement, not replaced by helper parking/solo trim. Face-center grasp requirement is not traded for edge/half-cup contact.
+- New concrete geometry interference and actual-vs-declared material mismatch require user direction under repository rules. Ask before changing teacher-approved L tool/contact sequence or friction. No answer to model-review/numeric questions has arrived; keep them pending, never invent consent.
+- All protected user files preserved; no automatic shutdown task or paper baseline has been started.
+
+## 2026-10-03 — Model-review question pending
+- Asked whether to retain near-unbreakable suction force/torque limits 1e6 and hidden hand/finger branch mass about 1.946 kg as a candidate, or revise then revalidate. No answer/numeric freeze is inferred at this checkpoint. Continue read-only/controlled metrology with unchanged physics while preserving D004 protocol distinction.
+
 ## 2026-10-03 — Persistence request
 - User explicitly requested: “继续，直到task01调通，再汇报”. Continue safe in-scope repair and physical verification instead of routine partial handoff. Preserve scientific review/stop conditions; this does not authorize arbitrary numeric freeze or deviations from the approved contact protocol.
 

@@ -1,5 +1,25 @@
 # DECISIONS
 
+## D013 — Exhaust non-mutating fixed-contact alternatives before changing tool
+- Date: 2026-10-03
+- Classification: [ENGINEERING] exact OBB roll diagnostic, not motion planner or paper method.
+- Decision: Preserve the user-required face-center contact and inward normal; test discrete TCP rolls on existing tool geometry before asking for alteration. At 15-deg spacing all 24 checked Cube04 poses retain support/neighbor interference. Record this scope; do not infer continuous-search completeness or accept no-box-interference as full IK/path safety.
+- Impact: No physics/ACM/contact-position change. Request direction on model/protocol rather than silently adopting half-cup/edge contact.
+
+## D012 — Successful old demo is not authorization to change benchmark physics/contact
+- Date: 2026-10-03
+- Classification: [ENGINEERING] exact geometry/actual-material readout and full-rate metrology; [EXPERIMENTAL] controlled hold; [DEVIATION] legacy protocol mismatch explicitly identified, not accepted as replacement.
+- Decision: Keep ordinary 5/5 PASS separate from D004 fixture and TASK01 freeze. When current face-centered helper pose intersects neighbor, require direction before altering tool/contact/order; do not use ACM/edge-cup shortcuts. When actual Cube friction 0.5/0.5 differs from deleted authored material 0.90/0.75, ask whether to retain actual values or restore/revalidate; don't silently change physics under a bug-fix label.
+- Measurement: Use every explicit-hold physics step, report mean bias and raw RMS/peak separately. Do not suppress alternating loads or claim per-cup/internal wrench calibration from correct average support; velocity-vs-pose consistency remains open.
+- Impact: TASK01 IN_PROGRESS with unchanged YAML/hash/36 nulls, TASK02 TODO. Scientific review stop follows AGENTS stop conditions; no paper method or numeric/model approval inferred from “until task01 works”.
+
+## D011 — Controlled static-load hold keeps telemetry running
+- Date: 2026-10-03
+- Classification: [EXPERIMENTAL] static metrology pause; [ENGINEERING] test-only control parameter and phase marker.
+- Decision: Do not SIGSTOP a ROS manipulation process for a measurement window: it also stops callback processing and invalidates in-flight state requests. Archive the failed experiment; use task01_calibration_hold_sec only when explicitly requested, default 0, pause task progression while executor stays active and suction/geometry gates continue.
+- Impact: 7-s hold changes this experiment's timing and cannot count as an ordinary timing/reliability trial. Physics, grasp stiffness, model masses and benchmark gates remain unchanged. Received hold phase is stamped at physical observation, not claimed to be exact actuator-event timestamp.
+- Review: Near-unbreakable suction and hidden branch mass remain proposed inherited model features, not approved numeric freeze; ask user before changing them.
+
 ## D010 — Repair quantization without weakening alignment or bypassing protocol review
 - Date: 2026-10-03
 - Classification: [ENGINEERING] bounded residual/local-FK correction and scaled-transform extraction; [EXPERIMENTAL] normal-feed regression.

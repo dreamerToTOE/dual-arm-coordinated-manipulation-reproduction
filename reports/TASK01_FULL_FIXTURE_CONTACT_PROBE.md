@@ -1,6 +1,54 @@
 # TASK01 正常供料五 Cube 物理探针（2026-10-03）
 
-状态：**PARTIAL。五批只规划检查通过；真实执行完成 Cube 01，Cube 02 吸附前失败，完整流程未通过。**
+最新状态：**修正版旧工程正常五件物理流程 5/5 通过；TASK01 仍 IN_PROGRESS，不是已冻结 benchmark。**
+
+后续受控 hold 已通过机器人流程，但真实瞬时 wrench/速度仍未标定；内件规定的侧吸姿态存在邻 Cube 干涉；实际摩擦 0.5/0.5 与声明 0.90/0.75 不一致。最新证据/方向请求：[评审报告](TASK01_RUNTIME_REVIEW_20261003.md)。没有改工具/材料或将旧流程当 D004 通过。
+
+## 修正后完整五件实测（后续实验，历史失败保留）
+
+- Run: `results/20261003_TASK01_full_five_corrected_01/metadata.json`；legacy fix `d80b6b6`，patch/provenance 在 `platforms/isaac_ros2/legacy_patches/`。
+- 初次 build 因新 header include path 缺失失败；补正 CMake 后 build PASS（55.7 s）。9 项 C++ residual assertions PASS；新增分析器 5 项 unit checks PASS。
+- 去掉 0.650 mm 最小步长，按实测 residual 修正、最多 1 mm；未吸附微 IK 验证 5 um / 50 urad endpoint、关节范围和 seed 邻域，并继续完整同步 FCL。原 0.300 mm gate/三次停机、几何/质量/摩擦/ACM 保持。
+- 仅 Task27 去除 scaled-USD quaternion 提取错误；USD application-frame lag 仍独立存在。官方 asset root 显式指定绕过目录发现故障，引用的机器人资产不变。
+- 第一件预吸附左右 gap 差 0.447 -> **0.001 mm**；第二件 **0.287 mm**；第四件 0.973 -> **0.296 mm**。修正未再使该流程在预吸附过冲处中止。
+- 真实正常供料、没有预放夹具：`batch 1/2/3/4/5 PASS`，controller exit **0**，双臂最终 HOME。ROS controller wall **1284.391 s**（包含规划/等待），不是按此混合时钟计算的冻结执行时间。
+- **70,434** 连续同一步物理记录、0 缺失/倒退/非有限数/跨通道 stamp-step 不一致；dt 实测 0.0166666675359 s。每步 contact normal matrix 重建最大误差 3.05176e-5 N。
+
+| Cube | 结束后 PhysX center error (mm) | 实际 yaw (deg) | 最近深墙平面 gap (mm) |
+|---|---:|---:|---:|
+| 01 | 1.669 | -0.74091 | 0.447 |
+| 02 | 2.276 | 0.00290 | 2.273 |
+| 03 | 0.574 | -0.00009 | 0.234 |
+| 04 | 0.615 | 0.09111 | 0.384 |
+| 05 | 0.563 | 0.08054 | 0.386 |
+
+第五件 controller 当时的 center error 为 **0.493 mm**；后续 PhysX 最后样本为 **0.563 mm**，时间不同，不删掉或混写其中一个。最近角/面到墙距离不是整个面贴合证明。峰值 Cube02-side-wall collision 156.905 N、Cube01-deep-wall 148.364 N，包括瞬态；不是吸盘内力或批准的安全门限。
+
+### 尚未满足用户指定的双臂推压协议（BUG-009）
+
+逐 6 步抽样，前四件都有双侧吸盘 CLOSED 的搬运样本，但 rear + side 同时 CLOSED 的推压样本为 **0**。源码也确认：向深墙推入时 helper 停放；外件再用未吸附杯面侧压、rear suction 保持；内件是 rear 单臂侧向微调。
+
+因此上面的 5/5 是**继承流程工程回归 PASS**，不能误报成 D004 rear 主推/side 吸附约束及角色交换的四件夹具 PASS；TASK01 的数值/接触协议评审与修正仍不能省略。分析器只读，不扩大 ACM、不改机器人或 Cube。
+
+复现使用下文三终端命令；场景命令需加：
+
+```bash
+--asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5
+```
+
+离线审核完整停止后的记录：
+
+```bash
+python3 platforms/isaac_ros2/probes/analyze_full_fixture.py \
+  results/20261003_TASK01_full_five_corrected_01/raw \
+  --output results/20261003_TASK01_full_five_corrected_01/analysis.json
+python3 -m unittest discover -s platforms/isaac_ros2/probes \
+  -p test_full_fixture_analysis.py -v
+```
+
+## 历史原版结果（未修改原失败证据）
+
+原版状态：**PARTIAL。五批只规划检查通过；真实执行完成 Cube 01，Cube 02 吸附前失败，完整流程未通过。**
 
 ## 范围与复现边界
 
@@ -21,6 +69,7 @@
 cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
 ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh \
   platforms/isaac_ros2/probes/task01_full_fixture_headless.py \
+  --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 \
   --duration-sec 1800 --output-dir results/manual_TASK01_full_five/raw
 ```
 

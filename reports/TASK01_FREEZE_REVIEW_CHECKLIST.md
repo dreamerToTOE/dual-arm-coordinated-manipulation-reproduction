@@ -2,7 +2,9 @@
 
 状态：**PENDING，不是用户数值批准，不修改 benchmark YAML。**
 
-草案仍有 36 个 null，SHA256 `a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8`。正常五件执行在 Cube 02 停止，FR3 TCP wrench 尚未标定，不能由“测量校准通过”自动填入控制/安全门限。
+草案仍有 36 个 null，SHA256 `a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8`。后续修正版正常五件已实际完成；早期 Cube02 停止作为历史失败保留。FR3 TCP wrench 尚未标定，不能由“旧流程完成/平均承重正确”自动填入控制/安全门限。
+
+最新 [运行与评审报告](TASK01_RUNTIME_REVIEW_20261003.md)：真实 link8 固定 joint 帧已核验，但 D004 contact topology / 当前侧吸工具干涉 / actual friction 0.5/0.5 vs declared 0.90/0.75 / 瞬时 wrench 与速度契约仍未解决。以下 36 项保持候选，不偷偷按现有 demo 默认数值冻结。
 
 ## 接口方向（待评审）
 
@@ -59,4 +61,4 @@
 
 近不可断吸盘 `forceLimit/torqueLimit=1e6`、隐藏支路约 1.946 kg 质量、grasp nominal gap、初始 joint state、车厢 TF 和扰动协议不能因不是 null 就视为批准。删除质量、改吸盘断裂策略/几何会改变物理，须记录并获批准。
 
-顺序：微调过冲修复 → 正常五件复测 → FR3 帧/补偿与时间验证 → 材料/安全/扰动/试验预算提案 → 用户评审 → TASK01 FROZEN → TASK02。
+后续顺序：用户确认材料/中心侧吸可达性方向 → D004 实现与实际物理验证 → FR3 补偿/时间契约 → 安全/扰动/试验预算提案 → 数值评审 → TASK01 FROZEN → TASK02。微调过冲修复和普通五件回归已完成，不重复冒充下一步成果。

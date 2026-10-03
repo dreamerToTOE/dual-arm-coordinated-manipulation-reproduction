@@ -19,6 +19,8 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--duration-sec", type=float, default=1200.0)
     parser.add_argument("--verify-only", action="store_true")
+    parser.add_argument("--record-calibration-phase", action="store_true",
+                        help="Record optional TASK01 hold phase alongside physical step; not a control command")
     parser.add_argument("--asset-root", default=None,
                         help="Explicit official Isaac asset root; bypass unreliable directory discovery only")
     args = parser.parse_args()
@@ -45,7 +47,7 @@ def main():
         import omni.physx
         import omni.timeline
         import omni.usd
-        from pxr import PhysxSchema, UsdPhysics
+        from pxr import PhysxSchema, UsdPhysics, UsdShade
         from isaacsim.core.prims import RigidPrim
         import isaacsim.storage.native as storage
         sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -83,6 +85,15 @@ def main():
         namespace = {"_SIDE_SUCTION_SCENARIO": "task27"}
         exec(compile(source.read_text(encoding="utf-8"), str(source), "exec"), namespace, namespace)
         bridge = builtins._task26_batched_feed_bridge
+        calibration_phase = ""
+        phase_subscription = None
+        if args.record_calibration_phase:
+            from std_msgs.msg import String
+            def receive_phase(message):
+                nonlocal calibration_phase
+                calibration_phase = message.data
+            phase_subscription = bridge.node.create_subscription(
+                String, "/task01/calibration_phase", receive_phase, 10)
         view = RigidPrim(paths, reset_xform_properties=False, prepare_contact_sensors=False)
         view.initialize()
         pose_sampler = PhysicsObjectSampler(view)
@@ -102,6 +113,47 @@ def main():
                            "masses_kg": np.asarray(articulation.get_masses()).tolist(),
                            "com_poses": np.asarray(articulation.get_coms()).tolist()}
                     for side, articulation in articulations.items()}
+        # Read actual mass instead of inferring it from a scaled USD shape.
+        topology["cube_masses_kg_physics"] = np.asarray(view.get_masses()).tolist()
+        cube_physics_view = sim_view.create_rigid_body_view(paths)
+        if list(cube_physics_view.prim_paths) != paths:
+            raise RuntimeError("Cube physics material view path order changed")
+        topology["cube_shape_material_properties_physics"] = {
+            "paths": paths, "columns": ["static_friction", "dynamic_friction", "restitution"],
+            "values": np.asarray(cube_physics_view.get_material_properties()).tolist(),
+            "note": "Actual shape coefficients, not pairwise effective friction/combine-mode validation"}
+        material_audit = {}
+        material_paths = paths + fixed_filters
+        for side in ("left", "right"):
+            material_paths += [f"/World/{side}_fr3/fr3_link8/side_suction_tool/{name}" for name in
+                               ("vertical_support", "lateral_support", "vacuum_manifold")]
+        for path in material_paths:
+            prim = stage.GetPrimAtPath(path)
+            if not prim.IsValid():
+                material_audit[path] = {"prim_valid": False}
+                continue
+            material, relationship = UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial(
+                materialPurpose="physics")
+            general_material, general_relationship = UsdShade.MaterialBindingAPI(prim).ComputeBoundMaterial()
+            material_prim = material.GetPrim() if material else None
+            values = {"prim_valid": True,
+                      "physics_purpose_binding": str(material.GetPath()) if material else None,
+                      "all_purpose_binding": str(general_material.GetPath()) if general_material else None,
+                      "note": "All-purpose PhysicsMaterial binding is also audited; pairwise effective combine rule is not inferred"}
+            if not material_prim and general_material:
+                material_prim = general_material.GetPrim()
+            values["physics_material_candidate"] = (
+                str(material_prim.GetPath()) if material_prim and material_prim.HasAPI(UsdPhysics.MaterialAPI) else None)
+            if material_prim and material_prim.HasAPI(UsdPhysics.MaterialAPI):
+                api = UsdPhysics.MaterialAPI(material_prim)
+                values.update({"static_friction": api.GetStaticFrictionAttr().Get(),
+                               "dynamic_friction": api.GetDynamicFrictionAttr().Get(),
+                               "restitution": api.GetRestitutionAttr().Get()})
+                if material_prim.HasAPI(PhysxSchema.PhysxMaterialAPI):
+                    physx = PhysxSchema.PhysxMaterialAPI(material_prim)
+                    values["friction_combine_mode"] = physx.GetFrictionCombineModeAttr().Get()
+            material_audit[path] = values
+        topology["physics_material_bindings_audit"] = material_audit
         incoming_joints = {}
         for prim in stage.Traverse():
             if prim.IsA(UsdPhysics.Joint):
@@ -160,6 +212,8 @@ def main():
                            "feed_state": list(bridge.cube_state),
                            "suction_closed": {side: bool(g.is_closed()) for side, g in bridge.grippers.items()},
                            "reaction_note": "RAW incoming joint reaction includes body gravity/inertia and needs joint-frame/reference mapping; not TCP wrench"}
+                    if args.record_calibration_phase:
+                        row["calibration_phase"] = calibration_phase
                     stream.write(json.dumps(row, sort_keys=True) + "\n")
                     for measurement in contacts:
                         for pair in measurement["pairs"]:

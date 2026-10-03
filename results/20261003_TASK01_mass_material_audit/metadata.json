@@ -1,0 +1,27 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_no_paper_method",
+  "platform": "Isaac_Sim_4.5_startup_readonly",
+  "git_commit": "b4466a112886effc6948b6e6652d76cbebe38343 + measured uncommitted probe variant",
+  "legacy_git_commit": "76408c855e3e7b4966db8bfcc26683587d31f3fb",
+  "seed": "not applicable; fixed scene; no OMPL",
+  "config_path": "configs/benchmark/benchmark_v1.yaml (unchanged DRAFT, 36 nulls)",
+  "command": "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --verify-only --duration-sec 45 --output-dir results/20261003_TASK01_mass_material_audit/raw",
+  "status": "PARTIAL_MASS_BINDING_AUDIT_TOOL_PATH_WRONG",
+  "metrics": {
+    "cube_mass_kg": 0.800000011920929,
+    "robot_commands_sent": 0,
+    "benchmark_or_model_changed": false,
+    "tool_paths_verified": false,
+    "incorrect_tool_path_probe_count": 6,
+    "actual_shape_material_properties_read": false
+  },
+  "artifact_paths": [
+    "summary.json",
+    "raw/topology.json",
+    "raw/summary.json",
+    "raw/kit.log",
+    "raw/physics_contact_samples.jsonl"
+  ],
+  "boundary": "Read-only startup, no robot commands. No approved effective pairwise friction/combine rule or numeric benchmark freeze. Initial diagnostics explicitly partial."
+}

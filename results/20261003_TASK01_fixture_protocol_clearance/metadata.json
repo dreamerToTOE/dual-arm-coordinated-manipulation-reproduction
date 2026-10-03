@@ -1,0 +1,32 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_no_paper_method",
+  "platform": "Offline_exact_OBB_geometry_audit_not_Isaac_execution",
+  "git_commit": "b4466a112886effc6948b6e6652d76cbebe38343 + measured uncommitted probe variant",
+  "legacy_git_commit": "d80b6b63d21065ff67ed2fd3f45bf09c9440cd53",
+  "seed": "not applicable; deterministic geometry",
+  "config_path": "configs/benchmark/benchmark_v1.yaml (unchanged DRAFT, 36 nulls)",
+  "command": [
+    "python3 platforms/isaac_ros2/probes/audit_fixture_tool_clearance.py --xacro /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/urdf/dual_side_suction.xacro --physical-analysis results/20261003_TASK01_full_five_corrected_01/analysis.json --output results/20261003_TASK01_fixture_protocol_clearance/summary.json",
+    "python3 platforms/isaac_ros2/probes/audit_fixture_tool_clearance.py --xacro /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/urdf/dual_side_suction.xacro --physical-analysis results/20261003_TASK01_full_five_corrected_01/analysis.json --roll-sweep-step-deg 15 --output results/20261003_TASK01_fixture_protocol_clearance/roll_sweep_summary.json"
+  ],
+  "status": "REQUIRED_SIDE_POSE_INTERFERES_PROTOCOL_NOT_VALIDATED",
+  "metrics": {
+    "target_cube": "Cube04",
+    "helper_face": "+Y centered",
+    "prior_neighbor": "Cube03",
+    "intersecting_tool_boxes": 2,
+    "fixed_face_roll_poses_checked": 24,
+    "fixed_face_roll_clear_box_poses": 0,
+    "lateral_minimum_SAT_axis_overlap_mm": 33.524301638342955,
+    "robot_commands_sent": 0,
+    "benchmark_or_model_changed": false
+  },
+  "source_xacro_sha256": "a0630156df03502e6624f593041db3e5f281f52958512672049b60b31ed49f1d",
+  "artifact_paths": [
+    "summary.json",
+    "roll_sweep_summary.json",
+    "../20261003_TASK01_full_five_corrected_01/analysis.json"
+  ],
+  "boundary": "Existing pose plus optional 24 discrete fixed-center/normal rolls only; not exhaustive continuous contact/IK search. SAT overlap is not PhysX penetration depth; no geometry, ACM or model changes."
+}

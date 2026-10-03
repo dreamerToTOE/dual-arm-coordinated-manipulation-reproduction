@@ -11,7 +11,7 @@
     "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=3.0"
   ],
-  "status": "RUNNING_CHECKPOINT",
+  "status": "PASS_LEGACY_FIVE_CUBE_DEMO_ONLY",
   "metrics": {
     "first_cube_legacy_batch_pass": true,
     "first_preclose_asymmetry_before_mm": 0.447,
@@ -19,8 +19,23 @@
     "second_preclose_after_mm": 0.287,
     "original_gate_mm": 0.300,
     "normal_feed_no_preplacement": true,
-    "frame_audit_startup": "PASS: link8 incoming fixed joint child anchor zero and child axes identity on both arms"
+    "frame_audit_startup": "PASS: link8 incoming fixed joint child anchor zero and child axes identity on both arms",
+    "controller_exit_code": 0,
+    "completed_batches": [1, 2, 3, 4, 5],
+    "both_arms_home": true,
+    "controller_wall_s": 1284.3914,
+    "center_cube_controller_final_error_mm": 0.493,
+    "center_cube_later_physics_final_error_mm": 0.5627550745696205,
+    "all_cube_later_physics_errors_mm": [1.6692122516790096, 2.275921963338434, 0.5741188164251398, 0.6147736278223161, 0.5627550745696205],
+    "snapshots": 70434,
+    "record_integrity_errors": 0,
+    "first_four_rear_plus_side_closed_sample_count": 0,
+    "physics_model_or_acceptance_gate_change": false,
+    "benchmark_freeze": false
   },
-  "artifact_paths": ["raw/controller.log", "raw/moveit.log", "raw/kit.log", "raw/topology.json", "raw/physics_contact_samples.jsonl"],
-  "boundary": "Completion pending. Legacy first-four helper parking/solo inner trim is not yet the D004 cooperative contact protocol. No scientific TASK01 PASS/FROZEN claim."
+  "artifact_paths": ["analysis.json", "raw/controller.log", "raw/moveit.log", "raw/kit.log", "raw/topology.json", "raw/physics_contact_samples.jsonl", "raw/summary.json"],
+  "tested_runner_sha256": "3f568e2c84d753bbebfb077948e4fcdbc742586ee61924745c81a4214cbbe3eb",
+  "tested_controller_source_sha256": "ea92299fdb8ae5855b8fdb515cd70984c15983a2010cbf010f9101d556a07641",
+  "tested_binary_sha256": "ad022d164a499b383ba9986fc255e5e1bf03938184095607fbce92d30007a507",
+  "boundary": "5/5 inherited physical demo, one fresh unseeded run. Legacy first-four helper parking/solo inner trim is not the D004 cooperative contact protocol. No scientific TASK01 PASS/FROZEN or reliability claim. Later physics final sample and controller final log refer to different settle times."
 }

@@ -1,5 +1,24 @@
 # WORKLOG
 
+## 2026-10-03 — Further persistence / non-mutating contact alternative check
+- User repeated “继续，直到task01调通，再汇报” and “继续”; no model/numeric approval was supplied. Tested a safe alternative before requesting a tool change: 24 discrete TCP rolls at the same Cube04 face-center/inward normal. All retain lateral-support/neighbor intersection; no command/IK/model change, no continuous-search impossibility claim.
+- Added corresponding rod/roll regression (18 offline Python tests total). Preserved exact upstream patch context spaces using scoped .gitattributes instead of editing patch syntax.
+
+## 2026-10-03 — TASK01 final evidence and mandatory review boundary
+- Controlled default-zero task-thread hold completes normally: Cube01 / both HOME / exit 0. 34,510 recorded snapshots, zero integrity errors; 238 full-rate hold samples after first second. Mean force error 0.000370 N, instantaneous RMS 0.494278 N; mean moment residual 0.014902 Nm, tensor-vs-position-FD velocity max error 0.013163 m/s. Not force/internal-wrench calibration PASS. Repaired analyzer decimation aliasing, kept raw peaks and added regression; all 17 Python offline tests PASS.
+- Existing xacro OBB audit: Cube04 face-center sidePose right has lateral/vertical support intersections with actual seated Cube03. Lateral minimum SAT axis overlap=33.524 mm, not PhysX penetration depth; no exhaustive arbitrary-roll claim or robot command. This is a protocol/geometry review blocker (BUG-009), not license to move cup to edge or ignore neighbor.
+- Three startup mass/material audits retained, final reads actual backend Cube mass 0.800000012 kg and shape coefficients 0.5/0.5/0. Source material gets deleted in _build_objects after it was created. No silent restoration to 0.90/0.75; that would change physical comparison (BUG-012). First audit's incorrect tool path and intermediate partial binding checks explicitly retained.
+- MoveIt teardown again -11; normal manipulation results not called clean-launch lifecycle PASS. All owned test processes stopped. Ordinary full-five and failed pause outcomes remain alongside new summaries and six records.
+- GitHub records prepared on task01-benchmark-draft; legacy 76408c8 on task01-runtime-fixes already pushed. Scientific stop boundary: tool/contact/material review needed; 36 nulls unchanged and TASK02 still TODO.
+
+## 2026-10-03 — TASK01 repaired full-flow outcome and load-check follow-up
+- Normal fixed-feed inherited demo completes 5/5 physical batches with controller exit 0 and both arms HOME. No pre-placed fixture, physics/ACM/gate relaxation. Real final center errors 1.669/2.276/0.574/0.615/0.563 mm; final sample yaw maximum 0.741 deg. Controller fifth-Cube settle value 0.493 mm is a different sampling time.
+- Full-stream integrity audit PASS: 70,434 snapshots, zero missed/nonmonotonic/nonfinite/mixed-step samples, dt=0.0166666675359 s. 5 analysis unit checks PASS.
+- Read-only sampled contact-topology audit corroborates BUG-009: transport has opposed-side suction, but first-four rear+side simultaneous CLOSED is absent. No full D004 or paper success claim.
+- Archived failed whole-process-pause metrology: suspending ROS executor expires current-state request; after resume controller opens both and returns 1. Does not invalidate ordinary five-Cube PASS. Replaced with opt-in task01_calibration_hold_sec in legacy 76408c8, default 0, main task thread only; normal ROS executor remains active. Build PASS (47.9 s). Supported SIGSTOP driver removed, exact initial variant retained in failed raw.
+- Fresh controlled hold/load test is underway, with received phase observed alongside simulation step in opt-in measurement stream. No dynamic contact/internal-force calibration claim yet.
+- Requested user model review for 1e6 suction break limits / retained 1.946277 kg branch; candidate YAML/hash/nulls unchanged. Six records and README/task report updated; TASK01 IN_PROGRESS / TASK02 TODO.
+
 ## 2026-10-03 — TASK01 runtime-repair checkpoint (execution ongoing)
 - User requested continuing until TASK01 works, not another routine interim handoff. No numeric freeze or theory change was inferred.
 - Fixed Task27 pre-close minimum-step overshoot with full measured residual correction capped at 1 mm and no minimum step. A seeded local FK/Jacobian micro-solver requires 5 um / 50 urad endpoint accuracy; joint bounds, seed neighborhood, full synchronized FCL, original 0.300 mm measured gate and three-attempt stop remain mandatory. This is [ENGINEERING], not a new paper planner. Task26 default path unchanged.

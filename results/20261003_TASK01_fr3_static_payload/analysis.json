@@ -1,0 +1,217 @@
+{
+  "contact_topology_audit_note": "Every sixth recorded step; CLOSED + physical TCP/cup normal near face center is geometric association, not per-cup force proof",
+  "errors": {
+    "invalid_dt": 0,
+    "missing_steps": 0,
+    "nonfinite_articulation": 0,
+    "nonfinite_body": 0,
+    "nonfinite_components": 0,
+    "nonfinite_contact": 0,
+    "nonmonotonic": 0,
+    "quaternion_not_normalized": 0,
+    "stamp_step_mismatch": 0,
+    "wrong_body_count": 0
+  },
+  "explicit_hold_metrology": {
+    "expected_payload_mass_kg": 0.8,
+    "kinematics": {},
+    "mass_provenance": "legacy scene constant; independently confirmed by separate physics mass audit",
+    "net_payload_support": {
+      "count": 0
+    },
+    "note": "Hold phase does not by itself prove static force balance or calibrated per-cup wrench",
+    "sampling": "Every recorded physics step; first observed simulation second excluded"
+  },
+  "final_geometry": [
+    {
+      "nominal_cell_center_error_mm": 646.8790239963043,
+      "oriented_nearest_deep_wall_gap_mm": 599.7027888317665,
+      "oriented_nearest_minus_wall_gap_mm": 243.49504859756314,
+      "oriented_nearest_plus_wall_gap_mm": 242.50377620674305,
+      "position_m": [
+        0.5002966523170471,
+        0.000495636195410043,
+        0.25999996066093445
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_01",
+      "quaternion_xyzw": [
+        -4.27885453286991e-07,
+        1.8833239323422255e-07,
+        4.468782662980086e-06,
+        0.9999999999899059
+      ],
+      "yaw_deg": 0.0005120847630673431
+    },
+    {
+      "nominal_cell_center_error_mm": 5469.995339965142,
+      "oriented_nearest_deep_wall_gap_mm": 1500.0000059604643,
+      "oriented_nearest_minus_wall_gap_mm": -57.00001192092896,
+      "oriented_nearest_plus_wall_gap_mm": 543.0000119209288,
+      "position_m": [
+        -0.4000000059604645,
+        -0.30000001192092896,
+        -5.0
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_02",
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "yaw_deg": 0.0
+    },
+    {
+      "nominal_cell_center_error_mm": 5434.635430992399,
+      "oriented_nearest_deep_wall_gap_mm": 1300.000002980232,
+      "oriented_nearest_minus_wall_gap_mm": -57.00001192092896,
+      "oriented_nearest_plus_wall_gap_mm": 543.0000119209288,
+      "position_m": [
+        -0.20000000298023224,
+        -0.30000001192092896,
+        -5.0
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_03",
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "yaw_deg": 0.0
+    },
+    {
+      "nominal_cell_center_error_mm": 5376.752017180611,
+      "oriented_nearest_deep_wall_gap_mm": 1099.9999999999995,
+      "oriented_nearest_minus_wall_gap_mm": -57.00001192092896,
+      "oriented_nearest_plus_wall_gap_mm": 543.0000119209288,
+      "position_m": [
+        1.1102230246251565e-16,
+        -0.30000001192092896,
+        -5.0
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_04",
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "yaw_deg": 0.0
+    },
+    {
+      "nominal_cell_center_error_mm": 5536.027464546656,
+      "oriented_nearest_deep_wall_gap_mm": 1700.0000238418577,
+      "oriented_nearest_minus_wall_gap_mm": 543.000011920929,
+      "oriented_nearest_plus_wall_gap_mm": -57.00001192092896,
+      "position_m": [
+        -0.6000000238418579,
+        0.30000001192092896,
+        -5.0
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_05",
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "yaw_deg": 0.0
+    }
+  ],
+  "limitations": [
+    "No dynamic inertia compensation; no per-cup internal-force calibration",
+    "Stationarity criteria are metrology filters, not frozen benchmark gates",
+    "Nearest plane gaps do not prove entire face flush",
+    "Controller/protocol completion must be checked separately"
+  ],
+  "normal_matrix_max_error_n": 7.62939453125e-06,
+  "partial_prefix_only": false,
+  "peak_pair_collision_force_n": {
+    "/World/Task27/Supply/Cube_01 <-> /World/Table": 117.13034037785404,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Table": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Table": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Table": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Table": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/TruckBox/WallPlusY": 0.0
+  },
+  "physics_dt_range_s": [
+    0.01666666753590107,
+    0.01666666753590107
+  ],
+  "sampled_contact_topology_audit": {
+    "Cube_01": {
+      "dual_opposed_side_closed_samples": 120
+    },
+    "Cube_02": {},
+    "Cube_03": {},
+    "Cube_04": {},
+    "Cube_05": {}
+  },
+  "snapshots": 36806,
+  "static_airborne_checked_step_range": [
+    null,
+    null
+  ],
+  "static_gravity_consistency": {
+    "empty_left_force_error_n": {
+      "count": 661,
+      "max": 0.011903881773751344,
+      "median": 0.0002145131941558968,
+      "rms": 0.000547050946626326
+    },
+    "empty_left_torque_error_nm": {
+      "count": 661,
+      "max": 0.001751953175766985,
+      "median": 2.2159045007577115e-05,
+      "rms": 7.708239335567863e-05
+    },
+    "empty_right_force_error_n": {
+      "count": 705,
+      "max": 0.5839840226241174,
+      "median": 0.00020079834513092194,
+      "rms": 0.022260766710866554
+    },
+    "empty_right_torque_error_nm": {
+      "count": 705,
+      "max": 0.08813192576894181,
+      "median": 2.1725768137254236e-05,
+      "rms": 0.0033486964753222928
+    }
+  },
+  "status": "PASS_RECORD_INTEGRITY"
+}

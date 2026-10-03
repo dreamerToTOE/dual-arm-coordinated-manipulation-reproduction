@@ -1,0 +1,230 @@
+{
+  "contact_topology_audit_note": "Every sixth recorded step; CLOSED + physical TCP/cup normal near face center is geometric association, not per-cup force proof",
+  "errors": {
+    "invalid_dt": 0,
+    "missing_steps": 0,
+    "nonfinite_articulation": 0,
+    "nonfinite_body": 0,
+    "nonfinite_components": 0,
+    "nonfinite_contact": 0,
+    "nonmonotonic": 0,
+    "quaternion_not_normalized": 0,
+    "stamp_step_mismatch": 0,
+    "wrong_body_count": 0
+  },
+  "explicit_hold_metrology": {
+    "expected_payload_mass_kg": 0.8,
+    "kinematics": {},
+    "mass_provenance": "legacy scene constant; independently confirmed by separate physics mass audit",
+    "net_payload_support": {
+      "count": 0
+    },
+    "note": "Hold phase does not by itself prove static force balance or calibrated per-cup wrench",
+    "sampling": "Every recorded physics step; first observed simulation second excluded"
+  },
+  "final_geometry": [
+    {
+      "nominal_cell_center_error_mm": 1.6692122516790096,
+      "oriented_nearest_deep_wall_gap_mm": 0.4474380648738299,
+      "oriented_nearest_minus_wall_gap_mm": 484.0878662622885,
+      "oriented_nearest_plus_wall_gap_mm": 0.3697392500357291,
+      "position_m": [
+        1.0987815856933594,
+        0.2418590635061264,
+        0.2599998116493225
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_01",
+      "quaternion_xyzw": [
+        2.9717510297396633e-06,
+        1.1567077755476716e-06,
+        -0.006465603720253322,
+        0.9999790977607298
+      ],
+      "yaw_deg": -0.7409087721769626
+    },
+    {
+      "nominal_cell_center_error_mm": 2.275921963338434,
+      "oriented_nearest_deep_wall_gap_mm": 2.27281562081727,
+      "oriented_nearest_minus_wall_gap_mm": -2.065059179212625e-06,
+      "oriented_nearest_plus_wall_gap_mm": 485.9938898893628,
+      "position_m": [
+        1.0977240800857544,
+        -0.242996945977211,
+        0.25999999046325684
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_02",
+      "quaternion_xyzw": [
+        1.1801927246806198e-07,
+        -5.197487406608639e-07,
+        2.53500089933172e-05,
+        0.9999999996785465
+      ],
+      "yaw_deg": 0.0029048970451547064
+    },
+    {
+      "nominal_cell_center_error_mm": 0.5741188164251398,
+      "oriented_nearest_deep_wall_gap_mm": 0.2338804418320073,
+      "oriented_nearest_minus_wall_gap_mm": 363.9755478461585,
+      "oriented_nearest_plus_wall_gap_mm": 122.0240971406303,
+      "position_m": [
+        1.0997660160064697,
+        0.12097572535276413,
+        0.2600000202655792
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_03",
+      "quaternion_xyzw": [
+        6.990186989238062e-07,
+        -8.272682805450113e-08,
+        -7.802041181999142e-07,
+        0.999999999999448
+      ],
+      "yaw_deg": -8.940481288970516e-05
+    },
+    {
+      "nominal_cell_center_error_mm": 0.6147736278223161,
+      "oriented_nearest_deep_wall_gap_mm": 0.38445079682054156,
+      "oriented_nearest_minus_wall_gap_mm": 121.02019102497252,
+      "oriented_nearest_plus_wall_gap_mm": 364.78894264621886,
+      "position_m": [
+        1.099520206451416,
+        -0.12188437581062317,
+        0.2600000202655792
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_04",
+      "quaternion_xyzw": [
+        8.266133934406099e-07,
+        -7.388965480059029e-08,
+        0.0007950821057628131,
+        0.9999996839218283
+      ],
+      "yaw_deg": 0.0911097076453903
+    },
+    {
+      "nominal_cell_center_error_mm": 0.5627550745696205,
+      "oriented_nearest_deep_wall_gap_mm": 0.3863312473489783,
+      "oriented_nearest_minus_wall_gap_mm": 242.60706057116033,
+      "oriented_nearest_plus_wall_gap_mm": 243.22420019466074,
+      "position_m": [
+        1.0995293855667114,
+        -0.00030856981175020337,
+        0.2600000202655792
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_05",
+      "quaternion_xyzw": [
+        7.49778432308044e-07,
+        -3.0066159098254955e-08,
+        0.0007028244794521466,
+        0.9999997530185635
+      ],
+      "yaw_deg": 0.08053775945000476
+    }
+  ],
+  "limitations": [
+    "No dynamic inertia compensation; no per-cup internal-force calibration",
+    "Stationarity criteria are metrology filters, not frozen benchmark gates",
+    "Nearest plane gaps do not prove entire face flush",
+    "Controller/protocol completion must be checked separately"
+  ],
+  "normal_matrix_max_error_n": 3.0517578125e-05,
+  "partial_prefix_only": false,
+  "peak_pair_collision_force_n": {
+    "/World/Task27/Supply/Cube_01 <-> /World/Table": 185.53831822404487,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_03": 0.5656200514695738,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/TruckBox/WallDeep": 148.36360166421142,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_01 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Table": 202.57250452254326,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/TruckBox/WallDeep": 118.95744497398285,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/TruckBox/WallMinusY": 156.90458629803828,
+    "/World/Task27/Supply/Cube_02 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Table": 12.814701227190891,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_01": 0.5656200514695738,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_03 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Table": 17.713023350173934,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/Supply/Cube_05": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_04 <-> /World/Task27/TruckBox/WallPlusY": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Table": 134.2074489353355,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_01": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_02": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_03": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/Supply/Cube_04": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/TruckBox/WallDeep": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/TruckBox/WallMinusY": 0.0,
+    "/World/Task27/Supply/Cube_05 <-> /World/Task27/TruckBox/WallPlusY": 0.0
+  },
+  "physics_dt_range_s": [
+    0.01666666753590107,
+    0.01666666753590107
+  ],
+  "sampled_contact_topology_audit": {
+    "Cube_01": {
+      "dual_opposed_side_closed_samples": 302,
+      "rear_only_closed_samples": 586
+    },
+    "Cube_02": {
+      "dual_opposed_side_closed_samples": 340,
+      "rear_only_closed_samples": 665
+    },
+    "Cube_03": {
+      "dual_opposed_side_closed_samples": 295,
+      "rear_only_closed_samples": 362
+    },
+    "Cube_04": {
+      "dual_opposed_side_closed_samples": 370,
+      "rear_only_closed_samples": 396
+    },
+    "Cube_05": {
+      "dual_opposed_side_closed_samples": 245,
+      "rear_only_closed_samples": 307
+    }
+  },
+  "snapshots": 70434,
+  "static_airborne_checked_step_range": [
+    null,
+    null
+  ],
+  "static_gravity_consistency": {
+    "empty_left_force_error_n": {
+      "count": 1426,
+      "max": 0.012528059928123253,
+      "median": 0.0002145131941558968,
+      "rms": 0.0005171028146352488
+    },
+    "empty_left_torque_error_nm": {
+      "count": 1426,
+      "max": 0.0018486622235228138,
+      "median": 2.2159045007577115e-05,
+      "rms": 7.292772972568542e-05
+    },
+    "empty_right_force_error_n": {
+      "count": 1470,
+      "max": 0.5840073504716268,
+      "median": 0.00019941102335768913,
+      "rms": 0.015233444259608849
+    },
+    "empty_right_torque_error_nm": {
+      "count": 1470,
+      "max": 0.08813562813913213,
+      "median": 2.177863710027117e-05,
+      "rms": 0.002298855308827263
+    }
+  },
+  "status": "PASS_RECORD_INTEGRITY"
+}

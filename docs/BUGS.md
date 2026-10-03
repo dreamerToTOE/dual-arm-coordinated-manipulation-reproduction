@@ -1,5 +1,54 @@
 # BUGS
 
+## 2026-10-03 — BUG-009 fixed-center roll alternative checked
+Status: OPEN
+Evidence: Follow-up fixed-center/normal roll sweep has 24/24 rod-neighbor intersections. This eliminates the tested discrete rotation-only alternatives, not every continuous/contact-order strategy. No offset/edge grasp, model change or collision bypass adopted.
+
+## 2026-10-03 — BUG-009 physical contact-accessibility follow-up
+Status: OPEN / CURRENT_SIDE_POSE_GEOMETRY_BLOCKER
+Evidence: Exact existing tool OBBs at Cube04 +Y face center intersect the measured seated Cube03. Lateral support minimum SAT axis overlap=33.524 mm; vertical support also intersects. This is not PhysX depth and not an exhaustive arbitrary-roll search. Old full-five demo still does not use rear+side simultaneous suction constraint. Tool/contact sequence changes need explicit review; no ACM expansion, Cube ignore, geometry change or edge-cup shortcut implemented.
+Run: results/20261003_TASK01_fixture_protocol_clearance/.
+
+## BUG-011 — Real-FR3 hold reactions alternate and velocity readout differs from pose derivative
+Date: 2026-10-03
+Task: TASK01
+Status: OPEN_METROLOGY / ANALYZER_ALIASING_FIXED
+Evidence: 238 full-rate observed hold samples: net support mean error 0.000370 N but instantaneous RMS 0.494278 N; mean Cube-center moment residual 0.014902 Nm. Tensor speed RMS 0.012773 m/s while position-FD RMS 0.000505 m/s, discrepancy max 0.013163 m/s. Root cause of physical/API velocity behavior unconfirmed; cannot call force calibration PASS from mean only.
+Diagnostic correction: Decimation by six captured one parity of alternating reactions and created a false mean lateral bias. Explicit hold now uses every physics step, reports mean and instantaneous errors separately; alternating-sequence regression PASS. No physics/solver/filter/gate changed.
+Run: results/20261003_TASK01_fr3_static_payload_v2/analysis.json.
+
+## BUG-012 — Declared high-friction material deleted before task objects build
+Date: 2026-10-03
+Task: TASK01
+Status: OPEN_MODEL_REVIEW
+Evidence: _make_material creates material below /World/Task27; _build_objects subsequently removes that root without rebuilding material. Startup USD physics/all-purpose bindings unresolved; actual Cube shape backend properties are static/dynamic friction 0.5/0.5 and restitution 0, despite declared 0.90/0.75/0. Cube actual masses are 0.800000012 kg.
+Impact: Prior demos must not be interpreted as tests with the declared high-friction material. Repairing lifecycle changes actual physics; approve effective material version and rerun before freeze. Pairwise effective combination rule also remains open.
+Run: results/20261003_TASK01_mass_material_audit_v3/summary.json; earlier partial path/purpose-only audits preserved.
+
+## 2026-10-03 — BUG-010 controlled replacement verified
+Status: RESOLVED_TEST_MECHANISM_ONLY
+Evidence: Optional task-thread hold leaves executor running, resumes without stale state, and completes Cube01/HOME with controller exit 0. It does not resolve the new force/velocity issue BUG-011 or approve benchmark/model values.
+
+## 2026-10-03 — BUG-004 teardown recurrence
+Status: OPEN
+Evidence: Full-five/controlled-hold shared MoveIt launch later interrupted: move_group exit -11, dual_joint_state_bridge exit 1. Controller manipulation and Isaac complete/stop separately; do not call launch teardown clean.
+
+## 2026-10-03 — BUG-008 repaired inherited full-flow verification
+Status: RESOLVED_FOR_LEGACY_DEMO / NOT_PROTOCOL_OR_FREEZE_PROOF
+Evidence: d80b6b6 unit/build PASS and fresh normal-feed physical batches 1–5 PASS, exit 0 and both arms HOME. Original 0.300 mm measured pre-close gate, three attempts and full FCL retained. This is one unseeded full run, not broad reliability evidence; D004 protocol remains BUG-009.
+
+## BUG-010 — Whole-process pause invalidates ROS current-state request
+Date: 2026-10-03
+Task: TASK01
+Status: RESOLVED_TEST_MECHANISM / NEGATIVE_EVIDENCE_RETAINED
+Symptom: Experimental 7-s SIGSTOP after lift also suspends the ROS executor. An in-flight 2-s state request returns stale data after SIGCONT; controller safely opens both and exits 1.
+Resolution: Do not use process pause as supported metrology method. Use explicit default-zero task-thread hold leaving executor active (legacy 76408c8); controlled replacement validation pending. Ordinary five-Cube run succeeded without this pause.
+Evidence: results/20261003_TASK01_fr3_static_payload/{metadata,analysis}.json and raw controller/hold_driver logs.
+
+## 2026-10-03 — BUG-006 Task27-only fix
+Status: FIXED_TASK27_QUATERNION / TIMING_MIGRATION_PENDING
+Evidence: d80b6b6 removes Cube scale before extracting quaternion in Task27 only; same-step PhysX final yaw is now preserved rather than compressed by scale. Prior calibration distinguishes orientation extraction from USD lag. Task26 default untouched; legacy wall timestamp / frame lag BUG-002/005 remain open.
+
 ## 2026-10-03 — BUG-008 bounded-correction checkpoint
 Status: FIX_IMPLEMENTED / FULL_FLOW_VALIDATION_PENDING
 Evidence: d80b6b6 in legacy task01-runtime-fixes replaces 0.650 mm minimum correction with measured residual and precise seeded FK solving. Unit/build PASS. Fresh Cube01 0.447 -> 0.001 mm; Cube02 0.287 mm passes original 0.300 mm gate. Do not claim full five-Cube fix until physical completion.

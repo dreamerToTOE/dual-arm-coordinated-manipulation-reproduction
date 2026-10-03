@@ -1,5 +1,20 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — TASK01 fixed-contact TCP roll diagnostic
+- Same `20261003_TASK01_fixture_protocol_clearance` run family, additional `roll_sweep_summary.json`: fixed face center/normal, TCP roll 0..345 deg in 15 deg steps, 24/24 poses have lateral rod/Cube03 OBB intersection, zero clear box-only poses. No robot commands; no arbitrary-contact/IK completeness claim. New regression passes; 18 Python offline tests total.
+
+## 2026-10-03 — TASK01 controlled hold, protocol geometry and actual material
+- `20261003_TASK01_fr3_static_payload_v2`: PASS_CONTROLLED_HOLD_AND_CUBE01 / PARTIAL_METROLOGY. Default-zero optional 7-s task-thread hold, legacy 76408c8; controller exit 0, placement/HOME complete. 34,510 snapshots, 238 full-rate load samples. Mean net-support error 0.000370 N but instantaneous RMS 0.494278 N / moment mean 0.014902 Nm and velocity discrepancy persist. Raw six-step diagnostic was aliased; full-rate reanalysis does not convert this into a sensor PASS.
+- `20261003_TASK01_fixture_protocol_clearance`: REQUIRED_SIDE_POSE_INTERFERES. Read exact existing xacro and prior full-flow Cube03 PhysX pose; Cube04 centered right helper support boxes intersect neighbor, minimum lateral SAT axis overlap 33.524 mm. Analytic only, no commands/model changes. Metadata + summary tracked.
+- `20261003_TASK01_mass_material_audit`, `_v2`, `_v3`: Initial two PARTIAL audits retained; final PASS_MASS_AND_SHAPE_READOUT / MODEL_REVIEW_PENDING. Cube actual mass 0.800000012 kg, static/dynamic friction 0.5/0.5, restitution 0.0. Declared 0.90/0.75 material deleted by cleanup; no effective combine-rule freeze. Initial wrong tool path corrected in reader only; no scene changed.
+- `python3 -m unittest discover -s platforms/isaac_ros2/probes -p 'test_*.py' -v`: 17/17 PASS. YAML checker still analytic PASS / 36 unresolved, not TASK01 PASS. Report `TASK01_RUNTIME_REVIEW_20261003.md` contains commands, results and boundaries.
+- MoveIt SIGINT teardown again exit -11; retained full-five raw launch log. Test processes fully stopped; no ordinary controller failure inferred from teardown.
+
+## 2026-10-03 — TASK01 completed normal feed and retained failed metrology
+- results/20261003_TASK01_full_five_corrected_01/: PASS_LEGACY_FIVE_CUBE_DEMO_ONLY, controller exit 0, physical batches 1–5 complete, both arms HOME, wall 1284.391 s. Detailed physical geometry and 70,434-snapshot integrity analysis uploaded; raw heavy remains ignored. BUG-009 contact protocol not passed.
+- results/20261003_TASK01_fr3_static_payload/: FAIL_EXPERIMENTAL_PAUSE_THEN_SAFE_ABORT, 7-s SIGSTOP of controller group also pauses state monitor; resume triggers stale-state failure and releases both cups. Raw script/negative logs preserved; no normal-flow regression claimed.
+- Fresh results/20261003_TASK01_fr3_static_payload_v2/ is controlled opt-in task-thread hold instead of process suspension; phase recorded with physical snapshots. Build PASS 47.9 s; physical force statistics pending at this checkpoint.
+
 ## 2026-10-03 — TASK01 corrected runtime checkpoint
 - Run: results/20261003_TASK01_preclose_unit/metadata.json — PASS_UNIT_AND_BUILD_ONLY. Residual regression and corrected colcon build PASS; initial target include-path failure retained.
 - Run: results/20261003_TASK01_full_five_corrected_01/metadata.json — RUNNING_CHECKPOINT. Fresh headless normal feed, max_batches=5, right center pusher, time_scale=3, no pre-placed fixture. Cube01 complete; Cube02 pre-close correction passes original gate. Final completion/force/pose audit pending.

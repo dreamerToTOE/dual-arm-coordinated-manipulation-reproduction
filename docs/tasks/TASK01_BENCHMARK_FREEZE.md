@@ -29,6 +29,23 @@ Freeze one common dual-FR3 Cube/carriage benchmark before tuning any paper metho
 - Review queue: `reports/TASK01_FREEZE_REVIEW_CHECKLIST.md` lists all 36 null fields and already-numeric but unapproved model choices. The last added real-FR3 authored-joint-frame startup audit failed on asset-root availability; that check and TCP compensation remain unvalidated.
 
 ## Codex actions
+
+### Final tested outcome / review boundary (2026-10-03)
+
+- Full inherited physical flow 5/5 and controlled Cube01 7-s hold both complete with exit 0/HOME; 17 offline Python tests PASS, latest report `reports/TASK01_RUNTIME_REVIEW_20261003.md`.
+- D004 remains unmet: current centered Cube04 side helper tool intersects seated Cube03 (exact OBB evidence; no model/ACM change). Tool/contact-order review needed, not hidden protocol replacement.
+- Actual physics Cube friction reads 0.5/0.5 rather than authored 0.90/0.75 because cleanup deletes material. Material version decision/retest needed before freezing.
+- FR3 static mean support error 0.000370 N but raw force RMS 0.494278 N / mean moment error 0.014902 Nm and tensor-vs-pose velocity mismatch persist. Full-rate diagnostic fixes aliasing only; no calibrated TCP/internal-wrench claim.
+- 36 nulls and numeric/model review pending, YAML/hash unchanged, TASK02 TODO. Following mandatory stop conditions, seek direction on material and centered-helper accessibility before scientific/model changes.
+
+### Runtime-repair checkpoint (2026-10-03, later run)
+
+- Pre-close overshoot fixed without gate relaxation: local seeded fine FK/Jacobian micro correction, maximum 1 mm, no minimum quantization, original 0.300 mm gate and three-attempt stop.
+- Task27 quaternion extraction corrected; independent same-step physical records retained. Exact official asset root allows real FR3 joint-frame audit to run; both link8 incoming fixed joints have zero child anchor/identity child axes.
+- Fresh normal-feed inherited physical demo **5/5 PASS**, exit 0, both arms HOME. 70,434 snapshots / zero integrity errors. Fifth center error 0.493 mm at controller settle / 0.563 mm at later physical final sample. Full report and upstream patches provide commands/hashes/negative evidence.
+- Crucial remaining protocol gap: legacy first-four helper parks during rear push; outer side pressing does not suction the side cup, inner trim is solo. This does not satisfy D004 even though placements complete (BUG-009).
+- A whole-process 7-s pause metrology attempt safely aborts after stale-state timeout. Replaced by an opt-in main-thread hold, keeping ROS executor active; controlled load calibration pending at this checkpoint. Ordinary hold default=0.
+- All 36 nulls and numeric/model approval remain pending; user asked whether to keep 1e6 suction/1.946 kg hidden branch as candidate. TASK01 stays IN_PROGRESS, TASK02 TODO.
 - Define FR3 base poses.
 - Define cube size, mass and friction/contact parameters.
 - Define left/right grasp transforms.

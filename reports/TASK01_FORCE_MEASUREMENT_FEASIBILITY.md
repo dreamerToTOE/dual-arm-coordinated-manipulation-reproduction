@@ -2,6 +2,14 @@
 
 状态：**碰撞接触测量与独立安装座反力校准通过；FR3 TCP 接触 wrench 尚未完成标定。TASK01 仍为 IN_PROGRESS。**
 
+## 后续实际 FR3 静载结果（2026-10-03）
+
+下文保留早期独立夹具/参考帧未核验的历史。之后已显式引用同一官方 asset root，核验两臂 link8 incoming **fixed** joint 的 child anchor=0 / child axes=identity。可选 7-s task-thread hold 正常恢复并完成 Cube01/HOME，完整 physics 数据已保存。
+
+扣除真实 1.946277 kg 支路重力、按各 body COM 计算 moment 并移到 TCP/Cube center 后，238 个 full-rate hold 样本的平均合支撑误差=0.000370 N；瞬时力误差 RMS=0.494278 N，平均 moment 残差=0.014902 Nm。相邻位置差分与 tensor 速度也明显不一致，根因未确证。原每六步 decimation 将交替力误当 DC bias，分析器已修正并单测覆盖；**没有滤掉峰值/放宽 gate 来声明标定通过**。
+
+只提供静态重力一致性诊断，不是动态惯性补偿、单吸盘 wrench 或 P2 internal-force 校准。完整命令/标量/负实验和新的模型审计见 [本次评审报告](TASK01_RUNTIME_REVIEW_20261003.md) / `results/20261003_TASK01_fr3_static_payload_v2/{metadata,analysis}.json`。正常五件 demo 后续已 5/5，但 D004 及冻结仍未通过，不能沿用下文历史失败描述当最新状态。
+
 ## 本轮范围
 
 - [ENGINEERING] 同一物理步读取碰撞法向冲量、摩擦冲量、接触点，并重建指定刚体原点处的 wrench；8 个离线单元测试。

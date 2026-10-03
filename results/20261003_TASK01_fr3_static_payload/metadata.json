@@ -1,0 +1,25 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_failed_process_pause_metrology",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2",
+  "git_commit": "b4466a1 + experimental pause-driver working tree",
+  "legacy_git_commit": "d80b6b6",
+  "seed": "OMPL uncontrolled; fresh fixed normal feed",
+  "config_path": "configs/benchmark/benchmark_v1.yaml (unchanged DRAFT)",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --duration-sec 700 --output-dir results/20261003_TASK01_fr3_static_payload/raw",
+    "python3 results/20261003_TASK01_fr3_static_payload/raw/driver_source.py --output-dir results/20261003_TASK01_fr3_static_payload/raw --hold-sec 7 --timeout-sec 650"
+  ],
+  "status": "FAIL_EXPERIMENTAL_PAUSE_THEN_SAFE_ABORT",
+  "metrics": {
+    "lift_completed": true,
+    "pause_seconds": 7,
+    "controller_exit_code": 1,
+    "suction_open_on_abort": true,
+    "cause": "SIGSTOP also suspends ROS executor; in-flight current-state request expires and returns stale state after resume",
+    "normal_five_Cube_result_invalidated": false,
+    "replacement": "opt-in Task27 task01_calibration_hold_sec leaves ROS executor active"
+  },
+  "artifact_paths": ["analysis.json", "raw/controller.log", "raw/hold_driver.log", "raw/hold_summary.json", "raw/driver_source.py", "raw/physics_contact_samples.jsonl", "raw/topology.json", "raw/summary.json", "raw/hold_option_build.log"],
+  "boundary": "Not a normal-flow regression. Failed pause driver archived in ignored raw and removed from supported probes. Negative result preserved; no gate/model relaxation."
+}

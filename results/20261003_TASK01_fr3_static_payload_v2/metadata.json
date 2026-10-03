@@ -1,0 +1,48 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_FR3_controlled_static_hold_ENGINEERING_phase_reader",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2",
+  "git_commit": "b4466a112886effc6948b6e6652d76cbebe38343 + measured uncommitted probe variant",
+  "legacy_git_commit": "76408c855e3e7b4966db8bfcc26683587d31f3fb",
+  "seed": "Not randomized; legacy OMPL seed uncontrolled where planning is used",
+  "config_path": "configs/benchmark/benchmark_v1.yaml (unchanged DRAFT, 36 nulls)",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --record-calibration-phase --duration-sec 650 --output-dir results/20261003_TASK01_fr3_static_payload_v2/raw",
+    "cd /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws; source /opt/ros/humble/setup.bash; source install/setup.bash; export ROS_LOCALHOST_ONLY=0; ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=1 -p max_batches:=1 -p center_pusher_arm:=right -p execution_time_scale:=3.0 -p task01_calibration_hold_sec:=7.0",
+    "python3 platforms/isaac_ros2/probes/analyze_full_fixture.py results/20261003_TASK01_fr3_static_payload_v2/raw --output results/20261003_TASK01_fr3_static_payload_v2/analysis.json"
+  ],
+  "status": "PASS_CONTROLLED_HOLD_AND_CUBE01_ONLY_PARTIAL_METROLOGY",
+  "metrics": {
+    "controller_exit_code": 0,
+    "completed_batches": [
+      1
+    ],
+    "both_arms_home": true,
+    "requested_task_hold_wall_sec": 7,
+    "snapshots": 34510,
+    "record_integrity_errors": 0,
+    "all_step_hold_samples_after_one_sim_sec": 238,
+    "mean_payload_support_error_n": 0.0003702388031672908,
+    "instantaneous_force_error_rms_n": 0.49427794137268843,
+    "instantaneous_force_error_max_n": 0.526522812953164,
+    "mean_payload_moment_error_nm": 0.014902116005105116,
+    "instantaneous_moment_error_rms_nm": 0.03902194995808454,
+    "tensor_vs_pose_fd_velocity_error_max_m_s": 0.013163401619774395,
+    "per_cup_wrench_calibration": false,
+    "dynamic_inertia_compensation": false,
+    "benchmark_freeze": false
+  },
+  "tested_controller_source_sha256": "8d9cd0050179a41a03ac39bf65fc6126ab7514adf4cd8fbef354f79c1d94f095",
+  "tested_binary_sha256": "5df12934c7c95b64081380f52b7cadbd839a6ccf20c0dfd4e08653a6d481c3d5",
+  "artifact_paths": [
+    "analysis.json",
+    "raw/controller.log",
+    "raw/kit.log",
+    "raw/physics_contact_samples.jsonl",
+    "raw/topology.json",
+    "raw/summary.json",
+    "raw/analysis.log",
+    "../20261003_TASK01_full_five_corrected_01/raw/moveit.log"
+  ],
+  "boundary": "All-step reanalysis corrects decimation aliasing, not the physical reaction/velocity issue. Mean correct support is not instantaneous force/internal-wrench calibration. Source variant at run added optional phase reader; no runner snapshot hash was captured. Legacy code pinned by exact commit/source/binary. Phase reception is observation, not actuator-event time. No model/gate changes."
+}
