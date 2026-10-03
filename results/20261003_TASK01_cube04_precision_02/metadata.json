@@ -1,0 +1,22 @@
+{
+  "task": "TASK01", "baseline": "EXPERIMENTAL_Cube04_precision_single_rear_insert",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2", "git_commit": "900d106",
+  "legacy_git_commit": "7be3659 with PRE_FINAL_BUILD_BINARY; see build_boundary",
+  "tested_binary_sha256": "46dd809e4d115a3847f83bc4f896087508b2111148e788bc756c416e6b07907b",
+  "build_boundary": "Controller started before final rebuild finished: exploratory binary lacks later nonfinite-input gate guard and portable logging change, same physical protocol. Re-test final built binary separately; not final delivery evidence.",
+  "seed": "OMPL uncontrolled; three fixed preplaced Cubes",
+  "config_path": "configs/benchmark/benchmark_v1.yaml DRAFT + D014 control variant",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --duration-sec 1050 --output-dir results/20261003_TASK01_cube04_precision_02/raw",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=4 -p max_batches:=2 -p center_pusher_arm:=right -p execution_time_scale:=3.0"
+  ],
+  "status": "FAIL_CUBE04_FINAL_NEIGHBOR_GAP_SAFE_STOP",
+  "metrics": {"controller_exit_code": 1, "completed_new_batches": 0,
+    "cube04_initial_y_error_mm": 0.046, "cube04_initial_oriented_neighbor_clearance_mm": 0.454,
+    "cube04_final_neighbor_gap_mm": 1.827, "original_max_final_neighbor_gap_mm": 1.5,
+    "peak_push_joint_torque_nm_raw": 23.0, "snapshots": 6036, "sampler_errors": 0,
+    "cube05_executed": false, "moveit_teardown_exit_code": -11},
+  "artifact_paths": ["analysis.json", "raw/controller.log", "raw/kit.log", "raw/moveit.log", "raw/physics_pose_samples.jsonl", "raw/summary.json", "raw/model_audit.json", "raw/build.log", "raw/python_tests.log"],
+  "boundary": "Failure retained, no threshold widening; first three preplaced, not full-five proof. Old scene/material/ACM/final gates preserved."
+}

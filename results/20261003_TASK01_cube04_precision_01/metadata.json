@@ -1,0 +1,9 @@
+{
+  "task": "TASK01", "baseline": "EXPERIMENTAL_Cube04_probe_startup", "platform": "Isaac_Sim_4.5",
+  "git_commit": "f455274 + initial probe working tree", "seed": "not applicable",
+  "config_path": "old Task27 scene, three fixture Cubes preplaced",
+  "command": "scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --duration-sec 1050 --output-dir results/20261003_TASK01_cube04_precision_01/raw",
+  "status": "FAILED_STARTUP_WITHOUT_SUMMARY", "metrics": {"controller_started": false, "physics_snapshots": 0},
+  "artifact_paths": ["raw/startup_api_attempt.log", "raw/model_audit.json", "raw/physics_pose_samples.jsonl"],
+  "boundary": "Fast shutdown swallowed exception, exit 0 is not PASS. Inspection found incorrect callback API/argument; replaced with verified API and explicit exception artifacts."
+}

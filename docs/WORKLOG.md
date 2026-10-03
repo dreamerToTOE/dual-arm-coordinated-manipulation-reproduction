@@ -1,5 +1,10 @@
 # WORKLOG
 
+## 2026-10-03 — Cube04 first physical failure retained
+- Actual first three settled, fourth normal-fed/dual-carried/staged/rear-regrasped/pushed. PRE_PUSH precision error 0.046 mm passes, but lateral drift produces final gap 1.827 mm, exceeding unchanged 1.5-mm gate; controller exit 1, no fifth command.
+- 6,036 sparse PhysX samples, no integrity/readout errors; fourth helper CLOSED count inside carriage=0, no inner trim; peak raw joint torque 23.0 Nm. No force calibration claim.
+- Exploratory controller was launched before final logging/nonfinite-guard rebuild completed; exact binary hash retained. Separate final-build clean-scene time_scale=5 repetition running. Avoid calling the exploratory binary the final delivery. No changes to scene/material/ACM, no silent online correction.
+
 ## 2026-10-03 — Cube04 precision insert implementation checkpoint
 - Read all mandated task/source/benchmark records; issued pre-task report. User explicitly approves Cube04 contact-protocol adaptation.
 - Added independent legacy ROS executable + compile-time policy, reused shared controller; fourth no longer plans/executes INNER_SIDE_TRIM, remains inner-neighbor accepted. PRE_PUSH uses previous pressed target 0.5 mm. Old nodes/scenes unchanged in behavior/geometry.

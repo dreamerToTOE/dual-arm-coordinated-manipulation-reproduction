@@ -1,5 +1,8 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — Scope remains single-rear insertion, no hidden fallback
+- No new user instruction authorizes restoring Cube04 side pressing or adding online lateral/force correction after a failed pure single-arm test. Preserve initial request and report negative outcomes explicitly; low-speed repetition is not permission to freeze the benchmark.
+
 ## 2026-10-03 — Cube04 should use Cube05 insertion
 - User: “那第4块采取第5块的推入方式”. Explicitly authorizes this contact-protocol exception; no implied authorization for all Cubes or benchmark freeze.
 - User previously insisted the validated scene must not change; may add things. Retain existing scene, tool, mass/material/geometry. Cube04 final neighbor acceptance remains distinct from Cube05 center acceptance.

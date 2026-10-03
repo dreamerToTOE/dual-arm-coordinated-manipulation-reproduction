@@ -1,5 +1,10 @@
 # BUGS
 
+## BUG-013 — Cube04 pure single-arm insertion drifts despite precise initial placement
+- Date: 2026-10-03; TASK01; OPEN_PHYSICAL_VALIDATION.
+- First variant test starts with Y error 0.046 mm yet ends at 1.827-mm neighbor gap (> unchanged 1.5 mm), safe stop and no Cube05. Sparse physical insertion Y span about 1.089 mm, yaw up to 0.210 deg. This shows initial precision alone does not guarantee tracking, not proof of physical impossibility.
+- Original initial/pre-close/final gates and model preserved. Low-speed final-binary repeat pending. Any online Y feedback, rear+side restoration or force controller beyond the approved Cube05-like method needs explicit direction, not hidden compensation.
+
 ## 2026-10-03 — Cube04 variant validation checkpoint
 - New test-runner callback argument mismatch fixed before any robot control. Preserve negative startup log; not an inherited scene failure. New Cube04 protocol physical validation pending, cannot mark BUG-009 globally resolved: first three cooperative rear+side protocol still unmet.
 - Cube04 original final <=1.5-mm neighbor gap retained; precision target can still fail through physical tracking/yaw drift. Stop on real failure instead of enabling side trim or widening acceptance. Force/time/model/MoveIt teardown issues remain open.

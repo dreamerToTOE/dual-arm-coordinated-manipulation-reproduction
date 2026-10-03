@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D015 — Retain failed pure single-arm test before considering feedback
+- Date: 2026-10-03; [ENGINEERING]/[EXPERIMENTAL]. Cube04 precise-stage variant fails final 1.5-mm neighbor gate at 1.827 mm; do not restore inner trim, widen gates or declare physical impossibility after one sample. Repeat clean physics using final built binary and slower unchanged motion protocol.
+- An online lateral-tracking controller would be additional method work, not simply reusing Cube05. Ask before changing that research protocol; all frozen/numeric questions stay pending.
+
 ## D014 — Authorized Cube04 single-rear insertion variant
 - Date: 2026-10-03; [ADAPTATION]/[DEVIATION], explicit user approval: “那第4块采取第5块的推入方式”. Cube04 is an exception to D004; no blanket approval to change first three or freeze numbers.
 - Add an independent executable reusing existing Task26/27 code, guarded compile-time policy; old targets preserve behavior. Do not change original Isaac scene/tool/mass/material/ACM or final placement gates.

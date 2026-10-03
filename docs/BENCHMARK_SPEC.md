@@ -1,5 +1,9 @@
 # Benchmark Specification
 
+## Candidate exception approved 2026-10-03 (not frozen)
+
+User explicitly requests Cube04 adopting Cube05 precise-stage/single-rear insertion (D014). Independent controller variant only: Cube04 is no longer a rear+side dual-suction insertion subcase; Cube01–03 retain intended D004 requirements. Historical B-fixture text below and draft YAML are retained rather than silently reclassified as validated. Do not aggregate results as faithful cooperative baseline evidence. Scene geometry/material unchanged; new PRE_PUSH Y control target uses prior 0.5-mm pressed endpoint. See `reports/TASK01_CUBE04_PRECISION_INSERT.md`.
+
 Status: **DRAFT until TASK01, then FROZEN as benchmark_v1.**
 
 TASK01 candidate configuration: `configs/benchmark/benchmark_v1.yaml` (DRAFT). Its source-derived geometry is a starting point only; the null fields, contact topology, sensor contract, physics timing, perturbations and thresholds must be resolved and user-reviewed before any FROZEN claim.

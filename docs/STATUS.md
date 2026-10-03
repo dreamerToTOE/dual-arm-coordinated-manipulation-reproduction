@@ -2,6 +2,10 @@
 
 Last update: 2026-10-03
 
+## Cube04 physical negative checkpoint
+
+First time_scale=3 exploratory trial: precise pre-staging 0.046 mm, but final neighbor gap 1.827 mm > original 1.5 mm, safe stop; Cube05 not executed. No inner trim or helper-side suction. Final built binary now repeating from clean physics at time_scale=5; no feedback/force controller added. New failure preserved, TASK01 not passed.
+
 ## 2026-10-03 Cube04 protocol adaptation — running
 
 User explicitly approved Cube04 adopting Cube05 precise-stage/single-rear-suction insertion. New independent executable/build/unit checks pass; Cube04/05 physical probe now running with first three pre-placed/settled. Original scenes/materials/ACM/final gates preserved. Control PRE_PUSH Y changes to the existing 0.5-mm pressed target; benchmark YAML unchanged. Report: `reports/TASK01_CUBE04_PRECISION_INSERT.md`. TASK01 remains IN_PROGRESS, TASK02 TODO.

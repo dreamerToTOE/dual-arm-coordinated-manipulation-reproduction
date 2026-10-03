@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — Cube04 precise staging is not sufficient in first physical trial
+- `_02`: FAIL_CUBE04_FINAL_NEIGHBOR_GAP_SAFE_STOP, controller exit 1, zero completed new batches. Initial Y error 0.046 mm / oriented clearance 0.454 mm; final original axis-gap acceptance 1.827 mm, oriented projected gap 1.607 mm. Cube05 not executed. Raw push torque max 23.0 Nm. 6,036 sparse samples, zero integrity errors, no helper-side suction/inner trim. MoveIt teardown -11 retained separately.
+- `_03`: FINAL_BUILD_REPETITION_RUNNING, time_scale=5 instead of 3, clean original physics, same original gates; not a new force/feedback algorithm. Exact source/binary identity will be recorded.
+
 ## 2026-10-03 — Cube04 precision variant startup
 - C++ policy regression and Python syntax PASS. Package build PASS; non-portable directive-inside-logging-macro warning removed before final test build.
 - `20261003_TASK01_cube04_precision_01`: FAIL_NEW_PROBE_STARTUP_API, no controller execution; initially passed extra argument to legacy callback subscription; raw startup preserved. Final probe uses existing verified post-step API and exception artifact writer.
