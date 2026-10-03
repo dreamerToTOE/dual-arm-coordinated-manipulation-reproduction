@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-03 — TASK01 runtime-repair checkpoint (execution ongoing)
+- User requested continuing until TASK01 works, not another routine interim handoff. No numeric freeze or theory change was inferred.
+- Fixed Task27 pre-close minimum-step overshoot with full measured residual correction capped at 1 mm and no minimum step. A seeded local FK/Jacobian micro-solver requires 5 um / 50 urad endpoint accuracy; joint bounds, seed neighborhood, full synchronized FCL, original 0.300 mm measured gate and three-attempt stop remain mandatory. This is [ENGINEERING], not a new paper planner. Task26 default path unchanged.
+- Corrected scaled-USD quaternion extraction only in Task27; position/time lag remains separately open. Legacy fixes committed on task01-runtime-fixes at d80b6b6. Pure C++ regression PASS and ROS package build PASS (55.7 s); initial missing include-path build FAIL retained.
+- Explicit official asset-root option bypasses failed S3 directory discovery, without substituting the FR3 asset. Real link8 incoming fixed-joint anchor/axes audit now succeeds on both arms.
+- Fresh normal-feed five-Cube physical run ongoing: Cube01 legacy batch PASS; preclose asymmetry 0.447 -> 0.001 mm. Cube02 passes preclose at 0.287 mm, below unchanged 0.300 mm gate. Do not infer final 5/5 yet.
+- Audit found an additional protocol gap: legacy helper parks during deep push, and inner cubes receive solo rear-suction lateral trim. A legacy full-flow PASS alone cannot validate the explicitly requested D004 rear-primary/side-constraint and role-swap fixture protocol. Geometry/gates remain unchanged; benchmark draft still has 36 nulls.
+
 Append-only project work log.
 
 ## 2026-09-29 — Repository initialization

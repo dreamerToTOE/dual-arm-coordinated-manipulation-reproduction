@@ -1,5 +1,8 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — Persistence request
+- User explicitly requested: “继续，直到task01调通，再汇报”. Continue safe in-scope repair and physical verification instead of routine partial handoff. Preserve scientific review/stop conditions; this does not authorize arbitrary numeric freeze or deviations from the approved contact protocol.
+
 Persistent user decisions/feedback that must influence future work.
 
 ## 2026-09-29

@@ -1,0 +1,31 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_preclose_residual_regression_not_paper",
+  "platform": "native_C++17_and_ROS2_Humble",
+  "git_commit": "2fe12f2 + task01 checkpoint working tree",
+  "legacy_git_commit": "d80b6b6 (task01-runtime-fixes)",
+  "seed": null,
+  "config_path": "configs/benchmark/benchmark_v1.yaml (unchanged DRAFT)",
+  "command": [
+    "g++ -std=c++17 -Wall -Wextra -pedantic -I/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_palletize/include platforms/isaac_ros2/probes/test_preclose_alignment.cpp -o results/20261003_TASK01_preclose_unit/raw/test_preclose_alignment",
+    "results/20261003_TASK01_preclose_unit/raw/test_preclose_alignment",
+    "cd /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws && source /opt/ros/humble/setup.bash && source install/setup.bash && colcon build --packages-select fr3_dual_palletize --symlink-install --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release"
+  ],
+  "status": "PASS_UNIT_AND_BUILD_ONLY",
+  "metrics": {
+    "residual_regression_assertions": "PASS including previous Cube02 overshoot, signs, clamping and NaN rejection",
+    "initial_build": "FAIL: new header include path was missing from target; retained as negative result",
+    "corrected_build_exit_code": 0,
+    "corrected_build_duration_s": 55.7,
+    "legacy_symmetry_gate_m": 0.0003,
+    "legacy_retry_limit": 3,
+    "maximum_correction_m": 0.001,
+    "fine_FK_position_gate_m": 0.000005,
+    "fine_FK_orientation_gate_rad": 0.00005,
+    "benchmark_gate_change": false,
+    "physics_change": false,
+    "acm_expansion": false
+  },
+  "artifact_paths": ["platforms/isaac_ros2/probes/test_preclose_alignment.cpp", "raw/colcon_build.log", "raw/test_preclose_alignment"],
+  "boundary": "This is not proof of physical five-Cube completion or frozen benchmark validity."
+}

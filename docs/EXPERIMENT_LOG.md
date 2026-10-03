@@ -1,5 +1,10 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — TASK01 corrected runtime checkpoint
+- Run: results/20261003_TASK01_preclose_unit/metadata.json — PASS_UNIT_AND_BUILD_ONLY. Residual regression and corrected colcon build PASS; initial target include-path failure retained.
+- Run: results/20261003_TASK01_full_five_corrected_01/metadata.json — RUNNING_CHECKPOINT. Fresh headless normal feed, max_batches=5, right center pusher, time_scale=3, no pre-placed fixture. Cube01 complete; Cube02 pre-close correction passes original gate. Final completion/force/pose audit pending.
+- Link8 authored incoming fixed-joint anchor/axes audit succeeds; empty-branch static force/torque consistency is preliminary only, not dynamic contact/internal-force calibration.
+
 Append-only experiment index.
 
 At repository initialization, no experiments had been run.

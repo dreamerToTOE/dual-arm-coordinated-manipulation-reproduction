@@ -1,5 +1,18 @@
 # BUGS
 
+## 2026-10-03 — BUG-008 bounded-correction checkpoint
+Status: FIX_IMPLEMENTED / FULL_FLOW_VALIDATION_PENDING
+Evidence: d80b6b6 in legacy task01-runtime-fixes replaces 0.650 mm minimum correction with measured residual and precise seeded FK solving. Unit/build PASS. Fresh Cube01 0.447 -> 0.001 mm; Cube02 0.287 mm passes original 0.300 mm gate. Do not claim full five-Cube fix until physical completion.
+
+## BUG-009 — Legacy first-four push contact protocol differs from D004
+Date: 2026-10-03
+Task: TASK01
+Status: OPEN
+Symptom: Legacy deep push holds helper at a parked pose, rather than side-face suction constraint. Inner cubes later get rear-arm-only lateral trim, not the approved side-primary/rear-hold role swap.
+Evidence: task26_truck_box_push_in.cpp executePushWithSupervision call and isInnerReferenceTask block under TASK27_FIVE_CUBE.
+Impact: Legacy full five-Cube demo PASS cannot establish requested cooperative fixture behavior or be relabeled as paper dual-arm insertion evidence.
+Resolution needed: Verify contact accessibility and implement/test the distinct fixture protocol without geometry/gate relaxation; stop for user direction if physical constraints require benchmark change.
+
 Append-only unresolved/resolved bug register.
 
 At repository initialization, no bugs were recorded.

@@ -19,6 +19,8 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--duration-sec", type=float, default=1200.0)
     parser.add_argument("--verify-only", action="store_true")
+    parser.add_argument("--asset-root", default=None,
+                        help="Explicit official Isaac asset root; bypass unreliable directory discovery only")
     args = parser.parse_args()
     if args.duration_sec <= 0:
         parser.error("duration must be positive")
@@ -45,13 +47,22 @@ def main():
         import omni.usd
         from pxr import PhysxSchema, UsdPhysics
         from isaacsim.core.prims import RigidPrim
+        import isaacsim.storage.native as storage
         sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
         from physics_object_sampler import PhysicsObjectSampler
         from physics_contact_sampler import PhysicsContactSampler
         omni.usd.get_context().new_stage()
         namespace = {"_SIDE_SUCTION_SCENARIO": "task27"}
         source = legacy_root / "isaac/scripts/task26_truck_box_scene.py"
-        exec(compile(source.read_text(encoding="utf-8"), str(source), "exec"), namespace, namespace)
+        # [ENGINEERING] S3 对象可读但目录发现可能失败。仅在显式给出根路径时
+        # 跳过目录发现；旧场景仍 stat/引用同一官方 FR3 USD，不替换机器人。
+        original_discovery = storage.get_assets_root_path
+        if args.asset_root:
+            storage.get_assets_root_path = lambda: args.asset_root
+        try:
+            exec(compile(source.read_text(encoding="utf-8"), str(source), "exec"), namespace, namespace)
+        finally:
+            storage.get_assets_root_path = original_discovery
         scene_values = {"entry_x": float(namespace["BOX_INTERIOR_X"][0]),
                         "table_top_z": float(namespace["TABLE_TOP_Z"]),
                         "tcp_y": float(namespace["TCP_Y"]),
@@ -102,6 +113,7 @@ def main():
                         "child_local_joint_quaternion_xyzw": list(quaternion.GetImaginary()) + [quaternion.GetReal()],
                         "note": "Authored frame; robot links have no calibration Cube scaling. Non-fixed axis conventions need separate validation."}
         topology["incoming_joint_frames_authored"] = incoming_joints
+        topology["explicit_asset_root"] = args.asset_root
         topology["force_interpretation"] = "RAW reaction in incoming joint axes, about joint anchor; not world/link axes or TCP wrench"
         link8_indices = {side: list(art.link_paths[0]).index(f"/World/{side}_fr3/fr3_link8")
                          for side, art in articulations.items()}

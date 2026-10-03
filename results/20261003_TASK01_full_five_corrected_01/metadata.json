@@ -1,0 +1,26 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_legacy_five_Cube_regression_with_ENGINEERING_fixes",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2",
+  "git_commit": "2fe12f2 + explicit-asset-root runner working tree",
+  "legacy_git_commit": "d80b6b6",
+  "seed": "OMPL seed uncontrolled; normal fixed feed layout",
+  "config_path": "configs/benchmark/benchmark_v1.yaml (DRAFT, 36 null fields)",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_full_fixture_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --duration-sec 2400 --output-dir results/20261003_TASK01_full_five_corrected_01/raw",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task27_five_cube_center_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=3.0"
+  ],
+  "status": "RUNNING_CHECKPOINT",
+  "metrics": {
+    "first_cube_legacy_batch_pass": true,
+    "first_preclose_asymmetry_before_mm": 0.447,
+    "first_preclose_asymmetry_after_mm": 0.001,
+    "second_preclose_after_mm": 0.287,
+    "original_gate_mm": 0.300,
+    "normal_feed_no_preplacement": true,
+    "frame_audit_startup": "PASS: link8 incoming fixed joint child anchor zero and child axes identity on both arms"
+  },
+  "artifact_paths": ["raw/controller.log", "raw/moveit.log", "raw/kit.log", "raw/topology.json", "raw/physics_contact_samples.jsonl"],
+  "boundary": "Completion pending. Legacy first-four helper parking/solo inner trim is not yet the D004 cooperative contact protocol. No scientific TASK01 PASS/FROZEN claim."
+}

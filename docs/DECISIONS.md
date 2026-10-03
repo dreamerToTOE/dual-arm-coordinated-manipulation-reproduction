@@ -1,5 +1,12 @@
 # DECISIONS
 
+## D010 — Repair quantization without weakening alignment or bypassing protocol review
+- Date: 2026-10-03
+- Classification: [ENGINEERING] bounded residual/local-FK correction and scaled-transform extraction; [EXPERIMENTAL] normal-feed regression.
+- Decision: Remove mandatory 0.650 mm pre-close step, keep maximum 1 mm, original 0.300 mm physical gate and three attempts. Use seeded local FK micro-IK only while ungrasped, with conservative scope/joint bounds and unchanged full synchronized FCL. Task26 default unchanged.
+- Measurement: Task27 scale removal fixes its quaternion only, not USD frame lag. Explicit official asset root only avoids directory discovery failure; same FR3 source still required.
+- Scientific boundary: A repaired legacy five-Cube demo is not automatically D004 fixture-protocol or TASK01 freeze evidence. No benchmark numeric approval, geometry/mass/material change, ACM expansion or paper implementation is authorized by persistence request.
+
 Append-only architectural and scientific decisions.
 
 ## D001 — Two-platform strategy

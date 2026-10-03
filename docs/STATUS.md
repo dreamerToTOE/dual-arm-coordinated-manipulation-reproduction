@@ -20,3 +20,7 @@ Repository initialized. No baseline implementation has started.
 
 ## Current gate
 **Do not implement paper algorithms yet. Draft and review TASK01 benchmark_v1 first.**
+
+## 2026-10-03 runtime-repair checkpoint
+
+Bounded fine pre-close correction and Task27 quaternion fix are implemented in legacy branch `task01-runtime-fixes` (`d80b6b6`); unit/build PASS. Fresh normal five-Cube physical regression is running: Cube01 complete and Cube02 pre-close passes unchanged 0.300 mm gate. No final full-flow result yet. Real link8 fixed-joint frame/anchor audit now succeeds; dynamic contact compensation still unvalidated. Legacy first-four push/inner-trim topology also differs from D004 (BUG-009), so even legacy demo completion alone cannot freeze TASK01. YAML remains DRAFT with 36 nulls; TASK02 TODO.
