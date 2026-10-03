@@ -29,7 +29,8 @@
 - 独立 C++ 策略测试：OPEN/有限7关节/步数上限/非有限输入/越界拒绝 PASS。
 - Python 19/19 PASS；语法/diff PASS。
 - benchmark YAML 原 SHA `a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8` 未改，36 null；TASK01 IN_PROGRESS / TASK02 TODO。
-- 真 RobotModel 只读探针与物理验证尚未运行；不得称为交付 PASS。
+- 真 RobotModel 只读最终探针 exit0：左右20mm连续seed路径/FCL通过；已释放 Cube 挡住路径时 FCL 正确拒绝；超范围/全零 quaternion 拒绝；零位移输出有效保持。首轮探针将 Quaternion{} 误当全零（ROS默认w=1），仅修正测试输入，原失败日志保留。控制器门限未改。
+- 当前独立第五件物理测试运行；二进制 SHA `77b4f4993c0a5a0cecc82e03c7a671182f384d60576e42e14443d80c78b0866f`，legacy `4f88c68`（运行控制器同 `e25de24`），repro `9098faf`。前三/四件预置只用于隔离，不能称完整五件交付 PASS。
 
 ## Fidelity
 

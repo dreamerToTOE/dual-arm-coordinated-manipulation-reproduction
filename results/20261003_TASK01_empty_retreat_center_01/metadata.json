@@ -1,0 +1,19 @@
+{
+  "task": "TASK01", "baseline": "EXPERIMENTAL_Cube05_empty_retreat_repair",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2", "git_commit": "9098faf",
+  "legacy_git_commit": "4f88c68 (controller identical to e25de24)",
+  "tested_binary_sha256": "77b4f4993c0a5a0cecc82e03c7a671182f384d60576e42e14443d80c78b0866f",
+  "tested_controller_source_sha256": "3087d64b2cdc59561c6a32333e4dbd6690214d1d3b0e7273df7c37ba4887d256",
+  "benchmark_yaml_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "seed": "OMPL uncontrolled, original slot/cell positions; four preplaced",
+  "config_path": "configs/benchmark/benchmark_v1.yaml DRAFT + D014/D015 engineering variant",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 4 --duration-sec 1150 --output-dir results/20261003_TASK01_empty_retreat_center_01/raw",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=5 -p max_batches:=1 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
+  ],
+  "status": "RUNNING_PHYSICAL_CUBE05; READ_ONLY_TEST_PASS",
+  "metrics": {},
+  "artifact_paths": ["raw/kit.log", "raw/controller.log", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json"],
+  "boundary": "Only Cube05 may count as executed. Four preplaced fixture Cubes are not proof of preparation; no physics/material/ACM/gate change."
+}

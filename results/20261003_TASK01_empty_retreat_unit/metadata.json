@@ -1,0 +1,19 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_bounded_seeded_empty_retreat_read_only",
+  "platform": "ROS2_Humble_MoveIt2_real_FR3_RobotModel_no_sim_execution",
+  "git_commit": "9098faf",
+  "legacy_git_commit": "4f88c68",
+  "seed": "deterministic home kHomeQ; no OMPL planning used",
+  "config_path": "original dual_fr3_side_suction URDF/SRDF + benchmark_v1 DRAFT (unchanged)",
+  "command": "ros2 run fr3_dual_palletize task01_empty_retreat_probe",
+  "status": "PASS_READ_ONLY_FINAL_REPEAT; FIRST_NEGATIVE_TEST_RETAINED",
+  "metrics": {"first_probe_exit": 1, "left_right_20mm_and_FCL_passed": true,
+    "reason": "Test initialized Quaternion{} but ROS default w=1; expected invalid quaternion was actually valid. Probe-only fixture corrected to explicit all-zero. No production gate weakened.",
+    "python_tests": 19, "pure_cpp_guard_tests": "PASS", "final_probe_exit": 0,
+    "left_right_line_deviation_mm_printed": 0.000, "FCL_samples": 34,
+    "released_cube_collision_rejected": true, "zero_displacement_valid": true,
+    "oversize_and_invalid_quaternion_rejected": true},
+  "artifact_paths": ["raw/probe.log", "raw/probe_final.log", "raw/moveit.log"],
+  "boundary": "No Arm constructed; no joint/suction commands. This is FK/FCL software validation, not physical demonstration."
+}
