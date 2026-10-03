@@ -4,6 +4,8 @@
 
 Added macro-isolated measured-state empty retreat / fresh released-Cube FCL world / bounded seed-continuation fallback, reusing existing fine IK rather than changing loaded/contact control. Added read-only real RobotModel FK/FCL probe and pure C++ guards; added optional four-preplaced fixture mode. colcon final completion 57.2 s, policy PASS, Python19/19, unchanged YAML/36 nulls. Physical results pending; negative prior fourth/fifth results retained.
 
+Follow-up: final real RobotModel basic probe PASS after correcting only invalid-quaternion test input (ROS default w=1). Long rounded-seed no-command replay left404.716/right301.601mm PASS +610 FCL samples including released Cube. Actual isolated fifth full cycle/controller exit0:0.540mm center/0.514mm deepgap, 4691 sparse samples, no integrity errors. Four fixture cubes preplaced; fallback not physically triggered, so no causal/reliability claim. All owned first-run runtimes stopped; MoveIt teardown -11. New clean actual fourth/fifth trial starting.
+
 ## 2026-10-03 — Cube04 variant physical handoff / tests stopped
 - Final `7be3659` binary time_scale=5 passes fourth: precise staging 0.040 mm, final neighbor 0.227 mm, deep gap 0.413 mm, cell error 1.339 mm. No helper-side suction or inner trim; short-clearance/RRT transition to fifth completes.
 - Fifth actually dual-carried/dropped, but actual empty Cartesian retreat fails original 5-mm line-deviation guard (up to 450.1 mm), safely opens both cups and exits 1. Only fourth physically completed. No ignored constraint/fallback/extra feedback implemented; original fifth controller behavior remains preserved.

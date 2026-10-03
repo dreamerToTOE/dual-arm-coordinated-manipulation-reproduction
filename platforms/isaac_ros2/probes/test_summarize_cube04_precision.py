@@ -34,6 +34,12 @@ class Cube04SummaryTest(unittest.TestCase):
             self.assertEqual(result['integrity_errors'], [])
             self.assertAlmostEqual(result['cube04_axis_center_neighbor_gap_mm'], .5)
             self.assertAlmostEqual(result['cube04_oriented_projection_neighbor_gap_mm'], .5)
+            # 独立第五件探针预置4件，不能写成“前三件预置”或误计第四件吸附。
+            (run / 'raw/model_audit.json').write_text(json.dumps({'preplaced_count': 4}))
+            fourth_fixture = module.summarize(run)
+            self.assertEqual(fourth_fixture['fixture_preplaced_count'], 4)
+            self.assertIn('count=4', fourth_fixture['boundary'])
+            self.assertNotIn('cube04_insertion_y_span_mm', fourth_fixture)
 
 
 if __name__ == '__main__':

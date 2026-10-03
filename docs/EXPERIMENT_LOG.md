@@ -4,6 +4,8 @@
 
 Result: PASS software only. Commands: `colcon build --packages-select fr3_dual_palletize --symlink-install --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release`, C++ policy -Wall/-Wextra/-Werror, Python unittest19/19, benchmark draft analytic checker PASS/36nulls. No robot commands yet in this iteration. Report: TASK01_EMPTY_RETREAT_REPAIR.md. Real RobotModel and physical trials next.
 
+Follow-up runs: `20261003_TASK01_empty_retreat_unit` basic + long deterministic rounded-seed FK/FCL replay PASS (initial probe-only input mistake retained); `20261003_TASK01_empty_retreat_center_01` actual fifth full physical exit0/PASS, 0.540mm error, 0.514mm deepgap, 4691 samples/0errors. CurrentCube FCL included, no fallback trigger, no threshold/model/physics change. Four preplaced not executed; exact commands/source hashes in run metadata. MoveIt teardown -11. `...empty_retreat_pair_01` starts next clean fourth/fifth experiment.
+
 ## 2026-10-03 — Final Cube04 variant physical result: PARTIAL
 - `_03`: PARTIAL_CUBE04_PASS_CUBE05_EMPTY_RETREAT_PLANNING_ABORT. Exact final source `7be3659`, binary `daec912…`, time_scale=5. Actual batch4 PASS (neighbor 0.227 mm, deep 0.413 mm); batch5 transport/drop done, empty retreat invalid FK path rejected, no fifth rear push. Controller exit 1, move_group teardown -11.
 - 8,985 sparse post-step snapshots, 0 sampler/integrity errors; fourth helper closed inside=0, inner trim commands=0; fourth lateral span 0.205 mm/yaw max 0.053 deg, max raw push joint torque 24.29 Nm. Not calibrated contact wrench. First three pre-placed: not full-five proof or stable-success estimate. Both test processes stopped.

@@ -4,6 +4,8 @@
 
 Status: OPEN / engineering patch built, not physically verified. Prior Cube04/05 slow run safely rejects Cube05 retreat at 289–450 mm FK deviation despite fraction=1. New independent precision variant uses actual measured start state, then bounded seeded local IK if ordinary candidates fail; released current Cube included in strict FCL. No collision exemptions; real starting collision will stop, not be hidden. Report: TASK01_EMPTY_RETREAT_REPAIR.md. Cube04 drift/model/force/teardown issues remain separate and open.
 
+Follow-up: isolated fifth actual full physical PASS with measured-start ordinary retreat (0.002/0.001mm FK deviations) and currentCube FCL. Long seeded fallback passes separate read-only replay. No failing-state exact A/B replay or repeated physical proof yet; Cube04→05 continuation pending. BUG-004 teardown -11 repeats; no claim of clean MoveIt lifecycle.
+
 ## BUG-014 — Fifth empty retreat can switch to a large off-line IK branch
 - Date: 2026-10-03; TASK01; OPEN_ENGINEERING_ROBUSTNESS.
 - In final Cube04→05 test, fourth passes and fifth carries/drops, but actual PREPLANNED_COMMON_RETREAT left trajectories show 289.3–450.1 mm FK deviation from the requested line. Original 5-mm guard correctly refuses execution; controller opens both cups and exits 1. No collision/line threshold widened. Candidate preflight alone does not ensure actual later replanning remains on the same branch.

@@ -18,7 +18,10 @@ def half_y(q):
 
 def summarize(run_dir):
     text = (run_dir / 'raw/controller.log').read_text(encoding='utf-8')
+    audit_path = run_dir / 'raw/model_audit.json'
+    preplaced_count = json.loads(audit_path.read_text()).get('preplaced_count') if audit_path.exists() else None
     metrics = {
+        'fixture_preplaced_count': preplaced_count,
         'completed_batches': [int(n) for n in re.findall(r'Task27 batch (\d+) PASS:', text)],
         'cube04_inner_trim_command_lines': len(re.findall(r'task27_minus_inner INNER_(?:SIDE|EXTRA)_TRIM', text)),
         'cube04_precision_gate': re.findall(r'CUBE04_PRECISION_GATE: (.*)', text),
@@ -46,7 +49,7 @@ def summarize(run_dir):
                     raise ValueError('Nonunit quaternion')
             fourth, fifth = bodies[3], bodies[4]
             # 下一件供料前统计第四件，避免误计第五件双臂搬运的 CLOSED。
-            if row['feed_state'][4] == 0 and fourth['position_m'][0] >= .91:
+            if (preplaced_count is None or preplaced_count < 4) and row['feed_state'][4] == 0 and fourth['position_m'][0] >= .91:
                 metrics['fourth_helper_closed_inside_samples'] += int(row['suction_closed']['right'])
                 if row['suction_closed']['left']:
                     ys.append(fourth['position_m'][1]); yaws.append(yaw_deg(fourth['quaternion_xyzw']))
@@ -65,7 +68,8 @@ def summarize(run_dir):
     if ys:
         metrics['cube04_insertion_y_span_mm'] = 1000*(max(ys)-min(ys))
         metrics['cube04_insertion_abs_yaw_max_deg'] = max(map(abs, yaws))
-    metrics['boundary'] = 'First three preplaced; sparse readout is not force/reliability proof; projected gap is not PhysX penetration depth'
+    metrics['boundary'] = (f'Fixture preplaced count={preplaced_count}; preplaced cubes are not executed; '
+        'sparse readout is not force/reliability proof; projected gap is not PhysX penetration depth')
     return metrics
 
 

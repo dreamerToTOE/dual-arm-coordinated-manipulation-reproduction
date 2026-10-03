@@ -12,8 +12,18 @@
     "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=5 -p max_batches:=1 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
   ],
-  "status": "RUNNING_PHYSICAL_CUBE05; READ_ONLY_TEST_PASS",
-  "metrics": {},
-  "artifact_paths": ["raw/kit.log", "raw/controller.log", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json"],
+  "status": "PASS_ISOLATED_CUBE05_PHYSICAL; NOT_FULL_FIVE",
+  "metrics": {"controller_exit_code": 0, "completed_batches": [5],
+    "center_error_mm": 0.540, "deep_wall_gap_mm": 0.514,
+    "positive_inner_gap_mm": 1.335, "negative_inner_gap_mm": 1.665,
+    "empty_retreat_left_line_deviation_mm": 0.002,
+    "empty_retreat_right_line_deviation_mm": 0.001,
+    "empty_retreat_measured_vs_command_left_rad": 0.000809,
+    "empty_retreat_measured_vs_command_right_rad": 0.001186,
+    "empty_retreat_released_cube_FCL_samples": 290,
+    "fallback_used_during_physical_run": false, "snapshots": 4691,
+    "sampler_and_integrity_errors": 0, "peak_push_joint_torque_nm_raw": 35.52,
+    "final_physics_yaw_deg": 0.062808, "moveit_teardown_exit_code": -11},
+  "artifact_paths": ["analysis.json", "raw/kit.log", "raw/controller.log", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json", "../20261003_TASK01_empty_retreat_unit/raw/moveit.log"],
   "boundary": "Only Cube05 may count as executed. Four preplaced fixture Cubes are not proof of preparation; no physics/material/ACM/gate change."
 }
