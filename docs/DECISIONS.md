@@ -1,5 +1,12 @@
 # DECISIONS
 
+## D015 — Engineering continuation limited to already-released empty arms
+
+- Date: 2026-10-03.
+- Classification: [ENGINEERING], no paper-method or contact-protocol change.
+- Decision: In the approved Cube04 independent variant only, use measured dual-arm seed after confirmed OPEN. Ordinary Cartesian first; bounded piecewise fine-IK seed continuation as fallback, same targets. Include the released Cube in synchronized full FCL and retain all original gates. No feedback/contact/model/physics adjustment to cure drift.
+- User boundary: Continue independently only while no hard research decision is needed; stop and record choices if model/material/contact strategy needs to change. Freeze gates remain pending/36 nulls, TASK02 untouched.
+
 ## 2026-10-03 — D014/D015 validation boundary
 - Final slow trial validates actual fourth single-rear protocol once with original gates; preceding faster trial failed. Report limited feasibility, not stable/five-Cube reproduction. Fifth empty Cartesian exit is independently refused by existing geometric guard. Do not change fifth protocol or hide this negative by calling fourth batch PASS whole-process PASS.
 - Recommended next engineering step: safe empty-retreat start-state/IK candidate diagnosis, then repeated fourth→fifth tests. No scene/tool/material/gate change, force controller, research-baseline shortcut or numeric freeze.

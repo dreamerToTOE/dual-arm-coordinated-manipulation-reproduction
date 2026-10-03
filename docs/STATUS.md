@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-03 latest — empty retreat engineering repair, tests pending
+
+New precision-variant empty retreat uses measured joint seed and bounded continuous-seed fallback, with released Cube included in strict FCL. Build + policy +19 Python tests PASS; real RobotModel / physical verification next. No scene/model/material/ACM/gate change. Report: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. TASK01 IN_PROGRESS, TASK02 TODO; 36 nulls unchanged.
+
 Last update: 2026-10-03
 
 ## Latest Cube04 variant handoff — PARTIAL, physical tests stopped

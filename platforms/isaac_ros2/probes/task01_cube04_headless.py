@@ -1,4 +1,4 @@
-"""[EXPERIMENTAL] 保留旧场景，前三件预置落稳，真实执行第四/第五件。
+"""[EXPERIMENTAL] 保留旧场景，前3或4件预置落稳，真实执行余下件。
 
 只缩短测试准备过程；不能将预置前三件算作完整五件实测成功。
 不改旧场景源码、夹具、材质或物理参数；采样由 PhysX post-step 驱动。
@@ -20,6 +20,8 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--duration-sec", type=float, default=1000.0)
     parser.add_argument("--asset-root", required=True)
+    parser.add_argument("--preplaced-count", type=int, choices=(3, 4), default=3,
+                        help="4 isolates Cube05; never counts preplaced cubes as executed")
     args = parser.parse_args()
     if args.duration_sec <= 0:
         parser.error("duration must be positive")
@@ -61,7 +63,7 @@ def main():
         finally:
             storage.get_assets_root_path = original_discovery
         stage = omni.usd.get_context().get_stage()
-        cells = tuple(tuple(task["cell"]) for task in namespace["TASKS"][:3])
+        cells = tuple(tuple(task["cell"]) for task in namespace["TASKS"][:args.preplaced_count])
         for index, center in enumerate(cells, start=1):
             prim = stage.GetPrimAtPath(f"/World/Task27/Supply/Cube_{index:02d}")
             if not prim.IsValid():
@@ -92,12 +94,12 @@ def main():
         sim_view = tensors.create_simulation_view("numpy")
         materials = sim_view.create_rigid_body_view(list(bridge.cube_paths))
         (args.output_dir / "model_audit.json").write_text(json.dumps({
-            "preplaced_count": 3, "preplaced_cells_m": cells,
+            "preplaced_count": args.preplaced_count, "preplaced_cells_m": cells,
             "cube_masses_kg": np.asarray(view.get_masses()).tolist(),
             "actual_material_columns": ["static_friction", "dynamic_friction", "restitution"],
             "actual_cube_materials": np.asarray(materials.get_material_properties()).tolist(),
             "scene_source": str(legacy_root / "isaac/scripts/task26_truck_box_scene.py"),
-            "boundary": "Only Cube04/05 physically executed; no full-five proof"}, indent=2) + "\n")
+            "boundary": "Only non-preplaced cubes physically executed; no full-five proof"}, indent=2) + "\n")
         started = time.monotonic()
         ready = False
         with (args.output_dir / "physics_pose_samples.jsonl").open("w") as stream:
@@ -125,10 +127,11 @@ def main():
             while app.is_running() and not stopping and time.monotonic() - started < args.duration_sec:
                 app.update()
                 if not ready and all(state == namespace["STATE_ARRIVED"]
-                                     for state in bridge.cube_state[:3]):
+                                     for state in bridge.cube_state[:args.preplaced_count]):
                     ready = True
-                    print("[TASK01 Cube04] READY: first three physically settled; "
-                          "run first_batch:=4 max_batches:=1 or 2", flush=True)
+                    print(f"[TASK01 Cube04] READY: first {args.preplaced_count} physically settled; "
+                          f"run first_batch:={args.preplaced_count + 1} "
+                          f"max_batches:=1 or {5 - args.preplaced_count}", flush=True)
         subscription.unsubscribe()
         subscription = None
         (args.output_dir / "summary.json").write_text(json.dumps({
