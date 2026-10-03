@@ -1,0 +1,20 @@
+{
+  "task": "TASK01", "baseline": "EXPERIMENTAL_Cube04_precision_single_rear_insert_slower_repeat",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2", "git_commit": "900d106 at launch (probe unchanged in 1cbcf26)",
+  "legacy_git_commit": "7be3659",
+  "tested_binary_sha256": "daec9123398b79f75e24dae97c46f8da48a2cbee0d6060ad54fa6f5138ed1d1b",
+  "tested_controller_source_sha256": "49b79c06430cb253fd525eebc7d041b956c4d88ca1c5881a658b3800de630192",
+  "original_scene_source_sha256": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+  "benchmark_yaml_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "seed": "OMPL uncontrolled; original fixed slots; first three preplaced",
+  "config_path": "configs/benchmark/benchmark_v1.yaml DRAFT + D014 control variant",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --duration-sec 1300 --output-dir results/20261003_TASK01_cube04_precision_03/raw",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=4 -p max_batches:=2 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
+  ],
+  "status": "RUNNING_FINAL_BINARY_REPEAT",
+  "metrics": {"controller_result": "pending", "python_unit_tests_passed": 19},
+  "artifact_paths": ["analysis.json (pending)", "raw/controller.log", "raw/kit.log", "raw/moveit.log", "raw/physics_pose_samples.jsonl", "raw/summary.json (pending)", "raw/model_audit.json", "raw/python_tests.log"],
+  "boundary": "Only actual Cube04/05 tasks counted; first three preplaced. Low speed experimental run, not efficiency optimization, reliability/force/benchmark-freeze proof. No scene/material/ACM/gate relaxation."
+}

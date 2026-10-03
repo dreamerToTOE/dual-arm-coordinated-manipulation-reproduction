@@ -2,6 +2,10 @@
 
 Last update: 2026-10-03
 
+## Cube04 final-binary slow trial — fourth passed, fifth running
+
+Clean time_scale=5 trial passes Cube04 original final gates: neighbor 0.227 mm, deep-wall 0.413 mm, precise staging Y error 0.040 mm. No inner trim/helper side suction; short-clearance/RRT handoff to Cube05 completes (batch4 PASS). Cube05 actual transport/insert now running. Previous time_scale=3 trial failed; do not infer stable repeatability or causal speed-only fix.
+
 ## Cube04 physical negative checkpoint
 
 First time_scale=3 exploratory trial: precise pre-staging 0.046 mm, but final neighbor gap 1.827 mm > original 1.5 mm, safe stop; Cube05 not executed. No inner trim or helper-side suction. Final built binary now repeating from clean physics at time_scale=5; no feedback/force controller added. New failure preserved, TASK01 not passed.

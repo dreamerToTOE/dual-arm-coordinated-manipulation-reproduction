@@ -77,6 +77,7 @@ ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args \
 - 初次新探针使用旧 callback 的错误 API 参数，启动即退出；已换成现有验证探针相同的 PhysX post-step API，并补异常记录。不算物理任务失败/通过。
 - `_02` 第四件实际执行至推入/短退，但最终邻件间隙 1.827 mm 超过原 1.5 mm，controller exit 1；第5件未执行。暂放 Y 误差 0.046 mm / 初始旋转投影余隙 0.454 mm；推进期间稀疏物理 Y 范围 1.089 mm，yaw 最大 0.210 deg，原门限没有放宽。6036 个有效稀疏采样；实际辅助吸盘 CLOSED=0、INNER_SIDE_TRIM 命令=0。
 - `_02` controller 启动早于最后一次重编译完成；其二进制 SHA 已记录（缺最后的非有限输入门控保护/日志宏可移植性改动，物理流程相同），不能作为最终交付二进制验证。`_03` 单独清场复测最终 SHA，time_scale=5，未增加力控/横向反馈。
+- `_03` 中间检查：第四件暂放 Y 误差 0.040 mm，通过最终原门限，邻件间隙 0.227 mm / 深墙间隙 0.413 mm；短退后 RRT 到第五件上方，batch4 PASS。第五件仍在执行。不能把不同随机冗余构型+不同速度的两次试验解释为“减速必然解决”。
 - 所有物理负证据保留；无稳定性、多次重复或完整五件通过声明。
 - [ORIGINAL] 本次未实现论文算法；[ADAPTATION] 第四件用户批准的后吸直推协议；[ENGINEERING] 宏隔离/策略测试/门控；[DEVIATION] 第四件不再遵循旧 D004 双吸盘插入；[EXPERIMENTAL] 前三件预置缩短测试准备。
 - 未开始 TASK02；未解决原始力/时间标定、前三件 D004、MoveIt teardown 问题。
