@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-03 latest — Normal-feed current variant FAIL, stopped for review
+
+Full five-object attempt (no preplacement), same tested binary/model/gates: controller exit1, only Cube01 actual PASS. Cube02 pre-close Y gap asymmetry corrects2.230→0.427→0.001mm, but X TCP mismatch3.150mm exceeds original2.500mm alignment gate; suction never enabled, Cube03–05 not advanced. 7214 sparse PhysX samples/0errors. No controller/model/physics/gate change; all owned test processes stopped, MoveItteardown-11 repeats. Report `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md`. Prior partial/legacy PASS evidence retained; current variant is not full-flow stable. Next discuss XYZ execution residual diagnosis/correction scope plus pending model/contact/36numeric review; TASK01 IN_PROGRESS, TASK02 TODO.
+
 ## 2026-10-03 — Current variant full normal-feed regression preparing
 
 Adding only zero-preplaced test mode and read-only summaries, then actual first_batch=1/max_batches=5 using unchanged current binary/model/physics/gates. Previous isolated fifth and fourth→fifth PASS remain scoped results. Full-flow result pending; no paper method or benchmark freeze. Report: `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md`. Stop for user decision if model/contact/physics/gate changes become necessary; TASK02 TODO.

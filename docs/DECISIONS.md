@@ -1,5 +1,9 @@
 # DECISIONS
 
+## 2026-10-03 — Full-run failure retained, no autonomous compensation expansion
+
+Actual no-preplacement run failsCube02Xcorrespondence3.150mm>2.500mm afterYconverges0.001mm; onlyCube01placed. Keep same scene/model/control/gates and stop this test-only iteration rather than silently addXYZtracking compensation or relaxacceptance. Next scope should first isolate FK/tracking/metrology, then discuss bounded ungraspedXYZrepair; noforcecontroller/contactredesign/numericfreeze inferred. Earlierisolated/continuous4→5PASS remains true but cannot establish current full-five stability. TASK01IN_PROGRESS/TASK02TODO,36nulls unchanged.
+
 ## 2026-10-03 — Full-flow regression without expanding scope
 
 [ENGINEERING]/[EXPERIMENTAL]: repeated user continuation permits testing current approved variant from normal feed, not redesigning physics or contact. No preplacement and no runtime code/model/gate change. Actual five batch PASS and exit code are required for full-demo evidence; ARRIVED alone is insufficient. A failure requiring material/research decisions stops for tomorrow. Existing36nulls/TASK01 review/D004 first-three discrepancy remain unresolved even if this demo passes.

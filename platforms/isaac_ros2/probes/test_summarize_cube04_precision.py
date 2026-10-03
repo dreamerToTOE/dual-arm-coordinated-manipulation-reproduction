@@ -43,7 +43,10 @@ class Cube04SummaryTest(unittest.TestCase):
             self.assertFalse(fourth_fixture['full_five_batch_completion_reported'])
             # 全部供料 ARRIVED 不能冒充五件完成；必须有正常模式的五条批 PASS。
             (run / 'raw/model_audit.json').write_text(json.dumps({'preplaced_count': 0}))
-            self.assertFalse(module.summarize(run)['full_five_batch_completion_reported'])
+            incomplete = module.summarize(run)
+            self.assertFalse(incomplete['full_five_batch_completion_reported'])
+            self.assertFalse(incomplete['cube04_neighbor_geometry_available'])
+            self.assertIsNone(incomplete['cube04_axis_center_neighbor_gap_mm'])
             (run / 'raw/controller.log').write_text(
                 ''.join(f'Task27 batch {i} PASS:\n' for i in range(1, 6)) +
                 'task27_plus_outer final Ground Truth: cell_error=1.0 mm\n')

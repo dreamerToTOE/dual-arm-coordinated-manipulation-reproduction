@@ -68,8 +68,18 @@ def summarize(run_dir):
     metrics['final_physical_poses'] = [{'path': b['prim_path'], 'position_m': b['position_m'],
         'quaternion_xyzw': b['quaternion_xyzw'], 'yaw_deg': yaw_deg(b['quaternion_xyzw'])} for b in bodies]
     outer, fourth = bodies[1], bodies[3]
-    metrics['cube04_axis_center_neighbor_gap_mm'] = 1000*(fourth['position_m'][1]-outer['position_m'][1]-.120)
-    metrics['cube04_oriented_projection_neighbor_gap_mm'] = 1000*(fourth['position_m'][1]-half_y(fourth['quaternion_xyzw'])-outer['position_m'][1]-half_y(outer['quaternion_xyzw']))
+    # 中途失败时第四件可能仍在桌下停车位，不能将其坐标差报成码垛间隙。
+    neighbor_geometry_available = preplaced_count is None or (
+        (preplaced_count >= 2 or 2 in metrics['completed_batches']) and
+        (preplaced_count >= 4 or 4 in metrics['completed_batches']))
+    metrics['cube04_neighbor_geometry_available'] = neighbor_geometry_available
+    metrics['cube04_axis_center_neighbor_gap_mm'] = (
+        1000*(fourth['position_m'][1]-outer['position_m'][1]-.120)
+        if neighbor_geometry_available else None)
+    metrics['cube04_oriented_projection_neighbor_gap_mm'] = (
+        1000*(fourth['position_m'][1]-half_y(fourth['quaternion_xyzw'])-
+              outer['position_m'][1]-half_y(outer['quaternion_xyzw']))
+        if neighbor_geometry_available else None)
     if ys:
         metrics['cube04_insertion_y_span_mm'] = 1000*(max(ys)-min(ys))
         metrics['cube04_insertion_abs_yaw_max_deg'] = max(map(abs, yaws))

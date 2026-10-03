@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## Latest normal-feed precision-variant regression (2026-10-03)
+
+No preplacement, unchanged runtime/model/gates; actual five-object attempt fails safely at Cube02 before suction, controllerexit1 and onlybatch1PASS. FineYgapdelta reaches0.001mm, but actualX correspondence3.150mm>original2.500mm. Cube03–05notadvanced;7214valid sparse samples; all ownedruntimesstopped. `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md` containscommands/negativeevidence/nextscope. Do not reinterpret earlierisolated fifth/fourth→fifthPASS as stable full-flow. XYZtracking/modelmetrology diagnosis/correction scope and existingfriction/hiddenmass/D004/36numericreview stillneeded;TASK02notstarted.
+
 ## Latest engineering validation / user-review boundary (2026-10-03)
 
 Later than the historical failure checkpoints below: measured empty-retreat start / releasedCube strictFCL / bounded local-seed fallback implemented in independent approved precision variant. Basic and long no-command FK/FCL PASS; isolated actual Cube05 and fresh actual Cube04→05 pair both exit0/PASS. Fourth neighbor0.375mm/deep0.244mm; fifth error0.530mm/deep0.476mm. First3/4preplaced are not executed/full-five proof, fallback not physically triggered, no repeatability claim. Exact sources/commands/negative evidence: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. Task27 rotation fix from prior iteration preserved; USD dynamic timing still uncalibrated. Actualfriction0.5/0.5, hiddenmass, first-three D004 and36numericfields require review before benchmarkfreeze/paperalgorithms. All owned runtimes stopped; teardown-11 persists. No YAML/hash/scene/model/ACM/gate change.

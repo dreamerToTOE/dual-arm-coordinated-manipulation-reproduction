@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — Test-only continuation ended at actual alignment failure
+
+Completed remaining autonomous full-five regression rather than relying on preplacedfixturePASS. Currentvariant failsCube02pre-closeXgate, onlyCube01PASS; stoppedwithout suction/latercubes, no control/model/material/gate edits. User's hard-decision boundary respected: savefailure and proposedXYZdiagnosis/correction discussion plus unresolvedmodel/contact/numericalreview for tomorrow, not hidden compensation or benchmarkPASS. Raw and summarizedresults retained; ownedtestprocessesstopped.
+
 ## 2026-10-03 — Repeated autonomous-continuation request
 
 User: “如果你可以自己继续就继续，如果需要我来做硬性决断，就停下来等我明天来”. One remaining safe engineering validation is full five-Cube regression of the current variant from normal feed, not another protocol/model redesign. Announced PRE-TASK scope before edits; do not silently change physics/contact/numeric gates or start paper methods to obtain a PASS. Record any remaining hard decision for tomorrow.

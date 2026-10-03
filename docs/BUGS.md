@@ -1,5 +1,12 @@
 # BUGS
 
+## BUG-015 — Pre-close Y correction does not resolve actual X correspondence error
+
+- Date2026-10-03; TASK01; OPEN_DIAGNOSED_GATE_FAILURE.
+- Normal current-variant five-Cube run completesCube01, then Cube02preclose fails after3checks/controllerexit1 before suction. InitialX3.027mm; finalX3.150mm>original2.500mm, despite Ygapdelta2.230→0.427→0.001mm. Lateststationary published left/rightTCPx difference3.149754mm supports the gate failure; snapshots nonsynchronous, not motion-time metrology.
+- Code computes max(Cube-leftX,Cube-rightX,left-rightX). Current fine correction accumulates only Y execution residual, repeatedly nominalX/Z does not establish actualXYZ convergence. Tracking/model/metrology root cause not yet isolated; do not claim geometry impossible or force control necessary.
+- No original threshold/model/contact/control changed; Cube02notgrasped, Cube03–05notcommanded, all test processes stopped. Report/metadata: TASK01_PRECISION_FULL_FIVE_REGRESSION, precision_full_five_01. Discuss read-onlyFK-vs-Isaac diagnosis and bounded ungraspedXYZ correction scope before modifying runtime; material/D004/freeze remain pending. BUG-004teardown-11 also repeats independently.
+
 ## 2026-10-03 — Normal-feed test readiness guard
 
 Existing sparse probe was intentionally limited to preplaced3/4 and cancels batch1. New zero-preplaced mode must retain automatic initial feed and wait for actual first ARRIVED, not all([]). Added engineering test-mode guard/unit coverage; this is not a robot control defect or a scene repair. Earlier physical/model/force/teardown issues remain open; full normal-feed variant result pending.

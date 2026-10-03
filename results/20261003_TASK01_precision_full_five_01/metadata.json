@@ -15,8 +15,25 @@
     "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
   ],
-  "status": "RUNNING_NORMAL_FEED_REGRESSION",
-  "metrics": {"offline_python_tests_passed": 21, "preplaced_count": 0},
-  "artifact_paths": ["analysis.json", "raw/kit.log", "raw/moveit.log", "raw/controller.log", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json"],
+  "status": "FAIL_SAFE_STOP_CUBE02_PRE_CLOSE_X_ALIGNMENT; COMPLETED_1_OF_5",
+  "metrics": {
+    "offline_python_tests_passed": 21, "preplaced_count": 0,
+    "controller_exit_code": 1, "completed_batches": [1],
+    "cube01_center_error_mm": 1.605, "cube01_deep_wall_axis_gap_mm": 1.006,
+    "cube01_side_wall_axis_gap_mm": 1.251, "cube01_final_physx_yaw_deg": -0.968790,
+    "cube02_preclose_x_mismatch_mm": [3.027, 3.145, 3.150],
+    "cube02_preclose_gap_asymmetry_mm": [2.230, 0.427, 0.001],
+    "cube02_final_preclose_z_mismatch_mm": 1.521,
+    "unchanged_xyz_alignment_gate_mm": 2.500,
+    "unchanged_preclose_gap_asymmetry_gate_mm": 0.300,
+    "stopped_static_tcp_x_difference_mm_nonsynchronous": 3.149754,
+    "snapshots": 7214, "sampler_and_integrity_errors": 0,
+    "sampler_wall_s": 761.389368, "controller_wall_s_from_log": 472.035932,
+    "peak_push_joint_torque_nm_raw": 35.53,
+    "moveit_teardown_exit_code": -11, "joint_bridge_teardown_exit_code": 1,
+    "headless_sampling_process_exit_code": 0,
+    "cube02_suction_enabled": false, "cubes03_to_05_advanced": false
+  },
+  "artifact_paths": ["analysis.json", "raw/kit.log", "raw/moveit.log", "raw/controller.log", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json", "raw/stopped_left_tcp.yaml", "raw/stopped_right_tcp_typed.yaml", "raw/stopped_cube_poses.yaml"],
   "boundary": "Normal feed, all five must actually execute. No runtime source/model/physics/gate modification; full demo does not freeze benchmark or prove D004/paper protocol/reliability."
 }

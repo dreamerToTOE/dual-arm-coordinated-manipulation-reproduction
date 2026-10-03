@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — Current variant full-five actual FAIL_SAFE_STOP
+
+TaskTASK01, baselineEXPERIMENTAL normal-feed D014/D015 variant, Isaac4.5/ROS2/MoveIt2; repro511349c atlaunch/legacy3ee42d2/binary77b4f499..., OMPLuncontrolled. Commands/config/artifacts: `results/20261003_TASK01_precision_full_five_01/metadata.json`, reportTASK01_PRECISION_FULL_FIVE_REGRESSION. Actualexit1/completed[1], no preplacement. Cube01center1.605/deep1.006/side1.251mm; Cube02precloseX3.027→3.145→3.150mm against2.500mm gate, gapdelta2.230→0.427→0.001mm against0.300mm gate. No suction/laterCube execution. 7214sparse samples0errors, sampler761.389s/controller472.036s, rawpushtorque35.53Nm(notTCP). Allownedruntimesstopped; MoveItteardown-11/jointbridgeExternalShutdown exit1 independent. Offline21/21PASS; no YAML/hash/runtime/model/physics/gate change. Prior partialsuccess does not erase newfailure; no frozenbenchmark/paper/reliability claim.
+
 ## 2026-10-03 — Current variant normal full-five run preparing
 
 Task TASK01, baseline EXPERIMENTAL normal-feed approved precision variant, Isaac4.5/ROS2/MoveIt2; uncontrolled OMPL, no preplacement. Planned run `results/20261003_TASK01_precision_full_five_01/`, first_batch1/max_batches5/time_scale5, same binary77b4f499... and original physics/gates. No physical result yet; exact commands/pins/artifacts in metadata and report TASK01_PRECISION_FULL_FIVE_REGRESSION. Test-only code changes; no statistical reliability or frozen benchmark claim.
