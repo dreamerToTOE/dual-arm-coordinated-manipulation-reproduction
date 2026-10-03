@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_normal_feed_five_precision_variant",
+  "platform": "Isaac_Sim_4.5_ROS2_Humble_MoveIt2",
+  "git_commit": "511349c",
+  "legacy_git_commit": "3ee42d2; controller identical to e25de24",
+  "tested_binary_sha256": "77b4f4993c0a5a0cecc82e03c7a671182f384d60576e42e14443d80c78b0866f",
+  "tested_controller_source_sha256": "3087d64b2cdc59561c6a32333e4dbd6690214d1d3b0e7273df7c37ba4887d256",
+  "scene_source_sha256": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+  "benchmark_yaml_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "seed": "OMPL uncontrolled, original slots/cells; no preplaced cube",
+  "config_path": "configs/benchmark/benchmark_v1.yaml DRAFT + D014/D015 variant",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 2600 --output-dir results/20261003_TASK01_precision_full_five_01/raw",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
+  ],
+  "status": "RUNNING_NORMAL_FEED_REGRESSION",
+  "metrics": {"offline_python_tests_passed": 21, "preplaced_count": 0},
+  "artifact_paths": ["analysis.json", "raw/kit.log", "raw/moveit.log", "raw/controller.log", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json"],
+  "boundary": "Normal feed, all five must actually execute. No runtime source/model/physics/gate modification; full demo does not freeze benchmark or prove D004/paper protocol/reliability."
+}
