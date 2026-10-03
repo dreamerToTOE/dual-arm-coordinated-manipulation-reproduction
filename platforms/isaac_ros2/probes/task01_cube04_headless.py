@@ -1,4 +1,4 @@
-"""[EXPERIMENTAL] 保留旧场景，前3或4件预置落稳，真实执行余下件。
+"""[EXPERIMENTAL] 保留旧场景：正常五件供料，或前3/4件预置的局部回归。
 
 只缩短测试准备过程；不能将预置前三件算作完整五件实测成功。
 不改旧场景源码、夹具、材质或物理参数；采样由 PhysX post-step 驱动。
@@ -15,13 +15,22 @@ import sys
 import time
 
 
+def fixture_ready(cube_states, preplaced_count, arrived_state):
+    """正常供料必须等第一件真正到位，不能利用 all([]) 提前宣称 READY。"""
+    if preplaced_count not in (0, 3, 4):
+        raise ValueError("Unsupported preplaced count")
+    required = max(1, preplaced_count)
+    return len(cube_states) >= required and all(
+        state == arrived_state for state in cube_states[:required])
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--duration-sec", type=float, default=1000.0)
     parser.add_argument("--asset-root", required=True)
-    parser.add_argument("--preplaced-count", type=int, choices=(3, 4), default=3,
-                        help="4 isolates Cube05; never counts preplaced cubes as executed")
+    parser.add_argument("--preplaced-count", type=int, choices=(0, 3, 4), default=3,
+                        help="0 uses normal feed; 4 isolates Cube05; preplaced cubes are not executed")
     args = parser.parse_args()
     if args.duration_sec <= 0:
         parser.error("duration must be positive")
@@ -81,7 +90,9 @@ def main():
         bridge = builtins._task26_batched_feed_bridge
         # 不伪造 ARRIVED；复用原 bridge 的速度/位置落稳检测。
         with bridge._lock:
-            bridge._pending_batch = None
+            # 正常五件回归保留 Bridge 的自动批1供料；只有预置夹具才取消它。
+            if args.preplaced_count:
+                bridge._pending_batch = None
             for index, cell in enumerate(cells):
                 bridge.slot_pose[index] = cell
                 bridge.cube_state[index] = namespace["STATE_ARRIVING"]
@@ -99,7 +110,9 @@ def main():
             "actual_material_columns": ["static_friction", "dynamic_friction", "restitution"],
             "actual_cube_materials": np.asarray(materials.get_material_properties()).tolist(),
             "scene_source": str(legacy_root / "isaac/scripts/task26_truck_box_scene.py"),
-            "boundary": "Only non-preplaced cubes physically executed; no full-five proof"}, indent=2) + "\n")
+            "boundary": ("Normal feed; no cubes preplaced; placement completion requires controller PASS evidence"
+                         if args.preplaced_count == 0 else
+                         "Only non-preplaced cubes physically executed; no full-five proof")}, indent=2) + "\n")
         started = time.monotonic()
         ready = False
         with (args.output_dir / "physics_pose_samples.jsonl").open("w") as stream:
@@ -126,12 +139,16 @@ def main():
                 post_step, False, 200)
             while app.is_running() and not stopping and time.monotonic() - started < args.duration_sec:
                 app.update()
-                if not ready and all(state == namespace["STATE_ARRIVED"]
-                                     for state in bridge.cube_state[:args.preplaced_count]):
+                if not ready and fixture_ready(bridge.cube_state, args.preplaced_count,
+                                               namespace["STATE_ARRIVED"]):
                     ready = True
-                    print(f"[TASK01 Cube04] READY: first {args.preplaced_count} physically settled; "
-                          f"run first_batch:={args.preplaced_count + 1} "
-                          f"max_batches:=1 or {5 - args.preplaced_count}", flush=True)
+                    if args.preplaced_count == 0:
+                        print("[TASK01 Cube04] READY: normal first feed physically arrived; "
+                              "no cubes preplaced; run first_batch:=1 max_batches:=5", flush=True)
+                    else:
+                        print(f"[TASK01 Cube04] READY: first {args.preplaced_count} physically settled; "
+                              f"run first_batch:={args.preplaced_count + 1} "
+                              f"max_batches:=1 or {5 - args.preplaced_count}", flush=True)
         subscription.unsubscribe()
         subscription = None
         (args.output_dir / "summary.json").write_text(json.dumps({

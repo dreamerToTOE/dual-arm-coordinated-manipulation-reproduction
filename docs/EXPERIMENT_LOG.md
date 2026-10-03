@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — Current variant normal full-five run preparing
+
+Task TASK01, baseline EXPERIMENTAL normal-feed approved precision variant, Isaac4.5/ROS2/MoveIt2; uncontrolled OMPL, no preplacement. Planned run `results/20261003_TASK01_precision_full_five_01/`, first_batch1/max_batches5/time_scale5, same binary77b4f499... and original physics/gates. No physical result yet; exact commands/pins/artifacts in metadata and report TASK01_PRECISION_FULL_FIVE_REGRESSION. Test-only code changes; no statistical reliability or frozen benchmark claim.
+
 ## 2026-10-03 — Final actual fourth/fifth continuous run
 
 Task TASK01 / EXPERIMENTAL Cube04 precision + engineering empty retreat. Legacy3ee42d2/controller binary77b4f499..., reproduction5c72a1a atlaunch; uncontrolledOMPL, originalslots/cells/time_scale5. Exact commands/config/pins in `results/20261003_TASK01_empty_retreat_pair_01/metadata.json`. Controllerexit0, actual batches[4,5]PASS (first3preplaced). Fourthgap0.375/deep0.244mm, fifthcenter0.530/deep0.476mm; 7778 valid sparse poses/0errors; rawpeakjoint torque34.21Nm. ReleasedcurrentCube FCL540/287samples passes, no fallbacktrigger. Simulatorstopped successfully; MoveItteardown-11 separately. Basic/long no-command FK/FCL and isolated fifthalsoPASS; final report TASK01_EMPTY_RETREAT_REPAIR. No YAML freeze/full-five/reliability proof; all prior failures preserved.

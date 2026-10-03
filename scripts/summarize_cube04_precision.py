@@ -26,8 +26,13 @@ def summarize(run_dir):
         'cube04_inner_trim_command_lines': len(re.findall(r'task27_minus_inner INNER_(?:SIDE|EXTRA)_TRIM', text)),
         'cube04_precision_gate': re.findall(r'CUBE04_PRECISION_GATE: (.*)', text),
         'controller_final_geometry_lines': re.findall(r'task27_(?:minus_inner|center_insert) (?:final|center) Ground Truth: (.*)', text),
+        'all_controller_final_geometry_lines': re.findall(
+            r'(task27_(?:plus_outer|minus_outer|plus_inner|minus_inner|center_insert)) (?:final|center) Ground Truth: (.*)', text),
         'snapshots': 0, 'integrity_errors': [],
         'fourth_helper_closed_inside_samples': 0, 'fifth_helper_closed_inside_samples': 0}
+    # ARRIVED 是供料状态，不是码垛成功；预置夹具也不能算五件实际执行。
+    metrics['full_five_batch_completion_reported'] = (
+        preplaced_count == 0 and metrics['completed_batches'] == [1, 2, 3, 4, 5])
     peaks = [float(v) for v in re.findall(r'PUSH slice .*?peak_torque=([\d.]+) Nm', text)]
     metrics['peak_push_joint_torque_nm_raw'] = max(peaks, default=None)
     last_step = last_stamp = latest = None

@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-03 — Normal-feed test readiness guard
+
+Existing sparse probe was intentionally limited to preplaced3/4 and cancels batch1. New zero-preplaced mode must retain automatic initial feed and wait for actual first ARRIVED, not all([]). Added engineering test-mode guard/unit coverage; this is not a robot control defect or a scene repair. Earlier physical/model/force/teardown issues remain open; full normal-feed variant result pending.
+
 ## 2026-10-03 — Empty retreat WORKAROUND validated narrowly
 
 Independent approved precision variant now passes one isolated fifth and one actual fourth→fifth continuation, using measured starts with releasedcurrentCube strictFCL. Final ordinary pathsmax0.002mm printed deviation; local-seed fallbacklong replaypasses withoutcommands. This is a verified narrow engineering workaround, not proof all random IKbranches/repeatedtrials work; fallbackphysicallynottriggered. OlderfourthdriftFAIL and fifthIKabortretained. BUG-004 MoveItteardown-11 repeats bothnewphysicalruns; actual0.5/0.5 versusdocument0.90/0.75, hiddenmass and D004contacttopology remainopen. BUG-006 rotation is already fixed for Task27 by prior Gf.Transform patch; historical Task26 branch remains untouched. USD motion-time synchronization/metrology still needs review. Report TASK01_EMPTY_RETREAT_REPAIR.

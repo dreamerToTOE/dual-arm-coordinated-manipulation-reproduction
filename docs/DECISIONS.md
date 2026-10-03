@@ -1,5 +1,9 @@
 # DECISIONS
 
+## 2026-10-03 — Full-flow regression without expanding scope
+
+[ENGINEERING]/[EXPERIMENTAL]: repeated user continuation permits testing current approved variant from normal feed, not redesigning physics or contact. No preplacement and no runtime code/model/gate change. Actual five batch PASS and exit code are required for full-demo evidence; ARRIVED alone is insufficient. A failure requiring material/research decisions stops for tomorrow. Existing36nulls/TASK01 review/D004 first-three discrepancy remain unresolved even if this demo passes.
+
 ## D015 validation / hard-decision boundary
 
 2026-10-03; [ENGINEERING] scoped repair physically verified by isolated fifth and fourth/fifth pair, no currentCube exemption. [EXPERIMENTAL] first3/4preplaced; no full-five or stable benchmark assertion. Stop before choosing effective-friction baseline, modifying retained hidden mass, changing first-three D004 protocol, or approving36numericfields. These are material user decisions, not inferred from the instruction to continue independently. Preserve0.5/0.5 actualphysics and originalscene/gates tonight. TASK01 IN_PROGRESS, TASK02 TODO.

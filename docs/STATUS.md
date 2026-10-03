@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-03 — Current variant full normal-feed regression preparing
+
+Adding only zero-preplaced test mode and read-only summaries, then actual first_batch=1/max_batches=5 using unchanged current binary/model/physics/gates. Previous isolated fifth and fourth→fifth PASS remain scoped results. Full-flow result pending; no paper method or benchmark freeze. Report: `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md`. Stop for user decision if model/contact/physics/gate changes become necessary; TASK02 TODO.
+
 ## 2026-10-03 final — empty-retreat engineering PASS, benchmark review pending
 
 Final report: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. Real-model FK/FCL basic and long replay PASS; isolated Cube05 physical exit0; clean actual Cube04→Cube05 continuous physical exit0. Fourth neighbor gap0.375mm/deepgap0.244mm; fifth center error0.530mm/deepgap0.476mm. Released Cube included in actual retreat FCL; fallback not physically triggered. 7778+4691 sparse valid samples; no full-five-new-variant/reliability claim. All owned runtimes stopped; MoveIt teardown-11 remains. Code/results pushed. TASK01 IN_PROGRESS with36nulls; model/material/D004/freeze decisions remain for user review; TASK02 TODO.
