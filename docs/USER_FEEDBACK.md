@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-03 — Cube04 should use Cube05 insertion
+- User: “那第4块采取第5块的推入方式”. Explicitly authorizes this contact-protocol exception; no implied authorization for all Cubes or benchmark freeze.
+- User previously insisted the validated scene must not change; may add things. Retain existing scene, tool, mass/material/geometry. Cube04 final neighbor acceptance remains distinct from Cube05 center acceptance.
+
 ## 2026-10-03 — Further continuation while recording
 - User again asked to continue until TASK01 works and then said “继续”. Continued safe fixed-contact geometry alternatives and record upload. This remains persistence authority, not approval to change physical material, teacher-approved tool, contact protocol or benchmark gates.
 

@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D014 — Authorized Cube04 single-rear insertion variant
+- Date: 2026-10-03; [ADAPTATION]/[DEVIATION], explicit user approval: “那第4块采取第5块的推入方式”. Cube04 is an exception to D004; no blanket approval to change first three or freeze numbers.
+- Add an independent executable reusing existing Task26/27 code, guarded compile-time policy; old targets preserve behavior. Do not change original Isaac scene/tool/mass/material/ACM or final placement gates.
+- New Cube04 PRE_PUSH Y control target uses Cube02 GT plus 120 mm and original 0.5-mm pressed target; replace post-seat lateral trim, not geometry. Added <=0.5-mm Y engineering staging gate and nonnegative oriented-neighbor projection clearance; no force-control/paper fidelity claim.
+- Experimental validation may pre-place/physically settle only the first three; fourth/fifth use normal feed and actual transport. Keep this distinct from all-five proof; YAML remains unchanged/DRAFT.
+
 ## D013 — Exhaust non-mutating fixed-contact alternatives before changing tool
 - Date: 2026-10-03
 - Classification: [ENGINEERING] exact OBB roll diagnostic, not motion planner or paper method.

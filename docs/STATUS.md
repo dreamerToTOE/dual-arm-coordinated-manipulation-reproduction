@@ -2,6 +2,10 @@
 
 Last update: 2026-10-03
 
+## 2026-10-03 Cube04 protocol adaptation — running
+
+User explicitly approved Cube04 adopting Cube05 precise-stage/single-rear-suction insertion. New independent executable/build/unit checks pass; Cube04/05 physical probe now running with first three pre-placed/settled. Original scenes/materials/ACM/final gates preserved. Control PRE_PUSH Y changes to the existing 0.5-mm pressed target; benchmark YAML unchanged. Report: `reports/TASK01_CUBE04_PRECISION_INSERT.md`. TASK01 remains IN_PROGRESS, TASK02 TODO.
+
 ## Project state
 Repository initialized. No baseline implementation has started.
 

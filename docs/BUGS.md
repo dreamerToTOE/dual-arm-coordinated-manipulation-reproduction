@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-03 — Cube04 variant validation checkpoint
+- New test-runner callback argument mismatch fixed before any robot control. Preserve negative startup log; not an inherited scene failure. New Cube04 protocol physical validation pending, cannot mark BUG-009 globally resolved: first three cooperative rear+side protocol still unmet.
+- Cube04 original final <=1.5-mm neighbor gap retained; precision target can still fail through physical tracking/yaw drift. Stop on real failure instead of enabling side trim or widening acceptance. Force/time/model/MoveIt teardown issues remain open.
+
 ## 2026-10-03 — BUG-009 fixed-center roll alternative checked
 Status: OPEN
 Evidence: Follow-up fixed-center/normal roll sweep has 24/24 rod-neighbor intersections. This eliminates the tested discrete rotation-only alternatives, not every continuous/contact-order strategy. No offset/edge grasp, model change or collision bypass adopted.

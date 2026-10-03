@@ -1,5 +1,10 @@
 # EXPERIMENT_LOG
 
+## 2026-10-03 — Cube04 precision variant startup
+- C++ policy regression and Python syntax PASS. Package build PASS; non-portable directive-inside-logging-macro warning removed before final test build.
+- `20261003_TASK01_cube04_precision_01`: FAIL_NEW_PROBE_STARTUP_API, no controller execution; initially passed extra argument to legacy callback subscription; raw startup preserved. Final probe uses existing verified post-step API and exception artifact writer.
+- `20261003_TASK01_cube04_precision_02`: RUNNING_CHECKPOINT; first three pre-placed/physically settled, Cube04/05 physical execution pending. Not full-five proof; scene/material/final gates unchanged.
+
 ## 2026-10-03 — TASK01 fixed-contact TCP roll diagnostic
 - Same `20261003_TASK01_fixture_protocol_clearance` run family, additional `roll_sweep_summary.json`: fixed face center/normal, TCP roll 0..345 deg in 15 deg steps, 24/24 poses have lateral rod/Cube03 OBB intersection, zero clear box-only poses. No robot commands; no arbitrary-contact/IK completeness claim. New regression passes; 18 Python offline tests total.
 

@@ -1,5 +1,10 @@
 # WORKLOG
 
+## 2026-10-03 — Cube04 precision insert implementation checkpoint
+- Read all mandated task/source/benchmark records; issued pre-task report. User explicitly approves Cube04 contact-protocol adaptation.
+- Added independent legacy ROS executable + compile-time policy, reused shared controller; fourth no longer plans/executes INNER_SIDE_TRIM, remains inner-neighbor accepted. PRE_PUSH uses previous pressed target 0.5 mm. Old nodes/scenes unchanged in behavior/geometry.
+- New physical fixture initializes/settles first three only, logs sparse same-step PhysX positions and actual material/mass. First probe callback argument mistake retained, fixed via already validated post-step API. Compile/unit/syntax PASS; physical run preparing. Six records updated; no freeze/paper algorithms.
+
 ## 2026-10-03 — Further persistence / non-mutating contact alternative check
 - User repeated “继续，直到task01调通，再汇报” and “继续”; no model/numeric approval was supplied. Tested a safe alternative before requesting a tool change: 24 discrete TCP rolls at the same Cube04 face-center/inward normal. All retain lateral-support/neighbor intersection; no command/IK/model change, no continuous-search impossibility claim.
 - Added corresponding rod/roll regression (18 offline Python tests total). Preserved exact upstream patch context spaces using scoped .gitattributes instead of editing patch syntax.
