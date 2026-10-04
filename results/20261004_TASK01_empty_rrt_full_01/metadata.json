@@ -6,7 +6,8 @@
   "seed":"fixed offline poses; OMPL RNG uncontrolled",
   "config_path":"unchanged Task27 scene/bridge; benchmark_v1.yaml DRAFT",
   "command":["ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 3000 --record-release-diagnostics --output-dir results/20261004_TASK01_empty_rrt_full_01/raw","ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false","ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0"],
-  "status":"STARTING_NOT_PHYSICAL_PASS",
+  "status":"RUNNING_COMPLETED_FIRST_TWO_BATCHES_NOT_FULL_PASS",
+  "checkpoint":{"completed_batches":[1,2],"cube01_cell_error_mm":1.983,"cube01_deep_gap_mm":1.521,"cube01_side_gap_mm":1.272,"cube02_cell_error_mm":0.807,"cube02_deep_gap_mm":0.800,"cube02_side_gap_mm":0.104,"physical_empty_RRT_fallback_triggered":false},
   "metrics":{"preplaced_count":0,"release_diagnostic_hold_sec":0.0,"binary_sha256":"c760d506fdc678f8733e2b640aca9de428dd65f6467027ea0df299c521715ad6","source_sha256":"5d1ee37b118314b0a0926515860b0dcc4566d3a2540d62e08c23f6979eb79f1a"},
   "artifact_paths":["raw/kit.log","raw/moveit.log","raw/controller.log","raw/summary.json","raw/physics_pose_samples.jsonl","raw/release_contact_samples.jsonl"],
   "boundary":"Normal-feed fromCube01, no objects preplaced, ordinary diagnostic hold zero. OPEN-only unloaded RRT fallback; old loaded Cartesian/contact/scene/material/gripper/ACM/gates unchanged. Rounded-seed replay PASS is not physical completion; TASK01 IN_PROGRESS/36nulls/TASK02 TODO."

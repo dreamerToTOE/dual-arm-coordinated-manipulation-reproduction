@@ -57,3 +57,5 @@
 无命令重放01 exit1：新手写总角度门限拒绝左候选，场景已有对象的严格逐字段恢复比较失败，均保留。重放02按本次实际MoveIt请求的原目标约束判断（不是放宽用户门限），使用正确上一批railshift0.100m，起点Cube模型x0.667925、目标leftx0.690/rightx0.590。exit0：严格FCL1277采样，CLOSED/起点障碍负测试通过，临时同步的6个原本不存在ID同步删除/查询确认。第一次已有对象逐字段恢复问题没有由第二次absent-ID测试证明解决，后续需独立核查；当前实际caller的当前Cube正常被摘除，走已验证REMOVE分支。该重放不发布机器人命令，不构造Arm，但会临时改PlanningScene，不应叫场景只读。旧Cube04/05连续seed重放及XYZ测试仍通过，Python28/C++策略/analytic36nulls通过。
 
 下一轮`results/20261004_TASK01_empty_rrt_full_01`：本机headless全新普通供料0预置，first1/max5/scale5/hold0，实际结果待完成。源码已推上游task01-runtime-fixes。不得用无命令重放替代实际退出或完整五件证明。
+
+正常物理checkpoint（同一df9c2c0二进制，仍运行）：batch1和2已实际PASS；第一块cell1.983/deep1.521/side1.272mm，第二块cell0.807/deep0.800/side0.104mm。两件空载退路均普通Cartesian通过，未触发RRT。前两释放窗口2870条same-step诊断完整性通过，Cube02press末x1.0992638→clearancelast1.0992001，回带约0.0637mm；CLEARANCE_ENTER内CubeXdelta-0.012mm，后臂TCPX-5.734/侧压臂-14.073mm。工具仍有X运动但本次Cube未大幅回带，不能归因“已消除该运动”。phase标签异步、普通OPEN标签最多1step，不构成单独静止释放观察；历史5.138mm失败仍保留/BUG016仍OPEN。第三块正在原流程执行，不能算完整五件。
