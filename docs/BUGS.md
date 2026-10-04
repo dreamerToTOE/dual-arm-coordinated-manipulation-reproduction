@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-04 — New replay guard/restore validation boundaries
+
+Manualaggregate-angleendpointguard differedfromoriginalMoveItposegoalconstraints; replacedbycheckingconstructedactualrequest, nobenchmarktolerancechange. Replay02PASS/norobotcommands. Replay01strictbitwisecomparisonofrestoredexistingobjectsFAILremainsunexplained; absent-IDsyncREMOVEverifiedinfreshreplay02, do notclaimbothcasesresolved. Runtimecallerrestorefailureblockscommand. ActualRRTmotionnotyetverified; originalBUG016releasebackdragstillOPEN.
+
 ## 2026-10-04 — Empty-retreat configuration-sensitive recurrence
 
 OPEN; currentCube02 Cartesianfraction1butFK752–967mm, localIKfails118/151. Actualcommanddelta<0.001rad; historicalCube02passesdifferinredundantconfiguration. SamecontrollersCube01retreatPASS, so notallretreatsbroken. RRTbackupisnotyetvalidated; genuinecollision/boundsremainrejects. PriorBUG016releasebackdragstillOPEN/notreached. Evidence measured_side_full_01/raw/controller.log, analysis.json. No gate bypass.

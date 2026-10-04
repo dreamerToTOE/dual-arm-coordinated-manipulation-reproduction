@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 — empty_rrt_replay_01 FAIL / replay_02 PASS; full_01 running
+
+Replay01exit1/newguardrejections/exactrestorefalse; norobotcommand. Replay02freshMoveItactualrequestconstraints/railshift.1: exit0, fullFCL1277samples, CLOSEDandobstructionnegativePASS, originalnamedIDs0→temporary6→restored0; notexisting-IDrestorationproof. Builds56.2s/55.8s separatelyrecorded. Runtimefinaldf9c2c0/binaryc760d506.../Python28/C++PASS. Full_01 localIsaacheadlessnormalfirst1/max5/scale5/hold0/3000sdeadline starts; samplerREADY/controllerplanning, actualcompletionpending. Preserveallraw/metadata/commandsandnegativeprecedingrun.
+
 ## 2026-10-04 — measured_side_full_01 final physical FAIL
 
 Runtime2fbfa0b/binary6a64fb90..., hold0/preplaced0/first1/max5/scale5. Cube01batchPASS; Cube02COMMON_DROPGT(.768,-.060,.262), bothOPEN; fourCartesianstepsfraction1butFK752–967mm, boundedIK118/151failure, exit1/safeabort. NoCube02side/release-windowtestandnolaterCubecommand. 17319sparsePhysXposes0integrityerrors; headlessSIGTERMaftercontrollerabortwritesummary, noGUIused. Finalmetadata/analysis/release_windows inresults/20261004_TASK01_measured_side_full_01. CurrentnewRRTunbuilt/notusedinthisrun. 28offlinePythontestsPASSnextiteration.

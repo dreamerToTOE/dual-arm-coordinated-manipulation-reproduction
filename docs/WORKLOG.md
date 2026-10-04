@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 — Bounded fallback built and replayed before commands
+
+FinalRRT source/runtime df9c2c0 pushed; fullbuild55.8s PASS. OriginalMoveItrequestgoalconstraintsreplaceincorrecthandwrittenaggregate-angleguard, notsuccessthresholdchange. Negativefirstreplayretained; finalno-commandreplay02PASS1277jointFCLsamplesincludingreleasedCube; syncREMOVE/absenceconfirmed. Ordinaryheadless0preplacedfive-runlaunched, binarypinned, resultpending. Prioroldexitsnotdiscarded; sameCube02differentredundantqrecorded. Existing-objectbitwise restoration comparison needslaterunitreview; noclaimresolved.
+
 ## 2026-10-04 — Reconcile prior retreat successes with normal-feed failure
 
 UsercorrectlyrecallspreviousexitPASS; comparedactualCube02jointseedsratherthanassumingglobalregression. Currentleftj3=-2.7546/j4=-2.8750rad, tinytrackingdelta; originalFKguardrejectsbadCartesian. ArchivedFAILsummary17319poses/0errors, stopownedheadlessafterbothOPEN. PreparingRRTreplayusingretainedrailshift0.1m, sameworld/target; threecandidatebudgetandshortestjointtravelranking, verifiedsceneundo, no robotcommandsinprobe. Existing28PythonPASS; build/physicalpending. PREinTASK01_RELEASE_CLEARANCE, no scientificchange.

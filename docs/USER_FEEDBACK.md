@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 — Continue locally with explicit headless disclosure
+
+User“那你继续”authorizescontinuingengineeringtests. ExplainedoldexitPASSandconfiguration-sensitivecurrentfailure, corrected100mmrailframeinreplay, announcednewnormalfeedtestexplicitlylocalheadless. NoGUIacceptanceor5/5claimfromreplay. Preservepartialfailures, pauseonlyifscientific/model/gateauthorityneeded; source/runtimebranchpushed.
+
 ## 2026-10-04 — Explain headless execution and verify previously working exits
 
 UseraskswhereIsaacrunsbecauseGUIwasnotopened; confirmedlocal/home/ubuntu2004/isaacsim-4.5.0backgroundSimulationApp(headless=True), notremote/notsandbox/nothumanGUIacceptance. Userthenrequestscontinuationandrecallspreviousexitsworked. PreserveoldPASSwithscope, compareactualseedsandframeoffsets; don'tinventmodelregressionorcallpartialfivePASS. Continuein-scopedunloadedRRTreuse, reportmajorissuesandrecordGitHub. No inferredgeometry/contact/gateapproval.

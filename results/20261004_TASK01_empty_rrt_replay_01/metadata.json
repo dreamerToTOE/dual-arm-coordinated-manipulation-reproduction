@@ -1,0 +1,13 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_empty_OPEN_only_RRT_round_seed_replay",
+  "platform": "ROS2_Humble_MoveIt2_real_FR3_RobotModel_no_robot_command",
+  "git_commit": "uncommitted runtime patch on2fbfa0b; reproduction44880f7",
+  "seed": "Cube02 rounded logged joint state; OMPL uncontrolled RNG; rail shift0.100m",
+  "config_path": "unchanged side-suction model and table/wall/cube constructors",
+  "command": "ros2 run fr3_dual_palletize task01_empty_retreat_probe --ros-args -p run_failed_cube02_rrt_replay:=true",
+  "status": "FAIL_EXIT_1_GUARDS_REJECTED_NO_ROBOT_COMMAND",
+  "metrics": {"build_package_s":56.2,"python_tests_passed":28,"closed_negative_rejected":true,"start_obstruction_negative_rejected":true,"left_successful_plans_rejected_by_new_numeric_goal_guard":2,"right_numeric_goal_pass":3,"scene_restore_exact_comparison_pass":false},
+  "artifact_paths": ["raw/probe.log", "../20261004_TASK01_measured_side_full_01/raw/moveit.log"],
+  "boundary": "No Arm/joint/suction publisher. Temporary named scene sync/restore attempted; exact-compare failure retained. Original manual total-angle check may differ from actual MoveIt per-axis orientation constraints; next iteration diagnoses rather than bypassing. This replay appended MoveIt requests to previously running move_group log; not part of that previous physical run."
+}

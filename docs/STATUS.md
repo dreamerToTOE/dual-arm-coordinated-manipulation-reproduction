@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-04 — Empty RRT no-command replay PASS; clean physics regression running
+
+Runtime df9c2c0 built55.8s; binaryc760d506...; correctedrailshift0.1m failedCube02rounded-seedreplay02exit0/fullFCL1277samples, CLOSED/obstructedstartreject and absent-IDsyncsceneundoPASS. Replay01negativepreserved; existing-objectstrictcomparisonproblemnotclaimedresolved. No Arm/joint/suctioncommandsinprobe. New ordinary0preplacedfirst1/max5/scale5/hold0 localheadlessrunempty_rrt_full_01 started, nofinalphysicsPASSyet. Sourcepushed, TASK01IN_PROGRESS/36nulls/TASK02TODO; BUG016remainsOPEN.
+
 ## 2026-10-04 — Ordinary second-Cube retreat rejected; bounded empty RRT preparing
 
 Ordinary measured_side_full_01 controllerexit1/completed[1], Cube01cell0.678/deep0.670/side0.108mm. Cube02dropped/bothOPEN, measured-commanddelta0.000681/0.000995rad, CartesianFK752–967mm rejected; continuousIKfails118/151. EarlierCube02retreatPASSuseddifferentredundantconfiguration; notblanketlogicregression/rootcauseproof. Headlesslocalteststoppedaftercontrollerabort,17319sparseposes0errors. AddedunbuiltOPEN-onlyRRTbackupwithsameactualstart/originalgoal/fullreleasedCubeFCL, ≤3plans/arm; numeric/bounds/adapterstart/goalchecksandverifiedscenecleanup. Pendingreal-model/physicsvalidation, BUG016stillOPEN. No model/physics/ACM/gate/YAMLchange,TASK01IN_PROGRESS/36nulls,TASK02TODO.

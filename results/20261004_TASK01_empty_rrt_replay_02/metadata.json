@@ -1,0 +1,13 @@
+{
+  "task":"TASK01",
+  "baseline":"ENGINEERING_empty_OPEN_only_RRT_rounded_seed_replay",
+  "platform":"ROS2_Humble_MoveIt2_real_FR3_RobotModel_no_robot_command",
+  "git_commit":"runtime df9c2c0; reproduction44880f7 (next record commit follows)",
+  "seed":"Cube02 rounded logged joint state; OMPL uncontrolled; railshift0.100m",
+  "config_path":"unchanged side-suction RobotModel/world constructors",
+  "command":"ros2 run fr3_dual_palletize task01_empty_retreat_probe --ros-args -p run_failed_cube02_rrt_replay:=true",
+  "status":"PASS_EXIT_0_NO_ROBOT_COMMAND",
+  "metrics":{"build_package_s":55.8,"joint_FCL_samples":1277,"CLOSED_negative_rejected":true,"start_obstruction_negative_rejected":true,"scene_remove_sync_confirmed":true,"named_objects_before":0,"named_objects_after":0,"binary_sha256":"c760d506fdc678f8733e2b640aca9de428dd65f6467027ea0df299c521715ad6","source_sha256":"5d1ee37b118314b0a0926515860b0dcc4566d3a2540d62e08c23f6979eb79f1a"},
+  "artifact_paths":["raw/probe.log","raw/moveit.log"],
+  "boundary":"Temporary named PlanningScene sync then verified synchronous removal; no Arm/joint/suction commands. Endpoints checked against actual constructed MoveIt goal constraints, not invented total orientation-angle tolerance. Does not resolve previous exact existing-object restore comparison failure or establish physical/continuous-collision/full-five success."
+}

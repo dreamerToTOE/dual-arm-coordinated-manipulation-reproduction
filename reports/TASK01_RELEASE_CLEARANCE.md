@@ -51,3 +51,9 @@
 - Need user confirmation: no，用户明确要求继续，空载RRT属既有工程路径复用；科学/几何/物理/门限变化仍需另行确认。
 
 普通measured_side_full_01实际最终FAIL：Cube01完成；Cube02共同落桌并双杯OPEN后，左臂实测seed与命令差0.000681rad/右0.000995rad。4种Cartesian步长fraction均1，但FK直线偏差752–967mm，严格拒绝；连续IK失败118/151段，controllerexit1，后续对象未执行。未到达Cube02侧压/释放，BUG-016尚无修复证明。Isaac在本机后台headless运行，不是GUI验收；用户询问后已明确说明。
+
+空载RRT最终源码runtime df9c2c0，binaryc760d506...；编译55.8s/package56.1s/total通过。每臂最多3个3s候选；数字/限位/实测首点/原MoveIt目标约束检查，复用关节总路程排序，起点及双臂同步FCL保留当前Cube；场景恢复失败不执行。旧Task26/27宏分支不启用此机制。
+
+无命令重放01 exit1：新手写总角度门限拒绝左候选，场景已有对象的严格逐字段恢复比较失败，均保留。重放02按本次实际MoveIt请求的原目标约束判断（不是放宽用户门限），使用正确上一批railshift0.100m，起点Cube模型x0.667925、目标leftx0.690/rightx0.590。exit0：严格FCL1277采样，CLOSED/起点障碍负测试通过，临时同步的6个原本不存在ID同步删除/查询确认。第一次已有对象逐字段恢复问题没有由第二次absent-ID测试证明解决，后续需独立核查；当前实际caller的当前Cube正常被摘除，走已验证REMOVE分支。该重放不发布机器人命令，不构造Arm，但会临时改PlanningScene，不应叫场景只读。旧Cube04/05连续seed重放及XYZ测试仍通过，Python28/C++策略/analytic36nulls通过。
+
+下一轮`results/20261004_TASK01_empty_rrt_full_01`：本机headless全新普通供料0预置，first1/max5/scale5/hold0，实际结果待完成。源码已推上游task01-runtime-fixes。不得用无命令重放替代实际退出或完整五件证明。
