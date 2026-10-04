@@ -2,7 +2,7 @@
 
 ## 2026-10-04 — Approved pre-close XYZ extension underway
 
-User approved combining XYZ execution residual into one bounded pre-suction correction. Current independent precision variant only; old Task26/27 behavior, original model/physics/ACM/gates and loaded motion retained. Mathematical tests pass; build, read-only real-model and normal-feed physical validation pending. Diagnostics and correction timing added. Report `reports/TASK01_PRECLOSE_XYZ.md`. TASK01 IN_PROGRESS, 36 null fields unchanged, TASK02 TODO.
+User approved combining XYZ execution residual into one bounded pre-suction correction. Current independent precision variant only; old Task26/27 behavior, original model/physics/ACM/gates and loaded motion retained. C++/build, 22 Python tests and read-only real RobotModel XYZ/FCL PASS; normal-feed physical validation now running, not yet accepted. Diagnostics and correction timing added. Runtime f0812a4/reproduction b0dbd86 pushed after a command-local HTTP-CONNECT proxy fixed the SSH transport failure; no system configuration change. Report `reports/TASK01_PRECLOSE_XYZ.md`. TASK01 IN_PROGRESS, 36 null fields unchanged, TASK02 TODO.
 
 ## 2026-10-03 latest — Normal-feed current variant FAIL, stopped for review
 

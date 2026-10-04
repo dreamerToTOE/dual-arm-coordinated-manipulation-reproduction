@@ -1,0 +1,28 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_bounded_preclose_XYZ_normal_feed_full_five",
+  "platform": "Isaac_Sim_4.5.0_ROS2_Humble_MoveIt2_RTX3070",
+  "git_commit": "reproduction b0dbd86; runtime f0812a4",
+  "seed": "offline fixed poses; OMPL RNG not fixed",
+  "config_path": "legacy Task27 scene unchanged; benchmark_v1.yaml DRAFT unchanged",
+  "command": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 2600 --output-dir results/20261004_TASK01_preclose_xyz_full_01/raw",
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
+  ],
+  "status": "RUNNING_NORMAL_FEED_PHYSICS; SOURCE_AND_PLAN_PUSHED",
+  "metrics": {
+    "preplaced_count": 0,
+    "controller_binary_sha256": "fc5e7f8a340287cc6770c78a7a338d439395a2e1caaec8ee950c8317de615539",
+    "shared_source_sha256": "dd61874a0125e75db00883f5c726e0dc5e8da383a150d744ee901fc271ea784e",
+    "scene_sha256_unchanged": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+    "bridge_sha256_unchanged": "0f7123657ea8422cf0efd468e7bcd59624e144ae8c9ca315a82af57576b68dc6",
+    "preclose_vector_limit_mm": 1.0,
+    "original_xyz_alignment_gate_mm": 2.5,
+    "max_checks": 3,
+    "max_corrections": 2,
+    "completed": null
+  },
+  "artifact_paths": ["raw/moveit.log", "raw/kit.log", "raw/controller.log", "raw/model_audit.json", "raw/summary.json", "analysis.json"],
+  "boundary": "Actual normal feed, not a preplaced fixture. No changed scene/model/material/ACM/acceptance gates/loaded control. Engineering regression only, no TASK01 freeze or paper reproduction claim."
+}
