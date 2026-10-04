@@ -29,6 +29,8 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--duration-sec", type=float, default=1000.0)
     parser.add_argument("--asset-root", required=True)
+    parser.add_argument("--record-release-diagnostics", action="store_true",
+                        help="Read-only full-rate contacts/tools ONLY inside release phases")
     parser.add_argument("--preplaced-count", type=int, choices=(0, 3, 4), default=3,
                         help="0 uses normal feed; 4 isolates Cube05; preplaced cubes are not executed")
     args = parser.parse_args()
@@ -72,6 +74,12 @@ def main():
         finally:
             storage.get_assets_root_path = original_discovery
         stage = omni.usd.get_context().get_stage()
+        if args.record_release_diagnostics:
+            for index in range(1, 6):
+                prim = stage.GetPrimAtPath(f"/World/Task27/Supply/Cube_{index:02d}")
+                PhysxSchema.PhysxContactReportAPI.Apply(prim).CreateThresholdAttr(0.0)
+        tool_values = {'tcp_y': namespace['TCP_Y'],
+                       'vertical_drop_z': namespace['VERTICAL_DROP_Z']}
         cells = tuple(tuple(task["cell"]) for task in namespace["TASKS"][:args.preplaced_count])
         for index, center in enumerate(cells, start=1):
             prim = stage.GetPrimAtPath(f"/World/Task27/Supply/Cube_{index:02d}")
@@ -87,6 +95,8 @@ def main():
         namespace = {"_SIDE_SUCTION_SCENARIO": "task27"}
         exec(compile(source.read_text(encoding="utf-8"), str(source), "exec"),
              namespace, namespace)
+        # BRANCH_SIGN 由原Bridge定义；长度由原scene定义，不能混用命名空间。
+        tool_values['branch_sign'] = namespace['BRANCH_SIGN']
         bridge = builtins._task26_batched_feed_bridge
         # 不伪造 ARRIVED；复用原 bridge 的速度/位置落稳检测。
         with bridge._lock:
@@ -103,6 +113,7 @@ def main():
         view.initialize()
         sampler = PhysicsObjectSampler(view)
         sim_view = tensors.create_simulation_view("numpy")
+        sim_view.set_subspace_roots("/")
         materials = sim_view.create_rigid_body_view(list(bridge.cube_paths))
         (args.output_dir / "model_audit.json").write_text(json.dumps({
             "preplaced_count": args.preplaced_count, "preplaced_cells_m": cells,
@@ -115,16 +126,28 @@ def main():
                          "Only non-preplaced cubes physically executed; no full-five proof")}, indent=2) + "\n")
         started = time.monotonic()
         ready = False
-        with (args.output_dir / "physics_pose_samples.jsonl").open("w") as stream:
+        diagnostics = None
+        with (args.output_dir / "physics_pose_samples.jsonl").open("w") as stream, \
+             (args.output_dir / "release_contact_samples.jsonl").open("w") as release_stream:
+            if args.record_release_diagnostics:
+                from release_diagnostics import ReleaseDiagnostics, active_cube_index
+                diagnostics = ReleaseDiagnostics(bridge.node, sim_view, list(bridge.cube_paths),
+                                                 tool_values, release_stream)
             steps = 0
 
             def post_step(dt):
                 nonlocal count, latest, steps
                 steps += 1
-                if steps % 6:
+                record_release = diagnostics is not None and active_cube_index(diagnostics.phase) is not None
+                if steps % 6 and not record_release:
                     return
                 try:
-                    latest = {"physics": asdict(sampler.capture()),
+                    snapshot = sampler.capture()
+                    if diagnostics is not None:
+                        diagnostics.capture(snapshot, float(dt), bridge.grippers)
+                    if steps % 6:
+                        return
+                    latest = {"physics": asdict(snapshot),
                               "feed_state": list(bridge.cube_state),
                               "suction_closed": {side: bool(g.is_closed())
                                                  for side, g in bridge.grippers.items()}}
@@ -139,6 +162,8 @@ def main():
                 post_step, False, 200)
             while app.is_running() and not stopping and time.monotonic() - started < args.duration_sec:
                 app.update()
+                if errors:
+                    raise RuntimeError("Stopping diagnostic after a physical readout error")
                 if not ready and fixture_ready(bridge.cube_state, args.preplaced_count,
                                                namespace["STATE_ARRIVED"]):
                     ready = True
@@ -153,7 +178,8 @@ def main():
         subscription = None
         (args.output_dir / "summary.json").write_text(json.dumps({
             "ready": ready, "snapshots": count, "errors": errors,
-            "wall_s": time.monotonic() - started, "final_snapshot": latest}, indent=2) + "\n")
+            "wall_s": time.monotonic() - started, "final_snapshot": latest,
+            "release_diagnostic_snapshots": diagnostics.count if diagnostics else 0}, indent=2) + "\n")
         if not ready or errors:
             raise RuntimeError("Fixture readiness / physical sampler validation failed")
     except Exception as error:

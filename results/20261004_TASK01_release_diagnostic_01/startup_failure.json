@@ -1,0 +1,10 @@
+{
+  "error": "KeyError('BRANCH_SIGN')",
+  "failed_script_sha256": "54aa055cd2015c08c2baaf27a3967026d2112418fab5731aa6902410a00d74eb",
+  "controller_started": false,
+  "cause": "The scene supplies TCP_Y/VERTICAL_DROP_Z but BRANCH_SIGN belongs to bridge namespace",
+  "fix": "Read lengths before executing bridge, then read sign from actual bridge namespace; no original scene/bridge edit",
+  "raw_evidence": "raw/failure.json and raw/kit.log",
+  "simulation_app_exit_code": 0,
+  "boundary": "Exception evidence takes precedence over masked SimulationApp shutdown exit status"
+}

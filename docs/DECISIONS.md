@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D017 — User-approved release/withdrawal repair, evidence-first scope
+
+2026-10-04; user“继续”followingexplicitproposal permitsminimalrelease/clearanceengineeringrepair. Firstaddread-onlyphase/tool/contactobservations andoptionalpostreleasehold; ifcubeisstablebeforefirstwithdrawal, inspectactualseed/pressure unloading/trajectory ratherthanchangefrictionorforcegates. Adiagnosticholdrunisnotordinaryfull-flowproof. Preservemodel/material/ACM/gripperparameters/successgates/YAML; stopifcontactredesign/forcecontrol/benchmarkchoicebecomesnecessary. PriorD004gapstillpending.
+
 ## D016 validation — Scope completed without expanding into loaded/release control
 
 2026-10-04; XYZactualtwo-correctionPASS, but new laterCube02deep-wallfailure5.138mm retained, rather than claiming full-flowPASS or adjusting3mm gate. Stop after safe diagnostics/records; fixing release/withdrawal/contact or adding force/physics changes is a distinct next scope. Originalmodel/material/ACM/contact/loadedflow and36nulls preserved. Report TASK01_PRECLOSE_XYZ; BUG-016. One negative normal-feed run is enough to reject stability, not prove physical impossibility or a specific contact-force root cause.

@@ -1,5 +1,9 @@
 # BUGS
 
+## BUG-016 follow-up — Instrument before choosing a remedy
+
+2026-10-04; OPEN. Added independentrelease/clearance tags and optional3s stationarypostreleasehold toseparateconstraint/contact responsefromwithdrawal trajectory. Same-stepPhysXcube/tools/collisionreadoutonlywithinwindow; asyncphasearrivalnotahardtimestampcontract, collision telemetryexcludesD6suction. No rootcause/PASS claim untilactualevidence; no physics/gate bypass.
+
 ## BUG-016 — Cube02 loses deep-wall seating around rear suction release
 
 2026-10-04; TASK01; OPEN_PHYSICAL_RELEASE_WINDOW. New normal-feed XYZ variant passes original attachment gates and deep push seating0.488mm. After sidewall reached, first bothOPEN sim689.933s x1.099789; bysim691.133s x1.094862, finaldeep5.138mm>3.000mm, cell5.138mm; yaw0.000120deg. Controllerexit1, completedonlybatch1; Cube03–05notadvanced. NegativeX drift/temporary2mmheight excursion occur in release/clearance window, but sparse cube/gripper records alone do not prove cup-contact/constraint-release/tracking causality. No scene/contact/physics/gate change. Need same-step tool/contact/action-phase diagnosis then user-approved release/withdrawal fix, not relaxedgates. Evidence `preclose_xyz_full_01/analysis.json`, `release_drift.json`, raw retained; report TASK01_PRECLOSE_XYZ.

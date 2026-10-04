@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-04 — Release-window diagnostic underway
+
+User approved continuing BUG-016 repair. Added independent-variant release/clearance stage topic and optional3s post-release main-thread diagnostic hold (ordinarydefault0), plus read-only same-physics-step tools/collision logger active only inside release window. Software25testsPASS, build/physics pending. No scene/model/material/gripper/ACM/gate or active release-control fix yet. Report TASK01_RELEASE_CLEARANCE. TASK01 IN_PROGRESS/36nulls,TASK02TODO; priorXYZPASS/full-flowFAIL preserved.
+
 ## 2026-10-04 final — XYZ pre-close verified, full flow still FAIL
 
 User-approved independent XYZ extension compiled, C++/22 Python/real RobotModel XYZ+FCL PASS. Normal-feed run: Cube01 batchPASS; Cube02 physically corrects X2.012→0.606mm/Z1.589→0.451mm/gapdelta0.879→0.275mm within original gates, then grasps/transports/pushes. But after side pressing and rear release, deep gap grows0.488→5.138mm > original3mm, exit1/completed1of5; Cube03–05notadvanced. Two XYZ moves total1mm cap, planning0.078621s/execution7.569621s atscale5. 7680valid sparse PhysX poses/0errors; static FK–Isaac difference norm max0.056mm, no hard dynamic timing proof. All owned processes stopped, teardown-11 repeats. Runtime f0812a4; full report `reports/TASK01_PRECLOSE_XYZ.md`, BUG-016 release-window diagnosis needs next-scope review. No scene/model/physics/ACM/gate/loaded-control/YAML changes; TASK01 IN_PROGRESS,36nulls,TASK02TODO. GitHub transport recovered with command-local existing HTTP CONNECT proxy, no system config edits.

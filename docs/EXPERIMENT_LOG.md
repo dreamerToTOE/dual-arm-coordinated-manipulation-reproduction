@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 — Release diagnostic software checks
+
+TASK01 ENGINEERING, 25PythonunittestsPASS including activephasewindow selection/identity+rotatedtoolTCP transform/invalidquaternion rejection. Diagnostic runtime addsnoordinarymotionchanges, optionalholdEXPERIMENTALdefault0. Preparingnormalfeedfirst1/max5/scale5/hold3, releasewindowfull-rate same-step contact/tools only; actualresultpending, notphysicalPASS.
+
 ## 2026-10-04 final — Actual bounded XYZ PASS, full five FAIL at later release
 
 TASK01 ENGINEERING/EXPERIMENTAL, Isaac4.5/Humble/MoveIt2, runtimef0812a4/binaryfc5e7f8a...; reproductionb0dbd86(test)/8adf617(launch record), OMPL RNG uncontrolled. Metadata commands/config/hashes in `results/20261004_TASK01_preclose_xyz_full_01`. Normalfeed0preplaced; exit1/completed[1],714.408s controller/815.721s sampler. Cube01cell1.576/deep0.871/side1.313mm. Cube02 actualXYZ correction X2.012→1.361→0.606,Z1.589→1.009→0.451,gapdelta0.879→0.607→0.275mm; original gatesPASS, maxvector1mm, two correctionsplan0.078621s/execute7.569621s. Pre-side-pressdeep0.488mm but final5.138mm>3mm; sim689.933firstbothOPEN x1.099789, sim691.133x1.094862, finalyaw0.000120deg. 7680samples0errors; Cube03–05unexecuted; allownedprocessesstopped, teardown-11retained. StaticFK/Isaac maxnorm0.056mm is not dynamic synchronized calibration. C++/22Python/build/realXYZ+FCLno-commandPASS in unitrun; firstPython parserfailure retained. No scene/model/physics/ACM/threshold/loaded-control/freezechange; not stable/full-five benchmark proof.

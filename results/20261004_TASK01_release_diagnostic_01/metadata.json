@@ -1,0 +1,17 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_post_release_hold_phase_contact_diagnostic",
+  "platform": "Isaac4.5_ROS2_Humble_MoveIt2_RTX3070",
+  "git_commit": "reproduction59a8095 + documented diagnostic working tree; runtimef0812a4 + documented diagnostic working tree",
+  "seed": "offline fixed poses; OMPL RNG uncontrolled",
+  "config_path": "unchanged Task27 scene; benchmark_v1.yaml DRAFT",
+  "command": [
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 1400 --record-release-diagnostics --output-dir results/20261004_TASK01_release_diagnostic_01/raw",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0 -p release_diagnostic_hold_sec:=3.0"
+  ],
+  "status": "FAIL_STARTUP_BRIDGE_SIGN_READ_FROM_SCENE_NAMESPACE; NO_ROBOT_COMMANDS",
+  "metrics": {"software_tests_passed": 25, "colcon_package_wall_s": 56.5, "colcon_total_wall_s": 56.8, "diagnostic_hold_sec": 3.0, "normal_hold_default_sec": 0.0, "preplaced_count": 0, "controller_started": false, "actual_startup_error": "KeyError: BRANCH_SIGN; bridge field incorrectly read from scene namespace", "headless_exit_code": 0, "exit_code_boundary": "SimulationApp shutdown masks exception process status; failure.json is authoritative"},
+  "artifact_paths": ["raw/moveit.log", "raw/kit.log", "raw/controller.log", "raw/release_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/summary.json"],
+  "boundary": "No ordinary release/loaded-control fix yet; optionalhold changes timing ONLY as a diagnostic, not normal benchmark proof. Same-step collision telemetry excludes suction D6 force; ROS phase labels arrive asynchronously. Original scene/model/material/gripper/ACM/gates retained."
+}

@@ -1,0 +1,17 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL_normal_feed_release_hold_contact_trace",
+  "platform": "Isaac4.5_ROS2_Humble_MoveIt2_RTX3070",
+  "git_commit": "runtime b259366; reproduction59a8095 plus documented release diagnostics working tree",
+  "seed": "offline fixed poses; OMPL RNG uncontrolled",
+  "config_path": "unchanged Task27 scene; benchmark_v1.yaml DRAFT",
+  "command": [
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 1400 --record-release-diagnostics --output-dir results/20261004_TASK01_release_diagnostic_02/raw",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0 -p release_diagnostic_hold_sec:=3.0"
+  ],
+  "status": "READOUT_STARTUP_PENDING; NO_CONTROLLER_YET",
+  "metrics": {"software_tests_passed": 25, "colcon_package_wall_s": 56.5, "colcon_total_wall_s": 56.8, "preplaced_count": 0, "diagnostic_hold_sec": 3.0, "normal_hold_default_sec": 0.0},
+  "artifact_paths": ["raw/kit.log", "raw/controller.log", "raw/release_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/summary.json", "../20261004_TASK01_release_diagnostic_01/raw/moveit.log"],
+  "boundary": "Diagnostic hold modifies timing, NOT ordinary benchmark evidence. Tool/cube/contact states same physics step; phase labels are async arrival. Collision forces exclude suction D6 wrench. No scene/model/gripper/physics/ACM/gate change."
+}

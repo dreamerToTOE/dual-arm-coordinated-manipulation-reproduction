@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 — Continue after XYZ pass / release-gap failure
+
+User“继续”authorizespreviouslyproposedrelease/withdrawalrepairwithunchangedscene/friction/gripper/gates. CarryforwardXYZcodeandhonestpartialoutcome, diagnosebeforeadjustment, re-testactualphysics andrecordGitHub. Noimplicitapprovalforbenchmarkfreeze/materialchange/paperforcecontrol.
+
 ## 2026-10-04 final — Approved XYZ change delivered with honest failure boundary
 
 User's “好的，那就这么做” applied to one merged boundedXYZ correction only. Implemented/tested without changing model/physics/acceptance or loaded task. Physical Cube02preclose passes aftertwo corrections; ~0.079s totalplanning vs7.57s slowphysicalmoves, no extra correction forCube01. Full flow still failsCube02post-release deepgap5.138mm, so no stable/fullfive handoff. Stop before distinct release/contact-control redesign, save evidence for nextuserdirection; don't silently implement forcecontrol or widen gates. Allownedtestprocessesstopped, GitHubrecordspublished, TASK01notfrozen.

@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 — Release-window diagnostic preparation
+
+Reread mandatory instructions/currentTask01/spec/P2/P3 cards and statuses, sent PRE-TASK. Scoped userapprovalto release/clearance engineering, not forcecontrol/model/gates. Addedphasepublisher plusoptionaldiagnostichold default0 onlyindependentnode; opt-in headless usesexisting validatedPhysicsContactSampler and nativeRigidPrim tools, noUSDdisplaypose. Full-rate onlyduringreleasephases, sparseordinaryposesunchanged. Phasearrivalsasyncexplicitlylabelled; collisionforcesnotD6wrench. 25softwaretestsPASS; build/actualdiagnosticpending.
+
 ## 2026-10-04 final — XYZ validation completed, release-window failure retained
 
 Built runtime f0812a4; C++/22Python/real RobotModel PASS including XYZ obstruction rejection. Started actual normal-feed headless with unchanged scene/bridge hashes, no preplaced objects. Cube01PASS; Cube02 needs two XYZ corrections and passes original preclose gates (X0.606/Z0.451/gapdelta0.275mm). Planning0.078621s/execution7.569621s, bounded1mm and3checks. Actual Cube02 later fails final deep gap5.138mm against3mm despite pre-side-press0.488mm; physical data shows negativeX retreat around rear suction release after sidewall reached. No loaded/contact/physics/gate repair silently added. Preserved full fail/exit1,7680samples0errors and release_drift.json; no later cube advanced. Stopped exact owned processes, headlessexit0/MoveItteardown-11. Updated all six records/task/report/metadata; branches uploaded through command-local existing proxy after directSSH failure. TASK01 IN_PROGRESS/36nulls, TASK02TODO; next release/contact diagnosis needs scope decision.
