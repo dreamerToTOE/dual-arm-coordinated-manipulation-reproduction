@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D018 — Reuse bounded free-space RRT only after physical release
+
+2026-10-04; ENGINEERING. User“那你继续，我记得之前退出都是没问题的啊”requestscomparisonandrepair. KeepCartesian/localcontinuousseedfirst; ifrejectedandbothcupsOPEN, ≤3RRTConnectrequests/arm,3s/request, samefullmeasuredstartandoriginaltargets. PreservecurrentreleasedCubeinworld/MoveItplanningandjointFCL, checknumeric/bounds/firstpointnotadapter-shifted/endpoint, ranksbyexistingjointtravelscore. Temporarilyaddedworldobjectmustsynchronouslyrestore,elseabort. No loadedXYZ/contact/scene/material/ACM/gate/paperchange. Roundedreplaymustusepreviousbatchrailshift0.1m; noexactA/Borfullphysicsclaimfromreplay.
+
 ## D017 — Repair measured start before entering the blocked diagnostic window
 
 ENGINEERING: newdiagnostic revealspre-releaseactualsideplanningmixescommandjointseedwithmeasuredCubeGT. Reuseexistingone-RobotState seedmechanismforindependentactualsideentry; validateCLOSEDpusher/OPENhelper, jointfinite/count/bounds andoriginal0.035radcommanddeltagate. KeepcurrentCubeinFCL, allphysics/contacttargets/protocols/ACM unchanged. Ifmeasuredstartstillcollides, stop; do notallowpairtoobtainPASS. Thisprerequisiterepairdoesnotestablishrelease-driftcause. Nextordinaryfullfivehasdiagnostichold0, nosilent3sdelayfix.

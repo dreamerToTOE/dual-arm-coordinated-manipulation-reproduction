@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-04 — Empty-retreat configuration-sensitive recurrence
+
+OPEN; currentCube02 Cartesianfraction1butFK752–967mm, localIKfails118/151. Actualcommanddelta<0.001rad; historicalCube02passesdifferinredundantconfiguration. SamecontrollersCube01retreatPASS, so notallretreatsbroken. RRTbackupisnotyetvalidated; genuinecollision/boundsremainrejects. PriorBUG016releasebackdragstillOPEN/notreached. Evidence measured_side_full_01/raw/controller.log, analysis.json. No gate bypass.
+
 ## 2026-10-04 — Side approach command/measurement seed mismatch, patch not yet verified
 
 Diagnostic02 abortsbeforeCube02release: SIDECOMPACTIONincludesactualcurrentCube butpusherholdseedisPUSHcommandend, gives0.783mm collisiont0onall8candidates. ExistingjointsettlegatedoesnotmeanCartesiancommand=physicalpose. Postabortstaticcupgap0.267mm isonlysupporting—notexactfailurestate—observation. Independentactualsideapproach nowusesmeasureddualstatewithoriginaljointdelta/bounds/graspchecksandcurrentCubeFCL; noexemption. Physicalproofpending. BUG016originalreleasereturnremainsOPEN, notsolvedbyfirstcubediagnosticPASS.

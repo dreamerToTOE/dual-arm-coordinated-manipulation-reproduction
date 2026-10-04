@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 — measured_side_full_01 final physical FAIL
+
+Runtime2fbfa0b/binary6a64fb90..., hold0/preplaced0/first1/max5/scale5. Cube01batchPASS; Cube02COMMON_DROPGT(.768,-.060,.262), bothOPEN; fourCartesianstepsfraction1butFK752–967mm, boundedIK118/151failure, exit1/safeabort. NoCube02side/release-windowtestandnolaterCubecommand. 17319sparsePhysXposes0integrityerrors; headlessSIGTERMaftercontrollerabortwritesummary, noGUIused. Finalmetadata/analysis/release_windows inresults/20261004_TASK01_measured_side_full_01. CurrentnewRRTunbuilt/notusedinthisrun. 28offlinePythontestsPASSnextiteration.
+
 ## 2026-10-04 — Diagnostic02 final FAIL and new ordinary regression preparing
 
 Diagnostic02 raw/analysis/release_windows retained: exit1/completed[1], firstcell0.946/deep0.497/side0.805mm; seconddeep1.804mm, laterpre-releaseSIDEPREFLIGHTcommandseedFCL0.783mm abort. No secondrelease trace, no causalclaim on originalBUG016. 13227poses0integrityerrors,1617windowcontacts; headlessexit0,teardownmovegroup-11/jointbridge1. Addedmeasuredsideactualstart runtime2fbfa0b/binary6a64fb90...,policyCPP/Python28/buildPASS. Normalfirst1/max5/scale5/hold0/preplaced0 runmeasured_side_full_01next; not a PASS untilactualcompletion.

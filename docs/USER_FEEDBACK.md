@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 — Explain headless execution and verify previously working exits
+
+UseraskswhereIsaacrunsbecauseGUIwasnotopened; confirmedlocal/home/ubuntu2004/isaacsim-4.5.0backgroundSimulationApp(headless=True), notremote/notsandbox/nothumanGUIacceptance. Userthenrequestscontinuationandrecallspreviousexitsworked. PreserveoldPASSwithscope, compareactualseedsandframeoffsets; don'tinventmodelregressionorcallpartialfivePASS. Continuein-scopedunloadedRRTreuse, reportmajorissuesandrecordGitHub. No inferredgeometry/contact/gateapproval.
+
 ## 2026-10-04 — No collision bypass for new diagnostic blockage
 
 Continuation staysengineering-scoped: secondcube'snewcommand-seedcollisionisrecorded, notignored. ReuseactualseedandstrictFCL beforefurtherreleasevalidation; nouserapprovalinferredforACM/material/grasp/benchmarkchanges. Ordinaryrunhold0required; diagnosticfirstcubestabilitycannotbehandedoffasstablefivecube.

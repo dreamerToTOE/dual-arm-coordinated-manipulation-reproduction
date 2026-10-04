@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-04 — Ordinary second-Cube retreat rejected; bounded empty RRT preparing
+
+Ordinary measured_side_full_01 controllerexit1/completed[1], Cube01cell0.678/deep0.670/side0.108mm. Cube02dropped/bothOPEN, measured-commanddelta0.000681/0.000995rad, CartesianFK752–967mm rejected; continuousIKfails118/151. EarlierCube02retreatPASSuseddifferentredundantconfiguration; notblanketlogicregression/rootcauseproof. Headlesslocalteststoppedaftercontrollerabort,17319sparseposes0errors. AddedunbuiltOPEN-onlyRRTbackupwithsameactualstart/originalgoal/fullreleasedCubeFCL, ≤3plans/arm; numeric/bounds/adapterstart/goalchecksandverifiedscenecleanup. Pendingreal-model/physicsvalidation, BUG016stillOPEN. No model/physics/ACM/gate/YAMLchange,TASK01IN_PROGRESS/36nulls,TASK02TODO.
+
 ## 2026-10-04 — Diagnostic stopped safely; measured side start built
 
 Diagnostic02 exit1/completed[1]; Cube02 before release side-approach t0 commanded-seed/currentCube collision0.783mm, deepseat1.804mm. Firstcubeholdstable notsecondcubeproof. Preserved13227poses/0errors/1617contacts, stoppedallownedprocesses/teardown-11. Independent actual side start nowusesone measuredRobotState, CLOSEDpusher/OPENhelper, existingjointdelta/bounds, strictcurrentCubeFCL. Runtime2fbfa0b/build+policyPASS/Python28PASS. Norelease-control/rootcause claim yet; cleanordinaryhold0/fullfive preparing. ReportTASK01_RELEASE_CLEARANCE, TASK01IN_PROGRESS/36nulls/TASK02TODO.

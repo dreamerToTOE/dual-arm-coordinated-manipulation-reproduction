@@ -38,3 +38,16 @@
 下一次正常供料5件，hold默认0，不使用预置；`results/20261004_TASK01_measured_side_full_01/metadata.json`保存精确命令/版本/hash。普通释放窗口继续只读记录，既有BUG-016仍OPEN。
 
 普通测试checkpoint：同一最终binary的真实RobotModel无命令XYZ/空载退路/FCL probe exit0。Cube01实测side-start联合FCL通过，普通releasehold0，最终cell0.678/deep0.670/side0.108mm通过；batch1PASS并到第二件预吸位。第二件仍在运行，不能提前宣称修复Cube02或完整五件。基准analytic checkerPASS/36nulls/hash不变。一次误传checker的`--help`被当作文件名报错，随后按真实文件参数重跑PASS，不是仿真或模型负结果。
+
+### 2026-10-04 后续 PRE-TASK REPORT：空载退出备用路径
+
+- Task: TASK01，Cube02落桌后空载退出。
+- Goal: 对比此前成功记录，复用已允许的空载RRTConnect，保留安全拒绝和释放诊断。
+- Paper method understood as: 仍为工程基准准备，不实施P2/P3论文控制方法。
+- Scope: 独立变体双杯OPEN后，实测起点+原目标，Cartesian和连续seed失败才尝试有限RRT；已释放Cube保留完整FCL，不更改持件路径/侧压/模型/场景/ACM/门限。
+- Files expected to change: 上游共享cpp独立宏、无命令probe；此报告、六份记录、结果metadata/摘要。
+- Validation plan: 失败日志差异审查→编译/政策测试→四位小数失败seed无命令重放（临时同步PlanningScene须同步恢复）→全新普通供料物理回归。
+- Known ambiguities / risks: 此前局部Cube04→05成功时未触发备用IK，不覆盖本次Cube02肘部分支。OMPL不固定随机seed；同步FCL为离散采样，不是连续碰撞保证。复现仍可能发现实测起点碰撞，必须拒绝。
+- Need user confirmation: no，用户明确要求继续，空载RRT属既有工程路径复用；科学/几何/物理/门限变化仍需另行确认。
+
+普通measured_side_full_01实际最终FAIL：Cube01完成；Cube02共同落桌并双杯OPEN后，左臂实测seed与命令差0.000681rad/右0.000995rad。4种Cartesian步长fraction均1，但FK直线偏差752–967mm，严格拒绝；连续IK失败118/151段，controllerexit1，后续对象未执行。未到达Cube02侧压/释放，BUG-016尚无修复证明。Isaac在本机后台headless运行，不是GUI验收；用户询问后已明确说明。

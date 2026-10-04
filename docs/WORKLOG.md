@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 — Reconcile prior retreat successes with normal-feed failure
+
+UsercorrectlyrecallspreviousexitPASS; comparedactualCube02jointseedsratherthanassumingglobalregression. Currentleftj3=-2.7546/j4=-2.8750rad, tinytrackingdelta; originalFKguardrejectsbadCartesian. ArchivedFAILsummary17319poses/0errors, stopownedheadlessafterbothOPEN. PreparingRRTreplayusingretainedrailshift0.1m, sameworld/target; threecandidatebudgetandshortestjointtravelranking, verifiedsceneundo, no robotcommandsinprobe. Existing28PythonPASS; build/physicalpending. PREinTASK01_RELEASE_CLEARANCE, no scientificchange.
+
 ## 2026-10-04 — Diagnostic failure retained; actual side seed engineering repair
 
 Diagnostic02 Cube02SIDE_HIGH_APPROACH t0 activeCube collision0.783mm aborts before sidepress/release; onlybatch1PASS. Collected13227poses/1617releasecontacts0errors; stoppedheadlesswithbothOPEN, MoveItteardown-11. PostabortstaticrearCupgap0.267mm notexactfailuretimestamp. Mixedcommandseed+actualGT identifiedinsource; adapted independentactualsideplan tosinglemeasuredRobotState andexistingdeltabounds/graspstate, currentCubeFCL stillstrict. Sharedfinite-seed helper/unitextended; runtime2fbfa0bpushed, build62s/finalincremental0.44s/Python28testsPASS. Normalhold0/fullfive preparing, originalreleasedrift remainsOPEN/noeffectclaim yet.
