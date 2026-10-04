@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-04 — Approved pre-close XYZ extension underway
+
+User approved combining XYZ execution residual into one bounded pre-suction correction. Current independent precision variant only; old Task26/27 behavior, original model/physics/ACM/gates and loaded motion retained. Mathematical tests pass; build, read-only real-model and normal-feed physical validation pending. Diagnostics and correction timing added. Report `reports/TASK01_PRECLOSE_XYZ.md`. TASK01 IN_PROGRESS, 36 null fields unchanged, TASK02 TODO.
+
 ## 2026-10-03 latest — Normal-feed current variant FAIL, stopped for review
 
 Full five-object attempt (no preplacement), same tested binary/model/gates: controller exit1, only Cube01 actual PASS. Cube02 pre-close Y gap asymmetry corrects2.230→0.427→0.001mm, but X TCP mismatch3.150mm exceeds original2.500mm alignment gate; suction never enabled, Cube03–05 not advanced. 7214 sparse PhysX samples/0errors. No controller/model/physics/gate change; all owned test processes stopped, MoveItteardown-11 repeats. Report `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md`. Prior partial/legacy PASS evidence retained; current variant is not full-flow stable. Next discuss XYZ execution residual diagnosis/correction scope plus pending model/contact/36numeric review; TASK01 IN_PROGRESS, TASK02 TODO.

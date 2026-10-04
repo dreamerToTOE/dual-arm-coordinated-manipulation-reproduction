@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 — Explicit approval for pre-suction XYZ and efficiency policy
+
+User asks what XYZ means, why prior runs passed, and overhead; then confirms “好的，那就这么做”. Explained that prior X/Z residuals existed below gates; latest onlyXfailed and random/configuration cause not proved. Approved one combined bounded XYZ micro trajectory only if needed, not three axis moves/full RRT, same3checkstop. Current implementation adds static FK/Isaac diagnostic and measured timing; no approval to change validated scene/material/gates or loaded/contact controller.
+
 ## 2026-10-03 — Test-only continuation ended at actual alignment failure
 
 Completed remaining autonomous full-five regression rather than relying on preplacedfixturePASS. Currentvariant failsCube02pre-closeXgate, onlyCube01PASS; stoppedwithout suction/latercubes, no control/model/material/gate edits. User's hard-decision boundary respected: savefailure and proposedXYZdiagnosis/correction discussion plus unresolvedmodel/contact/numericalreview for tomorrow, not hidden compensation or benchmarkPASS. Raw and summarizedresults retained; ownedtestprocessesstopped.

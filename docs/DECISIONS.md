@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D016 — User-approved merged XYZ pre-suction correction
+
+2026-10-04; [ENGINEERING]. User “好的，那就这么做” approves described XYZ extension/speed policy. Apply only when original attachment gate fails and both cups OPEN; accumulated command-FK plus actual residual, total1mm vector bound, same fineIK/FCL/orientation, maximum3checks. No separate X/Y/Z RRT, no correction when already valid, timing recorded. No authority inferred to change mass/material/contact topology/gates/freeze36fields or implement paper force control. Old Task26/27 nodes retain Y-only semantics; current precision variant receives the change.
+
 ## 2026-10-03 — Full-run failure retained, no autonomous compensation expansion
 
 Actual no-preplacement run failsCube02Xcorrespondence3.150mm>2.500mm afterYconverges0.001mm; onlyCube01placed. Keep same scene/model/control/gates and stop this test-only iteration rather than silently addXYZtracking compensation or relaxacceptance. Next scope should first isolate FK/tracking/metrology, then discuss bounded ungraspedXYZrepair; noforcecontroller/contactredesign/numericfreeze inferred. Earlierisolated/continuous4→5PASS remains true but cannot establish current full-five stability. TASK01IN_PROGRESS/TASK02TODO,36nulls unchanged.

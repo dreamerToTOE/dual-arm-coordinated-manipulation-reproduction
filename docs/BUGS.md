@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-04 — BUG-015 approved XYZ repair, verification pending
+
+User approved pre-suction XYZ residual correction with unchanged gates. Independent variant now corrects all translation components in one total1mm move; diagnostics compare command-FK/measured-FK/Isaac before correction. Initial mathematical checks PASS, but no claim tracking/model origin identified or full flow repaired before physical evidence. Previous failed run retained; material/contact/measurement/teardown issues remain independent.
+
 ## BUG-015 — Pre-close Y correction does not resolve actual X correspondence error
 
 - Date2026-10-03; TASK01; OPEN_DIAGNOSED_GATE_FAILURE.

@@ -1,0 +1,8 @@
+{
+  "status": "FAIL_SUMMARY_PARSER_UNIT_FIRST_ATTEMPT_RETAINED",
+  "test": "test_xyz_stats_and_error_source_vectors",
+  "exception": "ValueError: could not convert string to float: '1.000.'",
+  "cause": "Numeric regex accepted terminal punctuation in correction norm log",
+  "fix": "Use decimal grammar instead of greedy digits/dots class",
+  "boundary": "Only offline summary/parser test failed; no physical controller or thresholds changed"
+}

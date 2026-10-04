@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 — XYZ header mathematical checks
+
+Task TASK01, baseline ENGINEERING pre-close XYZ, standalone C++17. Command: `c++ -std=c++17 -Wall -Wextra -Werror -I <legacy>/ros_ws/src/fr3_dual_palletize/include platforms/isaac_ros2/probes/test_preclose_alignment.cpp -o /tmp/task01_preclose_xyz_test`; execution PASS. Checks: old Y semantics, combined vector direction/1mm norm bound, tiny and zero residual, NaN/Inf rejection, mathematical previous-static-failure replay. No robot commands or physical-tracking proof. Build/real-model/full-flow trials pending; report TASK01_PRECLOSE_XYZ.
+
 ## 2026-10-03 — Current variant full-five actual FAIL_SAFE_STOP
 
 TaskTASK01, baselineEXPERIMENTAL normal-feed D014/D015 variant, Isaac4.5/ROS2/MoveIt2; repro511349c atlaunch/legacy3ee42d2/binary77b4f499..., OMPLuncontrolled. Commands/config/artifacts: `results/20261003_TASK01_precision_full_five_01/metadata.json`, reportTASK01_PRECISION_FULL_FIVE_REGRESSION. Actualexit1/completed[1], no preplacement. Cube01center1.605/deep1.006/side1.251mm; Cube02precloseX3.027→3.145→3.150mm against2.500mm gate, gapdelta2.230→0.427→0.001mm against0.300mm gate. No suction/laterCube execution. 7214sparse samples0errors, sampler761.389s/controller472.036s, rawpushtorque35.53Nm(notTCP). Allownedruntimesstopped; MoveItteardown-11/jointbridgeExternalShutdown exit1 independent. Offline21/21PASS; no YAML/hash/runtime/model/physics/gate change. Prior partialsuccess does not erase newfailure; no frozenbenchmark/paper/reliability claim.

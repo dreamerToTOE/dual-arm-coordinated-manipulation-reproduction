@@ -16,6 +16,37 @@ def half_y(q):
     return .060 * (abs(2*(x*y+z*w)) + abs(1-2*(x*x+z*z)) + abs(2*(y*z-x*w)))
 
 
+def preclose_metrics(text):
+    """仅汇总实际日志；无纠偏行时不虚构耗时或误差来源。"""
+    stats = []
+    for row in re.findall(
+            r'(task27_\w+) PRE_CLOSE_XYZ_STATS checks=(\d+) corrections=(\d+) '
+            r'plan_wall_s=([\d.]+) execute_wall_s=([\d.]+) total_wall_s=([\d.]+) result=(PASS|FAIL)', text):
+        name, checks, corrections, planning, execution, total, result = row
+        stats.append({'object': name, 'checks': int(checks), 'corrections': int(corrections),
+                      'plan_wall_s': float(planning), 'execute_wall_s': float(execution),
+                      'total_wall_s': float(total), 'result': result})
+    diagnostics = []
+    for name, side, attempt, tracking, difference in re.findall(
+            r'(task27_\w+) PRE_CLOSE_KINEMATICS side=(left|right) attempt=(\d+) .*?'
+            r'tracking_mm=\(([^)]+)\) fk_isaac_mm=\(([^)]+)\)', text):
+        vectors = [[float(v) for v in value.split(',')] for value in (tracking, difference)]
+        if any(len(v) != 3 or not all(math.isfinite(x) for x in v) for v in vectors):
+            raise ValueError('Invalid preclose diagnostic vector')
+        diagnostics.append({'object': name, 'side': side, 'attempt': int(attempt),
+                            'tracking_xyz_mm': vectors[0], 'fk_isaac_xyz_mm': vectors[1]})
+    correction_norms = [float(v) for v in re.findall(
+        r'PRE_CLOSE_XYZ_CORRECTION side=\w+ delta_mm=\([^)]+\) norm_mm=(\d+(?:\.\d+)?)', text)]
+    return {'preclose_xyz_stats': stats, 'preclose_kinematics': diagnostics,
+            'preclose_total_correction_plan_wall_s': sum(row['plan_wall_s'] for row in stats),
+            'preclose_total_correction_execute_wall_s': sum(row['execute_wall_s'] for row in stats),
+            'preclose_max_correction_norm_mm_printed': max(correction_norms, default=None),
+            'preclose_max_tracking_norm_mm_printed': max(
+                (math.hypot(*row['tracking_xyz_mm']) for row in diagnostics), default=None),
+            'preclose_max_fk_isaac_norm_mm_printed': max(
+                (math.hypot(*row['fk_isaac_xyz_mm']) for row in diagnostics), default=None)}
+
+
 def summarize(run_dir):
     text = (run_dir / 'raw/controller.log').read_text(encoding='utf-8')
     audit_path = run_dir / 'raw/model_audit.json'
@@ -30,6 +61,7 @@ def summarize(run_dir):
             r'(task27_(?:plus_outer|minus_outer|plus_inner|minus_inner|center_insert)) (?:final|center) Ground Truth: (.*)', text),
         'snapshots': 0, 'integrity_errors': [],
         'fourth_helper_closed_inside_samples': 0, 'fifth_helper_closed_inside_samples': 0}
+    metrics.update(preclose_metrics(text))
     # ARRIVED 是供料状态，不是码垛成功；预置夹具也不能算五件实际执行。
     metrics['full_five_batch_completion_reported'] = (
         preplaced_count == 0 and metrics['completed_batches'] == [1, 2, 3, 4, 5])

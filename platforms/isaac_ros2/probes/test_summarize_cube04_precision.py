@@ -12,6 +12,22 @@ spec.loader.exec_module(module)
 
 
 class Cube04SummaryTest(unittest.TestCase):
+    def test_xyz_stats_and_error_source_vectors(self):
+        text = ('task27_minus_outer PRE_CLOSE_KINEMATICS side=right attempt=2 '
+                'commanded=(0,0,0) measured_fk=(0,0,0) isaac=(0,0,0) '
+                'tracking_mm=(1.000,-2.000,2.000) fk_isaac_mm=(0.000,0.003,0.004).\n'
+                'task27_minus_outer PRE_CLOSE_XYZ_CORRECTION side=right '
+                'delta_mm=(0.600,0.000,0.800) norm_mm=1.000.\n'
+                'task27_minus_outer PRE_CLOSE_XYZ_STATS checks=2 corrections=1 '
+                'plan_wall_s=0.010 execute_wall_s=3.000 total_wall_s=3.510 result=PASS.\n')
+        result = module.preclose_metrics(text)
+        self.assertEqual(result['preclose_xyz_stats'][0]['corrections'], 1)
+        self.assertAlmostEqual(result['preclose_max_tracking_norm_mm_printed'], 3)
+        self.assertAlmostEqual(result['preclose_max_fk_isaac_norm_mm_printed'], .005)
+        self.assertEqual(result['preclose_max_correction_norm_mm_printed'], 1)
+        self.assertEqual(result['preclose_total_correction_plan_wall_s'], .01)
+        self.assertIsNone(module.preclose_metrics('')['preclose_max_fk_isaac_norm_mm_printed'])
+
     def test_gap_and_do_not_confuse_next_task_suction(self):
         with tempfile.TemporaryDirectory() as temporary:
             run = Path(temporary)

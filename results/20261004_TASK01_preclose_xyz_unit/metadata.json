@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_preclose_XYZ_unit_and_build",
+  "platform": "C++17_Python3_ROS2_Humble_MoveIt2_build",
+  "git_commit": "314e55c reproduction + explicitly documented XYZ working tree; legacy 3ee42d2 + XYZ working tree",
+  "seed": "none; mathematical tests",
+  "config_path": "configs/benchmark/benchmark_v1.yaml unchanged DRAFT",
+  "command": [
+    "c++ -std=c++17 -Wall -Wextra -Werror -I <legacy>/ros_ws/src/fr3_dual_palletize/include platforms/isaac_ros2/probes/test_preclose_alignment.cpp -o /tmp/task01_preclose_xyz_test; /tmp/task01_preclose_xyz_test",
+    "colcon build --packages-select fr3_dual_palletize --symlink-install --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release",
+    "python3 -m unittest discover -s platforms/isaac_ros2/probes -p 'test_*.py' -v",
+    "python3 scripts/validate_benchmark_candidate.py configs/benchmark/benchmark_v1.yaml"
+  ],
+  "status": "PASS_SOFTWARE_AND_READ_ONLY_ROBOT_MODEL; PHYSICS_PENDING",
+  "metrics": {"colcon_package_wall_s_rounded": 69, "colcon_total_wall_s_rounded": 73,
+    "cpp_xyz_policy": "PASS", "python_initial_passed": 21, "python_initial_errors": 1,
+    "python_final_passed": 22, "python_final_errors": 0,
+    "robot_model_probe_exit_code": 0, "xyz_fcl_samples": 25,
+    "xyz_obstruction_rejection": "PASS", "benchmark_unresolved_fields": 36},
+  "artifact_paths": ["unit_failures.json", "raw/python_final.log", "raw/cpp_final.log", "raw/robot_model_probe.log"],
+  "boundary": "Software checks only; no robot commands. Original rosidl deprecation warnings remain, not compile errors."
+}

@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 — Pre-close XYZ engineering implementation
+
+Read required task/benchmark/paper records and git status; announced PRE-TASK. User approved merged XYZ correction rather than three serial axis moves. Added pure finite-input helper with total 1mm vector cap, accumulated commanded-FK targets in the independent variant, OPEN guards, static FK/Isaac diagnostics and timing. Preserved legacy Y logic under other nodes and all existing gates/model/physics/loaded control. Extended mathematical and no-command RobotModel probes; build/physical evidence pending.
+
 ## 2026-10-03 — Normal full-five negative result preserved
 
 Actually ran normal feed first1/max5/time_scale5, no preplaced cubes and unchanged binary77b4f499... . Cube01PASS (center1.605mm, deep1.006/side1.251mm), short/RRT handoff to Cube02. Two fine Y corrections converge gap asymmetry to0.001mm but X mismatch remains3.150mm>2.500mm, so pre-close safely exits1 without suction or later tasks. Stationary TCP read-only snapshots support3.149754mm difference, not synchronous dynamic calibration. 7214 valid sparse poses; no code/model/gate changes. Added null guard for parked/unexecuted Cube04 neighbor geometry in summarizer, not physical scene. Saved raw/metadata/analysis/report, stopped all owned processes; MoveItteardown-11 persists. User-review boundary: do not silently add XYZ feedback/model/material changes to obtainPASS.
