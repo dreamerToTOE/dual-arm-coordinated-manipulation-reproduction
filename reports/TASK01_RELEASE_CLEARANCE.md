@@ -36,3 +36,5 @@
 实际侧压规划混用了PUSH命令终点与Cube实测位姿。失败后的静态ROS杯面后侧间隙约0.267mm（不同时间，不是失败瞬间证明）；因此先复用已有实测seed工程机制。在独立宏分支的实际侧压入口，用同一RobotState取双臂，验证CLOSED背挡/OPEN侧压臂、关节形状/有限/限位、命令差仍在原0.035rad内，然后生成hold seed，当前Cube仍在完整FCL里。预测预检、侧压/释放轨迹目标、旧Task26/27行为均不改。实测碰撞仍拒绝，不扩大ACM/不豁免Cube。runtime2fbfa0b；最终binary6a64fb90...。C++政策单测PASS，Python28/28PASS，完整build62s+最终增量0.44s；实际效果未先行宣称。
 
 下一次正常供料5件，hold默认0，不使用预置；`results/20261004_TASK01_measured_side_full_01/metadata.json`保存精确命令/版本/hash。普通释放窗口继续只读记录，既有BUG-016仍OPEN。
+
+普通测试checkpoint：同一最终binary的真实RobotModel无命令XYZ/空载退路/FCL probe exit0。Cube01实测side-start联合FCL通过，普通releasehold0，最终cell0.678/deep0.670/side0.108mm通过；batch1PASS并到第二件预吸位。第二件仍在运行，不能提前宣称修复Cube02或完整五件。基准analytic checkerPASS/36nulls/hash不变。一次误传checker的`--help`被当作文件名报错，随后按真实文件参数重跑PASS，不是仿真或模型负结果。
