@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 — Diagnostic02 in-progress checkpoint
+
+TASK01 EXPERIMENTAL normalfeedfirst1/max5/scale5/releasehold3s, runtimeb259366/binaryc0939f21..., sourcecapture6f8dd67. Original scene/physics/gates preserved. FirstcubeSIDE_PRESS/release/shortclearance observed: stationaryOPEN holdXdelta0.028mm, shortclearanceXdelta0.000mm. This is not evidence for secondcube norordinary timing. Stopafterbatch2 planned beforeCube03 commands. Startup01negativeBRANCH_SIGN failure archive, no controller then; build56.5s andPython28testsPASS. No active motion repair yet; tools/contacts samephysstep, phasearrivalasync, collisionforceexcludesD6wrench.
+
 ## 2026-10-04 — Release diagnostic software checks
 
 TASK01 ENGINEERING, 25PythonunittestsPASS including activephasewindow selection/identity+rotatedtoolTCP transform/invalidquaternion rejection. Diagnostic runtime addsnoordinarymotionchanges, optionalholdEXPERIMENTALdefault0. Preparingnormalfeedfirst1/max5/scale5/hold3, releasewindowfull-rate same-step contact/tools only; actualresultpending, notphysicalPASS.

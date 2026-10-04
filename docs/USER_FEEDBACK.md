@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 — Continue scoped release-window diagnosis
+
+Continuinguserapprovedrepair independently withfirsttwoobjectphysicaldiagnostics. Preserve originalscene/material/gripper/acceptance, do notinferpermissionforpaperforcecontrol/benchmarkfreeze. Publishin-progressandnegativeevidence; reportordinaryvalidation separatelyfromoptionaldiagnostichold. No user-action requested while safe diagnostic progress remains.
+
 ## 2026-10-04 — Continue after XYZ pass / release-gap failure
 
 User“继续”authorizespreviouslyproposedrelease/withdrawalrepairwithunchangedscene/friction/gripper/gates. CarryforwardXYZcodeandhonestpartialoutcome, diagnosebeforeadjustment, re-testactualphysics andrecordGitHub. Noimplicitapprovalforbenchmarkfreeze/materialchange/paperforcecontrol.

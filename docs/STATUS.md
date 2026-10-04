@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-04 — Diagnostic physical checkpoint, not a control fix
+
+Runtime b259366 buildPASS56.5s, diagnostic02 physically running with3s hold after OPEN. Cube01 release-hold deltaX0.028mm and clearance deltaX0.000mm, hence first object does not reproduce previous Cube02 failure. Cube02 underway. Initial diagnostic01 startupBRANCH_SIGN ordering failure archived (processclose returned0 despite failure.json); no controller was started then. Logger uses bridge namespace for signs, not scene edit. Python28/28PASS including peak/mixed-step guards. Stop diagnostic after second completed batch before later object control; no normal-flow or reliability claim. Prior full-flowFAIL retained, no active release-motion repair yet.
+
 ## 2026-10-04 — Release-window diagnostic underway
 
 User approved continuing BUG-016 repair. Added independent-variant release/clearance stage topic and optional3s post-release main-thread diagnostic hold (ordinarydefault0), plus read-only same-physics-step tools/collision logger active only inside release window. Software25testsPASS, build/physics pending. No scene/model/material/gripper/ACM/gate or active release-control fix yet. Report TASK01_RELEASE_CLEARANCE. TASK01 IN_PROGRESS/36nulls,TASK02TODO; priorXYZPASS/full-flowFAIL preserved.

@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-04 — Release diagnostics do not yet establish cause
+
+BUG-016 remainsOPEN. Firstcube not reproducing priorsecondcube failure: holdX0.028mm,clearanceX0mm. NeedCube02 data before attributingdrift torelease/servo/trajectory. Diagnostic01 BRANCH_SIGN source lookup failurefixedonly inprobeconfiguration afterpreservingfailure; no controller ran. SimulationApp.close returned0 despiteexception, therefore failure.json/errorlogs—notexit0alone—mustgovernrunstatus.
+
 ## BUG-016 follow-up — Instrument before choosing a remedy
 
 2026-10-04; OPEN. Added independentrelease/clearance tags and optional3s stationarypostreleasehold toseparateconstraint/contact responsefromwithdrawal trajectory. Same-stepPhysXcube/tools/collisionreadoutonlywithinwindow; asyncphasearrivalnotahardtimestampcontract, collision telemetryexcludesD6suction. No rootcause/PASS claim untilactualevidence; no physics/gate bypass.

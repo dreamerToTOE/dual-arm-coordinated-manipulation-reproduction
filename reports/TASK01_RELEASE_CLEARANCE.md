@@ -22,3 +22,9 @@
 ## 验证与最终记录
 
 待实际实验；上一轮完整失败保持在 `results/20261004_TASK01_preclose_xyz_full_01`，不得覆盖。
+
+### 诊断 checkpoint
+
+独立变体 build PASS56.5s/package56.8s/total，runtime b259366/binaryc0939f21...。Python28/28PASS，包括摘要峰值、混步拒绝、非有限位置拒绝。诊断01在启动期BRANCH_SIGN读取失败，无控制器命令；failure.json是权威负证据，Isaac.close导致exit0不能算PASS。诊断02用bridge命名空间取得既有sign，未改scene/bridge。
+
+诊断02 max5为保留Cube02短转场分支，但在batch2完成后主动停止，避免1400s仿真deadline中断后续持件运动。hold3s改变时序，仅诊断；普通默认0未改。第一块观察到OPEN静止hold的Xdelta0.028mm、短退出Xdelta0mm，不复现此前第二块问题，尚不能归因/宣称修复。实际第二块数据待完成。命令、版本和artifact见run metadata。

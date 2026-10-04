@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D017 checkpoint — Diagnostic timing is not normal-flow evidence
+
+Keep3s hold strictlyopt-in/default0. Enddiagnosticaftersecondcompletedbatch andbeforelaterobjectmotion toavoidfixedsimduration interruptingloadedtask. Do notcallfirstcubestabilitysecondcube repair ordiagnosticPASSordinaryfivePASS. Maintainasynctag caveat andcollision-versusD6 distinction; addpeak/mixedstep regression beforeusingcontactsummary. Noactivecontrol/physics/contact/gate changefromthischeckpoint.
+
 ## D017 — User-approved release/withdrawal repair, evidence-first scope
 
 2026-10-04; user“继续”followingexplicitproposal permitsminimalrelease/clearanceengineeringrepair. Firstaddread-onlyphase/tool/contactobservations andoptionalpostreleasehold; ifcubeisstablebeforefirstwithdrawal, inspectactualseed/pressure unloading/trajectory ratherthanchangefrictionorforcegates. Adiagnosticholdrunisnotordinaryfull-flowproof. Preservemodel/material/ACM/gripperparameters/successgates/YAML; stopifcontactredesign/forcecontrol/benchmarkchoicebecomesnecessary. PriorD004gapstillpending.

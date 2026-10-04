@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 — Release diagnostic startup/build/first-object checkpoint
+
+Compiledindependentvariant56.5s/package56.8s/total, committedruntimeb259366. Startup01failsBRANCH_SIGN lookup beforecontroller, failure.json retained despiteIsaaccloseexit0; corrected logger config namespace only. Diagnostic02 startsnativecube/tool/contactviews beforecommands; optionalhold3s distinguishesrelease fromclearance. First-objectholdX0.028mm,clearanceX0mm; secondobjectstillrunning. Addedsummary peak/mixed-step/nonfinite regression, Python28/28PASS. Exactbinary/pins/commands inmetadata. Diagnosticstopatbatch2 prevents later loaded motion atsimdeadline; not ordinaryfullfive proof.
+
 ## 2026-10-04 — Release-window diagnostic preparation
 
 Reread mandatory instructions/currentTask01/spec/P2/P3 cards and statuses, sent PRE-TASK. Scoped userapprovalto release/clearance engineering, not forcecontrol/model/gates. Addedphasepublisher plusoptionaldiagnostichold default0 onlyindependentnode; opt-in headless usesexisting validatedPhysicsContactSampler and nativeRigidPrim tools, noUSDdisplaypose. Full-rate onlyduringreleasephases, sparseordinaryposesunchanged. Phasearrivalsasyncexplicitlylabelled; collisionforcesnotD6wrench. 25softwaretestsPASS; build/actualdiagnosticpending.
