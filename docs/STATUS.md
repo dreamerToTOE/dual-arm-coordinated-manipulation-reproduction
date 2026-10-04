@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-04 — Diagnostic stopped safely; measured side start built
+
+Diagnostic02 exit1/completed[1]; Cube02 before release side-approach t0 commanded-seed/currentCube collision0.783mm, deepseat1.804mm. Firstcubeholdstable notsecondcubeproof. Preserved13227poses/0errors/1617contacts, stoppedallownedprocesses/teardown-11. Independent actual side start nowusesone measuredRobotState, CLOSEDpusher/OPENhelper, existingjointdelta/bounds, strictcurrentCubeFCL. Runtime2fbfa0b/build+policyPASS/Python28PASS. Norelease-control/rootcause claim yet; cleanordinaryhold0/fullfive preparing. ReportTASK01_RELEASE_CLEARANCE, TASK01IN_PROGRESS/36nulls/TASK02TODO.
+
 ## 2026-10-04 — Diagnostic physical checkpoint, not a control fix
 
 Runtime b259366 buildPASS56.5s, diagnostic02 physically running with3s hold after OPEN. Cube01 release-hold deltaX0.028mm and clearance deltaX0.000mm, hence first object does not reproduce previous Cube02 failure. Cube02 underway. Initial diagnostic01 startupBRANCH_SIGN ordering failure archived (processclose returned0 despite failure.json); no controller was started then. Logger uses bridge namespace for signs, not scene edit. Python28/28PASS including peak/mixed-step guards. Stop diagnostic after second completed batch before later object control; no normal-flow or reliability claim. Prior full-flowFAIL retained, no active release-motion repair yet.

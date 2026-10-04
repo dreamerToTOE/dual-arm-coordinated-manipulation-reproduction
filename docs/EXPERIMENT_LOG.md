@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 — Diagnostic02 final FAIL and new ordinary regression preparing
+
+Diagnostic02 raw/analysis/release_windows retained: exit1/completed[1], firstcell0.946/deep0.497/side0.805mm; seconddeep1.804mm, laterpre-releaseSIDEPREFLIGHTcommandseedFCL0.783mm abort. No secondrelease trace, no causalclaim on originalBUG016. 13227poses0integrityerrors,1617windowcontacts; headlessexit0,teardownmovegroup-11/jointbridge1. Addedmeasuredsideactualstart runtime2fbfa0b/binary6a64fb90...,policyCPP/Python28/buildPASS. Normalfirst1/max5/scale5/hold0/preplaced0 runmeasured_side_full_01next; not a PASS untilactualcompletion.
+
 ## 2026-10-04 — Diagnostic02 in-progress checkpoint
 
 TASK01 EXPERIMENTAL normalfeedfirst1/max5/scale5/releasehold3s, runtimeb259366/binaryc0939f21..., sourcecapture6f8dd67. Original scene/physics/gates preserved. FirstcubeSIDE_PRESS/release/shortclearance observed: stationaryOPEN holdXdelta0.028mm, shortclearanceXdelta0.000mm. This is not evidence for secondcube norordinary timing. Stopafterbatch2 planned beforeCube03 commands. Startup01negativeBRANCH_SIGN failure archive, no controller then; build56.5s andPython28testsPASS. No active motion repair yet; tools/contacts samephysstep, phasearrivalasync, collisionforceexcludesD6wrench.

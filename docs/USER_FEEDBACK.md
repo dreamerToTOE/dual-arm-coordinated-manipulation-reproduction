@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 — No collision bypass for new diagnostic blockage
+
+Continuation staysengineering-scoped: secondcube'snewcommand-seedcollisionisrecorded, notignored. ReuseactualseedandstrictFCL beforefurtherreleasevalidation; nouserapprovalinferredforACM/material/grasp/benchmarkchanges. Ordinaryrunhold0required; diagnosticfirstcubestabilitycannotbehandedoffasstablefivecube.
+
 ## 2026-10-04 — Continue scoped release-window diagnosis
 
 Continuinguserapprovedrepair independently withfirsttwoobjectphysicaldiagnostics. Preserve originalscene/material/gripper/acceptance, do notinferpermissionforpaperforcecontrol/benchmarkfreeze. Publishin-progressandnegativeevidence; reportordinaryvalidation separatelyfromoptionaldiagnostichold. No user-action requested while safe diagnostic progress remains.

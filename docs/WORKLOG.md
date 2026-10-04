@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 — Diagnostic failure retained; actual side seed engineering repair
+
+Diagnostic02 Cube02SIDE_HIGH_APPROACH t0 activeCube collision0.783mm aborts before sidepress/release; onlybatch1PASS. Collected13227poses/1617releasecontacts0errors; stoppedheadlesswithbothOPEN, MoveItteardown-11. PostabortstaticrearCupgap0.267mm notexactfailuretimestamp. Mixedcommandseed+actualGT identifiedinsource; adapted independentactualsideplan tosinglemeasuredRobotState andexistingdeltabounds/graspstate, currentCubeFCL stillstrict. Sharedfinite-seed helper/unitextended; runtime2fbfa0bpushed, build62s/finalincremental0.44s/Python28testsPASS. Normalhold0/fullfive preparing, originalreleasedrift remainsOPEN/noeffectclaim yet.
+
 ## 2026-10-04 — Release diagnostic startup/build/first-object checkpoint
 
 Compiledindependentvariant56.5s/package56.8s/total, committedruntimeb259366. Startup01failsBRANCH_SIGN lookup beforecontroller, failure.json retained despiteIsaaccloseexit0; corrected logger config namespace only. Diagnostic02 startsnativecube/tool/contactviews beforecommands; optionalhold3s distinguishesrelease fromclearance. First-objectholdX0.028mm,clearanceX0mm; secondobjectstillrunning. Addedsummary peak/mixed-step/nonfinite regression, Python28/28PASS. Exactbinary/pins/commands inmetadata. Diagnosticstopatbatch2 prevents later loaded motion atsimdeadline; not ordinaryfullfive proof.

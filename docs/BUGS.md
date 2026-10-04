@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-04 — Side approach command/measurement seed mismatch, patch not yet verified
+
+Diagnostic02 abortsbeforeCube02release: SIDECOMPACTIONincludesactualcurrentCube butpusherholdseedisPUSHcommandend, gives0.783mm collisiont0onall8candidates. ExistingjointsettlegatedoesnotmeanCartesiancommand=physicalpose. Postabortstaticcupgap0.267mm isonlysupporting—notexactfailurestate—observation. Independentactualsideapproach nowusesmeasureddualstatewithoriginaljointdelta/bounds/graspchecksandcurrentCubeFCL; noexemption. Physicalproofpending. BUG016originalreleasereturnremainsOPEN, notsolvedbyfirstcubediagnosticPASS.
+
 ## 2026-10-04 — Release diagnostics do not yet establish cause
 
 BUG-016 remainsOPEN. Firstcube not reproducing priorsecondcube failure: holdX0.028mm,clearanceX0mm. NeedCube02 data before attributingdrift torelease/servo/trajectory. Diagnostic01 BRANCH_SIGN source lookup failurefixedonly inprobeconfiguration afterpreservingfailure; no controller ran. SimulationApp.close returned0 despiteexception, therefore failure.json/errorlogs—notexit0alone—mustgovernrunstatus.

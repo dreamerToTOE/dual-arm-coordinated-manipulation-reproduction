@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D017 — Repair measured start before entering the blocked diagnostic window
+
+ENGINEERING: newdiagnostic revealspre-releaseactualsideplanningmixescommandjointseedwithmeasuredCubeGT. Reuseexistingone-RobotState seedmechanismforindependentactualsideentry; validateCLOSEDpusher/OPENhelper, jointfinite/count/bounds andoriginal0.035radcommanddeltagate. KeepcurrentCubeinFCL, allphysics/contacttargets/protocols/ACM unchanged. Ifmeasuredstartstillcollides, stop; do notallowpairtoobtainPASS. Thisprerequisiterepairdoesnotestablishrelease-driftcause. Nextordinaryfullfivehasdiagnostichold0, nosilent3sdelayfix.
+
 ## D017 checkpoint — Diagnostic timing is not normal-flow evidence
 
 Keep3s hold strictlyopt-in/default0. Enddiagnosticaftersecondcompletedbatch andbeforelaterobjectmotion toavoidfixedsimduration interruptingloadedtask. Do notcallfirstcubestabilitysecondcube repair ordiagnosticPASSordinaryfivePASS. Maintainasynctag caveat andcollision-versusD6 distinction; addpeak/mixedstep regression beforeusingcontactsummary. Noactivecontrol/physics/contact/gate changefromthischeckpoint.

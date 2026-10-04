@@ -1,0 +1,18 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_measured_side_start_normal_full_feed",
+  "platform": "Isaac4.5_ROS2_Humble_MoveIt2_RTX3070",
+  "git_commit": "runtime 2fbfa0b; reproduction97fd353 plus recorded tests and run metadata",
+  "seed": "offline fixed poses; OMPL RNG uncontrolled",
+  "config_path": "unchanged Task27 scene; benchmark_v1.yaml DRAFT",
+  "command": [
+    "ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ros2 run fr3_dual_palletize task01_empty_retreat_probe",
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 2600 --record-release-diagnostics --output-dir results/20261004_TASK01_measured_side_full_01/raw",
+    "ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args -p first_batch:=1 -p max_batches:=5 -p center_pusher_arm:=right -p execution_time_scale:=5.0"
+  ],
+  "status": "PREPARING_NORMAL_HOLD_ZERO; PHYSICAL_RESULT_PENDING",
+  "metrics": {"software_tests_passed": 28, "policy_cpp_pass": true, "rebuild_package_wall_s": 62.0, "final_incremental_build_package_wall_s": 0.44, "preplaced_count": 0, "diagnostic_hold_sec": 0.0, "runtime_binary_sha256": "6a64fb907df0b8cd877262b2ce5cc4e6621065a9485be94337a9ebc59958b7d5", "controller_source_sha256": "947060f131e25e5ae550e1da525289bbd8b8a1a1e9664e5345ec6e53b5665b9a", "scene_sha256": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7", "bridge_sha256": "0f7123657ea8422cf0efd468e7bcd59624e144ae8c9ca315a82af57576b68dc6"},
+  "artifact_paths": ["raw/kit.log", "raw/moveit.log", "raw/read_only_probe.log", "raw/controller.log", "raw/release_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/summary.json"],
+  "boundary": "Actual side approach starts from one measured RobotState with pusher CLOSED/helper OPEN verified, same bounds and existing joint delta gate; strict current Cube FCL retained. No scene/model/material/gripper/ACM/gate change. Old Task26/27 unaffected. Original release drift remains unproven until this ordinary run."
+}
