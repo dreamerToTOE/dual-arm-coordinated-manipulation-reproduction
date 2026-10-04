@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D018 final validation — 不把一次成功扩大为方法或可靠性证明
+
+2026-10-04；[ENGINEERING]。保持源码和原门限不变完成一次零预置/hold=0 的实际五件回归。旧 Cartesian/continuous-seed 优先，有限 RRT 仅双吸盘 OPEN 且前者拒绝后使用；本轮未触发，不能用 5/5 为其实际执行背书。失败重放 01、历史 Cube02 回带和 MoveIt teardown 继续保存。
+
+[EXPERIMENTAL] 慢速 scale=5 / OMPL RNG 不受控的一轮本机 headless 成功只证明该次流程到位。停止本轮自有测试进程，不继续循环来声称稳定。TASK01 的论文接触协议、材质/质量、力/时间测量与 36 数值冻结需要用户审查；不因 demo PASS 自动推进 TASK02。没有新增 [DEVIATION]，既有 D014 第四件适配与前三件 D004 差异仍单列。
+
 ## D018 validation — Check original goal semantics, keep negative evidence
 
 ENGINEERING: evaluateendpointusingactualMoveItconstructedgoalconstraints insteadofinventingaggregate-anglegate; numeric/seed/bounds remain. Frozenacceptancevaluesunchanged. Beforephysicalcommandsverifyroundedfailedstate/railshift andtemporaryabsent-IDsynccleanup withnorobotpublishers. Preservefailedfirstreplayanddo notinferexisting-objectrestoreverifiedfromabsence-onlycase. Actualrunusespinnedbinary/source; nogoal/scene/material/ACMchangesmidrun.

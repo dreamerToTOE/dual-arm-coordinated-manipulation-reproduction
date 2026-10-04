@@ -1,0 +1,22 @@
+Selected actual controller log lines; full raw/controller.log retained locally.
+Runtime df9c2c0 / binary c760d506fdc678f8733e2b640aca9de428dd65f6467027ea0df299c521715ad6.
+Normal feed, preplaced_count=0, first_batch=1, max_batches=5, execution_time_scale=5.0, release_diagnostic_hold_sec=0.
+
+[INFO] [1791100363.273526658] [task01_cube04_precision_insert]: task27_plus_outer final Ground Truth: expected=(1.100, 0.243, 0.260), actual=(1.098, 0.242, 0.260), cell_error=1.983 mm, +X deep wall_gap=+1.521 mm, +Y wall_gap=+1.272 mm.
+[INFO] [1791100435.245162483] [task01_cube04_precision_insert]: Task27 batch 1 PASS: Cube 已落稳；双臂从短清障位经 RRTConnect 到下一件上方待命位，未执行长距离原路退出或批间 HOME。
+[INFO] [1791100510.162093827] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_GEOMETRY ATTACHMENT: x=0.186 mm z=0.198 mm left_gap=1.219 mm right_gap=1.001 mm gap_delta=0.219 mm tilt=0.000 deg.
+[INFO] [1791100510.162103093] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_XYZ_STATS checks=3 corrections=2 plan_wall_s=0.069299 execute_wall_s=7.418296 total_wall_s=8.303532 result=PASS.
+[INFO] [1791100780.402964631] [task01_cube04_precision_insert]: task27_minus_outer final Ground Truth: expected=(1.100, -0.243, 0.260), actual=(1.099, -0.243, 0.260), cell_error=0.807 mm, +X deep wall_gap=+0.800 mm, -Y wall_gap=+0.104 mm.
+[INFO] [1791100822.240112609] [task01_cube04_precision_insert]: Task27 batch 2 PASS: Cube 已落稳；双臂从短清障位经 RRTConnect 到下一件上方待命位，未执行长距离原路退出或批间 HOME。
+[INFO] [1791101080.614784747] [task01_cube04_precision_insert]: task27_plus_inner final Ground Truth: expected=(1.100, 0.120, 0.260), actual=(1.100, 0.121, 0.260), cell_error=0.723 mm, +X deep wall_gap=+0.235 mm, +Y outer cube_gap=+0.817 mm.
+[INFO] [1791101120.508953356] [task01_cube04_precision_insert]: Task27 batch 3 PASS: Cube 已落稳；双臂从短清障位经 RRTConnect 到下一件上方待命位，未执行长距离原路退出或批间 HOME。
+[INFO] [1791101350.305549602] [task01_cube04_precision_insert]: task27_minus_inner CUBE04_PRECISION_GATE: y_error=0.082 mm (<=0.500), oriented_neighbor_clearance=0.480 mm (>=0); helper remains OPEN.
+[INFO] [1791101406.104198514] [task01_cube04_precision_insert]: task27_minus_inner final Ground Truth: expected=(1.100, -0.121, 0.260), actual=(1.099, -0.123, 0.260), cell_error=1.319 mm, +X deep wall_gap=+0.641 mm, -Y outer cube_gap=+0.347 mm.
+[INFO] [1791101463.463617169] [task01_cube04_precision_insert]: Task27 batch 4 PASS: Cube 已落稳；双臂从短清障位经 RRTConnect 到下一件上方待命位，未执行长距离原路退出或批间 HOME。
+[INFO] [1791101712.142407378] [task01_cube04_precision_insert]: task27_center_insert center Ground Truth: expected=(1.100, -0.001, 0.260), actual=(1.100, -0.001, 0.260), cell_error=0.481 mm, +X_gap=+0.406 mm, +Y_inner_gap=+1.987 mm, -Y_inner_gap=+1.473 mm, total=+3.460 mm.
+[INFO] [1791101749.335665613] [task01_cube04_precision_insert]: left final joint-state settled: max_error=0.059 deg.
+[INFO] [1791101749.335747756] [task01_cube04_precision_insert]: right final joint-state settled: max_error=0.061 deg.
+[INFO] [1791101749.335783791] [task01_cube04_precision_insert]: Task27 batch 5 PASS: 当前批 1 件已落稳入垛，双臂已回到共同 HOME。
+
+Controller exit0 verified from command session; all five ordinary empty retreats passed without new RRT fallback.
+MoveIt teardown -11 / joint bridge teardown1 recorded separately in raw/moveit.log, not clean-lifecycle PASS.

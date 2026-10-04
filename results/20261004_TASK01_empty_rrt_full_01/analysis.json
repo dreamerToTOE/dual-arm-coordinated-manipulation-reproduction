@@ -1,0 +1,393 @@
+{
+  "all_controller_final_geometry_lines": [
+    [
+      "task27_plus_outer",
+      "expected=(1.100, 0.243, 0.260), actual=(1.098, 0.242, 0.260), cell_error=1.983 mm, +X deep wall_gap=+1.521 mm, +Y wall_gap=+1.272 mm."
+    ],
+    [
+      "task27_minus_outer",
+      "expected=(1.100, -0.243, 0.260), actual=(1.099, -0.243, 0.260), cell_error=0.807 mm, +X deep wall_gap=+0.800 mm, -Y wall_gap=+0.104 mm."
+    ],
+    [
+      "task27_plus_inner",
+      "expected=(1.100, 0.120, 0.260), actual=(1.100, 0.121, 0.260), cell_error=0.723 mm, +X deep wall_gap=+0.235 mm, +Y outer cube_gap=+0.817 mm."
+    ],
+    [
+      "task27_minus_inner",
+      "expected=(1.100, -0.121, 0.260), actual=(1.099, -0.123, 0.260), cell_error=1.319 mm, +X deep wall_gap=+0.641 mm, -Y outer cube_gap=+0.347 mm."
+    ],
+    [
+      "task27_center_insert",
+      "expected=(1.100, -0.001, 0.260), actual=(1.100, -0.001, 0.260), cell_error=0.481 mm, +X_gap=+0.406 mm, +Y_inner_gap=+1.987 mm, -Y_inner_gap=+1.473 mm, total=+3.460 mm."
+    ]
+  ],
+  "boundary": "Fixture preplaced count=0; preplaced cubes are not executed; sparse readout is not force/reliability proof; projected gap is not PhysX penetration depth",
+  "completed_batches": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "controller_final_geometry_lines": [
+    "expected=(1.100, -0.121, 0.260), actual=(1.099, -0.123, 0.260), cell_error=1.319 mm, +X deep wall_gap=+0.641 mm, -Y outer cube_gap=+0.347 mm.",
+    "expected=(1.100, -0.001, 0.260), actual=(1.100, -0.001, 0.260), cell_error=0.481 mm, +X_gap=+0.406 mm, +Y_inner_gap=+1.987 mm, -Y_inner_gap=+1.473 mm, total=+3.460 mm."
+  ],
+  "cube04_axis_center_neighbor_gap_mm": 0.3474700450897261,
+  "cube04_inner_trim_command_lines": 0,
+  "cube04_insertion_abs_yaw_max_deg": 0.025031408913873614,
+  "cube04_insertion_y_span_mm": 0.2767518162727356,
+  "cube04_neighbor_geometry_available": true,
+  "cube04_oriented_projection_neighbor_gap_mm": 0.23615046159432967,
+  "cube04_precision_gate": [
+    "y_error=0.082 mm (<=0.500), oriented_neighbor_clearance=0.480 mm (>=0); helper remains OPEN."
+  ],
+  "fifth_helper_closed_inside_samples": 0,
+  "final_physical_poses": [
+    {
+      "path": "/World/Task27/Supply/Cube_01",
+      "position_m": [
+        1.09847891330719,
+        0.24172809720039368,
+        0.2600000202655792
+      ],
+      "quaternion_xyzw": [
+        8.719866296902938e-07,
+        -1.145237364046279e-07,
+        -0.006559860900186345,
+        0.9999784838806267
+      ],
+      "yaw_deg": -0.7517100788605379
+    },
+    {
+      "path": "/World/Task27/Supply/Cube_02",
+      "position_m": [
+        1.0992001295089722,
+        -0.24289603531360626,
+        0.2600000202655792
+      ],
+      "quaternion_xyzw": [
+        5.114157427286609e-07,
+        -4.800843327492773e-07,
+        0.0008597879683886027,
+        0.9999996303820105
+      ],
+      "yaw_deg": 0.09852445584027114
+    },
+    {
+      "path": "/World/Task27/Supply/Cube_03",
+      "position_m": [
+        1.0997647047042847,
+        0.12091127038002014,
+        0.2599999010562897
+      ],
+      "quaternion_xyzw": [
+        -6.597923900286423e-07,
+        -2.3007987570703846e-08,
+        0.00039545835337226613,
+        0.9999999218061244
+      ],
+      "yaw_deg": 0.04531619042572387
+    },
+    {
+      "path": "/World/Task27/Supply/Cube_04",
+      "position_m": [
+        1.0993590354919434,
+        -0.12254856526851654,
+        0.2600000202655792
+      ],
+      "quaternion_xyzw": [
+        7.814700091028388e-07,
+        -3.404511001811523e-08,
+        -6.732601854717691e-05,
+        0.9999999977332977
+      ],
+      "yaw_deg": -0.007714993437220282
+    },
+    {
+      "path": "/World/Task27/Supply/Cube_05",
+      "position_m": [
+        1.0995935201644897,
+        -0.0010754583636298776,
+        0.2600000202655792
+      ],
+      "quaternion_xyzw": [
+        7.29557655283252e-07,
+        -7.163416971756643e-09,
+        0.0005977756810314612,
+        0.9999998213318355
+      ],
+      "yaw_deg": 0.06850005131629215
+    }
+  ],
+  "fixture_preplaced_count": 0,
+  "fourth_helper_closed_inside_samples": 0,
+  "full_five_batch_completion_reported": true,
+  "integrity_errors": [],
+  "peak_push_joint_torque_nm_raw": 32.7,
+  "preclose_kinematics": [
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        0.017,
+        -0.003,
+        0.006
+      ],
+      "object": "task27_plus_outer",
+      "side": "left",
+      "tracking_xyz_mm": [
+        -0.941,
+        -0.661,
+        -0.975
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        -0.014,
+        0.026,
+        -0.021
+      ],
+      "object": "task27_plus_outer",
+      "side": "right",
+      "tracking_xyz_mm": [
+        -0.779,
+        0.568,
+        -0.852
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        -0.027,
+        0.001,
+        0.016
+      ],
+      "object": "task27_minus_outer",
+      "side": "left",
+      "tracking_xyz_mm": [
+        -1.172,
+        -1.485,
+        -1.368
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        0.025,
+        -0.024,
+        0.026
+      ],
+      "object": "task27_minus_outer",
+      "side": "right",
+      "tracking_xyz_mm": [
+        0.082,
+        0.226,
+        -0.718
+      ]
+    },
+    {
+      "attempt": 2,
+      "fk_isaac_xyz_mm": [
+        -0.011,
+        -0.001,
+        0.014
+      ],
+      "object": "task27_minus_outer",
+      "side": "left",
+      "tracking_xyz_mm": [
+        -1.195,
+        -1.483,
+        -1.367
+      ]
+    },
+    {
+      "attempt": 2,
+      "fk_isaac_xyz_mm": [
+        -0.022,
+        -0.0,
+        0.001
+      ],
+      "object": "task27_minus_outer",
+      "side": "right",
+      "tracking_xyz_mm": [
+        0.127,
+        0.203,
+        -0.694
+      ]
+    },
+    {
+      "attempt": 3,
+      "fk_isaac_xyz_mm": [
+        0.013,
+        0.002,
+        -0.01
+      ],
+      "object": "task27_minus_outer",
+      "side": "left",
+      "tracking_xyz_mm": [
+        -1.228,
+        -1.488,
+        -1.344
+      ]
+    },
+    {
+      "attempt": 3,
+      "fk_isaac_xyz_mm": [
+        -0.022,
+        -0.0,
+        0.001
+      ],
+      "object": "task27_minus_outer",
+      "side": "right",
+      "tracking_xyz_mm": [
+        0.127,
+        0.203,
+        -0.694
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        0.011,
+        0.001,
+        -0.007
+      ],
+      "object": "task27_plus_inner",
+      "side": "left",
+      "tracking_xyz_mm": [
+        -1.588,
+        -1.184,
+        -0.974
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        -0.008,
+        0.01,
+        -0.007
+      ],
+      "object": "task27_plus_inner",
+      "side": "right",
+      "tracking_xyz_mm": [
+        -1.128,
+        0.966,
+        -1.029
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        0.003,
+        -0.011,
+        -0.028
+      ],
+      "object": "task27_minus_inner",
+      "side": "left",
+      "tracking_xyz_mm": [
+        1.738,
+        0.658,
+        -1.538
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        0.007,
+        -0.01,
+        -0.02
+      ],
+      "object": "task27_minus_inner",
+      "side": "right",
+      "tracking_xyz_mm": [
+        1.987,
+        -0.91,
+        -1.518
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        -0.037,
+        -0.014,
+        -0.005
+      ],
+      "object": "task27_center_insert",
+      "side": "left",
+      "tracking_xyz_mm": [
+        -1.648,
+        -1.232,
+        -1.015
+      ]
+    },
+    {
+      "attempt": 1,
+      "fk_isaac_xyz_mm": [
+        0.012,
+        0.018,
+        -0.028
+      ],
+      "object": "task27_center_insert",
+      "side": "right",
+      "tracking_xyz_mm": [
+        -1.547,
+        1.139,
+        -1.015
+      ]
+    }
+  ],
+  "preclose_max_correction_norm_mm_printed": 1.0,
+  "preclose_max_fk_isaac_norm_mm_printed": 0.04332435804486894,
+  "preclose_max_tracking_norm_mm_printed": 2.660938368320469,
+  "preclose_total_correction_execute_wall_s": 7.418296,
+  "preclose_total_correction_plan_wall_s": 0.069299,
+  "preclose_xyz_stats": [
+    {
+      "checks": 1,
+      "corrections": 0,
+      "execute_wall_s": 0.0,
+      "object": "task27_plus_outer",
+      "plan_wall_s": 0.0,
+      "result": "PASS",
+      "total_wall_s": 0.260793
+    },
+    {
+      "checks": 3,
+      "corrections": 2,
+      "execute_wall_s": 7.418296,
+      "object": "task27_minus_outer",
+      "plan_wall_s": 0.069299,
+      "result": "PASS",
+      "total_wall_s": 8.303532
+    },
+    {
+      "checks": 1,
+      "corrections": 0,
+      "execute_wall_s": 0.0,
+      "object": "task27_plus_inner",
+      "plan_wall_s": 0.0,
+      "result": "PASS",
+      "total_wall_s": 0.278614
+    },
+    {
+      "checks": 1,
+      "corrections": 0,
+      "execute_wall_s": 0.0,
+      "object": "task27_minus_inner",
+      "plan_wall_s": 0.0,
+      "result": "PASS",
+      "total_wall_s": 0.26708
+    },
+    {
+      "checks": 1,
+      "corrections": 0,
+      "execute_wall_s": 0.0,
+      "object": "task27_center_insert",
+      "plan_wall_s": 0.0,
+      "result": "PASS",
+      "total_wall_s": 0.271664
+    }
+  ],
+  "snapshots": 18498
+}

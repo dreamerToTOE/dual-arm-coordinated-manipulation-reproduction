@@ -1,5 +1,16 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 final — empty_rrt_full_01 普通实际执行 5/5 PASS
+
+- 平台：用户本机 Isaac 4.5 headless + PhysX + ROS2 Humble + MoveIt2；不是 GUI 验收。源码 `df9c2c0` / binary `c760d506…`，无中途重编译或场景/门限调整。
+- 配置：preplaced_count=0，first_batch=1，max_batches=5，center_pusher_arm=right，execution_time_scale=5.0，release_diagnostic_hold_sec=0（默认）。已知离线位姿；OMPL 随机数未受控。
+- 结果：实际 completed=[1,2,3,4,5]，controller=0，最终双臂 HOME、双吸盘 OPEN。中心误差 [1.983,0.807,0.723,1.319,0.481] mm，深墙 gap [1.521,0.800,0.235,0.641,0.406] mm。第四 neighbor gap=0.347 mm；第五两侧 gap=1.987/1.473 mm。
+- Cube02 preclose gap asymmetry 1.283→0.850→0.219 mm，3 checks / 2 corrections；规划总计 0.069299 s，执行 7.418296 s。其他四件不做多余纠偏。原门限不变。
+- 记录：18,498 个稀疏 PhysX snapshots / 0 integrity errors，3,212 个 release snapshots；controller 首日志至最终 batch PASS=1,726.184527 s，sampler wall=1,940.471278 s（含准备/空闲）。慢速 scale=5，非效率基准。
+- 退出：headless=0；MoveIt 子进程关闭 -11 / joint bridge 1 单列，不能由 launcher 0 宣称全部干净关闭。自有进程已停。
+- 证据：`results/20261004_TASK01_empty_rrt_full_01/{metadata.json,analysis.json,release_windows.json,controller_excerpt.txt}`；raw 在该目录本地保存并忽略。完整命令见 metadata 和报告。
+- 边界：RRT 备用未物理触发；一轮成功不解决历史释放漂移/可靠性/已有对象恢复比较，也不证明论文接触/力控或冻结基准。TASK01 IN_PROGRESS / 36 nulls。
+
 ## 2026-10-04 — empty_rrt_replay_01 FAIL / replay_02 PASS; full_01 running
 
 Replay01exit1/newguardrejections/exactrestorefalse; norobotcommand. Replay02freshMoveItactualrequestconstraints/railshift.1: exit0, fullFCL1277samples, CLOSEDandobstructionnegativePASS, originalnamedIDs0→temporary6→restored0; notexisting-IDrestorationproof. Builds56.2s/55.8s separatelyrecorded. Runtimefinaldf9c2c0/binaryc760d506.../Python28/C++PASS. Full_01 localIsaacheadlessnormalfirst1/max5/scale5/hold0/3000sdeadline starts; samplerREADY/controllerplanning, actualcompletionpending. Preserveallraw/metadata/commandsandnegativeprecedingrun.

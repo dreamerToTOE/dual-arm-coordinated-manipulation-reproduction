@@ -1,5 +1,15 @@
 # BUGS
 
+## 2026-10-04 final — 完整一次通过，保留未覆盖缺陷
+
+普通 `empty_rrt_full_01` 五件实际 PASS / controller 0 / HOME；此前正常成功退出并未失效。本轮普通 Cartesian 空载退出均通过，因此 RRT 备用只有无命令失败姿态重放覆盖，没有实际备用执行证明。构型敏感的旧退出失败保留为工程健壮性风险，不能标为完全 RESOLVED。
+
+BUG-016 仍 OPEN / intermittent：本轮 Cube02 最终 deep gap=0.800 mm，原 5.138 mm 回带未复现。第一、二件同一步窗口 2,870 条有效记录；Cube02 侧压末至 clearance 末 X 变化约 -0.0637 mm。退出中工具仍有 X 运动，Cube 未大幅回带；不能宣称“消除了工具 X 运动”或隔离了根因。普通 OPEN phase 至多 1 step，是异步阶段标签，不是独立静止释放观察。
+
+重放 01 的已有对象严格逐字段恢复比较失败仍未隔离；重放 02 只验证原本不存在的 6 个对象同步 REMOVE + 查询不存在。首轮左候选拒绝详细子原因记录不足，不能仅由后来更换 goal constraint 检查断言唯一因果。恢复失败仍阻止任何机器人执行。
+
+BUG-004 MoveIt teardown -11 再现，joint bridge 关闭 1；控制器完成 0 独立有效，不等于所有进程生命周期正常。原材质/质量、动态测量与 D004 接触差异待审查，不由本次几何 PASS 消除。
+
 ## 2026-10-04 — New replay guard/restore validation boundaries
 
 Manualaggregate-angleendpointguard differedfromoriginalMoveItposegoalconstraints; replacedbycheckingconstructedactualrequest, nobenchmarktolerancechange. Replay02PASS/norobotcommands. Replay01strictbitwisecomparisonofrestoredexistingobjectsFAILremainsunexplained; absent-IDsyncREMOVEverifiedinfreshreplay02, do notclaimbothcasesresolved. Runtimecallerrestorefailureblockscommand. ActualRRTmotionnotyetverified; originalBUG016releasebackdragstillOPEN.

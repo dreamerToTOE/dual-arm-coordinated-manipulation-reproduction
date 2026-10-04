@@ -1,5 +1,13 @@
 # STATUS
 
+## 2026-10-04 final — 普通供料五件物理回归 5/5 PASS，基准仍未冻结
+
+本机 Isaac 4.5 **headless**、零预置、普通释放 hold=0 的 `empty_rrt_full_01` 完成 batch 1–5，控制器 exit=0，双臂最终 HOME / 双杯 OPEN。运行源码 `df9c2c0`，二进制 `c760d506…`。五件中心误差分别 1.983 / 0.807 / 0.723 / 1.319 / 0.481 mm；第四邻块缝隙 0.347 mm，第五两侧缝隙 1.987 / 1.473 mm。18,498 条稀疏 PhysX 记录，完整性错误 0；3,212 条释放诊断记录。
+
+这是一轮实际完整执行，不是 GUI 验收、长期稳定性或论文复现证明。普通 Cartesian 空载退出本轮都成功，新增有限 RRT 备用**没有物理触发**；备用仅有失败姿态四位小数重放 / 1,277 次联合 FCL 的无机器人命令验证。BUG-016 历史 Cube02 释放回带本次未复现，原因仍 OPEN；已有对象严格恢复比较问题仍未隔离。所有自有运行进程已停止，MoveIt 关闭时 -11 / joint bridge 1 与控制器 0 分开记录。
+
+最新报告：`reports/TASK01_RELEASE_CLEARANCE.md`。原场景、材质、质量、ACM、验收门限及 YAML 未改变。TASK01 保持 IN_PROGRESS / DRAFT / 36 nulls；TASK02 TODO。下方 running / failure 项均为保留的历史 checkpoint，本段为最新结果。
+
 ## 2026-10-04 — Empty RRT no-command replay PASS; clean physics regression running
 
 Runtime df9c2c0 built55.8s; binaryc760d506...; correctedrailshift0.1m failedCube02rounded-seedreplay02exit0/fullFCL1277samples, CLOSED/obstructedstartreject and absent-IDsyncsceneundoPASS. Replay01negativepreserved; existing-objectstrictcomparisonproblemnotclaimedresolved. No Arm/joint/suctioncommandsinprobe. New ordinary0preplacedfirst1/max5/scale5/hold0 localheadlessrunempty_rrt_full_01 started, nofinalphysicsPASSyet. Sourcepushed, TASK01IN_PROGRESS/36nulls/TASK02TODO; BUG016remainsOPEN.
@@ -42,7 +50,7 @@ New precision-variant empty retreat uses measured joint seed and bounded continu
 
 Latest follow-up: real RobotModel basic/long replay PASS; isolated actual Cube05 exit0/batch5 PASS, placement0.540mm/deepgap0.514mm; ordinary measured-start retreat/FCL passes, fallback not triggered physically. New clean Cube04→05 run starting. No stable/full-five claim; MoveIt teardown -11 remains.
 
-Last update: 2026-10-03
+Last update: 2026-10-04
 
 ## Latest Cube04 variant handoff — PARTIAL, physical tests stopped
 
@@ -66,7 +74,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | D016 preclose XYZ verified once; normal full flow still fails Cube02 post-release deep gap5.138mm/3mm gate. Previous partial/legacy passes retained; no full-five stable proof. First-three D004/model/force/time/36nulls/teardown pending. Latest report TASK01_PRECLOSE_XYZ |
+| TASK01 Benchmark Freeze | IN_PROGRESS | Current engineering variant normal-feed physical 5/5 once, runtime df9c2c0 / controller 0 / final HOME. Not reliability or freeze; empty RRT physically untriggered, historical BUG-016 open. First-three D004/model/force/time/36 nulls/teardown pending. Latest report TASK01_RELEASE_CLEARANCE |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

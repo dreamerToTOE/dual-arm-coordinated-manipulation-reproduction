@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-04 final — 完成普通五件回归并收尾上传
+
+保持已编译源码 `df9c2c0` 和原场景/模型/物理/门限，实际跑完零预置 first_batch=1 / max_batches=5 / time_scale=5 / release hold=0。五个 batch 均 PASS，controller 0，双臂 HOME；普通空载 Cartesian 成功，新 RRT 备用未触发。保存 metadata、analysis、release_windows 和精选 controller 原日志；raw 留本地、不提交大数据。18,498 条稀疏姿态 / 0 完整性错误，3,212 条释放诊断。复核 Cube02 XYZ 两次有限修正的规划 0.069299 s / 慢速执行 7.418296 s，不把约 28.77 min 的 demo 当效率结果。
+
+停止自有 Isaac、MoveIt 与控制器进程；保留 MoveIt teardown -11 / bridge 1。六份记录和 TASK01 报告更新，历史普通失败、重放 01 失败不抹掉。此前退出成功与本次成功都保留，但不能据此证明所有冗余构型可靠或 BUG-016 已修复。TASK01 仍待用户基准/接触/测量审查，TASK02 未开始。
+
 ## 2026-10-04 — Bounded fallback built and replayed before commands
 
 FinalRRT source/runtime df9c2c0 pushed; fullbuild55.8s PASS. OriginalMoveItrequestgoalconstraintsreplaceincorrecthandwrittenaggregate-angleguard, notsuccessthresholdchange. Negativefirstreplayretained; finalno-commandreplay02PASS1277jointFCLsamplesincludingreleasedCube; syncREMOVE/absenceconfirmed. Ordinaryheadless0preplacedfive-runlaunched, binarypinned, resultpending. Prioroldexitsnotdiscarded; sameCube02differentredundantqrecorded. Existing-objectbitwise restoration comparison needslaterunitreview; noclaimresolved.

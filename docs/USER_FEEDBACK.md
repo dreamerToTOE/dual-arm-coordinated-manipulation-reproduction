@@ -1,5 +1,11 @@
 # USER_FEEDBACK
 
+## 2026-10-04 final — 按“以前退出没问题”核对并交付本轮结果
+
+用户最新要求“那你继续，我记得之前退出都是没问题的啊”。保留此前退出 PASS，实际比较冗余构型而非宣布全面回归；复用已允许的空载 RRT 备用并先验证后执行。向用户明确本轮 Isaac 在其本机后台 headless 跑，不是远程或 GUI。
+
+本轮普通五件物理运行最终全部 PASS / 控制器 0 / 双臂 HOME；RRT 备用未触发、历史释放漂移未归因、一次成功不等于稳定版或基准冻结，已在交付前说明。自有运行进程停止并上传过程/负证据。没有从“继续”推断场景/材质/ACM/门限/论文方法改变的权限，也未开展 TASK02。
+
 ## 2026-10-04 — Continue locally with explicit headless disclosure
 
 User“那你继续”authorizescontinuingengineeringtests. ExplainedoldexitPASSandconfiguration-sensitivecurrentfailure, corrected100mmrailframeinreplay, announcednewnormalfeedtestexplicitlylocalheadless. NoGUIacceptanceor5/5claimfromreplay. Preservepartialfailures, pauseonlyifscientific/model/gateauthorityneeded; source/runtimebranchpushed.

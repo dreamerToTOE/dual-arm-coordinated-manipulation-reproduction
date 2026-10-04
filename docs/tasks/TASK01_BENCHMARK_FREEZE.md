@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## Latest final engineering result (2026-10-04)
+
+当前独立精准插入版源码 `df9c2c0` 在本机 Isaac headless 的普通供料五件实际完成：零预置、release hold=0、scale=5；controller 0 / 双臂最终 HOME / 双杯 OPEN。五件中心误差 1.983 / 0.807 / 0.723 / 1.319 / 0.481 mm，第四邻缝 0.347 mm，第五两侧缝 1.987 / 1.473 mm。18,498 条稀疏 PhysX 记录无完整性错误，3,212 条释放诊断。完整命令、源码/hash、原日志摘录和未解决问题见 `reports/TASK01_RELEASE_CLEARANCE.md` 及 `results/20261004_TASK01_empty_rrt_full_01/`。
+
+新增有限空载 RRT 备用通过失败姿态四位小数无命令重放 / 1,277 次联合 FCL，但本轮普通 Cartesian 全通过，**备用未物理触发**。历史 Cube02 5.138 mm 释放回带本轮未复现、BUG-016 原因仍 OPEN；已有对象恢复严格比较及 MoveIt teardown -11 保留。该一次实际完整 PASS 取代下方“当前仍失败”的历史运行状态，不抹掉负结果，不是稳定性、GUI 验收或论文复现证明。
+
+原场景、质量、有效摩擦、ACM、门限和 benchmark YAML 未改，D004 前三件协议/力与时间测量/数值审查仍待确认；36 nulls / DRAFT 保持，TASK01 不冻结，TASK02 TODO。
+
 ## Latest XYZ engineering result (2026-10-04)
 
 User-approvedD016 combinedXYZ preclose implemented in independentvariant; build/C++/22Python/real RobotModel IK+FCL PASS. Actual normalfeed Cube02residuals X2.012→0.606mm/Z1.589→0.451mm/gapdelta0.879→0.275mm pass originalgate aftertwo total1mm-boundedmoves. Correctionplanning0.078621s/physicalexecution7.569621s(scale5); Cube01alreadyvalidskipscorrection. But full-five remainsFAIL: Cube02laterdeepgap0.488→5.138mm>original3mm aroundsidepress/rearsuctionrelease, controllerexit1/completed[1],noCube03–05commands. 7680physicalposes0errors, allownedprocessesstopped/teardown-11retained. `reports/TASK01_PRECLOSE_XYZ.md` contains PRE/POST/commands/hashes/results and BUG-016 scope boundary. No loadedcontrol/model/material/scene/ACM/gate/YAMLchanges;36nulls andD004/metrologyreviewstillpending, TASK02TODO. Do not reinterpretpreclosePASS as full-task or paper reproductionPASS.
