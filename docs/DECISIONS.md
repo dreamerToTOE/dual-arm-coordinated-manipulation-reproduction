@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D016 validation — Scope completed without expanding into loaded/release control
+
+2026-10-04; XYZactualtwo-correctionPASS, but new laterCube02deep-wallfailure5.138mm retained, rather than claiming full-flowPASS or adjusting3mm gate. Stop after safe diagnostics/records; fixing release/withdrawal/contact or adding force/physics changes is a distinct next scope. Originalmodel/material/ACM/contact/loadedflow and36nulls preserved. Report TASK01_PRECLOSE_XYZ; BUG-016. One negative normal-feed run is enough to reject stability, not prove physical impossibility or a specific contact-force root cause.
+
 ## D016 — User-approved merged XYZ pre-suction correction
 
 2026-10-04; [ENGINEERING]. User “好的，那就这么做” approves described XYZ extension/speed policy. Apply only when original attachment gate fails and both cups OPEN; accumulated command-FK plus actual residual, total1mm vector bound, same fineIK/FCL/orientation, maximum3checks. No separate X/Y/Z RRT, no correction when already valid, timing recorded. No authority inferred to change mass/material/contact topology/gates/freeze36fields or implement paper force control. Old Task26/27 nodes retain Y-only semantics; current precision variant receives the change.

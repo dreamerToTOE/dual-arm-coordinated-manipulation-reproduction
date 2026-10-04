@@ -1,5 +1,13 @@
 # BUGS
 
+## BUG-016 — Cube02 loses deep-wall seating around rear suction release
+
+2026-10-04; TASK01; OPEN_PHYSICAL_RELEASE_WINDOW. New normal-feed XYZ variant passes original attachment gates and deep push seating0.488mm. After sidewall reached, first bothOPEN sim689.933s x1.099789; bysim691.133s x1.094862, finaldeep5.138mm>3.000mm, cell5.138mm; yaw0.000120deg. Controllerexit1, completedonlybatch1; Cube03–05notadvanced. NegativeX drift/temporary2mmheight excursion occur in release/clearance window, but sparse cube/gripper records alone do not prove cup-contact/constraint-release/tracking causality. No scene/contact/physics/gate change. Need same-step tool/contact/action-phase diagnosis then user-approved release/withdrawal fix, not relaxedgates. Evidence `preclose_xyz_full_01/analysis.json`, `release_drift.json`, raw retained; report TASK01_PRECLOSE_XYZ.
+
+## BUG-015 follow-up — Bounded XYZ physically passes once, not global reliability
+
+ApprovedD016/independent variant: Cube02X2.012→0.606mm, Z1.589→0.451mm, gapdelta0.879→0.275mm aftertwo1mm-boundedmicrocorrections; originalgatepassesbeforegrasp. StaticmeasuredFK tracksIsaac within0.056mm maxnorm, whilecommandtrackingnorm reaches2.806mm. Supports tracking-residual diagnosis at these holds, not complete model/time calibration. Preclose scoped workaround verified; wholeprocesslaterfails BUG-016, keep earlierfailures and no stablefullfive claim.
+
 ## 2026-10-04 — BUG-015 approved XYZ repair, verification pending
 
 User approved pre-suction XYZ residual correction with unchanged gates. Independent variant now corrects all translation components in one total1mm move; diagnostics compare command-FK/measured-FK/Isaac before correction. Initial mathematical checks PASS, but no claim tracking/model origin identified or full flow repaired before physical evidence. Previous failed run retained; material/contact/measurement/teardown issues remain independent.

@@ -1,8 +1,8 @@
 # STATUS
 
-## 2026-10-04 — Approved pre-close XYZ extension underway
+## 2026-10-04 final — XYZ pre-close verified, full flow still FAIL
 
-User approved combining XYZ execution residual into one bounded pre-suction correction. Current independent precision variant only; old Task26/27 behavior, original model/physics/ACM/gates and loaded motion retained. C++/build, 22 Python tests and read-only real RobotModel XYZ/FCL PASS; normal-feed physical validation now running, not yet accepted. Diagnostics and correction timing added. Runtime f0812a4/reproduction b0dbd86 pushed after a command-local HTTP-CONNECT proxy fixed the SSH transport failure; no system configuration change. Report `reports/TASK01_PRECLOSE_XYZ.md`. TASK01 IN_PROGRESS, 36 null fields unchanged, TASK02 TODO.
+User-approved independent XYZ extension compiled, C++/22 Python/real RobotModel XYZ+FCL PASS. Normal-feed run: Cube01 batchPASS; Cube02 physically corrects X2.012→0.606mm/Z1.589→0.451mm/gapdelta0.879→0.275mm within original gates, then grasps/transports/pushes. But after side pressing and rear release, deep gap grows0.488→5.138mm > original3mm, exit1/completed1of5; Cube03–05notadvanced. Two XYZ moves total1mm cap, planning0.078621s/execution7.569621s atscale5. 7680valid sparse PhysX poses/0errors; static FK–Isaac difference norm max0.056mm, no hard dynamic timing proof. All owned processes stopped, teardown-11 repeats. Runtime f0812a4; full report `reports/TASK01_PRECLOSE_XYZ.md`, BUG-016 release-window diagnosis needs next-scope review. No scene/model/physics/ACM/gate/loaded-control/YAML changes; TASK01 IN_PROGRESS,36nulls,TASK02TODO. GitHub transport recovered with command-local existing HTTP CONNECT proxy, no system config edits.
 
 ## 2026-10-03 latest — Normal-feed current variant FAIL, stopped for review
 
@@ -46,7 +46,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Inherited demo5/5 distinct from protocol/freeze. D014/D015 variant: isolated fifth and actual fourth→fifth engineering PASS after empty-retreat fix; previous drift/IK failures retained. First-three D004/model/force/time/36nulls/teardown pending. Latest report TASK01_EMPTY_RETREAT_REPAIR |
+| TASK01 Benchmark Freeze | IN_PROGRESS | D016 preclose XYZ verified once; normal full flow still fails Cube02 post-release deep gap5.138mm/3mm gate. Previous partial/legacy passes retained; no full-five stable proof. First-three D004/model/force/time/36nulls/teardown pending. Latest report TASK01_PRECLOSE_XYZ |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |

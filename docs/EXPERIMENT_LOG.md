@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-04 final — Actual bounded XYZ PASS, full five FAIL at later release
+
+TASK01 ENGINEERING/EXPERIMENTAL, Isaac4.5/Humble/MoveIt2, runtimef0812a4/binaryfc5e7f8a...; reproductionb0dbd86(test)/8adf617(launch record), OMPL RNG uncontrolled. Metadata commands/config/hashes in `results/20261004_TASK01_preclose_xyz_full_01`. Normalfeed0preplaced; exit1/completed[1],714.408s controller/815.721s sampler. Cube01cell1.576/deep0.871/side1.313mm. Cube02 actualXYZ correction X2.012→1.361→0.606,Z1.589→1.009→0.451,gapdelta0.879→0.607→0.275mm; original gatesPASS, maxvector1mm, two correctionsplan0.078621s/execute7.569621s. Pre-side-pressdeep0.488mm but final5.138mm>3mm; sim689.933firstbothOPEN x1.099789, sim691.133x1.094862, finalyaw0.000120deg. 7680samples0errors; Cube03–05unexecuted; allownedprocessesstopped, teardown-11retained. StaticFK/Isaac maxnorm0.056mm is not dynamic synchronized calibration. C++/22Python/build/realXYZ+FCLno-commandPASS in unitrun; firstPython parserfailure retained. No scene/model/physics/ACM/threshold/loaded-control/freezechange; not stable/full-five benchmark proof.
+
 ## 2026-10-04 — XYZ header mathematical checks
 
 Task TASK01, baseline ENGINEERING pre-close XYZ, standalone C++17. Command: `c++ -std=c++17 -Wall -Wextra -Werror -I <legacy>/ros_ws/src/fr3_dual_palletize/include platforms/isaac_ros2/probes/test_preclose_alignment.cpp -o /tmp/task01_preclose_xyz_test`; execution PASS. Checks: old Y semantics, combined vector direction/1mm norm bound, tiny and zero residual, NaN/Inf rejection, mathematical previous-static-failure replay. No robot commands or physical-tracking proof. Build/real-model/full-flow trials pending; report TASK01_PRECLOSE_XYZ.

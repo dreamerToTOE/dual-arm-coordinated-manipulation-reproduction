@@ -1,6 +1,6 @@
 # TASK01 — 吸附前合并 XYZ 有界纠偏
 
-日期：2026-10-04；状态：IN_PROGRESS，物理验证待完成。TASK01仍未冻结。
+日期：2026-10-04；状态：XYZ吸附前工程验证PASS；五件全流程FAIL（完成1/5，Cube02释放后深墙间隙5.138mm）。TASK01仍未冻结。
 
 ## PRE-TASK REPORT
 
@@ -32,3 +32,89 @@ Fidelity：[ORIGINAL] 尚无论文方法；[ADAPTATION] 当前FR3/TCP/滑轨坐�
 colcon完成（包69s，总73s）；C++原Y策略及新XYZ向量限幅测试PASS；Python最终22/22 PASS。最初Python新增解析测试暴露日志末尾句点被读成数字的错误，已修复正则并保留失败记录，不涉及机器人逻辑。
 
 真实MoveIt RobotModel只读probe exit=0：左右合并XYZ细IK各0.707mm/9点，联合FCL25样本PASS；加入已释放Cube障碍后正确拒绝。原空载退出及真实种子回放也PASS。probe未构造机器人/吸盘命令发布器。物理回归待完成；上一轮失败原始证据保持在 `20261003_TASK01_precision_full_five_01`。
+
+### 正常供料物理运行中间检查点（非最终PASS）
+
+运行 `20261004_TASK01_preclose_xyz_full_01`，runtime f0812a4，原速度scale=5。Cube01已完成batch1，吸附前直接合格，没有纠偏，总检查0.278s。Cube02真正触发两次合并XYZ纠偏：X对应2.012→1.361→0.606mm，Z1.589→1.009→0.451mm，左右间隙差0.879→0.607→0.275mm，原0.300mm门限内通过后才吸附。左杯两次向量均1.000mm，右杯0.702/0.002mm；不扩大限幅或重试次数。两次纠偏规划总0.078621s，执行7.569621s，检查窗口8.414887s（原scale=5慢速执行，非计算延迟）。Cube02后续搬运/最终摆放仍在运行，不把此检查点当作五件成功。
+
+静止日志实测FK与IsaacTCP差约几十微米，命令FK→实测FK仍有毫米级残差；这支持当前误差主要在执行/跟踪侧，但读数不是硬同步，不宣称时间合同/动态模型已全面验证。源码与初期记录均已push；SSH直连被当前网络关闭，命令局部使用已有HTTP CONNECT代理后push成功，未改SSH或系统配置。
+
+### 最终结果 / 原始失败保留
+
+- Runtime f0812a4；reproduction测试源b0dbd86、启动记录8adf617；二进制 `fc5e7f8a340287cc6770c78a7a338d439395a2e1caaec8ee950c8317de615539`。scene/bridge SHA与上一轮完全相同，详见metadata。
+- 正常供料，无预置。controller exit1，已完成batch1；Cube02通过吸附前XYZ/吸附/搬运/深墙推入，但在后续最终检查失败。Cube03–05仍在停车位，未规划或执行。不能交付为全流程稳定版。
+- Cube01最终cell误差1.576mm，深墙0.871mm/侧墙1.313mm；Cube02推到底墙时0.488mm，最终深墙5.138mm > 原3.000mm门限。侧墙接近零，最终PhysX yaw0.000120deg，不能用斜摆解释或扩大间隙验收。
+- 7680稀疏同一步PhysX采样，0采样/完整性错误。controller日志窗口714.408s，sampler815.721s；原推入raw关节力矩峰35.36Nm（不是TCP力）。终止自有headless exit0；MoveIt在主动关停时再次exit-11/关节bridge exit1，与之前相同，不是本次控制器几何失败的起因。所有自有进程已停止。
+
+### 释放阶段只读定位
+
+`release_drift.json`保留从原始同一步PhysX样本提取的状态：sim685.933s侧墙附近时x1.099861（后吸盘CLOSED）；首次双杯OPEN为sim689.933s，x1.099789；sim691.033s首次深墙间隙超过3mm；sim691.133s落到x1.094862并维持至最终。也就是解除后吸盘附近约1.2s，负X移动约4.93mm，且有约2mm临时抬高。
+
+这将问题缩小到侧压完成后的物理释放/接触/退出窗口，尚未隔离是杯面接触回带、压力释放响应、姿态跟踪还是撤离轨迹。不能凭这些稀疏Cube样本宣布具体力学根因。源码仍按既有方式侧压完成500ms后打开后杯，再短清障；未修改这一载物/接触协议。后续需要明确授权诊断和修复该窗口，先增加同一步工具/接触/动作阶段观测，不改变场景、摩擦或门限来规避失败。
+
+### 已使用的完整验证命令
+
+外部ROS终端：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+export ROS_LOCALHOST_ONLY=0
+colcon build --packages-select fr3_dual_palletize --symlink-install \
+  --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release
+source install/setup.bash
+ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false
+```
+
+第二个同环境终端，真实模型只读检查：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+export ROS_LOCALHOST_ONLY=0
+ros2 run fr3_dual_palletize task01_empty_retreat_probe
+```
+
+干净Isaac终端（内建ROS，不source系统Python）：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
+ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh \
+  platforms/isaac_ros2/probes/task01_cube04_headless.py \
+  --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 \
+  --preplaced-count 0 --duration-sec 2600 \
+  --output-dir results/20261004_TASK01_preclose_xyz_full_01/raw
+```
+
+等正常首件真正ARRIVED/READY后，第三个ROS终端：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+export ROS_LOCALHOST_ONLY=0
+ros2 run fr3_dual_palletize task01_cube04_precision_insert --ros-args \
+  -p first_batch:=1 -p max_batches:=5 \
+  -p center_pusher_arm:=right -p execution_time_scale:=5.0
+```
+
+统计命令（本次raw已保留，不要覆盖，下一次用新的run目录）：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
+python3 -m unittest discover -s platforms/isaac_ros2/probes -p 'test_*.py' -v
+python3 scripts/summarize_cube04_precision.py results/20261004_TASK01_preclose_xyz_full_01
+python3 scripts/validate_benchmark_candidate.py configs/benchmark/benchmark_v1.yaml
+```
+
+## POST-TASK REPORT
+
+- Completed: 合并XYZ有限纠偏、两处OPEN检查、静止FK分解、耗时日志及负例测试；真实模型和一次实际纠偏通过。
+- Files changed: 上游3源码文件；本仓header测试、汇总测试/脚本、此报告/六份记录/TASK01任务说明、unit/full run结果。
+- Validation: colcon PASS；C++ PASS；22Python PASS；真实模型XYZ/FCL及障碍拒绝PASS；正常五件全流程FAIL/exit1，仅batch1PASS，Cube02后吸盘释放附近退离深墙。
+- Paper fidelity: 本轮ENGINEERING/EXPERIMENTAL，不是论文力控；D004前三件差异、实际摩擦0.5/0.5和隐藏质量/时间与力测量合同仍待review。
+- Remaining / next: 在原门限下定位释放/接触回带，后续协议或载物控制修改须用户决定；不得把本次XYZ修正推广为全流程稳定。
+- Safety: 无场景/工具/摩擦/质量/ACM/门限/载物控制/YAML改动；保护目录未访问或修改；停止全部自有测试进程，历史失败保留。
+- Delivery: 运行源码task01-runtime-fixes、本仓记录task01-benchmark-draft；raw本地忽略，analysis/metadata和释放窗口数值随GitHub提交。TASK01 IN_PROGRESS/36nulls，TASK02 TODO。

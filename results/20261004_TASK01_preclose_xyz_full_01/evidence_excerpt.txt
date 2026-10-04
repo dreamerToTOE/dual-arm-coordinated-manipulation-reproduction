@@ -1,0 +1,18 @@
+Selected verbatim lines from local raw/controller.log (full raw log retained locally):
+
+[INFO] [1791093225.021733062] [task01_cube04_precision_insert]: task27_plus_outer PRE_CLOSE_XYZ_STATS checks=1 corrections=0 plan_wall_s=0.000000 execute_wall_s=0.000000 total_wall_s=0.277999 result=PASS.
+[INFO] [1791093514.649381005] [task01_cube04_precision_insert]: Task27 batch 1 PASS: Cube 已落稳；双臂从短清障位经 RRTConnect 到下一件上方待命位，未执行长距离原路退出或批间 HOME。
+[INFO] [1791093581.786436536] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_GEOMETRY ATTACHMENT: x=2.012 mm z=1.589 mm left_gap=0.150 mm right_gap=1.029 mm gap_delta=0.879 mm tilt=0.000 deg.
+[ERROR] [1791093581.786445672] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_GEOMETRY: dual side attachment is not corresponding; stop before a skewed transport.
+[INFO] [1791093581.786468138] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_XYZ_CORRECTION side=left delta_mm=(-0.745,-0.315,0.588) norm_mm=1.000.
+[INFO] [1791093581.786480038] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_XYZ_CORRECTION side=right delta_mm=(-0.251,-0.029,0.655) norm_mm=0.702.
+[INFO] [1791093585.863965160] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_GEOMETRY ATTACHMENT: x=1.361 mm z=1.009 mm left_gap=0.393 mm right_gap=1.000 mm gap_delta=0.607 mm tilt=0.000 deg.
+[INFO] [1791093585.863996128] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_XYZ_CORRECTION side=left delta_mm=(-0.756,-0.337,0.561) norm_mm=1.000.
+[INFO] [1791093585.864007565] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_XYZ_CORRECTION side=right delta_mm=(0.002,-0.000,0.002) norm_mm=0.002.
+[INFO] [1791093589.936914404] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_GEOMETRY ATTACHMENT: x=0.606 mm z=0.451 mm left_gap=0.725 mm right_gap=1.000 mm gap_delta=0.275 mm tilt=0.000 deg.
+[INFO] [1791093589.936924028] [task01_cube04_precision_insert]: task27_minus_outer PRE_CLOSE_XYZ_STATS checks=3 corrections=2 plan_wall_s=0.078621 execute_wall_s=7.569621 total_wall_s=8.414887 result=PASS.
+[INFO] [1791093776.049831796] [task01_cube04_precision_insert]: task27_minus_outer +X support seat (+X deep wall): gap=+0.488 mm (target 0), z_error=0.040 mm.
+[INFO] [1791093845.068927683] [task01_cube04_precision_insert]: task27_minus_outer final Ground Truth: expected=(1.100, -0.243, 0.260), actual=(1.095, -0.243, 0.260), cell_error=5.138 mm, +X deep wall_gap=+5.138 mm, -Y wall_gap=+0.000 mm.
+[ros2run]: Process exited with failure 1
+
+Boundary: The recovered pre-close ERROR lines are checks followed by bounded correction; the final placement failure is not recovered. Only batch1 passed. Cubes03-05 were not advanced. No gates were widened.

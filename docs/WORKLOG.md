@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-04 final — XYZ validation completed, release-window failure retained
+
+Built runtime f0812a4; C++/22Python/real RobotModel PASS including XYZ obstruction rejection. Started actual normal-feed headless with unchanged scene/bridge hashes, no preplaced objects. Cube01PASS; Cube02 needs two XYZ corrections and passes original preclose gates (X0.606/Z0.451/gapdelta0.275mm). Planning0.078621s/execution7.569621s, bounded1mm and3checks. Actual Cube02 later fails final deep gap5.138mm against3mm despite pre-side-press0.488mm; physical data shows negativeX retreat around rear suction release after sidewall reached. No loaded/contact/physics/gate repair silently added. Preserved full fail/exit1,7680samples0errors and release_drift.json; no later cube advanced. Stopped exact owned processes, headlessexit0/MoveItteardown-11. Updated all six records/task/report/metadata; branches uploaded through command-local existing proxy after directSSH failure. TASK01 IN_PROGRESS/36nulls, TASK02TODO; next release/contact diagnosis needs scope decision.
+
 ## 2026-10-04 — Pre-close XYZ engineering implementation
 
 Read required task/benchmark/paper records and git status; announced PRE-TASK. User approved merged XYZ correction rather than three serial axis moves. Added pure finite-input helper with total 1mm vector cap, accumulated commanded-FK targets in the independent variant, OPEN guards, static FK/Isaac diagnostics and timing. Preserved legacy Y logic under other nodes and all existing gates/model/physics/loaded control. Extended mathematical and no-command RobotModel probes; build/physical evidence pending.

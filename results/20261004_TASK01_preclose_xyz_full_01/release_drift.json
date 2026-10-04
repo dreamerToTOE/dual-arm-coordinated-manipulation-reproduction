@@ -1,0 +1,32 @@
+{
+  "classification": "ENGINEERING_READ_ONLY_DIAGNOSTIC",
+  "object": "Cube_02",
+  "source": "raw/physics_pose_samples.jsonl",
+  "selection": "Normal feed, second cube, sim_s > 685, x > 1.09; report suction transition and first original 3mm deep-gap crossing",
+  "original_deep_wall_gap_limit_mm": 3.0,
+  "controller_pre_side_press_deep_gap_mm": 0.488,
+  "first_near_sidewall": {
+    "sim_s": 685.933369108,
+    "position_m": [1.0998610258102417, -0.24204377830028534, 0.2606833577156067],
+    "yaw_deg": -0.07395294307324968,
+    "suction_closed": {"left": true, "right": false}
+  },
+  "first_both_open_after_side_press": {
+    "sim_s": 689.933369316,
+    "position_m": [1.099789023399353, -0.24284565448760986, 0.26064416766166687],
+    "suction_closed": {"left": false, "right": false}
+  },
+  "first_deep_gap_over_3mm": {
+    "sim_s": 691.033369374,
+    "position_m": [1.096749186515808, -0.24300001561641693, 0.2619922161102295],
+    "suction_closed": {"left": false, "right": false}
+  },
+  "first_at_final_displaced_x": {
+    "sim_s": 691.133369379,
+    "position_m": [1.094861626625061, -0.2429998368024826, 0.25999999046325684],
+    "suction_closed": {"left": false, "right": false}
+  },
+  "final_yaw_deg": 0.0001204044203910114,
+  "final_deep_wall_gap_mm": 5.138373374939,
+  "boundary": "Sparse same-step cube poses and gripper flags, not synchronized joint/contact-wrench causality proof. Drift appears after rear suction opens; precise contact/release/withdrawal cause still unisolated. No changed physics/contact/control/gates."
+}

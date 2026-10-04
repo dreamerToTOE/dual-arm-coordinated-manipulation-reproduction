@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## Latest XYZ engineering result (2026-10-04)
+
+User-approvedD016 combinedXYZ preclose implemented in independentvariant; build/C++/22Python/real RobotModel IK+FCL PASS. Actual normalfeed Cube02residuals X2.012→0.606mm/Z1.589→0.451mm/gapdelta0.879→0.275mm pass originalgate aftertwo total1mm-boundedmoves. Correctionplanning0.078621s/physicalexecution7.569621s(scale5); Cube01alreadyvalidskipscorrection. But full-five remainsFAIL: Cube02laterdeepgap0.488→5.138mm>original3mm aroundsidepress/rearsuctionrelease, controllerexit1/completed[1],noCube03–05commands. 7680physicalposes0errors, allownedprocessesstopped/teardown-11retained. `reports/TASK01_PRECLOSE_XYZ.md` contains PRE/POST/commands/hashes/results and BUG-016 scope boundary. No loadedcontrol/model/material/scene/ACM/gate/YAMLchanges;36nulls andD004/metrologyreviewstillpending, TASK02TODO. Do not reinterpretpreclosePASS as full-task or paper reproductionPASS.
+
 ## Latest normal-feed precision-variant regression (2026-10-03)
 
 No preplacement, unchanged runtime/model/gates; actual five-object attempt fails safely at Cube02 before suction, controllerexit1 and onlybatch1PASS. FineYgapdelta reaches0.001mm, but actualX correspondence3.150mm>original2.500mm. Cube03–05notadvanced;7214valid sparse samples; all ownedruntimesstopped. `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md` containscommands/negativeevidence/nextscope. Do not reinterpret earlierisolated fifth/fourth→fifthPASS as stable full-flow. XYZtracking/modelmetrology diagnosis/correction scope and existingfriction/hiddenmass/D004/36numericreview stillneeded;TASK02notstarted.

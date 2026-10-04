@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-04 final — Approved XYZ change delivered with honest failure boundary
+
+User's “好的，那就这么做” applied to one merged boundedXYZ correction only. Implemented/tested without changing model/physics/acceptance or loaded task. Physical Cube02preclose passes aftertwo corrections; ~0.079s totalplanning vs7.57s slowphysicalmoves, no extra correction forCube01. Full flow still failsCube02post-release deepgap5.138mm, so no stable/fullfive handoff. Stop before distinct release/contact-control redesign, save evidence for nextuserdirection; don't silently implement forcecontrol or widen gates. Allownedtestprocessesstopped, GitHubrecordspublished, TASK01notfrozen.
+
 ## 2026-10-04 — Explicit approval for pre-suction XYZ and efficiency policy
 
 User asks what XYZ means, why prior runs passed, and overhead; then confirms “好的，那就这么做”. Explained that prior X/Z residuals existed below gates; latest onlyXfailed and random/configuration cause not proved. Approved one combined bounded XYZ micro trajectory only if needed, not three axis moves/full RRT, same3checkstop. Current implementation adds static FK/Isaac diagnostic and measured timing; no approval to change validated scene/material/gates or loaded/contact controller.
