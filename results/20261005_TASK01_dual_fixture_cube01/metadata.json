@@ -14,8 +14,8 @@
     "ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false (retained from preceding no-command probe)",
     "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=5.0"
   ],
-  "status": "PREPARED; pending actual controller result",
-  "metrics": {},
+  "status": "FAIL_PHYSICAL_ROLE_SWAP; current Cube safely released; no following task",
+  "metrics": {"controller_exit_code": 1, "completed_batches": [], "x_push_dual_closed_slices": 16, "x_seated_deep_wall_gap_mm": 0.286, "x_final_alignment_mm": 2.171, "x_final_tilt_deg": 0.265, "left_x_end_max_tracking_error_deg": 0.551, "y_push_completed_slices": 0, "sparse_physics_snapshots": 4747, "integrity_errors": 0, "final_both_suction_open": true, "failure": "Active execution interlock abort just after role swap; old guard log did not identify torque vs suction, do not claim exact root cause. Measured role-start and explicit interlock diagnostics added in later e0477ab, not tested in this run."},
   "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/model_audit.json", "raw/physics_pose_samples.jsonl", "raw/release_contact_samples.jsonl", "../20261005_TASK01_dual_fixture_preflight/raw/moveit.log"],
   "boundary": "New fresh original scene; unchanged teacher-approved tool/physics/ACM/acceptance gates. Single first-Cube run only, not five-object acceptance or force/paper/GUI/reliability proof."
 }

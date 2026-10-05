@@ -1,5 +1,10 @@
 # EXPERIMENT_LOG
 
+## 2026-10-05 follow-up — dual_fixture_cube01 FAIL / measured replay running
+
+- Actual runtimeff20ac3/bd1de5b7…, first1/max1/scale5/hold0/0preplaced: controller1, completed=[], bothOPEN on abort. X16/16 dualCLOSED, deep0.286mm/alignment2.171mm/tilt0.265deg; Y0 completed slices. Raw guard lacked torque/state reason; no exact cause claim. 4747 sparse PhysX samples, integrity0; later4 cubes parked. Metadata/analysis/protocol/controller_evidence all under run directory.
+- e0477ab/d1658940…: measured role-swap seed/current FCL/explicit interlock diagnostics only; 54.3s buildPASS, Python35PASS, prior4 C++ policiesPASS. Fresh original scene measured Cube01 replay started, same config; result pending, no source edits mid-run. MoveIt retained, original physical stage restarted. Detailed commands/artifact paths in measured run metadata.
+
 ## 2026-10-05 TASK01 dual_fixture_preflight / cube01
 
 - Platform: local user machine Isaac 4.5 headless + ROS2 Humble MoveIt; not GUI acceptance.

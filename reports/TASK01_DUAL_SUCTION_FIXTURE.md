@@ -28,6 +28,14 @@ Runtime `ff20ac3d18f16245cabb1a32e8e2c14a83af42ed`，独立目标binary SHA256 `
 
 新鲜原场景首块物理 `results/20261005_TASK01_dual_fixture_cube01` 正在运行；未取得新流程物理PASS。旧5/5只属于rear-only推入/未吸附侧压旧节点。
 
+### 首块新物理试验：X通过，Y互锁停止
+
+上述运行现已结束，controller exit1 / completed=[]，不是首块完整PASS。rear=right、side=left均CLOSED时X的16/16片段完成，到深墙gap0.286mm，alignment2.171mm/tilt0.265deg。刚进入主从互换后即触发active interlock；旧日志未记录具体是哪项状态或raw力矩，不能确定根因，也不能叫物理不可行。
+
+X末左臂tracking残差0.551deg，原Y沿命令终点衔接而非实测状态。新工程版本 `e0477ab`（binary `d1658940…`）在深墙座稳后读取同一份双臂实测状态/新Cube GT、保留双CLOSED、检查当前联合FCL再计划Y和释放包络；guard记录rear/side状态与两臂raw peak torque，不放宽任何门限。新鲜首件复测 `results/20261005_TASK01_dual_fixture_cube01_measured` 已开始，结果待实测，不能宣称修复因果已经证实。
+
+首试4747条稀疏PhysX样本/0完整性错误，失败后双OPEN，Cube02–05仍停车；原日志与analysis/protocol保留。新增协议parser实际把旧五件PASS判为 `full_new_protocol_logged=false`；35 Python测试通过（包含保留失败局部证据），4 C++策略测试和新版编译通过。
+
 ### 验证命令
 
 ```bash

@@ -14,7 +14,8 @@ def protocol_evidence(text):
         start = text.find(name + " DUAL_REAR_PRIMARY_X: ")
         swap = text.find(name + " DUAL_ROLE_SWAP: ", start) if start >= 0 else -1
         release = text.find("object=" + name + " phase=RELEASE_REQUEST", swap) if swap >= 0 else -1
-        window = text[start:release] if start >= 0 and release > start else ""
+        # 失败未释放时保留已完成X/Y片段证据，但valid仍要求释放/批次均完成。
+        window = text[start:release] if start >= 0 and release > start else (text[start:] if start >= 0 else "")
         stages = {}
         for stage in ("DUAL_REAR_PRIMARY_X", "DUAL_SIDE_PRIMARY_Y"):
             samples = re.findall(re.escape(name + " " + stage) +

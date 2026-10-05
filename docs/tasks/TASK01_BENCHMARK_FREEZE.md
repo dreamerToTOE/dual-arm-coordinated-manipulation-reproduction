@@ -4,6 +4,8 @@ Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
 ## 2026-10-05 用户批准新3+2接触协议
 
+Follow-up：新首件ff20ac3双吸X16段PASS/deep0.286mm，但Y起步互锁FAIL，整件未PASS；实测换角色起点e0477ab fresh replay进行中，原数值门限未改。BUG-017 OPEN，35 Python /4 C++ /build PASS；TASK01仍不能冻结。
+
 前三件双吸附rear-primary X推入、side约束，到深墙不松吸盘换side-primary Y压紧/rear保持深墙；后两件精准暂放+单rear插入。独立节点ff20ac3、无执行前三完整FR3链PASS，首块新鲜普通供料物理运行中，不能借旧5/5宣称新流程通过。详见 `reports/TASK01_DUAL_SUCTION_FIXTURE.md` /D019。YAML还是原DRAFT/36nulls，模型/物理/门限未冻结；不启动TASK02/论文算法。
 
 ## Latest final engineering result (2026-10-04)

@@ -40,6 +40,12 @@ class EvidenceTests(unittest.TestCase):
     def test_missing_slice_rejected(self):
         self.assertFalse(protocol_evidence(self.complete.replace("slice 16 rear=", "slice 17 rear=", 1))["full_new_protocol_logged"])
 
+    def test_failed_partial_retains_x_evidence(self):
+        rows = fixture_log(FIXTURES[0]).split("DUAL_ROLE_SWAP:")[0]
+        evidence = protocol_evidence(rows)
+        self.assertFalse(evidence["full_new_protocol_logged"])
+        self.assertEqual(evidence["fixtures"][FIXTURES[0]]["stages"]["DUAL_REAR_PRIMARY_X"]["slices"], list(range(1, 17)))
+
 
 if __name__ == "__main__":
     unittest.main()

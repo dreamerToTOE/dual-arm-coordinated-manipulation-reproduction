@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-05 follow-up — 首件X双吸推入通过，Y互锁失败；实测换角复测中
+
+`dual_fixture_cube01`/ff20ac3 controller1/completed=[]；16/16 X片段双CLOSED，deep gap0.286mm，随后Y起步active interlock停止/双OPEN，不是首件完整PASS。4747稀疏PhysX样本/0完整性错误；Cube02–05未推进。旧guard没具体原因，暂不能断言是力矩/吸附/物理不可行。
+
+发现X末tracking残差0.551deg，e0477ab新增从双臂实测/新Cube GT重新规划Y与current-start FCL、详细互锁诊断；新鲜原场景首件复测中，尚无新版PASS。35 Python /4 C++ /build PASS。源码/负证据与后续计划持续上传，报告TASK01_DUAL_SUCTION_FIXTURE。TASK01 IN_PROGRESS /36nulls/TASK02 TODO；原场景/物理/ACM/门限/YAML不变。
+
 ## 2026-10-05 — 新3+2接触协议已搭建，首块物理验证运行中
 
 用户批准前三件双吸附主从推压、后两精准单rear插入。独立运行节点 `task01_dual_suction_fixture` / runtime `ff20ac3` 编译通过；34个Python测试、4个C++策略测试通过。新无执行探针前三件名义接触/X推入/Y压紧/局部释放退出通过联合FR3 FCL和相对TCP检查（最大轴向变化约0.002mm）；早期探针负结果保留。

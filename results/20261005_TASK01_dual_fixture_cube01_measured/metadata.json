@@ -1,0 +1,20 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL Cube01 dual fixture measured role-swap variant",
+  "platform": "user machine local Isaac Sim 4.5 headless / PhysX / ROS2 Humble / MoveIt",
+  "git_commit": {"runtime": "e0477ab3a8ba2b23bf99297e8af99227d727ede0", "reproduction_checkpoint": "5a635c5"},
+  "runtime_binary_sha256": "d1658940c72be17d4cb903bd0fdd3357ce5f82b7514d22d5e55207baaff82cff",
+  "seed": null,
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "parameters": {"preplaced_count": 0, "first_batch": 1, "max_batches": 1, "execution_time_scale": 5.0, "release_diagnostic_hold_sec": 0.0, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 1800 --record-release-diagnostics --output-dir results/20261005_TASK01_dual_fixture_cube01_measured/raw",
+    "ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false (same retained MoveIt process; original physical scene restarted)",
+    "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=5.0"
+  ],
+  "status": "PREPARED; pending measured-start physical result",
+  "metrics": {},
+  "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/model_audit.json", "raw/physics_pose_samples.jsonl", "raw/release_contact_samples.jsonl", "../20261005_TASK01_dual_fixture_preflight/raw/moveit.log"],
+  "boundary": "No geometry/physics/ACM/gate changes. Single first-Cube trial; role swap re-reads measured joint state and fresh Cube GT and reruns whole-pair FCL. No force-control, five-object, GUI, reliability or benchmark freeze claim."
+}

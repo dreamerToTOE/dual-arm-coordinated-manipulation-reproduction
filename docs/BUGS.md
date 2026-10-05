@@ -1,5 +1,12 @@
 # BUGS
 
+## BUG-017 — 新rear+side协议进入Y压紧时互锁停止
+
+Date: 2026-10-05; Task: TASK01; Status: OPEN.
+Evidence: ff20ac3 Cube01 X16/16 dualCLOSED/deep0.286mm，主从换角后controller1/未完成Y首段/双OPEN。旧guard不输出触发项，不能将failure直接归因于接触力、吸附失效或物理不可行。
+Candidate issue: X末左臂joint tracking残差0.551deg，Y原从命令终点继续可能再次顶墙。e0477ab改同一实测起点/current FCL与Y重算、补具体raw torque/state诊断；fresh replay进行中，还不是RESOLVED。
+No geometry/ACM/gate relaxation; no calibrated contact force or force controller.
+
 ## 2026-10-05 — 新协议覆盖与仍存风险
 
 BUG-009：用户已将“前四双吸附”更新为“前三双吸附、后两精准单推”。新独立节点已实现前三rear+side CLOSED主从换角，不恢复第四侧接触；名义FR3链PASS，但新物理过程未完成，不能标协议覆盖已验收。
