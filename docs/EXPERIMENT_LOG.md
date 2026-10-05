@@ -1,5 +1,14 @@
 # EXPERIMENT_LOG
 
+## 2026-10-05 final — dual_fixture_cube01_measured FAIL / released diagnostic PASS
+
+- Task: TASK01; baseline: [EXPERIMENTAL] user-approved3+2 protocol; platform: local user-machine Isaac4.5 headless/PhysX/ROS2 Humble/MoveIt.
+- Executed commit e0477ab3a8ba2b23bf99297e8af99227d727ede0, binary d1658940c72be17d4cb903bd0fdd3357ce5f82b7514d22d5e55207baaff82cff; seed null/uncontrolled. Config benchmark_v1.yaml/hash a49d60a4… unchanged; first1/max1/scale5/hold0/zero preplaced. Commands: measured run metadata.json.
+- FAIL/controller1/completed=[]: X16/16 and Y14/16 dualCLOSED; measured-start FCL/replanning succeeds; Y15 guard left86.975/right32.984Nm>80Nm. Later cubes not commanded; bothOPEN on abort. X deep seat0.445mm; Y last completed deep seat0.191mm/alignment1.448mm/tilt0.220deg.
+- Released static-state diagnostic exit0/FCL PASS (all remaining walls/table/other objects retained). Later released state is not event-time collision proof. Last sparse dualCLOSED pose (1.099520,0.225646,0.260454)m, 17.354mm short of nominal Y endpoint. No calibrated contact-wrench/root-cause claim.
+- Artifacts: results/20261005_TASK01_dual_fixture_cube01_measured/{metadata.json,analysis.json,protocol.json,controller_evidence.log,released_state_evidence.log}; ignored raw logs/poses/audit/summary. 9432 snapshots/0 integrity errors; release_contact_samples.jsonl empty because release phases not reached.
+- Build66s/Python35 PASS; analytic geometry PASS only/36nulls. All owned processes stopped, headless exit0; MoveIt teardown-11/bridge1 independently of controller1. No source edits during physical run. Old5/5/new nominal3-chain PASS do not establish new physical5/5.
+
 ## 2026-10-05 follow-up — dual_fixture_cube01 FAIL / measured replay running
 
 - Actual runtimeff20ac3/bd1de5b7…, first1/max1/scale5/hold0/0preplaced: controller1, completed=[], bothOPEN on abort. X16/16 dualCLOSED, deep0.286mm/alignment2.171mm/tilt0.265deg; Y0 completed slices. Raw guard lacked torque/state reason; no exact cause claim. 4747 sparse PhysX samples, integrity0; later4 cubes parked. Metadata/analysis/protocol/controller_evidence all under run directory.

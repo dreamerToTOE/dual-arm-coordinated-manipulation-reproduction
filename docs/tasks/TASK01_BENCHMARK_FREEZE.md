@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## 2026-10-05 final 新协议未完成物理验收
+
+e0477ab/首件新鲜普通供料：X16/16、Y14/16双CLOSED，Y15 raw effort86.975Nm>原80Nm保护停止，controller1/整件完成0。释放后只读FCL PASS不证明触发步无碰撞；后两件精准单推复用旧逻辑，本轮未回归执行。报告 `reports/TASK01_DUAL_SUCTION_FIXTURE.md`/BUG-017；新3+2 PARTIAL，不能借旧5/5冻结。模型/物理/门限/YAML不变，36nulls，TASK02 TODO。
+
 ## 2026-10-05 用户批准新3+2接触协议
 
 Follow-up：新首件ff20ac3双吸X16段PASS/deep0.286mm，但Y起步互锁FAIL，整件未PASS；实测换角色起点e0477ab fresh replay进行中，原数值门限未改。BUG-017 OPEN，35 Python /4 C++ /build PASS；TASK01仍不能冻结。

@@ -1,5 +1,11 @@
 # BUGS
 
+## BUG-017 follow-up — 双CLOSED下Y15 raw effort超限，根因仍OPEN
+
+2026-10-05，e0477ab新鲜原场景复测：X16/Y14段完成，Y15 left86.975/right32.984Nm触发原80Nm保护，两个杯都CLOSED；本次触发项是raw关节effort而非吸盘OPEN。实测换角色修正使本次能进入Y，但不同IK构型的两次运行不能证明单一修正的因果。
+
+释放后静态FCL PASS/较低effort不是失败步无碰撞或闭环内力根因证明。最后稀疏双CLOSED样本Y离原终点还有17.354mm，不能声称终点侧墙越程。持件同物理步contacts/关节状态缺失（原release logger未激活），需要区分机器人/工具接触、轨迹跟踪误差及闭环约束载荷。保留失败，不提高80Nm、不放宽碰撞/几何门限、不改旧场景；OPEN。
+
 ## BUG-017 — 新rear+side协议进入Y压紧时互锁停止
 
 Date: 2026-10-05; Task: TASK01; Status: OPEN.

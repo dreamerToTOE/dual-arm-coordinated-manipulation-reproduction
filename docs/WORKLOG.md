@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-05 final — 实测换角色复测结束，保存未通过结果
+
+`dual_fixture_cube01_measured`/e0477ab/binary d1658940…：X16与Y14段实际完成且双CLOSED，Y15 raw effort86.975/32.984Nm触发80Nm保护。controller1/completed0，后续四件保持停车，不叫首件或五件PASS。保存metadata、analysis、protocol与精选控制器原日志。
+
+新增只读 `diagnose_released_state:=true` 探针并编译66s，释放后实际14关节姿态对桌/墙/其他物体联合FCL通过；仅本地忽略当前合法接触Cube01，不修改远程Scene/ACM、不发布机器人命令。不能回推互锁步无碰撞。末双CLOSED样本距名义侧压终点还有17.354mm；原release logger只采释放窗口，本轮没进入它，零接触样本不等于零接触力。
+
+35 Python PASS；稀疏姿态9432/完整性错误0；自有Isaac0退出与MoveIt关闭-11分别记录。模型/物理/门限/benchmark哈希不变。持件同一步接触/关节观测待下一步，不从两次失败推断必须改基准或加论文力控。
+
 ## 2026-10-05 follow-up — 保存首块负结果与实测换角版本
 
 首件新协议实际X完成16/16双CLOSED、贴深墙0.286mm，但Y开始触发未细分互锁，控制器1、双OPEN、completed0。保存4747无完整性错误PhysX样本与精选原日志/protocol，不把搬到深墙叫整件PASS。

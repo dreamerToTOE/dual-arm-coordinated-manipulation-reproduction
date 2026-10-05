@@ -1,5 +1,13 @@
 # STATUS
 
+## 2026-10-05 final — 新3+2协议 PARTIAL，首件Y第15段力矩保护停止
+
+实测换角色版 `e0477ab` 在新鲜原场景中完成 X16/16、Y14/16，全部完成片段双杯CLOSED。Y15原始关节effort峰值 left86.975/right32.984Nm，超过保留的80Nm门限，controller1/completed=[]；安全双OPEN，未推进Cube02–05。首件未完整通过，不能交付为新五件验收版。
+
+释放后静态实测姿态只读联合FCL通过，不是触发瞬间FCL证据。最后稀疏双CLOSED样本Y=0.225646m，距+Y目标0.243m仍17.354mm，不能直接归因为最终侧墙压紧。9432条稀疏PhysX样本/0完整性错误；持件推压阶段缺少全速接触/关节联合记录，根因OPEN。35 Python/编译PASS；自有Isaac/MoveIt已停止，关闭时MoveIt-11独立保留。
+
+报告 `reports/TASK01_DUAL_SUCTION_FIXTURE.md`。原场景/工具/物理/ACM/门限/YAML不变，旧5/5不算新协议通过。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。下一步需同物理步持件接触与关节诊断，不能以提高门限、改变场景或恢复单臂推入替代。
+
 ## 2026-10-05 follow-up — 首件X双吸推入通过，Y互锁失败；实测换角复测中
 
 `dual_fixture_cube01`/ff20ac3 controller1/completed=[]；16/16 X片段双CLOSED，deep gap0.286mm，随后Y起步active interlock停止/双OPEN，不是首件完整PASS。4747稀疏PhysX样本/0完整性错误；Cube02–05未推进。旧guard没具体原因，暂不能断言是力矩/吸附/物理不可行。
@@ -86,7 +94,7 @@ Repository initialized. No baseline implementation has started.
 | Task | Status | Notes |
 |---|---|---|
 | TASK00 Environment Audit | PASS | Report: reports/TASK00_ENVIRONMENT.md; external integration gaps identified |
-| TASK01 Benchmark Freeze | IN_PROGRESS | Current engineering variant normal-feed physical 5/5 once, runtime df9c2c0 / controller 0 / final HOME. Not reliability or freeze; empty RRT physically untriggered, historical BUG-016 open. First-three D004/model/force/time/36 nulls/teardown pending. Latest report TASK01_RELEASE_CLEARANCE |
+| TASK01 Benchmark Freeze | IN_PROGRESS | New user-approved3+2 protocol PARTIAL: Cube01 X16/Y14 dualCLOSED, Y15 raw effort86.975Nm>80 guard; completed0. Old df9c2c0 physical5/5 retained as different protocol, not freeze/reliability. BUG017/016, force/time/model/36nulls/teardown pending. Latest report TASK01_DUAL_SUCTION_FIXTURE |
 | TASK02 Common Interfaces / Logger / Metrics | TODO | Depends on TASK01 |
 | TASK03–06 P4 | TODO | |
 | TASK07–10 P2 | TODO | |
