@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## 2026-10-05 用户批准新3+2接触协议
+
+前三件双吸附rear-primary X推入、side约束，到深墙不松吸盘换side-primary Y压紧/rear保持深墙；后两件精准暂放+单rear插入。独立节点ff20ac3、无执行前三完整FR3链PASS，首块新鲜普通供料物理运行中，不能借旧5/5宣称新流程通过。详见 `reports/TASK01_DUAL_SUCTION_FIXTURE.md` /D019。YAML还是原DRAFT/36nulls，模型/物理/门限未冻结；不启动TASK02/论文算法。
+
 ## Latest final engineering result (2026-10-04)
 
 当前独立精准插入版源码 `df9c2c0` 在本机 Isaac headless 的普通供料五件实际完成：零预置、release hold=0、scale=5；controller 0 / 双臂最终 HOME / 双杯 OPEN。五件中心误差 1.983 / 0.807 / 0.723 / 1.319 / 0.481 mm，第四邻缝 0.347 mm，第五两侧缝 1.987 / 1.473 mm。18,498 条稀疏 PhysX 记录无完整性错误，3,212 条释放诊断。完整命令、源码/hash、原日志摘录和未解决问题见 `reports/TASK01_RELEASE_CLEARANCE.md` 及 `results/20261004_TASK01_empty_rrt_full_01/`。

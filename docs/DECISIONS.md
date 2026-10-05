@@ -1,5 +1,15 @@
 # DECISIONS
 
+## D019 — 前三 rear+side 双吸附，后两精准单 rear 插入
+
+- Date: 2026-10-05；用户明确批准新的3+2分工，覆盖D004中“前四件双吸附”的该部分。
+- [ADAPTATION] 新独立节点 `task01_dual_suction_fixture`：旧共同 lift/XYZ 搬运/落桌后，rear 重抓 -X 面；helper 抓朝中央自由通道的侧面中心。双 CLOSED 才允许共同 +X 推入，到深墙后不松吸盘互换 rear-hold / side-primary。第三件是双吸附侧压，不隐性回退成 helper park / solo trim。第四/第五继承精准暂放、单 rear 推入。
+- [ENGINEERING] 两臂使用同一物体位移进度，每2mm共同 waypoint 复用有限世界FK Jacobian微解算；每段保持实际 grasp 相对变换，整条联合10ms FCL及原2.5mm/3deg相对几何门控。不是把独立时间参数化轨迹仅拉成一样时长。旧节点负载路径不变。
+- [ADAPTATION] 双吸附闭环不能照搬旧未吸附侧压的4mm压紧越程；新节点终点为既有贴墙格位。没有改变墙/格位/验收值。第三件保留原1mm短压目标，第四没有侧压。新释放局部法向清障包络30mm，只有双OPEN才执行，再接原RRT/FCL转场；不要求helper跨过整个中央槽120mm退出。
+- [ENGINEERING] 新执行器带CLOSED/OPEN及原80Nm原始关节effort互锁、有限候选、失败双OPEN并回写当前Cube，保留旧可执行节点。无执行探针不构造Arm或发布joint/suction/feed/rail，也不修改远程PlanningScene/ACM。
+- [EXPERIMENTAL] 名义IK种子/盒体检查及本机headless验证只建立工程可行性证据；没有校准接触wrench或P2内部力/P3力位混合控制。推墙阶段只有当前移动Cube按旧接触策略不作静态障碍，其余桌/墙/已放块与全部机器人碰撞检查保留；不声称这就是移动物体的完整连续接触动力学证明。
+- TASK01仍IN_PROGRESS / DRAFT /36nulls；模型/物理参数和YAML/hash保持不变。新版5/5未验证前，不借用旧df9c2c0的5/5作为新版PASS。
+
 ## D018 final validation — 不把一次成功扩大为方法或可靠性证明
 
 2026-10-04；[ENGINEERING]。保持源码和原门限不变完成一次零预置/hold=0 的实际五件回归。旧 Cartesian/continuous-seed 优先，有限 RRT 仅双吸盘 OPEN 且前者拒绝后使用；本轮未触发，不能用 5/5 为其实际执行背书。失败重放 01、历史 Cube02 回带和 MoveIt teardown 继续保存。

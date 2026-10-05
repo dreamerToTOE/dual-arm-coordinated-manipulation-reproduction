@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-05 — 新3+2协议实现与首块验证
+
+完成PRE报告后新增独立节点/策略header/共享实现include/无执行探针，保留旧节点。前三件建立rear+朝中央空隙side两个面中心吸附，双CLOSED下共同X推入与不松吸盘的主从互换Y压紧；第四第五继承精准单推。保留80Nm原始effort监督、原接触几何门控、失败双OPEN并回写当前Cube。工具盒体初检不等于FR3证据。
+
+完整探针先失败于本地IK缺参，再暴露独立轨迹时间缩放不保相对几何/Cartesian跳支。复制当前MoveIt运动学参数、复用连续世界FK微解算成同一位移网格、扩大对置名义seed覆盖后，最终前三链全部通过，relativeTCP最大约0.002mm；无机器人命令。34 Python+4 C++策略测试、colcon build PASS。新鲜headless原场景首块运行中，源码ff20ac3/binarybd1de5b7…；不借用旧5/5或启动纸面力控。
+
 ## 2026-10-04 final — 完成普通五件回归并收尾上传
 
 保持已编译源码 `df9c2c0` 和原场景/模型/物理/门限，实际跑完零预置 first_batch=1 / max_batches=5 / time_scale=5 / release hold=0。五个 batch 均 PASS，controller 0，双臂 HOME；普通空载 Cartesian 成功，新 RRT 备用未触发。保存 metadata、analysis、release_windows 和精选 controller 原日志；raw 留本地、不提交大数据。18,498 条稀疏姿态 / 0 完整性错误，3,212 条释放诊断。复核 Cube02 XYZ 两次有限修正的规划 0.069299 s / 慢速执行 7.418296 s，不把约 28.77 min 的 demo 当效率结果。

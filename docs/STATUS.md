@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-05 — 新3+2接触协议已搭建，首块物理验证运行中
+
+用户批准前三件双吸附主从推压、后两精准单rear插入。独立运行节点 `task01_dual_suction_fixture` / runtime `ff20ac3` 编译通过；34个Python测试、4个C++策略测试通过。新无执行探针前三件名义接触/X推入/Y压紧/局部释放退出通过联合FR3 FCL和相对TCP检查（最大轴向变化约0.002mm）；早期探针负结果保留。
+
+新鲜原场景首件试验 `results/20261005_TASK01_dual_fixture_cube01/` 已启动（first1/max1/scale5/hold0/无预置），目前没有新物理PASS。旧节点df9c2c0的一次5/5仍有效但不证明新协议。原场景/教师认可L工具/物理/ACM/门限及YAML不变；TASK01 IN_PROGRESS / DRAFT /36nulls，TASK02 TODO。报告：`reports/TASK01_DUAL_SUCTION_FIXTURE.md`。下方“final”为保留历史结果。
+
 ## 2026-10-04 final — 普通供料五件物理回归 5/5 PASS，基准仍未冻结
 
 本机 Isaac 4.5 **headless**、零预置、普通释放 hold=0 的 `empty_rrt_full_01` 完成 batch 1–5，控制器 exit=0，双臂最终 HOME / 双杯 OPEN。运行源码 `df9c2c0`，二进制 `c760d506…`。五件中心误差分别 1.983 / 0.807 / 0.723 / 1.319 / 0.481 mm；第四邻块缝隙 0.347 mm，第五两侧缝隙 1.987 / 1.473 mm。18,498 条稀疏 PhysX 记录，完整性错误 0；3,212 条释放诊断记录。
@@ -50,7 +56,7 @@ New precision-variant empty retreat uses measured joint seed and bounded continu
 
 Latest follow-up: real RobotModel basic/long replay PASS; isolated actual Cube05 exit0/batch5 PASS, placement0.540mm/deepgap0.514mm; ordinary measured-start retreat/FCL passes, fallback not triggered physically. New clean Cube04→05 run starting. No stable/full-five claim; MoveIt teardown -11 remains.
 
-Last update: 2026-10-04
+Last update: 2026-10-05
 
 ## Latest Cube04 variant handoff — PARTIAL, physical tests stopped
 

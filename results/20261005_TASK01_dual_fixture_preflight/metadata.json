@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL nominal rear+side full-FR3 contact-chain probe",
+  "platform": "local Isaac Sim 4.5 headless and ROS2 Humble MoveIt",
+  "git_commit": {"reproduction_base": "bb301b2261e7174532f3db33d22ed2f8e5204b43", "runtime_base": "df9c2c06ad0667c5fe1f34b573e8ee89657bf8af", "runtime_probe_worktree": "new uncommitted target at first probe run"},
+  "seed": null,
+  "seed_note": "Explicit IK joint seeds are recorded in probe source; internal IK/OMPL randomness is not controlled.",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "commands": [
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; colcon build --packages-select fr3_dual_palletize --symlink-install --parallel-workers 1",
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 2400 --record-release-diagnostics --output-dir results/20261005_TASK01_dual_fixture_preflight/raw",
+    "ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_fixture_probe"
+  ],
+  "status": "PASS_NO_COMMAND_NOMINAL_CHAIN; earlier negative probes retained",
+  "final_runtime_commit": "ff20ac3d18f16245cabb1a32e8e2c14a83af42ed",
+  "final_probe_binary_sha256": "be34b81cd70b3cabf9cb39d495064d7907be07a004cd7e41c6716601c1c89708",
+  "metrics": {"first_probe_exit_code": 1, "second_probe_exit_code": 1, "third_probe_exit_code": 1, "fourth_probe_exit_code": 0, "robot_commands_sent": 0, "final_nominal_chains_passed": 3, "relative_tcp_max_axis_mm": 0.002, "failures": ["First local RobotState had no IK plugin; fixed by copying current MoveIt kinematics parameters", "Independent time scaling violated relative TCP gate; some Cartesian paths jumped IK branch, rejected", "Initial equal-sided narrow joint seeds did not cover Cube01 continuous branch; no infeasibility conclusion"]},
+  "artifacts": ["raw/probe.log", "raw/probe02.log", "raw/probe03.log", "raw/probe04.log", "raw/isaac.log", "raw/moveit.log", "raw/model_audit.json", "raw/physics_pose_samples.jsonl", "raw/summary.json"],
+  "boundary": "Original scene/tool/physics/ACM/gates unchanged; no physical five-object PASS or benchmark freeze. Probe reads MoveIt parameters and does not publish robot/feed/rail/suction commands or mutate remote Planning Scene."
+}

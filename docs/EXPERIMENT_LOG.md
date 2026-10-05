@@ -1,5 +1,14 @@
 # EXPERIMENT_LOG
 
+## 2026-10-05 TASK01 dual_fixture_preflight / cube01
+
+- Platform: local user machine Isaac 4.5 headless + ROS2 Humble MoveIt; not GUI acceptance.
+- Runtime final source: ff20ac3 / probe binarybe34b81c… / executablebd1de5b7…; reproduction basebb301b2 + new records/tests. Seed:null, explicit nominal joint seeds in source, internal IK/OMPL randomness uncontrolled.
+- Commands/config/status/artifacts: `results/20261005_TASK01_dual_fixture_preflight/metadata.json` and `results/20261005_TASK01_dual_fixture_cube01/metadata.json`. 原场景/工具/参数/ACM/门限未改；YAML SHA256 a49d60a4…，36nulls。
+- Offline: 34 Python /4 C++ policy / build PASS. Analytic candidate PASS only.
+- No-command nominal full-robot probe04 exit0: 3/3 contact/X/Y/30mm released exit FCL chains PASS, relative TCP max axis about0.002mm; no Arm publishers, remote scene/ACM mutation or physical commands. Probe01–03 failures preserved (IK config; independent time-scale relative drift / rejected Cartesian branch; narrow joint seed coverage).
+- Fresh normal-feed first1/max1/scale5/hold0 physical controller started; actual result pending. It is not full-five, force-control or paper-method evidence.
+
 ## 2026-10-04 final — empty_rrt_full_01 普通实际执行 5/5 PASS
 
 - 平台：用户本机 Isaac 4.5 headless + PhysX + ROS2 Humble + MoveIt2；不是 GUI 验收。源码 `df9c2c0` / binary `c760d506…`，无中途重编译或场景/门限调整。
