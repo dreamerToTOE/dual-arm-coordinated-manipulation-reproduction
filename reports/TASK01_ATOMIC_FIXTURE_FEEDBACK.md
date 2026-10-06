@@ -96,3 +96,9 @@ Need user confirmation: no（既有RRT候选联合可行性工程筛选）；任
 联合gate实测probe binary `f5143152ddb33fd5be81d27357469aebe4053b7fdb1d13de5168d74255c8922e`，是ebddf6d工作树中上述新增gate；最终a3fceab只再修正probe总结标签（连续链不再写endpoint-only），最终probe另编译。production controller binary `174d6ef7ec237967792bf92119f58e50e27629019ae26630859d04c95db072f0`与a3fceab执行源码一致。
 
 物理复测PRE：`results/20261006_TASK01_coupled_rear_full01/`，本机headless原资产/原场景、零预置first1/max5/scale5/hold0、rear45/side-15、原子反馈及同一步held记录。机器人/墙/Cube/材料/原80Nm/原几何门限不变，旧负结果保留；只有controller全五batch完成才能称这次物理流程PASS。启动/运行失败即停后续对象，不预填结果。此为[EXPERIMENTAL]工程回归，不是科学benchmark冻结/论文方法/GUI验收。
+
+### 第五阶段运行记录更正 — full01没有机器人动作
+
+本轮controller启动exit1/命令0，报告local IK configuration unavailable。原headless正常启动并在3600s时限退出0（35998稀疏/215989原子快照，0完整性错），只有自动第一件到料，不能称完成了运动测试。已核对MoveIt六个kinematics参数有效，双组实际LMA；不是场景/URDF或Python选择器故障。
+
+核对binary strings发现production SHA174d6ef7缺left_arm./right_arm.筛选字符串，而成功probe有。其编译开始于include前缀修正之前、link晚于修改，后续增量构建no-op。因此上一段“a3fceab执行源码与production一致”的断言**作废**，只读probe结果不受影响，生产结果不能引用该源码通过。串行`cmake --build build/fr3_dual_palletize --target task01_dual_suction_fixture -- -B -j2`强制重编译，最终核对SHA和参数字符串；重新fresh `coupled_rear_full02`，不覆盖这一启动负结果，也不边改源边构建生产目标。

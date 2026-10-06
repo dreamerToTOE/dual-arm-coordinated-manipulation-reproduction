@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D026 build follow-up — 实验前串行核对最终执行二进制
+
+不边修改include边编译production目标；增量no-op/mtime不足以保证源码一致。full01 174d6ef7等价声明作废并保留启动负结果；当前强制目标重建，不编辑生成install文件。核对新binary SHA及真实执行初始化后才能算source对应运行。probe已通过的本地联合链结果独立保留，不拿未动作的production启动当物理测试。
+
 ## D026 follow-up — 旧solo预检不能代表新双吸链
 
 首三选候选改用新双链，不再要求/宣称旧helper-park solo PUSH/RETREAT代表rear+side可行；后两/旧节点保持原逻辑。实际HIGH RRT/下降/加载联合FCL及80Nm/原子几何guard依然必做，不持件换构型。参数从实际运行MoveIt读取，支持现有root arm布局，不把插件变化当成算法修复。只读链通过后才进入fresh原场景物理回归，不以endpoint或软件PASS冻结benchmark。

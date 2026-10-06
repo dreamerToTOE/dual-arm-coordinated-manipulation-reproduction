@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — coupled_rear_full01 FAIL_STARTUP_NO_COMMANDS
+
+controller SHA174d6ef7 exit1因旧filter拒绝当前LMA root-arm参数；命令0/完成0，非物理推压失败。Isaac ready但在3600s空闲采样时限正常退出0，35998sparse/215989atomic0errors，仅自动第一件供料，未执行机器人。六参数RPC类型值有效；生产strings无root arm前缀，成功probe有，因此之前source/binary等价声明作废。串行强制 -B重建后再fresh full02，原日志保留、不覆盖。
+
 ## 2026-10-06 — coupled_rear只读链PASS，fresh full01启动
 
 coupled_rear_goal_search首次exit1无命令/参数名布局错误，修正后02 exit0：记录rear60IK/0free拒绝，替代attempt4/5/6完成200mm连续下降/约330mm X/1mm Y/30mm退出完整FCL与相对TCP。某些endpoint-free候选连续链仍失败，负日志原样保存；HIGH的RRT连接不属于这个纯本地PASS。61Python与两C++成功重跑，C++首harness路径错误保留；controller52.2s构建、probe53.0s+修正build。当前实际插件LMA（KDL底层），不是更改IK算法。a3fceab /174d6ef7生产binary，fresh coupled_rear_full01零预置五件headless启动；metadata记录原参数/seed null，实际完成数待定。

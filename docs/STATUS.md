@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 — coupled full01启动失败，无机器人测试
+
+controller1/命令0，生产二进制仍旧参数筛选；已查明编译过程中include被修改、link晚于修改使后续增量no-op。前述a3fceab/174d6ef7一致性断言作废；成功probe不受影响。headless自动first feed后空闲达到3600s，正常退出0，35998sparse/215989atomic0錯。现串行强制重编译、验证binary，再fresh full02，不复用旧运行为物理PASS。TASK01仍IN_PROGRESS/36nulls/TASK02TODO。
+
 ## 2026-10-06 running — 联合rear候选软件通过，fresh完整五件回归
 
 runtime a3fceab /controller174d6ef7：原blocked rear被联合gate拒绝；3个替代构型连续CONTACT/X约330mm/Y1mm/短退出FCL与相对TCP预检通过，尚未物理执行。实际MoveIt LMA插件参数布局适配后probe0，61Python/两组C++ PASS（临时目录首轮harness失败保留）；原场景/桥/物理/ACM/门限未改。新fresh coupled_rear_full01零预置first1/max5/scale5启动，物理结果待定；TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。

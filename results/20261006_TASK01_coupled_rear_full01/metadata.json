@@ -15,8 +15,9 @@
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=5 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
-  "status": "STARTING_PHYSICAL_REGRESSION_NOT_YET_PASS",
-  "metrics": {"completed_batches": [], "controller_exit": null, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "draft_unresolved_fields": 36},
-  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log"],
+  "status": "FAIL_CONTROLLER_STARTUP_OLD_PARAMETER_FILTER_BINARY_NO_MOTION",
+  "source_binary_correction": "Planned a3fceab source and SHA174d6ef7 were recorded together, but binary strings prove controller still had pre-prefix-fix include contents: concurrent compile had already parsed old include before its modification; final link mtime was newer than edit and subsequent incremental build was no-op. This invalidates that claimed source/binary equivalence. Probe f514 and its coupled no-command results used corrected include, unaffected. Production target now force-rebuilding serially with CMake make -B before fresh full02.",
+  "metrics": {"completed_batches": [], "controller_exit": 1, "controller_failure": "TASK01 local paired candidate IK configuration unavailable; no commands", "robot_suction_feed_rail_controller_commands": 0, "headless_exit": 0, "headless_duration_limit_reached": true, "headless_wall_s": 3600.009058566, "sparse_snapshots": 35998, "sparse_integrity_errors": 0, "atomic_feedback_snapshots": 215989, "atomic_feedback_errors": 0, "physics_motion_test_completed": false, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "draft_unresolved_fields": 36},
+  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log", "raw/summary.json", "raw/controller_force_rebuild.log"],
   "boundary": "Only first3 OPEN rear candidate preflight changed. HIGH RRT connectivity must still pass on actual measured state before execution. Original L/cubes/world/material/ACM/80Nm/geometry gates unchanged; fourth/fifth precise single rear. Physical completion requires controller evidence; not GUI, seeded reliability, force reproduction or benchmark freeze."
 }

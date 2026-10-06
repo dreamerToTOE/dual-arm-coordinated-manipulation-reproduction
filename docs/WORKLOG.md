@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — production二进制一致性审计更正
+
+full01控制器启动阶段拒绝/命令0；通过只读RPC核对六参数类型值正确，strings揭示production缺root arm前缀，probe有。编译时修改include造成已读旧源码、链接更新mtime并后续no-op；不再称production与a3fceab一致。保留startup负日志/3600s空闲采样（非运动验收），串行CMake -B重编译/字符串及SHA验证后另fresh full02。未修改源码行为/场景/物理/门限来掩盖失败。
+
 ## 2026-10-06 — 联合rear预检实现/诊断验证，物理fresh复测启动
 
 首三候选只读HIGH IK+连续下降+双X/Y+短退出复用现有本地FK/FCL，不再拿旧solo链代表新协议；后两精准solo不变。原blocked姿态拒绝、3替代完整本地链通过。参数读取首轮拒绝（实际是left/right_arm.* LMA）修正后通过，旧失败日志保留；61Python/两C++ PASS，第一次C++临时目录不存在不是源码失败，set-e/mktemp重跑通过。a3fceab控制器SHA174d6ef7，fresh零预置五件headless启动；没改场景/物理/门限，未称物理完成。

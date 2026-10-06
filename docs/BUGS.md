@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-06 — 编译/源码时序导致production旧参数筛选
+
+full01无动作启动拒绝。不是LMA参数缺失：read-only GetParameters六类型/值均有效。编译已解析旧include后编辑、link更新mtime使后续增量no-op，production174d6ef7缺left/right_arm字符串；成功probe有。此前源码/binary等价标记作废。串行CMake -B强制重编译并检查SHA/字符串，待新fresh实测，不通过增加超时/改插件/跳过初始化来绕过。BUG021实际回归依旧待定。
+
 ## BUG021 follow-up — 候选联合gate只读通过，真实回归待定
 
 联合gate已正确拒绝blocked rear，并找到3条continuous CONTACT/X/Y/短退出本地FCL自由链；首轮参数命名读取错误无命令退出，适配实际LMA left/right_arm.*后通过。不是HIGH连接/物理/稳定性证明，BUG021仍OPEN待fresh正常供料五件；BUG019原模型差异、BUG017实际力矩保护风险保留。
