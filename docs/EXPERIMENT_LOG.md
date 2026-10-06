@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — gui_physclock_cube01 final FAIL；CONTACT IPTP准备
+
+6fa161e/75f798a1、fresh可见/zero-preplaced/first1,max1/scale1。CONTACT310样本、左tracking5.429181deg、leftJ2 raw86.670166Nm、Cube左工具接触217.403930N；原80Nm互锁/双OPEN/controller1/完成0，无X/Y。GUIpause/SIGINT0，1904held/11098atomic/1849sparse完整性0错，279.117870s。早20s外部只读原子1199样本/PhysX-wall1.000084/receipt max41.339ms，不覆盖contact窗口或作单因证明。下一仅Task01侧下降同q/IPTP按现有缩放构建中，物理PASS待结果。
+
 ## 2026-10-06 — gui_physclock_cube01 RUNNING
 
 runtime6fa161e/binary75f798a1、GUIadapter433e836，production build02 58.5s/exit0、63Python/两政策C++ PASS。0preplaced/first1/max1/scale1/rear45/side-15/PhysX秒回放，fresh可见GUI截图确认/first feed真实READY后开始actual运动。沿用自有新MoveIt，无新后台沙箱/全局参数或world豁免。命令完整写metadata；只读20s原子receipt对物理stamp采样，尚未从软件/启动预记物理PASS。

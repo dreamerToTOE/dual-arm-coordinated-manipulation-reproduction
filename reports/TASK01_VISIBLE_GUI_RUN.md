@@ -100,3 +100,22 @@ GUI采样573.024725s。FCL拒绝的其它候选全部保留，不执行；当选
 首编译因final hold局部stamp与ROS stamp同名失败exit2/22.3s，保留build.log；
 更名并在新独立build02重编译，不在编译中改源码。63Python/政策C++新增物理
 进度测试PASS，物理修复结果仍待fresh实测，不从单测推断成功。
+
+## PhysX秒首件负结果与接触下降计时PRE
+
+`gui_physclock_cube01` runtime6fa161e/binary75f798a1实际仍FAIL/controller1，
+完成0/无X-Y。CONTACT310样本、tracking5.429181deg、Cube-left link8
+217.403930N、leftJ2 raw86.670166Nm；新增接近互锁明确rearCLOSED/sideOPEN，
+不是反馈过期。本轮不能与run02不同IK构型的峰值直接作受控因果A/B。
+首次20s外部只读1199反馈、PhysX/现实秒1.0000838、max receipt间隔41.339ms；
+这不覆盖后续contact窗口，不能反过来证明GUI在所有阶段都实时。
+pause/SIGINT后GUI0，1849sparse/11098atomic/1904held完整性零错，279.117870s。
+
+本机`/opt/ros/humble/share/moveit_msgs/srv/GetCartesianPath.srv`没有velocity/
+acceleration scaling字段；不能宣称Cartesian请求继承RRT的12%设置。
+下一工程迭代仅`DUAL_SIDE_CONTACT`：相同关节路点用IPTP及现有MotionPlanRequest
+的v/a缩放参数时间化（当前0.12），逐值确认q完全未改，再走原同步FCL。
+播放倍率仍1.0，物理/drive/几何/ACM/门限不变，旧Task26/27不启用。
+这仅完善接近阶段的规划计时，不是更换论文方法/隐性降低播放倍率；联合持件
+路径、其他Cartesian阶段的既有时序未改。风险仍有实际跟踪与模型差异，物理
+结果待fresh可见GUI，若需要改物理/模型/门限则停止问用户。

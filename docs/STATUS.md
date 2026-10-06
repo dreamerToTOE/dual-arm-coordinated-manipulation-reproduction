@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 GUI physclock final — 单独改时基仍未通过接近
+
+新run实际侧下降left86.670Nm>80、tracking5.429deg、Cube接触217.404N，controller1/完成0，无X/Y；pause/GUI0，1904held/11098atomic/1849sparse完整性0错。早20s反馈接收PhysX/wall1.000084不证明contact窗口实时；时基适配不自动解决物理问题。查本机Humble Cartesian srv不带v/a缩放，只给Task01侧CONTACT补现有0.12/IPTP同q计时后再fresh GUI实测，原物理/模型/门限不动。TASK01 IN_PROGRESS/36nulls，TASK02 TODO。
+
 ## 2026-10-06 GUI physclock running — 修复候选已编译并开始实测
 
 runtime6fa161e/binary75f798a1、串行build58.5s/63Python/两C++通过。正常倍率改为同一原子PhysX秒，无wall fallback/原250ms和80Nm门禁。fresh可见GUI完整画面/first feed READY确认后first1/max1/scale1已运动；仅软件PASS，实际结果待定。原scene/Bridge/YAML hash完全不变，TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。

@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D031 — 仅新侧接触下降补实际规划时间化，不降播放倍率掩盖问题
+
+2026-10-06。[ENGINEERING] 本机Humble Cartesian srv无v/a scale；Task01 DUAL_SIDE_CONTACT以现有MotionPlanRequest速度/加速度scale（当前0.12）做IPTP，逐点q和joint_names必须完全不变，完整同步FCL保持，播放1.0/PhysX秒不变。不是改物理或关闭碰撞，不改其它Cartesian或旧节点时序；不将slow成功当normal成功。真实接近仍失败则保留，不从软件补计时称已经修复。
+
 ## D030 run follow-up — fresh GUI实测，不拿软件测试称通过
 
 source6fa161e串行58.5s/Binary75f798a1核对后进入fresh可见原场景首件；GUI显示/READY确认和控制器初始化均实际通过。外部20s只读原子消息receipt记录物理/现实时间关系，不能把receipt频率当纯physics FPS或据此单独证明接触根因。保持所有原保护/模型/36nulls，先实际结果再决定五件。

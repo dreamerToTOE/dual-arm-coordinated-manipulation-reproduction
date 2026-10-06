@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-06 — BUG024仍OPEN；Cartesian scaling接口差异确认
+
+physclock实际仍侧接近碰Cube/80Nm拒绝。原Humble GetCartesianPath.srv无v/a scaling字段，不能把group的RRT12%配置当成Cartesian请求速度保证。限定同q/IPTP接触下降计时待实测；GUI时间修复不是物理根因闭环，不改门限/模型。BUG023与原模型差异继续保留。
+
 ## 2026-10-06 — BUG024时基候选仅软件通过
 
 实际PhysX秒执行器production58.5s/63Python/两C++通过，fresh visible首件运行；不是BUG024真实修复证明。新增side接近互锁原因与反馈ready/age/accepted/incoming stamp拒绝日志，不放宽任何保护。BUG023原反馈及时性和旧模型/碰撞缺口仍保留。

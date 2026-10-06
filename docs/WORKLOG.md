@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — PhysX计时仍FAIL；Cartesian接近计时范围PRE
+
+physclock首件侧接近原80Nm互锁拒绝left86.670/实际Cube接触217.404N，未建立side suction、未执行X/Y。完整数据/负结果保存，GUIpause后正常0停止，不冒称时基修复PASS。读取本机GetCartesianPath.srv确认无v/a缩放字段；仅Task01 DUAL_SIDE_CONTACT显式按现有请求0.12/IPTP计时、逐值q不变/FCL仍必做，非改physics、drive、路径或门限。构建完成前不改源码，fresh GUI实测待结果。
+
 ## 2026-10-06 — PhysX时基production通过并fresh可见GUI启动
 
 build02修正重名后58.5s/exit0，source6fa161e/binary75f798a1、源码冻结期间编译；63Python/两组C++通过。fresh可见GUI再次加载同原场景，图片确认第一供料落稳后启动normal1.0首件，没有用旧慢速/旧初始化stage代替。同步shared phase来自同一次stamp，单臂也用原子反馈；保持原轨迹和保护，新增缺失ready/age/stamp错误日志及侧接近互锁详情。真实结果RUNNING，读取原子消息的外部20s只读时钟采样无命令。
