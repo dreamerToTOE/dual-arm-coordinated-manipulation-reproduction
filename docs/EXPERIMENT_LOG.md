@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — coupled_rear_full02物理2/5运行checkpoint
+
+controller仍运行/batch[1,2]PASS，前三新协议前两X/Y各16段均CLOSED且swap在release前。第一后抓candidate5/24通过新gate、第二candidate1；第二rearXYZ norm2.026/1.031/0.036mm。最新release+短清障GT中心误差0.302/0.407mm、deep0.156/0.091、side0.259/0.397，无批间HOME、原路长退出。第三初始抓取已开始，但尚未到关键side HIGH；不写五件PASS或稳定性。最终采样审计待flush，原seed/model/physics/gates不变。
+
 ## 2026-10-06 — coupled_rear_full02 RUNNING
 
 runtime a3fceab/source final、serial force binary57e72f83，fresh Isaac4.5本机headless/0preplaced/first1/max5/scale5/hold0/side-15/rear45；沿用自有原参数MoveIt launch，仅fresh物理stage。启动等待READY≤90s并exactSHA守卫，controller实际模型/IK/首件RRT+FCL完成进入运动。尚无全件完成结果；commands/metadata独立full02，full01startup失败不覆盖。seed null/原模型物理门限保持。

@@ -18,7 +18,7 @@
   ],
   "launch_note": "Reuses our same /move_group launch from coupled_rear_full01 (unchanged source/parameters, its raw/moveit.log records launch and this run); fresh Isaac stage is reconstructed. Controller auto starts only after explicit fresh normal-feed READY and exact binary hash guard, bounded readiness wait90s.",
   "status": "RUNNING_NOT_YET_PHYSICAL_PASS",
-  "metrics": {"completed_batches": [], "controller_exit": null, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "draft_unresolved_fields": 36},
+  "metrics": {"completed_batches": [1,2], "controller_exit": null, "first_two_after_clearance_center_error_mm": [0.302,0.407], "first_two_after_clearance_deep_gap_mm": [0.156,0.091], "first_two_after_clearance_side_gap_mm": [0.259,0.397], "first_two_actual_closed_X_Y_slices": [[16,16],[16,16]], "between_batch_HOME": false, "third_started_not_yet_pass": true, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "draft_unresolved_fields": 36},
   "artifacts": ["raw/isaac.log", "raw/controller.log", "../20261006_TASK01_coupled_rear_full01/raw/moveit.log", "../20261006_TASK01_coupled_rear_full01/raw/controller_force_rebuild.log"],
   "boundary": "First3 rear+side simultaneous CLOSED and unreleased role swap, last2 precise single rear. Local candidate gate does not waive actual HIGH RRT connectivity/FCL/loaded guards. All-five controller evidence required; no GUI/reliability/force-paper/frozen benchmark claim."
 }

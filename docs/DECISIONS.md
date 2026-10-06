@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D026 physical checkpoint — 以实际完成计数，不以候选成功计数
+
+full02已实际batch1/2通过，第三抓取继续。联合gate PASS只授权同候选后续实测流程，不将preflight当batch完成；原RRT/FCL重试/OPEN XYZ/原子geometry/80Nm仍全部保留。短清障后的GT而非释放前命令终点作为最新落点记录，不从2/5提升稳定性或冻结状态。
+
 ## D026 run follow-up — READY与hash双守卫后才运动
 
 production57e72f83强制重编译核对成功后，fresh full02只有在新场景日志出现真实first feed READY且exe SHA完全相符时才启动。启动正确不等于物理成功；运行期间不改当前源码/门限/场景，避免再次二进制与记录时序错位。

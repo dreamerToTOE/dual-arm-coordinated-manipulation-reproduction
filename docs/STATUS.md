@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 running — final binary full02前两件实际PASS
+
+57e72f83/source a3fceab，batch1/2新双吸协议X16/Y16、无释放主从互换/双OPEN/短清障RRT转场均完成，无批间HOME。短退出后center0.302/0.407mm，deep0.156/0.091mm，side0.259/0.397mm。第三正在抓取搬运，还未到上轮失败side HIGH，不称BUG021已物理修复或全五件PASS；原保护/模型/物理/36nulls保留，TASK02TODO。
+
 ## 2026-10-06 running — full02最终二进制已实际进入首件运动
 
 串行强制重建production SHA57e72f83含正确root-arm参数筛选，源码a3fceab；fresh原场景自动READY后hash守卫再启动，模型/IK初始化与首件HIGH/CONTACT候选预检已实际通过、机器人开始执行。full01旧binary无命令失败保留且源码等价声明已纠正。full02零预置first1/max5/scale5，最终完成/几何审计待定，不能称5/5或稳定版。TASK01 IN_PROGRESS/36nulls/TASK02TODO。

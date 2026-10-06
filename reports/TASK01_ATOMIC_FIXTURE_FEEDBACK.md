@@ -102,3 +102,7 @@ Need user confirmation: no（既有RRT候选联合可行性工程筛选）；任
 本轮controller启动exit1/命令0，报告local IK configuration unavailable。原headless正常启动并在3600s时限退出0（35998稀疏/215989原子快照，0完整性错），只有自动第一件到料，不能称完成了运动测试。已核对MoveIt六个kinematics参数有效，双组实际LMA；不是场景/URDF或Python选择器故障。
 
 核对binary strings发现production SHA174d6ef7缺left_arm./right_arm.筛选字符串，而成功probe有。其编译开始于include前缀修正之前、link晚于修改，后续增量构建no-op。因此上一段“a3fceab执行源码与production一致”的断言**作废**，只读probe结果不受影响，生产结果不能引用该源码通过。串行`cmake --build build/fr3_dual_palletize --target task01_dual_suction_fixture -- -B -j2`强制重编译，最终核对SHA和参数字符串；重新fresh `coupled_rear_full02`，不覆盖这一启动负结果，也不边改源边构建生产目标。
+
+### full02运行checkpoint — 2/5真实完成，第三关键环节待验
+
+最终串行binary57e72f83与a3fceab执行源、root arm参数筛选一致；fresh场景first1/max5/scale5、READY与hash守卫后运行。batch1/2实际X16/Y16/双吸CLOSED主从互换/释放及短清障RRT到下一件通过，无批间HOME。第一rear pool前4候选被新gate拒绝，5/24通过；第二candidate1通过，rear XYZ2.026→1.031→0.036mm。最新短清障GT中心误差0.302/0.407mm，deep0.156/0.091mm，side0.259/0.397mm；第三已经抓取搬运，但尚未到上一轮side HIGH阻塞环节。不是五件或稳定性PASS，最终同一步数据审计等待正常flush。
