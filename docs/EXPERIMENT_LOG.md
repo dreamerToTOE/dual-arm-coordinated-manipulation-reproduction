@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — coupled_rear只读链PASS，fresh full01启动
+
+coupled_rear_goal_search首次exit1无命令/参数名布局错误，修正后02 exit0：记录rear60IK/0free拒绝，替代attempt4/5/6完成200mm连续下降/约330mm X/1mm Y/30mm退出完整FCL与相对TCP。某些endpoint-free候选连续链仍失败，负日志原样保存；HIGH的RRT连接不属于这个纯本地PASS。61Python与两C++成功重跑，C++首harness路径错误保留；controller52.2s构建、probe53.0s+修正build。当前实际插件LMA（KDL底层），不是更改IK算法。a3fceab /174d6ef7生产binary，fresh coupled_rear_full01零预置五件headless启动；metadata记录原参数/seed null，实际完成数待定。
+
 ## 2026-10-06 — full01第三件goal与rear替代构型诊断
 
 side_goal_probe exit1：原fixed-rear下60IK/0free，主pair left_fr3_side_suction↔right_fr3_link5。rear_goal_search exit0：同rear TCP，rear_solved7，3对HIGH/CONTACT/park终点全FCL自由（attempt2/5/6）。两个无命令实验共用准确held快照46343/stamp772383373616、原远程world，仅本地替换当前Cube；未控制KDL内部RNG，不是全球不可行/受控A/B/路径/物理PASS。探针 ebddf6d、SHAa4462325、build52.7s；完整精确命令/输入见full01 metadata、raw日志。联合链版编译进行中，不预填通过。

@@ -88,3 +88,11 @@ Files expected to change: runtime独立fixture include/主文件仅新节点宏�
 Validation plan: 编译、原61Python/C++、精确Cube03负姿态拒绝与替代姿态只读链；通过后fresh原场景零预置物理回归，保存每件完成与失败、同一步几何/contact/DOF；不将endpoint或只读PASS称物理PASS。
 Known ambiguities / risks: 有限候选未找到并不证明不存在；HIGH终点可行仍可能RRT连接失败；原NVIDIA/URDF碰撞模型差异/实际到位残差未消失。
 Need user confirmation: no（既有RRT候选联合可行性工程筛选）；任何场景/物理/ACM/原门限或论文方法更改则另问。
+
+第五阶段软件POST：runtime `a3fceab8e368c73a39f3ad9c1b54bc8d3dad31c1`，仅新前三将过时solo PUSH/RETREAT候选筛选替换为已批准dual链，后两/旧节点不变。联合gate拒绝记录的blocked rear（60IK/0HIGH_free），替代attempt4/5/6的连续CONTACT下降、同进度X约330mm/Y1mm、30mm短退出全部full FCL/relative TCP通过，probe0。HIGH从park的RRT连接依旧必须现场验证，不被这份纯本地gate豁免。
+
+第一次联合probe无命令启动exit1，因为参数名筛选只认robot_description_kinematics.*，实际MoveIt使用left_arm.*/right_arm.*；有界读取适配实际布局后复测成功。当前双组实际参数均为`lma_kinematics_plugin/LMAKinematicsPlugin`（基于KDL ChainIkSolverPos_LMA），不是硬编码更换KDL插件。原diag日志/失败原样保存。probe构建53.0s/修正build通过，controller构建52.2s/再检查0.41s，61Python与两组C++严格编译通过；C++第一次临时目录不存在导致harness失败，改用已有runtime artifacts下mktemp并set-e重跑通过，不称首轮编译通过。benchmark analytic 36nulls/DRAFT。
+
+联合gate实测probe binary `f5143152ddb33fd5be81d27357469aebe4053b7fdb1d13de5168d74255c8922e`，是ebddf6d工作树中上述新增gate；最终a3fceab只再修正probe总结标签（连续链不再写endpoint-only），最终probe另编译。production controller binary `174d6ef7ec237967792bf92119f58e50e27629019ae26630859d04c95db072f0`与a3fceab执行源码一致。
+
+物理复测PRE：`results/20261006_TASK01_coupled_rear_full01/`，本机headless原资产/原场景、零预置first1/max5/scale5/hold0、rear45/side-15、原子反馈及同一步held记录。机器人/墙/Cube/材料/原80Nm/原几何门限不变，旧负结果保留；只有controller全五batch完成才能称这次物理流程PASS。启动/运行失败即停后续对象，不预填结果。此为[EXPERIMENTAL]工程回归，不是科学benchmark冻结/论文方法/GUI验收。

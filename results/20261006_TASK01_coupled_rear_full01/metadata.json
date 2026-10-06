@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL approved3+2 with ENGINEERING coupled OPEN rear candidate selection; not paper force control",
+  "platform": "user local Isaac4.5 headless / ROS2 Humble / MoveIt",
+  "git_commit": {"runtime": "a3fceab8e368c73a39f3ad9c1b54bc8d3dad31c1", "reproduction_pre_run": "cc9c171"},
+  "runtime_binary_sha256": "174d6ef7ec237967792bf92119f58e50e27629019ae26630859d04c95db072f0",
+  "seed": null,
+  "seed_note": "OMPL/IK RNG uncontrolled; no causal A/B or reliability claim",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "config_usage": "DRAFT reference only; original physical constants and acceptance gates unchanged",
+  "parameters": {"preplaced_count": 0, "first_batch": 1, "max_batches": 5, "execution_time_scale": 5.0, "release_diagnostic_hold_sec": 0.0, "dual_fixture_side_roll_world_y_deg": -15.0, "dual_fixture_rear_roll_magnitude_deg": 45.0, "physics_fixture_feedback": true, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 3600 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_coupled_rear_full01/raw",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=5 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
+  ],
+  "status": "STARTING_PHYSICAL_REGRESSION_NOT_YET_PASS",
+  "metrics": {"completed_batches": [], "controller_exit": null, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "draft_unresolved_fields": 36},
+  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log"],
+  "boundary": "Only first3 OPEN rear candidate preflight changed. HIGH RRT connectivity must still pass on actual measured state before execution. Original L/cubes/world/material/ACM/80Nm/geometry gates unchanged; fourth/fifth precise single rear. Physical completion requires controller evidence; not GUI, seeded reliability, force reproduction or benchmark freeze."
+}

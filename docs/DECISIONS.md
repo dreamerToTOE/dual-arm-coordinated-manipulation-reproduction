@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D026 follow-up — 旧solo预检不能代表新双吸链
+
+首三选候选改用新双链，不再要求/宣称旧helper-park solo PUSH/RETREAT代表rear+side可行；后两/旧节点保持原逻辑。实际HIGH RRT/下降/加载联合FCL及80Nm/原子几何guard依然必做，不持件换构型。参数从实际运行MoveIt读取，支持现有root arm布局，不把插件变化当成算法修复。只读链通过后才进入fresh原场景物理回归，不以endpoint或软件PASS冻结benchmark。
+
 ## D026 — rear在OPEN候选选择时预检新双臂链
 
 2026-10-06，[ENGINEERING]。同rear吸点已有替代端点构型可让side HIGH/CONTACT全FCL自由；选择时只看旧solo推入不够。仅新首三候选改为HIGH IK、连续下降（自由当前Cube参与FCL）、同进度双X/Y和短退出；原合法运动当前Cube仅在本地push世界不作静态障碍，所有其它对象/ACM不动。旧后两精准solo预检不改；现场实际HIGH RRT连接与负载检查仍必做，不能用候选预检绕过真实保护。保持原场景/工具/吸点/姿态/物理/80Nm/几何门限，局部插件参数来自当前MoveIt有界读取。不是论文算法、CLOSED构型调整或全局可行证明；真实回归后才汇报结果。

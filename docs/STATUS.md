@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 running — 联合rear候选软件通过，fresh完整五件回归
+
+runtime a3fceab /controller174d6ef7：原blocked rear被联合gate拒绝；3个替代构型连续CONTACT/X约330mm/Y1mm/短退出FCL与相对TCP预检通过，尚未物理执行。实际MoveIt LMA插件参数布局适配后probe0，61Python/两组C++ PASS（临时目录首轮harness失败保留）；原场景/桥/物理/ACM/门限未改。新fresh coupled_rear_full01零预置first1/max5/scale5启动，物理结果待定；TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
+
 ## 2026-10-06 — 第三件固定rear碰撞证据与联合候选筛选准备
 
 只读精确held快照重放：固定rear时60/60 side HIGH解碰left suction↔right link5；相同rear TCP的替代构型在7个有效rear IK中找到3个HIGH/CONTACT全FCL自由组合。endpoint-only/probe0，不是物理或RRT连接PASS。runtime ebddf6d；本轮仅新前三rear候选加入HIGH/连续下降/共同X/Y/短退出预检，编译与实测待验。full01最终2/5失败已完整归档，第四第五无命令；TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。

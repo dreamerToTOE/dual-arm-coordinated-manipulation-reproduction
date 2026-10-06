@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — 联合rear预检实现/诊断验证，物理fresh复测启动
+
+首三候选只读HIGH IK+连续下降+双X/Y+短退出复用现有本地FK/FCL，不再拿旧solo链代表新协议；后两精准solo不变。原blocked姿态拒绝、3替代完整本地链通过。参数读取首轮拒绝（实际是left/right_arm.* LMA）修正后通过，旧失败日志保留；61Python/两C++ PASS，第一次C++临时目录不存在不是源码失败，set-e/mktemp重跑通过。a3fceab控制器SHA174d6ef7，fresh零预置五件headless启动；没改场景/物理/门限，未称物理完成。
+
 ## 2026-10-06 — BUG021无命令重放与联合链修复PRE
 
 probe从/move_group有界读取当前KDL参数，用第三件held step46343精确14关节/Cube重放；原rear固定侧HIGH 60/60解都有工具↔right link5碰撞。保持rear TCP，前7有效IK找到3终点组合自由。保存build/side_goal_probe/rear_goal_search日志及binary SHA，未发机器人/吸盘/供料/导轨或远程Scene命令。新增联合候选预检PRE见原子反馈报告：纯软件、首三件、旧后两与原模型/物理/ACM/门限不改；先编译/共用只读链，再真实fresh回归。

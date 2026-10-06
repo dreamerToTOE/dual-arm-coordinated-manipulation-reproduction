@@ -1,5 +1,9 @@
 # BUGS
 
+## BUG021 follow-up — 候选联合gate只读通过，真实回归待定
+
+联合gate已正确拒绝blocked rear，并找到3条continuous CONTACT/X/Y/短退出本地FCL自由链；首轮参数命名读取错误无命令退出，适配实际LMA left/right_arm.*后通过。不是HIGH连接/物理/稳定性证明，BUG021仍OPEN待fresh正常供料五件；BUG019原模型差异、BUG017实际力矩保护风险保留。
+
 ## BUG021 follow-up — 当前rear确实挡住side HIGH，终点替代存在
 
 2026-10-06，仍OPEN。第三件held精确快照在MoveIt模型重放，60/60 side IK终点主碰撞对left suction↔right link5。相同rear TCP已有3个替代rear构型使park/HIGH/CONTACT终点FCL自由；当前选择流程只筛旧solo PUSH/RETREAT而不是新双持链，证据支持这一软件缺口。有限IK不证明全局不可行，终点free不证明路径/物理通过。新增仅首三rear联合链筛选待编译/实测；原BUG017/019模型差异与BUG004清理问题不自动消失。
