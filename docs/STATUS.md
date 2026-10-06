@@ -1,5 +1,13 @@
 # STATUS
 
+## 2026-10-06 GUI physclock running — 修复候选已编译并开始实测
+
+runtime6fa161e/binary75f798a1、串行build58.5s/63Python/两C++通过。正常倍率改为同一原子PhysX秒，无wall fallback/原250ms和80Nm门禁。fresh可见GUI完整画面/first feed READY确认后first1/max1/scale1已运动；仅软件PASS，实际结果待定。原scene/Bridge/YAML hash完全不变，TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
+
+## 2026-10-06 GUI result — 首件真实下降碰Cube，保护停止
+
+run02可见GUI/1.0现实墙钟回放，CONTACT侧臂跟踪10.109deg、Cube-left link8真实468.823N、leftJ2 raw86.323Nm，原80Nm止动，controller1/完成0/X-Y未开始。安全双OPEN后pause并受控GUI0，6158held/26516atomic/4419sparse完整性0错。不是已证实的闭合超时，GUI实时倍率/构型因果未隔离。准备仅Task01改用原子PhysX秒推进（不改物理/路径/门限），详细日志补入approach interlock；首编译重名失败保留，修正后build02进行中。TASK01仍IN_PROGRESS/36nulls，TASK02 TODO。
+
 ## 2026-10-06 GUI running — 可见场景已确认，正常倍率首件实测
 
 新的可见SimulationApp入口headless=False显示双FR3/L工具/原三墙/供料Cube（截图实际确认）；原Bridge和同一步反馈/真实first feed READY后启动runtime6bc24ec/binary08f3060a、first1/max1/scale1，无预置。63Python通过，物理结果待定，之后才决定五件测试。首个官方GUI空网格/渲染诊断后native139负启动保留、机器人命令0，不算速度测试失败。仅GUI灯光/相机/本机executor适配，原场景/物理/ACM/门限/36nulls不变。TASK01 IN_PROGRESS，TASK02 TODO。[GUI报告](../reports/TASK01_VISIBLE_GUI_RUN.md)。

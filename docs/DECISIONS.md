@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D030 run follow-up — fresh GUI实测，不拿软件测试称通过
+
+source6fa161e串行58.5s/Binary75f798a1核对后进入fresh可见原场景首件；GUI显示/READY确认和控制器初始化均实际通过。外部20s只读原子消息receipt记录物理/现实时间关系，不能把receipt频率当纯physics FPS或据此单独证明接触根因。保持所有原保护/模型/36nulls，先实际结果再决定五件。
+
+## D030 — 正常规划播放用实际PhysX秒，GUI延迟不变成隐性加速
+
+2026-10-06。[ENGINEERING] 仅Task01 single/sync执行器，从已校验的原子fixture_geometry拿物理stamp；一次循环双臂同phase，重复stamp停进度，回退拒绝，原250ms收件失鲜拒绝且无wall fallback。1.0定义为正常物理规划秒，12%RRT限速/原Cartesian时间/phase平滑/下发周期均不变。不是改physics dt/drive/路径/ACM，也不是论文控制律。真实GUIrun02跟踪/接触负结果保留；因果不唯一，fresh重测前不宣称物理修复。如果标准规划速度仍失效，不自动降速、提高force gate或改模型。
+
 ## D029 — 可见SimulationApp复用原fixture记录器，不静默fallback
 
 2026-10-06。[ENGINEERING] 新GUI入口显式headless=False，缺DISPLAY立即拒绝；本机官方Kit VS Code执行器只监听回环。只增加可视灯光/观察相机，不改原场景/工具/碰撞/物理、采样或控制门限。第一次可见GUI渲染失败时先不运动，保留0命令/native139负启动，再独立fresh GUI截图确认后实测。先单件scale1，后按结果五件；不能拿旧慢速PASS支持新速度/全任务PASS。历史headless源码可保留复现，但本轮及未来不得直接启动其无界面入口。

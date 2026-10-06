@@ -14,8 +14,10 @@
     "ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=1.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
-  "status": "GUI_READY_CONTROLLER_PENDING",
-  "metrics": {"visible_gui_verified": true, "robot_execution_started": false, "python_unit_tests": 63, "unresolved_draft_fields": 36},
-  "artifacts": ["raw/gui.log", "raw/gui_loaded.png", "raw/controller.log", "../20261006_TASK01_gui_normal_cube01/raw/moveit.log"],
+  "status": "FAIL_CUBE01_SIDE_APPROACH_PHYSICAL_CONTACT",
+  "metrics": {"visible_gui_verified": true, "robot_execution_started": true, "controller_exit": 1, "gui_exit": 0, "completed_batches": [], "side_contact_samples": 207, "contact_left_max_tracking_error_deg": 10.108529707457132, "contact_left_raw_peak_nm": 86.3232421875, "contact_cube_left_link8_peak_force_n": 468.82310481327966, "held_snapshots": 6158, "atomic_feedback_snapshots": 26516, "sparse_snapshots": 4419, "stream_integrity_errors": 0, "wall_sec": 573.0247250050015, "python_unit_tests": 63, "unresolved_draft_fields": 36},
+  "failure": "Before side suction ON: side-arm physical descent lagged the nominal target, CONTACT left tracking peak10.109deg and actual Cube-left link8 contact468.823N with raw left effort86.323Nm over original80Nm; stopped with safe bothOPEN, no X/Y slices or next Cube. Approach guard originally returned without a detailed reason log. Contact records support the physical failure; GUI real-time ratio and actual candidate effects are not yet isolated, so do not assert a single cause.",
+  "stop_note": "Paused the visible timeline after safe abort to prevent remaining position targets pushing the free Cube; owned GUI then received SIGINT and exited0. Fresh visible rerun required, no headless fallback.",
+  "artifacts": ["raw/gui.log", "raw/gui_loaded.png", "raw/gui_start_motion.png", "raw/gui_stopped.png", "raw/controller.log", "raw/summary.json", "held_analysis.json", "raw/physical_clock_build.log", "raw/physical_clock_build02.log", "../20261006_TASK01_gui_normal_cube01/raw/moveit.log"],
   "boundary": "Original fixture, tool, mass, material, physics, ACM,250ms freshness and80Nm guard unchanged. GUI adds only a preview light, camera and loopback executor. Normal playback is not100% joint-limit speed. One Cube cannot establish all-five PASS or TASK01 FROZEN."
 }

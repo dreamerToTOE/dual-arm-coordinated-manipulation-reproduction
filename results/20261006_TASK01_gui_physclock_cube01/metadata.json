@@ -1,0 +1,21 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL approved3+2; ENGINEERING fresh PhysX-time playback at100%",
+  "platform": "local visible Isaac Sim4.5 GUI / ROS2 Humble / MoveIt2",
+  "git_commit": {"runtime": "6fa161e", "reproduction_adapter": "433e836", "tests_records": "working-tree follow-up"},
+  "runtime_binary_sha256": "75f798a1a9ac61acffb891b8c5af1ae9ac054cce70e7f3a5af52dc31e90d385f",
+  "build": "serial production build02 exit0/58.5s; first name-conflict error retained; no runtime source edits during successful build",
+  "seed": null,
+  "seed_note": "OMPL RNG uncontrolled; no controlled same-candidate speed A/B or reliability proof",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "parameters": {"headless": false, "preplaced_count": 0, "first_batch": 1, "max_batches": 1, "execution_time_scale": 1.0, "timeline": "atomic PhysX stamp", "dual_fixture_side_roll_world_y_deg": -15.0, "dual_fixture_rear_roll_magnitude_deg": 45.0, "physics_fixture_feedback": true, "record_release_diagnostics": true, "record_held_diagnostics": true, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "env ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_gui_fixture.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 3600 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_gui_physclock_cube01/raw",
+    "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=1.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
+  ],
+  "status": "RUNNING",
+  "metrics": {"visible_gui_verified": true, "python_tests": 63, "cpp_policy_groups": 2, "unresolved_draft_fields": 36},
+  "artifacts": ["raw/controller.log", "raw/gui_ready.png", "raw/delivery_clock.txt", "raw/summary.json", "../20261006_TASK01_gui_normal_cube01_run02/raw/gui_physclock_startup.log", "../20261006_TASK01_gui_normal_cube01_run02/raw/physical_clock_build02.log", "../20261006_TASK01_gui_normal_cube01/raw/moveit.log"],
+  "boundary": "Only shared playback timing uses existing fresh PhysX time. No wall fallback, unchanged250ms/80Nm/geometry/ACM/model/material/mass/physics/MoveIt limits. No new success yet."
+}

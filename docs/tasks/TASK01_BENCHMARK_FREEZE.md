@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## 2026-10-06 GUI — 正常倍率首件物理失败，PhysX秒回放复测
+
+可见GUIrun02真实侧下降跟踪10.109deg/Cube接触468.823N/left raw86.323Nm，原保护停止controller1/完成0，非已证实的吸盘闭合超时；原数据完整保留。新仅Task01计时以已有原子PhysX stamp推进，缺失/回退/250ms过期拒绝无wall fallback，原geometry/physics/ACM/限速不变。runtime6fa161e/binary75f798a1串行58.5s/63Python/两组C++通过后fresh GUI首件复测RUNNING，不能预记物理修复/全五件成功。详见reports/TASK01_VISIBLE_GUI_RUN.md。36nulls/DRAFT/TASK02TODO不变。
+
 ## 2026-10-06 latest — GUI-only与normal播放倍率，未完成新速度验收
 
 用户要求可见GUI、不再headless；新Task01默认time_scale1.0（100%规划时间播放），此前5.0实际20%。MoveIt RRT速度/加速度12%与原接触/碰撞门禁不改；未授权/实施100%关节上限速度。full01最终首件X16反馈STALE_OR_INVALID/controller1/completed0/headless0，空载修复未触发。完整报告与GUI加载步骤见`reports/TASK01_GUI_SPEED.md`；新速度没有物理PASS，36nulls/DRAFT/TASK02TODO不变。

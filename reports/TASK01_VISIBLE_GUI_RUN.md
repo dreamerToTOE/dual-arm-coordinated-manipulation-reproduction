@@ -74,4 +74,29 @@ runtime6bc24ec，binary08f3060ac4d710b5580fad5023ba16bb718df0bfc5505de175bdbcc7a
 63Python tests通过；原始scene SHA43aa7c2e…、Bridge0f712365…、benchmark
 a49d60a4…/36nulls不变。TASK01仍IN_PROGRESS/DRAFT，TASK02 TODO。
 
-最终POST与测量结果待本轮结束补入，RUNNING不等于交付。
+## 首件GUI正常倍率负结果
+
+run02按现实墙钟播放：双侧抓取/搬运/下降/释放成功，但接着侧臂重新下降到
+双持接触时停止，controller1、完成0、无X/Y段/后续Cube。CONTACT窗口207个
+同一步样本，左臂跟踪最大10.108530deg，Cube↔left link8真实接触峰468.823105N，
+同一步左J2 raw86.323242Nm超过原80Nm保护。并非有证据的吸盘闭合超时；
+原approach_guard未打印停止原因，故最初观察只能说阶段失败，现已更正。
+相位标记异步，不能将它当精确控制事件时钟或把raw effort称TCP wrench。
+
+安全双OPEN后剩余驱动目标仍在，已pause可见Timeline避免继续压自由Cube，再
+SIGINT正常GUI0关闭/记录flush。6158held/26516atomic/4419sparse完整性零错误；
+GUI采样573.024725s。FCL拒绝的其它候选全部保留，不执行；当选规划自由不证明
+物理跟踪安全。不据这一未控制IK随机性的运行断言速度或GUI为唯一根因。
+
+## 执行计时软件修复PRE
+
+- Task: 正常倍率可见GUI的轨迹计时适配。
+- Goal: 一个规划秒对应一个PhysX秒，而非GUI低于实时仍按现实墙钟发完轨迹。
+- Method/scope: [ENGINEERING] 仅Task01同步/单臂下发以已有原子物理时间戳计进度；不改路径、smoothed phase、物理步长、drive、限速或保护。
+- Files: runtime共享源码条件分支/fixture impl/policy；本仓库政策单测和六记录/报告/metadata。
+- Validation: 重复stamp保持进度、回退拒绝、原250ms失鲜拒绝无wall fallback；串行production build并核对hash后fresh GUI first1/max1/scale1复测。
+- Risk/confirmation: side IK/实际几何和正常规划速度仍可能失败；没有单一因果证明。不需新权限；若模型/物理/门限必须改变则停止问用户。
+
+首编译因final hold局部stamp与ROS stamp同名失败exit2/22.3s，保留build.log；
+更名并在新独立build02重编译，不在编译中改源码。63Python/政策C++新增物理
+进度测试PASS，物理修复结果仍待fresh实测，不从单测推断成功。

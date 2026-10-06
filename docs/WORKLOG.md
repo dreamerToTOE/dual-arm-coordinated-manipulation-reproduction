@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-06 — PhysX时基production通过并fresh可见GUI启动
+
+build02修正重名后58.5s/exit0，source6fa161e/binary75f798a1、源码冻结期间编译；63Python/两组C++通过。fresh可见GUI再次加载同原场景，图片确认第一供料落稳后启动normal1.0首件，没有用旧慢速/旧初始化stage代替。同步shared phase来自同一次stamp，单臂也用原子反馈；保持原轨迹和保护，新增缺失ready/age/stamp错误日志及侧接近互锁详情。真实结果RUNNING，读取原子消息的外部20s只读时钟采样无命令。
+
+## 2026-10-06 — GUI首件负结果与实际物理时间计时PRE
+
+run02实际COMMON搬运完成，但重抓侧臂下降CONTACT跟踪最大10.109deg并与Cube真实接触，left raw86.323Nm，原保护拒绝/安全OPEN，无X/Y。最初日志缺接近互锁细节，不能称闭合超时；补正式负结果/held审计。暂停余下drive再正常停owned GUI0，不无界面重启。仅Task01执行器改用既有原子PhysX stamp，共享双臂进度、不用wall fallback；get时原250ms且回退拒绝，旧Task26/27、路径、physics、ACM等不变。新增进度C++测试，63Python及两政策组PASS；首编译final hold重名失败保留，build02修正后进行中，不边改源边build。
+
 ## 2026-10-06 — 可见GUI启动诊断及首件正常倍率回归
 
 按用户“启动gui继续测试”。先官方可见GUI加载原fixture/Bridge/readonly recorder，Prim/物理存在但空网格，机器人命令0；渲染detach/readd排查后native139，完整负记录保留。撤下仅本轮新增且未使用的GUI原型，改复用原记录器的SimulationApp可见入口，显示原完整场景成功。新增缺DISPLAY拒绝的GUI入口、循环执行客户端（仅127.0.0.1:8226）、两GUI设置单测；不改原场景/Bridge/物理/门限。

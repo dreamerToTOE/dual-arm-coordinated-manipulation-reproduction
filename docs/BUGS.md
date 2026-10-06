@@ -1,5 +1,13 @@
 # BUGS
 
+## 2026-10-06 — BUG024时基候选仅软件通过
+
+实际PhysX秒执行器production58.5s/63Python/两C++通过，fresh visible首件运行；不是BUG024真实修复证明。新增side接近互锁原因与反馈ready/age/accepted/incoming stamp拒绝日志，不放宽任何保护。BUG023原反馈及时性和旧模型/碰撞缺口仍保留。
+
+## BUG-024 — 正常倍率GUI侧臂下降真实跟踪滞后与碰Cube
+
+2026-10-06，OPEN。gui_normal_cube01_run02 CONTACT左跟踪10.109deg/真实Cube-left link8接触468.823N/原80Nm拒绝，完成0；没有闭合超时证据，未执行X/Y。现计时使用steady wall，无GUI低实时补偿，怀疑发送进度快于physics；IK构型/物理模型等未隔离，不称单一根因。仅Task01计划用原子物理秒计时、保留新鲜度保护，补approach互锁原因日志，不改变原场景/drive/物理步长/门限。软件测试或新计时不自动RESOLVED。
+
 ## 2026-10-06 — GUI空网格负启动已绕开，不关闭物理缺陷
 
 首个官方可见GUI加载原物理场景但Viewport空网格；渲染连接排查后native139，控制器命令0。后续独立可见SimulationApp入口成功显示场景，仅为GUI工程启动WORKAROUND，非正式根因修复。BUG023反馈及时性、BUG022空载转场、原模型/真实接触缺陷仍OPEN；正常倍率实际结果待定，250ms/80Nm等门限没有放宽。

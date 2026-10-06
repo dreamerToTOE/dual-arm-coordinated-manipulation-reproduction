@@ -1,5 +1,15 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — gui_physclock_cube01 RUNNING
+
+runtime6fa161e/binary75f798a1、GUIadapter433e836，production build02 58.5s/exit0、63Python/两政策C++ PASS。0preplaced/first1/max1/scale1/rear45/side-15/PhysX秒回放，fresh可见GUI截图确认/first feed真实READY后开始actual运动。沿用自有新MoveIt，无新后台沙箱/全局参数或world豁免。命令完整写metadata；只读20s原子receipt对物理stamp采样，尚未从软件/启动预记物理PASS。
+
+## 2026-10-06 — gui_normal_cube01_run02 FAIL_CONTACT / PhysX秒修复准备
+
+生产6bc24ec/08f3060a，headlessFalse/zero-preplaced/first1/max1/scale1现实墙钟。CONTACT207样本、左跟踪10.108530deg、Cube-left link8峰468.823105N、leftJ2 raw86.323242Nm；原80Nm拒绝、双OPEN/controller1/完成0，无X/Y及后续Cube。GUIpause再SIGINT0，6158held/26516atomic/4419sparse0完整性错、573.024725s。构型随机性/GUI物理实时比未控制，不能断言单因。原动态Cube被工具接触后移动，最终不是成功落位。
+
+仅Task01计时以已有原子物理stamp推进的新软件测试通过；首build22.3s/error2变量重名，日志原样保留，修正后build02待结果。修改路径几何/drive/物理/门限0次，未重启headless，fresh正常GUI复测待启动。
+
 ## 2026-10-06 — 可见GUI负启动与正常倍率首件RUNNING
 
 gui_normal_cube01：官方Isaac GUI可见但Viewport空网格，原物理/Prim/first feed有效；控制器命令0，渲染连接排查后Kit139，不是速度/协议物理结果。gui_normal_cube01_run02：可见SimulationApp入口截图显示完整原fixture，runtime6bc24ec/binary08f3060a，first1/max1/scale1/zero-preplaced/roll-15/rear45，原atomic反馈和full-rate只读held/release启用、ROS_LOCALHOST_ONLY0。正常GUI实测已启动，结果未出，不预填成功。新GUI设置两测试加原61=63PASS，benchmark36nulls/原hash不变，完整命令和负结果在metadata/报告。
