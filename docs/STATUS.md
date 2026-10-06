@@ -1,5 +1,29 @@
 # STATUS
 
+## 2026-10-06 — Research reset: TASK01 narrowed to one-Cube core benchmark
+
+User approved a plan correction after review of the overloaded five-Cube Task27-derived TASK01. The common SCI benchmark is now **one shared Cube + dual FR3 + one carriage**. Historical five-Cube debugging remains preserved under legacy/stress-test scope and no longer blocks benchmark freeze.
+
+Current gate:
+1. stop five-Cube execution/debugging for TASK01;
+2. perform the single-Cube geometry-feasibility probe;
+3. create/reuse deterministic one-Cube Isaac READY/reset;
+4. freeze geometry/material/time/start-goal values after user review;
+5. proceed to TASK02, then P4.
+
+Force/TCP-wrench calibration is explicitly deferred to TASK10-IS before P2 Isaac migration. P4 must not be blocked on force sensing.
+
+| Task | Status | Notes |
+|---|---|---|
+| TASK00 Environment Audit | PASS | retained |
+| TASK01 Core Single-Cube Benchmark Freeze | IN_PROGRESS | **new scope; five-Cube flow non-blocking** |
+| TASK02 Common Interfaces / Logger / Metrics | TODO | after TASK01 freeze |
+| TASK03–06 P4 | TODO | may start after TASK02; no wrench dependency |
+| TASK07–09 P2 MuJoCo | TODO | force/control math |
+| TASK10-IS Force/Wrench Calibration + P2 Migration | TODO | owns Isaac wrench calibration |
+
+---
+
 ## 2026-10-06 GUI physclock running — 修复候选已编译并开始实测
 
 runtime6fa161e/binary75f798a1、串行build58.5s/63Python/两C++通过。正常倍率改为同一原子PhysX秒，无wall fallback/原250ms和80Nm门禁。fresh可见GUI完整画面/first feed READY确认后first1/max1/scale1已运动；仅软件PASS，实际结果待定。原scene/Bridge/YAML hash完全不变，TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
