@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — 首件新协议实际通过，开始完整五件回归
+
+runtime39f1a0c原场景rear45/side-15，后杯OPEN两次XYZ后norm0.205mm，X16/Y16/双吸附主从换角/释放/HOME全部完成/controller0，最终中心0.303/deep0.212/side0.216mm。同一步35几何精确匹配、8470held0完整性错且窗口无非零机器人-墙接触；原80Nm/2.5mm不变。Isaac正常0退出，MoveIt关闭-11另记。保存首件报告/metadata/audits；同binary fresh first1/max5继续，不能复用这一件称全部稳定。
+
 ## 2026-10-06 — rear45真实Z残差与后杯OPEN精调
 
 rear_roll_cube01最终X1原alignment失败、双OPEN，精确stamp确认rear Z为PRE_CLOSE -2.363/CLOSED -2.462/X1 -2.578mm；不是USD假报，没到墙。保存metadata/geometry_audit/held_analysis，失败不抹。runtime39f1a0c新增仅前三rear OPEN的有界XYZ，上一命令FK加实测残差，原Cube参与完整联合FCL，helper保持实测姿态，失效拒绝CLOSE。初编译linkPose签名错误exit2，修正后build50.4s PASS/61Python/两组C++/analytic36nulls。原模型/物理/保护门限不改，真实新首件待测。

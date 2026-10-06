@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — rear_open_xyz_cube01 PASS_FIRST_CUBE_ONLY
+
+runtime39f1a0c/repro7b61780/binaryefb1d133…，普通zero-preplaced first1/max1/scale5/hold0。rear residual2.196→1.201→0.205mm，两次命令增量≤1mm、实际FK微轨迹span3.178/3.200mm（仍原4mm scope）；X16/Y16/controller0/batch[1]/双OPEN/HOME，最终center0.303/deep0.212/side0.216mm。35精确stamp geometry/rounding≤0.0004966，8470held/26166atomic/4361sparse0错误，4524release；持件窗口robot-wall非零pair0，raw revolute CONTACT最大46.669Nm。560.393s采样、headless0、MoveIt清理-11/joint bridge1。首件单次PASS不是多件稳定/GUI/benchmark冻结，full-five同binary准备。
+
 ## 2026-10-06 — rear_roll_cube01 FAIL_X1 / OPEN rear XYZ software PASS
 
 runtime4ebe279/reproe4004ab/binarye50b23fe…，fresh零预置first1/max1/scale5/hold0、rear45/side-15。X1 alignment2.577694mm>原2.5mm；3条原子stamp准确匹配、日志舍入差max0.000488mm/deg。controller1/completed[]/双OPEN/headless0，35922atomic/4552held/5987sparse均0完整性错；没到墙/Y，非碰墙修复PASS。

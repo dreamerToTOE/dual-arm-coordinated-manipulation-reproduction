@@ -54,3 +54,15 @@ rear_roll_cube01在X1原2.5mm对齐guard失败2.578mm，双OPEN/controller1；�
 复用现有`precloseAlignmentDeltaXYZ`（1mm向量限步、无最低量化）与`planFinePreclose`的局部FK微解算，在rear吸附之前、两杯OPEN时将后TCP到达新的Cube后面中心。目标到位精度0.3mm仅吸附前工程目标，不放宽原2.5mm加载门限；最多3次修正/4次检查，失败不CLOSE。按上一命令FK累加残差以消除执行偏差，保持现有杯面姿态，原Cube参与完整双臂FCL，helper只保持实测关节。第四第五/旧节点不改变；不做CLOSED补偿、力控或物理参数更改。
 
 验证计划：已有XYZ边界单测+编译→fresh首件scale5/hold0/原子反馈→记录每次XYZ残差与次数/原门限结果；若仍需模型/物理/门限改变则停止另问。
+
+实现/软件检查：runtime39f1a0c，controller build50.4s、61Python/两组C++/analytic36nulls通过。首编译误用`linkPose`参数类型，exit2后修正，不掩盖失败。首次fresh运行rear OPEN residual norm2.196mm，第一微轨迹FK span3.178mm；**1mm限的是加到上一命令FK的修正向量，不是从当前实测位姿算起的整条TCP轨迹长度**。这条轨迹还包含之前命令的到位残差，仍受既有fine solver的4mm总span/0.02rad姿态/联合FCL约束。未将1mm命令增量误报成1mm实际位移门限，物理结果待定。
+
+## 第三阶段 POST — 首件物理PASS，整体仍PARTIAL
+
+`rear_open_xyz_cube01` /runtime39f1a0c/repro7b61780/binaryefb1d133…；普通零预置first1/max1/scale5/hold0。后杯OPEN两次精调norm2.196→1.201→0.205mm（总微轨迹span3.178/3.200mm、每次命令增量≤1mm），之后后杯/侧杯闭合。实际X16/Y16全部完成、主从互换时未释放，最后双OPEN、局部退出/共同HOME、controller0。
+
+最终中心误差0.303mm，deep gap0.212mm，side gap0.216mm；35条打印几何与精确同一步PhysX匹配，日志舍入差max0.0004966mm/deg。8470 held记录完整性0错，**仅该持件记录窗口**未发现机器人-三墙非零contact，CONTACT/实际X/Y峰raw revolute effort46.669Nm，低于保留80Nm；不是校准TCP/吸盘D6内力。26166atomic/4361sparse/4524release有效记录，采样错0。
+
+测试结束后停止自有headless/MoveIt：Isaac0，MoveIt launch0但move_group关闭-11、joint bridge1，BUG004保留；不能把这些清理错误当控制器失败或称软件完全无缺陷。原模型/材料/L工具/几何/ACM/几何与effort门限不变。前面的负结果全部保存；一次首件不是后四件、GUI、多次稳定性、TASK01基准冻结或P2/P3方法复现证明。
+
+下一步：同一源码/binary，fresh零预置first1/max5/scale5/hold0，验证前三新双吸附以及后两原精准单rear连续执行；失败即停止后续Cube，不改变场景/物理/保护来换PASS。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。

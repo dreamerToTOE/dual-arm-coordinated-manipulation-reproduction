@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D024 follow-up — 精调首件通过后才进入五件；命令限步与轨迹span分开
+
+首件两次OPEN精调norm2.196→1.201→0.205mm，实际流程controller0。1mm限制上一命令目标的修正向量，不是从实测起点的全部TCP运动；本次span3.178/3.200mm含旧执行残差，仍满足既有4mm/0.02rad微解算/FCL范围。明确记录这一区别，不隐瞒位移或放宽加载门限。
+
+下一步同binary/原物理fresh zero-preplaced first1/max5，前三双吸附后两精准单rear。只一次首件不证明后续Cube、不自动冻结benchmark/推进TASK02；任何失败保留并停止后续对象，原模型/物理/门限权限边界保留。
+
 ## D024 — 复用吸附前XYZ消除rear重抓残差，不放宽加载门限
 
 2026-10-06，[ENGINEERING]。rear45实测X1原子alignment2.578mm、主要rear Z残差，复用用户已允许的OPEN XYZ精调：仅前三后杯重抓，上一发送命令FK加同一步Cube/TCP残差；每次整向量≤1mm、最多3次/4检查。0.3mm仅新的吸附前目标精度，不替代原2.5mm/80Nm/碰撞门控。helper OPEN实测保持、原自由Cube/所有其它静态对象参与联合FCL；观测过期/失败则双OPEN停止，不CLOSE或推进下一件。

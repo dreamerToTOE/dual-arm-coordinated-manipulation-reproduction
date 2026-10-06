@@ -2,7 +2,7 @@
   "task": "TASK01",
   "baseline": "ENGINEERING bounded OPEN rear XYZ correction, EXPERIMENTAL 3+2 physical single-Cube regression",
   "platform": "user local Isaac4.5 headless / ROS2 Humble / MoveIt",
-  "git_commit": {"runtime": "39f1a0c79ab8dfe46b429fa15b5230b861962930", "reproduction": "record_commit_pending"},
+  "git_commit": {"runtime": "39f1a0c79ab8dfe46b429fa15b5230b861962930", "reproduction": "7b61780bec8c4d48fa483305df0bf4f59f3977ae"},
   "runtime_binary_sha256": "efb1d133db42fdf74a31e624d73d4d7437fec553bff2a06ac45784ba3f78c68b",
   "seed": null,
   "seed_note": "OMPL/IK RNG uncontrolled; no reliability or causal A/B claim",
@@ -15,8 +15,8 @@
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
-  "status": "PREPARED_PHYSICS_RESULT_PENDING",
-  "metrics": {"first_build_exit": 2, "first_build_failure": "linkPose expects JointTrajectory reference; call signature corrected", "controller_build_sec": 50.4, "python_tests_passed": 61, "preclose_xyz_cpp_passed": true, "dual_fixture_cpp_passed": true, "draft_unresolved_fields": 36},
-  "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/moveit.log", "raw/summary.json", "raw/held_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/geometry_source_comparison.jsonl"],
+  "status": "PASS_ACTUAL_FIRST_CUBE_ONLY",
+  "metrics": {"first_build_exit": 2, "first_build_failure": "linkPose expects JointTrajectory reference; call signature corrected", "controller_build_sec": 50.4, "python_tests_passed": 61, "preclose_xyz_cpp_passed": true, "dual_fixture_cpp_passed": true, "draft_unresolved_fields": 36, "controller_exit": 0, "completed_batches": [1], "rear_open_xyz_corrections": 2, "rear_open_xyz_residual_norm_mm": [2.196, 1.201, 0.205], "rear_open_fine_trajectory_span_mm": [3.178, 3.200], "x_slices_accepted": 16, "y_slices_accepted": 16, "final_center_error_mm": 0.303, "final_deep_gap_mm": 0.212, "final_side_gap_mm": 0.216, "both_open_at_end": true, "both_home_at_end": true, "headless_shutdown_exit": 0, "moveit_launch_shutdown_exit": 0, "move_group_shutdown_exit": -11, "joint_bridge_shutdown_exit": 1, "sparse_snapshots": 4361, "sparse_errors": 0, "atomic_feedback_snapshots": 26166, "atomic_feedback_errors": 0, "held_snapshots": 8470, "held_integrity_errors": 0, "release_snapshots": 4524, "sampler_wall_sec": 560.3929539019991, "exact_stamp_geometry_observations_matched": 35, "maximum_print_rounding_difference_mm_or_deg": 0.0004966037698511463, "maximum_sampled_geometry_alignment_mm": 1.625924622809416, "held_window_nonzero_robot_wall_pairs": 0, "held_contact_phase_peak_raw_revolute_effort_nm": 46.66857147216797},
+  "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/moveit.log", "raw/summary.json", "raw/held_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/geometry_source_comparison.jsonl", "geometry_audit.json", "held_analysis.json"],
   "boundary": "Rear XYZ correction only before CLOSE with both cups OPEN and free Cube in joint FCL; not loaded compensation. Original scene, L-tool, physics, ACM,2.5mm/80Nm gates unchanged. Single-Cube headless trial, not full-five/GUI/paper/frozen benchmark proof."
 }

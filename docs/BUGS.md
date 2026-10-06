@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-06 — 首件通过不将旧缺陷全部标RESOLVED
+
+rear_open_xyz_cube01后杯OPEN精调实际将残差压到0.205mm，首件X16/Y16与退出通过、8470持件记录窗口robot-wall非零pair0。此为本次配置/物理首件通过，BUG017/019仍需其它Cube/构型验证，模型差异未消失；BUG020 WORKAROUND仅新消费路径，旧反馈不变。BUG004关闭move_group-11/joint bridge1再次出现，独立于controller0。禁止用一次首件把可靠性/全系统碰撞缺陷标已解决。
+
 ## 2026-10-06 — 后杯OPEN重抓残差实际超限（仍待物理验证）
 
 rear_roll_cube01：原子精确stamp验证X1后杯Z=-2.577694mm、原2.5mm保护自动停止/双OPEN。前三rear重抓只有RRT毫米级到位残差，闭合后的小变化耗尽原加载余量；不能归为已修复的USD假报。复用既有有界XYZ精调到OPEN重抓阶段，build/单测PASS但新物理结果待定；不提高门限、不在CLOSED补偿。BUG017/019保持OPEN，名义三墙0交集不是实际修复证明。

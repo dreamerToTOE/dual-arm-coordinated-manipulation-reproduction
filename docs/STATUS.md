@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 latest — 新rear OPEN精调首件物理PASS，五件连续回归准备
+
+rear_open_xyz_cube01 /39f1a0c/binaryefb1d133：rear norm2.196→1.201→0.205mm，两次OPEN修正后实际X16/Y16/主从换角/双OPEN退出/HOME全部完成，controller0；中心0.303/deep0.212/side0.216mm。35精确stamp几何匹配、8470held0完整性错/窗口内无非零机器人-墙接触，26166atomic/4361sparse0错。
+
+这是first1/max1/scale5/零预置的单次headless PASS，不是五件/GUI/稳定或科学冻结。自有运行已停，Isaac0、MoveIt清理-11/joint bridge1保留。下一轮同源码fresh完整3+2五件准备；TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO，原场景/物理/ACM/门限不变。
+
 ## 2026-10-06 latest — 后腕实际首件X1失败；吸附前XYZ复用精调已编译
 
 rear_roll_cube01 /4ebe279：原子反馈精确匹配3条几何，X1 rear Z偏差2.578mm超过原2.5mm，controller1/完成0/双OPEN/headless0；未到墙或Y，不称腕姿物理修复。35922原子快照/4552held/5987稀疏记录均0完整性错。
