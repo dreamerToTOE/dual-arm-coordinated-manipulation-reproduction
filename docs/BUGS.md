@@ -1,5 +1,10 @@
 # BUGS
 
+## BUG-023 — 首件X16原子反馈过期或无效导致互锁
+
+Date: 2026-10-06; Task: TASK01; Status: OPEN.
+`empty_handoff_full01`第一X1–15完成，X16控制器反馈STALE_OR_INVALID/controller1/completed[]；双CLOSED、raw efforts20.627/30.965Nm低于80，故本次不是原80Nm超限。17几何stamp匹配/5862held等记录完整性通过不能证明ROS收到该步反馈的及时性；目前未区分采样停顿、回调/传输延迟或消息合法性失败。安全双OPEN并停后续Cube，原250ms门禁未放宽。新空载helper未物理触发，BUG022仍OPEN。以后诊断只在可见GUI；用户normal倍率请求不是这个缺陷的解决证据。
+
 ## BUG022工程候选通过只读，不关闭物理问题
 
 精确第三释放后重放：最终局部RRT候选/IPTP保持路点/顺序完整起点通过491+469 FCL；CLOSED/碰撞起点拒绝和world未改通过。六条raw/TOTG/IPTP同路径都安全，不能把首轮postprocessing无效全部归咎TOTG。修复不是豁免Cube，不声称原USD/URDF差异消失。新的fresh实际五件回归已启动，BUG022待真实空载转场通过；BUG017/019与科学冻结缺口仍保留。

@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D028 — 正常规划轨迹倍率与GUI-only仿真
+
+- Date: 2026-10-06; Classification: [ENGINEERING]运行默认值/工作流；[EXPERIMENTAL]后续新速度验收。
+- User input: 用户询问是否50%运行并要求100%；以后不要headless，需要看场景。
+- Decision: 当前`task01_dual_suction_fixture`默认`execution_time_scale=1.0`，含义是按规划时间100%播放，之前实测5.0是20%、2.0才是50%。该设置不等于MoveIt/机器人关节上限100%；RRT速度/加速度12%保持并明确告知用户，不推断批准把接触运动直接提高至硬件上限。
+- Workflow: 以后助手只启动可见Isaac GUI，不再headless；保留历史脚本、命令与原始负证据，完整列出scene/Play/Bridge/原子反馈加载步骤。当前仅改新节点默认值，旧Task26/27参数不受影响，显式历史5.0参数仍优先于新默认值。
+- Validation boundary: 1.0实际轨迹需要重新GUI物理验收；此前慢速单次PASS不可用于normal倍率成功率。250ms反馈/80Nm/2.5mm/ACM/物理/模型/36项null均不改变；不启动P2/P3控制律或TASK02。
+
 ## D027 follow-up — 加密空载几何检查、保持路点的计时，先同路径对照
 
 首个请求局部scene探针3次被MoveIt自己判后处理路径无效，全部负结果保留。下一工程范围仅OPEN空载handoff：在当前控制器内加载原OMPL插件和配置副本，本地检查分段比例0.0005、IPTP计时并逐值验证q路点未变，最后仍原0.01s完整FCL/起点/目标/限位守卫。不是启动后台沙箱/第二move_group，也不改全局参数、加载轨迹、ACM、世界或接触门限。probe同一raw RRT分别检查原几何/defaultTOTG/IPTP，不能先验声称TOTG唯一根因。当前改动未作物理成功承诺，不是P2/P3复现或benchmark冻结。

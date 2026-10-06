@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-06 — 正常播放倍率与可见GUI工作流
+
+按用户新要求停止延续无界面实验。核对播放计时为wall_elapsed/time_scale，上轮5.0=20%，旧默认3.0约33.3%；新`TASK01_DUAL_SUCTION_FIXTURE`默认1.0，增加明确播放比例与保留12%规划限速的启动日志，有限值/倍率>=1门禁在任何Arm命令前拒绝错误输入。旧Task26/27节点默认3.0不静默改动，历史显式5.0日志不篡改。README/启动指南记录GUI场景→Play→原Bridge→原子反馈全部步骤。没有改接触速度规划、场景、ACM、保护门限或启动新物理实验；编译与软件检查结果另见TASK01_GUI_SPEED报告。
+
+此前full01最终归档FAIL_X16_STALE_OR_INVALID/controller1、headless0/completed[]；17几何匹配、5862held/21398atomic/3566sparse完整性0错，未到空载转场。保留原数据和未知根因，不能用normal速度设置称修复了反馈问题。
+
 ## 2026-10-06 — 空载局部管线重放PASS/真实five-Cube开始
 
 第一请求局部action探针3个postprocessed路径被MoveIt拒绝，负结果保留。最终仅新fixture OPENhandoff复用当前进程本机OMPL与参数副本，segment fraction0.0005/原RRTConnect/原目标/完整世界，IPTP不改q路点，顺序第二臂含第一预测终点，执行前再以第一实测关节完整FCL复验。无远程Scene或参数写/额外move_group/背景预规划，旧及加载链不改。probe03同f237cff串行重编译并实际无命令PASS，首编译main-local槽位lambda错误与中间binary一致性边界保留。原61Python/两C++/benchmark36nulls/hash PASS。新fresh原headless普通供料five-Cube回归启动，source/binary检查后运行，暂不预记完成。

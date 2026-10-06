@@ -1,0 +1,65 @@
+{
+  "fixtures": {
+    "task27_plus_outer": {
+      "role_swap_before_release": false,
+      "stages": {
+        "DUAL_REAR_PRIMARY_X": {
+          "slices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "all_both_closed": true
+        },
+        "DUAL_SIDE_PRIMARY_Y": {
+          "slices": [],
+          "all_both_closed": false
+        }
+      },
+      "dual_protocol_logged": false
+    },
+    "task27_minus_outer": {
+      "role_swap_before_release": false,
+      "stages": {
+        "DUAL_REAR_PRIMARY_X": {
+          "slices": [],
+          "all_both_closed": false
+        },
+        "DUAL_SIDE_PRIMARY_Y": {
+          "slices": [],
+          "all_both_closed": false
+        }
+      },
+      "dual_protocol_logged": false
+    },
+    "task27_plus_inner": {
+      "role_swap_before_release": false,
+      "stages": {
+        "DUAL_REAR_PRIMARY_X": {
+          "slices": [],
+          "all_both_closed": false
+        },
+        "DUAL_SIDE_PRIMARY_Y": {
+          "slices": [],
+          "all_both_closed": false
+        }
+      },
+      "dual_protocol_logged": false
+    }
+  },
+  "completed_batches": [],
+  "full_new_protocol_logged": false,
+  "boundary": "Controller/Bridge state evidence only; physical success also needs exit code and independent actual poses. Not contact-force, timing-synchronized wrench, GUI acceptance, reliability or benchmark freeze."
+}

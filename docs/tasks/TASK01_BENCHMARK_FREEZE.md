@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## 2026-10-06 latest — GUI-only与normal播放倍率，未完成新速度验收
+
+用户要求可见GUI、不再headless；新Task01默认time_scale1.0（100%规划时间播放），此前5.0实际20%。MoveIt RRT速度/加速度12%与原接触/碰撞门禁不改；未授权/实施100%关节上限速度。full01最终首件X16反馈STALE_OR_INVALID/controller1/completed0/headless0，空载修复未触发。完整报告与GUI加载步骤见`reports/TASK01_GUI_SPEED.md`；新速度没有物理PASS，36nulls/DRAFT/TASK02TODO不变。
+
 ## 2026-10-06 latest — 持件数据已获得，实际腕部碰墙，修复候选仅只读验证
 
 diagnostic02本机首件X16/Y14后Y15原80Nm停止，controller1/completed0；held10538/0errors，left link7↔深墙实体接触，精确FK与物理差<0.001mm但MoveIt墙FCL自由。原USD convexHull与URDF STL不同，未改碰撞/场景。nominal02杯面内-15deg候选前三链IK/FCL/relativeTCP及1330原USD离线腕部节点通过，尚无新物理PASS。BUG017/019 OPEN，53Python/build PASS，36nulls/hash不变。详见reports/TASK01_HELD_CONTACT_DIAGNOSTIC.md。

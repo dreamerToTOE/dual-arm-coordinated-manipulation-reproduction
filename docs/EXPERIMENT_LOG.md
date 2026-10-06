@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — empty_handoff_full01 final FAIL；新倍率没有物理结果
+
+runtimef237cff/binary812c71ee、原零预置first1/max5/scale5/hold0配置；第一X1–15双CLOSED完成，X16互锁反馈STALE_OR_INVALID（left20.627/right30.965Nm<80），安全双OPEN、controller1/completed[]，后续Cube未命令。Isaac受控SIGINT后exit0。17stamp匹配舍入差<=0.000491945mm/deg，5862held/21398atomic/3566sparse无记录完整性错；release0、wall474.505s。记录完整性通过不等于ROS及时交付通过。空载helper未物理触发，根因待诊断。
+
+随后用户要求normal倍率/GUI-only；独立Task01默认1.0、MoveIt规划限速仍12%。只编译和61离线测试，不启动headless或新GUI物理动作；尚无1.0倍率的运行误差/速度/成功率。旧scale5证据不可用于该新配置验收，benchmark36nulls/hash不变。
+
 ## 2026-10-06 — exact empty handoff replay PASS，物理回归RUNNING
 
 results/20261006_TASK01_empty_handoff_replay：旧action/probe1；局部OMPL/IPTP probe02与最终f237cff probe03均0。最终a33c7565、full02最后step51290/stamp854833377916精确14q/三pose，same-start11+left491+right469完整FCL，CLOSED/obstruction安全拒绝、world前后完全一致；6条同raw路径三种计时全部安全，不证明单一TOTG因果。原参数/scene/ACM不改；软件61Python/2C++、analytic36nulls PASS。fresh results/20261006_TASK01_empty_handoff_full01本机headless0preplaced/first1/max5/scale5/hold0/side-15/rear45，production812c71ee、READY与hash守卫后开始实际回归；物理结果尚未产生。

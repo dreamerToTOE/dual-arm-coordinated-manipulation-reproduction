@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING normal playback configuration / visible GUI workflow",
+  "platform": "ROS2 Humble / MoveIt2 compile and offline tests only; no simulation launched",
+  "git_commit": {"runtime": "6bc24ec", "reproduction_parent": "3dfe973"},
+  "seed": null,
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "runtime_binary_sha256": "08f3060ac4d710b5580fad5023ba16bb718df0bfc5505de175bdbcc7a49bd31e",
+  "parameters": {"new_task01_default_execution_time_scale": 1.0, "default_planned_playback_percent": 100.0, "unchanged_moveit_rrt_velocity_and_acceleration_scale": 0.12, "future_isaac_mode": "visible GUI only", "legacy_task26_task27_default_time_scale": 3.0},
+  "command": [
+    "colcon build --packages-select fr3_dual_palletize --symlink-install --parallel-workers 1 --cmake-target task01_dual_suction_fixture",
+    "python3 -m unittest discover -s platforms/isaac_ros2/probes -p 'test_*.py'",
+    "ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p execution_time_scale:=0.5",
+    "python3 scripts/validate_benchmark_candidate.py configs/benchmark/benchmark_v1.yaml"
+  ],
+  "status": "PASS_CONFIGURATION_AND_SOFTWARE_ONLY_GUI_PHYSICAL_VALIDATION_PENDING",
+  "metrics": {"build_exit": 0, "build_package_sec": 57.3, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "invalid_scale_guard_exit_expected": 1, "robot_commands_in_this_iteration": 0, "unresolved_draft_fields": 36, "physical_placement_error_mm_at_new_speed": null},
+  "negative_check": "validate_benchmark_candidate.py --help is not a supported option; path lookup exited1. Explicit config path rerun passed without changing benchmark.",
+  "artifacts": ["../../reports/TASK01_GUI_SPEED.md", "../20261006_TASK01_empty_handoff_full01/metadata.json"],
+  "boundary": "100% planned playback is not100% hardware joint limits. Previous scale5 slow physics evidence does not validate scale1. No new simulator started, no headless continuation, model/physics/ACM/gates unchanged. TASK01 DRAFT/IN_PROGRESS; TASK02 TODO."
+}

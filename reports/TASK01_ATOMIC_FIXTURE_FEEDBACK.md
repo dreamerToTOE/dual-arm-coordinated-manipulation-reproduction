@@ -2,6 +2,11 @@
 
 2026-10-06，IN_PROGRESS；不是论文控制律/基准冻结。
 
+最新工作流取代下方历史headless命令：用户要求后续只用可见GUI，新节点默认正常
+播放倍率1.0（保留12% MoveIt RRT限速）。完整scene/Bridge/原子反馈代码见
+[TASK01_GUI_SPEED](TASK01_GUI_SPEED.md)。最后full01已经首件X16反馈过期/无效安全
+失败并停止，完成0；下方RUNNING是历史检查点，不是当前状态。
+
 ## === PRE-TASK REPORT ===
 
 Task: TASK01 / BUG005、017、019，新增测量反馈工程修复。

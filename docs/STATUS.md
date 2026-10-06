@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 latest — 用户要求正常播放倍率与GUI-only
+
+此前实际`execution_time_scale=5.0`是20%规划轨迹播放，不是50%；新Task01独立节点默认改为`1.0`（100%规划轨迹倍率），保留MoveIt RRT速度/加速度12%及原碰撞/接触保护。以后助手不再启动headless，只用可见GUI；历史脚本/无界面记录保留。新倍率尚未完成GUI物理验收，不等于100%关节极限速度，也不能借旧scale5结果称通过。
+
+上一轮`empty_handoff_full01`已经停止：首件X1–15完成，X16原子反馈STALE_OR_INVALID、安全双OPEN/controller1/完成0，自有Isaac正常停止0。17几何精确stamp匹配，5862held/21398atomic/3566sparse完整性0错；空载修复未物理触发。原因未隔离，不放宽250ms门禁。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。详见[运行约定](../reports/TASK01_GUI_SPEED.md)。下方RUNNING是保留历史检查点。
+
 ## 2026-10-06 running — 空载重放通过，新fresh五件实际回归
 
 runtimef237cff/binary812c71ee，串行构建56.2s；同commit探针a33c7565/build59.5s，精确第三释放后14q/三Cube输入一致、两段fullFCL491/469样本、安全pair/CLOSED和碰撞起点拒绝/remote world不变均PASS。局部原OMPL RRTConnect加密检查0.0005，IPTP逐值保持q路点；全局MoveIt/加载链/原模型物理ACM门限不变，不启动后台沙箱。六条same-raw对照raw/TOTG/IPTP都安全，不能归因TOTG唯一故障。61Python/两C++/analytic36nulls通过。fresh empty_handoff_full01实际运动正在启动，零预置first1/max5/scale5、READY+hash守卫；完整物理结果待定，不称5/5。TASK02TODO。

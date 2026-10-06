@@ -18,8 +18,10 @@
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=5 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
   "launch_note": "Own same unchanged /move_group launch retained from coupled_rear_full01; its raw/moveit.log contains launch. Fresh Isaac original stage, bounded90s READY + production exactSHA guard, no source changes during run.",
-  "status": "RUNNING_FRESH_PHYSICAL_FIVE_CUBE_RESULT_PENDING",
-  "metrics": {"completed_batches": [], "controller_exit": null, "headless_exit": null, "unresolved_draft_fields": 36},
-  "artifacts": ["raw/isaac.log", "raw/controller.log", "../20261006_TASK01_coupled_rear_full01/raw/moveit.log", "../20261006_TASK01_empty_handoff_replay/raw/controller_build.log"],
+  "status": "FAIL_CUBE01_X16_ATOMIC_FEEDBACK_STALE_OR_INVALID",
+  "metrics": {"completed_batches": [], "controller_exit": 1, "headless_exit": 0, "completed_x_slices": 15, "completed_y_slices": 0, "left_guard_peak_nm": 20.627, "right_guard_peak_nm": 30.965, "guard_limit_nm": 80.0, "geometry_stamp_matches": 17, "maximum_print_rounding_difference_mm_or_deg": 0.0004919441633131072, "sparse_snapshots": 3566, "atomic_feedback_snapshots": 21398, "held_snapshots": 5862, "stream_integrity_errors": 0, "recorder_wall_sec": 474.5051690100008, "unresolved_draft_fields": 36},
+  "failure": "First Cube X16 active interlock reported atomic_feedback=STALE_OR_INVALID while both suction CLOSED and efforts below80Nm. Safe abort opened both cups; no following Cube commanded. Freshness failure cause not isolated; new OPEN empty handoff helper was never physically reached.",
+  "stop_note": "Controller exited1; owned headless received SIGINT and exited0 before user's GUI-only request. Historical launch retained as evidence, not a recommended future startup.",
+  "artifacts": ["raw/isaac.log", "raw/controller.log", "raw/summary.json", "geometry_audit.json", "held_analysis.json", "protocol_evidence.json", "../20261006_TASK01_coupled_rear_full01/raw/moveit.log", "../20261006_TASK01_empty_handoff_replay/raw/controller_build.log"],
   "boundary": "Only controller actual all-five completion and measured poses can support one physical engineering PASS. No GUI acceptance, repeatability, calibrated TCP wrench, paper reproduction, TASK01 FROZEN or TASK02 advance. Model/scene/material/mass/physics/ACM/80Nm and contact gates unchanged."
 }

@@ -149,3 +149,10 @@ Stop and ask the user if:
 - a dependency/license prevents faithful use;
 - repeated failures suggest the reproduction target itself must change;
 - a proposed shortcut would become a [DEVIATION].
+
+## 13. Visible simulation workflow (user requirement, 2026-10-06)
+
+- Do not start Isaac Sim in headless mode. Use a visible GUI so the user can inspect the scene and motion; this overrides earlier headless debugging plans unless the user explicitly changes it later.
+- Keep historical headless scripts/logs as evidence, but do not copy their launch commands into new runs. If a visible GUI cannot be connected or started, report that limitation instead of silently using headless.
+- Current `task01_dual_suction_fixture` defaults to `execution_time_scale=1.0` (100% planned-trajectory playback). Earlier `5.0` means20% playback, not50%. Explicit ROS parameters override the default.
+- Do not confuse playback倍率 with MoveIt joint velocity/acceleration limits (currently12%). Changing to100% joint limits is a separate physical/control change, not implied by normal playback; actual new-speed performance needs GUI verification.
