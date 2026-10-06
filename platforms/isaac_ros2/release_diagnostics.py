@@ -37,7 +37,8 @@ def tcp_from_link8(position, quaternion, offset, tool_quaternion):
 
 
 class ReleaseDiagnostics:
-    def __init__(self, node, sim_view, cube_paths, scene_values, stream):
+    def __init__(self, node, sim_view, cube_paths, scene_values, stream,
+                 phase_topic='/task01/release_phase', phase_index=active_cube_index):
         from isaacsim.core.prims import RigidPrim
         from physics_object_sampler import PhysicsObjectSampler
         from physics_contact_sampler import PhysicsContactSampler
@@ -47,8 +48,9 @@ class ReleaseDiagnostics:
         self.stream = stream
         self.count = 0
         self.scene_values = scene_values
+        self.phase_index = phase_index
         self.subscription = node.create_subscription(
-            String, '/task01/release_phase', self._phase,
+            String, phase_topic, self._phase,
             QoSProfile(depth=10, durability=DurabilityPolicy.TRANSIENT_LOCAL))
         link_paths = [f'/World/{side}_fr3/fr3_link8' for side in ('left', 'right')]
         self.tool_view = RigidPrim(link_paths, reset_xform_properties=False,
@@ -73,7 +75,7 @@ class ReleaseDiagnostics:
 
     def capture(self, cube_snapshot, dt, grippers):
         phase = self.phase
-        index = active_cube_index(phase)
+        index = self.phase_index(phase)
         if index is None:
             return
         from dataclasses import asdict
@@ -94,5 +96,7 @@ class ReleaseDiagnostics:
                                        for side, art in self.articulations.items()},
                'phase_received_async': phase,
                'suction_closed': {side: bool(g.is_closed()) for side, g in grippers.items()}}
-        self.stream.write(json.dumps(row, sort_keys=True)+'\n')
+        if self.stream is not None:
+            self.stream.write(json.dumps(row, sort_keys=True)+'\n')
         self.count += 1
+        return row

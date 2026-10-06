@@ -30,7 +30,7 @@ class PhysicsContactSampler:
             raise RuntimeError("Contact buffer range invalid or capacity exhausted")
         return slice(start, start + count)
 
-    def capture(self, snapshot, dt):
+    def capture(self, snapshot, dt, nonzero_only=False):
         if not math.isfinite(dt) or dt <= 0:
             raise ValueError("Real physics dt must be positive; dt=1 returns impulses, not Newtons")
         if not self.view.check():
@@ -49,6 +49,11 @@ class PhysicsContactSampler:
             for other, other_path in enumerate(self.filter_paths):
                 n = self._slice(counts, starts, sensor, other, len(normal))
                 f = self._slice(friction_counts, friction_starts, sensor, other, len(friction))
+                if nonzero_only and not counts[sensor, other] and not friction_counts[sensor, other]:
+                    if not np.isfinite(matrix[sensor, other]).all():
+                        raise ValueError("Nonfinite contact force matrix")
+                    if not np.any(matrix[sensor, other]):
+                        continue
                 normal_vectors = normal[n].reshape(-1, 1) * directions[n]
                 normal_sum = normal_vectors.sum(axis=0)
                 friction_sum = friction[f].sum(axis=0)
@@ -58,6 +63,10 @@ class PhysicsContactSampler:
                 values = np.concatenate((normal_sum, friction_sum, total, moment, matrix[sensor, other]))
                 if not np.isfinite(values).all():
                     raise ValueError("Nonfinite collision contact data")
+                # [ENGINEERING] 可选压缩仅删完全零的对；仍校验所有缓冲/数值。
+                # 不设力阈值，不把小接触丢掉，旧记录默认行为不变。
+                if nonzero_only and not counts[sensor, other] and not friction_counts[sensor, other] and not np.any(values):
+                    continue
                 pairs.append({
                     "sensor_path": sensor_path, "other_path": other_path,
                     "normal_contact_count": int(counts[sensor, other]),

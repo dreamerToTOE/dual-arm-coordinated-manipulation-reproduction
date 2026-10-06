@@ -90,6 +90,26 @@ class ContactSamplerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             PhysicsContactSampler(self.view, ["cube"], ["wrong_wall"])
 
+    def test_compact_keeps_tiny_and_existing_contact(self):
+        self.view.normal[:] = 1e-12
+        result = self.sampler.capture(self.snapshot, 1 / 60, nonzero_only=True)
+        self.assertEqual(len(result['pairs']), 1)
+
+    def test_compact_still_rejects_nonfinite(self):
+        self.view.normal[:] = float('nan')
+        with self.assertRaises(ValueError):
+            self.sampler.capture(self.snapshot, 1 / 60, nonzero_only=True)
+
+    def test_compact_only_omits_zero_pair(self):
+        self.view.get_contact_force_matrix = lambda dt: np.zeros((1, 1, 3))
+        self.view.get_contact_data = lambda dt: (
+            np.zeros((1,1)), np.zeros((1,3)), np.zeros((1,3)), np.zeros((1,1)),
+            np.zeros((1,1), dtype=int), np.zeros((1,1), dtype=int))
+        self.view.get_friction_data = lambda dt: (
+            np.zeros((1,3)), np.zeros((1,3)), np.zeros((1,1), dtype=int), np.zeros((1,1), dtype=int))
+        self.assertEqual(self.sampler.capture(self.snapshot, 1/60, nonzero_only=True)['pairs'], [])
+        self.assertEqual(len(self.sampler.capture(self.snapshot, 1/60)['pairs']), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

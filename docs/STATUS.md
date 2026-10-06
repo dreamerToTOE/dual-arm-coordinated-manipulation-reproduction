@@ -1,5 +1,17 @@
 # STATUS
 
+## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
+
+原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。
+
+## 2026-10-06 final — 44软件测试/编译通过，资产连接阻塞物理诊断
+
+新持件采样与分析器完成，44Python/build103s PASS；本机headless启动在原_asset_url报“找不到官方FR3 USD”，尚未完成真实句柄/采样验证，机器人命令0。官方S3直连/本地代理curl均SSL EOF，GitHub SSH banner超时；缓存映射SDK返回ERROR_CONNECTION，未替换资产。原Y15根因仍OPEN。自有仿真/MoveIt停止，teardown-11独立保存。TASK01 IN_PROGRESS/36nulls/TASK02 TODO；新记录先本地提交，push结果另记。
+
+## 2026-10-06 — TASK01 BUG-017同物理步诊断扩展
+
+新增可选持件窗口Cube/工具/全机器人contact与DOF记录；新节点仅加异步phase标签，39离线测试/build PASS。本机headless真实句柄启动检查中，无新物理PASS。原模型/物理/门限/YAML不变，TASK01 IN_PROGRESS/36nulls，TASK02 TODO。报告TASK01_HELD_CONTACT_DIAGNOSTIC。
+
 ## 2026-10-05 final — 新3+2协议 PARTIAL，首件Y第15段力矩保护停止
 
 实测换角色版 `e0477ab` 在新鲜原场景中完成 X16/16、Y14/16，全部完成片段双杯CLOSED。Y15原始关节effort峰值 left86.975/right32.984Nm，超过保留的80Nm门限，controller1/completed=[]；安全双OPEN，未推进Cube02–05。首件未完整通过，不能交付为新五件验收版。

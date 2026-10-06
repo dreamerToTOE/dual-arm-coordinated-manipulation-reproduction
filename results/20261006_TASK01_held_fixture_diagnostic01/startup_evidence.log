@@ -1,0 +1,11 @@
+2026-10-06 06:40:56 [292,618ms] [Error] [omni.kit.app._impl] [py stderr]: Traceback (most recent call last):
+2026-10-06 06:40:56 [292,618ms] [Error] [omni.kit.app._impl] [py stderr]:   File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/probes/task01_cube04_headless.py", line 74, in main
+    exec(compile(source.read_text(encoding="utf-8"), str(source), "exec"),
+2026-10-06 06:40:56 [292,618ms] [Error] [omni.kit.app._impl] [py stderr]:   File "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py", line 761, in <module>
+    _add_fr3(LEFT_ROOT, LEFT_BASE)
+2026-10-06 06:40:56 [292,618ms] [Error] [omni.kit.app._impl] [py stderr]:   File "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py", line 323, in _add_fr3
+    robot.GetReferences().AddReference(_asset_url())
+2026-10-06 06:40:56 [292,619ms] [Error] [omni.kit.app._impl] [py stderr]:   File "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py", line 307, in _asset_url
+    raise RuntimeError("找不到官方 FR3 USD。")
+2026-10-06 06:40:56 [292,619ms] [Error] [omni.kit.app._impl] [py stderr]: RuntimeError: 找不到官方 FR3 USD。
+[294.526s] Simulation App Shutting Down

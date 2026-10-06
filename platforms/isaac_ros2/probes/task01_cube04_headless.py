@@ -31,6 +31,8 @@ def main():
     parser.add_argument("--asset-root", required=True)
     parser.add_argument("--record-release-diagnostics", action="store_true",
                         help="Read-only full-rate contacts/tools ONLY inside release phases")
+    parser.add_argument("--record-held-diagnostics", action="store_true",
+                        help="Read-only full-rate Cube/robot contacts and DOFs in new dual fixture phases")
     parser.add_argument("--preplaced-count", type=int, choices=(0, 3, 4), default=3,
                         help="0 uses normal feed; 4 isolates Cube05; preplaced cubes are not executed")
     args = parser.parse_args()
@@ -74,10 +76,16 @@ def main():
         finally:
             storage.get_assets_root_path = original_discovery
         stage = omni.usd.get_context().get_stage()
-        if args.record_release_diagnostics:
+        if args.record_release_diagnostics or args.record_held_diagnostics:
             for index in range(1, 6):
                 prim = stage.GetPrimAtPath(f"/World/Task27/Supply/Cube_{index:02d}")
                 PhysxSchema.PhysxContactReportAPI.Apply(prim).CreateThresholdAttr(0.0)
+        if args.record_held_diagnostics:
+            from pxr import UsdPhysics
+            for prim in stage.Traverse():
+                if str(prim.GetPath()).startswith(('/World/left_fr3/', '/World/right_fr3/')) and prim.HasAPI(UsdPhysics.RigidBodyAPI):
+                    # 只启用contact telemetry，不改碰撞几何/材料/质量/solver/drive。
+                    PhysxSchema.PhysxContactReportAPI.Apply(prim).CreateThresholdAttr(0.0)
         tool_values = {'tcp_y': namespace['TCP_Y'],
                        'vertical_drop_z': namespace['VERTICAL_DROP_Z']}
         cells = tuple(tuple(task["cell"]) for task in namespace["TASKS"][:args.preplaced_count])
@@ -126,25 +134,35 @@ def main():
                          "Only non-preplaced cubes physically executed; no full-five proof")}, indent=2) + "\n")
         started = time.monotonic()
         ready = False
-        diagnostics = None
+        diagnostics = held_diagnostics = None
         with (args.output_dir / "physics_pose_samples.jsonl").open("w") as stream, \
-             (args.output_dir / "release_contact_samples.jsonl").open("w") as release_stream:
+             (args.output_dir / "release_contact_samples.jsonl").open("w") as release_stream, \
+             (args.output_dir / "held_contact_samples.jsonl").open("w") as held_stream:
             if args.record_release_diagnostics:
                 from release_diagnostics import ReleaseDiagnostics, active_cube_index
                 diagnostics = ReleaseDiagnostics(bridge.node, sim_view, list(bridge.cube_paths),
                                                  tool_values, release_stream)
+            if args.record_held_diagnostics:
+                from held_fixture_diagnostics import HeldFixtureDiagnostics, held_cube_index
+                held_diagnostics = HeldFixtureDiagnostics(bridge.node, sim_view, list(bridge.cube_paths),
+                                                         tool_values, held_stream)
+                (args.output_dir / 'held_topology.json').write_text(json.dumps(
+                    held_diagnostics.topology(), indent=2)+'\n')
             steps = 0
 
             def post_step(dt):
                 nonlocal count, latest, steps
                 steps += 1
                 record_release = diagnostics is not None and active_cube_index(diagnostics.phase) is not None
-                if steps % 6 and not record_release:
+                record_held = held_diagnostics is not None and held_cube_index(held_diagnostics.phase) is not None
+                if steps % 6 and not record_release and not record_held:
                     return
                 try:
                     snapshot = sampler.capture()
                     if diagnostics is not None:
                         diagnostics.capture(snapshot, float(dt), bridge.grippers)
+                    if held_diagnostics is not None:
+                        held_diagnostics.capture(snapshot, float(dt), bridge.grippers)
                     if steps % 6:
                         return
                     latest = {"physics": asdict(snapshot),
@@ -179,7 +197,8 @@ def main():
         (args.output_dir / "summary.json").write_text(json.dumps({
             "ready": ready, "snapshots": count, "errors": errors,
             "wall_s": time.monotonic() - started, "final_snapshot": latest,
-            "release_diagnostic_snapshots": diagnostics.count if diagnostics else 0}, indent=2) + "\n")
+            "release_diagnostic_snapshots": diagnostics.count if diagnostics else 0,
+            "held_diagnostic_snapshots": held_diagnostics.count if held_diagnostics else 0}, indent=2) + "\n")
         if not ready or errors:
             raise RuntimeError("Fixture readiness / physical sampler validation failed")
     except Exception as error:

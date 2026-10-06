@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## 2026-10-06 final — 持件诊断实现，资产连接阻塞真实采样
+
+44软件测试/build PASS，新诊断真实启动在原FR3_asset_url连接失败，机器人命令0/未获得live held samples；本轮无新的物理PASS，Y15根因仍OPEN。原模型/物理/80Nm/ACM/YAML保持；TASK01 IN_PROGRESS/36nulls，TASK02 TODO。详见reports/TASK01_HELD_CONTACT_DIAGNOSTIC.md；网络恢复后从同一首件普通供料重测。
+
 ## 2026-10-05 final 新协议未完成物理验收
 
 e0477ab/首件新鲜普通供料：X16/16、Y14/16双CLOSED，Y15 raw effort86.975Nm>原80Nm保护停止，controller1/整件完成0。释放后只读FCL PASS不证明触发步无碰撞；后两件精准单推复用旧逻辑，本轮未回归执行。报告 `reports/TASK01_DUAL_SUCTION_FIXTURE.md`/BUG-017；新3+2 PARTIAL，不能借旧5/5冻结。模型/物理/门限/YAML不变，36nulls，TASK02 TODO。

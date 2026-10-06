@@ -1,5 +1,17 @@
 # DECISIONS
 
+## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
+
+原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。
+
+## 2026-10-06 final — D020 final：外部依赖失败不篡改模型取得结果
+
+只读代码/44软件测试/编译通过，外部资产失败使真实采样尚未验证；保留原模型/门限，不把未验证来源的cached FR3当作原模型替换。保留失败.json，即使Kit cleanup退出0也判startupFAIL；不宣称新3+2或Y15通过。网络/代理恢复后从同样普通供料首件重启并先确认live sampler，随后再做证据驱动工程修正。没有修改系统网络设置/SSH凭据或开始论文算法。
+
+## 2026-10-06 — D020 诊断优先、控制律不改
+
+[ENGINEERING]新增专用异步phase topic并复用同一步sampler；真实contact-report telemetry为可选运行期API，不改原源码场景/几何/材质/质量/驱动/solver。采DOF投影effort而非混合6Dfallback；保持revolute Nm/prismatic N区别，不叫TCP wrench。先记录后决定是否有原范围内修正，不默许力控/物理/门限改变。
+
 ## D019 final checkpoint — 新流程软件实现不等于物理验收
 
 2026-10-05；实测换角色试验X16/Y14后在Y15触发86.975Nm保护。保持前三双吸附/后两精准单推，不以helper退场、单臂替代、提高80Nm或改场景获得PASS。首件未完整完成，不继续后四件并称新5/5。

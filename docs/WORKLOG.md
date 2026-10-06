@@ -1,5 +1,17 @@
 # WORKLOG
 
+## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
+
+原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。
+
+## 2026-10-06 final — 本轮启动负结果，未开展物理推压
+
+实现持件phase只读记录、全机器人contact路径/DOF targets/positions/velocity/projected effort、同一步/丢步/空流/非有限分析门控，44单测与编译PASS。真实启动在FR3远程stat连接失败，未导入诊断到有效机器人；本轮不是Y15再次失败或修复证据。尝试直连/代理/另一S3域名/SSH及SDK缓存lookup，均失败；离线缓存含FR3但来源映射未证实，不擅自替代。原场景/工具/质量/摩擦/门限/ACM/YAML哈希未变，自有进程结束。
+
+## 2026-10-06 — 持件诊断搭建
+
+复用原pose/contact sampler和release logger接口，专用held phases；记录机器人全部link/桌墙Cube接触对、DOF positions/targets/velocities/projected effort，零接触对仅压缩不设力阈值。保持旧logger默认行为；39 Python/build PASS，启动验证中。
+
 ## 2026-10-05 final — 实测换角色复测结束，保存未通过结果
 
 `dual_fixture_cube01_measured`/e0477ab/binary d1658940…：X16与Y14段实际完成且双CLOSED，Y15 raw effort86.975/32.984Nm触发80Nm保护。controller1/completed0，后续四件保持停车，不叫首件或五件PASS。保存metadata、analysis、protocol与精选控制器原日志。

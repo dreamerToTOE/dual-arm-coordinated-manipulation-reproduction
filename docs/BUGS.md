@@ -1,5 +1,17 @@
 # BUGS
 
+## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
+
+原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。
+
+## 2026-10-06 final — BUG-018 官方FR3资产/GitHub连接失败（外部状态）
+
+2026-10-06，OPEN。原资产URL的stat失败，headless traceback在_asset_url找不到FR3；直连/127.0.0.1:7897代理HTTPS均unexpected EOF，GitHub SSH banner超时。SDK仅查cache仍ERROR_CONNECTION，本地发现fr3缓存不等于来源/物理模型已确认。hold诊断有效句柄与物理样本未得到，不把startup失败归为新控制算法失败。SimulationApp failure.json与exit0矛盾已留证，不能仅靠process0验收。BUG017仍OPEN，原门限不变。
+
+## 2026-10-06 — BUG-017仍OPEN
+
+先补持件窗口的同一步接触/DOF完整记录；旧release-only日志无法观测Y15。原80Nm保护不改，未宣称闭环内力根因或碰撞排除。启动valid句柄/路径/DOF检查不通过时不发机器人命令。
+
 ## BUG-017 follow-up — 双CLOSED下Y15 raw effort超限，根因仍OPEN
 
 2026-10-05，e0477ab新鲜原场景复测：X16/Y14段完成，Y15 left86.975/right32.984Nm触发原80Nm保护，两个杯都CLOSED；本次触发项是raw关节effort而非吸盘OPEN。实测换角色修正使本次能进入Y，但不同IK构型的两次运行不能证明单一修正的因果。

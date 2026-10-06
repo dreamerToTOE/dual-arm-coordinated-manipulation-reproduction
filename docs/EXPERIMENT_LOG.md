@@ -1,5 +1,17 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
+
+原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。
+
+## 2026-10-06 final — held_fixture_diagnostic01 FAIL_STARTUP
+
+Task TASK01；local Isaac4.5 headless/ROS2 Humble/MoveIt；runtime d35cc0c769fe51832dd0717ba0fcf71b873e2cef/binary d6b53269…，seed null。原first1/max1/scale5/hold0/0preplaced配置，controller未启动。44Python/build103s PASS、analytic36nulls；headless原FR3_asset_url失败，failure.json存在但app exit0，严格判FAIL_STARTUP，held_samples0/live handle未验证。MoveIt启动planning ready，关闭-11/bridge1，非运动失败。结果metadata与startup_evidence.log保存，完整raw本地ignored。网络curl35（SSL EOF）/SSH255（banner timeout）/SDK ERROR_CONNECTION；未使用未经溯源缓存。
+
+## 2026-10-06 — held_fixture_diagnostic01准备
+
+Task TASK01；[EXPERIMENTAL]首件新协议诊断；local Isaac4.5 headless/ROS2 Humble/MoveIt。first1/max1/scale5/hold0/zero preplaced；新代码待commit SHA记录；39Python/build PASS。原场景和门限不变，原Y15FAIL保留；startup检查中，未发控制命令。结果路径results/20261006_TASK01_held_fixture_diagnostic01/，metadata待真实过程补齐。
+
 ## 2026-10-05 final — dual_fixture_cube01_measured FAIL / released diagnostic PASS
 
 - Task: TASK01; baseline: [EXPERIMENTAL] user-approved3+2 protocol; platform: local user-machine Isaac4.5 headless/PhysX/ROS2 Humble/MoveIt.
