@@ -1,0 +1,25 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL approved3+2 / ENGINEERING OPEN handoff pool + dense OMPL + waypoint-preserving IPTP",
+  "platform": "user local Isaac4.5 headless / ROS2 Humble / MoveIt2",
+  "git_commit": {"runtime": "f237cff", "reproduction_pre_run": "94605b2 plus diagnostic records"},
+  "runtime_binary_sha256": "812c71eeab695c02d992ce4c16569c951e390a296b8429d655ef40bdc1ab9ef3",
+  "build_integrity": "Production serial build56.2s, no source editing during build. Final probe rebuilt from same clean runtime commit separately before physical launch.",
+  "seed": null,
+  "seed_note": "OMPL/LMA internal RNG uncontrolled; not a seeded reliability trial",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "config_usage": "DRAFT reference, 36 nulls, not frozen",
+  "parameters": {"preplaced_count": 0, "first_batch": 1, "max_batches": 5, "execution_time_scale": 5.0, "release_diagnostic_hold_sec": 0.0, "dual_fixture_side_roll_world_y_deg": -15.0, "dual_fixture_rear_roll_magnitude_deg": 45.0, "physics_fixture_feedback": true, "ROS_LOCALHOST_ONLY": 0},
+  "empty_handoff_only": {"planner": "same installed ompl_interface/OMPLPlanner / RRTConnectkConfigDefault", "world": "full same snapshot including released Cube + original3mm-per-side guard and next supply Cube", "ACM": "original SRDF, no Cube exemptions", "longest_valid_segment_fraction_local": 0.0005, "retiming": "IPTP with exact unchanged q-waypoints checked", "velocity_and_acceleration_scale": 0.12, "full_FCL_period_sec": 0.01, "candidate_count_per_start": 3, "planning_budget_each_sec": 3.0, "second_start": "first-arm predicted endpoint + other original q, actual partner rechecked before second execution", "no_extra_move_group_or_background_sandbox": true},
+  "commands": [
+    "colcon build --packages-select fr3_dual_palletize --symlink-install --parallel-workers 1 --cmake-target task01_dual_suction_fixture",
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 3600 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_empty_handoff_full01/raw",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=5 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
+  ],
+  "launch_note": "Own same unchanged /move_group launch retained from coupled_rear_full01; its raw/moveit.log contains launch. Fresh Isaac original stage, bounded90s READY + production exactSHA guard, no source changes during run.",
+  "status": "RUNNING_FRESH_PHYSICAL_FIVE_CUBE_RESULT_PENDING",
+  "metrics": {"completed_batches": [], "controller_exit": null, "headless_exit": null, "unresolved_draft_fields": 36},
+  "artifacts": ["raw/isaac.log", "raw/controller.log", "../20261006_TASK01_coupled_rear_full01/raw/moveit.log", "../20261006_TASK01_empty_handoff_replay/raw/controller_build.log"],
+  "boundary": "Only controller actual all-five completion and measured poses can support one physical engineering PASS. No GUI acceptance, repeatability, calibrated TCP wrench, paper reproduction, TASK01 FROZEN or TASK02 advance. Model/scene/material/mass/physics/ACM/80Nm and contact gates unchanged."
+}

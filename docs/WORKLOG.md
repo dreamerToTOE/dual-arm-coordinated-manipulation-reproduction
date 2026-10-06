@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — 空载局部管线重放PASS/真实five-Cube开始
+
+第一请求局部action探针3个postprocessed路径被MoveIt拒绝，负结果保留。最终仅新fixture OPENhandoff复用当前进程本机OMPL与参数副本，segment fraction0.0005/原RRTConnect/原目标/完整世界，IPTP不改q路点，顺序第二臂含第一预测终点，执行前再以第一实测关节完整FCL复验。无远程Scene或参数写/额外move_group/背景预规划，旧及加载链不改。probe03同f237cff串行重编译并实际无命令PASS，首编译main-local槽位lambda错误与中间binary一致性边界保留。原61Python/两C++/benchmark36nulls/hash PASS。新fresh原headless普通供料five-Cube回归启动，source/binary检查后运行，暂不预记完成。
+
 ## 2026-10-06 — full02终局归档与空载转场PRE
 
 控制器1、第三件实际双吸推压放置成功但handoff未完成，不能把三放置/两batch冒称五件成功。正常停自有headless0并审计完整stream：105精确stamp、36469held、51175atomic、8529sparse/0errors；原raw保存。当前只读读取MoveIt world/ACM证实无Cube条目全豁免，不能以扩大ACM修复。准备仅新节点的有限空载路径候选筛选、同一实测完整起点和第二段预测partner起点，原RRTConnect/目标/每侧3mm冗余/30mm退出不变。不是冻结的Task22后台沙箱预规划。

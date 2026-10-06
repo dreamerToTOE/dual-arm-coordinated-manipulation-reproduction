@@ -1,5 +1,9 @@
 # BUGS
 
+## BUG022工程候选通过只读，不关闭物理问题
+
+精确第三释放后重放：最终局部RRT候选/IPTP保持路点/顺序完整起点通过491+469 FCL；CLOSED/碰撞起点拒绝和world未改通过。六条raw/TOTG/IPTP同路径都安全，不能把首轮postprocessing无效全部归咎TOTG。修复不是豁免Cube，不声称原USD/URDF差异消失。新的fresh实际五件回归已启动，BUG022待真实空载转场通过；BUG017/019与科学冻结缺口仍保留。
+
 ## BUG-022 — 第三放置后只验最短空载RRT候选导致handoff拒绝
 
 Date: 2026-10-06; Task: TASK01; Status: OPEN.

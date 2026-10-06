@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D027 follow-up — 加密空载几何检查、保持路点的计时，先同路径对照
+
+首个请求局部scene探针3次被MoveIt自己判后处理路径无效，全部负结果保留。下一工程范围仅OPEN空载handoff：在当前控制器内加载原OMPL插件和配置副本，本地检查分段比例0.0005、IPTP计时并逐值验证q路点未变，最后仍原0.01s完整FCL/起点/目标/限位守卫。不是启动后台沙箱/第二move_group，也不改全局参数、加载轨迹、ACM、世界或接触门限。probe同一raw RRT分别检查原几何/defaultTOTG/IPTP，不能先验声称TOTG唯一根因。当前改动未作物理成功承诺，不是P2/P3复现或benchmark冻结。
+
 ## D027 — 只读重放与实际路径规划使用同一完整场景和顺序起点
 
 Date: 2026-10-06. [ENGINEERING] 新fixture空载转场有限RRT候选池，原场景、目标、碰撞冗余、ACM、阈值不变。先从一次完整实测RobotState规划/验第一臂，再以第一臂预测终点+第二臂原起点规划/验第二臂；两段均通过才执行。MoveGroup plan_only的planning_scene_diff只作用于该请求场景副本，不是后台沙箱预规划，不写远程Scene，也不豁免当前Cube。实现/真实验证待完成，不能预记PASS；若需改变模型/物理/门限则另问用户。官方MoveIt2 Humble move_action_capability.cpp 的executeMoveCallbackPlanOnly使用copyPlanningScene进行请求局部规划。

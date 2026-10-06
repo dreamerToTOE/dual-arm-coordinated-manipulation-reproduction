@@ -123,3 +123,17 @@ Known ambiguities/risks: 不控制LMA/OMPL内部RNG；有限候选不等于全�
 Need user confirmation: no（工程修复）；模型/物理/ACM/门限或科学方法改动另问。
 
 MoveIt2 Humble官方实现：plan_only分支通过copyPlanningScene(planning_scene_diff)规划，区别于planAndExecute；[源码](https://github.com/moveit/moveit2/blob/humble/moveit_ros/move_group/src/default_capabilities/move_action_capability.cpp)。运行依旧调用本机安装MoveIt2，不下载/替换算法。
+
+### 第六阶段首轮只读负结果与软件范围补充
+
+request-local /move_action重放probe SHA13d8ea50、build55.6s：CLOSED/碰撞起点拒绝、remote world前后完全相同均PASS，但3次左RRT全被MoveIt自己的planning_pipeline拒绝，错误明确写postprocessing后Cube03/深墙碰撞。停Isaac后的current-state时戳等待警告保留；请求起点是明确保存的14q，不将警告当根因。probe1，无机器人/吸盘/导轨/供料或远程Scene命令。首编译probe调用main-local槽位lambda失败，改用同一原A/B常量重建；负记录不覆盖。
+
+补充工程范围/验证：只在OPEN转场的当前控制器进程内调用同一本机MoveIt OMPL插件，复制原配置（读RPC）、本地加密longest_valid_segment_fraction至0.0005，不更改全局/move_group参数或启动额外沙箱服务器。原RRTConnect/IK/世界/ACM/目标/0.12速度加速度比例不变，加载链仍用原MoveIt管线。空载用保持每个关节路点逐值不变的IPTP计时、原0.01s完整FCL；若改变路点或adapter起点则拒绝。无命令探针对同一原始RRT路径做raw/defaultTOTG/IPTP对照，先获得证据，不能仅凭日志推定TOTG是唯一根因。这是[ENGINEERING]数值碰撞检查/计时，不是论文算法替代或benchmark值变更；物理/model修改另问。
+
+### 第六阶段软件POST / 真实复测PRE
+
+runtime `f237cff`，production串行build56.2s/SHA812c71eeab695c02d992ce4c16569c951e390a296b8429d655ef40bdc1ab9ef3；最终probe在同一clean commit上另串行build59.5s，SHAa33c7565b5e2c443ec523519215afe2d9293a23303cf8c5e9f963f27e737de20，probe03实际exit0。精确snapshot来自full02最后同一步51290/stamp854833377916，两杯OPEN；14q/三7D姿态与原raw逐值核对，无四舍五入，不能说它是被拒绝轨迹t0.610s的碰撞姿态。
+
+same-start FCL11次、选中左491/右469次，安全pair、CLOSED拒绝、obstruction拒绝、remote world序列化严格前后相同全部PASS。有限3+3候选各numeric/start/原goal/bounds检查通过；第二臂预测partner及执行前实测partnerFCL为新节点特有，后两的空载转场也受保护，但其加载单rear插入不变。对6条同raw RRT路径raw/defaultTOTG/IPTP均安全，**不证明TOTG是唯一根因，也非受控RNG的resolution A/B统计**。最初action负日志与中间probe02仍保留，最终probe03消除未执行main后来变动的二进制/源码不一致边界。
+
+61Python/两C++严格编译/PASS、analytic36nulls/hash、scene/bridgehash及diff检查通过。本轮仅软件工程PASS，物理总任务仍PARTIAL。fresh `results/20261006_TASK01_empty_handoff_full01`原stage、零预置、普通供料first1/max5/scale5/hold0/side-15/rear45、原子反馈+held/release记录，READY+exact productionSHA后启动。本机headless不是用户GUI；原模型/物理/ACM/80Nm/几何gate/YAML不变。待实际五件完成与同一步审计后才更新结果；失败立即停止后续物体，不能用只读成功替代实际任务。

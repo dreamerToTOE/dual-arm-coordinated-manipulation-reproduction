@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — exact empty handoff replay PASS，物理回归RUNNING
+
+results/20261006_TASK01_empty_handoff_replay：旧action/probe1；局部OMPL/IPTP probe02与最终f237cff probe03均0。最终a33c7565、full02最后step51290/stamp854833377916精确14q/三pose，same-start11+left491+right469完整FCL，CLOSED/obstruction安全拒绝、world前后完全一致；6条同raw路径三种计时全部安全，不证明单一TOTG因果。原参数/scene/ACM不改；软件61Python/2C++、analytic36nulls PASS。fresh results/20261006_TASK01_empty_handoff_full01本机headless0preplaced/first1/max5/scale5/hold0/side-15/rear45，production812c71ee、READY与hash守卫后开始实际回归；物理结果尚未产生。
+
 ## 2026-10-06 — coupled_rear_full02 final FAIL
 
 runtimea3fceab/binary57e72f83，参数/命令见run metadata。前三真实CONTACT/X16/Y16/ROLE_SWAP/OPEN完成，GT center0.302/0.407/1.343mm、deep0.156/0.091/0.087mm、侧/邻缝0.259/0.397/0.160mm。第三清障6.3mm RRT无合法样本；26.9mm得到左右各3候选却只取最短，后验FCL拒绝left suction↔Cube03（t0.610/depth0.329mm），未执行该路径。completed[1,2]、controller1、headless0、后两无命令。105stamp舍入差≤0.000499181mm/deg；36469held/51175atomic/8529sparse完整性0错，release501。CONTACT/X/Y peak raw46.019/48.571/37.297Nm、该窗口机器人-墙非零pair0；COMPLETE跨转场，不能称全程零接触。BUG021旧HIGH本轮跨过，不宣称所有构型修复。原参数/36nulls不变。

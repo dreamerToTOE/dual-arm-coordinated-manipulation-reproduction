@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 running — 空载重放通过，新fresh五件实际回归
+
+runtimef237cff/binary812c71ee，串行构建56.2s；同commit探针a33c7565/build59.5s，精确第三释放后14q/三Cube输入一致、两段fullFCL491/469样本、安全pair/CLOSED和碰撞起点拒绝/remote world不变均PASS。局部原OMPL RRTConnect加密检查0.0005，IPTP逐值保持q路点；全局MoveIt/加载链/原模型物理ACM门限不变，不启动后台沙箱。六条same-raw对照raw/TOTG/IPTP都安全，不能归因TOTG唯一故障。61Python/两C++/analytic36nulls通过。fresh empty_handoff_full01实际运动正在启动，零预置first1/max5/scale5、READY+hash守卫；完整物理结果待定，不称5/5。TASK02TODO。
+
 ## 2026-10-06 final — full02前三实际放置完成，第三空载转场FAIL
 
 source a3fceab/binary57e72f83，前三各X16/Y16双CLOSED、无释放主从换角与释放全部完成；batch完成计数仍[1,2]，第三26.9mm短清障后最短RRT在0.610s碰left suction↔Cube03（FCL0.329mm），拒绝执行/controller1/第四第五无命令/headless0。三件短退出center0.302/0.407/1.343mm，deep0.156/0.091/0.087mm，侧/邻缝0.259/0.397/0.160mm。105精确stamp匹配、36469held/51175atomic/8529sparse均0完整性错；CONTACT/X/Y窗口无机器人-墙非零pair，不推广到COMPLETE/全流程。下一步空载候选池/同一RobotState/request-local场景诊断，保持原模型/物理/ACM/门限/36nulls，TASK02TODO。
