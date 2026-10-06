@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 latest — 原子反馈实测匹配；Y15后腕碰侧墙仍FAIL
+
+atomic_feedback_cube01：33条geometry打印与同一步PhysX精确stamp匹配，X16/Y14完成；Y15原80Nm guard left86.999/right70.170、feedback FRESH，实际right link7↔+Y墙峰745.808N。controller1/完成0/双OPEN，headless0；25171反馈无错、9491held/4195sparse完整性无错。
+
+旧名义1330双腕节点补三墙复核：deep0/minusY0/plusY7节点重叠，不能用deep-only检查称全墙安全。新readonly后腕worldX法向翻转向中央候选检查中，执行器未启用；60Python/C++PASS。Task01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO；原场景/桥/模型/物理/门限不变。报告TASK01_ATOMIC_FIXTURE_FEEDBACK。
+
 ## 2026-10-06 latest — 新腕姿X3被旧反馈guard拒绝，原子观测修复中
 
 cup_roll_cube01 / dd63c74 实际首件X1/X2接受，X3 rear=-1.784mm判失败/controller1/完成0/双OPEN；末同一步PhysX rear=+1.065mm，4738 held与4085稀疏样本0完整性错误。未到深墙/Y，腕姿不是物理PASS。旧USD滞后已校准、三个latest独立消费仍存在。

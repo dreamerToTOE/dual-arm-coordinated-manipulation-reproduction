@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL 3+2 position-only fixture, atomic PhysX geometry and cup-normal wrist roll",
+  "platform": "user local Isaac Sim4.5 headless / ROS2 Humble / MoveIt",
+  "git_commit": {"runtime": "88ef454", "reproduction": "a952a18"},
+  "runtime_binary_sha256": "31d862a662f0a57aa77f84b22e5aa378234b74990eee2ed294b1f14089f94c55",
+  "seed": null,
+  "seed_note": "Uncontrolled OMPL/IK RNG; not causal A/B or reliability proof",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_usage": "DRAFT reference, unchanged original task constants",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "parameters": {"preplaced_count": 0, "first_batch": 1, "max_batches": 1, "execution_time_scale": 5.0, "release_diagnostic_hold_sec": 0.0, "dual_fixture_side_roll_world_y_deg": -15.0, "physics_fixture_feedback": true, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 1000 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_atomic_feedback_cube01/raw",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0"
+  ],
+  "status": "FAIL_Y15_ORIGINAL_EFFORT_GUARD_WITH_FRESH_ATOMIC_FEEDBACK",
+  "metrics": {"python_tests_passed_at_start": 56, "python_tests_with_replay_audit": 60, "Cplusplus_policy_passed": true, "controller_build_sec": 54.2, "atomic_live_handle_startup": true, "normal_first_feed_ready": true, "controller_exit": 1, "completed_batches": [], "x_slices_accepted": 16, "y_slices_accepted": 14, "failed_y_slice": 15, "guard_left_peak_raw_nm": 86.999, "guard_right_peak_raw_nm": 70.170, "original_effort_limit_nm": 80.0, "feedback_at_guard": "FRESH", "both_open_after_abort": true, "held_snapshots": 9491, "held_integrity_errors": 0, "sparse_snapshots": 4195, "sparse_errors": 0, "atomic_feedback_snapshots": 25171, "atomic_feedback_errors": 0, "exact_stamp_geometry_observations_matched": 33, "maximum_print_rounding_difference_mm_or_deg": 0.0004998695345181936, "headless_shutdown_exit": 0, "y15_robot_wall_peak_force_n": 745.8077657910625, "y15_robot_wall_peak_step": 19613, "y15_robot_wall_pair": "/World/right_fr3/fr3_link7 <-> /World/Task27/TruckBox/WallPlusY"},
+  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log", "raw/summary.json", "raw/held_contact_samples.jsonl", "raw/geometry_source_comparison.jsonl", "raw/physics_pose_samples.jsonl", "geometry_audit.json", "geometry_sources.json", "held_analysis.json", "old_nominal_all_walls.json"],
+  "boundary": "New geometry gate uses atomic same-physics-step observations, no legacy fallback. Scene/bridge source, L-tool, physical parameters, ACM, geometry/80Nm limits unchanged. Only first cube is executed; not full-five/GUI/benchmark freeze/paper controller proof."
+}

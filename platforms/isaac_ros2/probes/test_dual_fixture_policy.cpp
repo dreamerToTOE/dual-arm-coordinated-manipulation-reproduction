@@ -5,6 +5,9 @@
 int main()
 {
   using namespace fr3_dual_palletize;
+  assert(validRearFixtureRoll(0.) && validRearFixtureRoll(45.) && validRearFixtureRoll(60.));
+  assert(!validRearFixtureRoll(-.001) && !validRearFixtureRoll(60.001));
+  assert(!validRearFixtureRoll(std::numeric_limits<double>::quiet_NaN()));
   assert(validFixturePose({1, 2, 3, 0, 0, 0, 1}));
   assert(!validFixturePose({1, 2, 3, 0, 0, 0, 0}));
   assert(!validFixturePose({std::numeric_limits<double>::quiet_NaN(), 2, 3, 0, 0, 0, 1}));

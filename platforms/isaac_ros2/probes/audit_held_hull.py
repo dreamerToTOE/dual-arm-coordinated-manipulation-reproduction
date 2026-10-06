@@ -81,13 +81,34 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('probe_log', type=Path)
     parser.add_argument('original_asset_mesh_json', type=Path)
+    parser.add_argument('--all-walls', action='store_true',
+                        help='Also audit original +/-Y walls; not a whole-robot physics guarantee')
     args = parser.parse_args()
     mesh = json.loads(args.original_asset_mesh_json.read_text())
     if mesh['attributes']['physics:approximation'] != 'convexHull':
         raise ValueError('Unexpected original asset approximation')
     # 原 Task27 深墙物理边界，出处 task26_truck_box_scene.py；不是新几何参数。
     wall = [(1.16, 1.18), (-.323, .323), (.2, .35)]
-    with args.probe_log.open() as stream:
-        result = summarize_probe(stream, mesh['points'], wall)
+    if args.all_walls:
+        # Exact original source: x0=.910, x1=1.160; Y inner +/-.303; thickness=.020.
+        walls = {'WallDeep': wall,
+                 'WallMinusY': [(.890, 1.180), (-.323, -.303), (.2, .35)],
+                 'WallPlusY': [(.890, 1.180), (.303, .323), (.2, .35)]}
+        lines = args.probe_log.read_text().splitlines()
+        results = {}
+        for name, bounds in walls.items():
+            value = summarize_probe(lines, mesh['points'], bounds)
+            results[name] = {'samples': value['samples'], 'overlapping_samples':
+                sum(v['overlapping_samples'] for v in value['phases'].values()),
+                'bounds_m': bounds, 'phases': {k: {'samples': v['samples'],
+                    'overlapping_samples': v['overlapping_samples'],
+                    'max_common_ball_radius_mm': v['max_common_ball_radius_mm']}
+                    for k, v in value['phases'].items()}}
+        result = {'walls': results, 'boundary': 'Discrete nominal original link7 authored convexHull only; '
+            'LP radius is not penetration depth/distance, not PhysX cooked mesh/contact offsets, '
+            'not whole-robot/continuous tracking or physical PASS.'}
+    else:
+        with args.probe_log.open() as stream:
+            result = summarize_probe(stream, mesh['points'], wall)
     result.update(asset_sha256=mesh['asset_sha256'], wall_physical_bounds_m=wall)
     print(json.dumps(result, indent=2, sort_keys=True))

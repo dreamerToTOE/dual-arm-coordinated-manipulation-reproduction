@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — atomic_feedback_cube01 FAIL_Y15_FRESH
+
+完整命令/源码hash在run metadata。controller1/完成0，X16/Y14完成，Y15原80Nm left86.999/right70.170、feedback FRESH；实际right link7↔+Y墙745.807766N/step19613。双OPEN/headless0。25171feedback/0错、9491held/4195sparse/0完整性错误；33打印几何与精确物理stamp匹配到舍入误差。
+
+同callbackUSD源X9–11可产生-1.622/-1.631/-1.755mm假负rear gap，最大rear差3.055mm；未重建旧ROS异步接收。旧nominal02三墙凸包：1330节点deep0/minusY0/plusY7交集，LP值非深度；只读后腕45deg候选待检查。60Python/C++PASS，场景/物理/门限/YAML不变。
+
 ## 2026-10-06 — cup_roll_cube01 FAIL_X3 / atomic feedback准备
 
 run metadata保存runtime dd63c74、repro eb3b7f9、binary f74cc897…、first1/max1/scale5/hold0/zero-preplaced/roll-15、seed null和完整命令。controller1/完成0，X3旧rear=-1.784mm/末同一步+1.065277mm；双OPEN，headless0，held4738/sparse4085/0错误。未到深墙/Y，不能用名义1330节点检查当物理PASS。

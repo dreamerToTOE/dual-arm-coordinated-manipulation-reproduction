@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-06 — BUG020受限修复有实测支持；BUG017/019仍OPEN
+
+新3+2节点33精确stamp几何与同一步PhysX一致、X16/Y14，原USD在X9–11可仍给<-1mm假负值。BUG020标WORKAROUND（仅新节点持件几何），旧桥/全规划消费者未替换，不能全系统RESOLVED。
+
+Y15反馈FRESH但原80Nm自动停止，真正pair是**rear right link7↔WallPlusY**，峰745.808N。此前left深墙和本次right侧墙都需避开；原模型差异仍OPEN。旧nominal02 deep-only安全不代表其它墙安全；补原USD三墙检查证实7个右腕Y节点重叠。尝试杯面法向后腕姿态只读，不抬门限/扩大ACM/改墙。
+
 ## BUG-020 — 持件几何guard与同一步PhysX值不吻合
 
 2026-10-06，OPEN。cup_roll_cube01 X3 rear打印-1.784mm，最后三CLOSED物理步21045–21047约+1.065mm，controller安全停止。原bridge在physics回调读USD（已有BUG005校准证据），消费者对Cube/两个TCP分别读latest且丢弃header。两路时钟未对齐，尚不能判定唯一原因/比例。
