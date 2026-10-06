@@ -1,0 +1,27 @@
+task: TASK01 Core Single-Cube Benchmark Freeze
+scope: single_cube_core_benchmark
+baseline: ENGINEERING endpoint IK and joint full FCL feasibility check; no paper algorithm
+platform: native ROS2 Humble / MoveIt2 2.5.9 / LMA / FCL; no Isaac
+git_commit: b31ff05205e913f2b28dd9950777d2218c96f895
+runtime_model_commit: d4b290c1f929428e7d3bd6776b6d55709ca34b0f
+seed: deterministic_explicit_joint_seed_grid
+config_path: configs/benchmark/benchmark_v1.yaml
+config_sha256: ff490a562edb9415b20d162e17d17d1fc7de6b92cc4d731792f35d95d6514c94
+source_sha256: 172284162930add2be85d45fd9a8e8ed36de3219da2a2a238af4872e8e768b01
+command: >-
+  build/single_cube_geometry/task01_single_cube_geometry configs/benchmark/benchmark_v1.yaml
+  results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.urdf
+  results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.srdf
+  /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/config/kinematics.yaml
+  results/20261006_TASK01_single_cube_geometry_probe01
+status: PARTIAL_UNDEFINED_START
+exit_code: 3
+metrics:
+  endpoint_samples_passed: 6
+  start_defined: false
+  continuous_path_verified: false
+  robot_commands: 0
+  suction_commands: 0
+  physics_started: false
+artifacts: [sample_results.json, collision_pairs.csv, joint_margin.csv, relative_grasp_error.csv, raw/probe.log, raw/build.log, raw/robot.urdf, raw/robot.srdf]
+boundary: Endpoint-only, finite IK seed search; not continuous feasibility, global existence, Isaac geometry equivalence or physics PASS.

@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-06 — 第一阶段只做 Single-Cube Geometry Feasibility Probe
+
+用户明确要求：“先不要长时间跑 Isaac。第一步只做 Single-Cube Geometry Feasibility Probe；如果纯几何不通过，立即停下来告诉我，不要自己修改工具或车厢”。附件要求保留原L工具/原车厢/固定TCP，不扩大ACM；旧五块归legacy，力标定留TASK10-IS。此要求覆盖此前持续GUI旧应用调试，当前已停止旧自有GUI，仅无执行几何。加密IK首败后不擅自重试/修正，等待用户决定。
+
 ## 2026-10-06 — 告知正常GUI复测仍拒绝，不给用户失败验收版
 
 告知PhysX秒跟踪峰约5.4deg但仍真实接触/原保护止动；说明本机Cartesian请求不带RRT缩放，继续只补接触下降同q计时，倍率仍1.0/原保护不变。保持可见测试和原数据，不宣称根因唯一或全流程通过。

@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-06 — 单 Cube 几何检查首败停止，不再扩展旧应用
+
+读取用户附件及云端单Cube计划；ff-only不可用（本地旧证据提交与远端新计划分叉），安全merge保留双边历史，仅STATUS顶部冲突手工保留新范围和旧负结果。f616603完成合并，未force/reset。停止自有旧GUI193707，未启动新Isaac、未继续旧五块控制器。
+
+新增独立native probe，读原源码xacro/kinematics和新schema2候选，在本地一Cube/桌/三墙检查，无MoveGroup action/remoteScene修改/机器人或吸盘命令。串行build PASS；b31ff05端点probe01六PASS/START缺失/exit3。c9d71f4加密probe02六端点PASS，但上一q单次seed在前进1.987179mm无合格双IK，exit1，当即停止并汇报。没有错误后重放、试别的姿态、改工具/车厢/ACM/门限；具体拒绝臂/插件原始错误未记录，不编造碰撞pair。
+
+保存两个run的metadata、sample JSON、CSV（84限位/12抓取误差）、dense JSON及精选原日志；报告TASK01_SINGLE_CUBE_GEOMETRY。原场景/Bridge SHA保持；START/连续IK/Isaac碰撞模型差异待审查，TASK01 BLOCKED、TASK02 TODO，force/wrench留TASK10-IS。
+
 ## 2026-10-06 — PhysX计时仍FAIL；Cartesian接近计时范围PRE
 
 physclock首件侧接近原80Nm互锁拒绝left86.670/实际Cube接触217.404N，未建立side suction、未执行X/Y。完整数据/负结果保存，GUIpause后正常0停止，不冒称时基修复PASS。读取本机GetCartesianPath.srv确认无v/a缩放字段；仅Task01 DUAL_SIDE_CONTACT显式按现有请求0.12/IPTP计时、逐值q不变/FCL仍必做，非改physics、drive、路径或门限。构建完成前不改源码，fresh GUI实测待结果。

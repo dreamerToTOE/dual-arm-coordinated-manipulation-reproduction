@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 — Single-Cube geometry probe: BLOCKED，失败即停
+
+按新单 Cube 范围，仅本地原模型/LMA/full FCL，无新Isaac/机器人命令。PRE_PUSH和10/30/50/70/100%六端点通过；同一seed加密插入在0.641026%（前进1.987179mm）无合格双IK，exit1立即停止，无失败点碰撞结论/全局不可行证明。START仍PENDING_CAPTURE；不暗改工具、车厢、TCP、SRDF/ACM，不进入READY/reset或力控。报告 [TASK01_SINGLE_CUBE_GEOMETRY](../reports/TASK01_SINGLE_CUBE_GEOMETRY.md)，新结果scope=`single_cube_core_benchmark`。TASK01当前门禁BLOCKED待用户确认连续IK诊断/START，TASK02 TODO。
+
+旧GUI接触计时run在本请求前已86.949Nm保护失败，当前只pause/正常关闭并记录；后文五块/36nulls/running均为历史，不再是科研冻结要求。
+
 ## 2026-10-06 — Research reset: TASK01 narrowed to one-Cube core benchmark
 
 User approved a plan correction after review of the overloaded five-Cube Task27-derived TASK01. The common SCI benchmark is now **one shared Cube + dual FR3 + one carriage**. Historical five-Cube debugging remains preserved under legacy/stress-test scope and no longer blocks benchmark freeze.

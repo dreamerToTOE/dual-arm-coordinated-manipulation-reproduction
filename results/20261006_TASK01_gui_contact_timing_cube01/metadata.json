@@ -1,5 +1,6 @@
 {
   "task": "TASK01",
+  "scope": "legacy_task27_five_cube",
   "baseline": "EXPERIMENTAL approved3+2; ENGINEERING same-q configured-scale contact timing + PhysX playback",
   "platform": "local visible Isaac Sim4.5 GUI / ROS2 Humble / MoveIt2",
   "git_commit": {"runtime": "d4b290c", "reproduction_gui_adapter": "433e836", "records_base": "10b6853"},
@@ -14,7 +15,8 @@
     "env ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_gui_fixture.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 3600 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_gui_contact_timing_cube01/raw",
     "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=1.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
-  "status": "RUNNING",
+  "status": "FAIL_SIDE_APPROACH_INTERLOCK_BEFORE_SCOPE_RESET",
+  "final_result": {"controller_exit": 1, "gui_exit": 0, "completed_batches": [], "side_approach_left_peak_raw_Nm": 86.949, "side_approach_right_peak_raw_Nm": 27.352, "limit_raw_Nm": 80.0, "rear_state": "CLOSED", "side_state": "OPEN", "new_request_action": "pause and close only; no new legacy debugging", "sparse_snapshots": 2650, "sparse_integrity_errors": []},
   "metrics": {"visible_gui_verified": true, "python_tests": 63, "cpp_policy_groups": 2, "unresolved_draft_fields": 36},
   "artifacts": ["raw/controller.log", "raw/gui_ready.png", "raw/summary.json", "../20261006_TASK01_gui_physclock_cube01/raw/gui_contact_startup.log", "../20261006_TASK01_gui_physclock_cube01/raw/contact_timing_build.log", "../20261006_TASK01_gui_normal_cube01/raw/moveit.log"],
   "boundary": "No model/physics/drive/material/mass/ACM/gate change. No completed Cube yet. Side descent timing change cannot be declared a proven physical fix before actual regression."

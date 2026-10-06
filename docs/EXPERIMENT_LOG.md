@@ -1,5 +1,18 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — single_cube_core_benchmark / geometry_probe01,02
+
+- Platform: native ROS2 Humble/MoveIt2 2.5.9/LMA/FCL，零Isaac启动/零关节和吸盘命令。Source b31ff05/c9d71f4，runtime模型d4b290c；候选hash ff490a56…，几何/ACM不改。
+- probe01: 六规定插入端点通过，START未定义，exit3/PARTIAL；不是完整链PASS。
+- probe02: 六端点通过；上一q seed连续检查第二状态（CubeX0.791987179，0.641026%）无合格双IK，exit1/FAIL_STOP。不记录为物理碰撞/全局无解；具体臂/插件错误需另行批准诊断。
+- 端点最小关节余量3.189440°；最近腕/工具墙FCL距离为right_link7↔deep wall2.205603mm；最大抓取位置残差0.000585mm。原Isaac mesh不等价，不能据此认证物理净空。
+- Artifact roots: results/20261006_TASK01_single_cube_geometry_probe01、probe02；metadata.yaml/sample_results.json/dense_insertion_results.json/三个CSV/精选原日志；详情和完整命令见reports/TASK01_SINGLE_CUBE_GEOMETRY.md。
+- Stop rule: 首败立即停止，未进入Isaac READY/reset、force/P4或其它后续任务。
+
+## 2026-10-06 — legacy_task27_five_cube / 仅结束上一请求遗留GUI
+
+旧gui_contact_timing_cube01在本轮请求前已controller1，DUAL_SIDE_APPROACH rearCLOSED/sideOPEN、left86.949/right27.352Nm触发80Nm保护，无后续X/Y执行。本轮仅pause并正常关闭自有GUI0，补旧metadata，不开展新旧应用测试。raw summary2650 snapshots/errors[]保留；不算新单Cube科研试验。
+
 ## 2026-10-06 — gui_physclock_cube01 final FAIL；CONTACT IPTP准备
 
 6fa161e/75f798a1、fresh可见/zero-preplaced/first1,max1/scale1。CONTACT310样本、左tracking5.429181deg、leftJ2 raw86.670166Nm、Cube左工具接触217.403930N；原80Nm互锁/双OPEN/controller1/完成0，无X/Y。GUIpause/SIGINT0，1904held/11098atomic/1849sparse完整性0错，279.117870s。早20s外部只读原子1199样本/PhysX-wall1.000084/receipt max41.339ms，不覆盖contact窗口或作单因证明。下一仅Task01侧下降同q/IPTP按现有缩放构建中，物理PASS待结果。

@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current execution gate: BLOCKED / stop for review (2026-10-06)
+
+Single-Cube endpoint probe passes PRE_PUSH/10/30/50/70/100% joint IK/bounds/full FCL. START remains undefined. An extra ≤2mm same-seed insertion check rejects its second state at0.641026% (1.987179mm forward), so no continuous geometric chain has passed. No collision pair is established for that rejected IK state. User stop-on-failure obeyed; no new Isaac READY/reset, tool/carriage/TCP/ACM edits, force controller or paper algorithm. See [geometry report](../../reports/TASK01_SINGLE_CUBE_GEOMETRY.md). Do not mark PASS/FROZEN or proceed until review.
+
 ## Why this task was re-scoped
 The previous TASK01 inherited the legacy five-Cube Task27 application flow and gradually expanded into multi-Cube sequencing, retreat planning, fixture construction, contact-force metrology, GUI/headless behavior and force/wrench calibration. Those are valuable historical engineering results, but they are not all prerequisites for starting the scientific baselines.
 

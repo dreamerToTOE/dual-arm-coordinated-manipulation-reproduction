@@ -1,0 +1,56 @@
+task: TASK01 Core Single-Cube Benchmark Freeze
+scope: single_cube_core_benchmark
+baseline: ENGINEERING discrete endpoints plus bounded same-seed branch continuation
+platform: native ROS2 Humble / MoveIt2 2.5.9 / LMA / FCL; no Isaac
+git_commit: c9d71f4cb8bb45b94fe5962b0f143ed3846d09aa
+runtime_model_commit: d4b290c1f929428e7d3bd6776b6d55709ca34b0f
+seed: deterministic_explicit_joint_seed_grid_then_previous_joint_state
+config_path: configs/benchmark/benchmark_v1.yaml
+config_sha256: ff490a562edb9415b20d162e17d17d1fc7de6b92cc4d731792f35d95d6514c94
+source_sha256: c1091a80c253c3c3f9668113d6204d9cf882c7105529508810295aefdc735d13
+binary_sha256: 1569a5cb5b28c0c53f46d56e66d975328c2d8719ea45f9dba4160ff11ce77b10
+input_hashes:
+  expanded_urdf: a9d6a364c89b9e72e51da962d16ee44de45595429339b51004a59211b312939b
+  expanded_srdf: 11b89277bfa5fb7bcedfa35f8285507e88d2c793df6ba8e04daf12c8eb8d023a
+  original_L_tool_xacro: a0630156df03502e6624f593041db3e5f281f52958512672049b60b31ed49f1d
+  kinematics_yaml: 80c77389765b8bb2e401fdfaa4a3d1bdd97aa85d90472a16d39d7ba403d70654
+command: >-
+  build/single_cube_geometry/task01_single_cube_geometry configs/benchmark/benchmark_v1.yaml
+  results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.urdf
+  results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.srdf
+  /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/config/kinematics.yaml
+  results/20261006_TASK01_single_cube_geometry_probe02
+status: FAIL_STOP
+exit_code: 1
+build: PASS serial; no compiler warnings in final build.log
+metrics:
+  endpoint_samples_passed: 6
+  start_defined: false
+  dense_states_checked: 2
+  dense_states_passed: 1
+  first_failure_fraction: 0.00641025641025641
+  first_failure_cube_center_world_m: [0.7919871794871796, 0.0, 0.26]
+  first_failure_kind: NO_ACCEPTED_DUAL_IK_ON_PREVIOUS_SEED
+  first_failure_collision_pair: null
+  first_failure_fcl: NOT_RUN_NO_ACCEPTED_DUAL_IK
+  first_failure_arm: NOT_RECORDED_IN_THIS_PROBE_VERSION
+  minimum_endpoint_joint_margin_deg: 3.1894398218196827
+  minimum_endpoint_wrist_tool_wall_distance_mm: 2.205603330277306
+  minimum_distance_pair: [carriage_deep_wall, right_fr3_link7]
+  max_endpoint_translation_residual_mm: 0.0005853956155418419
+  max_endpoint_rotation_residual_rad: 0.00008560183343316343
+  joint_margin_csv_rows: 84
+  relative_grasp_error_csv_rows: 12
+  collision_csv_contact_rows: 0
+  robot_commands: 0
+  suction_commands: 0
+  physics_started: false
+  acm_modified: false
+  continuous_path_verified: false
+artifacts: [sample_results.json, dense_insertion_results.json, collision_pairs.csv, joint_margin.csv, relative_grasp_error.csv, probe_evidence.log, raw/probe.log, raw/build.log]
+boundary: >-
+  Stop-on-failure obeyed; no replay, alternate-branch search, force control, Isaac reset,
+  tool/carriage/TCP/ACM change after failure. One-seed rejection is not a proof of global
+  infeasibility. Failure stage does not distinguish raw IK failure from bounds/residual
+  rejection or identify the rejecting arm. Known Isaac/MoveIt link7 mesh discrepancy
+  remains BUG019; no PhysX collision/clearance or cooked hull equivalence is claimed.

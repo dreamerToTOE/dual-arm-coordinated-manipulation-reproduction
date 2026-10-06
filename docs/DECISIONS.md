@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D032 — 单 Cube 几何先行，首败后停止，不从端点PASS推断路径PASS
+
+2026-10-06，[ENGINEERING]/[EXPERIMENTAL]。遵循用户新要求及云端已批准单Cube范围（同日single-Cube D016，与历史XYZ D016不同）：只做几何，不启动长Isaac试验。端点PASS与同一seed加密链分开记录；连续链首败后不再搜索/修改，不将数值IK失败称工具几何不可行。START仍待定义，不自行选择供料点或平移导轨。以后只有用户确认诊断范围后再继续，工具/车厢/TCP/SRDF/ACM和force/wrench延期边界保持。未新增论文[DEVIATION]，没有借机实现P4。
+
 ## D031 — 仅新侧接触下降补实际规划时间化，不降播放倍率掩盖问题
 
 2026-10-06。[ENGINEERING] 本机Humble Cartesian srv无v/a scale；Task01 DUAL_SIDE_CONTACT以现有MotionPlanRequest速度/加速度scale（当前0.12）做IPTP，逐点q和joint_names必须完全不变，完整同步FCL保持，播放1.0/PhysX秒不变。不是改物理或关闭碰撞，不改其它Cartesian或旧节点时序；不将slow成功当normal成功。真实接近仍失败则保留，不从软件补计时称已经修复。

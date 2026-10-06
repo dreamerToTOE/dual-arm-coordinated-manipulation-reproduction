@@ -1,5 +1,13 @@
 # BUGS
 
+## BUG-025 — 单 Cube 加密几何链局部IK候选拒绝，诊断信息不足
+
+2026-10-06，scope=`single_cube_core_benchmark`，OPEN/STOPPED_FOR_REVIEW。六端点联合IK/限位/FCL通过，但从PRE_PUSH同一上一q继续1.987179mm，probe02没有合格双IK，exit1停止。一个seed的失败不是全局不可行或碰撞证明，失败点尚未FCL。当前solutions将插件失败/限位/残差拒绝汇总为空，未输出具体拒绝臂/原始error；不能猜测右臂或某个墙。
+
+START本身仍PENDING_CAPTURE，是独立定义缺口。用户要求纯几何失败即停，因此未追加重放、分支/姿态修正或物理运行。待用户决定保留几何的诊断范围；不改工具/车厢/TCP/ACM，也不以力控补救。
+
+BUG019原Isaac与MoveIt link7网格差异仍OPEN；本轮2.206mm FCL净空不等于PhysX安全。BUG024旧GUI计时候选在新请求前又86.949Nm拒绝，仅关闭归档，不继续旧五块debug。
+
 ## 2026-10-06 — BUG024仍OPEN；Cartesian scaling接口差异确认
 
 physclock实际仍侧接近碰Cube/80Nm拒绝。原Humble GetCartesianPath.srv无v/a scaling字段，不能把group的RRT12%配置当成Cartesian请求速度保证。限定同q/IPTP接触下降计时待实测；GUI时间修复不是物理根因闭环，不改门限/模型。BUG023与原模型差异继续保留。
