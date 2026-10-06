@@ -78,7 +78,8 @@ double margin(const State& state,const Group* group)
   return result;
 }
 std::vector<State> solutions(const State& origin,const Group* group,
-                            const std::string& tip,const Eigen::Isometry3d& target)
+                            const std::string& tip,const Eigen::Isometry3d& target,
+                            int attempt_cap=64,std::size_t retained_cap=12)
 {
   // 有限、显式 seed；使用插件单次 getPositionIK，禁止 searchPositionIK 隐式随机重试。
   // 无候选仅表示本探针未找到，不能宣称全局无解。
@@ -86,7 +87,7 @@ std::vector<State> solutions(const State& origin,const Group* group,
   const auto solver=group->getSolverInstance();
   if (!solver || solver->getJointNames()!=group->getVariableNames())
     throw std::runtime_error("Missing IK or unexpected joint ordering");
-  for (int attempt=0;attempt<64 && found.size()<12;++attempt)
+  for (int attempt=0;attempt<attempt_cap && found.size()<retained_cap;++attempt)
   {
     State trial(origin);
     std::vector<double> seed; trial.copyJointGroupPositions(group,seed);
@@ -120,6 +121,7 @@ int main(int argc,char** argv)
     { std::cerr<<"Refusing to overwrite prior run\n"; return 2; }
   std::filesystem::create_directories(output);
   Json samples=Json::array();
+  Json dense=Json::array();
   int exit_code=2;
   rclcpp::init(argc,argv);
   try
@@ -184,6 +186,7 @@ int main(int argc,char** argv)
     errors<<"sample,arm,translation_m,rotation_rad\n";
     contacts<<std::setprecision(17); margins<<std::setprecision(17); errors<<std::setprecision(17);
     bool stopped=false;
+    std::optional<State> pre_state;
     for (const auto& [name,fraction]:names)
     {
       if (stopped) { samples.push_back({{"sample",name},{"status","NOT_RUN_STOP_ON_FAILURE"}}); continue; }
@@ -256,12 +259,64 @@ candidate_selected:
               {"body2",entry.first.second},{"signed_distance_m",d.distance}});
         valid=valid && selected->satisfiesBounds();
         state=*selected;
+        if (name=="PRE_PUSH" && valid) pre_state=state;
       }
       record["status"]=valid ? "PASS_SAMPLED_ENDPOINT":"FAIL_STOP";
       std::cout<<name<<": "<<record["status"]<<", dual IK="<<ls.size()<<'/'<<rs.size()
                <<", paired candidates="<<candidate<<", contacts="<<best_contacts.dump()<<std::endl;
       samples.push_back(record);
       if (!valid) stopped=true;
+    }
+    // [ENGINEERING] 额外验证插入段同一 IK 分支延续，每不超过 2 mm 检查闭链和全 FCL。
+    // 这是离散几何检查，不是 P4 投影规划或连续碰撞证明；第一次失败立即停止。
+    if (!stopped && pre_state)
+    {
+      State previous=*pre_state;
+      const int steps=static_cast<int>(std::ceil((goal-pre).norm()/.002));
+      for (int index=0;index<=steps;++index)
+      {
+        const double fraction=static_cast<double>(index)/steps;
+        Eigen::Isometry3d object=Eigen::Isometry3d::Identity(); object.translation()=pre+fraction*(goal-pre);
+        auto ls=solutions(previous,left,lt,object*grasp_l,1,1),rs=solutions(previous,right,rt,object*grasp_r,1,1);
+        Json row={{"index",index},{"insertion_fraction",fraction},{"cube_center_world_m",xyz(object.translation())},
+                  {"status","FAIL_STOP"},{"dual_ik",!ls.empty() && !rs.empty()}};
+        if (!ls.empty() && !rs.empty())
+        {
+          State paired(previous); std::vector<double> lq,rq;
+          ls.front().copyJointGroupPositions(left,lq); rs.front().copyJointGroupPositions(right,rq);
+          paired.setJointGroupPositions(left,lq); paired.setJointGroupPositions(right,rq); paired.update();
+          box(scene,"shared_cube",object.translation(),size);
+          collision_detection::CollisionRequest request; request.contacts=true;
+          request.max_contacts=200; request.max_contacts_per_pair=1;
+          collision_detection::CollisionResult result; scene.checkCollision(request,result,paired);
+          row["collision_pairs"]=Json::array();
+          for (const auto& entry:result.contacts) for (const auto& hit:entry.second)
+          {
+            row["collision_pairs"].push_back({{"body1",entry.first.first},{"body2",entry.first.second},
+                                             {"depth_m",hit.depth},{"position_world_m",xyz(hit.pos)}});
+            contacts<<"DENSE_"<<index<<",0,"<<entry.first.first<<','<<entry.first.second<<','<<hit.depth<<','
+                    <<hit.pos.x()<<','<<hit.pos.y()<<','<<hit.pos.z()<<'\n';
+          }
+          row["joint_limit"]=paired.satisfiesBounds();
+          row["min_joint_margin_rad"]=std::min(margin(paired,left),margin(paired,right));
+          row["left_relative_grasp_error"]=residual(paired,lt,object*grasp_l);
+          row["right_relative_grasp_error"]=residual(paired,rt,object*grasp_r);
+          row["max_joint_step_rad"]=0.;
+          for (const auto& joint:model->getVariableNames()) row["max_joint_step_rad"]=std::max(
+            row["max_joint_step_rad"].get<double>(),std::abs(paired.getVariablePosition(joint)-previous.getVariablePosition(joint)));
+          row["left_q_rad"]=lq; row["right_q_rad"]=rq;
+          for (const auto link:{"left_fr3_link7","right_fr3_link7"})
+          {
+            const auto& t=paired.getGlobalLinkTransform(link); const Eigen::Quaterniond q(t.linear());
+            row[std::string(link)+"_world_pose"]={{"translation_m",xyz(t.translation())},
+              {"quaternion_xyzw",Json::array({q.x(),q.y(),q.z(),q.w()})}};
+          }
+          if (!result.collision && paired.satisfiesBounds()) { row["status"]="PASS"; previous=paired; }
+        }
+        dense.push_back(row);
+        if (row["status"]!="PASS") { stopped=true; std::cout<<"DENSE FAIL: "<<row.dump()<<std::endl; break; }
+      }
+      std::cout<<"Dense insertion states checked="<<dense.size()<<", stop="<<stopped<<std::endl;
     }
     if (scene.getAllowedCollisionMatrix().getSize()!=acm_before) throw std::runtime_error("ACM changed");
     exit_code=stopped ? 1:3; // START 缺失不能用插入离散点 PASS 宣称整链通过。
@@ -270,6 +325,8 @@ candidate_selected:
   std::ofstream file(output/"sample_results.json");
   file<<Json({{"scope","single_cube_core_benchmark"},{"status",exit_code==1 ? "FAIL_STOP":exit_code==3 ? "PARTIAL_UNDEFINED_START":"ERROR"},
     {"physics_started",false},{"robot_commands",0},{"suction_commands",0},{"acm_modified",false},
-    {"continuous_path_verified",false},{"samples",samples}}).dump(2)<<'\n';
+    {"continuous_path_verified",false},{"dense_step_cap_m",.002},{"dense_states_checked",dense.size()},
+    {"samples",samples}}).dump(2)<<'\n';
+  std::ofstream dense_file(output/"dense_insertion_results.json"); dense_file<<dense.dump(2)<<'\n';
   rclcpp::shutdown(); return exit_code;
 }
