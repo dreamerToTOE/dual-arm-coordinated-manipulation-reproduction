@@ -20,6 +20,14 @@ class HeldReplayHullTest(unittest.TestCase):
         self.assertLess(value['common_ball_radius_m'], 0)
         self.assertAlmostEqual(value['deep_wall_x_plane_clearance_m'], 1)
 
+    def test_translation_invariant_radius_and_world_witness(self):
+        offset = [1.25, -2.5, .3]
+        wall = [[v-.5, v+.5] for v in offset]
+        value = common_ball_radius(self.vertices, offset, [0, 0, 0, 1], wall)
+        self.assertAlmostEqual(value['common_ball_radius_m'], .5)
+        for actual, expected in zip(value['witness_center_m'], offset):
+            self.assertAlmostEqual(actual, expected)
+
     def test_invalid_pose(self):
         for q in ([0, 0, 0, 0], [0, 0, 0, float('nan')]):
             with self.assertRaises(ValueError):

@@ -1,0 +1,351 @@
+{
+  "asset_sha256": "3feceb47747b49f908f9719299132deb9759f2d5edb390d14f0f3ed62c63255f",
+  "boundary": "Discrete nominal original link7 authored convexHull only; LP radius is not penetration depth/distance, not PhysX cooked mesh/contact offsets, not whole-robot/continuous tracking or physical PASS.",
+  "solver": "SciPy HiGHS interior-point; identical recentered LP inequalities, witness residual checked",
+  "wall_physical_bounds_m": [
+    [
+      1.16,
+      1.18
+    ],
+    [
+      -0.323,
+      0.323
+    ],
+    [
+      0.2,
+      0.35
+    ]
+  ],
+  "walls": {
+    "WallDeep": {
+      "bounds_m": [
+        [
+          1.16,
+          1.18
+        ],
+        [
+          -0.323,
+          0.323
+        ],
+        [
+          0.2,
+          0.35
+        ]
+      ],
+      "overlapping_samples": 0,
+      "phases": {
+        "task27_minus_outer:CONTACT:left": {
+          "max_common_ball_radius_mm": -270.84774382957505,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_minus_outer:CONTACT:right": {
+          "max_common_ball_radius_mm": -157.85653833647646,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_minus_outer:X:left": {
+          "max_common_ball_radius_mm": -115.92680446593035,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_minus_outer:X:right": {
+          "max_common_ball_radius_mm": -8.403066504975175,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_minus_outer:Y:left": {
+          "max_common_ball_radius_mm": -115.92680278937893,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_minus_outer:Y:right": {
+          "max_common_ball_radius_mm": -8.403057285839438,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_plus_inner:CONTACT:left": {
+          "max_common_ball_radius_mm": -157.86973395171267,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:CONTACT:right": {
+          "max_common_ball_radius_mm": -251.9960648894941,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:X:left": {
+          "max_common_ball_radius_mm": -8.434494691488474,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_inner:X:right": {
+          "max_common_ball_radius_mm": -97.22654476582443,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_inner:Y:left": {
+          "max_common_ball_radius_mm": -8.434494246538954,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:Y:right": {
+          "max_common_ball_radius_mm": -97.22654421361997,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:CONTACT:left": {
+          "max_common_ball_radius_mm": -157.88008230181214,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:CONTACT:right": {
+          "max_common_ball_radius_mm": -251.99648862912738,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:X:left": {
+          "max_common_ball_radius_mm": -8.436803155250255,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_outer:X:right": {
+          "max_common_ball_radius_mm": -97.22647796230574,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_outer:Y:left": {
+          "max_common_ball_radius_mm": -8.436791247258963,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_plus_outer:Y:right": {
+          "max_common_ball_radius_mm": -97.22647623650401,
+          "overlapping_samples": 0,
+          "samples": 93
+        }
+      },
+      "samples": 1330
+    },
+    "WallMinusY": {
+      "bounds_m": [
+        [
+          0.89,
+          1.18
+        ],
+        [
+          -0.323,
+          -0.303
+        ],
+        [
+          0.2,
+          0.35
+        ]
+      ],
+      "overlapping_samples": 0,
+      "phases": {
+        "task27_minus_outer:CONTACT:left": {
+          "max_common_ball_radius_mm": -160.38953895388764,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_minus_outer:CONTACT:right": {
+          "max_common_ball_radius_mm": -188.5994343145343,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_minus_outer:X:left": {
+          "max_common_ball_radius_mm": -125.24051108448897,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_minus_outer:X:right": {
+          "max_common_ball_radius_mm": -188.5994343145343,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_minus_outer:Y:left": {
+          "max_common_ball_radius_mm": -34.96073729852037,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_minus_outer:Y:right": {
+          "max_common_ball_radius_mm": -97.24217014184829,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_plus_inner:CONTACT:left": {
+          "max_common_ball_radius_mm": -64.19873352708052,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:CONTACT:right": {
+          "max_common_ball_radius_mm": -170.2371296498059,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:X:left": {
+          "max_common_ball_radius_mm": -63.52798882307997,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_inner:X:right": {
+          "max_common_ball_radius_mm": -124.77942969556244,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_inner:Y:left": {
+          "max_common_ball_radius_mm": -63.52798882307997,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:Y:right": {
+          "max_common_ball_radius_mm": -124.77942985522647,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:CONTACT:left": {
+          "max_common_ball_radius_mm": -44.10510277587717,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:CONTACT:right": {
+          "max_common_ball_radius_mm": -155.50648527781274,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:X:left": {
+          "max_common_ball_radius_mm": -32.820178101645524,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_outer:X:right": {
+          "max_common_ball_radius_mm": -98.9787917915275,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_outer:Y:left": {
+          "max_common_ball_radius_mm": -32.820180258138265,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_plus_outer:Y:right": {
+          "max_common_ball_radius_mm": -98.97879203191277,
+          "overlapping_samples": 0,
+          "samples": 93
+        }
+      },
+      "samples": 1330
+    },
+    "WallPlusY": {
+      "bounds_m": [
+        [
+          0.89,
+          1.18
+        ],
+        [
+          0.303,
+          0.323
+        ],
+        [
+          0.2,
+          0.35
+        ]
+      ],
+      "overlapping_samples": 0,
+      "phases": {
+        "task27_minus_outer:CONTACT:left": {
+          "max_common_ball_radius_mm": -148.7838045801915,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_minus_outer:CONTACT:right": {
+          "max_common_ball_radius_mm": -60.248052757881275,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_minus_outer:X:left": {
+          "max_common_ball_radius_mm": -98.97888306929048,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_minus_outer:X:right": {
+          "max_common_ball_radius_mm": -51.42136571205989,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_minus_outer:Y:left": {
+          "max_common_ball_radius_mm": -98.97888327907283,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_minus_outer:Y:right": {
+          "max_common_ball_radius_mm": -51.42136701369816,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_plus_inner:CONTACT:left": {
+          "max_common_ball_radius_mm": -176.6455354188386,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:CONTACT:right": {
+          "max_common_ball_radius_mm": -133.08957784585442,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:X:left": {
+          "max_common_ball_radius_mm": -176.6455354188386,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_inner:X:right": {
+          "max_common_ball_radius_mm": -94.70362556430777,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_inner:Y:left": {
+          "max_common_ball_radius_mm": -176.14579772459587,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_inner:Y:right": {
+          "max_common_ball_radius_mm": -94.20713301308021,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:CONTACT:left": {
+          "max_common_ball_radius_mm": -207.3830395890953,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:CONTACT:right": {
+          "max_common_ball_radius_mm": -152.3025273590259,
+          "overlapping_samples": 0,
+          "samples": 2
+        },
+        "task27_plus_outer:X:left": {
+          "max_common_ball_radius_mm": -207.3830395890953,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_outer:X:right": {
+          "max_common_ball_radius_mm": -125.24089779414591,
+          "overlapping_samples": 0,
+          "samples": 157
+        },
+        "task27_plus_outer:Y:left": {
+          "max_common_ball_radius_mm": -115.9293581441732,
+          "overlapping_samples": 0,
+          "samples": 93
+        },
+        "task27_plus_outer:Y:right": {
+          "max_common_ball_radius_mm": -34.42995094000128,
+          "overlapping_samples": 0,
+          "samples": 93
+        }
+      },
+      "samples": 1330
+    }
+  }
+}

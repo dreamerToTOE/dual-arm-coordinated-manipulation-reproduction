@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D023 follow-up — OPEN时建立后腕姿态，CLOSED时只共同平移
+
+无命令rear45三链与三墙检查通过后，仅新3+2节点前三后抓RRT/预演调用同一函数，后两件原pushPose；不在已经吸附时修改相对grasp。参数非法在Arm前拒绝。原几何/物理/门限/ACM不变，fresh首件实际验证是必需，名义结果不叫物理PASS。
+
+LP求解变更为[ENGINEERING]：等价坐标重心化、同全部约束的HiGHS-IPM与解残差检查；两次default solver失败保留，没跳数据/没更改碰撞成功阈值。
+
 ## D023 — 保持后杯面法向，先向中央让腕的无命令验证
 
 2026-10-06，[EXPERIMENTAL]/[ENGINEERING]。原子反馈首件暴露rear右腕侧墙接触，不把原80Nm错误叫传感假报。只读probe增加rear worldX法向镜像roll幅值（诊断范围0..60deg，不是验收容差），尝试45deg/+Y正转、-Y负转，把腕向自由中央偏移；side保持-15deg。执行器未采用，没有CLOSED下转腕。

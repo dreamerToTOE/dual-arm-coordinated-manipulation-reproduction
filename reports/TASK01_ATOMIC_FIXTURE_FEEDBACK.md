@@ -27,8 +27,6 @@ exec(open('/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/p
 
 headless原复测命令增加`--physics-fixture-feedback`。控制器缺少新话题时拒绝启动，不能默默退回旧USD反馈。
 
-## 第二阶段 PRE — 后推杯面法向腕姿只读候选
-
 ## 原子反馈实测 POST（第一阶段，PARTIAL）
 
 新鲜本机headless首件 / runtime88ef454/reproa952a18/binary31d862a6… / first1,max1,scale5,hold0,零预置、原side roll -15。
@@ -39,8 +37,12 @@ headless原复测命令增加`--physics-fixture-feedback`。控制器缺少新�
 - 原side roll只解决名义deep-wall检查的范围。补查旧nominal02双腕1330节点对三墙：deep0/minusY0，plusY有7个右腕Y节点交集；LP共同球半径不是穿透深度。此前deep-only PASS绝不能推广为all-wall PASS。
 - 60Python/C++策略检查PASS，旧scene/bridge/YAML hash不变。新反馈消费工程得到实测支持，但完整任务仍FAIL，BUG017/019仍OPEN，不能冻结基准或推进论文方法。
 
-下一步第二阶段仅no-command后腕roll候选与三墙检查，执行器尚未应用。
+## 第二阶段 PRE — 后推杯面法向腕姿候选（历史准备与新结果）
 
 实测原子反馈首件完成X16/Y14，Y15出现rear right link7↔+Y墙接触，原80Nm保护停止。只读尝试rear绕worldX法向45deg，正Y件正转/负Y件镜像负转，目标是把后腕偏向中央空区；side仍worldY -15deg。中心/法向/L几何/原接触点与桌/墙位置不动，没有载荷下旋转或执行器自动启用。
 
 验证：名义前三链全FR3 FCL/TCP约束、输出精确双腕FK，同时检查原USD link7凸包对三面墙（此前deep-only检查不足）。失败保留、不放宽门限；只读PASS不替代真实物理/空载接近完整验证。
+
+结果`rear_roll_nominal01` /runtime39d72c6：probe0/前三链3/3/FCL与TCP约束PASS。原SciPy1.8.0 HiGHS默认LP在一条记录status4，不吞掉该行；等价重心坐标仍失败。保留两次负证据，换HiGHS内点LP、同一全部不等式/原>0交集判断、显式解残差检查，全1330双腕节点对三墙deep/minusY/plusY均0交集。共同球半径不是碰撞深度/最小距离，未替换任何PhysX/MoveIt几何。61Python/C++PASS。
+
+物理复测PRE：在OPEN后抓-RRT及其预演链调用同一`dualRearFixturePose`，前三件rear幅值45deg、正Y正/负Y负；吸点/法向保持，后两单rear调用原pushPose。吸住后仍同进度平移，不在CLOSED时转腕；原物理/门限不动。编译→fresh首件原场景/scale5/hold0/原子反馈→同一步contact/DOF/几何审计；失败不推进下一件。

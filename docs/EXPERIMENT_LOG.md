@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — rear_roll_nominal01 PASS_NO_COMMAND
+
+runtime39d72c6/probe902c1fb1…/build51.2s，side-15、rear镜像45，probe0/3链通过。第一次原世界坐标LP status4，等价重心坐标default仍status4；两份失败JSON保留。同约束HiGHS-IPM审计1330节点×三墙0交集，61PythonPASS。无机器人/吸盘/供料/轨道/remoteScene命令，未物理执行，非全机器人PhysX或连续tracking保证。
+
 ## 2026-10-06 — atomic_feedback_cube01 FAIL_Y15_FRESH
 
 完整命令/源码hash在run metadata。controller1/完成0，X16/Y14完成，Y15原80Nm left86.999/right70.170、feedback FRESH；实际right link7↔+Y墙745.807766N/step19613。双OPEN/headless0。25171feedback/0错、9491held/4195sparse/0完整性错误；33打印几何与精确物理stamp匹配到舍入误差。

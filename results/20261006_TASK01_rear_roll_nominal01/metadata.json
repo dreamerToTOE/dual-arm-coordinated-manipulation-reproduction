@@ -1,0 +1,18 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL no-command cup-normal mirrored rear45/side-15 wrist feasibility",
+  "platform": "local ROS2 Humble / real dual FR3 RobotModel / original Isaac authored link7 convexHull offline",
+  "git_commit": {"runtime": "39d72c6", "reproduction_at_probe": "934f2b9"},
+  "runtime_probe_binary_sha256": "902c1fb199949f408e3093bd7f762853d459b0c309af30fa8e575513697915e9",
+  "seed": null,
+  "seed_note": "40 bounded deterministic seed templates plus solver nondeterminism; not a reliability trial",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "commands": [
+    "ros2 run fr3_dual_palletize task01_dual_fixture_probe --ros-args -p side_roll_world_y_deg:=-15.0 -p rear_roll_magnitude_deg:=45.0 -p wrist_audit_path:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261006_TASK01_rear_roll_nominal01/raw/wrist_fk.tsv",
+    "python3 platforms/isaac_ros2/probes/audit_held_hull.py results/20261006_TASK01_rear_roll_nominal01/raw/wrist_fk.tsv results/20261006_TASK01_held_fixture_diagnostic02/raw/asset_link7.json --all-walls"
+  ],
+  "status": "PASS_NO_COMMAND_NOMINAL_AND_THREE_WALL_WRIST_HULL_ONLY",
+  "metrics": {"probe_exit": 0, "nominal_chains_passed": 3, "probe_build_sec": 51.2, "first_hull_audit_exit": 1, "recentered_default_solver_audit_failed": true, "interior_point_audit_exit": 0, "wrist_nodes_per_wall": 1330, "wall_deep_overlapping_nodes": 0, "wall_minus_y_overlapping_nodes": 0, "wall_plus_y_overlapping_nodes": 0, "python_tests_passed": 61, "robot_commands": 0},
+  "artifacts": ["raw/probe.log", "raw/wrist_fk.tsv", "hull_audit_attempt01.json", "hull_audit_attempt02.json", "hull_audit_ipm.json"],
+  "boundary": "Cup center/normal invariant; no controller/scene/ACM/joint/suction/feed/rail writes. No physical task or whole-robot PhysX safety proof; LP errors preserved and not classified as safe."
+}

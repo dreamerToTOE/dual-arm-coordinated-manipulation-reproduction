@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 latest — 双腕三墙名义检查通过，后腕OPEN姿态复测准备
+
+rear_roll_nominal01 /39d72c6，side-15/rear镜像45：前三名义链3/3 IK/FCL/相对TCP通过，1330双腕节点对原三墙均0凸包交集。旧SciPy1.8默认LP两次status4保留；同约束内点LP/显式解残差复核通过。61Python/C++PASS，不是实际物理成功。
+
+执行器仅前三后杯OPEN-RRT重抓接入同一腕姿，后两单rear保持原姿态；fresh首件物理验证准备。上轮X16/Y14/Y15力矩保护与侧墙接触仍保留。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO；原场景/模型/物理/门限无更改。
+
 ## 2026-10-06 latest — 原子反馈实测匹配；Y15后腕碰侧墙仍FAIL
 
 atomic_feedback_cube01：33条geometry打印与同一步PhysX精确stamp匹配，X16/Y14完成；Y15原80Nm guard left86.999/right70.170、feedback FRESH，实际right link7↔+Y墙峰745.808N。controller1/完成0/双OPEN，headless0；25171反馈无错、9491held/4195sparse完整性无错。

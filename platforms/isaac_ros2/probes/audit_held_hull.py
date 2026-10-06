@@ -25,23 +25,28 @@ def common_ball_radius(points, position, quaternion, wall):
     world = points @ rotation.T + position
     equations = ConvexHull(points).equations
     normals = equations[:, :3] @ rotation.T
-    offsets = equations[:, 3] - normals @ position
+    # [ENGINEERING] LP中心变量用腕部附近坐标，避免世界系平面offset的消差。
+    # 与原世界系不等式数学等价，不改变几何/重叠门限，witness最后转回世界系。
+    offsets = equations[:, 3]
     a = np.c_[normals, np.ones(len(normals))]
     b = -offsets
     for axis, (lo, hi) in enumerate(wall):
         plane = np.zeros(4)
         plane[axis], plane[3] = 1, 1
-        a, b = np.vstack([a, plane]), np.r_[b, hi]
+        a, b = np.vstack([a, plane]), np.r_[b, hi-position[axis]]
         plane = np.zeros(4)
         plane[axis], plane[3] = -1, 1
-        a, b = np.vstack([a, plane]), np.r_[b, -lo]
+        a, b = np.vstack([a, plane]), np.r_[b, position[axis]-lo]
     solution = linprog([0, 0, 0, -1], A_ub=a, b_ub=b,
-                       bounds=[(None, None)] * 4, method='highs')
+                       bounds=[(None, None)] * 4, method='highs-ipm')
     if not solution.success or not np.isfinite(solution.x).all():
-        raise ValueError('Geometry LP failed')
+        raise ValueError(f'Geometry LP failed: {solution.status}: {solution.message}')
+    violation = float(np.max(a @ solution.x - b))
+    if violation > 1e-7 or (solution.x[3] > 0 and violation >= solution.x[3]):
+        raise ValueError('Geometry LP returned an uncertified witness')
     return {'common_ball_radius_m': float(solution.x[3]),
             'deep_wall_x_plane_clearance_m': float(wall[0, 0] - world[:, 0].max()),
-            'witness_center_m': solution.x[:3].tolist()}
+            'witness_center_m': (solution.x[:3]+position).tolist()}
 
 
 def summarize_probe(lines, points, wall):
@@ -111,4 +116,5 @@ if __name__ == '__main__':
         with args.probe_log.open() as stream:
             result = summarize_probe(stream, mesh['points'], wall)
     result.update(asset_sha256=mesh['asset_sha256'], wall_physical_bounds_m=wall)
+    result['solver'] = 'SciPy HiGHS interior-point; identical recentered LP inequalities, witness residual checked'
     print(json.dumps(result, indent=2, sort_keys=True))

@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-06 — 后腕名义检查与实际重抓接入
+
+- rear45镜像/side-15无命令前三链3/3 PASS；1330双腕节点三墙均0交集，不仅查深墙。
+- SciPy1.8 HiGHS默认status4两次保留，换同约束内点LP并检查残差，61Python/C++PASS；没有放宽交集判据或跳过坏行。
+- 新节点前三件后抓OPEN RRT/预演统一姿态函数，后两件/旧节点原pushPose不变；待编译和新鲜首件原门限物理验证，不能提前PASS。
+
 ## 2026-10-06 — 原子反馈实测与后腕侧墙定位
 
 - runtime88ef454/build54.2s/binary31d862a6…；原子反馈首件真实X16/Y14，Y15原保护停止，bothOPEN/完成0。33精确stamp几何校验匹配，60Python/C++PASS；源对照显示USD可在有效物理正gap时输出<-1mm。
