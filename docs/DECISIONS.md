@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D024 — 复用吸附前XYZ消除rear重抓残差，不放宽加载门限
+
+2026-10-06，[ENGINEERING]。rear45实测X1原子alignment2.578mm、主要rear Z残差，复用用户已允许的OPEN XYZ精调：仅前三后杯重抓，上一发送命令FK加同一步Cube/TCP残差；每次整向量≤1mm、最多3次/4检查。0.3mm仅新的吸附前目标精度，不替代原2.5mm/80Nm/碰撞门控。helper OPEN实测保持、原自由Cube/所有其它静态对象参与联合FCL；观测过期/失败则双OPEN停止，不CLOSE或推进下一件。
+
+后两单rear/旧节点/L工具/世界几何/材料/物理/ACM及CLOSED路径不变。属于既有精调软件复用，不是论文控制律或新的力控；实际fresh首件须另验，若需模型/物理/门限改变仍停止询问。
+
 ## D023 follow-up — OPEN时建立后腕姿态，CLOSED时只共同平移
 
 无命令rear45三链与三墙检查通过后，仅新3+2节点前三后抓RRT/预演调用同一函数，后两件原pushPose；不在已经吸附时修改相对grasp。参数非法在Arm前拒绝。原几何/物理/门限/ACM不变，fresh首件实际验证是必需，名义结果不叫物理PASS。

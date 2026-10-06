@@ -1,0 +1,343 @@
+{
+  "boundary": "Phase tags asynchronous; within rows physics pose/contact/DOF synchronous. Contact force excludes D6 wrench; raw revolute effort Nm/prismatic N, not calibrated TCP wrench. No physical task PASS is inferred from diagnostic completeness.",
+  "integrity_errors": 0,
+  "phases": {
+    "task27_plus_outer:ABORT": {
+      "both_closed_samples": 0,
+      "collision_pairs": {
+        "/World/Task27/Supply/Cube_01 <-> /World/Table": {
+          "force_world_n": [
+            -27.61728286743164,
+            -1.647627592086792,
+            59.07821273803711
+          ],
+          "peak_force_n": 65.23545209456825,
+          "peak_step": 32421,
+          "samples": 3613
+        },
+        "/World/Task27/Supply/Cube_01 <-> /World/left_fr3/fr3_link8": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 36033,
+          "samples": 3613
+        },
+        "/World/Task27/Supply/Cube_01 <-> /World/right_fr3/fr3_link8": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 36033,
+          "samples": 3613
+        },
+        "/World/left_fr3/fr3_link8 <-> /World/Task27/Supply/Cube_01": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 36033,
+          "samples": 3613
+        },
+        "/World/right_fr3/fr3_link8 <-> /World/Table": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 36033,
+          "samples": 3613
+        },
+        "/World/right_fr3/fr3_link8 <-> /World/Task27/Supply/Cube_01": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 36033,
+          "samples": 3613
+        }
+      },
+      "first_cube_m": [
+        0.7902089357376099,
+        0.060335613787174225,
+        0.26001808047294617
+      ],
+      "first_step": 32421,
+      "last_cube_m": [
+        0.7902092933654785,
+        0.0603322833776474,
+        0.2600000202655792
+      ],
+      "last_step": 36033,
+      "max_arm_tracking_error_deg": {
+        "left": 0.09406878034400061,
+        "right": 0.2817043221280059
+      },
+      "max_raw_effort": {
+        "left": {
+          "abs_value": 25.759410858154297,
+          "cube_m": [
+            0.7902079820632935,
+            0.06033216789364815,
+            0.25999996066093445
+          ],
+          "joint": "fr3_joint4",
+          "physics_step": 32422,
+          "suction_closed": {
+            "left": false,
+            "right": false
+          }
+        },
+        "right": {
+          "abs_value": 46.70857238769531,
+          "cube_m": [
+            0.790209174156189,
+            0.06033221259713173,
+            0.25999999046325684
+          ],
+          "joint": "fr3_joint2",
+          "physics_step": 32423,
+          "suction_closed": {
+            "left": false,
+            "right": false
+          }
+        }
+      },
+      "samples": 3613
+    },
+    "task27_plus_outer:CONTACT": {
+      "both_closed_samples": 18,
+      "collision_pairs": {
+        "/World/Task27/Supply/Cube_01 <-> /World/Table": {
+          "force_world_n": [
+            0.2584085464477539,
+            -36.2952880859375,
+            87.62725067138672
+          ],
+          "peak_force_n": 94.84698082935545,
+          "peak_step": 32114,
+          "samples": 836
+        },
+        "/World/Task27/Supply/Cube_01 <-> /World/left_fr3/fr3_link8": {
+          "force_world_n": [
+            -0.27425816655158997,
+            19.622623443603516,
+            -50.607059478759766
+          ],
+          "peak_force_n": 54.27888205774053,
+          "peak_step": 32114,
+          "samples": 213
+        },
+        "/World/Task27/Supply/Cube_01 <-> /World/right_fr3/fr3_link8": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32317,
+          "samples": 836
+        },
+        "/World/left_fr3/fr3_link8 <-> /World/Task27/Supply/Cube_01": {
+          "force_world_n": [
+            0.27425816655158997,
+            -19.622623443603516,
+            50.607059478759766
+          ],
+          "peak_force_n": 54.27888205774053,
+          "peak_step": 32114,
+          "samples": 213
+        },
+        "/World/right_fr3/fr3_link8 <-> /World/Table": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32317,
+          "samples": 836
+        },
+        "/World/right_fr3/fr3_link8 <-> /World/Task27/Supply/Cube_01": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32317,
+          "samples": 836
+        }
+      },
+      "first_cube_m": [
+        0.7700212597846985,
+        0.060105618089437485,
+        0.2600008547306061
+      ],
+      "first_step": 31482,
+      "last_cube_m": [
+        0.7701541781425476,
+        0.06016644090414047,
+        0.2600807249546051
+      ],
+      "last_step": 32317,
+      "max_arm_tracking_error_deg": {
+        "left": 2.488155952365605,
+        "right": 0.28372605812232965
+      },
+      "max_raw_effort": {
+        "left": {
+          "abs_value": 28.941328048706055,
+          "cube_m": [
+            0.7701160311698914,
+            0.06016119197010994,
+            0.26011574268341064
+          ],
+          "joint": "fr3_joint4",
+          "physics_step": 32088,
+          "suction_closed": {
+            "left": false,
+            "right": true
+          }
+        },
+        "right": {
+          "abs_value": 46.14235305786133,
+          "cube_m": [
+            0.7700220346450806,
+            0.060106270015239716,
+            0.2600007951259613
+          ],
+          "joint": "fr3_joint2",
+          "physics_step": 31510,
+          "suction_closed": {
+            "left": false,
+            "right": true
+          }
+        }
+      },
+      "samples": 836
+    },
+    "task27_plus_outer:X_1": {
+      "both_closed_samples": 103,
+      "collision_pairs": {
+        "/World/Task27/Supply/Cube_01 <-> /World/Table": {
+          "force_world_n": [
+            -29.43017578125,
+            -9.875580787658691,
+            62.09669494628906
+          ],
+          "peak_force_n": 69.42378458180833,
+          "peak_step": 32372,
+          "samples": 103
+        },
+        "/World/Task27/Supply/Cube_01 <-> /World/left_fr3/fr3_link8": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32420,
+          "samples": 103
+        },
+        "/World/Task27/Supply/Cube_01 <-> /World/right_fr3/fr3_link8": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32420,
+          "samples": 103
+        },
+        "/World/left_fr3/fr3_link8 <-> /World/Task27/Supply/Cube_01": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32420,
+          "samples": 103
+        },
+        "/World/right_fr3/fr3_link8 <-> /World/Table": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32420,
+          "samples": 103
+        },
+        "/World/right_fr3/fr3_link8 <-> /World/Task27/Supply/Cube_01": {
+          "force_world_n": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "peak_force_n": 0.0,
+          "peak_step": 32420,
+          "samples": 103
+        }
+      },
+      "first_cube_m": [
+        0.7701541781425476,
+        0.060166433453559875,
+        0.2600806951522827
+      ],
+      "first_step": 32318,
+      "last_cube_m": [
+        0.7902089357376099,
+        0.060335613787174225,
+        0.26001808047294617
+      ],
+      "last_step": 32420,
+      "max_arm_tracking_error_deg": {
+        "left": 0.44709052269069466,
+        "right": 0.6059334020285112
+      },
+      "max_raw_effort": {
+        "left": {
+          "abs_value": 25.09299087524414,
+          "cube_m": [
+            0.7701540589332581,
+            0.060166459530591965,
+            0.26008081436157227
+          ],
+          "joint": "fr3_joint4",
+          "physics_step": 32319,
+          "suction_closed": {
+            "left": true,
+            "right": true
+          }
+        },
+        "right": {
+          "abs_value": 35.01567840576172,
+          "cube_m": [
+            0.7701541185379028,
+            0.060166455805301666,
+            0.2600807845592499
+          ],
+          "joint": "fr3_joint2",
+          "physics_step": 32320,
+          "suction_closed": {
+            "left": true,
+            "right": true
+          }
+        }
+      },
+      "samples": 103
+    }
+  },
+  "samples": 4552
+}

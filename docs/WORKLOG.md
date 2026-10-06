@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — rear45真实Z残差与后杯OPEN精调
+
+rear_roll_cube01最终X1原alignment失败、双OPEN，精确stamp确认rear Z为PRE_CLOSE -2.363/CLOSED -2.462/X1 -2.578mm；不是USD假报，没到墙。保存metadata/geometry_audit/held_analysis，失败不抹。runtime39f1a0c新增仅前三rear OPEN的有界XYZ，上一命令FK加实测残差，原Cube参与完整联合FCL，helper保持实测姿态，失效拒绝CLOSE。初编译linkPose签名错误exit2，修正后build50.4s PASS/61Python/两组C++/analytic36nulls。原模型/物理/保护门限不改，真实新首件待测。
+
 ## 2026-10-06 — 后腕名义检查与实际重抓接入
 
 - rear45镜像/side-15无命令前三链3/3 PASS；1330双腕节点三墙均0交集，不仅查深墙。

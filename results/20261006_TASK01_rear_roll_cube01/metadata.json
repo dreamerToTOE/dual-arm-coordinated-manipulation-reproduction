@@ -1,0 +1,21 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL first-Cube 3+2 protocol with atomic physics geometry and mirrored rear/side cup-normal wrist rolls",
+  "platform": "user local Isaac4.5 headless / ROS2 Humble / MoveIt",
+  "git_commit": {"runtime": "4ebe279", "reproduction": "e4004ab"},
+  "runtime_binary_sha256": "e50b23fefb1b92ade157eab89b7827791014d93ebebc964a5ad200dc3e53899c",
+  "seed": null,
+  "seed_note": "OMPL/IK RNG uncontrolled, no A/B or reliability claim",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_usage": "DRAFT reference, unchanged original task constants/physics/gates",
+  "parameters": {"preplaced_count": 0, "first_batch": 1, "max_batches": 1, "execution_time_scale": 5.0, "release_diagnostic_hold_sec": 0.0, "dual_fixture_side_roll_world_y_deg": -15.0, "dual_fixture_rear_roll_magnitude_deg": 45.0, "physics_fixture_feedback": true, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 1200 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_rear_roll_cube01/raw",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
+  ],
+  "status": "FAIL_X1_ORIGINAL_ALIGNMENT_GUARD_ACTUAL_REAR_Z_RESIDUAL",
+  "metrics": {"python_tests_passed": 61, "controller_build_sec": 50.7, "nominal_first_three_chains_passed": 3, "nominal_wrist_nodes_per_wall": 1330, "nominal_three_wall_hull_overlaps": 0, "invalid_61deg_parameter_exit": 1, "invalid_parameter_rejected_before_Arm": true, "atomic_live_startup": true, "normal_feed_ready": true, "controller_exit": 1, "completed_batches": [], "both_open_after_abort": true, "failed_x_slice": 1, "x_slices_accepted": 0, "y_slices_accepted": 0, "x1_alignment_mm": 2.5776944215525344, "original_alignment_limit_mm": 2.5, "preclose_alignment_mm": 2.3631439370052076, "closed_alignment_mm": 2.462488372120375, "x1_rear_y_error_mm": 0.244681, "x1_rear_z_error_mm": -2.577694, "exact_stamp_geometry_observations_matched": 3, "maximum_print_rounding_difference_mm_or_deg": 0.0004883721203747804, "sparse_snapshots": 5987, "sparse_errors": 0, "held_snapshots": 4552, "held_integrity_errors": 0, "atomic_feedback_snapshots": 35922, "atomic_feedback_errors": 0, "sampler_wall_sec": 686.029532265, "headless_shutdown_exit": 0},
+  "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/moveit.log", "raw/invalid_parameter.log", "raw/held_contact_samples.jsonl", "raw/geometry_source_comparison.jsonl", "raw/physics_pose_samples.jsonl", "raw/summary.json", "geometry_audit.json", "held_analysis.json"],
+  "boundary": "Only OPEN rear/side regrasp orientations change while cup centers/normals fixed; no CLOSED wrist rotation, no model/physical parameter/geometry/ACM/80Nm gate changes. First cube only, not full-five/GUI/reliability/freeze/paper method proof."
+}

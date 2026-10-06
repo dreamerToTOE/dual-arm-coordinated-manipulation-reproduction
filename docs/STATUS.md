@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 latest — 后腕实际首件X1失败；吸附前XYZ复用精调已编译
+
+rear_roll_cube01 /4ebe279：原子反馈精确匹配3条几何，X1 rear Z偏差2.578mm超过原2.5mm，controller1/完成0/双OPEN/headless0；未到墙或Y，不称腕姿物理修复。35922原子快照/4552held/5987稀疏记录均0完整性错。
+
+独立前三后杯OPEN重抓后复用1mm向量限步/FK微解算，最多3修正/4检查、吸附前工程目标0.3mm，原加载门限不变。runtime39f1a0c/build50.4s/61Python与两组C++/analytic36nulls通过；首编译API签名错误已修正并保留，不是物理PASS。fresh首件原场景复测准备，后两/旧节点/物理/ACM不改，TASK01 IN_PROGRESS，TASK02 TODO。
+
 ## 2026-10-06 latest — 双腕三墙名义检查通过，后腕OPEN姿态复测准备
 
 rear_roll_nominal01 /39d72c6，side-15/rear镜像45：前三名义链3/3 IK/FCL/相对TCP通过，1330双腕节点对原三墙均0凸包交集。旧SciPy1.8默认LP两次status4保留；同约束内点LP/显式解残差复核通过。61Python/C++PASS，不是实际物理成功。

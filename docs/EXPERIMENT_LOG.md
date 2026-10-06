@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — rear_roll_cube01 FAIL_X1 / OPEN rear XYZ software PASS
+
+runtime4ebe279/reproe4004ab/binarye50b23fe…，fresh零预置first1/max1/scale5/hold0、rear45/side-15。X1 alignment2.577694mm>原2.5mm；3条原子stamp准确匹配、日志舍入差max0.000488mm/deg。controller1/completed[]/双OPEN/headless0，35922atomic/4552held/5987sparse均0完整性错；没到墙/Y，非碰墙修复PASS。
+
+新runtime39f1a0c/binaryefb1d133…后杯OPEN XYZ最多3次/向量1mm/目标0.3mm，不变原加载验收。colcon目标首次linkPose参数类型错误exit2/20.8s，修正后50.4s PASS；61Python、实际header的preclose与dual_fixture两组C++ PASS，analytic36nulls/DRAFT。fresh首件物理试验准备；不是论文算法或可靠性证明。
+
 ## 2026-10-06 — rear_roll_nominal01 PASS_NO_COMMAND
 
 runtime39d72c6/probe902c1fb1…/build51.2s，side-15、rear镜像45，probe0/3链通过。第一次原世界坐标LP status4，等价重心坐标default仍status4；两份失败JSON保留。同约束HiGHS-IPM审计1330节点×三墙0交集，61PythonPASS。无机器人/吸盘/供料/轨道/remoteScene命令，未物理执行，非全机器人PhysX或连续tracking保证。

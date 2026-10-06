@@ -46,3 +46,11 @@ headless原复测命令增加`--physics-fixture-feedback`。控制器缺少新�
 结果`rear_roll_nominal01` /runtime39d72c6：probe0/前三链3/3/FCL与TCP约束PASS。原SciPy1.8.0 HiGHS默认LP在一条记录status4，不吞掉该行；等价重心坐标仍失败。保留两次负证据，换HiGHS内点LP、同一全部不等式/原>0交集判断、显式解残差检查，全1330双腕节点对三墙deep/minusY/plusY均0交集。共同球半径不是碰撞深度/最小距离，未替换任何PhysX/MoveIt几何。61Python/C++PASS。
 
 物理复测PRE：在OPEN后抓-RRT及其预演链调用同一`dualRearFixturePose`，前三件rear幅值45deg、正Y正/负Y负；吸点/法向保持，后两单rear调用原pushPose。吸住后仍同进度平移，不在CLOSED时转腕；原物理/门限不动。编译→fresh首件原场景/scale5/hold0/原子反馈→同一步contact/DOF/几何审计；失败不推进下一件。
+
+## 第三阶段 PRE — 后杯OPEN的XYZ到位精调
+
+rear_roll_cube01在X1原2.5mm对齐guard失败2.578mm，双OPEN/controller1；精确同一步回放证实rear Z差为-2.363mm(PRE_CLOSE)、-2.462mm(CLOSED)、-2.578mm(X1)，不是旧USD假负值。新腕姿尚未实际到墙，不能宣布已修复墙碰撞。
+
+复用现有`precloseAlignmentDeltaXYZ`（1mm向量限步、无最低量化）与`planFinePreclose`的局部FK微解算，在rear吸附之前、两杯OPEN时将后TCP到达新的Cube后面中心。目标到位精度0.3mm仅吸附前工程目标，不放宽原2.5mm加载门限；最多3次修正/4次检查，失败不CLOSE。按上一命令FK累加残差以消除执行偏差，保持现有杯面姿态，原Cube参与完整双臂FCL，helper只保持实测关节。第四第五/旧节点不改变；不做CLOSED补偿、力控或物理参数更改。
+
+验证计划：已有XYZ边界单测+编译→fresh首件scale5/hold0/原子反馈→记录每次XYZ残差与次数/原门限结果；若仍需模型/物理/门限改变则停止另问。
