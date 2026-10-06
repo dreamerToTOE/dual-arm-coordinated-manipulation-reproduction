@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — cup_roll_cube01 FAIL_X3 / atomic feedback准备
+
+run metadata保存runtime dd63c74、repro eb3b7f9、binary f74cc897…、first1/max1/scale5/hold0/zero-preplaced/roll-15、seed null和完整命令。controller1/完成0，X3旧rear=-1.784mm/末同一步+1.065277mm；双OPEN，headless0，held4738/sparse4085/0错误。未到深墙/Y，不能用名义1330节点检查当物理PASS。
+
+新原子测量软件56Python/C++PASS；原模型/桥/scene/hash/YAML不变。新的受控源对照首件待实际结果，不预填通过。
+
 ## 2026-10-06 latest — held diagnostic02 FAIL / nominal wrist02 PASS_NO_COMMAND
 
 - 本机Isaac4.5 headless / 原source d35cc0c+b749abc / first1,max1,scale5,hold0,zero-preplaced / RNG未受控；diagnostic02 controller1、X16/Y14、Y15原80Nm止动 left86.958/right52.123；bothOPEN/后四件未发指令，headless SIGINT后0。held10538/稀疏4598均0完整性错误。源commit、binaryhash、完整命令见run metadata。

@@ -5,6 +5,14 @@
 int main()
 {
   using namespace fr3_dual_palletize;
+  assert(validFixturePose({1, 2, 3, 0, 0, 0, 1}));
+  assert(!validFixturePose({1, 2, 3, 0, 0, 0, 0}));
+  assert(!validFixturePose({std::numeric_limits<double>::quiet_NaN(), 2, 3, 0, 0, 0, 1}));
+  assert(validFixtureStamp(2, 1));
+  assert(!validFixtureStamp(1, 1) && !validFixtureStamp(0, -1) && !validFixtureStamp(1, 2));
+  assert(freshFixtureReceipt(0) && freshFixtureReceipt(.25));
+  assert(!freshFixtureReceipt(.250001) && !freshFixtureReceipt(-.001));
+  assert(!freshFixtureReceipt(std::numeric_limits<double>::quiet_NaN()));
   assert(validSideFixtureRoll(-15.0));
   assert(validSideFixtureRoll(0.0));
   assert(validSideFixtureRoll(-30.0) && validSideFixtureRoll(30.0));

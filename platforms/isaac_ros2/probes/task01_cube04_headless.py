@@ -33,6 +33,8 @@ def main():
                         help="Read-only full-rate contacts/tools ONLY inside release phases")
     parser.add_argument("--record-held-diagnostics", action="store_true",
                         help="Read-only full-rate Cube/robot contacts and DOFs in new dual fixture phases")
+    parser.add_argument("--physics-fixture-feedback", action="store_true",
+                        help="Atomic live-PhysX Cube + two TCP feedback; leaves legacy topics unchanged")
     parser.add_argument("--preplaced-count", type=int, choices=(0, 3, 4), default=3,
                         help="0 uses normal feed; 4 isolates Cube05; preplaced cubes are not executed")
     args = parser.parse_args()
@@ -44,7 +46,7 @@ def main():
     from isaacsim import SimulationApp
     app = SimulationApp({"headless": True, "multi_gpu": False, "sync_loads": False,
                          "fast_shutdown": True})
-    bridge = subscription = None
+    bridge = subscription = fixture_feedback = None
     stopping = False
 
     def request_stop(signum, frame):
@@ -137,7 +139,13 @@ def main():
         diagnostics = held_diagnostics = None
         with (args.output_dir / "physics_pose_samples.jsonl").open("w") as stream, \
              (args.output_dir / "release_contact_samples.jsonl").open("w") as release_stream, \
-             (args.output_dir / "held_contact_samples.jsonl").open("w") as held_stream:
+             (args.output_dir / "held_contact_samples.jsonl").open("w") as held_stream, \
+             (args.output_dir / "geometry_source_comparison.jsonl").open("w") as geometry_stream:
+            if args.physics_fixture_feedback:
+                from fixture_geometry_stream import FixtureGeometryPublisher
+                fixture_feedback = FixtureGeometryPublisher(
+                    bridge, bridge.cube_paths, tool_values, geometry_stream)
+                print('[TASK01] Atomic live-PhysX fixture feedback ready', flush=True)
             if args.record_release_diagnostics:
                 from release_diagnostics import ReleaseDiagnostics, active_cube_index
                 diagnostics = ReleaseDiagnostics(bridge.node, sim_view, list(bridge.cube_paths),
@@ -180,7 +188,7 @@ def main():
                 post_step, False, 200)
             while app.is_running() and not stopping and time.monotonic() - started < args.duration_sec:
                 app.update()
-                if errors:
+                if errors or (fixture_feedback is not None and fixture_feedback.errors):
                     raise RuntimeError("Stopping diagnostic after a physical readout error")
                 if not ready and fixture_ready(bridge.cube_state, args.preplaced_count,
                                                namespace["STATE_ARRIVED"]):
@@ -192,11 +200,15 @@ def main():
                         print(f"[TASK01 Cube04] READY: first {args.preplaced_count} physically settled; "
                               f"run first_batch:={args.preplaced_count + 1} "
                               f"max_batches:=1 or {5 - args.preplaced_count}", flush=True)
+            if fixture_feedback is not None:
+                fixture_feedback.close()
         subscription.unsubscribe()
         subscription = None
         (args.output_dir / "summary.json").write_text(json.dumps({
             "ready": ready, "snapshots": count, "errors": errors,
             "wall_s": time.monotonic() - started, "final_snapshot": latest,
+            "atomic_feedback_snapshots": fixture_feedback.snapshots if fixture_feedback else 0,
+            "atomic_feedback_errors": fixture_feedback.errors if fixture_feedback else [],
             "release_diagnostic_snapshots": diagnostics.count if diagnostics else 0,
             "held_diagnostic_snapshots": held_diagnostics.count if held_diagnostics else 0}, indent=2) + "\n")
         if not ready or errors:
@@ -208,6 +220,8 @@ def main():
             "error": repr(error), "traceback": traceback.format_exc()}, indent=2) + "\n")
         raise
     finally:
+        if fixture_feedback is not None and fixture_feedback.subscription is not None:
+            fixture_feedback.close()
         if subscription is not None:
             subscription.unsubscribe()
         if bridge is not None:

@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-06 — 腕姿实测负结果与持件原子反馈
+
+- dd63c74编译/非法31deg提前拒绝通过，首件X3旧rear gap负值停止；保存4738 held/4085 sparse/0错误，未到深墙，不声称姿态物理修复。
+- 本轮PRE：定位旧USD显示滞后及独立latest观测，新增可选live PhysX五Cube+两link8单view快照/TCP固定变换/单PoseArray；独立3+2控制节点必需该源、格式/时间/250ms门控、不回退旧反馈。旧场景/bridge源码/后两单推不变。
+- 56Python/C++边界检查PASS，编译和新鲜首件headless验证进行中。P2/P3未实施，36nulls不填，benchmark未冻结。
+
 ## 2026-10-06 latest — 真实接触诊断与只读腕姿候选
 
 诊断02原source d35cc0c/b749abc实际首件复现Y15保护，原物理/模型/80Nm/ACM不改。先自动safe abort，再手动结束仅仿真记录进程；保存10538连续held与4598稀疏行、精确峰值接触/DOF、服务FK/FCL重放和原mesh/hull审计。发现left link7深墙实体接触，而同关节MoveIt墙检查自由；测量FK一致，不能继续把根因只归为闭链内部力。

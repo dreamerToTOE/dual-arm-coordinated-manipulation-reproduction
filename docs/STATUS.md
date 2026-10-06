@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-06 latest — 新腕姿X3被旧反馈guard拒绝，原子观测修复中
+
+cup_roll_cube01 / dd63c74 实际首件X1/X2接受，X3 rear=-1.784mm判失败/controller1/完成0/双OPEN；末同一步PhysX rear=+1.065mm，4738 held与4085稀疏样本0完整性错误。未到深墙/Y，腕姿不是物理PASS。旧USD滞后已校准、三个latest独立消费仍存在。
+
+新独立PhysX单消息Cube+双TCP适配器与严格buffer正在编译/实测准备，56Python/C++策略PASS；无原门限/场景/桥/模型/ACM改变，无旧数据fallback。报告TASK01_ATOMIC_FIXTURE_FEEDBACK。TASK01 IN_PROGRESS/DRAFT/36nulls；TASK02 TODO。
+
 ## 2026-10-06 latest — 实测腕部碰深墙；杯面内转角候选只读通过
 
 diagnostic02 本机headless首件实际 X16/Y14，Y15原80Nm保护自动停止（left86.958/right52.123Nm）/controller1/整件完成0，双OPEN后自有headless正常停机。10,538同一步held记录/0完整性错误；left link7深墙接触从X16有非零力，峰值309.658N，Y15同一步140.242N/leftJ2 raw86.997Nm。不是D6/TCP力估计。

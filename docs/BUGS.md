@@ -1,5 +1,11 @@
 # BUGS
 
+## BUG-020 — 持件几何guard与同一步PhysX值不吻合
+
+2026-10-06，OPEN。cup_roll_cube01 X3 rear打印-1.784mm，最后三CLOSED物理步21045–21047约+1.065mm，controller安全停止。原bridge在physics回调读USD（已有BUG005校准证据），消费者对Cube/两个TCP分别读latest且丢弃header。两路时钟未对齐，尚不能判定唯一原因/比例。
+
+工程修复：仅新3+2几何门禁使用single live-PhysX Cube+双TCP消息，校验时间/世界系/单位四元数/250ms新鲜度，缺失拒绝/无旧反馈fallback。编译/物理验证中，不能标RESOLVED；原1mm负间隙/2.5mm对齐/80Nm等门限不动。BUG017/019仍OPEN，未到深墙意味着新腕姿未物理验证。
+
 ## BUG-019 — 同一实测姿态的机器人-深墙碰撞模型不一致
 
 2026-10-06；OPEN。精确step19753/21051实测FK与PhysX差<0.001mm，MoveIt墙FCL无碰撞，却有left link7深墙非零接触。原NVIDIA link7 mesh(convexHull)与franka_description link7 STL不同；离线原mesh凸包交集支持几何差异，而非100mm导轨偏移错误。尚未逆向cooked hull/contact offsets，不能由此宣称全部effort都来自墙接触。

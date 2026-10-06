@@ -49,6 +49,12 @@ python3 -m unittest discover -s platforms/isaac_ros2/probes -p 'test_*.py'
 python3 scripts/validate_benchmark_candidate.py
 ```
 
-## 物理复测准备
+## 物理复测结果（覆盖准备状态）
 
-执行器尚待引入同一转角函数/参数与编译。仅前三件side helper在OPEN重抓时应用；已吸附后不旋转、不更换grasp。后两件精准单rear与双臂搬运不变。first1/max1/scale5/hold0/zero-preplaced新鲜本机headless结果待填写，无新物理PASS。
+runtime dd63c74 / binary f74cc897… 已引入与探针共享的转角函数；build50.1s PASS，非法31deg在Arm创建前拒绝。首件正常双臂搬运/重抓成功，X1/X2接受，但X3旧几何guard rear=-1.784mm拒绝，controller1/完成0/双OPEN/headless正常关闭0。4738 held与4085稀疏记录均0完整性错误。末三个CLOSED同一步PhysX rear≈+1.065mm、side≈+1.309mm，与打印值不吻合；尚不能仅凭时钟未对齐的两路读数断言唯一根因。
+
+该版没有到深墙或Y段，不能说腕姿已解决BUG017/019；没有提高力矩/间隙门限。新工程反馈诊断见`TASK01_ATOMIC_FIXTURE_FEEDBACK.md`。MoveIt关闭状态与控制结果分开记录。
+
+## === POST-TASK REPORT ===
+
+Task: TASK01，Status: PARTIAL。名义姿态/编译/非法参数门禁通过，物理X3失败；原模型、工具、物理、门限保持。六记录与metadata保留负结果，TASK01 IN_PROGRESS/36nulls，TASK02 TODO。下一步是观测同步，不把零命令名义成功或旧5/5作为新物理成功。

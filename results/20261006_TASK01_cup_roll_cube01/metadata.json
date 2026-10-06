@@ -1,0 +1,22 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL first-Cube 3+2 protocol, cup-center/normal preserving side wrist roll",
+  "platform": "user local Isaac Sim4.5 headless PhysX / ROS2 Humble / MoveIt",
+  "git_commit": {"runtime": "dd63c740336c249d8176cbf483d538a9e156a172", "reproduction": "eb3b7f9cfef7c971374c6836e7adeb10ec7629ac"},
+  "runtime_binary_sha256": "f74cc897518c66a7e0fbb29ede8b76c459b782dc001ecde1f7c53ef44f92f304",
+  "seed": null,
+  "seed_note": "OMPL/IK randomness uncontrolled; not an A/B causal or reliability trial",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_usage": "DRAFT reference only, original OfflineTask constants and explicit runtime parameters",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "parameters": {"preplaced_count": 0, "first_batch": 1, "max_batches": 1, "execution_time_scale": 5.0, "release_diagnostic_hold_sec": 0.0, "dual_fixture_side_roll_world_y_deg": -15.0, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_cube04_headless.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 1200 --record-release-diagnostics --record-held-diagnostics --output-dir results/20261006_TASK01_cup_roll_cube01/raw",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0"
+  ],
+  "status": "FAIL_X3_LEGACY_GEOMETRY_GUARD",
+  "metrics": {"python_tests_passed": 53, "Cplusplus_roll_policy_passed": true, "invalid_31deg_rejected_before_Arm": true, "controller_target_build_sec": 50.1, "probe_target_build_sec": 51.1, "controller_started": true, "shared_helper_real_model_nominal_chains_passed": 3, "live_handle_startup_validated": true, "controller_exit": 1, "completed_batches": [], "x_slices_accepted": 2, "failed_x_slice": 3, "legacy_logged_rear_gap_mm": -1.784, "last_closed_physics_step": 21047, "last_closed_same_step_rear_gap_mm": 1.0652769921782324, "last_closed_same_step_side_gap_mm": 1.3094962060136717, "held_snapshots": 4738, "held_integrity_errors": 0, "sparse_snapshots": 4085, "sparse_errors": 0, "headless_shutdown_exit": 0, "both_open_after_abort": true, "physical_deep_wall_roll_validation": false},
+  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log", "raw/held_contact_samples.jsonl", "raw/release_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/model_audit.json", "raw/held_topology.json", "raw/summary.json"],
+  "boundary": "Only helper OPEN side regrasp posture changed; cup center/normal unchanged, no CLOSED rotation. Original bilateral transport and Cube04/05 precise single-rear, L-tool/scene/physics/material/ACM/80Nm and geometry gates retained. One fresh first-Cube, not full-five/GUI/reliability/scientific baseline/freeze."
+}
