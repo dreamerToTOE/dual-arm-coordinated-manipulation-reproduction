@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 GUI running — 可见场景已确认，正常倍率首件实测
+
+新的可见SimulationApp入口headless=False显示双FR3/L工具/原三墙/供料Cube（截图实际确认）；原Bridge和同一步反馈/真实first feed READY后启动runtime6bc24ec/binary08f3060a、first1/max1/scale1，无预置。63Python通过，物理结果待定，之后才决定五件测试。首个官方GUI空网格/渲染诊断后native139负启动保留、机器人命令0，不算速度测试失败。仅GUI灯光/相机/本机executor适配，原场景/物理/ACM/门限/36nulls不变。TASK01 IN_PROGRESS，TASK02 TODO。[GUI报告](../reports/TASK01_VISIBLE_GUI_RUN.md)。
+
 ## 2026-10-06 latest — 用户要求正常播放倍率与GUI-only
 
 此前实际`execution_time_scale=5.0`是20%规划轨迹播放，不是50%；新Task01独立节点默认改为`1.0`（100%规划轨迹倍率），保留MoveIt RRT速度/加速度12%及原碰撞/接触保护。以后助手不再启动headless，只用可见GUI；历史脚本/无界面记录保留。新倍率尚未完成GUI物理验收，不等于100%关节极限速度，也不能借旧scale5结果称通过。

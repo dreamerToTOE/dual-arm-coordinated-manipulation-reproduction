@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D029 — 可见SimulationApp复用原fixture记录器，不静默fallback
+
+2026-10-06。[ENGINEERING] 新GUI入口显式headless=False，缺DISPLAY立即拒绝；本机官方Kit VS Code执行器只监听回环。只增加可视灯光/观察相机，不改原场景/工具/碰撞/物理、采样或控制门限。第一次可见GUI渲染失败时先不运动，保留0命令/native139负启动，再独立fresh GUI截图确认后实测。先单件scale1，后按结果五件；不能拿旧慢速PASS支持新速度/全任务PASS。历史headless源码可保留复现，但本轮及未来不得直接启动其无界面入口。
+
 ## D028 — 正常规划轨迹倍率与GUI-only仿真
 
 - Date: 2026-10-06; Classification: [ENGINEERING]运行默认值/工作流；[EXPERIMENTAL]后续新速度验收。

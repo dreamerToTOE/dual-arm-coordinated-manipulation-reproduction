@@ -1,0 +1,14 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING visible GUI startup diagnosis; no controller run",
+  "platform": "local Isaac Sim4.5 GUI / original fixture",
+  "git_commit": {"runtime": "6bc24ec", "reproduction_base": "dc8a448"},
+  "seed": null,
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "command": "/home/ubuntu2004/isaacsim-4.5.0/isaac-sim.sh --enable isaacsim.code_editor.vscode --enable isaacsim.ros2.bridge --/exts/isaacsim.code_editor.vscode/host=127.0.0.1 --/exts/isaacsim.code_editor.vscode/port=8226; original scene/Bridge loaded using a new GUI prototype",
+  "status": "FAIL_GUI_RENDER_STARTUP_NO_CONTROLLER",
+  "metrics": {"headless": false, "controller_commands": 0, "original_first_feed_ready": true, "scene_prims_present": true, "viewport_scene_visible": false, "kit_exit": 139},
+  "failure": "The visible window showed an empty grid although the original World prims, physics and atomic feed existed. Reattaching the stage and adding light did not fix it. Native crash occurred after an attempted Hydra detach/readd render refresh; no robot controller had been started. Temporal association is not a proven root cause.",
+  "artifacts": ["raw/gui.log", "raw/gui_initial.png", "raw/gui_viewport.png", "raw/gui_raised.png", "raw/summary.json", "raw/moveit.log"],
+  "boundary": "This is a GUI adapter startup failure, not a normal-speed physical protocol result. Only our new unused prototype was removed with apply_patch; raw negative records retained. A separate visible SimulationApp entry is tested in gui_normal_cube01_run02."
+}

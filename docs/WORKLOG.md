@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-06 — 可见GUI启动诊断及首件正常倍率回归
+
+按用户“启动gui继续测试”。先官方可见GUI加载原fixture/Bridge/readonly recorder，Prim/物理存在但空网格，机器人命令0；渲染detach/readd排查后native139，完整负记录保留。撤下仅本轮新增且未使用的GUI原型，改复用原记录器的SimulationApp可见入口，显示原完整场景成功。新增缺DISPLAY拒绝的GUI入口、循环执行客户端（仅127.0.0.1:8226）、两GUI设置单测；不改原场景/Bridge/物理/门限。
+
+新fresh可见run02第一供料真实落稳、截图确认后启动08f3060a原production，first1/max1/scale1/roll-15/rear45。63Python PASS，无headless进程启动；实际结果RUNNING，原反馈过期问题待观察，不从配置通过推断物理通过。
+
 ## 2026-10-06 — 正常播放倍率与可见GUI工作流
 
 按用户新要求停止延续无界面实验。核对播放计时为wall_elapsed/time_scale，上轮5.0=20%，旧默认3.0约33.3%；新`TASK01_DUAL_SUCTION_FIXTURE`默认1.0，增加明确播放比例与保留12%规划限速的启动日志，有限值/倍率>=1门禁在任何Arm命令前拒绝错误输入。旧Task26/27节点默认3.0不静默改动，历史显式5.0日志不篡改。README/启动指南记录GUI场景→Play→原Bridge→原子反馈全部步骤。没有改接触速度规划、场景、ACM、保护门限或启动新物理实验；编译与软件检查结果另见TASK01_GUI_SPEED报告。

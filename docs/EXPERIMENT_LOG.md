@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — 可见GUI负启动与正常倍率首件RUNNING
+
+gui_normal_cube01：官方Isaac GUI可见但Viewport空网格，原物理/Prim/first feed有效；控制器命令0，渲染连接排查后Kit139，不是速度/协议物理结果。gui_normal_cube01_run02：可见SimulationApp入口截图显示完整原fixture，runtime6bc24ec/binary08f3060a，first1/max1/scale1/zero-preplaced/roll-15/rear45，原atomic反馈和full-rate只读held/release启用、ROS_LOCALHOST_ONLY0。正常GUI实测已启动，结果未出，不预填成功。新GUI设置两测试加原61=63PASS，benchmark36nulls/原hash不变，完整命令和负结果在metadata/报告。
+
 ## 2026-10-06 — empty_handoff_full01 final FAIL；新倍率没有物理结果
 
 runtimef237cff/binary812c71ee、原零预置first1/max5/scale5/hold0配置；第一X1–15双CLOSED完成，X16互锁反馈STALE_OR_INVALID（left20.627/right30.965Nm<80），安全双OPEN、controller1/completed[]，后续Cube未命令。Isaac受控SIGINT后exit0。17stamp匹配舍入差<=0.000491945mm/deg，5862held/21398atomic/3566sparse无记录完整性错；release0、wall474.505s。记录完整性通过不等于ROS及时交付通过。空载helper未物理触发，根因待诊断。

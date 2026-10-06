@@ -24,7 +24,21 @@ def fixture_ready(cube_states, preplaced_count, arrived_state):
         state == arrived_state for state in cube_states[:required])
 
 
-def main():
+def simulation_settings(visible_gui=False):
+    """[ENGINEERING] GUI入口强制可见；历史记录器默认行为仅为保留复现。"""
+    settings = {"headless": not visible_gui, "multi_gpu": False, "sync_loads": False,
+                "fast_shutdown": True}
+    if visible_gui:
+        settings["extra_args"] = [
+            "--enable", "isaacsim.code_editor.vscode",
+            "--/exts/isaacsim.code_editor.vscode/host=127.0.0.1",
+            "--/exts/isaacsim.code_editor.vscode/port=8226",
+            "--/exts/isaacsim.code_editor.vscode/carb_logs=false",
+        ]
+    return settings
+
+
+def main(*, visible_gui=False):
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--duration-sec", type=float, default=1000.0)
@@ -44,8 +58,7 @@ def main():
     legacy_root = Path(os.environ.get(
         "TASK01_LEGACY_ROOT", "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing"))
     from isaacsim import SimulationApp
-    app = SimulationApp({"headless": True, "multi_gpu": False, "sync_loads": False,
-                         "fast_shutdown": True})
+    app = SimulationApp(simulation_settings(visible_gui))
     bridge = subscription = fixture_feedback = None
     stopping = False
 
@@ -78,6 +91,14 @@ def main():
         finally:
             storage.get_assets_root_path = original_discovery
         stage = omni.usd.get_context().get_stage()
+        if visible_gui:
+            # 仅照明/观察相机，不改变原碰撞、质量、材质摩擦或物理步长。
+            from pxr import UsdLux
+            light = UsdLux.DomeLight.Define(stage, "/World/Task01PreviewLight")
+            light.CreateIntensityAttr(1000.0)
+            from isaacsim.core.utils.viewports import set_camera_view
+            set_camera_view(eye=[2.30, -2.0, 1.6], target=[1.0, 0.0, 0.35])
+            print("[TASK01] VISIBLE GUI: headless=False; original fixture + preview lighting", flush=True)
         if args.record_release_diagnostics or args.record_held_diagnostics:
             for index in range(1, 6):
                 prim = stage.GetPrimAtPath(f"/World/Task27/Supply/Cube_{index:02d}")

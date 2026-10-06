@@ -1,0 +1,21 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL approved3+2 / ENGINEERING visible GUI and normal trajectory playback",
+  "platform": "local visible Isaac Sim4.5 GUI / ROS2 Humble / MoveIt2",
+  "git_commit": {"runtime": "6bc24ec", "reproduction_base": "dc8a448", "adapter": "working-tree GUI adapter, diff retained in this iteration"},
+  "runtime_binary_sha256": "08f3060ac4d710b5580fad5023ba16bb718df0bfc5505de175bdbcc7a49bd31e",
+  "seed": null,
+  "seed_note": "OMPL RNG uncontrolled; this is not a seeded reliability trial",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "benchmark_sha256": "a49d60a4dc6a8a00c3bf55a512113af50760968827a8cefe64dae1c7de55fde8",
+  "parameters": {"headless": false, "preplaced_count": 0, "first_batch": 1, "max_batches": 1, "execution_time_scale": 1.0, "dual_fixture_side_roll_world_y_deg": -15.0, "dual_fixture_rear_roll_magnitude_deg": 45.0, "physics_fixture_feedback": true, "record_release_diagnostics": true, "record_held_diagnostics": true, "ROS_LOCALHOST_ONLY": 0},
+  "commands": [
+    "env ROS_LOCALHOST_ONLY=0 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_gui_fixture.py --asset-root https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5 --preplaced-count 0 --duration-sec 3600 --record-release-diagnostics --record-held-diagnostics --physics-fixture-feedback --output-dir results/20261006_TASK01_gui_normal_cube01_run02/raw",
+    "ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
+    "ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=1 -p execution_time_scale:=1.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
+  ],
+  "status": "GUI_READY_CONTROLLER_PENDING",
+  "metrics": {"visible_gui_verified": true, "robot_execution_started": false, "python_unit_tests": 63, "unresolved_draft_fields": 36},
+  "artifacts": ["raw/gui.log", "raw/gui_loaded.png", "raw/controller.log", "../20261006_TASK01_gui_normal_cube01/raw/moveit.log"],
+  "boundary": "Original fixture, tool, mass, material, physics, ACM,250ms freshness and80Nm guard unchanged. GUI adds only a preview light, camera and loopback executor. Normal playback is not100% joint-limit speed. One Cube cannot establish all-five PASS or TASK01 FROZEN."
+}
