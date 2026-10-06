@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-06 — BUG021无命令重放与联合链修复PRE
+
+probe从/move_group有界读取当前KDL参数，用第三件held step46343精确14关节/Cube重放；原rear固定侧HIGH 60/60解都有工具↔right link5碰撞。保持rear TCP，前7有效IK找到3终点组合自由。保存build/side_goal_probe/rear_goal_search日志及binary SHA，未发机器人/吸盘/供料/导轨或远程Scene命令。新增联合候选预检PRE见原子反馈报告：纯软件、首三件、旧后两与原模型/物理/ACM/门限不改；先编译/共用只读链，再真实fresh回归。
+
+## 2026-10-06 — full01真实2/5，第三goal诊断
+
+前三后杯OPEN精调都通过，第一第二新主从双吸X/Y、释放/短RRT转场真实通过；第三rear重抓后side HIGH无合法goal sample×8（各约20s），安全双OPEN/exit1，不执行第四第五。保存70精确stamp几何/37804完整held审计和全部失败日志，headless正常停机0；无持件机器人-墙非零接触。新增纯probe精确14关节/Cube输入、60有限KDL种子与FCL pair计数，不构造Arm/发命令/改远程Scene。不是目标全局不可行证明，也不直接改控制器。
+
 ## 2026-10-06 — 首件新协议实际通过，开始完整五件回归
 
 runtime39f1a0c原场景rear45/side-15，后杯OPEN两次XYZ后norm0.205mm，X16/Y16/双吸附主从换角/释放/HOME全部完成/controller0，最终中心0.303/deep0.212/side0.216mm。同一步35几何精确匹配、8470held0完整性错且窗口无非零机器人-墙接触；原80Nm/2.5mm不变。Isaac正常0退出，MoveIt关闭-11另记。保存首件报告/metadata/audits；同binary fresh first1/max5继续，不能复用这一件称全部稳定。

@@ -1,5 +1,13 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — full01第三件goal与rear替代构型诊断
+
+side_goal_probe exit1：原fixed-rear下60IK/0free，主pair left_fr3_side_suction↔right_fr3_link5。rear_goal_search exit0：同rear TCP，rear_solved7，3对HIGH/CONTACT/park终点全FCL自由（attempt2/5/6）。两个无命令实验共用准确held快照46343/stamp772383373616、原远程world，仅本地替换当前Cube；未控制KDL内部RNG，不是全球不可行/受控A/B/路径/物理PASS。探针 ebddf6d、SHAa4462325、build52.7s；完整精确命令/输入见full01 metadata、raw日志。联合链版编译进行中，不预填通过。
+
+## 2026-10-06 — rear_open_xyz_full01 FAIL_CUBE03_SIDE_HIGH
+
+runtime39f1a0c/repro566ff09/binaryefb1d133，zero-preplaced first1/max5/scale5/hold0。实际completed[1,2]、各X16/Y16，最终center0.269/0.470mm，deep0.099/0.019mm，side0.250/0.470mm；短清障RRT转场/无批间HOME。rear XYZ最终0.047/0.006/0.002mm。第三侧臂高位8×约20s目标采样失败/Invalid goal state，controller1/安全双OPEN，第四第五未命令；非几何/80Nm触发。70原子stamp精确匹配/roundingmax0.000496，37804held/8899sparse/53398atomic0错误，release163（不称全部释放窗口覆盖）；headless0/wall1481.936s。持件窗口robot-wall非零pair0，不是模型一致性或五件稳定性证明。只读goal诊断新探针初build52.7s有声明/format warnings，修正后重新build中。
+
 ## 2026-10-06 — rear_open_xyz_cube01 PASS_FIRST_CUBE_ONLY
 
 runtime39f1a0c/repro7b61780/binaryefb1d133…，普通zero-preplaced first1/max1/scale5/hold0。rear residual2.196→1.201→0.205mm，两次命令增量≤1mm、实际FK微轨迹span3.178/3.200mm（仍原4mm scope）；X16/Y16/controller0/batch[1]/双OPEN/HOME，最终center0.303/deep0.212/side0.216mm。35精确stamp geometry/rounding≤0.0004966，8470held/26166atomic/4361sparse0错误，4524release；持件窗口robot-wall非零pair0，raw revolute CONTACT最大46.669Nm。560.393s采样、headless0、MoveIt清理-11/joint bridge1。首件单次PASS不是多件稳定/GUI/benchmark冻结，full-five同binary准备。

@@ -1,5 +1,15 @@
 # BUGS
 
+## BUG021 follow-up — 当前rear确实挡住side HIGH，终点替代存在
+
+2026-10-06，仍OPEN。第三件held精确快照在MoveIt模型重放，60/60 side IK终点主碰撞对left suction↔right link5。相同rear TCP已有3个替代rear构型使park/HIGH/CONTACT终点FCL自由；当前选择流程只筛旧solo PUSH/RETREAT而不是新双持链，证据支持这一软件缺口。有限IK不证明全局不可行，终点free不证明路径/物理通过。新增仅首三rear联合链筛选待编译/实测；原BUG017/019模型差异与BUG004清理问题不自动消失。
+
+## BUG-021 — 第三件固定rear构型下side高位目标采样失败
+
+2026-10-06，OPEN。full01前两件完整新双吸协议通过，第三rearXYZ0.002mm且rearCLOSED/sideOPEN；DUAL_SIDE_HIGH八次RRT均Unable to sample any valid states for goal tree / Invalid goal state，controller1安全双OPEN，无后续第四第五。不能只叫概率timeout，亦不能据有限失败称物理不可行；怀疑rear冗余构型或side高位目标几何，尚未定因。
+
+新增无命令实测IK/FCL诊断，不改变世界/碰撞/门限；原BUG017/019尚未全构型验证，旧源码模型差异不因前两件通过消失。记录后再决定有限构型预检的工程修复，不直接改场景或吸点。
+
 ## 2026-10-06 — 首件通过不将旧缺陷全部标RESOLVED
 
 rear_open_xyz_cube01后杯OPEN精调实际将残差压到0.205mm，首件X16/Y16与退出通过、8470持件记录窗口robot-wall非零pair0。此为本次配置/物理首件通过，BUG017/019仍需其它Cube/构型验证，模型差异未消失；BUG020 WORKAROUND仅新消费路径，旧反馈不变。BUG004关闭move_group-11/joint bridge1再次出现，独立于controller0。禁止用一次首件把可靠性/全系统碰撞缺陷标已解决。

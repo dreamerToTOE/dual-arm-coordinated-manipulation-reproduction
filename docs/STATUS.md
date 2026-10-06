@@ -1,5 +1,15 @@
 # STATUS
 
+## 2026-10-06 — 第三件固定rear碰撞证据与联合候选筛选准备
+
+只读精确held快照重放：固定rear时60/60 side HIGH解碰left suction↔right link5；相同rear TCP的替代构型在7个有效rear IK中找到3个HIGH/CONTACT全FCL自由组合。endpoint-only/probe0，不是物理或RRT连接PASS。runtime ebddf6d；本轮仅新前三rear候选加入HIGH/连续下降/共同X/Y/短退出预检，编译与实测待验。full01最终2/5失败已完整归档，第四第五无命令；TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
+
+## 2026-10-06 latest — 五件回归完成2/5，第三侧臂高位目标采样失败
+
+full01同binary，batch1/2真实双吸附X16/Y16/短清障RRT转场通过（center0.269/0.470mm）。前三rear OPEN XYZ最终norm0.047/0.006/0.002mm；第三DUAL_SIDE_HIGH连续8次无合法goal sample/controller1安全双OPEN，第四第五未命令。70精确stamp几何匹配，37804held/53398atomic/8899sparse0完整性错，持件窗口robot-wall非零pair0；headless0。不是五件PASS，也不是Y80Nm失败。
+
+仅无命令probe扩展实测rear固定的side IK/FCL碰撞对诊断，不改场景/物理/ACM/门限；读图/编译/真实模型重放待完成。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
+
 ## 2026-10-06 running — 新3+2五件零预置回归
 
 同runtime39f1a0c/binaryefb1d133，full01已完成batch1（center0.269/deep0.099/side0.250mm）与短清障RRT到下一件的转场，无批间HOME。第二件后杯OPEN两次精调norm1.866→0.870→0.006mm，双吸附X推进中；其余未验收，完整/记录完整性结果待定。原模型/物理/保护门限不改，TASK01 IN_PROGRESS/TASK02 TODO。

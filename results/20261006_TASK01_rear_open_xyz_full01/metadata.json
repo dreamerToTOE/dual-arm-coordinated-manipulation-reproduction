@@ -15,8 +15,30 @@
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=5 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
-  "status": "RUNNING_FRESH_FULL_FLOW_PHYSICS_RESULT_PENDING",
-  "metrics": {"same_binary_as_verified_first_cube": true, "preplaced_cubes": 0, "completed_batches": [1], "python_tests_passed": 61, "draft_unresolved_fields": 36, "first_cube_final_center_error_mm": 0.269, "first_cube_deep_gap_mm": 0.099, "first_cube_side_gap_mm": 0.250, "first_cube_between_batch_HOME": false, "first_cube_short_clearance_RRT_handoff": true, "second_cube_rear_open_residual_norm_mm": [1.866, 0.870, 0.006], "checkpoint": "Second cube dual CLOSED X push underway; no final full-flow or integrity claim until complete and flushed"},
-  "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/moveit.log", "raw/summary.json", "raw/held_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/geometry_source_comparison.jsonl"],
+  "status": "FAIL_CUBE03_SIDE_HIGH_NO_VALID_GOAL_SAMPLES_TWO_BATCHES_PASS",
+  "metrics": {"same_binary_as_verified_first_cube": true, "preplaced_cubes": 0, "completed_batches": [1,2], "controller_exit": 1, "both_open_after_abort": true, "failed_cube_index_zero_based": 2, "failed_stage": "DUAL_SIDE_HIGH", "goal_sampling_failure_attempts": 8, "approximately_per_failed_attempt_sec": 20, "fourth_fifth_commanded": false, "python_tests_passed": 61, "draft_unresolved_fields": 36, "first_cube_final_center_error_mm": 0.269, "first_cube_deep_gap_mm": 0.099, "first_cube_side_gap_mm": 0.250, "first_cube_between_batch_HOME": false, "first_cube_short_clearance_RRT_handoff": true, "second_cube_final_center_error_mm": 0.470, "second_cube_deep_gap_mm": 0.019, "second_cube_side_gap_mm": 0.470, "second_cube_between_batch_HOME": false, "rear_open_residual_norm_mm_by_cube": [[2.036,1.042,0.047],[1.866,0.870,0.006],[1.542,0.549,0.002]], "x_y_slices_accepted_by_cube": [[16,16],[16,16],[0,0]], "headless_shutdown_exit": 0, "sampler_wall_sec": 1481.936183496, "sparse_snapshots": 8899, "sparse_errors": 0, "atomic_feedback_snapshots": 53398, "atomic_feedback_errors": 0, "held_snapshots": 37804, "held_integrity_errors": 0, "release_snapshots": 163, "exact_stamp_geometry_observations_matched": 70, "maximum_print_rounding_difference_mm_or_deg": 0.0004960197098029528, "held_window_nonzero_robot_wall_pairs": 0},
+  "read_only_diagnostics": {
+    "runtime_git_commit": "ebddf6d",
+    "probe_sha256": "a44623250ca993463090436e1d080277e4025d846a1a53db29942f36246b4117",
+    "probe_build_exit": 0,
+    "probe_build_sec": 52.7,
+    "snapshot_source": "held record step46343 / sim stamp772383373616, rear CLOSED/side OPEN; replay run after safe stop",
+    "diagnostic_cube_index": 2,
+    "diagnostic_cube": [0.770139217376709,0.12139403820037842,0.2599990665912628,0.000027165819094900543,-0.000011957778941061649,0.000030552389916487646,0.9999999990927906],
+    "diagnostic_left_q": [1.334812879562378,-1.2801934480667114,0.18459631502628326,-2.370765447616577,0.1982349455356598,1.100793719291687,1.4784061908721924],
+    "diagnostic_right_q": [-0.8778710961341858,1.0500156879425049,-1.3717799186706543,-1.6689331531524658,0.45663490891456604,1.2734483480453491,2.2516891956329346],
+    "command_template": "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_fixture_probe --ros-args -p diagnose_side_high:=true -p diagnose_rear_search:=true -p side_roll_world_y_deg:=-15.0 -p rear_roll_magnitude_deg:=45.0 -p diagnostic_cube_index:=2 -p 'diagnostic_cube:=[exact array above]' -p 'diagnostic_left_q:=[exact array above]' -p 'diagnostic_right_q:=[exact array above]'",
+    "side_only_exit": 1,
+    "side_ik_solved": 60,
+    "side_high_free": 0,
+    "side_tool_rear_link5_collision_count": 60,
+    "rear_search_exit": 0,
+    "rear_ik_solved": 7,
+    "paired_free_endpoints": 3,
+    "robot_suction_feed_rail_commands": 0,
+    "remote_scene_writes": 0,
+    "boundary": "finite KDL seeds, RNG uncontrolled; same rear TCP. Endpoint-only not connectivity, continuous descent, loaded trajectory or physics proof."
+  },
+  "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/moveit.log", "raw/summary.json", "raw/held_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/geometry_source_comparison.jsonl", "raw/side_goal_probe.log", "raw/rear_goal_search.log", "raw/rear_probe_build.log", "geometry_audit.json", "held_analysis.json"],
   "boundary": "First three dual rear+side CLOSED X/Y role swap, fourth/fifth precise single rear. No model/physical parameters/geometry/ACM/80Nm/loaded geometry changes. Failure stops all following Cubes; whole-five actual completion needs controller evidence. Not GUI, reliability, paper-force or benchmark-freeze proof."
 }

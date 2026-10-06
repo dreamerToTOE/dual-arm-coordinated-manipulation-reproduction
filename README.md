@@ -17,7 +17,7 @@
 - TASK01 保持 **IN_PROGRESS / DRAFT**，36 项基准参数待评审，TASK02 未开始。
 - 当前用户确认的接触协议是 **前三件后杯+侧杯双吸附推入，到深墙后互换主从侧压；第四、第五件精准暂放后单 rear 插入**。旧五件成功不作为新协议通过证据。
 - 新协议首件已在本机 Isaac4.5 **headless** 实际通过：原子 PhysX Cube+双TCP反馈、杯面法向保持的腕姿、吸附前后杯有界XYZ精调；X16/Y16、释放/退出/HOME完成，controller0，最终中心误差0.303mm、深/侧墙间隙0.212/0.216mm。原模型、物理、ACM及2.5mm/80Nm保护未改。
-- 相同源码的零预置 **五件连续回归正在运行**，不是已经验收，也不是GUI/可靠性/论文控制律证明。此前碰墙、真实Z残差、USD不同步、LP求解和关闭时错误全部保留。
+- 相同源码的零预置五件连续回归目前 **2/5 通过**：前三后杯精调通过，但第三侧臂高位8次无合法goal sample、安全双OPEN停止，第四第五未执行。正在只读IK/FCL诊断，不是五件/GUI/可靠性/论文控制律证明。此前碰墙、真实Z残差、USD不同步、LP求解和关闭时错误全部保留。
 - [当前报告、反馈接口及Script Editor加载代码](reports/TASK01_ATOMIC_FIXTURE_FEEDBACK.md) · [首件实际记录](results/20261006_TASK01_rear_open_xyz_cube01/metadata.json) · [五件回归状态](results/20261006_TASK01_rear_open_xyz_full01/metadata.json) · [最新状态](docs/STATUS.md)
 
 ## 历史检查点（2026-10-03，保留原证据）

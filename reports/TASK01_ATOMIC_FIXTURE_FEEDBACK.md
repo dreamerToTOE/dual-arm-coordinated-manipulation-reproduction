@@ -66,3 +66,25 @@ rear_roll_cube01在X1原2.5mm对齐guard失败2.578mm，双OPEN/controller1；�
 测试结束后停止自有headless/MoveIt：Isaac0，MoveIt launch0但move_group关闭-11、joint bridge1，BUG004保留；不能把这些清理错误当控制器失败或称软件完全无缺陷。原模型/材料/L工具/几何/ACM/几何与effort门限不变。前面的负结果全部保存；一次首件不是后四件、GUI、多次稳定性、TASK01基准冻结或P2/P3方法复现证明。
 
 下一步：同一源码/binary，fresh零预置first1/max5/scale5/hold0，验证前三新双吸附以及后两原精准单rear连续执行；失败即停止后续Cube，不改变场景/物理/保护来换PASS。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
+
+## 第四阶段 PRE — 第三件侧臂高位的只读目标诊断
+
+full01 fresh零预置五件在batch1/2实际通过后，Cube03后杯OPEN residual1.542→0.549→0.002mm、rear已闭合而side仍OPEN；其后`DUAL_SIDE_HIGH`8次RRT均无合法goal sample、controller1安全双OPEN停止，Cube04/05未执行。不是新Y力矩失败，也不能从有限采样断言目标物理不可行。
+
+Goal: 区分固定rear构型挡住side goal和单臂高位目标本身不可行。Paper method: 不改变协议，不实施P2/P3。Scope/files: 仅现有无命令probe增加精确实测14关节/Cube pose参数输入与本地KDL/FCL候选/碰撞对输出；读取原MoveIt参数和world、不构造Arm、不发布机器人/吸盘/供料/导轨、无远程Scene/ACM写。Validation: source finite/bounds、完整原机器人/世界FCL、有限不同IK种子；保留0合法候选结果，不叫全局不可行或物理成功。Risks: 此为安全释放后的静态重放，不等同失败时全速动态碰撞；原NVIDIA/URDF模型差异未消失。Need user confirmation: no（只读工程诊断）；模型/物理/成功门限改变则停止另问。
+
+## 第四阶段 POST — 相同rear TCP有可用的另一冗余构型
+
+`full01/raw/side_goal_probe.log`及`rear_goal_search.log`：精确输入来自第三件最后rear CLOSED/side OPEN的held同一步46343/stamp772383373616（不是拿释放后的姿态当失败瞬间）。当前rear固定时60/60 side HIGH IK解都出现left side suction ↔ right link5碰撞；个别解另碰-Y墙。此为MoveIt原模型的有限采样证据，不是全局不可行证明。PRE中“安全释放后重放”应理解为诊断运行发生于安全停止后，而输入来自以上持件记录。
+
+保持该rear TCP变换，有限40个不同rear IK种子在前7个有效IK解中找到3组rear-at-park、side HIGH、side CONTACT终点都完整FCL自由的组合（attempt2/5/6）。未改变Cube/吸点/工具/墙/ACM，probe0；只证明终点组合存在，尚未证明RRT连接、连续下降/X/Y或PhysX实际成功。probe构建52.7s通过；二进制SHA256 `a44623250ca993463090436e1d080277e4025d846a1a53db29942f36246b4117`。两份日志保留，60采样碰撞次数会随KDL内部随机性变化，不能作受控可靠性或因果A/B统计。
+
+## 第五阶段 === PRE-TASK REPORT === — rear候选纳入新的双臂链
+
+Task: TASK01 / BUG021；Goal: 防止仅通过旧solo推入预检的rear冗余构型被选中，随后堵住侧臂HIGH。
+Paper method understood as: 不实现P2/P3；已批准前三rear+side主从互换/后两精准单rear不变。
+Scope of this iteration: [ENGINEERING]纯软件、吸附前候选筛选，先确认same candidate rear固定时side HIGH、连续CONTACT下降、联合X/Y及退出预检；保留原现场执行时再次规划/检查。局部IK插件来自当前MoveIt参数，不硬编码/改插件。
+Files expected to change: runtime独立fixture include/主文件仅新节点宏下调用/无命令probe共用验证；测试、结果元数据、本报告与六记录。
+Validation plan: 编译、原61Python/C++、精确Cube03负姿态拒绝与替代姿态只读链；通过后fresh原场景零预置物理回归，保存每件完成与失败、同一步几何/contact/DOF；不将endpoint或只读PASS称物理PASS。
+Known ambiguities / risks: 有限候选未找到并不证明不存在；HIGH终点可行仍可能RRT连接失败；原NVIDIA/URDF碰撞模型差异/实际到位残差未消失。
+Need user confirmation: no（既有RRT候选联合可行性工程筛选）；任何场景/物理/ACM/原门限或论文方法更改则另问。

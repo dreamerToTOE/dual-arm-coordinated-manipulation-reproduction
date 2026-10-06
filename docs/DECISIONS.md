@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D026 — rear在OPEN候选选择时预检新双臂链
+
+2026-10-06，[ENGINEERING]。同rear吸点已有替代端点构型可让side HIGH/CONTACT全FCL自由；选择时只看旧solo推入不够。仅新首三候选改为HIGH IK、连续下降（自由当前Cube参与FCL）、同进度双X/Y和短退出；原合法运动当前Cube仅在本地push世界不作静态障碍，所有其它对象/ACM不动。旧后两精准solo预检不改；现场实际HIGH RRT连接与负载检查仍必做，不能用候选预检绕过真实保护。保持原场景/工具/吸点/姿态/物理/80Nm/几何门限，局部插件参数来自当前MoveIt有界读取。不是论文算法、CLOSED构型调整或全局可行证明；真实回归后才汇报结果。
+
+## D025 — 第三goal失败先做固定rear的有限IK/FCL重放
+
+2026-10-06，[ENGINEERING]/[EXPERIMENTAL]。front2物理通过、third side HIGH无合法目标，先用原MoveIt模型/kinematics/world和精确实测14关节/Cube输入，在纯probe固定后臂、60个有限侧臂IK种子统计goal collision pairs。无Arm/机器人/吸盘/导轨/供料消息、无远程Scene/ACM写入。0合法候选不等于全局不可行；不从怀疑直接改rear/side的物理姿态、场景或保护。若要调整选构型预检，需先得到重放证据，保留full01失败。
+
 ## D024 follow-up — 精调首件通过后才进入五件；命令限步与轨迹span分开
 
 首件两次OPEN精调norm2.196→1.201→0.205mm，实际流程controller0。1mm限制上一命令目标的修正向量，不是从实测起点的全部TCP运动；本次span3.178/3.200mm含旧执行残差，仍满足既有4mm/0.02rad微解算/FCL范围。明确记录这一区别，不隐瞒位移或放宽加载门限。
