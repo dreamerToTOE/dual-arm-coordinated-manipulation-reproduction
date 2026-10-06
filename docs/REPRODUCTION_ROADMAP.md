@@ -1,63 +1,77 @@
-# Reproduction Roadmap
+# Reproduction Roadmap — revised 2026-10-06
+
+## Core principle
+The scientific benchmark is **one shared Cube + dual FR3 + one carriage**.
+The legacy five-Cube Task27 flow remains an application/stress-test asset and does not block paper reproduction.
 
 ## Phase 0 — Foundation
-- TASK00 Environment Audit
-- TASK01 Benchmark Freeze
-- TASK02 Common Interface / Logger / Metrics
+- **TASK00 Environment Audit — PASS**
+- **TASK01 Core Single-Cube Benchmark Freeze — IN_PROGRESS**
+  - geometry / frames / nominal material / time contract / start-goal states;
+  - single-Cube geometric feasibility;
+  - Isaac deterministic READY/reset;
+  - **no force-controller calibration**.
+- **TASK02 Common Interface / Logger / Metrics**
+  - common state/command/result contracts;
+  - same-post-step simulation timestamp;
+  - collision-distance interface;
+  - deterministic run metadata.
 
 ## Phase 1 — P4 Closed-chain Planning
-- TASK03 closure residual/Jacobian definition
-- TASK04 Newton-Raphson projection
-- TASK05 constrained local connection
-- TASK06 constrained RRTConnect + Benchmark A planning baseline
+- TASK03 Closure Constraint
+- TASK04 Newton-Raphson Projection
+- TASK05 Constrained Local Connection
+- TASK06 Constrained RRTConnect
 
-Acceptance emphasis: constraint residual, projection success/time, planning success/time, collision safety.
+**Important:** P4 does not require calibrated contact wrench. Do not block this phase on P2/P3 sensing.
 
-## Phase 2 — P2 Pose/Force
+## Phase 2 — P2 Pose / Internal Force
 ### MuJoCo
-- TASK07-MJ grasp matrix and internal wrench decomposition
-- TASK08-MJ object pose controller
-- TASK09-MJ pose + internal force controller
+- TASK07-MJ Grasp Matrix + Internal Wrench
+- TASK08-MJ Object Pose Controller
+- TASK09-MJ Pose + Internal Force
+
 ### Isaac
-- TASK10-IS migrate same controller through adapter
+- **TASK10-IS Isaac Force/Wrench Interface Calibration + P2 Migration**
+  1. establish explicit force/wrench source;
+  2. frame/application-point transform;
+  3. gravity/inertia compensation as required;
+  4. calibration/sanity tests;
+  5. migrate the already-working P2 controller to Isaac.
 
-First adaptation uses simulator object pose/contact information instead of reproducing the full visual-tactile IESEKF. This must remain marked [DEVIATION/ADAPTATION] until an estimator is added.
+Force calibration is deliberately here, not in TASK01.
 
-## Phase 3 — P3 Insertion
-### MuJoCo
-- TASK11-MJ position-only pushing baseline
-- TASK12-MJ hybrid force/position control
-- TASK13-MJ jam detector
-- TASK14-MJ search/align recovery
-### Isaac
-- TASK15-IS migration and Benchmark B
+## Phase 3 — P3 Constrained Insertion
+- TASK11-MJ Position-only Push
+- TASK12-MJ Hybrid Force/Position
+- TASK13-MJ Jam Detection
+- TASK14-MJ Search / Align Recovery
+- TASK15-IS Isaac Migration + Benchmark B
 
-Do not reproduce dexterous-hand-specific mechanisms unless they are needed for the arm-level insertion comparison.
+Only here freeze desired push force, force safety limits, jam thresholds and C1–C5 contact perturbation values.
 
 ## Phase 4 — P5 QP Coordination
-- TASK16 centralized QP IK
-- TASK17 joint constraints
-- TASK18 collision constraints
-- TASK19 real-time Isaac execution
+- TASK16 QP IK Core
+- TASK17 Joint Constraints
+- TASK18 Collision Constraints
+- TASK19 Isaac Real-time Execution
 
-Core version may use FCL distance constraints. Learned SCA boundary is a second-level fidelity target and must not be silently conflated with the core reproduction.
+## Phase 5 — P1 Sampling MPC
+- TASK20 Upstream Reproduction
+- TASK21 Dual-FR3 Adapter
+- TASK22 Equality Constraint / Null Space
+- TASK23 Stage-1 Exploration
+- TASK24 Stage-2 Refinement
+- TASK25 GPU Benchmark
+- TASK26 Isaac Integration
 
-## Phase 5 — P1 Two-stage Sampling MPC
-- TASK20 reproduce pinned upstream example
-- TASK21 dual-FR3 adapter
-- TASK22 equality constraint/null-space propagation
-- TASK23 first-stage exploration + mode discovery
-- TASK24 second-stage local refinement
-- TASK25 GPU performance benchmark
-- TASK26 Isaac integration
+## Phase 6 — Scientific Evaluation
+- TASK27 Unified Benchmark
+- TASK28 Ablation
+- TASK29 Failure Case Analysis
+- TASK30 Baseline Freeze
 
-## Phase 6 — Scientific evaluation
-- TASK27 unified benchmark
-- TASK28 ablations
-- TASK29 failure-case analysis
-- TASK30 baseline freeze
-
-## Phase 7 — Our method
-- TASK31 evidence-based method v0 design
+## Phase 7 — Our Method
+- TASK31 Ours v0 Design
 
 No new method implementation before TASK30.
