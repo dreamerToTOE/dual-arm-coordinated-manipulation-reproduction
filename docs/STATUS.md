@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 running — full02最终二进制已实际进入首件运动
+
+串行强制重建production SHA57e72f83含正确root-arm参数筛选，源码a3fceab；fresh原场景自动READY后hash守卫再启动，模型/IK初始化与首件HIGH/CONTACT候选预检已实际通过、机器人开始执行。full01旧binary无命令失败保留且源码等价声明已纠正。full02零预置first1/max5/scale5，最终完成/几何审计待定，不能称5/5或稳定版。TASK01 IN_PROGRESS/36nulls/TASK02TODO。
+
 ## 2026-10-06 — coupled full01启动失败，无机器人测试
 
 controller1/命令0，生产二进制仍旧参数筛选；已查明编译过程中include被修改、link晚于修改使后续增量no-op。前述a3fceab/174d6ef7一致性断言作废；成功probe不受影响。headless自动first feed后空闲达到3600s，正常退出0，35998sparse/215989atomic0錯。现串行强制重编译、验证binary，再fresh full02，不复用旧运行为物理PASS。TASK01仍IN_PROGRESS/36nulls/TASK02TODO。

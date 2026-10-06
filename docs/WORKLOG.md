@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-06 — final binary full02启动正常
+
+不再边改源边编译，CMake -B目标重建57e72f83、两组root arm字符串与run前SHA验证成功。新fresh原stage/正常供料/零预置，自动READY后启动controller模型正常并已进入首件实际运动；先前full01未运动负记录保留。没有放宽保护、改场景或用采样空转宣称物理通过。完整回归和同一步审计继续中。
+
 ## 2026-10-06 — production二进制一致性审计更正
 
 full01控制器启动阶段拒绝/命令0；通过只读RPC核对六参数类型值正确，strings揭示production缺root arm前缀，probe有。编译时修改include造成已读旧源码、链接更新mtime并后续no-op；不再称production与a3fceab一致。保留startup负日志/3600s空闲采样（非运动验收），串行CMake -B重编译/字符串及SHA验证后另fresh full02。未修改源码行为/场景/物理/门限来掩盖失败。

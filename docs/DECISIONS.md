@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D026 run follow-up — READY与hash双守卫后才运动
+
+production57e72f83强制重编译核对成功后，fresh full02只有在新场景日志出现真实first feed READY且exe SHA完全相符时才启动。启动正确不等于物理成功；运行期间不改当前源码/门限/场景，避免再次二进制与记录时序错位。
+
 ## D026 build follow-up — 实验前串行核对最终执行二进制
 
 不边修改include边编译production目标；增量no-op/mtime不足以保证源码一致。full01 174d6ef7等价声明作废并保留启动负结果；当前强制目标重建，不编辑生成install文件。核对新binary SHA及真实执行初始化后才能算source对应运行。probe已通过的本地联合链结果独立保留，不拿未动作的production启动当物理测试。

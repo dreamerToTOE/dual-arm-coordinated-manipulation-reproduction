@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-06 — 构建一致性启动问题已工程验证，接触问题仍待回归
+
+production串行强制重建57e72f83含当前LMA参数布局筛选，full02实际模型/首件RRT与FCL初始化进入运动；旧binary拒绝问题本次未复现。不把这一启动通过称BUG021/017/019物理修复，full五件仍待结果。
+
 ## 2026-10-06 — 编译/源码时序导致production旧参数筛选
 
 full01无动作启动拒绝。不是LMA参数缺失：read-only GetParameters六类型/值均有效。编译已解析旧include后编辑、link更新mtime使后续增量no-op，production174d6ef7缺left/right_arm字符串；成功probe有。此前源码/binary等价标记作废。串行CMake -B强制重编译并检查SHA/字符串，待新fresh实测，不通过增加超时/改插件/跳过初始化来绕过。BUG021实际回归依旧待定。

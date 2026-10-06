@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — coupled_rear_full02 RUNNING
+
+runtime a3fceab/source final、serial force binary57e72f83，fresh Isaac4.5本机headless/0preplaced/first1/max5/scale5/hold0/side-15/rear45；沿用自有原参数MoveIt launch，仅fresh物理stage。启动等待READY≤90s并exactSHA守卫，controller实际模型/IK/首件RRT+FCL完成进入运动。尚无全件完成结果；commands/metadata独立full02，full01startup失败不覆盖。seed null/原模型物理门限保持。
+
 ## 2026-10-06 — coupled_rear_full01 FAIL_STARTUP_NO_COMMANDS
 
 controller SHA174d6ef7 exit1因旧filter拒绝当前LMA root-arm参数；命令0/完成0，非物理推压失败。Isaac ready但在3600s空闲采样时限正常退出0，35998sparse/215989atomic0errors，仅自动第一件供料，未执行机器人。六参数RPC类型值有效；生产strings无root arm前缀，成功probe有，因此之前source/binary等价声明作废。串行强制 -B重建后再fresh full02，原日志保留、不覆盖。
