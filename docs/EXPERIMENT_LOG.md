@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 — coupled_rear_full02 final FAIL
+
+runtimea3fceab/binary57e72f83，参数/命令见run metadata。前三真实CONTACT/X16/Y16/ROLE_SWAP/OPEN完成，GT center0.302/0.407/1.343mm、deep0.156/0.091/0.087mm、侧/邻缝0.259/0.397/0.160mm。第三清障6.3mm RRT无合法样本；26.9mm得到左右各3候选却只取最短，后验FCL拒绝left suction↔Cube03（t0.610/depth0.329mm），未执行该路径。completed[1,2]、controller1、headless0、后两无命令。105stamp舍入差≤0.000499181mm/deg；36469held/51175atomic/8529sparse完整性0错，release501。CONTACT/X/Y peak raw46.019/48.571/37.297Nm、该窗口机器人-墙非零pair0；COMPLETE跨转场，不能称全程零接触。BUG021旧HIGH本轮跨过，不宣称所有构型修复。原参数/36nulls不变。
+
 ## 2026-10-06 — coupled_rear_full02物理2/5运行checkpoint
 
 controller仍运行/batch[1,2]PASS，前三新协议前两X/Y各16段均CLOSED且swap在release前。第一后抓candidate5/24通过新gate、第二candidate1；第二rearXYZ norm2.026/1.031/0.036mm。最新release+短清障GT中心误差0.302/0.407mm、deep0.156/0.091、side0.259/0.397，无批间HOME、原路长退出。第三初始抓取已开始，但尚未到关键side HIGH；不写五件PASS或稳定性。最终采样审计待flush，原seed/model/physics/gates不变。

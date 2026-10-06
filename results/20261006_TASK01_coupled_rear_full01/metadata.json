@@ -18,6 +18,12 @@
   "status": "FAIL_CONTROLLER_STARTUP_OLD_PARAMETER_FILTER_BINARY_NO_MOTION",
   "source_binary_correction": "Planned a3fceab source and SHA174d6ef7 were recorded together, but binary strings prove controller still had pre-prefix-fix include contents: concurrent compile had already parsed old include before its modification; final link mtime was newer than edit and subsequent incremental build was no-op. This invalidates that claimed source/binary equivalence. Probe f514 and its coupled no-command results used corrected include, unaffected. Production target now force-rebuilding serially with CMake make -B before fresh full02.",
   "metrics": {"completed_batches": [], "controller_exit": 1, "controller_failure": "TASK01 local paired candidate IK configuration unavailable; no commands", "robot_suction_feed_rail_controller_commands": 0, "headless_exit": 0, "headless_duration_limit_reached": true, "headless_wall_s": 3600.009058566, "sparse_snapshots": 35998, "sparse_integrity_errors": 0, "atomic_feedback_snapshots": 215989, "atomic_feedback_errors": 0, "physics_motion_test_completed": false, "python_tests_passed": 61, "cpp_policy_tests_passed": 2, "draft_unresolved_fields": 36},
-  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log", "raw/summary.json", "raw/controller_force_rebuild.log"],
+  "lossless_raw_archive": {
+    "reason": "Low free disk during following full02. Only our completed idle full01 raw samples archived, no user files altered.",
+    "physics_pose_samples": {"path": "raw/physics_pose_samples.jsonl.gz", "uncompressed_sha256": "d8815ee0bac7abeb82cb8cbe35e2a1daec608b40d9ccd3b58d3619ebf56ae07c", "decompressed_hash_verified": true},
+    "geometry_source_comparison": {"path": "raw/geometry_source_comparison.jsonl.gz", "uncompressed_sha256": "86bdca83c4bb343948a9e5d30699bfba120d4f943602f752d2a3746e78bb6e85", "decompressed_hash_verified": true},
+    "recovery": "gzip -dk raw/physics_pose_samples.jsonl.gz; gzip -dk raw/geometry_source_comparison.jsonl.gz (keep compressed copy, do not overwrite existing raw file)."
+  },
+  "artifacts": ["raw/isaac.log", "raw/moveit.log", "raw/controller.log", "raw/summary.json", "raw/controller_force_rebuild.log", "raw/physics_pose_samples.jsonl.gz", "raw/geometry_source_comparison.jsonl.gz"],
   "boundary": "Only first3 OPEN rear candidate preflight changed. HIGH RRT connectivity must still pass on actual measured state before execution. Original L/cubes/world/material/ACM/80Nm/geometry gates unchanged; fourth/fifth precise single rear. Physical completion requires controller evidence; not GUI, seeded reliability, force reproduction or benchmark freeze."
 }

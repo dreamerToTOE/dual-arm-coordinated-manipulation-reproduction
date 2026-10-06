@@ -106,3 +106,20 @@ Need user confirmation: no（既有RRT候选联合可行性工程筛选）；任
 ### full02运行checkpoint — 2/5真实完成，第三关键环节待验
 
 最终串行binary57e72f83与a3fceab执行源、root arm参数筛选一致；fresh场景first1/max5/scale5、READY与hash守卫后运行。batch1/2实际X16/Y16/双吸CLOSED主从互换/释放及短清障RRT到下一件通过，无批间HOME。第一rear pool前4候选被新gate拒绝，5/24通过；第二candidate1通过，rear XYZ2.026→1.031→0.036mm。最新短清障GT中心误差0.302/0.407mm，deep0.156/0.091mm，side0.259/0.397mm；第三已经抓取搬运，但尚未到上一轮side HIGH阻塞环节。不是五件或稳定性PASS，最终同一步数据审计等待正常flush。
+
+### 第五阶段 POST — 前三实际推压完成，第三空载handoff仍FAIL
+
+full02 controller1/headless0，batch完成[1,2]，实际放置三件但第三后续handoff未完成。前三各X16/Y16全部双CLOSED、互换角色未释放；第三实际HIGH/CONTACT/X/Y跨过先前阻塞。短清障后的中心误差0.302/0.407/1.343mm，deep0.156/0.091/0.087mm、侧/邻缝0.259/0.397/0.160mm。第四第五无机器人命令。
+
+第三释放/6.3mm短清障后RRT3次无解；26.9mm清障后左右各3候选，代码只选各最短，后验FCL在左路径t0.610s拒绝left_fr3_side_suction↔task26_cube_3，depth0.329mm。该路径没有执行，不通过扩大ACM/缩小Cube/原路长退出掩盖。几何105条打印与同一步真实反馈精确stamp匹配，最大舍入差0.0004991804mm或deg；36469held/51175atomic/8529sparse0完整性错，release501。CONTACT/X/Y原始关节effort峰46.019/48.571/37.297Nm，该窗口机器人-墙非零pair0。COMPLETE标签覆盖空载及下一件接近，其中接触数据仍保留，**不声称全流程无实体接触**。
+
+### 第六阶段 === PRE-TASK REPORT === — 空载handoff有限候选与一致起点
+
+Task: TASK01 / BUG022. Goal: 严格碰撞检查后短清障→下件预吸位，避免只选最短再整池失败。
+Paper method understood as: 用户已批准3+2，不实现P2/P3；[ENGINEERING]候选和起点一致性。
+Scope/files: 新fixture宏内共享helper与无命令probe/依赖、结果/本报告/六记录。第一臂从单份完整实测state规划、逐候选完整FCL；第二臂以第一臂预测终点及自身原起点规划/验。保持每个起点3次/每次3s，候选失败不命令。使用现有/move_action的plan_only请求局部完整scene，不写远程world/ACM，不是冻结的Task22背景沙箱预规划。
+Validation plan: 精确full02最终bothOPEN 14关节/三落位Cube重放；确认远程world前后不变、CLOSED/碰撞起点拒绝；数值/限位/adapter起点/原目标约束及完整联合FCL；串行构建和原测试后再fresh真实回归。
+Known ambiguities/risks: 不控制LMA/OMPL内部RNG；有限候选不等于全局结论；原USD/URDF碰撞模型差异仍存在，只读PASS不是PhysX/GUI/五件稳定性或基准冻结。
+Need user confirmation: no（工程修复）；模型/物理/ACM/门限或科学方法改动另问。
+
+MoveIt2 Humble官方实现：plan_only分支通过copyPlanningScene(planning_scene_diff)规划，区别于planAndExecute；[源码](https://github.com/moveit/moveit2/blob/humble/moveit_ros/move_group/src/default_capabilities/move_action_capability.cpp)。运行依旧调用本机安装MoveIt2，不下载/替换算法。

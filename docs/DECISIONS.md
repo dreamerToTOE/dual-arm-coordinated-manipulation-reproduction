@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D027 — 只读重放与实际路径规划使用同一完整场景和顺序起点
+
+Date: 2026-10-06. [ENGINEERING] 新fixture空载转场有限RRT候选池，原场景、目标、碰撞冗余、ACM、阈值不变。先从一次完整实测RobotState规划/验第一臂，再以第一臂预测终点+第二臂原起点规划/验第二臂；两段均通过才执行。MoveGroup plan_only的planning_scene_diff只作用于该请求场景副本，不是后台沙箱预规划，不写远程Scene，也不豁免当前Cube。实现/真实验证待完成，不能预记PASS；若需改变模型/物理/门限则另问用户。官方MoveIt2 Humble move_action_capability.cpp 的executeMoveCallbackPlanOnly使用copyPlanningScene进行请求局部规划。
+
 ## D026 physical checkpoint — 以实际完成计数，不以候选成功计数
 
 full02已实际batch1/2通过，第三抓取继续。联合gate PASS只授权同候选后续实测流程，不将preflight当batch完成；原RRT/FCL重试/OPEN XYZ/原子geometry/80Nm仍全部保留。短清障后的GT而非释放前命令终点作为最新落点记录，不从2/5提升稳定性或冻结状态。

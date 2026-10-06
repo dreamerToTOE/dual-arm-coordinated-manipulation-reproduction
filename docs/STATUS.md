@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 final — full02前三实际放置完成，第三空载转场FAIL
+
+source a3fceab/binary57e72f83，前三各X16/Y16双CLOSED、无释放主从换角与释放全部完成；batch完成计数仍[1,2]，第三26.9mm短清障后最短RRT在0.610s碰left suction↔Cube03（FCL0.329mm），拒绝执行/controller1/第四第五无命令/headless0。三件短退出center0.302/0.407/1.343mm，deep0.156/0.091/0.087mm，侧/邻缝0.259/0.397/0.160mm。105精确stamp匹配、36469held/51175atomic/8529sparse均0完整性错；CONTACT/X/Y窗口无机器人-墙非零pair，不推广到COMPLETE/全流程。下一步空载候选池/同一RobotState/request-local场景诊断，保持原模型/物理/ACM/门限/36nulls，TASK02TODO。
+
 ## 2026-10-06 running — final binary full02前两件实际PASS
 
 57e72f83/source a3fceab，batch1/2新双吸协议X16/Y16、无释放主从互换/双OPEN/短清障RRT转场均完成，无批间HOME。短退出后center0.302/0.407mm，deep0.156/0.091mm，side0.259/0.397mm。第三正在抓取搬运，还未到上轮失败side HIGH，不称BUG021已物理修复或全五件PASS；原保护/模型/物理/36nulls保留，TASK02TODO。

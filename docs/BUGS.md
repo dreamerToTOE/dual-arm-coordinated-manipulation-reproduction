@@ -1,5 +1,10 @@
 # BUGS
 
+## BUG-022 — 第三放置后只验最短空载RRT候选导致handoff拒绝
+
+Date: 2026-10-06; Task: TASK01; Status: OPEN.
+full02前三实际推压成功，第三释放后26.9mm清障位左右各有3个RRT候选，但planPose各只返回最短。完整FCL拒绝left suction↔刚落位Cube03，t0.610s/depth0.329mm/controller1，两batch完成/后两未命令。当前代码还独立取两次current state，第二段规划未显式包含第一段预测partner终点。尚未证明所有备选安全、全局无解或物理场景有错；保留全部负结果。拟工程修复：同一完整实测起点、请求局部完整world、逐候选严格FCL和顺序第二段预测partner，无新增ACM。BUG019模型差异及COMPLETE中的真实接触记录仍保留。
+
 ## 2026-10-06 — full02前两件通过，不泛化为全构型修复
 
 新联合gate二进制正常、首二实际双吸X/Y/短RRT handoff通过；第三尚未到旧故障阶段，BUG021/017/019依旧保留待真实回归及原模型差异审查。只读预检拒绝的碰撞/失败候选日志不抹掉、不会执行这些候选。
