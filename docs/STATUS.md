@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-06 running — 新3+2五件零预置回归
+
+同runtime39f1a0c/binaryefb1d133，full01已完成batch1（center0.269/deep0.099/side0.250mm）与短清障RRT到下一件的转场，无批间HOME。第二件后杯OPEN两次精调norm1.866→0.870→0.006mm，双吸附X推进中；其余未验收，完整/记录完整性结果待定。原模型/物理/保护门限不改，TASK01 IN_PROGRESS/TASK02 TODO。
+
 ## 2026-10-06 latest — 新rear OPEN精调首件物理PASS，五件连续回归准备
 
 rear_open_xyz_cube01 /39f1a0c/binaryefb1d133：rear norm2.196→1.201→0.205mm，两次OPEN修正后实际X16/Y16/主从换角/双OPEN退出/HOME全部完成，controller0；中心0.303/deep0.212/side0.216mm。35精确stamp几何匹配、8470held0完整性错/窗口内无非零机器人-墙接触，26166atomic/4361sparse0错。

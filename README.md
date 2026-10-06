@@ -12,7 +12,15 @@
 
 最终所有可横向比较的正式结果，原则上统一落到 **Isaac Sim + ROS 2 + 双 FR3 + Cube + 车厢** 场景；MuJoCo 仅作为 P2/P3 的接触/力控快速验证平台。
 
-## 当前进度（2026-10-03）
+## 当前进度（2026-10-06）
+
+- TASK01 保持 **IN_PROGRESS / DRAFT**，36 项基准参数待评审，TASK02 未开始。
+- 当前用户确认的接触协议是 **前三件后杯+侧杯双吸附推入，到深墙后互换主从侧压；第四、第五件精准暂放后单 rear 插入**。旧五件成功不作为新协议通过证据。
+- 新协议首件已在本机 Isaac4.5 **headless** 实际通过：原子 PhysX Cube+双TCP反馈、杯面法向保持的腕姿、吸附前后杯有界XYZ精调；X16/Y16、释放/退出/HOME完成，controller0，最终中心误差0.303mm、深/侧墙间隙0.212/0.216mm。原模型、物理、ACM及2.5mm/80Nm保护未改。
+- 相同源码的零预置 **五件连续回归正在运行**，不是已经验收，也不是GUI/可靠性/论文控制律证明。此前碰墙、真实Z残差、USD不同步、LP求解和关闭时错误全部保留。
+- [当前报告、反馈接口及Script Editor加载代码](reports/TASK01_ATOMIC_FIXTURE_FEEDBACK.md) · [首件实际记录](results/20261006_TASK01_rear_open_xyz_cube01/metadata.json) · [五件回归状态](results/20261006_TASK01_rear_open_xyz_full01/metadata.json) · [最新状态](docs/STATUS.md)
+
+## 历史检查点（2026-10-03，保留原证据）
 
 - TASK00 环境审计已通过；TASK01 benchmark 草案仍在评审，有 36 项未定值，尚未冻结。
 - 左右臂各三次第五块物理探针通过；新只读 PhysX 位姿通路已通过外部 ROS 匀速校准，并随一次完整第五块任务记录 14,295 个连续物理快照。

@@ -2,7 +2,7 @@
   "task": "TASK01",
   "baseline": "EXPERIMENTAL approved3+2 continuous fixture regression with ENGINEERING atomic PhysX feedback and OPEN rear XYZ reuse",
   "platform": "user local Isaac4.5 headless / ROS2 Humble / MoveIt",
-  "git_commit": {"runtime": "39f1a0c79ab8dfe46b429fa15b5230b861962930", "reproduction": "record_commit_pending"},
+  "git_commit": {"runtime": "39f1a0c79ab8dfe46b429fa15b5230b861962930", "reproduction": "566ff09703d3c3d6bf926f750bba0940ce9421b0"},
   "runtime_binary_sha256": "efb1d133db42fdf74a31e624d73d4d7437fec553bff2a06ac45784ba3f78c68b",
   "seed": null,
   "seed_note": "OMPL/IK RNG uncontrolled; no reliability or causal A/B claim",
@@ -15,8 +15,8 @@
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 launch fr3_dual_side_suction_description moveit_dual_side_suction.launch.py use_rviz:=false",
     "source /opt/ros/humble/setup.bash; source install/setup.bash; ROS_LOCALHOST_ONLY=0 ros2 run fr3_dual_palletize task01_dual_suction_fixture --ros-args -p first_batch:=1 -p max_batches:=5 -p execution_time_scale:=5.0 -p dual_fixture_side_roll_world_y_deg:=-15.0 -p dual_fixture_rear_roll_magnitude_deg:=45.0"
   ],
-  "status": "PREPARED_FULL_FLOW_PHYSICS_RESULT_PENDING",
-  "metrics": {"same_binary_as_verified_first_cube": true, "preplaced_cubes": 0, "completed_batches": [], "python_tests_passed": 61, "draft_unresolved_fields": 36},
+  "status": "RUNNING_FRESH_FULL_FLOW_PHYSICS_RESULT_PENDING",
+  "metrics": {"same_binary_as_verified_first_cube": true, "preplaced_cubes": 0, "completed_batches": [1], "python_tests_passed": 61, "draft_unresolved_fields": 36, "first_cube_final_center_error_mm": 0.269, "first_cube_deep_gap_mm": 0.099, "first_cube_side_gap_mm": 0.250, "first_cube_between_batch_HOME": false, "first_cube_short_clearance_RRT_handoff": true, "second_cube_rear_open_residual_norm_mm": [1.866, 0.870, 0.006], "checkpoint": "Second cube dual CLOSED X push underway; no final full-flow or integrity claim until complete and flushed"},
   "artifacts": ["raw/controller.log", "raw/isaac.log", "raw/moveit.log", "raw/summary.json", "raw/held_contact_samples.jsonl", "raw/physics_pose_samples.jsonl", "raw/geometry_source_comparison.jsonl"],
   "boundary": "First three dual rear+side CLOSED X/Y role swap, fourth/fifth precise single rear. No model/physical parameters/geometry/ACM/80Nm/loaded geometry changes. Failure stops all following Cubes; whole-five actual completion needs controller evidence. Not GUI, reliability, paper-force or benchmark-freeze proof."
 }
