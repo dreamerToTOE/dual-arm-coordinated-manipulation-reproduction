@@ -194,3 +194,10 @@ Persistent user decisions/feedback that must influence future work.
 ## 2026-10-03
 - User requested continuation. Advanced TASK01 measurement diagnosis within the existing Task27-derived draft rather than starting paper baselines before the freeze gate. No new numeric benchmark approval or permission to modify the protected reinforcement_stair-test directory was inferred.
 - User approved continuing the proposed order: force-measurement feasibility/calibration, synchronized frames/time, then a full five-Cube nominal probe and benchmark parameter review. This is not permission to alter hidden-body masses, freeze success gates, skip TASK01, or start paper force controllers; the protected directory remains untouched.
+
+
+## 2026-10-06 — TASK01 plan correction approved
+- User approved simplifying the scientific benchmark to one Cube + dual FR3 + carriage.
+- Five-Cube Task27 remains useful but must not block the paper-reproduction baseline.
+- User approved moving force/wrench calibration out of TASK01 and into the P2 Isaac stage (TASK10-IS).
+- The next Codex work should stop legacy five-Cube debugging and execute the single-Cube geometry feasibility + READY/reset checks.

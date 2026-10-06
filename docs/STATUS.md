@@ -1,8 +1,32 @@
 # STATUS
 
-## 2026-10-06 GUI physclock final — 单独改时基仍未通过接近
+## 2026-10-06 — Research reset: TASK01 narrowed to one-Cube core benchmark
 
-新run实际侧下降left86.670Nm>80、tracking5.429deg、Cube接触217.404N，controller1/完成0，无X/Y；pause/GUI0，1904held/11098atomic/1849sparse完整性0错。早20s反馈接收PhysX/wall1.000084不证明contact窗口实时；时基适配不自动解决物理问题。查本机Humble Cartesian srv不带v/a缩放，只给Task01侧CONTACT补现有0.12/IPTP同q计时后再fresh GUI实测，原物理/模型/门限不动。TASK01 IN_PROGRESS/36nulls，TASK02 TODO。
+User approved a plan correction after review of the overloaded five-Cube Task27-derived TASK01. The common SCI benchmark is now **one shared Cube + dual FR3 + one carriage**. Historical five-Cube debugging remains preserved under legacy/stress-test scope and no longer blocks benchmark freeze.
+
+Current gate:
+1. stop five-Cube execution/debugging for TASK01;
+2. perform the single-Cube geometry-feasibility probe;
+3. create/reuse deterministic one-Cube Isaac READY/reset;
+4. freeze geometry/material/time/start-goal values after user review;
+5. proceed to TASK02, then P4.
+
+Force/TCP-wrench calibration is explicitly deferred to TASK10-IS before P2 Isaac migration. P4 must not be blocked on force sensing.
+
+| Task | Status | Notes |
+|---|---|---|
+| TASK00 Environment Audit | PASS | retained |
+| TASK01 Core Single-Cube Benchmark Freeze | IN_PROGRESS | **new scope; five-Cube flow non-blocking** |
+| TASK02 Common Interfaces / Logger / Metrics | TODO | after TASK01 freeze |
+| TASK03–06 P4 | TODO | may start after TASK02; no wrench dependency |
+| TASK07–09 P2 MuJoCo | TODO | force/control math |
+| TASK10-IS Force/Wrench Calibration + P2 Migration | TODO | owns Isaac wrench calibration |
+
+---
+
+## 历史记录：2026-10-06 GUI physclock final — 单独改时基仍未通过接近
+
+新run实际侧下降left86.670Nm>80、tracking5.429deg、Cube接触217.404N，controller1/完成0，无X/Y；pause/GUI0，1904held/11098atomic/1849sparse完整性0错。早20s反馈接收PhysX/wall1.000084不证明contact窗口实时；时基适配不自动解决物理问题。查本机Humble Cartesian srv不带v/a缩放，只给Task01侧CONTACT补现有0.12/IPTP同q计时后再fresh GUI实测，原物理/模型/门限不动。以下旧五块实验不再作为新单 Cube 基准的冻结门槛。
 
 ## 2026-10-06 GUI physclock running — 修复候选已编译并开始实测
 

@@ -293,3 +293,12 @@ Append-only project work log.
 - Own full-run processes stopped. MoveIt teardown -11 recurred (BUG-004). Final added authored FR3 joint-frame audit failed on remote asset-root lookup before control commands; new audit remains unverified.
 - Reports distinguish force calibration, failed full flow and 36-field freeze review. Metadata retains negative starts and invalidated fixtures; heavy raw remains local/ignored. No legacy tracked model/control or protected-directory change.
 - TASK01 IN_PROGRESS, TASK02 TODO. Next scoped correction fix must retain gates, followed by normal five-Cube re-run and remaining model/frame/numeric review; no paper force controller yet.
+
+
+## 2026-10-06 — TASK01 research reset approved
+- Reviewed current GitHub progress after extensive five-Cube Task27 debugging.
+- Identified task-scope overload: multi-Cube sequencing, empty retreat, tool-neighbor interference, material mismatch, wrench calibration and timing work had all accumulated inside benchmark freeze.
+- Re-scoped benchmark_v1 to one shared Cube + dual FR3 + one carriage.
+- Preserved all legacy five-Cube evidence without making it a freeze gate.
+- Deferred Isaac force/wrench calibration to TASK10-IS before P2 Isaac migration.
+- Next action: single-Cube geometric feasibility probe, then deterministic Isaac READY/reset, then user freeze review.

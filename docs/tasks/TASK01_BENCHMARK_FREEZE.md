@@ -1,117 +1,133 @@
-# TASK01 — Freeze Benchmark V1
+# TASK01 — Core Single-Cube Benchmark Freeze
 
-Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
+Status: IN_PROGRESS — re-scoped 2026-10-06
 
-## 2026-10-06 GUI — 正常倍率首件物理失败，PhysX秒回放复测
+## Why this task was re-scoped
+The previous TASK01 inherited the legacy five-Cube Task27 application flow and gradually expanded into multi-Cube sequencing, retreat planning, fixture construction, contact-force metrology, GUI/headless behavior and force/wrench calibration. Those are valuable historical engineering results, but they are not all prerequisites for starting the scientific baselines.
 
-可见GUIrun02真实侧下降跟踪10.109deg/Cube接触468.823N/left raw86.323Nm，原保护停止controller1/完成0，非已证实的吸盘闭合超时；原数据完整保留。新仅Task01计时以已有原子PhysX stamp推进，缺失/回退/250ms过期拒绝无wall fallback，原geometry/physics/ACM/限速不变。runtime6fa161e/binary75f798a1串行58.5s/63Python/两组C++通过后fresh GUI首件复测RUNNING，不能预记物理修复/全五件成功。详见reports/TASK01_VISIBLE_GUI_RUN.md。36nulls/DRAFT/TASK02TODO不变。
+The common SCI benchmark is therefore simplified to the actual research question:
 
-## 2026-10-06 latest — GUI-only与normal播放倍率，未完成新速度验收
+```text
+one shared Cube
++ dual FR3
++ fixed side-suction tools
++ one carriage
+→ tight cooperative transport
+→ PRE_PUSH
+→ cooperative constrained insertion/pushing
+```
 
-用户要求可见GUI、不再headless；新Task01默认time_scale1.0（100%规划时间播放），此前5.0实际20%。MoveIt RRT速度/加速度12%与原接触/碰撞门禁不改；未授权/实施100%关节上限速度。full01最终首件X16反馈STALE_OR_INVALID/controller1/completed0/headless0，空载修复未触发。完整报告与GUI加载步骤见`reports/TASK01_GUI_SPEED.md`；新速度没有物理PASS，36nulls/DRAFT/TASK02TODO不变。
-
-## 2026-10-06 latest — 持件数据已获得，实际腕部碰墙，修复候选仅只读验证
-
-diagnostic02本机首件X16/Y14后Y15原80Nm停止，controller1/completed0；held10538/0errors，left link7↔深墙实体接触，精确FK与物理差<0.001mm但MoveIt墙FCL自由。原USD convexHull与URDF STL不同，未改碰撞/场景。nominal02杯面内-15deg候选前三链IK/FCL/relativeTCP及1330原USD离线腕部节点通过，尚无新物理PASS。BUG017/019 OPEN，53Python/build PASS，36nulls/hash不变。详见reports/TASK01_HELD_CONTACT_DIAGNOSTIC.md。
-
-## 2026-10-06 final — 持件诊断实现，资产连接阻塞真实采样
-
-44软件测试/build PASS，新诊断真实启动在原FR3_asset_url连接失败，机器人命令0/未获得live held samples；本轮无新的物理PASS，Y15根因仍OPEN。原模型/物理/80Nm/ACM/YAML保持；TASK01 IN_PROGRESS/36nulls，TASK02 TODO。详见reports/TASK01_HELD_CONTACT_DIAGNOSTIC.md；网络恢复后从同一首件普通供料重测。
-
-## 2026-10-05 final 新协议未完成物理验收
-
-e0477ab/首件新鲜普通供料：X16/16、Y14/16双CLOSED，Y15 raw effort86.975Nm>原80Nm保护停止，controller1/整件完成0。释放后只读FCL PASS不证明触发步无碰撞；后两件精准单推复用旧逻辑，本轮未回归执行。报告 `reports/TASK01_DUAL_SUCTION_FIXTURE.md`/BUG-017；新3+2 PARTIAL，不能借旧5/5冻结。模型/物理/门限/YAML不变，36nulls，TASK02 TODO。
-
-## 2026-10-05 用户批准新3+2接触协议
-
-Follow-up：新首件ff20ac3双吸X16段PASS/deep0.286mm，但Y起步互锁FAIL，整件未PASS；实测换角色起点e0477ab fresh replay进行中，原数值门限未改。BUG-017 OPEN，35 Python /4 C++ /build PASS；TASK01仍不能冻结。
-
-前三件双吸附rear-primary X推入、side约束，到深墙不松吸盘换side-primary Y压紧/rear保持深墙；后两件精准暂放+单rear插入。独立节点ff20ac3、无执行前三完整FR3链PASS，首块新鲜普通供料物理运行中，不能借旧5/5宣称新流程通过。详见 `reports/TASK01_DUAL_SUCTION_FIXTURE.md` /D019。YAML还是原DRAFT/36nulls，模型/物理/门限未冻结；不启动TASK02/论文算法。
-
-## Latest final engineering result (2026-10-04)
-
-当前独立精准插入版源码 `df9c2c0` 在本机 Isaac headless 的普通供料五件实际完成：零预置、release hold=0、scale=5；controller 0 / 双臂最终 HOME / 双杯 OPEN。五件中心误差 1.983 / 0.807 / 0.723 / 1.319 / 0.481 mm，第四邻缝 0.347 mm，第五两侧缝 1.987 / 1.473 mm。18,498 条稀疏 PhysX 记录无完整性错误，3,212 条释放诊断。完整命令、源码/hash、原日志摘录和未解决问题见 `reports/TASK01_RELEASE_CLEARANCE.md` 及 `results/20261004_TASK01_empty_rrt_full_01/`。
-
-新增有限空载 RRT 备用通过失败姿态四位小数无命令重放 / 1,277 次联合 FCL，但本轮普通 Cartesian 全通过，**备用未物理触发**。历史 Cube02 5.138 mm 释放回带本轮未复现、BUG-016 原因仍 OPEN；已有对象恢复严格比较及 MoveIt teardown -11 保留。该一次实际完整 PASS 取代下方“当前仍失败”的历史运行状态，不抹掉负结果，不是稳定性、GUI 验收或论文复现证明。
-
-原场景、质量、有效摩擦、ACM、门限和 benchmark YAML 未改，D004 前三件协议/力与时间测量/数值审查仍待确认；36 nulls / DRAFT 保持，TASK01 不冻结，TASK02 TODO。
-
-## Latest XYZ engineering result (2026-10-04)
-
-User-approvedD016 combinedXYZ preclose implemented in independentvariant; build/C++/22Python/real RobotModel IK+FCL PASS. Actual normalfeed Cube02residuals X2.012→0.606mm/Z1.589→0.451mm/gapdelta0.879→0.275mm pass originalgate aftertwo total1mm-boundedmoves. Correctionplanning0.078621s/physicalexecution7.569621s(scale5); Cube01alreadyvalidskipscorrection. But full-five remainsFAIL: Cube02laterdeepgap0.488→5.138mm>original3mm aroundsidepress/rearsuctionrelease, controllerexit1/completed[1],noCube03–05commands. 7680physicalposes0errors, allownedprocessesstopped/teardown-11retained. `reports/TASK01_PRECLOSE_XYZ.md` contains PRE/POST/commands/hashes/results and BUG-016 scope boundary. No loadedcontrol/model/material/scene/ACM/gate/YAMLchanges;36nulls andD004/metrologyreviewstillpending, TASK02TODO. Do not reinterpretpreclosePASS as full-task or paper reproductionPASS.
-
-## Latest normal-feed precision-variant regression (2026-10-03)
-
-No preplacement, unchanged runtime/model/gates; actual five-object attempt fails safely at Cube02 before suction, controllerexit1 and onlybatch1PASS. FineYgapdelta reaches0.001mm, but actualX correspondence3.150mm>original2.500mm. Cube03–05notadvanced;7214valid sparse samples; all ownedruntimesstopped. `reports/TASK01_PRECISION_FULL_FIVE_REGRESSION.md` containscommands/negativeevidence/nextscope. Do not reinterpret earlierisolated fifth/fourth→fifthPASS as stable full-flow. XYZtracking/modelmetrology diagnosis/correction scope and existingfriction/hiddenmass/D004/36numericreview stillneeded;TASK02notstarted.
-
-## Latest engineering validation / user-review boundary (2026-10-03)
-
-Later than the historical failure checkpoints below: measured empty-retreat start / releasedCube strictFCL / bounded local-seed fallback implemented in independent approved precision variant. Basic and long no-command FK/FCL PASS; isolated actual Cube05 and fresh actual Cube04→05 pair both exit0/PASS. Fourth neighbor0.375mm/deep0.244mm; fifth error0.530mm/deep0.476mm. First3/4preplaced are not executed/full-five proof, fallback not physically triggered, no repeatability claim. Exact sources/commands/negative evidence: `reports/TASK01_EMPTY_RETREAT_REPAIR.md`. Task27 rotation fix from prior iteration preserved; USD dynamic timing still uncalibrated. Actualfriction0.5/0.5, hiddenmass, first-three D004 and36numericfields require review before benchmarkfreeze/paperalgorithms. All owned runtimes stopped; teardown-11 persists. No YAML/hash/scene/model/ACM/gate change.
-
-## Authorized Cube04 protocol experiment (2026-10-03)
-
-User explicitly asks Cube04 to use Cube05 precision single-rear insertion. Independent engineering controller target, no scene/model/gate changes; new PRE_PUSH Y control target is the old pressed 0.5-mm gap. Physical Cube04/05 probe uses only first three pre-placed/settled. See `reports/TASK01_CUBE04_PRECISION_INSERT.md` and D014; old D004 no longer applies to Cube04 in this variant, not blanket first-three approval. No numeric YAML freeze or TASK02 advance.
-
-Final experimental handoff: one slow Cube04 PASS (neighbor 0.227 mm, deep 0.413 mm), earlier faster Cube04 drift failure. Cube05 follow-on empty retreat refused unsafe off-line IK branch; whole run exit 1. No stable/full-five PASS and no TASK01 freeze. Next engineering diagnostic is empty-retreat branch selection while original guards remain enforced.
-
-## Current progress (2026-10-02)
-- User confirmed the existing Task27 dual-FR3, L-side-suction and truck-box scene as the **geometric starting point**, not as a wholesale approval of its numerical parameters or thresholds.
-- Draft candidate: `configs/benchmark/benchmark_v1.yaml`; analytic checker: `scripts/validate_benchmark_candidate.py`.
-- Initial static geometry passed with 30 unresolved fields. After recording the user-confirmed B-fixture/B-center contact split, the latest static check still passes and has 36 unresolved fields (new alignment/force gates were made explicit).
-- Fresh [EXPERIMENTAL] Isaac 4.5 probe: four Cubes directly pre-placed, then only Cube 05 executed with the right or left pusher in separate clean scenes. Right and left each passed 3/3 physical runs; final center error was at most 0.603/0.669 mm respectively. Detailed Ground Truth and boundaries are in `reports/TASK01_CENTER_ARM_SYMMETRY.md`. This small, non-seeded sample does not validate full four-Cube fixture construction, long-term reliability, calibrated contact forces, or the frozen benchmark.
-- New instrumentation records final Bridge pose and compares motion-time PhysX and USD pose sources read-only. The sources differed transiently by up to about 2.8 mm in observed push samples, then converged after settle; this must be resolved as a measurement/timing issue before dynamic contact metrics are frozen (BUG-005). MoveIt shutdown also repeatedly segfaulted after successful controller completion (BUG-004).
-- The benchmark remains **DRAFT / IN_PROGRESS**. No paper baseline may use it as a frozen common test yet.
+The five-Cube Task27 flow is retained as a legacy application/stress test and must not block this task.
 
 ## Goal
-Freeze one common dual-FR3 Cube/carriage benchmark before tuning any paper method.
+Freeze the **minimum scientifically sufficient** common environment for all later baselines.
 
-## Measurement follow-up (2026-10-03)
-- Diagnosed the motion-time position mismatch as USD application-frame lag relative to PhysX physics steps. Separately confirmed that extracting a quaternion from the scaled Cube world matrix corrupts the old Bridge rotation. Historical Bridge yaw values are retained but must not be treated as accurate 6D measurements.
-- Added an opt-in read-only physics pose/velocity channel with a single simulation timestamp and physics-step number per snapshot. External ROS known-motion calibration passed at 30 Hz and 20 Hz frame updates with 60 Hz physics: maximum position error about 0.000313 mm and angular error about 0.000865 deg. This is sensor-plumbing evidence, not contact/benchmark performance.
-- Details, failures, source references and complete commands: `reports/TASK01_PHYSICS_POSE_MEASUREMENT.md`. Old Task27 control/scene sources and all 36 unresolved benchmark fields remain unchanged. TASK02 stays TODO pending review/freeze.
-- A further real right-arm Cube 05 task passed (0.520 mm final center error, both arms HOME), while the separate recorder obtained 14,295 contiguous five-Cube snapshots with no record errors. This validates measurement integration with the existing physical task, not a new controller or full five-Cube benchmark.
+TASK01 freezes geometry, frames, nominal physical parameters, deterministic start/goal definitions and time policy. It does **not** implement or calibrate the later force-control algorithms.
 
-## Force feasibility follow-up (2026-10-03)
+## In scope
+1. Dual-FR3 robot/base/rail geometry.
+2. One Cube geometry and mass.
+3. Fixed L-side-suction tool geometry.
+4. Carriage geometry and explicit `carriage_entrance` frame.
+5. Benchmark A start state and PRE_PUSH target.
+6. Benchmark B PRE_PUSH start and insertion target.
+7. Nominal effective contact material.
+8. Physics step / controller period.
+9. Single common simulation-time contract.
+10. One-Cube geometry feasibility evidence.
+11. Isaac reset/READY reproducibility.
 
-- Independent known-load collision calibration passed at 60/120 Hz, including static friction, nonzero torque, rotated-wall force direction and same-step pose/contact stamping. Collision telemetry demonstrably omits suction D6 constraint loads.
-- Independent mount-joint load probes passed at 0/90 deg roll, but their coincident frames do not identify the force reference. The final unscaled COM/principal/joint-anchor/joint-axis test identifies incoming joint axes / about joint anchor. Earlier scaled-body origin identification is invalidated and retained in records. This is not a calibrated FR3 TCP contact estimator or paper controller.
-- Actual FR3 topology exposes link8 raw reactions, but its downstream hidden hand/finger/hand_tcp bodies retain mass. Gravity/inertia compensation and TCP moment shifting remain necessary; no body mass was removed.
-- Added a separate full five-Cube headless measurement runner: normal feed, no pre-placed four-Cube fixture, unchanged legacy controller. Five-batch planning preflight passed, but physical run placed only Cube 01 then stopped at Cube 02 pre-close: symmetry residual 0.968 -> 0.315 -> 0.339 mm versus 0.300 mm gate, with mandatory 0.65 mm minimum correction. No threshold was relaxed. Reports: `TASK01_FORCE_MEASUREMENT_FEASIBILITY.md`, `TASK01_FULL_FIXTURE_CONTACT_PROBE.md`.
-- Benchmark YAML is unchanged; its 36 null fields still require resolution/review, not automatic filling from a successful calibration.
-- Review queue: `reports/TASK01_FREEZE_REVIEW_CHECKLIST.md` lists all 36 null fields and already-numeric but unapproved model choices. The last added real-FR3 authored-joint-frame startup audit failed on asset-root availability; that check and TCP compensation remain unvalidated.
+## Explicitly out of scope
+Do **not** spend TASK01 time on:
+- five-Cube placement sequence reliability;
+- Cube-to-Cube fixture building;
+- batch-to-batch empty retreat;
+- five-Cube neighbor gaps;
+- final force-control gains;
+- desired push force;
+- internal-wrench thresholds;
+- jam-force thresholds;
+- contact-wrench estimator calibration;
+- gravity/inertia compensation for TCP wrench;
+- P2/P3/P5/P1 paper algorithms.
 
-## Codex actions
+These are deferred to their owning tasks.
 
-### Final tested outcome / review boundary (2026-10-03)
+## Required experiment 1 — Single-Cube Geometry Feasibility Probe
+No physics control and no suction actuation are required for this check.
 
-- Full inherited physical flow 5/5 and controlled Cube01 7-s hold both complete with exit 0/HOME; 17 offline Python tests PASS, latest report `reports/TASK01_RUNTIME_REVIEW_20261003.md`.
-- D004 remains unmet: current centered Cube04 side helper tool intersects seated Cube03 (exact OBB evidence; no model/ACM change). Tool/contact-order review needed, not hidden protocol replacement.
-- Actual physics Cube friction reads 0.5/0.5 rather than authored 0.90/0.75 because cleanup deletes material. Material version decision/retest needed before freezing.
-- FR3 static mean support error 0.000370 N but raw force RMS 0.494278 N / mean moment error 0.014902 Nm and tensor-vs-pose velocity mismatch persist. Full-rate diagnostic fixes aliasing only; no calibrated TCP/internal-wrench claim.
-- 36 nulls and numeric/model review pending, YAML/hash unchanged, TASK02 TODO. Following mandatory stop conditions, seek direction on material and centered-helper accessibility before scientific/model changes.
+Using the intended left/right shared-object contact transforms, sample the nominal shared Cube along:
 
-### Runtime-repair checkpoint (2026-10-03, later run)
+```text
+shared-grasp START
+→ PRE_PUSH
+→ 10% insertion
+→ 30%
+→ 50%
+→ 70%
+→ 100% insertion
+```
 
-- Pre-close overshoot fixed without gate relaxation: local seeded fine FK/Jacobian micro correction, maximum 1 mm, no minimum quantization, original 0.300 mm gate and three-attempt stop.
-- Task27 quaternion extraction corrected; independent same-step physical records retained. Exact official asset root allows real FR3 joint-frame audit to run; both link8 incoming fixed joints have zero child anchor/identity child axes.
-- Fresh normal-feed inherited physical demo **5/5 PASS**, exit 0, both arms HOME. 70,434 snapshots / zero integrity errors. Fifth center error 0.493 mm at controller settle / 0.563 mm at later physical final sample. Full report and upstream patches provide commands/hashes/negative evidence.
-- Crucial remaining protocol gap: legacy first-four helper parks during rear push; outer side pressing does not suction the side cup, inner trim is solo. This does not satisfy D004 even though placements complete (BUG-009).
-- A whole-process 7-s pause metrology attempt safely aborts after stale-state timeout. Replaced by an opt-in main-thread hold, keeping ROS executor active; controlled load calibration pending at this checkpoint. Ordinary hold default=0.
-- All 36 nulls and numeric/model approval remain pending; user asked whether to keep 1e6 suction/1.946 kg hidden branch as candidate. TASK01 stays IN_PROGRESS, TASK02 TODO.
-- Define FR3 base poses.
-- Define cube size, mass and friction/contact parameters.
-- Define left/right grasp transforms.
-- Define carriage geometry and entrance frame.
-- Define PRE_PUSH and insertion target/depth.
-- Define physics dt, control dt and seed policy.
-- Define all success/failure tolerances for Benchmark A/B.
-- Define C0–C5 insertion perturbations.
-- Validate geometry in Isaac; validate P2/P3 reduced version in MuJoCo if needed.
+At every sample verify:
+- dual-arm IK exists;
+- joint limits;
+- full self/inter-arm/environment FCL;
+- tool-carriage collision;
+- shared-object relative grasp transform;
+- joint-limit margin.
+
+If this chain is geometrically infeasible, stop and report the blocking collision/configuration. Do not add force control to cure a geometric impossibility.
+
+## Required experiment 2 — Core Isaac READY
+Create or reuse a minimal scene containing:
+- dual FR3;
+- current fixed L tools;
+- one Cube;
+- carriage;
+- table/support if required.
+
+Reset to the frozen Benchmark-A start and Benchmark-B PRE_PUSH states and verify:
+- same geometry each reset;
+- deterministic state restore;
+- no unintended initial collision;
+- explicit frame transforms;
+- one post-physics-step simulation timestamp policy.
+
+No five-Cube execution is required.
+
+## Material policy
+TASK00/TASK01 measurement found the actually effective Cube friction to be approximately static=0.5, dynamic=0.5 in the inherited scene, while old source constants claimed 0.90/0.75 but were not bound as expected.
+
+For benchmark_v1, use **0.5 / 0.5 as the nominal candidate** unless the user explicitly changes this decision. Later P3 robustness tests may vary friction as a perturbation. Do not rewrite historical 0.90/0.75 runs as 0.5 results.
+
+## Force/wrench policy
+TASK01 only specifies the future interface semantics:
+- SI units;
+- timestamped at the physics post-step;
+- frame and application point explicit;
+- joint effort must not be mislabeled as TCP/contact wrench.
+
+Actual Isaac contact/TCP wrench calibration is deferred to **TASK10-IS before P2 Isaac benchmark execution** and must not block P4.
 
 ## Outputs
-- `configs/benchmark/benchmark_v1.yaml`
-- benchmark scene notes.
-- benchmark hash/version.
+- simplified `configs/benchmark/benchmark_v1.yaml`;
+- `reports/TASK01_CORE_BENCHMARK.md`;
+- single-Cube geometry-feasibility artifacts;
+- Isaac READY/reset evidence;
+- updated STATUS / WORKLOG / DECISIONS / BUGS as applicable.
 
-## PASS/FROZEN
-All values reviewed by user. Then mark FROZEN. Any later change requires DECISIONS entry and benchmark version bump.
+## PASS criteria
+- [ ] Benchmark uses one Cube only.
+- [ ] Base/tool/Cube/carriage geometry is explicit.
+- [ ] `carriage_entrance`, shared-object, TCP and world frame conventions are explicit.
+- [ ] Benchmark A start and PRE_PUSH target are reproducible.
+- [ ] Benchmark B PRE_PUSH and insertion target are reproducible.
+- [ ] Single-Cube geometry feasibility probe passes or a user-reviewed geometry change is made.
+- [ ] Nominal material is explicit.
+- [ ] Physics dt and simulation-time policy are explicit.
+- [ ] Isaac reset/READY can be reproduced.
+- [ ] No force-controller or paper algorithm was implemented.
+- [ ] User reviews the candidate.
+
+## FROZEN criteria
+After PASS and explicit user approval, mark benchmark_v1 FROZEN. Any later geometry/time/material change requires a DECISIONS entry and benchmark version bump.

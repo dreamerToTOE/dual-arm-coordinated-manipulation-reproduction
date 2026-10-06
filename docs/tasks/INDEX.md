@@ -3,7 +3,7 @@
 | Issue | Task | Phase |
 |---:|---|---|
 | #1 | TASK00 Environment Audit | Foundation |
-| #2 | TASK01 Freeze Benchmark V1 | Foundation |
+| #2 | TASK01 Core Single-Cube Benchmark Freeze | Foundation |
 | #3 | TASK02 Common Interfaces / Logger / Metrics | Foundation |
 | #4 | TASK03 P4 Closure Constraint | P4 |
 | #5 | TASK04 P4 Newton-Raphson Projection | P4 |
@@ -12,7 +12,7 @@
 | #8 | TASK07-MJ P2 Grasp Matrix + Internal Wrench | P2 |
 | #9 | TASK08-MJ P2 Object Pose Controller | P2 |
 | #10 | TASK09-MJ P2 Pose + Internal Force | P2 |
-| #11 | TASK10-IS P2 Isaac Migration | P2 |
+| #11 | TASK10-IS Force/Wrench Calibration + P2 Isaac Migration | P2 |
 | #12 | TASK11-MJ P3 Position-only Push | P3 |
 | #13 | TASK12-MJ P3 Hybrid Force/Position | P3 |
 | #14 | TASK13-MJ P3 Jam Detection | P3 |
