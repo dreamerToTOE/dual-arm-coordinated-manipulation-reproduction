@@ -281,3 +281,14 @@ Append-only architectural and scientific decisions.
 - Impact: Real FR3 reactions stay raw until actual joint frame/anchor, gravity/inertia and TCP shift checks. Failed asset-root startup is not a successful frame audit.
 - Full flow: Record 5/5 planning-only but 1/5 physical completion, Cube 02 pre-close overshoot separately. Never widen the 0.300 mm gate to accommodate minimum 0.650 mm correction. No legacy controller fix in this read-only scope.
 - Freeze: 36-field checklist is a review queue, not approved values. Keep YAML/hash unchanged, TASK01 IN_PROGRESS, TASK02 TODO; no early paper algorithm/model mass changes.
+
+
+## D016 — Single-Cube scientific benchmark; legacy five-Cube flow is non-blocking
+- Date: 2026-10-06
+- Classification: [ADAPTATION] benchmark architecture.
+- User approval: explicit.
+- Decision: benchmark_v1 uses one shared Cube, dual FR3 and one carriage. The legacy five-Cube Task27 application is preserved as a later application/stress test and no longer blocks TASK01.
+- Reason: the research question is tight cooperative transport plus constrained cooperative insertion, while the inherited five-Cube sequence introduced unrelated multi-object sequencing, retreat and fixture constraints that prevented progress toward paper baselines.
+- Force boundary: TASK01 freezes geometry/frames/material/time/start-goal only. Isaac TCP/contact-wrench calibration moves to TASK10-IS, before P2 Isaac migration. P4 is not blocked by force sensing.
+- Nominal material candidate: retain the measured effective 0.5/0.5 static/dynamic friction for benchmark_v1 candidate; P3 may later vary friction as robustness perturbation. Final freeze still requires user review.
+- Historical evidence: no old result is deleted or re-labeled; old five-Cube reports remain historical evidence only.
