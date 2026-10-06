@@ -1,5 +1,13 @@
 # STATUS
 
+## 2026-10-06 latest — 实测腕部碰深墙；杯面内转角候选只读通过
+
+diagnostic02 本机headless首件实际 X16/Y14，Y15原80Nm保护自动停止（left86.958/right52.123Nm）/controller1/整件完成0，双OPEN后自有headless正常停机。10,538同一步held记录/0完整性错误；left link7深墙接触从X16有非零力，峰值309.658N，Y15同一步140.242N/leftJ2 raw86.997Nm。不是D6/TCP力估计。
+
+精确实测14关节只读FK与物理腕部差<0.001mm，MoveIt该步墙FCL无碰撞；原NVIDIA link7 mesh(convexHull)与本机URDF STL不同。新鲜官方资产与旧cache SHA一致，未换模型。原mesh离线凸包复核实测X16/Y15有体积交集，不能把LP球半径当penetration depth。BUG017/新BUG019仍OPEN。
+
+只读绕杯面法向worldY -15deg候选前三链3/3 IK/FCL/relativeTCP通过；nominal02独立导出1330腕部节点，原USD凸包对深墙0重叠，最小X平面余量6.766mm，仍非物理PASS。nominal01日志穿插导致分析安全拒绝，保留负结果。53Python/探针build PASS，执行控制器尚未使用新转角。TASK01 IN_PROGRESS/DRAFT/36nulls，TASK02 TODO。
+
 ## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
 
 原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。

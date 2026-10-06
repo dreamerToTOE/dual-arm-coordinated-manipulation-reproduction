@@ -1,0 +1,106 @@
+{
+  "held_samples": 10538,
+  "first_nonzero_wrist_wall_contact": {
+    "physics_step": 19715,
+    "phase_received_async": "task27_plus_outer:X_16",
+    "collision_force_n": 0.527976197231963,
+    "pair": {
+      "collision_force_world_n": [
+        -0.17936301231384277,
+        -0.03148292750120163,
+        -0.49557703733444214
+      ],
+      "collision_torque_about_sensor_origin_world_nm": [
+        0.01472482943392972,
+        0.05549077230534749,
+        -0.008854529959972268
+      ],
+      "force_matrix_world_n": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_anchor_count": 1,
+      "friction_force_world_n": [
+        -0.17936301231384277,
+        -0.03148292750120163,
+        -0.49557703733444214
+      ],
+      "matrix_vs_normal_error_n": 0.0,
+      "normal_contact_count": 1,
+      "normal_force_world_n": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "other_path": "/World/Task27/TruckBox/WallDeep",
+      "sensor_path": "/World/left_fr3/fr3_link7"
+    },
+    "suction_closed": {
+      "left": true,
+      "right": true
+    }
+  },
+  "Y15_peak_same_step": {
+    "physics_step": 21051,
+    "left_raw_joint_peak_nm": 86.99725341796875,
+    "cube": {
+      "angular_velocity_rad_s": [
+        -0.21416990458965302,
+        0.35265102982521057,
+        -0.036700062453746796
+      ],
+      "linear_velocity_m_s": [
+        -0.00183448800817132,
+        -0.019262639805674553,
+        -0.00037913472624495625
+      ],
+      "position_m": [
+        1.099470615386963,
+        0.22564761340618134,
+        0.2604045867919922
+      ],
+      "prim_path": "/World/Task27/Supply/Cube_01",
+      "quaternion_xyzw": [
+        -0.0019899207987859337,
+        -0.0023453398344117434,
+        -0.0015114294531503175,
+        0.9999941275713992
+      ]
+    },
+    "contact": {
+      "collision_force_world_n": [
+        -84.57572937011719,
+        -0.6267004013061523,
+        111.86815643310547
+      ],
+      "collision_torque_about_sensor_origin_world_nm": [
+        -3.025623646246391,
+        0.9453177768361343,
+        -2.5783882481867835
+      ],
+      "force_matrix_world_n": [
+        -25.937788009643555,
+        7.483675956726074,
+        123.67521667480469
+      ],
+      "friction_anchor_count": 2,
+      "friction_force_world_n": [
+        -58.637943267822266,
+        -8.110376358032227,
+        -11.807059288024902
+      ],
+      "matrix_vs_normal_error_n": 1.9073486328125e-06,
+      "normal_contact_count": 4,
+      "normal_force_world_n": [
+        -25.937786102294922,
+        7.483675956726074,
+        123.67521667480469
+      ],
+      "other_path": "/World/Task27/TruckBox/WallDeep",
+      "sensor_path": "/World/left_fr3/fr3_link7"
+    }
+  },
+  "selected_measured_FK_max_difference_mm": 0.0008722016824275206,
+  "boundary": "Contact impulses/dt, not suction D6/internal TCP wrench. First nonzero logged contact is after held logger activation, not complete task first contact. Phase label async. Live guard left86.958Nm differs slightly from post-step peak86.997Nm because ROS raw-effort channel is20Hz."
+}

@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-06 latest — 按继续指令定位，不交付未验证版
+
+用户继续既定3+2流程。告知自动80Nm保护已停/双OPEN、发现left link7碰深墙；以精确关节重放排除主要坐标错，再只读验证杯面中心/法向不变的腕姿。明确本机headless而非GUI，53单测/名义3链不是物理通过。不推断批准改场景/L工具/质量/摩擦/门限/ACM/论文力控/36数值冻结。
+
 ## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
 
 原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。

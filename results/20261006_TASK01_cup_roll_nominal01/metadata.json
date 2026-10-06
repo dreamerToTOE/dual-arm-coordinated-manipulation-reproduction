@@ -1,0 +1,16 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL no-command wrist-roll kinematics/FCL and unchanged authored Isaac link7 convex hull audit",
+  "platform": "local ROS2 Humble MoveIt real dual FR3 model; offline original Isaac mesh",
+  "git_commit": {"runtime": "0cfdbaf3ef9efc06194c5081a2c198dcb7013d72", "reproduction": "working tree; replay/audit records pending"},
+  "seed": null,
+  "seed_note": "Finite explicit probe seeds; local IK random restarts uncontrolled, not repeatability evidence",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_usage": "DRAFT only; original task constants, original 3+2 contact positions/normals, no physics",
+  "command": "ros2 run fr3_dual_palletize task01_dual_fixture_probe --ros-args -p side_roll_world_y_deg:=-15.0",
+  "status": "PARTIAL_KINEMATICS_PASS_HULL_AUDIT_REJECTED",
+  "metrics": {"robot_commands": 0, "scene_commands": 0, "probe_exit_code": 0, "nominal_chains_passed": 3, "hull_audit_exit_code": 1},
+  "failure": "Buffered stdout audit rows interleaved with multithread rosout/stderr; parser rejected Malformed audit record. Not geometry PASS. Preserve raw, rerun with dedicated no-overwrite data file.",
+  "artifacts": ["raw/probe.log"],
+  "boundary": "Only probe code changed. Controller, L-tool/cube/walls/physics/ACM/80Nm gates unchanged. Roll about cup normal preserves center and normal; no actual regrasp/insertion or full-five PASS inferred."
+}

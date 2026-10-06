@@ -1,5 +1,14 @@
 # EXPERIMENT_LOG
 
+## 2026-10-06 latest — held diagnostic02 FAIL / nominal wrist02 PASS_NO_COMMAND
+
+- 本机Isaac4.5 headless / 原source d35cc0c+b749abc / first1,max1,scale5,hold0,zero-preplaced / RNG未受控；diagnostic02 controller1、X16/Y14、Y15原80Nm止动 left86.958/right52.123；bothOPEN/后四件未发指令，headless SIGINT后0。held10538/稀疏4598均0完整性错误。源commit、binaryhash、完整命令见run metadata。
+- 真正机器人-墙pair `/World/left_fr3/fr3_link7`↔`WallDeep`，X16峰309.657685N；Y15 step21051 same-row raw leftJ2=86.997253Nm/contact140.242401N。20Hz ROS guard与poststep峰值不同，不强行对齐。四肢/DOF同一步，不是D6 wrench。
+- 19627/19753/21051精确14关节只读服务重放，模型FK+已知rail0.1m与物理最大差0.000872mm；实测X16/Y15 `/check_state_validity` valid且无wall pair。object.pose与primitive local pose单列，防规范化局部0位置误读。
+- Fresh official USD SHA3feceb47…与cache一致；NVIDIA mesh convexHull、URDF STL差异存在；原USD凸包在记录实测姿态与深墙LP交集有正共同球半径，STL凸包比较则不相交。LP值不是碰撞深度/最小距离，未逆向PhysX cooked hull/contact offset。
+- nominal01/0cfdbaf probe0/3链名义通过，但stdout/rosout穿插，hull分析1拒绝，保存负结果。nominal02/c13ea40独立数据，probe0/3链通过、1330腕部节点、0深墙凸包重叠/minXplane6.766308mm。只读无joint/suction/feed/rail与Scene/ACM写；不是物理/全五件PASS。
+- 53Python/build目标PASS，analytic PASS only/36nulls。新转角仅探针，未改执行器。原source/scene/bridge/YAML hash保持。
+
 ## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
 
 原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。

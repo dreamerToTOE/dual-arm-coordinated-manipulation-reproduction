@@ -2,6 +2,10 @@
 
 Status: IN_PROGRESS (candidate study; benchmark_v1 not yet reviewed or frozen)
 
+## 2026-10-06 latest — 持件数据已获得，实际腕部碰墙，修复候选仅只读验证
+
+diagnostic02本机首件X16/Y14后Y15原80Nm停止，controller1/completed0；held10538/0errors，left link7↔深墙实体接触，精确FK与物理差<0.001mm但MoveIt墙FCL自由。原USD convexHull与URDF STL不同，未改碰撞/场景。nominal02杯面内-15deg候选前三链IK/FCL/relativeTCP及1330原USD离线腕部节点通过，尚无新物理PASS。BUG017/019 OPEN，53Python/build PASS，36nulls/hash不变。详见reports/TASK01_HELD_CONTACT_DIAGNOSTIC.md。
+
 ## 2026-10-06 final — 持件诊断实现，资产连接阻塞真实采样
 
 44软件测试/build PASS，新诊断真实启动在原FR3_asset_url连接失败，机器人命令0/未获得live held samples；本轮无新的物理PASS，Y15根因仍OPEN。原模型/物理/80Nm/ACM/YAML保持；TASK01 IN_PROGRESS/36nulls，TASK02 TODO。详见reports/TASK01_HELD_CONTACT_DIAGNOSTIC.md；网络恢复后从同一首件普通供料重测。

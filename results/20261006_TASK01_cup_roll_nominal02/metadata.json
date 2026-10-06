@@ -1,0 +1,15 @@
+{
+  "task": "TASK01",
+  "baseline": "EXPERIMENTAL read-only wrist-roll chain and unchanged authored Isaac hull audit, dedicated data file",
+  "platform": "local ROS2 Humble MoveIt real dual FR3 model; offline original Isaac mesh",
+  "git_commit": {"runtime": "c13ea40af62921b05397ed06ead2d1c1b5fa7a81", "reproduction": "working tree; replay/audit records pending"},
+  "probe_binary_sha256": "151f56ebf9fd616701bc8a79476b7eeac7ca4246e3c39be1c4eda2d352c328d4",
+  "seed": null,
+  "seed_note": "Finite explicit probe seeds; local IK restarts uncontrolled; no A/B or repeatability proof",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "command": "ros2 run fr3_dual_palletize task01_dual_fixture_probe --ros-args -p side_roll_world_y_deg:=-15.0 -p wrist_audit_path:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261006_TASK01_cup_roll_nominal02/raw/wrist_fk.tsv",
+  "status": "PASS_NO_COMMAND_ONLY",
+  "metrics": {"robot_commands": 0, "scene_commands": 0, "probe_exit_code": 0, "nominal_chains_passed": 3, "authored_hull_nodes": 1330, "deep_wall_hull_overlapping_nodes": 0, "min_deep_wall_x_plane_clearance_mm": 6.766308015560885, "python_tests_passed": 53},
+  "artifacts": ["probe_evidence.log", "raw/probe.log", "raw/wrist_fk.tsv", "audit.json"],
+  "boundary": "Only probe changed. Cup center and normal unchanged; only in-plane array/wrist roll. Original controller/L-tool/Cube/walls/physics/ACM/80Nm unchanged. Discrete original mesh audit does not model PhysX contact offsets/cooking or execution tracking. Not physical or full-five PASS."
+}

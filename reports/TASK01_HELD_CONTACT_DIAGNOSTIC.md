@@ -2,7 +2,31 @@
 
 日期：2026-10-06。Status: IN_PROGRESS；BUG-017仍OPEN，不是新版五件通过。
 
-## 网络恢复后的第二次启动（进行中）
+## 最新真实结果（取代下方startup01的历史checkpoint）
+
+startup02成功，同一步诊断live26机器人body/每臂9DOF均验证。原d35cc0c+b749abc实际首件完成X16/Y14，Y15原80Nm自动保护：ROSguard left86.958/right52.123Nm，controller1/整件完成0，安全双OPEN/后四件不执行。保护已先停controller；随后headless仅继续记录ABORT，再SIGINT正常0退出，并非人工终止导致控制器失败。
+
+10538 held/4598 sparse行均0完整性错误。X16 left link7↔deep wall峰309.657685N；Y15 step21051相同poststep leftJ2 raw86.997253Nm、contact140.242401N。阶段标签异步、ROSforce20Hz，不强行把guard86.958与单步峰86.997当同一时刻；contact没有D6/TCP校准声明。
+
+只读精确14joint重放19627/19753/21051：FK+独立已知rail0.1m与物理位置max0.000872mm；实测X16/Y15MoveIt scene valid、无wall pair。原NVIDIA link7 mesh(convexHull)与URDF STL不同；新鲜原URLGET/hash3feceb47…和之前cache一致。原USD凸包在X16/Y15物理姿态与深墙有体积交集，STL convexHull比较则自由；LP共同球半径不是penetration depth，未逆向cooked hull/contact offset，也不宣称所有力矩只有这一个来源。
+
+文件：run02 metadata/held_analysis/analysis/protocol/contact_evidence/controller_evidence/moveit_replay/mesh_hull_audit，raw本地ignored。原scene43aa7c2e…/bridge0f712365…/YAML a49d60a4…保持。新的杯面内腕部转角只读候选记录另见 `TASK01_CUP_NORMAL_ROLL.md`；不以其名义PASS替代物理验收。
+
+### 本阶段 POST-TASK REPORT
+
+- Task: TASK01 BUG017持件诊断；Status: **PARTIAL**（观测获得，物理任务FAIL）。
+- Completed: 真实live映射/同物理步诊断、峰值/精确FK/scene只读重放、原资产来源/mesh/hull审计；区分实际接触与未校准D6/internal wrench。
+- Files changed: 此报告/六记录/TASK01卡/results；新task01_held_moveit_replay/audit_held_hull与9单测；runtime仅无命令转角探针/独立TSV导出，执行器尚未修正。
+- Commands run: 上文原build/Isaac/MoveIt/controller、SIGINT自有headless、analyze_held_fixture、summarize_cube04_precision/dual_fixture、recorded-state replay、fresh官方URL GET、USD只读/STL/LP audit、53Python/analytic。所有完整执行命令/来源见run metadata。
+- Tests / experiment results: 原物理首件FAIL/Y15保护，53软件PASS，no-command3链与hull候选PASS仅名义；startup01与nominal01日志污染失败保存。
+- Key metrics: X16/Y14/整件0；10538held/0errors，86.997Nm rawJ2、140.242N同时墙接触，FK0.000872mm；候选1330节点0重叠/minXplane6.766mm。
+- Paper fidelity: [ORIGINAL]无新论文方法；[ADAPTATION]原3+2；[ENGINEERING]只读记录/重放/原点法向不变姿态检查；[DEVIATION]未改物理/场景/ACM/门限或借用旧5/5；[EXPERIMENTAL]单件headless诊断与未执行候选，不叫论文/可靠性通过。
+- Records updated: STATUS/WORKLOG/EXPERIMENT_LOG/BUGS（017/019 OPEN，018恢复记录）/DECISIONS D021/USER_FEEDBACK及TASK01/results。
+- Open risks: 原模型碰撞差异/跟踪/D6负载、候选未物理验证、teardown/36numeric审查仍OPEN。
+- Recommended next step: 用同一只读候选姿态做前三侧重抓的独立参数修正、编译，再fresh原场景首件同一步接触/原保护复测。需改变模型/物理/目标/法向/门限则另问。
+- Git branch / commit / dirty files: runtime task01-runtime-fixes探针c13ea40；本仓task01-benchmark-draft记录提交见历史，raw ignored；runtime无关未跟踪目录保留，保护目录未访问。push结果另记，不用本地commit冒充云端上传。
+
+## 网络恢复后的第二次启动（历史进行中checkpoint）
 
 同日后续S3直连/代理HEAD均HTTP200，原资产Content-Length17462793；runtime正常push已成功。保留下面startup01失败，不将瞬时网络故障视为永久阻塞。新鲜原场景 `results/20261006_TASK01_held_fixture_diagnostic02/` 重新启动，真实采样与首件结果待验证；尚未替换资产或发送controller命令。下方startup01的POST是该失败尝试的checkpoint，不是第二次启动的结果。
 

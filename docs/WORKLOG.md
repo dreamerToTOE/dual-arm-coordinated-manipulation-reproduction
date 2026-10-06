@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-06 latest — 真实接触诊断与只读腕姿候选
+
+诊断02原source d35cc0c/b749abc实际首件复现Y15保护，原物理/模型/80Nm/ACM不改。先自动safe abort，再手动结束仅仿真记录进程；保存10538连续held与4598稀疏行、精确峰值接触/DOF、服务FK/FCL重放和原mesh/hull审计。发现left link7深墙实体接触，而同关节MoveIt墙检查自由；测量FK一致，不能继续把根因只归为闭链内部力。
+
+新增只读重放脚本、凸包审计和9单测，53Python通过。探针0cfdbaf名义3链通过，但多线程日志穿插污染数据，分析器拒绝；c13ea40改独立不覆盖数据文件，重新nominal02通过3链与1330原mesh离线节点/0墙重叠。杯面中心/法向不变，仅面内转角候选，仍未改执行器/运行新物理任务。原资产fresh GET SHA与cache一致，未使用不明替代模型。
+
 ## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
 
 原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。

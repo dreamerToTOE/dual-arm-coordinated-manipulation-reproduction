@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D021 — 先做原点/杯面法向不变的腕姿检查，不靠换场景或加力控
+
+2026-10-06；[ENGINEERING]/[EXPERIMENTAL]。用户“继续”下，先保持原controller/模型/物理/80Nm实际复测并记录；实测机器人-深墙接触且FK一致，不再仅假定闭链内力。只读探针允许绕杯面法向worldY转角（有限±30deg诊断范围，不是benchmark门限）候选，杯面中心、法向、3+2角色、cube/墙/L几何不变；不选新基座/墙/碰撞豁免。
+
+nominal02 -15deg通过原FR3链与原USD凸包离线检查；执行器尚未应用，不用无命令证据替代物理验收。nominal01采样行坏就FAIL分析，独立文件重跑而非吞掉坏行。若需要改模型/物理/benchmark/论文算法则另问；36nulls/TASK02保持。
+
 ## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
 
 原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。

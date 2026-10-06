@@ -1,5 +1,15 @@
 # BUGS
 
+## BUG-019 — 同一实测姿态的机器人-深墙碰撞模型不一致
+
+2026-10-06；OPEN。精确step19753/21051实测FK与PhysX差<0.001mm，MoveIt墙FCL无碰撞，却有left link7深墙非零接触。原NVIDIA link7 mesh(convexHull)与franka_description link7 STL不同；离线原mesh凸包交集支持几何差异，而非100mm导轨偏移错误。尚未逆向cooked hull/contact offsets，不能由此宣称全部effort都来自墙接触。
+
+不改原场景/碰撞体/ACM/80Nm；检查绕杯面法向腕姿候选，原点与法向不动。nominal02前三链/1330腕部节点无墙重叠仍不等于物理修复；BUG017保持OPEN。
+
+BUG017 latest：diagnostic02再现Y15自动保护 left86.958/right52.123Nm；同一步leftJ2峰86.997Nm且link7-wall140.242N，X16已有309.658N；原保护有效/整件完成0。持件记录已获得，不再写“零接触数据”。
+
+采集工程负结果：nominal01 stdout/rosout穿插，分析器正确拒绝；nominal02用独立不覆盖文件复验通过，旧坏记录不删除/不修饰。BUG018网络恢复、fresh资产溯源成功，不抹startup01失败。
+
 ## 2026-10-06 follow-up — 网络恢复，原场景第二次启动
 
 原S3直连/代理HEAD恢复HTTP200，runtime d35cc0c正常push成功；保留startup01失败。相同官方资产/原参数的startup02重新运行，held live handles与首件物理诊断仍待验证，尚未发controller命令。BUG017根因未解决，BUG018外部连接暂时恢复不抹掉负结果；模型/物理/门限/YAML不变。本段更新此前“final”失败checkpoint，不叫新物理PASS。
