@@ -87,6 +87,8 @@ std::vector<State> solutions(const State& origin,const Group* group,
   const auto solver=group->getSolverInstance();
   if (!solver || solver->getJointNames()!=group->getVariableNames())
     throw std::runtime_error("Missing IK or unexpected joint ordering");
+  if (solver->getTipFrames()!=std::vector<std::string>{tip})
+    throw std::runtime_error("Configured solver tip differs from requested TCP");
   if (diagnostics) *diagnostics=Json::array();
   for (int attempt=0;attempt<attempt_cap && found.size()<retained_cap;++attempt)
   {
@@ -137,13 +139,27 @@ std::vector<State> solutions(const State& origin,const Group* group,
 
 int main(int argc,char** argv)
 {
-  if (argc!=6) { std::cerr<<"usage: probe benchmark.yaml robot.urdf robot.srdf kinematics.yaml output-dir\n"; return 2; }
+  if (argc<6 || argc%2!=0) { std::cerr<<"usage: probe benchmark.yaml robot.urdf robot.srdf kinematics.yaml output-dir [--ik-epsilon value] [--replay-step dense-results.json]\n"; return 2; }
+  std::optional<double> solver_epsilon;
+  std::optional<std::string> replay_path;
+  for (int i=6;i<argc;i+=2)
+  {
+    if (std::string(argv[i])=="--ik-epsilon")
+    {
+      try { solver_epsilon=std::stod(argv[i+1]); } catch (...) { return 2; }
+      // 仅收紧求解精度；不允许借此放宽原来的残差验收。
+      if (!std::isfinite(*solver_epsilon) || *solver_epsilon<=0. || *solver_epsilon>1e-5) return 2;
+    }
+    else if (std::string(argv[i])=="--replay-step") replay_path=argv[i+1];
+    else return 2;
+  }
   const std::filesystem::path output(argv[5]);
-  if (std::filesystem::exists(output/"sample_results.json"))
+  if (std::filesystem::exists(output/"sample_results.json") || std::filesystem::exists(output/"replay_step_results.json"))
     { std::cerr<<"Refusing to overwrite prior run\n"; return 2; }
   std::filesystem::create_directories(output);
   Json samples=Json::array();
   Json dense=Json::array();
+  Json numeric;
   int exit_code=2;
   rclcpp::init(argc,argv);
   try
@@ -160,8 +176,18 @@ int main(int argc,char** argv)
         const auto key=entry.first.as<std::string>();
         for (const auto& prefix:{arm+".","robot_description_kinematics."+arm+"."})
           if (key=="kinematics_solver") params.emplace_back(prefix+key,entry.second.as<std::string>());
+          else if (key=="max_solver_iterations") params.emplace_back(prefix+key,entry.second.as<int>());
+          else if (key=="position_only_ik") params.emplace_back(prefix+key,entry.second.as<bool>());
           else params.emplace_back(prefix+key,entry.second.as<double>());
       }
+    for (const std::string arm:{"left_arm","right_arm"})
+    {
+      if (solver_epsilon) params.emplace_back(arm+".epsilon",*solver_epsilon);
+      numeric[arm]={{"plugin",kin[arm]["kinematics_solver"].as<std::string>()},
+        {"epsilon",solver_epsilon.value_or(kin[arm]["epsilon"] ? kin[arm]["epsilon"].as<double>():1e-5)},
+        {"orientation_vs_position",kin[arm]["orientation_vs_position"] ? kin[arm]["orientation_vs_position"].as<double>():.01},
+        {"epsilon_override_namespace",solver_epsilon ? arm+".epsilon":"none; YAML or plugin default"}};
+    }
     auto node=std::make_shared<rclcpp::Node>("task01_single_cube_geometry",
       rclcpp::NodeOptions().parameter_overrides(params).automatically_declare_parameters_from_overrides(true)
         .enable_rosout(false).start_parameter_services(false).start_parameter_event_publisher(false));
@@ -195,6 +221,48 @@ int main(int argc,char** argv)
     const auto size=vec(config["cube"]["size_m"]);
     const auto b=config["benchmarks"]["B_constrained_insertion"];
     const auto pre=vec(b["start_cube_center_world_m"]),goal=vec(b["target_cube_center_world_m"]);
+    if (replay_path)
+    {
+      // 同一记录的精确14q/同一目标做数值A/B，只检查一个步骤，不选择新的吸点或构型。
+      const auto recorded=Json::parse(readText(*replay_path));
+      if (!recorded.is_array() || recorded.size()!=2 || recorded[0]["status"]!="PASS" || recorded[1]["status"]!="FAIL_STOP")
+        throw std::runtime_error("Replay expects prior two-row PASS/FAIL record");
+      const auto lq=recorded[0]["left_q_rad"].get<std::vector<double>>();
+      const auto rq=recorded[0]["right_q_rad"].get<std::vector<double>>();
+      if (lq.size()!=left->getVariableCount() || rq.size()!=right->getVariableCount())
+        throw std::runtime_error("Replay joint count mismatch");
+      state.setJointGroupPositions(left,lq); state.setJointGroupPositions(right,rq); state.update();
+      if (!state.satisfiesBounds()) throw std::runtime_error("Replay seed exceeds original limits");
+      Eigen::Isometry3d object=Eigen::Isometry3d::Identity();
+      const auto p=recorded[1]["cube_center_world_m"].get<std::vector<double>>();
+      if (p.size()!=3) throw std::runtime_error("Replay Cube XYZ mismatch");
+      object.translation()=Eigen::Vector3d(p[0],p[1],p[2]);
+      box(scene,"shared_cube",object.translation(),size);
+      Json ld,rd;
+      const auto ls=solutions(state,left,lt,object*grasp_l,1,1,&ld),rs=solutions(state,right,rt,object*grasp_r,1,1,&rd);
+      Json record={{"scope","single_cube_core_benchmark"},{"replay_input",*replay_path},
+        {"effective_ik_numeric",numeric},{"original_seed_left_q_rad",lq},{"original_seed_right_q_rad",rq},
+        {"cube_center_world_m",xyz(object.translation())},{"left_ik_diagnostics",ld},{"right_ik_diagnostics",rd},
+        {"robot_commands",0},{"suction_commands",0},{"physics_started",false},{"acm_modified",false},
+        {"full_chain_verified",false},{"fcl","NOT_RUN_NO_ACCEPTED_DUAL_IK"},{"status","FAIL_STOP"}};
+      if (!ls.empty() && !rs.empty())
+      {
+        State pair(state); std::vector<double> new_lq,new_rq;
+        ls.front().copyJointGroupPositions(left,new_lq); rs.front().copyJointGroupPositions(right,new_rq);
+        pair.setJointGroupPositions(left,new_lq); pair.setJointGroupPositions(right,new_rq); pair.update();
+        collision_detection::CollisionRequest request; request.contacts=true;
+        request.max_contacts=200; request.max_contacts_per_pair=1;
+        collision_detection::CollisionResult result; scene.checkCollision(request,result,pair);
+        record["collision_pairs"]=Json::array();
+        for (const auto& entry:result.contacts) for (const auto& hit:entry.second)
+          record["collision_pairs"].push_back({{"body1",entry.first.first},{"body2",entry.first.second},{"depth_m",hit.depth}});
+        record["fcl"]=result.collision ? "FAIL":"PASS";
+        if (!result.collision && pair.satisfiesBounds()) record["status"]="PASS_RECORDED_STEP_ONLY";
+      }
+      std::ofstream file(output/"replay_step_results.json"); file<<record.dump(2)<<'\n';
+      std::cout<<record.dump()<<std::endl;
+      rclcpp::shutdown(); return record["status"]=="PASS_RECORDED_STEP_ONLY" ? 3:1;
+    }
     // START 缺定义就记录缺失；不私自继承 Task27 供料位或选一个更好到达的位置。
     const auto start=config["benchmarks"]["A_tight_transport"]["initial_cube_center_world_m"];
     const bool start_defined=start.IsSequence();
@@ -350,7 +418,8 @@ candidate_selected:
   std::ofstream file(output/"sample_results.json");
   file<<Json({{"scope","single_cube_core_benchmark"},{"status",exit_code==1 ? "FAIL_STOP":exit_code==3 ? "PARTIAL_UNDEFINED_START":"ERROR"},
     {"physics_started",false},{"robot_commands",0},{"suction_commands",0},{"acm_modified",false},
-    {"continuous_path_verified",false},{"dense_step_cap_m",.002},{"dense_states_checked",dense.size()},
+    {"continuous_path_verified",false},{"effective_ik_numeric",numeric},
+    {"dense_step_cap_m",.002},{"dense_states_checked",dense.size()},
     {"samples",samples}}).dump(2)<<'\n';
   std::ofstream dense_file(output/"dense_insertion_results.json"); dense_file<<dense.dump(2)<<'\n';
   rclcpp::shutdown(); return exit_code;
