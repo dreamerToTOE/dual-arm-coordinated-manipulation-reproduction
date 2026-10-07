@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D034 evidence follow-up — 全链实得14q只候选，先核模型再reset
+
+2026-10-07，[EXPERIMENTAL] 新START几何链实际A136/B157通过，实际PRE14q完全相同；所有状态distance而非仅六端点已保存。START与PRE配置记录候选YAML，不自动FROZEN，不再随机求起点。原run配置独立快照/SHA，避免录q后篡改旧hash。
+
+[ENGINEERING] 全链最小腕工具环境gap在TARGET左link7/deepwall2.212219mm；另全pair min约1mm为现有Cube/杯面间距。实际PhysX对照优先START/PRE/TARGET/state196，再其余全部状态；不用FCL模型给PhysX背书。未过parity不做reset，未过reset不标TASK01 PASS CANDIDATE；旧5Cube与force/wrench仍不在范围内。
+
 ## D034 — 新科研START明确批准；全链几何→模型一致性→READY/reset按序门禁
 
 2026-10-07，[ADAPTATION] 用户明确确认Benchmark A START Cube=(0.550,0,0.380)m、xyzw=(0,0,0,1)：双FR3已经通过当前shared-grasp transforms稳定共同持件并离桌，不包含抓取过程。**这是新的科研benchmark设计，不是旧Task27 feed pose**。PRE_PUSH=(0.790,0,0.260)、TARGET=(1.100,0,0.260)、L工具/车厢/抓取/TCP/基座/碰撞网格/SRDF/ACM/独立验收保持。

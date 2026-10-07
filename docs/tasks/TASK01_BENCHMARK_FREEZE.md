@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current ordered gate: FULL_GEOMETRY_PASS / ISAAC_PARITY_PENDING (2026-10-07)
+
+Actual full-chain native exit0: A136/B157,293 records292 distinct states, exact PRE14q seam, every-state signed FCL distance/pair recorded. START/PRE14q is captured in candidate YAML, not FROZEN. Visible GUI model parity is initializing; repeated READY/reset has not run. See reports/TASK01_FULL_SINGLE_CUBE_GEOMETRY.md, TASK01_ISAAC_MODEL_PARITY.md and TASK01_READY_RESET.md. BUG001 belongs to TASK10-IS, non-blocking; TASK02 remains TODO.
+
+#### Historical PRE checkpoint (before full-chain execution)
+
+User confirmed the new scientific START=(0.550,0,0.380), identity orientation, already shared-grasped and off-table; not Task27 feed. Probe LMA epsilon1e-7 and independent limits unchanged. First run dense START→PRE_PUSH with every-state full FCL signed distance/pair; failure stops without geometry edits. Only then stitch by exact PRE14q into B, capture START14q candidate, perform visible single-Cube static original-model parity, then repeated READY/reset. No force calibration or frozen claim; BUG001 belongs to TASK10-IS. Previous entries below are historical and remain intact.
+
 ### Latest execution gate: PARTIAL_PENDING_START_AND_ISAAC_REVIEW (2026-10-07)
 
 User approved continuing geometry-preserving diagnosis. Same-seed precision A/B identifies both prior IK candidates as SUCCESS/bounds-valid but rotation-residual rejected. Local epsilon1e-7 resolves that step without changing acceptance1e-5m/1e-4rad or geometry/weight. PRE_PUSH→TARGET now passes157 ≤2mm discrete IK/bounds/full robot FCL states; separate nominal Cube/table/three-wall audit has628 checks/zero volumetric overlaps. Not continuous collision or physics proof. START→PRE_PUSH remains undefined; BUG019 mesh mismatch/Isaac READY-reset/user freeze review remain pending. No Isaac started or robot/suction command; TASK02 stays TODO. See [new diagnosis report](../../reports/TASK01_SINGLE_CUBE_IK_DIAGNOSIS.md). Do not mark TASK01 PASS/FROZEN.

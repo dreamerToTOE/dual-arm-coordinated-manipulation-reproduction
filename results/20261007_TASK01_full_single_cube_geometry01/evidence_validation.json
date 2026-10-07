@@ -1,0 +1,53 @@
+{
+  "status": "PASS_ARTIFACT_ONLY",
+  "scientific_classification": "ENGINEERING",
+  "scope": "stored_geometry_artifact_only",
+  "validation_date": "2026-10-07",
+  "command": "python3 platforms/isaac_ros2/probes/single_cube_geometry/verify_full_chain_evidence.py results/20261007_TASK01_full_single_cube_geometry01",
+  "exit_code": 0,
+  "assertions_checked": 210164,
+  "verifier_sha256": "53ff74b5536c01cc8c99fd261423b612e9b8e1998b3dc3f80265b6b906b7843b",
+  "probe_or_isaac_started": false,
+  "isaac_model_parity_verified": false,
+  "dynamics_verified": false,
+  "reset_readiness_verified": false,
+  "continuous_collision_certificate": false,
+  "robot_commands": 0,
+  "suction_commands": 0,
+  "metrics": {
+    "records": 293,
+    "unique_states": 292,
+    "A_states": 136,
+    "B_states": 157,
+    "csv_rows": 1758,
+    "failed_states": 0,
+    "maximum_cube_translation_step_m": {
+      "A": 0.0019876159799999253,
+      "B": 0.0019871794871795245
+    },
+    "exact_14q_seam_verified": true,
+    "per_state_distances_pairs_nearest_points_finite": true,
+    "summary_csv_metadata_consistent": true,
+    "source_model_binary_hashes_verified": true,
+    "config_snapshot_sha256": "3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b",
+    "source_commit": "fb643f1",
+    "binary_sha256": "7da613a4cac990a7c07adb2cee10bfce9fe9f01f3bc709b26562305eb0840605",
+    "minimum_fcl_distance": {
+      "state_index": 196,
+      "signed_distance_m": 0.0009996689104571322,
+      "body1": "shared_cube",
+      "body2": "left_fr3_side_suction"
+    },
+    "minimum_wrist_tool_environment_fcl_distance": {
+      "state_index": 292,
+      "signed_distance_m": 0.0022122185355011987,
+      "body1": "left_fr3_link7",
+      "body2": "carriage_deep_wall"
+    }
+  },
+  "notes": [
+    "Summary of the actual verifier stdout; not a new geometry-probe run.",
+    "Uses config_at_run.yaml and its original approval-commit hash; does not read the changed working benchmark YAML.",
+    "Evidence integrity PASS does not certify Isaac collision parity, dynamics, suction stability, force control, or readiness."
+  ]
+}

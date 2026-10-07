@@ -1,0 +1,3369 @@
+{
+  "acm_modified": false,
+  "acm_unchanged_verified": true,
+  "benchmark_frozen": false,
+  "continuous_collision_certificate": false,
+  "effective_ik_numeric": {
+    "left_arm": {
+      "acceptance_rotation_rad": 0.0001,
+      "acceptance_translation_m": 1e-05,
+      "epsilon": 1e-07,
+      "max_solver_iterations": 500,
+      "orientation_vs_position": 0.01,
+      "plugin": "lma_kinematics_plugin/LMAKinematicsPlugin",
+      "position_only_ik": false
+    },
+    "right_arm": {
+      "acceptance_rotation_rad": 0.0001,
+      "acceptance_translation_m": 1e-05,
+      "epsilon": 1e-07,
+      "max_solver_iterations": 500,
+      "orientation_vs_position": 0.01,
+      "plugin": "lma_kinematics_plugin/LMAKinematicsPlugin",
+      "position_only_ik": false
+    }
+  },
+  "kinematic_timed_trajectory": false,
+  "max_cube_translation_step_m": 0.002,
+  "physics_started": false,
+  "planned_state_counts": {
+    "A_tight_transport": 136,
+    "B_constrained_insertion": 157,
+    "shared_pre_push_duplicate_records": 1,
+    "unique_chain_states": 292
+  },
+  "recorded_states": 293,
+  "robot_commands": 0,
+  "scientific_classification": "ENGINEERING",
+  "scope": "single_cube_core_benchmark",
+  "seed_policy": "original deterministic64 per-arm,retain12; then previous-q one-shot continuation",
+  "segments": {
+    "A": {
+      "collision_pairs": [],
+      "complete_segment_checked": true,
+      "cube_environment_checks": 544,
+      "cube_environment_penetrations": 0,
+      "max_grasp_rotation_rad": 5.063085078206643e-06,
+      "max_grasp_translation_m": 1.5384210010393093e-09,
+      "minimum_fcl_distance": {
+        "body1": "shared_cube",
+        "body2": "right_fr3_side_suction",
+        "cube_center_world_m": [
+          0.79,
+          0.0,
+          0.26
+        ],
+        "nearest_point_1_world_m": [
+          0.7607074260794491,
+          0.06,
+          0.2892925739205509
+        ],
+        "nearest_point_2_world_m": [
+          0.76070744126641,
+          0.060999798493757466,
+          0.28929259074797564
+        ],
+        "segment_index": 135,
+        "signed_distance_m": 0.0009997984940144258,
+        "state_index": 135,
+        "type": "ROBOT_WORLD"
+      },
+      "minimum_joint_margin_rad": 0.46182800144132097,
+      "minimum_wrist_tool_environment_fcl_distance": {
+        "body1": "table",
+        "body2": "left_fr3_side_suction",
+        "cube_center_world_m": [
+          0.79,
+          0.0,
+          0.26
+        ],
+        "nearest_point_1_world_m": [
+          0.7549999907623086,
+          -0.07165936550463464,
+          0.2
+        ],
+        "nearest_point_2_world_m": [
+          0.7549999915012321,
+          -0.0716593641191526,
+          0.22500003015228873
+        ],
+        "segment_index": 135,
+        "signed_distance_m": 0.02500003015228876,
+        "state_index": 135,
+        "type": "ROBOT_WORLD"
+      },
+      "planned_states": 136,
+      "segment": "A_tight_transport",
+      "states_checked": 136,
+      "states_passed": 136,
+      "status": "PASS_SAMPLED_SEGMENT"
+    },
+    "B": {
+      "collision_pairs": [],
+      "complete_segment_checked": true,
+      "cube_environment_checks": 628,
+      "cube_environment_penetrations": 0,
+      "max_grasp_rotation_rad": 9.944047613674544e-06,
+      "max_grasp_translation_m": 8.685637772377861e-09,
+      "minimum_fcl_distance": {
+        "body1": "shared_cube",
+        "body2": "left_fr3_side_suction",
+        "cube_center_world_m": [
+          0.9092307692307693,
+          0.0,
+          0.26
+        ],
+        "nearest_point_1_world_m": [
+          0.8824662271931667,
+          -0.06,
+          0.22746264958220708
+        ],
+        "nearest_point_2_world_m": [
+          0.8824662282764217,
+          -0.06099966891045604,
+          0.2274626485718258
+        ],
+        "segment_index": 60,
+        "signed_distance_m": 0.0009996689104571322,
+        "state_index": 196,
+        "type": "ROBOT_WORLD"
+      },
+      "minimum_joint_margin_rad": 0.4678486266996673,
+      "minimum_wrist_tool_environment_fcl_distance": {
+        "body1": "left_fr3_link7",
+        "body2": "carriage_deep_wall",
+        "cube_center_world_m": [
+          1.1,
+          0.0,
+          0.26
+        ],
+        "nearest_point_1_world_m": [
+          1.1599526608903397,
+          -0.23141952016700967,
+          0.3522117119743564
+        ],
+        "nearest_point_2_world_m": [
+          1.16,
+          -0.23141952016700976,
+          0.35
+        ],
+        "segment_index": 156,
+        "signed_distance_m": 0.0022122185355011987,
+        "state_index": 292,
+        "type": "ROBOT_WORLD"
+      },
+      "planned_states": 157,
+      "segment": "B_constrained_insertion",
+      "states_checked": 157,
+      "states_passed": 157,
+      "status": "PASS_SAMPLED_SEGMENT"
+    }
+  },
+  "start_ik_seed_diagnostics": {
+    "left": [
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 0,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.6462042333814599,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          0.6556998327304024,
+          -0.9158460955296517,
+          0.9361619490344238,
+          -2.43079576661854,
+          0.7029262366728565,
+          1.726259984792982,
+          1.2164416425071283
+        ],
+        "residual": {
+          "rotation_rad": 4.653976565548746e-07,
+          "translation_m": 2.958359245614655e-10
+        },
+        "seed_q_rad": [
+          0.0,
+          -0.7853981634,
+          0.0,
+          -2.3561944902,
+          0.0,
+          1.5707963268,
+          0.7853981634
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 1,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5185731718763753,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.3821268281236248,
+          -0.5563677051267977,
+          -0.4926103219484771,
+          -2.4761157489466954,
+          -0.2734884052282736,
+          1.961330424132587,
+          2.0608505207977297
+        ],
+        "residual": {
+          "rotation_rad": 1.730110650865149e-07,
+          "translation_m": 6.724052646362327e-11
+        },
+        "seed_q_rad": [
+          -1.87617276,
+          -0.93567656,
+          -1.0802206799999998,
+          -1.94505776,
+          -0.28187739999999994,
+          2.61266328,
+          0.5381611200000003
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 2,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.9096595199999999,
+          -0.32388803999999993,
+          -0.11370744000000022,
+          -1.4519051,
+          0.6765057600000004,
+          3.3093511600000003,
+          1.5546876800000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 3,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.05685371999999944,
+          0.28790048000000024,
+          0.8528058000000001,
+          -0.95875244,
+          1.6348889200000003,
+          4.00603904,
+          2.57121424
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 4,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.0233669600000002,
+          0.899689,
+          1.8193190400000003,
+          -0.46559978000000024,
+          2.5932720799999998,
+          0.5635812800000001,
+          -2.4516228800000004
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 5,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.9898801999999995,
+          1.5114775200000001,
+          2.7858322799999997,
+          -2.9023541,
+          -2.14226824,
+          1.26026916,
+          -1.4350963199999998
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 6,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.2322927964516448,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.6684072035483553,
+          -0.6680512556975521,
+          -0.7258096049937812,
+          -2.4621979833289886,
+          -0.44883551145905,
+          1.8960994918110385,
+          2.212667983094497
+        ],
+        "residual": {
+          "rotation_rad": 2.4724972393919505e-07,
+          "translation_m": 9.851804465728464e-11
+        },
+        "seed_q_rad": [
+          -2.78583228,
+          -1.5114775200000001,
+          -1.9898802,
+          -2.40920144,
+          -1.18388508,
+          1.95695704,
+          -0.41856976
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 7,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5355551648959338,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.3651448351040663,
+          -0.551809021629677,
+          -0.47808231380368027,
+          -2.476676702856415,
+          -0.26415640839583926,
+          1.9638272113766129,
+          2.0527975936861855
+        ],
+        "residual": {
+          "rotation_rad": 6.241986889792159e-06,
+          "translation_m": 1.2342753655294497e-08
+        },
+        "seed_q_rad": [
+          -1.8193190399999999,
+          -0.899689,
+          -1.02336696,
+          -1.9160487800000001,
+          -0.22550192000000013,
+          2.65364492,
+          0.5979568
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 8,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.8528058000000001,
+          -0.28790048,
+          -0.05685372000000033,
+          -1.4228961200000003,
+          0.7328812400000002,
+          3.3503328,
+          1.61448336
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 9,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.11370744000000022,
+          0.3238880400000004,
+          0.9096595199999995,
+          -0.9297434600000005,
+          1.6912644000000001,
+          4.04702068,
+          2.63100992
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 10,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.08022068,
+          0.9356765600000001,
+          1.8761727599999998,
+          -0.4365908000000003,
+          2.6496475600000005,
+          0.60456292,
+          -2.3918272000000003
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 11,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          2.04673392,
+          1.5474650799999998,
+          2.842686,
+          -2.8733451199999998,
+          -2.08589276,
+          1.3012508,
+          -1.37530064
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 12,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.2668557487673131,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.633844251232687,
+          -0.6504641470291691,
+          -0.6992145938040781,
+          -2.464424163768292,
+          -0.42557761118871307,
+          1.9069017784531865,
+          2.192466733100427
+        ],
+        "residual": {
+          "rotation_rad": 3.938137172905743e-06,
+          "translation_m": 5.653886675184794e-09
+        },
+        "seed_q_rad": [
+          -2.72897856,
+          -1.47548996,
+          -1.93302648,
+          -2.38019246,
+          -1.1275096,
+          1.9979386799999999,
+          -0.35877408000000033
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 13,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5622840378169482,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.338415962183052,
+          -0.545012375023963,
+          -0.4551074809174709,
+          -2.4775013898198393,
+          -0.24965499301247765,
+          1.9675076199571007,
+          2.0402896780906037
+        ],
+        "residual": {
+          "rotation_rad": 6.294992545383885e-06,
+          "translation_m": 1.2710041139050787e-08
+        },
+        "seed_q_rad": [
+          -1.76246532,
+          -0.8637014399999999,
+          -0.9665132400000003,
+          -1.8870398,
+          -0.16912643999999988,
+          2.69462656,
+          0.6577524800000001
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 14,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.7959520799999997,
+          -0.2519129200000001,
+          0.0,
+          -1.3938871400000001,
+          0.78925672,
+          3.39131444,
+          1.6742790399999996
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 15,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.1705611600000001,
+          0.3598756000000001,
+          0.9665132399999998,
+          -0.9007344800000001,
+          1.74763988,
+          4.08800232,
+          2.6908055999999996
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 16,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.1370744,
+          0.9716641199999998,
+          1.93302648,
+          -0.4075818200000003,
+          2.7060230399999994,
+          0.64554456,
+          -2.33203152
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 17,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          2.10358764,
+          1.58345264,
+          -2.842686,
+          -2.8443361400000002,
+          -2.0295172800000003,
+          1.34223244,
+          -1.3155049600000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 18,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.2972931100855636,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.6034068899144365,
+          -0.6360390480542584,
+          -0.6753518399247839,
+          -2.4662381018934925,
+          -0.40561852539119536,
+          1.9156120376412638,
+          2.175149735171939
+        ],
+        "residual": {
+          "rotation_rad": 1.3448873808669524e-06,
+          "translation_m": 1.0165821019582536e-09
+        },
+        "seed_q_rad": [
+          -2.67212484,
+          -1.4395024,
+          -1.87617276,
+          -2.35118348,
+          -1.07113412,
+          2.0389203200000003,
+          -0.29897839999999976
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 19,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5981272153639208,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.289181973757444,
+          -0.5336621081754617,
+          -0.4124769227251659,
+          -2.478872784636079,
+          -0.22352110427338975,
+          1.973583048150025,
+          2.0177617361605344
+        ],
+        "residual": {
+          "rotation_rad": 7.817010427548463e-06,
+          "translation_m": 1.70464968252035e-08
+        },
+        "seed_q_rad": [
+          -1.7056116,
+          -0.8277138799999999,
+          -0.9096595199999999,
+          -1.85803082,
+          -0.11275096000000007,
+          2.7356082,
+          0.7175481600000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 20,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.7390983600000003,
+          -0.21592536000000018,
+          0.05685371999999944,
+          -1.36487816,
+          0.8456322000000003,
+          3.43229608,
+          1.7340747200000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 21,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.22741487999999999,
+          0.3958631600000002,
+          1.0233669600000002,
+          -0.8717255000000002,
+          1.8040153599999997,
+          4.12898396,
+          2.75060128
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 22,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.1939281200000003,
+          1.00765168,
+          1.9898801999999995,
+          -0.37857284000000035,
+          2.76239852,
+          0.6865262000000001,
+          -2.2722358400000005
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 23,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          2.1604413599999996,
+          1.6194401999999997,
+          -2.78583228,
+          -2.81532716,
+          -1.9731418,
+          1.38321408,
+          -1.25570928
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 24,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.32430184295906583,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.5763981570409342,
+          -0.6240284001651004,
+          -0.6538642264945698,
+          -2.467744512394026,
+          -0.38830723294948644,
+          1.9227675818926884,
+          2.160141309620007
+        ],
+        "residual": {
+          "rotation_rad": 4.527377662605247e-07,
+          "translation_m": 1.7938279249427574e-10
+        },
+        "seed_q_rad": [
+          -2.61527112,
+          -1.4035148400000002,
+          -1.8193190399999999,
+          -2.3221745,
+          -1.01475864,
+          2.07990196,
+          -0.23918272000000007
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 25,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5957945645268938,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.1841387830576116,
+          -0.5140774199139921,
+          -0.3204158548960646,
+          -2.481205435473106,
+          -0.16991258165364423,
+          1.9838294152057125,
+          1.9715991382634221
+        ],
+        "residual": {
+          "rotation_rad": 1.4351479165414047e-07,
+          "translation_m": 4.9004636081839e-11
+        },
+        "seed_q_rad": [
+          -1.64875788,
+          -0.79172632,
+          -0.8528058000000001,
+          -1.8290218400000002,
+          -0.056375480000000255,
+          2.7765898399999998,
+          0.7773438400000003
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 26,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.593283288652934,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          1.996178613583808,
+          -0.49275200576487355,
+          -0.15317097524434697,
+          -2.483716711347066,
+          -0.07926558669756566,
+          1.9946769614551971,
+          1.893652750169811
+        ],
+        "residual": {
+          "rotation_rad": 1.946135586750809e-07,
+          "translation_m": 6.798638984078461e-11
+        },
+        "seed_q_rad": [
+          -0.68224464,
+          -0.17993780000000004,
+          0.11370744000000022,
+          -1.33586918,
+          0.9020076799999996,
+          3.4732777199999996,
+          1.7938704000000008
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 27,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.2842686000000003,
+          0.43185072000000035,
+          1.08022068,
+          -0.8427165200000002,
+          1.8603908400000004,
+          4.1699656,
+          2.81039696
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 28,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.2507818399999997,
+          1.04363924,
+          2.04673392,
+          -0.3495638600000004,
+          2.818774,
+          0.72750784,
+          -2.21244016
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 29,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          2.21729508,
+          1.6554277599999998,
+          -2.72897856,
+          -2.78631818,
+          -1.91676632,
+          1.42419572,
+          -1.1959136000000001
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "left_arm",
+        "attempt": 30,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.3484222999062583,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.5522777000937418,
+          -0.6138974562416039,
+          -0.6344466045492861,
+          -2.4690114828713905,
+          -0.37315213064106656,
+          1.9287329766259458,
+          2.1470108407646524
+        ],
+        "residual": {
+          "rotation_rad": 1.643289340303273e-07,
+          "translation_m": 3.794564213612989e-11
+        },
+        "seed_q_rad": [
+          -2.5584174,
+          -1.36752728,
+          -1.76246532,
+          -2.29316552,
+          -0.9583831600000001,
+          2.1208836,
+          -0.17938703999999994
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "left_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.0,
+            1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            -0.061,
+            0.38
+          ]
+        },
+        "tip_link": "left_fr3_side_suction_tcp"
+      }
+    ],
+    "right": [
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 0,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.6721996016238818,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.47514226618537353,
+          -1.1301697571742122,
+          -0.9979978814517659,
+          -2.404800398376118,
+          -0.8636013246419576,
+          1.5572941255153623,
+          -1.0752371378447552
+        ],
+        "residual": {
+          "rotation_rad": 1.1524626910609585e-06,
+          "translation_m": 1.2038722032050068e-09
+        },
+        "seed_q_rad": [
+          0.0,
+          -0.7853981634,
+          0.0,
+          -2.3561944902,
+          0.0,
+          1.5707963268,
+          0.7853981634
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 1,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.623496573120903,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.8684764665900945,
+          -0.7364652127593008,
+          -0.8090920038604612,
+          -2.453503426879097,
+          -0.5305332234690457,
+          1.8523911284965136,
+          -1.3673220018721643
+        ],
+        "residual": {
+          "rotation_rad": 1.6067165267094081e-06,
+          "translation_m": 1.9270629062307465e-09
+        },
+        "seed_q_rad": [
+          -1.87617276,
+          -0.93567656,
+          -1.0802206799999998,
+          -1.94505776,
+          -0.28187739999999994,
+          2.61266328,
+          0.5381611200000003
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 2,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.9096595199999999,
+          -0.32388803999999993,
+          -0.11370744000000022,
+          -1.4519051,
+          0.6765057600000004,
+          3.3093511600000003,
+          1.5546876800000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 3,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.05685371999999944,
+          0.28790048000000024,
+          0.8528058000000001,
+          -0.95875244,
+          1.6348889200000003,
+          4.00603904,
+          2.57121424
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 4,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.0233669600000002,
+          0.899689,
+          1.8193190400000003,
+          -0.46559978000000024,
+          2.5932720799999998,
+          0.5635812800000001,
+          -2.4516228800000004
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 5,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.205175637066481,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.695524362933519,
+          1.169576916552448,
+          2.1388794293616216,
+          -2.400213217608363,
+          -0.8896209741237301,
+          1.5243525250532342,
+          -1.052394500834068
+        ],
+        "residual": {
+          "rotation_rad": 8.032046404540685e-06,
+          "translation_m": 2.275071573973928e-08
+        },
+        "seed_q_rad": [
+          1.9898801999999995,
+          1.5114775200000001,
+          2.7858322799999997,
+          -2.9023541,
+          -2.14226824,
+          1.26026916,
+          -1.4350963199999998
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 6,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -2.78583228,
+          -1.5114775200000001,
+          -1.9898802,
+          -2.40920144,
+          -1.18388508,
+          1.95695704,
+          -0.41856976
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 7,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.6221632068163498,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.8842561355808822,
+          -0.7259938175961665,
+          -0.7980721022675957,
+          -2.45483679318365,
+          -0.5187911018302143,
+          1.8592510116181828,
+          -1.3775596705338453
+        ],
+        "residual": {
+          "rotation_rad": 9.785155493769515e-07,
+          "translation_m": 9.115754653506442e-10
+        },
+        "seed_q_rad": [
+          -1.8193190399999999,
+          -0.899689,
+          -1.02336696,
+          -1.9160487800000001,
+          -0.22550192000000013,
+          2.65364492,
+          0.5979568
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 8,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.8528058000000001,
+          -0.28790048,
+          -0.05685372000000033,
+          -1.4228961200000003,
+          0.7328812400000002,
+          3.3503328,
+          1.61448336
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 9,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.11370744000000022,
+          0.3238880400000004,
+          0.9096595199999995,
+          -0.9297434600000005,
+          1.6912644000000001,
+          4.04702068,
+          2.63100992
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 10,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.08022068,
+          0.9356765600000001,
+          1.8761727599999998,
+          -0.4365908000000003,
+          2.6496475600000005,
+          0.60456292,
+          -2.3918272000000003
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 11,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.21032554498109857,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.6903744550189015,
+          1.1625089720271882,
+          2.139599665520303,
+          -2.401025513938599,
+          -0.8850168352506138,
+          1.5302925781850147,
+          -1.0564321425714005
+        ],
+        "residual": {
+          "rotation_rad": 7.170412966597351e-07,
+          "translation_m": 5.186921940705758e-10
+        },
+        "seed_q_rad": [
+          2.04673392,
+          1.5474650799999998,
+          2.842686,
+          -2.8733451199999998,
+          -2.08589276,
+          1.3012508,
+          -1.37530064
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 12,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -2.72897856,
+          -1.47548996,
+          -1.93302648,
+          -2.38019246,
+          -1.1275096,
+          1.9979386799999999,
+          -0.35877408000000033
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 13,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.621150489179243,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.8966092722442668,
+          -0.7180363903498241,
+          -0.7893265356708914,
+          -2.455849510820757,
+          -0.5097021454662183,
+          1.864423464351266,
+          -1.385480435790035
+        ],
+        "residual": {
+          "rotation_rad": 3.600675164653023e-07,
+          "translation_m": 1.9856444550609067e-10
+        },
+        "seed_q_rad": [
+          -1.76246532,
+          -0.8637014399999999,
+          -0.9665132400000003,
+          -1.8870398,
+          -0.16912643999999988,
+          2.69462656,
+          0.6577524800000001
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 14,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.7959520799999997,
+          -0.2519129200000001,
+          0.0,
+          -1.3938871400000001,
+          0.78925672,
+          3.39131444,
+          1.6742790399999996
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 15,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.1705611600000001,
+          0.3598756000000001,
+          0.9665132399999998,
+          -0.9007344800000001,
+          1.74763988,
+          4.08800232,
+          2.6908055999999996
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 16,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.1370744,
+          0.9716641199999998,
+          1.93302648,
+          -0.4075818200000003,
+          2.7060230399999994,
+          0.64554456,
+          -2.33203152
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 17,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5377157370287078,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.3629842629712923,
+          0.8031169325618663,
+          2.2734169387867276,
+          -2.4450145147604743,
+          -0.6002356686130232,
+          1.8073587703492617,
+          -1.3064416065733657
+        ],
+        "residual": {
+          "rotation_rad": 2.4307333870573843e-07,
+          "translation_m": 1.1957647309961797e-10
+        },
+        "seed_q_rad": [
+          2.10358764,
+          1.58345264,
+          -2.842686,
+          -2.8443361400000002,
+          -2.0295172800000003,
+          1.34223244,
+          -1.3155049600000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 18,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -2.67212484,
+          -1.4395024,
+          -1.87617276,
+          -2.35118348,
+          -1.07113412,
+          2.0389203200000003,
+          -0.29897839999999976
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 19,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.6203306830731381,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.9068522588644067,
+          -0.7115948572083355,
+          -0.781999091332408,
+          -2.456669316926862,
+          -0.5022346972706737,
+          1.8685853638642302,
+          -1.3919856966645656
+        ],
+        "residual": {
+          "rotation_rad": 2.2429652405794858e-07,
+          "translation_m": 9.924618699404327e-11
+        },
+        "seed_q_rad": [
+          -1.7056116,
+          -0.8277138799999999,
+          -0.9096595199999999,
+          -1.85803082,
+          -0.11275096000000007,
+          2.7356082,
+          0.7175481600000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 20,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.7390983600000003,
+          -0.21592536000000018,
+          0.05685371999999944,
+          -1.36487816,
+          0.8456322000000003,
+          3.43229608,
+          1.7340747200000002
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 21,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.22741487999999999,
+          0.3958631600000002,
+          1.0233669600000002,
+          -0.8717255000000002,
+          1.8040153599999997,
+          4.12898396,
+          2.75060128
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 22,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.1939281200000003,
+          1.00765168,
+          1.9898801999999995,
+          -0.37857284000000035,
+          2.76239852,
+          0.6865262000000001,
+          -2.2722358400000005
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 23,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5403324164418204,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.3603675835581797,
+          0.8009980393040846,
+          2.2750390085278136,
+          -2.4452839359488223,
+          -0.5981386853523908,
+          1.8088254027595965,
+          -1.3082758220764379
+        ],
+        "residual": {
+          "rotation_rad": 3.039646947221531e-07,
+          "translation_m": 1.6316765526890115e-10
+        },
+        "seed_q_rad": [
+          2.1604413599999996,
+          1.6194401999999997,
+          -2.78583228,
+          -2.81532716,
+          -1.9731418,
+          1.38321408,
+          -1.25570928
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 24,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -2.61527112,
+          -1.4035148400000002,
+          -1.8193190399999999,
+          -2.3221745,
+          -1.01475864,
+          2.07990196,
+          -0.23918272000000007
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 25,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.6196156147213987,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.9159376165522876,
+          -0.7059999299624986,
+          -0.7754445524538158,
+          -2.4573843852786013,
+          -0.49566602426653006,
+          1.8721866667853657,
+          -1.3977061330158804
+        ],
+        "residual": {
+          "rotation_rad": 3.4561203519297216e-06,
+          "translation_m": 6.2910143580912445e-09
+        },
+        "seed_q_rad": [
+          -1.64875788,
+          -0.79172632,
+          -0.8528058000000001,
+          -1.8290218400000002,
+          -0.056375480000000255,
+          2.7765898399999998,
+          0.7773438400000003
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 26,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -0.68224464,
+          -0.17993780000000004,
+          0.11370744000000022,
+          -1.33586918,
+          0.9020076799999996,
+          3.4732777199999996,
+          1.7938704000000008
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 27,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          0.2842686000000003,
+          0.43185072000000035,
+          1.08022068,
+          -0.8427165200000002,
+          1.8603908400000004,
+          4.1699656,
+          2.81039696
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 28,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          1.2507818399999997,
+          1.04363924,
+          2.04673392,
+          -0.3495638600000004,
+          2.818774,
+          0.72750784,
+          -2.21244016
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 29,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.5415644687707504,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          2.3591355312292497,
+          0.8000070722275167,
+          2.2758044299763034,
+          -2.445413594224463,
+          -0.5971564993969299,
+          1.8095162599561068,
+          -1.3091351226860068
+        ],
+        "residual": {
+          "rotation_rad": 4.02541404953511e-06,
+          "translation_m": 7.942514386637615e-09
+        },
+        "seed_q_rad": [
+          2.21729508,
+          1.6554277599999998,
+          -2.72897856,
+          -2.78631818,
+          -1.91676632,
+          1.42419572,
+          -1.1959136000000001
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 30,
+        "disposition": "SOLVER_FAILURE",
+        "moveit_error_code": -6,
+        "raw_q_rad": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "seed_q_rad": [
+          -2.5584174,
+          -1.36752728,
+          -1.76246532,
+          -2.29316552,
+          -0.9583831600000001,
+          2.1208836,
+          -0.17938703999999994
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": false,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      },
+      {
+        "acceptance_rotation_limit_rad": 0.0001,
+        "acceptance_translation_limit_m": 1e-05,
+        "arm_group": "right_arm",
+        "attempt": 31,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "minimum_joint_margin_rad": 0.6189987371091514,
+        "moveit_error_code": 1,
+        "raw_q_rad": [
+          -0.9239442151045871,
+          -0.7011572750691898,
+          -0.7696259368769583,
+          -2.4580012628908485,
+          -0.4899157207010831,
+          1.8752866604726495,
+          -1.4027125164455636
+        ],
+        "residual": {
+          "rotation_rad": 4.465960439205223e-06,
+          "translation_m": 7.832093018384117e-09
+        },
+        "seed_q_rad": [
+          -1.5919041600000001,
+          -0.7557387600000001,
+          -0.7959520799999997,
+          -1.80001286,
+          0.0,
+          2.81757148,
+          0.83713952
+        ],
+        "solution_size": 7,
+        "solver_base_frame": "right_fr3_link0",
+        "solver_return": true,
+        "target_world_pose": {
+          "rotation_matrix": [
+            -2.220446049250313e-16,
+            -1.0000000000000002,
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            0.0,
+            0.0,
+            0.0,
+            -1.0000000000000004
+          ],
+          "translation_m": [
+            0.55,
+            0.061,
+            0.38
+          ]
+        },
+        "tip_link": "right_fr3_side_suction_tcp"
+      }
+    ]
+  },
+  "start_joint_state_is_candidate_not_frozen": true,
+  "start_paired_candidates": [
+    {
+      "candidate_index": 0,
+      "collision": false,
+      "collision_pairs": [],
+      "left_q_rad": [
+        0.6556998327304024,
+        -0.9158460955296517,
+        0.9361619490344238,
+        -2.43079576661854,
+        0.7029262366728565,
+        1.726259984792982,
+        1.2164416425071283
+      ],
+      "right_q_rad": [
+        -0.47514226618537353,
+        -1.1301697571742122,
+        -0.9979978814517659,
+        -2.404800398376118,
+        -0.8636013246419576,
+        1.5572941255153623,
+        -1.0752371378447552
+      ]
+    }
+  ],
+  "state_timestamp_policy": "geometry_index_only_not_simulation_time",
+  "status": "PASS_DISCRETE_FULL_CHAIN_ONLY",
+  "suction_commands": 0,
+  "translation_step_m": {
+    "A": 0.0019876159799998134,
+    "B": 0.0019871794871794877
+  }
+}

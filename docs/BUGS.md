@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-07 — 新START全链几何通过；BUG019必须实际模型复核
+
+BUG025本次数值设置epsilon1e-7/原验收下START→PRE136及同14q PRE→TARGET157离散状态均通过；这只解决当前单Cube名义几何链，不把所有IK/连续碰撞问题宣称RESOLVED。旧失败/错误旧binary结果保留。所有状态signed距离/closestpair有限、无FCLcollision，与independent产物审计一致。
+
+BUG019仍OPEN：全链最小腕工具环境clearance2.212219mm（TARGET/leftlink7↔deepwall），Isaac原convexHull与MoveItSTL差异仍不能凭FCL PASS消除。现在才启动visible单Cube静态实际cooked/query比对，首unexpected overlap会停，不改ACM/mesh/tool/carriage。READY/reset未运行；BUG001/wrench归TASK10-IS，明确不使TASK01 BLOCKED。
+
 ## 2026-10-07 — BUG025具体数值拒绝定位，原FAIL保留；物理差异仍OPEN
 
 Status: DIAGNOSIS_GAP_RESOLVED / LOCAL_NUMERIC_WORKAROUND；不宣称所有连续IK问题已解决。有效diagnostic02与同seed原精度A/B均证明两臂LMA SUCCESS、7q/限位通过，旋转残差左2.582469e-4/right9.985173e-4rad被1e-4rad独立验收拒绝。不是solver false或FCL碰撞；旧失败点原版没有FCL不能反填碰撞pair。只把本地epsilon收紧1e-7后，同14q种子残差降到1.841597e-6/2.037263e-6rad，FCL PASS；157状态名义插入通过。仍不是全局IK或连续扫掠证明。

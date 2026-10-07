@@ -1,5 +1,13 @@
 # EXPERIMENT_LOG
 
+## 2026-10-07 — single_cube_core_benchmark / full_single_cube_geometry01
+
+Task TASK01；[ENGINEERING]/[EXPERIMENTAL]离散完整几何，不是P4算法。Platform native Humble/MoveIt2 2.5.9/LMA/FCL；source fb643f1、approval cc04cec、model d4b290c；binary7da613a4…；原run config SHA3dbe7fcb…881b（config_at_run.yaml，后录q候选不改变旧证据）。命令/完整SHA见metadata.json与FULL_SINGLE_CUBE_GEOMETRY报告。显式START有限64seed/arm retain12，首fullFCL有效pair；之后每臂一次previous-q延续，不重新选分支。
+
+Actual exit0/PASS_DISCRETE_FULL_CHAIN_ONLY：A136/B157/293records292unique；A step1.987616mm B1.987179mm；PRE pose/14q exactequal。joint margin min A0.4618280014/B0.4678486267rad，max grasptranslation1.538421e-9/8.685638e-9m，rotation5.063085e-6/9.944048e-6rad。self/inter/world collision0，Cube四环境1172checks/positive-volume0。min全FCL state196 Cube↔lefttool0.999669mm；min腕工具环境state292/TARGET leftlink7↔deepwall2.212219mm。每态distance/pair/nearestpoints记录：state_records.json、1758row CSV、full/summary/startcandidate；原stdout与build保留，未抹前轮数值负记录。
+
+Isaac/robot/ROS/suction命令0、physicssteps0；不能称时间轨迹/连续证书/动力学或吸附PASS。START/PRE配置只candidate。纯几何后新visibleGUI staticparity初始化，另run结果待定；reset未运行，BUG001不阻塞本task。TASK01 IN_PROGRESS，TASK02 TODO。
+
 ## 2026-10-07 — single_cube_core_benchmark / IK diagnosis + same-seed precision A/B
 
 Task: TASK01；Baseline: [ENGINEERING]/[EXPERIMENTAL]有限数值诊断，不是论文算法。Platform: native Humble/MoveIt2 2.5.9/LMA/FCL，无Isaac。Source: instrumentation12a6d74/binary415f23ef；A/B与dense8a5bbaf/binary01d64241；AABB2856fa5。Config:原schema2候选ff490a56…及runtime d4b290c模型hash不变。Seed:原显式端点策略；A/B精确原probe02 PRE_PUSH14q、每臂一次；dense上一q延续。

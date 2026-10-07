@@ -1,5 +1,15 @@
 # STATUS
 
+## 2026-10-07 — 完整单Cube纯几何PASS；GUI模型一致性门禁进行中
+
+新科研START→PRE136/136，实际PRE14q无跳变延续到TARGET157/157，共293记录/292独立状态、每态全部signed FCL距离/exact pair/最近点保存。原独立IK门限、shared-grasp、几何/ACM不变；A/B最小joint margin0.461828/0.467849rad。全链腕工具环境最低净空TARGET左link7↔deep wall2.212219mm，包含Cube的最低0.999669mm在state196；不是连续碰撞证书/时间轨迹/PhysX安全证明。
+
+实得START/PRE14q已存候选YAML，未FROZEN；run前config独立快照+SHA保留。可见GUI仅单Cube原模型静态BUG019复核启动中，无五Cube/ROS/controller/force。READY/reset尚未运行；TASK01 IN_PROGRESS，只有parity/reset实际通过才能PASS CANDIDATE，等用户最终确认。BUG001非本任务阻塞，TASK02 TODO。详见三份TASK01_FULL_SINGLE_CUBE_GEOMETRY / ISAAC_MODEL_PARITY / READY_RESET报告。
+
+## 2026-10-07 — 新科研START已确认，先完整单Cube几何门禁
+
+用户确认START=(0.550,0,0.380)、identity姿态、已经双臂持件离桌、不包含抓取；不是旧Task27供料位。候选仍DRAFT，PRE/TARGET/原几何与验收不动。当前先准备A≤2mm几何和逐状态signed FCL distance/pair；只有A全通过才延续实际PRE14q到B。几何尚未运行，GUI静态BUG019复核及READY/reset均未运行，不自标PASS/FROZEN；force/wrench明确留TASK10-IS，TASK02 TODO。
+
 ## 2026-10-07 — 单 Cube 名义插入几何通过，整体PARTIAL待START
 
 用户“继续”后限定保持几何诊断：原失败点两臂LMA均SUCCESS/限位通过，旋转残差2.582e-4/9.985e-4rad超1e-4验收；同14q seed仅将本地epsilon1e-5收紧到1e-7即通过IK/FCL，验收和权重0.01均不变。名义PRE_PUSH→TARGET的157个≤2mm状态全IK/限位/full robot FCL通过；Cube/world另628个AABB检查无体积穿透。无新Isaac、机器人或吸盘命令，无工具/车厢/TCP/基座/SRDF/ACM/runtime配置修改。

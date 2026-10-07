@@ -38,16 +38,8 @@ robots:
     rail_axis_world: [1.0, 0.0, 0.0]
     rail_x_limits_world_m: [0.450, 1.050]
     tcp_link: right_fr3_side_suction_tcp
-  # [EXPERIMENTAL] 2026-10-07完整几何链实得14q候选；不是FROZEN。
-  # reset必须复用同一配置，不再随机重新求解START/PRE_PUSH。
-  benchmark_a_start_joint_state_rad: &benchmark_a_start_q
-    left: [0.6556998327304024, -0.9158460955296517, 0.9361619490344238, -2.43079576661854, 0.7029262366728565, 1.726259984792982, 1.2164416425071283]
-    right: [-0.47514226618537353, -1.1301697571742122, -0.9979978814517659, -2.404800398376118, -0.8636013246419576, 1.5572941255153623, -1.0752371378447552]
-  benchmark_b_start_joint_state_rad:
-    left: [0.21744143569271313, -0.5164914914460937, 1.0171641693028668, -2.6091513733003326, 0.5632971965150655, 2.2361990887058414, 0.7985013134114293]
-    right: [0.03097153340224297, -0.8182678884154884, -1.2267956826752937, -2.5710825559909845, -0.8729224205691766, 2.028938813811622, -0.5717471798134617]
-  start_joint_state_validation: GEOMETRY_CANDIDATE_ISAAC_PARITY_AND_RESET_PENDING
-  start_joint_state_evidence: results/20261007_TASK01_full_single_cube_geometry01/state_records.json
+  benchmark_a_start_joint_state_rad: PENDING_CAPTURE
+  benchmark_b_start_joint_state_rad: PENDING_CAPTURE
 
 table:
   center_world_m: [0.550, 0.000, 0.100]
@@ -82,7 +74,7 @@ shared_grasp:
     translation_m: [0.000, 0.061, 0.000]
     quaternion_xyzw: [0.7071067811865476, -0.7071067811865476, 0.0, 0.0]
   physical_contact_calibration: DEFERRED_TO_P2_P3
-  geometric_validation: PASS_SAMPLED_FULL_CHAIN_ISAAC_PARITY_PENDING
+  geometric_validation: PENDING_SINGLE_CUBE_PROBE
 
 carriage:
   opening_side: -X
@@ -100,7 +92,7 @@ benchmarks:
     # 双臂已稳定共同持有Cube且已离桌；本基准不包含抓取过程。
     initial_cube_center_world_m: [0.550, 0.000, 0.380]
     initial_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
-    initial_robot_joint_state_rad: *benchmark_a_start_q
+    initial_robot_joint_state_rad: PENDING_CAPTURE
     target_name: PRE_PUSH
     target_cube_center_world_m: [0.790, 0.000, 0.260]
     target_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]

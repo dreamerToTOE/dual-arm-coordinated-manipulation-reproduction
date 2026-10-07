@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-07 — 用户批准新START；有序全链几何实际通过
+
+D034/cc04cec记录START=(.55,0,.38)、identity、双臂已持件，不是Task27feed。fb643f1增加独立完整链probe，抽取原几何helper保持算法，失败记录/nearest-point有限性/distance-collision一致性守卫。两轮build都真实完成，第一仅build未执行；最终build02核对SHA后只运行一次fullchain exit0。未更改原model/ACM/mesh/场景，禁止以改几何解决失败。
+
+A136/B157、≤2mm、previous-q各一次IK、PRE接缝实际14q完全复用，293完整状态均PASS；记录每态六类FCL min/exact pair/closestpoints与所有linkFK/IK诊断。Cube四环境另1172检查无穿透。START/PRE的14q复制候选YAML而非冻结；原run config_at_run不可变保存。独立readonly产物复核counts/seam/steps/min/max/CSV/source/input/binarySHA全部相符。
+
+然后才实现/启动单Cube visibleGUI静态PhysX query/cookedshape一致性probe，不执行旧scene module bottom、五Cube/ROSgraph/控制器，不改材料/drive/原碰撞。GUI初始化进行中，parity与READY无通过结论；首意外overlap会停，不修geometry/ACM。三报告和六记录持续保存，force/wrench延期TASK10-IS、TASK02未开始。
+
 ## 2026-10-07 — 保持几何的单Cube IK拒绝诊断与精度对照
 
 按用户“继续”及PRE报告，仅扩展只读probe日志/局部数值设置，没有启动Isaac。12a6d74为每臂记录solver bool/error/raw q/限位/FK残差与拒绝原因；首次diagnostic01在链接前误启动旧exe，不算instrumentation验证，标INVALID并保留旧log，等待actual build exit0后另起diagnostic02。有效结果确认两臂SUCCESS/界限通过但旋转残差超原1e-4rad，BUG025诊断缺口定位，不编造碰撞pair。

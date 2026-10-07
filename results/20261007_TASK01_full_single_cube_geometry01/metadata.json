@@ -1,0 +1,333 @@
+{
+  "task": "TASK01 Full Single-Cube Geometry",
+  "scope": "single_cube_core_benchmark",
+  "baseline": "ENGINEERING dense same-branch discrete geometry; no P4 planner",
+  "platform": "native ROS2 Humble / MoveIt2 2.5.9 / LMA / FCL; no Isaac",
+  "git_commit": "fb643f1",
+  "config_approval_commit": "cc04cec",
+  "seed": "original deterministic64 per-arm retain12 for START; first accepted full-FCL pair; previous-q single solve thereafter; no reseeding",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_sha256_at_run": "3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b",
+  "config_snapshot": "config_at_run.yaml",
+  "runtime_model_commit": "d4b290c1f929428e7d3bd6776b6d55709ca34b0f",
+  "input_hashes": {
+    "expanded_urdf": "a9d6a364c89b9e72e51da962d16ee44de45595429339b51004a59211b312939b",
+    "expanded_srdf": "11b89277bfa5fb7bcedfa35f8285507e88d2c793df6ba8e04daf12c8eb8d023a",
+    "kinematics": "80c77389765b8bb2e401fdfaa4a3d1bdd97aa85d90472a16d39d7ba403d70654",
+    "full_probe_source": "3c3a2283d364a435f987e8ea3be26725f0f8f7067f6aa3c9533a91a577ca0e92",
+    "shared_helpers": "815b1a908fc431f54755262ac60f944a3e40320f91ff3f457af2106ff95e2a39"
+  },
+  "binary_sha256": "7da613a4cac990a7c07adb2cee10bfce9fe9f01f3bc709b26562305eb0840605",
+  "build_status": "PASS; build02 actually completed before invocation; first build-only log retained",
+  "build_logs": [
+    "raw/configure.log",
+    "raw/build.log",
+    "raw/build02.log"
+  ],
+  "command": "build/single_cube_geometry/task01_full_single_cube_geometry configs/benchmark/benchmark_v1.yaml results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.urdf results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.srdf /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/config/kinematics.yaml results/20261007_TASK01_full_single_cube_geometry01",
+  "environment_setup": [
+    "source /opt/ros/humble/setup.bash",
+    "source /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/install/setup.bash"
+  ],
+  "working_directory": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction",
+  "status": "PASS_DISCRETE_FULL_CHAIN_ONLY",
+  "exit_code": 0,
+  "metrics": {
+    "status": "PASS_DISCRETE_FULL_CHAIN_ONLY",
+    "start": {
+      "left": [
+        0.6556998327304024,
+        -0.9158460955296517,
+        0.9361619490344238,
+        -2.43079576661854,
+        0.7029262366728565,
+        1.726259984792982,
+        1.2164416425071283
+      ],
+      "right": [
+        -0.47514226618537353,
+        -1.1301697571742122,
+        -0.9979978814517659,
+        -2.404800398376118,
+        -0.8636013246419576,
+        1.5572941255153623,
+        -1.0752371378447552
+      ]
+    },
+    "pre": {
+      "left": [
+        0.21744143569271313,
+        -0.5164914914460937,
+        1.0171641693028668,
+        -2.6091513733003326,
+        0.5632971965150655,
+        2.2361990887058414,
+        0.7985013134114293
+      ],
+      "right": [
+        0.03097153340224297,
+        -0.8182678884154884,
+        -1.2267956826752937,
+        -2.5710825559909845,
+        -0.8729224205691766,
+        2.028938813811622,
+        -0.5717471798134617
+      ]
+    },
+    "segments": {
+      "A": {
+        "collision_pairs": [],
+        "complete_segment_checked": true,
+        "cube_environment_checks": 544,
+        "cube_environment_penetrations": 0,
+        "max_grasp_rotation_rad": 0.000005063085078206643,
+        "max_grasp_translation_m": 1.5384210010393093e-9,
+        "minimum_fcl_distance": {
+          "body1": "shared_cube",
+          "body2": "right_fr3_side_suction",
+          "cube_center_world_m": [
+            0.79,
+            0,
+            0.26
+          ],
+          "nearest_point_1_world_m": [
+            0.7607074260794491,
+            0.06,
+            0.2892925739205509
+          ],
+          "nearest_point_2_world_m": [
+            0.76070744126641,
+            0.060999798493757466,
+            0.28929259074797564
+          ],
+          "segment_index": 135,
+          "signed_distance_m": 0.0009997984940144258,
+          "state_index": 135,
+          "type": "ROBOT_WORLD"
+        },
+        "minimum_joint_margin_rad": 0.46182800144132097,
+        "minimum_wrist_tool_environment_fcl_distance": {
+          "body1": "table",
+          "body2": "left_fr3_side_suction",
+          "cube_center_world_m": [
+            0.79,
+            0,
+            0.26
+          ],
+          "nearest_point_1_world_m": [
+            0.7549999907623086,
+            -0.07165936550463464,
+            0.2
+          ],
+          "nearest_point_2_world_m": [
+            0.7549999915012321,
+            -0.0716593641191526,
+            0.22500003015228873
+          ],
+          "segment_index": 135,
+          "signed_distance_m": 0.02500003015228876,
+          "state_index": 135,
+          "type": "ROBOT_WORLD"
+        },
+        "planned_states": 136,
+        "segment": "A_tight_transport",
+        "states_checked": 136,
+        "states_passed": 136,
+        "status": "PASS_SAMPLED_SEGMENT"
+      },
+      "B": {
+        "collision_pairs": [],
+        "complete_segment_checked": true,
+        "cube_environment_checks": 628,
+        "cube_environment_penetrations": 0,
+        "max_grasp_rotation_rad": 0.000009944047613674544,
+        "max_grasp_translation_m": 8.685637772377861e-9,
+        "minimum_fcl_distance": {
+          "body1": "shared_cube",
+          "body2": "left_fr3_side_suction",
+          "cube_center_world_m": [
+            0.9092307692307693,
+            0,
+            0.26
+          ],
+          "nearest_point_1_world_m": [
+            0.8824662271931667,
+            -0.06,
+            0.22746264958220708
+          ],
+          "nearest_point_2_world_m": [
+            0.8824662282764217,
+            -0.06099966891045604,
+            0.2274626485718258
+          ],
+          "segment_index": 60,
+          "signed_distance_m": 0.0009996689104571322,
+          "state_index": 196,
+          "type": "ROBOT_WORLD"
+        },
+        "minimum_joint_margin_rad": 0.4678486266996673,
+        "minimum_wrist_tool_environment_fcl_distance": {
+          "body1": "left_fr3_link7",
+          "body2": "carriage_deep_wall",
+          "cube_center_world_m": [
+            1.1,
+            0,
+            0.26
+          ],
+          "nearest_point_1_world_m": [
+            1.1599526608903397,
+            -0.23141952016700967,
+            0.3522117119743564
+          ],
+          "nearest_point_2_world_m": [
+            1.16,
+            -0.23141952016700976,
+            0.35
+          ],
+          "segment_index": 156,
+          "signed_distance_m": 0.0022122185355011987,
+          "state_index": 292,
+          "type": "ROBOT_WORLD"
+        },
+        "planned_states": 157,
+        "segment": "B_constrained_insertion",
+        "states_checked": 157,
+        "states_passed": 157,
+        "status": "PASS_SAMPLED_SEGMENT"
+      }
+    },
+    "minimum_states": {
+      "minimum_fcl_distance": {
+        "state_index": 196,
+        "segment": "B_constrained_insertion",
+        "segment_index": 60,
+        "cube_center_world_m": [
+          0.9092307692307693,
+          0,
+          0.26
+        ],
+        "pair": {
+          "body1": "shared_cube",
+          "body2": "left_fr3_side_suction",
+          "nearest_point_1_world_m": [
+            0.8824662271931667,
+            -0.06,
+            0.22746264958220708
+          ],
+          "nearest_point_2_world_m": [
+            0.8824662282764217,
+            -0.06099966891045604,
+            0.2274626485718258
+          ],
+          "signed_distance_m": 0.0009996689104571322,
+          "type": "ROBOT_WORLD"
+        }
+      },
+      "minimum_wrist_tool_environment_fcl_distance": {
+        "state_index": 292,
+        "segment": "B_constrained_insertion",
+        "segment_index": 156,
+        "cube_center_world_m": [
+          1.1,
+          0,
+          0.26
+        ],
+        "pair": {
+          "body1": "left_fr3_link7",
+          "body2": "carriage_deep_wall",
+          "nearest_point_1_world_m": [
+            1.1599526608903397,
+            -0.23141952016700967,
+            0.3522117119743564
+          ],
+          "nearest_point_2_world_m": [
+            1.16,
+            -0.23141952016700976,
+            0.35
+          ],
+          "signed_distance_m": 0.0022122185355011987,
+          "type": "ROBOT_WORLD"
+        }
+      },
+      "minimum_robot_environment_excluding_cube_fcl_distance": {
+        "state_index": 292,
+        "segment": "B_constrained_insertion",
+        "segment_index": 156,
+        "cube_center_world_m": [
+          1.1,
+          0,
+          0.26
+        ],
+        "pair": {
+          "body1": "left_fr3_link7",
+          "body2": "carriage_deep_wall",
+          "nearest_point_1_world_m": [
+            1.1599526608903397,
+            -0.23141952016700967,
+            0.3522117119743564
+          ],
+          "nearest_point_2_world_m": [
+            1.16,
+            -0.23141952016700976,
+            0.35
+          ],
+          "signed_distance_m": 0.0022122185355011987,
+          "type": "ROBOT_WORLD"
+        }
+      },
+      "minimum_inter_arm_fcl_distance": {
+        "state_index": 196,
+        "segment": "B_constrained_insertion",
+        "segment_index": 60,
+        "cube_center_world_m": [
+          0.9092307692307693,
+          0,
+          0.26
+        ],
+        "pair": {
+          "body1": "left_fr3_side_suction",
+          "body2": "right_fr3_side_suction",
+          "nearest_point_1_world_m": [
+            0.8752308416495018,
+            -0.06099974108407411,
+            0.23599930221038623
+          ],
+          "nearest_point_2_world_m": [
+            0.8952308274977923,
+            0.06099991405870356,
+            0.2359997921897834
+          ],
+          "signed_distance_m": 0.12362813308114207,
+          "type": "INTER_ARM"
+        }
+      }
+    },
+    "translation_step_m": {
+      "A": 0.0019876159799998134,
+      "B": 0.0019871794871794877
+    },
+    "records": 293,
+    "acm_unchanged_verified": true
+  },
+  "scientific_boundary": {
+    "timed_trajectory": false,
+    "continuous_collision_certificate": false,
+    "physics_started": false,
+    "robot_commands": 0,
+    "suction_commands": 0,
+    "acm_modified": false,
+    "benchmark_frozen": false,
+    "benchmark_task_pass": false,
+    "force_calibration_deferred": "TASK10-IS",
+    "recorded_state_timestamp": "geometry state index only; no fake simulation timestamp"
+  },
+  "artifacts": [
+    "full_chain_results.json",
+    "state_records.json",
+    "per_state_minimum_fcl_distance.csv",
+    "start_joint_state_candidate.json",
+    "summary.json",
+    "config_at_run.yaml",
+    "probe_evidence.log"
+  ]
+}
