@@ -88,7 +88,10 @@ carriage:
 benchmarks:
   A_tight_transport:
     start_mode: both_side_suctions_closed_and_cube_stably_shared
-    initial_cube_center_world_m: PENDING_CAPTURE
+    # [ADAPTATION] 用户2026-10-07确认的新科研START，不是旧Task27 feed pose。
+    # 双臂已稳定共同持有Cube且已离桌；本基准不包含抓取过程。
+    initial_cube_center_world_m: [0.550, 0.000, 0.380]
+    initial_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
     initial_robot_joint_state_rad: PENDING_CAPTURE
     target_name: PRE_PUSH
     target_cube_center_world_m: [0.790, 0.000, 0.260]
@@ -149,8 +152,16 @@ task01_validation:
   require_isaac_reset_ready: true
   require_force_calibration: false
   require_five_cube_flow: false
+  geometry_probe_numeric:
+    # [ENGINEERING] 仅探针数值求解设置，独立验收门限未放宽。
+    lma_epsilon: 1.0e-7
+    orientation_vs_position: 0.01
+    translation_acceptance_m: 1.0e-5
+    rotation_acceptance_rad: 1.0e-4
+    max_cube_translation_step_m: 0.002
 
 approval:
   one_cube_core_benchmark_rescope: CONFIRMED_2026-10-06
+  benchmark_a_start_pose_candidate: CONFIRMED_2026-10-07_NEW_RESEARCH_DESIGN_NOT_TASK27_FEED
   nominal_effective_friction_0p5_0p5: CANDIDATE_REQUIRES_FINAL_FREEZE_REVIEW
   benchmark_freeze: PENDING

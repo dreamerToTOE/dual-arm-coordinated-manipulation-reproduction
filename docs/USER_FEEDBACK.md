@@ -1,5 +1,11 @@
 # USER_FEEDBACK
 
+## 2026-10-07 — 科研START与最终验收顺序明确确认
+
+用户确认START=(0.55,0,0.38)、单位四元数，为已共同持有、离桌的新科研设计（不包含抓取，不是旧Task27 feed）；保持PRE/TARGET和所有工具/车厢/抓取/碰撞/ACM/验收。明确采用LMA epsilon1e-7。先稠密START→PRE纯几何、逐状态min FCL distance/pair与Cube/environment，任一点失败即停且不改几何；通过才接同PRE14q B段。记录START14q候选，不自冻。
+
+随后可见GUI仅单Cube静态模型一致性复核BUG019，首个FCL-free/Isaac碰撞即停报exact pair；模型通过后多次START/PRE READY/reset和postphysics统一时标。不做force calibration，BUG001留TASK10-IS，不因此拖TASK01。最终三个报告；全部通过只PASS CANDIDATE，等待用户最终FROZEN确认，尽量不扩展TASK01。
+
 ## 2026-10-07 — 用户“继续”限定为保持几何的诊断
 
 用户在单Cube首败报告后要求“继续”。按照已提出的下一步，只定位具体拒绝臂/原始IK返回/残差并有限同seed数值对照；不推断批准修改工具/车厢/TCP/ACM、重启长Isaac或旧五Cube实验。过程中告知两臂SUCCESS但旋转超门限，以及只收紧数值求解精度、验收不变。

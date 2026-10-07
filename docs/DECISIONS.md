@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D034 — 新科研START明确批准；全链几何→模型一致性→READY/reset按序门禁
+
+2026-10-07，[ADAPTATION] 用户明确确认Benchmark A START Cube=(0.550,0,0.380)m、xyzw=(0,0,0,1)：双FR3已经通过当前shared-grasp transforms稳定共同持件并离桌，不包含抓取过程。**这是新的科研benchmark设计，不是旧Task27 feed pose**。PRE_PUSH=(0.790,0,0.260)、TARGET=(1.100,0,0.260)、L工具/车厢/抓取/TCP/基座/碰撞网格/SRDF/ACM/独立验收保持。
+
+[ENGINEERING] 探针继续已验证LMA epsilon1e-7/weight0.01、平移1e-5m/旋转1e-4rad验收和≤2mm Cube位移；记录所有状态full FCL最小距离/最近pair及腕工具环境距离。A先检查，首败即停；A通过后以其实际PRE14q延续B，不能简单拼接旧B另一IK构型。记录实际START14q为候选及provenance，供后续reset精确恢复，不自动FROZEN。
+
+[EXPERIMENTAL] 几何通过后才可见GUI静态replay单Cube全链作BUG019原模型对照，任何FCL-free/Isaac-overlap exact pair出现即停止，不改几何/ACM。模型门禁通过后重复START/PRE reset，用post-physics-step simulation stamp记录q/Cube/TCP/frame误差。不得开五Cube/完整控制器/force calibration；BUG001/wrench/重力惯性补偿归TASK10-IS，不是TASK01门禁。全通过也仅PASS CANDIDATE，待用户最终冻结审查。
+
 ## D033 — 原几何/门限下同seed数值精度对照，不等同物理或论文PASS
 
 2026-10-07，[ENGINEERING]/[EXPERIMENTAL]。用户批准“继续”保留几何诊断；只在独立探针中记录每臂拒绝并允许收紧LMA epsilon（1e-5→1e-7），同一失败14q/目标重放。保持orientation_vs_position0.01、平移1e-5m/旋转1e-4rad验收、原限位/模型/抓取/ACM/runtime文件不变；不新增随机重试、暗改START或工具/车厢。只证明数值停止精度不满足原验收的局部问题得到解决。
