@@ -15,3 +15,10 @@ target_compile_options(task01_single_cube_geometry PRIVATE -Wall -Wextra -Wpedan
 ament_target_dependencies(task01_single_cube_geometry rclcpp moveit_ros_planning
   moveit_core moveit_msgs geometry_msgs shape_msgs)
 target_link_libraries(task01_single_cube_geometry yaml-cpp nlohmann_json::nlohmann_json)
+
+add_executable(task01_full_single_cube_geometry full_chain_probe.cpp)
+target_compile_features(task01_full_single_cube_geometry PRIVATE cxx_std_17)
+target_compile_options(task01_full_single_cube_geometry PRIVATE -Wall -Wextra -Wpedantic)
+ament_target_dependencies(task01_full_single_cube_geometry rclcpp moveit_ros_planning
+  moveit_core moveit_msgs geometry_msgs shape_msgs)
+target_link_libraries(task01_full_single_cube_geometry yaml-cpp nlohmann_json::nlohmann_json)
