@@ -79,7 +79,7 @@ double margin(const State& state,const Group* group)
 }
 std::vector<State> solutions(const State& origin,const Group* group,
                             const std::string& tip,const Eigen::Isometry3d& target,
-                            int attempt_cap=64,std::size_t retained_cap=12)
+                            int attempt_cap=64,std::size_t retained_cap=12,Json* diagnostics=nullptr)
 {
   // 有限、显式 seed；使用插件单次 getPositionIK，禁止 searchPositionIK 隐式随机重试。
   // 无候选仅表示本探针未找到，不能宣称全局无解。
@@ -87,6 +87,7 @@ std::vector<State> solutions(const State& origin,const Group* group,
   const auto solver=group->getSolverInstance();
   if (!solver || solver->getJointNames()!=group->getVariableNames())
     throw std::runtime_error("Missing IK or unexpected joint ordering");
+  if (diagnostics) *diagnostics=Json::array();
   for (int attempt=0;attempt<attempt_cap && found.size()<retained_cap;++attempt)
   {
     State trial(origin);
@@ -100,15 +101,36 @@ std::vector<State> solutions(const State& origin,const Group* group,
     // 插件使用其 base frame 表达目标；world 系目标不直接误传入插件。
     const auto base=trial.getGlobalLinkTransform(solver->getBaseFrame());
     std::vector<double> q; moveit_msgs::msg::MoveItErrorCodes error;
-    if (!solver->getPositionIK(pose(base.inverse()*target),seed,q,error) ||
-        error.val!=error.SUCCESS || q.size()!=seed.size()) continue;
+    const bool solved=solver->getPositionIK(pose(base.inverse()*target),seed,q,error);
+    Json diagnostic={{"arm_group",group->getName()},{"tip_link",tip},
+      {"solver_base_frame",solver->getBaseFrame()},{"attempt",attempt},
+      {"seed_q_rad",seed},{"raw_q_rad",q},{"solver_return",solved},
+      {"moveit_error_code",error.val},{"solution_size",q.size()},
+      {"target_world_pose",{{"translation_m",xyz(target.translation())},
+        {"rotation_matrix",Json::array({target.linear()(0,0),target.linear()(0,1),target.linear()(0,2),
+          target.linear()(1,0),target.linear()(1,1),target.linear()(1,2),
+          target.linear()(2,0),target.linear()(2,1),target.linear()(2,2)})}}},
+      {"acceptance_translation_limit_m",1e-5},{"acceptance_rotation_limit_rad",1e-4}};
+    const auto reject=[&](const std::string& reason) {
+      diagnostic["disposition"]=reason;
+      if (diagnostics) diagnostics->push_back(diagnostic);
+    };
+    if (!solved || error.val!=error.SUCCESS) { reject("SOLVER_FAILURE"); continue; }
+    if (q.size()!=seed.size()) { reject("JOINT_COUNT_MISMATCH"); continue; }
+    if (!std::all_of(q.begin(),q.end(),[](double value) { return std::isfinite(value); }))
+      { reject("NONFINITE_SOLUTION"); continue; }
     trial.setJointGroupPositions(group,q); trial.update();
     const auto r=residual(trial,tip,target);
-    if (!trial.satisfiesBounds(group) || r["translation_m"].get<double>()>1e-5 ||
-        r["rotation_rad"].get<double>()>1e-4) continue;
+    diagnostic["bounds_satisfied"]=trial.satisfiesBounds(group);
+    diagnostic["minimum_joint_margin_rad"]=margin(trial,group);
+    diagnostic["residual"]=r;
+    if (!trial.satisfiesBounds(group)) { reject("JOINT_BOUNDS_REJECTED"); continue; }
+    if (r["translation_m"].get<double>()>1e-5) { reject("TRANSLATION_RESIDUAL_REJECTED"); continue; }
+    if (r["rotation_rad"].get<double>()>1e-4) { reject("ROTATION_RESIDUAL_REJECTED"); continue; }
     bool duplicate=false;
     for (const auto& old:found) if (old.distance(trial,group)<1e-5) duplicate=true;
-    if (!duplicate) found.push_back(trial);
+    if (duplicate) { reject("DUPLICATE"); continue; }
+    found.push_back(trial); reject("ACCEPTED");
   }
   return found;
 }
@@ -277,9 +299,12 @@ candidate_selected:
       {
         const double fraction=static_cast<double>(index)/steps;
         Eigen::Isometry3d object=Eigen::Isometry3d::Identity(); object.translation()=pre+fraction*(goal-pre);
-        auto ls=solutions(previous,left,lt,object*grasp_l,1,1),rs=solutions(previous,right,rt,object*grasp_r,1,1);
+        Json ldiagnostic,rdiagnostic;
+        auto ls=solutions(previous,left,lt,object*grasp_l,1,1,&ldiagnostic);
+        auto rs=solutions(previous,right,rt,object*grasp_r,1,1,&rdiagnostic);
         Json row={{"index",index},{"insertion_fraction",fraction},{"cube_center_world_m",xyz(object.translation())},
-                  {"status","FAIL_STOP"},{"dual_ik",!ls.empty() && !rs.empty()}};
+                  {"status","FAIL_STOP"},{"dual_ik",!ls.empty() && !rs.empty()},
+                  {"left_ik_diagnostics",ldiagnostic},{"right_ik_diagnostics",rdiagnostic}};
         if (!ls.empty() && !rs.empty())
         {
           State paired(previous); std::vector<double> lq,rq;
