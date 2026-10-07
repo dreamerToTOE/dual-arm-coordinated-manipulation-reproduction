@@ -1,5 +1,15 @@
 # EXPERIMENT_LOG
 
+## 2026-10-07 — single_cube_core_benchmark / IK diagnosis + same-seed precision A/B
+
+Task: TASK01；Baseline: [ENGINEERING]/[EXPERIMENTAL]有限数值诊断，不是论文算法。Platform: native Humble/MoveIt2 2.5.9/LMA/FCL，无Isaac。Source: instrumentation12a6d74/binary415f23ef；A/B与dense8a5bbaf/binary01d64241；AABB2856fa5。Config:原schema2候选ff490a56…及runtime d4b290c模型hash不变。Seed:原显式端点策略；A/B精确原probe02 PRE_PUSH14q、每臂一次；dense上一q延续。
+
+Results: diagnostic01为编译结束前旧binary误跑，INVALID_DIAGNOSTIC_OLD_BINARY/exit1，缺诊断字段和实际exe SHA，不当作新代码验证。正确diagnostic02/原精度对照exit1均定位ROTATION_RESIDUAL_REJECTED：两臂SUCCESS、bounds true、角残差2.582469e-4/9.985173e-4rad。仅本地epsilon1e-7（权重/验收不变）同seed角残差1.841597e-6/2.037263e-6rad、IK/FCL PASS，exit3/PASS_RECORDED_STEP_ONLY。
+
+Dense: 六端点PASS；157状态、步长1.987179mm、FCL pairs0、joint margin最小25.755478deg、相邻单关节增量最大0.415676deg、TCP translation最大6.591492e-9m/rotation9.942151e-6rad。无时间化/连续扫掠保证。AABB audit:628对、体积穿透0、table边界touch157/deep目标touch1、4基本测试PASS/exit0。
+
+Artifacts: results/20261007_TASK01_single_cube_{ik_diagnostic01,ik_diagnostic02,precision_default,precision_tight,precision_dense}/各metadata.json、JSON/CSV、probe_evidence.log；完整命令见reports/TASK01_SINGLE_CUBE_IK_DIAGNOSIS.md及逐run metadata。Native dense exit3/PARTIAL_UNDEFINED_START，不是TASK01 PASS。机器人/吸盘命令0、新物理启动0、ACM/工具/车厢/TCP/基座修改0；BUG019模型差异仍OPEN，START和READY/reset待验。
+
 ## 2026-10-06 — single_cube_core_benchmark / geometry_probe01,02
 
 - Platform: native ROS2 Humble/MoveIt2 2.5.9/LMA/FCL，零Isaac启动/零关节和吸盘命令。Source b31ff05/c9d71f4，runtime模型d4b290c；候选hash ff490a56…，几何/ACM不改。

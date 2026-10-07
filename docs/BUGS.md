@@ -1,5 +1,13 @@
 # BUGS
 
+## 2026-10-07 — BUG025具体数值拒绝定位，原FAIL保留；物理差异仍OPEN
+
+Status: DIAGNOSIS_GAP_RESOLVED / LOCAL_NUMERIC_WORKAROUND；不宣称所有连续IK问题已解决。有效diagnostic02与同seed原精度A/B均证明两臂LMA SUCCESS、7q/限位通过，旋转残差左2.582469e-4/right9.985173e-4rad被1e-4rad独立验收拒绝。不是solver false或FCL碰撞；旧失败点原版没有FCL不能反填碰撞pair。只把本地epsilon收紧1e-7后，同14q种子残差降到1.841597e-6/2.037263e-6rad，FCL PASS；157状态名义插入通过。仍不是全局IK或连续扫掠证明。
+
+另外diagnostic01误在新binary链接完成前启动，标INVALID_DIAGNOSTIC_OLD_BINARY、保留实际旧输出/缺字段，不猜旧exe SHA；后续实际build exit0后才执行有效run。没有物理命令。
+
+START仍独立PENDING_CAPTURE；BUG019原Isaac convexHull/MoveIt STL差异仍OPEN，2.212mm端点FCL净空不可认证PhysX安全。WorldCube/world环境不由robot FCL覆盖，已补当前零偏航名义628对AABB审计；实际接触偏置/姿态偏差不在该保证内。详见TASK01_SINGLE_CUBE_IK_DIAGNOSIS。
+
 ## BUG-025 — 单 Cube 加密几何链局部IK候选拒绝，诊断信息不足
 
 2026-10-06，scope=`single_cube_core_benchmark`，OPEN/STOPPED_FOR_REVIEW。六端点联合IK/限位/FCL通过，但从PRE_PUSH同一上一q继续1.987179mm，probe02没有合格双IK，exit1停止。一个seed的失败不是全局不可行或碰撞证明，失败点尚未FCL。当前solutions将插件失败/限位/残差拒绝汇总为空，未输出具体拒绝臂/原始error；不能猜测右臂或某个墙。

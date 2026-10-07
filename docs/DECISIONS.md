@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D033 — 原几何/门限下同seed数值精度对照，不等同物理或论文PASS
+
+2026-10-07，[ENGINEERING]/[EXPERIMENTAL]。用户批准“继续”保留几何诊断；只在独立探针中记录每臂拒绝并允许收紧LMA epsilon（1e-5→1e-7），同一失败14q/目标重放。保持orientation_vs_position0.01、平移1e-5m/旋转1e-4rad验收、原限位/模型/抓取/ACM/runtime文件不变；不新增随机重试、暗改START或工具/车厢。只证明数值停止精度不满足原验收的局部问题得到解决。
+
+随后≤2mm名义插入检查首次真实失败即停；157状态实际通过，也只记离散几何PASS，整体PARTIAL待START和Isaac审查，TASK02不提前开始。robot FCL未覆盖的worldCube/environment，用当前原盒形/零偏航AABB补审计，不豁免接触/改变PhysX。保留原失败与旧binary无效尝试，完成实际构建后核对exe再跑；无新论文[DEVIATION]。
+
 ## D032 — 单 Cube 几何先行，首败后停止，不从端点PASS推断路径PASS
 
 2026-10-06，[ENGINEERING]/[EXPERIMENTAL]。遵循用户新要求及云端已批准单Cube范围（同日single-Cube D016，与历史XYZ D016不同）：只做几何，不启动长Isaac试验。端点PASS与同一seed加密链分开记录；连续链首败后不再搜索/修改，不将数值IK失败称工具几何不可行。START仍待定义，不自行选择供料点或平移导轨。以后只有用户确认诊断范围后再继续，工具/车厢/TCP/SRDF/ACM和force/wrench延期边界保持。未新增论文[DEVIATION]，没有借机实现P4。

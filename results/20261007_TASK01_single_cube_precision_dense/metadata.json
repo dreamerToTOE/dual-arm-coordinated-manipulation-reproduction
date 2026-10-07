@@ -1,0 +1,119 @@
+{
+  "task": "TASK01 Core Single-Cube Benchmark Freeze",
+  "date": "2026-10-07",
+  "scope": "single_cube_core_benchmark",
+  "baseline": "ENGINEERING bounded numeric IK diagnosis; no paper algorithm",
+  "platform": "native ROS2 Humble / MoveIt2 2.5.9 / LMA / FCL; no Isaac",
+  "git_commit": "8a5bbafddda62186b595fb24f5cda4736a9ff263",
+  "runtime_model_commit": "d4b290c1f929428e7d3bd6776b6d55709ca34b0f",
+  "seed": "unchanged deterministic explicit seed grid endpoints; previous q single attempt dense",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_sha256": "ff490a562edb9415b20d162e17d17d1fc7de6b92cc4d731792f35d95d6514c94",
+  "source_sha256": "7a6bf565d25e72891b497c82705ad5ebdb39fab3eb0302156fc910c65284d09f",
+  "binary_sha256": "01d64241ed4fb52c76102347bb7cff1fb42c11c4530aa15435bd656771edf990",
+  "input_hashes": {
+    "expanded_urdf": "a9d6a364c89b9e72e51da962d16ee44de45595429339b51004a59211b312939b",
+    "expanded_srdf": "11b89277bfa5fb7bcedfa35f8285507e88d2c793df6ba8e04daf12c8eb8d023a",
+    "kinematics_yaml": "80c77389765b8bb2e401fdfaa4a3d1bdd97aa85d90472a16d39d7ba403d70654"
+  },
+  "command": "build/single_cube_geometry/task01_single_cube_geometry configs/benchmark/benchmark_v1.yaml results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.urdf results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.srdf /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/config/kinematics.yaml results/20261007_TASK01_single_cube_precision_dense --ik-epsilon 1e-7",
+  "working_directory": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction",
+  "environment_setup": [
+    "source /opt/ros/humble/setup.bash",
+    "source /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/install/setup.bash"
+  ],
+  "status": "PARTIAL_UNDEFINED_START",
+  "exit_code": 3,
+  "ik_numeric": {
+    "epsilon": 1e-7,
+    "orientation_vs_position": 0.01,
+    "max_solver_iterations": 500,
+    "position_only_ik": false,
+    "acceptance_translation_limit_m": 0.00001,
+    "acceptance_rotation_limit_rad": 0.0001,
+    "limits_and_geometry_unchanged": true
+  },
+  "metrics": {
+    "status": "PARTIAL_UNDEFINED_START",
+    "dense_states_checked": 157,
+    "dense_states_passed": 157,
+    "start_defined": false,
+    "instrumentation_present": true,
+    "max_dense_translation_residual_m": 6.5914918065832556e-9,
+    "max_dense_rotation_residual_rad": 0.000009942150586217994,
+    "diagnostics": {
+      "left": {
+        "solver_return": true,
+        "moveit_error_code": 1,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "residual": {
+          "rotation_rad": 2.939766998075365e-7,
+          "translation_m": 7.684278533318133e-11
+        }
+      },
+      "right": {
+        "solver_return": true,
+        "moveit_error_code": 1,
+        "bounds_satisfied": true,
+        "disposition": "ACCEPTED",
+        "residual": {
+          "rotation_rad": 3.8656977371597675e-7,
+          "translation_m": 1.1564637269559456e-10
+        }
+      }
+    },
+    "min_dense_joint_margin_deg": 25.755478183394075,
+    "max_dense_joint_step_deg": 0.41567611098187596,
+    "dense_collision_pairs": 0,
+    "cube_environment_audit": {
+      "scope": "nominal_axis_aligned_cube_vs_environment_only",
+      "status": "PASS_NOMINAL_AABB_ONLY",
+      "dense_states": 157,
+      "pair_checks": 628,
+      "volumetric_overlaps": 0,
+      "table_touch_states": 157,
+      "deep_wall_touch_states": 1,
+      "self_tests_passed": 4,
+      "floating_point_roundoff_m": 1e-12,
+      "physics_started": false,
+      "acm_modified": false,
+      "config": "configs/benchmark/benchmark_v1.yaml",
+      "input": "results/20261007_TASK01_single_cube_precision_dense/dense_insertion_results.json"
+    },
+    "robot_commands": 0,
+    "suction_commands": 0,
+    "physics_started": false,
+    "acm_modified": false,
+    "full_chain_verified": false,
+    "continuous_collision_verified": false
+  },
+  "artifacts": [
+    "sample_results.json",
+    "dense_insertion_results.json",
+    "collision_pairs.csv",
+    "joint_margin.csv",
+    "relative_grasp_error.csv",
+    "probe_evidence.log",
+    "raw/probe.log",
+    "cube_environment_audit.json",
+    "verify_evidence.py",
+    "verification.json"
+  ],
+  "boundary": "Discrete local geometry/numerics only. START is undefined; no START-to-PRE_PUSH, controller, physical suction, PhysX, P4 or frozen benchmark claim. Known Isaac/MoveIt collision mesh discrepancy BUG019 remains.",
+  "evidence_validation": {
+    "baseline": "ENGINEERING artifact consistency and negative CLI guard tests",
+    "command": "python3 results/20261007_TASK01_single_cube_precision_dense/verify_evidence.py",
+    "source_sha256": "66445ff76757acfa062f817f2fdeb14735f8e6f8518843d33537a744dae82fc0",
+    "status": "PASS_EVIDENCE_AND_GUARDS_ONLY",
+    "exit_code": 0
+  },
+  "secondary_experiment": {
+    "classification": "ENGINEERING nominal axis-aligned Cube/environment audit; not PhysX",
+    "source_commit": "2856fa54dfcc6808ec3a326187884246a174fdfd",
+    "source_sha256": "a4588d073675f1d0a3b0a1aa5a69d2c5ed8485824c45df71bdf28468b2aed854",
+    "command": "python3 platforms/isaac_ros2/probes/single_cube_geometry/audit_cube_environment.py configs/benchmark/benchmark_v1.yaml results/20261007_TASK01_single_cube_precision_dense/dense_insertion_results.json results/20261007_TASK01_single_cube_precision_dense/cube_environment_audit.json",
+    "exit_code": 0,
+    "status": "PASS_NOMINAL_AABB_ONLY"
+  }
+}

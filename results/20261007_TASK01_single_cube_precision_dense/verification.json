@@ -1,0 +1,16 @@
+{
+  "status": "PASS_EVIDENCE_AND_GUARDS_ONLY",
+  "command": "python3 results/20261007_TASK01_single_cube_precision_dense/verify_evidence.py",
+  "source_sha256": "66445ff76757acfa062f817f2fdeb14735f8e6f8518843d33537a744dae82fc0",
+  "exit_code": 0,
+  "checks": {
+    "same_seed_same_pose_same_acceptance_ab": "PASS",
+    "157_state_spacing_bounds_residual_and_fcl": "PASS",
+    "628_nominal_cube_environment_checks": "PASS",
+    "five_run_metadata_source_binary_artifacts_provenance": "PASS",
+    "invalid_epsilon_and_prior_result_overwrite_refused": "PASS"
+  },
+  "physics_started": false,
+  "robot_commands": 0,
+  "boundary": "Artifact integrity and numeric CLI guard verification; not physical or full TASK01 success. Invalid epsilon and prior-result guards reject before loading any robot/ROS controller."
+}

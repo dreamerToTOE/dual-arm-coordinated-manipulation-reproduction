@@ -1,5 +1,11 @@
 # USER_FEEDBACK
 
+## 2026-10-07 — 用户“继续”限定为保持几何的诊断
+
+用户在单Cube首败报告后要求“继续”。按照已提出的下一步，只定位具体拒绝臂/原始IK返回/残差并有限同seed数值对照；不推断批准修改工具/车厢/TCP/ACM、重启长Isaac或旧五Cube实验。过程中告知两臂SUCCESS但旋转超门限，以及只收紧数值求解精度、验收不变。
+
+最终名义插入157状态通过、未启动Isaac；必须明确整体仍PARTIAL，START定义需用户决定，已知模型差异需审查。继续约束：可见GUI-only、保护reinforcement_stair-test、实时记录GitHub，不把有限几何成功等同物理搬运或TASK01冻结。
+
 ## 2026-10-06 — 第一阶段只做 Single-Cube Geometry Feasibility Probe
 
 用户明确要求：“先不要长时间跑 Isaac。第一步只做 Single-Cube Geometry Feasibility Probe；如果纯几何不通过，立即停下来告诉我，不要自己修改工具或车厢”。附件要求保留原L工具/原车厢/固定TCP，不扩大ACM；旧五块归legacy，力标定留TASK10-IS。此要求覆盖此前持续GUI旧应用调试，当前已停止旧自有GUI，仅无执行几何。加密IK首败后不擅自重试/修正，等待用户决定。

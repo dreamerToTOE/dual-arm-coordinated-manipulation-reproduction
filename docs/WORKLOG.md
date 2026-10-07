@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-07 — 保持几何的单Cube IK拒绝诊断与精度对照
+
+按用户“继续”及PRE报告，仅扩展只读probe日志/局部数值设置，没有启动Isaac。12a6d74为每臂记录solver bool/error/raw q/限位/FK残差与拒绝原因；首次diagnostic01在链接前误启动旧exe，不算instrumentation验证，标INVALID并保留旧log，等待actual build exit0后另起diagnostic02。有效结果确认两臂SUCCESS/界限通过但旋转残差超原1e-4rad，BUG025诊断缺口定位，不编造碰撞pair。
+
+8a5bbaf新增同记录14q重放和只收紧本地epsilon选项（默认不变）、int/bool kinematics解析及tip断言。同二进制原1e-5重现拒绝，1e-7同seed/同目标通过原门限与full FCL；然后有限dense原名义段157/157通过，max旋转9.94215e-6rad、密集margin25.755478deg。2856fa5补worldCube对table/三墙零偏航AABB审计628对，无体积穿透/4基本测试PASS，不改变ACM或PhysX容差。
+
+五个run元数据/结构化结果/原stdout均保存，报告TASK01_SINGLE_CUBE_IK_DIAGNOSIS。原YAML/model/kinematics hash不变；START缺定义和BUG019留待用户审查，整体PARTIAL，TASK02 TODO，无P4/force/旧五块debug。后续须先确认START，不能用插入局部成功宣称科研冻结。
+
 ## 2026-10-06 — 单 Cube 几何检查首败停止，不再扩展旧应用
 
 读取用户附件及云端单Cube计划；ff-only不可用（本地旧证据提交与远端新计划分叉），安全merge保留双边历史，仅STATUS顶部冲突手工保留新范围和旧负结果。f616603完成合并，未force/reset。停止自有旧GUI193707，未启动新Isaac、未继续旧五块控制器。

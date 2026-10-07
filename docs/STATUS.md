@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-07 — 单 Cube 名义插入几何通过，整体PARTIAL待START
+
+用户“继续”后限定保持几何诊断：原失败点两臂LMA均SUCCESS/限位通过，旋转残差2.582e-4/9.985e-4rad超1e-4验收；同14q seed仅将本地epsilon1e-5收紧到1e-7即通过IK/FCL，验收和权重0.01均不变。名义PRE_PUSH→TARGET的157个≤2mm状态全IK/限位/full robot FCL通过；Cube/world另628个AABB检查无体积穿透。无新Isaac、机器人或吸盘命令，无工具/车厢/TCP/基座/SRDF/ACM/runtime配置修改。
+
+TASK01维持IN_PROGRESS，当前门禁PARTIAL_PENDING_START_AND_ISAAC_REVIEW；START→PRE_PUSH、物理模型差异BUG019、READY/reset及用户冻结审查仍缺。TASK02 TODO，P4/force未开始。原失败与第一次旧binary无效诊断保留，不冒称完整/连续/物理PASS。报告 [TASK01_SINGLE_CUBE_IK_DIAGNOSIS](../reports/TASK01_SINGLE_CUBE_IK_DIAGNOSIS.md)。
+
 ## 2026-10-06 — Single-Cube geometry probe: BLOCKED，失败即停
 
 按新单 Cube 范围，仅本地原模型/LMA/full FCL，无新Isaac/机器人命令。PRE_PUSH和10/30/50/70/100%六端点通过；同一seed加密插入在0.641026%（前进1.987179mm）无合格双IK，exit1立即停止，无失败点碰撞结论/全局不可行证明。START仍PENDING_CAPTURE；不暗改工具、车厢、TCP、SRDF/ACM，不进入READY/reset或力控。报告 [TASK01_SINGLE_CUBE_GEOMETRY](../reports/TASK01_SINGLE_CUBE_GEOMETRY.md)，新结果scope=`single_cube_core_benchmark`。TASK01当前门禁BLOCKED待用户确认连续IK诊断/START，TASK02 TODO。

@@ -1,5 +1,7 @@
 # TASK01 Single-Cube Geometry Feasibility Probe
 
+2026-10-07 follow-up: 原FAIL完整保留。具体拒绝原因及同seed精度A/B已查明，名义插入157状态通过，但整体仍PARTIAL/START未定义。最新结论和命令见 [IK_DIAGNOSIS](TASK01_SINGLE_CUBE_IK_DIAGNOSIS.md)。以下2026-10-06为历史原结果，不代表后续未诊断。
+
 2026-10-06 · scope: `single_cube_core_benchmark` · Status: **BLOCKED / stop for review**.
 
 只运行纯几何探针。按用户要求，在加密插入链首个失败后立即停止；没有启动新 Isaac、旧 Task27 控制器或 READY/reset。原 L 工具、车厢、TCP、碰撞网格、SRDF/ACM 没有修改。

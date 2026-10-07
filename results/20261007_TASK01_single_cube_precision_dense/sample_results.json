@@ -1,0 +1,1753 @@
+{
+  "acm_modified": false,
+  "continuous_path_verified": false,
+  "dense_states_checked": 157,
+  "dense_step_cap_m": 0.002,
+  "effective_ik_numeric": {
+    "left_arm": {
+      "epsilon": 1e-07,
+      "epsilon_override_namespace": "left_arm.epsilon",
+      "orientation_vs_position": 0.01,
+      "plugin": "lma_kinematics_plugin/LMAKinematicsPlugin"
+    },
+    "right_arm": {
+      "epsilon": 1e-07,
+      "epsilon_override_namespace": "right_arm.epsilon",
+      "orientation_vs_position": 0.01,
+      "plugin": "lma_kinematics_plugin/LMAKinematicsPlugin"
+    }
+  },
+  "physics_started": false,
+  "robot_commands": 0,
+  "samples": [
+    {
+      "sample": "START",
+      "status": "NOT_RUN_UNDEFINED_START"
+    },
+    {
+      "all_candidates_failed_is_not_global_infeasibility_proof": true,
+      "collision_pairs": [],
+      "cube_center_world_m": [
+        0.79,
+        0.0,
+        0.26
+      ],
+      "fcl": "PASS",
+      "joint_candidates_checked": 1,
+      "joint_limit": "PASS",
+      "left_ik_count": 12,
+      "left_q_rad": [
+        0.49486499991616845,
+        -0.37785314891551114,
+        0.7415981792338585,
+        -2.6274821052742054,
+        0.34475949539371986,
+        2.312476930983798,
+        0.9621895974099302
+      ],
+      "left_relative_grasp_error": {
+        "rotation_rad": 6.831668125993697e-07,
+        "translation_m": 5.012254383756335e-10
+      },
+      "min_joint_margin_rad": 0.4495178947257945,
+      "retained_solution_cap_per_arm": 12,
+      "right_ik_count": 12,
+      "right_q_rad": [
+        -0.2729708920257375,
+        -0.4785089139518445,
+        -0.9634288110830853,
+        -2.6142369044798865,
+        -0.5113593909080687,
+        2.258592276640459,
+        -0.8372934673133238
+      ],
+      "right_relative_grasp_error": {
+        "rotation_rad": 1.9403645181486451e-07,
+        "translation_m": 1.0146027023906085e-10
+      },
+      "sample": "PRE_PUSH",
+      "seed_attempt_cap_per_arm": 64,
+      "status": "PASS_SAMPLED_ENDPOINT",
+      "wrist_tool_wall_distances_m": [
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.28906565178716165
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.35600001398445486
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3610000020614076
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3350000004235049
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.38400000013280944
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3360000002065588
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3840000063331363
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.33600000992539564
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.289065625874819
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.35599999591693404
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3609999957552014
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.33499999930361735
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3840000010256142
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.33600000013749015
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.38399999990320727
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3360000001982973
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.04608805827760974
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.11280515314660157
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1258967888493845
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.22748403949582113
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2584956644817928
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.24120531962695635
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2584956351781261
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2412052958727936
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.4422801598979421
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.5122704354498583
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.39950218820540856
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3796063674784064
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3814341411891119
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36993513357444824
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3814341322945776
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3699351293867505
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.4845054950689648
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.5122703872878125
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3995021860106641
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.37960635572182455
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3814341197693444
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36993511750582936
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3814341505908556
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36993515427288604
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.08823512206986825
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.11280512935251291
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.1258967790473058
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2274840597275571
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.25849564399026076
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.24120530370458995
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.25849565206455505
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.24120532000032754
+        }
+      ]
+    },
+    {
+      "all_candidates_failed_is_not_global_infeasibility_proof": true,
+      "collision_pairs": [],
+      "cube_center_world_m": [
+        0.8210000000000001,
+        0.0,
+        0.26
+      ],
+      "fcl": "PASS",
+      "joint_candidates_checked": 1,
+      "joint_limit": "PASS",
+      "left_ik_count": 12,
+      "left_q_rad": [
+        0.4414562546246846,
+        -0.3259729965685172,
+        0.7209468348865634,
+        -2.5950598866154584,
+        0.29411359041418406,
+        2.3244692302451835,
+        0.9312992621054902
+      ],
+      "left_relative_grasp_error": {
+        "rotation_rad": 9.343710446908624e-07,
+        "translation_m": 4.891406428713919e-10
+      },
+      "min_joint_margin_rad": 0.48194011338454157,
+      "retained_solution_cap_per_arm": 12,
+      "right_ik_count": 12,
+      "right_q_rad": [
+        -0.20146309061798096,
+        -0.41989308106796125,
+        -0.9611713686690468,
+        -2.583696678186989,
+        -0.4560008651737147,
+        2.279838638353288,
+        -0.8102393965558751
+      ],
+      "right_relative_grasp_error": {
+        "rotation_rad": 1.1271923866621857e-06,
+        "translation_m": 7.430769444981719e-10
+      },
+      "sample": "INSERT_10",
+      "seed_attempt_cap_per_arm": 64,
+      "status": "PASS_SAMPLED_ENDPOINT",
+      "wrist_tool_wall_distances_m": [
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.2580760529222799
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.325000007421
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.33000000027798676
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3039999976117103
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.35300000462000114
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.30500000483141837
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3530000040557707
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.30500000916850817
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.25807605205500367
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.32500000946781266
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3300000013891963
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.30399999669558525
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.35300000760625616
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.30500001123791753
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3529999946831955
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.30499999517451426
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.02438788046466012
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.09140017429715443
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1056834876929835
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.22063541337598752
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.24640006313034896
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23462521042539503
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2464001091367508
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23462525797864833
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.4390524772461193
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.507986221877413
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.39360004172562246
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3755422372648575
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3733430334011114
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36567884969271636
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.37334298459396337
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3656787996449038
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.47975237416287164
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.5079862222381756
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.39360004351681754
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.37554224447558127
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.37334302830617633
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.365678845525823
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.37334298880120054
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3656788047085211
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.06736080891027664
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.09140016225120043
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.10568348469974177
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2206354074224954
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2464000586291662
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2346252064653628
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.24640011249887245
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.234625262698278
+        }
+      ]
+    },
+    {
+      "all_candidates_failed_is_not_global_infeasibility_proof": true,
+      "collision_pairs": [],
+      "cube_center_world_m": [
+        0.883,
+        0.0,
+        0.26
+      ],
+      "fcl": "PASS",
+      "joint_candidates_checked": 1,
+      "joint_limit": "PASS",
+      "left_ik_count": 12,
+      "left_q_rad": [
+        0.34379748883694183,
+        -0.20920133849235759,
+        0.6838342517457769,
+        -2.5102839808977078,
+        0.18341966623944708,
+        2.33871949944048,
+        0.888707864565424
+      ],
+      "left_relative_grasp_error": {
+        "rotation_rad": 2.5185606359175235e-07,
+        "translation_m": 1.1711527523109405e-10
+      },
+      "min_joint_margin_rad": 0.5667160191022922,
+      "retained_solution_cap_per_arm": 12,
+      "right_ik_count": 12,
+      "right_q_rad": [
+        -0.05747747358376288,
+        -0.28322165755872036,
+        -0.9696419196338503,
+        -2.503833859559525,
+        -0.3186180829262374,
+        2.3149074608552693,
+        -0.7882136323660476
+      ],
+      "right_relative_grasp_error": {
+        "rotation_rad": 6.262456117917722e-07,
+        "translation_m": 4.762487792873293e-10
+      },
+      "sample": "INSERT_30",
+      "seed_attempt_cap_per_arm": 64,
+      "status": "PASS_SAMPLED_ENDPOINT",
+      "wrist_tool_wall_distances_m": [
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.19610669011153883
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2629999981159038
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2679999981025277
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.24199999966022173
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2910000028391083
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.24300000463919097
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.29100001521460206
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.24300002628942166
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.1961067010337313
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2630000013314277
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2679999988844707
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2419999987031178
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2910000029748436
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2430000030766067
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2909999980223211
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.24299999929057792
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.009058530288378734
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.07299998005933789
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.08699999912309611
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.21799999149091726
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23294848626152148
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23199999487409642
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23294850203100012
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23200000576098043
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.4379954180853606
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.5050000189206139
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3890000013565837
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.37400000106126235
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3646052815182246
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3640000122718927
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36460525430738794
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3639999854317657
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.47591678757225897
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.5049999999545193
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3889999977587844
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.37399999102120746
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3646052724891038
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3640000034951683
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.364605262969007
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3639999913687142
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.04418955933301262
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.07299995051628999
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.08699999748227454
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.21799997812799318
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23294847758940285
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23199998658196866
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2329485103159381
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2320000129884696
+        }
+      ]
+    },
+    {
+      "all_candidates_failed_is_not_global_infeasibility_proof": true,
+      "collision_pairs": [],
+      "cube_center_world_m": [
+        0.9450000000000001,
+        0.0,
+        0.26
+      ],
+      "fcl": "PASS",
+      "joint_candidates_checked": 1,
+      "joint_limit": "PASS",
+      "left_ik_count": 12,
+      "left_q_rad": [
+        0.269291331909535,
+        -0.07966305877365405,
+        0.6450289426360563,
+        -2.399683591447646,
+        0.06631435137022104,
+        2.3348792737108877,
+        0.8668785944539834
+      ],
+      "left_relative_grasp_error": {
+        "rotation_rad": 1.0892103941036308e-06,
+        "translation_m": 1.0274978549185306e-09
+      },
+      "min_joint_margin_rad": 0.677316408552354,
+      "retained_solution_cap_per_arm": 12,
+      "right_ik_count": 12,
+      "right_q_rad": [
+        0.06343408671791678,
+        -0.1132850225176172,
+        -0.9762496795390548,
+        -2.398492086628313,
+        -0.12953874887049022,
+        2.3306486337499774,
+        -0.8203372676512468
+      ],
+      "right_relative_grasp_error": {
+        "rotation_rad": 2.899496337235059e-07,
+        "translation_m": 1.7907474983963568e-10
+      },
+      "sample": "INSERT_50",
+      "seed_attempt_cap_per_arm": 64,
+      "status": "PASS_SAMPLED_ENDPOINT",
+      "wrist_tool_wall_distances_m": [
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.1341656944195628
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.20099999742893204
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.20599999589013065
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1799999987244886
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.22900000885861085
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.18100001390015907
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2290000269570258
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.18100005317812382
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.1341656973936202
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.20100000451517122
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.20600000077292255
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.1799999992308164
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.22900002214399695
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.18100004479565363
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.22900000177184165
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.18100000648096207
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.009058357716228597
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.07299991334666245
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.0869999931587879
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2179999617684433
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23199997479197831
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23199997220356447
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23200002142629111
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2320000172907334
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.4379953867472503
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.5050000003469306
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.38899999751650766
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.37399999072487805
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36400000395491183
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3640000054002103
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3639999901224459
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36399999474657146
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.47591595021114197
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.5050000008228807
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.38899999872595414
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.37399996312990086
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36400001755081857
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3640000158785321
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3639999650014197
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36399997708435994
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.0441895920923714
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.07299997718190454
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.0869999971832486
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.21799998961285227
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23199999399001425
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23199999208626243
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23200000606003512
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23200000391539488
+        }
+      ]
+    },
+    {
+      "all_candidates_failed_is_not_global_infeasibility_proof": true,
+      "collision_pairs": [],
+      "cube_center_world_m": [
+        1.0070000000000001,
+        0.0,
+        0.26
+      ],
+      "fcl": "PASS",
+      "joint_candidates_checked": 1,
+      "joint_limit": "PASS",
+      "left_ik_count": 12,
+      "left_q_rad": [
+        0.2249769242904454,
+        0.0560147408134519,
+        0.5996122238702181,
+        -2.2639124371966886,
+        -0.042752177168210975,
+        2.309718842699435,
+        0.8526610772452314
+      ],
+      "left_relative_grasp_error": {
+        "rotation_rad": 3.186176647959325e-06,
+        "translation_m": 4.375136516580734e-09
+      },
+      "min_joint_margin_rad": 0.8130875628033114,
+      "retained_solution_cap_per_arm": 12,
+      "right_ik_count": 12,
+      "right_q_rad": [
+        0.09961024338362671,
+        0.07698041654771615,
+        -0.9268618769433118,
+        -2.2634233891718143,
+        0.08316632021372097,
+        2.3079753334107713,
+        -0.8818025372160403
+      ],
+      "right_relative_grasp_error": {
+        "rotation_rad": 2.1437579849967585e-06,
+        "translation_m": 2.689609665518928e-09
+      },
+      "sample": "INSERT_70",
+      "seed_attempt_cap_per_arm": 64,
+      "status": "PASS_SAMPLED_ENDPOINT",
+      "wrist_tool_wall_distances_m": [
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.07232595845831723
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1390000349736197
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1440000005739249
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.11799998705193349
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.16700002464701852
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.11900002919680408
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1670000450592186
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.1190001465544662
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.07232595207988686
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.13900006161616327
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.14400001102398252
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.11799999250509884
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.16700007028108382
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.11900001974080147
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.16699999253351414
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.11900000966573113
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.009057953500721356
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.07299975475713617
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.08699996840938017
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.21799988930122258
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.231999917824591
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2319999103024818
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23200005038856458
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23200003638287142
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.43799556575485243
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.5049999982547809
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3890000062743276
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3740000050145012
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36400002819965205
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36400003823850485
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3639999333428331
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3639999511608977
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.4759161541303084
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.505000000941842
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3890000093661192
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3740000076050465
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36400004130309765
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36400005480528574
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3639999327411318
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36399992469669806
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.04418941821961025
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.07299983737657287
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.08699999372587017
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.21799992597678425
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23199995163302997
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23199992874088862
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23200003937288258
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23200002223568808
+        }
+      ]
+    },
+    {
+      "all_candidates_failed_is_not_global_infeasibility_proof": true,
+      "collision_pairs": [],
+      "cube_center_world_m": [
+        1.1,
+        0.0,
+        0.26
+      ],
+      "fcl": "PASS",
+      "joint_candidates_checked": 1,
+      "joint_limit": "PASS",
+      "left_ik_count": 12,
+      "left_q_rad": [
+        0.2060643632556026,
+        0.26265463194857447,
+        0.5253873651314049,
+        -2.013166708502815,
+        -0.1661422334891122,
+        2.234968142777123,
+        0.8194408512093444
+      ],
+      "left_relative_grasp_error": {
+        "rotation_rad": 2.4378027254246746e-06,
+        "translation_m": 2.981848779633127e-09
+      },
+      "min_joint_margin_rad": 1.0638332914971849,
+      "retained_solution_cap_per_arm": 12,
+      "right_ik_count": 12,
+      "right_q_rad": [
+        0.04553519727954437,
+        0.32051041923287693,
+        -0.7967552118447797,
+        -2.0081659372555705,
+        0.2858854859238167,
+        2.2161595865714276,
+        -0.9000809556957746
+      ],
+      "right_relative_grasp_error": {
+        "rotation_rad": 6.866368073159385e-07,
+        "translation_m": 4.790536339228218e-10
+      },
+      "sample": "INSERT_100",
+      "seed_attempt_cap_per_arm": 64,
+      "status": "PASS_SAMPLED_ENDPOINT",
+      "wrist_tool_wall_distances_m": [
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.002212015441148388
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.046000090124684784
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.05100001015148635
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.02499996262698291
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.07400005332747317
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.02600039261277132
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.07400045182345379
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.025999974462712096
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.0022122064754676696
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.046000036401717924
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.051000003536723466
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.024999996942133094
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.07400002369219986
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.026000012591084313
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.07400007638583035
+        },
+        {
+          "body1": "carriage_deep_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.026000283969427426
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.009058179753802601
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.07299984620464216
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.08699997941294699
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.21799991548821696
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23199994738664614
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.2319999174713612
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23200004090366944
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.23200001173281756
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.43799541875482295
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.5050000053921433
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.38899999685605147
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3739999931831065
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3640000033995726
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3640000144934909
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.3639999805814141
+        },
+        {
+          "body1": "carriage_minus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.36399999146006895
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_link7",
+          "signed_distance_m": 0.4759160444693278
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.505000021984704
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.38899999082161973
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3739999539710795
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3640000223521418
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36400004878510434
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.36399993681667314
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "left_fr3_side_suction",
+          "signed_distance_m": 0.3639999658509804
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_link7",
+          "signed_distance_m": 0.04418956475023234
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.0729999576583834
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.08699999392125012
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.21799997612883573
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23199998649973175
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.2319999800531996
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23200001282086585
+        },
+        {
+          "body1": "carriage_plus_y_wall",
+          "body2": "right_fr3_side_suction",
+          "signed_distance_m": 0.23200000338680038
+        }
+      ]
+    }
+  ],
+  "scope": "single_cube_core_benchmark",
+  "status": "PARTIAL_UNDEFINED_START",
+  "suction_commands": 0
+}

@@ -1,0 +1,74 @@
+{
+  "task": "TASK01 Core Single-Cube Benchmark Freeze",
+  "date": "2026-10-07",
+  "scope": "single_cube_core_benchmark",
+  "baseline": "ENGINEERING bounded numeric IK diagnosis; no paper algorithm",
+  "platform": "native ROS2 Humble / MoveIt2 2.5.9 / LMA / FCL; no Isaac",
+  "git_commit": "8a5bbafddda62186b595fb24f5cda4736a9ff263",
+  "runtime_model_commit": "d4b290c1f929428e7d3bd6776b6d55709ca34b0f",
+  "seed": "exact recorded PRE_PUSH 14q from probe02; one deterministic attempt per arm",
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "config_sha256": "ff490a562edb9415b20d162e17d17d1fc7de6b92cc4d731792f35d95d6514c94",
+  "source_sha256": "7a6bf565d25e72891b497c82705ad5ebdb39fab3eb0302156fc910c65284d09f",
+  "binary_sha256": "01d64241ed4fb52c76102347bb7cff1fb42c11c4530aa15435bd656771edf990",
+  "input_hashes": {
+    "expanded_urdf": "a9d6a364c89b9e72e51da962d16ee44de45595429339b51004a59211b312939b",
+    "expanded_srdf": "11b89277bfa5fb7bcedfa35f8285507e88d2c793df6ba8e04daf12c8eb8d023a",
+    "kinematics_yaml": "80c77389765b8bb2e401fdfaa4a3d1bdd97aa85d90472a16d39d7ba403d70654"
+  },
+  "command": "build/single_cube_geometry/task01_single_cube_geometry configs/benchmark/benchmark_v1.yaml results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.urdf results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.srdf /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/src/fr3_dual_side_suction_description/config/kinematics.yaml results/20261007_TASK01_single_cube_precision_default --replay-step results/20261006_TASK01_single_cube_geometry_probe02/dense_insertion_results.json",
+  "working_directory": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction",
+  "environment_setup": [
+    "source /opt/ros/humble/setup.bash",
+    "source /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/install/setup.bash"
+  ],
+  "status": "FAIL_STOP",
+  "exit_code": 1,
+  "ik_numeric": {
+    "epsilon": 0.00001,
+    "orientation_vs_position": 0.01,
+    "max_solver_iterations": 500,
+    "position_only_ik": false,
+    "acceptance_translation_limit_m": 0.00001,
+    "acceptance_rotation_limit_rad": 0.0001,
+    "limits_and_geometry_unchanged": true
+  },
+  "metrics": {
+    "status": "FAIL_STOP",
+    "fcl": "NOT_RUN_NO_ACCEPTED_DUAL_IK",
+    "diagnostics": {
+      "left": {
+        "solver_return": true,
+        "moveit_error_code": 1,
+        "bounds_satisfied": true,
+        "disposition": "ROTATION_RESIDUAL_REJECTED",
+        "residual": {
+          "rotation_rad": 0.0002582469016866072,
+          "translation_m": 9.585251187792709e-8
+        }
+      },
+      "right": {
+        "solver_return": true,
+        "moveit_error_code": 1,
+        "bounds_satisfied": true,
+        "disposition": "ROTATION_RESIDUAL_REJECTED",
+        "residual": {
+          "rotation_rad": 0.000998517296020584,
+          "translation_m": 3.0037140819660546e-7
+        }
+      }
+    },
+    "robot_commands": 0,
+    "suction_commands": 0,
+    "physics_started": false,
+    "acm_modified": false,
+    "full_chain_verified": false,
+    "continuous_collision_verified": false
+  },
+  "artifacts": [
+    "replay_step_results.json",
+    "probe_evidence.log",
+    "raw/probe.log"
+  ],
+  "boundary": "Discrete local geometry/numerics only. START is undefined; no START-to-PRE_PUSH, controller, physical suction, PhysX, P4 or frozen benchmark claim. Known Isaac/MoveIt collision mesh discrepancy BUG019 remains."
+}

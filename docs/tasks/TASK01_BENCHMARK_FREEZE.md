@@ -2,7 +2,11 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
-### Current execution gate: BLOCKED / stop for review (2026-10-06)
+### Latest execution gate: PARTIAL_PENDING_START_AND_ISAAC_REVIEW (2026-10-07)
+
+User approved continuing geometry-preserving diagnosis. Same-seed precision A/B identifies both prior IK candidates as SUCCESS/bounds-valid but rotation-residual rejected. Local epsilon1e-7 resolves that step without changing acceptance1e-5m/1e-4rad or geometry/weight. PRE_PUSH→TARGET now passes157 ≤2mm discrete IK/bounds/full robot FCL states; separate nominal Cube/table/three-wall audit has628 checks/zero volumetric overlaps. Not continuous collision or physics proof. START→PRE_PUSH remains undefined; BUG019 mesh mismatch/Isaac READY-reset/user freeze review remain pending. No Isaac started or robot/suction command; TASK02 stays TODO. See [new diagnosis report](../../reports/TASK01_SINGLE_CUBE_IK_DIAGNOSIS.md). Do not mark TASK01 PASS/FROZEN.
+
+### Historical execution gate: BLOCKED / stop for review (2026-10-06)
 
 Single-Cube endpoint probe passes PRE_PUSH/10/30/50/70/100% joint IK/bounds/full FCL. START remains undefined. An extra ≤2mm same-seed insertion check rejects its second state at0.641026% (1.987179mm forward), so no continuous geometric chain has passed. No collision pair is established for that rejected IK state. User stop-on-failure obeyed; no new Isaac READY/reset, tool/carriage/TCP/ACM edits, force controller or paper algorithm. See [geometry report](../../reports/TASK01_SINGLE_CUBE_GEOMETRY.md). Do not mark PASS/FROZEN or proceed until review.
 
