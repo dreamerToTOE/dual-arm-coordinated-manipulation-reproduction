@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Re-read governance; reject inertial parity09 continuation
+
+User: “GitHub 中的 AGENTS.md 和 docs/EXECUTION_GOVERNANCE.md 已更新。先重新阅读它们，特别是 Anti-loop / Attempt Budget / Minimum Sufficient Evidence 规则，然后重新评估当前 TASK01，不要沿用之前默认继续开发 parity09 的惯性。” Fully read cloud pinned main0e3f8f5; stopped experiments/source development. Reassess scientific evidence and ownership; same-root07/08/09 budget exhausted,09 actual failure recorded. No further probe/init/physics/geometry changes. Proposed boundedcritical GUI replay/reset awaits user's decision; do not presume this feedback grants a new engineering budget. [Review](../reports/TASK01_GOVERNANCE_REVIEW.md).
+
 ## 2026-10-08 — 静态软件适配延续，不扩大物理或模型授权
 
 延续用户既定严格范围：08 query miss仍停，09仅安全审核/设计原native逐态重建，不需要新的科学基准决策、不代表授权修改模型/几何/ACM或启动物理控制。09未执行、READY未做，无parityPASS/force/P4/冻结；保留旧失败，BUG001留TASK10-IS非阻塞。

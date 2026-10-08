@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-08 — Governance ownership / budget stop (supersedes current repair plans)
+
+Same-root static evidence loop07/08/09 exhausted3/3:09 actual reloaded left7q=0/error2.43079577rad/callback0 stopped, no new-chain collision verdict. Zero-step query-cache perfection is **KNOWN LIMITATION**, not required subsystem repair for TASK01; stop the series/no parity10. BUG019 original STL/cooked-hull discrepancy also remains KNOWN LIMITATION, not RESOLVED or equivalence-proven. **TASK-BLOCKING** is the separate missing actual critical-state safety and repeatedSTART/PRE reset acceptance evidence; proposed bounded alternate measurement needs user approval. BUG001 explicitly **DEFERRED TASK10-IS**, no effect on TASK01/P4 gate; fiveCube flow **LEGACY**. No benchmark/ACM/geometry/threshold edits. [Governance review](../reports/TASK01_GOVERNANCE_REVIEW.md).
+
 ## 2026-10-08 — 08零步subsystem refresh未解决link2 positive proof
 
 08 callback0/accepted0，flush/on_update(time,0,false)完成仍left link2 query miss，未得到collision verdict。actual14q/TCP/Cube/18FK与pre/post27 native本轮保存，geometry fingerprint不变；56unit0.100s OK非模型PASS。query工程缺口仍OPEN，不能把07缺失q数据反填成08数据。

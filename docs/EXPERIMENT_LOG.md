@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — Correct09 actual result; governance review, no additional run
+
+09 had already executed before governance override, source commit `a5dba59`/SHA `803b1e9e…`, visible bounded GUI. Actual `ENGINEERING_ORIGINAL_RELOAD_STATE_STOP`, accepted0/START index0/callback0; after original handles reloaded, left7q all0, max expectedq error2.43079576661854rad. Immediate stop before right freshq or collision query; no READY/reset/force. Software70OK/.148s and wrapper0 are not simulator PASS. [09 actual metadata](../results/20261008_TASK01_isaac_model_parity09/metadata.json)/[summary](../results/20261008_TASK01_isaac_model_parity09/summary.json); raw rejection preserved. Recent07/08/09 same-root attempts now exhaust default3/3; no experiment after user requested governance reading. Proposed targeted Tier2 fallback remains NOT_RUN pending approval.
+
 ## 2026-10-08 — isaac_model_parity08 query proof STOP；09 IN DESIGN
 
 TASK01/[ENGINEERING]/visible Isaac4.5，commit3e2414b72d2d103b0012b1b8cb9dda06764bf17f/source29cfd626a4f1f78cc943baeee151807e6c3fd48252ed6dfaeae0ad9b2965699a；完整命令/inputs见 [08 metadata](../results/20261008_TASK01_isaac_model_parity08/metadata.json)。实际START accepted0/callbacks0，disabled-physics flush/on_update(time,0,false)已调用但left link2内部点query0hits，`ENGINEERING_STALE_OR_UNVERIFIED_NATIVE_QUERY_STOP`，不是collision/READY。56纯unit主代理0.100s OK。

@@ -2,6 +2,12 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current governance gate (2026-10-08): STOP STATIC QUERY LOOP / USER FALLBACK DECISION
+
+User required updated Anti-loop/Attempt Budget/Minimum Sufficient Evidence review. Main read cloud AGENTS and EXECUTION_GOVERNANCE at `0e3f8f5`. GeometryA136/B157 and actualSTART/PRE14q suffice for nominal geometry, but runtimecritical safety + repeatedreset still absent, TASK01 **PARTIAL**, not PASS/FROZEN. Static zero-stepqueryperfection/fullSTL-cooked equivalence is not the scientific requirement. Recent07/08/09 same-root budget at least3/3 used; no newprobe/initializer/physics run after override.09 is actually FAILED (left freshq all0/error2.43079577rad/callback0), not IN DESIGN; retained lower entries are history. [Escalation/scope review](../../reports/TASK01_GOVERNANCE_REVIEW.md).
+
+Minimum sufficient evidence: unchanged explicit oneCube benchmark; approved discrete dualIK/grasp/joint/FCL chain; targeted actualIsaaccriticalstate sanity including closestwallrisk; deterministicSTART/PRE≥3reset with q/Cube/TCP/carriageframe/truepoststep timestamps; userreview. Non-goals: perfect querycache, mathematical model equivalence, forcewrenchcalibration/newcontroller/newintegration/fiveCube. Proposed fallback small visible controlled synchronized key-state replay+reset under one≤120s boundedattempt remains **NOT_RUN / requiresuserapproval**. Exact original geometry, ACM, grasps, physics and tolerances stay; any unexpected collision/unvalidated measurement stops rather than triggers another variant. BUG001 DEFERREDTASK10-IS; old5Cube LEGACY. Awaituserdecision, not automaticcontinue.
+
 ### Current gate: FULL_GEOMETRY_PASS / QUERY_PROOF_STOP; 09 IN DESIGN (2026-10-08)
 
 08 (`3e2414b` /29cfd626…) START callbacks0/accepted0: official disabled-physics refresh completed but left link2 interior query still missed. Actual_q/TCP/Cube/18linkFK now saved, pre/post27 native and immutable geometry hash unchanged;56unitOK/.100s. No collision/parityPASS/READY; records are static-index, not poststep scientific data.

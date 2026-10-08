@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D036 — 2026-10-08 TASK01 minimum evidence / anti-loop scope decision [ENGINEERING]
+
+User explicitly requires current GitHub AGENTS/EXECUTION_GOVERNANCE review, not inertial parity09 development. Read cloud main `0e3f8f5`. REQUIREMENT is a minimal reproducible oneCube environment with actual critical-state safety/reset; static all-state original-query checking is a PREFERRED METHOD, not the scientific goal. Recent07/08/09 same-root default3/3 exhausted despite different sub-errors; stop/no parity10, no initialization-schema implementation. Preserve A136/B157 geometryPASS and known14q; no change to benchmark/tool/carriage/grasp/ACM/limits/acceptance/physics. Correct09 actual failure instead of planned state.
+
+Recommend STOP FOR USER now; proposed FALLBACK is small critical-state controlled synchronized visible replay plus ≥3START/≥3PRE resets under one ≤120s bounded attempt, original configuration and poststep time, first unexpected collision or unvalidated measurement stops. Proposed route not implemented/authorized; user must approve allowance and any change from earlier strictly static preferred method. Do not silently waive remainingruntime safety/reset or claim exhaustive model-equivalence/continuous collision/stability. BUG001 remains TASK10-IS, legacy5Cube not prerequisite. [Review](../reports/TASK01_GOVERNANCE_REVIEW.md).
+
 ## D035 follow-up — 08 query缺口保留，逐态原handle重建先安全审核
 
 2026-10-08，[ENGINEERING]。08零步官方subsystem refresh未证实link2 query（accepted0），不能报parityPASS/collision判决；本轮actual14q/TCP/FK已存，仍只静态index，不叫poststep/force证据。09仅设计逐状态原native handle重建，安全API复核中未执行；保留owned原USD/hashes/已捕获14q与完整零步/query守卫，不改model/几何/ACM/benchmark、不随机IK。无P4/DEVIATION；先parity才READY，BUG001延期非阻塞、03–08原记录保持。

@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-08 — User governance override / stop engineering loop
+
+Fully re-read latest cloud AGENTS (243 lines), EXECUTION_GOVERNANCE (103), startup/task/status/benchmark/P4 references. SSH/HTTPS fetch failed; used raw GitHub pinned main `0e3f8f5`, did not merge stale main or overwrite task progress. No new source/Isaac/physics after override. Audit corrects09 actual reloaded leftq all0 vs candidate max2.43079577rad/callback0,70 softwareOK/.148s, no collision verdict; previous planned text is superseded, not erased. Recent07/08/09 count as exhausted same-root3/3. Stop parity series and proposed initialization extension. Scope/ownership/minimum Tier2/escalation in [review](../reports/TASK01_GOVERNANCE_REVIEW.md); fallback awaits user decision.
+
 ## 2026-10-08 — 08 query proof仍停止；09逐态原native重建IN DESIGN
 
 08 source3e2414b/29cfd626…，START accepted0/callback0，官方flush与on_update(time,0,false)实际完成，left link2内部点query依旧miss。56纯unit0.100s OK不能替代parity；成功actual_q/TCP/Cube/18linkFK本轮实际落盘，pre/post27 native和不变几何fingerprint保留，但无碰撞结论/READY。

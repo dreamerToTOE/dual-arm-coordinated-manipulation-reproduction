@@ -1,5 +1,7 @@
 # TASK01 — Full Single-Cube Geometry
 
+2026-10-08 governance review: this nominal geometry evidence is complete and sufficient for the geometry gate; stop expanding it.09 actual staticreload failed beforecollisionverdict, not a geometry failure. The pending scientific gates are targetedIsaaccriticalstate safety and repeatedreset, not zero-stepqueryperfectness/exhaustivemodel-equivalence. Staticseriesbudget exhausted; no newexperiment/source afteruseroverride, fallback decisionpending. [Review](TASK01_GOVERNANCE_REVIEW.md).
+
 Latest Oct8 downstream08: original native/static q/FK gates and zero-step passed; moving query proof still failed at START. 09 original-handle rebuild prepared only; original discrete geometry evidence and thresholds unchanged, READY not run.
 
 2026-10-08 latest downstream gate: GUI07 actually achieved zero physics callbacks but could not prove the original link2 native query target at START, accepted0 before any overlap verdict. GUI08 subsystem refresh prepared/not run; this does not change the native discrete geometry PASS or authorize READY/FROZEN.

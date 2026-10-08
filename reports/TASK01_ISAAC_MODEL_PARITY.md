@@ -1,6 +1,8 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
-2026-10-08. Current status: ENGINEERING_UNVERIFIED_MOVING_NATIVE_QUERY_STOP (08); original native handle rebuild prepared (09 not run), **not PASS**.
+2026-10-08. Current status: **STATIC QUERY SERIES STOPPED AFTER09 / GOVERNANCE ESCALATION**, not PASS. Subsequent history retains original checkpoints; they are not current plans.
+
+09 actually ran (`a5dba59`, sourceSHA `803b1e9e…`), with callbacks0 but fresh reloaded left7q all0, maximum difference2.43079576661854rad. Guard stopped before reading reloadedrightq or collision query; accepted0, no geometry/BUG019 collision verdict. Software70OK/.148s and wrapper0 do not certify physics. [09 actual metadata](../results/20261008_TASK01_isaac_model_parity09/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity09/summary.json). No source/simulator work after user governance override. Recent07/08/09 default3/3 exhausted; full zero-step query/equivalence perfection is a KNOWN LIMITATION, while actualcriticalstate safety remains missing. [Scope review and proposed bounded Tier2 route](TASK01_GOVERNANCE_REVIEW.md), awaiting user decision, no parity10.
 
 Prerequisite full discrete geometry passed (A136/B157, exact PRE14q seam): [report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). The original PhysX convexHull model is not assumed equivalent to the MoveIt STL. Full-chain wall-risk state is TARGET/state292, left_link7↔deep_wall FCL clearance2.212219mm; intended Cube/tool minimum is state196/0.999669mm.
 

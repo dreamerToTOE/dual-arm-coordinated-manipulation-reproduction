@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-08 — GOVERNANCE REVIEW: static parity series STOPPED, user decision pending
+
+Read current cloud AGENTS/EXECUTION_GOVERNANCE pinned at main `0e3f8f5` (not stale local origin/main). Scientific TASK01 remains **PARTIAL / IN_PROGRESS pending runtime acceptance evidence**, not PASS/FROZEN. A136/B157 nominal geometry and deterministic14q are sufficient geometry evidence; stop extending that proof. Recent same-root07 diagnosis/08 fix/09 actual alternate consumed at least3/3; no parity10, new initializer or automatic budget reset. [Scope/escalation review](../reports/TASK01_GOVERNANCE_REVIEW.md).
+
+Correct09 from earlier IN DESIGN/PREPARED to actual `ENGINEERING_ORIGINAL_RELOAD_STATE_STOP`: fresh left7q all0 before setter, max candidate difference2.43079576661854rad, callback0; right reload not read, no collision verdict/READY. 70unit0.148s is software only. Query perfection/full model equivalence and BUG019 discrepancy are KNOWN LIMITATION; missing actual critical-state collision sanity + repeated START/PRE reset is the remaining TASK-BLOCKING acceptance gap. BUG001 DEFERRED TASK10-IS; old5Cube LEGACY. Recommend a user-approved small Tier2 controlled GUI replay + repeated reset, not another static-query repair. That fallback is **not run/approved**; no new experiment after user override. Older entries below are historical checkpoints, not current plans.
+
 ## 2026-10-08 — 08非physics refresh后link2仍miss；09 native重建仅设计
 
 08（`3e2414b` /`29cfd626…`）START accepted0/callbacks0：官方flush/on_update(time,0,false)实际调用后，left link2 cooked内部点query仍无hit，工程guard停止，未得到碰撞判决/READY。56纯tests0.100s OK；本轮actual14q/TCP/Cube与18linkFK已存raw/failure（q reset max左9.70629e-8/右1.71159e-8rad），pre/post27 native与geometry fingerprint不变；静态index/time-null，不是post-step科研测量。

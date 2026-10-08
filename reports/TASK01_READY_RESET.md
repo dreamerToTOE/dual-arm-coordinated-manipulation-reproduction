@@ -2,6 +2,8 @@
 
 2026-10-08. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
 
+Current governance correction: **NOT_RUN_PENDING_RUNTIME_ACCEPTANCE_EVIDENCE / FALLBACK DECISION**, not indefinitely gated on perfect zero-stepnativequeries.09 actual originalreload returnedleftq all0 andstopped, rightreloadunobserved/callback0; no READYtrial. Recent07/08/09 same-rootbudget exhausted andstaticseriesstopped. Proposed smalltargetedvisiblecontrolledreplayplus≥3START/PREreset withtruepoststep time requiresuserapproval; unexecuted/no PASS/FROZEN. Earlier entries below arehistorical plans anddo not authorizeautomaticcontinuation. [Governance review](TASK01_GOVERNANCE_REVIEW.md).
+
 Latest08 actual gate: zero steps/model/native/q/FK/TCP correct, but official non-physics refresh still did not prove link2 query target at START. Accepted0, no collision verdict or READY trial. 09 guarded original-physics handle rebuild prepared, not run, exact candidateq must be recovered without new schema/setter repair before any parity claim.
 
 Current actual gate:07 reached zero actual physics callbacks and original native/output agreement, but stopped at START on an unverified moving native query (link2 inside-point miss), accepted0. This is not a verified geometric collision or a READY/reset trial. 08 disabled-physics subsystem refresh is prepared, not run; READY remains gated on complete model parity.
