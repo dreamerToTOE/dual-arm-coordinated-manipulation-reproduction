@@ -1,0 +1,196 @@
+{
+  "task": "TASK01 Isaac model parity",
+  "scope": "single_cube_core_benchmark",
+  "baseline": "ENGINEERING guarded nominal static actual-cooked-shape replay; no paper controller",
+  "platform": "Isaac Sim 4.5.0 visible GUI / original USD / PhysX",
+  "git_commit": "d9c422c",
+  "seed": "deterministic existing full-chain 14q, no new IK",
+  "config_path": "results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml",
+  "command": "timeout --signal=TERM --kill-after=20s 480s env DISPLAY=:1 PYTHONUNBUFFERED=1 scripts/run_isaac_bundled_ros.sh platforms/isaac_ros2/probes/task01_single_cube_model_parity_gui.py --output-dir results/20261008_TASK01_isaac_model_parity03/raw --hold-for-inspection-sec 0",
+  "working_directory": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction",
+  "status": "ENGINEERING_STALE_USD_QUERY_SOURCE_STOP",
+  "probe_source_sha256": "27e0a043431a83b0f8fa760fd6307f8749ee2e825de154dcad4c3c67ae6d7aa1",
+  "source_snapshot_provenance": "COPIED_BEFORE_EXECUTION_BYTE_IDENTICAL_TO_COMMITTED_SOURCE",
+  "startup_or_runtime_wall_time_is": "engineering profiling only; not scientific simulation timestamp",
+  "simulation_timestamp": null,
+  "physics_step": null,
+  "physics_integration_requested": false,
+  "controller_started": false,
+  "suction_commands": 0,
+  "poststep_model_contact_check": "NOT_RUN",
+  "READY_reset": "NOT_RUN_PENDING_PARITY",
+  "force_wrench_calibration": "NOT_RUN_DEFERRED_TASK10_IS",
+  "metrics": {
+    "rejected_frame": {
+      "actual_usd_matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0.65,
+          -0.6,
+          0.3330000042915344,
+          1
+        ]
+      ],
+      "expected_from_live_body_matrix": [
+        [
+          0.7926214094888855,
+          0.609714114482171,
+          1.9133941759838253e-9,
+          0
+        ],
+        [
+          -0.6097141144821686,
+          0.7926214094888822,
+          9.099161655759134e-8,
+          0
+        ],
+        [
+          5.396227570193227e-8,
+          -7.328852681085267e-8,
+          0.9999999999999959,
+          0
+        ],
+        [
+          0.6500000357627869,
+          -0.6000000238418579,
+          0.333000123500824,
+          1
+        ]
+      ],
+      "max_abs_matrix_error": 0.609714114482171,
+      "owner": "/World/left_fr3/fr3_link1",
+      "shape_path": "/World/left_fr3/fr3_link1/collisions"
+    },
+    "pre_query_actual_q": {
+      "left": {
+        "live_tcp_xyzw": [
+          0.5499996033135596,
+          -0.061000020503997665,
+          0.38000001206994083,
+          0.707106582764543,
+          0.7071069796085521,
+          -3.6769266264584907e-7,
+          1.5914294374032632e-7
+        ],
+        "maximum_q_reset_error_rad": 9.706287595889762e-8,
+        "q_rad": [
+          0.6556998491287231,
+          -0.9158461093902588,
+          0.9361619353294373,
+          -2.430795669555664,
+          0.7029262185096741,
+          1.7262599468231201,
+          1.2164416313171387
+        ],
+        "tcp_position_error_m": 3.976069182062307e-7,
+        "tcp_rotation_error_rad": 6.861009855998394e-7
+      },
+      "right": {
+        "live_tcp_xyzw": [
+          0.550000003243749,
+          0.061000034809110676,
+          0.3800006251037118,
+          0.7071067883340412,
+          -0.707106774039054,
+          6.748366766343906e-7,
+          7.792295969914534e-7
+        ],
+        "maximum_q_reset_error_rad": 1.7115877160023274e-8,
+        "q_rad": [
+          -0.4751422703266144,
+          -1.1301697492599487,
+          -0.9979978799819946,
+          -2.4048004150390625,
+          -0.8636013269424438,
+          1.5572941303253174,
+          -1.0752371549606323
+        ],
+        "tcp_position_error_m": 6.256020684309647e-7,
+        "tcp_rotation_error_rad": 0.0000010000444493033106
+      }
+    },
+    "pre_query_actual_cube_xyzw": [
+      0.550000011920929,
+      0,
+      0.3799999952316284,
+      0,
+      0,
+      0,
+      1
+    ],
+    "native_actor_gate": "NOT_REJECTED_BY_CONTROL_FLOW; values not included in this failed run output",
+    "tensor_device_ordinal": -1,
+    "is_readback_suppressed": false,
+    "physics_integration_requested": false,
+    "simulation_timestamp": null,
+    "physics_step": null
+  },
+  "artifact_paths": [
+    "probe_source_at_run.py",
+    "launch.log",
+    "raw/inputs.json",
+    "raw/failure.json",
+    "raw/query_frame_rejection.json",
+    "raw/query_api_contract.json",
+    "raw/original_shape_audit.json",
+    "raw/cooked_shapes.json"
+  ],
+  "wrapper_exit_code": 0,
+  "acceptance_gate": "failure/summary evidence; wrapper0 is not PASS",
+  "process_exited_and_reaped": true,
+  "accepted_parity_states": 0,
+  "attempted_state_index": 0,
+  "geometry_failure_established": false,
+  "BUG019_model_parity": "NOT_ESTABLISHED",
+  "input_provenance": {
+    "ROS_publishers": 0,
+    "argv": [
+      "platforms/isaac_ros2/probes/task01_single_cube_model_parity_gui.py",
+      "--output-dir",
+      "results/20261008_TASK01_isaac_model_parity03/raw",
+      "--hold-for-inspection-sec",
+      "0"
+    ],
+    "asset": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261006_TASK01_held_fixture_diagnostic02/raw/fr3_official.usd",
+    "asset_sha256": "3feceb47747b49f908f9719299132deb9759f2d5edb390d14f0f3ed62c63255f",
+    "classification": "ENGINEERING",
+    "config_path": "results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml",
+    "config_sha256": "3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b",
+    "expected_records": 293,
+    "old_material_bound": false,
+    "physics_integration_requested": false,
+    "physics_parameters_changed": false,
+    "probe_source_sha256": "27e0a043431a83b0f8fa760fd6307f8749ee2e825de154dcad4c3c67ae6d7aa1",
+    "robot_controller_started": false,
+    "scope": "single_cube_core_benchmark",
+    "source": "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing/isaac/scripts/task26_truck_box_scene.py",
+    "source_sha256": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+    "srdf_sha256": "11b89277bfa5fb7bcedfa35f8285507e88d2c793df6ba8e04daf12c8eb8d023a",
+    "states_sha256": "607c30480ae264fd20ae4a09a750d5af6acb992d6d67c65a86103f86baa88d8e",
+    "suction_commands": 0,
+    "time_contract": "GEOMETRY_STATIC_REPLAY; state_index only; no simulation measurement timestamp"
+  },
+  "failure": {
+    "READY_reset_not_run": true,
+    "error": "RuntimeError('USD query source differs from LIVE original rigid body frame: /World/left_fr3/fr3_link1/collisions')",
+    "status": "FAIL_INITIALIZATION_OR_STATIC_REPLAY",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/probes/task01_single_cube_model_parity_gui.py\", line 534, in main\n    raise RuntimeError(\"USD query source differs from LIVE original rigid body frame: \"+path)\nRuntimeError: USD query source differs from LIVE original rigid body frame: /World/left_fr3/fr3_link1/collisions\n"
+  }
+}

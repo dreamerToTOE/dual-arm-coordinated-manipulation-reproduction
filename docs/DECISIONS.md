@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D035 — 静态输出源工程修复保留原模型与全部取证门禁
+
+2026-10-08，[ENGINEERING]。03 START/state0 因USD collider旧旋转被正确拒绝，accepted0；wrapper0不等于PASS，不把尚未发生的移动shape/full-chain查询说成几何失败或BUG019实际碰撞。已通过native actor门禁但成功值未存，只记录控制流事实，不能事后补成实测数值；后续新的执行应完整保存native与USD比较。
+
+04准备优先复用官方scene/Fabric当前已有导出路径。若仍stale，仅可把已经验证的native actor SE3镜像到**原body已有**translate/orient作为静态输出适配；不得新增/重排xform ops，不动原scale、collider local transforms、网格/shape、物理/设置、工具/车厢/抓持/SRDF/ACM/IK验收/基准。处理paused notices后再次完整核对q、native actor、原几何/设置与step0，实际cooked-shape positive/negative移动query freshness门禁不削弱。不能用USD镜像自动推定PhysX actor或broadphase已同步。
+
+04尚未运行；任何证实FCL-free/Isaac真实意外重叠依旧首败即停/exact pair，不修几何。静态replay以index记录、step/time=null，不伪称postphysics reset数据；仅parity实际通过才继续START/PRE多次READY/reset。此决策不是P4实现、论文替代算法或[DEVIATION]，不为TASK01加force门槛；BUG001属于TASK10-IS。只在所有门禁实际通过后才可PASS CANDIDATE，FROZEN仍待用户批准。
+
 ## D034 evidence follow-up — 全链实得14q只候选，先核模型再reset
 
 2026-10-07，[EXPERIMENTAL] 新START几何链实际A136/B157通过，实际PRE14q完全相同；所有状态distance而非仅六端点已保存。START与PRE配置记录候选YAML，不自动FROZEN，不再随机求起点。原run配置独立快照/SHA，避免录q后篡改旧hash。

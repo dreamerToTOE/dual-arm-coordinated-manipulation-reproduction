@@ -1,5 +1,11 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — “继续”仍按既定单Cube严格顺序，不扩大授权
+
+用户本次要求“继续”，未改变已批准START/PRE/TARGET、shared-grasp/L工具/车厢/ACM/IK门限，也未授权五Cube、headless、force/P4或自行冻结。继续只在全链几何已通过后完成可见GUI原模型一致性及其软件取证适配；03实际START输出源门禁停止不能包装成几何FAIL或PASS。04静态输出适配尚未运行，READY/reset仍未运行；native成功值缺失如实保留，不能补写，wrapper0不作为验收。
+
+保持D034全部顺序：真实意外collision exact pair即停，不改几何解决；parity通过才做重复START/PRE postphysics reset；BUG001留TASK10-IS不拖TASK01。全部通过最多PASS CANDIDATE，等待用户最后确认；保护reinforcement_stair-test、可见GUI和GitHub过程记录约束继续生效。
+
 ## 2026-10-07 — 科研START与最终验收顺序明确确认
 
 用户确认START=(0.55,0,0.38)、单位四元数，为已共同持有、离桌的新科研设计（不包含抓取，不是旧Task27 feed）；保持PRE/TARGET和所有工具/车厢/抓取/碰撞/ACM/验收。明确采用LMA epsilon1e-7。先稠密START→PRE纯几何、逐状态min FCL distance/pair与Cube/environment，任一点失败即停且不改几何；通过才接同PRE14q B段。记录START14q候选，不自冻。

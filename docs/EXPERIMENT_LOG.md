@@ -1,5 +1,24 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — single_cube_core_benchmark / isaac_model_parity03 工程门禁停止
+
+TASK01；baseline=[ENGINEERING]原cooked-shape静态对照，不是论文算法；platform=Isaac Sim4.5 visible GUI/CPU PhysX。Source commit `d9c422c`，probe SHA `27e0a043431a83b0f8fa760fd6307f8749ee2e825de154dcad4c3c67ae6d7aa1`，执行前源码快照一致；seed为既有全链14q（无新IK）；config=`results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml`、SHA `3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b`。完整来源/命令/指标在 [03 metadata](../results/20261008_TASK01_isaac_model_parity03/metadata.json)。实际命令：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
+timeout --signal=TERM --kill-after=20s 480s env DISPLAY=:1 PYTHONUNBUFFERED=1 \
+  scripts/run_isaac_bundled_ros.sh \
+  platforms/isaac_ros2/probes/task01_single_cube_model_parity_gui.py \
+  --output-dir results/20261008_TASK01_isaac_model_parity03/raw \
+  --hold-for-inspection-sec 0
+```
+
+Actual status=`ENGINEERING_STALE_USD_QUERY_SOURCE_STOP`，accepted0/attempted index0；wrapper exit0不是PASS。START已存q reset max left9.706287595889762e-8/right1.7115877160023274e-8rad，TCP位置误差left3.976069182062307e-7/right6.256020684309647e-7m，角误差6.861009855998394e-7/1.0000444493033106e-6rad；Cube=(0.550000011920929,0,0.3799999952316284)、identity。native actor门禁未拒绝只由控制流知晓，实际成功比较值未落盘，不补写。CPU device ordinal=-1，readback_suppressed=false不单独证明查询freshness。
+
+Rejected USD source=`/World/left_fr3/fr3_link1/collisions`：rotation旧identity，与live-body预期矩阵max error0.609714114482171（无量纲），不是collision depth。尚未进入移动shape查询/全链collision验收；geometry_failure_established=false、BUG019 NOT_ESTABLISHED。Artifacts=root metadata/summary/源码快照/软件测试log，以及raw inputs/query_frame_rejection/query_api_contract/original_shape_audit/cooked_shapes/failure；原负结果不覆盖。进程已退出回收。独立软件19 tests OK，仅软件证据；physics integration_requested=false、physics step与simulation timestamp=null（静态索引，不伪造poststep科研时标），controller/suction/force=未运行，READY/reset NOT_RUN。
+
+04目前只准备D035静态输出适配，**尚未运行、无实验结果**。A136/B157几何证据仍有效；TASK01 IN_PROGRESS/PARTIAL，TASK02/P4未开始，BUG001延期TASK10-IS不阻塞。
+
 ## 2026-10-07 — single_cube_core_benchmark / full_single_cube_geometry01
 
 Task TASK01；[ENGINEERING]/[EXPERIMENTAL]离散完整几何，不是P4算法。Platform native Humble/MoveIt2 2.5.9/LMA/FCL；source fb643f1、approval cc04cec、model d4b290c；binary7da613a4…；原run config SHA3dbe7fcb…881b（config_at_run.yaml，后录q候选不改变旧证据）。命令/完整SHA见metadata.json与FULL_SINGLE_CUBE_GEOMETRY报告。显式START有限64seed/arm retain12，首fullFCL有效pair；之后每臂一次previous-q延续，不重新选分支。

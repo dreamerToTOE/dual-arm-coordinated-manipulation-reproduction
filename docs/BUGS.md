@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — 新单Cube静态输出源不同步；03未得到BUG019几何判决
+
+OPEN / ENGINEERING_STALE_USD_QUERY_SOURCE_STOP：03 START/state0 q/Cube/TCP与link FK已存检查通过；native actor检查控制流未拒绝，但成功值未保存，不得反填成数据。`/World/left_fr3/fr3_link1/collisions` USD rotation仍identity，live-body预期矩阵差0.609714114482171（无量纲）。当前 `update_transformations(True,True)` 后仍未证实USD/query source同步；CPU ordinal=-1/readback_suppressed=false不能单独排除stale源。accepted parity states=0，wrapper0不能用作PASS。
+
+这是工程输出/取证缺口，不是纯几何FAIL，也不是已复现/已修复BUG019。原convexHull/STL模型差异BUG019继续OPEN，本轮NOT_ESTABLISHED。04仅准备D035严格输出适配和paused通知后再核对，尚未运行；不得通过减弱USD/native/query门禁、增加ACM、替换网格、改工具/车厢/物理来绕过。READY/reset仍NOT_RUN。BUG001力测量明确归TASK10-IS，非本TASK01阻塞；旧负结果完整保留。
+
 ## 2026-10-07 — 新START全链几何通过；BUG019必须实际模型复核
 
 BUG025本次数值设置epsilon1e-7/原验收下START→PRE136及同14q PRE→TARGET157离散状态均通过；这只解决当前单Cube名义几何链，不把所有IK/连续碰撞问题宣称RESOLVED。旧失败/错误旧binary结果保留。所有状态signed距离/closestpair有限、无FCLcollision，与independent产物审计一致。

@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-08 — 单Cube几何保持PASS；03静态输出源门禁停止，04未运行
+
+`isaac_model_parity03` 实际在 START/state0 停止：`ENGINEERING_STALE_USD_QUERY_SOURCE_STOP`，accepted parity states=0。已存关节/Cube/TCP及link FK到位证据，但 `/World/left_fr3/fr3_link1/collisions` 的USD旋转仍为旧identity，与实时刚体预期矩阵最大元素差0.609714114482171（无量纲，不是距离/penetration）。native actor比较未被控制流拒绝，其成功数值未保存，不能补写为实测数据。wrapper exit0不等于PASS；这是静态输出/查询源的工程门禁，不是几何FAIL，也没有新链BUG019实际碰撞结论。
+
+04仅准备严格输出适配：优先当前官方scene/Fabric已有导出路径；若仍stale，只允许原body既有translate/orient承载已验证native SE3的静态镜像，不新增/重排xform ops，不改scale/local collider或任何原模型/基准。处理paused notices后再次核对q、native actor、原几何/设置和step0，原query freshness门禁不削弱。04尚未运行。全链A136/B157纯几何结论保持；TASK01 IN_PROGRESS/PARTIAL，READY/reset NOT_RUN，TASK02/P4未开始，BUG019 OPEN，BUG001归TASK10-IS且非本任务阻塞；不标PASS CANDIDATE/FROZEN。详见 [模型对照报告](../reports/TASK01_ISAAC_MODEL_PARITY.md) 与 [03元数据](../results/20261008_TASK01_isaac_model_parity03/metadata.json)。
+
 ## 2026-10-07 — 完整单Cube纯几何PASS；GUI模型一致性门禁进行中
 
 新科研START→PRE136/136，实际PRE14q无跳变延续到TARGET157/157，共293记录/292独立状态、每态全部signed FCL距离/exact pair/最近点保存。原独立IK门限、shared-grasp、几何/ACM不变；A/B最小joint margin0.461828/0.467849rad。全链腕工具环境最低净空TARGET左link7↔deep wall2.212219mm，包含Cube的最低0.999669mm在state196；不是连续碰撞证书/时间轨迹/PhysX安全证明。

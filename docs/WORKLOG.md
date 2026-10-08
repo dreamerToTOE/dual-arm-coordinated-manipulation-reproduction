@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-08 — 03可见静态取证门禁停止；04输出适配仅准备
+
+按用户“继续”保留既定单Cube严格顺序。`d9c422c` /probe SHA `27e0a043431a83b0f8fa760fd6307f8749ee2e825de154dcad4c3c67ae6d7aa1` 在执行前保存byte-identical快照；使用原native-run配置与官方资产，不执行旧五Cube场景入口/ROSgraph/controller。03可见GUI加载原模型及实际cooked shape，CPU tensor ordinal=-1/readback_suppressed=false。START q/Cube/TCP与link FK通过已存门禁；native actor比较控制流未拒绝，但成功值未包含在失败产物，保留这个证据缺口，不反填数据。
+
+实际在 `/World/left_fr3/fr3_link1/collisions` 的USD旧旋转停止，accepted=0，未进入移动shape查询和全链碰撞判定。状态为 `ENGINEERING_STALE_USD_QUERY_SOURCE_STOP`；wrapper0与实际failure分开记录，owned GUI进程已退出/reaped。纯软件query守卫19测试OK不等于模型一致性PASS。03原始负记录保留，没有称BUG019复现/修复、几何FAIL、READY或动力学PASS。
+
+04准备遵循D035：先官方scene/Fabric当前已有输出路径，必要时仅把verified native SE3镜像到原body既有translate/orient；保留原scale、local collider、ops顺序、几何、设置及step0，paused notices后再核对q/native与所有守卫，不跳过freshness验证。04尚未运行，结果必须另记。无P4、force/wrench、物理参数/ACM或基准改动；READY/reset仍NOT_RUN，TASK01未冻结。
+
 ## 2026-10-07 — 用户批准新START；有序全链几何实际通过
 
 D034/cc04cec记录START=(.55,0,.38)、identity、双臂已持件，不是Task27feed。fb643f1增加独立完整链probe，抽取原几何helper保持算法，失败记录/nearest-point有限性/distance-collision一致性守卫。两轮build都真实完成，第一仅build未执行；最终build02核对SHA后只运行一次fullchain exit0。未更改原model/ACM/mesh/场景，禁止以改几何解决失败。

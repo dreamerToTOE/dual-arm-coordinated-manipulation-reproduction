@@ -191,66 +191,6 @@ def owning_body(prim, UsdPhysics):
     return None
 
 
-def original_geometry_fingerprint(stage, enabled, body_paths, UsdPhysics, UsdGeom):
-    """Exclude only existing body pose ops; preserve scale, shapes and physics attrs."""
-    paths = set(enabled) | set(body_paths)
-    paths.update(str(p.GetPath()) for p in stage.Traverse() if p.IsA(UsdPhysics.Joint))
-    records = []
-    for path in sorted(paths):
-        prim = stage.GetPrimAtPath(path)
-        pose_names = set()
-        if path in body_paths:
-            pose_names = {str(op.GetOpName()) for op in UsdGeom.Xformable(prim).GetOrderedXformOps()
-                          if op.GetOpType() in (UsdGeom.XformOp.TypeTranslate, UsdGeom.XformOp.TypeOrient)}
-        attrs = {str(a.GetName()): {"value": str(a.Get()), "time_samples": a.GetTimeSamples()}
-                 for a in prim.GetAttributes() if str(a.GetName()) not in pose_names}
-        records.append({"path": path, "type": str(prim.GetTypeName()),
-                        "schemas": list(prim.GetAppliedSchemas()), "attributes": attrs,
-                        "relationships": {str(r.GetName()): list(map(str, r.GetTargets()))
-                                          for r in prim.GetRelationships()}})
-    return hashlib.sha256(json.dumps(records, sort_keys=True, allow_nan=False).encode()).hexdigest()
-
-
-def mirror_existing_body_pose_ops(stage, body_matrices, Gf, UsdGeom, np):
-    """Static replay state output only: existing pose ops, never new/reordered ops.
-
-    原暂停状态的 update_transformations 可能不输出 tensor teleport。
-    仅将已核验的 native/tensor SE3 写回原 body 的现存位姿 ops；必须再验
-    原生 actor/14q 未变、原几何 hash 未变及查询真正更新，不能凭写 USD 算通过。
-    """
-    changes = []
-    for path in sorted(body_matrices, key=lambda p: (p.count("/"), p)):
-        prim = stage.GetPrimAtPath(path)
-        xform = UsdGeom.Xformable(prim)
-        ops = xform.GetOrderedXformOps()
-        if xform.GetResetXformStack() or any(op.IsInverseOp() for op in ops):
-            raise RuntimeError("Unsupported original body transform stack: " + path)
-        translates = [op for op in ops if op.GetOpType() == UsdGeom.XformOp.TypeTranslate]
-        orients = [op for op in ops if op.GetOpType() == UsdGeom.XformOp.TypeOrient]
-        allowed_stacks = ((UsdGeom.XformOp.TypeTranslate, UsdGeom.XformOp.TypeOrient, UsdGeom.XformOp.TypeScale),
-                          (UsdGeom.XformOp.TypeTranslate, UsdGeom.XformOp.TypeScale))
-        if (len(translates) != 1 or len(orients) > 1 or
-                tuple(op.GetOpType() for op in ops) not in allowed_stacks or
-                any(op.GetOpType() not in (UsdGeom.XformOp.TypeTranslate, UsdGeom.XformOp.TypeOrient,
-                                          UsdGeom.XformOp.TypeScale) for op in ops) or
-                any(op.GetAttr().GetTimeSamples() for op in ops)):
-            raise RuntimeError("Refusing to change/reorder original body pose stack: " + path)
-        parent = prim.GetParent()
-        parent_world = UsdGeom.Xformable(parent).ComputeLocalToWorldTransform(0.)
-        if np.max(np.abs(np.asarray(parent_world) - np.asarray(pure_rigid_matrix(parent_world, Gf)))) > 1e-7:
-            raise RuntimeError("Scaled original body parent is unsupported: " + path)
-        local_rigid = body_matrices[path] * parent_world.GetInverse()
-        q = local_rigid.ExtractRotationQuat()
-        if not orients and quat_angle(list(map(float, q.GetImaginary())) + [float(q.GetReal())], [0.,0.,0.,1.]) > 1e-6:
-            raise RuntimeError("Original body has no orient op; do not add one: " + path)
-        translates[0].Set(local_rigid.ExtractTranslation())
-        if orients:
-            orients[0].Set(q)
-        changes.append({"body_path": path, "existing_pose_ops_written":
-                        [str(op.GetOpName()) for op in translates + orients]})
-    return changes
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
@@ -311,8 +251,6 @@ def main():
     signal.signal(signal.SIGTERM, stop)
     try:
         import numpy as np
-        import carb.settings
-        import omni.kit.app
         import omni.physx
         import omni.physics.tensors as tensors
         import omni.timeline
@@ -321,30 +259,7 @@ def main():
         from isaacsim.core.utils.viewports import set_camera_view
         from omni.kit.viewport.utility import capture_viewport_to_file, get_active_viewport
         timeline = omni.timeline.get_timeline_interface()
-        physx = omni.physx.get_physx_interface()
-        physics_steps = []
-        physics_step_subscription = physx.subscribe_physics_step_events(
-            lambda dt: physics_steps.append(float(dt)))
-        static_timeline_time = float(timeline.get_current_time())
-        output_settings_paths = ("/physics/updateToUsd", "/physics/updateVelocitiesToUsd",
-            "/physics/updateParticlesToUsd", "/physics/updateForceSensorsToUsd",
-            "/physics/fabricEnabled", "/physics/fabricUpdateTransformations")
-        settings = carb.settings.get_settings()
-        original_output_settings = {path: settings.get(path) for path in output_settings_paths}
-        fabric_enabled = omni.kit.app.get_app().get_extension_manager().is_extension_enabled("omni.physx.fabric")
-        fabric_interface = None
-        if fabric_enabled:
-            from omni.physxfabric import get_physx_fabric_interface
-            fabric_interface = get_physx_fabric_interface()
-        write_json(args.output_dir / "output_sync_contract.json", {
-            "original_settings": original_output_settings, "existing_fabric_extension_enabled": fabric_enabled,
-            "no_output_settings_or_physics_parameters_changed": True,
-            "official_api_order": "update_transformations; update_transformations_scene; existing Fabric force_update/save_to_usd",
-            "guarded_fallback": "mirror already verified native SE3 to existing body translate/orient ops only",
-            "fallback_requires": "all q/native actor/Cube unchanged; immutable shape/scale/physics hash unchanged; moving queries verified",
-            "physics_step_count_must_remain": 0})
         timeline.stop()
-        static_timeline_time = float(timeline.get_current_time())
         omni.usd.get_context().new_stage()
         stage = omni.usd.get_context().get_stage()
         UsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)
@@ -488,9 +403,6 @@ def main():
                 for side,art in arts.items()},
             "original_srdf_allowed_pairs":[{"pair":list(p),"reason":reason} for p,reason in original_acm.items()],
             "controller_graphs":[],"gravity_disabled":False,"simulation_integration_requested":False})
-        immutable_geometry_sha = original_geometry_fingerprint(
-            stage, enabled, list(arts["left"].link_paths[0]) + list(arts["right"].link_paths[0]) + ["/World/Task01/Cube"],
-            UsdPhysics, UsdGeom)
         write_json(args.output_dir / "query_api_contract.json", {
             "is_readback_suppressed": readback_suppressed,
             "readback_flag_api_note":"official API returns false when simulation is not running; paused flag alone is not freshness proof",
@@ -606,56 +518,6 @@ def main():
                             "native_actor_comparison":native_bodies,"actual_q":actual,
                             "kind":"ENGINEERING_STALE_NATIVE_ACTOR_STOP","physics_step":None,"simulation_timestamp":None})
                         raise RuntimeError("Native PhysX actor differs from LIVE tensor FK: "+body_path)
-                def stale_shape_paths():
-                    return [path for path in enabled if float(np.max(np.abs(
-                        np.asarray(UsdGeom.Xformable(stage.GetPrimAtPath(path)).ComputeLocalToWorldTransform(0.)) -
-                        np.asarray(local_to_owner[path]*live_by_path[owners[path]] if owners[path] else local_to_owner[path])))) > 1e-5]
-                sync = {"before_stale_shapes": stale_shape_paths(), "existing_pose_ops_written": []}
-                if sync["before_stale_shapes"]:
-                    physx.update_transformations_scene(PhysicsSchemaTools.sdfPathToInt("/physicsScene"), True, False)
-                    sync["after_official_scene_export_stale_shapes"] = stale_shape_paths()
-                    if sync["after_official_scene_export_stale_shapes"] and fabric_interface is not None:
-                        fabric_interface.force_update(1./60., static_timeline_time)
-                        fabric_interface.save_to_usd()
-                        sync["after_existing_fabric_export_stale_shapes"] = stale_shape_paths()
-                    if stale_shape_paths():
-                        sync["existing_pose_ops_written"] = mirror_existing_body_pose_ops(
-                            stage, live_by_path, Gf, UsdGeom, np)
-                sync["after_output_stale_shapes"] = stale_shape_paths()
-                # 暂停 GUI 处理 USD notices；不能假定 USD 写值只是渲染输出。
-                # 后面的原生 actor / q / geometry / step 守卫全部在 notices 后检查。
-                app.update()
-                sync["after_paused_notice_update_stale_shapes"] = stale_shape_paths()
-                sync["immutable_geometry_sha256"] = original_geometry_fingerprint(
-                    stage, enabled, list(live_by_path), UsdPhysics, UsdGeom)
-                sync["original_immutable_geometry_sha256"] = immutable_geometry_sha
-                sync["physics_step_callback_count"] = len(physics_steps)
-                if (physics_steps or timeline.is_playing() or float(timeline.get_current_time()) != static_timeline_time or
-                        {path: settings.get(path) for path in output_settings_paths} != original_output_settings or
-                        sync["immutable_geometry_sha256"] != immutable_geometry_sha):
-                    write_json(args.output_dir/"output_sync_rejection.json", {"state_index": index, "sync": sync,
-                        "native_actor_comparison_before_output":native_bodies, "actual_q":actual,
-                        "kind":"ENGINEERING_OUTPUT_INTEGRITY_STOP"})
-                    raise RuntimeError("Output sync changed geometry/settings or integrated physics")
-                after_native = {}
-                for body_path, before in native_bodies.items():
-                    native = physx.get_rigidbody_transformation(body_path)
-                    if not native.get("ret_val"):
-                        raise RuntimeError("Native actor disappeared after output sync: " + body_path)
-                    pose = list(map(float,native["position"])) + list(map(float,native["rotation"]))
-                    before_pose = before["native_actor_pose_xyzw"]
-                    after_native[body_path] = {"native_actor_pose_xyzw":pose,
-                        "position_change_m":math.dist(pose[:3],before_pose[:3]),
-                        "rotation_change_rad":quat_angle(pose[3:],before_pose[3:])}
-                    if not np.all(np.isfinite(pose)) or after_native[body_path]["position_change_m"] > 1e-6 or after_native[body_path]["rotation_change_rad"] > 1e-5:
-                        raise RuntimeError("Output sync altered native actor pose: " + body_path)
-                for side, art in arts.items():
-                    names = [f"fr3_joint{i}" for i in range(1,8)]
-                    selected = [list(art.shared_metatype.dof_names).index(name) for name in names]
-                    observed = np.array(art.get_dof_positions(),copy=True)[0,selected]
-                    if not np.all(np.isfinite(observed)) or np.max(np.abs(observed-actual[side]["q_rad"])) > 1e-6:
-                        raise RuntimeError("Output sync altered original articulation q: " + side)
-                sync["native_actor_comparison_after_output"] = after_native
                 shape_frames, live_shape_matrices = [], {}
                 for path in enabled:
                     actual_matrix=UsdGeom.Xformable(stage.GetPrimAtPath(path)).ComputeLocalToWorldTransform(0.)
@@ -668,7 +530,6 @@ def main():
                     if not np.all(np.isfinite(np.asarray(actual_matrix))) or matrix_error>1e-5:
                         write_json(args.output_dir/"query_frame_rejection.json",{"state_index":index,"rejected_frame":frame,
                             "actual_q":actual,"live_fk_comparison":fk,"Cube_actual_xyzw":cube_actual.tolist(),
-                            "native_actor_comparison":native_bodies,"output_sync":sync,
                             "kind":"ENGINEERING_STALE_USD_QUERY_SOURCE_STOP","physics_step":None,"simulation_timestamp":None})
                         raise RuntimeError("USD query source differs from LIVE original rigid body frame: "+path)
                 # 不添加任何物体或改碰撞掩码；直接查询原 collider 内部点。
@@ -771,7 +632,6 @@ def main():
                     "nominal_minimum_wrist_tool_environment_fcl_distance":row["minimum_wrist_tool_environment_fcl_distance"],
                     "actual_q":actual,"live_fk_comparison":fk,"native_actor_comparison":native_bodies,
                     "live_original_shape_frames":shape_frames,
-                    "output_sync":sync,
                     "moving_target_query_guards":moving_query_guards,
                     "original_shape_queries":original_shape_queries,
                     "is_readback_suppressed":bool(physx.is_readback_suppressed()),

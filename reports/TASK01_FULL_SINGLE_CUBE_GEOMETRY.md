@@ -74,6 +74,8 @@ The first build-only log is retained; only the final actually completed build02 
 
 ## Next gates / limits
 
+2026-10-08 update: actual guarded visible GUI03 rejected a stale USD source frame at START before accepting any parity sample; native discrete geometry evidence above is unchanged. This is an engineering adapter stop, not IK/FCL failure or confirmed BUG019 overlap. Corrected output adapter04 is prepared, not yet run; READY/reset remains NOT_RUN. See [parity report](TASK01_ISAAC_MODEL_PARITY.md).
+
 Independent stored-evidence verifier actually passed twice (exit0, 210,164 assertions): counts, exact seam, <=2mm steps, finite positive distances/nearest points, every collision/AABB result, CSV/summary/metadata consistency, immutable config and source/model/binary hashes. It does not read the changed working YAML and is not another probe or physics run. [Validation result](../results/20261007_TASK01_full_single_cube_geometry01/evidence_validation.json).
 
 ```bash

@@ -1,6 +1,8 @@
 # TASK01 — READY / Reset
 
-2026-10-07. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
+2026-10-08. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
+
+Latest actual GUI attempt03 stopped at START/index0 on stale USD collider output before any accepted parity sample. This is an engineering source-frame rejection, not a geometric collision verdict. Output-adapter04 is prepared but not yet run. See [parity report](TASK01_ISAAC_MODEL_PARITY.md). No repeated post-step reset has occurred and no READY state is claimed.
 
 Actual START/PRE_PUSH candidate 14q was recorded by the native full-chain geometry probe in [candidate YAML](../configs/benchmark/benchmark_v1.yaml) and [full-chain report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). These are not FROZEN; future benchmark reset must restore them rather than randomly solve IK again.
 

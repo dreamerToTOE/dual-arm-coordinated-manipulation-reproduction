@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current ordered gate: FULL_GEOMETRY_PASS / STATIC_OUTPUT_GUARD_STOP (2026-10-08)
+
+03 visible single-Cube replay stopped at START/state0 with `ENGINEERING_STALE_USD_QUERY_SOURCE_STOP`, accepted parity states=0. The original left_link1 collider USD rotation remained old despite recorded q/Cube/TCP/live-FK checks. Native actor success values were not saved; only non-rejection by control flow is known and must not be reconstructed as measurements. Wrapper exit0 is not PASS. No actual new-chain collision verdict or BUG019 reproduction/resolution was established; pure geometry A136/B157 remains valid.
+
+04 is prepared, **not run**: first use the existing official scene/Fabric output path; if still stale, mirror verified native SE3 only through original body existing translate/orient, without adding/reordering ops or changing local collider transforms/scale, geometry, physics/settings, shared-grasp, SRDF/ACM, or IK acceptance. After paused notices, re-check q/native/original geometry/settings/step0 and retain full cooked-shape and moving-query guards (D035, ENGINEERING only; no P4/DEVIATION). READY/reset NOT_RUN; BUG019 OPEN, BUG001 deferred TASK10-IS non-blocking; TASK02 TODO. No TASK01 PASS CANDIDATE/FROZEN claim. Three reports and [03 evidence](../../results/20261008_TASK01_isaac_model_parity03/metadata.json) distinguish each gate.
+
+#### Historical full-geometry / GUI initialization checkpoint
+
 ### Current ordered gate: FULL_GEOMETRY_PASS / ISAAC_PARITY_PENDING (2026-10-07)
 
 Actual full-chain native exit0: A136/B157,293 records292 distinct states, exact PRE14q seam, every-state signed FCL distance/pair recorded. START/PRE14q is captured in candidate YAML, not FROZEN. Visible GUI model parity is initializing; repeated READY/reset has not run. See reports/TASK01_FULL_SINGLE_CUBE_GEOMETRY.md, TASK01_ISAAC_MODEL_PARITY.md and TASK01_READY_RESET.md. BUG001 belongs to TASK10-IS, non-blocking; TASK02 remains TODO.
