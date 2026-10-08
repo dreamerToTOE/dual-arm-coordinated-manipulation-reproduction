@@ -1,3 +1,37 @@
+## D039 — Restore staged transport→release→rear-regrasp→single-arm insertion topology [ADAPTATION]
+
+2026-10-08, explicit user approval after reviewing the already completed `dreamerToTOE/dual-arm-embodied-palletizing@side-suction-palletizing` work.
+
+The reproduction draft had unintentionally changed the physical task by keeping both L-shaped side-suction tools attached from PRE_PUSH to TARGET. That was not the validated Task26/27 workflow and produced an Isaac TARGET wrist/deep-wall collision (~−3.016 mm link7 separation).
+
+The common benchmark is corrected before freeze:
+
+```text
+Benchmark A:
+bilateral shared hold, START → PRE_PUSH_SHARED
+
+Fixed engineering handoff:
+release both side suctions
+→ left helper park
+→ right pusher regrasp Cube -X face
+→ INSERT_READY
+
+Benchmark B:
+right rear pusher, INSERT_READY → TARGET x=1.100
+```
+
+Decisions:
+- retain TARGET x=1.100; do not move it to 1.090 merely to make the superseded bilateral topology fit;
+- use the predecessor Task27 center-Cube default **right-arm pusher** for benchmark_v1;
+- treat PRE_PUSH→INSERT_READY as fixed/common engineering setup, not a scored P3 controller;
+- formal P3 metrics begin at INSERT_READY;
+- prefer reuse of Task24/Task11–13 Surface Gripper holding and Task26/27 regrasp/push primitives over new infrastructure;
+- preserve all bilateral-to-TARGET failure evidence as historical negative evidence;
+- full five-Cube scheduling remains LEGACY/stress-test, not the scientific one-Cube baseline;
+- wrench semantics remain TASK10-IS; historical joint/contact readings are not calibrated wrench evidence.
+
+This is a benchmark topology correction while benchmark_v1 is still DRAFT, not an ACM relaxation or hidden geometry repair.
+
 # DECISIONS
 
 ## D038 — One launcher-only allowance; critical safety only, no READY/reset [ENGINEERING]
