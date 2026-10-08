@@ -1,3 +1,16 @@
+## 2026-10-08 — Reuse prior completed side-suction results
+
+User explicitly pointed out that the predecessor project had already completed the Cube transport and push-in workflow and approved updating this repository to **combine and reuse those validated results**.
+
+Interpretation approved for future agents:
+- do not treat bilateral Surface Gripper holding as an unsolved new research problem;
+- do not keep both side wrists attached all the way to the deep-wall TARGET;
+- align the scientific benchmark with the validated Task24/26/27 topology;
+- reuse existing engineering primitives first, then add only the measurements/interfaces required for paper reproduction;
+- preserve old successful/failed evidence rather than repeating solved engineering work.
+
+The user approved the D039 plan and GitHub documentation changes.
+
 # USER_FEEDBACK
 
 ## 2026-10-08 — Additional allowance exactly1/1; no held-reset claim
