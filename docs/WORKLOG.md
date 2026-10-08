@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-08 — One approved controlled fallback executed, bounded launcher stop
+
+Re-read current cloud AGENTS/EXECUTION_GOVERNANCE through GitHub plugin (complete files), plus local startup/status/task/P4/benchmark. User approved4states+5eachreset, no staticquery repair. Main prepared minimal reuse-based originalscene normal `simulate/fetch` harness; readonly independent API/source/evidence audit. Sevenpure classification tests/py_compile/diff checksOK. Source checkpoint47d22ce/SHAab174884… before singleGUI launch, unchanged during/after run; no original runtime source/geometry/physics/ACM/YAML edits.
+
+One originaldt synchronized START14q/Cube, saved nativeposttime/step/contacts/overlaps. Actual1step START had no unexpectedpenetration/environmenthit;14qpostmax9.05020e-5rad, TCP0.096015/0.067458mm, CubeZdrop2.725005mm withoutheldconstraint (notREADY). Inputs/material/mass/frame allsaved. Introduced stdin drift-review gate then blocked in background terminal read (processT/Tl, SIGTTINconsistent/nottraced); one accept_snapshot input was sent but never persisted. Outer120s timeout124/reaped, nointernalfailure/summary, noPRE/state196/TARGET orreset. This avoidable launcher barrier was agent-added, not a new physicsmodel fault.
+
+No retry/source change after the one approved attempt. Saved originalSTART42.6kB/rawinput/sceneaudit/source/log and post-runoutcome clearly distinguished from probe output. Corrected CPU label to measured GPUsceneattributes/NumPyfrontend. Updated three requestedreports, task, sixrecords and governance authorizationfollowup. TASK01PARTIAL; userdecision required for any extra bounded command-only run; never parity10/FROZEN/force work.
+
 ## 2026-10-08 — User governance override / stop engineering loop
 
 Fully re-read latest cloud AGENTS (243 lines), EXECUTION_GOVERNANCE (103), startup/task/status/benchmark/P4 references. SSH/HTTPS fetch failed; used raw GitHub pinned main `0e3f8f5`, did not merge stale main or overwrite task progress. No new source/Isaac/physics after override. Audit corrects09 actual reloaded leftq all0 vs candidate max2.43079577rad/callback0,70 softwareOK/.148s, no collision verdict; previous planned text is superseded, not erased. Recent07/08/09 count as exhausted same-root3/3. Stop parity series and proposed initialization extension. Scope/ownership/minimum Tier2/escalation in [review](../reports/TASK01_GOVERNANCE_REVIEW.md); fallback awaits user decision.

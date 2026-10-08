@@ -2,6 +2,12 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Latest gate (2026-10-08): approved bounded fallback used once; PARTIAL / STOP FOR USER
+
+User authorized exactly START0/PRE135/min196/TARGET292 controlled normal-step safety replay, then5+5reset onlyifcriticalpass. Source47d22ce/ab174884…,7puretestsOK. Singlevisible120scap launch savedSTARTstep1, original14q/noobservedunexpectedpenetration/focusenvironmentoverlap. Postqmax9.0502e-5rad/TCP0.096015–0.067458mm; noheldconstraint Cubegravitydrop2.725005mm, notstable-heldREADY. Trueposttime/coreboth0.01666666753590107s/frame(.91,0,.2).
+
+Agent-added stdinreview stopped atbackgroundTTYread/processT/Tl; launcher124/reaped, nosummary/failure,0acceptedreviews. **Otherthreecriticalstates/reset5+5 NOT_RUN**. Onefallbackbudget1/1used; static07/08/09budget3/3remainsstopped. No sourcechange/retry/parity10/physics/geometry/ACM/threshold change. TASK01PARTIAL, noPASSCANDIDATEREVIEW/FROZEN; userdecisionrequiredforanyadditionalboundedcommand-onlyattempt. [Actualreport](../../reports/TASK01_BOUNDED_CONTROLLED_REPLAY.md). Earlierplans below arehistory, notactiveauthorization.
+
 ### Current governance gate (2026-10-08): STOP STATIC QUERY LOOP / USER FALLBACK DECISION
 
 User required updated Anti-loop/Attempt Budget/Minimum Sufficient Evidence review. Main read cloud AGENTS and EXECUTION_GOVERNANCE at `0e3f8f5`. GeometryA136/B157 and actualSTART/PRE14q suffice for nominal geometry, but runtimecritical safety + repeatedreset still absent, TASK01 **PARTIAL**, not PASS/FROZEN. Static zero-stepqueryperfection/fullSTL-cooked equivalence is not the scientific requirement. Recent07/08/09 same-root budget at least3/3 used; no newprobe/initializer/physics run after override.09 is actually FAILED (left freshq all0/error2.43079577rad/callback0), not IN DESIGN; retained lower entries are history. [Escalation/scope review](../../reports/TASK01_GOVERNANCE_REVIEW.md).

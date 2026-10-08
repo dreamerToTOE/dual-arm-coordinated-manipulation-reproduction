@@ -2,6 +2,14 @@
 
 Date: 2026-10-08. Status: **PARTIAL; static-query series STOPPED; fallback decision pending**.
 
+## Later authorization and actual outcome (supersedes decision-pending status)
+
+User explicitly approved **one bounded controlled fallback**, only four known critical states START0/PRE135/state196B60/TARGET292 (replace rather than add if a riskier state is already known; no replacement needed), then5START+5PRE deterministic reset only after safety gate. The old lower-cost proposal's larger insertion-sample set below is not the authorized set. No parity10/zero-step/query-tree/native-handle repair; no benchmark/force/fiveCube expansion or FROZEN.
+
+The one approved source47d22ce/SHAab174884… GUI attempt actually saved START after one normal PhysX step, trueposttime/corestep1/.01666666753590107s. No unexpectedpenetration/environmentoverlap observed in that short sample; Cube was unconstrained and fell2.725mm, so not stable-held READY. Newstdinexecution-review barrier then blocked (processT/Tl, backgroundTTYread consistent/inferredSIGTTIN) until launcher120s timeout124; allownedprocessesreaped, no probe internalfailure/summary. Critical samplesobserved1/reviewsaccepted0; other3criticalstates and5+5resetNOT_RUN.
+
+Single additional allowance1/1 consumed; nosecondattempt orsourcefix. TASK01PARTIAL, not PASSCANDIDATEREVIEW/FROZEN. Requiredruntimecritical/reset evidence remainsmissing; minimumevidencerule does notpermit converting one incomplete sample toPASS. NextactionSTOPFORUSER, including anyadditional command-only terminal rerun. [Actual fallback report](TASK01_BOUNDED_CONTROLLED_REPLAY.md). Previous review text below is retainedhistory.
+
 ## Authority and scope
 
 User requested re-reading the updated GitHub governance and reassessment, explicitly rejecting default continuation of parity09. Main read the complete current [AGENTS.md](https://github.com/dreamerToTOE/dual-arm-coordinated-manipulation-reproduction/blob/0e3f8f5b25bac24cd75a477744d06150b76f0ddb/AGENTS.md) (243 lines) and [EXECUTION_GOVERNANCE.md](https://github.com/dreamerToTOE/dual-arm-coordinated-manipulation-reproduction/blob/0e3f8f5b25bac24cd75a477744d06150b76f0ddb/docs/EXECUTION_GOVERNANCE.md) (103 lines), plus CODEX_START_HERE, remote/local task/status, BENCHMARK_SPEC, P4 card and worktree status. Cloud main HEAD observed `0e3f8f5`; local task HEAD at review `a5dba59`. Git fetch over SSH/HTTPS failed, so the current authoritative governance was read via commit-pinned raw GitHub, **not** the stale local `origin/main` (`046c4ad`). No merge/reset of task records.

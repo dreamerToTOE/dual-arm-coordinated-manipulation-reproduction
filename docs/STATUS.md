@@ -1,5 +1,15 @@
 # STATUS
 
+## 2026-10-08 — Approved one bounded controlled fallback: PARTIAL / STOP FOR USER
+
+User explicitly approved replacing the exhausted static07/08/09 route with **one** bounded normal-step GUI fallback at four recorded 14q states: START0, PRE135, minimum196, TARGET292. Five resets per start follow only after the safety gate. No zero-step/native-handle/query-tree development, force/P2/P3/five-Cube work or benchmark redesign. Source `47d22ce` / `ab174884…`; seven pure classification tests passed, not simulator acceptance.
+
+One visible 120s-capped attempt saved **START/state0 only**, at actual post-step1 / time0.01666666753590107s (dt accumulator and native core agree). No unexpected penetration or focus–environment overlap was observed in that single sample. Eight cup–Cube headers / 32points all had positive separation near1mm. Maximum joint reset error after the step was9.05020e-5rad; TCP position errors were0.096015/0.067458mm. The original free dynamic Cube had no suction constraint and dropped2.725005mm, so this is not stable-held READY. Scene GPU attributes remain True/GPU; the NumPy frontend is not a CPU-engine claim.
+
+The new stdin execution-review barrier did not consume input. The owned Python process was observed in `Tl`, consistent with a background terminal read under default timeout process grouping (SIGTTIN inferred, not traced). The launcher exited124; all owned processes were reaped, with no probe-produced summary/failure. Observed critical samples:1; accepted reviews:0. **PRE135/state196/TARGET292 and all repeated reset trials were NOT_RUN**. This is an incomplete engineering run, not geometry/collision FAIL and not TASK01 PASS CANDIDATE. The approved fallback budget1/1 is consumed; no second launch/source repair. [Actual report](../reports/TASK01_BOUNDED_CONTROLLED_REPLAY.md), [metadata](../results/20261008_TASK01_bounded_controlled_replay/metadata.json).
+
+TASK01 remains **PARTIAL / IN_PROGRESS pending user decision**; TASK02/P4 are TODO and the benchmark is DRAFT, not FROZEN. Remaining critical/reset evidence is TASK-BLOCKING. Zero-step/model equivalence remains a KNOWN LIMITATION; BUG001 is DEFERRED to TASK10-IS; five-Cube work is LEGACY. A command-only terminal rerun needs a new explicitly bounded allowance; do not autonomously create another probe. Older entries below are historical, not current authorization.
+
 ## 2026-10-08 — GOVERNANCE REVIEW: static parity series STOPPED, user decision pending
 
 Read current cloud AGENTS/EXECUTION_GOVERNANCE pinned at main `0e3f8f5` (not stale local origin/main). Scientific TASK01 remains **PARTIAL / IN_PROGRESS pending runtime acceptance evidence**, not PASS/FROZEN. A136/B157 nominal geometry and deterministic14q are sufficient geometry evidence; stop extending that proof. Recent same-root07 diagnosis/08 fix/09 actual alternate consumed at least3/3; no parity10, new initializer or automatic budget reset. [Scope/escalation review](../reports/TASK01_GOVERNANCE_REVIEW.md).

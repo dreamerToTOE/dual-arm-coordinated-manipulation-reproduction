@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D037 — User-approved one bounded critical-state fallback; no automatic retry [ENGINEERING]
+
+2026-10-08. Explicituserapproval: staticparity07→08→09 counts as one root3attempts, exhausted; stopzero-step/staticquery/nativehandle/querytree extensions permanently. Newallowance **one** boundedcontrollednormalstep visibleGUI fallback, onlySTART/PRE/state196B60/TARGET (at most5ifrisk-basedreplacement, no replacementneeded). Exactrecorded14q, originalCube/tool/carriage/grasp/SRDFACM/physics, noIKresampling. Immediateunexpectedcollisionstop; TARGETCube/deepboundary pendingdefinition, not automaticFAIL/redesign. Onlysafetygatepasses then5START+5PREdeterministicreset withpoststepclock, thenPASSCANDIDATEREVIEW/notFROZEN.
+
+Scientificrequirement is minimalcriticalIsaacsafety, not equivalence/exhaustive292/zeroqueryproof or force/suctionstability. Proberetainsactual drift/depth, noreset/successthresholdinvented. START(.55,0,.38) remainsnewresearchbenchmark/notlegacyTask27feed (D034). Deferreddefinitionitems: TARGETtouch, reset/successtolerances, already-heldstart semantics, frequencypolicy; no changeshere. BUG001staysTASK10IS/P2, P2P3/fiveCubeoutofscope.
+
+Actualoutcome: source47d22ce, bounded120sGUI1/1used. START1sample/noobservedunexpectedcontactpenetration/focusenvhit, butaddedstdinreviewblockedT/Tl, inferredTTY/SIGTTIN, exit124; noacceptedreview or otherstates/reset. Allprocessesreaped; sourceunchangedafterrun. No secondattempt or parity10. STOPFORUSER, TASK01PARTIAL, no candidatefreezeclaim. Prospectivecommand-onlyforeground-terminalcorrection needs explicitnewboundedallowance, notautomaticbudgetreset. [Report](../reports/TASK01_BOUNDED_CONTROLLED_REPLAY.md).
+
 ## D036 — 2026-10-08 TASK01 minimum evidence / anti-loop scope decision [ENGINEERING]
 
 User explicitly requires current GitHub AGENTS/EXECUTION_GOVERNANCE review, not inertial parity09 development. Read cloud main `0e3f8f5`. REQUIREMENT is a minimal reproducible oneCube environment with actual critical-state safety/reset; static all-state original-query checking is a PREFERRED METHOD, not the scientific goal. Recent07/08/09 same-root default3/3 exhausted despite different sub-errors; stop/no parity10, no initialization-schema implementation. Preserve A136/B157 geometryPASS and known14q; no change to benchmark/tool/carriage/grasp/ACM/limits/acceptance/physics. Correct09 actual failure instead of planned state.

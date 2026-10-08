@@ -1,6 +1,6 @@
 # TASK01 — Bounded Critical-State Controlled Replay Fallback
 
-2026-10-08. **PREPARED / NOT RUN** at this source checkpoint.
+2026-10-08. **PARTIAL — one approved bounded attempt used; STOP FOR USER**. The PRE section below is the preserved source-checkpoint plan, not a new run authorization.
 
 ## PRE-TASK REPORT
 
@@ -35,3 +35,62 @@ timeout --signal=TERM --kill-after=20s 120s env DISPLAY=:1 PYTHONUNBUFFERED=1 \
 ```
 
 Status is based on structured actual evidence, never wrapper exit0 alone. No second simulator run is automatically authorized.
+
+## Actual single attempt
+
+Source checkpoint `47d22ce3cc8a61f89cfaace5c2a9b3eab1e88ef8`, SHA256 `ab1748840559e8e4cbed33ab194d5c70fd118dc15a6951d5d094e4195c740dc8`. Historical parity09 source SHA remains `803b1e9e…`, unchanged. One visible GUI launch only, command above. One original dt normal `simulate/fetch` completed; post-step callback and native core agree at step1 / `0.01666666753590107 s`.
+
+The first START measurement was saved, but the newly added stdin execution-review barrier did not consume the agent's `accept_snapshot` input. Read-only process inspection observed owned `python.sh` in `T` and Python in `Tl`, consistent with a background terminal-read/SIGTTIN stop under GNU timeout's default separate process group. This is a launcher/review workflow error, not a demonstrated physics/query failure or collision. Signal tracing was not captured, so the SIGTTIN explanation is an inference. At120s the launcher returned **124**, all owned processes were reaped. No internal `failure.json` or `summary.json` exists; [run_outcome.json](../results/20261008_TASK01_bounded_controlled_replay/run_outcome.json) is explicitly a post-run audit, not fabricated probe output.
+
+**Do not rerun this command automatically.** A command-only foreground-terminal correction could address this launch issue, but it was not implemented/tested and no second attempt is authorized. No source modification or new simulator run followed the timeout.
+
+## Saved scientific evidence — START only
+
+| Quantity | Measured value |
+|---|---:|
+| Recorded critical-state indices sampled | 0 only; no135/196/292 |
+| Pre-sync maximum14q readback error | 9.706288e-8 rad |
+| Pre-sync Cube pose position error | 1.283923e-8 m |
+| Post-sync max joint reset error | 9.050200e-5 rad |
+| Largest joint change during step | 9.059906e-5 rad |
+| Left/right TCP position error | 0.096015 / 0.067458 mm |
+| Cube before / after world Z | 0.3799999952 / 0.3772749901 m |
+| Cube translation / rotation during step | 2.725005 mm / 0 rad |
+| Original contact reports | 8 cup–Cube headers,32 points, all positive separation |
+| Minimum reported separation | +0.999954 mm; not penetration |
+| Focus original-shape overlaps | 17queries,37hits;0 environment hits,0 callback/count errors |
+| Unexpected collision evidence in saved sample | 0 |
+| START/PRE reset repetitions | 0 / 0 |
+
+Actual14q, Cube/TCP poses, all body poses, original shape hits and exact contact paths are preserved in [critical_START_sample.json](../results/20261008_TASK01_bounded_controlled_replay/critical_START_sample.json), unaltered SHA `959e6a70…`. Measured Cube mass0.8000000119kg/material0.5/0.5/0.0, originalgravity9.81/TGS/CCD/60Hz. Carriage frame `(0.910,0,0.200)` with identity rotation; identical before/after. Runtimeoriginalgeometry/source/benchmarkYAML/ACM/independentIK limits unchanged. [Metadata](../results/20261008_TASK01_bounded_controlled_replay/metadata.json), [actual launch log](../results/20261008_TASK01_bounded_controlled_replay/launch.log).
+
+Do not label this CPU PhysX from the NumPy frontend: actual scene attributes are `enableGPUDynamics=True`, `broadphaseType=GPU`, as saved in scene_audit. These attributes are reported without changing them; no execution-device equivalence claim is made.
+
+The Cube had **no active shared-held/suction constraint** in this short safety measurement and fell under original gravity. The2.725mm drift is not hidden/reset away; this sample must not be presented as stable-held Benchmark-A READY or as a valid repeated reset result. The execution-review acceptance was not recorded. For the minimum safety question, only the saved START neighborhood has positive evidence; PRE_PUSH, state196 and TARGET remain untested. Neither geometry infeasibility nor four-state safety is established by the launcher timeout.
+
+## Definition items retained for the eventual candidate review
+
+- TARGET Cube/deep-wall boundary-touch policy (not tested here; coordinates unchanged).
+- Numeric READY/reset and later method success tolerances, currently PENDING_USER_REVIEW.
+- Already-shared-held start semantics versus this short free-dynamic-Cube measurement; no suction-stability proof requested/provided.
+- Physics60Hz versus candidate command100Hz policy, unchanged; no controller-frequency redesign.
+- BUG019 original STL/convex-hull discrepancy remains a known limitation, not RESOLVED or equivalence-certified.
+- BUG001 TCP/wrench/gravity-inertia calibration remains DEFERRED TASK10-IS, not a reason to extend TASK01.
+
+## POST-TASK REPORT
+
+- Task/status: TASK01 **PARTIAL**, approved bounded fallback stopped; no PASS CANDIDATE REVIEW/FROZEN.
+- Scientific objective/minimum sufficient evidence achieved: unchanged nominal discrete geometry yes; four-state safety + repeated reset **no**.
+- Completed/files: one minimal reuse-based normal-step harness;7 pure classification tests; frozen execution source and saved START same-step evidence; run outcome/metadata; three reports, task and six records updated.
+- Commands/results:7 testsOK (software only); one120s capped visible launch exit124,1 physics step/START sample; actual state/contact and source/input hash audit; no following experiment.
+- TASK-BLOCKING: remaining three critical safety states + repeated reset acceptance evidence; launcher prevents completion of the approved attempt.
+- DEFERRED: BUG001/TASK10-IS wrench and later P2/P3 work.
+- KNOWN LIMITATION: full model-equivalence/zero-step route stopped; free-Cube sample is not heldREADY proof; numeric benchmark decisions pending review.
+- LEGACY: five-Cube Task27 remains outside current gate.
+- Attempt budget: static07/08/09 same-root3/3 remains exhausted; separately approved one controlled GUI attempt1/1 used. Escalation required **yes**; no automatic retry or variant.
+- Fidelity: [ADAPTATION] unchanged dualFR3 benchmark; [ENGINEERING] bounded normal-step diagnostic and records; [EXPERIMENTAL] one short measured snapshot only; [ORIGINAL] no reproduced controller claim; [DEVIATION] no benchmark/controller redesign.
+- Records: STATUS/WORKLOG/EXPERIMENT_LOG/BUGS/DECISIONS/USER_FEEDBACK updated, historical attempts preserved.
+- Next action: STOP FOR USER. A further command-only rerun would require an explicit new bounded allowance; no parity10/query-tree/native-handle repair.
+- Git: branch `task01-benchmark-draft`; source47d22ce; pre-existing untracked01/02logs preserved; cloud publication status recorded separately after push verification.
+
+Git formatting note: the verbatim actual launch log ends in a prompt with a trailing space. This evidence byte stream is intentionally not reformatted; source/docs/JSON diff checks pass with that log excluded. Its original SHA is retained.

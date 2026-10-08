@@ -1,5 +1,15 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — TASK01 bounded controlled replay (one approved attempt, PARTIAL)
+
+- Run: `results/20261008_TASK01_bounded_controlled_replay/`; sourcecommit47d22ce, SHAab174884…; originalruntime d4b290c. Exact nativegeometry snapshot3dbe7fcb…/states607c3048…; no newIK.
+- Command:120s bounded DISPLAY=:1 visibleGUI, bundledROS launcher, `task01_critical_controlled_replay_gui.py`; exact command inmetadata/report. No controller/suction/force/fiveCube.
+- Software:7newpure classification testsOK/compile/diffOK, not runtimePASS.
+- Actual snapshot: STARTstate0 only, one PhysXstep and nativeclock0.01666666753590107s, no wallstate timestamps. Beforeqmax9.70629e-8rad/Cubepos1.28392e-8m; postqmax9.05020e-5rad, TCP0.096015/0.067458mm, freeCubegravitydrop2.725005mm, rotation0. Frame[.91,0,.2,0,0,0,1]. Mass.8000000119kg/friction.5/.5/0. GPUsceneattributesTrue/GPU retained, NumPy notCPUproof.
+- Contacts:8cup–Cube headers32points allpositive0.999954–1.000086mm, no penetration.17focusedoriginalshapequeries/37hits,0environmenthits/count/callbackerror. Exactpaths/readback saved untouched incritical_START_sample.json.
+- Stop: added stdin review gate unconsumed, processT/Tl consistent backgroundTTYread; launchertimeout124/reaped. No probe summary/failure; post-runauditseparate. Observedcritical1/reviewsaccepted0; PRE/state196/TARGET NOT_RUN, START/PREreset0/0.
+- Conclusion: limited START short-step safety observation only; no four-state/READY/PASSCANDIDATE/FROZEN/model-equivalence/force/suction claim. Oneapprovedfallback1/1used; no additionalexperiment. Originalnominalgeometry A136/B157 remainsPASS.
+
 ## 2026-10-08 — Correct09 actual result; governance review, no additional run
 
 09 had already executed before governance override, source commit `a5dba59`/SHA `803b1e9e…`, visible bounded GUI. Actual `ENGINEERING_ORIGINAL_RELOAD_STATE_STOP`, accepted0/START index0/callback0; after original handles reloaded, left7q all0, max expectedq error2.43079576661854rad. Immediate stop before right freshq or collision query; no READY/reset/force. Software70OK/.148s and wrapper0 are not simulator PASS. [09 actual metadata](../results/20261008_TASK01_isaac_model_parity09/metadata.json)/[summary](../results/20261008_TASK01_isaac_model_parity09/summary.json); raw rejection preserved. Recent07/08/09 same-root attempts now exhaust default3/3; no experiment after user requested governance reading. Proposed targeted Tier2 fallback remains NOT_RUN pending approval.

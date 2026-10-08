@@ -1,5 +1,13 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Explicit approval: one bounded critical-state controlled fallback
+
+User agreed to governance review andcountsparity07/08/09 as same-root3attempts exhausted. Nozero-step/staticquery/parity10/newquery-tree/nativehandle repair. Approves **one** bounded normal-physics-synchronized replay fallback at START/PRE_PUSH/state196B60/TARGET; otherdangerousstate mayreplace notadd, totalpreferably≤5. Reuseactualrecorded14q/Cubepose; checkdrift; recordoriginalcontact/overlap/exactpairs; distinguish expected/unexpected/nocontact. TARGETCube–deepwall boundary is definitionissue, do not selfFAIL orchangeTARGET.
+
+Minimumgoal is noobviousunexpectedIsaaccollisionnegatingnominalsingleCubegeometry, notSTL-hullequivalence/zeroquery/all292/continuousproof/force/suctionstability. Onlycriticalgatepasses: deterministic START/PRE eachsuggested5reset, q/Cube/TCP/frame/unintendedcollision/postphysicsstep/time; thenstop andsubmit **TASK01 PASS CANDIDATE REVIEW**, notFROZEN. NoTCPwrench/force/P2P3/fiveCube/target/controllerfrequency/successtolerance sidework; definitionslistforuserreview.
+
+The approval authorizes oneattempt, notunlimitedversions. Actual attemptstoppedat agent-added terminalreviewbarrier/timeout124 afterSTARTone-step sample; noother3states/reset. User has not approved anotherlaunch at thischeckpoint; noautomaticcontinuation. PersistactualPARTIAL result andescalate, do notreuseoldPASS ormanufacturepasscandidate.
+
 ## 2026-10-08 — Re-read governance; reject inertial parity09 continuation
 
 User: “GitHub 中的 AGENTS.md 和 docs/EXECUTION_GOVERNANCE.md 已更新。先重新阅读它们，特别是 Anti-loop / Attempt Budget / Minimum Sufficient Evidence 规则，然后重新评估当前 TASK01，不要沿用之前默认继续开发 parity09 的惯性。” Fully read cloud pinned main0e3f8f5; stopped experiments/source development. Reassess scientific evidence and ownership; same-root07/08/09 budget exhausted,09 actual failure recorded. No further probe/init/physics/geometry changes. Proposed boundedcritical GUI replay/reset awaits user's decision; do not presume this feedback grants a new engineering budget. [Review](../reports/TASK01_GOVERNANCE_REVIEW.md).

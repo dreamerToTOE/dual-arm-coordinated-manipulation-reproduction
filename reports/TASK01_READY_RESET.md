@@ -1,5 +1,15 @@
 # TASK01 — READY / Reset
 
+## 2026-10-08 latest: NOT_RUN — approved safety fallback incomplete
+
+User approved one bounded controlled safety replay (START/PRE/state196/TARGET), then START and PRE_PUSH **five resets each only after the four-state safety gate**. The single GUI attempt saved START at step1/time0.01666666753590107s, with14q initialized from the recorded candidate (no newIK), then stopped at the added stdin execution-review barrier and outer120s timeout124. Otherthreecriticalstates and reset loops were not reached; no internalsummary/failure generated, noacceptedcriticalreview. [Actual report](TASK01_BOUNDED_CONTROLLED_REPLAY.md).
+
+**Reset trial count: Benchmark A START0/5; Benchmark B PRE_PUSH0/5.** Do not relabel the first critical safety snapshot as a reset repetition or extrapolate repeatability from setter readback. Recorded14q candidates remain unchanged/notFROZEN.
+
+One saved START snapshot contains pre-/post-step q/Cube/TCP and stable carriage frame[.91,0,.2,0,0,0,1]. Preqmax9.70629e-8rad; postqmax9.05020e-5rad, TCPposition0.096015/0.067458mm. Free dynamic Cube, no suction constraint, fell2.725005mm under originalgravity. This is **not stable shared-held READY evidence**. No gravity disabled/pose rewritten after the measurement, no physical drift hidden. Numeric reset acceptance thresholds remain PENDING_USER_REVIEW; no invented/widened threshold.
+
+Approved controlled fallback budget1/1 consumed; allownedprocessesreaped and no subsequent simulator/source repair. Stopforuser before anyextra bounded terminal rerun. Wrench/force/suction-stability/P2/P3/fiveCube remain outside this round. TASK01 overall PARTIAL, not PASS CANDIDATE/FROZEN. Old entries below are preserved historical plans, not current mandates for exhaustive model parity.
+
 2026-10-08. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
 
 Current governance correction: **NOT_RUN_PENDING_RUNTIME_ACCEPTANCE_EVIDENCE / FALLBACK DECISION**, not indefinitely gated on perfect zero-stepnativequeries.09 actual originalreload returnedleftq all0 andstopped, rightreloadunobserved/callback0; no READYtrial. Recent07/08/09 same-rootbudget exhausted andstaticseriesstopped. Proposed smalltargetedvisiblecontrolledreplayplus≥3START/PREreset withtruepoststep time requiresuserapproval; unexecuted/no PASS/FROZEN. Earlier entries below arehistorical plans anddo not authorizeautomaticcontinuation. [Governance review](TASK01_GOVERNANCE_REVIEW.md).

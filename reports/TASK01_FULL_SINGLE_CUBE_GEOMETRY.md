@@ -1,5 +1,7 @@
 # TASK01 — Full Single-Cube Geometry
 
+2026-10-08 latest downstream scope/result: the approved one controlled fallback used its single bounded allowance. One START post-step sample was saved (no observed unexpected penetration/environment overlap); execution-review stdin then blocked and outer timeout returned124. PRE/state196/TARGET and repeated resets were **NOT_RUN**. No geometry inputs, recorded14q, independent IK acceptance, LMA settings or FCL results changed. Nominal A136/B157 remains PASS_DISCRETE_FULL_CHAIN_ONLY; TASK01 overall PARTIAL, not PASS CANDIDATE/FROZEN. [Actual bounded report](TASK01_BOUNDED_CONTROLLED_REPLAY.md). No further geometry/parity expansion is authorized.
+
 2026-10-08 governance review: this nominal geometry evidence is complete and sufficient for the geometry gate; stop expanding it.09 actual staticreload failed beforecollisionverdict, not a geometry failure. The pending scientific gates are targetedIsaaccriticalstate safety and repeatedreset, not zero-stepqueryperfectness/exhaustivemodel-equivalence. Staticseriesbudget exhausted; no newexperiment/source afteruseroverride, fallback decisionpending. [Review](TASK01_GOVERNANCE_REVIEW.md).
 
 Latest Oct8 downstream08: original native/static q/FK gates and zero-step passed; moving query proof still failed at START. 09 original-handle rebuild prepared only; original discrete geometry evidence and thresholds unchanged, READY not run.

@@ -1,5 +1,13 @@
 # BUGS
 
+## 2026-10-08 — Bounded fallback stopped at new terminal review barrier [TASK-BLOCKING evidence gap]
+
+One user-approved controlled GUI attempt after staticbudgetstop producedSTARTstep1 then timedout124 at an agent-added stdin review gate. Observed ownedwrapperT/PythonTl, unconsumed input/noexecution_review_decision; backgroundterminalread/SIGTTIN is a consistent inference, not signaltrace. This is an avoidable launch/review workflow error, **not** an Isaac collision/query result. No internalfailure/summary, no3remainingcriticalstates orreset. Allownedprocessesreaped. Do not waive acceptance because softwaretests or firstsnapshot succeeded; no automatic retry/variant.
+
+Firstsample noobservedunexpectedpenetration/environmentoverlap. FreeCubegravitydrop2.725mm is a **KNOWN LIMITATION of this short unconstrained snapshot**, not stable-held BenchmarkA READY; do not turn that into force/suction-stability development this round. Numericreset thresholds remainuserdecision. ActualphysicsattributesGPUDynamicsTrue/GPU, not a claimedCPUengine.
+
+Remainingcriticalstate safety/repeatedreset evidence staysTASK-BLOCKING. The separately approved onefallback1/1consumed; furthercommand-onlyrerun needs newapproval. Static07–09 rootbudget remains3/3STOPPED; zero-step/query-tree repair/fullmodelequivalence and BUG019 discrepancy KNOWNLIMITATION, BUG001 DEFERREDTASK10-IS, fiveCubeLEGACY. [Evidence](../reports/TASK01_BOUNDED_CONTROLLED_REPLAY.md).
+
 ## 2026-10-08 — Governance ownership / budget stop (supersedes current repair plans)
 
 Same-root static evidence loop07/08/09 exhausted3/3:09 actual reloaded left7q=0/error2.43079577rad/callback0 stopped, no new-chain collision verdict. Zero-step query-cache perfection is **KNOWN LIMITATION**, not required subsystem repair for TASK01; stop the series/no parity10. BUG019 original STL/cooked-hull discrepancy also remains KNOWN LIMITATION, not RESOLVED or equivalence-proven. **TASK-BLOCKING** is the separate missing actual critical-state safety and repeatedSTART/PRE reset acceptance evidence; proposed bounded alternate measurement needs user approval. BUG001 explicitly **DEFERRED TASK10-IS**, no effect on TASK01/P4 gate; fiveCube flow **LEGACY**. No benchmark/ACM/geometry/threshold edits. [Governance review](../reports/TASK01_GOVERNANCE_REVIEW.md).
