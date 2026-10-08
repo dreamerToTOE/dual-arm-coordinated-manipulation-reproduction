@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 integration follow-up — stop at first world gate, preserve fixed station [ENGINEERING]
+
+2026-10-08. Approvedoneattempt usedat sourceee51470; initialzero-shift tablemessage-readback rejects before safe/rail/rear. .750/.750 remainsapprovedcandidatependingcapture; no .700/.800 orgeometry/ACM/physics/forcechange. Source-level MoveItnormalization explainsguardrisk butwithoutobservedrawobjects cannotclaim confirmedphysicaloffset orfixedworld. Stop/noimplementationrerun; propose futureexplicitallowanceforcomposedobject+shape worldpose verification+rawmessages, nottolerancerelaxation. No TARGET/Bstage/READYrepeat; noFROZEN. Wrapper0doesnotprovePASS; driver1/cleanup−11preserved. [Actualresult](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## D039 fixed-rail follow-up — user-approved .750 B candidate [ADAPTATION]
 
 2026-10-08. Both A/PRE rails/rest remain .650m; INSERT_READY candidate .750/.750m and world_shift_x=+.100m are fixed common engineering handoff, not P3 tuning variables. Require bilateral OPEN confirmation, old safe helper/pusher state, measured rail/base consistency and complete world rebuild/ACK after move. Capture fullpoststep14q/base/rail/Cube/TCP/leftOPEN/rightrearCLOSED/relativeattachment/helperpark/carriage/time/step, not14q alone. Do not bring old friction, robot speed, drives,80Nm guard or3mmwallgate into benchmark.

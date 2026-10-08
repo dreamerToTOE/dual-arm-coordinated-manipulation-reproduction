@@ -1,0 +1,13 @@
+[task01_rear_handoff-3] [ERROR] [1791462606.640300670] [task01_rear_handoff]: BOUNDED HANDOFF STOP: Planning object differs after shift: task01_table. No second station/path experiment.
+[ERROR] [task01_rear_handoff-3]: process has died [pid 384354, exit code 1, cmd '/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/build/task01_handoff/task01_rear_handoff --ros-args -r __node:=task01_rear_handoff --params-file /tmp/launch_params_2fyc3wrv --params-file /tmp/launch_params_y6tluamr --params-file /tmp/launch_params_mi76th5y --params-file /tmp/launch_params_bb4l9omp --params-file /tmp/launch_params_961haziu'].
+[INFO] [launch.user]: TASK01 handoff driver exited: returncode=1; stopping owned MoveIt nodes.
+[INFO] [robot_state_publisher-2]: sending signal 'SIGINT' to process[robot_state_publisher-2]
+[move_group-1] Segmentation fault (Address not mapped to object [0x71b2902cf850])
+[TASK01 reused left] SUCTION OFF, result=False
+[TASK01 reused right] SUCTION OFF, result=False
+[TASK01 reused left] SUCTION ON, result=True
+[TASK01 reused right] SUCTION ON, result=True
+[TASK01 reused left] SUCTION OFF, result=True
+[TASK01 reused right] SUCTION OFF, result=True
+TASK01 HANDOFF STOP: RuntimeError('MoveIt/driver exited before capture: 0; inspect moveit_driver.log')
+[20.914s] Simulation App Shutting Down

@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-08 — D039 integration01 actual STOP, no repair/retry
+
+Onevisible180s-capped run sourceee51470; normalSDKwarm-start→recordedPRE14q→bothSGCLOSED→bothOPENconfirmed. Initial worldapply/readback atshift0 rejects task01_table. Bothbasesremain.65, no safeplanning/rail/rear/READY/reset/TARGET.351nativepoststepstate/contactrows and selectedPREstate/stoplogs saved; originalmass/friction/geometry/physics retained. Read-only installedMoveItheader identifies shape/objectpose normalization as guardfalsefailure risk, not proven actualdifference (rawobjectsnotlogged). Driver1, wrapper0 despitefailure, cleanupmove_group−11; ownedprocessesabsent. Integrationbudget1/1consumed, STOPFORUSER/nofix/relaunch. [Full report](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## 2026-10-08 — D039 fixed handoff preparation
 
 User approved both rails .750 candidate; base_at_rest .650 unchanged. Added candidate/required capture fields and pinned-source single-Cube SG/rail, C++ safe/rear/FCL driver, minimal MoveIt launch and visible post-step recorder. Source audit precedes code; Task27/five-Cube/main not executed. C++ compile/self-test, Python syntax/launch construction and8 pure mock tests PASS. No physical launch yet, budget0/1; one≤180s attempt scheduled. No tool/wall/ACM/friction/drive/controller-force modification. [Files, provenance and planned command](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).

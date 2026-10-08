@@ -1,5 +1,14 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — TASK01 fixed handoff01 (PARTIAL, initial world gate)
+
+- Run `results/20261008_TASK01_fixed_handoff01/`; sourceee51470, configSHA25b7162c…, gui539615dc…, driver231785fa…; exactcommand/artifacthashes inmetadata. One180s-cappedvisibleGUI, consumed1/1, endedbeforecap.
+-351recordednativepoststeps5–355, times.083333338→5.916666975s; fourordinarySDKwarmupsteps precedestream. BothSGCLOSED196samples(firststep6/.100000005s); firstconfirmedbothOPENstep202/3.366666842s.
+- PREstep17/.283333348s: actualCube(.789996266,.000000154,.259998947)m, error3.882252µm; qmaxleft.000644268rad/right.000361433rad; railsboth.649999976m, unchanged. Full14q/TCP/base/relativetransform/frame/status savedselectedevidence. Actualmass.8000000119kg/material.5,.5,0; originalTGS/GPU/60Hz/CCD/gravity retained.
+-441contactheaders onlycupCube/tableCube; minleftcup+.954676mm/right+.999734mm, expectedtableCube−.008691mm. No unexpectedrobotenvironmentreport inthisstationaryprefix—notwholehandoffsafety, airbornehold, nativeD6anchororREADYresetproof.
+- Initialshift0worldreadback rejects task01_table before safepath/rails/rear. ACKgeneration0; INSERT_READYnotcaptured, reset0, TARGET/Bnotrun. Combinedguarddoesnotlogexactfield; normalizedobject/shapepose explanation issourcesupported, notactualvalueproof.
+- Driverexit1; launchshutdownmove_group−11; Isaacwrapper0isnotPASS. Allownedprocessesabsent, nosecondattempt/runtimeedit. TASK01PARTIAL/DRAFT/STOPFORUSER; BUG001TASK10IS; fiveCubeoutofscope. [Report](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## 2026-10-08 — D039 fixed handoff software preflight (not physical evidence)
 
 CMake Release build+pure `task01_rear_handoff --self-test` PASS (before rclcpp init:5objects/.100projection/rear/interpolation). Eight `test_reused_bridge.py` mock tests PASS (0.020s), including originalrail math/arrival, same-stamp atomic commands and fail-closed setter. Python compilation/launch construction/diff check PASS. No ROS/IK/Isaac/control command ran. Physical integration allowance remains0/1. [Bounded run plan](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).

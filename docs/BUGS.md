@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — D039 initial planning-world readback guard [TASK-BLOCKING]
+
+Oneauthorizedintegration atinitialshift0 fails `Planning object differs after shift: task01_table`, before any safeplan/railmove/rear. This is anobservedengineeringgatefailure, **not confirmed physical world misalignment or collision**. Driver's combinedOR compares primitive counts/dimensions/exactshapePose, ignoringCollisionObject.pose. InstalledMoveItplanning_scene.h:704–711 explicitlypromotes shapepose intoobjectpose; equalworldgeometry canhave differentprimitiveposes. Exactsent/readbackobjects missing, so triggerfield/numericaldifferenceunconfirmed. Recommend representation-aware composed-world validation plusfullrawobjects onlywithfreshapproval; no post-run codeedit/retry. Budget1/1used. Bothrails.65, READYnotestablished, rearBpending.
+
+KNOWNLIMITATION: SG reportsCLOSED butpublicD6lookup0/nativeanchorunavailable; measuredCube→TCP isnotjointanchorproof. Rawcontactabsenceinstationaryprefix notfullsafety. Cleanupmove_group−11 duringshutdown is separate/lifecycledeferred; wrapper0 mustnotoverride driver1/failure.json. BUG001remainsTASK10IS, parityequivalenceknownlimitation, fiveCubelegacy. [Evidence](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## 2026-10-08 — D039 rail definition resolved, integration evidence pending
 
 User approval resolves undefined B rail candidate:both .750, shift+.100, A/rest .650 unchanged. Physical capture/repeatability and fresh rail/world consistency remain acceptance gaps, not proven software bugs. Pre-run review corrected ROS extension ordering, 4.5 normal SDK initialization and launch completion wiring; narrowed expected Cube contact to cup surfaces/table (rod/manifold penetration STOP). No simulator attempt yet. Native D6 anchor readback remains unavailable; measured same-frame Cube→rightTCP relative transform is labelled accordingly. Rear B geometry/safety, held START reset remain TASK-BLOCKING; BUG001 DEFERRED TASK10-IS, parity equivalence KNOWN LIMITATION, five-Cube LEGACY.

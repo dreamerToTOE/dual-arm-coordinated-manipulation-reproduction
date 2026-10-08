@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Applying user's one-attempt stop rule
+
+Theapprovedfixedstationintegration reachedinitialplanning-worldreadbackerror before railadvance. User's instruction tostop onworldinconsistency/newintegrationfailure wasrespected: nosecondlaunch,noalternativeposition,noregrasp/newprobe/forcework. Fullnegativeevidence andincompleteREADYstatus recorded. Read-onlymessage-normalizationdiagnosis isnot approvalforfurthercode/runtimechanges; freshboundedauthorization isrequired. TASK01PARTIAL/notFROZEN. [Result](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## 2026-10-08 — Explicit .750 fixed handoff approval
 
 User approves reusing old both-rail +.100m: bilateralOPENconfirmed→old safehelper/pusher→.650→.750both→fresh planningworld+.100→rightrearSG→INSERT_READY. .750 is fixed B engineering setup, not P3 variable; A base_at_rest remains .650. Capture full14q+measuredrails/bases/worldshift/Cube/TCP/SG/attachment/helper/carriage/poststepclock. One bounded integration, stop immediately on substantial collision/regrasp/world mismatch, no secondstationsearch; B geometry/minimal safety only after READY success. No old friction/speed/drive/80Nm/3mmgate, no fiveCube, noFROZEN. [Bounded preparation](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
