@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 follow-up — Interpret “再次尝试” as one unchanged invocation [ENGINEERING]
+
+2026-10-08. Announced interpretation: one new bounded runtime attempt using identical harness/config/binary, output/evidence directories only; no repair or scope expansion. Retain all previous exhausted allowances,180s/reset0/TARGET0 and original stops. Retry02 repeated native startup symptom before runtime state/readback, so no validator/geometry PASS/FAIL claim or fixed-handoff redesign. New1/1 consumed; further blind launch and native-debug implementation are not authorized. Recommend separate bounded startup diagnosis for user decision; benchmark and paper methods unchanged/notFROZEN. [Report](../reports/TASK01_UNCHANGED_RETRY02.md).
+
 ## D039 readback follow-up — startup STOP does not redefine handoff [ENGINEERING]
 
 2026-10-08. Source08c34b8 changes only worldshape message-equivalence validation/evidence/puretests/output path, using fixed1e-8m/rad and1e-12dimension limits; benchmark/geometry/tool/ACM/physics/stations/IK/FCL/topology unchanged. Sole additionalruntime1/1 crashes native before anyrefresh or actualstate. Do not interpret as repeatedvalidatorfailure, physicalworldoffset or handoffgeometryfailure. Messagefix is softwarePASS/runtimeUNVERIFIED, noINSERT_READY. Exhaustedallowance means stop/noautomatic native/startup fixes orsecondlaunch. User must decide any separate startup diagnosis budget. No TARGET, helper/station changes, resets, force, parity10 orFROZEN. [Final report](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).

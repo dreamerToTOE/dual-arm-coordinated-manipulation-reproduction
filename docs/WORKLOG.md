@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-08 — Additional unchanged retry02, no implementation edits
+
+Reread governance/current TASK01/reuse/benchmark/paper; announced one-invocation interpretation of “再次尝试”. Read-only audit verified identical eight hashes and original bound/scope. No runtime/source/config/binary/launcher edits, rebuild or tests. Sole visible GUI at d8d0096 with new evidence directory/reset0 again nativeSIGSEGV afterapp-ready; exit1 before180s. Captured complete log/input hashes, no scientific post-step or readback data. New1/1 used; no startup diagnosis/repair/extra launch. Offline result/process checks and six records/TASK01/report updated; preserve old logs. TASK01PARTIAL, noREADY/TARGET/FROZEN; escalate for separately budgeted startup diagnosis. [Run record](../reports/TASK01_UNCHANGED_RETRY02.md).
+
 ## 2026-10-08 — Readback normalization implementation and sole retry result
 
 Limited change: composed object×primitive SE3 validator, fixed1e-8m/rad/1e-12dims, lossless CDR/full-field evidence before verdict, strict pure tests and launch output-directory parameter. New header/driver/launch only; immutable benchmark/GUI/bridge/primitives hashes unchanged. Preparation compile/self-test and pure7-entity launch construction exit0; independent scope audit PASS. Source committed08c34b8 before runtime. Sole180s-capped visibleGUI command reset0 died nativeSIGSEGV just after app-ready; wrapperexit1, no physics/readback/handoff records, only hashed inputs/log. Budget1/1 consumed, no second launch/startup fix, no TARGET. Read-only evidence/process audit; complete negative result and six records updated. TASK01PARTIAL/notFROZEN, startup root undetermined; STOPFORUSER/ENGINEERINGESCALATION. [Full record](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).

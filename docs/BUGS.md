@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-08 — Startup symptom reproduced on unchanged retry02 [TASK-BLOCKING]
+
+User-requested extra one-invocation retry at d8d0096 with identical eight runtime hashes again ends nativeSIGSEGV afterapp-ready, PID11986/wrapperexit1. No readback or post-step data. Exact native root remains undetermined; this is repeated startup symptom, not confirmed same root cause, live validator failure, collision or handoff geometry failure. New1/1 consumed; stop blind reruns and request separate bounded startup diagnosis, not repair authority inferred. [Full evidence](../reports/TASK01_UNCHANGED_RETRY02.md). Prior readback bug remains runtime-unverified; BUG001/force deferred, model equivalence limitation, fiveCube legacy unchanged.
+
 ## 2026-10-08 — Native GUI initialization SIGSEGV [TASK-BLOCKING]
 
 Sole authorized readback retry atsource08c34b8/unchangedGUI ends `Fatal Python error: Segmentation fault` afterapp-ready7.514s, nativepid398623, wrapperexit1. No poststep, driver, refresh or READY record. Exact native root cause undetermined; no inference about readback, handoff geometry or collision. Prevents current actualINSERT_READY evidence; not owned by force/TASK10-IS. Additional1/1 consumed, stop/escalate; no automatic startup repair/relaunch or new probe. Full log/input published. [Evidence and user-decision request](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).

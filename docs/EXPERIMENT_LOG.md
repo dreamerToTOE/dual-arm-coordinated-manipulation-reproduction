@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — Unchanged readback retry02: no scientific-state evidence
+
+- Run `results/20261008_TASK01_readback_retry02`, source d8d0096511c165f3afc616cf76b2331222dce407; all eight runtime/config/binary SHA match retry01. Exact command/input hashes in [metadata](../results/20261008_TASK01_readback_retry02/metadata.json).
+- One DISPLAY=:1 GUI, 180s cap/reset0/noTARGET. App-ready62.619s, lastTLAS64.839s, nativeSIGSEGV/PID11986/core-dump message, wrapperexit1 beforecap. App-relative time is not native simulation time; actual physics step/time unknown.
+- Only input and launchlog retained (SHAf6a33b28…/738fab8f…). Recorded state/contact rows0/0, refresh0, no driver/sceneaudit/PRE/READY. Runtime readback/rails/rear NOT_REACHED; original guards NOT_EVALUATED. No collision or geometry verdict inferred.
+- New user-requested1/1 consumed, no repair/newprobe/rebuild/test/secondinvocation. Matching owned processes absent. TASK01PARTIAL/notFROZEN; actualINSERT_READY remains unavailable. [Report/escalation](../reports/TASK01_UNCHANGED_RETRY02.md).
+
 ## 2026-10-08 — Readback retry01: GUI initialization crash, no scientific state
 
 - Run `results/20261008_TASK01_readback_retry01`; source08c34b8, binarySHA86237ffa…, config25b7162c…, unchangedGUI539615dc…; exact command/hashes in [metadata](../results/20261008_TASK01_readback_retry01/metadata.json).

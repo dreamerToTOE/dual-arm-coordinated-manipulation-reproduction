@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — “再次尝试” after retry01 startup failure
+
+User asks to try again. Main explicitly scoped it to one additional unchanged bounded GUI invocation,180s/reset0/noTARGET/no repairs; no objection or broader authority assumed. Retry02 repeated nativeSIGSEGV before scene/readback records. New1/1 used, no automatic second launch or fix. TASK01PARTIAL; preserve all historical budgets/evidence. Report runtime unavailable instead of handoff/validator failure; recommend startup-only diagnosis subject to separate user approval. [Outcome](../reports/TASK01_UNCHANGED_RETRY02.md).
+
 ## 2026-10-08 — One-only readback retry honored; stopped on native startup failure
 
 Applied only authorized composed-world representation validator and full raw-object persistence, fixed numerical limits, unchanged originalhandoff/harness/config. Unique preparation checks PASS. Exactlyonevisible runtimeattempt ended nativeSIGSEGV before readback/rails/rear; nofullobjects exist because no refresh occurred. Additionalallowance1/1 consumed, noauto-retry/startupfix/newprobe/geometrychange. ReportactualNOT_REACHED rather than PASS/geometryfailure; TASK01PARTIAL, INSERT_READYnotestablished/noFROZEN. Escalate and await userdecision on independent startupdiagnosis; do not presume authorization from initial readback request. [Negative result and escalation](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
