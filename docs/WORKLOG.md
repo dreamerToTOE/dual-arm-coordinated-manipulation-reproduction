@@ -1,3 +1,5 @@
+# WORKLOG
+
 ## 2026-10-08 — D039 benchmark topology correction / predecessor reuse audit
 
 Reviewed `dual-arm-embodied-palletizing@side-suction-palletizing` Task24, Task26, Task27 and Task11–13 records plus Task26 source behavior. Confirmed prior physical workflow:
@@ -5,7 +7,7 @@ bilateral side-suction transport → release → one-arm -X rear regrasp → seg
 
 No simulator experiment or algorithm implementation was run in this iteration. Updated benchmark/task/roadmap/P3 specs and added `docs/PRIOR_PROJECT_REUSE.md`. Archived the pre-D039 TASK01 spec so parity/bilateral-TARGET history is not lost.
 
-# WORKLOG
+
 
 ## 2026-10-08 — One command-only rerun; explicit TARGET safety failure
 
