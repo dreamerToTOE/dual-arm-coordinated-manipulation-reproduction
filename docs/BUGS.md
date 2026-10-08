@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — 07 actual callback0但原link2 query miss；08待验证
+
+07 START accepted0/callback0，pre/post27 native与不变geometry fingerprint已存；镜像后stale0仍不能证明query tree。left link2 cooked凸包内部质心query无hit，前link0/link1命中，立即 `ENGINEERING_STALE_OR_UNVERIFIED_NATIVE_QUERY_STOP`，不是碰撞。质心/坐标独立核对未见明显错误；stale解释尚不唯一。成功q/liveFK全表缺失限制保留，READY NOT_RUN。
+
+08仅准备原flush_changes + stage_update.on_update(static_time,0,False)工程刷新，不承诺tree修复；all hardguards/no Play/no stepping/原模型ACM不变，GUI08 NOT_RUN。保留03–07，BUG019 OPEN/未科学判决，BUG001非TASK01阻塞，不预标RESOLVED。
+
 ## 2026-10-08 — 06 SDK warm-start可绕过render gate；07初始化适配待验证
 
 06 START accepted0/render_guard实际观察2 callbacks×0.01666666753590107s，pre-render27 native和mirror stale0不构成更新后的静态安全；未到moving query/full collision，wrapper0非PASS。SDK `_warm_start`直接update_simulation与`_create_simulation_view`第二调用可绕过render gate，与2events吻合但没有唯一causal trace；不把推断当已隔离根因。

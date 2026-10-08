@@ -1,5 +1,7 @@
 # TASK01 — Full Single-Cube Geometry
 
+2026-10-08 latest downstream gate: GUI07 actually achieved zero physics callbacks but could not prove the original link2 native query target at START, accepted0 before any overlap verdict. GUI08 subsystem refresh prepared/not run; this does not change the native discrete geometry PASS or authorize READY/FROZEN.
+
 Date: 2026-10-07. Scope: `single_cube_core_benchmark`.
 Result: **PASS_DISCRETE_FULL_CHAIN_ONLY** (native probe exit 0).
 TASK01 overall remains IN_PROGRESS; this is not FROZEN or physical PASS.

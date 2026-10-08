@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D035 follow-up — 原SDK非physics更新只作刷新候选，不推定query freshness
+
+2026-10-08，[ENGINEERING]。07 callback0/q-native及镜像门禁通过后，left link2内部点query未命中即拒绝，不作collision判决。08仅准备原IPhysxSimulation.flush_changes和IPhysxStageUpdate.on_update(static_time,0,False)；文档只说明physics更新关闭、其他子系统更新，不保证query tree freshness，必须保留所有原positive/negative query、step0/q/native/geometry hardguards。
+
+source29cfd626… prepared NOT_RUN、测试待主代理。不Play/stepping、不改原model/benchmark/ACM、不实现P4/DEVIATION。先parity才READY（NOT_RUN），BUG019未判决/BUG001非阻塞，03–07原负证据与成功q/liveFK未存限制保留。
+
 ## D035 follow-up — 不触发Play的原API初始化，不修改SDK callback或物理
 
 2026-10-08，[ENGINEERING]。06 official render gate仍观察2步并拒绝；SDK_warm_start/update_simulation与_create_simulation_view第二调用绕过render gate可解释事件数，但未捕获唯一因果trace。07仅准备不timeline PLAY，原force_load/start_simulation API只初始化，不update/simulate/fetch，不禁用/patch SDK callback；全部零步/q/native/几何/query freshness门禁保持，不改physics/model/ACM/benchmark。

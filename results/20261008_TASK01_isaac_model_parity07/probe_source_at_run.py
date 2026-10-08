@@ -216,23 +216,6 @@ def static_render_update(app, timeline, settings, physics_steps):
         raise RuntimeError("Official render-only dispatch advanced physics/timeline")
 
 
-def static_subsystem_refresh(simulation_interface, stage_update_interface, timeline, physics_steps):
-    """Process original buffered changes with physics update explicitly disabled.
-
-    官方 IPhysxStageUpdate.on_update(..., enable_update=False) 仍更新其他
-    子系统，不进行 physics update。它不承诺刷新查询树，所以每形状实际
-    正/负命中门禁仍不可省略；不能用接口调用成功冒充模型一致性。
-    """
-    before = float(timeline.get_current_time())
-    if physics_steps or timeline.is_playing() or not math.isfinite(before):
-        raise RuntimeError("Static subsystem refresh requires zero steps and a finite paused clock")
-    simulation_interface.flush_changes()
-    stage_update_interface.on_update(before, 0.0, False)
-    after = float(timeline.get_current_time())
-    if physics_steps or timeline.is_playing() or not math.isfinite(after) or after != before:
-        raise RuntimeError("Disabled-physics subsystem refresh advanced physics/timeline")
-
-
 def original_geometry_fingerprint(stage, enabled, body_paths, UsdPhysics, UsdGeom, return_records=False):
     """Exclude body pose output fields; preserve scale, shapes and physical settings.
 
@@ -727,11 +710,6 @@ def main():
                 # 暂停 GUI 处理 USD notices；不能假定 USD 写值只是渲染输出。
                 # 后面的原生 actor / q / geometry / step 守卫全部在 notices 后检查。
                 render_only()
-                static_subsystem_refresh(omni.physx.get_physx_simulation_interface(),
-                    omni.physx.get_physx_stage_update_interface(), timeline, physics_steps)
-                sync["official_disabled_physics_subsystem_refresh"] = {
-                    "flush_buffered_changes": True, "elapsed_sec": 0.0,
-                    "enable_physics_update": False, "query_freshness_not_assumed": True}
                 sync["after_paused_notice_update_stale_shapes"] = stale_shape_paths()
                 sync["after_adapter_body_output_ops"] = body_output_op_audit(stage, list(live_by_path), UsdGeom)
                 sync["immutable_geometry_sha256"] = original_geometry_fingerprint(
@@ -926,9 +904,6 @@ def main():
             "state_index":locals().get("index"),"output_sync":locals().get("sync"),
             "native_actor_gate_completed":locals().get("native_actor_gate_completed",False),
             "native_actor_comparison":locals().get("native_bodies"),
-            "actual_q_and_tcp":locals().get("actual"),
-            "live_fk_comparison":locals().get("fk"),
-            "Cube_actual_xyzw":locals().get("cube_actual").tolist() if locals().get("cube_actual") is not None else None,
             "physics_step_callback_count":len(physics_steps),
             "physics_step_callback_dt_values_sec":physics_steps,
             "physics_step":None,"simulation_timestamp":None})

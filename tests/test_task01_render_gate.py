@@ -184,5 +184,65 @@ class StaticRenderGateTests(unittest.TestCase):
         self.assert_rejected_with_restored_setting()
 
 
+class StaticSubsystemRefreshTests(unittest.TestCase):
+    def setUp(self):
+        self.timeline = Timeline()
+        self.physics_steps = []
+        self.calls = []
+        self.action = None
+        test = self
+        class Simulation:
+            def flush_changes(self):
+                test.calls.append("flush")
+        class StageUpdate:
+            def on_update(self, time, elapsed, enable):
+                test.calls.append((time, elapsed, enable))
+                if test.action:
+                    test.action()
+        self.simulation = Simulation()
+        self.stage_update = StageUpdate()
+
+    def refresh(self):
+        return HELPERS["static_subsystem_refresh"](
+            self.simulation, self.stage_update, self.timeline, self.physics_steps)
+
+    def test_exact_official_disabled_physics_call_order(self):
+        self.timeline.current_time = 0.5
+        self.refresh()
+        self.assertEqual(self.calls, ["flush", (0.5, 0.0, False)])
+        self.assertEqual(self.physics_steps, [])
+
+    def test_already_playing_or_existing_callback_rejected_before_calls(self):
+        self.timeline.playing = True
+        with self.assertRaises(RuntimeError):
+            self.refresh()
+        self.assertEqual(self.calls, [])
+        self.timeline.playing = False
+        self.physics_steps.append(0.0)
+        with self.assertRaises(RuntimeError):
+            self.refresh()
+        self.assertEqual(self.calls, [])
+
+    def test_nonfinite_clock_rejected_before_calls(self):
+        self.timeline.current_time = float("nan")
+        with self.assertRaises(RuntimeError):
+            self.refresh()
+        self.assertEqual(self.calls, [])
+
+    def test_actual_callback_during_refresh_rejected(self):
+        self.action = lambda: self.physics_steps.append(0.0)
+        with self.assertRaises(RuntimeError):
+            self.refresh()
+        self.assertEqual(self.physics_steps, [0.0])
+
+    def test_actual_clock_or_play_change_during_refresh_rejected(self):
+        for attribute, value in (("current_time", 1.0 / 60.0), ("playing", True)):
+            with self.subTest(attribute=attribute):
+                self.timeline = Timeline()
+                self.action = lambda: setattr(self.timeline, attribute, value)
+                with self.assertRaises(RuntimeError):
+                    self.refresh()
+
+
 if __name__ == "__main__":
     unittest.main()

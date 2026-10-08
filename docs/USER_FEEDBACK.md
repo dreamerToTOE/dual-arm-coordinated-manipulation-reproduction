@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — 严格范围继续：零步成功不代表模型query验收通过
+
+既定单Cube要求未改变：07 callback0但link2 query miss仍停，不能用51软件测试/native或USD到位称模型PASS。08仅准备原SDK非physics刷新、所有hardguards及原model/benchmark/ACM保持，不Play/stepping；GUI08未运行、READY NOT_RUN，无P4/force/冻结新授权，BUG001延期非阻塞。
+
 ## 2026-10-08 — 严格静态范围持续：06负结果后07只修原API初始化
 
 用户既定范围不变：06 render gate仍2真实callbacks即拒绝，不能用pre-render native/mirror到位或50软件测试称parity通过。07仅准备无timeline PLAY的原物理API初始化、不patch callback或改model/ACM/benchmark；GUI07未运行，READY NOT_RUN，先parity后reset，BUG001延期非阻塞。不新增五Cube/force/P4或冻结授权。

@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current gate: FULL_GEOMETRY_PASS / NATIVE_QUERY_UNVERIFIED; 08 NOT_RUN (2026-10-08)
+
+07 (`0fb2fc4` /8887ad…) START callbacks0/accepted0:27 pre/post native comparisons and unchanged geometry fingerprint/inputs are saved;51 pure testsOK/.099s. Mirror+paused stale0, link0/link1 exact shape hits, but link2 cooked interior centroid query misses and guard stops—not an actual collision verdict. Successful actual_q/liveFK full values were not saved; do not backfill. READY NOT_RUN, BUG019 unadjudicated.
+
+08 source29cfd626… only prepares official flush_changes + stage_update.on_update(static_time,0,False), documented as updating other subsystems without physics—not guaranteed query freshness. Tests pending/GUI08 NOT_RUN; preserve all hardguards/no Play/no stepping/original model/benchmark/ACM. D035 ENGINEERING/no P4/DEVIATION, BUG001 non-blocking/TASK02 TODO; retain03–07 evidence.
+
+#### Historical 06 checkpoint
+
 ### Current gate: FULL_GEOMETRY_PASS / RENDER_GUARD_STOP; 07 NOT_RUN (2026-10-08)
 
 06 (`0a78485` /`923aca…`) GUI14.25s, START accepted0: render-only gate still observed2 callbacks of0.01666666753590107s. Pre-render27 native comparisons max0m/6.165552397244359e-7rad and mirror stale0 are saved, but render_guard rejected before moving queries/collision. Fifty pure testsOK/0.079s and wrapper0 are not parityPASS. SDK_warm_start/direct update_simulation and second_create_simulation_view can bypass render gate; event count is consistent, not a uniquely captured causal trace.

@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-08 — 07零步成立，但link2 query未证实；08仅准备
+
+07（`0fb2fc4` /`8887ad1bd7d674ecae930b65a8c496d3c1776433b34eab826f2172dce72660cf`）START accepted0/callbacks0。pre/post各27 native比较已存，几何fingerprint/input/runtime/candidate YAML保持；51纯测试0.099s OK。mirror+paused后stale0，但原left link2 cooked质心10µm球query无hit，guard立即拒绝，**不是collision**，未到全链判定/READY。成功actual_q/liveFK全表未存，只能记录控制流已通过，不补写实测表。
+
+08只准备ENGINEERING query刷新候选：原IPhysxSimulation.flush_changes及IPhysxStageUpdate.on_update(static_time,0,False)，文档语义为不更新physics而刷新其他子系统；不保证query tree freshness，原所有hard guards保持。source `29cfd626a4f1f78cc943baeee151807e6c3fd48252ed6dfaeae0ad9b2965699a` prepared NOT_RUN，新增测试待主代理结果。不Play/stepping、不改原model/benchmark/ACM；先parity再READY（仍NOT_RUN），BUG019无科学碰撞判决、BUG001非阻塞，TASK01 IN_PROGRESS/PARTIAL、TASK02 TODO，旧03–07负结果保留。
+
 ## 2026-10-08 — 06 render gate仍观察2步；07仅准备直接物理初始化
 
 06（`0a78485` /`923aca…`）可见GUI14.25s，START accepted0；官方render gate下仍2 callbacks（各0.01666666753590107s）。pre-render27 native比较max0m/6.165552397244359e-7rad已存、输出镜像stale0，随后render_guard拒绝，未到moving queries/碰撞判定。50纯软件测试0.079s OK不等于parity，wrapper0非PASS。

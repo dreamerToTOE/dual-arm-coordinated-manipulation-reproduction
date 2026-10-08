@@ -2,6 +2,8 @@
 
 2026-10-08. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
 
+Current actual gate:07 reached zero actual physics callbacks and original native/output agreement, but stopped at START on an unverified moving native query (link2 inside-point miss), accepted0. This is not a verified geometric collision or a READY/reset trial. 08 disabled-physics subsystem refresh is prepared, not run; READY remains gated on complete model parity.
+
 Latest checkpoint: 06 render-only path still triggered two direct physics callbacks at START and stopped with accepted0. No READY/reset data exists. 07 is prepared to initialize native handles without timeline PLAY/SDK implicit warm-up; exact candidate14q and all actual guards remain unchanged.
 
 Current gate: 05 actually detected unintended physics dispatch during its paused GUI update and stopped before any accepted parity sample. Official render-only dispatch06 is prepared/not run. This invalid static attempt is **not** a repeated READY/reset trial; no post-step reset acceptance or scientific time record is claimed.

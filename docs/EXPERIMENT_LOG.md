@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — isaac_model_parity07 零步query proof STOP；08未运行
+
+TASK01/[ENGINEERING]/visible Isaac4.5，commit0fb2fc4/source8887ad1bd7d674ecae930b65a8c496d3c1776433b34eab826f2172dce72660cf，原输入/确定14q/config不变；命令和产物见 [07 metadata](../results/20261008_TASK01_isaac_model_parity07/metadata.json)。START accepted0、actual callbacks0/dt[]，pre27 native max差0m/6.165552397244359e-7rad，post27 max变化2.9802322387695312e-8m/4.2146848510894035e-8rad，geometry fingerprint前后相同。51纯tests主代理0.099s OK；inputs/candidate/runtime hashes独立一致。
+
+mirror/paused后stale[]，left link0/link1 exact shape+owner hit，但left link2 cooked质心10µm球未hit，`ENGINEERING_STALE_OR_UNVERIFIED_NATIVE_QUERY_STOP`；static_replay空，不是实际collision/BUG019判决。成功actual_q/liveFK全表未存，只由控制流知晓，不补写；READY NOT_RUN。08仅准备原flush_changes/on_update(static_time,0,False)非physics刷新；source29cfd626…/新增测试待验/GUI NOT_RUN，不保证treefreshness，不减弱门禁或改原模型，03–07保留，BUG001非阻塞。
+
 ## 2026-10-08 — isaac_model_parity06 render-only仍2callbacks STOP；07未运行
 
 TASK01/[ENGINEERING]/visible Isaac4.5，commit `0a78485` /source `923aca89345fa7850ad9f5b981c38718c742a98c12fb07c9a7e4206a7a244498`，原config/确定14q/inputs SHA一致。完整480s可见命令与证据在 [06 metadata](../results/20261008_TASK01_isaac_model_parity06/metadata.json)。GUI14.25s、START accepted0：实际callback2，各dt0.01666666753590107s，render_guard拒绝。pre-render27 native比较max0m/6.165552397244359e-7rad与mirror后stale0已存；static_replay为空，moving queries/full collision未执行，无collision verdict/READY。50纯unit tests主代理0.079s OK；wrapper0非PASS，不能称无积分。

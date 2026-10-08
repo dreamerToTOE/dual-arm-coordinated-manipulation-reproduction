@@ -1,6 +1,6 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
-2026-10-08. Current status: ENGINEERING_RENDER_ZERO_STEP_GUARD_STOP (06); no-PLAY native initialization prepared (07 not run), **not PASS**.
+2026-10-08. Current status: ENGINEERING_UNVERIFIED_MOVING_NATIVE_QUERY_STOP (07); disabled-physics subsystem refresh prepared (08 not run), **not PASS**.
 
 Prerequisite full discrete geometry passed (A136/B157, exact PRE14q seam): [report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). The original PhysX convexHull model is not assumed equivalent to the MoveIt STL. Full-chain wall-risk state is TARGET/state292, left_link7↔deep_wall FCL clearance2.212219mm; intended Cube/tool minimum is state196/0.999669mm.
 
@@ -8,7 +8,13 @@ Independent visible GUI only: dual FR3/current L tools/one Cube/table/carriage. 
 
 Replay all states where possible, with early priority START→A minimum/PRE→TARGET (full-chain wall minimum)→state196 (full all-pair minimum). Required insertion samples and all-state replay remain to verify. First unexpected FCL-free/Isaac collision stops, records exact pair/state/actual FK/cooked shape evidence, no geometry repair.
 
-Latest artifact directory: `results/20261008_TASK01_isaac_model_parity06/`. READY/reset has not been authorized or run.
+Latest artifact directory: `results/20261008_TASK01_isaac_model_parity07/`. READY/reset gate not reached or run.
+
+## 07 actual zero-step query guard stop / 08 subsystem refresh prepared
+
+07 source commit `0fb2fc4`, SHA `8887ad1bd7d674ecae930b65a8c496d3c1776433b34eab826f2172dce72660cf`. No PLAY native initialization eliminated actual physics callbacks (**0**, dt list empty), but START still accepted0: link0/link1 actual cooked interior-point queries hit the correct original collider/owner; link2 exact original target returned zero hits and stopped before collision verdict. 27 native actors matched tensors before output (max0m/6.165552397244359e-7rad); after output max position change2.9802322387695312e-8m/rotation4.2146848510894035e-8rad. USD source frames and original immutable fingerprint matched. Q/FK/TCP guards traversed successfully but their successful numerical values were not saved in 07 failure artifact; do not backfill measurements. [07 metadata](../results/20261008_TASK01_isaac_model_parity07/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity07/summary.json). 51 software tests OK/0.099s; wrapper0 not PASS, GUI closed/reaped.
+
+Independent cooked-plane/transform audit found the link2 centroid strictly inside all60 hull planes (minimum approximately50.808mm); collider local-to-owner is unit/identity and independent world transform agrees within16.7nm. A stale query target is consistent with the miss, not a uniquely captured cause. No verified unexpected collision/BUG019 result, no READY/reset. 08 only tries installed official `IPhysxSimulation.flush_changes()` then `IPhysxStageUpdate.on_update(static_time, 0.0, False)` (physics update disabled, other subsystems updated). It does not promise query-tree freshness: actual zero-step, native pose/q/immutable model, original cooked positive/negative queries remain mandatory. No Play/integration/model/ACM changes. 08 prepared, not run.
 
 ## 06 actual render-only guard stop / 07 no-PLAY initialization prepared
 

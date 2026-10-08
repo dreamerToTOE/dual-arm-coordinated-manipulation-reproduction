@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-08 — 07合法零步后query guard停止；08官方零步refresh候选未运行
+
+07 commit0fb2fc4/source8887ad…，START callbacks0/accepted0；pre/post27 native比较与不变geometry fingerprint保存，inputs/runtime/candidate YAML独立hash一致，51纯unit0.099s OK。原left link2 cooked质心查询无hit而立即拒绝；独立坐标核对未见明显变换错误，但不能唯一归因stale tree。没有collision verdict/READY；成功q/liveFK全表未存，只记录控制流通过，不反填。
+
+08 source29cfd626…只准备原flush_changes + stage_update.on_update(static_time,0,False)工程refresh（文档：更新其他子系统、不更新physics），非tree freshness保证。全部零步/q/native/geometry/query hardguards、no Play/stepping及原模型保持，测试待主代理、GUI08 NOT_RUN。保留03–07，BUG019未判决/BUG001非阻塞，TASK02 TODO。
+
 ## 2026-10-08 — 06零步guard拒绝；07避免Play warm-start仅准备
 
 06 commit0a78485/source923aca…，GUI14.25s/START accepted0：render gate仍callbacks2×0.01666666753590107s。输出mirror stale0、pre-render27 native比较max0m/6.165552397244359e-7rad已保存，但render_guard随后拒绝，moving queries/碰撞未开始；50纯测试0.079s OK、wrapper0不证明parity。candidate YAML/捕获14q/runtime原模型hash独立复核未变。
