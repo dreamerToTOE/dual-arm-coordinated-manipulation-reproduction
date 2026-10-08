@@ -2,6 +2,8 @@
 
 Status: **IN_PROGRESS / PARTIAL — topology corrected by D039 (2026-10-08)**
 
+**Latest outcome: PARTIAL / STOP FOR USER / ENGINEERING ESCALATION.** The additionalreadbackrepair attempt1/1 is consumed. Validator build/puretests PASS (fixedcomposedworldepsilon/rawpersistence); sole unchangedvisibleGUI diesnativeSIGSEGV atinitialization, noMoveItrefresh orpoststepstate. Thus livevalidator/handoff/guards NOT_EVALUATED; INSERT_READYNOT_ESTABLISHED, actualrail/q/Cube/TCP/nativeclockunavailable. NoTARGET/reset/secondlaunch/FROZEN. Notreadbackrecurrence orhandoffgeometryfailure; startuprootundetermined. [Actual report](../../reports/TASK01_READBACK_NORMALIZATION_RETRY.md). Preparation/history below retain earlier checkpoints.
+
 New user authorization: one readback-validator normalization repair/retry, fixed numericalepsilons only; fullrawexpected/readback+composedworldpose evidence. Runtimeadditional0/1 duringpreparation; unchangedbenchmark/handoff/IK/FCL/physics/ACM. Onevisibleboundedrun toactualINSERT_READY, reset0/TARGET0, thenstopPARTIAL/notFROZEN. Readbackrecurrence→ENGINEERING ESCALATION/no thirdvalidator. [Active protocol](../../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
 
 Actual latest integration: **1/1 consumed / STOP FOR USER**, initialshift0planning-worldtable readbackguard rejects afterbilateralOPEN, before safeplanning/railadvance/rear. NoINSERT_READY/reset/Btest/TARGET. Bothrailsstill.65; approved.75candidatependingcapture. Source-supportedmessage-normalizationrisk, notprovenphysicalworldmismatch. Noautomaticrepair/rerun; freshboundedapprovalneeded. [Outcome/evidence](../../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).

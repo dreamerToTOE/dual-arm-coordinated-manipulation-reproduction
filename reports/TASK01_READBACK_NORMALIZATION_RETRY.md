@@ -1,6 +1,6 @@
 # TASK01 — Authorized readback normalization repair and one bounded retry
 
-2026-10-08. **PREPARING / runtime NOT_RUN (additional allowance0/1). TASK01 PARTIAL / DRAFT, not FROZEN.**
+2026-10-08. **ENGINEERING ESCALATION / GUI initialization STOP. Additional allowance1/1 consumed. TASK01 PARTIAL / DRAFT, not FROZEN; INSERT_READY NOT_ESTABLISHED.** Preparation entries below describe the pre-run checkpoint, not the final result.
 
 ## PRE-TASK REPORT
 
@@ -66,7 +66,7 @@ reused_bridge.py:e4c1dc8bea2098d315d2404bdbd0b5c986ca46df4ac9a7facca123a4e5dabae
 task01_insert_ready_gui.py:539615dc789460abc2e3b0b2e7c09dff8c7ad00b8dc74327f1e8d114a0a1a77c
 ```
 
-## Planned command (exactly one authorized invocation)
+## Actual command (exactly one authorized invocation)
 
 ```bash
 cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
@@ -86,6 +86,95 @@ The single preparation CMake Release build and pure `--self-test` passed (exit0;
 
 Immutable input hashes above rechecked unchanged. New driver source SHA256 `e8ed058e58e63eb7f0a36bd02daa25151e62d81867d0bc52754192a9375f909a`; validator `6ab64d3fa680a92957d24198a2f2c895ce4c026559414112e92ba386949ec030`; launch `4c707922986112f9d667d3ba212191c0099bcdb94a010050168361438a7f3f47`.
 
-## Outcome
+## Actual outcome — initialization STOP, not readback or geometry failure
 
-Pending software preflight and single runtime attempt. Neither representation validation nor handoff completion is presumed from this preparation entry. Historic raw/negative evidence remains untouched. BUG001/wrench stays TASK10-IS; shutdown fault deferred; full collision-model equivalence a known limitation; five-Cube Task27 legacy.
+The sole attempt ran source `08c34b847906a0f229a442290467c8e1b63fdc22` using the unchanged GUI. Its log ends:
+
+```text
+[7.514s] app ready
+Fatal Python error: Segmentation fault
+... python.sh: ... 398623 ... core dumped ...
+There was an error running python
+```
+
+The launcher returned **exit1**, before the 180s cap. The native crash's cause is **undetermined**; the log alone does not establish a validator, plugin, resource or model cause. No repair, second launch, debug probe or threshold change followed. Read-only process checks found no remaining matching Isaac/handoff/MoveIt processes.
+
+Actual files are only [inputs_at_run.json](../results/20261008_TASK01_readback_retry01/inputs_at_run.json), [complete launch.log](../results/20261008_TASK01_readback_retry01/launch.log) and [metadata](../results/20261008_TASK01_readback_retry01/metadata.json). `raw/inputs.json` verifies source/config/GUI/launch/binary hashes, visible GUI, reset cap0 and no TARGET. There is no `scene_audit.json`, post-step state/contact stream, MoveIt driver log, refresh JSON, PRE_PUSH sample or INSERT_READY capture.
+
+Therefore:
+
+- readback/composed-transform **runtime validation NOT_REACHED**; neither PASS nor recurring readback failure;
+- initial shift0 and post-rail shift+.100 sent/readback evidence **not produced** because no refresh occurred;
+- safe transition, rails, rear regrasp and attachment **NOT_REACHED**;
+- no scientific native physics step/simulation timestamp or actual q/Cube/TCP/rail measurement available in this run;
+- collision/FCL/Cube-drift/rail consistency guards **NOT_EVALUATED**, not safety PASS/FAIL;
+- INSERT_READY **NOT_ESTABLISHED**, repeated resets0, TARGET not commanded;
+- TASK01 **PARTIAL**, not PASS CANDIDATE or FROZEN; budget **1/1 used**.
+
+Software compilation and pure tests passed, but are not physical evidence. The previous `f73490d` readback STOP remains separate history; this run cannot demonstrate that the normalization repair fixes it in live MoveIt. Historical negative/raw evidence remains untouched. BUG001/wrench stays TASK10-IS; prior shutdown issue deferred; full collision-model equivalence a known limitation; five-Cube Task27 legacy.
+
+## ENGINEERING ESCALATION
+
+```text
+Scientific question: can the approved fixed D039 handoff establish actual INSERT_READY?
+What is already established: original reuse/provenance; software validator/tests PASS;
+  prior supported PRE_PUSH and bilateral OPEN observations from earlier run only.
+What remains unknown: live composed-world readback and complete fixed handoff state.
+Why the remaining unknown matters: cannot accept INSERT_READY from software tests.
+Attempts made: this separately authorized bounded retry1/1; startup SIGSEGV before
+  any MoveIt refresh. No second attempt and no third validator.
+Root blocker classification: TASK-BLOCKING GUI native initialization failure;
+  exact root cause not diagnosed. Readback correctness remains runtime-unverified.
+Is it still task-critical: yes, for actual INSERT_READY evidence.
+Lower-cost evidence available: successful pure build/serialization/SE3 tests and
+  source/hash audit; insufficient for physical handoff acceptance.
+Recommended action: stop runtime; preserve fixed geometry/topology and evidence.
+Need user decision: whether to authorize a separate bounded startup diagnosis and
+  subsequent attempt, or keep the task paused. No further authority inferred.
+```
+
+## POST-TASK REPORT
+
+```text
+Task: TASK01 / readback-validator normalization, independent allowance1/1
+Status: PARTIAL; runtime STOP; INSERT_READY NOT_ESTABLISHED
+Scientific objective: establish actual fixed handoff INSERT_READY
+Minimum sufficient evidence achieved: no
+Completed: fixed object×shape equivalence validator, full raw refresh persistence,
+  lossless CDR/all-field JSON, strict pure tests, launch evidence-directory wiring;
+  one bounded visible attempt, negative startup evidence preserved.
+Files changed: collision_readback.hpp; task01_rear_handoff.cpp;
+  moveit_handoff.launch.py; this report; run metadata/log/input; six records; TASK01.
+Commands run: one preparation build/self-test; pure launch construction;
+  sole actual GUI command above; read-only hashes/process/artifact audit; git publish.
+Tests / experiment results: software PASS; physical initialization STOP (exit1).
+Key metrics: additional attempts1/1; recorded post-step samples0; refresh records0;
+  actual q/TCP/Cube/rail/step/time unavailable; no READY, reset or TARGET.
+TASK-BLOCKING: GUI native initialization crash; readback/handoff runtime unverified.
+DEFERRED: BUG001/wrench TASK10-IS and earlier shutdown issue.
+KNOWN LIMITATION: full model equivalence not required/established.
+LEGACY: old five-Cube Task27, not executed.
+Attempt budget used: additional1/1; previous exhausted budgets unchanged.
+Escalation required: yes; no automatic retry or new validator/probe.
+Paper fidelity: ORIGINAL paper/controller unchanged; ADAPTATION D039 fixed topology
+  unchanged; ENGINEERING message equivalence and evidence only; no new DEVIATION
+  or EXPERIMENTAL controller/model alteration.
+Records updated: STATUS/WORKLOG/EXPERIMENT_LOG/BUGS/DECISIONS/USER_FEEDBACK/TASK01.
+Open risks: native crash cause unknown; live readback and downstream stages untested.
+Recommended next step: user decision on separate startup diagnosis/attempt budget.
+Git: task01-benchmark-draft; code checkpoint08c34b8; evidence commit follows.
+Dirty files preserved: three pre-existing untracked historic launch logs.
+```
+
+### Software command provenance
+
+These commands were already run once during preparation; **not rerun after the crash**. Outputs reside in tool history, not an independently captured compiler log:
+
+```bash
+source /opt/ros/humble/setup.bash
+cmake -S platforms/isaac_ros2/handoff -B build/task01_handoff -DCMAKE_BUILD_TYPE=Release
+cmake --build build/task01_handoff -j2
+build/task01_handoff/task01_rear_handoff --self-test configs/benchmark/benchmark_v1.yaml
+```
+
+Tool session44362 exit0: `[100%] Built target task01_rear_handoff`; `PURE SELF TEST PASS: current world/Task26 regressions plus composed readback, strict epsilon boundaries, malformed inputs and raw CDR/all-field JSON; no ROS/IK/Isaac`. Launch AST/import/`generate_launch_description()` test, using system Python and existing ROS/install environment, returned `PURE LAUNCH CONSTRUCTION PASS: 7 entities, evidence-directory env wiring, no ROS launch` (exit0). This is construction only, not node/MoveIt startup.

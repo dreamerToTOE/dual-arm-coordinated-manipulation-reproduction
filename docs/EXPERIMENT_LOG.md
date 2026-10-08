@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — Readback retry01: GUI initialization crash, no scientific state
+
+- Run `results/20261008_TASK01_readback_retry01`; source08c34b8, binarySHA86237ffa…, config25b7162c…, unchangedGUI539615dc…; exact command/hashes in [metadata](../results/20261008_TASK01_readback_retry01/metadata.json).
+- Exactly one DISPLAY=:1 visibleGUI, external180s cap, reset0/TARGETfalse. After app-relative7.514s `app ready`, `Fatal Python error: Segmentation fault`, nativepid398623/core-dump message; wrapperexit1 beforecap. App log time is not a native simulation timestamp. Root cause undetermined.
+- Only complete launchlog and hash-matched inputJSON retained. Recordedpoststepstates0/contacts0, refreshJSON0, q/TCP/Cube/rail/native step/time unavailable. No driver/sceneaudit/PREsample/READY. Cannot establish actualphysicsstep0, collision free, live validator PASS/FAIL or handoffgeometryfailure from missing data.
+- Safe transition/rails/rear/attachment/readback bothshifts NOT_REACHED, originalguardverdicts NOT_EVALUATED. No repeats/TARGET; processes absent. Additional1/1 consumed, no retry/code repair/probe. TASK01PARTIAL/notFROZEN; user decision required. [Report/escalation](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## 2026-10-08 — Readback normalization preparation (no physical experiment yet)
 
 User-authorized independent allowance1/1 remains0/1 at this checkpoint. Unique CMake Release build/pure `--self-test` exit0; normalization, fixed epsilon boundary rejection, invalid/nonfinite and lossless raw evidence tests passed. Launch pure construction7 entities and independent scope audit passed. No ROS initialization, IK, Isaac or control command in software checks. YAML/GUI/bridge/original primitives byte-identical to f73490d; driver/source/launch hashes in [bounded plan](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md). Planned sole visibleGUI attempt180s with reset-repeats0; all runtime results still NOT_RUN, TASK01 PARTIAL, no TARGET/FROZEN.

@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 readback follow-up — startup STOP does not redefine handoff [ENGINEERING]
+
+2026-10-08. Source08c34b8 changes only worldshape message-equivalence validation/evidence/puretests/output path, using fixed1e-8m/rad and1e-12dimension limits; benchmark/geometry/tool/ACM/physics/stations/IK/FCL/topology unchanged. Sole additionalruntime1/1 crashes native before anyrefresh or actualstate. Do not interpret as repeatedvalidatorfailure, physicalworldoffset or handoffgeometryfailure. Messagefix is softwarePASS/runtimeUNVERIFIED, noINSERT_READY. Exhaustedallowance means stop/noautomatic native/startup fixes orsecondlaunch. User must decide any separate startup diagnosis budget. No TARGET, helper/station changes, resets, force, parity10 orFROZEN. [Final report](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## D039 readback retry authorization — equivalence, not spatial relaxation [ENGINEERING]
 
 2026-10-08. User grants one additional1/1 only for CollisionObject readback normalization: validate id/worldframe/count/type/dimensions and T_world_object×T_object_shape. Fixedtranslation/rotation1e-8,dimensions1e-12; not benchmark/IK/FCL/collision/success tolerances, no adaptive enlargement. Save full raw sent/readback/object/shape/composedvalues+shift/generation/nativepoststepclock before verdict. Keep fixed.650→.750 helper/rear topology and all geometry/physics/ACM. One visible≤180sretry, reset0/TARGET0; captureactualINSERT_READY thenstopPARTIAL/notFROZEN. Same-root recurrence→ENGINEERING ESCALATION, not thirdvalidator. [Protocol](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).

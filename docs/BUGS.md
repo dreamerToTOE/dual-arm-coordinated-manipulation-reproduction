@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — Native GUI initialization SIGSEGV [TASK-BLOCKING]
+
+Sole authorized readback retry atsource08c34b8/unchangedGUI ends `Fatal Python error: Segmentation fault` afterapp-ready7.514s, nativepid398623, wrapperexit1. No poststep, driver, refresh or READY record. Exact native root cause undetermined; no inference about readback, handoff geometry or collision. Prevents current actualINSERT_READY evidence; not owned by force/TASK10-IS. Additional1/1 consumed, stop/escalate; no automatic startup repair/relaunch or new probe. Full log/input published. [Evidence and user-decision request](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
+Readback normalization code/software tests are complete, but originalreadbackblocker's live closure remains **UNVERIFIED**. This run did not reach it; do not count this crash as a third validator or recurring readback failure. No benchmark/IK/FCL/physics/ACM modification. Priorshutdown faultDEFERRED, fullmodel equivalenceKNOWNLIMITATION, fiveCubeLEGACY.
+
 ## 2026-10-08 — World readback blocker: one normalization repair approved
 
 Initialshift0 readbackguard failure remains anengineeringissue, not handoffgeometryfailure. User authorizes composedworldshape validation andlosslessrawobjects atfixed numericalepsilon; no benchmark/safetyconditionchange. TASK-BLOCKING until tested. Prior1/1 preserved; additionalruntime0/1 atpreparation. Recurrence ofrepresentation/readback root muststop ENGINEERING ESCALATION; no furtherautomaticvalidatorvariant. Rear/rail/READY evidence stillpending. [Scope](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).

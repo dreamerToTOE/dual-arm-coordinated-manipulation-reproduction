@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-08 — Readback normalization implementation and sole retry result
+
+Limited change: composed object×primitive SE3 validator, fixed1e-8m/rad/1e-12dims, lossless CDR/full-field evidence before verdict, strict pure tests and launch output-directory parameter. New header/driver/launch only; immutable benchmark/GUI/bridge/primitives hashes unchanged. Preparation compile/self-test and pure7-entity launch construction exit0; independent scope audit PASS. Source committed08c34b8 before runtime. Sole180s-capped visibleGUI command reset0 died nativeSIGSEGV just after app-ready; wrapperexit1, no physics/readback/handoff records, only hashed inputs/log. Budget1/1 consumed, no second launch/startup fix, no TARGET. Read-only evidence/process audit; complete negative result and six records updated. TASK01PARTIAL/notFROZEN, startup root undetermined; STOPFORUSER/ENGINEERINGESCALATION. [Full record](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## 2026-10-08 — Readback normalization repair preparation
 
 Reread AGENTS/governance/STATUS/currentTASK01/D039/reuse/benchmark/P4; pre-task report delivered. New authorization permits only composedworldshape message validation plus full raw evidence, one bounded retry, no geometry/handoff/safety-condition change. ImmutableYAML/GUI/bridge/primitives hashes recorded. Implement validator/puretests/evidence-path launch wiring; no runtime yet, additional0/1. Plan onevisible180s cap to INSERT_READY, no repeatedreset/TARGET. [Protocol](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).

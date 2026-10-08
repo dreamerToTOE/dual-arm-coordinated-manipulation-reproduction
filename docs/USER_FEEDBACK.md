@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — One-only readback retry honored; stopped on native startup failure
+
+Applied only authorized composed-world representation validator and full raw-object persistence, fixed numerical limits, unchanged originalhandoff/harness/config. Unique preparation checks PASS. Exactlyonevisible runtimeattempt ended nativeSIGSEGV before readback/rails/rear; nofullobjects exist because no refresh occurred. Additionalallowance1/1 consumed, noauto-retry/startupfix/newprobe/geometrychange. ReportactualNOT_REACHED rather than PASS/geometryfailure; TASK01PARTIAL, INSERT_READYnotestablished/noFROZEN. Escalate and await userdecision on independent startupdiagnosis; do not presume authorization from initial readback request. [Negative result and escalation](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## 2026-10-08 — Additional allowance1/1, validator-only
 
 User approves exactlyone boundedretry after fixing only CollisionObjectrepresentation normalization. Require composedworldpose comparison, fixednumerical epsilons1e-8m/rad/1e-12dimensions andcomplete rawexpected/readback+nativepoststep evidence for everyrefresh. Nobenchmarkgeometry/tool/carriage/ACM/physics/rail/IK/FCL/handoffchange. Stopatanylistedfailure; readbacksame-root recurrence→ENGINEERING ESCALATION/no thirdvalidator. Successonlyactual INSERT_READY established, thenstopTASK01PARTIAL/notFROZEN, noTARGET. Originalf73490d prefixfailure wasnot handoffgeometryfailure. [Plan](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
