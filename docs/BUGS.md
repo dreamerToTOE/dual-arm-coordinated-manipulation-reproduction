@@ -1,3 +1,19 @@
+## 2026-10-08 — BUG019 disposition after D039 topology correction
+
+The measured TARGET collision remains real for the tested **superseded bilateral-side-grasp-to-TARGET topology**:
+- left link7 ↔ deep wall ≈ −3.016 mm;
+- right link7 ↔ deep wall ≈ −3.016 mm raw same-step observation.
+
+D039 does not delete or waive this evidence. Instead, it identifies that the tested topology was not the validated application workflow. Current Benchmark B now uses release → right rear (-X face) regrasp → single-arm +X insertion, as in predecessor Task26/27.
+
+Classification:
+- exact MoveIt/PhysX model equivalence: KNOWN LIMITATION;
+- bilateral-to-TARGET wrist collision: CONFIRMED NEGATIVE EVIDENCE FOR SUPERSEDED TOPOLOGY;
+- corrected rear-push Benchmark-B Isaac safety: TASK-BLOCKING UNTIL REVALIDATED;
+- free-Cube READY drop: not a new suction research problem; reuse the already validated Surface Gripper holding representation first.
+
+Do not reopen parity10 or “fix” the old collision with ACM/tool/wall changes.
+
 # BUGS
 
 ## 2026-10-08 — BUG019: concrete critical-state robot–wall failure [TASK-BLOCKING]
