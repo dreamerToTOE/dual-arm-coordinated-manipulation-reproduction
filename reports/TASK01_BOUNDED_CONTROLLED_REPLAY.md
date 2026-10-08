@@ -94,3 +94,20 @@ The Cube had **no active shared-held/suction constraint** in this short safety m
 - Git: branch `task01-benchmark-draft`; source47d22ce; pre-existing untracked01/02logs preserved; cloud publication status recorded separately after push verification.
 
 Git formatting note: the verbatim actual launch log ends in a prompt with a trailing space. This evidence byte stream is intentionally not reformatted; source/docs/JSON diff checks pass with that log excluded. Its original SHA is retained.
+
+## ENGINEERING ESCALATION
+
+- Scientific question: do the four approved critical states provide minimum Isaac safety evidence, followed by reproducible START/PRE resets?
+- Already established: nominal A136/B157 geometry; exact recorded14q; one genuine START post-step snapshot with no observed unexpected penetration/environment overlap.
+- Remaining unknown: safety at PRE/state196/TARGET and all repeated reset results. The unconstrained short-step Cube sample is not stable-held READY evidence.
+- Why it matters: a single sample cannot replace the user-approved four-state/reset gate, especially at the2.212mm FCL wrist–wall minimum.
+- Attempts: static root07/08/09 exhausted3/3; approved controlled GUI allowance used1/1, stopped at the added terminal review barrier, not a physics collision.
+- Root blocker classification: TASK-BLOCKING acceptance-evidence gap; terminal review is an engineering method failure. Query perfection/model equivalence remains KNOWN LIMITATION.
+- Is it still task-critical: missing acceptance evidence yes; perfecting zero-step queries no.
+- Lower-cost evidence: the same existing controlled harness with a foreground-compatible bounded terminal launch, not a new probe/model/control layer. This remains untested and unapproved for a second run.
+- Recommended action: STOP FOR USER; request one command-only bounded rerun allowance, retain all previous evidence and constraints.
+- Need user decision: whether to authorize that additional attempt. No autonomous retry, benchmark redefinition or FROZEN.
+
+## Git publication
+
+Initial push was rejected because the remote task branch had new user governance commits, not because GitHub authentication failed. Read those five governance files completely, fetched and merged `bfd09ac` without conflicts or overwriting either history. The resulting `b73e273` (includes source47d22ce and evidence2cc95eb) was pushed successfully to `task01-benchmark-draft`; the GitHub file tool read back the new metadata with actual PARTIAL/exit124. Main was not changed. The earlier governance review9f5a03b is now uploaded as well. No source/config or new experiment accompanied the governance merge/publication.

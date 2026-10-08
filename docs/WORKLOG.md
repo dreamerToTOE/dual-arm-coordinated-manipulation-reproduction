@@ -2,6 +2,8 @@
 
 ## 2026-10-08 — One approved controlled fallback executed, bounded launcher stop
 
+Git follow-up: initial non-fast-forward push rejected; read remote task-branch governance files fully, fetched `bfd09ac` and merged safely/no conflicts. Pushed `b73e273` successfully, then verified the new actual PARTIAL metadata through the GitHub file tool. This also uploads prior review9f5a03b. Main untouched; no experiment/source change during sync. This publication note is a records-only follow-up.
+
 Re-read current cloud AGENTS/EXECUTION_GOVERNANCE through GitHub plugin (complete files), plus local startup/status/task/P4/benchmark. User approved4states+5eachreset, no staticquery repair. Main prepared minimal reuse-based originalscene normal `simulate/fetch` harness; readonly independent API/source/evidence audit. Sevenpure classification tests/py_compile/diff checksOK. Source checkpoint47d22ce/SHAab174884… before singleGUI launch, unchanged during/after run; no original runtime source/geometry/physics/ACM/YAML edits.
 
 One originaldt synchronized START14q/Cube, saved nativeposttime/step/contacts/overlaps. Actual1step START had no unexpectedpenetration/environmenthit;14qpostmax9.05020e-5rad, TCP0.096015/0.067458mm, CubeZdrop2.725005mm withoutheldconstraint (notREADY). Inputs/material/mass/frame allsaved. Introduced stdin drift-review gate then blocked in background terminal read (processT/Tl, SIGTTINconsistent/nottraced); one accept_snapshot input was sent but never persisted. Outer120s timeout124/reaped, nointernalfailure/summary, noPRE/state196/TARGET orreset. This avoidable launcher barrier was agent-added, not a new physicsmodel fault.
