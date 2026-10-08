@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-08 — 08 query proof仍停止；09逐态原native重建IN DESIGN
+
+08 source3e2414b/29cfd626…，START accepted0/callback0，官方flush与on_update(time,0,false)实际完成，left link2内部点query依旧miss。56纯unit0.100s OK不能替代parity；成功actual_q/TCP/Cube/18linkFK本轮实际落盘，pre/post27 native和不变几何fingerprint保留，但无碰撞结论/READY。
+
+09仅设计原模型逐状态native handle重建，安全API审核中未执行；owned原USD/hashes/known14q保持，不改model/几何/ACM/benchmark、不给parityPASS。旧03–08负结果不覆盖，静态index不冒充poststep测量；BUG001延期非阻塞、TASK02 TODO。
+
 ## 2026-10-08 — 07合法零步后query guard停止；08官方零步refresh候选未运行
 
 07 commit0fb2fc4/source8887ad…，START callbacks0/accepted0；pre/post27 native比较与不变geometry fingerprint保存，inputs/runtime/candidate YAML独立hash一致，51纯unit0.099s OK。原left link2 cooked质心查询无hit而立即拒绝；独立坐标核对未见明显变换错误，但不能唯一归因stale tree。没有collision verdict/READY；成功q/liveFK全表未存，只记录控制流通过，不反填。

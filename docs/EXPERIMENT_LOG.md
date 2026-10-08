@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — isaac_model_parity08 query proof STOP；09 IN DESIGN
+
+TASK01/[ENGINEERING]/visible Isaac4.5，commit3e2414b72d2d103b0012b1b8cb9dda06764bf17f/source29cfd626a4f1f78cc943baeee151807e6c3fd48252ed6dfaeae0ad9b2965699a；完整命令/inputs见 [08 metadata](../results/20261008_TASK01_isaac_model_parity08/metadata.json)。实际START accepted0/callbacks0，disabled-physics flush/on_update(time,0,false)已调用但left link2内部点query0hits，`ENGINEERING_STALE_OR_UNVERIFIED_NATIVE_QUERY_STOP`，不是collision/READY。56纯unit主代理0.100s OK。
+
+本轮raw/failure已保存actual14q/TCP/Cube与18FK，q error左9.706287595889762e-8/右1.7115877160023274e-8rad，TCP position3.976069182062307e-7/6.256020684309647e-7m，18FK max position5.988083249179899e-7m/rotation1.082772143160413e-6rad；pre/post27 native与geometry fingerprint保持。step/time=null，仅静态索引、非poststep科学测量。09逐态原native handle重建IN DESIGN/API review、未执行，原USD/hash/14q/model/ACM保持；03–08保留，不称parityPASS，BUG019未判决/BUG001非阻塞。
+
 ## 2026-10-08 — isaac_model_parity07 零步query proof STOP；08未运行
 
 TASK01/[ENGINEERING]/visible Isaac4.5，commit0fb2fc4/source8887ad1bd7d674ecae930b65a8c496d3c1776433b34eab826f2172dce72660cf，原输入/确定14q/config不变；命令和产物见 [07 metadata](../results/20261008_TASK01_isaac_model_parity07/metadata.json)。START accepted0、actual callbacks0/dt[]，pre27 native max差0m/6.165552397244359e-7rad，post27 max变化2.9802322387695312e-8m/4.2146848510894035e-8rad，geometry fingerprint前后相同。51纯tests主代理0.099s OK；inputs/candidate/runtime hashes独立一致。

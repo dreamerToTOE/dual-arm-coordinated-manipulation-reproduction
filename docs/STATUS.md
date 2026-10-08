@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-08 — 08非physics refresh后link2仍miss；09 native重建仅设计
+
+08（`3e2414b` /`29cfd626…`）START accepted0/callbacks0：官方flush/on_update(time,0,false)实际调用后，left link2 cooked内部点query仍无hit，工程guard停止，未得到碰撞判决/READY。56纯tests0.100s OK；本轮actual14q/TCP/Cube与18linkFK已存raw/failure（q reset max左9.70629e-8/右1.71159e-8rad），pre/post27 native与geometry fingerprint不变；静态index/time-null，不是post-step科研测量。
+
+09只在设计逐状态原native handle重建，API安全复核中、**未执行**；保留owned原USD模型/hashes与已捕获14q，不改几何/ACM/model/benchmark、不随机构型、不降低零步/query门禁。03–08各自负结果保留，无parityPASS；先parity再READY，BUG019未判决、BUG001延期非阻塞，TASK01 IN_PROGRESS/PARTIAL、TASK02 TODO。
+
 ## 2026-10-08 — 07零步成立，但link2 query未证实；08仅准备
 
 07（`0fb2fc4` /`8887ad1bd7d674ecae930b65a8c496d3c1776433b34eab826f2172dce72660cf`）START accepted0/callbacks0。pre/post各27 native比较已存，几何fingerprint/input/runtime/candidate YAML保持；51纯测试0.099s OK。mirror+paused后stale0，但原left link2 cooked质心10µm球query无hit，guard立即拒绝，**不是collision**，未到全链判定/READY。成功actual_q/liveFK全表未存，只能记录控制流已通过，不补写实测表。

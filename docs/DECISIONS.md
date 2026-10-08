@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D035 follow-up — 08 query缺口保留，逐态原handle重建先安全审核
+
+2026-10-08，[ENGINEERING]。08零步官方subsystem refresh未证实link2 query（accepted0），不能报parityPASS/collision判决；本轮actual14q/TCP/FK已存，仍只静态index，不叫poststep/force证据。09仅设计逐状态原native handle重建，安全API复核中未执行；保留owned原USD/hashes/已捕获14q与完整零步/query守卫，不改model/几何/ACM/benchmark、不随机IK。无P4/DEVIATION；先parity才READY，BUG001延期非阻塞、03–08原记录保持。
+
 ## D035 follow-up — 原SDK非physics更新只作刷新候选，不推定query freshness
 
 2026-10-08，[ENGINEERING]。07 callback0/q-native及镜像门禁通过后，left link2内部点query未命中即拒绝，不作collision判决。08仅准备原IPhysxSimulation.flush_changes和IPhysxStageUpdate.on_update(static_time,0,False)；文档只说明physics更新关闭、其他子系统更新，不保证query tree freshness，必须保留所有原positive/negative query、step0/q/native/geometry hardguards。

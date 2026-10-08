@@ -1,5 +1,7 @@
 # TASK01 — Full Single-Cube Geometry
 
+Latest Oct8 downstream08: original native/static q/FK gates and zero-step passed; moving query proof still failed at START. 09 original-handle rebuild prepared only; original discrete geometry evidence and thresholds unchanged, READY not run.
+
 2026-10-08 latest downstream gate: GUI07 actually achieved zero physics callbacks but could not prove the original link2 native query target at START, accepted0 before any overlap verdict. GUI08 subsystem refresh prepared/not run; this does not change the native discrete geometry PASS or authorize READY/FROZEN.
 
 Date: 2026-10-07. Scope: `single_cube_core_benchmark`.

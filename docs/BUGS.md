@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — 08零步subsystem refresh未解决link2 positive proof
+
+08 callback0/accepted0，flush/on_update(time,0,false)完成仍left link2 query miss，未得到collision verdict。actual14q/TCP/Cube/18FK与pre/post27 native本轮保存，geometry fingerprint不变；56unit0.100s OK非模型PASS。query工程缺口仍OPEN，不能把07缺失q数据反填成08数据。
+
+09原native handle逐态重建仅IN DESIGN/未执行，先审核安全API，保留原USD/hash/known14q与所有门禁、不改model/几何/ACM。03–08保留，READY NOT_RUN、BUG019未判决/BUG001延期非阻塞，不预标RESOLVED。
+
 ## 2026-10-08 — 07 actual callback0但原link2 query miss；08待验证
 
 07 START accepted0/callback0，pre/post27 native与不变geometry fingerprint已存；镜像后stale0仍不能证明query tree。left link2 cooked凸包内部质心query无hit，前link0/link1命中，立即 `ENGINEERING_STALE_OR_UNVERIFIED_NATIVE_QUERY_STOP`，不是碰撞。质心/坐标独立核对未见明显错误；stale解释尚不唯一。成功q/liveFK全表缺失限制保留，READY NOT_RUN。

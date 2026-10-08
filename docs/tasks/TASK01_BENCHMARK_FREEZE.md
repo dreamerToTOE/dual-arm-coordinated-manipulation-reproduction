@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current gate: FULL_GEOMETRY_PASS / QUERY_PROOF_STOP; 09 IN DESIGN (2026-10-08)
+
+08 (`3e2414b` /29cfd626…) START callbacks0/accepted0: official disabled-physics refresh completed but left link2 interior query still missed. Actual_q/TCP/Cube/18linkFK now saved, pre/post27 native and immutable geometry hash unchanged;56unitOK/.100s. No collision/parityPASS/READY; records are static-index, not poststep scientific data.
+
+09 per-state original native-handle reconstruction is IN DESIGN/API safety review, NOT EXECUTED. Preserve owned originalUSD/hashes/known14q, all guards and unchanged model/geometry/ACM/benchmark; retain03–08. D035 ENGINEERING/no P4/DEVIATION, parity before READY, BUG019 unadjudicated/BUG001 non-blocking, TASK02 TODO.
+
+#### Historical 07 checkpoint
+
 ### Current gate: FULL_GEOMETRY_PASS / NATIVE_QUERY_UNVERIFIED; 08 NOT_RUN (2026-10-08)
 
 07 (`0fb2fc4` /8887ad…) START callbacks0/accepted0:27 pre/post native comparisons and unchanged geometry fingerprint/inputs are saved;51 pure testsOK/.099s. Mirror+paused stale0, link0/link1 exact shape hits, but link2 cooked interior centroid query misses and guard stops—not an actual collision verdict. Successful actual_q/liveFK full values were not saved; do not backfill. READY NOT_RUN, BUG019 unadjudicated.

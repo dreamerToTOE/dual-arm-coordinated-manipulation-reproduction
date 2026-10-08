@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — 静态软件适配延续，不扩大物理或模型授权
+
+延续用户既定严格范围：08 query miss仍停，09仅安全审核/设计原native逐态重建，不需要新的科学基准决策、不代表授权修改模型/几何/ACM或启动物理控制。09未执行、READY未做，无parityPASS/force/P4/冻结；保留旧失败，BUG001留TASK10-IS非阻塞。
+
 ## 2026-10-08 — 严格范围继续：零步成功不代表模型query验收通过
 
 既定单Cube要求未改变：07 callback0但link2 query miss仍停，不能用51软件测试/native或USD到位称模型PASS。08仅准备原SDK非physics刷新、所有hardguards及原model/benchmark/ACM保持，不Play/stepping；GUI08未运行、READY NOT_RUN，无P4/force/冻结新授权，BUG001延期非阻塞。

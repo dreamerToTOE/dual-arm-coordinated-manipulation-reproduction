@@ -1,6 +1,6 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
-2026-10-08. Current status: ENGINEERING_UNVERIFIED_MOVING_NATIVE_QUERY_STOP (07); disabled-physics subsystem refresh prepared (08 not run), **not PASS**.
+2026-10-08. Current status: ENGINEERING_UNVERIFIED_MOVING_NATIVE_QUERY_STOP (08); original native handle rebuild prepared (09 not run), **not PASS**.
 
 Prerequisite full discrete geometry passed (A136/B157, exact PRE14q seam): [report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). The original PhysX convexHull model is not assumed equivalent to the MoveIt STL. Full-chain wall-risk state is TARGET/state292, left_link7↔deep_wall FCL clearance2.212219mm; intended Cube/tool minimum is state196/0.999669mm.
 
@@ -8,7 +8,13 @@ Independent visible GUI only: dual FR3/current L tools/one Cube/table/carriage. 
 
 Replay all states where possible, with early priority START→A minimum/PRE→TARGET (full-chain wall minimum)→state196 (full all-pair minimum). Required insertion samples and all-state replay remain to verify. First unexpected FCL-free/Isaac collision stops, records exact pair/state/actual FK/cooked shape evidence, no geometry repair.
 
-Latest artifact directory: `results/20261008_TASK01_isaac_model_parity07/`. READY/reset gate not reached or run.
+Latest artifact directory: `results/20261008_TASK01_isaac_model_parity08/`. READY/reset gate not reached or run.
+
+## 08 actual subsystem refresh ineffective / 09 original handle rebuild prepared
+
+08 (`3e2414b`, SHA `29cfd626a4f1f78cc943baeee151807e6c3fd48252ed6dfaeae0ad9b2965699a`) called official flush/on_update(time,0,false) with callbacks0, unchanged original immutable hash and native/output poses. The same START link2 interior-point native query still returned no exact target hit; accepted0 and no collision verdict. This run explicitly persists actual14q/TCP/Cube/18linkFK: q max left9.706287595889762e-8/right1.7115877160023274e-8rad, TCP translation left3.976069182062307e-7/right6.256020684309647e-7m, max18linkFK5.988083249179899e-7m/1.082772143160413e-6rad. Do not backfill these into07. [08 metadata](../results/20261008_TASK01_isaac_model_parity08/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity08/summary.json). 56 pure software tests0.100s, no scientific post-step measurement; GUI exited/reaped, wrapper0 not PASS.
+
+09 guarded static adapter uses existing verified body T/R only, invalidates old tensor view and calls original `release_physics_objects()`→`force_load_physics_from_usd()`→`start_simulation()` without PLAY/steps. It does not use `reset_simulation()` (USD rollback), introduce JointStateAPI/state attributes, or change original geometry, joints/drive parameters, materials, scene, model/ACM. On fresh views the exact stored14q/Cube/all native poses must match **before any DOF setter**; failure stops, not repaired. Original model fingerprint checked across release/reload, all actual moving-target positive/negative/native overlap/zero-step guards retained. No assumption that no-JointState parsing must recover candidateq. Only prepared, 09 not run.
 
 ## 07 actual zero-step query guard stop / 08 subsystem refresh prepared
 

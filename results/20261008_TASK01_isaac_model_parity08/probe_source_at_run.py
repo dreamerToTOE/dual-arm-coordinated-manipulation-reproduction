@@ -233,50 +233,6 @@ def static_subsystem_refresh(simulation_interface, stage_update_interface, timel
         raise RuntimeError("Disabled-physics subsystem refresh advanced physics/timeline")
 
 
-def rebuild_original_static_handles(physx, tensors, sim, settings, timeline, physics_steps,
-                                    original_digest, geometry_digest):
-    """Reparse unchanged original USD at the verified body-pose state, no step.
-
-    原查询树未随 tensor teleport 更新时，重新解析原场景，而不是改碰撞模型。
-    release 只释放原生对象；严禁 reset_simulation（会回滚 USD 初态）。
-    新 view 必须先读出原14q并与目标核验，不能用 setter 修补加载误差。
-    不增加 JointStateAPI、状态属性、shape、padding、过滤规则或 ACM。
-    """
-    clock = float(timeline.get_current_time())
-    def guard():
-        if (physics_steps or timeline.is_playing() or
-                not math.isfinite(float(timeline.get_current_time())) or
-                float(timeline.get_current_time()) != clock or
-                geometry_digest() != original_digest):
-            raise RuntimeError("Original static-handle rebuild changed model or advanced physics/time")
-    guard()
-    path = "/app/player/playSimulations"
-    original_dispatch = settings.get(path)
-    if not isinstance(original_dispatch, bool):
-        raise RuntimeError("Original dispatcher bool missing before static-handle rebuild")
-    settings.set_bool(path, False)
-    try:
-        sim.invalidate()
-        physx.release_physics_objects()
-        guard()
-        physx.force_load_physics_from_usd()
-        physx.start_simulation()
-        guard()
-        result = tensors.create_simulation_view("numpy")
-        result.set_subspace_roots("/")
-        arts = {side: result.create_articulation_view(f"/World/{side}_fr3") for side in ("left", "right")}
-        cube = result.create_rigid_body_view("/World/Task01/Cube")
-        for name, view in list(arts.items()) + [("Cube", cube)]:
-            if view.count != 1 or not view.check():
-                raise RuntimeError("Original reloaded handle unavailable: " + name)
-        if int(result.device_ordinal) != -1:
-            raise RuntimeError("Original static CPU backend changed during handle rebuild")
-        guard()
-        return result, arts, cube
-    finally:
-        settings.set_bool(path, original_dispatch)
-
-
 def original_geometry_fingerprint(stage, enabled, body_paths, UsdPhysics, UsdGeom, return_records=False):
     """Exclude body pose output fields; preserve scale, shapes and physical settings.
 
@@ -777,32 +733,6 @@ def main():
                     "flush_buffered_changes": True, "elapsed_sec": 0.0,
                     "enable_physics_update": False, "query_freshness_not_assumed": True}
                 sync["after_paused_notice_update_stale_shapes"] = stale_shape_paths()
-                # 只重建原物理对象，不对新 view 做任何 position setter。
-                # 若原14q不能从当前原 body poses恢复，立即停，不修补模型。
-                original_body_paths = list(live_by_path)
-                sim, arts, cube = rebuild_original_static_handles(
-                    physx, tensors, sim, settings, timeline, physics_steps, immutable_geometry_sha,
-                    lambda: original_geometry_fingerprint(stage, enabled, original_body_paths, UsdPhysics, UsdGeom))
-                reloaded_actual = {}
-                for side, art in arts.items():
-                    selected = [list(art.shared_metatype.dof_names).index(f"fr3_joint{i}") for i in range(1,8)]
-                    q_reloaded = np.array(art.get_dof_positions(), copy=True)[0,selected]
-                    reloaded_actual[side] = {"q_rad":q_reloaded.tolist(),
-                        "maximum_q_difference_from_candidate_rad":float(np.max(np.abs(q_reloaded-row[side+"_q_rad"]))) }
-                    if not np.all(np.isfinite(q_reloaded)) or reloaded_actual[side]["maximum_q_difference_from_candidate_rad"] > 1e-6:
-                        write_json(args.output_dir / "original_rebuild_rejection.json", {
-                            "state_index":index, "reloaded_actual_before_any_setter":reloaded_actual,
-                            "expected_q":{s:row[s+"_q_rad"] for s in ("left","right")},
-                            "kind":"ENGINEERING_ORIGINAL_RELOAD_STATE_STOP"})
-                        raise RuntimeError("Original model reload did not recover candidate 14q: " + side)
-                reloaded_cube = np.array(cube.get_transforms(), copy=True)[0]
-                if not np.all(np.isfinite(reloaded_cube)) or math.dist(reloaded_cube[:3],cube_actual[:3])>1e-6 or quat_angle(reloaded_cube[3:],cube_actual[3:])>1e-5:
-                    raise RuntimeError("Original reloaded Cube pose differs before any setter")
-                sync["original_handle_rebuild"] = {
-                    "reloaded_q_before_any_setter": reloaded_actual,
-                    "reloaded_cube_before_any_setter_xyzw":reloaded_cube.tolist(),
-                    "new_joint_state_schema_or_attribute":False,
-                    "query_freshness_not_assumed":True}
                 sync["after_adapter_body_output_ops"] = body_output_op_audit(stage, list(live_by_path), UsdGeom)
                 sync["immutable_geometry_sha256"] = original_geometry_fingerprint(
                     stage, enabled, list(live_by_path), UsdPhysics, UsdGeom)
