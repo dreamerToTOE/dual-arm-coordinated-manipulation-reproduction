@@ -1,3 +1,5 @@
+# BUGS
+
 ## 2026-10-08 — BUG019 disposition after D039 topology correction
 
 The measured TARGET collision remains real for the tested **superseded bilateral-side-grasp-to-TARGET topology**:
@@ -14,7 +16,7 @@ Classification:
 
 Do not reopen parity10 or “fix” the old collision with ACM/tool/wall changes.
 
-# BUGS
+
 
 ## 2026-10-08 — BUG019: concrete critical-state robot–wall failure [TASK-BLOCKING]
 
