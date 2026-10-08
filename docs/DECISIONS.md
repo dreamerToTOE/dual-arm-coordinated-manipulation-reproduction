@@ -1,3 +1,5 @@
+# DECISIONS
+
 ## D039 — Restore staged transport→release→rear-regrasp→single-arm insertion topology [ADAPTATION]
 
 2026-10-08, explicit user approval after reviewing the already completed `dreamerToTOE/dual-arm-embodied-palletizing@side-suction-palletizing` work.
@@ -32,7 +34,7 @@ Decisions:
 
 This is a benchmark topology correction while benchmark_v1 is still DRAFT, not an ACM relaxation or hidden geometry repair.
 
-# DECISIONS
+
 
 ## D038 — One launcher-only allowance; critical safety only, no READY/reset [ENGINEERING]
 
