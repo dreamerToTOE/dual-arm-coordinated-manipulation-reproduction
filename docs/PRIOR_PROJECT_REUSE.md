@@ -2,6 +2,8 @@
 
 Status: **ACTIVE ENGINEERING REFERENCE for TASK01 and later Isaac integration.**
 
+2026-10-08 pinned-source audit: [TASK01_PRIOR_PROJECT_REUSE_AUDIT](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md), [source/hash manifest](../reports/TASK01_REUSE_SOURCE_MANIFEST.json). Source ref is `631b1f65656d025c1bb2173e874192f3fe4d355a`. The audited raw right-pusher success includes **both rail bases X=.750, not rest X=.650**; B's INSERT_READY rail/base state needs explicit user review before integration. No new simulator run or READY capture has been performed by this audit.
+
 Source repository:
 - `dreamerToTOE/dual-arm-embodied-palletizing`
 - branch: `side-suction-palletizing`
@@ -101,8 +103,8 @@ scientific focus: closed-chain / object-level dual-arm coordination
 Fixed engineering handoff
 PRE_PUSH
 → release bilateral side suction
-→ right-arm -X rear regrasp
 → left helper park
+→ right-arm -X rear regrasp
 → INSERT_READY
 
 Benchmark B — CONSTRAINED_INSERTION

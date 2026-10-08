@@ -1,5 +1,15 @@
 # WORKLOG
 
+## 2026-10-08 — Read-only old-asset audit and minimum staged integration plan
+
+Safely fast-forwarded task branch to cloud `c525fc1`; re-read mandatory governance/status/D039/reuse/task/benchmark/paper files. Two parallel read-only audits checked shared hold and rear insertion against predecessor Git objects `631b1f…`; source worktree remains runtime-fixes/d4b290c, unmodified. Root independently checked original right-pusher/rail/seat log lines and hashes.
+
+Mapped 19 source/report assets into a hashed manifest. Preserved a byte-verifiable 11-line excerpt from `full_run_606_optimized.log` (original SHA2a286c…); raw run lacks build SHA and is historical only. Identified both .750 rail station, actual14q+base/attachment snapshot requirement, legacy center index4/neighbor dependencies, ignored OPEN return in normal release, old timestamp/friction differences. Audited existing live post-step sampler for thin reuse, not a new measurement framework.
+
+Wrote [audit/plan](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md), linked TASK01, corrected release→left park→right rear order in reuse map, updated six records. **No code/config/model/physics edits, no ROS/Isaac/IK/build/reset.** Existing +.100 rail handoff is a recommendation requiring user review, not an approved benchmark state. Integration attempt budget used0; no restart of exhausted parity. Final file/source/link/hash checks and publication are records-only.
+
+Validation actually completed: diff whitespace, manifest JSON, YAML DRAFT/one-Cube/staged order/pending state assertions, raw-excerpt cmp, unchanged config/sampler SHA and source tracked-worktree checks all exit0. These are definition/provenance checks, not physical acceptance.
+
 ## 2026-10-08 — D039 benchmark topology correction / predecessor reuse audit
 
 Reviewed `dual-arm-embodied-palletizing@side-suction-palletizing` Task24, Task26, Task27 and Task11–13 records plus Task26 source behavior. Confirmed prior physical workflow:

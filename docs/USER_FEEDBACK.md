@@ -1,5 +1,11 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Latest definitions first; audit and minimal integration before implementation
+
+User requests rereading latest AGENTS/STATUS/D039/PRIOR_PROJECT_REUSE/TASK01/benchmark_v1.yaml, auditing old assets and drafting minimal integration before proceeding under START→PRE_PUSH→INSERT_READY→TARGET. Explicitly do not reinvent Surface Gripper, rear regrasp or insertion.
+
+Response: source/hash audit and plan only, no Isaac/ROS/IK/build/reset. Existing Task24/26 mechanisms and historical right log located; five-Cube wrappers not imported wholesale. **No user approval is inferred for B rail X=.750** from the old success: it is a recommended existing station pending confirmation. Current config remains pending/DRAFT; TASK01 PARTIAL; integration budget0used. [Report](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md).
+
 ## 2026-10-08 — Reuse prior completed side-suction results
 
 User explicitly pointed out that the predecessor project had already completed the Cube transport and push-in workflow and approved updating this repository to **combine and reuse those validated results**.

@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-08",
+  "scope": "read_only_prior_asset_audit_no_runtime_or_integration",
+  "active_reproduction": {
+    "repository": "dreamerToTOE/dual-arm-coordinated-manipulation-reproduction",
+    "branch": "task01-benchmark-draft",
+    "input_commit": "c525fc15bc65633db2154135960706a1ec8f4ff8",
+    "files": [
+      {
+        "path": "configs/benchmark/benchmark_v1.yaml",
+        "sha256": "da1b1de421111a52a874cd776a7fdc34cc86654bfddb144399f05ef480f10634"
+      },
+      {
+        "path": "platforms/isaac_ros2/fixture_geometry_stream.py",
+        "sha256": "c06e8bcb18e3ea7ef703dfa8377fe8fcbf9a7ab5487c813ab332ead2903588ab"
+      },
+      {
+        "path": "platforms/isaac_ros2/physics_object_sampler.py",
+        "sha256": "79e152f172dfbffca5f0c10fa4e70ae541c8bcd37cf36a698f695950bc9f64c1"
+      }
+    ]
+  },
+  "source": {
+    "repository": "dreamerToTOE/dual-arm-embodied-palletizing",
+    "branch": "side-suction-palletizing",
+    "commit": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+    "read_method": "git show pinned Git objects; legacy worktree not switched or edited",
+    "assets": [
+      {
+        "role": "shared_hold_bridge",
+        "path": "isaac/scripts/task24_side_suction_tight_bridge.py",
+        "git_blob_sha1": "4694b0669d380c6b1abed1d24603f01d705c7276",
+        "sha256": "1995d3c397748500130f7f58009b7e989123b52b574b20a39bfbb18f8a690542"
+      },
+      {
+        "role": "shared_hold_scene_reference",
+        "path": "isaac/scripts/task24_side_suction_tight_scene.py",
+        "git_blob_sha1": "18f84afd9ea3e4fe9c7c42abe7e752040f428f7c",
+        "sha256": "f7b36d44120d2bb810492414d569750a39e0d0fc44518eca8779fdffe4f94a90"
+      },
+      {
+        "role": "shared_hold_controller",
+        "path": "ros_ws/src/fr3_dual_palletize/src/task24_side_suction_tight.cpp",
+        "git_blob_sha1": "1bc1ce203a3e3e2ef39d12765e9a077f43974222",
+        "sha256": "7fedae345d86884e2f9fbf56b256ceb3d7c30ba1581dffa6dd6337f030bbfde2"
+      },
+      {
+        "role": "l_tool_description",
+        "path": "ros_ws/src/fr3_dual_side_suction_description/urdf/dual_side_suction.xacro",
+        "git_blob_sha1": "035a05f1a5b9d63cb22bc260c8fde3256e188605",
+        "sha256": "a0630156df03502e6624f593041db3e5f281f52958512672049b60b31ed49f1d"
+      },
+      {
+        "role": "rear_push_controller",
+        "path": "ros_ws/src/fr3_dual_palletize/src/task26_truck_box_push_in.cpp",
+        "git_blob_sha1": "dc436a52cb31c34c4dc656e200923ea81ec0e3dd",
+        "sha256": "a844529af73a77b8e52aa7be8eb879a4a86d317148a3ded49ea76e714a72e840"
+      },
+      {
+        "role": "five_cube_controller_wrapper",
+        "path": "ros_ws/src/fr3_dual_palletize/src/task27_five_cube_center_insert.cpp",
+        "git_blob_sha1": "33db720e768f515ea14a9479bb0a29e7622a54d0",
+        "sha256": "b5d976a30bf8ac99e0f5da41a76eca297bc7d398e7cde71fbfb36d13356a82af"
+      },
+      {
+        "role": "rear_push_bridge",
+        "path": "isaac/scripts/task26_truck_box_bridge.py",
+        "git_blob_sha1": "48df73a246bbcd4a98f60bc4e5c9a1fc224aeb76",
+        "sha256": "13b5f88d1e7563a37ecafbf571d8ef93015b57059b8912ba9f3399e21e339644"
+      },
+      {
+        "role": "five_cube_bridge_wrapper",
+        "path": "isaac/scripts/task27_five_cube_center_insert_bridge.py",
+        "git_blob_sha1": "926a76991a2f1d4faee9514a1c03a2312c030bf8",
+        "sha256": "b45b54088e6600036818168f9b98002ee2dc2a07bf52cbd06f844fed6022ef10"
+      },
+      {
+        "role": "rear_push_scene_reference",
+        "path": "isaac/scripts/task26_truck_box_scene.py",
+        "git_blob_sha1": "4d52cc68692d25c1b56dcae1e0e07e6ad1365408",
+        "sha256": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7"
+      },
+      {
+        "role": "five_cube_scene_wrapper",
+        "path": "isaac/scripts/task27_five_cube_center_insert_scene.py",
+        "git_blob_sha1": "d5a1335581f8e9826fc789fadf54a4537c72ba58",
+        "sha256": "74eb11999b799681ec93b124d58b854c32018f1e23219a5ff07f7918fd201801"
+      },
+      {
+        "role": "legacy_push_parameters_reference_only",
+        "path": "ros_ws/src/fr3_dual_palletize/config/task26_push_control.yaml",
+        "git_blob_sha1": "7855de0cecbdae9ad1d58348baa8d433cd17dde4",
+        "sha256": "7e02ddab2ec5e64d3e939d0c233b6b317a426e84ae2a6013a915dd0765487405"
+      },
+      {
+        "role": "legacy_top_hold_bridge_evidence_only",
+        "path": "isaac/scripts/task11_shared_box_bridge.py",
+        "git_blob_sha1": "67a9264995edb08d2e5f7af1982120044fcdc067",
+        "sha256": "51eefb4db7a9eeaae0b8503c14010d31f8ef76df4a6354b460f81b2380fc9312"
+      },
+      {
+        "role": "legacy_top_hold_controller_evidence_only",
+        "path": "ros_ws/src/fr3_dual_palletize/src/task11_shared_box_grasp.cpp",
+        "git_blob_sha1": "18e26e96265e26594a6d6abf1e05179fd469430a",
+        "sha256": "a24b42430df05bbd6cd1e3bbb01d482fbf75735ccf62c2e74002e50aa438b160"
+      },
+      {
+        "role": "historical_shared_hold_report",
+        "path": "docs/tasks/TASK11_SHARED_OBJECT_BASELINE.md",
+        "git_blob_sha1": "c46bd8a492ad0a271da3361d4225cf4fb695bfae",
+        "sha256": "10dead3c63a5c7d20d018acda89c5ea5aa1f034368c3882aee3f2cafb906578b"
+      },
+      {
+        "role": "historical_shared_lift_transport_report",
+        "path": "docs/tasks/TASK12_SHARED_BOX_LIFT.md",
+        "git_blob_sha1": "a5742e90237f9251de4f560cfaa563c8d04df2f0",
+        "sha256": "a79f4c2125c8a5c4363c2e25d2a787a003f6c5c588cf560109c44ac7d9cbbc1d"
+      },
+      {
+        "role": "historical_shared_place_report",
+        "path": "docs/tasks/TASK13_SHARED_BOX_PLACE.md",
+        "git_blob_sha1": "785ac3b581af628ac04bebac63289923359cc8e6",
+        "sha256": "285ec62f8394632975ad766b2709c64e936dbdd360e8b4e78f1c613807ea1ce1"
+      },
+      {
+        "role": "historical_side_hold_report",
+        "path": "docs/tasks/TASK24_SIDE_SUCTION_TIGHT_OFFLINE.md",
+        "git_blob_sha1": "8cac9213b951fdf640f106d9c13ce63997b85ed8",
+        "sha256": "ae818a2552a2b41506dcfd597665e422e05853ec0d5dcb682e2b1a0d0d9df95b"
+      },
+      {
+        "role": "historical_rear_push_report",
+        "path": "docs/tasks/TASK26_TRUCK_BOX_PUSH_IN.md",
+        "git_blob_sha1": "8c488ba82204403d25913d12dd109cb2ac4462c2",
+        "sha256": "16af05c42a51ac834fdcfa7623968b70086b1d8215b808a772fe93f005e7da4b"
+      },
+      {
+        "role": "historical_five_cube_report",
+        "path": "docs/tasks/TASK27_FIVE_CUBE_CENTER_INSERT.md",
+        "git_blob_sha1": "9cdfe3738af91b285cde7ad8d5362c4fab766970",
+        "sha256": "1f568a41691e9b96f26ded41e7848b8ec7d94faa49049e668542c1351d8f7ec5"
+      }
+    ]
+  },
+  "historical_raw_evidence": [
+    {
+      "path": "artifacts/task27_repeat_20260926/full_run_606_optimized.log",
+      "source_local_repository": "/home/ubuntu2004/lmy/dual-arm-embodied-palletizing",
+      "tracked_at_source_commit": false,
+      "sha256": "2a286c3ad2a339f2525025ef13ed28ef752cf1ba515da9a41912fa5a2e593bec",
+      "lines": {
+        "both_rails_0p650_to_0p750": 2985,
+        "right_pusher_full_preflight": 3094,
+        "push_complete": 3146,
+        "deep_wall_gap_0p426_mm": 3147,
+        "settled_gap_0p480_mm_cell_error_0p509_mm": 3149,
+        "batch_complete": 3164
+      },
+      "build_source_commit_in_log": "NOT_RECORDED",
+      "use": "historical engineering feasibility only, not current benchmark acceptance",
+      "published_excerpt": {
+        "path": "reports/evidence/TASK01_PRIOR_RIGHT_PUSH_EXCERPT.log",
+        "source_line_selection": "2982-2985,3094,3145-3149,3164",
+        "line_count": 11,
+        "verbatim": true,
+        "complete_run_log": false
+      }
+    }
+  ],
+  "no_new_experiment": true,
+  "insert_ready": "PENDING_CAPTURE_AND_RAIL_STATE_USER_REVIEW"
+}

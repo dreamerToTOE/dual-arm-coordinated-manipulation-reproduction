@@ -1,5 +1,13 @@
 # STATUS
 
+## 2026-10-08 — D039 pinned-source reuse audit complete; integration awaits INSERT_READY station
+
+**TASK01 = PARTIAL / DRAFT. Audit complete; simulator/IK/build/integration/reset NOT_RUN this turn.** Latest task-branch input `c525fc1` and required governance/benchmark/reuse files re-read. Source assets pinned to predecessor `side-suction-palletizing@631b1f…`, not its local runtime-fixes worktree.
+
+Reuse is concrete: Task24 official Surface Gripper/link8 lifecycle and same-stamp dual command; Task26 rear `preplanPush` → segmented +X → exit. Task27 is a thin wrapper, not a separate algorithm. Historical raw **right** push achieved deep-wall gap .480 mm after exit, but included **both bases X=.650→.750 on existing rails**. Current YAML has rest .650 and rail limits, not a confirmed B station. Recommend this existing +.100 m rail handoff as a candidate; **STOP FOR USER on nominal INSERT_READY rail/base state before implementation**, no silent config change.
+
+Existing A136/START/PRE14q retained; rear B/held READY/INSERT_READY remain unvalidated. Old bilateral TARGET failure remains history, not current B's repair target. Source manifest plus verbatim 11-line historical excerpt published with [audit/minimal integration plan](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md). No new attachment/regrasp/push framework, parity10, force work, geometry/ACM/physics change or five-Cube application. New integration attempts=0; exhausted prior budgets stay exhausted. Lower entries are historical checkpoints.
+
 ## 2026-10-08 — D039 topology correction: reuse validated predecessor workflow
 
 User approved correcting TASK01 to match the previously validated `side-suction-palletizing` workflow instead of inventing a continuous bilateral-side-grasp insertion.

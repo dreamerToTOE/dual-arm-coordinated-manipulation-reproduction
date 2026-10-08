@@ -1,5 +1,13 @@
 # BUGS
 
+## 2026-10-08 — D039 reuse integration gaps; no new runtime bug claim
+
+Readonly audit found existing hold/rear mechanisms; this is not a new SG research problem. **TASK-BLOCKING BEFORE INTEGRATION:** nominal B INSERT_READY base/rail state is undefined. Historical right PASS uses both rails X=.750, whereas YAML specifies rest X=.650 and available rails only. Existing +.100 station is proposed, not approved; config/geometry unchanged. Actual14q alone is insufficient—capture base/world_shift, Cube/TCP, attachment identity/status and post-step stamp.
+
+Thin interface items: old normal release ignores `openBothAndConfirm` bool; adapter must stop if OPEN confirmation fails. Legacy center index4 / neighbor reads cannot be carried into a one-Cube driver. Old USD/ROS-clock pose streams are not same-post-step scientific records; reuse current live sampler. These are source-audit findings, **not reproduced failures this turn**.
+
+New rear B safety/held READY/reset remain TASK-BLOCKING acceptance gaps. Historical right run lacks build SHA (KNOWN LIMITATION); full FCL/PhysX equivalence remains KNOWN LIMITATION, not a new probe requirement. BUG001/force is DEFERRED TASK10-IS; five-Cube flow LEGACY. [Audit](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md). No parity10/new IK/model/ACM/physics repair or automatic retry.
+
 ## 2026-10-08 — BUG019 disposition after D039 topology correction
 
 The measured TARGET collision remains real for the tested **superseded bilateral-side-grasp-to-TARGET topology**:

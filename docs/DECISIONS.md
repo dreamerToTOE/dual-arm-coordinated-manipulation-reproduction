@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D039 audit follow-up — Pinned primitives and explicit rail-state review [ENGINEERING]
+
+2026-10-08, user requested rereading latest governance and asset audit before integration. Fixed predecessor source631b1f, current definitions c525fc1. Reuse Task24 SG lifecycle / atomic command and Task26 local rear full-chain precheck / segmented position push / exit, not whole five-Cube Task27 wrapper. New START remains D034 scientific(.55,0,.38), not legacy feed. Correct reuse-map sequence to release→left park→right rear, matching D039/YAML.
+
+Raw historical right-pusher evidence includes **both bases .650→.750**, model world_shift .100. YAML's .650 is rest station, not a frozen B prohibition/selection. Recommend existing rail handoff as a nominal candidate; **user confirmation pending** before adding it to INSERT_READY or implementing. No decision to change base rest, tool, carriage, TARGET, ACM, friction/drive or frequency has been made. Do not call old .750 PASS a current fixed-.650 result.
+
+Future deterministic INSERT_READY needs actual14q plus actual bases/rails/frame shift, Cube/TCP/SG/attachment and post-step time. Old raw7q candidate output is insufficient. Existing live sampler can supply pose/time bindings; no new SG/regrasp/push or logging framework. No experiment/integration this turn; new budget0used, old budgets exhausted. [Audited source/provenance and minimal plan](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md).
+
 ## D039 — Restore staged transport→release→rear-regrasp→single-arm insertion topology [ADAPTATION]
 
 2026-10-08, explicit user approval after reviewing the already completed `dreamerToTOE/dual-arm-embodied-palletizing@side-suction-palletizing` work.

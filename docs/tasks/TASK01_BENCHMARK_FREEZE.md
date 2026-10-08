@@ -2,6 +2,8 @@
 
 Status: **IN_PROGRESS / PARTIAL — topology corrected by D039 (2026-10-08)**
 
+2026-10-08 update: [pinned-source reuse audit and minimal integration plan](../../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md) completed without simulator/IK/build. Existing Task24 hold and Task26 rear primitives are present. The raw historical right-pusher PASS uses both base rails X=.750; current YAML only declares rest X=.650 plus rail limits. Confirm the nominal INSERT_READY base/rail state before integration; actual14q/holding/reset remain pending. Current benchmark YAML and all geometry/physics are unchanged.
+
 ## Scientific objective
 Freeze the minimum reproducible single-Cube benchmark that matches the actual research workflow already demonstrated in the predecessor project:
 

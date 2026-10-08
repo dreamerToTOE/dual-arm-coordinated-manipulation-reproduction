@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — TASK01 reuse audit: NO NEW EXPERIMENT
+
+- Scope: predecessor Git/source/log reads only; current input c525fc1, old source pin631b1f. No simulator, ROS, IK, build, controller, suction, reset or physical steps initiated. No new experiment/acceptance result.
+- Historical raw evidence: old `artifacts/task27_repeat_20260926/full_run_606_optimized.log`, SHA2562a286c3ad2a339f2525025ef13ed28ef752cf1ba515da9a41912fa5a2e593bec. L2985 BOTH rail .650→.750; L3094 right pusher; L3147 deep-wall .426 mm; L3149 after-exit .480 mm / cell error .509 mm. [Verbatim excerpt](../reports/evidence/TASK01_PRIOR_RIGHT_PUSH_EXCERPT.log); **not a new run and no verifiable historical build SHA**.
+- Task24 .184/.115 mm single-Cube results remain documentation-level historical evidence; Task11–13 top-grasp results do not validate current side-tool geometry. Do not label five-Cube success or fixed-.650 current B PASS.
+- Current YAML SHAda1b1de4… unchanged; A136 existing evidence retained, old bilateral B157 superseded. INSERT_READY/held reset/new rear B NOT_RUN. New integration attempts0; old budgets not reopened. [Audit/plan](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md).
+
 ## 2026-10-08 — TASK01 command-only additional attempt1/1: safety FAIL
 
 - Run: `results/20261008_TASK01_critical_safety_command_rerun/`; checkpointa10db77, unchanged source47d22ce/SHAab174884…; exact command in metadata/report. VisibleGUI, four recorded14q/Cube states, original1/60step each; no IK/code/geometry/physics/ACM change or controller/suction command.
