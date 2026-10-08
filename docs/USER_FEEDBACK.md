@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Explicit .750 fixed handoff approval
+
+User approves reusing old both-rail +.100m: bilateralOPENconfirmed→old safehelper/pusher→.650→.750both→fresh planningworld+.100→rightrearSG→INSERT_READY. .750 is fixed B engineering setup, not P3 variable; A base_at_rest remains .650. Capture full14q+measuredrails/bases/worldshift/Cube/TCP/SG/attachment/helper/carriage/poststepclock. One bounded integration, stop immediately on substantial collision/regrasp/world mismatch, no secondstationsearch; B geometry/minimal safety only after READY success. No old friction/speed/drive/80Nm/3mmgate, no fiveCube, noFROZEN. [Bounded preparation](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## 2026-10-08 — Latest definitions first; audit and minimal integration before implementation
 
 User requests rereading latest AGENTS/STATUS/D039/PRIOR_PROJECT_REUSE/TASK01/benchmark_v1.yaml, auditing old assets and drafting minimal integration before proceeding under START→PRE_PUSH→INSERT_READY→TARGET. Explicitly do not reinvent Surface Gripper, rear regrasp or insertion.

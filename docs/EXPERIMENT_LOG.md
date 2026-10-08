@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — D039 fixed handoff software preflight (not physical evidence)
+
+CMake Release build+pure `task01_rear_handoff --self-test` PASS (before rclcpp init:5objects/.100projection/rear/interpolation). Eight `test_reused_bridge.py` mock tests PASS (0.020s), including originalrail math/arrival, same-stamp atomic commands and fail-closed setter. Python compilation/launch construction/diff check PASS. No ROS/IK/Isaac/control command ran. Physical integration allowance remains0/1. [Bounded run plan](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## 2026-10-08 — TASK01 reuse audit: NO NEW EXPERIMENT
 
 - Scope: predecessor Git/source/log reads only; current input c525fc1, old source pin631b1f. No simulator, ROS, IK, build, controller, suction, reset or physical steps initiated. No new experiment/acceptance result.

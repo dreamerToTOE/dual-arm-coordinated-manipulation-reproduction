@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-08 — D039 .750 fixed handoff approved; one bounded integration prepared
+
+**TASK01 PARTIAL / DRAFT. Physical integration NOT_RUN (budget0/1).** User explicitly approves both rails .650→.750 as common handoff, preserving A/rest .650. Candidate recorded in benchmark_v1; no new station search or controller optimization. Thin single-Cube adapters reuse pinned Task26 SG/rail/rear/FCL primitives, with complete post-step state capture and fresh shifted planning world. C++ build, pure self-test and8 mock tests PASS, not simulator acceptance. One ≤180s visible launch only, ending INSERT_READY plus at most2 same-state restores; first collision/regrasp/world mismatch STOP, no automatic retry/TARGET. [Plan and commands](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md). Historical entries below retain their original context.
+
 ## 2026-10-08 — D039 pinned-source reuse audit complete; integration awaits INSERT_READY station
 
 **TASK01 = PARTIAL / DRAFT. Audit complete; simulator/IK/build/integration/reset NOT_RUN this turn.** Latest task-branch input `c525fc1` and required governance/benchmark/reuse files re-read. Source assets pinned to predecessor `side-suction-palletizing@631b1f…`, not its local runtime-fixes worktree.

@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D039 fixed-rail follow-up — user-approved .750 B candidate [ADAPTATION]
+
+2026-10-08. Both A/PRE rails/rest remain .650m; INSERT_READY candidate .750/.750m and world_shift_x=+.100m are fixed common engineering handoff, not P3 tuning variables. Require bilateral OPEN confirmation, old safe helper/pusher state, measured rail/base consistency and complete world rebuild/ACK after move. Capture fullpoststep14q/base/rail/Cube/TCP/leftOPEN/rightrearCLOSED/relativeattachment/helperpark/carriage/time/step, not14q alone. Do not bring old friction, robot speed, drives,80Nm guard or3mmwallgate into benchmark.
+
+One visible bounded integration≤180s to INSERT_READY, two capped captured-state restores within same launch; no TARGET execution. First substantive collision/regrasp/world mismatch stops, no alternative .700/.800 station or automatic second attempt. Software-only finite source reuse adapters do not reopen exhausted parity/static budgets. Relative Cube→TCP pose is not the native D6 anchor. Formal freeze thresholds and Benchmark-B geometry/runtime remain pending; TASK01 PARTIAL/notFROZEN. [Protocol](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
+
 ## D039 audit follow-up — Pinned primitives and explicit rail-state review [ENGINEERING]
 
 2026-10-08, user requested rereading latest governance and asset audit before integration. Fixed predecessor source631b1f, current definitions c525fc1. Reuse Task24 SG lifecycle / atomic command and Task26 local rear full-chain precheck / segmented position push / exit, not whole five-Cube Task27 wrapper. New START remains D034 scientific(.55,0,.38), not legacy feed. Correct reuse-map sequence to release→left park→right rear, matching D039/YAML.

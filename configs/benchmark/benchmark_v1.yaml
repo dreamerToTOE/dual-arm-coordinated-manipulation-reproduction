@@ -43,6 +43,21 @@ robots:
     rail_x_limits_world_m: [0.450, 1.050]
     tcp_link: right_fr3_side_suction_tcp
 
+  # [ADAPTATION] D039 用户批准的 fixed handoff；不是算法优化变量。
+  # base_at_rest 保持 .650；INSERT_READY .750 仍需实测捕获/验收，不自行 FROZEN。
+  rail_state_candidates:
+    A_and_pre_push_shared: &a_rail_state
+      left_x_world_m: 0.650
+      right_x_world_m: 0.650
+      world_shift_x_m: 0.000
+    INSERT_READY: &insert_ready_rail_state
+      left_x_world_m: 0.750
+      right_x_world_m: 0.750
+      world_shift_x_m: 0.100
+      role: fixed_common_engineering_handoff_not_p3_parameter
+      optimization_allowed: false
+      status: USER_APPROVED_CANDIDATE_PENDING_MEASURED_CAPTURE
+
   # [EXPERIMENTAL] actual candidate from the completed START→PRE_PUSH geometry chain.
   benchmark_a_start_joint_state_rad: &benchmark_a_start_q
     left: [0.6556998327304024, -0.9158460955296517, 0.9361619490344238, -2.43079576661854, 0.7029262366728565, 1.726259984792982, 1.2164416425071283]
@@ -124,6 +139,7 @@ carriage:
 
 benchmarks:
   A_tight_transport:
+    rail_state: *a_rail_state
     start_mode: both_side_suctions_closed_and_cube_stably_shared
     initial_cube_center_world_m: [0.550, 0.000, 0.380]
     initial_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
@@ -140,9 +156,21 @@ benchmarks:
     scored_as_p3_algorithm: false
     start_name: PRE_PUSH_SHARED
     start_cube_center_world_m: [0.790, 0.000, 0.260]
+    start_rail_state: *a_rail_state
+    output_rail_state: *insert_ready_rail_state
+    fixed_rail_translation_world_m: 0.100
+    require_bilateral_open_confirmed_before_rail_move: true
+    require_safe_helper_and_pusher_before_rail_move: true
+    require_measured_rails_and_bases: true
+    require_planning_world_rebuild_after_rail_move: true
+    forbid_pre_move_FCL_world_cache_after_move: true
     sequence:
       - release_both_side_suctions
-      - move_left_helper_to_safe_park
+      - confirm_bilateral_suction_open
+      - move_helper_and_pusher_to_predecessor_safe_states
+      - move_both_rails_to_fixed_0p750_station
+      - verify_both_measured_rails_and_base_world_poses
+      - rebuild_planning_world_with_world_shift_x_0p100
       - move_right_pusher_to_cube_minus_x_face
       - close_right_rear_surface_gripper
       - verify_attachment_and_common_collision_gates
@@ -152,6 +180,8 @@ benchmarks:
 
   B_constrained_insertion:
     start_name: INSERT_READY
+    rail_state: *insert_ready_rail_state
+    rail_station_is_controller_parameter: false
     start_cube_center_world_m: [0.790, 0.000, 0.260]
     start_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
     target_cube_center_world_m: [1.100, 0.000, 0.260]
@@ -196,6 +226,21 @@ measurement_contract:
     - frame_id
     - application_point_for_wrench_when_available
 
+  insert_ready_required_fields:
+    - left_right_rail_measured_x_m
+    - left_right_base_world_pose
+    - world_shift_x_m
+    - planning_world_refresh_generation_and_ack
+    - left_right_joint_state_rad
+    - cube_world_pose
+    - left_right_tcp_world_pose
+    - left_suction_open_confirmed
+    - right_rear_surface_gripper_closed_confirmed
+    - right_attachment_relative_transform_and_source
+    - helper_park_state
+    - carriage_frame_world_pose
+    - post_physics_simulation_timestamp_and_step
+
 task01_validation:
   A_dense_geometry_already_passed: true
   require_A_surface_gripper_hold_sanity: true
@@ -215,5 +260,6 @@ approval:
   one_cube_core_benchmark_rescope: CONFIRMED_2026-10-06
   benchmark_a_start_pose_candidate: CONFIRMED_2026-10-07_NEW_RESEARCH_DESIGN_NOT_TASK27_FEED
   staged_B_topology_reuse_prior_work: CONFIRMED_2026-10-08
+  fixed_handoff_both_rails_0p750_candidate: CONFIRMED_2026-10-08_NOT_AN_OPTIMIZATION_VARIABLE
   nominal_effective_friction_0p5_0p5: CANDIDATE_REQUIRES_FINAL_FREEZE_REVIEW
   benchmark_freeze: PENDING

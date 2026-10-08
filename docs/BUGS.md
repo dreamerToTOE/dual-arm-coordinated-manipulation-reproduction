@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-08 — D039 rail definition resolved, integration evidence pending
+
+User approval resolves undefined B rail candidate:both .750, shift+.100, A/rest .650 unchanged. Physical capture/repeatability and fresh rail/world consistency remain acceptance gaps, not proven software bugs. Pre-run review corrected ROS extension ordering, 4.5 normal SDK initialization and launch completion wiring; narrowed expected Cube contact to cup surfaces/table (rod/manifold penetration STOP). No simulator attempt yet. Native D6 anchor readback remains unavailable; measured same-frame Cube→rightTCP relative transform is labelled accordingly. Rear B geometry/safety, held START reset remain TASK-BLOCKING; BUG001 DEFERRED TASK10-IS, parity equivalence KNOWN LIMITATION, five-Cube LEGACY.
+
 ## 2026-10-08 — D039 reuse integration gaps; no new runtime bug claim
 
 Readonly audit found existing hold/rear mechanisms; this is not a new SG research problem. **TASK-BLOCKING BEFORE INTEGRATION:** nominal B INSERT_READY base/rail state is undefined. Historical right PASS uses both rails X=.750, whereas YAML specifies rest X=.650 and available rails only. Existing +.100 station is proposed, not approved; config/geometry unchanged. Actual14q alone is insufficient—capture base/world_shift, Cube/TCP, attachment identity/status and post-step stamp.
