@@ -1,3 +1,22 @@
+## 2026-10-08 — D039 topology correction: reuse validated predecessor workflow
+
+User approved correcting TASK01 to match the previously validated `side-suction-palletizing` workflow instead of inventing a continuous bilateral-side-grasp insertion.
+
+**Active benchmark topology:**
+```text
+A: START → bilateral side-suction tight transport → PRE_PUSH_SHARED
+HANDOFF: release both → left helper park → right rear(-X) regrasp → INSERT_READY
+B: INSERT_READY → single right-arm +X constrained insertion → TARGET x=1.100
+```
+
+Existing evidence is now separated correctly:
+- dense START→PRE_PUSH geometry remains valid and is retained;
+- prior Task24/Task11–13 physical bilateral Surface Gripper evidence is an approved engineering reuse source for shared-held READY;
+- prior Task26/27 release/rear-regrasp/segmented-push/exit is an approved engineering reuse source for the fixed handoff and Benchmark B;
+- the recent `left/right link7 ↔ WallDeep ≈ -3.016 mm` result remains valid **negative evidence for the superseded bilateral-to-TARGET topology**, but is no longer the geometry to repair for current B.
+
+Current TASK01 is still PARTIAL, not PASS/FROZEN. Next work must reuse predecessor assets first, capture deterministic INSERT_READY, validate the corrected rear-push B path, and then complete held READY/reset evidence. No parity10, no ACM/tool/wall repair, no force-control calibration. See `docs/PRIOR_PROJECT_REUSE.md` and D039.
+
 # STATUS
 
 ## 2026-10-08 — Command-only allowance consumed: TARGET collision; STOP FOR USER
