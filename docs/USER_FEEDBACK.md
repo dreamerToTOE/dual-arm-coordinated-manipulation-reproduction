@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Additional allowance1/1, validator-only
+
+User approves exactlyone boundedretry after fixing only CollisionObjectrepresentation normalization. Require composedworldpose comparison, fixednumerical epsilons1e-8m/rad/1e-12dimensions andcomplete rawexpected/readback+nativepoststep evidence for everyrefresh. Nobenchmarkgeometry/tool/carriage/ACM/physics/rail/IK/FCL/handoffchange. Stopatanylistedfailure; readbacksame-root recurrence→ENGINEERING ESCALATION/no thirdvalidator. Successonlyactual INSERT_READY established, thenstopTASK01PARTIAL/notFROZEN, noTARGET. Originalf73490d prefixfailure wasnot handoffgeometryfailure. [Plan](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## 2026-10-08 — Applying user's one-attempt stop rule
 
 Theapprovedfixedstationintegration reachedinitialplanning-worldreadbackerror before railadvance. User's instruction tostop onworldinconsistency/newintegrationfailure wasrespected: nosecondlaunch,noalternativeposition,noregrasp/newprobe/forcework. Fullnegativeevidence andincompleteREADYstatus recorded. Read-onlymessage-normalizationdiagnosis isnot approvalforfurthercode/runtimechanges; freshboundedauthorization isrequired. TASK01PARTIAL/notFROZEN. [Result](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).

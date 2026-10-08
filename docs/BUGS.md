@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-08 — World readback blocker: one normalization repair approved
+
+Initialshift0 readbackguard failure remains anengineeringissue, not handoffgeometryfailure. User authorizes composedworldshape validation andlosslessrawobjects atfixed numericalepsilon; no benchmark/safetyconditionchange. TASK-BLOCKING until tested. Prior1/1 preserved; additionalruntime0/1 atpreparation. Recurrence ofrepresentation/readback root muststop ENGINEERING ESCALATION; no furtherautomaticvalidatorvariant. Rear/rail/READY evidence stillpending. [Scope](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## 2026-10-08 — D039 initial planning-world readback guard [TASK-BLOCKING]
 
 Oneauthorizedintegration atinitialshift0 fails `Planning object differs after shift: task01_table`, before any safeplan/railmove/rear. This is anobservedengineeringgatefailure, **not confirmed physical world misalignment or collision**. Driver's combinedOR compares primitive counts/dimensions/exactshapePose, ignoringCollisionObject.pose. InstalledMoveItplanning_scene.h:704–711 explicitlypromotes shapepose intoobjectpose; equalworldgeometry canhave differentprimitiveposes. Exactsent/readbackobjects missing, so triggerfield/numericaldifferenceunconfirmed. Recommend representation-aware composed-world validation plusfullrawobjects onlywithfreshapproval; no post-run codeedit/retry. Budget1/1used. Bothrails.65, READYnotestablished, rearBpending.

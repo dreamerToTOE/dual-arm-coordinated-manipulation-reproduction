@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 readback retry authorization — equivalence, not spatial relaxation [ENGINEERING]
+
+2026-10-08. User grants one additional1/1 only for CollisionObject readback normalization: validate id/worldframe/count/type/dimensions and T_world_object×T_object_shape. Fixedtranslation/rotation1e-8,dimensions1e-12; not benchmark/IK/FCL/collision/success tolerances, no adaptive enlargement. Save full raw sent/readback/object/shape/composedvalues+shift/generation/nativepoststepclock before verdict. Keep fixed.650→.750 helper/rear topology and all geometry/physics/ACM. One visible≤180sretry, reset0/TARGET0; captureactualINSERT_READY thenstopPARTIAL/notFROZEN. Same-root recurrence→ENGINEERING ESCALATION, not thirdvalidator. [Protocol](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## D039 integration follow-up — stop at first world gate, preserve fixed station [ENGINEERING]
 
 2026-10-08. Approvedoneattempt usedat sourceee51470; initialzero-shift tablemessage-readback rejects before safe/rail/rear. .750/.750 remainsapprovedcandidatependingcapture; no .700/.800 orgeometry/ACM/physics/forcechange. Source-level MoveItnormalization explainsguardrisk butwithoutobservedrawobjects cannotclaim confirmedphysicaloffset orfixedworld. Stop/noimplementationrerun; propose futureexplicitallowanceforcomposedobject+shape worldpose verification+rawmessages, nottolerancerelaxation. No TARGET/Bstage/READYrepeat; noFROZEN. Wrapper0doesnotprovePASS; driver1/cleanup−11preserved. [Actualresult](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).

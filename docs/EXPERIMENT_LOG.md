@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — Readback normalization preparation (no physical experiment yet)
+
+User-authorized independent allowance1/1 remains0/1 at this checkpoint. Unique CMake Release build/pure `--self-test` exit0; normalization, fixed epsilon boundary rejection, invalid/nonfinite and lossless raw evidence tests passed. Launch pure construction7 entities and independent scope audit passed. No ROS initialization, IK, Isaac or control command in software checks. YAML/GUI/bridge/original primitives byte-identical to f73490d; driver/source/launch hashes in [bounded plan](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md). Planned sole visibleGUI attempt180s with reset-repeats0; all runtime results still NOT_RUN, TASK01 PARTIAL, no TARGET/FROZEN.
+
 ## 2026-10-08 — TASK01 fixed handoff01 (PARTIAL, initial world gate)
 
 - Run `results/20261008_TASK01_fixed_handoff01/`; sourceee51470, configSHA25b7162c…, gui539615dc…, driver231785fa…; exactcommand/artifacthashes inmetadata. One180s-cappedvisibleGUI, consumed1/1, endedbeforecap.

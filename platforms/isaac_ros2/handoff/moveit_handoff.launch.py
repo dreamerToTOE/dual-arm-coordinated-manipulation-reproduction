@@ -56,6 +56,7 @@ def generate_launch_description():
     driver = Node(executable=LaunchConfiguration("driver"), name="task01_rear_handoff",
                   output="screen", parameters=common + [{
                       "benchmark_config": LaunchConfiguration("benchmark_config"),
+                      "readback_evidence_dir": LaunchConfiguration("readback_evidence_dir"),
                       "snapshot_topic": "/task01/ready_snapshot", "deadline_sec": 120.0,
                       "joint_settle_limit_rad": .01, "cube_drift_guard_m": .005}])
 
@@ -68,6 +69,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument("driver", default_value=os.path.join(root, "build/task01_handoff/task01_rear_handoff")),
         DeclareLaunchArgument("benchmark_config", default_value=os.path.join(root, "configs/benchmark/benchmark_v1.yaml")),
+        DeclareLaunchArgument("readback_evidence_dir", default_value=os.environ.get("TASK01_READBACK_EVIDENCE_DIR", "")),
         Node(package="moveit_ros_move_group", executable="move_group", name="move_group",
              output="screen", parameters=common + [{"move_group": pipeline,
                  "publish_planning_scene": True, "publish_geometry_updates": True,

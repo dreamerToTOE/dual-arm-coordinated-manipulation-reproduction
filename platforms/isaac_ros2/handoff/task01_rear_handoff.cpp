@@ -2,6 +2,7 @@
 // rear候选/排序/FCL/同步提交复用固定631b1f Task26原语（见同目录抽取头）。
 // 不运行旧main/Task27、推进/force监督；不继承旧摩擦/drive/.12速度/3x时标。
 #include "task26_reused_primitives.hpp"
+#include "collision_readback.hpp"
 #include <moveit/robot_trajectory/robot_trajectory.h>
 #include <moveit/trajectory_processing/iterative_time_parameterization.h>
 #include <shape_msgs/msg/solid_primitive.hpp>
@@ -9,6 +10,8 @@
 #include <yaml-cpp/yaml.h>
 #include <nlohmann/json.hpp>
 #include <fstream>
+#include <filesystem>
+#include <limits>
 
 using Json = nlohmann::json;
 using namespace task26_reuse;
@@ -152,6 +155,109 @@ void verifyRails(const Json& state, double requested) {
   if (std::abs(state.at("world_shift_x_m").get<double>() - (requested-.650)) > 1e-5)
     throw std::runtime_error("Measured common world shift mismatch");
 }
+
+void readbackSelfTests() {
+  using namespace task01_readback;
+  const auto require=[](bool condition,const std::string& label) {
+    if (!condition) throw std::runtime_error("Readback self-test: "+label);
+  };
+  const auto pass=[](const Object& a,const Object& b) { return validateObject(a,b).at("pass").get<bool>(); };
+  const auto original=collisionBox("pure_test_box",{0.,0.,0.},{.12,.12,.12},0.);
+  require(pass(original,original),"empty-root identity");
+  auto translated=collisionBox("pure_test_box",{.79,.0,.26},{.12,.12,.12},0.);
+  auto normalized=translated; normalized.pose=translated.primitive_poses[0];
+  normalized.primitive_poses[0]=identityPose(0.,0.,0.);
+  require(pass(translated,normalized),"object/shape pose normalization");
+  auto rotated=original;
+  rotated.pose=identityPose(.1,.2,.3); rotated.pose.orientation.w=std::sqrt(.5);
+  rotated.pose.orientation.z=std::sqrt(.5);
+  rotated.primitive_poses[0]=identityPose(.2,.4,.6);
+  rotated.primitive_poses[0].orientation.w=std::sqrt(.5);
+  rotated.primitive_poses[0].orientation.x=std::sqrt(.5);
+  auto composed=original; composed.pose=identityPose(-.3,.4,.9);
+  auto& cq=composed.pose.orientation; cq.x=.5; cq.y=.5; cq.z=.5; cq.w=.5;
+  require(pass(rotated,composed),"rotated noncommuting object-times-shape composition");
+  auto wrong_order=composed; wrong_order.pose.orientation.y=-.5;
+  require(!pass(rotated,wrong_order),"noncommuting reversed product rejected");
+  auto signed_q=composed;
+  auto& sq=signed_q.pose.orientation; sq.x=-sq.x; sq.y=-sq.y; sq.z=-sq.z; sq.w=-sq.w;
+  require(pass(composed,signed_q),"q/-q equivalence");
+  auto changed=original; changed.primitive_poses[0].position.x=1e-7;
+  require(!pass(original,changed),"real world translation mismatch");
+  changed=original; changed.primitive_poses[0].orientation.z=std::sin(1e-7/2.);
+  changed.primitive_poses[0].orientation.w=std::cos(1e-7/2.);
+  require(!pass(original,changed),"real world rotation mismatch below acos precision");
+  changed=original; changed.id="another"; require(!pass(original,changed),"id mismatch");
+  changed=original; changed.header.frame_id="map"; require(!pass(original,changed),"frame mismatch");
+  changed=original; changed.primitives[0].type=changed.primitives[0].SPHERE;
+  require(!pass(original,changed),"primitive type mismatch");
+  changed=original; changed.primitives[0].dimensions[0]+=.001;
+  require(!pass(original,changed),"dimension mismatch");
+  changed=original; changed.primitives[0].dimensions.pop_back();
+  require(!pass(original,changed),"dimension count mismatch");
+  changed=original; changed.primitive_poses.clear(); require(!pass(original,changed),"pose count mismatch");
+  changed=original; changed.primitives.clear(); require(!pass(original,changed),"shape count mismatch");
+  changed=original; changed.pose.position.x=.1;
+  require(!pass(original,changed),"nonempty root with zero quaternion is malformed");
+  changed=original; changed.primitive_poses[0].orientation.w=0.;
+  require(!pass(original,changed),"zero primitive quaternion is malformed");
+  changed=original; changed.primitive_poses[0].orientation.w=1.01;
+  const auto invalid=validateObject(original,changed);
+  require(!invalid.at("pass").get<bool>() &&
+    invalid.at("primitives")[0].at("observed_raw_quaternion_norm")==1.01,
+    "nonunit quaternion STOP with raw norm");
+  changed=original; changed.primitive_poses[0].position.x=std::numeric_limits<double>::quiet_NaN();
+  require(!pass(original,changed),"nonfinite pose STOP");
+  changed=original; changed.primitives[0].dimensions[0]=std::numeric_limits<double>::infinity();
+  require(!pass(original,changed),"nonfinite dimensions STOP");
+  changed=original; changed.primitive_poses[0].position.x=kTranslationLimit;
+  require(pass(original,changed),"translation exact epsilon accepted");
+  changed.primitive_poses[0].position.x=std::nextafter(kTranslationLimit,INFINITY);
+  require(!pass(original,changed),"translation next-float above epsilon rejected");
+  changed=original; changed.primitive_poses[0].orientation.z=std::sin(kRotationLimit/2.);
+  changed.primitive_poses[0].orientation.w=std::cos(kRotationLimit/2.);
+  const auto boundary=validateObject(original,changed);
+  require(boundary.at("primitives")[0].at("rotation_error_rad").get<double>()==kRotationLimit &&
+    boundary.at("pass").get<bool>(),"rotation exact epsilon accepted");
+  const double above=std::nextafter(kRotationLimit,INFINITY);
+  changed.primitive_poses[0].orientation.z=std::sin(above/2.);
+  changed.primitive_poses[0].orientation.w=std::cos(above/2.);
+  require(!pass(original,changed),"rotation next-float above epsilon rejected");
+  auto dimension_boundary=original; dimension_boundary.primitives[0].dimensions[0]=kDimensionLimit;
+  changed=dimension_boundary; changed.primitives[0].dimensions[0]=2.*kDimensionLimit;
+  require(pass(dimension_boundary,changed),"dimension exact epsilon accepted");
+  changed.primitives[0].dimensions[0]=std::nextafter(2.*kDimensionLimit,INFINITY);
+  require(!pass(dimension_boundary,changed),"dimension next-float above epsilon rejected");
+  const std::vector<Object> expected{original};
+  require(validateWorld(expected,{{original.id,original}}).at("pass").get<bool>(),"world set matches");
+  require(!validateWorld(expected,{}).at("pass").get<bool>(),"missing world object rejected");
+  require(!validateWorld(expected,{{"wrong_map_key",original}}).at("pass").get<bool>(),"world key mismatch");
+  // 原始CDR往返和完整字段JSON，不依赖ROS context/服务器。
+  auto all_fields=original; all_fields.header.stamp.sec=17; all_fields.header.stamp.nanosec=23;
+  all_fields.type.key="key"; all_fields.type.db="db"; all_fields.operation=all_fields.APPEND;
+  geometry_msgs::msg::Point32 polygon; polygon.x=.25F; polygon.y=-.5F; polygon.z=1.F;
+  all_fields.primitives[0].polygon.points.push_back(polygon);
+  shape_msgs::msg::Mesh mesh; shape_msgs::msg::MeshTriangle triangle;
+  triangle.vertex_indices={0,1,2}; mesh.triangles.push_back(triangle);
+  geometry_msgs::msg::Point vertex; vertex.x=-0.; vertex.y=.25; vertex.z=1.; mesh.vertices.push_back(vertex);
+  all_fields.meshes.push_back(mesh); all_fields.mesh_poses.push_back(identityPose(.1,.2,.3));
+  shape_msgs::msg::Plane plane; plane.coef={0.,0.,1.,-.3}; all_fields.planes.push_back(plane);
+  all_fields.plane_poses.push_back(identityPose(.4,.5,.6));
+  all_fields.subframe_names={"tip"}; all_fields.subframe_poses.push_back(identityPose(.7,.8,.9));
+  const auto raw=rawMessage(all_fields);
+  require(Json::parse(raw.at("all_fields").dump())==raw.at("all_fields"),"all-field JSON roundtrip");
+  require(raw.at("all_fields").size()==13 && raw.at("byte_count").get<std::size_t>()*2==
+    raw.at("cdr_hex").get<std::string>().size(),"all CollisionObject fields and CDR length saved");
+  rclcpp::Serialization<Object> serializer; rclcpp::SerializedMessage bytes;
+  serializer.serialize_message(&all_fields,&bytes); Object restored;
+  serializer.deserialize_message(&bytes,&restored);
+  require(restored==all_fields,"full CDR message roundtrip");
+  all_fields.primitives[0].dimensions[0]=std::numeric_limits<double>::quiet_NaN();
+  const auto nonfinite_raw=rawMessage(all_fields);
+  require(nonfinite_raw.at("all_fields").at("primitives")[0].at("dimensions")[0].at(
+    "native_ieee754_bytes_hex").get<std::string>().size()==16 &&
+    Json::parse(nonfinite_raw.dump())==nonfinite_raw,"nonfinite raw JSON bit pattern preserved");
+}
 }
 
 int main(int argc, char** argv) {
@@ -180,7 +286,8 @@ int main(int argc, char** argv) {
       if (std::abs(interpolate(trajectory,.5)[0]-.1)>1e-12 ||
           interpolate(trajectory,-1.)[0]!=0. || interpolate(trajectory,2.)[0]!=.2)
         throw std::runtime_error("Task26 interpolation regression");
-      std::cout << "PURE SELF TEST PASS: 5 current objects, fixed .100 projection, rear pose, Task26 interpolation; no ROS/IK/Isaac\n";
+      readbackSelfTests();
+      std::cout << "PURE SELF TEST PASS: current world/Task26 regressions plus composed readback, strict epsilon boundaries, malformed inputs and raw CDR/all-field JSON; no ROS/IK/Isaac\n";
       return 0;
     } catch (const std::exception& error) {
       std::cerr << "PURE SELF TEST FAIL: " << error.what() << '\n'; return 2;
@@ -196,6 +303,7 @@ int main(int argc, char** argv) {
   };
   const std::string config_path = parameter("benchmark_config", std::string(""));
   const std::string snapshot_topic = parameter("snapshot_topic", std::string("/task01/ready_snapshot"));
+  const std::string readback_evidence_dir = parameter("readback_evidence_dir",std::string(""));
   const double deadline_sec = parameter("deadline_sec", 120.0);
   const double cube_drift_guard_m = parameter("cube_drift_guard_m", .005);
   g_joint_settle_limit_rad = parameter("joint_settle_limit_rad", .01);
@@ -236,6 +344,9 @@ int main(int argc, char** argv) {
   };
   try {
     if (config_path.empty()) throw std::runtime_error("benchmark_config required");
+    if (readback_evidence_dir.empty() || !std::filesystem::path(readback_evidence_dir).is_absolute())
+      throw std::runtime_error("absolute readback_evidence_dir required; no unlogged readback validation");
+    std::filesystem::create_directories(readback_evidence_dir);
     const auto config = YAML::LoadFile(config_path);
     if (config["cube"]["count"].as<int>() != 1 || config["status"].as<std::string>() != "DRAFT")
       throw std::runtime_error("Only current DRAFT single-Cube candidate is authorized");
@@ -273,27 +384,72 @@ int main(int argc, char** argv) {
     };
     moveit::planning_interface::PlanningSceneInterface scene;
     int generation = 0;
+    int readback_evidence_sequence = 0;
     const auto refresh = [&](const Json& measured, double shift, const std::string& helper_label) {
       g_operation_guard();
       verifyRails(measured, shift + .650);
       const auto expected = worldObjects(config, measured, shift);
-      const auto previous = scene.getObjects();
+      const auto sequence=++readback_evidence_sequence;
+      const auto evidence_path=std::filesystem::path(readback_evidence_dir)/
+        ("refresh_"+std::string(4-std::min<std::size_t>(4,std::to_string(sequence).size()),'0')+
+         std::to_string(sequence)+".json");
+      if (std::filesystem::exists(evidence_path)) throw std::runtime_error("Refusing readback evidence overwrite");
+      Json evidence={{"schema_version",1},{"label","ENGINEERING_COLLISIONOBJECT_READBACK"},
+        {"readback_evidence_sequence",sequence},{"planning_generation_candidate",generation+1},
+        {"world_shift_x_m",shift},{"physics_step",measured.at("physics_step")},
+        {"simulation_stamp_ns",measured.at("simulation_stamp_ns")},{"frame_id","world"},
+        {"input_post_physics_snapshot",measured},{"required_object_ids",kWorldIds},
+        {"expected",task01_readback::rawObjects(expected)},
+        {"observed",{{"status","NOT_REQUESTED"},{"objects",nullptr}}},
+        {"apply_result",nullptr},{"readback_validator",{{"status","NOT_RUN"}}},
+        {"planning_world_ack",{{"emitted",false},{"generation_before",generation}}}};
+      const auto persist=[&] {
+        std::ofstream stream(evidence_path,std::ios::out|std::ios::trunc);
+        if (!stream) throw std::runtime_error("Cannot open raw readback evidence "+evidence_path.string());
+        stream << evidence.dump(2) << '\n'; stream.flush();
+        if (!stream) throw std::runtime_error("Cannot persist raw readback evidence "+evidence_path.string());
+      };
+      // 每次refresh先保存完整expected CDR/JSON；apply/readback/尺寸门禁失败也有原始证据。
+      persist();
+      std::map<std::string,moveit_msgs::msg::CollisionObject> previous;
+      try { previous=scene.getObjects(); }
+      catch (const std::exception& error) {
+        evidence["previous_readback_error"]=error.what(); persist(); throw;
+      }
+      evidence["previous_world_raw"]=task01_readback::rawObjects(previous); persist();
       for (const auto& [id, unused] : previous) {
         (void)unused;
-        if (std::find(kWorldIds.begin(), kWorldIds.end(), id) == kWorldIds.end())
+        if (std::find(kWorldIds.begin(), kWorldIds.end(), id) == kWorldIds.end()) {
+          evidence["readback_validator"]={{"status","FOREIGN_STALE_WORLD_STOP"},{"id",id}}; persist();
           throw std::runtime_error("Foreign/stale collision object: " + id);
+        }
       }
       scene.removeCollisionObjects(kWorldIds);
-      if (!scene.applyCollisionObjects(expected)) throw std::runtime_error("Planning world refresh failed");
-      const auto actual = scene.getObjects(kWorldIds);
-      if (actual.size() != expected.size()) throw std::runtime_error("Missing refreshed world objects");
-      for (const auto& object : expected) {
-        const auto& observed = actual.at(object.id);
-        if (observed.primitives.size() != 1 || observed.primitive_poses.size() != 1 ||
-            observed.primitives[0].dimensions != object.primitives[0].dimensions ||
-            observed.primitive_poses[0] != object.primitive_poses[0])
-          throw std::runtime_error("Planning object differs after shift: " + object.id);
+      bool applied=false;
+      try { applied=scene.applyCollisionObjects(expected); }
+      catch (const std::exception& error) { evidence["apply_error"]=error.what(); persist(); throw; }
+      evidence["apply_result"]=applied; persist();
+      if (!applied) {
+        evidence["observed"]["status"]="NOT_REQUESTED_APPLY_FAILED"; persist();
+        throw std::runtime_error("Planning world refresh failed");
       }
+      std::map<std::string,moveit_msgs::msg::CollisionObject> actual;
+      try { actual=scene.getObjects(kWorldIds); }
+      catch (const std::exception& error) {
+        evidence["observed"]={{"status","READBACK_EXCEPTION"},{"error",error.what()},{"objects",nullptr}};
+        persist(); throw;
+      }
+      evidence["observed"]={{"status","ACQUIRED"},{"objects",task01_readback::rawObjects(actual)}};
+      // 原始收到的消息必须先落盘，然后才进行任何readback比较/门禁。
+      persist();
+      try { evidence["post_readback_post_physics_snapshot"]=snapshots.get(); }
+      catch (const std::exception& error) { evidence["snapshot_error"]=error.what(); persist(); throw; }
+      persist();
+      const auto validation=task01_readback::validateWorld(expected,actual);
+      evidence["readback_validator"]={{"status",validation.at("pass").get<bool>() ? "PASS" : "FAIL"},
+        {"diagnostics",validation}}; persist();
+      if (!validation.at("pass").get<bool>())
+        throw std::runtime_error("Composed planning world readback mismatch; raw evidence="+evidence_path.string());
       const long long prior_step = measured.at("physics_step");
       Json ack = {{"refreshed", true}, {"generation", ++generation}, {"world_shift_x_m", shift},
         {"measured_rail_x_m", {
@@ -301,6 +457,7 @@ int main(int argc, char** argv) {
           {"right", measured.at("rails").at("right").at("measured_x_m")}}},
         {"required_objects", kWorldIds}, {"helper_park_label", helper_label}};
       std_msgs::msg::String message; message.data = ack.dump(); ack_pub->publish(message);
+      evidence["planning_world_ack"]={{"emitted",true},{"generation",generation},{"message",ack}}; persist();
       const auto acknowledged = wait("post-step planning world ACK", [&](const Json& s) {
         return s.at("physics_step").get<long long>() > prior_step && s.contains("planning_world") &&
           s.at("planning_world").value("refreshed", false) &&
@@ -308,6 +465,7 @@ int main(int argc, char** argv) {
           std::abs(s.at("planning_world").at("world_shift_x_m").get<double>()-shift) < 1e-9;
       }, 5.);
       verifyRails(acknowledged, shift+.650);
+      evidence["planning_world_ack"]["post_physics_confirmation"]=acknowledged; persist();
       // 新建每次FCL场景并从刚确认的world取得，绝不使用移动前FCL缓存。
       return staticWorld(scene);
     };

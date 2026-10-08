@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-08 — Readback normalization repair preparation
+
+Reread AGENTS/governance/STATUS/currentTASK01/D039/reuse/benchmark/P4; pre-task report delivered. New authorization permits only composedworldshape message validation plus full raw evidence, one bounded retry, no geometry/handoff/safety-condition change. ImmutableYAML/GUI/bridge/primitives hashes recorded. Implement validator/puretests/evidence-path launch wiring; no runtime yet, additional0/1. Plan onevisible180s cap to INSERT_READY, no repeatedreset/TARGET. [Protocol](../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 ## 2026-10-08 — D039 integration01 actual STOP, no repair/retry
 
 Onevisible180s-capped run sourceee51470; normalSDKwarm-start→recordedPRE14q→bothSGCLOSED→bothOPENconfirmed. Initial worldapply/readback atshift0 rejects task01_table. Bothbasesremain.65, no safeplanning/rail/rear/READY/reset/TARGET.351nativepoststepstate/contactrows and selectedPREstate/stoplogs saved; originalmass/friction/geometry/physics retained. Read-only installedMoveItheader identifies shape/objectpose normalization as guardfalsefailure risk, not proven actualdifference (rawobjectsnotlogged). Driver1, wrapper0 despitefailure, cleanupmove_group−11; ownedprocessesabsent. Integrationbudget1/1consumed, STOPFORUSER/nofix/relaunch. [Full report](../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).

@@ -2,6 +2,8 @@
 
 Status: **IN_PROGRESS / PARTIAL — topology corrected by D039 (2026-10-08)**
 
+New user authorization: one readback-validator normalization repair/retry, fixed numericalepsilons only; fullrawexpected/readback+composedworldpose evidence. Runtimeadditional0/1 duringpreparation; unchangedbenchmark/handoff/IK/FCL/physics/ACM. Onevisibleboundedrun toactualINSERT_READY, reset0/TARGET0, thenstopPARTIAL/notFROZEN. Readbackrecurrence→ENGINEERING ESCALATION/no thirdvalidator. [Active protocol](../../reports/TASK01_READBACK_NORMALIZATION_RETRY.md).
+
 Actual latest integration: **1/1 consumed / STOP FOR USER**, initialshift0planning-worldtable readbackguard rejects afterbilateralOPEN, before safeplanning/railadvance/rear. NoINSERT_READY/reset/Btest/TARGET. Bothrailsstill.65; approved.75candidatependingcapture. Source-supportedmessage-normalizationrisk, notprovenphysicalworldmismatch. Noautomaticrepair/rerun; freshboundedapprovalneeded. [Outcome/evidence](../../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md).
 
 Latest: user approved D039 fixed rail move .650→.750both and world_shift_x=+.100; A/rest .650 unchanged. Candidate is recorded, not FROZEN. One bounded single-Cube integration prepared, ending complete INSERT_READY; software tests PASS, actual integration NOT_RUN. No second station/search/target command. [Protocol](../../reports/TASK01_FIXED_HANDOFF_INTEGRATION.md). The prior audit paragraph below describes the earlier pre-approval checkpoint.
