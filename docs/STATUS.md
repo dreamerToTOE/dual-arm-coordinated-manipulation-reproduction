@@ -1,3 +1,5 @@
+# STATUS
+
 ## 2026-10-08 — D039 topology correction: reuse validated predecessor workflow
 
 User approved correcting TASK01 to match the previously validated `side-suction-palletizing` workflow instead of inventing a continuous bilateral-side-grasp insertion.
@@ -17,7 +19,7 @@ Existing evidence is now separated correctly:
 
 Current TASK01 is still PARTIAL, not PASS/FROZEN. Next work must reuse predecessor assets first, capture deterministic INSERT_READY, validate the corrected rear-push B path, and then complete held READY/reset evidence. No parity10, no ACM/tool/wall repair, no force-control calibration. See `docs/PRIOR_PROJECT_REUSE.md` and D039.
 
-# STATUS
+
 
 ## 2026-10-08 — Command-only allowance consumed: TARGET collision; STOP FOR USER
 
