@@ -1,6 +1,6 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
-2026-10-08. Current status: ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP (04); corrected typed-output adapter prepared (05 not run), **not PASS**.
+2026-10-08. Current status: ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP (05); official render-only dispatch correction prepared (06 not run), **not PASS**.
 
 Prerequisite full discrete geometry passed (A136/B157, exact PRE14q seam): [report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). The original PhysX convexHull model is not assumed equivalent to the MoveIt STL. Full-chain wall-risk state is TARGET/state292, left_link7↔deep_wall FCL clearance2.212219mm; intended Cube/tool minimum is state196/0.999669mm.
 
@@ -8,9 +8,15 @@ Independent visible GUI only: dual FR3/current L tools/one Cube/table/carriage. 
 
 Replay all states where possible, with early priority START→A minimum/PRE→TARGET (full-chain wall minimum)→state196 (full all-pair minimum). Required insertion samples and all-state replay remain to verify. First unexpected FCL-free/Isaac collision stops, records exact pair/state/actual FK/cooked shape evidence, no geometry repair.
 
-Latest artifact directory: `results/20261008_TASK01_isaac_model_parity04/`. READY/reset has not been authorized or run.
+Latest artifact directory: `results/20261008_TASK01_isaac_model_parity05/`. READY/reset has not been authorized or run.
 
-## 04 actual API precision stop / 05 prepared
+## 05 actual zero-step guard stop / 06 prepared
+
+05 commit `8188168`, SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba`, source snapshot before execution. After typed pose-output correction, the paused `app.update()` actually triggered **2 physics-step callbacks**; Cube USD z changed to `0.3772749900817871` and velocity z to `-0.16350001 m/s`. Thus integration occurred **despite not being requested**, and this is not a valid static parity run. The zero-step/immutability guard stopped at START, accepted0 before overlap verdict. [05 metadata](../results/20261008_TASK01_isaac_model_parity05/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity05/summary.json). GUI was closed/reaped, wrapper0 not PASS. The successful **pre-notice** 27 native actor comparisons were actually persisted (max tensor/native position difference0m, rotation6.165552397244359e-7rad); do not confuse them with post-update states. 35 pure tests passed, not static physics evidence.
+
+06 uses the installed official `SimulationContext.render()` dispatch pattern: temporarily `/app/player/playSimulations=False` during render updates, restore the exact original bool in `finally`; same gate during handle loading. Keep actual physics-step callbacks/timeline change/native/q/shape/query checks as independent hard stops. No scene gravity/dt/solver/mass/model change. SDK dynamic velocity/joint-state output is not classified as immutable geometry; original limits/drives/mass/friction/mesh/scale/scene/frame remain hashed, and **actual integration still fails** the separate zero-step guard. Render-only regression is being prepared; 06 has not run. READY/reset remains NOT_RUN. All 03–05 negative evidence is preserved; no BUG019 geometric verdict/PASS/FROZEN claim.
+
+## 04 actual API precision stop / historical 05 plan
 
 04 source commit `a672224`, SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`; preserved execution-before source snapshot. Visible GUI startup/load about14.5s; accepted parity states0/START attempted. Existing Fabric extension was disabled and `/physics/updateToUsd=true`; hence Fabric separation is **not** the demonstrated cause of 03. Official output materialized a Cube `xformOp:orient` state field of type `GfQuatf`, while the fallback wrote `GfQuatd`, causing a USD type error. No parity overlap verdict, no READY/reset; wrapper0 again is not PASS. [04 metadata](../results/20261008_TASK01_isaac_model_parity04/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity04/summary.json). 32 pure tests passed but did not cover this SDK float output variant.
 

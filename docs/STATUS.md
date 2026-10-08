@@ -1,10 +1,16 @@
 # STATUS
 
+## 2026-10-08 — 05检测到意外积分并停止；06仅准备无physics dispatch渲染
+
+05（`8188168` /`66dce1cd…`）可见GUI约13.8s，START accepted0，`ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP`：paused `app.update()`实际触发2次physics-step callback，Cube USD z0.380→0.3772749900817871m、vz=-0.16350001m/s，不能称纯静态或没有积分。已存**通知更新前**27个native actor比较，位置差max0m/角差max6.165552397244359e-7rad；不能与更新后混淆。wrapper0非PASS，无碰撞判决，READY NOT_RUN，03/04/05负结果保留。
+
+06仅准备官方SimulationContext.render式dispatch隔离：临时 `/app/player/playSimulations=false` 包住app.update，finally恢复原bool，force_load初始化也隔离；独立callback必须0，time/q/native再验。geometry fingerprint只排除SDK动态velocity/jointstate输出，仍严守mass/scale/mesh/limits/drive/material/scene/frames；不移除step0门禁，不改Scene dt/gravity/benchmark/ACM/实际几何。06未运行，纯mock回归准备中，source/hash待冻结；`8188168`已direct push。TASK01 IN_PROGRESS/PARTIAL，BUG019未有科学碰撞判决，BUG001延期非阻塞。
+
 ## 2026-10-08 — 04停于原USD属性precision适配；05仅准备
 
 `isaac_model_parity04` source `a672224` /SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753` 可见GUI约14.5s，START accepted0：原SDK `/World/Task01/Cube.xformOp:orient` 要求GfQuatf，输出适配写GfQuatd，状态 `ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`。Fabric实际disabled、`/physics/updateToUsd=true`；未进入碰撞判定，native成功值未存，wrapper0不等于PASS。不是几何FAIL/BUG019复现或修复，03负结果保留。
 
-05只修原状态属性precision，并将body pose state-output与不可变几何尺度分开审计：SDK可物化Cube orient，不是helper新增ops；helper仍拒绝非法op顺序。全scene physics/材料/ancestors/工具TCP纳入geometry fingerprint，原scale/local shape/limits/参数继续核对，final step0与screenshot step0新增守卫。35项纯USD/query软件测试agent报告OK，主代理仍需复跑；拟固化source `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 后运行可见GUI05，**05尚未运行**。原benchmark/实际几何/ACM未改；TASK01 IN_PROGRESS/PARTIAL，READY NOT_RUN，BUG019未判决，BUG001非阻塞，TASK02/P4未开始。Git首次proxy push超时后direct push `a672224` 已成功，无全局SSH配置改动。
+05只修原状态属性precision，并将body pose state-output与不可变几何尺度分开审计：SDK可物化Cube orient，不是helper新增ops；helper仍拒绝非法op顺序。全scene physics/材料/ancestors/工具TCP纳入geometry fingerprint，原scale/local shape/limits/参数继续核对，final step0与screenshot step0新增守卫。35项纯USD/query软件测试主代理已实际复跑exit0/0.093s；source `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 已冻结，**GUI05尚未运行**。原benchmark/实际几何/ACM未改；TASK01 IN_PROGRESS/PARTIAL，READY NOT_RUN，BUG019未判决，BUG001非阻塞，TASK02/P4未开始。Git首次proxy push超时后direct push `a672224` 已成功，无全局SSH配置改动。
 
 ## 2026-10-08 — 单Cube几何保持PASS；03静态输出源门禁停止，04未运行
 

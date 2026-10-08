@@ -1,5 +1,13 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — isaac_model_parity05 意外积分STOP；06未运行
+
+TASK01/[ENGINEERING]/visible Isaac4.5，commit `8188168`，source SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba`，原config/确定14q/模型不变。命令（同480s可见wrapper、output-dir改05）、完整输入和产物见 [05 metadata](../results/20261008_TASK01_isaac_model_parity05/metadata.json)。约13.8s工程wall time，START accepted0，实际 `ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP`：paused app.update触发physics-step callbacks2，Cube USD z从0.38到0.3772749900817871m，velocity=(0,0,-0.16350001)m/s。integration_requested=false但integration_actually_observed=true；不能宣称没有积分/纯静态。无碰撞结果，wrapper0非PASS，owned GUI已退出回收。
+
+已保存pre_notice27 nativeactor比较，max position difference0m、max rotation difference6.165552397244359e-7rad，不能与after-notice状态混淆。raw/output_sync_rejection、前后inventory、failure、源码快照与metadata/summary保留；科研step/time仍null（没有合法静态或READY测量），READY/controller/suction/force NOT_RUN。03/04/05各自负结果不覆盖，BUG019 NOT_ESTABLISHED。
+
+06准备官方render-style playSimulations临时False→app.update→finally原bool恢复，force_load初始化亦隔离；独立step0/callback0与time/q/native再验。只把SDK动态velocity/jointstate从几何参数hash分离，mass/scale/mesh/limits/drive/material/scene/frames保留；dt/gravity/benchmark/ACM/实际几何不改。纯mock回归准备，06未运行/source待冻结；`8188168`已direct push，BUG001非阻塞。
+
 ## 2026-10-08 — single_cube_core_benchmark / isaac_model_parity04 API precision停止；05未运行
 
 TASK01，[ENGINEERING]静态原模型输出适配，非论文算法；Isaac4.5 visible GUI/既有全链确定14q，无新IK。Commit `a672224`，probe SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`；config仍不可变native-run `config_at_run.yaml` /SHA `3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b`。实际命令与完整证据见 [04 metadata](../results/20261008_TASK01_isaac_model_parity04/metadata.json)：
@@ -15,7 +23,7 @@ timeout --signal=TERM --kill-after=20s 480s env DISPLAY=:1 PYTHONUNBUFFERED=1 \
 
 Actual约14.5s工程wall time，START/index0 accepted0，`ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`：原SDK `/World/Task01/Cube.xformOp:orient` expected GfQuatf/got GfQuatd。实际Fabric disabled、updateToUsd=true；未进入全链碰撞判定，native成功值未落盘、不反填，wrapper0不等PASS。32软件测试OK只是当轮软件证据。Artifacts=root metadata/summary/source snapshot/software_validation/launch.log；raw inputs/failure/output_sync_contract。physics integration_requested=false，step/time=null、READY/controller/suction/force NOT_RUN，owned GUI已退出回收。03负结果保留；BUG019 NOT_ESTABLISHED，不作几何FAIL/模型修复结论。
 
-05准备状态属性precision修复与扩大不可变几何库存；原SDK物化pose orient与几何尺度分开，helper仍reject新增/reorder/非法ops，原模型/benchmark/ACM不改。增加final/screenshot step0守卫。Agent报告35纯USD/query tests OK（主代理待复跑），source当前 `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 待固化；**GUI05尚未运行，无05实验结果**。Git `a672224` direct push成功，首次proxy timeout保留，不改全局SSH。
+05准备状态属性precision修复与扩大不可变几何库存；原SDK物化pose orient与几何尺度分开，helper仍reject新增/reorder/非法ops，原模型/benchmark/ACM不改。增加final/screenshot step0守卫。35纯USD/query tests主代理已实际复跑exit0/0.093s，source `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 已冻结；**GUI05尚未运行，无05 GUI/物理实验结果**。Git `a672224` direct push成功，首次proxy timeout保留，不改全局SSH。
 
 ## 2026-10-08 — single_cube_core_benchmark / isaac_model_parity03 工程门禁停止
 

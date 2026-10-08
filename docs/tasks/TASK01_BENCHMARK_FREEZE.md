@@ -2,11 +2,19 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current gate: FULL_GEOMETRY_PASS / UNINTENDED_PHYSICS_DISPATCH_STOP; 06 NOT_RUN (2026-10-08)
+
+05 (`8188168` /`66dce1cd…`) visible GUI13.8s, START accepted0: paused app.update dispatched2 actual physics callbacks, Cube USD z0.38→0.3772749900817871m/vz=-0.16350001m/s. Integration observed despite not requested; no valid static parity/collision verdict or READY evidence. Saved27 pre-notice native comparisons (position max0m/rotation max6.165552397244359e-7rad) are not after-notice values; wrapper0 is not PASS. Preserve03/04/05.
+
+06 only prepares official render-style temporary playSimulations=False/app.update/finally original-bool restoration, including force_load; require independent callback0/time/q/native checks. Separate SDK dynamic velocity/jointstate output from geometry hash while retaining mass/scale/mesh/limits/drive/material/scene/frames; no step0 weakening or dt/gravity/benchmark/geometry/ACM changes. Mock regression/source freeze pending, GUI06 NOT_RUN; D035 ENGINEERING/no P4/DEVIATION, READY NOT_RUN, BUG019 unadjudicated, BUG001 non-blocking. `8188168` direct push confirmed.
+
+#### Historical 04 checkpoint
+
 ### Current gate: FULL_GEOMETRY_PASS / USD_ATTRIBUTE_PRECISION_STOP; 05 NOT_RUN (2026-10-08)
 
 04 commit `a672224`, source `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`: visible GUI stopped at START/index0, accepted0, because original SDK Cube orient requires GfQuatf but adapter supplied GfQuatd. Actual Fabric disabled/updateToUsd=true; native success values not saved; wrapper0 is not PASS. No collision verdict, geometric failure, or BUG019 reproduction/resolution. Preserve03/04 negative evidence separately.
 
-05 only prepares existing-attribute precision adaptation and distinguishes SDK-materialized body pose output from immutable geometry scale. Helper still rejects added/reordered/illegal ops; whole-scene physics/materials, ancestors and tool-TCP inventory enter the geometry fingerprint, while original scale/local shape/limits/settings/q/native/step0 checks remain. Final/screenshot step0 guards added. Agent reports35 pure USD/query software testsOK; main rerun/source freeze pending, GUI05 **not run**. Original benchmark/geometry/ACM unchanged; READY NOT_RUN, BUG019 OPEN/NOT_ESTABLISHED, BUG001 deferred TASK10-IS non-blocking, TASK02/P4 TODO. D035 remains ENGINEERING, no paper DEVIATION/PASS CANDIDATE/FROZEN claim.
+05 only prepares existing-attribute precision adaptation and distinguishes SDK-materialized body pose output from immutable geometry scale. Helper still rejects added/reordered/illegal ops; whole-scene physics/materials, ancestors and tool-TCP inventory enter the geometry fingerprint, while original scale/local shape/limits/settings/q/native/step0 checks remain. Final/screenshot step0 guards added. Main actually reran35 pure USD/query tests: exit0/0.093s; source frozen, GUI05 **not run**. Original benchmark/geometry/ACM unchanged; READY NOT_RUN, BUG019 OPEN/NOT_ESTABLISHED, BUG001 deferred TASK10-IS non-blocking, TASK02/P4 TODO. D035 remains ENGINEERING, no paper DEVIATION/PASS CANDIDATE/FROZEN claim.
 
 #### Historical 03 checkpoint
 

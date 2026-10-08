@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — 继续范围不变：真实积分不得冒充静态模型证据
+
+延续既定单Cube严格范围，05检测paused app.update仍积分后停止，不能以无integration请求或wrapper0称纯静态PASS；pre_notice与after-notice证据分开。06只准备工程render dispatch隔离及独立callback0/time/q/native守卫，不改工具/车厢/实际几何/benchmark/ACM/物理dt/gravity。06尚未运行、READY NOT_RUN，无新授权/五Cube/P4/force；BUG001留TASK10-IS，不阻塞TASK01。
+
 ## 2026-10-08 — 延续“继续”的严格范围：API类型错误不改基准解决
 
 延续用户既定单Cube有序验收，不新增授权。04原SDK Cube quaternion precision错误停止后，仅准备05软件状态属性precision修复及完整库存/step0守卫；GUI05尚未运行，READY NOT_RUN。03/04各自负结果保留，不能把native未存值补作数据、wrapper0当PASS或APItypeerror说成几何失败/BUG019已复现/已修复。原工具/车厢/benchmark/ACM/实际几何不改，仍可见GUI-only、无五Cube/P4/force；BUG001归TASK10-IS不阻塞。

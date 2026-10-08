@@ -1,10 +1,16 @@
 # WORKLOG
 
+## 2026-10-08 — 05意外physics dispatch保护停止；06 render gate准备
+
+05 commit `8188168` /source `66dce1cd…`，GUI约13.8s、START accepted0。paused app.update实际callback2，Cube z0.3772749900817871m/vz=-0.16350001m/s，真实积分已发生，立即拒绝，不称静态PASS。通知前27 nativeactor比较已落盘（位置max0m/角max6.165552397244359e-7rad），与通知后数据分开；wrapper0非PASS/READY NOT_RUN，无模型碰撞判决。03/04/05负记录保留，`8188168` direct push成功。
+
+06只准备官方render模式临时关闭playSimulations/app.update/finally恢复原bool，force_load初始化亦dispatch隔离；callback0、time/q/native核验不削弱。Fingerprint区分SDK动态velocity/jointstate输出与mass/scale/mesh/limits/drive/material/scene/frame几何参数；不改Scene dt/gravity、实际几何/benchmark/ACM。纯mock render-gate回归准备，06未运行/source待冻结；D035 ENGINEERING，无P4/DEVIATION，BUG019未判决、BUG001非阻塞。
+
 ## 2026-10-08 — 04原SDKQuatf属性报错保留；05状态precision与库存审计准备
 
 04使用已固化 `a672224` /probe SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`，可见GUI约14.5s后START accepted0，原SDK Cube `xformOp:orient` expected GfQuatf/got GfQuatd，实际 `ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`。Fabric未启用、updateToUsd=true，未进入模型碰撞验证；native成功值未保存，wrapper0非PASS、进程已退出回收。03 stale源负结果未覆盖；04也不是几何失败、BUG019判决或物理成功。Git首次proxy push超时保留，随后direct push `a672224` 成功，无全局SSH改动。
 
-05仅工程输出precision依原属性修正；body pose state-output允许原SDK自己物化Cube orient并单独审计，helper仍不新增ops/不重排且拒绝非法顺序。不可变geometry fingerprint扩展全scene physics/材料、ancestors、工具TCP库存，原scale/local shape/limits/参数继续核对；增加final step0及screenshot step0守卫。35纯USD/query测试agent报告OK，主代理复跑与source固化待完成（当前SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba`）。05尚未运行，不能记录为GUI/model PASS；READY NOT_RUN，无benchmark/实际几何/ACM/force/P4改动，后续结果另追加。
+05仅工程输出precision依原属性修正；body pose state-output允许原SDK自己物化Cube orient并单独审计，helper仍不新增ops/不重排且拒绝非法顺序。不可变geometry fingerprint扩展全scene physics/材料、ancestors、工具TCP库存，原scale/local shape/limits/参数继续核对；增加final step0及screenshot step0守卫。35纯USD/query测试主代理实际复跑exit0/0.093s，source SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 已冻结。GUI05尚未运行，不能记录为GUI/model PASS；READY NOT_RUN，无benchmark/实际几何/ACM/force/P4改动，后续结果另追加。
 
 ## 2026-10-08 — 03可见静态取证门禁停止；04输出适配仅准备
 

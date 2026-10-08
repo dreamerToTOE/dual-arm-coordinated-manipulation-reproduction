@@ -2,6 +2,8 @@
 
 2026-10-08. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
 
+Current gate: 05 actually detected unintended physics dispatch during its paused GUI update and stopped before any accepted parity sample. Official render-only dispatch06 is prepared/not run. This invalid static attempt is **not** a repeated READY/reset trial; no post-step reset acceptance or scientific time record is claimed.
+
 Latest actual GUI attempt03 stopped at START/index0 on stale USD collider output before any accepted parity sample. This is an engineering source-frame rejection, not a geometric collision verdict. Output-adapter04 is prepared but not yet run. See [parity report](TASK01_ISAAC_MODEL_PARITY.md). No repeated post-step reset has occurred and no READY state is claimed.
 
 Later Oct8 checkpoint: 04 actually stopped on a Cube state-output `Quatf/Quatd` type mismatch, again accepted0, not a geometry failure; typed-output correction05 is prepared/not run. READY/reset remains NOT_RUN, and the earlier 03/04-plan text above is preserved as history.

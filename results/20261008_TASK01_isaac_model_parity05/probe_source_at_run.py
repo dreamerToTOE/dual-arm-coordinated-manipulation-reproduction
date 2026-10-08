@@ -191,31 +191,6 @@ def owning_body(prim, UsdPhysics):
     return None
 
 
-def static_render_update(app, timeline, settings, physics_steps):
-    """Official SimulationContext.render dispatch gate; no physics-parameter edit.
-
-    PAUSED标签不能证明queued Play事件不会积分；刷新期间用官方
-    /app/player/playSimulations=False，finally精确还原，实际step事件仍须0。
-    """
-    path = "/app/player/playSimulations"
-    original = settings.get(path)
-    if not isinstance(original, bool):
-        raise RuntimeError("Missing/invalid original render-only dispatcher setting")
-    if timeline.is_playing() or physics_steps:
-        raise RuntimeError("Static render requires paused timeline and zero physics steps")
-    before_time = float(timeline.get_current_time())
-    if not math.isfinite(before_time):
-        raise RuntimeError("Static render requires a finite timeline time before update")
-    settings.set_bool(path, False)
-    try:
-        app.update()
-    finally:
-        settings.set_bool(path, original)
-    after_time = float(timeline.get_current_time())
-    if physics_steps or timeline.is_playing() or not math.isfinite(after_time) or after_time != before_time:
-        raise RuntimeError("Official render-only dispatch advanced physics/timeline")
-
-
 def original_geometry_fingerprint(stage, enabled, body_paths, UsdPhysics, UsdGeom, return_records=False):
     """Exclude body pose output fields; preserve scale, shapes and physical settings.
 
@@ -242,16 +217,8 @@ def original_geometry_fingerprint(stage, enabled, body_paths, UsdPhysics, UsdGeo
             pose_names = {str(op.GetOpName()) for op in UsdGeom.Xformable(prim).GetOrderedXformOps()
                           if op.GetOpType() in (UsdGeom.XformOp.TypeTranslate, UsdGeom.XformOp.TypeOrient)}
             pose_names.add("xformOpOrder")
-        # SDK state output is not a physical PARAMETER. Its actual evolution is
-        # guarded by zero-step callbacks and native/q invariance, not mislabelled
-        # as a changed mesh/material. Original limits/drives/mass/friction stay hashed.
-        state_names = {"physics:velocity", "physics:angularVelocity"} if path in body_paths else set()
-        if prim.IsA(UsdPhysics.Joint):
-            state_names.update(str(a.GetName()) for a in prim.GetAttributes()
-                               if str(a.GetName()).startswith("state:") and
-                               str(a.GetName()).endswith((":position", ":velocity")))
         attrs = {str(a.GetName()): {"value": str(a.Get()), "time_samples": a.GetTimeSamples()}
-                 for a in prim.GetAttributes() if str(a.GetName()) not in pose_names | state_names}
+                 for a in prim.GetAttributes() if str(a.GetName()) not in pose_names}
         records.append({"path": path, "type": str(prim.GetTypeName()),
                         "schemas": list(prim.GetAppliedSchemas()), "attributes": attrs,
                         "relationships": {str(r.GetName()): list(map(str, r.GetTargets()))
@@ -402,12 +369,10 @@ def main():
         write_json(args.output_dir / "output_sync_contract.json", {
             "original_settings": original_output_settings, "existing_fabric_extension_enabled": fabric_enabled,
             "no_output_settings_or_physics_parameters_changed": True,
-            "temporary_render_dispatch_gate": "/app/player/playSimulations=False during refresh/load; exact original bool restored; official SimulationContext.render pattern",
             "official_api_order": "update_transformations; update_transformations_scene; existing Fabric force_update/save_to_usd",
             "guarded_fallback": "mirror already verified native SE3 to existing body translate/orient ops only",
             "fallback_requires": "all q/native actor/Cube unchanged; immutable shape/scale/physics hash unchanged; moving queries verified",
             "physics_step_count_must_remain": 0})
-        render_only = lambda: static_render_update(app, timeline, settings, physics_steps)
         timeline.stop()
         static_timeline_time = float(timeline.get_current_time())
         omni.usd.get_context().new_stage()
@@ -428,7 +393,7 @@ def main():
         for side in ("left", "right"):
             namespace["_add_fr3"](f"/World/{side}_fr3", config["robots"][side]["base_at_rest_world_m"])
         for _ in range(20):
-            render_only()
+            app.update()
         namespace["_apply_official_joint_limits"]()
         namespace["_build_tool"]("/World/left_fr3", -1.)
         namespace["_build_tool"]("/World/right_fr3", 1.)
@@ -451,10 +416,10 @@ def main():
         light.CreateIntensityAttr(1000.)
         set_camera_view(eye=[2.5,-2.2,1.8], target=[.8,0.,.35])
         for _ in range(20):
-            render_only()
+            app.update()
         capture = capture_viewport_to_file(get_active_viewport(), str(args.output_dir / "gui_initial.png"))
         for _ in range(12):
-            render_only()
+            app.update()
         print("TASK01 VISIBLE_SINGLE_CUBE_GUI_READY: before physics load; no controller", flush=True)
         # Snapshot immutable original shape placement relative to its actual rigid body.
         # Later source-query geometry must match the LIVE tensor body pose, not a stale USD pose.
@@ -504,18 +469,9 @@ def main():
             tcp_local[side]=UsdGeom.Xformable(tcp_prim).ComputeLocalToWorldTransform(0.) * pure_rigid_matrix(UsdGeom.Xformable(stage.GetPrimAtPath(link_path)).ComputeLocalToWorldTransform(0.), Gf).GetInverse()
         write_json(args.output_dir/"original_shape_audit.json",shape_audit)
         # Pause keeps loaded PhysX handles without requesting an integration step.
-        original_dispatch = settings.get("/app/player/playSimulations")
-        if not isinstance(original_dispatch, bool):
-            raise RuntimeError("Original render-only dispatcher setting missing before physics load")
-        settings.set_bool("/app/player/playSimulations",False)
-        try:
-            timeline.play()
-            omni.physx.get_physx_interface().force_load_physics_from_usd()
-            timeline.pause()
-        finally:
-            settings.set_bool("/app/player/playSimulations",original_dispatch)
-        if physics_steps:
-            raise RuntimeError("Static handle initialization triggered physics steps")
+        timeline.play()
+        omni.physx.get_physx_interface().force_load_physics_from_usd()
+        timeline.pause()
         sim = tensors.create_simulation_view("numpy")
         sim.set_subspace_roots("/")
         arts = {side: sim.create_articulation_view(f"/World/{side}_fr3") for side in ("left","right")}
@@ -707,7 +663,7 @@ def main():
                 sync["after_output_stale_shapes"] = stale_shape_paths()
                 # 暂停 GUI 处理 USD notices；不能假定 USD 写值只是渲染输出。
                 # 后面的原生 actor / q / geometry / step 守卫全部在 notices 后检查。
-                render_only()
+                app.update()
                 sync["after_paused_notice_update_stale_shapes"] = stale_shape_paths()
                 sync["after_adapter_body_output_ops"] = body_output_op_audit(stage, list(live_by_path), UsdGeom)
                 sync["immutable_geometry_sha256"] = original_geometry_fingerprint(
@@ -763,7 +719,7 @@ def main():
                 # 静态墙角 smoke 不能证明移动 target 的 broadphase 已更新。
                 if index in (0,135,136,292,196):
                     capture_viewport_to_file(get_active_viewport(),str(args.output_dir/f"static_source_state_{index:03d}.png"))
-                    for _ in range(4): render_only()
+                    for _ in range(4): app.update()
                     if physics_steps or timeline.is_playing():
                         raise RuntimeError("Static source screenshot integrated physics")
                 moving_query_guards = []
@@ -876,7 +832,7 @@ def main():
                 rows.append(record)
                 if unallowed:
                     capture_viewport_to_file(get_active_viewport(),str(args.output_dir/"first_overlap.png"))
-                    for _ in range(8): render_only()
+                    for _ in range(8): app.update()
                     write_json(args.output_dir/"summary.json",{"status":"FAIL_MODEL_PARITY_OVERLAP_STOP",
                         "records_checked":len(rows),"failing_state_index":index,"unexpected_overlaps":unallowed,
                         "READY_reset_not_run":True,"physics_integration_requested":False})
@@ -884,7 +840,7 @@ def main():
                     return 1
                 if len(rows)%25==0 or index in (0,135,136,292,196):
                     print(f"TASK01 STATIC_SAMPLE index={index} checked={len(rows)}/293 PASS overlaps={len(hits)}",flush=True)
-                render_only()
+                app.update()
         if (physics_steps or timeline.is_playing() or float(timeline.get_current_time()) != static_timeline_time):
             raise RuntimeError("Static replay final GUI update integrated physics or changed timeline")
         if moving_negative_checks == 0:
@@ -903,7 +859,6 @@ def main():
             "native_actor_gate_completed":locals().get("native_actor_gate_completed",False),
             "native_actor_comparison":locals().get("native_bodies"),
             "physics_step_callback_count":len(physics_steps),
-            "physics_step_callback_dt_values_sec":physics_steps,
             "physics_step":None,"simulation_timestamp":None})
         traceback.print_exc()
         return 1
@@ -914,8 +869,7 @@ def main():
             omni.timeline.get_timeline_interface().pause()
             deadline=time.monotonic()+args.hold_for_inspection_sec
             while not stopping and app.is_running() and time.monotonic()<deadline:
-                static_render_update(app, omni.timeline.get_timeline_interface(),
-                    __import__("carb.settings",fromlist=["get_settings"]).get_settings(), physics_steps)
+                app.update()
         finally:
             app.close()
 

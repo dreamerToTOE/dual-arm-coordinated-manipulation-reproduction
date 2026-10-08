@@ -1,10 +1,16 @@
 # BUGS
 
+## 2026-10-08 — 05 paused app.update仍积分；06独立dispatch/step门禁待实测
+
+OPEN/ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP：05 START accepted0，paused app.update出现2个真实physics-step callbacks，Cube z0.38→0.3772749900817871m/vz=-0.16350001m/s，立即拒绝。通知前27 native比较已存且与通知后区分；wrapper0非PASS，无模型碰撞判决/READY。不能因“没有请求integration”声称没有积分；03/04/05负结果保留。
+
+06只准备官方render模式临时关闭playSimulations并finally恢复原bool（初始化force_load同样隔离），必须callback0/time/q/native再验。动态velocity/jointstate不作为几何参数hash，实际积分依独立step0门禁拒绝；mass/scale/mesh/limits/drive/material/scene/frames不豁免，dt/gravity/benchmark/ACM不改。06尚未运行，不称RESOLVED；BUG019仍OPEN/未判决，BUG001延期TASK10-IS非阻塞。
+
 ## 2026-10-08 — 04静态输出Quat precision错误；05修复仍待GUI验证
 
 04 `ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`，START accepted0：原SDK Cube `/World/Task01/Cube.xformOp:orient` 为GfQuatf，而输出helper提供GfQuatd。Fabric实际disabled/updateToUsd=true；没有进入碰撞判定，native成功值未存、wrapper0非PASS。这是原属性类型的工程适配错误，不是工具/车厢几何不可行、BUG019实际复现或已修复。
 
-05只按原属性precision写状态输出，并区分SDK物化body pose orient与不可变几何尺度；helper不新增/重排ops、非法顺序继续拒绝。全scene physics/材料/ancestors/工具TCP纳入fingerprint；scale/local shape/limits/参数以及q/native与step0继续审计，新增final/screenshot step0守卫。35纯USD/query软件测试agent报告OK，主代理复跑/GUI05尚未完成，不标工程问题实测RESOLVED。03/04负结果保留，BUG019 OPEN/NOT_ESTABLISHED，READY NOT_RUN，BUG001归TASK10-IS不阻塞；benchmark/ACM/实际几何保持。
+05只按原属性precision写状态输出，并区分SDK物化body pose orient与不可变几何尺度；helper不新增/重排ops、非法顺序继续拒绝。全scene physics/材料/ancestors/工具TCP纳入fingerprint；scale/local shape/limits/参数以及q/native与step0继续审计，新增final/screenshot step0守卫。35纯USD/query软件测试主代理复跑exit0/0.093s，source已冻结但GUI05尚未运行，不标工程问题实测RESOLVED。03/04负结果保留，BUG019 OPEN/NOT_ESTABLISHED，READY NOT_RUN，BUG001归TASK10-IS不阻塞；benchmark/ACM/实际几何保持。
 
 ## 2026-10-08 — 新单Cube静态输出源不同步；03未得到BUG019几何判决
 
