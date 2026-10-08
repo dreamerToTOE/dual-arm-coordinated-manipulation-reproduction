@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — 延续“继续”的严格范围：API类型错误不改基准解决
+
+延续用户既定单Cube有序验收，不新增授权。04原SDK Cube quaternion precision错误停止后，仅准备05软件状态属性precision修复及完整库存/step0守卫；GUI05尚未运行，READY NOT_RUN。03/04各自负结果保留，不能把native未存值补作数据、wrapper0当PASS或APItypeerror说成几何失败/BUG019已复现/已修复。原工具/车厢/benchmark/ACM/实际几何不改，仍可见GUI-only、无五Cube/P4/force；BUG001归TASK10-IS不阻塞。
+
 ## 2026-10-08 — “继续”仍按既定单Cube严格顺序，不扩大授权
 
 用户本次要求“继续”，未改变已批准START/PRE/TARGET、shared-grasp/L工具/车厢/ACM/IK门限，也未授权五Cube、headless、force/P4或自行冻结。继续只在全链几何已通过后完成可见GUI原模型一致性及其软件取证适配；03实际START输出源门禁停止不能包装成几何FAIL或PASS。04静态输出适配尚未运行，READY/reset仍未运行；native成功值缺失如实保留，不能补写，wrapper0不作为验收。

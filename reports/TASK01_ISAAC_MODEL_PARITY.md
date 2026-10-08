@@ -1,6 +1,6 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
-2026-10-08. Current status: ENGINEERING_STALE_USD_QUERY_SOURCE_STOP (03); output-adapter correction prepared (04 not run), **not PASS**.
+2026-10-08. Current status: ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP (04); corrected typed-output adapter prepared (05 not run), **not PASS**.
 
 Prerequisite full discrete geometry passed (A136/B157, exact PRE14q seam): [report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). The original PhysX convexHull model is not assumed equivalent to the MoveIt STL. Full-chain wall-risk state is TARGET/state292, left_link7↔deep_wall FCL clearance2.212219mm; intended Cube/tool minimum is state196/0.999669mm.
 
@@ -8,7 +8,15 @@ Independent visible GUI only: dual FR3/current L tools/one Cube/table/carriage. 
 
 Replay all states where possible, with early priority START→A minimum/PRE→TARGET (full-chain wall minimum)→state196 (full all-pair minimum). Required insertion samples and all-state replay remain to verify. First unexpected FCL-free/Isaac collision stops, records exact pair/state/actual FK/cooked shape evidence, no geometry repair.
 
-Latest artifact directory: `results/20261008_TASK01_isaac_model_parity03/`. READY/reset has not been authorized or run.
+Latest artifact directory: `results/20261008_TASK01_isaac_model_parity04/`. READY/reset has not been authorized or run.
+
+## 04 actual API precision stop / 05 prepared
+
+04 source commit `a672224`, SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`; preserved execution-before source snapshot. Visible GUI startup/load about14.5s; accepted parity states0/START attempted. Existing Fabric extension was disabled and `/physics/updateToUsd=true`; hence Fabric separation is **not** the demonstrated cause of 03. Official output materialized a Cube `xformOp:orient` state field of type `GfQuatf`, while the fallback wrote `GfQuatd`, causing a USD type error. No parity overlap verdict, no READY/reset; wrapper0 again is not PASS. [04 metadata](../results/20261008_TASK01_isaac_model_parity04/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity04/summary.json). 32 pure tests passed but did not cover this SDK float output variant.
+
+05 fixes **existing state-field precision**, not geometry. SDK-created body pose-output fields/order are separately audited; body pose output is distinguished from geometry dimensions/scale in the immutable fingerprint. The helper still cannot add/reorder ops and rejects unsupported stacks. Fingerprint additionally covers physics scene/material/joints, disabled colliders, ancestors/base/tool frames and TCP. Preserve original scale, actual collider owner-local geometry, model/source hashes, accepted q/native poses, output settings and step0. A paused notice update is followed by complete guards; final GUI update and screenshots also require step0. All 35 pure USD/query regression tests passed (agent run); main replay/test log will provide execution evidence. 05 is still not run at this checkpoint, no BUG019/PASS/FROZEN claim.
+
+GitHub checkpoint `a672224` was actually pushed over ordinary SSH after a proxy banner timeout; no global SSH config was changed.
 
 ## 03 actual guarded GUI result — source-frame rejection, no geometry verdict
 
@@ -28,7 +36,7 @@ timeout --signal=TERM --kill-after=20s 480s env DISPLAY=:1 PYTHONUNBUFFERED=1 \
   --hold-for-inspection-sec 0
 ```
 
-## 04 engineering output correction — prepared, not yet run
+## 04 historical engineering output plan (before execution)
 
 Preserve paused state and actual output settings; try official `update_transformations_scene` and **already enabled** Fabric `force_update/save_to_usd`, without enabling Fabric or changing physics settings. If tensor teleports still do not export, mirror the already validated body SE3 to **existing** body translate/orient ops only. Original actor hierarchy, op order/scale, all child/tool collider local geometry and physics properties remain unchanged. Process paused USD notices, then recheck native actors, 14q, Cube, immutable geometry/settings fingerprint and zero physics-step callbacks. Reject unsupported/time-sampled/reordered ops; never add/reset/reorder ops. All original cooked-shape and moving-query guards remain mandatory. This is a static state-output adapter, not a geometric repair or paper method. 04 has no result yet.
 

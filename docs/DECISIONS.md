@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D035 follow-up — 原属性precision与state-output/geometry双审计，不消除负结果
+
+2026-10-08，[ENGINEERING]。04因原SDK Cube orient expectedQuatf/gotQuatd在START停止，accepted0/wrapper0非PASS；Fabric disabled/updateToUsd=true，native成功值未保存且未进入碰撞判定，03/04均保留，不能作BUG019几何判决或修复证据。
+
+05仅依既有状态属性precision写值。将body pose state-output库存与不可变几何尺度分开：原SDK可能自己物化Cube orient，这是SDK状态输出，不是helper新增ops；helper依旧只写existing translate/orient、不新增/重排，非法顺序拒绝。geometry fingerprint涵盖全scene physics/材料、所有相关ancestors、工具TCP库存，原scale/local collider/shape/mesh/limits/参数和q/native/setting/step0守卫不削弱；新增final与screenshot step0检查。35纯USD/query测试agent报告OK、主代理待复跑，固化source后GUI05尚未运行。
+
+不改任何benchmark/实际几何/ACM，不实现P4、force或论文[DEVIATION]。READY仍须先过实际parity；BUG019未判决、BUG001非TASK01阻塞；全部门禁通过也只PASS CANDIDATE。Git采用命令局部direct push成功上传 `a672224`，首次proxy timeout记录保留，不改全局SSH。
+
 ## D035 — 静态输出源工程修复保留原模型与全部取证门禁
 
 2026-10-08，[ENGINEERING]。03 START/state0 因USD collider旧旋转被正确拒绝，accepted0；wrapper0不等于PASS，不把尚未发生的移动shape/full-chain查询说成几何失败或BUG019实际碰撞。已通过native actor门禁但成功值未存，只记录控制流事实，不能事后补成实测数值；后续新的执行应完整保存native与USD比较。

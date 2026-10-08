@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-08 — 04原SDKQuatf属性报错保留；05状态precision与库存审计准备
+
+04使用已固化 `a672224` /probe SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`，可见GUI约14.5s后START accepted0，原SDK Cube `xformOp:orient` expected GfQuatf/got GfQuatd，实际 `ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`。Fabric未启用、updateToUsd=true，未进入模型碰撞验证；native成功值未保存，wrapper0非PASS、进程已退出回收。03 stale源负结果未覆盖；04也不是几何失败、BUG019判决或物理成功。Git首次proxy push超时保留，随后direct push `a672224` 成功，无全局SSH改动。
+
+05仅工程输出precision依原属性修正；body pose state-output允许原SDK自己物化Cube orient并单独审计，helper仍不新增ops/不重排且拒绝非法顺序。不可变geometry fingerprint扩展全scene physics/材料、ancestors、工具TCP库存，原scale/local shape/limits/参数继续核对；增加final step0及screenshot step0守卫。35纯USD/query测试agent报告OK，主代理复跑与source固化待完成（当前SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba`）。05尚未运行，不能记录为GUI/model PASS；READY NOT_RUN，无benchmark/实际几何/ACM/force/P4改动，后续结果另追加。
+
 ## 2026-10-08 — 03可见静态取证门禁停止；04输出适配仅准备
 
 按用户“继续”保留既定单Cube严格顺序。`d9c422c` /probe SHA `27e0a043431a83b0f8fa760fd6307f8749ee2e825de154dcad4c3c67ae6d7aa1` 在执行前保存byte-identical快照；使用原native-run配置与官方资产，不执行旧五Cube场景入口/ROSgraph/controller。03可见GUI加载原模型及实际cooked shape，CPU tensor ordinal=-1/readback_suppressed=false。START q/Cube/TCP与link FK通过已存门禁；native actor比较控制流未拒绝，但成功值未包含在失败产物，保留这个证据缺口，不反填数据。

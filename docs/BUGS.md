@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — 04静态输出Quat precision错误；05修复仍待GUI验证
+
+04 `ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`，START accepted0：原SDK Cube `/World/Task01/Cube.xformOp:orient` 为GfQuatf，而输出helper提供GfQuatd。Fabric实际disabled/updateToUsd=true；没有进入碰撞判定，native成功值未存、wrapper0非PASS。这是原属性类型的工程适配错误，不是工具/车厢几何不可行、BUG019实际复现或已修复。
+
+05只按原属性precision写状态输出，并区分SDK物化body pose orient与不可变几何尺度；helper不新增/重排ops、非法顺序继续拒绝。全scene physics/材料/ancestors/工具TCP纳入fingerprint；scale/local shape/limits/参数以及q/native与step0继续审计，新增final/screenshot step0守卫。35纯USD/query软件测试agent报告OK，主代理复跑/GUI05尚未完成，不标工程问题实测RESOLVED。03/04负结果保留，BUG019 OPEN/NOT_ESTABLISHED，READY NOT_RUN，BUG001归TASK10-IS不阻塞；benchmark/ACM/实际几何保持。
+
 ## 2026-10-08 — 新单Cube静态输出源不同步；03未得到BUG019几何判决
 
 OPEN / ENGINEERING_STALE_USD_QUERY_SOURCE_STOP：03 START/state0 q/Cube/TCP与link FK已存检查通过；native actor检查控制流未拒绝，但成功值未保存，不得反填成数据。`/World/left_fr3/fr3_link1/collisions` USD rotation仍identity，live-body预期矩阵差0.609714114482171（无量纲）。当前 `update_transformations(True,True)` 后仍未证实USD/query source同步；CPU ordinal=-1/readback_suppressed=false不能单独排除stale源。accepted parity states=0，wrapper0不能用作PASS。

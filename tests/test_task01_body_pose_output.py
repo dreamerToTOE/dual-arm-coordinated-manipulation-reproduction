@@ -119,6 +119,51 @@ class OriginalBodyPoseOutputTests(unittest.TestCase):
         self.assert_matrix_close(tool.GetLocalTransformation(), original_local)
         self.assert_matrix_close(tool.ComputeLocalToWorldTransform(Usd.TimeCode.Default()), original_local * target)
 
+    def test_float_pose_ops_preserve_original_attribute_precision(self):
+        # Reproduce an SDK-generated quatf/float3 pose stack, not a new physics model.
+        body = UsdGeom.Xform.Define(self.stage, "/World/left_fr3/sdk_float_body")
+        translate = body.AddTranslateOp(precision=UsdGeom.XformOp.PrecisionFloat)
+        translate.Set(Gf.Vec3f(.088, 0., 1.033))
+        orient = body.AddOrientOp(precision=UsdGeom.XformOp.PrecisionFloat)
+        orient.Set(Gf.Quatf(1.))
+        scale = body.AddScaleOp(precision=UsdGeom.XformOp.PrecisionFloat)
+        scale.Set(Gf.Vec3f(1.))
+        UsdPhysics.RigidBodyAPI.Apply(body.GetPrim())
+        before_types = [op.GetAttr().GetTypeName() for op in body.GetOrderedXformOps()]
+        before_precisions = [op.GetPrecision() for op in body.GetOrderedXformOps()]
+        before_order = body.GetPrim().GetAttribute("xformOpOrder").Get()
+        target = self.pose((.57, -.2, .4), (0., 1., 0.), 40.)
+        self.mirror({str(body.GetPath()): target})
+        self.assertEqual([op.GetAttr().GetTypeName() for op in body.GetOrderedXformOps()], before_types)
+        self.assertEqual([op.GetPrecision() for op in body.GetOrderedXformOps()], before_precisions)
+        self.assertEqual(body.GetPrim().GetAttribute("xformOpOrder").Get(), before_order)
+        self.assertIsInstance(translate.Get(), Gf.Vec3f)
+        self.assertIsInstance(orient.Get(), Gf.Quatf)
+        self.assertEqual(scale.Get(), Gf.Vec3f(1.))
+        np.testing.assert_allclose(np.asarray(body.ComputeLocalToWorldTransform(Usd.TimeCode.Default())),
+                                   np.asarray(target), atol=1e-6, rtol=0.)
+
+    def test_sdk_added_cube_quatf_pose_field_is_not_geometry_change(self):
+        original_hash = self.fingerprint()
+        translate, scale = self.cube.GetOrderedXformOps()
+        sdk_orientation = self.cube.AddOrientOp(precision=UsdGeom.XformOp.PrecisionFloat)
+        sdk_orientation.Set(Gf.Quatf(1.))
+        self.cube.SetXformOpOrder([translate, sdk_orientation, scale])
+        self.assertEqual(self.fingerprint(), original_hash)
+        before_scale = scale.Get()
+        before_order = self.cube.GetPrim().GetAttribute("xformOpOrder").Get()
+        # Pose output can represent the already validated body orientation; scale stays original.
+        target = self.pose((.55, 0., .38), (0., 0., 1.), 20.)
+        self.mirror({str(self.cube.GetPath()): target})
+        self.assertIsInstance(sdk_orientation.Get(), Gf.Quatf)
+        self.assertEqual(scale.Get(), before_scale)
+        self.assertEqual(self.cube.GetPrim().GetAttribute("xformOpOrder").Get(), before_order)
+        self.assertEqual(self.fingerprint(), original_hash)
+        expected_scale = Gf.Matrix4d(1.)
+        expected_scale.SetScale(Gf.Vec3d(*map(float, before_scale)))
+        np.testing.assert_allclose(np.asarray(self.cube.ComputeLocalToWorldTransform(Usd.TimeCode.Default())),
+                                   np.asarray(expected_scale * target), atol=1e-6, rtol=0.)
+
     def test_original_body_scale_change_is_detected_by_fingerprint(self):
         before = self.fingerprint()
         self.bodies["left"].GetPrim().GetAttribute("xformOp:scale").Set(Gf.Vec3f(2., 1., 1.))
@@ -130,6 +175,11 @@ class OriginalBodyPoseOutputTests(unittest.TestCase):
         self.assertNotEqual(before, self.fingerprint())
         before = self.fingerprint()
         self.stage.GetPrimAtPath("/World/left_fr3/original_joint").GetAttribute("physics:localPos0").Set(Gf.Vec3f(0., 0., .2))
+        self.assertNotEqual(before, self.fingerprint())
+
+    def test_original_cube_mass_change_detected(self):
+        before = self.fingerprint()
+        UsdPhysics.MassAPI(self.cube.GetPrim()).GetMassAttr().Set(.81)
         self.assertNotEqual(before, self.fingerprint())
 
     def test_scaled_parent_rejected(self):

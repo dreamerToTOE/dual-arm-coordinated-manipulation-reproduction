@@ -1,5 +1,22 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — single_cube_core_benchmark / isaac_model_parity04 API precision停止；05未运行
+
+TASK01，[ENGINEERING]静态原模型输出适配，非论文算法；Isaac4.5 visible GUI/既有全链确定14q，无新IK。Commit `a672224`，probe SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`；config仍不可变native-run `config_at_run.yaml` /SHA `3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b`。实际命令与完整证据见 [04 metadata](../results/20261008_TASK01_isaac_model_parity04/metadata.json)：
+
+```bash
+cd /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction
+timeout --signal=TERM --kill-after=20s 480s env DISPLAY=:1 PYTHONUNBUFFERED=1 \
+  scripts/run_isaac_bundled_ros.sh \
+  platforms/isaac_ros2/probes/task01_single_cube_model_parity_gui.py \
+  --output-dir results/20261008_TASK01_isaac_model_parity04/raw \
+  --hold-for-inspection-sec 0
+```
+
+Actual约14.5s工程wall time，START/index0 accepted0，`ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`：原SDK `/World/Task01/Cube.xformOp:orient` expected GfQuatf/got GfQuatd。实际Fabric disabled、updateToUsd=true；未进入全链碰撞判定，native成功值未落盘、不反填，wrapper0不等PASS。32软件测试OK只是当轮软件证据。Artifacts=root metadata/summary/source snapshot/software_validation/launch.log；raw inputs/failure/output_sync_contract。physics integration_requested=false，step/time=null、READY/controller/suction/force NOT_RUN，owned GUI已退出回收。03负结果保留；BUG019 NOT_ESTABLISHED，不作几何FAIL/模型修复结论。
+
+05准备状态属性precision修复与扩大不可变几何库存；原SDK物化pose orient与几何尺度分开，helper仍reject新增/reorder/非法ops，原模型/benchmark/ACM不改。增加final/screenshot step0守卫。Agent报告35纯USD/query tests OK（主代理待复跑），source当前 `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 待固化；**GUI05尚未运行，无05实验结果**。Git `a672224` direct push成功，首次proxy timeout保留，不改全局SSH。
+
 ## 2026-10-08 — single_cube_core_benchmark / isaac_model_parity03 工程门禁停止
 
 TASK01；baseline=[ENGINEERING]原cooked-shape静态对照，不是论文算法；platform=Isaac Sim4.5 visible GUI/CPU PhysX。Source commit `d9c422c`，probe SHA `27e0a043431a83b0f8fa760fd6307f8749ee2e825de154dcad4c3c67ae6d7aa1`，执行前源码快照一致；seed为既有全链14q（无新IK）；config=`results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml`、SHA `3dbe7fcb192d09db83be801314582249ac3c0c77c9ffd683801ca7680d54881b`。完整来源/命令/指标在 [03 metadata](../results/20261008_TASK01_isaac_model_parity03/metadata.json)。实际命令：

@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-08 — 04停于原USD属性precision适配；05仅准备
+
+`isaac_model_parity04` source `a672224` /SHA `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753` 可见GUI约14.5s，START accepted0：原SDK `/World/Task01/Cube.xformOp:orient` 要求GfQuatf，输出适配写GfQuatd，状态 `ENGINEERING_USD_ATTRIBUTE_PRECISION_STOP`。Fabric实际disabled、`/physics/updateToUsd=true`；未进入碰撞判定，native成功值未存，wrapper0不等于PASS。不是几何FAIL/BUG019复现或修复，03负结果保留。
+
+05只修原状态属性precision，并将body pose state-output与不可变几何尺度分开审计：SDK可物化Cube orient，不是helper新增ops；helper仍拒绝非法op顺序。全scene physics/材料/ancestors/工具TCP纳入geometry fingerprint，原scale/local shape/limits/参数继续核对，final step0与screenshot step0新增守卫。35项纯USD/query软件测试agent报告OK，主代理仍需复跑；拟固化source `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba` 后运行可见GUI05，**05尚未运行**。原benchmark/实际几何/ACM未改；TASK01 IN_PROGRESS/PARTIAL，READY NOT_RUN，BUG019未判决，BUG001非阻塞，TASK02/P4未开始。Git首次proxy push超时后direct push `a672224` 已成功，无全局SSH配置改动。
+
 ## 2026-10-08 — 单Cube几何保持PASS；03静态输出源门禁停止，04未运行
 
 `isaac_model_parity03` 实际在 START/state0 停止：`ENGINEERING_STALE_USD_QUERY_SOURCE_STOP`，accepted parity states=0。已存关节/Cube/TCP及link FK到位证据，但 `/World/left_fr3/fr3_link1/collisions` 的USD旋转仍为旧identity，与实时刚体预期矩阵最大元素差0.609714114482171（无量纲，不是距离/penetration）。native actor比较未被控制流拒绝，其成功数值未保存，不能补写为实测数据。wrapper exit0不等于PASS；这是静态输出/查询源的工程门禁，不是几何FAIL，也没有新链BUG019实际碰撞结论。

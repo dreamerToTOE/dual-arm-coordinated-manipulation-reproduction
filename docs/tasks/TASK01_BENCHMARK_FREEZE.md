@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current gate: FULL_GEOMETRY_PASS / USD_ATTRIBUTE_PRECISION_STOP; 05 NOT_RUN (2026-10-08)
+
+04 commit `a672224`, source `3bf86b380723b317b2eb4b32f3020a3736a16126887648bbc8a80c0bc3da8753`: visible GUI stopped at START/index0, accepted0, because original SDK Cube orient requires GfQuatf but adapter supplied GfQuatd. Actual Fabric disabled/updateToUsd=true; native success values not saved; wrapper0 is not PASS. No collision verdict, geometric failure, or BUG019 reproduction/resolution. Preserve03/04 negative evidence separately.
+
+05 only prepares existing-attribute precision adaptation and distinguishes SDK-materialized body pose output from immutable geometry scale. Helper still rejects added/reordered/illegal ops; whole-scene physics/materials, ancestors and tool-TCP inventory enter the geometry fingerprint, while original scale/local shape/limits/settings/q/native/step0 checks remain. Final/screenshot step0 guards added. Agent reports35 pure USD/query software testsOK; main rerun/source freeze pending, GUI05 **not run**. Original benchmark/geometry/ACM unchanged; READY NOT_RUN, BUG019 OPEN/NOT_ESTABLISHED, BUG001 deferred TASK10-IS non-blocking, TASK02/P4 TODO. D035 remains ENGINEERING, no paper DEVIATION/PASS CANDIDATE/FROZEN claim.
+
+#### Historical 03 checkpoint
+
 ### Current ordered gate: FULL_GEOMETRY_PASS / STATIC_OUTPUT_GUARD_STOP (2026-10-08)
 
 03 visible single-Cube replay stopped at START/state0 with `ENGINEERING_STALE_USD_QUERY_SOURCE_STOP`, accepted parity states=0. The original left_link1 collider USD rotation remained old despite recorded q/Cube/TCP/live-FK checks. Native actor success values were not saved; only non-rejection by control flow is known and must not be reconstructed as measurements. Wrapper exit0 is not PASS. No actual new-chain collision verdict or BUG019 reproduction/resolution was established; pure geometry A136/B157 remains valid.
