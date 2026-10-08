@@ -4,14 +4,18 @@ schema_version: 2
 benchmark_id: benchmark_v1
 status: DRAFT
 scientific_classification: ADAPTATION
-scope: single_shared_cube_transport_and_constrained_insertion
+scope: staged_single_cube_tight_transport_handoff_and_constrained_insertion
 units: {length: m, mass: kg, time: s, angle: rad, force: N, torque: Nm}
 
-legacy:
-  task27_five_cube_flow:
+prior_project_reuse:
+  repository: dreamerToTOE/dual-arm-embodied-palletizing
+  branch: side-suction-palletizing
+  policy_doc: docs/PRIOR_PROJECT_REUSE.md
+  task24_bilateral_transport: VALIDATED_ENGINEERING_REFERENCE
+  task26_task27_rear_push: VALIDATED_ENGINEERING_REFERENCE
+  full_task27_five_cube_flow:
     role: application_demo_and_stress_test_only
     blocks_benchmark_freeze: false
-    note: Historical evidence is preserved but is not the common SCI baseline.
 
 frames:
   world: world
@@ -24,7 +28,7 @@ frames:
       x: insertion_forward
       y: carriage_width
       z: up
-    validation: PENDING_SINGLE_CUBE_READY
+    validation: PENDING_FINAL_READY
 
 robots:
   model: dual_fr3_side_suction
@@ -38,15 +42,18 @@ robots:
     rail_axis_world: [1.0, 0.0, 0.0]
     rail_x_limits_world_m: [0.450, 1.050]
     tcp_link: right_fr3_side_suction_tcp
-  # [EXPERIMENTAL] 2026-10-07完整几何链实得14q候选；不是FROZEN。
-  # reset必须复用同一配置，不再随机重新求解START/PRE_PUSH。
+
+  # [EXPERIMENTAL] actual candidate from the completed START→PRE_PUSH geometry chain.
   benchmark_a_start_joint_state_rad: &benchmark_a_start_q
     left: [0.6556998327304024, -0.9158460955296517, 0.9361619490344238, -2.43079576661854, 0.7029262366728565, 1.726259984792982, 1.2164416425071283]
     right: [-0.47514226618537353, -1.1301697571742122, -0.9979978814517659, -2.404800398376118, -0.8636013246419576, 1.5572941255153623, -1.0752371378447552]
-  benchmark_b_start_joint_state_rad:
+
+  pre_push_shared_joint_state_rad: &pre_push_shared_q
     left: [0.21744143569271313, -0.5164914914460937, 1.0171641693028668, -2.6091513733003326, 0.5632971965150655, 2.2361990887058414, 0.7985013134114293]
     right: [0.03097153340224297, -0.8182678884154884, -1.2267956826752937, -2.5710825559909845, -0.8729224205691766, 2.028938813811622, -0.5717471798134617]
-  start_joint_state_validation: GEOMETRY_CANDIDATE_ISAAC_PARITY_AND_RESET_PENDING
+
+  insert_ready_joint_state_rad: PENDING_CAPTURE_FROM_REUSED_REAR_REGRASP
+  start_joint_state_validation: A_GEOMETRY_PASS_B_INSERT_READY_PENDING_REUSE_CAPTURE
   start_joint_state_evidence: results/20261007_TASK01_full_single_cube_geometry01/state_records.json
 
 table:
@@ -74,15 +81,37 @@ tool:
   geometry_change_allowed_in_task01: false
 
 shared_grasp:
-  mode: rigid_shared_object_constraint
+  applies_to: [A_tight_transport, handoff_pre_release]
+  mode: bilateral_side_surface_gripper
   object_to_left_tcp_candidate:
     translation_m: [0.000, -0.061, 0.000]
     quaternion_xyzw: [0.7071067811865476, 0.7071067811865476, 0.0, 0.0]
   object_to_right_tcp_candidate:
     translation_m: [0.000, 0.061, 0.000]
     quaternion_xyzw: [0.7071067811865476, -0.7071067811865476, 0.0, 0.0]
-  physical_contact_calibration: DEFERRED_TO_P2_P3
-  geometric_validation: PASS_SAMPLED_FULL_CHAIN_ISAAC_PARITY_PENDING
+  isaac_hold_representation:
+    source: reuse_task24_task11_surface_gripper
+    status: REUSE_CANDIDATE_REQUIRES_TASK01_SANITY
+    historical_capture_threshold_m: 0.003
+    historical_stiffness: 1.0e4
+    historical_damping: 1.0e3
+    historical_break_force_N: 1.0e6
+    historical_break_torque_Nm: 1.0e6
+    note: Engineering hold abstraction only; not calibrated contact-wrench semantics.
+  force_wrench_calibration: DEFERRED_TO_TASK10_IS
+  geometric_validation_A: PASS_DENSE_START_TO_PRE_PUSH
+
+rear_push_grasp:
+  applies_to: B_constrained_insertion
+  transition_role: FIXED_ENGINEERING_HANDOFF_NOT_SCORED_AS_P3_CONTROL
+  pusher_arm: right
+  helper_arm: left
+  cube_contact_face: -X
+  insertion_axis_world: [1.0, 0.0, 0.0]
+  attachment: existing_surface_gripper_rear_regrasp
+  helper_policy: park_outside_insertion_work_zone
+  candidate_policy: reuse_task26_task27_full_chain_regrasp_push_exit_precheck
+  insert_ready_state: PENDING_CAPTURE_AND_REVALIDATION
 
 carriage:
   opening_side: -X
@@ -96,26 +125,42 @@ carriage:
 benchmarks:
   A_tight_transport:
     start_mode: both_side_suctions_closed_and_cube_stably_shared
-    # [ADAPTATION] 用户2026-10-07确认的新科研START，不是旧Task27 feed pose。
-    # 双臂已稳定共同持有Cube且已离桌；本基准不包含抓取过程。
     initial_cube_center_world_m: [0.550, 0.000, 0.380]
     initial_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
     initial_robot_joint_state_rad: *benchmark_a_start_q
-    target_name: PRE_PUSH
+    target_name: PRE_PUSH_SHARED
     target_cube_center_world_m: [0.790, 0.000, 0.260]
     target_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+    target_robot_joint_state_rad: *pre_push_shared_q
     success_tolerances: PENDING_USER_REVIEW
     force_metrics_required_for_pass: false
 
+  handoff_pre_push_to_insert_ready:
+    scientific_role: fixed_common_engineering_transition
+    scored_as_p3_algorithm: false
+    start_name: PRE_PUSH_SHARED
+    start_cube_center_world_m: [0.790, 0.000, 0.260]
+    sequence:
+      - release_both_side_suctions
+      - move_left_helper_to_safe_park
+      - move_right_pusher_to_cube_minus_x_face
+      - close_right_rear_surface_gripper
+      - verify_attachment_and_common_collision_gates
+    output_name: INSERT_READY
+    output_cube_center_world_m: [0.790, 0.000, 0.260]
+    output_robot_joint_state_rad: PENDING_CAPTURE_FROM_REUSED_TASK27_CENTER_FLOW
+
   B_constrained_insertion:
-    start_name: PRE_PUSH
+    start_name: INSERT_READY
     start_cube_center_world_m: [0.790, 0.000, 0.260]
     start_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
     target_cube_center_world_m: [1.100, 0.000, 0.260]
     target_orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
     commanded_translation_world_m: [0.310, 0.000, 0.000]
-    contact_topology: dual_arm_shared_object_for_scientific_benchmark
-    success_tolerances: PENDING_USER_REVIEW
+    contact_topology: single_right_rear_surface_gripper_push_after_bilateral_release
+    expected_terminal_support: deep_wall_near_contact
+    prior_engineering_deep_wall_gap_tolerance_m: 0.003
+    formal_success_tolerances: PENDING_USER_REVIEW
     force_limits: DEFERRED_TO_P3
     jam_detection_thresholds: DEFERRED_TO_P3
     cases:
@@ -132,6 +177,7 @@ timing:
   controller_command_period_s: 0.010
   timestamp_policy: physics_post_step_simulation_time_only
   wall_time_for_scientific_metrics: false
+  frequency_relation: PENDING_FINAL_FREEZE_REVIEW
 
 trials:
   development_seed: 0
@@ -151,25 +197,23 @@ measurement_contract:
     - application_point_for_wrench_when_available
 
 task01_validation:
-  single_cube_geometry_samples: [START, PRE_PUSH, INSERT_10, INSERT_30, INSERT_50, INSERT_70, INSERT_100]
-  require_dual_ik: true
-  require_joint_limits: true
-  require_full_fcl: true
-  require_tool_carriage_clearance: true
-  require_relative_grasp_consistency: true
-  require_isaac_reset_ready: true
+  A_dense_geometry_already_passed: true
+  require_A_surface_gripper_hold_sanity: true
+  require_A_start_and_pre_push_reset_ready: true
+  require_handoff_reuse_precheck: true
+  require_insert_ready_capture: true
+  require_B_rear_push_geometry_and_isaac_sanity: true
   require_force_calibration: false
   require_five_cube_flow: false
-  geometry_probe_numeric:
-    # [ENGINEERING] 仅探针数值求解设置，独立验收门限未放宽。
-    lma_epsilon: 1.0e-7
-    orientation_vs_position: 0.01
-    translation_acceptance_m: 1.0e-5
-    rotation_acceptance_rad: 1.0e-4
-    max_cube_translation_step_m: 0.002
+  superseded_validation:
+    bilateral_side_grasp_pre_push_to_target:
+      result: FAIL_ISAAC_TARGET_LINK7_DEEP_WALL
+      use_for_current_B: false
+      preserve_as_historical_negative_evidence: true
 
 approval:
   one_cube_core_benchmark_rescope: CONFIRMED_2026-10-06
   benchmark_a_start_pose_candidate: CONFIRMED_2026-10-07_NEW_RESEARCH_DESIGN_NOT_TASK27_FEED
+  staged_B_topology_reuse_prior_work: CONFIRMED_2026-10-08
   nominal_effective_friction_0p5_0p5: CANDIDATE_REQUIRES_FINAL_FREEZE_REVIEW
   benchmark_freeze: PENDING
