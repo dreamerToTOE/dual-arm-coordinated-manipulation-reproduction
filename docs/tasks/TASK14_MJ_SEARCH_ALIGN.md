@@ -3,15 +3,17 @@
 Status: TODO
 
 ## Goal
-Recover from jam/misalignment using paper-inspired perturbation/search behavior.
+Recover from jam/misalignment during Benchmark-B rear-push insertion using bounded paper-inspired perturbation/search behavior.
 
 ## State machine
-PRE_CONTACT → PUSH → SEARCH/ALIGN → INSERT → DONE, with JAM_ABORT after bounded recovery attempts.
+INSERT_READY → PUSH → SEARCH/ALIGN → INSERT → DONE, with JAM_ABORT after bounded recovery attempts.
 
 ## Codex actions
-- Implement small lateral/orientation perturbations inspired by P3 search/align stages.
+- Keep the same right-rear pusher contact topology.
+- Implement bounded lateral/orientation perturbations inspired by P3 search/align stages.
 - Bound force, amplitude, time and recovery count.
-- Compare with no-recovery hybrid controller.
+- Compare with the no-recovery hybrid controller from the identical INSERT_READY state.
+- Do not change the common handoff or benchmark geometry to improve recovery.
 
 ## PASS
 Recovery improves success on at least one frozen misalignment class without violating safety limits.
