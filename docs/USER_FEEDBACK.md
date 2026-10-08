@@ -1,3 +1,5 @@
+# USER_FEEDBACK
+
 ## 2026-10-08 — Reuse prior completed side-suction results
 
 User explicitly pointed out that the predecessor project had already completed the Cube transport and push-in workflow and approved updating this repository to **combine and reuse those validated results**.
@@ -11,7 +13,7 @@ Interpretation approved for future agents:
 
 The user approved the D039 plan and GitHub documentation changes.
 
-# USER_FEEDBACK
+
 
 ## 2026-10-08 — Additional allowance exactly1/1; no held-reset claim
 
