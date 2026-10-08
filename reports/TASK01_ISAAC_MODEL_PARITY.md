@@ -1,5 +1,13 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
+## 2026-10-08 current: critical-state safety FAIL at TARGET
+
+One explicit **command-only** additional attempt reuses unchanged harness47d22ce/SHAab174884…, original input hashes/scene audit; not parity10. Four actual post-steps at states0/135/196/292. Firstthree show no unexpected collision. TARGET original contact guard immediately stops on **leftlink7/collisions ↔ WallDeep**, min separation−3.016427159mm. Same-step raw rightlink7/deepwall−3.016243223mm is additional unclassified evidence. Not Cube/deep-wall boundary touch.
+
+Nominal FCL leftlink7/deepwall+2.212219mm does not certify PhysX safety. Actual poststep q/TCP movement is saved; no unique-cause/global-IK-impossibility conclusion. TARGET overlap queries NOT_RUN. This concrete candidate safety failure is TASK-BLOCKING; full equivalence remains KNOWN LIMITATION, not a new engineering repair mandate.
+
+TASK01 PARTIAL / safety FAIL / READY BLOCKED_BY_SHARED_HOLD_SEMANTICS;0reset. Four poststeps, native clock agrees at.0666666701436s. Physical check stops, close-resource wait then120s hardKILL/137, owned gone. No source/model/physics/ACM/IK change or retry. [Exact pairs/poses/log](TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md). Earlier entries are historical.
+
 ## 2026-10-08 latest: approved bounded critical-state fallback incomplete — PARTIAL
 
 User confirmed07/08/09 root budget exhausted and stopped zero-step/static-query repairs. One separately approved normal-step GUI fallback was actually run with four fixed recorded states planned (0/135/196/292). It saved **one START/state0 post-step measurement**, at physics step1 / sim0.01666666753590107s, matching native core clock. Original q readback passed before step; after step q reset error max9.05020e-5rad, TCP position errors0.096015/0.067458mm. Free dynamic Cube Z fell2.725005mm with original gravity and no suction constraint; not stable-held READY proof.

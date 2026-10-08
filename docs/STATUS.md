@@ -1,5 +1,21 @@
 # STATUS
 
+## 2026-10-08 — Command-only allowance consumed: TARGET collision; STOP FOR USER
+
+```text
+TASK01 = PARTIAL
+Critical-state Isaac safety = FAIL
+READY/reset = BLOCKED_BY_SHARED_HOLD_SEMANTICS
+```
+
+One explicitly approved additional attempt **1/1** reused the unchanged harness SHA `ab174884…`, recorded14q, original scene and input hashes. Only the command/stdin pipe changed; no new probe, source/model/physics/ACM/IK edit. Four actual post-steps were saved: START0, PRE135 and state196/B60 show no unexpected collision; TARGET292 triggers the original contact-guard STOP at simulation time0.0666666701436s.
+
+Blocking pair: `/World/left_fr3/fr3_link7/collisions` ↔ `/World/Task01/Carriage/WallDeep`, minimum contact separation **−3.016427159mm**. The same-step raw right link7/deep-wall report has−3.016243223mm; it was not subsequently classified after the first guard stopped. TARGET Cube/deep-wall boundary contact is a separate definition item, **not the blocking pair**. TARGET overlap queries were NOT_RUN. Nominal FCL +2.212219mm does not establish Isaac safety; no unique-cause or global-IK-infeasibility claim.
+
+Four observations, three automated continuation tokens, **zero reset trials**, no holding constraint/suction/controller. TARGET actual q error0.018546728rad and TCP errors2.513139/4.758278mm are saved. START free-Cube drop2.725005mm is not stable-held READY. Native and post-step clocks agree; carriage frame unchanged. Physics stopped at4steps; app.close then waited for resources until the120s hard cap (exit137), all owned processes verified absent. No clean-shutdown claim or lifecycle repair.
+
+TASK-BLOCKING: observed TARGET robot–wall safety failure; separately, missing shared-held READY representation. Full equivalence remains KNOWN LIMITATION; BUG001 DEFERRED TASK10-IS; five-Cube LEGACY. Static3/3, earlier controlled1/1 and additional1/1 budgets remain exhausted. **Stop; no retry/reset/parity10/geometry repair.** Await user direction on the collision and on initial holding representation (existing suction / benchmark rigid-shared attachment / another existing holding mechanism). Candidate DRAFT; TASK02/P4 TODO; no PASS CANDIDATE/FROZEN. [Report](../reports/TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md), [evidence](../results/20261008_TASK01_critical_safety_command_rerun/metadata.json). Lower entries are historical.
+
 ## 2026-10-08 — Approved one bounded controlled fallback: PARTIAL / STOP FOR USER
 
 User explicitly approved replacing the exhausted static07/08/09 route with **one** bounded normal-step GUI fallback at four recorded 14q states: START0, PRE135, minimum196, TARGET292. Five resets per start follow only after the safety gate. No zero-step/native-handle/query-tree development, force/P2/P3/five-Cube work or benchmark redesign. Source `47d22ce` / `ab174884…`; seven pure classification tests passed, not simulator acceptance.

@@ -1,5 +1,13 @@
 # TASK01 — READY / Reset
 
+## 2026-10-08 current: BLOCKED_BY_SHARED_HOLD_SEMANTICS — no reset trials
+
+Latest user instruction supersedes older plans: four safety snapshots only, **zero reset repetitions**. FreeCube/no holdingconstraint falls2.725005mm at START in one original step, not already-stably-sharedheldSTART. No stableREADY, sharedgrasp/suction stability or deterministicheldreset claim. Recorded14q unchanged/notFROZEN; thresholds PENDING_USER_REVIEW.
+
+Additional launcher-only attempt also fails safety at TARGET292 (leftlink7/deepwall−3.016427159mm contact), immediate STOP; raw right contact negative too. **Benchmark A reset count0; Benchmark B reset count0.** No5+5 or other repeats, attachment mechanism or force/drive/friction/suction tuning. [Exact run](TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md).
+
+TASK01 PARTIAL / safety FAIL / READY BLOCKED_BY_SHARED_HOLD_SEMANTICS. User must separately choose collision response and held-start representation: existing suction, benchmark rigid/shared-object attachment, or another existing fixedhold mechanism. No automatic choice/retry. Lower entries preserve historical plans, not current authorization.
+
 ## 2026-10-08 latest: NOT_RUN — approved safety fallback incomplete
 
 User approved one bounded controlled safety replay (START/PRE/state196/TARGET), then START and PRE_PUSH **five resets each only after the four-state safety gate**. The single GUI attempt saved START at step1/time0.01666666753590107s, with14q initialized from the recorded candidate (no newIK), then stopped at the added stdin execution-review barrier and outer120s timeout124. Otherthreecriticalstates and reset loops were not reached; no internalsummary/failure generated, noacceptedcriticalreview. [Actual report](TASK01_BOUNDED_CONTROLLED_REPLAY.md).

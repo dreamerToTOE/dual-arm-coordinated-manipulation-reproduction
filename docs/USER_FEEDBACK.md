@@ -1,5 +1,13 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — Additional allowance exactly1/1; no held-reset claim
+
+User approves oneandonlyone command/launcher-only rerun,120s hardcap, existing harness/recorded14q and Cube poses at START/PRE/state196/TARGET. Only launch/stdin review-barrier correction; no new probe, collision logic/model/geometry/ACM/physics/IK change. Unexpected collision/new engineering startup issue stops, no retry. Four PASS would also stop; **no5+5reset**.
+
+Reason: freeCube falls2.725mm per step, so already-stably-sharedheldREADY semantics are absent. Allowed positive conclusion only关键构型未发现明显非预期机器人/工具环境碰撞, never stableREADY/sharedgrasp/suction/deterministicheldreset. Required end statuses TASK01 PARTIAL, safety PASS/FAIL, READY BLOCKED_BY_SHARED_HOLD_SEMANTICS. Await choice existing suction / benchmark rigid-shared attachment / other existing fixedhold. Initial representation is not P2/P3 force work; no suction dynamics tuning.
+
+Actual response: command pipe only, harness unchanged; firstthree safety observations pass, TARGET leftlink7/deepwall−3.016427159mm immediate STOP; raw right negative contact also saved. No further physics/reset, close hardcap137/owned gone. Additional1/1 consumed. Experiments stopped, records prepared on task branch for publication; no PASS CANDIDATE/FROZEN or holding-mechanism choice. Collision action separately needs user direction.
+
 ## 2026-10-08 — Explicit approval: one bounded critical-state controlled fallback
 
 User agreed to governance review andcountsparity07/08/09 as same-root3attempts exhausted. Nozero-step/staticquery/parity10/newquery-tree/nativehandle repair. Approves **one** bounded normal-physics-synchronized replay fallback at START/PRE_PUSH/state196B60/TARGET; otherdangerousstate mayreplace notadd, totalpreferably≤5. Reuseactualrecorded14q/Cubepose; checkdrift; recordoriginalcontact/overlap/exactpairs; distinguish expected/unexpected/nocontact. TARGETCube–deepwall boundary is definitionissue, do not selfFAIL orchangeTARGET.

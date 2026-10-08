@@ -1,5 +1,19 @@
 # BUGS
 
+## 2026-10-08 — BUG019: concrete critical-state robot–wall failure [TASK-BLOCKING]
+
+One newly authorized **command-only** attempt, original inputs/harness/scene unchanged. TARGET/state292/step4/time.0666666701436s: `/World/left_fr3/fr3_link7/collisions` ↔ `/World/Task01/Carriage/WallDeep`, min PhysX separation−3.016427159mm at[1.160529494,-.238035619,.347037017]m; original guard stops immediately. Raw rightlink7/deepwall−3.016243223mm exists in the same batch but was not classified after STOP. Not the Cube's nominal boundary touch.
+
+Nominal FCL +2.212219mm remains planning-model evidence; actual poststep q/TCP drift is preserved. This defeats current candidate safety, **not a unique causal diagnosis/full model-equivalence finding/global IK impossibility proof**. TARGET overlap query not run, no subsequent physics/reset. No repair permitted/performed. Additional1/1 used; STOP FOR USER. [Exact evidence](../results/20261008_TASK01_critical_safety_command_rerun/critical_TARGET_sample.json). Equivalence/zero-step perfection remains KNOWN LIMITATION; the **observed collision** is now TASK-BLOCKING.
+
+### READY/reset holding representation [TASK-BLOCKING]
+
+User excludes5+5reset: freeCube/no sharedholding constraint falls2.725005mm at START in one step. READY/reset **BLOCKED_BY_SHARED_HOLD_SEMANTICS**,0trials. Requires user selection of existing suction / benchmark rigid-shared-object attachment / another existing fixedhold mechanism. Not force/P2/P3 or suctiondynamics development; no mechanism/tolerance selected.
+
+### Original GUI resource wait on close [KNOWN LIMITATION / engineering]
+
+Physics stopped at4steps; app.close starts at logged13.108s but waits until120s groupKILL cap, wrapper137; owned processes absent. No clean-close claim or autonomous repair/relaunch. Contact evidence was saved before shutdown. BUG001 stays DEFERRED TASK10-IS; fiveCube LEGACY.
+
 ## 2026-10-08 — Bounded fallback stopped at new terminal review barrier [TASK-BLOCKING evidence gap]
 
 One user-approved controlled GUI attempt after staticbudgetstop producedSTARTstep1 then timedout124 at an agent-added stdin review gate. Observed ownedwrapperT/PythonTl, unconsumed input/noexecution_review_decision; backgroundterminalread/SIGTTIN is a consistent inference, not signaltrace. This is an avoidable launch/review workflow error, **not** an Isaac collision/query result. No internalfailure/summary, no3remainingcriticalstates orreset. Allownedprocessesreaped. Do not waive acceptance because softwaretests or firstsnapshot succeeded; no automatic retry/variant.

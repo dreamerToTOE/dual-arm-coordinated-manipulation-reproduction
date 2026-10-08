@@ -1,0 +1,25 @@
+{
+  "record_type": "post_run_read_only_audit_not_probe_output",
+  "task_status": "PARTIAL",
+  "critical_state_Isaac_safety": "FAIL",
+  "READY_reset": "BLOCKED_BY_SHARED_HOLD_SEMANTICS",
+  "failure_evidence": "Original PhysX contact reports at TARGET/state292; first guard stops on left link7/deep wall negative separation -3.016427159mm. Additional right link7/deep wall raw separation -3.016243223mm was not reached by the classifier.",
+  "collision_guard_stopped_immediately": true,
+  "following_physics_steps_or_resets": 0,
+  "fourth_stdin_stop_reached": false,
+  "original_harness_and_launcher_source_modified": false,
+  "input_and_scene_audit_match_previous_attempt": true,
+  "visible_gui": true,
+  "wrapper_exit_code": 137,
+  "wrapper_exit_is_scientific_verdict": false,
+  "owned_processes_at_end": [],
+  "critical_state_results": [
+    {"state": "START", "index": 0, "status": "NO_UNEXPECTED_COLLISION_OBSERVED", "physics_step": 1, "simulation_time_s": 0.01666666753590107, "cube_drift_m": 0.0027250051498413086, "q_error_max_rad": 0.00009050199718263485, "TCP_error_left_right_m": [0.00009601519906501173, 0.00006745816978707398], "overlap_queries": 17, "overlap_hits": 37, "environment_hits": 0},
+    {"state": "PRE_PUSH", "index": 135, "status": "NO_UNEXPECTED_COLLISION_OBSERVED", "physics_step": 2, "simulation_time_s": 0.03333333507180214, "cube_drift_m": 0.0000002983184370264124, "q_error_max_rad": 0.0001545562830707059, "TCP_error_left_right_m": [0.0001835493903169106, 0.00010536279337846671], "overlap_queries": 17, "overlap_hits": 38, "environment_hits": 1, "environment_hit": "expected shared_cube/table support"},
+    {"state": "state196/B60", "index": 196, "status": "NO_UNEXPECTED_COLLISION_OBSERVED", "physics_step": 3, "simulation_time_s": 0.05000000260770321, "cube_drift_m": 0.0013625025749207072, "q_error_max_rad": 0.0003577195682429313, "TCP_error_left_right_m": [0.00035137878059544864, 0.00015687344137121077], "overlap_queries": 17, "overlap_hits": 38, "environment_hits": 1, "environment_hit": "expected shared_cube/table support"},
+    {"state": "TARGET", "index": 292, "status": "UNEXPECTED_COLLISION_STOP", "physics_step": 4, "simulation_time_s": 0.06666667014360428, "cube_drift_m": 0.0002522308362200676, "q_error_max_rad": 0.01854672809703528, "TCP_error_left_right_m": [0.002513138983784059, 0.0047582783575528505], "overlap_queries": "NOT_RUN", "contact_reports_saved": 13, "contact_points_saved": 47}
+  ],
+  "scientific_claims_not_made": ["stable READY", "shared-grasp stability", "suction validation", "deterministic held-object reset", "FCL/PhysX mathematical equivalence", "unique causal attribution", "all IK solutions or all target poses infeasible", "FROZEN"],
+  "next_action": "STOP_FOR_USER; collision/model or benchmark change requires explicit direction, and shared-held READY representation remains separately undecided",
+  "additional_allowance_used": "1/1"
+}

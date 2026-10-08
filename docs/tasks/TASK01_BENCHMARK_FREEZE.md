@@ -2,6 +2,12 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### 2026-10-08 current gate: PARTIAL / critical safety FAIL / READY semantics BLOCKED
+
+Exactly one user-approved additional command-only120s rerun, original harness/scene/input14q unchanged. START/PRE/state196 show no unexpected collision; TARGET292 original contact guard immediately stops on leftlink7/deepwall **−3.016427159mm**, with right negative contact in the same raw batch. Not Cube/deep boundary touch. Nominal FCL remains only nominal geometry evidence. Four actual poststeps,0reset; close wait hardcapped137/owned gone. [Report](../../reports/TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md).
+
+User explicitly forbids5+5reset because freeCube/no holdingconstraint is not already-stably-sharedheldSTART. **TASK01 PARTIAL; Critical-state Isaac safety FAIL; READY/reset BLOCKED_BY_SHARED_HOLD_SEMANTICS.** All budgets used; no new probe, repair/retry, geometry/ACM/physics/IK change or force/suctiondynamics work. Stop for user collision decision and holding-representation choice (existing suction / rigid-shared attachment / another existing fixedhold). Not PASS CANDIDATE/FROZEN; TASK02/P4 TODO. Older mandates/plans below are historical.
+
 ### Latest gate (2026-10-08): approved bounded fallback used once; PARTIAL / STOP FOR USER
 
 User authorized exactly START0/PRE135/min196/TARGET292 controlled normal-step safety replay, then5+5reset onlyifcriticalpass. Source47d22ce/ab174884…,7puretestsOK. Singlevisible120scap launch savedSTARTstep1, original14q/noobservedunexpectedpenetration/focusenvironmentoverlap. Postqmax9.0502e-5rad/TCP0.096015–0.067458mm; noheldconstraint Cubegravitydrop2.725005mm, notstable-heldREADY. Trueposttime/coreboth0.01666666753590107s/frame(.91,0,.2).

@@ -1,5 +1,15 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — TASK01 command-only additional attempt1/1: safety FAIL
+
+- Run: `results/20261008_TASK01_critical_safety_command_rerun/`; checkpointa10db77, unchanged source47d22ce/SHAab174884…; exact command in metadata/report. VisibleGUI, four recorded14q/Cube states, original1/60step each; no IK/code/geometry/physics/ACM change or controller/suction command.
+- Actual steps1–4: .0166666675359/.0333333350718/.0500000026077/.0666666701436s. Post-step dt accumulator/native core match; no scientific wall timestamps. Carriage[.91,0,.2,0,0,0,1] unchanged.
+- START/PRE/state196: no unexpected collision;17 focus queries each. PRE/state196 have expected Cube/table hits, not robotenvironment failures. Free-Cube drift2.725005/.000298/1.362503mm; not held stability. Existing7puretests passed, not simulator acceptance.
+- TARGET: original `UNEXPECTED_COLLISION_STOP`, leftlink7/deepwall min−3.016427159mm at[1.160529494,-.238035619,.347037017]m. Additional unclassified rightlink7/deepwall−3.016243223mm. Nominal FCL leftlink7/deepwall+2.212219mm. Cube/deepwall−5.59e-8m boundary is not the blocking pair. Postqmax.018546728rad, TCP2.513139/4.758278mm, Cube drift.252231mm; exact14q/poses saved.
+- Immediate stop: four snapshots, three continuation tokens,0reset. TARGET overlap/fourthstdin NOT_RUN; original failure.json saved, no summary. Unchanged harness inputs default5resets is inherited metadata, **not current authorization/execution**.
+- Lifecycle: app.close starts at logged13.108s, resource wait ends by120s groupKILL/137; owned processes absent. No second attempt/shutdown repair. Scientific verdict derives from contact evidence, not exit137.
+- Status: TASK01 PARTIAL; safety FAIL; READY/reset BLOCKED_BY_SHARED_HOLD_SEMANTICS. All input hashes/scene audit match previous run. [Report](../reports/TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md); additional1/1 consumed, stop for user.
+
 ## 2026-10-08 — TASK01 bounded controlled replay (one approved attempt, PARTIAL)
 
 - Run: `results/20261008_TASK01_bounded_controlled_replay/`; sourcecommit47d22ce, SHAab174884…; originalruntime d4b290c. Exact nativegeometry snapshot3dbe7fcb…/states607c3048…; no newIK.

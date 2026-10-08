@@ -1,5 +1,11 @@
 # TASK01 — Governance Review / Engineering Escalation
 
+## 2026-10-08 current escalation: new command-only allowance1/1 used; STOP
+
+User explicitly approved only one launcher/stdin correction, four existing critical states and120s hard cap, **no reset**. No new source/model/physics/IK work. Original harness collected firstthree no-unexpected-collision snapshots, then TARGET original guard stops on leftlink7/deepwall−3.016427159mm; raw right negative contact also exists. Four steps/0reset, TARGET overlap not run. Close-resource wait ends at hardcap137; owned processes gone. [Exact report](TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md).
+
+Scientific requirement has a concrete negative result, not another unverified-query gap. Collision is TASK-BLOCKING; READY independently BLOCKED_BY_SHARED_HOLD_SEMANTICS. No unique-cause/model-equivalence/global-IK claim. Static3/3, earlier controlled1/1 and new additional1/1 all used. No parity10, new native/query repair, rerun, geometry/ACM changes, force/P2/P3, fiveCube or freeze. **Stop for user collision direction and held-start representation selection.** No lower-cost extra run is authorized. Historical review below is superseded, not erased.
+
 Date: 2026-10-08. Status: **PARTIAL; static-query series STOPPED; fallback decision pending**.
 
 ## Later authorization and actual outcome (supersedes decision-pending status)

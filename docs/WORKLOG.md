@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-08 — One command-only rerun; explicit TARGET safety failure
+
+Re-read local governance/start/status/currenttask/benchmark/P4 documents; issued PRE report and delegated read-only launcher/evidence audit. User granted additional1/1, four states only, no reset. Records checkpoint `a10db77`; existing7pure classification tests passed. **No harness/launcher source, geometry, model, physics, ACM or IK modification**. Pipe supplies3 continuation tokens then fourth stop at the existing barrier; default GNU timeout groupKILL120s covers startup/close. HarnessSHA `ab174884…` unchanged.
+
+START/PRE/state196 passed original safety guards. TARGET immediately stopped on leftlink7/deepwall separation−3.016427159mm; unclassified right raw contact−3.016243223mm in the same step. Fourth stdin stop, TARGET overlap queries and all resets were not reached. Four post-steps/.0666666701436s; native clock agrees. Selected raw JSON copied byte-for-byte with SHAs; six input hashes and scene_audit match the previous attempt. No further replay or diagnosis after the collision.
+
+Original app.close started at logged13.108s but its resource wait lasted until external120s hardKILL, wrapper137; owned processes confirmed absent. No clean shutdown or repair claim. Reports/task/six records updated; prior124 attempt and untracked parity01/02logs preserved. TASK01 PARTIAL / safety FAIL / READY BLOCKED_BY_SHARED_HOLD_SEMANTICS. Stop for user collision action and holding-representation choice; no force/P2/P3/fiveCube work. Publication recorded after verification.
+
 ## 2026-10-08 — One approved controlled fallback executed, bounded launcher stop
 
 Git follow-up: initial non-fast-forward push rejected; read remote task-branch governance files fully, fetched `bfd09ac` and merged safely/no conflicts. Pushed `b73e273` successfully, then verified the new actual PARTIAL metadata through the GitHub file tool. This also uploads prior review9f5a03b. Main untouched; no experiment/source change during sync. This publication note is a records-only follow-up.

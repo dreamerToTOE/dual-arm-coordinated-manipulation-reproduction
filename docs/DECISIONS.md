@@ -1,5 +1,13 @@
 # DECISIONS
 
+## D038 — One launcher-only allowance; critical safety only, no READY/reset [ENGINEERING]
+
+2026-10-08, explicit user approval: additional1/1,120s whole-process hard cap; reuse existing harness and four recorded14q/Cube states. Only command/stdin flow correction; no probe/collision/model/tool/carriage/ACM/physics/IK edit. User supersedes automatic5+5reset because freeCube does not represent already-stably-sharedheldSTART. End statuses TASK01 PARTIAL / safety PASSorFAIL / READY BLOCKED_BY_SHARED_HOLD_SEMANTICS; wait for user holding-representation decision. No force/suctiondynamics sidework.
+
+Implementation has **no source edit**: pipe3 automated continuation tokens then fourth stop after saved fourth snapshot, before RESET. Tokens are launch flow only, not manual scientific/READY acceptance. Original collision guard remains higher-priority. Default GNUtimeout groupKILL120s covers children; no TTY read. Old harness default5reset in inputs is preserved as forensic metadata, not current authorization.
+
+Actual one attempt: TARGET leftlink7/deepwall−3.016427159mm triggers STOP before fourth stdin; raw right contact−3.016243223mm. Foursteps,0reset; resource-close wait capped137, owned gone. TASK01 PARTIAL / safety FAIL. No geometry/controller/tolerance repair or second launch. Collision action and holding representation separately await user; no implicit suction/rigid attachment choice. D034 new scientific START remains distinct from Task27 feed. Prior static3/3, controlled1/1 and additional1/1 consumed; no autonomous budget reset. [Report](../reports/TASK01_CRITICAL_SAFETY_COMMAND_RERUN.md).
+
 ## D037 — User-approved one bounded critical-state fallback; no automatic retry [ENGINEERING]
 
 2026-10-08. Explicituserapproval: staticparity07→08→09 counts as one root3attempts, exhausted; stopzero-step/staticquery/nativehandle/querytree extensions permanently. Newallowance **one** boundedcontrollednormalstep visibleGUI fallback, onlySTART/PRE/state196B60/TARGET (at most5ifrisk-basedreplacement, no replacementneeded). Exactrecorded14q, originalCube/tool/carriage/grasp/SRDFACM/physics, noIKresampling. Immediateunexpectedcollisionstop; TARGETCube/deepboundary pendingdefinition, not automaticFAIL/redesign. Onlysafetygatepasses then5START+5PREdeterministicreset withpoststepclock, thenPASSCANDIDATEREVIEW/notFROZEN.
