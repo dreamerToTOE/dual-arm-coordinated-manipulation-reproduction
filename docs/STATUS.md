@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-08 — 06 render gate仍观察2步；07仅准备直接物理初始化
+
+06（`0a78485` /`923aca…`）可见GUI14.25s，START accepted0；官方render gate下仍2 callbacks（各0.01666666753590107s）。pre-render27 native比较max0m/6.165552397244359e-7rad已存、输出镜像stale0，随后render_guard拒绝，未到moving queries/碰撞判定。50纯软件测试0.079s OK不等于parity，wrapper0非PASS。
+
+同SDK SimulationManager `_warm_start`直接update_simulation、`_create_simulation_view`第二次调用也会绕过render gate；与2events相符但未捕获唯一因果trace。07仅准备不timeline PLAY，原force_load/start_simulation API只初始化、不update/simulate/fetch，全部零步/q/native/几何/query守卫保留，不禁用/patch SDK callback，不改物理/model/ACM/benchmark；source `8887ad…`待冻结、GUI07未运行。03–06负结果保留，先parity后READY（仍NOT_RUN），BUG019未判决、BUG001非阻塞，TASK01 IN_PROGRESS/PARTIAL、TASK02 TODO。
+
 ## 2026-10-08 — 05检测到意外积分并停止；06仅准备无physics dispatch渲染
 
 05（`8188168` /`66dce1cd…`）可见GUI约13.8s，START accepted0，`ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP`：paused `app.update()`实际触发2次physics-step callback，Cube USD z0.380→0.3772749900817871m、vz=-0.16350001m/s，不能称纯静态或没有积分。已存**通知更新前**27个native actor比较，位置差max0m/角差max6.165552397244359e-7rad；不能与更新后混淆。wrapper0非PASS，无碰撞判决，READY NOT_RUN，03/04/05负结果保留。

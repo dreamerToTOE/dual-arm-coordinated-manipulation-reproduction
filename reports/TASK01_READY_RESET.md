@@ -2,6 +2,8 @@
 
 2026-10-08. Status: **NOT_RUN_PENDING_MODEL_PARITY**.
 
+Latest checkpoint: 06 render-only path still triggered two direct physics callbacks at START and stopped with accepted0. No READY/reset data exists. 07 is prepared to initialize native handles without timeline PLAY/SDK implicit warm-up; exact candidate14q and all actual guards remain unchanged.
+
 Current gate: 05 actually detected unintended physics dispatch during its paused GUI update and stopped before any accepted parity sample. Official render-only dispatch06 is prepared/not run. This invalid static attempt is **not** a repeated READY/reset trial; no post-step reset acceptance or scientific time record is claimed.
 
 Latest actual GUI attempt03 stopped at START/index0 on stale USD collider output before any accepted parity sample. This is an engineering source-frame rejection, not a geometric collision verdict. Output-adapter04 is prepared but not yet run. See [parity report](TASK01_ISAAC_MODEL_PARITY.md). No repeated post-step reset has occurred and no READY state is claimed.

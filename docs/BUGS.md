@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-08 — 06 SDK warm-start可绕过render gate；07初始化适配待验证
+
+06 START accepted0/render_guard实际观察2 callbacks×0.01666666753590107s，pre-render27 native和mirror stale0不构成更新后的静态安全；未到moving query/full collision，wrapper0非PASS。SDK `_warm_start`直接update_simulation与`_create_simulation_view`第二调用可绕过render gate，与2events吻合但没有唯一causal trace；不把推断当已隔离根因。
+
+07准备不timeline PLAY，只原force_load/start_simulation初始化，无update/simulate/fetch，不patch/禁用SDK callback；全部step0/q/native/geometry/query守卫和原物理/model/ACM/benchmark保持。07未运行/source待freeze，不称RESOLVED。03–06负结果保留，BUG019仍OPEN/未判决，READY NOT_RUN、BUG001非阻塞/TASK02 TODO。
+
 ## 2026-10-08 — 05 paused app.update仍积分；06独立dispatch/step门禁待实测
 
 OPEN/ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP：05 START accepted0，paused app.update出现2个真实physics-step callbacks，Cube z0.38→0.3772749900817871m/vz=-0.16350001m/s，立即拒绝。通知前27 native比较已存且与通知后区分；wrapper0非PASS，无模型碰撞判决/READY。不能因“没有请求integration”声称没有积分；03/04/05负结果保留。

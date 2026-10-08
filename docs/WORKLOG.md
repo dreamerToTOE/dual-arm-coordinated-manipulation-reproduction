@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-08 — 06零步guard拒绝；07避免Play warm-start仅准备
+
+06 commit0a78485/source923aca…，GUI14.25s/START accepted0：render gate仍callbacks2×0.01666666753590107s。输出mirror stale0、pre-render27 native比较max0m/6.165552397244359e-7rad已保存，但render_guard随后拒绝，moving queries/碰撞未开始；50纯测试0.079s OK、wrapper0不证明parity。candidate YAML/捕获14q/runtime原模型hash独立复核未变。
+
+SDK源码 `_warm_start`直接update_simulation及`_create_simulation_view`第二调用可绕过render gate，与2events吻合，非唯一已取证因果。07准备不timeline PLAY，仅原force_load/start_simulation初始化，无update/simulate/fetch、无SDK callback禁用/patch或物理/model/ACM/benchmark变动；所有step0/q/native/几何/query guards保留。source8887ad…待freeze，GUI07未运行；03–06负结果保留，READY NOT_RUN、BUG019未判决/BUG001非阻塞、TASK02 TODO。
+
 ## 2026-10-08 — 05意外physics dispatch保护停止；06 render gate准备
 
 05 commit `8188168` /source `66dce1cd…`，GUI约13.8s、START accepted0。paused app.update实际callback2，Cube z0.3772749900817871m/vz=-0.16350001m/s，真实积分已发生，立即拒绝，不称静态PASS。通知前27 nativeactor比较已落盘（位置max0m/角max6.165552397244359e-7rad），与通知后数据分开；wrapper0非PASS/READY NOT_RUN，无模型碰撞判决。03/04/05负记录保留，`8188168` direct push成功。

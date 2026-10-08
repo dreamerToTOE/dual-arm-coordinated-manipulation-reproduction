@@ -1,6 +1,6 @@
 # TASK01 — Isaac / MoveIt Model Parity
 
-2026-10-08. Current status: ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP (05); official render-only dispatch correction prepared (06 not run), **not PASS**.
+2026-10-08. Current status: ENGINEERING_RENDER_ZERO_STEP_GUARD_STOP (06); no-PLAY native initialization prepared (07 not run), **not PASS**.
 
 Prerequisite full discrete geometry passed (A136/B157, exact PRE14q seam): [report](TASK01_FULL_SINGLE_CUBE_GEOMETRY.md). The original PhysX convexHull model is not assumed equivalent to the MoveIt STL. Full-chain wall-risk state is TARGET/state292, left_link7↔deep_wall FCL clearance2.212219mm; intended Cube/tool minimum is state196/0.999669mm.
 
@@ -8,9 +8,15 @@ Independent visible GUI only: dual FR3/current L tools/one Cube/table/carriage. 
 
 Replay all states where possible, with early priority START→A minimum/PRE→TARGET (full-chain wall minimum)→state196 (full all-pair minimum). Required insertion samples and all-state replay remain to verify. First unexpected FCL-free/Isaac collision stops, records exact pair/state/actual FK/cooked shape evidence, no geometry repair.
 
-Latest artifact directory: `results/20261008_TASK01_isaac_model_parity05/`. READY/reset has not been authorized or run.
+Latest artifact directory: `results/20261008_TASK01_isaac_model_parity06/`. READY/reset has not been authorized or run.
 
-## 05 actual zero-step guard stop / 06 prepared
+## 06 actual render-only guard stop / 07 no-PLAY initialization prepared
+
+06 commit `0a78485`, SHA `923aca89345fa7850ad9f5b981c38718c742a98c12fb07c9a7e4206a7a244498`, GUI14.25s. Mirror output reached zero stale shapes and preserved pre-render27 actor comparisons (maxpos0m/maxrot6.165552397244359e-7rad), but the first render still produced **2 callbacks each0.01666666753590107s**. START accepted0; moving-query/full-overlap tests not reached. [06 metadata](../results/20261008_TASK01_isaac_model_parity06/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity06/summary.json). Integration was actually observed despite the render dispatch guard and contrary to the static intent. 50 pure tests OK/0.079s are not GUI PASS. Owned process closed/reaped, wrapper0 not PASS.
+
+Installed SDK `SimulationManager._warm_start` directly calls force-load/start/update_simulation(dt,0)/fetch on the timeline PLAY event; its `_create_simulation_view` calls update_simulation again. These bypass renderer dispatch and match the observed count, but a unique causal runtime trace was not captured. 07 therefore avoids **timeline PLAY entirely**: original native `force_load_physics_from_usd()` and `start_simulation()` initialize/store the static context, without update_simulation/simulate/fetch. No SDK subscription patch, no physical parameter, geometry/ACM or benchmark change. Retain every actual zero-step/native/q/USD/cooked/moving-query guard. Initialization availability and parity remain empirical gates; 07 not run. Original source/config/asset/q hashes independently match, no new IK. READY/reset still NOT_RUN.
+
+## 05 actual zero-step guard stop / historical 06 plan
 
 05 commit `8188168`, SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba`, source snapshot before execution. After typed pose-output correction, the paused `app.update()` actually triggered **2 physics-step callbacks**; Cube USD z changed to `0.3772749900817871` and velocity z to `-0.16350001 m/s`. Thus integration occurred **despite not being requested**, and this is not a valid static parity run. The zero-step/immutability guard stopped at START, accepted0 before overlap verdict. [05 metadata](../results/20261008_TASK01_isaac_model_parity05/metadata.json), [summary](../results/20261008_TASK01_isaac_model_parity05/summary.json). GUI was closed/reaped, wrapper0 not PASS. The successful **pre-notice** 27 native actor comparisons were actually persisted (max tensor/native position difference0m, rotation6.165552397244359e-7rad); do not confuse them with post-update states. 35 pure tests passed, not static physics evidence.
 

@@ -1,5 +1,11 @@
 # DECISIONS
 
+## D035 follow-up — 不触发Play的原API初始化，不修改SDK callback或物理
+
+2026-10-08，[ENGINEERING]。06 official render gate仍观察2步并拒绝；SDK_warm_start/update_simulation与_create_simulation_view第二调用绕过render gate可解释事件数，但未捕获唯一因果trace。07仅准备不timeline PLAY，原force_load/start_simulation API只初始化，不update/simulate/fetch，不禁用/patch SDK callback；全部零步/q/native/几何/query freshness门禁保持，不改physics/model/ACM/benchmark。
+
+source8887ad…待freeze，GUI07未运行；03–06负结果保留，先真实parity再READY（NOT_RUN），BUG019无科学碰撞判决，BUG001延期非阻塞。不是P4或论文[DEVIATION]，不预报PASS CANDIDATE/FROZEN，TASK02 TODO。
+
 ## D035 follow-up — render dispatch隔离与独立step0，不把动态输出当几何参数
 
 2026-10-08，[ENGINEERING]。05 paused app.update实际积分2步/START accepted0，立即拒绝，不给静态/碰撞PASS；pre_notice27 native证据只支持通知前状态，不混用after-notice。06准备按官方SimulationContext.render方式临时关闭 `/app/player/playSimulations`、app.update后finally恢复原bool，force_load初始化也隔离，实际callback必须0且time/q/native再验。

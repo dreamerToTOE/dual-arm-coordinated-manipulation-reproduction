@@ -1,5 +1,11 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — isaac_model_parity06 render-only仍2callbacks STOP；07未运行
+
+TASK01/[ENGINEERING]/visible Isaac4.5，commit `0a78485` /source `923aca89345fa7850ad9f5b981c38718c742a98c12fb07c9a7e4206a7a244498`，原config/确定14q/inputs SHA一致。完整480s可见命令与证据在 [06 metadata](../results/20261008_TASK01_isaac_model_parity06/metadata.json)。GUI14.25s、START accepted0：实际callback2，各dt0.01666666753590107s，render_guard拒绝。pre-render27 native比较max0m/6.165552397244359e-7rad与mirror后stale0已存；static_replay为空，moving queries/full collision未执行，无collision verdict/READY。50纯unit tests主代理0.079s OK；wrapper0非PASS，不能称无积分。
+
+SDK源码存在_warm_start直接update_simulation与_create_simulation_view第二调用绕过render gate，符合2events但缺唯一causal trace。07只准备原force_load/start_simulation直接初始化、不timeline PLAY/update/simulate/fetch，保留零步/q/native/几何/query所有守卫；不patch/禁用SDK callback、不改物理/model/ACM/benchmark。source8887ad…待freeze、GUI07未运行；旧03–06各自保留，BUG019 NOT_ESTABLISHED、READY NOT_RUN，BUG001非阻塞。
+
 ## 2026-10-08 — isaac_model_parity05 意外积分STOP；06未运行
 
 TASK01/[ENGINEERING]/visible Isaac4.5，commit `8188168`，source SHA `66dce1cd96875298f3830a25bb64232d6eb75f97717deaef7134feb43368cdba`，原config/确定14q/模型不变。命令（同480s可见wrapper、output-dir改05）、完整输入和产物见 [05 metadata](../results/20261008_TASK01_isaac_model_parity05/metadata.json)。约13.8s工程wall time，START accepted0，实际 `ENGINEERING_UNINTENDED_PHYSICS_DISPATCH_STOP`：paused app.update触发physics-step callbacks2，Cube USD z从0.38到0.3772749900817871m，velocity=(0,0,-0.16350001)m/s。integration_requested=false但integration_actually_observed=true；不能宣称没有积分/纯静态。无碰撞结果，wrapper0非PASS，owned GUI已退出回收。

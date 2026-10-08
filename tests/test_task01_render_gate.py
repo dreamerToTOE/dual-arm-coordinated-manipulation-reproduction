@@ -5,6 +5,7 @@ Passing these software guards is not evidence of scene-query or model parity.
 """
 
 from pathlib import Path
+import ast
 import runpy
 import unittest
 
@@ -58,6 +59,14 @@ class App:
 
 
 class StaticRenderGateTests(unittest.TestCase):
+    def test_probe_never_requests_play_or_a_physics_step(self):
+        calls = [node.func.attr for node in ast.walk(ast.parse(PROBE.read_text()))
+                 if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)]
+        for prohibited in ("play", "update_simulation", "simulate", "fetch_results"):
+            self.assertNotIn(prohibited, calls)
+        self.assertIn("force_load_physics_from_usd", calls)
+        self.assertIn("start_simulation", calls)
+
     def setUp(self):
         self.settings = Settings()
         self.timeline = Timeline()

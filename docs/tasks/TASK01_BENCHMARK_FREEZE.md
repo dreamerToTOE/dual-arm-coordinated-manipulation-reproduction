@@ -2,6 +2,14 @@
 
 Status: IN_PROGRESS — re-scoped 2026-10-06
 
+### Current gate: FULL_GEOMETRY_PASS / RENDER_GUARD_STOP; 07 NOT_RUN (2026-10-08)
+
+06 (`0a78485` /`923aca…`) GUI14.25s, START accepted0: render-only gate still observed2 callbacks of0.01666666753590107s. Pre-render27 native comparisons max0m/6.165552397244359e-7rad and mirror stale0 are saved, but render_guard rejected before moving queries/collision. Fifty pure testsOK/0.079s and wrapper0 are not parityPASS. SDK_warm_start/direct update_simulation and second_create_simulation_view can bypass render gate; event count is consistent, not a uniquely captured causal trace.
+
+07 only prepares original force_load/start_simulation initialization without timeline PLAY/update/simulate/fetch or SDK callback patch/disable; preserve zero-step/q/native/geometry/query guards and original physics/model/ACM/benchmark. Source8887ad…freeze pending, GUI07 NOT_RUN; retain03–06, READY NOT_RUN until parity passes, BUG019 unadjudicated, BUG001 non-blocking, TASK02 TODO. D035 ENGINEERING/no P4/DEVIATION or frozen claim.
+
+#### Historical 05 checkpoint
+
 ### Current gate: FULL_GEOMETRY_PASS / UNINTENDED_PHYSICS_DISPATCH_STOP; 06 NOT_RUN (2026-10-08)
 
 05 (`8188168` /`66dce1cd…`) visible GUI13.8s, START accepted0: paused app.update dispatched2 actual physics callbacks, Cube USD z0.38→0.3772749900817871m/vz=-0.16350001m/s. Integration observed despite not requested; no valid static parity/collision verdict or READY evidence. Saved27 pre-notice native comparisons (position max0m/rotation max6.165552397244359e-7rad) are not after-notice values; wrapper0 is not PASS. Preserve03/04/05.

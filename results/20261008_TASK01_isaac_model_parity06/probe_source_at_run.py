@@ -503,17 +503,15 @@ def main():
             if not tcp_prim.IsValid(): raise RuntimeError("Original TCP missing: "+tcp_path)
             tcp_local[side]=UsdGeom.Xformable(tcp_prim).ComputeLocalToWorldTransform(0.) * pure_rigid_matrix(UsdGeom.Xformable(stage.GetPrimAtPath(link_path)).ComputeLocalToWorldTransform(0.), Gf).GetInverse()
         write_json(args.output_dir/"original_shape_audit.json",shape_audit)
-        # 不发 timeline PLAY：Isaac4.5 SimulationManager 的 PLAY warm-start
-        # 回调直接 update_simulation 两次，绕过 renderer dispatcher。
-        # 原生 start_simulation 仅保存初态/初始化 manual-step 上下文；此处
-        # 不调用 update_simulation/simulate/fetch，实际零step事件仍是硬门禁。
+        # Pause keeps loaded PhysX handles without requesting an integration step.
         original_dispatch = settings.get("/app/player/playSimulations")
         if not isinstance(original_dispatch, bool):
             raise RuntimeError("Original render-only dispatcher setting missing before physics load")
         settings.set_bool("/app/player/playSimulations",False)
         try:
-            physx.force_load_physics_from_usd()
-            physx.start_simulation()
+            timeline.play()
+            omni.physx.get_physx_interface().force_load_physics_from_usd()
+            timeline.pause()
         finally:
             settings.set_bool("/app/player/playSimulations",original_dispatch)
         if physics_steps:

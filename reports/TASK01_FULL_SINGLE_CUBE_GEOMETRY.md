@@ -74,6 +74,8 @@ The first build-only log is retained; only the final actually completed build02 
 
 ## Next gates / limits
 
+Latest Oct8 checkpoint: GUI06 mirror output was no longer stale, but zero-step guard still rejected SDK implicit integration before native moving queries. 07 no-PLAY initialization is prepared/not run. Original full discrete geometry PASS and recorded exact START/PRE14q remain unchanged; READY/reset NOT_RUN.
+
 Current Oct8 checkpoint: GUI05 correctly rejected unintended physics dispatch during its pause-labelled refresh (accepted0). This is not a valid static parity run or a new geometric verdict. Official render-only dispatch06 is prepared/not run; native all-state geometry evidence remains unchanged. No model/threshold edits, no READY/reset. See [parity report](TASK01_ISAAC_MODEL_PARITY.md).
 
 Later Oct8 checkpoint: GUI04 stopped on an SDK Cube pose-field precision error before any accepted parity sample; correction05 prepared, not run. This changes neither the native geometry PASS nor any model/benchmark threshold. READY/reset remains gated; [actual parity attempts](TASK01_ISAAC_MODEL_PARITY.md).

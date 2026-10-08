@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-08 — 严格静态范围持续：06负结果后07只修原API初始化
+
+用户既定范围不变：06 render gate仍2真实callbacks即拒绝，不能用pre-render native/mirror到位或50软件测试称parity通过。07仅准备无timeline PLAY的原物理API初始化、不patch callback或改model/ACM/benchmark；GUI07未运行，READY NOT_RUN，先parity后reset，BUG001延期非阻塞。不新增五Cube/force/P4或冻结授权。
+
 ## 2026-10-08 — 继续范围不变：真实积分不得冒充静态模型证据
 
 延续既定单Cube严格范围，05检测paused app.update仍积分后停止，不能以无integration请求或wrapper0称纯静态PASS；pre_notice与after-notice证据分开。06只准备工程render dispatch隔离及独立callback0/time/q/native守卫，不改工具/车厢/实际几何/benchmark/ACM/物理dt/gravity。06尚未运行、READY NOT_RUN，无新授权/五Cube/P4/force；BUG001留TASK10-IS，不阻塞TASK01。
