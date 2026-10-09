@@ -1,5 +1,10 @@
 # STATUS
 
+## 2026-10-09 — Patched predecessor physical acceptance authorized, maximum3
+
+User approves up to3 bounded fresh GUI physical-acceptance attempts. Original scene/bridge reloaded via existing GUI after original shutdown→Stop; automatic Play is covered by latest runtime approval. Patched predecessor5ed0c96 only (owned FK + reused old side gate), no additional production edits. Original batch1 two Cubes, rails initial.650, SG OPEN, feed[2,2,0,0], callbackerrors{}; original MoveIt/preflight starting. TASK01 still PARTIAL/FOUNDATION_SCENE NOT_QUALIFIED until full two-Cube/HOME result. Retry only safely rejected planning, hard physical/state/native faults stop. [Pre-run scope/results](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
 ## 2026-10-09 — Authorized software fix: owned FK and reused Task27 side-chain selection
 
 **TASK01 remains PARTIAL; FOUNDATION_SCENE NOT_QUALIFIED; new physical runs0.** User approved exactly two proposed software corrections. Predecessor branch `task01-foundation-side-preflight-fix` / `5ed0c96` changes one controller file (+7/−6): independent Eigen::Vector3d FK return and existing Task27 downstream side-preflight for Task26. Preserve inner/center exclusions, all constexpr/geometry/physics/ACM and original execution gates. Offline3tests/ASAN arithmetic and both Task26/Task27 builds PASS. No new GUI/reset/scene/bridge/MoveIt/planning-only/physical call; prior budgets remain consumed. The old large FK numbers cannot be retrospectively classified as actual IK jumps or a proven root cause. Software qualification is not physical foundation acceptance. [Scope/result and source](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).

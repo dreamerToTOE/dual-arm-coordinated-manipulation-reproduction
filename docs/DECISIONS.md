@@ -1,5 +1,10 @@
 # DECISIONS
 
+## D041 follow-up — User renews bounded GUI physical acceptance, maximum3 [ENGINEERING]
+
+2026-10-09. User explicitly authorizes “继续物理验收，如果三次尝试都失败再反馈给我”. Run approved predecessor5ed0c96 software fix using existing visible GUI and original Task26 batch1 two-Cube assets/lifecycle. Up to3 fresh acceptance attempts, stop first success; unchanged safely rejected planning may retry, hard physical/state/native failure stops immediately. No additional fix, geometry/physics/ACM/gate change, standalone or foundation freeze. Original bridge shutdown before Stop/rebuild; GUI executor may perform Play/reset for this new runtime authorization. Preflight600s/physical1200s engineering caps per attempt. [Pre-run scope](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
 ## D041 follow-up — Explicit two-change software exception, not a new physical allowance [ENGINEERING]
 
 2026-10-09. User “可以” approves preceding evidence-based proposal only: materialize FK translation before localRobotState destruction, and enable existingTask27 rear→samePUSHendpoint→side-chain selector forTask26. This is a narrow explicit exception to original no-source-patch qualification rule, recorded as modified predecessor5ed0c96; do not call it byte-identical631b1f or silently replace previous failure. No entireTASK27 macro/layout/tolerances, geometry/physics/ACM/parameters or controller rewrite. One software correction/build-check cycle; original preflight/physical1/1 remain consumed and no new runtime/reset inferred. New qualified foundation label must disclose authorizedsoftwarefixes if later tested; currentPARTIAL/notqualified/notFROZEN. First substantive software failure stops, no fallback implementation. [Plan/evidence](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).
