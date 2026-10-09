@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Search later old tasks before rebuilding; approve only minimal reuse fix
+
+User asks search old side-suction-palletizing laterTasks for5mm side-preflight failure and avoid reinventing. Read-only audit found exactsame old backstop8 symptom, existingTask27 candidate filter and original FK view-lifetime defect; source/records showed filter notactive inTask26. User “可以” interpreted as approval of those two proposed code repairs. Announced software-only compile/offline validation first, no automatic physical trial. Implemented in isolatedoldbranch5ed0c96, originalbranch/scene/tool/carriage/ACM/physics untouched. Await separatelybounded runtime/reset direction after software handoff; no freeze or assumedcompletefailurefix. [Result](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).
+
 ## 2026-10-09 — Two-Cube approval and operator GUI lifecycle supplied
 
 User says “两件cube也可以，请你继续”, superseding only the exact-one-Cube count: run original pinned Task26 batch1 (`max_batches=1`) without selector/source patches. Operator “新场景已准备” supplies stopped new Stage; reply “已play” supplies manual Play after original scene ready. These prerequisite replies do not authorize a second runtime/fix or resurrect reproduction harnesses. Sole planning-only PASS, sole physical FAIL at first Cube side-compaction gate; obey first-failure STOP, second Cube unstarted. No later user permission to diagnose/repair/retry is assumed. TASK01PARTIAL/FOUNDATIONNOT_QUALIFIED, result submitted for user decision. [Actual record](../reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md).

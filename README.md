@@ -16,7 +16,9 @@
 
 TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-foundation。
 
-本轮已按最新批准的原 Task26 **第一批两件**完成一次资格测试，旧源码零修改：`planning_only` 通过，但物理执行在第一件推进到深墙后，侧压全链预检被原5mm FK贴线门禁拒绝，程序安全停止；第二件和退出/HOME未执行。**TASK01 = PARTIAL / STOP_FOR_USER，FOUNDATION_SCENE 尚未通过**。双吸盘已打开，GUI暂停，未修复或重跑。详见[实际结果与完整证据](reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md)。
+最新软件修正已按批准复用旧方案：独立数值 FK 返回，及 Task27 已有后抓候选的侧压整链筛选；原几何、物理、ACM、5mm门禁不变。源码在旧仓库独立分支 `task01-foundation-side-preflight-fix` / `5ed0c96`，不覆盖原side-suction分支。离线软件检查通过，不代表新的物理验收；本轮未启动Isaac/MoveIt或重跑机器人。[修改范围、编译与验证证据](reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md)。
+
+之前已按批准的原 Task26 **第一批两件**完成一次资格测试，该次旧源码零修改：`planning_only` 通过，但物理执行在第一件推进到深墙后，侧压全链预检被原5mm FK贴线门禁拒绝，程序安全停止；第二件和退出/HOME未执行。**TASK01 = PARTIAL / STOP_FOR_USER，FOUNDATION_SCENE 尚未通过**。该次双吸盘已打开、GUI暂停；后续软件修正尚未物理重跑。详见[实际结果与完整证据](reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md)。
 
 新的 TASK01 不再继续调试 reproduction 仓库中新建的单 Cube harness，而是先直接验证旧工程的成熟 Task26 场景能否作为基础场景：
 
@@ -31,7 +33,7 @@ TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-
 旧仓库固定读取：
 dreamerToTOE/dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a
 
-本轮禁止重新实现 scene、bridge、Surface Gripper、rail、rear regrasp、segmented push 或新的校验器。两件审批已消除 selector 适配需求，直接使用原 `max_batches=1`；本轮没有修改几何、物理或控制行为。
+禁止重新实现 scene、bridge、Surface Gripper、rail、rear regrasp、segmented push 或新的校验器。两件审批已消除 selector 适配需求，继续使用原 `max_batches=1`；额外批准的两项软件修正已单独记录，不修改原几何、物理或验收门限。
 
 当前 benchmark_v1 仍是 DRAFT，但在本次 foundation qualification 完成前不作为 TASK01 的执行输入，也不冻结。
 

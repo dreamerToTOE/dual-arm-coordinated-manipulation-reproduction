@@ -1,0 +1,50 @@
+{
+  "task": "TASK01 minimal predecessor software fix",
+  "baseline": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+  "platform": "offline C++/Eigen and original ROS package compilation",
+  "patch_branch": "task01-foundation-side-preflight-fix",
+  "record_branch": "task01-legacy-scene-foundation",
+  "git_commit": "5ed0c967401e5fedb93b938e1c3904f4a4c87600",
+  "seed": null,
+  "config_path": "unchanged ros_ws/src/fr3_dual_palletize/config/task26_push_control.yaml",
+  "command": "python3 tests/test_task01_predecessor_reuse_fix.py; original target-only colcon/CMake builds",
+  "status": "SOFTWARE_PASS_PHYSICAL_NOT_RUN",
+  "metrics": {
+    "production_files_changed": 1,
+    "production_diff_added": 7,
+    "production_diff_removed": 6,
+    "offline_tests": 3,
+    "offline_tests_exit": 0,
+    "task26_build_exit": 0,
+    "task27_build_exit": 0,
+    "new_simulator_runs": 0,
+    "new_planning_only_runs": 0,
+    "new_physical_runs": 0,
+    "robot_suction_rail_commands": 0
+  },
+  "source_sha256": "8c984cc761b7b4071bfcbc3f01398f30adfa9c43858032f23af551abd752e0f0",
+  "binary_sha256": {
+    "task26": "a84cb3ad8734d6a597a81ed33039c732d595029e23a46225c963dfb7069ce992",
+    "task27": "fa569029000582f9a38962823417a97758389d4c7d859ecd18d0f9adc610be31"
+  },
+  "immutable_sha256": {
+    "scene": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+    "bridge": "13b5f88d1e7563a37ecafbf571d8ef93015b57059b8912ba9f3399e21e339644",
+    "push_config": "7e02ddab2ec5e64d3e939d0c233b6b317a426e84ae2a6013a915dd0765487405"
+  },
+  "evidence_sha256": {
+    "build_task26.log": "dfca6ea2a6969556d1cbe328978020fc3c8a9bbdb492c858e29a0a17c77a9135",
+    "build_task27.log": "cd815b1de4801e72d86fa0e32b1849f197473b3d132f5c0835b3a86f21901989",
+    "unit_tests.txt": "dbb00305a138f00098c30f4b232604f4ebc936c017aa7f84b88c60bba5adcfa9",
+    "regression_test": "bb98ebd4d2fe06c5e50ff78f5461e318b2fb4694ff1d32149ae4c043c2ceac27"
+  },
+  "artifact_paths": [
+    "reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md",
+    "tests/test_task01_predecessor_reuse_fix.py",
+    "results/20261009_TASK01_predecessor_side_fix01/"
+  ],
+  "scope": "owned Vector3d FK return and existing Task27 downstream side gate for Task26 only",
+  "task01": "PARTIAL; foundation NOT_QUALIFIED; no FROZEN",
+  "authorization": "user approved two proposed minimal software fixes; no new physical trial inferred",
+  "prior_qualification": "preflight1/1 and physical1/1 remain consumed; no retrospective PASS or confirmed root cause"
+}

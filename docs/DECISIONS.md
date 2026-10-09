@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D041 follow-up — Explicit two-change software exception, not a new physical allowance [ENGINEERING]
+
+2026-10-09. User “可以” approves preceding evidence-based proposal only: materialize FK translation before localRobotState destruction, and enable existingTask27 rear→samePUSHendpoint→side-chain selector forTask26. This is a narrow explicit exception to original no-source-patch qualification rule, recorded as modified predecessor5ed0c96; do not call it byte-identical631b1f or silently replace previous failure. No entireTASK27 macro/layout/tolerances, geometry/physics/ACM/parameters or controller rewrite. One software correction/build-check cycle; original preflight/physical1/1 remain consumed and no new runtime/reset inferred. New qualified foundation label must disclose authorizedsoftwarefixes if later tested; currentPARTIAL/notqualified/notFROZEN. First substantive software failure stops, no fallback implementation. [Plan/evidence](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).
+
 ## D041 follow-up — Stop at original side-compaction rejection; no foundation qualification [ENGINEERING]
 
 2026-10-09. Original predecessor batch1 qualification was invoked once after original planning-only PASS; physical failure at first Cube's side-compaction FK gate stops the task. Completed transport/rail/regrasp/push prefix and historical predecessor PASS cannot substitute for the missing final side seat/second Cube/retreat. Record TASK01PARTIAL/FOUNDATIONNOT_QUALIFIED, preserve original source and acceptance, save negative evidence. Pausing the operator GUI and interrupting owned ROS processes does not authorize reset/HOME or retry. No new probe, second candidate station, geometry/ACM change, porting or FROZEN. If continuing, request separately bounded existing-evidence kinematics diagnosis before any implementation or new physical trial; root cause not presumed. [Review](../reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md).

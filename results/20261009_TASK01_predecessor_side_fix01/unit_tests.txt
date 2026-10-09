@@ -1,0 +1,16 @@
+Command: python3 tests/test_task01_predecessor_reuse_fix.py
+Exit code: 0
+Offline only: no Isaac/ROS import, IK, GUI, planning-only or robot command.
+
+test_existing_side_gate_shared_but_inner_predicate_preserved ... ok
+test_owned_fk_return_and_distance_arithmetic ... ok
+test_runtime_patch_scope_and_thresholds ... ok
+
+Ran 3 tests in 1.913s
+OK
+
+The ownership test compiles the actual extracted cartesianLineDeviation function
+with a small RobotState type double using owned Eigen::Isometry3d storage.
+AddressSanitizer enabled; exact line, 8mm deviation, endpoint overshoot and empty
+trajectory arithmetic checked. It does not validate actual RobotState FK/IK,
+actual prior failed trajectories, collision safety or physical execution.

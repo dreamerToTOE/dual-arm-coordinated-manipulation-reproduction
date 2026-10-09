@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — Side-preflight software correction; NO NEW ISAAC EXPERIMENT
+
+Source baseline631b1f→authorized patch5ed0c96, sourceSHA8c984cc7…; production1file/+7−6. Three pure tests in1.913s exit0: extracted actual distance function with small owned-transform RobotState type double/ASAN, exact/8mm/overshoot/empty arithmetic, shared macro gate and unchanged constexpr/scope. This does not run real FK/IK/FCL/PhysX or re-evaluate old failed trajectories. OriginalTask26 Release build exit0 (~45s engineering); separate Task27 compile compatibility check retained. Controller joint/suction/rail commands0; scene/reset/bridge/MoveIt/planning-only/physical invocations0; no new native physics state/time. Prior physical failure is not replaced by softwarePASS. [Software evidence](../results/20261009_TASK01_predecessor_side_fix01/metadata.json), [limits/report](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).
+
 ## 2026-10-09 — Predecessor foundation01: preflight PASS, original physical chain FAIL
 
 - Pin631b1f; original batch1 two Cubes approved; source changes0, normal visible GUI, original scene/bridge/controller/model/config. One target build exit0; planning-only1/1 exit0; physical1/1 exit1 before1200s engineering cap. No extra trial or repair. Raw evidence: `results/20261009_TASK01_predecessor_foundation01/`.
