@@ -1,0 +1,90 @@
+{
+  "task03_status": "PARTIAL",
+  "software_tests_passed": true,
+  "commands": {
+    "task02_regression.log": {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_task02*.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    "task03_math.log": {
+      "argv": [
+        "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/build/task03_closure/task03_math_test"
+      ],
+      "exit_code": 0
+    },
+    "ctest.log": {
+      "argv": [
+        "ctest",
+        "--test-dir",
+        "build/task03_closure",
+        "--output-on-failure"
+      ],
+      "exit_code": 0
+    },
+    "real_model.log": {
+      "argv": [
+        "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/build/task03_closure/task03_model_test",
+        "--urdf",
+        "tests/fixtures/task03/robot.urdf",
+        "--srdf",
+        "tests/fixtures/task03/robot.srdf",
+        "--fixture",
+        "results/20261007_TASK01_full_single_cube_geometry01/state_records.json",
+        "--config",
+        "results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml",
+        "--output",
+        "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261009_TASK03_closure02/model_metrics.json"
+      ],
+      "exit_code": 0
+    }
+  },
+  "protected_hashes_before": {
+    "configs/benchmark/benchmark_v1.yaml": "fbef560ae81963fdf5839cd83d95274edebd9769024d1ae74527f00092c8f2a2",
+    "common/interfaces/state.py": "8bf9674cbf7e84924e01bcee4fef902a12cda497840c0643d4c56e0c691071e9",
+    "common/interfaces/exchange.py": "136d8e5fe9ecb8450d43ad442ac6831b28ac81eb755263ac45f92840517ace45",
+    "common/interfaces/wire.py": "8f31210ea5286f369e56857a4a4c510dfa017fdd7b5f07266907c38e042bd1ec",
+    "common/logging/run.py": "1fdcce656fe3cf1f5025e4470c95612a9f230f12382f53a4db6729d629ae74a5",
+    "common/metrics/README.md": "872075c8417b8847d29c8757d458c82e15cd2c06ce16f39f5f72715558c962cd",
+    "common/metrics/math.py": "d00fef2a1a1740698e1514df320b6d941d128dc9f41e31dbb2e757f6c6429b36",
+    "common/metrics/evaluate.py": "6ffa7553d16c596bb1dd5ba6b66fd292ae9b42a23ffebc1e57e4d018e3696ce4",
+    "common/metrics/__init__.py": "e5cb293cc05fd7c5c0bcb54dc26137b1f60f0724e613383f2c5a31bda8658fcf",
+    "platforms/isaac_ros2/foundation/legacy_task26_manifest.json": "08e929b0b22f49db9cef4a0c95a45acf361241b3693abe19e69fcc5e9ec61b45",
+    "platforms/isaac_ros2/foundation/README.md": "934f497c30627959ea2bc525957e56b89bbf598dbca88a2187105040ea576a12",
+    "platforms/isaac_ros2/foundation/legacy_events.py": "b756873d6dabcb41b9d6af7a76d6f3e4dbe04de4b00ca6bd3c126534ac994332",
+    "platforms/isaac_ros2/foundation/legacy_task26.py": "36ba0451a5ae42fd9997422e3ff95c6e983137b99d187c0e13c6cf3062b3663b",
+    "platforms/isaac_ros2/foundation/__init__.py": "3ea09990d57fca57dee6baf4a62ce815b318520ff83d7eb0b0d6a4a168d10523"
+  },
+  "protected_hashes_after": {
+    "configs/benchmark/benchmark_v1.yaml": "fbef560ae81963fdf5839cd83d95274edebd9769024d1ae74527f00092c8f2a2",
+    "common/interfaces/state.py": "8bf9674cbf7e84924e01bcee4fef902a12cda497840c0643d4c56e0c691071e9",
+    "common/interfaces/exchange.py": "136d8e5fe9ecb8450d43ad442ac6831b28ac81eb755263ac45f92840517ace45",
+    "common/interfaces/wire.py": "8f31210ea5286f369e56857a4a4c510dfa017fdd7b5f07266907c38e042bd1ec",
+    "common/logging/run.py": "1fdcce656fe3cf1f5025e4470c95612a9f230f12382f53a4db6729d629ae74a5",
+    "common/metrics/README.md": "872075c8417b8847d29c8757d458c82e15cd2c06ce16f39f5f72715558c962cd",
+    "common/metrics/math.py": "d00fef2a1a1740698e1514df320b6d941d128dc9f41e31dbb2e757f6c6429b36",
+    "common/metrics/evaluate.py": "6ffa7553d16c596bb1dd5ba6b66fd292ae9b42a23ffebc1e57e4d018e3696ce4",
+    "common/metrics/__init__.py": "e5cb293cc05fd7c5c0bcb54dc26137b1f60f0724e613383f2c5a31bda8658fcf",
+    "platforms/isaac_ros2/foundation/legacy_task26_manifest.json": "08e929b0b22f49db9cef4a0c95a45acf361241b3693abe19e69fcc5e9ec61b45",
+    "platforms/isaac_ros2/foundation/README.md": "934f497c30627959ea2bc525957e56b89bbf598dbca88a2187105040ea576a12",
+    "platforms/isaac_ros2/foundation/legacy_events.py": "b756873d6dabcb41b9d6af7a76d6f3e4dbe04de4b00ca6bd3c126534ac994332",
+    "platforms/isaac_ros2/foundation/legacy_task26.py": "36ba0451a5ae42fd9997422e3ff95c6e983137b99d187c0e13c6cf3062b3663b",
+    "platforms/isaac_ros2/foundation/__init__.py": "3ea09990d57fca57dee6baf4a62ce815b318520ff83d7eb0b0d6a4a168d10523"
+  },
+  "protected_unchanged": true,
+  "seed": null,
+  "seed_status": "UNSET",
+  "random_ik_or_rng_used": false,
+  "simulation_stamp": null,
+  "physics_step": null,
+  "qualification": "OFFLINE_KINEMATICS_NOT_PHYSICAL_OR_SCIENTIFIC_TIME_SERIES"
+}

@@ -1,5 +1,23 @@
 # STATUS
 
+## 2026-10-09 — TASK03 offline closure/Jacobian delivered; original-grasp precision PARTIAL
+
+**TASK03 = PARTIAL / USER REVIEW; TASK02-D = PARTIAL / DEFERRED;
+TASK02 = IN_PROGRESS; BENCHMARK = DRAFT / NOT FROZEN.**
+Pure Eigen SE(3) closure and analytic6×14 derivative reuse unchanged FR3 RobotModel/
+RobotState and archived actual q/FK. Original grasp inversion and world Jacobian
+reference are explicit; quaternion signs, lever arms and pi chart handled. Independent
+primary-paper/math review found no blocking defect. **72 A/B/C +93 math checks PASS;
+435 real-model derivative configurations PASS**, max central3.281e-10/five-point1.545e-10.
+Original fixed-grasp maximum closure0.435μm exceeds predeclared0.05μm at219/293records:
+no silent tolerance/IK/grasp change, no complete TASK03 PASS. Test-only once-fixed
+algebraic grasps do not replace this negative acceptance. Full source/frames/formulas,
+actual logs, per-state results and exampleC/Jc saved. No Isaac, ROS/MoveIt services,
+Observer, execution, IK/projection, FCL query or protected asset/Benchmark change.
+Stop after scoped GitHub delivery; wait for offline precision/fixture review, no TASK04.
+[POST-TASK REPORT](../reports/TASK03_CLOSURE_CONSTRAINT01.md).
+Older IN_PROGRESS/next-task entries below are retained historical authorization.
+
 ## 2026-10-09 — TASK02-D audit closed PARTIAL / DEFERRED; TASK03 offline math authorized
 
 **TASK02-D = PARTIAL / DEFERRED; TASK02 = IN_PROGRESS; BENCHMARK = DRAFT / NOT FROZEN.**

@@ -1,5 +1,31 @@
 # WORKLOG
 
+## 2026-10-09 — TASK03 offline rigid-chain mathematics; stop PARTIAL
+
+- Base36c95ab; created task03-p4-closure-constraint. First audit commit9b59289 was
+  pushed: close TASK02-D PARTIAL/DEFERRED, no Observer and no freeze; API availability
+  distinguished from qualified native time/reset. Not an offline algorithm blocker.
+- Read governance/reuse/task/P4 and complete original shared-object planner/model/tool
+  sources; consulted author full paper. Prior-asset and pre-task reports preceded edits.
+  Reused original model/FK and accepted B RunLogger; no old top-midpoint gates imported.
+- Implemented pure Eigen closure/Jc with fixed-transform direction, correct lever arms,
+  world geometric reference and rigorous SO3 chart, plus thin offline MoveIt-core adapter.
+  No ROS context/node, MoveGroup/service, controller, IK, collision query or projection.
+- Independent math/source reviewer confirmed signs/frames/fidelity. Existing293 q/FK
+  records (292unique) kept unchanged; exact model snapshots hash-match ignored originals.
+- Initial unsourced build failed ament dependency/library resolution; sourced installed
+  Humble only, then existing predecessor install for mesh URI resolution. No dependency
+  installation or install-file edit. First mesh-warning mathematical run retained;
+  final log contains normal model loading, no mesh warnings. Existing incomplete
+  predecessor package setup warning preserved as environmental information, not repaired.
+- Final saved regression:72 A/B/C tests,93 math checks and435 model derivative configs
+  pass. Original fixed-grasp precision does not:219/293positionrecords exceed5e-8m,
+  max4.35027826256e-7m. No threshold/IK/G adjustment; algebraic test-only fixture is not
+  a substitute. Typed result INCOMPLETE and independent TASK03 status PARTIAL.
+- Formula/frame/provenance/report/source/log/result records prepared for scoped GitHub
+  delivery. Benchmark/A/B/C/foundation hashes unchanged; unrelated old raw logs preserved
+  and excluded. TASK02 IN_PROGRESS / Benchmark DRAFT. Stop for review, no TASK04.
+
 ## 2026-10-09 — TASK02-D availability audit recorded; enter offline TASK03
 
 User accepts closing the local4.5 audit asPARTIAL/DEFERRED. Record actual installed enum,

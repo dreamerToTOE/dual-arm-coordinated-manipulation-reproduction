@@ -1,0 +1,19 @@
+{
+  "task": "TASK03",
+  "baseline": "P4_CLOSURE_MATH",
+  "platform": "OFFLINE_MOVEIT_CORE",
+  "git_commit": "9b59289",
+  "source_scope": "working implementation before final example-matrix addition; full working-source hash set was not captured; use closure02 for reproducible final acceptance evidence",
+  "seed": null,
+  "seed_status": "UNSET",
+  "config_path": "results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml",
+  "command": "source /opt/ros/humble/setup.bash; cmake -S platforms/offline_moveit/task03_closure -B build/task03_closure -DCMAKE_BUILD_TYPE=Release; cmake --build build/task03_closure --parallel 2; build/task03_closure/task03_model_test --urdf results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.urdf --srdf results/20261006_TASK01_single_cube_geometry_probe01/raw/robot.srdf --fixture results/20261007_TASK01_full_single_cube_geometry01/state_records.json --config results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml --output results/20261009_TASK03_closure01/model_metrics.json",
+  "status": "PASS_OFFLINE_MATH_ONLY",
+  "task03_status": "PARTIAL",
+  "metrics": "model_metrics.json",
+  "artifact_paths": ["model_metrics.json"],
+  "limitations": ["Preliminary diagnostic; console output not saved as a file", "Mesh package URI unresolved in this environment; no collision claim", "Not physical shared-grasp or scientific synchronized evidence"],
+  "simulation_stamp": null,
+  "physics_step": null,
+  "simulation_started": false
+}

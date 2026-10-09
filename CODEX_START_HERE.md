@@ -23,6 +23,17 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+Latest delivery: **TASK03 = PARTIAL / USER REVIEW**, not PASS CANDIDATE. Offline
+SE3 closure/Jacobian software verified on unchanged actual FR3 model:72TASK02 +93
+math tests and435derivative configsPASS. Original fixed-grasp archived closure
+0.435μm exceeds predeclared0.05μm; algebraic test-only G* cannot substitute.
+Read [TASK03 POST-TASK REPORT](reports/TASK03_CLOSURE_CONSTRAINT01.md) and
+[formulas/frames](baselines/p4_closed_chain/README.md). No threshold/IK/G change,
+Isaac/services/Observer/projection/controller or benchmark freeze. Stop for user
+precision/fixture review; **do not start TASK04 automatically**. TASK02-D remains
+PARTIAL/DEFERRED, parent TASK02 IN_PROGRESS, Benchmark DRAFT. The IN_PROGRESS
+authorization entries below are retained history, not an instruction to keep coding.
+
 Latest explicit authorization: close **TASK02-D = PARTIAL / DEFERRED** ([localAPIaudit](reports/TASK02_POST_STEP_API_AUDIT.md));
 native post-step/clock/reset qualification belongs to later Isaacmeasurementadaptation and does
 not block offline math/planning. Active **TASK03 P4 closure residual/Jacobian, OFFLINE ONLY**,

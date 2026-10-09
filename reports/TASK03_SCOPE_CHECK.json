@@ -1,0 +1,31 @@
+{
+  "task": "TASK03_SCOPE_CHECK",
+  "qualification": "READ_ONLY_FILE_PROVENANCE_NOT_RUNTIME",
+  "base": "36c95ab",
+  "verified_original_assets": {
+    "isaac/scripts/task26_truck_box_scene.py": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+    "isaac/scripts/task26_truck_box_bridge.py": "13b5f88d1e7563a37ecafbf571d8ef93015b57059b8912ba9f3399e21e339644",
+    "ros_ws/src/fr3_dual_palletize/src/task26_truck_box_push_in.cpp": "8c984cc761b7b4071bfcbc3f01398f30adfa9c43858032f23af551abd752e0f0",
+    "ros_ws/build/fr3_dual_palletize/task26_truck_box_push_in": "a84cb3ad8734d6a597a81ed33039c732d595029e23a46225c963dfb7069ce992"
+  },
+  "original_asset_count": 4,
+  "protected_diff_exit_code": 0,
+  "protected_paths": [
+    "configs/benchmark/benchmark_v1.yaml",
+    "common/interfaces",
+    "common/metrics",
+    "common/logging",
+    "platforms/isaac_ros2",
+    "results/20261007_TASK01_full_single_cube_geometry01"
+  ],
+  "benchmark_sha256": "fbef560ae81963fdf5839cd83d95274edebd9769024d1ae74527f00092c8f2a2",
+  "exact_model_snapshot_matches": {
+    "robot.urdf": true,
+    "robot.srdf": true
+  },
+  "compiler": "g++ 11.4.0",
+  "python": "3.10.12",
+  "moveit_core": "2.5.9",
+  "physics_step": null,
+  "simulation_stamp": null
+}

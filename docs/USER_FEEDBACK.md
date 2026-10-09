@@ -1,5 +1,19 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Close TASK02-D audit and authorize only TASK03 offline kinematics
+
+- User explicitly closes native post-step API audit as PARTIAL/DEFERRED, records
+  availability versus unqualified clock/step/reset, and forbids implementing Observer.
+  These gaps must not block offline math/planning; parent TASK02 stays IN_PROGRESS.
+- Authorizes original P4 full-paper/old shared-planner/model reuse review, explicit
+  fixed-transform object-pose closure and Jacobian verified with finite differences.
+  No Euler shortcut, synthetic-as-real grasp claim or old Task14 drift-as-SE3 claim.
+- Forbids old Task26/scene/bridge/physics/benchmark edits, Isaac physical run,
+  TASK04 Newton/projection and automatic next-task progression.
+- PASS CANDIDATE requires real-model closure and Jacobian under declared offline
+  acceptance. Otherwise PARTIAL with missing evidence. Latest “继续” continues
+  this same scope; it does not authorize relaxing precision or freezing Benchmark.
+
 ## 2026-10-09 — Close TASK02-D; authorize TASK03 closed-chain math only
 
 User explicitly requires recording localAPI audit onGitHub asPARTIAL/DEFERRED, parentTASK02

@@ -1,6 +1,11 @@
 # TASK03 — P4 Closure Constraint
 
-Status: TODO
+Status: **PARTIAL / USER REVIEW** (2026-10-09)
+
+Software base36c95ab, task branch `task03-p4-closure-constraint`.
+TASK02-D remains PARTIAL / DEFERRED; parent TASK02 IN_PROGRESS;
+Benchmark DRAFT / NOT FROZEN. Native measurement qualification is not an offline
+math dependency. Original Task26 engineering foundation remains accepted.
 
 ## Goal
 Define the shared-object closed-chain constraint for dual FR3.
@@ -15,5 +20,42 @@ For q=[qL,qR], both end-effector/grasp chains must predict the same object pose.
 - Add finite-difference Jacobian checks.
 - Test valid shared-object states and perturbed states.
 
-## PASS
-Residual is near zero on valid grasps; Jacobian check passes within frozen tolerance.
+## Approved scope / minimum sufficient evidence
+
+Pure offline math and tests only. Reuse the existing FR3 RobotModel/RobotState
+FK and unchanged side-tool definitions, with explicit world/base/flange/TCP/
+Object transforms. Verify rigorous six-dimensional closure and 6×14 Jacobian
+against independently evaluated FK finite differences, bounds, original archived
+FK oracle, fixed grasps and perturbations. Keep synthetic and real-model evidence
+separate; real-model math is not physical holding/collision proof.
+
+No Isaac/ROS service/MoveIt node/controller, Observer, IK regeneration, Newton
+projection/TASK04, original Task26/rail/SG/physics/FCL/ACM modification or
+benchmark edits. Linking existing MoveIt kinematics libraries is not starting
+its planning service.
+
+## Predeclared engineering tests — not frozen scientific thresholds
+
+- Original fixed-grasp closure: position≤5e-8m, attitude≤2e-5rad.
+- Existing FK vs stored oracle: position/angle≤1e-11m/rad.
+- Analytic vs central FD (h=1e-5,3e-6,1e-6rad) and independent five-point FD
+  (h=3e-6rad): max entry error≤2e-7, with row-specific units m/rad or rad/rad.
+- Rotated coordinate-gauge arithmetic≤1e-11; quadratic remainder halving ratio
+  3.8–4.2. No test automatically sets formal Benchmark SUCCESS.
+
+## Current result / stop
+
+Software math, FK/bounds and derivative tests pass. The original fixed-grasp
+fixture is approximate historical IK: 219/293 records exceed positional precision;
+maximum4.35027826256e-7m atstate196; rotational maximum1.22663962184e-5rad passes.
+**TASK03 = PARTIAL**, not PASS CANDIDATE. No threshold, grasp or IK adjustment.
+One-time algebraic fixed-grasp zero-residual fixtures on the real FR3 model are
+software tests only and cannot replace this failed original-grasp acceptance.
+
+Minimum sufficient evidence for the complete requested acceptance: **not yet**.
+No further automatic implementation iteration. Submit evidence for user review of
+offline engineering precision/fixture policy (not scientific Benchmark freezing).
+Do not start TASK04.
+
+[Source/formulas](../../baselines/p4_closed_chain/README.md),
+[POST-TASK REPORT](../../reports/TASK03_CLOSURE_CONSTRAINT01.md).

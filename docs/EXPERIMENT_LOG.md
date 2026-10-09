@@ -1,5 +1,27 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — 20261009_TASK03_closure02 offline regression/model math
+
+Task: TASK03; P4_CLOSURE_MATH; offline Eigen/MoveIt core2.5.9/Python (no services).
+Base:36c95ab; evidence invocation commit9b59289 plus source-hashed working files.
+Seed:null / UNSET; deterministic equations/data, no random IK/RNG.
+Config: unchanged archived20261007 full-single-Cube grasp config, not benchmark_v1.
+Commands: cmake configure/build (Release,parallel2); sourced installed dependencies;
+`PYTHONPATH=. /usr/bin/python3 scripts/run_task03_offline.py --run-id 20261009_TASK03_closure02`.
+Actual command argv/exit codes captured in summary. **All four exits0**:72A/B/C,
+93math,CTest and real-model software check.435derivativeconfigs, centralworst3.281e-10,
+five-point1.545e-10, FK0m/6.107e-16rad; archivedminjointmargin.461828rad.
+Acceptance: originalpositionclosuremax.435μm >.05μm,219/293fail; attitude passes.
+**TASK03 PARTIAL; typed result INCOMPLETE**, not robot/benchmark SUCCESS.
+Artifacts: results/20261009_TASK03_closure02/{metadata,summary,result,model_metrics}.json
+and task02_regression/task03_math/ctest/real_model logs. Full perstate/derivative and
+example originalC/Jc retained; prior closure01 mathematical output retained.
+No simulation stamp/step/session invented; qualification UNQUALIFIED offline math;
+no physics/ROS nodes/MoveIt server/Task26 invocation, IK/FCL/projection0. Source/artifact
+hashes and protected before/after hashes saved. Results do not prove held-object
+stability, collision freedom, benchmark correctness or formal synchronized sensing.
+Report: reports/TASK03_CLOSURE_CONSTRAINT01.md. Stop, no automatic TASK04.
+
 ## 2026-10-09 — TASK02-C synthetic cross-input metrics; NO PHYSICAL EXPERIMENT
 
 Final stdlib unittest72/72PASS, exit0, engineering wall2.540s (A14+B19+C39). Both independent test formats decode the same4sample trajectory, valid4/rejected0: A relativeTCP0, midpointmax.030m, positionRMSE.0187082869338697m, attitudeRMS.1870828693rad; B progress0,1/3,2/3,1, finaltargetroundoff≈5.55e−17m, formalinsertiontimenull. Synthetic session/stamps/steps are constructed fixtures, not Isaac/MuJoCo data or scoring evidence. FORMAL duration code path is tested only with explicit fabricated declared-post-step TEST_DOUBLE, never published as native measurement. Tests reject session/clock/frame/qualification mixing and invalid/missing input, retain rejection reasons; actual legacyA snapshot compatibility only. Source hashes and immutable A/B/YAML/old4assets captured. Isaac/ROS/MoveIt/Task26/build/physics/robot/suction/rail calls0; no scientific or physical safety result. [Metadata](../results/20261009_TASK02_metrics_measurements01/metadata.json), [example](../results/20261009_TASK02_metrics_measurements01/example_metrics.json), [report](../reports/TASK02_METRICS_MEASUREMENTS01.md).

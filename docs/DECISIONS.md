@@ -1,5 +1,25 @@
 # DECISIONS
 
+## D046 — Explicit rigid closure chart; immutable existing FK; no acceptance fitting
+
+2026-10-09. [ORIGINAL] P4 generic rigid-chain C(q)=0 framework, joint/collision
+validity separate. [ADAPTATION] dualFR3 predicts Object with explicit TCP→Object G,
+position left−right in world and Log(RR^T RL) in right predicted Object axes.
+Jacobian accounts for fixed-grasp lever arms and SO3 differential. [ENGINEERING]
+reuse MoveIt2.5.9 RobotState FK/Jacobian, rotate first-joint-parent geometric axes to
+world, validate by independent FK differences; no new DH chain, planner or projection.
+Exact expanded archived URDF/SRDF snapshots make tests portable without geometry
+or ACM changes; license/source identity retained. Old Task26 and Benchmark untouched.
+
+**Do not freeze or silently change offline acceptance:** original historic G/q
+position closure0.435μm exceeds previously declared0.05μm. Keep this negative result
+and TASK03 PARTIAL, even though math/Jacobian software PASS. The engineering precision
+is not a formal Benchmark threshold. A one-time algebraic G*=FK(q0)^-1O fixture
+is classified mathematical/test-only, fixed for every subsequent perturbation;
+never feed it to benchmark/control/SG or use it to claim original grasp acceptance.
+No new IK or tolerance iteration. User review required before changing acceptance
+policy; no automatic TASK04/physical experiment. [Formula/source/evidence](../reports/TASK03_CLOSURE_CONSTRAINT01.md).
+
 ## D045 — Defer native Isaac sampling qualification; unblock offline math [ENGINEERING]
 
 2026-10-09. Explicit userapproval endsTASK02-D availabilityaudit. InstalledIsaac4.5 supports

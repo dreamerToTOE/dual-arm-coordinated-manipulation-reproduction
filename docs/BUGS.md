@@ -1,5 +1,20 @@
 # BUGS
 
+## 2026-10-09 — TASK03 original-grasp offline precision acceptance gap [TASK-BLOCKING]
+
+Task-blocking **for complete TASK03 acceptance at its predeclared precision**, not
+a demonstrated algorithm, scene, suction or physical defect. Unchanged historical
+FR3 IK/q plus original fixed grasps have position closure max4.35027826256e-7m at
+state196;219/293 records exceed5e-8m. Rotation≤1.22664e-5rad meets2e-5rad. Same-model
+FK oracle equality and all435 analytic-vs-FD checks pass. Approximate archived IK is
+consistent with this residual; no claim that old physical results are invalid.
+Do not silently raise tolerance, recalibrate grasps, run new IK/projection or repair
+geometry. Once-fixed algebraic real-model fixture is software evidence only, not
+replacement. **STOP for user precision/fixture policy review; TASK03 PARTIAL.**
+Native step/time/reset qualification remains DEFERRED to later Isaac measurement;
+not a blocker for these offline mathematical checks. No Observer/runtime implemented.
+[Full evidence](../reports/TASK03_CLOSURE_CONSTRAINT01.md).
+
 ## 2026-10-09 — TASK02-D native time/reset qualification DEFERRED
 
 BUG-002/005 follow-up; no claim RESOLVED. Installed4.5 direct PhysX post-step API and native
