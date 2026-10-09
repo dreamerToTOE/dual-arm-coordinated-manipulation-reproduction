@@ -14,23 +14,31 @@
 
 ## 当前进度（2026-10-09）
 
-最新：唯一获批的 existing-GUI `PRE_PUSH_SHARED → INSERT_READY` 实测已完成（1/1）。实际候选保存于step8967 /149450007794ns：导轨`.750/.750m`、左OPEN/右后吸盘CLOSED、规划世界generation2/shift+.100；原FCL/contact/drift/readback门禁通过。[完整结果与证据](reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md)。
+TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-foundation。
 
-TASK01 仍为 **PARTIAL / DRAFT**，INSERT_READY为**ESTABLISHED_CANDIDATE**，不是PASS/FROZEN或稳定持件/reset证明。严格复用旧Task26的`scene.py → 手动Play → bridge.py`生命周期，benchmark/工具/车厢/物理/SG/固定handoff/FCL/readback/控制算法均未改。原生D6anchor不可用且候选有非零速度；driver正常退出0后MoveIt收尾段错误−11已记录，GUI存活但cleanup已释放吸盘。未运行TARGET/reset/fullA/force/P3；停止、不修复或重跑，等用户审查。
+新的 TASK01 不再继续调试 reproduction 仓库中新建的单 Cube harness，而是先直接验证旧工程的成熟 Task26 场景能否作为基础场景：
 
-以下保留加载方式供以后单独批准运行时使用，**不构成再次运行授权**。在已正常启动的IsaacGUI中先 **Stop（不是Pause）**，使用干净Stage，依次在ScriptEditor执行：
+    旧仓库 Task26
+    → 只保留一个独立 Cube（task26_r0_deep）
+    → 原 GUI / scene / Play / bridge 生命周期
+    → 原 MoveIt
+    → 原 planning_only
+    → 原完整单 Cube 物理流程
+    → 判断是否可作为 FOUNDATION_SCENE
 
-```python
-exec(open("/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/task01_existing_gui_scene.py").read())
-```
+旧仓库固定读取：
+dreamerToTOE/dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a
 
-看到 scene ready 后，手动点击 **Play**，等待正常物理初始化，再执行：
+本轮禁止重新实现 scene、bridge、Surface Gripper、rail、rear regrasp、segmented push 或新的校验器。若旧源码没有严格单 Cube 模式，只允许做最小 task-count / loop-bound / selector 适配，不改变几何、物理或控制行为。
 
-```python
-exec(open("/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/task01_existing_gui_bridge.py").read())
-```
+当前 benchmark_v1 仍是 DRAFT，但在本次 foundation qualification 完成前不作为 TASK01 的执行输入，也不冻结。
 
-**bridge 不是只读操作**：它恢复已记录的 PRE_PUSH 状态并初始化原双吸盘持件；不会自动启动 MoveIt/controller。后续外部终端完整指令、证据目录和停止方法见 [现有 GUI 加载说明](reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md)。180 秒为 GUI cooperative deadline，不是卡死时的 OS 硬上限；结束会暂停 GUI、释放 SG，不能称为 held READY。历史 standalone/debug 入口不再作为当前启动方式。
+详见：
+- [重启后的 TASK01](docs/tasks/TASK01_BENCHMARK_FREEZE.md)
+- [D041 / 当前状态](docs/STATUS.md)
+- [旧工程复用说明](docs/PRIOR_PROJECT_REUSE.md)
+
+此前自建 TASK01 harness 的 INSERT_READY、startup、readback、native debug 等结果全部保留为历史证据，但不再是当前 TASK01 的 active blocker。
 
 ## 历史检查点（2026-10-06，保留原证据）
 
@@ -88,7 +96,7 @@ Planning & QP       Force & Contact
 ```text
 Phase 0  Foundation
   TASK00 Environment Audit
-  TASK01 Benchmark Freeze
+  TASK01 Predecessor Single-Cube Scene Foundation Qualification
   TASK02 Common Interface / Logger / Metrics
 
 Phase 1  P4 Closed-chain planning
