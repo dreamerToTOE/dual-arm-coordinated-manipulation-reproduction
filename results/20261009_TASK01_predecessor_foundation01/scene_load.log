@@ -1,0 +1,23 @@
+Pinned predecessor: 631b1f65656d025c1bb2173e874192f3fe4d355a
+Source SHA256: 43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7
+Existing GUI PID39508 / local executor8226; no new SimulationApp.
+Operator Stop + File New confirmed; read-only Timeline stopped=true, playing=false, /World empty, /World/Task01 absent.
+Command: _SIDE_SUCTION_SCENARIO = "task26"; exec(open("/home/ubuntu2004/lmy/dual-arm-embodied-palletizing-task01-foundation/isaac/scripts/task26_truck_box_scene.py").read())
+Executor status: ok; external client exit: 0.
+
+[Task26] 关节量程已对齐本仓库官方 FR3（joint_limits.yaml）；NVIDIA fr3.usd 的窄量程是规划/物理不一致的来源，见 _apply_official_joint_limits 注释
+Task26 truck-box side-suction scene ready
+tools: fixed 2x2 side-suction array, short L support (80 mm down + 130 mm side), TCP offset=0.155 m
+truck box: interior x=(0.91, 1.1600000000000001) y=(-0.314, 0.314), walls 0.020 m thick x 0.150 m high
+opening: -X side + top; push direction: +X
+table top z=0.200 m; FR3 official move_to_start targets are configured
+first layer cells: ((1.1, 0.254, 0.26), (0.98, 0.254, 0.26), (1.1, -0.254, 0.26), (0.98, -0.254, 0.26))
+pre-push positions: ((0.7899999999999999, 0.06, 0.26), (0.7899999999999999, 0.06, 0.26), (0.7899999999999999, -0.06, 0.26), (0.7899999999999999, -0.06, 0.26))
+rails (X axis, visual only): rest x=0.650 travel=(0.45, 1.05); base y fixed (-0.6, 0.6)
+TRUCK SHIFT: 车厢/格位/预推位 X 平移 +0.100 m；滑轨行程 (0.45, 1.05)；静止位 0.650
+rails are moved by the bridge via /task26/{left,right}/rail_command
+feed: 2 batches x 2 cubes; slot A=(0.5, 0.0, 0.26) (picked first), slot B=(0.35, 0.0, 0.26); all cubes start parked at z=-5.000
+PUB: /clock, /left/joint_states, /right/joint_states
+Next: Play, then run task26_truck_box_bridge.py
+
+This is scene-loading evidence only; manual Play, bridge, preflight and physical execution not yet evaluated at this checkpoint.
