@@ -1,6 +1,6 @@
 # TASK02 — Common Interfaces, Logger and Metrics
 
-Status: **IN_PROGRESS — TASK02-A offline slice PASS; TASK02-B PASS CANDIDATE; overall TASK02 not PASS**
+Status: **IN_PROGRESS — TASK02-A offline slice PASS; TASK02-B/C PASS CANDIDATE; BENCHMARK DRAFT / NOT FROZEN; overall TASK02 not PASS**
 
 ## 2026-10-09 minimal integration scope
 
@@ -29,19 +29,33 @@ Completed TASK02-B (one bounded offline implementation, no Isaac/ROS/MoveIt):
 **TASK02-B = PASS CANDIDATE.** [POST-TASK REPORT](../../reports/TASK02_EXCHANGE_LOGGING01.md).
 No execution binding, scientific success threshold, native timestamp or full TASK02 PASS is inferred.
 
+Completed TASK02-C (one bounded offline implementation fromc7b33b1):
+
+- Task14-derived relative TCP/midpoint/attitude initial drift and max/sample-RMS;
+- explicit object tracking positionRMSE; insertion target/axis/progress/lateral/attitude/window metrics;
+- ContactWrench/CollisionDistance data-only drafts, explicit frame/SI/point/source/time/validity;
+- frame/session/domain/qualification guards, missing/invalid/rejection counts, no zero fill;
+- two independent synthetic input formats give identical math; synthetic durationnull;
+- all A/B/C regressions72/72PASS (14+19+39), saved metricsJSON/readback/source evidence;
+- unchanged A/B semantics/old source/benchmark, no simulator/ROS/MoveIt/control/backend call.
+
+**TASK02-C = PASS CANDIDATE.** [POST-TASK REPORT](../../reports/TASK02_METRICS_MEASUREMENTS01.md),
+[metric definitions](../../common/metrics/README.md). Metrics do not automatically declare SUCCESS;
+old3mm/5mm/2deg/30ms engineering parameters are not new defaults. Declared-qualified test doubles
+are branch coverage only, not native scientific data. Benchmark remains DRAFT / NOT FROZEN.
+
 Remaining order:
 
-1. Shared metric functions and remaining measurement contracts with synthetic cross-platform tests; accept thresholds from explicit
-   configuration only, never import legacy acceptance values as scientific defaults.
+1. Review the completed C software slice; any next slice needs separately bounded approval.
 2. Bind already available native post-step state sources behind this interface, through a thin
    read-only adapter. This needs separate scope/evidence, not a replacement scene/bridge.
 3. Only then connect paper-specific baselines; formal Benchmark numerical freeze stays a
    separately approved research decision.
 
-No TASK02-B live command adapter, force calibration, controller, reset, physical trial or TASK03.
-`ContactWrench`, `CollisionDistance`, scientific metric evaluation, full output export and actual
-RNG seed control from the original goal below are not yet complete. B records seed only;
-it does not control execution RNGs. Stop after delivery; remaining items are not current authorization.
+No TASK02-C live command adapter, force calibration, controller, reset, physical trial or TASK03.
+Native metric evidence/attestation, full output export and actual RNG seed control from the
+original goal below remain incomplete. B records seed only; it does not control execution RNGs.
+Stop after C delivery; do not automatically start TASK02-D/TASK03. Remaining items are not authorization.
 
 ## Goal
 Create platform-independent contracts used by every baseline.

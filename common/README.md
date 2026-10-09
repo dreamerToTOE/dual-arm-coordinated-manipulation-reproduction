@@ -9,7 +9,10 @@ TASK02-A 提供 `common/interfaces/state.py` 的草案状态契约：SI 单位�
 已验收 Task26 的原地薄适配器在 `platforms/isaac_ros2/foundation/`。
 TASK02-B 提供 `common/interfaces/exchange.py` 数据命令、事件、结果和运行元数据，
 `wire.py` 严格确定性 JSON 编解码，以及 `common/logging/run.py` 文件日志。
-当前 TASK02-B PASS CANDIDATE、TASK02 IN_PROGRESS；不冻结 Benchmark。
+TASK02-C新增`common/interfaces/measurement.py`测量草案和`common/metrics/`纯数学函数；
+两种独立合成输入给相同指标，A/B/C72项离线测试通过。
+当前 TASK02-B/C PASS CANDIDATE、TASK02 IN_PROGRESS；BENCHMARK DRAFT / NOT FROZEN。
+[指标定义、测量资格和API](metrics/README.md) · [C交付报告](../reports/TASK02_METRICS_MEASUREMENTS01.md)。
 
 ## 数据契约和时间
 
@@ -64,8 +67,10 @@ result = BenchmarkResult.from_json((folder / "result.json").read_text())
 
 示例是故意失败的合成测试，**不是物理失败/成功证据**。历史旧状态缺少同步时间，不能靠
 补字段或删标签升级；日志的SYNCHRONIZED_POST_STEP结果需非空且全部同资格的状态记录。
-这仍是格式/来源声明校验，不能防止伪造所有字段。ContactWrench/CollisionDistance、科学
-metrics、执行RNG控制和native数据绑定留给后续有界切片；当前不执行实时测试或TASK03。
+这仍是格式/来源声明校验，不能防止伪造所有字段。C已实现ContactWrench/CollisionDistance
+草案和纯数学metrics，但不编写估计器/查询器/传感器，也不产生真实科研指标证据。
+执行RNG控制、native数据绑定和正式评分留给后续批准切片；提交后停止，不执行实时测试、
+TASK02-D或TASK03。原A/B语义与实现不变。
 
 离线测试（仓库根目录）：
 

@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — TASK02-C approved offline metrics, not runtime or benchmark freeze
+
+User requires Task14/Task16 audit first, pure platform-independent A/B math, explicit ContactWrench/CollisionDistance, strict quality/session/time treatment, identical metrics from two simulated input adapters, historical snapshot diagnostic-only and all A/B/C regressions with saved JSON/test artifacts. Old acceptance values cannot become default Benchmark gates, metrics cannot auto-SUCCESS. Explicitly forbids Isaac/ROS/MoveIt/Task26, mature source/physics/YAML/A/B semantic changes, new execution/collision/logging services and P1–P5 algorithms. Deliver on existingbranch fromc7b33b1 and publish GitHub with TASK02-C PASS CANDIDATE, parent IN_PROGRESS, BENCHMARK DRAFT/NOT FROZEN; then stop and wait, no TASK02-D/TASK03. This authorization does not resolve native binding, real force measurement or later scientific scoring decisions. [Delivered evidence](../reports/TASK02_METRICS_MEASUREMENTS01.md).
+
 ## 2026-10-09 — TASK02-B explicit offline-only delivery scope
 
 User requests unified BaselineCommand, distinct planned/observed/confirmed/failed events, four-status BenchmarkResult, lightweight metadata/event JSONL/result JSON/optional state files, explicit seed and source hashes, plus synthetic and historical snapshot acceptance tests. Commands must remain data only; SUCTION_ON is not successful ATTACH. User explicitly forbids changing old Task26/scene/bridge/FCL/SG/rails/push/physics/benchmark_v1, forbids any Isaac/ROS/MoveIt run and TASK03, and requests GitHub publication with POST-TASK REPORT. Execute one bounded offline implementation on task02-minimal-foundation-interface, label TASK02-B PASS CANDIDATE and TASK02 IN_PROGRESS only. Subsequent runtime and metric/benchmark threshold decisions are not inferred from this approval. [Delivered slice](../reports/TASK02_EXCHANGE_LOGGING01.md).

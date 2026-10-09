@@ -1,0 +1,100 @@
+{
+  "schema_version": "task02.offline_metrics_acceptance.v0.1",
+  "run_id": "20261009_TASK02_metrics_measurements01",
+  "task_id": "TASK02-C",
+  "date": "2026-10-09",
+  "branch": "task02-minimal-foundation-interface",
+  "source_base_commit": "c7b33b16c3b4332fb9b00d03f1ae853cbf519da2",
+  "source_at_artifact_generation": "base_commit_plus_working_tree_bound_by_source_sha256",
+  "predecessor_pin": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+  "accepted_predecessor_local_commit": "5ed0c967401e5fedb93b938e1c3904f4a4c87600",
+  "trial": 0,
+  "seed": null,
+  "seed_status": "UNSET_NO_RANDOM_INPUT",
+  "configuration": {
+    "id": "task02c_analytic_four_sample_fixture",
+    "path": "tests/task02c_synthetic_inputs.py",
+    "stamp_skew_policy_ns": 0,
+    "benchmark_thresholds": null,
+    "policy_scope": "synthetic_data_alignment_only_not_success_acceptance"
+  },
+  "evidence_class": "SYNTHETIC_OFFLINE_NOT_SCIENTIFIC",
+  "measurement_sources": ["synthetic_isaac_like_test_double", "synthetic_mujoco_like_test_double"],
+  "actual_simulation_session": null,
+  "actual_physics_step": null,
+  "actual_simulation_stamp": null,
+  "formal_native_measurement_evidence": false,
+  "formal_insertion_time_sec": null,
+  "formal_time_unavailable_reason": "SYNTHETIC_DATA_NOT_REAL_EXECUTION_TIME",
+  "qualified_duration_unit_test_note": "Explicit fabricated declared-post-step TEST_DOUBLE exercises code branch only; not native physics evidence",
+  "status": {
+    "task02c": "PASS CANDIDATE",
+    "task02": "IN_PROGRESS",
+    "benchmark": "DRAFT / NOT FROZEN",
+    "automatic_benchmark_success": null
+  },
+  "attempt_budget": {
+    "offline_implementation_validation_cycles": 1,
+    "simulator_ros_moveit_physical_allowance": 0,
+    "simulator_ros_moveit_physical_invocations": 0
+  },
+  "commands": [
+    ["python3", "-m", "unittest", "discover", "-s", "tests", "-p", "test_task02*.py", "-v"],
+    ["python3", "tests/task02c_synthetic_inputs.py", "--output", "results/20261009_TASK02_metrics_measurements01/example_metrics.json"]
+  ],
+  "python_version": "3.10.12",
+  "test_result": {
+    "exit_code": 0,
+    "tests": 72,
+    "passed": 72,
+    "task02a_tests": 14,
+    "task02b_tests": 19,
+    "task02c_tests": 39,
+    "engineering_wall_duration_sec": 2.540,
+    "duration_scope": "unittest_process_wall_only_not_robot_execution"
+  },
+  "numerical_readback": {
+    "both_mock_sources_equal": true,
+    "valid_samples_per_source_per_metric": 4,
+    "rejected_samples_per_source_per_metric": 0,
+    "a_position_rmse_m": 0.018708286933869715,
+    "a_relative_tcp_max_m": 0.0,
+    "a_midpoint_max_m": 0.030000000000000027,
+    "a_orientation_max_rad": 0.3000000000000006,
+    "a_orientation_rms_rad": 0.18708286933869683,
+    "b_final_target_error_m": 5.551115123125783e-17,
+    "b_progress": [0.0, 0.3333333333333333, 0.6666666666666666, 1.0000000000000002]
+  },
+  "source_sha256": {
+    "common/interfaces/measurement.py": "3bbf6d6cd00a0499d648ad748ac5da9856ff77c39cfe54e5af9b1b47cd90cbd0",
+    "common/metrics/__init__.py": "e5cb293cc05fd7c5c0bcb54dc26137b1f60f0724e613383f2c5a31bda8658fcf",
+    "common/metrics/math.py": "d00fef2a1a1740698e1514df320b6d941d128dc9f41e31dbb2e757f6c6429b36",
+    "common/metrics/evaluate.py": "6ffa7553d16c596bb1dd5ba6b66fd292ae9b42a23ffebc1e57e4d018e3696ce4",
+    "tests/task02c_synthetic_inputs.py": "a60717c7ae3a2c7d0a5c5541527eb5e968812dc8749e47f07376ae8126a237ae",
+    "tests/test_task02_measurements.py": "c4a6135a4aad09dc656d9ceb5719b201e0b7e4d22dbcd74638d7e8107f54605a",
+    "tests/test_task02_metrics.py": "1a5965831719711e2218ff3c9e48e7a00921fca41d71723b02a1764a52cb0d19"
+  },
+  "immutable_before_after_sha256": {
+    "configs/benchmark/benchmark_v1.yaml": "fbef560ae81963fdf5839cd83d95274edebd9769024d1ae74527f00092c8f2a2",
+    "common/interfaces/state.py": "8bf9674cbf7e84924e01bcee4fef902a12cda497840c0643d4c56e0c691071e9",
+    "common/interfaces/exchange.py": "136d8e5fe9ecb8450d43ad442ac6831b28ac81eb755263ac45f92840517ace45",
+    "common/interfaces/wire.py": "8f31210ea5286f369e56857a4a4c510dfa017fdd7b5f07266907c38e042bd1ec",
+    "common/logging/run.py": "1fdcce656fe3cf1f5025e4470c95612a9f230f12382f53a4db6729d629ae74a5",
+    "platforms/isaac_ros2/foundation/legacy_task26.py": "36ba0451a5ae42fd9997422e3ff95c6e983137b99d187c0e13c6cf3062b3663b",
+    "platforms/isaac_ros2/foundation/legacy_events.py": "b756873d6dabcb41b9d6af7a76d6f3e4dbe04de4b00ca6bd3c126534ac994332"
+  },
+  "accepted_old_assets_hash_check": "4/4 PASS; see scope_checks.log; old worktree clean",
+  "pinned_math_source_sha256": {
+    "task14_shared_box_geometry_monitor.cpp": "f598018252b881ffae797b296ac76d7f3f3c60edf7e4150106665f6a7bdf8395",
+    "TASK14_CONTINUOUS_GEOMETRY.md": "d5b5e7bb9613c1f69e888313ef1dd86a7131f467ff1e8729bfca6d4dd41ef00b",
+    "task16_planning_benchmark.cpp": "e913ecb9db58af4c30a20b76a6c4bcec4fee46afdef61582d77b784f09a23820"
+  },
+  "artifacts_sha256": {
+    "results/20261009_TASK02_metrics_measurements01/tests.log": "16806f9e8d75b4bf9f3a0b836fc26d5b0508d88dc45f93cb5b9c2815f4ddfa94",
+    "results/20261009_TASK02_metrics_measurements01/example_metrics.json": "011842092c038994f4c87db5286aa0ff93a6007926268e33822551c58ca92af5",
+    "results/20261009_TASK02_metrics_measurements01/scope_checks.log": "ddae5064ff46ff93d9125435f8f4160b888f8d9d9ddfed7f888ea680f6dd7c01",
+    "results/20261009_TASK02_metrics_measurements01/artifact_readback.log": "233233be5abbe8648f4fdcaaeeef69f6567ae6ca4e2c0fa1c0c03cd10fcf05c5"
+  },
+  "report": "reports/TASK02_METRICS_MEASUREMENTS01.md",
+  "stop_state": "WAIT_FOR_USER_REVIEW_NO_TASK02_D_NO_TASK03_NO_RUNTIME"
+}

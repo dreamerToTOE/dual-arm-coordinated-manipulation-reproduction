@@ -14,6 +14,13 @@
 
 ## 当前进度（2026-10-09）
 
+**最新：TASK02-C = PASS CANDIDATE；TASK02 = IN_PROGRESS；BENCHMARK = DRAFT / NOT FROZEN。**
+平台无关A/B指标与ContactWrench/CollisionDistance草案已完成：复用旧Task14数学定义，
+严格区分session、时钟和测量资格，不带入旧验收门限、不自动判成功。两种独立合成输入
+得到相同数值；A/B/C共72项离线回归通过，合成执行耗时为null。无Isaac/ROS/MoveIt运行，
+旧Task26、A/B数据语义、benchmark_v1和原始证据未改。提交后停止，不启动TASK02-D/TASK03。
+[POST-TASK REPORT与测试证据](reports/TASK02_METRICS_MEASUREMENTS01.md) · [指标定义/API](common/metrics/README.md)。
+
 TASK01 已按用户要求**完全重启并完成基础资格验收**，执行分支为 `task01-legacy-scene-foundation`；当前工作分支见下方 TASK02。
 
 **最新：用户已接受 TASK01 基础场景可行性 PASS CANDIDATE；正式科研 Benchmark 暂不冻结。** 已验收 Task26 原抓取/重抓/推进链不再重新开发。开始 TASK02 最小迁移与统一接口，使用原地薄适配优先；当前分支 `task02-minimal-foundation-interface`。[TASK02-A 软件结果与后续范围](reports/TASK02_FOUNDATION_INTERFACE01.md)：统一状态/来源、只读旧快照转换和四项资产 hash 核验已完成，14项离线测试 PASS；无新仿真/控制运行，不代表完整 TASK02 或科研数据接口已通过。
