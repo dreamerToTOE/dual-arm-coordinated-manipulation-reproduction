@@ -14,6 +14,8 @@
 
 ## 当前进度（2026-10-09）
 
+最新：已批准一次 existing-GUI `PRE_PUSH_SHARED → INSERT_READY` 实测；当前未检测到已启动的本机 Isaac/Kit GUI 或8226控制入口，因此尚未开始（物理尝试0/1），未改代码或使用 standalone。[前置条件检查](reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md)。
+
 TASK01 仍为 **PARTIAL / DRAFT**，尚未得到 INSERT_READY，不是 PASS/FROZEN。当前只交付已启动 GUI 的加载适配：严格复用旧 Task26 的 `scene.py → 手动 Play → bridge.py` 生命周期。benchmark、工具、车厢、物理、SG、固定 handoff、FCL/readback 和控制算法均未修改；停止 image-core 研究。本轮只完成纯软件测试，未运行 Isaac/ROS/机器人。
 
 下一次单独批准运行时，在已正常启动的 Isaac GUI 中先 **Stop（不是 Pause）**，使用干净 Stage，依次在 Script Editor 执行：

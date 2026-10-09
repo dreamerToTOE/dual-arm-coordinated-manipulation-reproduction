@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Approved exactly one existing-GUI PRE_PUSH_SHARED→INSERT_READY runtime
+
+User requires bbe9784 Stop→scene→ready→manualPlay→bridge→shared-sample→external unchanged driver; inspect seven handoff stages and save complete native INSERT_READY/contacts/raw readback. First listed failure stops, no source/geometry/ACM/physics/SG/IK/FCL/station change or same-round rerun. No TARGET/reset/full A/force/P3 or standalone/GDB/probe/image-core. Runtime preflight currently cannot observe normal GUI/executor; no attempt begun,0/1 used. Ask operator for existing GUI prerequisite, not a new permission or workaround. [Waiting record](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## 2026-10-09 — Only current TASK01 adapter; use old Task26 lifecycle
 
 User: read `dual-arm-embodied-palletizing@side-suction-palletizing` Task26; load the current single-Cube scene/handoff in an already-working Isaac GUI, strictly `scene.py → Play → bridge.py`; do not touch benchmark/control or continue image-core research. Implemented as one software-only adapter change and source/mock checks. This request is not interpreted as approval for another Isaac/ROS/control trial. Old exhausted budgets/evidence remain intact. Complete editor/terminal instructions saved, new runtime NOT_RUN, TASK01 PARTIAL. [Delivery](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).

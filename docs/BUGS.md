@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-09 — GUI availability prerequisite (TASK-BLOCKING, not a source defect)
+
+Approved existing-GUI runtime cannot begin locally: no Isaac/Kit process or existing8226 executor listener found by two independent checks. No actual scene/bridge/driver operation, no crash or new algorithm/model defect observed. Action is operator opening normal GUI and enabling already-documented local extension, not adapter repair/new probe/standalone launch. bbe9784 runtime unchanged; allowance0/1 used. Old startup/readback acceptance unknowns remain, no new physical closure. [Preflight](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## 2026-10-09 — Existing-session route prepared; live closure remains TASK-BLOCKING
 
 User redirects loading to an already-normal Isaac GUI and explicitly stops image-core research. Historical standalone initialization SIGSEGV remains unresolved evidence for that route; retaining its logs does not authorize further diagnosis or fixes. New scene/bridge lifecycle avoids creating/restarting the GUI, but has not been run physically, so it is not a proven crash fix. Actual readback closure/rail-safe transition/rear attachment/INSERT_READY remain TASK-BLOCKING acceptance unknowns, not new observed failures. GUI cooperative timeout cannot terminate a native GUI hang; external ROS controller exit code is not inferred from DDS disappearance. These are documented ownership/evidence limits, not reasons to build another probe. Force/wrench deferred; no parity10 or benchmark changes. [Scope and limitations](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).

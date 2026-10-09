@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-09 — Sole existing-GUI runtime authorization: prerequisite check only
+
+Re-read governance/current task/P4/benchmark and inspected git/critical hashes. No code/build/config change or tests; approved bbe9784 adapter source remains byte-identical. Process/listener preflight plus independent audit found no running Isaac/Kit GUI or existing8226 executor. No scene, Play, SG, rails, ROS driver or physical samples. Saved preflight report/metadata and records, waiting for operator prerequisite; allowance0/1, no startup fallback or repair. [Record](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## 2026-10-09 — Reuse Task26 scene → Play → bridge in an existing GUI
 
 Read mandatory governance/current TASK01/P4/benchmark/reuse records and remote-verified Task26@631b1f sources; wrote pre-task software-only scope before editing. Added a thin current-Stage scene loader, manual-Play bridge entry and asynchronous session adapter, retaining original constructors, SG and C++ fixed handoff. Native callbacks replace standalone manual simulation; Stage/token gates precede physical writes, existing halted/error protocol preserves last native stamp on failure, and external controller ownership is explicit. No new grasp/push/FCL/readback algorithm, benchmark geometry/physics/ACM edit, image-core investigation or runtime. Independent source audit plus pure AST/mock tests; preserve eight immutable hashes and prior logs. Complete README/records/report updated; TASK01 PARTIAL, new physical evidence absent. [Delivery](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).

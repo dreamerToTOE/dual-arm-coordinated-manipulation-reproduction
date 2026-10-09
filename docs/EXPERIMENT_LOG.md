@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — Approved existing-GUI runtime01 NOT STARTED
+
+Read-only source/process/socket preflight at executable source bbe97849e3e3cd5708861de676e7b952ec00fecb: GUI process/executor8226 not observed. No new Isaac/ROS invocation, scene/bridge load, physics step/time/state/contact/world readback or attachment capture. Not a failed experiment, native crash or safety result; new physical allowance0/1 unused. [Metadata](../results/20261009_TASK01_existing_gui_runtime01/metadata.json), [scope](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md). TASK01 PARTIAL, no FROZEN.
+
 ## 2026-10-09 — Existing-GUI adapter: pure software checks, NO ISAAC EXPERIMENT
 
 Source base d961a46. Lifecycle mock/AST tests and syntax/hash/source checks only; tests do not import Isaac/ROS or start an inferior/controller. Runtime attempts0, robot/suction/rail commands0, native simulation state/contact/readback/INSERT_READY records0. Historical run results are unchanged. New active loading route follows pinned Task26@631b1f, but runtime behavior is **NOT_VALIDATED**. No safety/held READY/reset/dynamics/FROZEN claim. [Software checks and immutable inputs](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).
