@@ -4,6 +4,20 @@
 
 2026-10-09. Fulfilled sole approved existing-GUI attempt with unchanged bbe9784 source: operatorPlay, savedsharedPRE, originalrelease/safe/FCL/dualrail/freshcomposedworld/rearregrasp, actualcandidate8967. Record **INSERT_READY ESTABLISHED_CANDIDATE / TASK01 PARTIAL**, notPASS/FROZEN. No benchmark/station/algorithm/SG/ACM/physics edits; noTARGET/reset. Preserve generation2 refresh-time pose versus later candidate drift and actualrailarrivedflags rather than redefining gates. NativeD6handle/anchor unavailable and nonzero capturevelocity constrainclaim to observedcandidate, notstablehold/reset. OriginalcleanupopensSG/pausesGUI; MoveItshutdown−11 afterdriver0 isDEFERRED here andreported separately, not concealed ascleanPASS or triggernewdebugging. Minimum sufficient candidateevidence obtained; budget1/1consumed; stopandawaituserreview, no automaticnextacceptance/fix/retry. [Fullreview](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
 
+## D040 — TASK02+ prior-engineering reuse is mandatory before new implementation [ENGINEERING]
+
+2026-10-09. User explicitly requested a second cross-repository review so later tasks do not rebuild already completed engineering infrastructure.
+
+Decision:
+- `dual-arm-embodied-palletizing@side-suction-palletizing` pinned at `631b1f65656d025c1bb2173e874192f3fe4d355a` is the engineering reuse source for TASK02+;
+- every TASK02+ implementation must perform a PRIOR-ASSET CHECK before coding;
+- reusable assets are classified as DIRECT_PORT / THIN_ADAPTER / TEST_ORACLE / REFERENCE_ONLY;
+- generic trajectory/event contracts, geometry utilities, MoveIt/FCL wrappers, synchronized execution, metrics/logging patterns and planning-sandbox isolation should be adapted instead of independently rewritten;
+- paper-specific mathematics/controllers/planners remain new and must retain ORIGINAL/ADAPTATION/DEVIATION traceability;
+- historical application schedulers/placement/router logic are not automatically promoted into P1–P5 baselines.
+
+The detailed mapping is `docs/POST_TASK01_REUSE_MAP.md`. TASK01-specific reuse remains separately governed by `docs/PRIOR_PROJECT_REUSE.md`.
+
 ## D039 follow-up — One existing-GUI physical attempt; no substitute launch [ENGINEERING]
 
 2026-10-09 explicit user authorization fixes executable source bbe9784 and scene→manualPlay→bridge→external unchanged driver sequence. Stop at first crash/lifecycle/restore/OPEN/drift/FCL/rail/world/contact/regrasp/attachment failure; no repair-and-rerun. End only INSERT_READY candidate, TASK01 PARTIAL; no TARGET/reset/A/force/P3/FROZEN. Keep all geometry/ACM/physics/SG/stations/thresholds unchanged. Missing already-normal GUI is a prerequisite, not authority to start standalone; preflight found none, so physical allowance remains0/1. Same permission may begin after operator provides existing GUI/executor; prior budgets do not reset. [Protocol and preflight](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
