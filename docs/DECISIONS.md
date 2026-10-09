@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 follow-up — One pre-control native capture, no implicit repair [ENGINEERING]
+
+2026-10-09. User approved exactly one visibleGUI/GDB180s startup-only invocation, not integration or source repair. Keep original harness/config/binary byte-identical; diagnostic hash+AST125 exit barrier before169PLAY and all controls, independentmaintrace only. Clean GDB environment/native stack without locals/core, SDK paths/preload onlyinferior. FirstSIGSEGV stops; capturedOmniGraph/image/exec/TBB stack and heap-integrity symptom, thenkill/no continue. Native fault evidence is not corrupting root, collision/readbackFAIL, READY or benchmarkPASS. No remainingbudget1/1; furtherfix/capture/integration needsnewboundedauthority. Physics clock absent; do not label diagnostic wall/profile time scientific. Eighthashesunchanged/TASK01PARTIAL/notFROZEN; D039topology/stations/thresholds untouched. [Report](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).
+
 ## D039 follow-up — Separate native startup evidence from handoff claims [ENGINEERING]
 
 2026-10-08. User approved bounded diagnosis; explicitly performed one existing-evidence-only audit, no live run/fix. Use full Kit positive markers over truncated console for execution boundary: SDK/ROS bridge completed, SG enable requested, then early-stage/asset investigation window. Kernel OmniGraph fault is a concrete correlated module clue, not exact root/stack or benchmark defect; absent buffered prints are not strict execution upper bounds. Apport non-package rejection explains missing core. Publish selected logs/source hashes without unrelated crash/environment data. Stop diagnosis1/1; any native-stack capture, launcher change, repair or handoff retry requires separate authority, no global core/benchmark change. TASK01PARTIAL/notFROZEN. [Report](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).

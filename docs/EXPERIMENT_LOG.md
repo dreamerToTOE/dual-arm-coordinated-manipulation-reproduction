@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — Startup-only diagnostic, NOT benchmark execution
+
+- Source944422dc92e7a8f39f0e8c8066147073ba0745f0; one DISPLAY`:1` GDB invocation under180s cap, ~109.663s log-file interval (engineering only). PID17071/LWP17392/thread67`tbb.worker`, SIGSEGV/address0x40/PC0x73be3cf418d9 in OmniGraph core; image-core×2→exec-core×2→TBB native callers; malloc fastbin integrity warning. Symbols stripped, corrupting writer/root unresolved.
+- Originalmain line124 observed before STOP-timeline app.update,125 barrier not reached; noPLAY/physicalcontrol/projectSGbridge/commands/MoveIt/worldrefresh/handoff/regrasp/READY/TARGET. No q/TCP/Cube/contact/nativepoststep data; no safety or stability verdict. SDK app/bridge startup markers are diagnostic profiling, not sim timestamps.
+- GDB captured then killedinferior; wrapper0 is NOTIsaacPASS. PIDs17037/17038/17071 and ownedPGIDs gone. Original eight hashes unchanged; launcher software5tests/syntax/reviewsPASS do not provide scientific acceptance.
+- New allowance1/1 consumed, norepair/secondcapture/retry. [Full provenance](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md), [metadata](../results/20261009_TASK01_startup_native_stack01/metadata.json), [native log](../results/20261009_TASK01_startup_native_stack01/launch.log). TASK01PARTIAL/noFROZEN; await bounded next decision.
+
 ## 2026-10-08 — Existing-log startup diagnosis: NO NEW ISAAC EXPERIMENT
 
 - Source407bd34; one read-only diagnostic iteration, no new simulator/ROS/control/debugger/test run or fix. Prior retry01/02 physical evidence remains separate and unchanged; all eight runtime hashes match.

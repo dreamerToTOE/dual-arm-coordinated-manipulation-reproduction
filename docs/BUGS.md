@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-09 — Native fault-site stack obtained, cause not fixed [TASK-BLOCKING]
+
+Authorized startup-only1/1 underGDB intercepted SIGSEGV/tbb.worker/PID17071,LWP17392,addr0x40 in OmniGraph core, called by image-core→exec-core→TBB; same module-relativePC0x1418d9 as retry02 kernel clue. Log also reports malloc fastbin corruption; this suggests heap-integrity trouble but does not identify corrupting code/root or establish a particular SDK/SurfaceGripper/driver defect. Stripped symbols and async native threads remain limits. Originalmainlast124 before125 barrier/169PLAY, no handoff/physical/MoveIt commands; no geometry/readback verdict. GDB deliberately killedaftercapture, wrapper0notPASS. Eight hashes unchanged; budgetconsumed/no automatic repair/relaunch. Readback code's live closureUNVERIFIED; force deferred TASK10-IS; no parity expansion. [Stack/provenance/escalation](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).
+
 ## 2026-10-08 — Native startup blocker narrowed, root still unresolved [TASK-BLOCKING]
 
 Read-only diagnosis confirms complete SDK init/ROS2 bridge before both crashes. Correlated retry02 kernel fault is in OmniGraph core's TBB worker at0x40, not a MoveIt driver/readback failure. Exact native call stack/cause remains unknown; module name does not prove a library defect, null-pointer cause, CUDA/driver/SG incompatibility or same root across both attempts. Apport ignored the bundled-Python executable, so “core dumped” did not yield a usable saved core. No new runtime/core/debugger/fix; eight hashes unchanged. Diagnosis1/1 consumed; request separately bounded stack capture/no blind repair. [Evidence and limits](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md). Prior readback closure remains unverified, force deferred, full model equivalence a limitation, five-Cube legacy.

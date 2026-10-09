@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-09 — Authorized startup-only GDB capture completed
+
+User “可以” approved one visible native-stack capture,180s hard cap, stop before physical/control/handoff. Re-read governance/task/P4; wrote pre-task scope; added thin hash/AST/main-only125 exit launcher and clean-GDB/SDK-inferior wrapper, no original harness edit. Five pure launcher tests/shell syntax/two independent read-only reviews PASS. Source944422d frozen before sole invocation. FirstSIGSEGV captured in OmniGraph worker with image-core/exec/TBB callers and heap warning; no exact corrupting cause. Saved full stack/log/input/guard/metadata, GDBkilledinferior, no further run or fix. ~110s engineering log interval; owned PID/PGIDs absent. Eight runtime hashes unchanged. TASK01PARTIAL, no physical safety/READY/FROZEN;1/1 consumed, six records/TASK01/report updated. [Result](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).
+
 ## 2026-10-09 — Finalize previous read-only diagnosis records
 
 User requested continuation; resumed only the pending final review/commit/push of2026-10-08 existing-evidence diagnosis. No new diagnostic iteration, runtime, debugger, tests or source/config/binary edits. Retained evidence dates/hashes, added publication completion date; no budget reset, READY claim or FROZEN. [Completed findings](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).

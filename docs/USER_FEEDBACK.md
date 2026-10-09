@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — “可以” to one visible native-stack capture
+
+Approval refers to the preceding explicit proposal: one visibleGUI native-stack diagnostic,180s cap, stop before physicalcontrol/handoff, no robot/suction commands. Fulfilledonce: firstSIGSEGV in OmniGraph worker captured, theninferiorkilled/cleanupconfirmed. No startupfix/autoretry/benchmarkedit or physicalacceptance. Exactcallchainnowavailable, corruptingrootstillunknown. New1/1consumed; preserve oldbudgets, waituserbeforeanyrepair/integration. TASK01PARTIAL/INSERT_READYnotestablished/noFROZEN. [Result](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).
+
 ## 2026-10-09 — Continue pending diagnostic handoff
 
 User says “继续” after interrupted2026-10-08 diagnosis. Finish its pending records/review/publication first; do not infer permission to fix benchmarks or reopen exhausted runtime budgets. Findings distinguish native-module evidence from unproven cause; a new startup-only native-stack capture remains a separate explicit decision. [Result](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
