@@ -1,5 +1,21 @@
 # DECISIONS
 
+## D050 — TASK04 reviewed; predeclare TASK05 offline RBS protocol
+
+2026-10-09, explicit user acceptance of TASK04 PASS CANDIDATE (OFFLINE PROJECTION
+MATHEMATICS ONLY), base5d41869. One bounded TASK05 offline slice, no Isaac/services/
+controller/Task26/TASK06/Benchmark edits. Original TASK03 precision FAIL retained.
+[ORIGINAL] P4 II-C RBS: project midpoint, validate, recursively connect subsegments.
+[ADAPTATION] unchanged 14q FR3 C/Jc/NR and private native MoveIt/FCL.
+[ENGINEERING] pre-experiment separate1e-8m/rad and unchanged TASK04 options;
+leaf/adjacentL2 .01rad, adjacentLinf .01rad, midpointcorrectionL2 .02rad,
+depth12/projections1023/points1025. Original SRDF ACM, no new touch-link allowance,
+no padding/model/threshold changes. Ten fixed positive connections and genuine
+FCL box-at-TCP negative fixture declared before tests. Discrete point evidence
+only, not continuous safety/full paper or physical grasp. Missing scene => PARTIAL,
+no replacement collision engine. TASK02-D DEFERRED, Benchmark DRAFT.
+[Full PRE-TASK/prior-asset/protocol](../reports/TASK05_PRE_TASK_PROTOCOL.md).
+
 ## D049 — TASK04 bounded projection evidence; separate mathematical/physical claims
 
 2026-10-09. [ORIGINAL] P4 Newton pseudoinverse; [ADAPTATION] unchanged TASK03
