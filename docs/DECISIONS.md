@@ -1,5 +1,19 @@
 # DECISIONS
 
+## D041 — Restart TASK01: qualify predecessor Task26 as the foundation scene [ENGINEERING]
+
+2026-10-09, explicit user decision.
+
+The previous TASK01 approach is superseded as the active execution strategy. Rather than rebuilding a parallel single-Cube Isaac stack, TASK01 must first run the predecessor Task26 implementation itself and determine whether it can serve as the foundation scene.
+
+Pinned predecessor: dreamerToTOE/dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a.
+
+Qualification target: exactly one independent Task26 Cube, task26_r0_deep.
+
+Allowed modification before qualification: only a minimal one-Cube selector/count/loop adaptation if the old source has no exact single-Cube mode. No geometry, physics, tool, Surface Gripper, rail, MoveIt, planning, FCL, push, wall-seat or retreat behavior may be redesigned.
+
+A successful full predecessor one-Cube run yields FOUNDATION_SCENE = PREDECESSOR_TASK26_SINGLE_CUBE / PASS CANDIDATE. Benchmark freeze and porting decisions occur only afterward.
+
 ## D039 follow-up — Capture is the stopping point, not stable reset certification [ENGINEERING]
 
 2026-10-09. Fulfilled sole approved existing-GUI attempt with unchanged bbe9784 source: operatorPlay, savedsharedPRE, originalrelease/safe/FCL/dualrail/freshcomposedworld/rearregrasp, actualcandidate8967. Record **INSERT_READY ESTABLISHED_CANDIDATE / TASK01 PARTIAL**, notPASS/FROZEN. No benchmark/station/algorithm/SG/ACM/physics edits; noTARGET/reset. Preserve generation2 refresh-time pose versus later candidate drift and actualrailarrivedflags rather than redefining gates. NativeD6handle/anchor unavailable and nonzero capturevelocity constrainclaim to observedcandidate, notstablehold/reset. OriginalcleanupopensSG/pausesGUI; MoveItshutdown−11 afterdriver0 isDEFERRED here andreported separately, not concealed ascleanPASS or triggernewdebugging. Minimum sufficient candidateevidence obtained; budget1/1consumed; stopandawaituserreview, no automaticnextacceptance/fix/retry. [Fullreview](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
