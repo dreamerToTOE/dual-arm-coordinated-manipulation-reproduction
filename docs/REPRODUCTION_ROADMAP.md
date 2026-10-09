@@ -22,13 +22,13 @@ Read `docs/PRIOR_PROJECT_REUSE.md` before rebuilding existing Isaac primitives.
 
 ## Phase 0 — Foundation
 - **TASK00 Environment Audit — PASS**
-- **TASK01 Core Single-Cube Benchmark Freeze — IN_PROGRESS**
-  - preserve completed dense Benchmark-A geometry;
-  - reuse validated bilateral Surface Gripper hold for START/PRE READY;
-  - reuse Task26/27 handoff/rear-regrasp/push primitives;
-  - capture deterministic INSERT_READY;
-  - validate corrected rear-push Benchmark B;
-  - no force-controller calibration.
+- **TASK01 Predecessor Single-Cube Scene Foundation Qualification — IN_PROGRESS (RESTARTED)**
+  - directly read and run predecessor Task26 at pinned commit 631b1f65656d025c1bb2173e874192f3fe4d355a;
+  - reduce to one independent Cube only;
+  - use original GUI → scene → Play → bridge → MoveIt → executor lifecycle;
+  - run original planning-only preflight and one complete physical one-Cube flow;
+  - if successful, mark predecessor Task26 single-Cube scene FOUNDATION_SCENE PASS CANDIDATE;
+  - benchmark_v1 freeze is deferred until the foundation decision.
 - **TASK02 Common Interface / Logger / Metrics**
   - common state/command/result contracts;
   - explicit phase label: A / HANDOFF / B;
