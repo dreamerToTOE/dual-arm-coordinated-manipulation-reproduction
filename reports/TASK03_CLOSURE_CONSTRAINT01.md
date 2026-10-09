@@ -1,5 +1,16 @@
 # TASK03 — P4 closure mathematics, offline evidence
 
+## Subsequent user reviewD047 (original report/results retained)
+
+User accepts **PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** for the mathematical
+implementation and verified real-FR3 Jacobian. Historical293-configuration precision
+remains **FAIL**: max0.435028μm versus original0.05μm, no numerical/source/data/G/model
+change. Full P4 reproduction is incomplete; TASK03 establishes no projection,
+constrained connector or RRTConnect. This is a reviewed acceptance-scope classification,
+not a tolerance relaxation. The following report and all original JSON/test outcomes
+retain the pre-review PARTIAL result. TASK04 is separately authorized; its projected
+configurations must not overwrite these original fixtures or results.
+
 2026-10-09 · software base `36c95ab` · branch `task03-p4-closure-constraint`
 
 **TASK03 = PARTIAL / USER REVIEW**

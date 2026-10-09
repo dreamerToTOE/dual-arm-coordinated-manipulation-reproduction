@@ -1,6 +1,10 @@
 # P4 closure residual and Jacobian — offline TASK03
 
-**TASK03 = PARTIAL.** Residual/Jacobian software checks pass; original historical
+**TASK03 = PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** after user reviewD047.
+Original historical configuration precision remains **FAIL** with unchanged0.05μm
+threshold and0.435028μm maximum. No source/test/model/grasp or historical result edit.
+This is a reviewed classification, not a tolerance relaxation. The prior delivery
+was **PARTIAL**: residual/Jacobian software checks pass; original historical
 fixed-grasp closure does not satisfy the predeclared positional precision. No
 projection, local connection, constrained planner or physical shared-grasp proof.
 The parent Benchmark is DRAFT / NOT FROZEN.
@@ -105,7 +109,9 @@ PYTHONPATH=. /usr/bin/python3 scripts/run_task03_offline.py \
   --run-id YOUR_NEW_TASK03_RUN_ID
 ```
 
-The logger refuses an existing run directory. Software exit0 means the offline
+The unchanged TASK03 logger refuses an existing run directory. Software exit0 means the offline
 tests pass; `task03_status`, `result.json` and the report independently preserve
 PARTIAL/INCOMPLETE when original closure acceptance fails. Seeds are explicitly
-UNSET; tests are deterministic, with no random IK. Stop for review, no TASK04.
+UNSET; tests are deterministic, with no random IK. These are original delivery
+semantics and are not rewritten after review. TASK04 has separate acceptance,
+config/results and user authorization; see its task card. No full P4 reproduction.

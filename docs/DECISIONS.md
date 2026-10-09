@@ -1,5 +1,47 @@
 # DECISIONS
 
+## D047 — TASK03 review accepts offline mathematics, preserves historical precision FAIL
+
+2026-10-09, explicit user review of91422f4. **TASK03 mathematical implementation =
+PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)**: real-FR3 finite-difference Jacobian
+validation passes. **Historical configuration precision = FAIL**: original293records
+max position closure0.435028μm exceeds unchanged0.05μm;219records exceed the limit.
+Keep original data, grasps, robot/model, source/tests and result status fields unchanged.
+This is an approved classification of acceptance scopes, **not** tolerance relaxation
+or retroactive conversion of the failed original diagnostic into PASS.
+Full P4 reproduction remains incomplete: no projection/path connection/RRTConnect
+conclusion in TASK03 evidence. Later TASK04 evidence is a separate software slice.
+The prior D046/PARTIAL delivery remains accurate historical evidence, superseded only
+for reviewed mathematical acceptance. No scientific Benchmark freeze.
+
+## D048 — TASK04 predeclared offline full-step SVD projection protocol [ENGINEERING]
+
+2026-10-09, before projection experiments. Implement qnext=q−Jc†C using existing
+TASK03 C/Jc/FK. No damping, line search, row weighting, clamp, active-set, alternate
+IK or grasp fit. Fixed chart uses SI m/rad; independent convergence does not make
+the numerical pseudoinverse invariant to arbitrary unit scaling.
+
+Engineering test standard: position norm≤1e-8m **and** rotation norm≤1e-8rad;
+max40 accepted full Newton updates, with final evaluation after the40th. Eigen
+JacobiSVD, cutoff=max(1e-12,1e-10σmax), singular values≤cutoff truncated.
+When correction is required and rank<6, explicitly reject as unqualified local
+projection; this conservative policy is **not required by P4** and does not reproduce
+the paper's general singular-configuration behavior. Already-converged states may
+return zero-update success. Candidate must be finite and inside original native
+URDF bounds, otherwise reject/no clamp; preserve last accepted q and rejected proposal.
+Step≤1e-14rad without convergence is numerical stagnation, not success.
+
+Finite deterministic suite: once-fixed algebraic START grasp G*, one zero sample,
+84single-joint samples (14×2signs×magnitudes.001/.01/.03rad),12coupled samples
+(4 deterministic directions×3 magnitudes) =97, repeat twice. Output-q repeat
+maxelement difference≤1e-12rad. Independent diagnostic: all293 archived originalq
+with unchanged originalG, once; projected q goes only into new TASK04 result files.
+No empirical tuning after results. Wallcompute time only, no simulation timestamp.
+Config: `configs/engineering/task04_projection_test_v1.json`. Synthetic failure
+tests exercise intentional alternate options, not new empirical acceptance thresholds.
+No TASK05/06, simulator, services, old Task26 or Benchmark changes. If evidence fails,
+report PARTIAL; do not silently expand method or acceptance.
+
 ## D046 — Explicit rigid closure chart; immutable existing FK; no acceptance fitting
 
 2026-10-09. [ORIGINAL] P4 generic rigid-chain C(q)=0 framework, joint/collision

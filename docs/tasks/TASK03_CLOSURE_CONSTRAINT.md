@@ -1,6 +1,17 @@
 # TASK03 — P4 Closure Constraint
 
-Status: **PARTIAL / USER REVIEW** (2026-10-09)
+Status: **PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** (2026-10-09 user reviewD047)
+
+Acceptance scopes are separate:
+
+- Mathematical implementation: PASS CANDIDATE; real-FR3 Jacobian FD validation passed.
+- Historical configuration precision: **FAIL**; original293records max0.435028μm
+  versus unchanged0.05μm. Original data/grasps/model/source/tests/results not changed.
+- Complete P4 reproduction: not established; TASK03 contains no projection,
+  constrained local connection or RRTConnect conclusion.
+
+This approved scope classification does not relax a numeric tolerance. The original
+partial delivery/report/test status fields are retained as historical evidence.
 
 Software base36c95ab, task branch `task03-p4-closure-constraint`.
 TASK02-D remains PARTIAL / DEFERRED; parent TASK02 IN_PROGRESS;
@@ -48,14 +59,14 @@ its planning service.
 Software math, FK/bounds and derivative tests pass. The original fixed-grasp
 fixture is approximate historical IK: 219/293 records exceed positional precision;
 maximum4.35027826256e-7m atstate196; rotational maximum1.22663962184e-5rad passes.
-**TASK03 = PARTIAL**, not PASS CANDIDATE. No threshold, grasp or IK adjustment.
+The original delivery reported **TASK03 = PARTIAL**, before the scope review above.
+That diagnostic remains unchanged. No threshold, grasp or IK adjustment.
 One-time algebraic fixed-grasp zero-residual fixtures on the real FR3 model are
 software tests only and cannot replace this failed original-grasp acceptance.
 
-Minimum sufficient evidence for the complete requested acceptance: **not yet**.
-No further automatic implementation iteration. Submit evidence for user review of
-offline engineering precision/fixture policy (not scientific Benchmark freezing).
-Do not start TASK04.
+Historical precision acceptance remains unmet; mathematical evidence is accepted
+underD047. User separately authorizes bounded offline TASK04; no automatic TASK05/06
+or scientific Benchmark freezing. This does not authorize rewriting TASK03 tests.
 
 [Source/formulas](../../baselines/p4_closed_chain/README.md),
 [POST-TASK REPORT](../../reports/TASK03_CLOSURE_CONSTRAINT01.md).

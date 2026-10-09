@@ -1,5 +1,19 @@
 # STATUS
 
+## 2026-10-09 — User accepts TASK03 mathematical scope; TASK04 offline-only authorized
+
+**TASK03 = PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** underD047 review.
+**Historical original293 configuration precision = FAIL**, original0.05μm threshold
+and max0.435028μm result remain unchanged. No old source/tests/data/G/model edits.
+Full P4 reproduction still incomplete; classification adjustment, not numerical relaxation.
+TASK04 IN_PROGRESS on same `task03-p4-closure-constraint`, base91422f4, only NR
+projection + bounded deterministic offline tests. Engineering precision1e-8m/1e-8rad,
+full-step SVD/no damping, max40, native-bound rejection and97×2 neighborhood +293
+original-grasp diagnostic samples are declared inD048 before experiments. No
+TASK05/06/services/physics/Benchmark change. TASK02 remainsIN_PROGRESS, D deferred,
+Benchmark DRAFT/NOTFROZEN. Earlier TASK03 PARTIAL entry is the unmodified pre-review
+delivery history, not the active mathematical acceptance gate.
+
 ## 2026-10-09 — TASK03 offline closure/Jacobian delivered; original-grasp precision PARTIAL
 
 **TASK03 = PARTIAL / USER REVIEW; TASK02-D = PARTIAL / DEFERRED;

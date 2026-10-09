@@ -23,6 +23,15 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+Latest user review/authorization: **D047 accepts TASK03 PASS CANDIDATE (OFFLINE
+MATHEMATICS ONLY)**. Original0.05μm historical precision FAIL/max0.435028μm and all
+source/tests/data remain unchanged; full P4 reproduction incomplete. Active **TASK04
+NR projection OFFLINE ONLY**, base91422f4, same task03-p4-closure-constraint branch.
+Read TASK04 card/D048 predeclared protocol: existingC/Jc/FK only, SVD full updates,
+independent1e-8m/1e-8rad, max40, exact bound rejection,97×2 deterministic neighbors
++293 original-grasp diagnoses. No physics/ROS services/Task26/Benchmark or TASK05/06.
+Stop after GitHub delivery for review; old stop/partial statements below are history.
+
 Latest delivery: **TASK03 = PARTIAL / USER REVIEW**, not PASS CANDIDATE. Offline
 SE3 closure/Jacobian software verified on unchanged actual FR3 model:72TASK02 +93
 math tests and435derivative configsPASS. Original fixed-grasp archived closure
