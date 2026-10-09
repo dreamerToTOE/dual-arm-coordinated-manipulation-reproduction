@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-09 — Complete the one approved existing-GUI handoff, no runtime edits
+
+User reports normal GUI/executor ready; read-only preflight verified PID39508/STOP and approved executable/config/binary hashes. Sole scene load, operator manualPlay, sole bridge load, saved bilateral-held PRE, sole unchanged external ROS handoff driver. Original safe/FCL gates, bothrails.650→.750, full composed expected/readback refresh0/.100 and rightrear regrasp establish candidate8967. No source/build/config/physics/ACM/IK threshold change or new tests. Offline independent review confirms native state/contact step alignment, candidate same-step contact and raw CDR lengths; save complete compact evidence and hash-index local raw22MB/1.26MB streams. Record unavailable native anchor/nonzero speed/derived TCP limits and move_group shutdown−11 after driver0, no diagnosis/rerun. Runtime stopped1/1, no TARGET/reset/A/force/P3/PASS/FROZEN; six records/TASK01/README updated. [Outcome](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## 2026-10-09 — Sole existing-GUI runtime authorization: prerequisite check only
 
 Re-read governance/current task/P4/benchmark and inspected git/critical hashes. No code/build/config change or tests; approved bbe9784 adapter source remains byte-identical. Process/listener preflight plus independent audit found no running Isaac/Kit GUI or existing8226 executor. No scene, Play, SG, rails, ROS driver or physical samples. Saved preflight report/metadata and records, waiting for operator prerequisite; allowance0/1, no startup fallback or repair. [Record](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).

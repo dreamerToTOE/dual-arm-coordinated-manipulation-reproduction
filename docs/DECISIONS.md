@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 follow-up — Capture is the stopping point, not stable reset certification [ENGINEERING]
+
+2026-10-09. Fulfilled sole approved existing-GUI attempt with unchanged bbe9784 source: operatorPlay, savedsharedPRE, originalrelease/safe/FCL/dualrail/freshcomposedworld/rearregrasp, actualcandidate8967. Record **INSERT_READY ESTABLISHED_CANDIDATE / TASK01 PARTIAL**, notPASS/FROZEN. No benchmark/station/algorithm/SG/ACM/physics edits; noTARGET/reset. Preserve generation2 refresh-time pose versus later candidate drift and actualrailarrivedflags rather than redefining gates. NativeD6handle/anchor unavailable and nonzero capturevelocity constrainclaim to observedcandidate, notstablehold/reset. OriginalcleanupopensSG/pausesGUI; MoveItshutdown−11 afterdriver0 isDEFERRED here andreported separately, not concealed ascleanPASS or triggernewdebugging. Minimum sufficient candidateevidence obtained; budget1/1consumed; stopandawaituserreview, no automaticnextacceptance/fix/retry. [Fullreview](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## D039 follow-up — One existing-GUI physical attempt; no substitute launch [ENGINEERING]
 
 2026-10-09 explicit user authorization fixes executable source bbe9784 and scene→manualPlay→bridge→external unchanged driver sequence. Stop at first crash/lifecycle/restore/OPEN/drift/FCL/rail/world/contact/regrasp/attachment failure; no repair-and-rerun. End only INSERT_READY candidate, TASK01 PARTIAL; no TARGET/reset/A/force/P3/FROZEN. Keep all geometry/ACM/physics/SG/stations/thresholds unchanged. Missing already-normal GUI is a prerequisite, not authority to start standalone; preflight found none, so physical allowance remains0/1. Same permission may begin after operator provides existing GUI/executor; prior budgets do not reset. [Protocol and preflight](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).

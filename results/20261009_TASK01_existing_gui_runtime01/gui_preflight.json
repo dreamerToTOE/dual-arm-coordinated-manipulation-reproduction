@@ -1,0 +1,11 @@
+{
+  "engineering_only": true,
+  "source_commit": "bbe9784",
+  "gui_pid": 39508,
+  "physical_commands": 0,
+  "request": "import json\nimport omni.timeline\nimport omni.usd\n_task01_remote_stage = omni.usd.get_context().get_stage()\n_task01_remote_timeline = omni.timeline.get_timeline_interface()\nprint(json.dumps({\n    \"stage_exists\": _task01_remote_stage is not None,\n    \"stage_identifier\": _task01_remote_stage.GetRootLayer().identifier if _task01_remote_stage else None,\n    \"timeline_stopped\": _task01_remote_timeline.is_stopped(),\n    \"timeline_playing\": _task01_remote_timeline.is_playing(),\n    \"top_level_prims\": [str(p.GetPath()) for p in _task01_remote_stage.GetPseudoRoot().GetChildren()] if _task01_remote_stage else [],\n}))\n",
+  "raw_response": {
+    "status": "ok",
+    "output": "{\"stage_exists\": true, \"stage_identifier\": \"anon:0x7ac8f0001510:World0.usd\", \"timeline_stopped\": true, \"timeline_playing\": false, \"top_level_prims\": [\"/World\", \"/Environment\", \"/OmniverseKit_Persp\", \"/OmniverseKit_Front\", \"/OmniverseKit_Top\", \"/OmniverseKit_Right\", \"/Render\"]}"
+  }
+}

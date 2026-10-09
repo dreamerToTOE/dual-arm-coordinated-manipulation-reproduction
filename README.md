@@ -14,11 +14,11 @@
 
 ## 当前进度（2026-10-09）
 
-最新：已批准一次 existing-GUI `PRE_PUSH_SHARED → INSERT_READY` 实测；当前未检测到已启动的本机 Isaac/Kit GUI 或8226控制入口，因此尚未开始（物理尝试0/1），未改代码或使用 standalone。[前置条件检查](reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md)。
+最新：唯一获批的 existing-GUI `PRE_PUSH_SHARED → INSERT_READY` 实测已完成（1/1）。实际候选保存于step8967 /149450007794ns：导轨`.750/.750m`、左OPEN/右后吸盘CLOSED、规划世界generation2/shift+.100；原FCL/contact/drift/readback门禁通过。[完整结果与证据](reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md)。
 
-TASK01 仍为 **PARTIAL / DRAFT**，尚未得到 INSERT_READY，不是 PASS/FROZEN。当前只交付已启动 GUI 的加载适配：严格复用旧 Task26 的 `scene.py → 手动 Play → bridge.py` 生命周期。benchmark、工具、车厢、物理、SG、固定 handoff、FCL/readback 和控制算法均未修改；停止 image-core 研究。本轮只完成纯软件测试，未运行 Isaac/ROS/机器人。
+TASK01 仍为 **PARTIAL / DRAFT**，INSERT_READY为**ESTABLISHED_CANDIDATE**，不是PASS/FROZEN或稳定持件/reset证明。严格复用旧Task26的`scene.py → 手动Play → bridge.py`生命周期，benchmark/工具/车厢/物理/SG/固定handoff/FCL/readback/控制算法均未改。原生D6anchor不可用且候选有非零速度；driver正常退出0后MoveIt收尾段错误−11已记录，GUI存活但cleanup已释放吸盘。未运行TARGET/reset/fullA/force/P3；停止、不修复或重跑，等用户审查。
 
-下一次单独批准运行时，在已正常启动的 Isaac GUI 中先 **Stop（不是 Pause）**，使用干净 Stage，依次在 Script Editor 执行：
+以下保留加载方式供以后单独批准运行时使用，**不构成再次运行授权**。在已正常启动的IsaacGUI中先 **Stop（不是Pause）**，使用干净Stage，依次在ScriptEditor执行：
 
 ```python
 exec(open("/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/task01_existing_gui_scene.py").read())

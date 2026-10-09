@@ -1,0 +1,250 @@
+{
+  "FROZEN": false,
+  "TARGET": "NOT_RUN",
+  "attempt": "1/1",
+  "candidate": {
+    "attachment": {
+      "relative_transform_cube_to_right_tcp_xyzw": [
+        -0.062640874107327,
+        -0.0009060944292378428,
+        0.0013647210325688497,
+        0.9999900709086813,
+        -0.003968609267489119,
+        0.0019393824376919922,
+        0.0005890842833872006
+      ],
+      "relative_transform_source": "same_post_step_physics_pose_relative_transform_not_joint_anchor",
+      "right": {
+        "actual_joint_anchor": "UNAVAILABLE",
+        "closed": true,
+        "identity_source": "existing Surface Gripper",
+        "joint_name": "/World/right_fr3/fr3_link8/task26_side_surface_gripper_joint",
+        "public_d6_handle": 0
+      }
+    },
+    "bases": {
+      "left": [
+        0.75,
+        -0.6000000238418579,
+        -1.1175870895385742e-08,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "right": [
+        0.75,
+        0.6000000238418579,
+        -1.1175870895385742e-08,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "carriage_frame_world_xyzw": [
+      0.91,
+      0.0,
+      0.2,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "cube_pose_xyzw": [
+      0.7912372946739197,
+      0.0006501167081296444,
+      0.2600436210632324,
+      -0.000593311881152615,
+      0.0002529834289275289,
+      0.002902733538265369,
+      0.9999955790494287
+    ],
+    "frame_id": "world",
+    "handoff_initial_ready": true,
+    "helper_park": {
+      "actual_q_rad": [
+        0.5367751717567444,
+        -1.3037140369415283,
+        0.18305011093616486,
+        -2.3715803623199463,
+        0.2002614587545395,
+        1.0787299871444702,
+        0.6808245182037354
+      ],
+      "actual_tcp_pose_xyzw": [
+        0.7902214884435795,
+        -0.3197898720182946,
+        0.5593911351550463,
+        0.7070922269296622,
+        0.7071206984951222,
+        -0.0009468727288896427,
+        -6.170459305406991e-05
+      ],
+      "label": "LEFT_HELPER_PARK_AFTER_FIXED_RAIL_ADVANCE"
+    },
+    "insert_ready_captured": true,
+    "joints": {
+      "left": [
+        0.5367751717567444,
+        -1.3037140369415283,
+        0.18305011093616486,
+        -2.3715803623199463,
+        0.2002614587545395,
+        1.0787299871444702,
+        0.6808245182037354
+      ],
+      "right": [
+        0.17275570333003998,
+        -1.2840396165847778,
+        -1.515870213508606,
+        -1.78056800365448,
+        -1.2768301963806152,
+        1.5816559791564941,
+        -2.7501113414764404
+      ]
+    },
+    "phase": "FIXED_HANDOFF",
+    "physics_snapshot": {
+      "bodies": [
+        {
+          "angular_velocity_rad_s": [
+            -0.03984728455543518,
+            -0.047419868409633636,
+            0.06174038350582123
+          ],
+          "linear_velocity_m_s": [
+            0.004039477091282606,
+            0.016927212476730347,
+            -0.0008899897802621126
+          ],
+          "position_m": [
+            0.7912372946739197,
+            0.0006501167081296444,
+            0.2600436210632324
+          ],
+          "prim_path": "/World/Task01/Cube",
+          "quaternion_xyzw": [
+            -0.000593311881152615,
+            0.0002529834289275289,
+            0.002902733538265369,
+            0.9999955790494287
+          ]
+        },
+        {
+          "angular_velocity_rad_s": [
+            0.00630029896274209,
+            -0.007166137918829918,
+            -0.0001919597270898521
+          ],
+          "linear_velocity_m_s": [
+            -0.0012229677522554994,
+            -0.001135155907832086,
+            0.002552204532548785
+          ],
+          "position_m": [
+            0.7903419733047485,
+            -0.4746896028518677,
+            0.639585018157959
+          ],
+          "prim_path": "/World/left_fr3/fr3_link8",
+          "quaternion_xyzw": [
+            0.9999995496095303,
+            2.01324370076874e-05,
+            -0.0007131718636973671,
+            0.0006259083913395887
+          ]
+        },
+        {
+          "angular_velocity_rad_s": [
+            -0.012308014556765556,
+            0.05734122544527054,
+            0.08284057676792145
+          ],
+          "linear_velocity_m_s": [
+            0.0038226277101784945,
+            0.005551373586058617,
+            0.00507722795009613
+          ],
+          "position_m": [
+            0.5733343958854675,
+            -9.984616190195084e-05,
+            0.3409162163734436
+          ],
+          "prim_path": "/World/right_fr3/fr3_link8",
+          "quaternion_xyzw": [
+            0.7078576566447494,
+            0.7063521028205958,
+            0.0003625303751913565,
+            0.002028137582547362
+          ]
+        }
+      ],
+      "frame_id": "world",
+      "physics_step": 8967,
+      "stamp_ns": 149450007794
+    },
+    "physics_step": 8967,
+    "planning_world": {
+      "generation": 2,
+      "helper_park_label": "LEFT_HELPER_PARK_AFTER_FIXED_RAIL_ADVANCE",
+      "measured_rail_x_m": {
+        "left": 0.7499998807907104,
+        "right": 0.7499998807907104
+      },
+      "refreshed": true,
+      "required_objects": [
+        "task01_table",
+        "task01_carriage_deep_wall",
+        "task01_carriage_minus_y_wall",
+        "task01_carriage_plus_y_wall",
+        "task01_cube"
+      ],
+      "world_shift_x_m": 0.1
+    },
+    "rails": {
+      "left": {
+        "arrived": true,
+        "measured_x_m": 0.75
+      },
+      "right": {
+        "arrived": true,
+        "measured_x_m": 0.75
+      }
+    },
+    "schema_version": 1,
+    "simulation_stamp_ns": 149450007794,
+    "suction": {
+      "left_closed": false,
+      "right_closed": true
+    },
+    "tcp_poses": {
+      "left": [
+        0.7902214884435795,
+        -0.3197898720182946,
+        0.5593911351550463,
+        0.7070922269296622,
+        0.7071206984951222,
+        -0.0009468727288896427,
+        -6.170459305406991e-05
+      ],
+      "right": [
+        0.7286034305413933,
+        -0.0006179795263405032,
+        0.26144132464760605,
+        0.9999973109381417,
+        -0.0010645873185003982,
+        0.001690457524482442,
+        0.0011777621511146195
+      ]
+    },
+    "world_shift_x_m": 0.09999999999999998
+  },
+  "external_driver_exit_code": "NOT_OBSERVED",
+  "post_step_source": "live PhysX",
+  "restore_records": [],
+  "status": "INSERT_READY_CANDIDATE_CAPTURED_REVIEW_REQUIRED",
+  "task": "TASK01",
+  "task01_status": "PARTIAL",
+  "wall_runtime_s_engineering_only": 104.87434930600011
+}

@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — “ok了”: normal GUI supplied; complete only approved handoff
+
+Operator reports existingGUI/executorready after missing-prerequisitecheck; main verifies normalGUISTOP, performs one scene load, explicitlywaits for operator manualPlay, thenone bridge/unchanged externaldriver. This is not permission to repair/retry, continueTARGET/reset or unfreezebenchmarkconstraints. Soleattempt capturesINSERT_READY andstopsPARTIAL; candidatelimits andMoveItcleanup−11 surfaced, no furtherphysicalwork. Budget1/1used, candidateawaitsuserreview, noPASS/FROZEN. [Actualevidence](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## 2026-10-09 — Approved exactly one existing-GUI PRE_PUSH_SHARED→INSERT_READY runtime
 
 User requires bbe9784 Stop→scene→ready→manualPlay→bridge→shared-sample→external unchanged driver; inspect seven handoff stages and save complete native INSERT_READY/contacts/raw readback. First listed failure stops, no source/geometry/ACM/physics/SG/IK/FCL/station change or same-round rerun. No TARGET/reset/full A/force/P3 or standalone/GDB/probe/image-core. Runtime preflight currently cannot observe normal GUI/executor; no attempt begun,0/1 used. Ask operator for existing GUI prerequisite, not a new permission or workaround. [Waiting record](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).

@@ -1,0 +1,123 @@
+{
+  "changes": "only approved rail targets; original geometry/physics preserved",
+  "cube_mass_kg": [
+    [
+      0.800000011920929
+    ]
+  ],
+  "cube_material": [
+    [
+      [
+        0.5,
+        0.5,
+        0.0
+      ]
+    ]
+  ],
+  "models_by_enabled_shape": {
+    "/World/Table": "table",
+    "/World/Task01/Carriage/WallDeep": "carriage_deep_wall",
+    "/World/Task01/Carriage/WallMinusY": "carriage_minus_y_wall",
+    "/World/Task01/Carriage/WallPlusY": "carriage_plus_y_wall",
+    "/World/Task01/Cube": "shared_cube",
+    "/World/left_fr3/fr3_link0/collisions": "left_fr3_link0",
+    "/World/left_fr3/fr3_link1/collisions": "left_fr3_link1",
+    "/World/left_fr3/fr3_link2/collisions": "left_fr3_link2",
+    "/World/left_fr3/fr3_link3/collisions": "left_fr3_link3",
+    "/World/left_fr3/fr3_link4/collisions": "left_fr3_link4",
+    "/World/left_fr3/fr3_link5/collisions": "left_fr3_link5",
+    "/World/left_fr3/fr3_link6/collisions": "left_fr3_link6",
+    "/World/left_fr3/fr3_link7/collisions": "left_fr3_link7",
+    "/World/left_fr3/fr3_link8/side_suction_tool/cup_r1_c1": "left_fr3_side_suction",
+    "/World/left_fr3/fr3_link8/side_suction_tool/cup_r1_c2": "left_fr3_side_suction",
+    "/World/left_fr3/fr3_link8/side_suction_tool/cup_r2_c1": "left_fr3_side_suction",
+    "/World/left_fr3/fr3_link8/side_suction_tool/cup_r2_c2": "left_fr3_side_suction",
+    "/World/left_fr3/fr3_link8/side_suction_tool/lateral_support": "left_fr3_side_suction",
+    "/World/left_fr3/fr3_link8/side_suction_tool/vacuum_manifold": "left_fr3_side_suction",
+    "/World/left_fr3/fr3_link8/side_suction_tool/vertical_support": "left_fr3_side_suction",
+    "/World/right_fr3/fr3_link0/collisions": "right_fr3_link0",
+    "/World/right_fr3/fr3_link1/collisions": "right_fr3_link1",
+    "/World/right_fr3/fr3_link2/collisions": "right_fr3_link2",
+    "/World/right_fr3/fr3_link3/collisions": "right_fr3_link3",
+    "/World/right_fr3/fr3_link4/collisions": "right_fr3_link4",
+    "/World/right_fr3/fr3_link5/collisions": "right_fr3_link5",
+    "/World/right_fr3/fr3_link6/collisions": "right_fr3_link6",
+    "/World/right_fr3/fr3_link7/collisions": "right_fr3_link7",
+    "/World/right_fr3/fr3_link8/side_suction_tool/cup_r1_c1": "right_fr3_side_suction",
+    "/World/right_fr3/fr3_link8/side_suction_tool/cup_r1_c2": "right_fr3_side_suction",
+    "/World/right_fr3/fr3_link8/side_suction_tool/cup_r2_c1": "right_fr3_side_suction",
+    "/World/right_fr3/fr3_link8/side_suction_tool/cup_r2_c2": "right_fr3_side_suction",
+    "/World/right_fr3/fr3_link8/side_suction_tool/lateral_support": "right_fr3_side_suction",
+    "/World/right_fr3/fr3_link8/side_suction_tool/vacuum_manifold": "right_fr3_side_suction",
+    "/World/right_fr3/fr3_link8/side_suction_tool/vertical_support": "right_fr3_side_suction"
+  },
+  "physics_scene_attributes": {
+    "physics:gravityDirection": "(0, 0, -1)",
+    "physics:gravityMagnitude": "9.8100004196167",
+    "physxScene:bounceThreshold": "0.0",
+    "physxScene:broadphaseType": "GPU",
+    "physxScene:collisionSystem": "PCM",
+    "physxScene:enableCCD": "True",
+    "physxScene:enableEnhancedDeterminism": "False",
+    "physxScene:enableExternalForcesEveryIteration": "False",
+    "physxScene:enableGPUDynamics": "True",
+    "physxScene:enableResidualReporting": "False",
+    "physxScene:enableSceneQuerySupport": "True",
+    "physxScene:enableStabilization": "True",
+    "physxScene:frictionCorrelationDistance": "0.02500000037252903",
+    "physxScene:frictionOffsetThreshold": "0.03999999910593033",
+    "physxScene:frictionType": "patch",
+    "physxScene:gpuCollisionStackSize": "67108864",
+    "physxScene:gpuFoundLostAggregatePairsCapacity": "1024",
+    "physxScene:gpuFoundLostPairsCapacity": "262144",
+    "physxScene:gpuHeapCapacity": "67108864",
+    "physxScene:gpuMaxDeformableSurfaceContacts": "1048576",
+    "physxScene:gpuMaxHairContacts": "1048576",
+    "physxScene:gpuMaxNumPartitions": "8",
+    "physxScene:gpuMaxParticleContacts": "1048576",
+    "physxScene:gpuMaxRigidContactCount": "524288",
+    "physxScene:gpuMaxRigidPatchCount": "81920",
+    "physxScene:gpuMaxSoftBodyContacts": "1048576",
+    "physxScene:gpuTempBufferCapacity": "16777216",
+    "physxScene:gpuTotalAggregatePairsCapacity": "1024",
+    "physxScene:invertCollisionGroupFilter": "False",
+    "physxScene:maxBiasCoefficient": "inf",
+    "physxScene:maxPositionIterationCount": "255",
+    "physxScene:maxVelocityIterationCount": "255",
+    "physxScene:minPositionIterationCount": "1",
+    "physxScene:minVelocityIterationCount": "0",
+    "physxScene:reportKinematicKinematicPairs": "False",
+    "physxScene:reportKinematicStaticPairs": "False",
+    "physxScene:solverType": "TGS",
+    "physxScene:timeStepsPerSecond": "60",
+    "physxScene:updateType": "Synchronous"
+  },
+  "source": {
+    "commit": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+    "methods": [
+      "_apply_joint_command",
+      "_apply_pending_joint_commands",
+      "_apply_rail",
+      "_author_translate",
+      "_build_gripper",
+      "_check_rail",
+      "_command",
+      "_joint_command",
+      "_rail_command",
+      "_rail_read_x",
+      "_stamp_key",
+      "_write_rail_x"
+    ],
+    "patch": "raise original final rail setter exception instead of silently continuing",
+    "path": "isaac/scripts/task26_truck_box_bridge.py",
+    "rail_mover_original_engineering_constants": {
+      "RAIL_COMMAND_QUIET_SEC": 1.0,
+      "RAIL_HOLD_SEC": 0.2,
+      "RAIL_MAX_SPEED": 0.2,
+      "RAIL_TOLERANCE": 0.001
+    },
+    "repository": "dreamerToTOE/dual-arm-embodied-palletizing",
+    "scientific_pose_feedback": "external live-PhysX post-step sampler, not old USD publisher",
+    "sha256": "13b5f88d1e7563a37ecafbf571d8ef93015b57059b8912ba9f3399e21e339644"
+  }
+}

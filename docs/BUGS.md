@@ -1,5 +1,12 @@
 # BUGS
 
+## 2026-10-09 — Actual candidate established; evidence limits and cleanup anomaly
+
+- **DEFERRED (candidate-only scope):** after INSERT_READY capture and driverexit0, move_groupSIGINTcleanup exits−11, repeating historical shutdown symptom. Complete log retained, cause not diagnosed, no fix/retry. It does not undo saved candidate gates; do not call wholelaunchcleanPASS. ExistingGUI remainsalive, ownedROSprocessesgone.
+- **KNOWN LIMITATION:** SGAPIrightCLOSED/name and same-step Cube→TCP geometry captured, but nativepublicD6handle0/anchorUNAVAILABLE; no independent nativeattachmentanchorcertificate. CaptureCube hasnonzerospeed; no stableheldREADY/reset proof. OriginalcleanupopensSG/pausesGUI. Cupcontactseparationspositive2.264–3.012mm; noflush/dynamic/forceproof. Sampledcontactguardnotfullmodel/continuum-equivalence. No new instrumentation repair authorized.
+- **TASK-BLOCKING remaining acceptance unknowns:** current rear `INSERT_READY→TARGET` and repeatable heldREADY/reset not run; next scope needs user approval. ExistingGUIavailable, PRE/OPEN/FCL/rail/freshworld/rearcapture established on this invocation, so earlier missingGUI/livehandoff unknowns are superseded for this candidate only, not globalSDKstartuprepair.
+- **DEFERRED:** BUG001/wrench/force TASK10-IS; **LEGACY:** parity/image-core/standalone/fiveCube routes not resumed. Startup/controller/acceleration-default warnings preserved inlog, no sidefix. Budget1/1consumed, noTARGET/PASS/FROZEN. [Evidence and taxonomy](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
+
 ## 2026-10-09 — GUI availability prerequisite (TASK-BLOCKING, not a source defect)
 
 Approved existing-GUI runtime cannot begin locally: no Isaac/Kit process or existing8226 executor listener found by two independent checks. No actual scene/bridge/driver operation, no crash or new algorithm/model defect observed. Action is operator opening normal GUI and enabling already-documented local extension, not adapter repair/new probe/standalone launch. bbe9784 runtime unchanged; allowance0/1 used. Old startup/readback acceptance unknowns remain, no new physical closure. [Preflight](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).

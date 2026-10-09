@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "review_kind": "READ_ONLY_EXISTING_FILES_NO_ROS_SDK_TEST_OR_REPLAY",
+  "date_local": "2026-10-09",
+  "TASK01": "PARTIAL",
+  "INSERT_READY": "ESTABLISHED_CANDIDATE",
+  "run_dir": "results/20261009_102650_295770_TASK01_existing_gui_handoff01",
+  "physics_attempts_used": 1,
+  "raw_summary_driver_exit": "NOT_OBSERVED",
+  "independent_terminal_driver_exit": 0,
+  "move_group_cleanup_exit": -11,
+  "wrapper_exit": 0,
+  "whole_launch_clean": false,
+  "candidate_step": 8967,
+  "candidate_simulation_stamp_ns": 149450007794,
+  "candidate_matches_summary_and_state_stream": true,
+  "failure_json_present": false,
+  "unexpected_collision_json_present": false,
+  "state_rows": 6152,
+  "contact_rows": 6152,
+  "step_and_stamp_pairwise_alignment": true,
+  "steps_missing": 0,
+  "duplicate_steps": 0,
+  "stamp_backwards": 0,
+  "native_step_range": [
+    2817,
+    8968
+  ],
+  "native_simulation_stamp_ns_range": [
+    46950002449,
+    149466674462
+  ],
+  "contact_headers": 978,
+  "contact_points": 3859,
+  "headers_without_points": 9,
+  "unexpected_penetration_events_under_unchanged_guard": 0,
+  "candidate_contact": {
+    "step": 8967,
+    "simulation_stamp_ns": 149450007794,
+    "pairs": 5,
+    "points": 20,
+    "classification": "EXPECTED_CUBE_TABLE_AND_FOUR_RIGHT_CUPS",
+    "minimum_table_separation_m": -0.00005628913640975952,
+    "right_cup_cube_separation_range_mm": [
+      2.264063,
+      3.011633
+    ],
+    "not_flush_contact_proof": true
+  },
+  "drift": {
+    "reference_nominal_PRE_PUSH_xyz_m": [
+      0.79,
+      0,
+      0.26
+    ],
+    "max_stream_from_nominal_m": 0.001479843247069616,
+    "capture_from_nominal_m": 0.0013983750002974041,
+    "capture_from_saved_PRE_sample_m": 0.0014016411720141288,
+    "capture_from_refresh2_input_m": 0.001398464,
+    "unchanged_original_guard_m": 0.005
+  },
+  "readbacks": [
+    {
+      "path": "results/20261009_102650_295770_TASK01_existing_gui_handoff01/planning_world_readback/refresh_0001.json",
+      "world_shift_x_m": 0,
+      "generation": 1,
+      "physics_step": 8454,
+      "simulation_stamp_ns": 140900007349,
+      "ack_step": 8455,
+      "ack_simulation_stamp_ns": 140916674016,
+      "expected_objects": 5,
+      "observed_objects": 5,
+      "previous_objects": 0,
+      "original_validator": "PASS",
+      "errors": [],
+      "composed_translation_max_error_m": 0,
+      "composed_rotation_max_error_rad": 1.0174454420436092e-20,
+      "dimension_max_error_m": 0
+    },
+    {
+      "path": "results/20261009_102650_295770_TASK01_existing_gui_handoff01/planning_world_readback/refresh_0002.json",
+      "world_shift_x_m": 0.1,
+      "generation": 2,
+      "physics_step": 8714,
+      "simulation_stamp_ns": 145233340908,
+      "ack_step": 8715,
+      "ack_simulation_stamp_ns": 145250007575,
+      "expected_objects": 5,
+      "observed_objects": 5,
+      "previous_objects": 5,
+      "original_validator": "PASS",
+      "errors": [],
+      "composed_translation_max_error_m": 0,
+      "composed_rotation_max_error_rad": 1.016453538337588e-20,
+      "dimension_max_error_m": 0
+    }
+  ],
+  "readback_validation": {
+    "translation_epsilon_m": 1e-8,
+    "rotation_epsilon_rad": 1e-8,
+    "dimension_epsilon_m": 1e-12,
+    "complete_json_and_cdr_hex_present": true,
+    "cdr_byte_count_matches_hex_length": true,
+    "cdr_decode_or_new_ROS_readback": false,
+    "not_benchmark_safety_tolerances": true
+  },
+  "fcl": {
+    "safe_transition_samples": 227,
+    "rear_approach_samples": 354,
+    "status": "PASS_UNCHANGED_ORIGINAL_GATES",
+    "not_continuous_collision_certificate": true
+  },
+  "rail_arrived_flag_at_refresh2_input": false,
+  "rail_arrived_flag_at_refresh2_ack": false,
+  "rail_arrived_flags_at_capture": [
+    true,
+    true
+  ],
+  "attachment": {
+    "right_SG_API_CLOSED": true,
+    "left_SG_API_OPEN": true,
+    "public_d6_handle": 0,
+    "actual_joint_anchor": "UNAVAILABLE",
+    "relative_transform_source": "SAME_POST_STEP_ACTUAL_POSES_NOT_NATIVE_JOINT_ANCHOR"
+  },
+  "capture_velocity": {
+    "linear_speed_m_s": 0.0174252684,
+    "angular_speed_rad_s": 0.0874547023,
+    "stable_static_hold_validated": false
+  },
+  "GUI_completion": {
+    "task_result": 0,
+    "GUI_alive": true,
+    "timeline": "PAUSED",
+    "SG_cleanup": "OPEN",
+    "current_GUI_not_held_READY": true
+  },
+  "limits": [
+    "No native anchor/handle identity certification",
+    "No stable hold or deterministic reset evidence",
+    "Derived TCP from measured link pose and unchanged tool transform",
+    "Authored unchanged carriage reference",
+    "Native contact stream is not exhaustive overlap or full model parity evidence",
+    "Readback Cube pose belongs to refresh instant, not identical later capture",
+    "Historical/default acceleration and controller/sensor launch warnings preserved",
+    "No new dynamics/force or paper algorithm result"
+  ],
+  "TARGET": "NOT_RUN",
+  "reset_repetitions": 0,
+  "Benchmark_A_transport": "NOT_RUN",
+  "force_wrench": "NOT_RUN",
+  "P3": "NOT_RUN",
+  "FROZEN": false,
+  "automatic_retry": false,
+  "large_raw_publication": "LOCAL_UNTRACKED_SHA256_INDEXED_IN_ARTIFACT_MANIFEST"
+}

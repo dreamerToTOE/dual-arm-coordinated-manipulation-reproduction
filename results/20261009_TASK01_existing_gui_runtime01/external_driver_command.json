@@ -1,0 +1,15 @@
+{
+  "attempt": 1,
+  "driver_launches": 1,
+  "code_source_commit": "bbe9784",
+  "record_HEAD": "005cd55",
+  "scope": "PRE_PUSH_SHARED_to_INSERT_READY_only",
+  "terminal_command": "source /opt/ros/humble/setup.bash\nsource /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/install/setup.bash\nexport ROS_LOCALHOST_ONLY=0\nexport ROS_DOMAIN_ID=0\nexec ros2 launch /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/moveit_handoff.launch.py benchmark_config:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/configs/benchmark/benchmark_v1.yaml driver:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/build/task01_handoff/task01_rear_handoff readback_evidence_dir:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261009_102650_295770_TASK01_existing_gui_handoff01/planning_world_readback",
+  "terminal_capture_wrapper": "timeout --foreground --signal=INT --kill-after=10s 130s script --quiet --return --command '/bin/bash --noprofile --norc -c '\\''source /opt/ros/humble/setup.bash\nsource /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/install/setup.bash\nexport ROS_LOCALHOST_ONLY=0\nexport ROS_DOMAIN_ID=0\nexec ros2 launch /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/moveit_handoff.launch.py benchmark_config:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/configs/benchmark/benchmark_v1.yaml driver:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/build/task01_handoff/task01_rear_handoff readback_evidence_dir:=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261009_102650_295770_TASK01_existing_gui_handoff01/planning_world_readback'\\''' '/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261009_102650_295770_TASK01_existing_gui_handoff01/external_moveit_driver.log'",
+  "raw_terminal_log": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/results/20261009_102650_295770_TASK01_existing_gui_handoff01/external_moveit_driver.log",
+  "deadline_s_existing_driver": 120,
+  "terminal_failsafe_s": 130,
+  "bridge_cooperative_deadline_s": 180,
+  "reset_repetitions": 0,
+  "TARGET": false
+}

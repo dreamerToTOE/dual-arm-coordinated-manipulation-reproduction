@@ -1,0 +1,17 @@
+{
+  "attempt": 1,
+  "allowance": 1,
+  "executable_source_commit": "bbe97849e3e3cd5708861de676e7b952ec00fecb",
+  "record_HEAD": "005cd553ca2fed1a9e8fa37d151930b569a6777a",
+  "gui_pid": 39508,
+  "request": "import omni.timeline\n_task01_remote_timeline = omni.timeline.get_timeline_interface()\nif not _task01_remote_timeline.is_stopped():\n    _task01_remote_timeline.stop()\nassert _task01_remote_timeline.is_stopped(), \"TASK01 requires Stop, not Pause\"\nexec(open(\"/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/task01_existing_gui_scene.py\").read())\n",
+  "raw_response": {
+    "status": "ok",
+    "output": "[Task26] 关节量程已对齐本仓库官方 FR3（joint_limits.yaml）；NVIDIA fr3.usd 的窄量程是规划/物理不一致的来源，见 _apply_official_joint_limits 注释\nTASK01 single-Cube scene ready in existing GUI. 下一步：手动 Play，再加载 bridge。\n只加载 scene，不代表 shared-held READY 或 TASK01 PASS。"
+  },
+  "scene_loads": 1,
+  "driver_launches": 0,
+  "bridge_loads": 0,
+  "TARGET": "NOT_RUN",
+  "reset_repetitions": 0
+}
