@@ -40,3 +40,6 @@ Equally important:
 “An auxiliary probe is imperfect” is not equivalent to “the current scientific task is blocked”.
 
 Use minimum sufficient evidence, attempt budgets, blocker ownership, and escalation rules. Never continue an engineering loop merely because another diagnostic refinement is technically possible.
+
+## Reuse rule for TASK02+
+Before implementing TASK02 or later, read `docs/POST_TASK01_REUSE_MAP.md` and complete the mandatory PRIOR-ASSET CHECK from `AGENTS.md`. Reuse validated engineering infrastructure from the predecessor project where appropriate; keep paper-specific algorithms new and traceable.
