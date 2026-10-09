@@ -1,5 +1,10 @@
 # STATUS
 
+## 2026-10-09 — Patched predecessor full physical PASS CANDIDATE; stopped
+
+**TASK01 = PASS CANDIDATE / USER REVIEW; FOUNDATION_SCENE = PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES; NOT FROZEN.** New user budget used2/3 physical invocations: firstexit1 afterdeepPASS/shallowleftjointsettle25s/max3.931858deg; secondexit0, both actual originalfullCubechains and physicalcommonHOME complete. Both originalpreflightexit0. SuccessfulperCube errors1.181/.376mm; wall/support gatesPASS; actualHOME errors.059/.062deg. Same5ed0c96approvedbinary, no runtime/model/physics/ACM/gate change during retries. FinalGUIpaused, SGbothOPEN, rails.750/nativebasesconsistent, callbackerrors{}, ownedROSprocessesstopped; no3rd run afterfullsuccess. Firstnegativepreserved, not statisticalstability/nativepost-step/continuouscollision/heldreset or paper-reproduction proof. Await userfoundationreview/reusepath; no automaticport/TASK02/freezing. [Final review and evidence](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md). Earlier checkpoints below remain historical.
+
+
 ## 2026-10-09 — Patched predecessor physical acceptance authorized, maximum3
 
 User approves up to3 bounded fresh GUI physical-acceptance attempts. Original scene/bridge reloaded via existing GUI after original shutdown→Stop; automatic Play is covered by latest runtime approval. Patched predecessor5ed0c96 only (owned FK + reused old side gate), no additional production edits. Original batch1 two Cubes, rails initial.650, SG OPEN, feed[2,2,0,0], callbackerrors{}; original MoveIt/preflight starting. TASK01 still PARTIAL/FOUNDATION_SCENE NOT_QUALIFIED until full two-Cube/HOME result. Retry only safely rejected planning, hard physical/state/native faults stop. [Pre-run scope/results](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).

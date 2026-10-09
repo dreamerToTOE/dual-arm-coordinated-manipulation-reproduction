@@ -1,0 +1,935 @@
+[INFO] [1791531404.550652647] [task26_batched_side_suction]: ========== Task26 BATCHED-FEED SIDE-SUCTION TIGHT: batches=1, cubes=4, planning_only=true, time_scale=3.00 ==========
+[INFO] [1791531404.718103244] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0272845 seconds
+[INFO] [1791531404.718132163] [moveit_robot_model.robot_model]: Loading robot model 'dual_fr3_side_suction'...
+[INFO] [1791531404.718137704] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1791531404.727349890] [moveit_ros.robot_model_loader]: No kinematics plugins defined. Fill and load kinematics.yaml!
+[INFO] [1791531404.737666887] [move_group_interface]: Ready to take commands for planning group left_arm.
+[INFO] [1791531404.742220277] [move_group_interface]: Ready to take commands for planning group right_arm.
+[INFO] [1791531404.793401913] [task26_batched_side_suction]: Task26 启动滑轨同步：left=0.6500 right=0.6500 rest=0.6500 world_shift_x=+0.0000 m。
+[INFO] [1791531404.793842543] [task26_batched_side_suction]: 推入控制参数已载入 /home/ubuntu2004/lmy/dual-arm-embodied-palletizing/ros_ws/install/fr3_dual_palletize/share/fr3_dual_palletize/config/task26_push_control.yaml：F_contact=1.50 N, F_target=4.00 N, M_d=2.00 kg, B_d=250.0 N*s/m, K_d=0.00, v_push<=0.016 m/s, F_jam=12.0 N
+[INFO] [1791531405.599882679] [task26_batched_side_suction]: Task26 槽 A 设计值=(0.500, 0.000, 0.260) 实际=(0.500, -0.000, 0.260) 偏差=0.00 mm。
+[INFO] [1791531405.599928752] [task26_batched_side_suction]: Task26 槽 B 设计值=(0.350, 0.000, 0.260) 实际=(0.350, -0.000, 0.260) 偏差=0.00 mm。
+[INFO] [1791531405.599936999] [task26_batched_side_suction]: ########## Task26 batch 1/1: Cube_01 (slot A) then Cube_02 (slot B) ##########
+[INFO] [1791531405.599942757] [task26_batched_side_suction]: Task26 planning-only batch 1: 使用设计槽位预演，未发布 feed_command 或任何运动命令。
+[INFO] [1791531405.900259669] [task26_batched_side_suction]: ---------- task26_r0_deep: source=(0.500, 0.000, 0.260), target=(0.790, 0.060, 0.260) ----------
+[INFO] [1791531405.900364916] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531405.900868333] [move_group_interface]: Planning request accepted
+[INFO] [1791531405.956519159] [move_group_interface]: Planning request complete!
+[INFO] [1791531405.957332708] [move_group_interface]: time taken to generate plan: 0.0311385 seconds
+[INFO] [1791531405.957356475] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=1/8 points=74 joint_travel=3.913.
+[INFO] [1791531405.957433316] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531405.957601440] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.004696521] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.004783119] [move_group_interface]: time taken to generate plan: 0.0272773 seconds
+[INFO] [1791531406.004805130] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=2/8 points=86 joint_travel=8.761.
+[INFO] [1791531406.004888678] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.005080124] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.045489040] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.045990747] [move_group_interface]: time taken to generate plan: 0.0250811 seconds
+[INFO] [1791531406.046010858] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=3/8 points=25 joint_travel=3.392.
+[INFO] [1791531406.046091223] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.046332754] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.091775632] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.092373907] [move_group_interface]: time taken to generate plan: 0.0300476 seconds
+[INFO] [1791531406.092401706] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=4/8 points=91 joint_travel=7.621.
+[INFO] [1791531406.092512296] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.092745530] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.131161807] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.131520573] [move_group_interface]: time taken to generate plan: 0.0276854 seconds
+[INFO] [1791531406.131544060] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=5/8 points=31 joint_travel=3.345.
+[INFO] [1791531406.131623957] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.132017572] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.188457167] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.189479567] [move_group_interface]: time taken to generate plan: 0.0329762 seconds
+[INFO] [1791531406.189514651] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=6/8 points=95 joint_travel=11.588.
+[INFO] [1791531406.189635028] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.189872964] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.220111255] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.220268292] [move_group_interface]: time taken to generate plan: 0.0263245 seconds
+[INFO] [1791531406.220291402] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=7/8 points=25 joint_travel=3.391.
+[INFO] [1791531406.220372656] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.220537691] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.285019699] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.285655129] [move_group_interface]: time taken to generate plan: 0.0336857 seconds
+[INFO] [1791531406.285684182] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=8/8 points=90 joint_travel=7.670.
+[INFO] [1791531406.285735202] [task26_batched_side_suction]: left task26_r0_deep LEFT HIGH_PRE_CONTACT RRTConnect candidates ready=8 shortest_joint_travel=3.345.
+[INFO] [1791531406.285803506] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.286054052] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.349492557] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.349942372] [move_group_interface]: time taken to generate plan: 0.0410075 seconds
+[INFO] [1791531406.349968644] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=1/8 points=111 joint_travel=12.024.
+[INFO] [1791531406.350067246] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.350295515] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.382781563] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.383783632] [move_group_interface]: time taken to generate plan: 0.026617 seconds
+[INFO] [1791531406.383812576] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=2/8 points=43 joint_travel=4.769.
+[INFO] [1791531406.383896339] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.384092551] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.427019827] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.427105494] [move_group_interface]: time taken to generate plan: 0.0282504 seconds
+[INFO] [1791531406.427130262] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=3/8 points=72 joint_travel=5.479.
+[INFO] [1791531406.427210776] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.427385967] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.473446882] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.473574584] [move_group_interface]: time taken to generate plan: 0.0285267 seconds
+[INFO] [1791531406.473594397] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=4/8 points=37 joint_travel=5.039.
+[INFO] [1791531406.473675300] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.473829575] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.525198677] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.525282454] [move_group_interface]: time taken to generate plan: 0.0291421 seconds
+[INFO] [1791531406.525307013] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=5/8 points=50 joint_travel=4.959.
+[INFO] [1791531406.525394558] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.525564774] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.573791943] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.573831399] [move_group_interface]: time taken to generate plan: 0.0285072 seconds
+[INFO] [1791531406.573850349] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=6/8 points=44 joint_travel=4.753.
+[INFO] [1791531406.573941138] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.574107603] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.633178202] [move_group_interface]: Planning request complete!
+[INFO] [1791531406.634013916] [move_group_interface]: time taken to generate plan: 0.0309507 seconds
+[INFO] [1791531406.634045341] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=7/8 points=93 joint_travel=8.872.
+[INFO] [1791531406.634145804] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531406.634444039] [move_group_interface]: Planning request accepted
+[INFO] [1791531406.697807498] [move_group_interface]: Planning request aborted
+[ERROR] [1791531406.698437766] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531406.698474009] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample failed=8/8.
+[INFO] [1791531406.698502991] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect candidates ready=7 shortest_joint_travel=4.753.
+[INFO] [1791531406.698514444] [task26_batched_side_suction]: right task26_r0_deep RIGHT HIGH_PRE_CONTACT RRTConnect selected points=44.
+[INFO] [1791531406.973611595] [task26_batched_side_suction]: task26_r0_deep LEFT_CANDIDATE_1 HIGH_LEFT synchronized FCL PASS, samples=300.
+[INFO] [1791531406.991312501] [task26_batched_side_suction]: task26_r0_deep LEFT_CANDIDATE_1 HIGH_RIGHT synchronized FCL PASS, samples=423.
+[INFO] [1791531406.991804082] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[INFO] [1791531407.045107893] [task26_batched_side_suction]: task26_r0_deep LEFT_CANDIDATE_1 OUTER_DESCENT Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531407.052028590] [task26_batched_side_suction]: task26_r0_deep LEFT_CANDIDATE_1 OUTER_DESCENT synchronized FCL PASS, samples=176.
+[INFO] [1791531407.077042256] [task26_batched_side_suction]: task26_r0_deep LEFT_CANDIDATE_1 CONTACT Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531407.084935475] [task26_batched_side_suction]: task26_r0_deep LEFT_CANDIDATE_1 CONTACT synchronized FCL PASS, samples=193.
+[INFO] [1791531407.085018404] [task26_batched_side_suction]: task26_r0_deep selected LEFT_CANDIDATE_1/8: HIGH_PRE_CONTACT -> OUTER_DESCENT -> CONTACT FCL PASS.
+[INFO] [1791531407.335673828] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.335985239] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.384526141] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.385217071] [move_group_interface]: time taken to generate plan: 0.0334712 seconds
+[INFO] [1791531407.385254037] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=1/8 points=81 joint_travel=9.724.
+[INFO] [1791531407.385371474] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.385584787] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.462449990] [move_group_interface]: Planning request aborted
+[ERROR] [1791531407.463302766] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531407.463339046] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample failed=2/8.
+[INFO] [1791531407.463400462] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.463596617] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.522624608] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.523394218] [move_group_interface]: time taken to generate plan: 0.0401562 seconds
+[INFO] [1791531407.523424192] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=3/8 points=107 joint_travel=12.278.
+[INFO] [1791531407.523529613] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.523712989] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.583178399] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.583873994] [move_group_interface]: time taken to generate plan: 0.0219997 seconds
+[INFO] [1791531407.583906496] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=4/8 points=81 joint_travel=9.737.
+[INFO] [1791531407.584020781] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.584264659] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.659994155] [move_group_interface]: Planning request aborted
+[ERROR] [1791531407.660930580] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531407.660977353] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample failed=5/8.
+[INFO] [1791531407.661048261] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.661283097] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.702781028] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.703434153] [move_group_interface]: time taken to generate plan: 0.0261752 seconds
+[INFO] [1791531407.703456460] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=6/8 points=51 joint_travel=6.278.
+[INFO] [1791531407.703555125] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.703752777] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.769204364] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.769898907] [move_group_interface]: time taken to generate plan: 0.0516917 seconds
+[INFO] [1791531407.769931657] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=7/8 points=97 joint_travel=10.294.
+[INFO] [1791531407.770029120] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.770227862] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.833400884] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.834142317] [move_group_interface]: time taken to generate plan: 0.0488735 seconds
+[INFO] [1791531407.834171818] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=8/8 points=100 joint_travel=12.913.
+[INFO] [1791531407.834233029] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=1 RRTConnect candidates ready=6 shortest_joint_travel=6.278.
+[INFO] [1791531407.834301547] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.834527786] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.901524113] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.901718315] [move_group_interface]: time taken to generate plan: 0.0453931 seconds
+[INFO] [1791531407.901747301] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=1/8 points=80 joint_travel=11.749.
+[INFO] [1791531407.901851384] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.902171065] [move_group_interface]: Planning request accepted
+[INFO] [1791531407.965376674] [move_group_interface]: Planning request complete!
+[INFO] [1791531407.966002903] [move_group_interface]: time taken to generate plan: 0.0494543 seconds
+[INFO] [1791531407.966024791] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=2/8 points=86 joint_travel=12.942.
+[INFO] [1791531407.966110577] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531407.966305593] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.015301474] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.016055657] [move_group_interface]: time taken to generate plan: 0.0349163 seconds
+[INFO] [1791531408.016075799] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=3/8 points=78 joint_travel=10.010.
+[INFO] [1791531408.016164321] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.016349448] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.084768828] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.085799483] [move_group_interface]: time taken to generate plan: 0.0371358 seconds
+[INFO] [1791531408.085832138] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=4/8 points=130 joint_travel=16.992.
+[INFO] [1791531408.085945782] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.086253929] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.128818633] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.129094114] [move_group_interface]: time taken to generate plan: 0.0295589 seconds
+[INFO] [1791531408.129112915] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=5/8 points=45 joint_travel=5.825.
+[INFO] [1791531408.129184320] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.129373581] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.181468008] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.181940355] [move_group_interface]: time taken to generate plan: 0.0295873 seconds
+[INFO] [1791531408.181960946] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=6/8 points=46 joint_travel=5.810.
+[INFO] [1791531408.182037588] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.182228206] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.261186633] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.261956515] [move_group_interface]: time taken to generate plan: 0.0506673 seconds
+[INFO] [1791531408.261982340] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=7/8 points=108 joint_travel=15.838.
+[INFO] [1791531408.262071989] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.262273849] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.326340921] [move_group_interface]: Planning request aborted
+[ERROR] [1791531408.326354917] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531408.326381293] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample failed=8/8.
+[INFO] [1791531408.326404966] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=2 RRTConnect candidates ready=7 shortest_joint_travel=5.810.
+[INFO] [1791531408.326461132] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.326656315] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.387486178] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.388493916] [move_group_interface]: time taken to generate plan: 0.0331024 seconds
+[INFO] [1791531408.388519208] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=1/8 points=75 joint_travel=10.280.
+[INFO] [1791531408.388624764] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.388913983] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.430483317] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.430777305] [move_group_interface]: time taken to generate plan: 0.029937 seconds
+[INFO] [1791531408.430799729] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=2/8 points=50 joint_travel=6.263.
+[INFO] [1791531408.430887205] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.431083784] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.477243928] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.477297954] [move_group_interface]: time taken to generate plan: 0.0268992 seconds
+[INFO] [1791531408.477320984] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=3/8 points=43 joint_travel=5.870.
+[INFO] [1791531408.477400378] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.477592030] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.540861033] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.541715979] [move_group_interface]: time taken to generate plan: 0.0352818 seconds
+[INFO] [1791531408.541748046] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=4/8 points=79 joint_travel=9.974.
+[INFO] [1791531408.541857467] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.542081431] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.590275341] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.590329186] [move_group_interface]: time taken to generate plan: 0.0359427 seconds
+[INFO] [1791531408.590356290] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=5/8 points=68 joint_travel=8.497.
+[INFO] [1791531408.590452101] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.590642137] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.642521031] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.643162493] [move_group_interface]: time taken to generate plan: 0.0366751 seconds
+[INFO] [1791531408.643188569] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=6/8 points=81 joint_travel=9.522.
+[INFO] [1791531408.643273024] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.643466374] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.699899722] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.700109223] [move_group_interface]: time taken to generate plan: 0.0410127 seconds
+[INFO] [1791531408.700136348] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=7/8 points=79 joint_travel=9.916.
+[INFO] [1791531408.700236070] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531408.700421785] [move_group_interface]: Planning request accepted
+[INFO] [1791531408.765385228] [move_group_interface]: Planning request complete!
+[INFO] [1791531408.765496191] [move_group_interface]: time taken to generate plan: 0.046419 seconds
+[INFO] [1791531408.765526327] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=8/8 points=103 joint_travel=12.116.
+[INFO] [1791531408.765587597] [task26_batched_side_suction]: right task26_r0_deep RIGHT_OUTER_APPROACH batch=3 RRTConnect candidates ready=8 shortest_joint_travel=5.870.
+[INFO] [1791531409.015693850] [task26_batched_side_suction]: task26_r0_deep RIGHT_OUTER_APPROACH evaluating 21 candidates from 3 batches.
+[INFO] [1791531409.035555414] [task26_batched_side_suction]: task26_r0_deep RIGHT_OUTER_CANDIDATE_1 synchronized FCL PASS, samples=501.
+[INFO] [1791531409.049721798] [task26_batched_side_suction]: task26_r0_deep RIGHT_CONTACT_CANDIDATE_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.052733328] [task26_batched_side_suction]: task26_r0_deep RIGHT_CONTACT_CANDIDATE_1 synchronized FCL PASS, samples=75.
+[INFO] [1791531409.076820564] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_COMMON_LIFT_1 left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531409.117692060] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_COMMON_LIFT_1 right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531409.128647799] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_COMMON_LIFT_1 synchronized FCL PASS, samples=264.
+[INFO] [1791531409.170598140] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_X_TRAVEL left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.187593926] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_X_TRAVEL right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.200259239] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_X_TRAVEL synchronized FCL PASS, samples=307.
+[INFO] [1791531409.210138903] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_Y_ALIGN left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531409.226258427] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_Y_ALIGN right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.232241705] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_Y_ALIGN synchronized FCL PASS, samples=130.
+[INFO] [1791531409.263956150] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_DESCENT_TO_ENTRY left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531409.287168620] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_DESCENT_TO_ENTRY right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.298242016] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_DESCENT_TO_ENTRY synchronized FCL PASS, samples=263.
+[INFO] [1791531409.307188380] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_SIDE_SHORT_PUSH left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.324036657] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_SIDE_SHORT_PUSH right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.325874212] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 COMMON_SIDE_SHORT_PUSH synchronized FCL PASS, samples=40.
+[INFO] [1791531409.400362540] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 PREPLANNED_COMMON_RETREAT left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.007 mm.
+[INFO] [1791531409.428313924] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 PREPLANNED_COMMON_RETREAT right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.448283001] [task26_batched_side_suction]: task26_r0_deep RIGHT_CANDIDATE_1 PREPLANNED_COMMON_RETREAT synchronized FCL PASS, samples=501.
+[INFO] [1791531409.448342005] [task26_batched_side_suction]: task26_r0_deep selected right outer candidate=1/21 after full loaded-chain preflight.
+[INFO] [1791531409.456206975] [task26_batched_side_suction]: task26_r0_deep REGRASP_LIFT left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531409.483525865] [task26_batched_side_suction]: task26_r0_deep REGRASP_LIFT right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531409.489805161] [task26_batched_side_suction]: task26_r0_deep REGRASP_LIFT synchronized FCL PASS, samples=148.
+[INFO] [1791531409.746146320] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531409.746430878] [move_group_interface]: Planning request accepted
+[INFO] [1791531409.848056131] [move_group_interface]: Planning request aborted
+[ERROR] [1791531409.849073174] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531409.849105972] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=1 RRTConnect candidate failed=1/8.
+[INFO] [1791531409.849185517] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531409.849373302] [move_group_interface]: Planning request accepted
+[INFO] [1791531409.903519906] [move_group_interface]: Planning request complete!
+[INFO] [1791531409.903946945] [move_group_interface]: time taken to generate plan: 0.0397769 seconds
+[INFO] [1791531409.904042351] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531409.904339094] [move_group_interface]: Planning request accepted
+[INFO] [1791531409.973190726] [move_group_interface]: Planning request complete!
+[INFO] [1791531409.973588299] [move_group_interface]: time taken to generate plan: 0.0478033 seconds
+[INFO] [1791531409.973683897] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531409.973865845] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.086334836] [move_group_interface]: Planning request complete!
+[INFO] [1791531410.087229988] [move_group_interface]: time taken to generate plan: 0.0532729 seconds
+[INFO] [1791531410.087329074] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.087679537] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.148139747] [move_group_interface]: Planning request complete!
+[INFO] [1791531410.148490853] [move_group_interface]: time taken to generate plan: 0.0329168 seconds
+[INFO] [1791531410.148599038] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.148786420] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.262181258] [move_group_interface]: Planning request complete!
+[INFO] [1791531410.262408872] [move_group_interface]: time taken to generate plan: 0.0804641 seconds
+[INFO] [1791531410.262507375] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.262677548] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.332072200] [move_group_interface]: Planning request complete!
+[INFO] [1791531410.332993420] [move_group_interface]: time taken to generate plan: 0.0317173 seconds
+[INFO] [1791531410.333083239] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.333272938] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.418787559] [move_group_interface]: Planning request aborted
+[ERROR] [1791531410.419307031] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531410.419341220] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=1 RRTConnect candidate failed=8/8.
+[INFO] [1791531410.419370169] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=1 candidates=6, shortest_joint_travel=6.427.
+[INFO] [1791531410.422848025] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.423138437] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.589046409] [move_group_interface]: Planning request aborted
+[ERROR] [1791531410.590019386] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531410.590064636] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=2 RRTConnect candidate failed=1/8.
+[INFO] [1791531410.590148926] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.590380657] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.695688129] [move_group_interface]: Planning request complete!
+[INFO] [1791531410.696503758] [move_group_interface]: time taken to generate plan: 0.0602482 seconds
+[INFO] [1791531410.696594389] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.696822488] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.822016249] [move_group_interface]: Planning request aborted
+[ERROR] [1791531410.822352778] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531410.822392476] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=2 RRTConnect candidate failed=3/8.
+[INFO] [1791531410.822462923] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.822673215] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.884377757] [move_group_interface]: Planning request aborted
+[ERROR] [1791531410.884717398] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531410.884756145] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=2 RRTConnect candidate failed=4/8.
+[INFO] [1791531410.884844631] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.885042296] [move_group_interface]: Planning request accepted
+[INFO] [1791531410.965133403] [move_group_interface]: Planning request complete!
+[INFO] [1791531410.965847986] [move_group_interface]: time taken to generate plan: 0.0424532 seconds
+[INFO] [1791531410.965938094] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531410.966131988] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.052867685] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.053381210] [move_group_interface]: time taken to generate plan: 0.0613863 seconds
+[INFO] [1791531411.053473485] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.053653945] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.153252675] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.153494095] [move_group_interface]: time taken to generate plan: 0.0571202 seconds
+[INFO] [1791531411.153589868] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.153774128] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.208847832] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.209439925] [move_group_interface]: time taken to generate plan: 0.024709 seconds
+[INFO] [1791531411.209497691] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=2 candidates=5, shortest_joint_travel=6.066.
+[INFO] [1791531411.224324105] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.224574800] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.358515811] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.359033478] [move_group_interface]: time taken to generate plan: 0.0733377 seconds
+[INFO] [1791531411.359142068] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.359344551] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.434984742] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.435790535] [move_group_interface]: time taken to generate plan: 0.0451715 seconds
+[INFO] [1791531411.435878007] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.436055453] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.549342216] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.549700394] [move_group_interface]: time taken to generate plan: 0.0783345 seconds
+[INFO] [1791531411.549811424] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.550019238] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.680891833] [move_group_interface]: Planning request aborted
+[ERROR] [1791531411.681346169] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531411.681377917] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=3 RRTConnect candidate failed=4/8.
+[INFO] [1791531411.681445679] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.681646134] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.867470096] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.868164296] [move_group_interface]: time taken to generate plan: 0.144832 seconds
+[INFO] [1791531411.868286141] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.868474376] [move_group_interface]: Planning request accepted
+[INFO] [1791531411.957185902] [move_group_interface]: Planning request complete!
+[INFO] [1791531411.957695968] [move_group_interface]: time taken to generate plan: 0.056903 seconds
+[INFO] [1791531411.957850868] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531411.958103548] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.093050609] [move_group_interface]: Planning request aborted
+[ERROR] [1791531412.093361758] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531412.093392163] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=3 RRTConnect candidate failed=7/8.
+[INFO] [1791531412.093461924] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.093755670] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.263147853] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.263486832] [move_group_interface]: time taken to generate plan: 0.107244 seconds
+[INFO] [1791531412.263554081] [task26_batched_side_suction]: right task26_r0_deep REGRASP_NEG_X batch=3 candidates=6, shortest_joint_travel=6.416.
+[INFO] [1791531412.263605843] [task26_batched_side_suction]: task26_r0_deep REGRASP_NEG_X evaluating 17 candidates from 3 batches, shortest_joint_travel=6.066.
+[INFO] [1791531412.285842985] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 synchronized FCL PASS, samples=558.
+[INFO] [1791531412.299014189] [task26_batched_side_suction]: task26_r0_deep PUSH_INTO_BOX left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531412.339035773] [task26_batched_side_suction]: task26_r0_deep PUSH_INTO_BOX right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531412.351992553] [task26_batched_side_suction]: task26_r0_deep PUSH_INTO_BOX synchronized FCL PASS, samples=292.
+[INFO] [1791531412.358118319] [task26_batched_side_suction]: task26_r0_deep PREPLANNED_CELL_EXIT left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531412.400200628] [task26_batched_side_suction]: task26_r0_deep PREPLANNED_CELL_EXIT right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531412.412383282] [task26_batched_side_suction]: task26_r0_deep PREPLANNED_CELL_EXIT synchronized FCL PASS, samples=289.
+[INFO] [1791531412.674552027] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.674829873] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.736714287] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.736781153] [move_group_interface]: time taken to generate plan: 0.028225 seconds
+[INFO] [1791531412.736864406] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.737045016] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.791301971] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.792121353] [move_group_interface]: time taken to generate plan: 0.0331081 seconds
+[INFO] [1791531412.792245508] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.792871952] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.837233998] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.837595609] [move_group_interface]: time taken to generate plan: 0.0278403 seconds
+[INFO] [1791531412.837690165] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.837907019] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.892621319] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.893586420] [move_group_interface]: time taken to generate plan: 0.0329507 seconds
+[INFO] [1791531412.893689128] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.893963794] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.938741231] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.939058383] [move_group_interface]: time taken to generate plan: 0.0258698 seconds
+[INFO] [1791531412.939147362] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.939362550] [move_group_interface]: Planning request accepted
+[INFO] [1791531412.981304636] [move_group_interface]: Planning request complete!
+[INFO] [1791531412.981401591] [move_group_interface]: time taken to generate plan: 0.0265543 seconds
+[INFO] [1791531412.981491188] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531412.981683267] [move_group_interface]: Planning request accepted
+[INFO] [1791531413.033049122] [move_group_interface]: Planning request complete!
+[INFO] [1791531413.033326264] [move_group_interface]: time taken to generate plan: 0.0272442 seconds
+[INFO] [1791531413.033411018] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531413.033735836] [move_group_interface]: Planning request accepted
+[INFO] [1791531413.089701731] [move_group_interface]: Planning request complete!
+[INFO] [1791531413.090324493] [move_group_interface]: time taken to generate plan: 0.0305642 seconds
+[INFO] [1791531413.090377078] [task26_batched_side_suction]: left task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_HIGH_APPROACH candidates=8, shortest_joint_travel=5.278.
+[INFO] [1791531413.115461513] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_HIGH_APPROACH_1 synchronized FCL PASS, samples=550.
+[INFO] [1791531413.141543784] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_CONTACT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531413.152794762] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_CONTACT_1 synchronized FCL PASS, samples=225.
+[INFO] [1791531413.422757289] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_PRESS_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.006 mm.
+[INFO] [1791531413.427183237] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.005 mm.
+[INFO] [1791531413.450848778] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_2 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.006 mm.
+[INFO] [1791531413.460436293] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_3 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.006 mm.
+[INFO] [1791531413.477086795] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_4 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.004 mm.
+[INFO] [1791531413.500712249] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_5 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531413.510193886] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_6 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531413.527148140] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_7 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531413.552149078] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_8 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531413.580878552] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_PRESS_1 synchronized FCL PASS, samples=522.
+[INFO] [1791531413.581013928] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_COMPACTION selected candidate=1/8: left arm presses 194.0 mm toward +Y wall.
+[INFO] [1791531413.581117213] [task26_batched_side_suction]: task26_r0_deep REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT PASS: 推入前已从同一 PUSH 末端验证侧压整链。
+[INFO] [1791531413.831231199] [task26_batched_side_suction]: task26_r0_deep selected shortest safe REGRASP_CANDIDATE_1/17 with full PUSH/RETREAT preflight (pusher=right).
+[INFO] [1791531414.099018167] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.099301029] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.150367367] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.150596438] [move_group_interface]: time taken to generate plan: 0.0318481 seconds
+[INFO] [1791531414.150708510] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.150983670] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.190226542] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.190785134] [move_group_interface]: time taken to generate plan: 0.0269161 seconds
+[INFO] [1791531414.190884070] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.191101886] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.233372518] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.234045551] [move_group_interface]: time taken to generate plan: 0.0290236 seconds
+[INFO] [1791531414.234130757] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.234308621] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.289020078] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.289268190] [move_group_interface]: time taken to generate plan: 0.0314867 seconds
+[INFO] [1791531414.289363161] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.289554932] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.354517175] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.354639949] [move_group_interface]: time taken to generate plan: 0.032035 seconds
+[INFO] [1791531414.354722309] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.354891843] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.408446341] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.409512692] [move_group_interface]: time taken to generate plan: 0.0312831 seconds
+[INFO] [1791531414.409639347] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.409866908] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.466048371] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.466552988] [move_group_interface]: time taken to generate plan: 0.0325263 seconds
+[INFO] [1791531414.466637126] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531414.466838443] [move_group_interface]: Planning request accepted
+[INFO] [1791531414.531048843] [move_group_interface]: Planning request complete!
+[INFO] [1791531414.531966033] [move_group_interface]: time taken to generate plan: 0.0395336 seconds
+[INFO] [1791531414.532032161] [task26_batched_side_suction]: left task26_r0_deep PLANNING_ONLY SIDE_HIGH_APPROACH candidates=8, shortest_joint_travel=3.352.
+[INFO] [1791531414.555016979] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_HIGH_APPROACH_1 synchronized FCL PASS, samples=517.
+[INFO] [1791531414.575544826] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_CONTACT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531414.586848471] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_CONTACT_1 synchronized FCL PASS, samples=250.
+[INFO] [1791531414.864645085] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_PRESS_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.005 mm.
+[INFO] [1791531414.877774940] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.005 mm.
+[INFO] [1791531414.901560836] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_2 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.006 mm.
+[INFO] [1791531414.910711290] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_3 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.006 mm.
+[INFO] [1791531414.927600432] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_4 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.004 mm.
+[INFO] [1791531414.951427827] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_5 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531414.960788657] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_6 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531414.977336690] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_7 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531415.001083951] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_8 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531415.027645156] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_PRESS_1 synchronized FCL PASS, samples=522.
+[INFO] [1791531415.027775948] [task26_batched_side_suction]: task26_r0_deep PLANNING_ONLY SIDE_COMPACTION selected candidate=1/8: left arm presses 194.0 mm toward +Y wall.
+[INFO] [1791531415.128194767] [task26_batched_side_suction]: task26_r0_deep Task26 PLANNING-ONLY PASS: 共同搬运、-X 面重抓、+X 推入与退出通过 IK/FCL；侧向压紧=外侧双臂侧压已预检；未发布 joint、suction 或 feed_command。
+[INFO] [1791531415.128474807] [task26_batched_side_suction]: ---------- task26_r0_shallow: source=(0.350, 0.000, 0.260), target=(0.790, 0.060, 0.260) ----------
+[INFO] [1791531415.128569408] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.129182371] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.188745218] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.188885370] [move_group_interface]: time taken to generate plan: 0.0343934 seconds
+[INFO] [1791531415.188906637] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=1/8 points=32 joint_travel=4.258.
+[INFO] [1791531415.188992684] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.189238452] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.236413888] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.236507910] [move_group_interface]: time taken to generate plan: 0.0310854 seconds
+[INFO] [1791531415.236527899] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=2/8 points=63 joint_travel=4.471.
+[INFO] [1791531415.236610144] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.236787032] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.277037414] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.277732813] [move_group_interface]: time taken to generate plan: 0.0237392 seconds
+[INFO] [1791531415.277758094] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=3/8 points=33 joint_travel=4.597.
+[INFO] [1791531415.277856028] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.278220255] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.335556761] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.335788721] [move_group_interface]: time taken to generate plan: 0.0267513 seconds
+[INFO] [1791531415.335816463] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=4/8 points=88 joint_travel=6.713.
+[INFO] [1791531415.335904357] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.336073489] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.393319622] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.393851675] [move_group_interface]: time taken to generate plan: 0.0339692 seconds
+[INFO] [1791531415.393883346] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=5/8 points=92 joint_travel=7.362.
+[INFO] [1791531415.393972275] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.394232103] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.427257645] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.427793568] [move_group_interface]: time taken to generate plan: 0.0234908 seconds
+[INFO] [1791531415.427819621] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=6/8 points=34 joint_travel=4.204.
+[INFO] [1791531415.427919400] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.428143567] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.490652764] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.491216794] [move_group_interface]: time taken to generate plan: 0.0311916 seconds
+[INFO] [1791531415.491244128] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=7/8 points=82 joint_travel=9.113.
+[INFO] [1791531415.491346576] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.491568048] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.534401788] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.534575916] [move_group_interface]: time taken to generate plan: 0.0286763 seconds
+[INFO] [1791531415.534596767] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidate sample=8/8 points=67 joint_travel=4.534.
+[INFO] [1791531415.534635955] [task26_batched_side_suction]: left task26_r0_shallow LEFT HIGH_PRE_CONTACT RRTConnect candidates ready=8 shortest_joint_travel=4.204.
+[INFO] [1791531415.534693997] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.534858223] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.587817825] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.588162911] [move_group_interface]: time taken to generate plan: 0.0290062 seconds
+[INFO] [1791531415.588189882] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=1/8 points=79 joint_travel=9.155.
+[INFO] [1791531415.588305309] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.588492256] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.635362609] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.635750240] [move_group_interface]: time taken to generate plan: 0.0257896 seconds
+[INFO] [1791531415.635778287] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=2/8 points=89 joint_travel=8.814.
+[INFO] [1791531415.635866736] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.636108932] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.679683920] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.680162640] [move_group_interface]: time taken to generate plan: 0.0245614 seconds
+[INFO] [1791531415.680184768] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=3/8 points=46 joint_travel=5.704.
+[INFO] [1791531415.680262807] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.680439981] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.732009621] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.732888759] [move_group_interface]: time taken to generate plan: 0.0267477 seconds
+[INFO] [1791531415.732912341] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=4/8 points=54 joint_travel=6.029.
+[INFO] [1791531415.732990443] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.733153597] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.781236424] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.781782792] [move_group_interface]: time taken to generate plan: 0.0264774 seconds
+[INFO] [1791531415.781805488] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=5/8 points=49 joint_travel=5.699.
+[INFO] [1791531415.781883489] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.782089267] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.839235970] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.839484322] [move_group_interface]: time taken to generate plan: 0.0296588 seconds
+[INFO] [1791531415.839506875] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=6/8 points=81 joint_travel=9.035.
+[INFO] [1791531415.839591961] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.839777112] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.896998449] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.897715557] [move_group_interface]: time taken to generate plan: 0.0358634 seconds
+[INFO] [1791531415.898418280] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=7/8 points=55 joint_travel=6.040.
+[INFO] [1791531415.898730394] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531415.899049601] [move_group_interface]: Planning request accepted
+[INFO] [1791531415.943463546] [move_group_interface]: Planning request complete!
+[INFO] [1791531415.944328039] [move_group_interface]: time taken to generate plan: 0.032612 seconds
+[INFO] [1791531415.944362893] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidate sample=8/8 points=51 joint_travel=5.833.
+[INFO] [1791531415.944420390] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect candidates ready=8 shortest_joint_travel=5.699.
+[INFO] [1791531415.944431781] [task26_batched_side_suction]: right task26_r0_shallow RIGHT HIGH_PRE_CONTACT RRTConnect selected points=49.
+[INFO] [1791531416.210005053] [task26_batched_side_suction]: task26_r0_shallow LEFT_CANDIDATE_1 HIGH_LEFT synchronized FCL PASS, samples=328.
+[INFO] [1791531416.228758321] [task26_batched_side_suction]: task26_r0_shallow LEFT_CANDIDATE_1 HIGH_RIGHT synchronized FCL PASS, samples=477.
+[INFO] [1791531416.259647003] [task26_batched_side_suction]: task26_r0_shallow LEFT_CANDIDATE_1 OUTER_DESCENT Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531416.266975316] [task26_batched_side_suction]: task26_r0_shallow LEFT_CANDIDATE_1 OUTER_DESCENT synchronized FCL PASS, samples=184.
+[INFO] [1791531416.288241569] [task26_batched_side_suction]: task26_r0_shallow LEFT_CANDIDATE_1 CONTACT Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531416.293761037] [task26_batched_side_suction]: task26_r0_shallow LEFT_CANDIDATE_1 CONTACT synchronized FCL PASS, samples=149.
+[INFO] [1791531416.293809387] [task26_batched_side_suction]: task26_r0_shallow selected LEFT_CANDIDATE_1/8: HIGH_PRE_CONTACT -> OUTER_DESCENT -> CONTACT FCL PASS.
+[INFO] [1791531416.544187717] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.544532391] [move_group_interface]: Planning request accepted
+[INFO] [1791531416.624275199] [move_group_interface]: Planning request aborted
+[ERROR] [1791531416.624594001] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531416.624626489] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample failed=1/8.
+[INFO] [1791531416.624692991] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.624857361] [move_group_interface]: Planning request accepted
+[INFO] [1791531416.697989260] [move_group_interface]: Planning request complete!
+[INFO] [1791531416.698385876] [move_group_interface]: time taken to generate plan: 0.0519172 seconds
+[INFO] [1791531416.698410766] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=2/8 points=105 joint_travel=13.479.
+[INFO] [1791531416.698512319] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.698712087] [move_group_interface]: Planning request accepted
+[INFO] [1791531416.768076849] [move_group_interface]: Planning request aborted
+[ERROR] [1791531416.768111678] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531416.768137295] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample failed=3/8.
+[INFO] [1791531416.768205576] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.768408403] [move_group_interface]: Planning request accepted
+[INFO] [1791531416.823241402] [move_group_interface]: Planning request complete!
+[INFO] [1791531416.824044378] [move_group_interface]: time taken to generate plan: 0.0330126 seconds
+[INFO] [1791531416.824067159] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=4/8 points=74 joint_travel=10.110.
+[INFO] [1791531416.824144643] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.824349015] [move_group_interface]: Planning request accepted
+[INFO] [1791531416.878514960] [move_group_interface]: Planning request aborted
+[ERROR] [1791531416.878881734] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531416.878935506] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample failed=5/8.
+[INFO] [1791531416.879016818] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.879764173] [move_group_interface]: Planning request accepted
+[INFO] [1791531416.953317587] [move_group_interface]: Planning request complete!
+[INFO] [1791531416.953776169] [move_group_interface]: time taken to generate plan: 0.0569304 seconds
+[INFO] [1791531416.953803810] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=6/8 points=117 joint_travel=12.219.
+[INFO] [1791531416.953912844] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531416.954168355] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.020289105] [move_group_interface]: Planning request aborted
+[ERROR] [1791531417.021314704] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531417.021352492] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample failed=7/8.
+[INFO] [1791531417.021434596] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.021611124] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.091345577] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.091488287] [move_group_interface]: time taken to generate plan: 0.0459823 seconds
+[INFO] [1791531417.091514288] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidate sample=8/8 points=96 joint_travel=13.887.
+[INFO] [1791531417.091558621] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=1 RRTConnect candidates ready=4 shortest_joint_travel=10.110.
+[INFO] [1791531417.091622810] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.091801834] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.150236845] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.150727843] [move_group_interface]: time taken to generate plan: 0.0381263 seconds
+[INFO] [1791531417.150761913] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=1/8 points=59 joint_travel=7.270.
+[INFO] [1791531417.150853972] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.151190637] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.212972770] [move_group_interface]: Planning request aborted
+[ERROR] [1791531417.213935142] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531417.213971949] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample failed=2/8.
+[INFO] [1791531417.214036738] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.214215619] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.278927415] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.279316532] [move_group_interface]: time taken to generate plan: 0.0364221 seconds
+[INFO] [1791531417.279340939] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=3/8 points=97 joint_travel=10.574.
+[INFO] [1791531417.279429207] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.279677021] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.320447225] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.320594473] [move_group_interface]: time taken to generate plan: 0.0290121 seconds
+[INFO] [1791531417.320620773] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=4/8 points=92 joint_travel=9.117.
+[INFO] [1791531417.320703193] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.320876597] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.364931422] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.365961325] [move_group_interface]: time taken to generate plan: 0.0264133 seconds
+[INFO] [1791531417.365986637] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=5/8 points=65 joint_travel=9.848.
+[INFO] [1791531417.366076629] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.366291050] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.429900663] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.430411822] [move_group_interface]: time taken to generate plan: 0.0397066 seconds
+[INFO] [1791531417.430439793] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=6/8 points=76 joint_travel=11.044.
+[INFO] [1791531417.430525302] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.430789741] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.502590268] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.503159134] [move_group_interface]: time taken to generate plan: 0.035982 seconds
+[INFO] [1791531417.503183887] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=7/8 points=88 joint_travel=12.142.
+[INFO] [1791531417.503277939] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.503489083] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.573211475] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.574106836] [move_group_interface]: time taken to generate plan: 0.0577851 seconds
+[INFO] [1791531417.574131261] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidate sample=8/8 points=80 joint_travel=11.822.
+[INFO] [1791531417.574168968] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=2 RRTConnect candidates ready=7 shortest_joint_travel=7.270.
+[INFO] [1791531417.574230950] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.574439905] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.631601691] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.632040975] [move_group_interface]: time taken to generate plan: 0.039385 seconds
+[INFO] [1791531417.632066646] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=1/8 points=91 joint_travel=10.734.
+[INFO] [1791531417.632166500] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.632410802] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.706221579] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.707004673] [move_group_interface]: time taken to generate plan: 0.0390449 seconds
+[INFO] [1791531417.707038190] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=2/8 points=95 joint_travel=11.237.
+[INFO] [1791531417.707144042] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.707931743] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.759660114] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.759784941] [move_group_interface]: time taken to generate plan: 0.0395153 seconds
+[INFO] [1791531417.759808880] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=3/8 points=54 joint_travel=7.262.
+[INFO] [1791531417.759887504] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.760055319] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.820833653] [move_group_interface]: Planning request aborted
+[ERROR] [1791531417.820990057] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531417.821027729] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample failed=4/8.
+[INFO] [1791531417.821095492] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.821279367] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.873841348] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.874269690] [move_group_interface]: time taken to generate plan: 0.0339763 seconds
+[INFO] [1791531417.874297126] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=5/8 points=65 joint_travel=9.854.
+[INFO] [1791531417.874370116] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.874559531] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.919418001] [move_group_interface]: Planning request complete!
+[INFO] [1791531417.919843284] [move_group_interface]: time taken to generate plan: 0.0279603 seconds
+[INFO] [1791531417.919871328] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=6/8 points=87 joint_travel=9.163.
+[INFO] [1791531417.919954254] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.920262237] [move_group_interface]: Planning request accepted
+[INFO] [1791531417.984859750] [move_group_interface]: Planning request aborted
+[ERROR] [1791531417.985261119] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531417.985291360] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample failed=7/8.
+[INFO] [1791531417.985358402] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531417.985529276] [move_group_interface]: Planning request accepted
+[INFO] [1791531418.041516903] [move_group_interface]: Planning request complete!
+[INFO] [1791531418.042164808] [move_group_interface]: time taken to generate plan: 0.0268713 seconds
+[INFO] [1791531418.042189437] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidate sample=8/8 points=87 joint_travel=9.059.
+[INFO] [1791531418.042224762] [task26_batched_side_suction]: right task26_r0_shallow RIGHT_OUTER_APPROACH batch=3 RRTConnect candidates ready=6 shortest_joint_travel=7.262.
+[INFO] [1791531418.292326842] [task26_batched_side_suction]: task26_r0_shallow RIGHT_OUTER_APPROACH evaluating 17 candidates from 3 batches.
+[INFO] [1791531418.322081954] [task26_batched_side_suction]: task26_r0_shallow RIGHT_OUTER_CANDIDATE_1 synchronized FCL PASS, samples=722.
+[INFO] [1791531418.334581510] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CONTACT_CANDIDATE_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531418.338126004] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CONTACT_CANDIDATE_1 synchronized FCL PASS, samples=89.
+[INFO] [1791531418.376779804] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531418.411948646] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=1274.324 mm.
+[WARN] [1791531418.411992785] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right rejected: 中间状态离线 1274.3 mm（超过 5.0 mm）；换步长重规划。
+[INFO] [1791531418.469971455] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right Cartesian fraction=1.0000 error=1 step=0.0015 attempt=1/3 line_deviation=253.254 mm.
+[WARN] [1791531418.470003425] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right rejected: 中间状态离线 253.3 mm（超过 5.0 mm）；换步长重规划。
+[INFO] [1791531418.500333219] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right Cartesian fraction=1.0000 error=1 step=0.0030 attempt=1/3 line_deviation=1338.350 mm.
+[WARN] [1791531418.500374714] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right rejected: 中间状态离线 1338.3 mm（超过 5.0 mm）；换步长重规划。
+[INFO] [1791531418.572013351] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right Cartesian fraction=1.0000 error=1 step=0.0010 attempt=1/3 line_deviation=1246.973 mm.
+[WARN] [1791531418.572051688] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_1 right rejected: 中间状态离线 1247.0 mm（超过 5.0 mm）；换步长重规划。
+[INFO] [1791531418.624426155] [task26_batched_side_suction]: task26_r0_shallow RIGHT_OUTER_CANDIDATE_2 synchronized FCL PASS, samples=1156.
+[INFO] [1791531418.635036342] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CONTACT_CANDIDATE_2 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531418.638765031] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CONTACT_CANDIDATE_2 synchronized FCL PASS, samples=99.
+[INFO] [1791531418.676837867] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_2 left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531418.705932125] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_2 right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.004 mm.
+[INFO] [1791531418.717118738] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_COMMON_LIFT_2 synchronized FCL PASS, samples=273.
+[INFO] [1791531418.817544749] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_X_TRAVEL left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531418.872047789] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_X_TRAVEL right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531418.890796588] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_X_TRAVEL synchronized FCL PASS, samples=369.
+[INFO] [1791531418.910149817] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_Y_ALIGN left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531418.918666680] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_Y_ALIGN right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531418.923664459] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_Y_ALIGN synchronized FCL PASS, samples=130.
+[INFO] [1791531418.947939345] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_DESCENT_TO_ENTRY left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531418.970718880] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_DESCENT_TO_ENTRY right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531418.981546735] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_DESCENT_TO_ENTRY synchronized FCL PASS, samples=271.
+[INFO] [1791531418.983737410] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_SIDE_SHORT_PUSH left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531419.006951353] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_SIDE_SHORT_PUSH right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531419.009278184] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 COMMON_SIDE_SHORT_PUSH synchronized FCL PASS, samples=45.
+[INFO] [1791531419.067144311] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 PREPLANNED_COMMON_RETREAT left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.005 mm.
+[INFO] [1791531419.099828510] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 PREPLANNED_COMMON_RETREAT right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531419.121680926] [task26_batched_side_suction]: task26_r0_shallow RIGHT_CANDIDATE_2 PREPLANNED_COMMON_RETREAT synchronized FCL PASS, samples=505.
+[INFO] [1791531419.121746062] [task26_batched_side_suction]: task26_r0_shallow selected right outer candidate=2/17 after full loaded-chain preflight.
+[INFO] [1791531419.132074269] [task26_batched_side_suction]: task26_r0_shallow REGRASP_LIFT left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531419.165895186] [task26_batched_side_suction]: task26_r0_shallow REGRASP_LIFT right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531419.172355418] [task26_batched_side_suction]: task26_r0_shallow REGRASP_LIFT synchronized FCL PASS, samples=135.
+[INFO] [1791531419.431561081] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.431834792] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.501807451] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.502131088] [move_group_interface]: time taken to generate plan: 0.0371664 seconds
+[INFO] [1791531419.502225731] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.502524307] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.545818653] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.546474561] [move_group_interface]: time taken to generate plan: 0.0316754 seconds
+[INFO] [1791531419.546595421] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.546842712] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.589662496] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.589941549] [move_group_interface]: time taken to generate plan: 0.0284627 seconds
+[INFO] [1791531419.590024586] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.590199359] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.638914443] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.639538960] [move_group_interface]: time taken to generate plan: 0.0254971 seconds
+[INFO] [1791531419.639641883] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.639834167] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.698162337] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.698727652] [move_group_interface]: time taken to generate plan: 0.0329664 seconds
+[INFO] [1791531419.698829063] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.699113061] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.743778296] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.744061060] [move_group_interface]: time taken to generate plan: 0.0268786 seconds
+[INFO] [1791531419.744175438] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.744407795] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.789012722] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.789605582] [move_group_interface]: time taken to generate plan: 0.0244508 seconds
+[INFO] [1791531419.789722787] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.789995092] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.851186730] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.852003736] [move_group_interface]: time taken to generate plan: 0.0341214 seconds
+[INFO] [1791531419.852051913] [task26_batched_side_suction]: right task26_r0_shallow REGRASP_NEG_X batch=1 candidates=8, shortest_joint_travel=5.299.
+[INFO] [1791531419.856220952] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.856438829] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.909179586] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.910016589] [move_group_interface]: time taken to generate plan: 0.0337799 seconds
+[INFO] [1791531419.910122549] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.910355153] [move_group_interface]: Planning request accepted
+[INFO] [1791531419.969007386] [move_group_interface]: Planning request complete!
+[INFO] [1791531419.969130249] [move_group_interface]: time taken to generate plan: 0.0389728 seconds
+[INFO] [1791531419.969228662] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531419.969401247] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.025920421] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.026127980] [move_group_interface]: time taken to generate plan: 0.0347948 seconds
+[INFO] [1791531420.026228212] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.026399785] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.074171850] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.074742404] [move_group_interface]: time taken to generate plan: 0.0323755 seconds
+[INFO] [1791531420.074834772] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.074997542] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.137470947] [move_group_interface]: Planning request aborted
+[ERROR] [1791531420.137892370] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531420.137922849] [task26_batched_side_suction]: right task26_r0_shallow REGRASP_NEG_X batch=2 RRTConnect candidate failed=5/8.
+[INFO] [1791531420.137993100] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.138167624] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.199283870] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.200106953] [move_group_interface]: time taken to generate plan: 0.0342069 seconds
+[INFO] [1791531420.200201345] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.200685199] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.256361429] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.257170922] [move_group_interface]: time taken to generate plan: 0.0391027 seconds
+[INFO] [1791531420.257261559] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.257465952] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.315986318] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.316217981] [move_group_interface]: time taken to generate plan: 0.0385452 seconds
+[INFO] [1791531420.316274309] [task26_batched_side_suction]: right task26_r0_shallow REGRASP_NEG_X batch=2 candidates=7, shortest_joint_travel=7.187.
+[INFO] [1791531420.317450689] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.317712261] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.402172270] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.402640351] [move_group_interface]: time taken to generate plan: 0.0427651 seconds
+[INFO] [1791531420.402740564] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.402935520] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.459275980] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.459476246] [move_group_interface]: time taken to generate plan: 0.0386681 seconds
+[INFO] [1791531420.459568600] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.459767515] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.513170338] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.513291070] [move_group_interface]: time taken to generate plan: 0.0324718 seconds
+[INFO] [1791531420.513381105] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.513550805] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.564415252] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.564948412] [move_group_interface]: time taken to generate plan: 0.0368305 seconds
+[INFO] [1791531420.565035408] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.565249362] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.608426440] [move_group_interface]: Planning request aborted
+[ERROR] [1791531420.609311369] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[WARN] [1791531420.609360891] [task26_batched_side_suction]: right task26_r0_shallow REGRASP_NEG_X batch=3 RRTConnect candidate failed=5/8.
+[INFO] [1791531420.609447284] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.609819454] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.665263629] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.665327932] [move_group_interface]: time taken to generate plan: 0.0375276 seconds
+[INFO] [1791531420.665430021] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.665668259] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.746353272] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.747404422] [move_group_interface]: time taken to generate plan: 0.0504496 seconds
+[INFO] [1791531420.747503062] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531420.747685179] [move_group_interface]: Planning request accepted
+[INFO] [1791531420.822642849] [move_group_interface]: Planning request complete!
+[INFO] [1791531420.823271662] [move_group_interface]: time taken to generate plan: 0.0351616 seconds
+[INFO] [1791531420.823322933] [task26_batched_side_suction]: right task26_r0_shallow REGRASP_NEG_X batch=3 candidates=7, shortest_joint_travel=9.456.
+[INFO] [1791531420.823373747] [task26_batched_side_suction]: task26_r0_shallow REGRASP_NEG_X evaluating 22 candidates from 3 batches, shortest_joint_travel=5.299.
+[INFO] [1791531420.843547179] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 synchronized FCL PASS, samples=505.
+[INFO] [1791531420.858143085] [task26_batched_side_suction]: task26_r0_shallow PUSH_INTO_BOX left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531420.880063413] [task26_batched_side_suction]: task26_r0_shallow PUSH_INTO_BOX right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531420.888928142] [task26_batched_side_suction]: task26_r0_shallow PUSH_INTO_BOX synchronized FCL PASS, samples=195.
+[INFO] [1791531420.908105138] [task26_batched_side_suction]: task26_r0_shallow PREPLANNED_CELL_EXIT left Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.000 mm.
+[INFO] [1791531420.929763549] [task26_batched_side_suction]: task26_r0_shallow PREPLANNED_CELL_EXIT right Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531420.939208243] [task26_batched_side_suction]: task26_r0_shallow PREPLANNED_CELL_EXIT synchronized FCL PASS, samples=200.
+[INFO] [1791531421.207712084] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.207972394] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.255423719] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.256165816] [move_group_interface]: time taken to generate plan: 0.0295668 seconds
+[INFO] [1791531421.256256913] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.256487265] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.302299607] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.302611904] [move_group_interface]: time taken to generate plan: 0.0332694 seconds
+[INFO] [1791531421.302706016] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.302895673] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.338825006] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.339690050] [move_group_interface]: time taken to generate plan: 0.0247428 seconds
+[INFO] [1791531421.339774174] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.339959641] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.390850913] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.391054325] [move_group_interface]: time taken to generate plan: 0.0280245 seconds
+[INFO] [1791531421.391132690] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.391360532] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.442317862] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.442780325] [move_group_interface]: time taken to generate plan: 0.0273278 seconds
+[INFO] [1791531421.442862534] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.443045677] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.499102688] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.499775586] [move_group_interface]: time taken to generate plan: 0.0368352 seconds
+[INFO] [1791531421.499869664] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.500081545] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.538512503] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.539027605] [move_group_interface]: time taken to generate plan: 0.0259795 seconds
+[INFO] [1791531421.539102244] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531421.539306455] [move_group_interface]: Planning request accepted
+[INFO] [1791531421.595482387] [move_group_interface]: Planning request complete!
+[INFO] [1791531421.595993281] [move_group_interface]: time taken to generate plan: 0.0286726 seconds
+[INFO] [1791531421.596029547] [task26_batched_side_suction]: left task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_HIGH_APPROACH candidates=8, shortest_joint_travel=2.872.
+[INFO] [1791531421.615158346] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_HIGH_APPROACH_1 synchronized FCL PASS, samples=431.
+[INFO] [1791531421.633136226] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_CONTACT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531421.642072598] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_CONTACT_1 synchronized FCL PASS, samples=211.
+[INFO] [1791531421.921645516] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_PRESS_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531421.936407434] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.017 mm.
+[INFO] [1791531421.960888208] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_2 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.043 mm.
+[INFO] [1791531421.970116559] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_3 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.034 mm.
+[INFO] [1791531421.986628997] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_4 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.007 mm.
+[INFO] [1791531422.010285442] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_5 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531422.019914756] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_6 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531422.036393187] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_7 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531422.060519235] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_BACKSTOP_Y_1_SEGMENT_8 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531422.085409296] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_PRESS_1 synchronized FCL PASS, samples=578.
+[INFO] [1791531422.085524016] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT SIDE_COMPACTION selected candidate=1/8: left arm presses 194.0 mm toward +Y wall.
+[INFO] [1791531422.085617246] [task26_batched_side_suction]: task26_r0_shallow REGRASP_CANDIDATE_1 PREPUSH_SIDE_PREFLIGHT PASS: 推入前已从同一 PUSH 末端验证侧压整链。
+[INFO] [1791531422.335733040] [task26_batched_side_suction]: task26_r0_shallow selected shortest safe REGRASP_CANDIDATE_1/22 with full PUSH/RETREAT preflight (pusher=right).
+[INFO] [1791531422.608021934] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.608302394] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.648657380] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.649155968] [move_group_interface]: time taken to generate plan: 0.0261232 seconds
+[INFO] [1791531422.649257021] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.649536001] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.693319136] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.693506994] [move_group_interface]: time taken to generate plan: 0.0296998 seconds
+[INFO] [1791531422.693583216] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.693747874] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.740001536] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.740323473] [move_group_interface]: time taken to generate plan: 0.0242889 seconds
+[INFO] [1791531422.740409730] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.740605013] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.804439830] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.804621658] [move_group_interface]: time taken to generate plan: 0.0315712 seconds
+[INFO] [1791531422.804737087] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.805028657] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.833310686] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.833502272] [move_group_interface]: time taken to generate plan: 0.0184407 seconds
+[INFO] [1791531422.833607485] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.834365091] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.870263539] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.870462663] [move_group_interface]: time taken to generate plan: 0.027539 seconds
+[INFO] [1791531422.870554647] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.870765237] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.932397855] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.932653110] [move_group_interface]: time taken to generate plan: 0.0333029 seconds
+[INFO] [1791531422.932752736] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531422.932950027] [move_group_interface]: Planning request accepted
+[INFO] [1791531422.969515182] [move_group_interface]: Planning request complete!
+[INFO] [1791531422.969688892] [move_group_interface]: time taken to generate plan: 0.0271427 seconds
+[INFO] [1791531422.969732517] [task26_batched_side_suction]: left task26_r0_shallow PLANNING_ONLY SIDE_HIGH_APPROACH candidates=8, shortest_joint_travel=3.645.
+[INFO] [1791531422.988100150] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_HIGH_APPROACH_1 synchronized FCL PASS, samples=428.
+[INFO] [1791531423.024980014] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_CONTACT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.002 mm.
+[INFO] [1791531423.033407767] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_CONTACT_1 synchronized FCL PASS, samples=198.
+[INFO] [1791531423.298752570] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_PRESS_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531423.312811053] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_1 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.017 mm.
+[INFO] [1791531423.322412835] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_2 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.043 mm.
+[INFO] [1791531423.337983701] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_3 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.034 mm.
+[INFO] [1791531423.362275525] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_4 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.007 mm.
+[INFO] [1791531423.370921830] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_5 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.003 mm.
+[INFO] [1791531423.388043195] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_6 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531423.411359363] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_7 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531423.421145627] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_BACKSTOP_Y_1_SEGMENT_8 Cartesian fraction=1.0000 error=1 step=0.0020 attempt=1/3 line_deviation=0.001 mm.
+[INFO] [1791531423.445081942] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_PRESS_1 synchronized FCL PASS, samples=578.
+[INFO] [1791531423.445208473] [task26_batched_side_suction]: task26_r0_shallow PLANNING_ONLY SIDE_COMPACTION selected candidate=1/8: left arm presses 194.0 mm toward +Y wall.
+[INFO] [1791531423.545716374] [task26_batched_side_suction]: task26_r0_shallow Task26 PLANNING-ONLY PASS: 共同搬运、-X 面重抓、+X 推入与退出通过 IK/FCL；侧向压紧=外侧双臂侧压已预检；未发布 joint、suction 或 feed_command。
+[INFO] [1791531423.546113507] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531423.546747791] [move_group_interface]: Planning request accepted
+[INFO] [1791531423.576758175] [move_group_interface]: Planning request complete!
+[INFO] [1791531423.577094421] [move_group_interface]: time taken to generate plan: 0.0161279 seconds
+[INFO] [1791531423.577113882] [task26_batched_side_suction]: left HOME planned points=2.
+[INFO] [1791531423.577184571] [move_group_interface]: MoveGroup action client/server ready
+[INFO] [1791531423.577378083] [move_group_interface]: Planning request accepted
+[INFO] [1791531423.604664477] [move_group_interface]: Planning request complete!
+[INFO] [1791531423.604678225] [move_group_interface]: time taken to generate plan: 0.0171298 seconds
+[INFO] [1791531423.604705322] [task26_batched_side_suction]: right HOME planned points=2.
+[INFO] [1791531423.605875392] [task26_batched_side_suction]: task26 COMMON_HOME batch 1 synchronized FCL PASS, samples=8.
+[INFO] [1791531423.605923725] [task26_batched_side_suction]: Task26 planning-only batch 1 PASS: 当前批 2 件与共同 HOME 退出均通过 IK/FCL 门禁；未发布任何 joint、suction 或 feed_command。

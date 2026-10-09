@@ -22,6 +22,11 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 `Foundation → P4 → P2 → P3 → P5 → P1 → unified benchmark → baseline freeze → ours`.
 
 ## Current execution gate
+
+Latest result (2026-10-09): **TASK01 PASS CANDIDATE / USER REVIEW**, not FROZEN. The approved predecessor runtime completed its original batch1 **two-Cube** physical flow and actual common HOME on attempt2; attempt1 failed and remains recorded. Stop after this minimum sufficient evidence; attempt3 was not run.
+
+The original single-Cube qualification steps below are historical scope, superseded by the user's explicit two-Cube, software-fix and bounded-runtime approvals. Read [the completed runtime review](reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md) and current STATUS before acting. Do not automatically rerun physics, port the foundation, freeze the benchmark or start TASK02; await the user's candidate/reuse-path decision.
+
 Current active work is **TASK01 — Predecessor Single-Cube Scene Foundation Qualification** on branch task01-legacy-scene-foundation.
 
 TASK01 has been explicitly restarted. Do not continue the previous custom TASK01 harness line.

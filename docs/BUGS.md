@@ -1,5 +1,10 @@
 # BUGS
 
+## 2026-10-09 — Original side-chain gates pass; intermittent shallow tracking remains [KNOWN LIMITATION]
+
+Approved5ed0c96 finally has currentphysicalevidence: actualdeepCube fullchainpasses inbothfreshtrials, successfulsecondtrialalso shallowfullchain/HOME; originalactualbackstop8segmentFKabout.001mm/5mmgatepasses. This doesnotretroactivelyproveuniquehistoricalrootcause. Newnegative: run01shallowRIGHT_OUTER_DESCENT leftcontactholdfailed25s/max3.931858deg(joint6), withunheldCube02Ydisturbance~14mm; noexactcollision/torque/jam evidence/rootisolated. Run02passes thissamephase andfullbatchunchanged. ForlimitedfoundationPASSCANDIDATEminimumevidence thisisKNOWNLIMITATION/robustnessriskforuserreview, nothiddenorfixedbydrive/gatechange; notstatisticalreliability. Original carriedCubeFCL/nominalsupport/clock/settle-restsemanticlimits retained. WrenchDEFERREDTASK10-IS; parity/imagecore/fiveCubeLEGACY. No newengineeringrepair authorized/performed. [Negative/positiveevidence](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
 ## 2026-10-09 — FK lifetime defect corrected; downstream qualification still TASK-BLOCKING
 
 Confirmed original auto-return FK lambda yields Eigen translation Block into local RobotState destroyed before caller conversion. Authorized5ed0c96 explicitly returns independentVector3d; offline extracted-function ASAN/arithmetic PASS. Do not infer old300–1000mm readings were all actual IK deviation or all memory corruption; failed trajectories were not saved, trigger unresolved. Task27 had same backstop8 symptom and downstream precheck, but Task26 did not compile that gate; reuse now includes it, no novel planner/threshold change. **TASK-BLOCKING:** patched physical foundation still unvalidated, prior failure outcome remains. **KNOWN LIMITATION:** old diagnostics/nominal vs measured seed; candidate screening cannot guarantee later physical side plan. **DEFERRED:** force/wrench; **LEGACY:** custom parity/startup/fiveCube. No new trial or automatic repair iteration. [Patch and evidence](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).

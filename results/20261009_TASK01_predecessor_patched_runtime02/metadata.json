@@ -1,0 +1,19 @@
+{
+  "task": "TASK01",
+  "baseline": "PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES",
+  "platform": "Isaac Sim visible existing GUI + ROS2 Humble + MoveIt2",
+  "git_commit": "eade5de",
+  "predecessor_commit": "5ed0c967401e5fedb93b938e1c3904f4a4c87600",
+  "seed": null,
+  "seed_policy": "unchanged predecessor stochastic planning; no new seed override",
+  "config_path": "predecessor ros_ws/src/fr3_dual_palletize/config/task26_push_control.yaml",
+  "command": "task26_truck_box_push_in --ros-args -p max_batches:=1 -p execution_time_scale:=3.0",
+  "status": "PHYSICAL_PASS_TASK01_PASS_CANDIDATE",
+  "attempt": 2,
+  "maximum_attempts": 3,
+  "preflight_engineering_timeout_sec": 600,
+  "physical_engineering_timeout_sec": 1200,
+  "metrics": {"planning_only_exit_code": 0, "physical_exit_code": 0, "physical_invocations": 1, "cubes_completed": 2, "batch_home_complete": true, "deep_cell_error_mm": 1.181, "deep_wall_gap_mm": 0.297, "deep_side_wall_gap_mm": 1.143, "shallow_cell_error_mm": 0.376, "shallow_nominal_prior_cube_gap_mm": 0.369, "shallow_side_wall_gap_mm": 0.070, "deep_peak_monitored_joint_torque_nm": 23.48, "shallow_peak_monitored_joint_torque_nm": 28.98, "home_joint_error_deg": {"left": 0.059, "right": 0.062}, "bridge_physics_errors": {}, "final_suction_states": {"left": false, "right": false}, "moveit_launch_cleanup_exit_code": 130},
+  "artifact_paths": ["stop.log", "scene_load.log", "play.log", "bridge_load.log", "initial_snapshot.json", "moveit.log", "planning_only.log", "physical.log", "final_snapshot.json"],
+  "measurement_limitation": "Legacy USD/ROS feedback; engineering wall timeout is not scientific simulation time."
+}

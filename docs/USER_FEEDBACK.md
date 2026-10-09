@@ -1,5 +1,15 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Authorized physical acceptance completed on second attempt
+
+Followingusermaximum3instruction, agentdirectlyreset/loaded/playedexistingGUIoriginalassets andranoriginalMoveIt/preflight/approvedphysicalbinarytwice, withoutaskingoperatoragain. Firstfailurecaptured; secondcompleteactualtwoCube+HOMEexit0. Stop2/3onsuccess; noextraattemptorrepair, GUIpausewithfinalsceneavailableforuserinspection. ReportPASSCANDIDATEreviewonly, notfrozenorstatisticalstableversion; nextfoundationreuse/freezechoicelefttouser. [Completedreview](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
+## 2026-10-09 — Agent controls existing GUI; maximum3 physical attempts authorized
+
+User asks whether Codex can directly control Isaac; read-only live executor query confirms GUI responds, paused Stage present. User then explicitly says “继续物理验收，如果三次尝试都失败再反馈给我”. Interpret as up to3 fresh original Task26 batch1 two-Cube physical-acceptance attempts using already approved5ed0c96 software correction, not new repairs or safety/model changes. Agent performs original shutdown→Stop→scene→Play→bridge via existing GUI, no further operator action required in this round. First complete success stops; confirmed hard physical/native/state faults override blind repetition. Normal stage-progress commentary is retained, final failure report after budget or hard stop. [Execution review](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
 ## 2026-10-09 — Search later old tasks before rebuilding; approve only minimal reuse fix
 
 User asks search old side-suction-palletizing laterTasks for5mm side-preflight failure and avoid reinventing. Read-only audit found exactsame old backstop8 symptom, existingTask27 candidate filter and original FK view-lifetime defect; source/records showed filter notactive inTask26. User “可以” interpreted as approval of those two proposed code repairs. Announced software-only compile/offline validation first, no automatic physical trial. Implemented in isolatedoldbranch5ed0c96, originalbranch/scene/tool/carriage/ACM/physics untouched. Await separatelybounded runtime/reset direction after software handoff; no freeze or assumedcompletefailurefix. [Result](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).

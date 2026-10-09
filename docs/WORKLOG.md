@@ -1,5 +1,15 @@
 # WORKLOG
 
+## 2026-10-09 — Complete bounded GUI physical acceptance; second run PASS
+
+Using only approved5ed0c96 and originalGUIscene→Play→bridge→MoveIt, ran2freshpreflights/2physicalinvocations undernewmax3permission. Firstfullbatchfailed atshallowleftjointsettle despiteactualdeepCubePASS; preservednegative and originalpausefeedback. Second progressesbeyondsameguard, completesbothfulloriginalCubechains/sidecompaction/release/retreat andjointHOME; controllerexit0/originalbatchPASS. Finalactualpositions/q/TCP/base/rail/SG/callbackhealthsavedbeforeownedlaunchCtrl-C130; GUIpreservedPause; originalsource/binary/scene/bridgehashes unchanged/isolatedoldworktreeclean. Stopafter2/3withoutthird orrepair/freeze. Updateall6records/TASK01/README/report/metadatas andpublishrawlogs, retainintermittentfirstfailureandlegacymeasurement/FCLlimits. TASK01PASSCANDIDATEonly. [Review](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
+## 2026-10-09 — Begin authorized patched-predecessor GUI retries
+
+Read governance/D041/activeTASK01/reuse/source scope, independently review reset/shutdown safety. Published pre-run scopeeade5de before completion; existing GUI39508/8226, no standalone. Original scene/bridge hashes and actualbinary match approved5ed0c96; original overlayYAMLcmp passes. Attempt1 fresh reset/preflight0, physical1: actual deepCube side-chain/backstop gate and full physical per-Cube PASS, shallowactualjointsettle25s/max3.931858deg fail beforeclose, no finalHOME. Preserved negative raw log and pause snapshot, SGbothOPEN/bridgeerrors{}/rail.75; no exactcollision proof. Under latest max3 runtime authority, started unchangedfreshattempt2 with preflight0; no implementation iteration/threshold/drive/geometry changes. Final outcome pending, TASK01PARTIAL. [Run review](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
 ## 2026-10-09 — Fix two audited software issues without rerunning Isaac
 
 Read-only old Task25/26/27/code/log/history audit found prior same backstop segment8 failure and6289f2b downstream candidate filter hidden from Task26 by macro. Main/independent installed-header audit also confirmed dangling Eigen Block return in original FK checker; historical root trigger remains unproven. User approved minimal correction. In isolated pinned-source worktree created `task01-foundation-side-preflight-fix`, changed only controller (+7/−6) and committed/pushed5ed0c96. No original side-suction branch overwrite or current runtime-fixes source edit. Offline regression uses actual extracted distance function and type double/ASAN, with source/macro/constant scope checks;3testsPASS. Build originalTask26 and compatibilityTask27 targets, no simulator/model/control invocation. Record authorized override and software-only evidence; no automatic physical retry/foundationPASS/FROZEN. [Report](../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).

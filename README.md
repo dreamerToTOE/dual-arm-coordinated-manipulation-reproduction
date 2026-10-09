@@ -16,9 +16,11 @@
 
 TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-foundation。
 
-最新软件修正已按批准复用旧方案：独立数值 FK 返回，及 Task27 已有后抓候选的侧压整链筛选；原几何、物理、ACM、5mm门禁不变。源码在旧仓库独立分支 `task01-foundation-side-preflight-fix` / `5ed0c96`，不覆盖原side-suction分支。离线软件检查通过，不代表新的物理验收；本轮未启动Isaac/MoveIt或重跑机器人。[修改范围、编译与验证证据](reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md)。
+**最新：TASK01 = PASS CANDIDATE，等待用户审查，未 FROZEN。** 在现有可见 Isaac GUI 中，已批准的原 Task26 软件修正版完成第一批两件的实际抓持、搬运、释放、导轨前移、后抓、推进、侧压、退出和共同 HOME，执行器exit0。用户最多3次授权实际用2次：第1次第二件到位超时，第2次完整通过；成功后停止，不隐去失败，也不宣称重复可靠性。原执行器验收格位误差为1.181/0.376mm。[完整物理结果、边界和原始证据](reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md)。
 
-之前已按批准的原 Task26 **第一批两件**完成一次资格测试，该次旧源码零修改：`planning_only` 通过，但物理执行在第一件推进到深墙后，侧压全链预检被原5mm FK贴线门禁拒绝，程序安全停止；第二件和退出/HOME未执行。**TASK01 = PARTIAL / STOP_FOR_USER，FOUNDATION_SCENE 尚未通过**。该次双吸盘已打开、GUI暂停；后续软件修正尚未物理重跑。详见[实际结果与完整证据](reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md)。
+候选名称：`PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES`。独立数值 FK 返回、复用 Task27 后抓候选侧压整链筛选的两项修正在旧仓库独立分支 `task01-foundation-side-preflight-fix` / `5ed0c96`；本轮物理重试不再修改生产源码。原几何、物理、ACM和5mm门禁不变，不覆盖原side-suction分支。[软件修改范围、编译与验证证据](reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md)。
+
+历史负结果保留：此前零修改631b1f原 Task26预检通过，但实际首件侧压5mm贴线门禁拒绝，未完成第二件和HOME。它不是本次软件修正版通过结果，也没有被回写为PASS。[原始失败与完整证据](reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md)。
 
 新的 TASK01 不再继续调试 reproduction 仓库中新建的单 Cube harness，而是先直接验证旧工程的成熟 Task26 场景能否作为基础场景：
 

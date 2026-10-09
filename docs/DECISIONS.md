@@ -1,5 +1,10 @@
 # DECISIONS
 
+## D041 follow-up — Stop after full patched-predecessor success, candidate only [ENGINEERING]
+
+2026-10-09. Usermax3runtimepermissionproducedFAILthenfullPASSin2invocations. Minimumfoundationengineeringevidence achieved bysecondactualtwoCube+HOMEexit0, so stop withoutthird; notseek3successes or perfectdiagnostics. LabelFOUNDATIONcandidateWITH_AUTHORIZED_SOFTWARE_FIXES, not byte-identical631b1f; preservefirstphysicaljointsettlefailure andlimitedoriginalmeasurement/FCLsupportsemantics. TASK01PASSCANDIDATEreview, notFROZEN, noautomaticport/TASK02/benchmarkedit. Force/clockresearchrequirements notsilentlypromotedintothislegacyqualification. Usermustreviewfoundationuse/reusepath. [Result](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).
+
+
 ## D041 follow-up — User renews bounded GUI physical acceptance, maximum3 [ENGINEERING]
 
 2026-10-09. User explicitly authorizes “继续物理验收，如果三次尝试都失败再反馈给我”. Run approved predecessor5ed0c96 software fix using existing visible GUI and original Task26 batch1 two-Cube assets/lifecycle. Up to3 fresh acceptance attempts, stop first success; unchanged safely rejected planning may retry, hard physical/state/native failure stops immediately. No additional fix, geometry/physics/ACM/gate change, standalone or foundation freeze. Original bridge shutdown before Stop/rebuild; GUI executor may perform Play/reset for this new runtime authorization. Preflight600s/physical1200s engineering caps per attempt. [Pre-run scope](../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md).

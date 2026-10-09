@@ -1,6 +1,8 @@
 # TASK01 — Predecessor Single-Cube Scene Foundation Qualification
 
-Status: **PARTIAL / STOP_FOR_USER — FOUNDATION_SCENE NOT_QUALIFIED**
+Status: **PASS CANDIDATE / USER REVIEW — PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES; NOT FROZEN**
+
+**2026-10-09 latest physical review:** User authorized up to3 fresh existingGUIacceptance attempts after approved5ed0c96 two softwarefixes. Attempt1 preflight0/physical1 (deepfullPASS, shallowactualjointsettletimeout); attempt2 preflight0/physical0, bothoriginalfullCubechains andactualcommonHOME complete. PerCube1.181/.376mm, HOME.059/.062deg. Stop2/3, no3rd, no further source/model/physics/ACM/gate edit. Latestcountoverride is originalbatch1twoCubescandidate, notexactonePrim. Firstnegative/oldFCL/clocklimits retained; no statisticalrepeatability/heldreset/nativecollision/wrenchproof. Await usercandidate/foundationreusepath review; noautomaticFROZEN/port/TASK02. [PASS CANDIDATE REVIEW](../../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md). The dated checkpoints and original specification below are historical and governed by these explicit source/count/runtime overrides.
 
 **2026-10-09 authorized software-only follow-up:** After old-asset audit, user approved explicit FK Vector3d return plus reuse of Task27's existing full side-chain rear-candidate gate for Task26. Isolated predecessor commit5ed0c96 changes only these software details, preserving geometry/physics/ACM/constants; this is a recorded exception to the source-preservation clauses below, not a new architecture or silently unmodified pin. Pure software checks/compile do not qualify the foundation. No new scene/reset/MoveIt/planning-only/physical invocation or renewed physical budget; prior negative run retained. Any future candidate must disclose `WITH_AUTHORIZED_SOFTWARE_FIXES`, not claim byte-identical631b1f. [Scope and checks](../../reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md).
 
