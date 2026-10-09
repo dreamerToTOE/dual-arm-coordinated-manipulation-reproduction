@@ -1,5 +1,16 @@
 # STATUS
 
+## 2026-10-09 — TASK01 fully restarted around predecessor Task26 scene
+
+User explicitly reset TASK01. The active question is no longer whether the custom reproduction harness can be made perfect. TASK01 now directly qualifies the mature predecessor Task26 scene as the possible Isaac foundation.
+
+Active branch: task01-legacy-scene-foundation.
+
+Required path:
+old Task26 source audit → exactly one independent Cube (task26_r0_deep) → original GUI/scene/Play/bridge lifecycle → original planning-only preflight → one full physical one-Cube workflow → foundation decision.
+
+All previous custom TASK01 scene/bridge/handoff/parity/native-debug work remains historical. It is not an active prerequisite and must not be extended during this restarted task. benchmark_v1 freeze is deferred.
+
 ## 2026-10-09 — Sole existing-GUI handoff captured INSERT_READY; stopped
 
 **TASK01 PARTIAL; INSERT_READY ESTABLISHED_CANDIDATE; physical1/1 consumed; STOP FOR USER.** Normal visible GUI/8226 → stopped scene → operator Play → bridge → PRE_PUSH_SHARED → unchanged driver completed once at executable source bbe9784 (invocation HEAD005cd55, records-only difference). Capture step8967/stamp149450007794ns: rails.750/.750, leftOPEN/rightrearCLOSED, actual14q/base/Cube/TCP/relative transform/helper/carriage saved, fresh world generation2/shift+.100. Both full raw readbacks PASS under unchanged composed-message epsilons; safe/rear synchronized FCL227/354samples PASS;6152 aligned native state/contact samples, original guard0 unexpected penetration events. Max drift1.480mm nominal; no TARGET/reset/A/force/P3. **Candidate is not stable held READY or native D6 anchor certification** (handle0/anchorUNAVAILABLE, nonzero Cube speed). Driver0; subsequent move_group cleanup−11 recorded, GUIalive/paused with SG opened by original cleanup, not current held READY. No source/model/physics/ACM/threshold/station edit, repair/retry, new probe or PASS/FROZEN. Rear B and held-reset acceptance still unperformed, pending separately scoped user review. [Actual result/evidence/limits](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md). All earlier entries are historical checkpoints.
