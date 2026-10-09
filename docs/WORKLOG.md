@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-09 — TASK01 restart design
+
+Per user instruction, created branch task01-legacy-scene-foundation and archived the prior active TASK01 specification. Reframed TASK01 as a direct qualification of the predecessor Task26 scene/runtime with one independent Cube only.
+
+No simulator or ROS run was performed in this design iteration. No old runtime code was copied or rewritten. The active task now requires Codex to read the pinned predecessor source itself, use its original GUI → scene → Play → bridge → MoveIt → executor lifecycle, make at most a selector-only one-Cube reduction if needed, and run one complete mature Task26 Cube flow before any new foundation implementation is considered.
+
 ## 2026-10-09 — Complete the one approved existing-GUI handoff, no runtime edits
 
 User reports normal GUI/executor ready; read-only preflight verified PID39508/STOP and approved executable/config/binary hashes. Sole scene load, operator manualPlay, sole bridge load, saved bilateral-held PRE, sole unchanged external ROS handoff driver. Original safe/FCL gates, bothrails.650→.750, full composed expected/readback refresh0/.100 and rightrear regrasp establish candidate8967. No source/build/config/physics/ACM/IK threshold change or new tests. Offline independent review confirms native state/contact step alignment, candidate same-step contact and raw CDR lengths; save complete compact evidence and hash-index local raw22MB/1.26MB streams. Record unavailable native anchor/nonzero speed/derived TCP limits and move_group shutdown−11 after driver0, no diagnosis/rerun. Runtime stopped1/1, no TARGET/reset/A/force/P3/PASS/FROZEN; six records/TASK01/README updated. [Outcome](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
