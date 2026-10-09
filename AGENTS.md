@@ -301,3 +301,16 @@ Stop and ask the user if:
 - Keep historical headless scripts/logs as evidence, but do not silently reuse them for new acceptance runs.
 - Playback rate, physics rate, controller rate, and MoveIt joint limits are distinct quantities and must not be conflated.
 - GUI visibility is an engineering/user-inspection requirement, not by itself scientific evidence of correctness.
+
+
+## 18. D041 restarted TASK01 override
+On branch task01-legacy-scene-foundation, active TASK01 is a direct predecessor-scene qualification.
+
+Before writing any TASK01 runtime code:
+- read docs/tasks/TASK01_BENCHMARK_FREEZE.md;
+- read the pinned predecessor Task26 source itself;
+- prefer running old Task26 directly over adapting current reproduction harnesses.
+
+For this restarted TASK01, do not extend the custom platforms/isaac_ros2/handoff/task01_* path, standalone SimulationApp path, native D6 introspection, custom readback-validator path, or previous INSERT_READY-only acceptance line unless the user explicitly reopens them.
+
+The only pre-qualification code change permitted by default is a minimal one-Cube selector/count/loop adaptation in the predecessor Task26 path if no exact single-Cube mode already exists.
