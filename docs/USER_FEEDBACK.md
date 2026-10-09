@@ -1,5 +1,17 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Restart TASK01 from the mature old scene
+
+User explicitly rejected continuing the newly built TASK01 harness line and requested that TASK01 start over from the predecessor project.
+
+Required interpretation:
+- Codex must read the old repository itself;
+- directly start the old mature Task26 scene;
+- use only one Cube;
+- test the old scene itself as the possible base scene;
+- do not repeat engineering work already completed in the predecessor project;
+- do not freeze a new benchmark until the old scene foundation has been qualified.
+
 ## 2026-10-09 — “ok了”: normal GUI supplied; complete only approved handoff
 
 Operator reports existingGUI/executorready after missing-prerequisitecheck; main verifies normalGUISTOP, performs one scene load, explicitlywaits for operator manualPlay, thenone bridge/unchanged externaldriver. This is not permission to repair/retry, continueTARGET/reset or unfreezebenchmarkconstraints. Soleattempt capturesINSERT_READY andstopsPARTIAL; candidatelimits andMoveItcleanup−11 surfaced, no furtherphysicalwork. Budget1/1used, candidateawaitsuserreview, noPASS/FROZEN. [Actualevidence](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
