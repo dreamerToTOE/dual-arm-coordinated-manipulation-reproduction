@@ -1,6 +1,6 @@
 # TASK02 — Common Interfaces, Logger and Metrics
 
-Status: **IN_PROGRESS — TASK02-A offline state/provenance slice PASS; overall TASK02 not PASS**
+Status: **IN_PROGRESS — TASK02-A offline slice PASS; TASK02-B PASS CANDIDATE; overall TASK02 not PASS**
 
 ## 2026-10-09 minimal integration scope
 
@@ -17,19 +17,31 @@ Completed TASK02-A:
 
 [Detailed report and PRIOR-ASSET CHECK](../../reports/TASK02_FOUNDATION_INTERFACE01.md).
 
+Completed TASK02-B (one bounded offline implementation, no Isaac/ROS/MoveIt):
+
+- data-only BaselineCommand with explicit intent, targets/units/frame, clock/deadline and provenance;
+- predecessor event/stage semantics, explicit PLANNED/OBSERVED/CONFIRMED/FAILED and causal evidence;
+- four-status draft BenchmarkResult, measurement qualification and failure/evidence fields;
+- exclusive run directories, metadata/command/event/state JSONL/result JSON, source/artifact hashes,
+  explicit trial/seed SET or UNSET and failure retention;
+- 19 B tests + 14 A regression tests PASS, actual retained-failure file example and historical state.
+
+**TASK02-B = PASS CANDIDATE.** [POST-TASK REPORT](../../reports/TASK02_EXCHANGE_LOGGING01.md).
+No execution binding, scientific success threshold, native timestamp or full TASK02 PASS is inferred.
+
 Remaining order:
 
-1. Unified command/result/event and minimal logger/metadata contracts, offline adapters first.
-2. Shared metric functions with synthetic cross-platform tests; accept thresholds from explicit
+1. Shared metric functions and remaining measurement contracts with synthetic cross-platform tests; accept thresholds from explicit
    configuration only, never import legacy acceptance values as scientific defaults.
-3. Bind already available native post-step state sources behind this interface, through a thin
+2. Bind already available native post-step state sources behind this interface, through a thin
    read-only adapter. This needs separate scope/evidence, not a replacement scene/bridge.
-4. Only then connect paper-specific baselines; formal Benchmark numerical freeze stays a
+3. Only then connect paper-specific baselines; formal Benchmark numerical freeze stays a
    separately approved research decision.
 
-No TASK02-A live command adapter, force calibration, controller, reset or physical trial.
-`ContactWrench`, `CollisionDistance`, `BaselineCommand`, `BenchmarkResult`, formal logger/metrics
-and seed plumbing from the original goal below are not yet claimed complete.
+No TASK02-B live command adapter, force calibration, controller, reset, physical trial or TASK03.
+`ContactWrench`, `CollisionDistance`, scientific metric evaluation, full output export and actual
+RNG seed control from the original goal below are not yet complete. B records seed only;
+it does not control execution RNGs. Stop after delivery; remaining items are not current authorization.
 
 ## Goal
 Create platform-independent contracts used by every baseline.

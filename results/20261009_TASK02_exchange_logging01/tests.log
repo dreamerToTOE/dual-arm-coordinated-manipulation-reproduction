@@ -1,0 +1,38 @@
+test_all_command_types_and_stable_round_trip (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_command_deadline_cannot_mix_clocks_or_reverse (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_commands_have_no_execution_side_effects (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_confirmation_requires_observation_evidence_and_same_attachment (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_event_backward_time_step_duplicate_and_failed_reason (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_four_result_statuses_and_metadata_round_trip (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_legacy_events_and_stage_remain_planned_relative (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_planned_observed_confirmed_are_distinct_and_clock_domains_not_compared (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_suction_on_never_implicitly_attaches (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_unknown_wire_enum_schema_and_fields_rejected (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_wrong_units_and_target_union_rejected (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_exception_leaves_aborted_result_and_propagates (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_failure_result_and_existing_events_are_preserved (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_no_legacy_state_or_run_qualification_upgrade (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_path_escape_existing_run_and_finished_writes_rejected (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_same_input_produces_identical_file_formats (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_source_command_and_run_identity_checks (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_success_logs_metadata_commands_events_states_artifacts_and_seed (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_unfinished_context_is_incomplete_not_success (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_asset_hash_guard_pass_and_mismatch (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_asset_path_escape_and_empty_set_rejected (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_callbacks_errors_are_preserved_not_claimed_as_safety (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_failed_envelope_is_not_a_snapshot (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_joint_identity_not_array_position_controls_mapping (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_legacy_clock_is_not_upgraded (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_manifest_keeps_engineering_qualification_separate (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_missing_or_duplicate_joint_identity_rejected (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_native_wxyz_is_explicitly_converted (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_no_object_identity_guessing (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_q_length_nan_inf_and_boolean_rejected (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_real_post_step_contract_requires_both_native_fields (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_real_success_snapshot_preserves_values_and_sources (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+test_wrong_frame_or_invalid_pose_rejected (test_task02_foundation_interface.FoundationInterfaceTest) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 2.265s
+
+OK

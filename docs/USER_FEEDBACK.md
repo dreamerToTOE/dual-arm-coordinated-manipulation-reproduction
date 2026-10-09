@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — TASK02-B explicit offline-only delivery scope
+
+User requests unified BaselineCommand, distinct planned/observed/confirmed/failed events, four-status BenchmarkResult, lightweight metadata/event JSONL/result JSON/optional state files, explicit seed and source hashes, plus synthetic and historical snapshot acceptance tests. Commands must remain data only; SUCTION_ON is not successful ATTACH. User explicitly forbids changing old Task26/scene/bridge/FCL/SG/rails/push/physics/benchmark_v1, forbids any Isaac/ROS/MoveIt run and TASK03, and requests GitHub publication with POST-TASK REPORT. Execute one bounded offline implementation on task02-minimal-foundation-interface, label TASK02-B PASS CANDIDATE and TASK02 IN_PROGRESS only. Subsequent runtime and metric/benchmark threshold decisions are not inferred from this approval. [Delivered slice](../reports/TASK02_EXCHANGE_LOGGING01.md).
+
 ## 2026-10-09 — Accept foundation feasibility, do not freeze Benchmark; continue minimum migration
 
 User: “TASK01 的基础场景可行性验收通过，接受 PASS CANDIDATE；不需要再为原有抓取与推进流程重新开发代码。暂不冻结正式科研 Benchmark，下一步应以最小迁移和统一接口为主。” Subsequent “继续” permits the scoped offline TASK02-A slice. Acceptance applies to the tested two-Cube software-fixed engineering foundation, not formal Benchmark parameters, repeatability, native post-step measurement or paper reproduction. Work uses in-place read-only source/state adapters, no mature runtime rewrite; no Isaac/ROS/control test. Do not request another TASK01 qualification or silently freeze/update benchmark_v1. [Current integration](../reports/TASK02_FOUNDATION_INTERFACE01.md).

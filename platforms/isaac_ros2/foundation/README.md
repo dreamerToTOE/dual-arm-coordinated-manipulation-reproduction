@@ -31,5 +31,9 @@ Prim 身份（包括原休眠件）、rail/SG/bridge 诊断和来源 hash。
 适配器保留原坐标与数值，不重命名世界坐标、不换算 rail 规划偏移、不加尺寸/质量
 默认值、不导入旧成功容差、不生成安全或动力学结论。
 
-下一片先补统一 command/result/事件和轻量输出接口；实时 post-step 数据绑定
-另作明确的软件集成切片，不重启旧 TASK01 probe 或扩大到力控。
+TASK02-B 的 `legacy_events.py` 薄适配器只把旧TaskEvent/TaskStageMarker字典转换为
+明确trajectory ID的PLANNED相对ns事件/阶段（编码舍入≤0.5ns，不是物理验收容差）。
+它不把计划或SG状态转换成实际ATTACH，不访问运行中Isaac，不改变成熟执行链。
+[统一数据/日志接口](../../../common/README.md)及[离线报告](../../../reports/TASK02_EXCHANGE_LOGGING01.md)。
+
+实时 post-step 数据绑定另作明确的软件集成切片，不重启旧 TASK01 probe 或扩大到力控。

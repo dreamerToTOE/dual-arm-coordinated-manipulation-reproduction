@@ -14,9 +14,11 @@
 
 ## 当前进度（2026-10-09）
 
-TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-foundation。
+TASK01 已按用户要求**完全重启并完成基础资格验收**，执行分支为 `task01-legacy-scene-foundation`；当前工作分支见下方 TASK02。
 
 **最新：用户已接受 TASK01 基础场景可行性 PASS CANDIDATE；正式科研 Benchmark 暂不冻结。** 已验收 Task26 原抓取/重抓/推进链不再重新开发。开始 TASK02 最小迁移与统一接口，使用原地薄适配优先；当前分支 `task02-minimal-foundation-interface`。[TASK02-A 软件结果与后续范围](reports/TASK02_FOUNDATION_INTERFACE01.md)：统一状态/来源、只读旧快照转换和四项资产 hash 核验已完成，14项离线测试 PASS；无新仿真/控制运行，不代表完整 TASK02 或科研数据接口已通过。
+
+**TASK02-B = PASS CANDIDATE；TASK02 = IN_PROGRESS。** 数据命令、事件/确认、结果与轻量 JSON/JSONL 日志接口已完成，19项新增测试 + 14项A回归共33项离线通过。命令不下发；SUCTION_ON不等于ATTACH；计划时间和仿真物理时间分开；失败/异常保留结果和日志，旧快照不升级科研资格。本轮未运行Isaac/ROS/MoveIt，未修改旧执行链或benchmark_v1，也不启动TASK03。[POST-TASK REPORT、测试和文件示例](reports/TASK02_EXCHANGE_LOGGING01.md) · [接口用法](common/README.md)。
 
 已接受的物理证据：在现有可见 Isaac GUI 中，已批准的原 Task26 软件修正版完成第一批两件的实际抓持、搬运、释放、导轨前移、后抓、推进、侧压、退出和共同 HOME，执行器exit0。用户最多3次授权实际用2次：第1次第二件到位超时，第2次完整通过；成功后停止，不隐去失败，也不宣称重复可靠性。原执行器验收格位误差为1.181/0.376mm。[完整物理结果、边界和原始证据](reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md)。
 

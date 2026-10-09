@@ -1,0 +1,44 @@
+{
+  "task": "TASK02-B",
+  "baseline": "ENGINEERING_DATA_CONTRACT_NOT_PAPER_ALGORITHM",
+  "platform": "offline_python_3.10.12_standard_library",
+  "git_commit": "06d54341efdb82a61d0097ee5bda439f50c47249",
+  "git_dirty": true,
+  "source_note": "Pre-implementation base; exact changed source bytes are hashed in retained_failure/metadata.json. Not a runtime benchmark.",
+  "branch": "task02-minimal-foundation-interface",
+  "trial_id": 0,
+  "seed": null,
+  "seed_status": "UNSET",
+  "config_path": "tests/test_task02_exchange_logging.py",
+  "command": [
+    "python3 -m unittest discover -s tests -p 'test_task02*.py' -v",
+    "Exact retained-failure fixture generation argv in retained_failure/metadata.json#/run_metadata/data/command",
+    "Read-only verify_legacy_assets and sha256sum configs/benchmark/benchmark_v1.yaml"
+  ],
+  "status": "TASK02_B_PASS_CANDIDATE_PARENT_TASK02_IN_PROGRESS",
+  "metrics": {
+    "tests_total": 33,
+    "tests_passed": 33,
+    "task02_b_tests": 19,
+    "task02_a_regression_tests": 14,
+    "test_exit_code": 0,
+    "test_wall_sec_engineering_only": 2.265,
+    "file_example_exit_code": 0,
+    "example_commands": 1,
+    "example_events": 3,
+    "example_legacy_states": 1,
+    "example_result": "DELIBERATE_SYNTHETIC_FAILURE",
+    "local_asset_hashes_matched": 4,
+    "physical_runs": 0,
+    "robot_commands_sent": 0,
+    "scientific_post_step_samples": 0
+  },
+  "artifact_paths": [
+    "tests.log", "synthetic_observation.json", "scope_validation.json",
+    "retained_failure/metadata.json", "retained_failure/commands.jsonl",
+    "retained_failure/events.jsonl", "retained_failure/states.jsonl",
+    "retained_failure/result.json"
+  ],
+  "attempt_budget_used": "one bounded offline implementation/validation cycle; no physical allowance",
+  "scientific_benchmark_status": "DRAFT_NOT_FROZEN"
+}
