@@ -1,5 +1,11 @@
 # WORKLOG
 
+## 2026-10-09 — Cross-repository reuse audit for TASK02+
+
+Reviewed the current reproduction task map against the predecessor `side-suction-palletizing` source, excluding already-handled TASK01 work. Identified reusable engineering assets for common interfaces/metrics, P4 planning scaffolding, P2 execution/geometry monitoring, P3 position-only rear insertion, P5 platform/collision scaffolding, P1 isolated MoveIt sandbox/cache validation, and unified benchmark reporting.
+
+Added `docs/POST_TASK01_REUSE_MAP.md`, made the PRIOR-ASSET CHECK mandatory in `AGENTS.md`, and linked it from `CODEX_START_HERE.md`. No simulator, ROS, controller, benchmark or baseline algorithm was executed or changed. No paper-specific algorithm was imported.
+
 ## 2026-10-09 — Sole existing-GUI runtime authorization: prerequisite check only
 
 Re-read governance/current task/P4/benchmark and inspected git/critical hashes. No code/build/config change or tests; approved bbe9784 adapter source remains byte-identical. Process/listener preflight plus independent audit found no running Isaac/Kit GUI or existing8226 executor. No scene, Play, SG, rails, ROS driver or physical samples. Saved preflight report/metadata and records, waiting for operator prerequisite; allowance0/1, no startup fallback or repair. [Record](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
