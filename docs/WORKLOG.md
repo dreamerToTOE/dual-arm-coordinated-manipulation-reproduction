@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-09 — Pinned Task26 full audit before foundation runtime
+
+Main directly read mandatory pinned document/scene/bridge/5444-line controller, original launch/model/SG/planning/rail/push/HOME/config closure; independent read-only audits cross-checked indexing and dependencies. Source pin631b1f differs from current old worktree controller. User accepts two Cubes, so select original batch1 unchanged; no selector/scene/bridge/controller implementation. Record raw module hashes, original two targets, config fallback risk, original planningScene mutation/table duplication, optional diagnostics and measurement limits. Existing GUI/executor observed, paused historical Stage detected; operator confirms Stop/New prerequisite after request. Only documentation changes and read-only checks so far, runtime0/1. Submit audit before isolated build and original lifecycle. [Report](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).
+
 ## 2026-10-09 — TASK01 restart design
 
 Per user instruction, created branch task01-legacy-scene-foundation and archived the prior active TASK01 specification. Reframed TASK01 as a direct qualification of the predecessor Task26 scene/runtime with one independent Cube only.

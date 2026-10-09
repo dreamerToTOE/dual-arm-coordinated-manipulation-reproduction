@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — D041 source audit / no new foundation experiment yet
+
+Pinned source631b1f; native Task26 batch1 two Cubes newly approved, zero runtime patches. No new scene/bridge/MoveIt/planning/physical invocation yet, no fresh foundation PASS. Existing GUI PID39508/8226 read-only inspection only; operator confirms clean new Stage prerequisite. Planned budgets preflight1/physical1, currently0/0 used. Original two-Cube September23 PASS remains historical; do not replace this turn's evidence with it. [Pre-run audit](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).
+
 ## 2026-10-09 — Existing-GUI handoff01: INSERT_READY candidate, not benchmark PASS
 
 - Executable sourcebbe9784 unchanged, invocationHEAD005cd55; one normal existing GUI session/scene/manualPlay/bridge/externaldriver, physicalallowance1/1used. Native output `results/20261009_102650_295770_TASK01_existing_gui_handoff01/`; experiment ends capture/noTARGET/reset/A/force/P3. No new IK algorithm or recomputation of recorded PRE_PUSH restore q; existing rear planning/pool unchanged. No source/physics/model/ACM/geometry/station/threshold edits or automatic rerun.

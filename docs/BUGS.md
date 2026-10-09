@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-09 — D041 audit risks, not new observed runtime failures
+
+Latest user accepts native two-Cube batch, avoiding selector implementation. Qualification pending; known original launch/controller table duplication, absent push-YAML fallback `.200` versus required loaded `.100`, optional diagnostic files and USD/ROS-clock feedback limits are documented without fixes. Current old worktree is newer than pinned631b1f, so compile pinned controller separately and verify actual runtime dependency/config provenance. No new simulator/controller failure observed; no reproduction parity/readback/native debugging resumed. [Full audit](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).
+
 ## 2026-10-09 — Previous custom TASK01 blockers demoted to historical for D041
 
 Under D041, earlier custom-harness blockers (standalone SimulationApp/image-core startup faults, custom readback-validator issues, INSERT_READY-only recorder limitations, native D6 anchor introspection, and MoveIt cleanup -11) are not active blockers for the restarted TASK01 unless they also reproduce in the predecessor Task26 foundation path.

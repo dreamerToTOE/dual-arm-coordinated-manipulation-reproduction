@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-09 — Predecessor foundation audit complete; original two-Cube batch approved
+
+**TASK01 IN_PROGRESS / foundation NOT_QUALIFIED / new runtime NOT_RUN.** Switched to `task01-legacy-scene-foundation`; read governance/D041/new TASK01 and pinned Task26 scene/bridge/controller/document directly in full. No exact one-Cube mode; user's latest two-Cube approval removes need for any selector patch. Use native batch1 deep+shallow, `max_batches=1`; other two scene rigid bodies remain dormant. Reproduction runtime inactive. Audit submitted before any new scene/MoveIt/controller execution; isolated pinned-source build and original GUI→scene→manualPlay→bridge→MoveIt→preflight→full two-Cube run pending, first substantive failure stops. No benchmark/tool/physics/ACM/threshold change, force calibration or FROZEN. [Audit, commands and risks](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md). Earlier exact-one-Cube restart wording is superseded only by this explicit count approval.
+
 ## 2026-10-09 — TASK01 fully restarted around predecessor Task26 scene
 
 User explicitly reset TASK01. The active question is no longer whether the custom reproduction harness can be made perfect. TASK01 now directly qualifies the mature predecessor Task26 scene as the possible Isaac foundation.

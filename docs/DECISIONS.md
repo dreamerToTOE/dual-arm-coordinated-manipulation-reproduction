@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D041 follow-up — User accepts original two-Cube batch, no selector patch [ENGINEERING]
+
+2026-10-09. User explicitly says “两件cube也可以，请你继续”. Qualify pinned predecessor Task26's native batch1 (`task26_r0_deep` then `task26_r0_shallow`) with `max_batches=1`, without any selector/count/loop or runtime source edit. Original scene retains four Prim rigid bodies, only the first two active; no second batch request. All D041 original lifecycle/mature-engineering preservation, first substantive failure stop, one preflight/one physical invocation and no FROZEN/port-before-qualification rules remain. Active candidate label is `PREDECESSOR_TASK26_BATCH1_TWO_CUBES`, not a false single-Cube result. [Pre-run full source audit](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).
+
 ## D041 — Restart TASK01: qualify predecessor Task26 as the foundation scene [ENGINEERING]
 
 2026-10-09, explicit user decision.
