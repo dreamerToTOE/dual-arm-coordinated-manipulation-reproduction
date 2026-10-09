@@ -1,5 +1,9 @@
 # STATUS
 
+## 2026-10-09 — TASK02+ reuse policy installed
+
+Cross-repository engineering reuse audit complete. `docs/POST_TASK01_REUSE_MAP.md` now maps predecessor assets into later reproduction tasks and `AGENTS.md` requires a PRIOR-ASSET CHECK before TASK02+ implementation. This is governance/infrastructure planning only: TASK01 status is unchanged, TASK02 remains TODO, and no P1–P5 paper algorithm has been implemented by this audit. The rule is: reuse validated engineering wheels, reproduce scientific algorithms from their papers.
+
 ## 2026-10-09 — Existing-GUI runtime approved; waiting for GUI (0/1 used)
 
 **TASK01 PARTIAL; INSERT_READY NOT_ESTABLISHED; NOT_STARTED_GUI_PREREQUISITE_MISSING.** User authorizes exactly one bbe9784 existing-GUI PRE_PUSH_SHARED→INSERT_READY attempt, no repair/rerun/TARGET/reset/full-A/force. Read-only preflight confirms approved hashes; two independent process/socket checks observe no normal Isaac/Kit GUI and no 127.0.0.1:8226 executor listener. No scene/bridge/driver load or physical command; new allowance **0/1 used**, prior budgets untouched. This is missing prerequisite, not observed native crash or physical failure. Do not replace it with standalone/GDB/probe. Await operator normally starting GUI and enabling existing executor, then use this same authorization; success only ESTABLISHED_CANDIDATE/PARTIAL, no PASS/FROZEN. [Preflight and operator prerequisite](../reports/TASK01_EXISTING_GUI_BOUNDED_RUNTIME01.md).
