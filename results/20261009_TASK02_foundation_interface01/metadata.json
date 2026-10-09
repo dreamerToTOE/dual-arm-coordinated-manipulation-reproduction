@@ -1,0 +1,19 @@
+{
+  "task": "TASK02-A",
+  "baseline": "ENGINEERING_CONTRACT_NOT_PAPER_ALGORITHM",
+  "platform": "offline_python_standard_library",
+  "git_commit": "5222b2e4ec51de814591c7d8dfb616d03236572d",
+  "git_dirty": true,
+  "source_note": "implementation added in this task working tree; source commit here denotes the base, not the new implementation",
+  "branch": "task02-minimal-foundation-interface",
+  "seed": null,
+  "config_path": "platforms/isaac_ros2/foundation/legacy_task26_manifest.json",
+  "command": [
+    "python3 -m unittest discover -s tests -p 'test_task02_foundation_interface.py' -v",
+    "python3 -m platforms.isaac_ros2.foundation.legacy_task26 --legacy-root /home/ubuntu2004/lmy/dual-arm-embodied-palletizing-task01-foundation --snapshot results/20261009_TASK01_predecessor_patched_runtime02/final_snapshot.json"
+  ],
+  "status": "OFFLINE_SLICE_PASS_PARENT_TASK02_IN_PROGRESS",
+  "metrics": {"tests_passed": 14, "tests_total": 14, "test_exit_code": 0, "converter_exit_code": 0, "local_asset_hashes_matched": 4, "joint_count": 14, "objects_including_dormant": 4, "physical_runs": 0, "scientific_post_step_state": false},
+  "artifact_paths": ["tests.log", "converted_snapshot.json"],
+  "scientific_benchmark_status": "DRAFT_NOT_FROZEN"
+}

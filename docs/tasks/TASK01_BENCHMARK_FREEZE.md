@@ -1,6 +1,14 @@
 # TASK01 — Predecessor Single-Cube Scene Foundation Qualification
 
-Status: **PASS CANDIDATE / USER REVIEW — PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES; NOT FROZEN**
+Status: **FOUNDATION PASS CANDIDATE ACCEPTED BY USER — PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES; SCIENTIFIC BENCHMARK NOT FROZEN**
+
+**2026-10-09 acceptance:** User confirms the foundation feasibility qualification passed,
+accepts PASS CANDIDATE, and requires no redevelopment of original grasp/push. Qualification
+is closed; next direction is minimal migration and unified interfaces. This does not freeze
+benchmark_v1 or elevate old asynchronous feedback/one successful run to research-grade evidence.
+TASK02-A uses the accepted source in place, with only read-only interface/provenance code;
+see [integration scope and offline tests](../../reports/TASK02_FOUNDATION_INTERFACE01.md).
+Earlier pending-review statements below are historical, superseded by this acceptance.
 
 **2026-10-09 latest physical review:** User authorized up to3 fresh existingGUIacceptance attempts after approved5ed0c96 two softwarefixes. Attempt1 preflight0/physical1 (deepfullPASS, shallowactualjointsettletimeout); attempt2 preflight0/physical0, bothoriginalfullCubechains andactualcommonHOME complete. PerCube1.181/.376mm, HOME.059/.062deg. Stop2/3, no3rd, no further source/model/physics/ACM/gate edit. Latestcountoverride is originalbatch1twoCubescandidate, notexactonePrim. Firstnegative/oldFCL/clocklimits retained; no statisticalrepeatability/heldreset/nativecollision/wrenchproof. Await usercandidate/foundationreusepath review; noautomaticFROZEN/port/TASK02. [PASS CANDIDATE REVIEW](../../reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md). The dated checkpoints and original specification below are historical and governed by these explicit source/count/runtime overrides.
 

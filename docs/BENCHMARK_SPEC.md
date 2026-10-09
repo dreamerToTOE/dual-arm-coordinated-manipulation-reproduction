@@ -1,6 +1,10 @@
 # Benchmark Specification — staged single-Cube scientific core
 
-Status: **DRAFT until TASK01 user review; then FROZEN as benchmark_v1.**
+Status: **DRAFT — formal Benchmark freeze requires a separate explicit user decision.**
+
+2026-10-09: user accepts TASK01 foundation feasibility PASS CANDIDATE, but expressly
+does not freeze the scientific Benchmark. Minimal migration/common interfaces may proceed;
+this acceptance does not approve numerical parameters or scientific success thresholds below.
 
 ## Scope boundary
 The common scientific benchmark contains:

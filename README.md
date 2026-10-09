@@ -16,7 +16,9 @@
 
 TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-foundation。
 
-**最新：TASK01 = PASS CANDIDATE，等待用户审查，未 FROZEN。** 在现有可见 Isaac GUI 中，已批准的原 Task26 软件修正版完成第一批两件的实际抓持、搬运、释放、导轨前移、后抓、推进、侧压、退出和共同 HOME，执行器exit0。用户最多3次授权实际用2次：第1次第二件到位超时，第2次完整通过；成功后停止，不隐去失败，也不宣称重复可靠性。原执行器验收格位误差为1.181/0.376mm。[完整物理结果、边界和原始证据](reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md)。
+**最新：用户已接受 TASK01 基础场景可行性 PASS CANDIDATE；正式科研 Benchmark 暂不冻结。** 已验收 Task26 原抓取/重抓/推进链不再重新开发。开始 TASK02 最小迁移与统一接口，使用原地薄适配优先；当前分支 `task02-minimal-foundation-interface`。[TASK02-A 软件结果与后续范围](reports/TASK02_FOUNDATION_INTERFACE01.md)：统一状态/来源、只读旧快照转换和四项资产 hash 核验已完成，14项离线测试 PASS；无新仿真/控制运行，不代表完整 TASK02 或科研数据接口已通过。
+
+已接受的物理证据：在现有可见 Isaac GUI 中，已批准的原 Task26 软件修正版完成第一批两件的实际抓持、搬运、释放、导轨前移、后抓、推进、侧压、退出和共同 HOME，执行器exit0。用户最多3次授权实际用2次：第1次第二件到位超时，第2次完整通过；成功后停止，不隐去失败，也不宣称重复可靠性。原执行器验收格位误差为1.181/0.376mm。[完整物理结果、边界和原始证据](reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md)。
 
 候选名称：`PREDECESSOR_TASK26_BATCH1_TWO_CUBES_WITH_AUTHORIZED_SOFTWARE_FIXES`。独立数值 FK 返回、复用 Task27 后抓候选侧压整链筛选的两项修正在旧仓库独立分支 `task01-foundation-side-preflight-fix` / `5ed0c96`；本轮物理重试不再修改生产源码。原几何、物理、ACM和5mm门禁不变，不覆盖原side-suction分支。[软件修改范围、编译与验证证据](reports/TASK01_PREDECESSOR_SIDE_PREFLIGHT_FIX.md)。
 
@@ -37,7 +39,7 @@ dreamerToTOE/dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d3
 
 禁止重新实现 scene、bridge、Surface Gripper、rail、rear regrasp、segmented push 或新的校验器。两件审批已消除 selector 适配需求，继续使用原 `max_batches=1`；额外批准的两项软件修正已单独记录，不修改原几何、物理或验收门限。
 
-当前 benchmark_v1 仍是 DRAFT，但在本次 foundation qualification 完成前不作为 TASK01 的执行输入，也不冻结。
+基础场景资格验收已完成；当前 benchmark_v1 仍是 DRAFT。用户接受工程可行性不等于批准正式 Benchmark 的状态、参数和跨算法评分门限。
 
 详见：
 - [重启后的 TASK01](docs/tasks/TASK01_BENCHMARK_FREEZE.md)

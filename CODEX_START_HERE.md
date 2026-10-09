@@ -23,15 +23,17 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
-Latest result (2026-10-09): **TASK01 PASS CANDIDATE / USER REVIEW**, not FROZEN. The approved predecessor runtime completed its original batch1 **two-Cube** physical flow and actual common HOME on attempt2; attempt1 failed and remains recorded. Stop after this minimum sufficient evidence; attempt3 was not run.
+Latest user decision (2026-10-09): **TASK01 foundation PASS CANDIDATE ACCEPTED**, not a frozen scientific Benchmark. The original batch1 two-Cube/HOME evidence and first negative run remain unchanged. Do not redevelop original grasp/regrasp/push or repeat foundation qualification.
 
-The original single-Cube qualification steps below are historical scope, superseded by the user's explicit two-Cube, software-fix and bounded-runtime approvals. Read [the completed runtime review](reports/TASK01_PREDECESSOR_PATCHED_RUNTIME_REVIEW.md) and current STATUS before acting. Do not automatically rerun physics, port the foundation, freeze the benchmark or start TASK02; await the user's candidate/reuse-path decision.
+Active work: **TASK02 minimal migration and unified interfaces**, branch `task02-minimal-foundation-interface`. Use accepted predecessor assets in place through thin adapters first, not a copy/rewrite. TASK02-A draft state/provenance adapter passes offline checks; command/result/logger/metrics and live post-step binding are not yet complete. Read [scope, tests and next slice](reports/TASK02_FOUNDATION_INTERFACE01.md), current STATUS and the mandatory reuse map before implementation. Formal Benchmark stays DRAFT; no new physical run or paper controller was performed in TASK02-A.
 
-Current active work is **TASK01 — Predecessor Single-Cube Scene Foundation Qualification** on branch task01-legacy-scene-foundation.
+### Historical qualification (completed; not an active work list)
+
+TASK01 predecessor qualification ran on branch `task01-legacy-scene-foundation`.
 
 TASK01 has been explicitly restarted. Do not continue the previous custom TASK01 harness line.
 
-The active task is:
+The original qualification scope was:
 1. read the pinned predecessor dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a;
 2. launch its mature Task26 scene using the original GUI → scene → Play → bridge lifecycle;
 3. reduce Task26 to exactly one independent Cube (task26_r0_deep) using an existing mode or the smallest selector-only patch;
