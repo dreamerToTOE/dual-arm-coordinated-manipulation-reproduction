@@ -1,5 +1,15 @@
 # BUGS
 
+## 2026-10-09 — TASK02-D native time/reset qualification DEFERRED
+
+BUG-002/005 follow-up; no claim RESOLVED. Installed4.5 direct PhysX post-step API and native
+q/rigid/link/CoreNodes time/count exist, but post-callback stamp/step binding, unique/reset
+identity coverage and USD readback ordering remain unqualified. NoObserver/runtime/source
+repair. **DEFERRED:** owned by later Isaac formal measurement adapter, not TASK03 math.
+**KNOWN LIMITATION:** installed API contract/test source does not attest a scientific sample;
+old asynchronous ROS/USD records stay diagnostic. User explicitly closes this engineering
+line; no more post-step probes under current scope. [Audit](../reports/TASK02_POST_STEP_API_AUDIT.md).
+
 ## 2026-10-09 — TASK02-C offline acceptance and measurement limits
 
 No TASK-BLOCKING software defect remains for C. Review-only corrections in new C code now regression-tested: per-channel temporal order, reversal before duplicate, vector shape before zip, invalid final endpoint not reused as final target. **KNOWN LIMITATION:** source/evidence/qualification fields declare provenance but cannot authenticate rewritten synthetic inputs as native; all FORMAL test doubles are explicitly fabricated. Task14 world-vector initial drift is not SE(3) closed-chain residual; equal-sample RMS depends on sampling density. Caller aligns desired reference and delimits insertion window; no target crossing or SUCCESS detection. Witness-point meaning during penetration is source-backend specific; invalid measurement isNone, not zero. **DEFERRED:** native source binding, scoring/threshold approval, full export and execution RNG plumbing; real wrench/calibration TASK10-IS. **LEGACY:** asynchronous Task26 diagnostics and custom parity/image-core/five-Cube routes, not current C blockers. No new physical bug observed or old runtime repair. [Acceptance](../reports/TASK02_METRICS_MEASUREMENTS01.md).

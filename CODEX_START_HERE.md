@@ -23,6 +23,14 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+Latest explicit authorization: close **TASK02-D = PARTIAL / DEFERRED** ([localAPIaudit](reports/TASK02_POST_STEP_API_AUDIT.md));
+native post-step/clock/reset qualification belongs to later Isaacmeasurementadaptation and does
+not block offline math/planning. Active **TASK03 P4 closure residual/Jacobian, OFFLINE ONLY**,
+branch `task03-p4-closure-constraint`, softwarebase36c95ab. NoObserver, Isaacphysicalrun,
+oldTask26 change, Newtonprojection/TASK04 or Benchmarkedit/freeze. Deliver real-modelFK+
+finite-difference evidence then stopforreview. TASK02 remainsIN_PROGRESS. The C-only stop
+below is retained history and superseded only by this bounded new approval.
+
 Latest user decision (2026-10-09): **TASK01 foundation PASS CANDIDATE ACCEPTED**, not a frozen scientific Benchmark. The original batch1 two-Cube/HOME evidence and first negative run remain unchanged. Do not redevelop original grasp/regrasp/push or repeat foundation qualification.
 
 Active work: **TASK02 minimal migration and unified interfaces**, branch `task02-minimal-foundation-interface`. Use accepted predecessor assets in place through thin adapters first, not a copy/rewrite. TASK02-A state/provenance passes; **TASK02-B/C = PASS CANDIDATE**, parent TASK02 IN_PROGRESS. C reuses Task14 initial-drift geometry/max/RMS, adds explicit tracking/insertion math and data-only wrench/distance with strict clocks/qualification; two independent mock adapters agree. Final72A/B/C tests PASS, no Isaac/ROS/MoveIt invocation, backend/control binding or scientific threshold freeze. Read [latest C POST-TASK REPORT](reports/TASK02_METRICS_MEASUREMENTS01.md), [metric semantics](common/metrics/README.md), [B scope](reports/TASK02_EXCHANGE_LOGGING01.md), STATUS and reuse map. Real post-step binding/attestation, execution RNG control and scoring decisions need separate bounded scope. Stop after C delivery: do not launch runtime, TASK02-D or TASK03 under this authorization. BENCHMARK remains DRAFT / NOT FROZEN.

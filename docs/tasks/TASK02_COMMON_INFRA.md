@@ -2,6 +2,17 @@
 
 Status: **IN_PROGRESS — TASK02-A offline slice PASS; TASK02-B/C PASS CANDIDATE; BENCHMARK DRAFT / NOT FROZEN; overall TASK02 not PASS**
 
+## 2026-10-09 TASK02-D closure / current execution override
+
+**TASK02-D = PARTIAL / DEFERRED.** Local4.5 directPhysX post-step and native articulation/
+rigid/link/CoreNodes time/count capabilities are available; exactstamp/step binding, reset
+identity and USDrefreshorder are notcertified. NoObserver implemented, no newruntime.
+[Audit and source signatures](../../reports/TASK02_POST_STEP_API_AUDIT.md).
+User assigns this gap to laterformalIsaacmeasurementadaptation and explicitly unblocks offline
+P4 mathematical/planning work. The older “only then connect baselines” order below is historical,
+not a reason to hold TASK03. Existing A/B/C data semantics stay unchanged; formal metric inputs
+still require native qualification. ParentTASK02 remainsIN_PROGRESS; nofullPASS orfreeze.
+
 ## 2026-10-09 minimal integration scope
 
 User accepts TASK01 foundation PASS CANDIDATE but does not freeze the formal Benchmark.

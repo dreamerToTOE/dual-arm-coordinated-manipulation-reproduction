@@ -1,5 +1,15 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Close TASK02-D; authorize TASK03 closed-chain math only
+
+User explicitly requires recording localAPI audit onGitHub asPARTIAL/DEFERRED, parentTASK02
+notfullPASS and Benchmarkunfrozen; nativeformalmeasurement adaptation no longer blocks offline
+math/planning. Authorizes TASK03 FK+fixedgrasp objectpredictions, position+strictrotation closure,
+constraintJacobian/finite-difference andrealmodel+perturbed tests; requires originalP4 and old
+engineeringreuse. Prohibits oldTask26/Observer/Isaac physical experiments/TASK04Newton/Benchmark
+edits/Task14vector metric substitution. DeliverGitHub POSTreport, PASSCANDIDATE only withdeclared
+real-modelmath evidence; otherwisePARTIAL. Stopforreview, noautomaticTASK04.
+
 ## 2026-10-09 — TASK02-C approved offline metrics, not runtime or benchmark freeze
 
 User requires Task14/Task16 audit first, pure platform-independent A/B math, explicit ContactWrench/CollisionDistance, strict quality/session/time treatment, identical metrics from two simulated input adapters, historical snapshot diagnostic-only and all A/B/C regressions with saved JSON/test artifacts. Old acceptance values cannot become default Benchmark gates, metrics cannot auto-SUCCESS. Explicitly forbids Isaac/ROS/MoveIt/Task26, mature source/physics/YAML/A/B semantic changes, new execution/collision/logging services and P1–P5 algorithms. Deliver on existingbranch fromc7b33b1 and publish GitHub with TASK02-C PASS CANDIDATE, parent IN_PROGRESS, BENCHMARK DRAFT/NOT FROZEN; then stop and wait, no TASK02-D/TASK03. This authorization does not resolve native binding, real force measurement or later scientific scoring decisions. [Delivered evidence](../reports/TASK02_METRICS_MEASUREMENTS01.md).

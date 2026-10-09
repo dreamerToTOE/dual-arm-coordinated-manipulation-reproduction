@@ -1,5 +1,14 @@
 # DECISIONS
 
+## D045 — Defer native Isaac sampling qualification; unblock offline math [ENGINEERING]
+
+2026-10-09. Explicit userapproval endsTASK02-D availabilityaudit. InstalledIsaac4.5 supports
+directPhysXpost-step, nativeq/rigid/link/CoreNodes time/count; not complete same-step/source/reset
+attestation. Do notimplementObserver or relabeloldUSD/ROSsamples. TASK02-DPARTIAL/DEFERRED,
+parentIN_PROGRESS, BenchmarkDRAFT. LaterformalIsaacmeasurementadapter owns theseissues;
+P4offlinekinematics/planning doesnotdependonthem. Noengineeringscopecontinuation or TASK04
+authorization inferred. [Evidence](../reports/TASK02_POST_STEP_API_AUDIT.md).
+
 ## D044 — TASK02-C reuses initial-drift math; measurement eligibility is not success [ENGINEERING]
 
 2026-10-09. User approves one offline slice on task02-minimal-foundation-interface fromc7b33b1; no runtime, old engineering/physics/YAML/A/B semantic edits or automatic next task. Preserve pinned Task14 relativeTCP and object-midpoint world-vector drift against first valid sample, sign-invariant orientation angle and equally weighted max/RMS. Explicit target-position RMSE and B nominal-axis/target math are basic contract extensions, not paper algorithms. Old3mm/5mm/2deg/30ms thresholds stay historical; timestamp-skew policy must be explicitly supplied and is not a success criterion. Same session/SIMULATION/native-declared post-step qualification is required for formal metrics; synthetic mode yields no real duration. Whole-input frame/session/domain/qualification/reversal failures cannot be hidden by dropping rows; row-level missing/invalid/duplicate/skew failures preserve counts and reasons. Formal insertion duration is only a caller-delimited qualified endpoint window, not target-arrival detection; unavailable endpoint does not borrow another sample. Wrench torque is about explicit application point in sameframe; distance uses declared signed/witness conventions. No data schema provides native attestation. Two mock adapters and all72regressions provide software minimum evidence, not simulator equivalence. TASK02-C PASS CANDIDATE, TASK02 IN_PROGRESS, BENCHMARK DRAFT/NOT FROZEN; stop for user review, no TASK02-D/TASK03. [POST-TASK REPORT](../reports/TASK02_METRICS_MEASUREMENTS01.md).

@@ -1,5 +1,18 @@
 # STATUS
 
+## 2026-10-09 — TASK02-D audit closed PARTIAL / DEFERRED; TASK03 offline math authorized
+
+**TASK02-D = PARTIAL / DEFERRED; TASK02 = IN_PROGRESS; BENCHMARK = DRAFT / NOT FROZEN.**
+Installed Isaac4.5 supports direct PhysX `pre_step=False`; native articulation/rigid/link and
+CoreNodes clock/count getters exist. Native clock/step phase binding and reset identity are
+not certified; USD refresh at callback is not guaranteed. No Observer or runtime implemented.
+User closes this audit line and assigns formal measurement qualification to later Isaac
+adaptation: it does not block offline P4 math/planning. [Full local API evidence](../reports/TASK02_POST_STEP_API_AUDIT.md).
+**TASK03 IN_PROGRESS** from36c95ab on `task03-p4-closure-constraint`: only real-model FK closure,
+Jacobian and offline tests. No Isaac/controller, Newton projection, benchmark freeze or TASK04.
+Entries below are retained historical checkpoints and their old next-task stops are superseded
+only by this explicit new authorization.
+
 ## 2026-10-09 — TASK02-C offline metrics and measurement contracts PASS CANDIDATE
 
 **TASK02-C = PASS CANDIDATE; TASK02 = IN_PROGRESS; BENCHMARK = DRAFT / NOT FROZEN.** One bounded offline slice starting c7b33b1 reuses pinned Task14 initial relative-TCP/midpoint/quaternion/max/RMS math, extends explicit position-RMSE and insertion-axis/target/window math, and adds data-only ContactWrench/CollisionDistance. No legacy3mm/5mm/2deg/30ms defaults, automatic SUCCESS, native sensor/query/backend or controller. Two independent mock adapters give identical numbers; synthetic duration isnull. Qualification/frame/session/domain mismatch and time reversal reject input; missing/invalid/duplicate/skew rows preserve reasons/counts, no zero fill. Final **72/72 A/B/C tests PASS (14+19+39)** and actual example JSON/readback saved. Legacy snapshot remains asynchronous; formal-clock test doubles are not real native evidence. A/B semantics, benchmark YAML, old Task26 assets4/4 and raw results unchanged; no Isaac/ROS/MoveIt/build invocation. Stop after scoped GitHub delivery; do not start TASK02-D/TASK03. [POST-TASK REPORT and evidence](../reports/TASK02_METRICS_MEASUREMENTS01.md). Earlier deferred-metrics statements below are historical.
