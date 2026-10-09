@@ -1,5 +1,9 @@
 # Prior Project Reuse Map — side-suction-palletizing
 
+## 2026-10-09 TASK01 full restart
+
+TASK01 no longer treats the predecessor as a source of selected primitives only. The active task now launches the predecessor Task26 scene/runtime itself, reduced to one independent Cube, and qualifies it as a possible foundation scene. Previous TASK01 adapter/harness evidence is historical and must not be used as a reason to rebuild equivalent runtime pieces before the predecessor scene is tested directly.
+
 Status: **ACTIVE ENGINEERING REFERENCE for TASK01 and later Isaac integration.**
 
 2026-10-08 pinned-source audit: [TASK01_PRIOR_PROJECT_REUSE_AUDIT](../reports/TASK01_PRIOR_PROJECT_REUSE_AUDIT.md), [source/hash manifest](../reports/TASK01_REUSE_SOURCE_MANIFEST.json). Source ref is `631b1f65656d025c1bb2173e874192f3fe4d355a`. The audited raw right-pusher success includes **both rail bases X=.750, not rest X=.650**; B's INSERT_READY rail/base state needs explicit user review before integration. No new simulator run or READY capture has been performed by this audit.
