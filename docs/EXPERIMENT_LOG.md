@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-08 — Existing-log startup diagnosis: NO NEW ISAAC EXPERIMENT
+
+- Source407bd34; one read-only diagnostic iteration, no new simulator/ROS/control/debugger/test run or fix. Prior retry01/02 physical evidence remains separate and unchanged; all eight runtime hashes match.
+- Full Kit positive markers: SDK startup complete10.589/81.426s, ROS bridge started10.765/83.685s, SG enable request10.810/83.915s, last World1 layers10.971/84.176s (app-relative profiling, not scientific simulation time). Console truncation cannot establish the actual last call.
+- Existing kernel21:31:44+0800: `tbb.worker[12295]`, address0x40, IP00007ae437f418d9 in `libomni.graph.core.plugin.so`, correlated with retry02 PID11986 SIG11. Native parent/thread stack unavailable; root cause not inferred.
+- Apport exactPID398623/11986 ignored non-package bundled Python with core limit0; no matching core. Selected excerptSHAda076852… and source hashes in [metadata](../results/20261008_TASK01_startup_readonly01/metadata.json). New native physics step/time/state/readback/READY absent. Diagnosis1/1 complete, TASK01PARTIAL; separate live stack-capture authority needed. [Report](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
+
 ## 2026-10-08 — Unchanged readback retry02: no scientific-state evidence
 
 - Run `results/20261008_TASK01_readback_retry02`, source d8d0096511c165f3afc616cf76b2331222dce407; all eight runtime/config/binary SHA match retry01. Exact command/input hashes in [metadata](../results/20261008_TASK01_readback_retry02/metadata.json).

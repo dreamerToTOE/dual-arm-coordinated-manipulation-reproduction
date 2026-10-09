@@ -1,0 +1,23 @@
+# Selected existing evidence only; no new Isaac/ROS run
+# Kit positive initialization markers (source file:line preserved)
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_213019.log:5404:2026-10-08 13:31:41 [81,246ms] [Info] [omni.kit.app.plugin] [81.426s] Simulation App Startup Complete
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_213019.log:7188:2026-10-08 13:31:43 [83,685ms] [Info] [omni.ext.plugin] [ext: isaacsim.ros2.bridge-4.1.15] started, startup time: 2428 (ms)
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_213019.log:7194:2026-10-08 13:31:43 [83,915ms] [Info] [omni.ext.plugin] Processing exts enabling request: 'isaacsim.robot.surface_gripper'
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_213019.log:8969:2026-10-08 13:31:44 [84,176ms] [Info] [omni.kit.widget.layers.layer_model] Load sublayers of layer anon:0x1c09c420:World1.usd.
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_213019.log:8970:2026-10-08 13:31:44 [84,176ms] [Info] [omni.kit.widget.layers.layer_model] Load sublayers of layer anon:0x20c0fe20:World1-session.usda.
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_210657.log:5420:2026-10-08 13:07:08 [10,580ms] [Info] [omni.kit.app.plugin] [10.589s] Simulation App Startup Complete
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_210657.log:7204:2026-10-08 13:07:08 [10,765ms] [Info] [omni.ext.plugin] [ext: isaacsim.ros2.bridge-4.1.15] started, startup time: 174 (ms)
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_210657.log:7210:2026-10-08 13:07:08 [10,810ms] [Info] [omni.ext.plugin] Processing exts enabling request: 'isaacsim.robot.surface_gripper'
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_210657.log:8985:2026-10-08 13:07:08 [10,971ms] [Info] [omni.kit.widget.layers.layer_model] Load sublayers of layer anon:0x4d79c3b0:World1.usd.
+/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_210657.log:8986:2026-10-08 13:07:08 [10,971ms] [Info] [omni.kit.widget.layers.layer_model] Load sublayers of layer anon:0x4db12420:World1-session.usda.
+
+# Apport records for the exact two prior native PIDs
+ERROR: apport (pid 399017) Thu Oct  8 21:07:08 2026: called for global pid 398623, signal 11, core limit 0, dump mode 1
+ERROR: apport (pid 399017) Thu Oct  8 21:07:08 2026: executable: /home/ubuntu2004/isaacsim-4.5.0/kit/python/bin/python3 (command line "/home/ubuntu2004/isaacsim-4.5.0/kit/python/bin/python3 platforms/isaac_ros2/handoff/task01_insert_ready_gui.py --output-dir results/20261008_TASK01_readback_retry01/raw --wall-limit-sec 180 --reset-repeats 0")
+ERROR: apport (pid 399017) Thu Oct  8 21:07:08 2026: executable does not belong to a package, ignoring
+ERROR: apport (pid 12933) Thu Oct  8 21:31:44 2026: called for global pid 11986, signal 11, core limit 0, dump mode 1
+ERROR: apport (pid 12933) Thu Oct  8 21:31:44 2026: executable: /home/ubuntu2004/isaacsim-4.5.0/kit/python/bin/python3 (command line "/home/ubuntu2004/isaacsim-4.5.0/kit/python/bin/python3 platforms/isaac_ros2/handoff/task01_insert_ready_gui.py --output-dir results/20261008_TASK01_readback_retry02/raw --wall-limit-sec 180 --reset-repeats 0")
+ERROR: apport (pid 12933) Thu Oct  8 21:31:44 2026: executable does not belong to a package, ignoring
+
+# Same-time kernel record, Asia/Shanghai; no full native stack
+2026-10-08T21:31:44+0800 ubuntu2004 kernel: tbb.worker[12295]: segfault at 40 ip 00007ae437f418d9 sp 00007ae4b6bfc740 error 4 in libomni.graph.core.plugin.so[7ae437e00000+313000] likely on CPU 0 (core 0, socket 0)

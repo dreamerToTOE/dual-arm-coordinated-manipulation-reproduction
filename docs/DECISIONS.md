@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D039 follow-up — Separate native startup evidence from handoff claims [ENGINEERING]
+
+2026-10-08. User approved bounded diagnosis; explicitly performed one existing-evidence-only audit, no live run/fix. Use full Kit positive markers over truncated console for execution boundary: SDK/ROS bridge completed, SG enable requested, then early-stage/asset investigation window. Kernel OmniGraph fault is a concrete correlated module clue, not exact root/stack or benchmark defect; absent buffered prints are not strict execution upper bounds. Apport non-package rejection explains missing core. Publish selected logs/source hashes without unrelated crash/environment data. Stop diagnosis1/1; any native-stack capture, launcher change, repair or handoff retry requires separate authority, no global core/benchmark change. TASK01PARTIAL/notFROZEN. [Report](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
+
 ## D039 follow-up — Interpret “再次尝试” as one unchanged invocation [ENGINEERING]
 
 2026-10-08. Announced interpretation: one new bounded runtime attempt using identical harness/config/binary, output/evidence directories only; no repair or scope expansion. Retain all previous exhausted allowances,180s/reset0/TARGET0 and original stops. Retry02 repeated native startup symptom before runtime state/readback, so no validator/geometry PASS/FAIL claim or fixed-handoff redesign. New1/1 consumed; further blind launch and native-debug implementation are not authorized. Recommend separate bounded startup diagnosis for user decision; benchmark and paper methods unchanged/notFROZEN. [Report](../reports/TASK01_UNCHANGED_RETRY02.md).

@@ -1,5 +1,13 @@
 # WORKLOG
 
+## 2026-10-09 — Finalize previous read-only diagnosis records
+
+User requested continuation; resumed only the pending final review/commit/push of2026-10-08 existing-evidence diagnosis. No new diagnostic iteration, runtime, debugger, tests or source/config/binary edits. Retained evidence dates/hashes, added publication completion date; no budget reset, READY claim or FROZEN. [Completed findings](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
+
+## 2026-10-08 — Read-only startup diagnosis, no rerun or implementation
+
+One bounded existing-evidence diagnosis approved; read governance/task/benchmark/paper, then two parallel read-only core/call-chain audits. Main verified selected Kit markers, exact prior PID Apport records and existing Asia/Shanghai kernel line. Corrected console-only boundary: SDK init/ROS bridge had completed. Kernel points to correlated OmniGraph worker fault; no stack/causal fix. Apport refused saved reports for bundled Python, so no usable core. Preserved selective verbatim excerpt/SHA and metadata; no environment/core secrets published. Runtime/config/binary unchanged; no simulator/ROS/debugger/test/fix or global core setting. Diagnosis now stopped1/1; six records/TASK01 updated and published, task remainsPARTIAL/noREADY/FROZEN. [Report](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
+
 ## 2026-10-08 — Additional unchanged retry02, no implementation edits
 
 Reread governance/current TASK01/reuse/benchmark/paper; announced one-invocation interpretation of “再次尝试”. Read-only audit verified identical eight hashes and original bound/scope. No runtime/source/config/binary/launcher edits, rebuild or tests. Sole visible GUI at d8d0096 with new evidence directory/reset0 again nativeSIGSEGV afterapp-ready; exit1 before180s. Captured complete log/input hashes, no scientific post-step or readback data. New1/1 used; no startup diagnosis/repair/extra launch. Offline result/process checks and six records/TASK01/report updated; preserve old logs. TASK01PARTIAL, noREADY/TARGET/FROZEN; escalate for separately budgeted startup diagnosis. [Run record](../reports/TASK01_UNCHANGED_RETRY02.md).

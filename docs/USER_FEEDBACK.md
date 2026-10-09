@@ -1,5 +1,13 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Continue pending diagnostic handoff
+
+User says “继续” after interrupted2026-10-08 diagnosis. Finish its pending records/review/publication first; do not infer permission to fix benchmarks or reopen exhausted runtime budgets. Findings distinguish native-module evidence from unproven cause; a new startup-only native-stack capture remains a separate explicit decision. [Result](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
+
+## 2026-10-08 — “可以” to bounded startup diagnosis
+
+User approves the proposed startup diagnosis. Main scopes it explicitly to one read-only existing-log/core/source audit,10min, no runtime/fix; if insufficient, request a separate diagnostic run. Found fuller SDK/ROS bridge markers, correlated kernel OmniGraph fault and Apport core rejection. No new simulator, debugger, control command, package install, core settings or source/config/binary changes. Exact root still unknown; diagnosis stopped1/1, no implicit authority to repair/relaunch. Recommend startup-only native stack capture for separate user decision; TASK01PARTIAL, noREADY/FROZEN. [Outcome](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md).
+
 ## 2026-10-08 — “再次尝试” after retry01 startup failure
 
 User asks to try again. Main explicitly scoped it to one additional unchanged bounded GUI invocation,180s/reset0/noTARGET/no repairs; no objection or broader authority assumed. Retry02 repeated nativeSIGSEGV before scene/readback records. New1/1 used, no automatic second launch or fix. TASK01PARTIAL; preserve all historical budgets/evidence. Report runtime unavailable instead of handoff/validator failure; recommend startup-only diagnosis subject to separate user approval. [Outcome](../reports/TASK01_UNCHANGED_RETRY02.md).

@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-08 — Native startup blocker narrowed, root still unresolved [TASK-BLOCKING]
+
+Read-only diagnosis confirms complete SDK init/ROS2 bridge before both crashes. Correlated retry02 kernel fault is in OmniGraph core's TBB worker at0x40, not a MoveIt driver/readback failure. Exact native call stack/cause remains unknown; module name does not prove a library defect, null-pointer cause, CUDA/driver/SG incompatibility or same root across both attempts. Apport ignored the bundled-Python executable, so “core dumped” did not yield a usable saved core. No new runtime/core/debugger/fix; eight hashes unchanged. Diagnosis1/1 consumed; request separately bounded stack capture/no blind repair. [Evidence and limits](../reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md). Prior readback closure remains unverified, force deferred, full model equivalence a limitation, five-Cube legacy.
+
 ## 2026-10-08 — Startup symptom reproduced on unchanged retry02 [TASK-BLOCKING]
 
 User-requested extra one-invocation retry at d8d0096 with identical eight runtime hashes again ends nativeSIGSEGV afterapp-ready, PID11986/wrapperexit1. No readback or post-step data. Exact native root remains undetermined; this is repeated startup symptom, not confirmed same root cause, live validator failure, collision or handoff geometry failure. New1/1 consumed; stop blind reruns and request separate bounded startup diagnosis, not repair authority inferred. [Full evidence](../reports/TASK01_UNCHANGED_RETRY02.md). Prior readback bug remains runtime-unverified; BUG001/force deferred, model equivalence limitation, fiveCube legacy unchanged.

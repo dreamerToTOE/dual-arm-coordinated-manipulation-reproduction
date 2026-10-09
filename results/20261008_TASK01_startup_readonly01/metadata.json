@@ -1,0 +1,58 @@
+{
+  "task": "TASK01",
+  "baseline": "ENGINEERING_existing_startup_evidence_readonly_diagnosis",
+  "platform": "Existing Isaac4.5/ROS2 logs and Linux crash records; no new simulator run",
+  "git_commit": "407bd344669e16692a66e0d1d0ad16ab428ecde6",
+  "seed": null,
+  "config_path": "configs/benchmark/benchmark_v1.yaml",
+  "command": "read-only rg/sed/nl/sha256sum of prior logs/source; existing core inventory; TZ=Asia/Shanghai journalctl --no-pager -k -o short-iso --since '2026-10-08 21:31:40' --until '2026-10-08 21:31:49' | rg 'tbb.worker|segfault|12295|11986'; no runtime/debugger",
+  "status": "READONLY_DIAGNOSIS_COMPLETE_MODULE_CLUE_ROOT_UNRESOLVED",
+  "records_finalized_date_local": "2026-10-09",
+  "record_date_timezone": "Asia/Shanghai",
+  "evidence_date_local": "2026-10-08",
+  "attempt_budget": "one user-approved read-only diagnosis1/1; no new runtime allowance",
+  "diagnostic_window_cap_minutes": 10,
+  "metrics": {
+    "new_Isaac_ROS_control_runs": 0,
+    "new_debugger_or_core_extraction_runs": 0,
+    "source_config_binary_fixes": 0,
+    "matching_retained_cores_found": 0,
+    "SDK_and_ROS_bridge_positive_markers_both_prior_runs": true,
+    "retry02_correlated_kernel_library": "libomni.graph.core.plugin.so",
+    "retry02_kernel_worker_tid": 12295,
+    "retry02_kernel_fault_address_hex": "0x40",
+    "kernel_parent_thread_mapping_available": false,
+    "exact_native_call_stack_available": false,
+    "root_cause": "UNDETERMINED",
+    "actual_new_physics_step": null,
+    "actual_new_simulation_stamp": null,
+    "new_INSERT_READY_evidence": false
+  },
+  "evidence_sources": {
+    "retry01_Kit_log": "/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_210657.log",
+    "retry02_Kit_log": "/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_213019.log",
+    "previous_success_prefix_Kit_log": "/home/ubuntu2004/isaacsim-4.5.0/kit/logs/Kit/Isaac-Sim Python/4.5/kit_20261008_202948.log",
+    "apport_log": "/var/log/apport.log",
+    "kernel": "existing boot journal, 2026-10-08T21:31:44+0800"
+  },
+  "evidence_source_sha256": {
+    "retry01_Kit_log": "9c733bdfa8f8150a9575d18a9ec09b3985c94831364add0f0c90ab9eebdc6463",
+    "retry02_Kit_log": "94c4a7e2023352a64827b8a8df1884ce9d1c2dba40d018957dbc88096f14106f",
+    "previous_success_prefix_Kit_log": "2ab2f3e680c5f7c8b254a61dd1ab2655c7383909e7b5cc66f04eea37e2e98563",
+    "apport_log_at_read": "1b76209a21a047163df3bcd854658456ca4e9ffdd9e5638e9350b6f5b39c148c",
+    "selected_excerpt": "da0768520b966b45a241e5d51a76b9205087560e3a94034ab02fe96d2b6adbf3"
+  },
+  "runtime_input_hashes": {
+    "config": "25b7162c848b4cfeeff7e07a8cd154f26dff215c6d8f3d1caf8cf6333bcc8783",
+    "GUI": "539615dc789460abc2e3b0b2e7c09dff8c7ad00b8dc74327f1e8d114a0a1a77c",
+    "bridge": "e4c1dc8bea2098d315d2404bdbd0b5c986ca46df4ac9a7facca123a4e5dabae1",
+    "primitives": "2051c84b9275e5bf1d286dcfd02b441e32a490e7b0b120757068878425d45cb1",
+    "driver_source": "e8ed058e58e63eb7f0a36bd02daa25151e62d81867d0bc52754192a9375f909a",
+    "validator": "6ab64d3fa680a92957d24198a2f2c895ce4c026559414112e92ba386949ec030",
+    "launch": "4c707922986112f9d667d3ba212191c0099bcdb94a010050168361438a7f3f47",
+    "driver_binary": "86237ffa76d3e2585bd475a06796f98bf49bf3ca34c6bae24e82c835a0bd5325"
+  },
+  "artifact_paths": ["reports/TASK01_STARTUP_READONLY_DIAGNOSIS.md", "reports/evidence/TASK01_STARTUP_EXISTING_LOG_EXCERPT.log", "results/20261008_TASK01_startup_readonly01/metadata.json"],
+  "TASK01_status": "PARTIAL",
+  "FROZEN": false
+}
