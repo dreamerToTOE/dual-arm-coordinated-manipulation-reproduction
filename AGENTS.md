@@ -33,6 +33,41 @@ Need user confirmation: yes/no
 
 Do not start implementation before this report.
 
+## 1.1 Mandatory PRIOR-ASSET CHECK for TASK02+
+For every implementation task from TASK02 onward, before writing replacement infrastructure:
+
+1. read `docs/POST_TASK01_REUSE_MAP.md`;
+2. inspect the pinned engineering source `dreamerToTOE/dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a` for relevant existing components;
+3. classify candidates as **DIRECT_PORT / THIN_ADAPTER / TEST_ORACLE / REFERENCE_ONLY**;
+4. state which scientific algorithm must still be implemented from the paper;
+5. prefer adaptation of validated engineering infrastructure over a parallel reimplementation.
+
+Add this block to the PRE-TASK report:
+
+```text
+=== PRIOR-ASSET CHECK ===
+Current task:
+Scientific algorithm that must remain new/paper-derived:
+Old repository areas searched:
+Pinned source commit:
+DIRECT_PORT:
+THIN_ADAPTER:
+TEST_ORACLE:
+REFERENCE_ONLY:
+Rejected old assets and reason:
+Files that will be reused/adapted:
+Files that will still be newly implemented:
+Risk of contaminating paper fidelity:
+Need user decision: yes/no
+```
+
+Hard boundaries:
+- reuse engineering wheels; do not use old code to fake a paper reproduction;
+- do not silently import historical thresholds, geometry assumptions, tool transforms or application schedulers;
+- generic MoveIt/FCL/execution/logging infrastructure should not be rewritten merely because the new task has a different paper label;
+- if reuse materially changes the paper method, classify it **[DEVIATION]** and stop for user review;
+- TASK01-specific reuse stays under `docs/PRIOR_PROJECT_REUSE.md`; this rule is for TASK02+.
+
 ## 2. Scientific fidelity labels
 Every implementation decision must be classified as one of:
 - **[ORIGINAL]** directly follows the paper.
