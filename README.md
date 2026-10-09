@@ -12,7 +12,25 @@
 
 最终所有可横向比较的正式结果，原则上统一落到 **Isaac Sim + ROS 2 + 双 FR3 + Cube + 车厢** 场景；MuJoCo 仅作为 P2/P3 的接触/力控快速验证平台。
 
-## 当前进度（2026-10-06）
+## 当前进度（2026-10-09）
+
+TASK01 仍为 **PARTIAL / DRAFT**，尚未得到 INSERT_READY，不是 PASS/FROZEN。当前只交付已启动 GUI 的加载适配：严格复用旧 Task26 的 `scene.py → 手动 Play → bridge.py` 生命周期。benchmark、工具、车厢、物理、SG、固定 handoff、FCL/readback 和控制算法均未修改；停止 image-core 研究。本轮只完成纯软件测试，未运行 Isaac/ROS/机器人。
+
+下一次单独批准运行时，在已正常启动的 Isaac GUI 中先 **Stop（不是 Pause）**，使用干净 Stage，依次在 Script Editor 执行：
+
+```python
+exec(open("/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/task01_existing_gui_scene.py").read())
+```
+
+看到 scene ready 后，手动点击 **Play**，等待正常物理初始化，再执行：
+
+```python
+exec(open("/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction/platforms/isaac_ros2/handoff/task01_existing_gui_bridge.py").read())
+```
+
+**bridge 不是只读操作**：它恢复已记录的 PRE_PUSH 状态并初始化原双吸盘持件；不会自动启动 MoveIt/controller。后续外部终端完整指令、证据目录和停止方法见 [现有 GUI 加载说明](reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md)。180 秒为 GUI cooperative deadline，不是卡死时的 OS 硬上限；结束会暂停 GUI、释放 SG，不能称为 held READY。历史 standalone/debug 入口不再作为当前启动方式。
+
+## 历史检查点（2026-10-06，保留原证据）
 
 - TASK01 保持 **IN_PROGRESS / DRAFT**，36 项基准参数待评审，TASK02 未开始。
 - 最新运行要求：**以后只用可见 Isaac GUI，不再启动 headless**。当前独立Task01节点默认`execution_time_scale=1.0`，按规划时间正常播放；上轮5.0是20%而不是50%。MoveIt RRT速度/加速度12%仍保留，正常播放不是关节极限速度。完整GUI加载步骤与验证边界见[运行约定](reports/TASK01_GUI_SPEED.md)。新速度未物理验收。

@@ -1,5 +1,9 @@
 # WORKLOG
 
+## 2026-10-09 — Reuse Task26 scene → Play → bridge in an existing GUI
+
+Read mandatory governance/current TASK01/P4/benchmark/reuse records and remote-verified Task26@631b1f sources; wrote pre-task software-only scope before editing. Added a thin current-Stage scene loader, manual-Play bridge entry and asynchronous session adapter, retaining original constructors, SG and C++ fixed handoff. Native callbacks replace standalone manual simulation; Stage/token gates precede physical writes, existing halted/error protocol preserves last native stamp on failure, and external controller ownership is explicit. No new grasp/push/FCL/readback algorithm, benchmark geometry/physics/ACM edit, image-core investigation or runtime. Independent source audit plus pure AST/mock tests; preserve eight immutable hashes and prior logs. Complete README/records/report updated; TASK01 PARTIAL, new physical evidence absent. [Delivery](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).
+
 ## 2026-10-09 — Authorized startup-only GDB capture completed
 
 User “可以” approved one visible native-stack capture,180s hard cap, stop before physical/control/handoff. Re-read governance/task/P4; wrote pre-task scope; added thin hash/AST/main-only125 exit launcher and clean-GDB/SDK-inferior wrapper, no original harness edit. Five pure launcher tests/shell syntax/two independent read-only reviews PASS. Source944422d frozen before sole invocation. FirstSIGSEGV captured in OmniGraph worker with image-core/exec/TBB callers and heap warning; no exact corrupting cause. Saved full stack/log/input/guard/metadata, GDBkilledinferior, no further run or fix. ~110s engineering log interval; owned PID/PGIDs absent. Eight runtime hashes unchanged. TASK01PARTIAL, no physical safety/READY/FROZEN;1/1 consumed, six records/TASK01/report updated. [Result](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).

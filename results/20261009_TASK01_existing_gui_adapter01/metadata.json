@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "date_local": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "classification": "ENGINEERING_SOFTWARE_ONLY",
+  "source_base_commit": "d961a46",
+  "task": "TASK01",
+  "task_status": "PARTIAL",
+  "scope": "existing_GUI_scene_manual_Play_bridge_lifecycle_adapter",
+  "predecessor_branch": "side-suction-palletizing",
+  "predecessor_commit": "631b1f65656d025c1bb2173e874192f3fe4d355a",
+  "physical_runtime": "NOT_RUN",
+  "simulator_invocations": 0,
+  "ros_controller_invocations": 0,
+  "robot_suction_rail_commands": 0,
+  "scientific_native_step_and_timestamp": "NONE_THIS_ITERATION",
+  "insert_ready": "NOT_ESTABLISHED",
+  "TARGET": "NOT_RUN",
+  "FROZEN": false,
+  "prior_attempt_budgets": "CONSUMED_UNCHANGED",
+  "tests": [
+    {
+      "command": "python3 -m unittest discover -s tests -p test_task01_existing_gui_session.py -v",
+      "tests": 33,
+      "exit_code": 0,
+      "result": "PASS",
+      "runtime_seconds_engineering_only": 0.344
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_task01_startup_debug_launcher.py -v",
+      "tests": 5,
+      "exit_code": 0,
+      "result": "PASS",
+      "runtime_seconds_engineering_only": 0.128
+    },
+    {
+      "command": "python3 -m py_compile platforms/isaac_ros2/handoff/task01_existing_gui_session.py platforms/isaac_ros2/handoff/task01_existing_gui_scene.py platforms/isaac_ros2/handoff/task01_existing_gui_bridge.py tests/test_task01_existing_gui_session.py",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "platforms/isaac_ros2/handoff/task01_existing_gui_scene.py": "5a884a6974e1ec22060627baf08aa3c75111c9748f4dbc40a015ebc908c426d1",
+    "platforms/isaac_ros2/handoff/task01_existing_gui_bridge.py": "f88103776fb06ec599709c2b05eea8aaa89854dfd7cbd922cea4baed5d88a543",
+    "platforms/isaac_ros2/handoff/task01_existing_gui_session.py": "d951a7035a2760806275574627f17f7447b8388f532eb5af7db287d74ded6029",
+    "tests/test_task01_existing_gui_session.py": "d37bd16d9f85eab82656ce8d0a3d0c6e50ba32113547aa47462b367cc09be3cf"
+  },
+  "immutable_sha256": {
+    "configs/benchmark/benchmark_v1.yaml": "25b7162c848b4cfeeff7e07a8cd154f26dff215c6d8f3d1caf8cf6333bcc8783",
+    "platforms/isaac_ros2/handoff/task01_insert_ready_gui.py": "539615dc789460abc2e3b0b2e7c09dff8c7ad00b8dc74327f1e8d114a0a1a77c",
+    "platforms/isaac_ros2/handoff/reused_bridge.py": "e4c1dc8bea2098d315d2404bdbd0b5c986ca46df4ac9a7facca123a4e5dabae1",
+    "platforms/isaac_ros2/handoff/task26_reused_primitives.hpp": "2051c84b9275e5bf1d286dcfd02b441e32a490e7b0b120757068878425d45cb1",
+    "platforms/isaac_ros2/handoff/task01_rear_handoff.cpp": "e8ed058e58e63eb7f0a36bd02daa25151e62d81867d0bc52754192a9375f909a",
+    "platforms/isaac_ros2/handoff/collision_readback.hpp": "6ab64d3fa680a92957d24198a2f2c895ce4c026559414112e92ba386949ec030",
+    "platforms/isaac_ros2/handoff/moveit_handoff.launch.py": "4c707922986112f9d667d3ba212191c0099bcdb94a010050168361438a7f3f47",
+    "build/task01_handoff/task01_rear_handoff": "86237ffa76d3e2585bd475a06796f98bf49bf3ca34c6bae24e82c835a0bd5325"
+  },
+  "limits": [
+    "AST/mock/source evidence only; no SDK execution",
+    "new-route native startup/readback/handoff remains unvalidated",
+    "cooperative GUI deadline is not an OS hard cap",
+    "external driver exit code not inferred from ROS graph",
+    "pause plus original SG shutdown is not held READY"
+  ]
+}

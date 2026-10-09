@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-09 — Existing-session route prepared; live closure remains TASK-BLOCKING
+
+User redirects loading to an already-normal Isaac GUI and explicitly stops image-core research. Historical standalone initialization SIGSEGV remains unresolved evidence for that route; retaining its logs does not authorize further diagnosis or fixes. New scene/bridge lifecycle avoids creating/restarting the GUI, but has not been run physically, so it is not a proven crash fix. Actual readback closure/rail-safe transition/rear attachment/INSERT_READY remain TASK-BLOCKING acceptance unknowns, not new observed failures. GUI cooperative timeout cannot terminate a native GUI hang; external ROS controller exit code is not inferred from DDS disappearance. These are documented ownership/evidence limits, not reasons to build another probe. Force/wrench deferred; no parity10 or benchmark changes. [Scope and limitations](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).
+
 ## 2026-10-09 — Native fault-site stack obtained, cause not fixed [TASK-BLOCKING]
 
 Authorized startup-only1/1 underGDB intercepted SIGSEGV/tbb.worker/PID17071,LWP17392,addr0x40 in OmniGraph core, called by image-core→exec-core→TBB; same module-relativePC0x1418d9 as retry02 kernel clue. Log also reports malloc fastbin corruption; this suggests heap-integrity trouble but does not identify corrupting code/root or establish a particular SDK/SurfaceGripper/driver defect. Stripped symbols and async native threads remain limits. Originalmainlast124 before125 barrier/169PLAY, no handoff/physical/MoveIt commands; no geometry/readback verdict. GDB deliberately killedaftercapture, wrapper0notPASS. Eight hashes unchanged; budgetconsumed/no automatic repair/relaunch. Readback code's live closureUNVERIFIED; force deferred TASK10-IS; no parity expansion. [Stack/provenance/escalation](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).

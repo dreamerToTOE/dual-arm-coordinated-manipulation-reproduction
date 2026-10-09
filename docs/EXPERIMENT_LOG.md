@@ -1,5 +1,9 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — Existing-GUI adapter: pure software checks, NO ISAAC EXPERIMENT
+
+Source base d961a46. Lifecycle mock/AST tests and syntax/hash/source checks only; tests do not import Isaac/ROS or start an inferior/controller. Runtime attempts0, robot/suction/rail commands0, native simulation state/contact/readback/INSERT_READY records0. Historical run results are unchanged. New active loading route follows pinned Task26@631b1f, but runtime behavior is **NOT_VALIDATED**. No safety/held READY/reset/dynamics/FROZEN claim. [Software checks and immutable inputs](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).
+
 ## 2026-10-09 — Startup-only diagnostic, NOT benchmark execution
 
 - Source944422dc92e7a8f39f0e8c8066147073ba0745f0; one DISPLAY`:1` GDB invocation under180s cap, ~109.663s log-file interval (engineering only). PID17071/LWP17392/thread67`tbb.worker`, SIGSEGV/address0x40/PC0x73be3cf418d9 in OmniGraph core; image-core×2→exec-core×2→TBB native callers; malloc fastbin integrity warning. Symbols stripped, corrupting writer/root unresolved.

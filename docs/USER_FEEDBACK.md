@@ -1,5 +1,9 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — Only current TASK01 adapter; use old Task26 lifecycle
+
+User: read `dual-arm-embodied-palletizing@side-suction-palletizing` Task26; load the current single-Cube scene/handoff in an already-working Isaac GUI, strictly `scene.py → Play → bridge.py`; do not touch benchmark/control or continue image-core research. Implemented as one software-only adapter change and source/mock checks. This request is not interpreted as approval for another Isaac/ROS/control trial. Old exhausted budgets/evidence remain intact. Complete editor/terminal instructions saved, new runtime NOT_RUN, TASK01 PARTIAL. [Delivery](../reports/TASK01_EXISTING_GUI_LIFECYCLE_ADAPTER.md).
+
 ## 2026-10-09 — “可以” to one visible native-stack capture
 
 Approval refers to the preceding explicit proposal: one visibleGUI native-stack diagnostic,180s cap, stop before physicalcontrol/handoff, no robot/suction commands. Fulfilledonce: firstSIGSEGV in OmniGraph worker captured, theninferiorkilled/cleanupconfirmed. No startupfix/autoretry/benchmarkedit or physicalacceptance. Exactcallchainnowavailable, corruptingrootstillunknown. New1/1consumed; preserve oldbudgets, waituserbeforeanyrepair/integration. TASK01PARTIAL/INSERT_READYnotestablished/noFROZEN. [Result](../reports/TASK01_STARTUP_NATIVE_STACK_CAPTURE.md).
