@@ -22,16 +22,20 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 `Foundation → P4 → P2 → P3 → P5 → P1 → unified benchmark → baseline freeze → ours`.
 
 ## Current execution gate
-Current active work is **TASK01 — Core Single-Cube Benchmark Freeze** on the task branch.
+Current active work is **TASK01 — Predecessor Single-Cube Scene Foundation Qualification** on branch task01-legacy-scene-foundation.
 
-TASK01's scientific purpose is to establish a minimal, stable, reproducible one-Cube environment. It is **not** a mandate to perfect every Isaac/PhysX diagnostic mechanism.
+TASK01 has been explicitly restarted. Do not continue the previous custom TASK01 harness line.
 
-Before every task/iteration, read:
-1. `AGENTS.md`
-2. `docs/EXECUTION_GOVERNANCE.md`
-3. `docs/STATUS.md`
-4. current task spec
-5. benchmark spec / relevant paper card
+The active task is:
+1. read the pinned predecessor dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a;
+2. launch its mature Task26 scene using the original GUI → scene → Play → bridge lifecycle;
+3. reduce Task26 to exactly one independent Cube (task26_r0_deep) using an existing mode or the smallest selector-only patch;
+4. run the predecessor planning-only check and then one complete physical Cube flow;
+5. decide whether that old scene is suitable as the Isaac foundation.
+
+The current benchmark_v1.yaml is DRAFT and is not an input to this qualification beyond historical comparison.
+
+Read docs/tasks/TASK01_BENCHMARK_FREEZE.md for the restarted scope.
 
 ## Scientific rule
 “Runs successfully” is not equivalent to “paper reproduced”.
