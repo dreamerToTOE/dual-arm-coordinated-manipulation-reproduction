@@ -1,5 +1,9 @@
 # TASK03 — P4 Closure Constraint
 
+Subsequent TASK04 delivery supplies a separate offline projection implementation;
+[TASK04 report](../../reports/TASK04_NR_PROJECTION01.md). It does not change TASK03
+source/tests/history or original precision FAIL, and is not a path/RRTConnect/full-P4 result.
+
 Status: **PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** (2026-10-09 user reviewD047)
 
 Acceptance scopes are separate:

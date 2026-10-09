@@ -1,5 +1,16 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — TASK03 mathematics accepted; TASK04 offline projection authorized
+
+- Accept TASK03 PASS CANDIDATE (OFFLINE MATHEMATICS ONLY); keep original0.05micrometre
+  gate and0.435028micrometre/219of293FAIL. Scope classification, not relaxed tolerance.
+- Authorize NR on existingC/Jc/FR3, independent position/rotation convergence,
+  explicit SVD/rank/limits/iterations/failure/residual/qchange/cost. Engineering precision
+  must precede experiments. Fixed consistent-grasp neighborhood plus independent original
+  grasps/q diagnostics, no refit or historical replacement.
+- Offline only; no Isaac/ROS services/Task26/new controller/TASK05/06/Benchmark edit.
+  SubmitGitHub, truthful PASSCANDIDATE/PARTIAL and stop for review; no freeze/physical claim.
+
 ## 2026-10-09 — Close TASK02-D audit and authorize only TASK03 offline kinematics
 
 - User explicitly closes native post-step API audit as PARTIAL/DEFERRED, records

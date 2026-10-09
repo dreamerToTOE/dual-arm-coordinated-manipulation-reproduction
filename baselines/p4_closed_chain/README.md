@@ -1,5 +1,11 @@
 # P4 closure residual and Jacobian — offline TASK03
 
+Subsequent bounded TASK04 projection is **PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)**.
+See [projection implementation/contract](PROJECTION.md) and
+[TASK04 POST-TASK REPORT](../../reports/TASK04_NR_PROJECTION01.md). It reuses the
+unchanged C/Jc/FK below; new projected q never replace original precision FAIL.
+Constraint-path connection/RRTConnect/full P4 remain unimplemented. Stop for review.
+
 **TASK03 = PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** after user reviewD047.
 Original historical configuration precision remains **FAIL** with unchanged0.05μm
 threshold and0.435028μm maximum. No source/test/model/grasp or historical result edit.

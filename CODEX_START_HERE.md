@@ -23,6 +23,15 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+**Delivery complete; STOP FOR USER REVIEW. TASK04 = PASS CANDIDATE (OFFLINE
+PROJECTION MATHEMATICS ONLY).** Read [TASK04 report](reports/TASK04_NR_PROJECTION01.md)
+and [projection contract](baselines/p4_closed_chain/PROJECTION.md). D048 protocol
+unchanged: 194/194 neighboring + 293/293 independent diagnostic projections converge.
+Original TASK03 0.05-micrometre historical precision FAIL remains FAIL; TASK03 math
+acceptance is user-reviewed D047. TASK02 IN_PROGRESS; Benchmark DRAFT / NOT FROZEN.
+No authorization to start TASK05/TASK06, physics, controller or Benchmark changes.
+The authorization and older delivery entries below remain historical.
+
 Latest user review/authorization: **D047 accepts TASK03 PASS CANDIDATE (OFFLINE
 MATHEMATICS ONLY)**. Original0.05μm historical precision FAIL/max0.435028μm and all
 source/tests/data remain unchanged; full P4 reproduction incomplete. Active **TASK04

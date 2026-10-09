@@ -1,5 +1,23 @@
 # STATUS
 
+## 2026-10-09 — TASK04 offline projection PASS CANDIDATE; stop for review
+
+**TASK04 = PASS CANDIDATE (OFFLINE PROJECTION MATHEMATICS ONLY).**
+TASK03 reviewed mathematics PASS CANDIDATE; original 0.05-micrometre historical
+precision **FAIL remains unchanged** (maximum 0.435028 micrometres, 219/293 records).
+No original source/tests/grasps/model/history changes. Predeclared D048 full-step
+SVD projection reuses C/Jc/FK: 194/194 fixed-grasp neighboring trials converge in
+at most 3 updates; maximum final residual 3.6973e-9 m / 9.1305e-9 rad; q repeat
+difference 0. Independent original-grasp diagnostics 293/293 converge in one update;
+new q do not replace original FAIL. 72 TASK02 + 93 TASK03 + 108 TASK04 checks and
+435 real-model derivative configurations PASS; 477 protected files/4 predecessor
+assets unchanged. Two dependency/runner build-only negatives retained, no empirical
+threshold tuning. Exactly 487 real-model projection calls; IK/FCL/execution/physics 0.
+Full traces and qualified compute costs saved. Low-rank correction unqualified;
+no collision/path/RRTConnect/full-paper or physical claim. **TASK02 IN_PROGRESS;
+Benchmark DRAFT / NOT FROZEN.** Stop after GitHub delivery; no TASK05/TASK06.
+[POST-TASK REPORT](../reports/TASK04_NR_PROJECTION01.md).
+
 ## 2026-10-09 — User accepts TASK03 mathematical scope; TASK04 offline-only authorized
 
 **TASK03 = PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)** underD047 review.

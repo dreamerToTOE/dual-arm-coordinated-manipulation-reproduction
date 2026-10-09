@@ -1,5 +1,19 @@
 # DECISIONS
 
+## D049 — TASK04 bounded projection evidence; separate mathematical/physical claims
+
+2026-10-09. [ORIGINAL] P4 Newton pseudoinverse; [ADAPTATION] unchanged TASK03
+dual-FR3 C/Jc/FK; [ENGINEERING] Eigen SVD, full-step guards and precommitted D048
+protocol. Independent source/math review finds no blocking defect. Exactly 487
+real-model calls: required194/194 converge in0/2/3updates, repeatq identical;
+original-grasp293/293 inone. Offline regressions/nativebounds/hashes pass, no tuning.
+Original TASK03 0.05-micrometre FAIL stays FAIL; projected q never replace archived q.
+Low-rank corrections unqualified, not claimed impossible under P4. Fixed SI units,
+no scale-invariance/global/collision/physical/path/RRTConnect/full-paper claim.
+Only TASK04 PASS CANDIDATE (OFFLINE MATHEMATICS ONLY). TASK02 IN_PROGRESS;
+Benchmark DRAFT/NOT FROZEN. Build/runner negatives retained; stop after GitHub
+delivery, no TASK05/06. [Report](../reports/TASK04_NR_PROJECTION01.md).
+
 ## D047 — TASK03 review accepts offline mathematics, preserves historical precision FAIL
 
 2026-10-09, explicit user review of91422f4. **TASK03 mathematical implementation =

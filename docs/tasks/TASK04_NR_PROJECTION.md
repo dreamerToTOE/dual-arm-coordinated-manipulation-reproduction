@@ -1,6 +1,15 @@
 # TASK04 — P4 Newton-Raphson Projection
 
-Status: IN_PROGRESS — bounded offline slice authorized at91422f4.
+Status: PASS CANDIDATE — OFFLINE PROJECTION MATHEMATICS ONLY; awaiting review.
+
+Bounded offline slice authorized at `91422f4`, protocol precommitted as `15951f7`.
+Required 194/194 neighboring cases and independent 293/293 original-grasp diagnostic
+projections converge under the unchanged declared protocol. Maximum required final
+residual 3.6973e-9 m / 9.1305e-9 rad; at most 3 updates, identical repeat q.
+72 TASK02 / 93 TASK03 / 108 TASK04 checks and 435 real-model derivative configurations
+PASS. Original TASK03 historical precision FAIL is not overwritten. Complete evidence
+and explicit limitations: [POST-TASK REPORT](../../reports/TASK04_NR_PROJECTION01.md).
+No physical/collision/path/full-P4 claim; stop, no TASK05/TASK06.
 
 TASK03 mathematical implementation PASS CANDIDATE underD047; original historical
 precision FAIL unchanged. Benchmark DRAFT / NOT FROZEN. Same task03 branch.

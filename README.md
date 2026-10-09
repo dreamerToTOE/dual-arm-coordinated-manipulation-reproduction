@@ -1,5 +1,12 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+最新进度（2026-10-09）：**TASK03 离线闭链数学经用户审查接受；TASK04 离线
+Newton-Raphson 投影 PASS CANDIDATE**。194/194 邻域扰动与 293/293 原抓取诊断
+投影收敛；原 TASK03 0.05 μm 历史精度 FAIL 完整保留。未运行物理实验，未实现
+约束路径连接或 RRTConnect，Benchmark 仍为 DRAFT / NOT FROZEN。交付后停下等待审查。
+[TASK04 报告与实测日志](reports/TASK04_NR_PROJECTION01.md) ·
+[公式、坐标和接口](baselines/p4_closed_chain/PROJECTION.md) · [当前状态](docs/STATUS.md)。
+
 面向双 FR3 紧协调搬运与受限空间协同推进任务的**论文复现、统一对标与后续方法研究仓库**。
 
 本仓库不是原 `dual-arm-embodied-palletizing` 工程的继续堆叠，而是一个独立的 SCI baseline/reproduction 工程。目标是在统一实验规范下复现并比较 5 类代表方法：

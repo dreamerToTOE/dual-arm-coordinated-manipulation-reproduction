@@ -1,5 +1,21 @@
 # WORKLOG
 
+## 2026-10-09 — TASK03 review closure and bounded TASK04 offline projection
+
+User baseline91422f4, same task03 branch. Read governance/cards/original P4 and
+pinned predecessor shared-object assets; reuse C/Jc/FK and TASK02 logger. D047
+records reviewed math PASS versus original precision FAIL; D048 predeclared and
+pushed15951f7 before experiments. Parallel independent math/code review and test
+implementation, root unified finite execution. Full-step SVD with explicit failures,
+rank/limits/proposal/acceptance/cost trace, no fallback or second kinematics stack.
+Build-only01 ABORTED(PYTHONPATH/legacyroot) and02 FAILURE(imported-target scope)
+preserved; dependency/launcher corrections only.03all8commands0:72TASK02/93TASK03/
+108TASK04checks,435FD configs PASS;194required +293diagnostic converge,max3updates,
+repeatqdiff0. OriginalFAIL219/293 remains.477protectedfiles/4oldassets unchanged;
+complete outputs/source hashes, physicaltime null. No Isaac/ROS services/Task26/
+IK/FCL/Benchmark/TASK05/06. TASK04PASSCANDIDATE, TASK02IN_PROGRESS, BenchmarkDRAFT.
+Stop for review. [Report](../reports/TASK04_NR_PROJECTION01.md).
+
 ## 2026-10-09 — TASK03 offline rigid-chain mathematics; stop PARTIAL
 
 - Base36c95ab; created task03-p4-closure-constraint. First audit commit9b59289 was

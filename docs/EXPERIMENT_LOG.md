@@ -1,5 +1,22 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — TASK04 finite projection03, negative build01/02 retained
+
+Offline Eigen/MoveIt core2.5.9/Python; invocation15951f7 plus working-source hashes;
+D048 protocol precommitted, no tuning:1e-8m/1e-8rad,40fullupdates,SVDcutoff,
+exactnativebounds. ExplicitseedUNSET/noRNG.01configurefails overwrittenPYTHONPATH
+then wronglegacyroot;02generationfails childfastcdrtargetscope. Both0projectioncalls,
+rawnegative logs/results retained.03all8build/testcommands0,72TASK02/93TASK03/
+108TASK04checks,435FD configs,CTest2/2PASS.97x2requiredconverge:maxfinal3.69727377e-9m/
+9.13054516e-9rad,max3updates,repeatqdiff0. Requiredcompute6.707253ms(total),.034573ms(mean).
+293originalGdiagnosesconverge1update:maxfinal2.52269308e-11m/3.17694454e-11rad;
+compute4.717277ms. Costs are projection-only steady wall, not physical time.
+OriginalTASK03FAIL219/293,max.435027826256micrometres>.05unchanged.487exactcalls;
+IK/FCL/execution0;477protected/4legacyassets unchanged. Simstamp/stepnull,
+UNQUALIFIED typedSUCCESS offlineonly. Evidence results/20261009_TASK04_projection0{1,2,3}.
+No physics/services/Task26/Benchmark/TASK05/06; TASK04PASSCANDIDATE, stopforreview.
+[Report](../reports/TASK04_NR_PROJECTION01.md).
+
 ## 2026-10-09 — 20261009_TASK03_closure02 offline regression/model math
 
 Task: TASK03; P4_CLOSURE_MATH; offline Eigen/MoveIt core2.5.9/Python (no services).

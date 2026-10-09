@@ -1,5 +1,20 @@
 # BUGS
 
+## 2026-10-09 — TASK03 reviewed precision scope / TASK04 limitations
+
+- **KNOWN LIMITATION:** user D047 accepts TASK03 mathematics separately; original
+  0.05-micrometre precision FAIL remains unchanged. Older TASK-BLOCKING entry below
+  is historical, not active for reviewed math scope. TASK04 new q are not history repair.
+- **KNOWN LIMITATION:** needed rank<6 corrections unqualified; global/singular behavior,
+  scale invariance, collision/path and physical stability not established. No expansion
+  required for declared finite projection evidence.
+- **RESOLVED engineering issues:** preserve sourced PYTHONPATH, correct predecessor
+  root for hashes and parent-scope imported MoveIt dependencies. Build01/02 negatives
+  retained;03finite suite PASS. No mathematical/model/Benchmark/threshold changes.
+- Native time/step/reset stays **DEFERRED**; no Observer/runtime. No blocking defect
+  found for this minimum offline projection claim.
+[Report](../reports/TASK04_NR_PROJECTION01.md).
+
 ## 2026-10-09 — TASK03 original-grasp offline precision acceptance gap [TASK-BLOCKING]
 
 Task-blocking **for complete TASK03 acceptance at its predeclared precision**, not
