@@ -1,5 +1,9 @@
 # BUGS
 
+## 2026-10-09 — Original Task26 side-compaction FK gate fails in foundation01 [TASK-BLOCKING]
+
+Pinned631b1f full physical qualification reaches first deep seat, then exhausts original side-compaction candidate pool. Candidates1–5,7–8 reject right backstop Y segment8; candidate6 rejects left SIDE_PRESS. Cartesian fraction1 is insufficient: original FK deviation exceeds unchanged5mm limit (candidate8 up to1037.690mm in a rejected plan). No actual side-compaction motion or observed FCL collision pair; do not call the planned deviation physical displacement/collision or infer globally impossible geometry. Root cause remains undiagnosed. Original abort opens both SG, exit1; second Cube/HOME not reached. One physical allowance consumed; stop, no source/model/ACM/IK/threshold fix or automatic rerun. **KNOWN LIMITATION:** original carried-Cube FCL omission, nominal shallow gap and legacy USD/time feedback remain documented, not repaired. **DEFERRED:** force/wrench/TASK10-IS. **LEGACY:** superseded custom parity/startup/readback/five-Cube routes remain inactive. [Exact failure/logs](../reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md).
+
 ## 2026-10-09 — D041 audit risks, not new observed runtime failures
 
 Latest user accepts native two-Cube batch, avoiding selector implementation. Qualification pending; known original launch/controller table duplication, absent push-YAML fallback `.200` versus required loaded `.100`, optional diagnostic files and USD/ROS-clock feedback limits are documented without fixes. Current old worktree is newer than pinned631b1f, so compile pinned controller separately and verify actual runtime dependency/config provenance. No new simulator/controller failure observed; no reproduction parity/readback/native debugging resumed. [Full audit](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).

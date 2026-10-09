@@ -16,20 +16,22 @@
 
 TASK01 已按用户要求**完全重启**，当前分支为 task01-legacy-scene-foundation。
 
+本轮已按最新批准的原 Task26 **第一批两件**完成一次资格测试，旧源码零修改：`planning_only` 通过，但物理执行在第一件推进到深墙后，侧压全链预检被原5mm FK贴线门禁拒绝，程序安全停止；第二件和退出/HOME未执行。**TASK01 = PARTIAL / STOP_FOR_USER，FOUNDATION_SCENE 尚未通过**。双吸盘已打开，GUI暂停，未修复或重跑。详见[实际结果与完整证据](reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md)。
+
 新的 TASK01 不再继续调试 reproduction 仓库中新建的单 Cube harness，而是先直接验证旧工程的成熟 Task26 场景能否作为基础场景：
 
     旧仓库 Task26
-    → 只保留一个独立 Cube（task26_r0_deep）
+    → 用户批准原批1两件（deep → shallow，其他两件休眠）
     → 原 GUI / scene / Play / bridge 生命周期
     → 原 MoveIt
     → 原 planning_only
-    → 原完整单 Cube 物理流程
+    → 原完整批1两件物理流程
     → 判断是否可作为 FOUNDATION_SCENE
 
 旧仓库固定读取：
 dreamerToTOE/dual-arm-embodied-palletizing@631b1f65656d025c1bb2173e874192f3fe4d355a
 
-本轮禁止重新实现 scene、bridge、Surface Gripper、rail、rear regrasp、segmented push 或新的校验器。若旧源码没有严格单 Cube 模式，只允许做最小 task-count / loop-bound / selector 适配，不改变几何、物理或控制行为。
+本轮禁止重新实现 scene、bridge、Surface Gripper、rail、rear regrasp、segmented push 或新的校验器。两件审批已消除 selector 适配需求，直接使用原 `max_batches=1`；本轮没有修改几何、物理或控制行为。
 
 当前 benchmark_v1 仍是 DRAFT，但在本次 foundation qualification 完成前不作为 TASK01 的执行输入，也不冻结。
 

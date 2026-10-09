@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — Predecessor foundation01: preflight PASS, original physical chain FAIL
+
+- Pin631b1f; original batch1 two Cubes approved; source changes0, normal visible GUI, original scene/bridge/controller/model/config. One target build exit0; planning-only1/1 exit0; physical1/1 exit1 before1200s engineering cap. No extra trial or repair. Raw evidence: `results/20261009_TASK01_predecessor_foundation01/`.
+- First Cube bilateral lift/transport/descent/release, helper/pusher transition, rails.650→.750, fresh world shift+.100 and right rear regrasp completed. Regrasp drift1.12mm. Original 16-slice +X push completed; final lag.680mm, deep seat gap+.680mm/Zerror.153mm, peak monitored joint torque48.56Nm under original80Nm guard. These are engineering-prefix metrics, not completed placement/force validation.
+- Original side candidates1–5,7–8 fail right backstop segment8 FK line-deviation; candidate6 fails left SIDE_PRESS. Example candidate8 deviations304.093/228.603/280.976/1037.690mm exceed unchanged5mm gate despite fraction1. No actual side-compaction commands, second Cube or HOME; no `FCL collision`/pair reported in physical log. Root cause not isolated.
+- Original abort both SG OPEN; final Cube01 USD center(1.099852324,.061820220,.260000050)m, Cube02 still supply; railsboth.750/arrived, callback errors{}. GUI paused without reset; owned MoveIt interrupted exit130, children gone. Snapshot is legacy USD/ROS-clock engineering feedback, not atomic native post-step scientific evidence. ~221.22s log interval is not performance score/simulation timestamp. **TASK01PARTIAL / FOUNDATIONNOT_QUALIFIED / STOPFORUSER**. [Result and evidence limits](../reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md).
+
 ## 2026-10-09 — D041 source audit / no new foundation experiment yet
 
 Pinned source631b1f; native Task26 batch1 two Cubes newly approved, zero runtime patches. No new scene/bridge/MoveIt/planning/physical invocation yet, no fresh foundation PASS. Existing GUI PID39508/8226 read-only inspection only; operator confirms clean new Stage prerequisite. Planned budgets preflight1/physical1, currently0/0 used. Original two-Cube September23 PASS remains historical; do not replace this turn's evidence with it. [Pre-run audit](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).

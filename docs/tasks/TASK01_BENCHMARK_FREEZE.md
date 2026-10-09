@@ -1,6 +1,8 @@
 # TASK01 — Predecessor Single-Cube Scene Foundation Qualification
 
-Status: **RESTARTED / IN_PROGRESS**
+Status: **PARTIAL / STOP_FOR_USER — FOUNDATION_SCENE NOT_QUALIFIED**
+
+**2026-10-09 current outcome:** Original pinned Task26 two-Cube batch1 qualification completed once: planning-only PASS/exit0, physical FAIL/exit1. First Cube reached deep support, then the unchanged FK straight-line gate rejected all side-compaction chains; no actual side-compaction, second Cube or retreat/HOME. No runtime source changes/fix/retry; both SG OPEN, GUI paused. Budgets preflight1/1 and physical1/1 consumed. This does not qualify the foundation or freeze the benchmark; await separately scoped user decision. [Full qualification result](../../reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md). The audit checkpoint and original restart specification below are historical scope records.
 
 **2026-10-09 latest user override:** “两件cube也可以，请你继续”. Use the pinned predecessor's original batch1 (`task26_r0_deep` then `task26_r0_shallow`, `max_batches=1`) unchanged. No selector/count/loop patch. The exact-one-Cube requirement below is superseded by this count-only approval; all original-runtime preservation, lifecycle, bounded-attempt and first-failure-stop rules remain. Four original Cube rigid-body Prims remain, two active and two dormant; no second batch. Candidate label if qualified: `PREDECESSOR_TASK26_BATCH1_TWO_CUBES`, not `SINGLE_CUBE`. [PREDECESSOR FOUNDATION AUDIT](../../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md) must precede runtime. No new foundation experiment has run at this audit checkpoint.
 

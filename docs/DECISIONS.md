@@ -1,5 +1,9 @@
 # DECISIONS
 
+## D041 follow-up — Stop at original side-compaction rejection; no foundation qualification [ENGINEERING]
+
+2026-10-09. Original predecessor batch1 qualification was invoked once after original planning-only PASS; physical failure at first Cube's side-compaction FK gate stops the task. Completed transport/rail/regrasp/push prefix and historical predecessor PASS cannot substitute for the missing final side seat/second Cube/retreat. Record TASK01PARTIAL/FOUNDATIONNOT_QUALIFIED, preserve original source and acceptance, save negative evidence. Pausing the operator GUI and interrupting owned ROS processes does not authorize reset/HOME or retry. No new probe, second candidate station, geometry/ACM change, porting or FROZEN. If continuing, request separately bounded existing-evidence kinematics diagnosis before any implementation or new physical trial; root cause not presumed. [Review](../reports/TASK01_PREDECESSOR_FOUNDATION_RUNTIME01.md).
+
 ## D041 follow-up — User accepts original two-Cube batch, no selector patch [ENGINEERING]
 
 2026-10-09. User explicitly says “两件cube也可以，请你继续”. Qualify pinned predecessor Task26's native batch1 (`task26_r0_deep` then `task26_r0_shallow`) with `max_batches=1`, without any selector/count/loop or runtime source edit. Original scene retains four Prim rigid bodies, only the first two active; no second batch request. All D041 original lifecycle/mature-engineering preservation, first substantive failure stop, one preflight/one physical invocation and no FROZEN/port-before-qualification rules remain. Active candidate label is `PREDECESSOR_TASK26_BATCH1_TWO_CUBES`, not a false single-Cube result. [Pre-run full source audit](../reports/TASK01_PREDECESSOR_FOUNDATION_AUDIT.md).
