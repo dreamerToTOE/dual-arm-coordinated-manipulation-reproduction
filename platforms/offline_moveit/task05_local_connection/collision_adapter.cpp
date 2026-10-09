@@ -238,7 +238,7 @@ struct CollisionAdapter::Impl
     const auto& b = contact.body_name_2;
     const auto native_type = [&](const std::string& name) {
       if (name == CUBE) return collision_detection::BodyTypes::ROBOT_ATTACHED;
-      if (model->getLinkModel(name)) return collision_detection::BodyTypes::ROBOT_LINK;
+      if (model->hasLinkModel(name)) return collision_detection::BodyTypes::ROBOT_LINK;
       return collision_detection::BodyTypes::WORLD_OBJECT;
     };
     if (contact.body_type_1 != native_type(a) || contact.body_type_2 != native_type(b)) return "UNKNOWN";
@@ -246,17 +246,17 @@ struct CollisionAdapter::Impl
     {
       const auto& other = a == CUBE ? b : a;
       if (other == "left_fr3_side_suction" || other == "right_fr3_side_suction") return "TOOL_CUBE";
-      if (model->getLinkModel(other)) return "ROBOT_CUBE";
+      if (model->hasLinkModel(other)) return "ROBOT_CUBE";
       return scene->getWorld()->hasObject(other) ? "CUBE_ENV" : "UNKNOWN";
     }
-    if (model->getLinkModel(a) && model->getLinkModel(b))
+    if (model->hasLinkModel(a) && model->hasLinkModel(b))
     {
       const bool opposite = (a.rfind("left_", 0) == 0 && b.rfind("right_", 0) == 0) ||
                             (a.rfind("right_", 0) == 0 && b.rfind("left_", 0) == 0);
       return opposite ? "INTER_ARM" : "SELF";
     }
-    if ((model->getLinkModel(a) && scene->getWorld()->hasObject(b)) ||
-        (model->getLinkModel(b) && scene->getWorld()->hasObject(a))) return "ROBOT_ENV";
+    if ((model->hasLinkModel(a) && scene->getWorld()->hasObject(b)) ||
+        (model->hasLinkModel(b) && scene->getWorld()->hasObject(a))) return "ROBOT_ENV";
     return "UNKNOWN";
   }
 };

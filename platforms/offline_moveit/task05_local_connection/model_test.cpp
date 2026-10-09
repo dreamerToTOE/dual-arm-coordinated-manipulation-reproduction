@@ -19,7 +19,8 @@ p4::JointVector joints(const Json& j)
 {
   if(j.size()!=14) throw std::runtime_error("Expected exact stored 14q");
   p4::JointVector q; for(int i=0;i<14;++i) q[i]=j.at(i).get<double>();
-  if(!q.allFinite()) throw std::runtime_error("Nonfinite stored q"); return q;
+  if(!q.allFinite()) throw std::runtime_error("Nonfinite stored q");
+  return q;
 }
 Eigen::Isometry3d pose(const Json& j)
 {
