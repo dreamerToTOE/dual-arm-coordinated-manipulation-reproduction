@@ -1,5 +1,11 @@
 # BUGS
 
+## 2026-10-09 — Previous custom TASK01 blockers demoted to historical for D041
+
+Under D041, earlier custom-harness blockers (standalone SimulationApp/image-core startup faults, custom readback-validator issues, INSERT_READY-only recorder limitations, native D6 anchor introspection, and MoveIt cleanup -11) are not active blockers for the restarted TASK01 unless they also reproduce in the predecessor Task26 foundation path.
+
+Do not reopen those lines while qualifying the old scene. A failure in a superseded new wrapper does not count as a failure of predecessor Task26.
+
 ## 2026-10-09 — Actual candidate established; evidence limits and cleanup anomaly
 
 - **DEFERRED (candidate-only scope):** after INSERT_READY capture and driverexit0, move_groupSIGINTcleanup exits−11, repeating historical shutdown symptom. Complete log retained, cause not diagnosed, no fix/retry. It does not undo saved candidate gates; do not call wholelaunchcleanPASS. ExistingGUI remainsalive, ownedROSprocessesgone.
