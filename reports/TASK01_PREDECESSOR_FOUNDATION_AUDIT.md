@@ -138,3 +138,13 @@ Physical command：
 - 成功需两件原 PASS、实际格位/后向支撑/侧墙门禁（原位置10mm、间隙3mm）与共同 HOME。只可给出 `TASK01=PASS CANDIDATE`、`FOUNDATION_SCENE=PREDECESSOR_TASK26_BATCH1_TWO_CUBES`；两件名称是最新授权，不能冒称 SINGLE_CUBE 或 FROZEN。失败保留本轮实际日志，历史 PASS 不覆盖失败。
 
 下一步只做固定 worktree 构建与上述原链路资格验证。暂不移植、优化、冻结 benchmark 或开展论文控制算法。
+
+## 6. 独立预检复核补充（预检后记录，不改原实现）
+
+原 planning-only 本轮 exit0：deep/shallow 分别输出 PASS，随后原 batch1/HOME 预检 PASS。候选池中存在被拒绝的 RRT 解，保留全日志，不称所有候选成功。
+
+- 原 `planHome()` 使用 `setStartStateToCurrentState()`；零执行时实际仍在 HOME，本轮 HOME 预检为各2点/联合8样本，不能解释成虚拟最终退出构型→HOME 的证书。真实物理末尾另从实际状态规划和执行 HOME。
+- 原 `validateSync()` 验证给定 world 和双臂关节；共同抓持阶段当前 Cube 已摘出 world，未建立 AttachedCollisionObject。因此不声称 carried-Cube 全链碰撞覆盖；只是保留原工程规划门禁，最终须真实物理资格验证。
+- 原 shallow `xSupportGap()` 用名义 deep X，不是另一个 Cube 的当前实际 X。保留原门禁；最终若补算两件 Ground Truth 真实净距，应明确标为独立离线计算。
+
+这些是前代实现的证据限制，不授权替换控制器或新建验证系统。实际物理结果尚未在本节作结论。
