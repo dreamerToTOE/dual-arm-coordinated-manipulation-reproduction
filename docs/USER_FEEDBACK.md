@@ -1,5 +1,13 @@
 # USER_FEEDBACK
 
+## 2026-10-12 — TASK05 accepted; bounded offline TASK06 authorized
+
+User baseline91a1adc accepts real-FR3/FCL discrete TASK05 only. Explicitly requires
+primary P4/author audit, true two-tree constrained search, fixed pre-experiment
+seeds/scenes/budgets, every edge validated, native negative tests and no tuning.
+No physics/services/Task26/new backend/Observer/Benchmark/TASK07. Deliver scoped
+PASS CANDIDATE only if nontrivial search/FCL/repeats pass, otherwise PARTIAL; stop.
+
 ## 2026-10-09 — TASK04 accepted; TASK05 bounded offline local connection authorized
 
 - User accepts TASK04 PASSCANDIDATE (OFFLINE PROJECTION MATHEMATICS ONLY), base5d41869.

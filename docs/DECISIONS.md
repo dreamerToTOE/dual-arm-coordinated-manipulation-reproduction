@@ -1,5 +1,18 @@
 # DECISIONS
 
+## D052 — Predeclare TASK06 constrained search and fixed offline suite
+
+2026-10-12, baseline91a1adc. User accepts TASK05 only real-FR3/FCL discrete local
+connections. Source audit pins CKCplanning909bd72, preserves repeated101/501 grow,
+ambient uniform NN→steer→NR→RBS and exact final tree connection. Reuse accepted
+TASK02–05 without alternate FK/projection/FCL/ACM. Full native14D sampling with
+real mt19937_64 seeds7/41/20261012, two repeats; simple0→1 and nontrivial0→100;
+private fixed midpoint BOX only independent test scene. All choices and limits
+committed before planning runs, no outcome tuning. Conservative inherited rank/
+RBS guards disclosed; no singularity/performance or full P4 reproduction claim.
+No Isaac/ROSservices/Task26/TASK07/Benchmark edits; parentTASK02IN_PROGRESS,
+DDEFERRED, BenchmarkDRAFT. [PRE-TASK/protocol](../reports/TASK06_PRE_TASK_PROTOCOL.md).
+
 ## D051 — TASK05 discrete evidence sufficient; stop before TASK06
 
 2026-10-09. D050 predeclared RBS guards unchanged. NativeFCL/30shapes/16meshes
