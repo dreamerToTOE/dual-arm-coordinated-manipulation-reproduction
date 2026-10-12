@@ -1,5 +1,20 @@
 # BUGS
 
+## 2026-10-12 — B0 执行资格缺口 [TASK-BLOCKING for execution]
+
+- **TASK-BLOCKING**：当前路径左J4 index860仅.236039°余量；旧终点容差.035/.06rad
+  远大于它，且没有全程单关节最坏方向跟踪/对齐/模型误差包络。尚未测到物理越界，
+  不声称必撞；只是当前证据不能批准执行，不下调旧容差迁就原路径。
+- **TASK-BLOCKING**：无完整认证加速度限额（原MoveIt日志使用默认1rad/s²），
+  没有本P4共同逐点时间表与v/a复核；旧.03s补时/.12缩放不能替代资格。
+- **TASK-BLOCKING**：旧初始化HOME/OPEN不等于离线构造持件START14q；须来源一致
+  实际q/Cube/TCP/双附件/rails/world对齐证据，禁止直接跳首点。
+- **KNOWN LIMITATION**：离散FCL/闭链来源完备，但无连续扫掠或正距离查询；明显
+  绕行/反向不等于关节分支跳变或碰撞。全部原资格和失败记录未改。
+- **DEFERRED**：TASK02-D正式post-step测量；不本轮写Observer/执行器/物理探针。
+审查已结束，只有未来执行门禁被阻塞，A离线验收保持；待另行路径改进授权。
+[精确点/表/曲线与源码证据](../reports/TASK06_IS_B0_PRE_EXECUTION_REVIEW.md)。
+
 ## 2026-10-12 — TASK06-IS-A V2 输入与名义端点资格；剩余风险分项
 
 - **RESOLVED（限新授权名义离线路线）**：用户D058批准独立Task26 .628m输入，不覆盖

@@ -1,5 +1,16 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+## 最新审查：TASK06-IS-B0 执行准备条件不满足（2026-10-12）
+
+A离线适配已由用户接受；固定1869点路径没有改动，但左J4在第861点距上限仅
+**0.236039°**。旧执行器终点容差大于该余量，且缺全程误差包络、合格共同赋时/
+加速度及实测持件START对齐；原闭链/离散FCL证据一致，不等于可以安全执行。
+[完整14关节数值表/曲线/执行与赋时审计](reports/TASK06_IS_B0_PRE_EXECUTION_REVIEW.md) ·
+[关节曲线](results/20261012_TASK06_IS_B0_path_review01/joint_positions.png) ·
+[余量曲线](results/20261012_TASK06_IS_B0_path_review01/joint_margins.png)。
+只完成离线审查，不重规划、不启动Isaac/ROS或控制；提交后停止等待独立改进/运行授权。
+Benchmark草案，TASK06原整体部分完成。以下记录保留历史。
+
 ## 最新交付：TASK06-IS-A 同源场景离线适配初步通过（2026-10-12）
 
 独立复用旧Task26真实0.628 m车厢输入，原工具/模型/ACM不改；已构造共同抬起到短推

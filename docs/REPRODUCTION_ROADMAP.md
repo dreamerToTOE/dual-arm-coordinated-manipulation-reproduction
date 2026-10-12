@@ -32,7 +32,8 @@
 
 | 任务 | 科研问题 | 当前安排 |
 |---|---|---|
-| [TASK06-IS-A](tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md) | 新 P4 规划器能否在**既有**双 FR3 / Cube / 车厢的原几何定义下生成合格规划？ | **下一步：仅适配、读取/核对与无执行规划验证** |
+| [TASK06-IS-A](tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md) | 新 P4 规划器能否在**既有**双 FR3 / Cube /车厢的原几何定义下生成合格规划？ | 离线适配初步验收已由用户接受；无物理执行 |
+| [TASK06-IS-B0](tasks/TASK06_IS_B0_PRE_EXECUTION_REVIEW.md) | 固定已存路径是否具备执行余量、跟踪、时间参数化和实际持件起点资格？ | 审查完成：执行准备条件不满足；停止待用户决定 |
 | [TASK06-IS-B](tasks/TASK06_IS_B_GUI_EXECUTION.md) | 能否用原工程双臂同步控制链在 Isaac Sim GUI 中实际执行经过门禁的闭链路径？ | 待 TASK06-IS-A 审查后另行授权 |
 | [TASK06-IS-C](tasks/TASK06_IS_C_COMPARISON.md) | 新旧规划方法在可比较的场景、起终点和测量条件下有什么差异？ | 待阶段 B 证据和科研采样资格后另行授权 |
 

@@ -1,5 +1,20 @@
 # EXPERIMENT_LOG
 
+## 2026-10-12 — B0 固定数据分析一次，非新规划或物理实验
+
+预声明c20c381，源码e1a2e22；run=20261012_TASK06_IS_B0_path_review01。
+原1869q SHA073723b32e4bc392af3fb0a182a03e92e45026771dc1d46fa9b7276b21614781不变。
+最小margin左J4 index860=.004119662522rad，q−.121019662522，上限−.1169。
+左J4累计4.152684973rad vs净变化.430655518rad；全L2长11.940815548rad；
+邻接maxL2 .009923957011、Linf .005315105379（原.01门限合格），24逐关节反转。
+全部原source620/artifact25、树边94、独立点1869及URDF限位14一致，复核无新FCL。
+原闭链max8.62520825e-9m/5.30773506e-9rad；原最小碰撞距离仍未查询。
+7/7纯合成软件测试；3组图表和完整CSV/JSON，seed UNSET，simulation/step null。
+结果INCOMPLETE仅指执行准备不满足，不更改原P4成功；未构造时间轨迹、v/a不认证。
+新规划/IK/NR/FCL/Isaac/ROS服务/命令均0，原输入及旧资产hash前后不变。
+[完整结果](../results/20261012_TASK06_IS_B0_path_review01/summary.json) ·
+[POST-TASK REPORT](../reports/TASK06_IS_B0_PRE_EXECUTION_REVIEW.md)。
+
 ## 2026-10-12 — TASK06-IS-A V2 唯一名义端点/规划进程（离线）
 
 协议20fe06d，测试c88a80c；第一阶段历史失败未改。独立v2保留六个原ID world BOX、
