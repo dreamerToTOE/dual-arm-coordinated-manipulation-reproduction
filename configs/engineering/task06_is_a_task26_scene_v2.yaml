@@ -1,0 +1,95 @@
+# [ADAPTATION] 独立Task26来源输入；不是覆盖旧0.606m归档/正式Benchmark。
+schema: task06_is_a.task26_scene_input.v2
+classification: NOMINAL_OFFLINE_SHARED_TRANSPORT_NOT_PHYSICAL_MEASUREMENT
+source:
+  base_commit: 631b1f65656d025c1bb2173e874192f3fe4d355a
+  approved_commit: 5ed0c967401e5fedb93b938e1c3904f4a4c87600
+  scene: isaac/scripts/task26_truck_box_scene.py
+  controller: ros_ws/src/fr3_dual_palletize/src/task26_truck_box_push_in.cpp
+  launch: ros_ws/src/fr3_dual_side_suction_description/launch/moveit_dual_side_suction.launch.py
+frames:
+  world: world
+robots:
+  left:
+    base_at_rest_world_m: [0.650, -0.600, 0.0]
+    tcp_link: left_fr3_side_suction_tcp
+  right:
+    base_at_rest_world_m: [0.650, 0.600, 0.0]
+    tcp_link: right_fr3_side_suction_tcp
+rail_state:
+  left_x_m: 0.650
+  right_x_m: 0.650
+  world_shift_x_m: 0.0
+cube:
+  count: 1
+  size_m: [0.120, 0.120, 0.120]
+  mass_kg: 0.800
+  collision_object_id: task26_cube_1
+table:
+  center_world_m: [0.550, 0.0, 0.100]
+  size_m: [1.500, 0.800, 0.200]
+  top_world_z_m: 0.200
+carriage:
+  interior_x_world_m: [0.910, 1.160]
+  interior_y_world_m: [-0.314, 0.314]
+  wall_thickness_m: 0.020
+  wall_height_m: 0.150
+  wall_top_world_z_m: 0.350
+shared_grasp:
+  object_to_left_tcp_candidate:
+    translation_m: [0.0, -0.061, 0.0]
+    quaternion_xyzw: [0.7071067811865476, 0.7071067811865476, 0.0, 0.0]
+  object_to_right_tcp_candidate:
+    translation_m: [0.0, 0.061, 0.0]
+    quaternion_xyzw: [0.7071067811865476, -0.7071067811865476, 0.0, 0.0]
+adapter_world_objects:
+  - id: task26_table
+    frame_id: world
+    center_world_m: [0.550, 0.0, 0.100]
+    size_m: [1.500, 0.800, 0.200]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    source: controller.tableObject_and_scene.Table
+  - id: task24_table
+    frame_id: world
+    center_world_m: [0.550, 0.0, 0.100]
+    size_m: [1.200, 0.800, 0.200]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    source: original_moveit_launch_environment_nested_table
+  - id: task26_box_wall_deep
+    frame_id: world
+    center_world_m: [1.170, 0.0, 0.275]
+    size_m: [0.020, 0.668, 0.150]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    source: controller.boxWallObjects_and_scene.WallDeep
+  - id: task26_box_wall_minus_y
+    frame_id: world
+    center_world_m: [1.035, -0.324, 0.275]
+    size_m: [0.290, 0.020, 0.150]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    source: controller.boxWallObjects_and_scene.WallMinusY
+  - id: task26_box_wall_plus_y
+    frame_id: world
+    center_world_m: [1.035, 0.324, 0.275]
+    size_m: [0.290, 0.020, 0.150]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    source: controller.boxWallObjects_and_scene.WallPlusY
+  - id: task26_cube_2
+    frame_id: world
+    center_world_m: [0.350, 0.0, 0.260]
+    size_m: [0.120, 0.120, 0.120]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+    source: original_batch1_slot_B_static_nonselected_obstacle
+other_cube_policy:
+  selected: task26_cube_1_is_the_only_carried_research_object
+  retained: task26_cube_2_fixed_at_original_slot_B_for_entire_offline_plan
+  excluded: dormant_batch2_Cube_03_and_Cube_04_at_park_Z_minus5_as_in_original_planning_world
+  changes_after_results: forbidden
+nominal_endpoints:
+  start:
+    phase: COMMON_LIFT_COMPLETED_BILATERAL_HELD
+    translation_m: [0.500, 0.0, 0.540]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
+  goal:
+    phase: COMMON_SIDE_SHORT_PUSH_COMPLETED_BEFORE_RELEASE
+    translation_m: [0.790, 0.060, 0.280]
+    quaternion_xyzw: [0.0, 0.0, 0.0, 1.0]
