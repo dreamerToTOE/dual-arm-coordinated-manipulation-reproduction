@@ -1,5 +1,15 @@
 # CODEX_START_HERE.md
 
+## 当前交付门禁（2026-10-12，D056/D057）
+
+TASK06-IS-A部分完成，分支task06-is-a-p4-scene-adapter，**停止等待用户审查**。
+读 [新报告](reports/TASK06_IS_A_SCENE_ADAPTER01.md)：Task26 world内宽628mm不等于
+旧P4归档606mm，实际持件A起终点/附件证据缺失。source验证1/1已停止；没有
+native加载/真实FCL状态查询/IK/搜索/执行。编译和纯离线回归通过不能替代路径证据。
+不自动改旧world、再跑来源门禁、取得实时状态或启动B/C/TASK07。输入路线需审查。
+旧TASK06整体部分完成、TASK02-D暂缓、Benchmark草案未定稿。
+下列D055“下一步A”以及此前门禁保留为历史规划，不授权交付后的自动续跑。
+
 ## 当前优先指令（2026-10-12，D055，覆盖以下历史停止门禁）
 
 用户已经更新总体路线：五篇论文的核心算法必须逐篇应用于现有双 FR3 + 侧吸盘 + Cube + 车厢场景。每篇按“算法/数学→场景无命令验证→单独授权的 Isaac Sim GUI 运行→阶段对比”推进。详见 [最新路线](docs/REPRODUCTION_ROADMAP.md)。

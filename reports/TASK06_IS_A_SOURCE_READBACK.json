@@ -1,0 +1,383 @@
+{
+  "qualification": "READ_ONLY_SOURCE_READBACK_AFTER_STOP_NOT_NEW_PLANNING_OR_MODEL_RUN",
+  "constants": {
+    "LEFT_BASE": [
+      0.65,
+      -0.6,
+      0
+    ],
+    "RIGHT_BASE": [
+      0.65,
+      0.6,
+      0
+    ],
+    "TABLE_CENTER": [
+      0.55,
+      0,
+      0.1
+    ],
+    "TABLE_SIZE": [
+      1.5,
+      0.8,
+      0.2
+    ],
+    "CUBE_SIZE": 0.12,
+    "CUBE_MASS": 0.8,
+    "BOX_INTERIOR_X": [
+      0.91,
+      1.1600000000000001
+    ],
+    "BOX_INTERIOR_Y": [
+      -0.314,
+      0.314
+    ],
+    "BOX_WALL_HEIGHT": 0.15,
+    "BOX_WALL_THICKNESS": 0.02,
+    "RAIL_TRAVEL": {
+      "left": [
+        0.45,
+        1.05
+      ],
+      "right": [
+        0.45,
+        1.05
+      ]
+    },
+    "SLOT_A": [
+      0.5,
+      0,
+      0.26
+    ],
+    "SLOT_B": [
+      0.35,
+      0,
+      0.26
+    ],
+    "TCP_Y": 0.155,
+    "FR3_OFFICIAL_JOINT_LIMITS_RAD": {
+      "1": [
+        -2.9007,
+        2.9007
+      ],
+      "2": [
+        -1.8361,
+        1.8361
+      ],
+      "3": [
+        -2.9007,
+        2.9007
+      ],
+      "4": [
+        -3.077,
+        -0.1169
+      ],
+      "5": [
+        -2.8763,
+        2.8763
+      ],
+      "6": [
+        0.4398,
+        4.6216
+      ],
+      "7": [
+        -3.0508,
+        3.0508
+      ]
+    }
+  },
+  "archived_urdf_revolute_order": [
+    "left_fr3_joint1",
+    "left_fr3_joint2",
+    "left_fr3_joint3",
+    "left_fr3_joint4",
+    "left_fr3_joint5",
+    "left_fr3_joint6",
+    "left_fr3_joint7",
+    "right_fr3_joint1",
+    "right_fr3_joint2",
+    "right_fr3_joint3",
+    "right_fr3_joint4",
+    "right_fr3_joint5",
+    "right_fr3_joint6",
+    "right_fr3_joint7"
+  ],
+  "archived_transforms": {
+    "left_fr3_joint8": {
+      "rpy": "0 0 0",
+      "xyz": "0 0 0.107"
+    },
+    "right_fr3_joint8": {
+      "rpy": "0 0 0",
+      "xyz": "0 0 0.107"
+    },
+    "world_to_left_fr3": {
+      "rpy": "0 0 0",
+      "xyz": "0.65 -0.60 0"
+    },
+    "world_to_right_fr3": {
+      "rpy": "0 0 0",
+      "xyz": "0.65 0.60 0"
+    },
+    "left_fr3_side_suction_tcp_joint": {
+      "rpy": "0 0 -1.57079632679",
+      "xyz": "0 -0.155 0.080"
+    },
+    "right_fr3_side_suction_tcp_joint": {
+      "rpy": "0 0 1.57079632679",
+      "xyz": "0 0.155 0.080"
+    }
+  },
+  "srdf_disabled_pair_count": 48,
+  "raw_archived_acm": [
+    {
+      "link1": "left_fr3_link0",
+      "link2": "left_fr3_link1",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link0",
+      "link2": "left_fr3_link2",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link0",
+      "link2": "left_fr3_link3",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link0",
+      "link2": "left_fr3_link4",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link1",
+      "link2": "left_fr3_link2",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link1",
+      "link2": "left_fr3_link3",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link1",
+      "link2": "left_fr3_link4",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link2",
+      "link2": "left_fr3_link3",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link2",
+      "link2": "left_fr3_link4",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link2",
+      "link2": "left_fr3_link6",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link3",
+      "link2": "left_fr3_link4",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link3",
+      "link2": "left_fr3_link5",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link3",
+      "link2": "left_fr3_link6",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link3",
+      "link2": "left_fr3_link7",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link4",
+      "link2": "left_fr3_link5",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link4",
+      "link2": "left_fr3_link6",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link4",
+      "link2": "left_fr3_link7",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link4",
+      "link2": "left_fr3_link8",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link5",
+      "link2": "left_fr3_link6",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link5",
+      "link2": "left_fr3_link7",
+      "reason": "Never"
+    },
+    {
+      "link1": "left_fr3_link6",
+      "link2": "left_fr3_link7",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link6",
+      "link2": "left_fr3_link8",
+      "reason": "Default"
+    },
+    {
+      "link1": "left_fr3_link7",
+      "link2": "left_fr3_link8",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "left_fr3_link8",
+      "link2": "left_fr3_side_suction",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link0",
+      "link2": "right_fr3_link1",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link0",
+      "link2": "right_fr3_link2",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link0",
+      "link2": "right_fr3_link3",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link0",
+      "link2": "right_fr3_link4",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link1",
+      "link2": "right_fr3_link2",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link1",
+      "link2": "right_fr3_link3",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link1",
+      "link2": "right_fr3_link4",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link2",
+      "link2": "right_fr3_link3",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link2",
+      "link2": "right_fr3_link4",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link2",
+      "link2": "right_fr3_link6",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link3",
+      "link2": "right_fr3_link4",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link3",
+      "link2": "right_fr3_link5",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link3",
+      "link2": "right_fr3_link6",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link3",
+      "link2": "right_fr3_link7",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link4",
+      "link2": "right_fr3_link5",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link4",
+      "link2": "right_fr3_link6",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link4",
+      "link2": "right_fr3_link7",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link4",
+      "link2": "right_fr3_link8",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link5",
+      "link2": "right_fr3_link6",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link5",
+      "link2": "right_fr3_link7",
+      "reason": "Never"
+    },
+    {
+      "link1": "right_fr3_link6",
+      "link2": "right_fr3_link7",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link6",
+      "link2": "right_fr3_link8",
+      "reason": "Default"
+    },
+    {
+      "link1": "right_fr3_link7",
+      "link2": "right_fr3_link8",
+      "reason": "Adjacent"
+    },
+    {
+      "link1": "right_fr3_link8",
+      "link2": "right_fr3_side_suction",
+      "reason": "Adjacent"
+    }
+  ],
+  "legacy_source_hashes": {
+    "isaac/scripts/task26_truck_box_scene.py": "43aa7c2eb6a5667da5e94eaaef347229fe6178ec58d6a10d12dddf14ba2aa9e7",
+    "isaac/scripts/task26_truck_box_bridge.py": "13b5f88d1e7563a37ecafbf571d8ef93015b57059b8912ba9f3399e21e339644",
+    "ros_ws/src/fr3_dual_side_suction_description/urdf/dual_fr3_side_suction.urdf.xacro": "3f72a4d6d14967bfa98db5ee3e6c31c1e03927abbd12f0d7c0f26bfbdc3bfea6",
+    "ros_ws/src/fr3_dual_side_suction_description/urdf/dual_side_suction.xacro": "a0630156df03502e6624f593041db3e5f281f52958512672049b60b31ed49f1d",
+    "ros_ws/src/fr3_dual_side_suction_description/srdf/dual_fr3_side_suction.srdf.xacro": "473c380d9c8468c4f356ae556c3d7870bc78b307e92cab38cce467c7853bded1"
+  },
+  "native_audit_run": false,
+  "xacro_comparison_run": false,
+  "snapshot_source": "20261009_TASK01_predecessor_patched_runtime02"
+}

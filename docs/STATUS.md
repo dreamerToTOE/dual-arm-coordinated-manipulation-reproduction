@@ -1,5 +1,19 @@
 # STATUS
 
+## 2026-10-12 — TASK06-IS-A 部分完成：现有场景输入核对停止，等待审查
+
+分支 `task06-is-a-p4-scene-adapter`，基线 eb858651；任务前协议462e6b1、实现a7223e3。
+固定旧 Task26@631b1f6/5ed0c96 已审计，新只读接口复用原 TASK02–06，不新建控制系统。
+唯一来源验证在 carriage_y 停止：旧 Task26 内宽628 mm，P4历史FCL环境606 mm，
+墙面每侧差11 mm。另缺实际共同持件 START/PRE_PUSH 完整14q、Cube/TCP/附件状态；
+HOME/open快照、单臂四位小数命令、D041前历史293q不能替代。
+科学搜索/IK/原生FCL状态查询/控制命令均0；native加载与xacro等价检查未执行。
+独立软件检查编译通过、8项接口+72项TASK02+4个数学CTest目标通过；不是场景路径证据。
+592个原文件哈希不变、原负结果保留；没有改墙/ACM/抓取/Benchmark或重试来源门禁。
+**无执行规划适配尚未通过；部分完成，提交后停止等待输入路线审查。**
+原TASK06整体部分完成、TASK02-D暂缓、Benchmark草案未定稿；B/C/TASK07未启动。
+[对照表与POST-TASK REPORT](../reports/TASK06_IS_A_SCENE_ADAPTER01.md)。
+
 ## 2026-10-12 — D055：五篇论文逐篇完成场景应用与仿真验证
 用户明确要求五篇论文的核心方法均应用到已有双 FR3/Cube/车厢场景，不能 P4 仅有离线算法便自动进入 P2。新路线是“离线算法→现有场景无命令适配→经批准的可见 Isaac 执行→阶段对比/审查”，适用于 P4、P2、P3、P5、P1；MuJoCo 是 P2/P3 的先期平台，不能替代 Isaac 最终验证。
 P4 新增 TASK06-IS-A/B/C；下一步仅 A（静态来源核查和有界离线规划，禁止启动 Isaac/ROS/控制），B/C 和 TASK07 未授权。原 TASK06 整体部分完成、专项障碍证据缺口、TASK02-D 暂缓、Benchmark 草案状态保持。

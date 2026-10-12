@@ -1,0 +1,99 @@
+{
+  "task": "TASK06-IS-A",
+  "baseline": "P4_SOFTWARE_CHECKS_NOT_SCENE_PLAN",
+  "platform": "OFFLINE_BUILD_AND_SYNTHETIC_ONLY",
+  "git_commit": "a7223e3",
+  "seed": null,
+  "seed_status": "SCENE_PLANNING_NOT_STARTED",
+  "config_path": "configs/engineering/task06_is_a_scene_adapter_v1.json",
+  "status": "SOFTWARE_CHECKS_PASS_TASK_PARTIAL",
+  "commands": [
+    "source /opt/ros/humble/setup.bash\nsource /home/ubuntu2004/lmy/dual-arm-embodied-palletizing-task01-foundation/ros_ws/install/setup.bash\ntimeout 60s cmake -S platforms/offline_moveit/task06_is_a_scene_adapter -B build/task06_is_a_scene_adapter -DCMAKE_BUILD_TYPE=Release",
+    "source /opt/ros/humble/setup.bash\nsource /home/ubuntu2004/lmy/dual-arm-embodied-palletizing-task01-foundation/ros_ws/install/setup.bash\ntimeout 240s cmake --build build/task06_is_a_scene_adapter --parallel 2",
+    "PYTHONPATH=\"${PWD}:${PYTHONPATH}\" timeout 60s /usr/bin/python3 -m unittest discover -s tests -p 'test_task06_is_a_scene_adapter.py' -v\nPYTHONPATH=\"${PWD}:${PYTHONPATH}\" timeout 60s /usr/bin/python3 -m unittest discover -s tests -p 'test_task02*.py' -v",
+    "source /opt/ros/humble/setup.bash\nsource /home/ubuntu2004/lmy/dual-arm-embodied-palletizing-task01-foundation/ros_ws/install/setup.bash\ntimeout 60s ctest --test-dir build/task06_is_a_scene_adapter --output-on-failure"
+  ],
+  "metrics": {
+    "adapter_tests": {
+      "passed": 8,
+      "total": 8
+    },
+    "task02_tests": {
+      "passed": 72,
+      "total": 72
+    },
+    "synthetic_ctest_targets": {
+      "passed": 4,
+      "total": 4
+    }
+  },
+  "artifact_paths": [
+    "results/20261012_TASK06_IS_A_software_checks01/build.log",
+    "results/20261012_TASK06_IS_A_software_checks01/configure.log",
+    "results/20261012_TASK06_IS_A_software_checks01/ctest.log",
+    "results/20261012_TASK06_IS_A_software_checks01/python_tests_excerpt.log",
+    "results/20261012_TASK06_IS_A_software_checks01/summary.json",
+    "reports/TASK06_IS_A_SOURCE_READBACK.json",
+    "results/20261012_TASK06_IS_A_scene_adapter01/failure.json",
+    "results/20261012_TASK06_IS_A_scene_adapter01/metadata.json",
+    "results/20261012_TASK06_IS_A_scene_adapter01/result.json",
+    "results/20261012_TASK06_IS_A_scene_adapter01/summary.json"
+  ],
+  "source_hash_evidence": "../20261012_TASK06_IS_A_scene_adapter01/metadata.json",
+  "artifact_sha256": [
+    {
+      "path": "results/20261012_TASK06_IS_A_software_checks01/build.log",
+      "sha256": "58ccdd51c752345e26e676ef5d6acef7a3d3c318928a4052dec747b1b869e8b6",
+      "bytes": 4869
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_software_checks01/configure.log",
+      "sha256": "b6e400753402fd1658f0648bb50c56eb0e21d7508288d23eb61dbbd55b968204",
+      "bytes": 2263
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_software_checks01/ctest.log",
+      "sha256": "cc52a9e2581918a7d168b916b0677959e021c5b0c3a428d49b983deedaa79018",
+      "bytes": 900
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_software_checks01/python_tests_excerpt.log",
+      "sha256": "05ccb9b7581fddb228c05ece061327615bc8d72c25ad9796d4603c324e704fbf",
+      "bytes": 2861
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_software_checks01/summary.json",
+      "sha256": "6d73f2e3b9790481a1042b9a2340eedfe00b936967eadd4195fb87b4450c8436",
+      "bytes": 1730
+    },
+    {
+      "path": "reports/TASK06_IS_A_SOURCE_READBACK.json",
+      "sha256": "6dbbb20db49eaa781842a3eff4415b0ee769f5b7687a71e6294810fbb55e61db",
+      "bytes": 8200
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_scene_adapter01/failure.json",
+      "sha256": "f49570717b848a846b518d8d31f4b79fe689ea895cdd64c288c57978e3f87436",
+      "bytes": 134
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_scene_adapter01/metadata.json",
+      "sha256": "5dbc73a7f4295664f47789a411085861ecabca0942b2203b30f19e0c65131b4a",
+      "bytes": 145719
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_scene_adapter01/result.json",
+      "sha256": "9a6b141119e3f9433acf3304b56747609856fac8815c61c062b6a394368b7948",
+      "bytes": 8266
+    },
+    {
+      "path": "results/20261012_TASK06_IS_A_scene_adapter01/summary.json",
+      "sha256": "79989426371d2cce825fdf05d60337e49916d9546504bb209886291688daefde",
+      "bytes": 162741
+    }
+  ],
+  "simulation_time": null,
+  "physics_step": null,
+  "qualification": "SOFTWARE_ONLY_NOT_SCIENTIFIC_NATIVE_MEASUREMENT",
+  "python_stdout_capture": "PARTIAL_RAW_WITH_TRANSCRIBED_OBSERVED_COMPLETION_NOT_FULL_STDOUT"
+}

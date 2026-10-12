@@ -1,0 +1,34 @@
+# CAPTURE QUALIFICATION: partial raw stdout followed by an explicitly transcribed observed completion summary; NOT full stdout.
+# No tests rerun to reconstruct omitted output.
+test_fixed_protocol_not_fake_endpoints (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_forged_complete_input_rejected (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_joint_order (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_literal_math_without_running_scene (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_missing_both_endpoints (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_one_endpoint_does_not_make_pair (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_script_call_never_executed (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+test_xml_comments_and_layout_only (test_task06_is_a_scene_adapter.AdapterTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+test_all_command_types_and_stable_round_trip (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_command_deadline_cannot_mix_clocks_or_reverse (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_commands_have_no_execution_side_effects (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_confirmation_requires_observation_evidence_and_same_attachment (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_event_backward_time_step_duplicate_and_failed_reason (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_four_result_statuses_and_metadata_round_trip (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_legacy_events_and_stage_remain_planned_relative (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_planned_observed_confirmed_are_distinct_and_clock_domains_not_compared (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_suction_on_never_implicitly_attaches (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_unknown_wire_enum_schema_and_fields_rejected (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_wrong_units_and_target_union_rejected (test_task02_exchange_logging.ExchangeContractTest) ... ok
+test_exception_leaves_aborted_result_and_propagates (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_failure_result_and_existing_events_are_preserved (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_no_legacy_state_or_run_qualification_upgrade (test_task02_exchange_logging.FileLoggerTest) ... ok
+test_path_escape_existing_run_and_finished_writes_rejected (test_task02_exchange_logging.FileLoggerTest) ... 
+# OBSERVED FINAL TOOL RESPONSE (summary transcription, not reconstructed raw stdout):
+# Session 34448 completed with exit_code=0.
+# TASK02 A/B/C: Ran 72 tests in 2.244s; OK.
+# Earlier adapter suite: Ran 8 tests in 0.001s; OK (raw stdout above).

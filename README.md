@@ -1,5 +1,15 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+## 最新交付：TASK06-IS-A 部分完成（2026-10-12）
+
+已审计旧Task26并新增复用P4的只读薄接口；编译、8项接口测试、72项TASK02回归和
+4个既有数学测试目标通过。场景输入核对发现：已接受Task26的车厢内宽628mm，
+P4历史环境606mm；旧日志也缺共同持件START/PRE_PUSH完整14q及附件变换。
+因此立即停止，**没有合格现有场景路径或仿真执行结果**，不改旧场景/门限来制造成功。
+[对照表与完整报告](reports/TASK06_IS_A_SCENE_ADAPTER01.md) ·
+[适配接口](platforms/offline_moveit/task06_is_a_scene_adapter/README.md)。
+等待用户审查输入路线；B/C/TASK07未启动，正式基准仍是草案。以下记录保留历史。
+
 ## 最新研究路线（2026-10-12，D055）
 
 **五篇论文都要把核心方法落到现有双 FR3 + 侧吸盘 + Cube + 车厢场景中**，按“数学/算法→现有场景适配→单独授权的 Isaac Sim 可见仿真执行→同场景阶段对比”逐篇推进；不能仅完成 P4 离线代码便自动进入 P2。详见 [新的总路线](docs/REPRODUCTION_ROADMAP.md)。

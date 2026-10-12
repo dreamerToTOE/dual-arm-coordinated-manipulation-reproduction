@@ -1,0 +1,64 @@
+{
+  "task": "TASK06-IS-A",
+  "qualification": "SOFTWARE_COMPILE_SYNTHETIC_AND_TASK02_REGRESSION_ONLY_AFTER_SOURCE_GATE_STOP",
+  "git_commit": "a7223e3",
+  "source_gate_run": "20261012_TASK06_IS_A_scene_adapter01",
+  "source_gate_rerun": false,
+  "native_audit_run": false,
+  "xacro_model_equivalence_run": false,
+  "real_fr3_search_calls": 0,
+  "real_fcl_state_queries": 0,
+  "ik_calls": 0,
+  "physics_runtime_starts": 0,
+  "execution_commands": 0,
+  "simulation_time": null,
+  "physics_step": null,
+  "seed_status": "UNSET_FOR_SCENE_PLANNING_SYNTHETIC_TEST_SEEDS_NOT_BENCHMARK_SEEDS",
+  "checks": [
+    {
+      "name": "CMake configure",
+      "exit_code": 0,
+      "timeout_sec": 60,
+      "artifact": "configure.log"
+    },
+    {
+      "name": "CMake compile unchanged dependencies + new adapter",
+      "exit_code": 0,
+      "timeout_sec": 240,
+      "artifact": "build.log"
+    },
+    {
+      "name": "new pure adapter data tests",
+      "passed": 8,
+      "total": 8,
+      "exit_code": 0,
+      "timeout_sec": 60,
+      "artifact": "python_tests_excerpt.log"
+    },
+    {
+      "name": "TASK02 A/B/C regression",
+      "passed": 72,
+      "total": 72,
+      "exit_code": 0,
+      "timeout_sec": 60,
+      "artifact": "python_tests_excerpt.log",
+      "capture_qualification": "PARTIAL_RAW_STDOUT_PLUS_TRANSCRIBED_OBSERVED_COMPLETION_SUMMARY"
+    },
+    {
+      "name": "unchanged TASK03-06 CTest math targets",
+      "passed": 4,
+      "total": 4,
+      "exit_code": 0,
+      "timeout_sec": 60,
+      "artifact": "ctest.log"
+    }
+  ],
+  "limitations": [
+    "NOT_NATIVE_SCENE_VALIDATION",
+    "NO_QUALIFIED_PATH",
+    "NO_REAL_FR3_PLAN",
+    "NO_EXECUTION"
+  ],
+  "task_status": "PARTIAL",
+  "status_zh": "部分完成"
+}

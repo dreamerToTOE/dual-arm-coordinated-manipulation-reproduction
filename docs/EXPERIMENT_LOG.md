@@ -1,5 +1,23 @@
 # EXPERIMENT_LOG
 
+## 2026-10-12 — TASK06-IS-A：来源拒绝证据与独立软件检查（无仿真）
+
+预声明462e6b1，测试源码a7223e3。`20261012_TASK06_IS_A_scene_adapter01` 唯一
+runner返回1，原结果ABORTED：SOURCE_MODEL_INPUT_AUDIT，carriage_y [-.314,.314]
+!=[-.303,.303]。protocol SHA256=0ea7988f42814027d711fca646d8623e88c192f715cef9dba76b3c35b75d43db。
+条件种子7/41/20261012均未启用；科学搜索0、IK0、原生FCL状态查询0、执行0；
+simulation_time/physics_step=null。原native加载/xacro核验未到达，不能称FCL通过。
+592文件before/after相同，原始summary/result/metadata/failure保留且不补写为成功。
+
+`20261012_TASK06_IS_A_software_checks01` 是分开的单次软件证据：configure60s、
+build240s、unittest每项60s、CTest60s硬上限；配置/编译exit0，8+72Python测试及
+4个合成数学CTest目标通过。Python只有部分raw stdout+明确标注的最终观测摘要，
+不冒充完整原始stdout；没有为补输出重跑。源码静态读回只是审计记录，无新模型运行。
+路径残差/长度/节点/规划耗时/关节余量未计算，最近距离不可用；不是物理或科研指标。
+[来源失败](../results/20261012_TASK06_IS_A_scene_adapter01/summary.json) ·
+[软件范围](../results/20261012_TASK06_IS_A_software_checks01/summary.json) ·
+[报告](../reports/TASK06_IS_A_SCENE_ADAPTER01.md)。
+
 ## 2026-10-12 — TASK06 review annotation only; NO NEW EXPERIMENT
 
 D054 review of74d4276 accepts coreoffline softwarePASSCANDIDATE only; overall

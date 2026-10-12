@@ -1,5 +1,17 @@
 # BUGS
 
+## 2026-10-12 — TASK06-IS-A world／持件端点输入缺口 [TASK-BLOCKING]
+
+**只阻塞本轮“现有场景合格P4路径”结论，不是已证明算法或物理场景失败。**
+旧Task26的Y范围±.314，原P4环境归档±.303；每侧差11mm，不能把旧归档
+当成已接受Task26的同一完整world。原FCL模板也没有两件来料的另一Cube。
+独立缺口：旧两件成功日志仅初始/最终HOME/open完整q；持件阶段缺双方14q和
+完整Cube/TCP/附件变换，阶段pre_push/short_push/drop定义不能混写。
+已有接口拒绝不一致/缺失输入，停止1/1source run，无world补丁或新IK重试。
+来源核对与阶段/端点路线待用户审查，不修改历史环境/成熟scene/ACM/门限来通过。
+TASK02-D原生时钟仍暂缓，非本轮继续开发Observer的理由；B/C/力控没有授权。
+[具体值和失败证据](../reports/TASK06_IS_A_SCENE_ADAPTER01.md)。
+
 ## 2026-10-12 — TASK06 review separates software acceptance and missing evaluation
 
 D054: user accepts coreoffline softwarePASSCANDIDATE; missing direct-COLLISION
