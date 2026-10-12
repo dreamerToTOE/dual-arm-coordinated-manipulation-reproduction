@@ -1,5 +1,21 @@
 # BUGS
 
+## 2026-10-12 — TASK06 predeclared obstacle qualification missing [TASK-BLOCKING]
+
+Task-blocking for completeD052acceptance, **not** a demonstrated planner/modelbug.
+Fixedobstacle directTASK05edge0→100 returnsPROJECTION_JUMP atcheckedindex2/depth1:
+NRconverges, correctionL2.0869493377881rad>.020rad unchangedlocalityguard; FCLnull.
+Thus missing thepredeclared direct-COLLISION qualification. Realnativeobstacle
+collisionrejections and20261012multi-nodeFCLsolution exist but donot retroactively
+satisfy that test. TASK06PARTIAL/STOP; nofixturemove/guardrelaxation/rerun.
+**KNOWN LIMITATION:** seeds7/41 exhaust600nodes, not impossibility; longunsmoothed
+paths/smallpositivemargin, inheritedrank/localityguards; no continuous/distance/
+physical/fullpaperclaim. **DEFERRED:** TASK02-D clocks/reset/native measurements.
+**LEGACY:** fiveCubeTask26/27 untouched. **RESOLVED ENGINEERING:** thecompile-only
+conversionfix below actuallybuilt in29a9d5c; fullsoftware regressionspass, initial
+negativepreserved. Finalnativecheckerexit1 isacceptancegap, notcompiler/crash.
+[Exact failure and evidence](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+
 ## 2026-10-12 — TASK06 harness serialization type ambiguity [ENGINEERING / RESOLVED_CANDIDATE]
 
 `constrained_search01` compile fails before scientific trials: implicit nlohmann

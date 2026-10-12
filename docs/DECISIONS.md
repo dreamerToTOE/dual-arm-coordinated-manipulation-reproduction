@@ -1,5 +1,20 @@
 # DECISIONS
 
+## D053 — Retain fixed TASK06 acceptance failure; deliver PARTIAL and stop
+
+2026-10-12. Solepredeclaredsuite source29a9d5c: genuine two-tree NR/RBS/FCL search,
+fixedseedrepeats/native negatives pass; obstacle20261012twicefinds148-edgepath.
+However directTASK05obstacleedge first fails projectionlocalityguard, notcollision.
+KeepD052protocol/fixture/guards/seeds/budgets immutable and thisFAIL visible.
+Noagentadjustmentofacceptancescope/tolerance afterresults;TASK06PARTIAL, notPASS.
+Onecompile-onlyfix doesnotauthorize empiricalretuning. Existingcompleteevidence
+is sufficient for review; stopscientificwork afterGitHubdelivery. Anynewvalidation
+case or scopedacceptance requires explicit userdecision, notautomaticTASK07.
+No oldTask26/model/ACM/Benchmark change; oldTASK03precisionFAIL preserved;
+TASK02IN_PROGRESS/DDEFERRED, BenchmarkDRAFT. Thisrecord is agentdelivery policy,
+not useracceptanceor formalBenchmarkfreeze.
+[POST-TASK REPORT](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+
 ## D052 — Predeclare TASK06 constrained search and fixed offline suite
 
 2026-10-12, baseline91a1adc. User accepts TASK05 only real-FR3/FCL discrete local

@@ -1,5 +1,21 @@
 # WORKLOG
 
+## 2026-10-12 — TASK06 fixed scientific suite complete; acceptance gap preserved
+
+Source29a9d5c compiled,72Python/CTest4of4 and all realTASK03–05 regressions pass.
+Exactly3scenes×3seeds×2repeats:14SUCCESS/4NODE_LIMIT; all9repeat pairs exact.
+Genuine553-node obstacle path found twice for20261012; otherseeds fixed600-node
+stops, no retries. Direct obstacle connector first fails unchangedTASK05 locality
+guard (.0869493>.020rad); recordTASK06PARTIAL rather than retunefixture/criterion.
+Full sampled/projection/RBS/FCL/parent/densepath traces losslesslygz preserved with
+rawhash/length; negative build01 retained. Read-only saved-evidence audit verifies
+40artifact/35source/23rawgzip/18payloadhashes,536protectedfiles/8meshes/4oldassets
+unchanged during run. Reports/task/status/records updated for stop-for-review,
+no additional scientific experiment/code tuning. OriginalprecisionFAIL retained;
+noIsaac/services/Task26/model/ACM/Benchmarkedit/TASK07. Git staging explicitly
+excludes5unrelated historical untrackedlogs and generatedbuild/install.
+[POST-TASK REPORT](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+
 ## 2026-10-12 — TASK06 compile-only failure retained; explicit conversion fix
 
 First suite invocation `constrained_search01` stopped at C++ harness compilation:

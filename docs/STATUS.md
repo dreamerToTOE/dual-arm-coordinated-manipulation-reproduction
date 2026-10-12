@@ -1,5 +1,25 @@
 # STATUS
 
+## 2026-10-12 — TASK06 bounded offline suite PARTIAL; stop for acceptance review
+
+**TASK06 = PARTIAL / STOP FOR USER REVIEW.** Precommitted D052 protocol877decd
+unchanged; testedsource29a9d5c. True two-tree NR/RBS/FCL search: simple/nontrivial
+all fixed seeds succeed; private obstacle20261012 succeeds twice (553nodes,
+148solutionedges/2261densepoints), seeds7/41 twice exhaust600nodes. All9repeat
+pairs match exact deterministic payload/path/status/counters. One acceptance gap:
+direct obstacle connector returnsPROJECTION_JUMP (.0869493rad>.020rad), not
+COLLISION; no FCL verdict at its rejected midpoint. No retrospective tuning/PASS.
+72TASK02+93/108/300/2757synthetic checks,435realFD and unchangedTASK04/05regressions
+pass. Native bounds/collision negatives reject. One compile-only correction,
+one complete18-call scientific suite; original failed run and all raw traces retained.
+536protectedfiles/8meshes/4legacyassets unchanged during run; saved artifacts/source/
+lossless/fingerprint hashes verified. OldTASK03 precisionFAIL preserved. No physics,
+ROS service/controller, continuous guarantee, positive distance or full P4 claim.
+TASK02 IN_PROGRESS, TASK02-D PARTIAL/DEFERRED, Benchmark DRAFT/NOT FROZEN.
+**No TASK07 or further experiment without review.** D053;
+[POST-TASK REPORT](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+Earlier authorization/delivery entries below are preserved history.
+
 ## 2026-10-12 — TASK06 offline constrained search authorized, protocol committed first
 
 TASK05 scoped discrete acceptance accepted by user; TASK06 IN_PROGRESS from91a1adc.

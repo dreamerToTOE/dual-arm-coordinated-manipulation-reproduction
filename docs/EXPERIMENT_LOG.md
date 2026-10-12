@@ -1,5 +1,28 @@
 # EXPERIMENT_LOG
 
+## 2026-10-12 — TASK06 constrained_search01 compile-only; search02 sole fixed suite
+
+D052 protocol877decd/SHA74a1aa3864da… committed/pushed before experiments.
+01sourceba20c98 failsC++JSON/Eigen/keyconversion atbuild, scientificcalls0;
+oneexplicitconversionfix29a9d5c, noalgorithm/protocoltuning.02Releasebuild+72TASK02+
+CTest4/4(93/108/300/2757assertions)+435realFD+194/293TASK04+10positive/3negative
+TASK05pass. Exactly18plan calls: simple/nontrivial7/41/20261012twice allSUCCESS;
+private obstacle7/41twiceNODE_LIMIT600;20261012twiceSUCCESS553nodes/148solution
+edges/2261points.9repeatpairs payload/path/counters/status exact.18-callprojection
+50602/fail26;nativeFCLstatequeries55118/collisionpositive392; costs.072159–.883389s
+planfunctiononly, notexecution/performancebenchmark. SuccessmaxC9.91760409e-9m/
+9.98385517e-9rad, minjointmargin.001980096rad. No native distance query;UNAVAILABLE.
+Direct obstacle0→100 returnsPROJECTION_JUMP, correction.0869493378rad>.020guard,
+FCLnullatmidpoint; onlypredeclaredgap, overallTASK06PARTIAL/nativecheckerexit1.
+Nativebounds/collisionroot negatives reject;allraw/typedFAILUREevidence retained.
+Onecompletefixedsuite,noextra seeds/budget/scenechanges;23losslessgzoriginals,
+40artifact/35sourcehashesmatch,536protected/8meshes/4oldassets unchangedbefore/after.
+Simtime/stepnull, commands0, qualificationofflineonly. OriginalTASK03precisionFAIL
+unchanged;TASK02IN_PROGRESS/DDEFERRED, BenchmarkDRAFT. NoIsaac/services/robot/
+Task26/TASK07. Saved-evidencehashreadback is not a new planning experiment.
+[POST-TASK REPORT](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md),
+[run02summary](../results/20261012_TASK06_constrained_search02/summary.json).
+
 ## 2026-10-09 — TASK05 local_connection01/02, bounded offline suite only
 
 D050 pre-experimentprotocol55e53493… at e308a71; no later numerical changes.

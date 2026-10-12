@@ -1,5 +1,13 @@
 # USER_FEEDBACK
 
+## 2026-10-12 — Continue the same bounded TASK06; no additional acceptance authority
+
+Latest user“继续” resumes the already authorizedofflineTASK06 delivery; it doesnot
+authorizepost-result tuning, extra seeds/obstacles, runtime orTASK07. ReportPARTIAL
+when anypredeclaredgatefails as requested. Fixedsuite completed, acceptancegap
+andfullrawresults nowprovided forreview; **no useracceptance ofTASK06 inferred**.
+[Delivered POST-TASK REPORT](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+
 ## 2026-10-12 — TASK05 accepted; bounded offline TASK06 authorized
 
 User baseline91a1adc accepts real-FR3/FCL discrete TASK05 only. Explicitly requires

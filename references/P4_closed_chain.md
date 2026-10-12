@@ -7,6 +7,25 @@ DOI: [10.1109/LRA.2018.2846806](https://doi.org/10.1109/LRA.2018.2846806).
 [Author's full 8-page manuscript](https://avishaisintov.wordpress.com/wp-content/uploads/2018/06/sintov-pcs.pdf)
 and [university publication record](https://experts.illinois.edu/en/publications/motion-planning-of-fully-actuated-closed-kinematic-chains-with-re/).
 
+## TASK06 primary-source search audit and delivery (2026-10-12)
+
+Full manuscript NR/RBS/bidirectional sampling combination and author
+[CKCplanning pinned909bd72](https://github.com/avishais/CKCplanning/tree/909bd72fff778aca8682c96f9eb86ae4eb75557b)
+`CBiRRT_NR.cpp` grow/connection/backtrack audited before experiments. Ambient
+uniform sample -> Euclidean NN -> bounded steer -> NR -> RBS; alternate trees,
+repeated101/501growth and exact final target retained. No ordinary MoveIt planner
+substitution, upstream code import, optimization/performance or singularity claim.
+14D FR3/MoveIt-FCL is ADAPTATION; inherited conservative rank/locality guards are
+disclosed differences, not reproduction of general paper singular passage.
+Author runtime dependency/defaultNN not fully pinned; repository-wide license absent,
+someplanner BSDheaders only, all source REFERENCE_ONLY.
+[Complete audit and predeclared protocol](../reports/TASK06_PRE_TASK_PROTOCOL.md).
+
+Offline source29a9d5c finds real multi-node FCL paths and9deterministic repeats.
+**TASK06 PARTIAL**: private-obstacle direct connector rejected by projection guard,
+not collision as the fixedprotocolrequires. No post-result tuning/fullP4PASS.
+[Implementation and results](../reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+
 ## TASK03 primary-source audit (2026-10-09)
 
 Full manuscript inspected. Printed page 2, II-A Eq. (1) defines generic rigid

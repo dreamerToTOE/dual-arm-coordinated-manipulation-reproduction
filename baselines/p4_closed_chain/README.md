@@ -1,5 +1,16 @@
 # P4 closure residual and Jacobian — offline TASK03
 
+Current slice (2026-10-12): TASK03/04 mathematics and TASK05 real-FCL discrete
+local connection are user-reviewed scoped candidates. TASK06 constrained search
+is implemented but **PARTIAL / STOP FOR REVIEW**: true bidirectional paths/repeats
+pass; fixed obstacle direct connector fails the unchanged locality guard before
+the required collision verdict. No full P4, continuous-safety or physics claim.
+[Search contract/pseudocode](CONSTRAINED_RRTCONNECT.md),
+[TASK06 evidence](../../reports/TASK06_CONSTRAINED_RRTCONNECT01.md),
+[TASK05 connection](LOCAL_CONNECTION.md). Benchmark stays DRAFT; no TASK07.
+Older implementation-status statements below describe the historical TASK03/04
+deliveries and do not mean subsequent modules are absent today.
+
 Subsequent bounded TASK04 projection is **PASS CANDIDATE (OFFLINE MATHEMATICS ONLY)**.
 See [projection implementation/contract](PROJECTION.md) and
 [TASK04 POST-TASK REPORT](../../reports/TASK04_NR_PROJECTION01.md). It reuses the

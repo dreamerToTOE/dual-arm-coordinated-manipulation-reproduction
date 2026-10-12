@@ -1,0 +1,75 @@
+diff --git a/platforms/offline_moveit/task03_closure/model_adapter.cpp b/platforms/offline_moveit/task03_closure/model_adapter.cpp
+index 62562c3..d106af9 100644
+--- a/platforms/offline_moveit/task03_closure/model_adapter.cpp
++++ b/platforms/offline_moveit/task03_closure/model_adapter.cpp
+@@ -136,6 +136,21 @@ std::array<std::string, 14> DualFr3Model::jointNames() const
+   return output;
+ }
+ 
++std::pair<p4::JointVector, p4::JointVector> DualFr3Model::positionBounds() const
++{
++  p4::JointVector lower, upper;
++  const auto names = jointNames();
++  for (std::size_t joint = 0; joint < names.size(); ++joint)
++  {
++    const auto& bounds = model_->getVariableBounds(names[joint]);
++    if (!bounds.position_bounded_ || !std::isfinite(bounds.min_position_) ||
++        !std::isfinite(bounds.max_position_) || bounds.min_position_ >= bounds.max_position_)
++      throw std::runtime_error("Native finite sampling bounds unavailable");
++    lower[joint] = bounds.min_position_; upper[joint] = bounds.max_position_;
++  }
++  return {lower, upper};
++}
++
+ Eigen::Isometry3d DualFr3Model::linkPose(const p4::JointVector& q, const std::string& link)
+ {
+   update(q);
+diff --git a/platforms/offline_moveit/task03_closure/model_adapter.hpp b/platforms/offline_moveit/task03_closure/model_adapter.hpp
+index 312a503..e652a35 100644
+--- a/platforms/offline_moveit/task03_closure/model_adapter.hpp
++++ b/platforms/offline_moveit/task03_closure/model_adapter.hpp
+@@ -24,6 +24,8 @@ public:
+   std::pair<p4::ArmSample, p4::ArmSample> sample(const p4::JointVector& q);
+   double minimumJointMargin(const p4::JointVector& q) const;
+   std::array<std::string, 14> jointNames() const;
++  // [ENGINEERING TASK06] 只读原生限位，给14维采样器；不更改模型或FK。
++  std::pair<p4::JointVector, p4::JointVector> positionBounds() const;
+   Eigen::Isometry3d linkPose(const p4::JointVector& q, const std::string& link);
+ 
+ private:
+diff --git a/platforms/offline_moveit/task05_local_connection/collision_adapter.cpp b/platforms/offline_moveit/task05_local_connection/collision_adapter.cpp
+index e5a30a9..f23f1f4 100644
+--- a/platforms/offline_moveit/task05_local_connection/collision_adapter.cpp
++++ b/platforms/offline_moveit/task05_local_connection/collision_adapter.cpp
+@@ -460,4 +460,17 @@ void CollisionAdapter::addNegativeWorldBox(const p4::JointVector& q)
+   impl_->box(NEGATIVE_BOX, linkPose(q, LEFT_TCP), impl_->cube_size, true);
+   impl_->integrity();
+ }
++
++void CollisionAdapter::addPrivateWorldBox(const std::string& id,
++                                         const Eigen::Isometry3d& pose_world,
++                                         const Eigen::Vector3d& size_m)
++{
++  impl_->integrity();
++  if (id.rfind("task06_private_", 0) != 0 || id.size() <= 15 ||
++      impl_->model->hasLinkModel(id) || impl_->scene->getWorld()->hasObject(id) || id == CUBE)
++    throw std::invalid_argument("Private fixture must have a new task06_private_ ID");
++  impl_->box(id, pose_world, size_m);
++  impl_->evidence["world_objects"].back()["classification"] = "PRIVATE_ENGINEERING_FIXTURE_ONLY";
++  impl_->integrity();
++}
+ }  // namespace task05_offline
+diff --git a/platforms/offline_moveit/task05_local_connection/collision_adapter.hpp b/platforms/offline_moveit/task05_local_connection/collision_adapter.hpp
+index 4f85876..ed45a30 100644
+--- a/platforms/offline_moveit/task05_local_connection/collision_adapter.hpp
++++ b/platforms/offline_moveit/task05_local_connection/collision_adapter.hpp
+@@ -24,6 +24,9 @@ public:
+ 
+   // 只在独立负例实例中添加同尺寸盒；不移动/删除归档 table 或三面墙。
+   void addNegativeWorldBox(const p4::JointVector& q);
++  // [ENGINEERING TASK06] 独立离线fixture，沿用原生box插入；禁止覆盖旧环境。
++  void addPrivateWorldBox(const std::string& id, const Eigen::Isometry3d& pose_world,
++                          const Eigen::Vector3d& size_m);
+ 
+ private:
+   struct Impl;

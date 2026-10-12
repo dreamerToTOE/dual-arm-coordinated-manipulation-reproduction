@@ -1,5 +1,18 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+最新交付（2026-10-12）：**TASK06 — P4 约束双向 RRTConnect = PARTIAL，等待审查**。
+已实现真实双树搜索，复用原 C/Jc、NR-SVD、RBS 与真实 FR3/FCL。简单及非平凡场景
+三个固定种子均成功；独立障碍场景种子 `20261012` 两次得到 553 节点、148 条解路径边，
+其余两种子在 600 节点预算内停止。9 对重复结果完全一致，离线回归通过。
+尚缺一项预声明证据：障碍场景的直接连接先被原投影跳变守卫拒绝，未得到要求的
+直接碰撞拒绝；未事后改场景、门限或验收标准，因此不标 PASS CANDIDATE。
+无 Isaac／ROS 服务／机器人运行，Benchmark DRAFT；提交后停止，不自动开始 TASK07。
+[TASK06 报告／结果／验收缺口](reports/TASK06_CONSTRAINED_RRTCONNECT01.md) ·
+[算法、接口和伪代码](baselines/p4_closed_chain/CONSTRAINED_RRTCONNECT.md) ·
+[实验前协议与原论文审计](reports/TASK06_PRE_TASK_PROTOCOL.md) · [当前状态](docs/STATUS.md)。
+
+### TASK05 历史交付（后经用户接受其离线离散范围）
+
 最新交付（2026-10-09）：**TASK05 — P4 递归二分局部连接 PASS CANDIDATE（仅离线离散验收）**。
 复用原 C/Jc、NR-SVD、FR3 模型与真实 PlanningScene/FCL；10 条正向连接通过，
 限位、闭链及真实碰撞负例被拒绝，完整失败前缀和证据已保存。原 ACM、旧 Task26
@@ -29,7 +42,14 @@ Newton-Raphson 投影 PASS CANDIDATE**。194/194 邻域扰动与 293/293 原抓�
 
 最终所有可横向比较的正式结果，原则上统一落到 **Isaac Sim + ROS 2 + 双 FR3 + Cube + 车厢** 场景；MuJoCo 仅作为 P2/P3 的接触/力控快速验证平台。
 
-## 当前进度（2026-10-09）
+## 当前进度（2026-10-12）
+
+TASK03 离线闭链数学、TASK04 离线投影及 TASK05 真实 FR3/FCL 离散连接范围已获用户审查接受。
+TASK06 离线规划已交付 **PARTIAL**，需审查上述独立障碍测试的验收缺口，暂停后续实验。
+TASK02 仍 IN_PROGRESS，TASK02-D PARTIAL / DEFERRED；Benchmark DRAFT / NOT FROZEN。
+原 TASK03 0.05 μm 历史精度 FAIL 与全部旧运行证据保持不变。
+
+### TASK02／TASK01 历史交付与审查（2026-10-09，保留）
 
 **最新：TASK02-C = PASS CANDIDATE；TASK02 = IN_PROGRESS；BENCHMARK = DRAFT / NOT FROZEN。**
 平台无关A/B指标与ContactWrench/CollisionDistance草案已完成：复用旧Task14数学定义，

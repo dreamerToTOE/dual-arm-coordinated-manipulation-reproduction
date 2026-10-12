@@ -23,6 +23,18 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+**Latest delivery: TASK06 = PARTIAL / STOP FOR USER REVIEW.** Branch
+`task06-p4-constrained-rrtconnect`, baseline91a1adc, testedsource29a9d5c, D052/D053.
+True two-tree NR/RBS/FCL paths and all9fixedseedrepeats verified; private obstacle
+20261012 succeeds twice (553nodes/148edges). Its directTASK05connector is rejected
+first by unchanged projectionlocalityguard, notCOLLISION as predeclared. Retain
+thatFAIL; no newseeds/scenetuning/thresholdchanges or completePASSclaim.
+Allsoftware/native regressionspass; compile-negative/fullrawfailedsearch evidence
+retained. NoIsaac/services/robot/Task26/model/ACM/Benchmarkchange. TASK02IN_PROGRESS,
+DDEFERRED, BenchmarkDRAFT. **Do not start TASK07 or additional experiments.**
+Read [latest POST-TASK REPORT](reports/TASK06_CONSTRAINED_RRTCONNECT01.md).
+All older authorization/stop entries below are historical, not current instructions.
+
 **Latest delivery: TASK05 PASS CANDIDATE (OFFLINE DISCRETE LOCAL CONNECTION ONLY).
 STOP FOR USER REVIEW; do not start TASK06 or runtime.** Branch
 `task05-p4-local-connection`, base5d41869, D050/D051. Existing C/Jc/NR/FK and
