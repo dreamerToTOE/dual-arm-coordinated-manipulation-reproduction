@@ -1,0 +1,8 @@
+{
+  "scientific_process_started_before_this_run": false,
+  "preflight_compile_error": "kdl_parser/kdl_parser.hpp unavailable through legacy CMake variables",
+  "source_evidence": "/opt/ros/humble/share/kdl_parser/cmake/export_kdl_parserExport.cmake:54-58",
+  "evidence_based_fix": "link existing imported target kdl_parser::kdl_parser; no numerical changes",
+  "second_compile_error": "ambiguous std::set<string>::insert(nlohmann::json) in old-default regression",
+  "second_compile_fix": "explicit get<string>(); formatting warning clarified; no runtime experiment yet"
+}

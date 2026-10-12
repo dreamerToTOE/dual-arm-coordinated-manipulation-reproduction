@@ -1,0 +1,76 @@
+[INFO] [1791791000.191704141] [moveit_robot_model.robot_model]: Loading robot model 'dual_fr3_side_suction'...
+[INFO] [1791791000.191734941] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[INFO] [1791791000.200009272] [moveit_robot_model.robot_model]: Loading robot model 'dual_fr3_side_suction'...
+[INFO] [1791791000.200017899] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[INFO] [1791791000.221007819] [moveit_robot_model.robot_model]: Loading robot model 'dual_fr3_side_suction'...
+[INFO] [1791791000.221018489] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+seed=7 status=SUCCESS nodes=96
+{
+  "benchmark_frozen": false,
+  "continuous_collision_certificate": false,
+  "endpoint_gate": "PASS",
+  "execution_commands": 0,
+  "failure_stage": null,
+  "minimum_collision_distance_m": null,
+  "minimum_collision_distance_status": "UNAVAILABLE_NATIVE_DISTANCE_NOT_QUERIED",
+  "physical_measurement": false,
+  "physics_step": null,
+  "planning_calls": 1,
+  "qualified_path_count": 1,
+  "reason": "First source-consistent qualified nominal path; STOP",
+  "schema": "task06_is_a.nominal_stage2.v2",
+  "simulation_time": null,
+  "task06_is_a_status": "PASS_CANDIDATE_OFFLINE_ADAPTATION_ONLY",
+  "trials": [
+    {
+      "artifact": "planner_seed7.json",
+      "counters": {
+        "accepted_goal_edges": 32,
+        "accepted_start_edges": 62,
+        "candidate_projection_calls": 94,
+        "candidate_projection_failures": 1,
+        "collision_positive_queries": 0,
+        "collision_queries": 1964,
+        "collision_unavailable_queries": 0,
+        "constraint_evaluations": 6038,
+        "extension_jump_rejections": 0,
+        "growth_attempts": 95,
+        "invalid_candidate_rejections": 0,
+        "iterations": 1,
+        "local_connection_rejections": 0,
+        "margin_evaluations": 6039,
+        "nearest_distance_evaluations": 2,
+        "nearest_queries": 2,
+        "no_progress_rejections": 0,
+        "projection_jump_rejections": 0,
+        "rbs_midpoint_projection_calls": 1774,
+        "rbs_midpoint_projection_failures": 0,
+        "rng_draws": 14,
+        "root_connection_calls": 2,
+        "samples": 1,
+        "tree_edge_connection_calls": 94
+      },
+      "metrics": {
+        "joint_path_length_rad": 11.940815548360233,
+        "maximum_adjacent_l2_rad": 0.009923957010773995,
+        "maximum_adjacent_max_abs_rad": 0.005315105379305629,
+        "maximum_position_residual_m": 8.6252082465342e-09,
+        "maximum_rotation_residual_rad": 5.3077350613721256e-09,
+        "milestone_path_length_rad": 11.939945099911574,
+        "minimum_collision_distance_m": null,
+        "minimum_collision_distance_status": "UNAVAILABLE_NATIVE_DISTANCE_NOT_QUERIED",
+        "minimum_native_joint_margin_rad": 0.004119662522104231,
+        "rms_position_residual_m": 1.243583471658266e-09,
+        "rms_rotation_residual_rad": 6.977329093543051e-10
+      },
+      "nodes": 96,
+      "path_edges": 94,
+      "path_points": 1869,
+      "reason": "Exact trees joined through qualified unchanged TASK05 edges",
+      "seed": 7,
+      "status": "SUCCESS",
+      "wall_sec": 0.213194502
+    }
+  ],
+  "world_source_readback_gate": "PASS"
+}

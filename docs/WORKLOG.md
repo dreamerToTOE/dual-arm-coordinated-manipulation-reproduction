@@ -1,5 +1,19 @@
 # WORKLOG
 
+## 2026-10-12 — TASK06-IS-A 新独立名义输入与合格离线路径交付
+
+按用户第二阶段指令重读治理/原接口和源资产，以7bae83a继续原分支，保留5个旧未跟踪日志。
+先提交/上传20fe06d PRE-TASK/PRIOR-ASSET及v2固定预算；旧Task26场景/成熟控制链不改。
+薄适配原FCL世界输入/只读组合readback，直接现成KDL-LMA造端点，原C/Jc/NR/RBS/双树
+不改。预编译KDL imported-target/JSON类型问题仅软件修正；源码c88a80c。
+run02因启动PYTHONPATH覆盖丢ROS Python包而停止，未IK/搜索；只读诊断确认一次命令修正。
+run03来源/模型/world资格通过，各端点第0候选即合格，唯一seed7搜索成功后停止。
+1869点独立约束/限位/连续性/FCL和94保存树边验证通过；原完整19MB搜索JSON无损gz，
+失败、完整14q/TCP/Cube、原生world/ACM/资源、protocol/source/artifact hashes齐全。
+15接口+72TASK02+4数学目标PASS；598旧文件/8mesh/4oldassets不变，旧报告/负例不改。
+记录/任务/入口更新，GitHub交付后停止；没有Isaac/ROS服务/命令/Benchmark定稿/B/C/TASK07。
+[交付报告](../reports/TASK06_IS_A_NOMINAL_SCENE02.md)。
+
 ## 2026-10-12 — TASK06-IS-A 单轮只读来源审计与薄接口交付
 
 保留原5个未跟踪日志，获取规划分支并从eb858651建立task06-is-a-p4-scene-adapter。

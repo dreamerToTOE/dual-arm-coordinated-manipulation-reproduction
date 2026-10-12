@@ -1,5 +1,22 @@
 # STATUS
 
+## 2026-10-12 — TASK06-IS-A 第二阶段：无执行规划适配初步验收通过，停止待审查
+
+基线7bae83a，分支task06-is-a-p4-scene-adapter；预提交协议20fe06d，测试源码c88a80c。
+用户另行批准独立Task26来源v2世界（内宽.628m），不覆盖旧.606m归档或第一阶段拒绝。
+原6个world对象及携带Cube编号/几何、原URDF/SRDF/FK/ACM实际核验通过。
+名义共同抬起(.500,0,.540)与短推完成释放前(.790,.060,.280)各候选0构造完整14q，
+旧物理日志双CLOSED仅证明阶段来源；新q不是实测持件状态。
+原NR/RBS/双树、原门限不改，seed7一次成功：96nodes/94edges/1869dense points；
+独立全路径FCL/闭链/限位/邻接及保存树边均合格。maxC=8.62521e-9m/5.30774e-9rad，
+minjointmargin=.00411966rad；规划compute=.213195s（非执行时间/性能对比）。
+15接口+72TASK02+4/4数学CTest通过，598旧文件/8STL/4旧资产哈希不变。
+run02启动覆盖PYTHONPATH导致xacro包不可用，原ABORTED保留；一次命令修正后的run03
+才运行唯一科学进程；没有重选端点、额外seed、改几何/ACM/模型/阈值或物理运行。
+**本轮只验收P4同源场景名义离线适配；提交后停止，B/C/TASK07未授权。**
+TASK06原整体仍部分完成，TASK02-D暂缓，Benchmark草案未定稿；无连续/吸附/物理证书。
+[完整结果/POST-TASK REPORT](../reports/TASK06_IS_A_NOMINAL_SCENE02.md)。下面均为保留历史。
+
 ## 2026-10-12 — TASK06-IS-A 部分完成：现有场景输入核对停止，等待审查
 
 分支 `task06-is-a-p4-scene-adapter`，基线 eb858651；任务前协议462e6b1、实现a7223e3。

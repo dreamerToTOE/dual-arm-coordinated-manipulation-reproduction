@@ -1,6 +1,18 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
-## 最新交付：TASK06-IS-A 部分完成（2026-10-12）
+## 最新交付：TASK06-IS-A 同源场景离线适配初步通过（2026-10-12）
+
+独立复用旧Task26真实0.628 m车厢输入，原工具/模型/ACM不改；已构造共同抬起到短推
+完成释放前的完整14q名义端点。原P4固定seed7成功：96节点、94条合格边、1869路径点，
+经原FCL/闭链/限位/连续性独立复核；15接口+72TASK02+4数学目标通过。
+**只限无执行离线规划适配，不代表Isaac物理执行或正式Benchmark成功。**
+[完整报告/14q/路径/失败证据](reports/TASK06_IS_A_NOMINAL_SCENE02.md) ·
+[新版场景输入](configs/engineering/task06_is_a_task26_scene_v2.yaml) ·
+[适配接口](platforms/offline_moveit/task06_is_a_scene_adapter/README.md)。
+提交后停止等待审查，B/C/TASK07未授权；原TASK06整体部分完成、TASK02-D暂缓，Benchmark草案。
+以下旧交付记录保留历史，不追溯改判。
+
+## 第一阶段历史交付：TASK06-IS-A 部分完成（2026-10-12）
 
 已审计旧Task26并新增复用P4的只读薄接口；编译、8项接口测试、72项TASK02回归和
 4个既有数学测试目标通过。场景输入核对发现：已接受Task26的车厢内宽628mm，

@@ -1,5 +1,20 @@
 # TASK06-IS-A 只读场景薄适配器
 
+## 第二阶段当前交付（D058/D059）
+
+**无执行规划适配初步验收通过，停止待审查**；
+见[报告/完整端点/路径](../../../reports/TASK06_IS_A_NOMINAL_SCENE02.md)。
+新独立v2世界读取旧Task26 .628m原六对象，未覆盖.606m历史归档。
+`nominal_inputs.py`复用原source audit核对静态来源、完整模型和持件名义阶段；
+`nominal_planning.cpp`直接原KDL-LMA后端构造两个完整14q，再调用原C/Jc/NR/RBS/P4。
+TASK05包装器仅增加可选来源world对象/附着ID与native World readback，默认行为回归通过。
+`scripts/run_task06_is_a_nominal_offline.py`锁定20fe06d协议，用原TASK02日志保留失败与全证据。
+唯一科学进程seed7成功、1869点独立合格；不是时间轨迹/实际持件/物理执行。
+原软件/原阈值/原scene/bridge/控制器/Benchmark不改，无ROS Node或执行接口。
+15接口测试、72TASK02、4/4数学目标通过；提交后不自动运行B/C/TASK07或重跑科学实验。
+
+## 第一阶段历史交付（保留，不回判）
+
 当前状态：**部分完成，停止等待审查**。源码/归档 Y 不匹配且实际持件端点缺失。
 新接口已编译，8项数据测试通过；不能用于机器人执行，不代表已有合格路径。
 完整来源/坐标/限制与证据见 [交付报告](../../../reports/TASK06_IS_A_SCENE_ADAPTER01.md)。

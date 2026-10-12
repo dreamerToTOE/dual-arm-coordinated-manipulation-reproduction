@@ -1,5 +1,15 @@
 # CODEX_START_HERE.md
 
+## 当前交付门禁（2026-10-12，D058/D059，覆盖以下历史交付门禁）
+
+TASK06-IS-A第二阶段**无执行规划适配初步验收通过；停止等待用户审查**。
+分支task06-is-a-p4-scene-adapter；基线7bae83a；协议20fe06d，测试c88a80c。
+读[本轮报告](reports/TASK06_IS_A_NOMINAL_SCENE02.md)：原Task26 .628m独立来源输入、
+完整14q名义端点、原P4 seed7 96nodes/1869点路径及原FCL独立复核已保存。
+这是离线构造，不是实际持件测量/Isaac执行/连续证书；原TASK06整体部分完成不改。
+原失败归档不重写，TASK02-D暂缓，Benchmark草案。科学预算本轮已结束，
+**不得自动再跑候选/seed、物理控制、B/C/TASK07**；下一步由用户审查另行授权。
+
 ## 当前交付门禁（2026-10-12，D056/D057）
 
 TASK06-IS-A部分完成，分支task06-is-a-p4-scene-adapter，**停止等待用户审查**。

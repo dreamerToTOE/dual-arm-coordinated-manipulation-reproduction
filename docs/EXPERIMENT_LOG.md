@@ -1,5 +1,24 @@
 # EXPERIMENT_LOG
 
+## 2026-10-12 — TASK06-IS-A V2 唯一名义端点/规划进程（离线）
+
+协议20fe06d，测试c88a80c；第一阶段历史失败未改。独立v2保留六个原ID world BOX、
+Task26 .628m内宽、slotB Cube2静态障碍；原.120m Cube、.800kg、工具/ACM/门限不变。
+run02仅source wrapper启动失败：PYTHONPATH=.覆盖ROS路径，xacro无法import ament包；
+ABORTED/原日志保留，无native/IK/搜索。完整环境展开成功、坏环境import失败为只读诊断。
+一次命令纠正保留PYTHONPATH，新run03实际科学进程1次，硬上限120s。
+START/GOAL各1/64对，seed-only HOME→accepted START，两RNG初始化但draw0；原NR各1更新。
+规划seed7：SUCCESS，96nodes(63/33)，94edges，1869点，.213194502s compute，
+长度11.940815548rad，最大闭链8.62520825e-9m/5.30773506e-9rad，最小关节余量.004119663rad。
+规划FCL1964次free，加端点2次、独立输出1869次，共3835状态检查；没有native距离查询。
+14随机draw/1sample；94candidate projection中1失败保留，RBS1774calls/0fail。
+原software regression15+72tests/4CTest目标PASS；598原文件/8STL/4旧资产hash不变。
+25artifact/620sourcehash、gz原19140034bytes及SHA核验一致。seed41/20261012未运行。
+没有物理时间/step/执行命令/正式计分；当前适配初步通过，不回判原TASK06整体。
+[完整证据](../results/20261012_TASK06_IS_A_nominal_scene03/summary.json) ·
+[失败run02](../results/20261012_TASK06_IS_A_nominal_scene02/summary.json) ·
+[报告](../reports/TASK06_IS_A_NOMINAL_SCENE02.md)。交付后停止。
+
 ## 2026-10-12 — TASK06-IS-A：来源拒绝证据与独立软件检查（无仿真）
 
 预声明462e6b1，测试源码a7223e3。`20261012_TASK06_IS_A_scene_adapter01` 唯一

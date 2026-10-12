@@ -1,5 +1,21 @@
 # BUGS
 
+## 2026-10-12 — TASK06-IS-A V2 输入与名义端点资格；剩余风险分项
+
+- **RESOLVED（限新授权名义离线路线）**：用户D058批准独立Task26 .628m输入，不覆盖
+  原.606m；原六world对象+原model实际匹配，现成KDL/原NR造出双端完整14q并通过FCL。
+  旧“实际持件状态未保存”事实不变，新q不冒充实测；旧失败不回判PASS。
+- **RESOLVED工程启动**：run02 PYTHONPATH=.覆盖ROS package path导致xacro失败，
+  完整环境诊断成功；一次启动命令修正后唯一科学run03成功。保留ABORTED证据，不改旧源。
+  KDL CMake imported target及显式JSON→string编译修正，不影响任何数学门限。
+- **KNOWN LIMITATION**：单seed，非时间路径；全链minjointmargin=.00411966rad（约.236°）
+  虽合法但小，不宣称实时跟踪鲁棒。距离未查询，离散FCL不能证明连续扫掠/PhysX等价。
+- **DEFERRED**：真实双吸盘 attachment/动态执行/时间参数化及TASK02-D正式step/time，
+  当前不用增加Observer/碰撞后端/控制器解决；B/C/TASK07未授权。
+- **LEGACY**：两件demo流程和摩擦/drive/推进参数不作为新算法变量导入。
+  无本轮最低离线结论的剩余TASK-BLOCKING；交付后停止审查。
+[报告](../reports/TASK06_IS_A_NOMINAL_SCENE02.md)。下面旧条目保留历史资格。
+
 ## 2026-10-12 — TASK06-IS-A world／持件端点输入缺口 [TASK-BLOCKING]
 
 **只阻塞本轮“现有场景合格P4路径”结论，不是已证明算法或物理场景失败。**
