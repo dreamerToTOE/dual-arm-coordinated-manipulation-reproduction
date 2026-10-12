@@ -1,5 +1,12 @@
 # BUGS
 
+## 2026-10-12 — TASK06 harness serialization type ambiguity [ENGINEERING / RESOLVED_CANDIDATE]
+
+`constrained_search01` compile fails before scientific trials: implicit nlohmann
+JSON values select an Eigen initializer-list overload; JSON-key `at` is ambiguous.
+Fix only explicit Vector3d scalar extraction/string key; no search/math/FCL or
+protocol change. Full failed build/result preserved. One fix; awaiting recompile.
+
 ## 2026-10-09 — TASK05 offline discrete acceptance limitations / diagnostic fix
 
 - **TASK-BLOCKING:** none remains for minimum offline discrete local-connection scope.

@@ -1,5 +1,15 @@
 # WORKLOG
 
+## 2026-10-12 — TASK06 compile-only failure retained; explicit conversion fix
+
+First suite invocation `constrained_search01` stopped at C++ harness compilation:
+JSON→Eigen initializer-list conversion and JSON-key overload ambiguity. No real
+planner/FCL trial was run. Evidence/result remains PARTIAL; sourceba20c98 retained.
+One evidence-based software fix makes numeric/key conversions explicit, unchanged
+planner/protocol/model/guards. Also persist the predeclared deterministic payload,
+repeat equality and SHA256 fingerprint rather than only in-memory comparison.
+Recompile and execute the still-unrun fixed scientific suite; no seed/scene tuning.
+
 ## 2026-10-12 — TASK06 primary audit and precommitted fixed engineering protocol
 
 Read governance/active task/P4/reuse/benchmark docs and pinned631b1f shared/FCL/

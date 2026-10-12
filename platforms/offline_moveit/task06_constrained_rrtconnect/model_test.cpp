@@ -30,7 +30,10 @@ p4::JointVector q(const Json& row)
   if(!result.allFinite()) throw std::runtime_error("Nonfinite stored14q");
   return result;
 }
-Eigen::Vector3d xyz(const Json& v) {return {v.at(0),v.at(1),v.at(2)};}
+Eigen::Vector3d xyz(const Json& v)
+{
+  return Eigen::Vector3d(v.at(0).get<double>(),v.at(1).get<double>(),v.at(2).get<double>());
+}
 Eigen::Isometry3d pose(const Json& p)
 {
   auto v=p.at("quaternion_xyzw"); return common_geometry::fromXyzw(xyz(p.at("translation_m")),
@@ -55,7 +58,7 @@ void run(const std::string& protocol,const std::filesystem::path& output,Json& r
   const auto config=Json::parse(read(protocol));
   const auto l=local(Json::parse(read(config.at("local_connection_protocol"))));
   const auto fixture=Json::parse(read(config.at("fixture")));
-  const auto& grasps=fixture.at("grasp_fixtures").at(config.at("grasp_fixture"));
+  const auto& grasps=fixture.at("grasp_fixtures").at(config.at("grasp_fixture").get<std::string>());
   const auto gl=pose(grasps.at("left_tcp_to_object")),gr=pose(grasps.at("right_tcp_to_object"));
   const auto urdf=read("tests/fixtures/task03/robot.urdf"),srdf=read("tests/fixtures/task03/robot.srdf");
   const std::string archive="results/20261007_TASK01_full_single_cube_geometry01/config_at_run.yaml";
@@ -116,8 +119,12 @@ void run(const std::string& protocol,const std::filesystem::path& output,Json& r
         const std::string id=name+"_seed"+std::to_string(seed)+"_repeat"+std::to_string(repeat);
         full["trial_id"]=id; full["classification"]="OFFLINE_REAL_FR3_NATIVE_FCL_DISCRETE_ONLY";
         full["native_backend_manifest"]=backend.manifest();
-        write(output/(id+".json"),full);
         const auto stable=task06_offline::deterministicJson(result);
+        full["deterministic_payload"]=stable;
+        const bool repeat_match=repeat==0 || stable==deterministic_before;
+        full["deterministic_repeat_comparison"]=repeat==0?"REFERENCE_FIRST_REPEAT":
+          (repeat_match?"EXACT_MATCH":"MISMATCH");
+        write(output/(id+".json"),full);
         if(repeat==0) deterministic_before=stable;
         else require(stable==deterministic_before,id+": deterministic path/termination/counters differ");
         const bool success=result.status==p4::PlannerStatus::SUCCESS;
@@ -156,6 +163,7 @@ void run(const std::string& protocol,const std::filesystem::path& output,Json& r
         }
         scene["trials"].push_back({{"trial_id",id},{"artifact",id+".json"},{"seed",seed},{"repeat",repeat},
           {"status",p4::statusName(result.status)},{"reason",result.reason},{"nontrivial",nontrivial},
+          {"repeat_matches_first",repeat_match},
           {"node_count",result.start_tree.size()+result.goal_tree.size()},{"path_tree_edges",result.path_edges.size()},
           {"path_points",result.dense_path.size()},{"compute_wall_time_sec",result.compute_wall_time_sec},
           {"summary",full.at("counters")},{"path_metrics",full.at("path_metrics")}});

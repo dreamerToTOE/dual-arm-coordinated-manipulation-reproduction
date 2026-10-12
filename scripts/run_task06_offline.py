@@ -101,12 +101,23 @@ def main():
         native_file = logger.path / "planning_metrics.json"
         native = json.loads(native_file.read_text()) if native_file.exists() else {}
         trial_metadata = []
+        fingerprints = []
         for case in native.get("cases", []):
             for trial in case["trials"]:
                 m = RunMetadata(trial["trial_id"], "TASK06", metadata.baseline_id, metadata.platform, commit,
                     trial["repeat"], trial["seed"], tuple([str(build / "task06_model_test"), "--protocol", PROTOCOL]),
                     metadata.config_ids, metadata.config_paths, metadata.sources)
                 trial_metadata.append(m.to_dict())
+                original = json.loads((logger.path / trial["artifact"]).read_text())
+                payload = json.dumps(original["deterministic_payload"], sort_keys=True,
+                    separators=(",", ":"), allow_nan=False).encode("utf-8")
+                fingerprints.append({"trial_id": trial["trial_id"], "seed": trial["seed"],
+                    "repeat": trial["repeat"], "deterministic_sha256": hashlib.sha256(payload).hexdigest(),
+                    "repeat_matches_first": trial["repeat_matches_first"],
+                    "canonical_encoding": "UTF8_SORTED_COMPACT_JSON_OF_SAVED_DETERMINISTIC_PAYLOAD",
+                    "excludes": ["compute_wall_time_sec", "native_raw_contact_arrays"]})
+        with (logger.path / "deterministic_fingerprints.json").open("x") as handle:
+            json.dump(fingerprints, handle, indent=2, allow_nan=False)
         with (logger.path / "trial_metadata.json").open("x") as handle:
             json.dump({"suite_seed": None, "suite_rng_status": "NO_SUITE_RNG_EXPLICIT_MULTISEED_CHILD_PLANNERS",
                 "actual_rng": config["rng"], "trials": trial_metadata}, handle, indent=2, allow_nan=False)
