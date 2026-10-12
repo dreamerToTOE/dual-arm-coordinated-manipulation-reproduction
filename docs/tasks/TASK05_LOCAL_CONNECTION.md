@@ -1,6 +1,11 @@
 # TASK05 — P4 Constrained Local Connection
 
-Status: IN_PROGRESS — user-authorized bounded offline slice from `5d41869`.
+Status: **PASS CANDIDATE (OFFLINE DISCRETE LOCAL CONNECTION ONLY)** — STOP FOR REVIEW.
+
+Final report: [TASK05 POST-TASK REPORT](../../reports/TASK05_LOCAL_CONNECTION01.md).
+Ten true FR3/FCL positives pass; projection/bounds/closure/continuity/budget
+failures reject with exact evidence. Native FCL known penetration rejected;
+original ACM/models unchanged. No continuous collision/physical/full-P4 proof.
 
 ## Goal
 Connect two valid closed-chain states without leaving the constraint manifold.
@@ -18,7 +23,7 @@ Reject edge on any failed intermediate state.
 ## PASS
 Unit tests include feasible connection, projection failure, joint-limit failure and collision failure.
 
-## Current authorized protocol (2026-10-09)
+## Completed bounded protocol (2026-10-09, from `5d41869`)
 
 Read [PRE-TASK / reuse / protocol](../../reports/TASK05_PRE_TASK_PROTOCOL.md),
 [connector contract](../../baselines/p4_closed_chain/LOCAL_CONNECTION.md) and D050.

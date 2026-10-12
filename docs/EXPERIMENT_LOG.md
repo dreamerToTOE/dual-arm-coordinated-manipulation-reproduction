@@ -1,5 +1,25 @@
 # EXPERIMENT_LOG
 
+## 2026-10-09 — TASK05 local_connection01/02, bounded offline suite only
+
+D050 pre-experimentprotocol55e53493… at e308a71; no later numerical changes.
+Sources e335e72 (run01) and1387808 (run02 diagnostic-onlyfix). Each10commands0:
+configure/build,72TASK02,CTest3/3,93TASK03/108TASK04/300TASK05mathassertions,
+435actualFR3FDconfigs,194+293TASK04projections and10realRBSpositive+3negativecases.
+Perrun:32pathpointoccurrences,14midpointcalls,35nativeFCLqueries; maxclosure
+1.8427461484e-10m/2.1963382036e-9rad; minnativejointmargin.6339639322rad;
+maxadjacentL2.00965945294rad/Linf.00619235117rad. Genuine negative FCL returns
+COLLISION with12ROBOT_ENV+4CUBE_ENV contacts, no failedendpoint addedtoprefix.
+Run01warning/worldlinkqueryERROR retained; no scientific failure. Only diagnostic
+lookup and indentation corrected, run02clean, checkedq/status/prefixexactlyequal.
+Final tiny-suitecompute.004389573sec (wallcostonly, NOT robotcycletime).
+Metadata/artifacthasheschecked;505protected/8STLs/4oldassets unchanged. Full outputs
+results/20261009_TASK05_local_connection0{1,2}/; seedUNSET,physicstime/stepnull,
+typedSUCCESS scopeofflineonly/UNQUALIFIED. NoIsaac/ROSservices/controllers/IK/
+Task26/Benchmark edits. TASK05PASSCANDIDATE onlydiscrete, not continuous safety or
+fullP4/physicalclaim. TASK02IN_PROGRESS/DDEFERRED, BenchmarkDRAFT; stopforreview.
+[Report](../reports/TASK05_LOCAL_CONNECTION01.md).
+
 ## 2026-10-09 — TASK04 finite projection03, negative build01/02 retained
 
 Offline Eigen/MoveIt core2.5.9/Python; invocation15951f7 plus working-source hashes;

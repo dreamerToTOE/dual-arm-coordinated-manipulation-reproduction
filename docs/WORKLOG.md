@@ -1,5 +1,35 @@
 # WORKLOG
 
+## 2026-10-12 — Resume interrupted TASK05 report/GitHub handoff only
+
+User sayscontinue; retain original offline scope, no newtask/runtime authorization.
+Re-readgovernance/status/task/report; currentbranchtask05-p4-local-connection with
+testedHEAD1387808. Existingrun01/run02 artifacts valid, run02allsourcehashesmatch;
+run01twopre-fixhashes correctly refer toe335e72. Independent read-only delivery
+review compares counts/contacts/logs/links. No newexperiment/code or oldasset edit.
+Stage onlyTASK05docs/report/tworesultfolders, preserve unrelated olduntrackedlogs.
+Submit taskbranch thenSTOPforreview; TASK06/physics not started.
+
+
+## 2026-10-09 — TASK04 review accepted; bounded TASK05 offline connection delivered
+
+Base5d41869; newtask05-p4-local-connection branch. Read governance/reuse/card/full
+P4/pinnedsharedObjectPlanner+conflictdetector. Main pretask/priorasset audit preceded
+edits; D050 protocol committed e308a71 before experiments. PaperRBS selected,
+not independent global-alpha projection; unchanged TASK03/04 sources reused.
+Thin private native FCL adapter excludes old self/world filters and ACM expansions.
+Parallel independent code/paper review and unit/backend implementation; all fixed
+acceptance runs orchestrated by root, no controls. Endpoint NaN/cutoff/prefix trace
+issues fixed before first run, not numerical protocol changes. e335e72 run01allPASS;
+1387808 only uses hasLinkModel for worldbody classification and removesindentwarning;
+run02allPASS, exactsameq/status/prefix. Both logs/negatives retained. Native30shapes/
+16meshes,10positiveedges/3negativeedges,14NRcalls/35FCLchecks perrun.72/93/108/300
+regressionchecks+435realFDconfigs PASS; oldprecisionFAIL retained. FullJSON traces,
+model/ACM/environment provenance and505protected/8mesh/4legacyhashes unchanged.
+No Isaac/ROS services/Task26/Benchmark edits or TASK06; parentTASK02IN_PROGRESS,
+measurementDDEFERRED, BenchmarkDRAFT. DeliverySTOPforreview, noextra instrumentation.
+[Report](../reports/TASK05_LOCAL_CONNECTION01.md).
+
 ## 2026-10-09 — TASK03 review closure and bounded TASK04 offline projection
 
 User baseline91422f4, same task03 branch. Read governance/cards/original P4 and

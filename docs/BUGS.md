@@ -1,5 +1,24 @@
 # BUGS
 
+## 2026-10-09 — TASK05 offline discrete acceptance limitations / diagnostic fix
+
+- **TASK-BLOCKING:** none remains for minimum offline discrete local-connection scope.
+  Real FCL scene/resources loaded; no alternate engine. No physics gap was hidden.
+- **KNOWN LIMITATION:** checked points/finite adjacency do not prove continuous
+  collision/manifold-branch safety. Conservative NRrank/locality guards may reject
+  valid larger connections. Historical bilateral fixture is not current frozen
+  Benchmark/PhysX parity. Tool/Cube raw contacts are classified but not granted any
+  new exemption; original mounting pairs stay allowed by unchanged SRDF.
+- **RESOLVED ENGINEERING:** run01 world-body classification queried getLinkModel
+  and emitted misleading native ERROR. Existing hasLinkModel removes output noise
+  without changing pair classification, FCL queries or result. Compiler indentation
+  warning also removed; run02 clean, sameexactq/status/prefix; bothlogsretained.
+- **DEFERRED:** TASK02-D native post-step clock/reset binding; force TASK10-IS and
+  future planner TASK06. Do not reopen Observer/parity or freeze Benchmark here.
+- **LEGACY:** original Task26/control/top-suction gates not modified or retested.
+Original TASK03 historical precision FAIL remains FAIL.
+[Evidence](../reports/TASK05_LOCAL_CONNECTION01.md).
+
 ## 2026-10-09 — TASK03 reviewed precision scope / TASK04 limitations
 
 - **KNOWN LIMITATION:** user D047 accepts TASK03 mathematics separately; original

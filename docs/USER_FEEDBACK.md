@@ -1,5 +1,18 @@
 # USER_FEEDBACK
 
+## 2026-10-09 — TASK04 accepted; TASK05 bounded offline local connection authorized
+
+- User accepts TASK04 PASSCANDIDATE (OFFLINE PROJECTION MATHEMATICS ONLY), base5d41869.
+- Reuse C/Jc, original NR-SVD/FR3FK and genuine existing MoveIt/PlanningScene/FCL.
+  Bound interpolation/projection, native limits/continuity; fail wholeedge with
+  explicitreason andverifiedprefix. Predeclarestep/precision/jump gates beforetests.
+- Distinguish self/environment/legal contact; no enlargedACM/collisionthreshold
+  relaxation. Syntheticcollision tests are not realFCL evidence. Missingtrue scene
+  =>PARTIAL, no alternative backend.
+- NoIsaac/actualcontroller/Bridge/Task26/TASK06; TASK02-DDEFERRED/BenchmarkDRAFT.
+  Requiredsame/near/failedprojection/outofbounds/realcollision cases andfulltrace.
+  Report/pushGitHub thenstopforreview, no automatic nexttask.
+
 ## 2026-10-09 — TASK03 mathematics accepted; TASK04 offline projection authorized
 
 - Accept TASK03 PASS CANDIDATE (OFFLINE MATHEMATICS ONLY); keep original0.05micrometre

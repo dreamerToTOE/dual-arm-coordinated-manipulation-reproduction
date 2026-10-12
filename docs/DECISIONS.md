@@ -1,5 +1,20 @@
 # DECISIONS
 
+## D051 — TASK05 discrete evidence sufficient; stop before TASK06
+
+2026-10-09. D050 predeclared RBS guards unchanged. NativeFCL/30shapes/16meshes
+and unchanged privateACM coverrobotself/interarm/robotworld/carriedCubeworld; no
+old filtering, newtouchlink or depthexception.10fixedrealpositiveconnections pass,
+3negatives reject including genuine world/tool/attachedCube penetration; fulltrace
+andorderedprefix retained. Nativebound/closure failure doesnot repaircallerendpoint.
+300syntheticchecks exerciseprojection/jump/continuity/budgets/failureinterfaces,
+not a substitute for actualFCL. Two software passes, one logging-onlyfix, identicalq.
+Minimum sufficient evidence reached for **OFFLINE DISCRETE LOCAL CONNECTION ONLY**;
+no continuous safety/branch/PhysX/suction/time-trajectory/full P4 claim. TASK05
+PASSCANDIDATE for userreview, not accepted/frozen automatically. No TASK06 or runtime
+authorization inferred. TASK02-D DEFERRED, parentTASK02IN_PROGRESS, BenchmarkDRAFT.
+[Report](../reports/TASK05_LOCAL_CONNECTION01.md).
+
 ## D050 — TASK04 reviewed; predeclare TASK05 offline RBS protocol
 
 2026-10-09, explicit user acceptance of TASK04 PASS CANDIDATE (OFFLINE PROJECTION

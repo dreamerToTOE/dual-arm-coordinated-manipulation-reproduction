@@ -1,5 +1,15 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+最新交付（2026-10-09）：**TASK05 — P4 递归二分局部连接 PASS CANDIDATE（仅离线离散验收）**。
+复用原 C/Jc、NR-SVD、FR3 模型与真实 PlanningScene/FCL；10 条正向连接通过，
+限位、闭链及真实碰撞负例被拒绝，完整失败前缀和证据已保存。原 ACM、旧 Task26
+和 Benchmark 未改；不代表连续无碰撞或实际机器人执行成功。TASK02-D 保持 DEFERRED，
+Benchmark DRAFT / NOT FROZEN；交付后停止等待审查，不自动开始 TASK06。
+[TASK05 报告／测试日志](reports/TASK05_LOCAL_CONNECTION01.md) ·
+[连接接口与限制](baselines/p4_closed_chain/LOCAL_CONNECTION.md) · [当前状态](docs/STATUS.md)。
+
+### TASK04 历史交付（保留）
+
 最新进度（2026-10-09）：**TASK03 离线闭链数学经用户审查接受；TASK04 离线
 Newton-Raphson 投影 PASS CANDIDATE**。194/194 邻域扰动与 293/293 原抓取诊断
 投影收敛；原 TASK03 0.05 μm 历史精度 FAIL 完整保留。未运行物理实验，未实现

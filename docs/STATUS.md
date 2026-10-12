@@ -1,5 +1,32 @@
 # STATUS
 
+## 2026-10-12 — TASK05 interrupted delivery resumed, no new experiment
+
+Saved run01/run02 artifact hashes verified; all final run02 source hashes match
+tested1387808, checkedq/status/prefix still identical across stored runs. Only
+report/evidence GitHub delivery remains; no new math/FCL/Isaac/ROS/controller run
+or algorithm/model/protocol edit. TASK05 PASS CANDIDATE (OFFLINE DISCRETE ONLY),
+TASK02-D DEFERRED, Benchmark DRAFT; stop for user review, no TASK06.
+
+
+## 2026-10-09 — TASK05 offline discrete RBS + genuine FCL PASS CANDIDATE; stop
+
+**TASK05 = PASS CANDIDATE (OFFLINE DISCRETE LOCAL CONNECTION ONLY).**
+User accepted TASK04 offline mathematics. Precommitted D050 protocol e308a71;
+RBS reuses unchanged C/Jc/FK/NR, native private PlanningScene/FCL and original ACM.
+Ten fixed real-model positives PASS (32 path-point occurrences,14 midpoint calls);
+native bound/closure/FCL negatives reject. Real negative has12tool↔obstacle and
+4attachedCube↔obstacle contacts, full q/residual/prefix/raw evidence.30shapes/16meshes
+loaded, no alternate collision engine or added contact exemption. Final maxC
+1.84274615e-10m/2.19633820e-9rad, minmargin.63396393rad; maxadjacentL2.00965945rad.
+72TASK02 +93TASK03 +108TASK04 +300TASK05 checks and435realFD configs PASS;
+505protectedfiles/8STLs/4predecessorassets unchanged. Two software runs both pass,
+q/status/prefix identical; one diagnostic-only lookup/warning fix, no tuning.
+Original TASK03 precision FAIL preserved. No new Isaac/ROS services/control,
+continuous safety/full P4 planning or physical claim. **TASK02-D DEFERRED;
+TASK02 IN_PROGRESS; Benchmark DRAFT / NOT FROZEN.** Stop for review, no TASK06.
+[POST-TASK REPORT](../reports/TASK05_LOCAL_CONNECTION01.md).
+
 ## 2026-10-09 — TASK04 offline projection PASS CANDIDATE; stop for review
 
 **TASK04 = PASS CANDIDATE (OFFLINE PROJECTION MATHEMATICS ONLY).**

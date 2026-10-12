@@ -23,6 +23,16 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+**Latest delivery: TASK05 PASS CANDIDATE (OFFLINE DISCRETE LOCAL CONNECTION ONLY).
+STOP FOR USER REVIEW; do not start TASK06 or runtime.** Branch
+`task05-p4-local-connection`, base5d41869, D050/D051. Existing C/Jc/NR/FK and
+genuine private FCL reused; no ACM/model/Benchmark/Task26 changes. Ten positives,
+three bound/closure/realFCL negatives and300syntheticchecks pass; complete ordered
+prefix/projection/collision evidence saved. No continuous safety/full P4 planning
+or physical claim. TASK02-D DEFERRED, parentTASK02 IN_PROGRESS, Benchmark DRAFT.
+[Latest POST-TASK REPORT](reports/TASK05_LOCAL_CONNECTION01.md).
+Earlier delivery/authorization gates below are preserved history, not active work.
+
 **Delivery complete; STOP FOR USER REVIEW. TASK04 = PASS CANDIDATE (OFFLINE
 PROJECTION MATHEMATICS ONLY).** Read [TASK04 report](reports/TASK04_NR_PROJECTION01.md)
 and [projection contract](baselines/p4_closed_chain/PROJECTION.md). D048 protocol
