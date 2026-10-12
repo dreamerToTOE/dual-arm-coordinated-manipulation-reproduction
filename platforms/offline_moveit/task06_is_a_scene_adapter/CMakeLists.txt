@@ -5,6 +5,8 @@ find_package(moveit_core REQUIRED)
 find_package(srdfdom REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(nlohmann_json REQUIRED)
+find_package(orocos_kdl REQUIRED)
+find_package(kdl_parser REQUIRED)
 enable_testing()
 # 原数学/搜索/FCL target 完整复用，无 ROS init/Node/服务/命令接口。
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../task06_constrained_rrtconnect" task06_reuse)
@@ -13,3 +15,9 @@ add_executable(task06_is_a_native_audit native_audit.cpp
 target_link_libraries(task06_is_a_native_audit PRIVATE
   task06_constrained_rrtconnect task05_collision_adapter)
 target_compile_options(task06_is_a_native_audit PRIVATE -Wall -Wextra -Wpedantic)
+add_executable(task06_is_a_nominal_planning nominal_planning.cpp
+  "${CMAKE_CURRENT_SOURCE_DIR}/../../../baselines/p4_closed_chain/closure.cpp")
+target_include_directories(task06_is_a_nominal_planning PRIVATE ${orocos_kdl_INCLUDE_DIRS} ${kdl_parser_INCLUDE_DIRS})
+target_link_libraries(task06_is_a_nominal_planning PRIVATE
+  task06_constrained_rrtconnect task05_collision_adapter ${orocos_kdl_LIBRARIES} kdl_parser::kdl_parser)
+target_compile_options(task06_is_a_nominal_planning PRIVATE -Wall -Wextra -Wpedantic)

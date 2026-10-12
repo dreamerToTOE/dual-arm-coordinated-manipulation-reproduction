@@ -171,6 +171,7 @@ struct CollisionAdapter::Impl
   std::array<const moveit::core::JointModelGroup*, 2> groups{};
   Eigen::Isometry3d left_tcp_to_object;
   Eigen::Vector3d cube_size;
+  std::string cube_id = CUBE;  // 默认历史 TASK05 身份不变。
   moveit_msgs::msg::AllowedCollisionMatrix original_acm;
   Json evidence;
 
@@ -186,8 +187,8 @@ struct CollisionAdapter::Impl
       const std::vector<shapes::ShapeConstPtr> shapes{
           std::make_shared<shapes::Box>(cube_size.x(), cube_size.y(), cube_size.z())};
       const EigenSTL::vector_Isometry3d poses{Eigen::Isometry3d::Identity()};
-      result.attachBody(CUBE, left_tcp_to_object, shapes, poses, std::set<std::string>{}, LEFT_TCP);
-      const auto* body = result.getAttachedBody(CUBE);
+      result.attachBody(cube_id, left_tcp_to_object, shapes, poses, std::set<std::string>{}, LEFT_TCP);
+      const auto* body = result.getAttachedBody(cube_id);
       if (!body || !body->getTouchLinks().empty() || body->getAttachedLinkName() != LEFT_TCP)
         throw std::runtime_error("Native attachment differs from empty-touch-links contract");
     }
@@ -237,14 +238,14 @@ struct CollisionAdapter::Impl
     const auto& a = contact.body_name_1;
     const auto& b = contact.body_name_2;
     const auto native_type = [&](const std::string& name) {
-      if (name == CUBE) return collision_detection::BodyTypes::ROBOT_ATTACHED;
+      if (name == cube_id) return collision_detection::BodyTypes::ROBOT_ATTACHED;
       if (model->hasLinkModel(name)) return collision_detection::BodyTypes::ROBOT_LINK;
       return collision_detection::BodyTypes::WORLD_OBJECT;
     };
     if (contact.body_type_1 != native_type(a) || contact.body_type_2 != native_type(b)) return "UNKNOWN";
-    if (a == CUBE || b == CUBE)
+    if (a == cube_id || b == cube_id)
     {
-      const auto& other = a == CUBE ? b : a;
+      const auto& other = a == cube_id ? b : a;
       if (other == "left_fr3_side_suction" || other == "right_fr3_side_suction") return "TOOL_CUBE";
       if (model->hasLinkModel(other)) return "ROBOT_CUBE";
       return scene->getWorld()->hasObject(other) ? "CUBE_ENV" : "UNKNOWN";
@@ -359,10 +360,38 @@ CollisionAdapter::CollisionAdapter(const std::string& urdf_xml, const std::strin
       throw std::invalid_argument("Original URDF base differs from archive");
   impl_->cube_size = vector3(archive["cube"]["size_m"]);
   if ((impl_->cube_size.array() != .120).any()) throw std::invalid_argument("Expected original 0.120 m Cube");
-  impl_->evidence["attachment"] = {{"id", CUBE}, {"parent_link", LEFT_TCP},
+  if (archive["cube"]["collision_object_id"])
+  {
+    impl_->cube_id = archive["cube"]["collision_object_id"].as<std::string>();
+    if (impl_->cube_id.empty() || impl_->model->hasLinkModel(impl_->cube_id))
+      throw std::invalid_argument("Invalid attached Cube identity");
+  }
+  impl_->evidence["attachment"] = {{"id", impl_->cube_id}, {"parent_link", LEFT_TCP},
       {"parent_collision_shapes", 0}, {"tcp_to_object", rigidJson(left_tcp_to_object)},
       {"size_m", xyz(impl_->cube_size)}, {"touch_links", Json::array()},
       {"tool_cube_exempt", false}, {"cube_world_covered_by_native_FCL", true}};
+  // 可选来源输入。缺省仍逐字沿用下面的历史四对象构造；不增改 ACM/碰撞门限。
+  if (archive["adapter_world_objects"])
+  {
+    const auto objects = archive["adapter_world_objects"];
+    if (!objects.IsSequence() || objects.size() == 0)
+      throw std::invalid_argument("Empty independent world input");
+    std::set<std::string> ids;
+    for (const auto& object : objects)
+    {
+      const auto id = object["id"].as<std::string>();
+      if (id.empty() || id == impl_->cube_id || impl_->model->hasLinkModel(id) ||
+          !ids.insert(id).second || object["frame_id"].as<std::string>() != "world")
+        throw std::invalid_argument("Invalid independent world object identity/frame");
+      const auto r = object["quaternion_xyzw"];
+      if (!r.IsSequence() || r.size() != 4) throw std::invalid_argument("Invalid world quaternion");
+      const auto pose = common_geometry::fromXyzw(vector3(object["center_world_m"]),
+          Eigen::Vector4d(r[0].as<double>(), r[1].as<double>(), r[2].as<double>(), r[3].as<double>()));
+      impl_->box(id, pose, vector3(object["size_m"]));
+    }
+    impl_->integrity();
+    return;
+  }
   const auto add = [&](const std::string& id, const Eigen::Vector3d& center, const Eigen::Vector3d& size) {
     Eigen::Isometry3d pose = Eigen::Isometry3d::Identity(); pose.translation() = center;
     impl_->box(id, pose, size);
@@ -444,6 +473,29 @@ Json CollisionAdapter::manifest() const
   return output;
 }
 
+Json CollisionAdapter::worldReadback() const
+{
+  impl_->integrity();
+  Json objects = Json::array();
+  for (const auto& id : impl_->scene->getWorld()->getObjectIds())
+  {
+    const auto object = impl_->scene->getWorld()->getObject(id);
+    if (!object || object->shapes_.size() != 1 || object->shape_poses_.size() != 1 ||
+        object->global_shape_poses_.size() != 1 || object->shapes_[0]->type != shapes::BOX)
+      throw std::runtime_error("Expected single native BOX world object: " + id);
+    const auto& box = static_cast<const shapes::Box&>(*object->shapes_[0]);
+    const Eigen::Isometry3d composed = object->pose_ * object->shape_poses_[0];
+    if ((composed.matrix() - object->global_shape_poses_[0].matrix()).cwiseAbs().maxCoeff() > 1e-12)
+      throw std::runtime_error("Native world shape composition mismatch: " + id);
+    objects.push_back({{"id", id}, {"frame_id", "world"}, {"primitive_count", 1},
+      {"primitive_type", "BOX"}, {"size_m", {box.size[0], box.size[1], box.size[2]}},
+      {"object_pose_world", rigidJson(object->pose_)},
+      {"shape_pose_object", rigidJson(object->shape_poses_[0])},
+      {"composed_shape_pose_world", rigidJson(composed)}});
+  }
+  return objects;
+}
+
 Eigen::Isometry3d CollisionAdapter::linkPose(const p4::JointVector& q, const std::string& name) const
 {
   if (!impl_->model->getLinkModel(name)) throw std::invalid_argument("Link absent from original native model: " + name);
@@ -467,7 +519,7 @@ void CollisionAdapter::addPrivateWorldBox(const std::string& id,
 {
   impl_->integrity();
   if (id.rfind("task06_private_", 0) != 0 || id.size() <= 15 ||
-      impl_->model->hasLinkModel(id) || impl_->scene->getWorld()->hasObject(id) || id == CUBE)
+      impl_->model->hasLinkModel(id) || impl_->scene->getWorld()->hasObject(id) || id == impl_->cube_id)
     throw std::invalid_argument("Private fixture must have a new task06_private_ ID");
   impl_->box(id, pose_world, size_m);
   impl_->evidence["world_objects"].back()["classification"] = "PRIVATE_ENGINEERING_FIXTURE_ONLY";

@@ -20,6 +20,8 @@ public:
 
   p4::CollisionEvidence check(const p4::JointVector& q) const;
   nlohmann::json manifest() const;
+  // [TASK06-IS-A] 原生 World 的只读组合 world-shape readback；不查询新碰撞后端。
+  nlohmann::json worldReadback() const;
   Eigen::Isometry3d linkPose(const p4::JointVector& q, const std::string& name) const;
 
   // 只在独立负例实例中添加同尺寸盒；不移动/删除归档 table 或三面墙。
