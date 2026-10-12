@@ -1,5 +1,11 @@
 # STATUS
 
+## 2026-10-12 — D055：五篇论文逐篇完成场景应用与仿真验证
+用户明确要求五篇论文的核心方法均应用到已有双 FR3/Cube/车厢场景，不能 P4 仅有离线算法便自动进入 P2。新路线是“离线算法→现有场景无命令适配→经批准的可见 Isaac 执行→阶段对比/审查”，适用于 P4、P2、P3、P5、P1；MuJoCo 是 P2/P3 的先期平台，不能替代 Isaac 最终验证。
+P4 新增 TASK06-IS-A/B/C；下一步仅 A（静态来源核查和有界离线规划，禁止启动 Isaac/ROS/控制），B/C 和 TASK07 未授权。原 TASK06 整体部分完成、专项障碍证据缺口、TASK02-D 暂缓、Benchmark 草案状态保持。
+详见 [新路线](REPRODUCTION_ROADMAP.md) 与 [TASK06-IS-A](tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md)。
+
+
 ## 2026-10-12 — TASK06 user review closes core software acceptance only (D054)
 
 - **TASK06 core offline planner software = PASS CANDIDATE**, explicitly accepted

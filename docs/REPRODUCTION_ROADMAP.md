@@ -1,100 +1,63 @@
-# Reproduction Roadmap — revised 2026-10-08 (D039)
+# 五篇论文算法复现与 Isaac Sim 场景验证路线
 
-## Core principle
-The scientific workflow is:
+更新时间：2026-10-12。用户确认的项目主线：**提取五篇论文的核心方法，逐篇应用到现有双 FR3 + 侧吸盘 + Cube + 车厢场景，并通过阶段性实验验证，而不是连续完成五套离线代码。** 决策见 `docs/DECISIONS.md` 的 D055。
 
-```text
-Benchmark A:
-dual-arm bilateral shared-object transport
-START → PRE_PUSH
+## 1. 固定研究任务与场景边界
 
-fixed engineering handoff:
-release → right rear regrasp → INSERT_READY
+- **搬运阶段 A（统一基准 A）**：双 FR3 已共同抓持同一个 Cube，从 START 协同搬运到 PRE_PUSH_SHARED；重点考察闭链、物体位姿、双臂协调与碰撞。
+- **固定工程交接**：释放双侧吸盘、左臂避让、右臂从 Cube 后方重新抓取，到 INSERT_READY。复用原 Task26/27 中成熟的交接与预检，不将交接算法混入待比较的论文算法。
+- **推进阶段 B（统一基准 B）**：右臂后方推动 Cube 沿 +X 进入车厢槽内，至 TARGET；重点考察受限接触与力位混合。
+- 基准文件 `configs/benchmark/benchmark_v1.yaml` 和 `docs/BENCHMARK_SPEC.md` 仍为**草案、未定稿**。此前 Task26 批次两件工程成功不等于“一个 Cube 的正式科研场景”已验证或定稿；不能用旧场景的结果替代正式论文实验。
+- 正式统一对比原则上在 **Isaac Sim + ROS 2 + 双 FR3** 的相同场景中完成；MuJoCo 用于 P2/P3 的动力学、接触和控制开发，但不能替代最后的 Isaac 验证。
 
-Benchmark B:
-single rear-pusher constrained insertion
-INSERT_READY → TARGET
-```
+## 2. 每篇论文必须经过四个关口
 
-This matches the validated engineering topology in `dual-arm-embodied-palletizing@side-suction-palletizing` while keeping the scientific benchmark to one Cube.
+1. **算法理解与实现**：核查论文、推导公式、复用数学/工程模块、完成离线测试；注明“论文原方法 / 场景适配 / 工程实现 / 方法偏离”。
+2. **适配现有场景、无命令验证**：对齐左右 FR3 关节顺序、坐标系、TCP、固定抓取变换、实际 Cube/车厢/障碍几何、碰撞语义、起终点；使用既有场景及执行通路的只读接口，先证明能对场景产生合格规划或控制候选，不发送运动/吸盘/导轨命令。
+3. **Isaac Sim 物理执行**：单独批准 GUI 仿真运行预算后，使用经过验证的旧 ROS 2/MoveIt2/双臂同步执行链执行新方法；运行前做阶段门禁、碰撞与关节限位预检。禁止新建第二套 scene/bridge/执行器来代替旧工程。物理结果单独记录，不能用离线成功推导。
+4. **阶段实验与对比验收**：同场景、相同任务定义与已声明的测量规则，对比合适的旧工程基线/其他方法；保存成功和失败、种子/参数/源码、规划与执行指标。先取得可追溯阶段结论，再经用户审查决定是否进入下一篇论文。阶段实验规范不代表整个项目的正式基准已经定稿。
 
-Read `docs/PRIOR_PROJECT_REUSE.md` before rebuilding existing Isaac primitives.
+各关口分别记录**初步验收通过／部分完成／未通过／暂缓**，不能因为第一关通过就标整篇论文复现完成；也不必因非关键诊断无限延期。任何真实物理执行或正式科学指标认证都必须单独获批。
 
-## Phase 0 — Foundation
-- **TASK00 Environment Audit — PASS**
-- **TASK01 Predecessor Single-Cube Scene Foundation Qualification — IN_PROGRESS (RESTARTED)**
-  - directly read and run predecessor Task26 at pinned commit 631b1f65656d025c1bb2173e874192f3fe4d355a;
-  - reduce to one independent Cube only;
-  - use original GUI → scene → Play → bridge → MoveIt → executor lifecycle;
-  - run original planning-only preflight and one complete physical one-Cube flow;
-  - if successful, mark predecessor Task26 single-Cube scene FOUNDATION_SCENE PASS CANDIDATE;
-  - benchmark_v1 freeze is deferred until the foundation decision.
-- **TASK02 Common Interface / Logger / Metrics**
-  - common state/command/result contracts;
-  - explicit phase label: A / HANDOFF / B;
-  - same-post-step simulation timestamp;
-  - collision-distance interface;
-  - deterministic run metadata.
+## 3. 当前第一篇：P4 闭链运动规划
 
-## Phase 1 — P4 Closed-chain Planning
-- TASK03 Closure Constraint
-- TASK04 Newton-Raphson Projection
-- TASK05 Constrained Local Connection
-- TASK06 Constrained RRTConnect
+### 已完成的离线算法工作（保留原始证据）
 
-P4 evaluates Benchmark A. It does not require calibrated contact wrench and must not be blocked by Benchmark-B force sensing.
+- TASK03：闭链约束和约束雅可比，离线数学初步验收通过；原历史抓取构型 `0.435028 μm > 0.05 μm` 精度验收**未通过**，原数据不覆盖。
+- TASK04：牛顿迭代／奇异值分解闭链投影，离线数学初步验收通过。
+- TASK05：递归二分局部连接与真实 FR3/FCL 的离散碰撞检查，初步验收通过；不宣称连续扫掠安全。
+- TASK06：真实双树约束 RRTConnect 软件初步验收通过，原完整协议仍**部分完成**。独立障碍场景直接连接先触发 `PROJECTION_JUMP`，没有取得规定的直接 `COLLISION` 证据；原固定种子结果、原始门限均不改判。专项评估 `P4-EVAL-OBSTACLE-DIRECT-COLLISION` 暂缓，需另行授权。
 
-## Phase 2 — P2 Pose / Internal Force
-### MuJoCo
-- TASK07-MJ Grasp Matrix + Internal Wrench
-- TASK08-MJ Object Pose Controller
-- TASK09-MJ Pose + Internal Force
+### 新增三个 P4 仿真阶段
 
-### Isaac
-- **TASK10-IS Force/Wrench Calibration + P2 Migration**
-  - validate explicit wrench source/frame/application point;
-  - compensation as required;
-  - migrate P2 to Benchmark A.
+| 任务 | 科研问题 | 当前安排 |
+|---|---|---|
+| [TASK06-IS-A](tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md) | 新 P4 规划器能否在**既有**双 FR3 / Cube / 车厢的原几何定义下生成合格规划？ | **下一步：仅适配、读取/核对与无执行规划验证** |
+| [TASK06-IS-B](tasks/TASK06_IS_B_GUI_EXECUTION.md) | 能否用原工程双臂同步控制链在 Isaac Sim GUI 中实际执行经过门禁的闭链路径？ | 待 TASK06-IS-A 审查后另行授权 |
+| [TASK06-IS-C](tasks/TASK06_IS_C_COMPARISON.md) | 新旧规划方法在可比较的场景、起终点和测量条件下有什么差异？ | 待阶段 B 证据和科研采样资格后另行授权 |
 
-P2's dual-arm internal-wrench claims belong primarily to Benchmark A.
+特别注意：**TASK06-IS-A 不授权启动 Isaac/ROS 服务或执行机器人**。仅允许可读取的已有场景/模型/存档、受限离线规划与静态一致性验证；真实场景状态缺失则明确列出、停止请求用户决定。即使规划产生路径，也不证明物理抓持/执行成功。
 
-## Phase 3 — P3 Constrained Insertion
-P3 begins from the frozen **INSERT_READY** state after the common fixed handoff.
+此前 TASK02-D 的物理计算后时间、步数、同一步状态和复位会话身份尚未认证。它不阻塞 A 的离线场景适配，但在 C 声称科研级执行轨迹指标前必须完成有界认证，或将相关指标明确列为不可用；不得伪造时间基准或把 ROS/墙钟当仿真物理步。
 
-- TASK11-MJ Position-only rear-push baseline
-- TASK12-MJ Hybrid Force/Position rear-push
-- TASK13-MJ Jam Detection
-- TASK14-MJ Search / Align Recovery
-- TASK15-IS Isaac Migration + Benchmark B
+## 4. 后续四篇论文：逐篇完成应用验证
 
-Only here freeze desired push force, force safety limits, jam thresholds and C1–C5 perturbation values.
+| 顺序 | 核心算法任务 | 先期研究平台 | 最终应用场景及阶段门禁 |
+|---|---|---|---|
+| **P2**：双臂物体位姿与内部作用力 | TASK07-MJ ～ TASK09-MJ | MuJoCo 力学与接触验证 | TASK10-IS 传感/坐标校验、控制迁移、**双臂搬运阶段 A** 的 Isaac 执行与对比；不是仅做力分解公式 |
+| **P3**：力位混合推进与卡滞处理 | TASK11-MJ ～ TASK14-MJ | MuJoCo 推进/接触研究 | TASK15-IS 移植并在 **INSERT_READY→TARGET 阶段 B** 进行 Isaac 执行和对比，复用固定交接与旧后推基线 |
+| **P5**：集中式二次规划协调 | TASK16 ～ TASK18 | 数学、MoveIt/FCL、离线约束 | TASK19 Isaac 运动控制和阶段 A 对比；需要明确真实速度/关节/碰撞约束资格 |
+| **P1**：采样式模型预测控制 | TASK20 ～ TASK25 | 上游方法、双 FR3 适配、离线/GPU 验证 | TASK26 Isaac 集成、阶段 A 执行与对比；不能用 GPU 计算实验替代执行证据 |
 
-## Phase 4 — P5 QP Coordination
-- TASK16 QP IK Core
-- TASK17 Joint Constraints
-- TASK18 Collision Constraints
-- TASK19 Isaac Real-time Execution
+前一篇完成合理的“离线实现→场景无命令验证→授权执行→阶段对比或清楚解释无法获得的证据”后，再经用户决定启动下一篇。允许记录阻塞和暂缓项，但**不能自动跳过 Isaac 应用验证**。不要求五篇算法控制完全相同的阶段：P4/P2/P5/P1 以 A 为主，P3 以 B 为主；不恰当地横比不同任务的成功率。
 
-Primary common comparison target is Benchmark A unless a later explicit decision defines a cooperative-contact B variant.
+## 5. 统一评价与我们的方法
 
-## Phase 5 — P1 Sampling MPC
-- TASK20 Upstream Reproduction
-- TASK21 Dual-FR3 Adapter
-- TASK22 Equality Constraint / Null Space
-- TASK23 Stage-1 Exploration
-- TASK24 Stage-2 Refinement
-- TASK25 GPU Benchmark
-- TASK26 Isaac Integration
+- TASK27：统一基准的场景、来源、指标和测量资格审核；TASK28 消融，TASK29 失败分析，TASK30 基准方法定稿；TASK31 才启动自研算法设计。
+- 五种方法的适用边界、失败情况与可组合性在 TASK27–30 汇总，作为自研方案设计依据；不预设方法组合一定提高效果。
+- 任何正式基准阈值、模型/几何/ACM、物理参数或冻结状态修改，均需独立用户决策和留痕。规划耗时、离散 FCL 安全与真实物理步轨迹指标分开报告。
+- 统一复用 `docs/POST_TASK01_REUSE_MAP.md`：旧工程的 scene、bridge、双臂执行、吸盘、导轨、MoveIt/FCL 等是成熟工程资产；不能重新造轮子，亦不能把复用当论文原方法。
 
-Primary shared-object target is Benchmark A.
+## 6. 当前批准边界
 
-## Phase 6 — Scientific Evaluation
-- TASK27 Unified Benchmark
-- TASK28 Ablation
-- TASK29 Failure Case Analysis
-- TASK30 Baseline Freeze
-
-## Phase 7 — Our Method
-- TASK31 Ours v0 Design
-
-No new method implementation before TASK30. Prior project code is an engineering reference, not a substitute for formal reproduction measurements.
+**本次仅批准路线文档修订，并允许随后独立交给 Codex 的 TASK06-IS-A 无执行开发指令。** TASK06-IS-B/C、P2 的 TASK07 及正式障碍专项评估没有因此获得执行授权。每一阶段交付报告后停止，等待审查。

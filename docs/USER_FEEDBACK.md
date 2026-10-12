@@ -1,5 +1,10 @@
 # USER_FEEDBACK
 
+## 2026-10-12 — 用户确认五篇论文必须在既有双臂场景应用验证
+
+用户认可“场景适配与规划验证 → Isaac Sim 运动执行 → 阶段对比”，明确要求将五篇论文的创新/核心方法运用到既有双 FR3、Cube 和车厢场景中，而不是连续完成离线算法后直接进入下一篇。用户要求更新 GitHub 规划并提供下一步 Codex 指令。此处决定仅改规划文档；新 P4 A 任务单独执行，B/C、P2 仍待授权；用户沟通采用中文状态词。
+
+
 ## 2026-10-12 — TASK06 scoped review, documentation-only closeout authorized
 
 User review of74d4276 explicitly accepts **core offline planner software = PASS

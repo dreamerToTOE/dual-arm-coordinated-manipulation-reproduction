@@ -1,5 +1,14 @@
 # CODEX_START_HERE.md
 
+## 当前优先指令（2026-10-12，D055，覆盖以下历史停止门禁）
+
+用户已经更新总体路线：五篇论文的核心算法必须逐篇应用于现有双 FR3 + 侧吸盘 + Cube + 车厢场景。每篇按“算法/数学→场景无命令验证→单独授权的 Isaac Sim GUI 运行→阶段对比”推进。详见 [最新路线](docs/REPRODUCTION_ROADMAP.md)。
+
+**唯一下一步任务：TASK06-IS-A — P4 现有场景适配与无命令规划验证**，见 [任务卡](docs/tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md)。本次规划提交本身不授权运行；用户随后提供明确 TASK06-IS-A 指令时才开展。不得启动仿真/ROS 服务或发送机械臂、吸盘、导轨命令，若需要实时接口必须停下征询授权。TASK06-IS-B/C、TASK07 均未授权。
+
+原 TASK06 核心软件初步验收通过、完整协议部分完成，直接碰撞专项缺口不改判。TASK02-D 暂缓、正式基准草案未定稿。旧工程只薄适配不重造轮子。向用户的报告优先使用中文状态词。以下旧执行门禁均为历史记录，仅在不与本节及 AGENTS/新任务卡冲突时参考。
+
+
 ## Mission
 Build a traceable reproduction and benchmarking stack for five high-level dual-arm manipulation baselines, then use measured evidence to design our own method.
 

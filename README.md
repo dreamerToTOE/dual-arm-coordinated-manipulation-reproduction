@@ -1,5 +1,11 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+## 最新研究路线（2026-10-12，D055）
+
+**五篇论文都要把核心方法落到现有双 FR3 + 侧吸盘 + Cube + 车厢场景中**，按“数学/算法→现有场景适配→单独授权的 Isaac Sim 可见仿真执行→同场景阶段对比”逐篇推进；不能仅完成 P4 离线代码便自动进入 P2。详见 [新的总路线](docs/REPRODUCTION_ROADMAP.md)。
+
+**下一步是 [TASK06-IS-A：P4 场景适配与无执行规划验证](docs/tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md)**；TASK06-IS-B/C 和 P2 TASK07 暂不启动，物理运行须另行批准。原 TASK06 完整验收仍为部分完成，旧结果不改；正式基准测试仍是草案。下面的 TASK06 历史交付记录不作为当前执行任务。
+
 最新审查（2026-10-12，D054）：**TASK06 核心离线规划器软件实现 = PASS CANDIDATE；
 TASK06 整体 = PARTIAL**。原协议仍缺直接连接因 COLLISION 被拒绝的证明；原始结果、
 失败证据及数值门限不变。专项障碍物验证作为独立 P4 评估待办，尚未授权执行。
@@ -165,6 +171,9 @@ Phase 1  P4 Closed-chain planning
   TASK04 Newton-Raphson Projection
   TASK05 Constrained Local Connection
   TASK06 Constrained RRTConnect
+  TASK06-IS-A 场景对齐与无命令规划验证
+  TASK06-IS-B Isaac Sim 可见物理执行（单独授权）
+  TASK06-IS-C 同场景对比与测量资格验收（单独授权）
 
 Phase 2  P2 Pose / Internal Force
   TASK07-MJ Grasp Matrix + Internal Wrench

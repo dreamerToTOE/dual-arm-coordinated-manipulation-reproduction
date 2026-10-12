@@ -1,5 +1,10 @@
 # WORKLOG
 
+## 2026-10-12 — D055 总路线修订（文档范围）
+
+用户明确要求五篇论文的算法逐篇进入既有 Isaac Sim 场景，P4 先补场景适配、执行与阶段对比三个关口。新建独立规划分支，仅更新路线、执行规范、任务卡和决策记录；无新算法编译、规划/仿真/机器人实验。TASK06 完整协议仍部分完成，Benchmark 仍草案。详见 [路线](REPRODUCTION_ROADMAP.md)。
+
+
 ## 2026-10-12 — TASK06 scoped review recorded; no implementation or experiment
 
 Base74d4276, same task06branch. Read governance/active task/current evidence;

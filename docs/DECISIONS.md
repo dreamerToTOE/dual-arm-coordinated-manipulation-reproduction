@@ -1,5 +1,18 @@
 # DECISIONS
 
+## D055 — 用户决定：五篇论文必须逐篇落到现有 Isaac Sim 科研场景
+
+2026-10-12。用户确认“要将这 5 篇论文中的创新方法用到我们的场景中”，并认可“场景适配/无命令验证→Isaac 运动执行→实验对比”三步，要求据此改路线。此前“完成 P4 离线软件直接进入 P2”的建议被撤回。
+
+决策：P4 TASK03–06 的离线基础之后新增 TASK06-IS-A、B、C，先完成与已有双 FR3+侧吸+Cube+车厢场景的适配与规划，再在单独用户授权下执行和对比。其余 P2/P3/P5/P1 也必须完成相应的 Isaac 应用验证和阶段性对比后再申请下篇启动；允许独立记录部分完成/暂缓，而不把离线通过当论文整体完成。
+
+本轮仅修改规划/治理/任务卡，**不启动仿真、服务或算法实验**；随后交给 Codex 的指令只授权 TASK06-IS-A 的离线场景核查和无运动命令适配，若需实时 GUI 或 ROS 须停下另行请示。B/C、P2 TASK07、P4 独立障碍补测均没有获得执行许可。
+
+既有 D052/D054 的 TASK06 原预声明 FAIL/整体部分完成不变，TASK02-D 继续暂缓，Benchmark 尚未定稿。旧 Task26 工程成熟部件优先薄适配而非重写；五篇方法属于论文/场景适配，不得将工程复用伪称论文原方法。
+
+[完整路线](REPRODUCTION_ROADMAP.md) · [阶段 A 任务卡](tasks/TASK06_IS_A_SCENE_PLANNING_ADAPTER.md)。
+
+
 ## D054 — User accepts TASK06 core software candidate; overall protocol remains PARTIAL
 
 2026-10-12, explicit review of `74d4276` on `task06-p4-constrained-rrtconnect`.

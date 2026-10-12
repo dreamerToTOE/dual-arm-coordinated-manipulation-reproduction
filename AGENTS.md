@@ -2,6 +2,15 @@
 
 This repository is a scientific reproduction and benchmarking project. **Reproducibility, traceability, and progress toward the scientific objective have priority over “making the demo work” or perfecting an auxiliary engineering probe.**
 
+## 最新执行规则：五篇论文逐篇落地（2026-10-12，D055）
+
+- 统一路线见 `docs/REPRODUCTION_ROADMAP.md`。每篇论文分别通过**算法/数学实现、现有场景无命令适配、单独授权的 Isaac Sim GUI 物理执行、阶段对比与用户审查**四个关口；P2/P3 可先在 MuJoCo 研究接触和力控，但不能代替 Isaac 对标。
+- 对当前 P4，下一步是 `TASK06-IS-A`，**仅静态读取、现有模型核对与无运动命令的受限离线规划**。没有授权启动 Isaac GUI、ROS 服务、MoveIt 节点、执行器，也没有授权任何关节/吸盘/导轨命令。实际需要这些运行时资源时必须停止向用户请示。
+- `TASK06-IS-B`（GUI 执行）、`TASK06-IS-C`（正式对比/测量）、P2 `TASK07` 与独立 P4 障碍补测都需要分别授权；上一任务通过不自动授权下一任务。
+- 旧 Task26 / Isaac 场景 / Bridge / FCL / 同步执行部件优先复用或薄适配，不重复搭建；旧批次两 Cube 工程成功**不代表**单 Cube 正式科研基准已验收。
+- 旧 TASK06 整体仍“部分完成”，TASK02-D 后物理步科研采样仍暂缓，Benchmark 仍草案；不得从 P4 离线输出宣称物理执行/连续无碰撞/正式指标。
+- 向用户的解释、汇报、任务结论**使用中文状态词**：初步验收通过、部分完成、未通过、进行中、暂缓、草案、未定稿。代码中不可避免的枚举/文件名/算法名保持原样。
+
 ## 1. Mandatory pre-task procedure
 Before editing code, always read:
 1. `CODEX_START_HERE.md`
