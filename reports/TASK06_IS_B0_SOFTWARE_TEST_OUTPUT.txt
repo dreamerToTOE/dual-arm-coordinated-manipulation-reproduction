@@ -1,0 +1,17 @@
+TASK06-IS-B0 software test evidence: verbatim terminal output captured by exec_command
+on 2026-10-12; no physical/model/FCL experiment. Command:
+PYTHONPATH=. python3 -m unittest tests.test_task06_is_b0_review -v
+exit_code: 0
+
+test_adjacent_vector_and_top_order (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+test_invalid_inputs_rejected (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+test_margin_and_original_angle_no_periodic_wrap (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+test_raw_and_diagnostic_noise_are_separate (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+test_same_input_same_numeric_output_and_no_input_mutation (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+test_single_point_and_stable_tie_choice (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+test_travel_detour_reversals_and_zero_delta (tests.test_task06_is_b0_review.FixedPathReviewTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.195s
+
+OK
