@@ -1,5 +1,11 @@
 # P4 closure residual and Jacobian — offline TASK03
 
+Review update D054 (2026-10-12, base74d4276): **TASK06 core offline planner software
+= PASS CANDIDATE; overall TASK06 = PARTIAL.** Original direct-collision qualification
+remains missing; no original result/numerical limit changed. Separate pending P4
+obstacle evaluation is not authorized. [Review](../../reports/TASK06_REVIEW_CLOSEOUT.md).
+Earlier delivery statements below remain historical. No TASK07/new experiment.
+
 Current slice (2026-10-12): TASK03/04 mathematics and TASK05 real-FCL discrete
 local connection are user-reviewed scoped candidates. TASK06 constrained search
 is implemented but **PARTIAL / STOP FOR REVIEW**: true bidirectional paths/repeats

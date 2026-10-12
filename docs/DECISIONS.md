@@ -1,5 +1,22 @@
 # DECISIONS
 
+## D054 — User accepts TASK06 core software candidate; overall protocol remains PARTIAL
+
+2026-10-12, explicit review of `74d4276` on `task06-p4-constrained-rrtconnect`.
+**Core offline planner software implementation = PASS CANDIDATE.**
+**Overall TASK06 = PARTIAL.** These are separate acceptance scopes; this is not
+retroactive PASS of D052 or relaxation of any numerical/algorithmic condition.
+
+Retain all18fixed-seed calls,9deterministic repeat pairs,4NODE_LIMIT results and
+both553-node/148-solution-edge obstacle successes. Direct TASK05 connection stays
+PROJECTION_JUMP; collision=null at the rejected midpoint, with no FCL query there.
+All original results/statuses/metrics/guards and TASK03–05 negatives remain unchanged.
+The missing direct-COLLISION qualification becomes a **separate pending P4 evaluation**;
+it neither invalidates the accepted software scope nor completes the original protocol.
+No authority to implement/run that evaluation, modify code/scene/ACM/model/Benchmark
+or start TASK07. This round is documentation only; stop after GitHub submission.
+[Scoped review record](../reports/TASK06_REVIEW_CLOSEOUT.md).
+
 ## D053 — Retain fixed TASK06 acceptance failure; deliver PARTIAL and stop
 
 2026-10-12. Solepredeclaredsuite source29a9d5c: genuine two-tree NR/RBS/FCL search,

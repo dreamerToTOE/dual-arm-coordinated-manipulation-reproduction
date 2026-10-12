@@ -1,5 +1,22 @@
 # STATUS
 
+## 2026-10-12 — TASK06 user review closes core software acceptance only (D054)
+
+- **TASK06 core offline planner software = PASS CANDIDATE**, explicitly accepted
+  by user reviewing74d4276; not physical/continuous-safety/full P4 acceptance.
+- **TASK06 overall = PARTIAL**: the predeclared direct-COLLISION obstacle gate
+  remains unproved. Direct TASK05 statusPROJECTION_JUMP and unqueried failure
+  midpoint FCL are unchanged; original D052 protocol is not retrospectively PASS.
+- Preserve18calls/9repeatpairs/4NODE_LIMIT, both553node/148solutionedge successes,
+  original thresholds and all TASK03–05 negative evidence. No raw result edits.
+- Independent P4 direct-collision obstacle evaluation: **DEFERRED / TODO,
+  NOT AUTHORIZED**, separate from original protocol; no new experiments now.
+- Documentation-only review complete; **STOP**, no TASK07/runtime/code changes.
+  TASK02 IN_PROGRESS, TASK02-D PARTIAL/DEFERRED, Benchmark DRAFT/NOT FROZEN.
+
+[Review / unchanged-evidence checks](../reports/TASK06_REVIEW_CLOSEOUT.md).
+Older delivery/escalation entries below remain historical.
+
 ## 2026-10-12 — TASK06 bounded offline suite PARTIAL; stop for acceptance review
 
 **TASK06 = PARTIAL / STOP FOR USER REVIEW.** Precommitted D052 protocol877decd

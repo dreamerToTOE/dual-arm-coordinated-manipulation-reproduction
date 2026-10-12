@@ -23,6 +23,16 @@ Dual FR3 tightly coordinated transport of one shared Cube followed by cooperativ
 
 ## Current execution gate
 
+**Latest user review D054 (base74d4276): TASK06 core offline planner software =
+PASS CANDIDATE; overall TASK06 = PARTIAL. REVIEW RECORDED / STOP.**
+Original protocol/result remains failed at directPROJECTION_JUMP, not proven
+directCOLLISION; no FCLquery at rejectedmidpoint.18calls/9pairs/4NODE_LIMIT and
+553node148edge successes retained unchanged. Missing obstaclequalification is
+a separate **DEFERRED P4 evaluation, not authorized**. No code/parameters/scene/
+ACM/model/Benchmark change, new experiments or TASK07. TASK02IN_PROGRESS,
+DDEFERRED, BenchmarkDRAFT. [Scoped review](reports/TASK06_REVIEW_CLOSEOUT.md).
+The pre-review delivery gates below are retained history.
+
 **Latest delivery: TASK06 = PARTIAL / STOP FOR USER REVIEW.** Branch
 `task06-p4-constrained-rrtconnect`, baseline91a1adc, testedsource29a9d5c, D052/D053.
 True two-tree NR/RBS/FCL paths and all9fixedseedrepeats verified; private obstacle

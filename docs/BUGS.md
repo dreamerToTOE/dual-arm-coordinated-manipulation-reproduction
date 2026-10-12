@@ -1,5 +1,16 @@
 # BUGS
 
+## 2026-10-12 — TASK06 review separates software acceptance and missing evaluation
+
+D054: user accepts coreoffline softwarePASSCANDIDATE; missing direct-COLLISION
+qualification is **DEFERRED to separate P4 evaluation**, not a current software
+repair mandate. It remains unmet for originalD052/overallTASK06PARTIAL; older
+TASK-BLOCKING entry below describes fulloriginalprotocol acceptance, not a reason
+to keep implementing now. DirectPROJECTION_JUMP/FCLnullatfailedmidpoint and all
+rawFAILURE/NODE_LIMIT/oldnegative evidence retained unchanged. No new experiments,
+fixes, acceptance-limit relaxation, formalBenchmarkfreeze or TASK07 authorization.
+[Scope/qualification review](../reports/TASK06_REVIEW_CLOSEOUT.md).
+
 ## 2026-10-12 — TASK06 predeclared obstacle qualification missing [TASK-BLOCKING]
 
 Task-blocking for completeD052acceptance, **not** a demonstrated planner/modelbug.

@@ -1,5 +1,16 @@
 # USER_FEEDBACK
 
+## 2026-10-12 — TASK06 scoped review, documentation-only closeout authorized
+
+User review of74d4276 explicitly accepts **core offline planner software = PASS
+CANDIDATE**, retains **overall TASK06 = PARTIAL**. Preserve18calls/9repeatpairs/
+4NODE_LIMIT,553nodes/148solutionedges, directPROJECTION_JUMP/unqueried midpoint
+FCL and every TASK03–05 negative. No result/metric/threshold rewrite. Record
+independent future P4 obstacle evaluation as pending, not original-protocol PASS.
+Only documents/status may change; no algorithm/scene/projection/ACM/model/Benchmark,
+new planning experiment or automaticTASK07. SubmitGitHubcommit thenstop.
+[D054 scoped review](../reports/TASK06_REVIEW_CLOSEOUT.md).
+
 ## 2026-10-12 — Continue the same bounded TASK06; no additional acceptance authority
 
 Latest user“继续” resumes the already authorizedofflineTASK06 delivery; it doesnot

@@ -1,5 +1,11 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+最新审查（2026-10-12，D054）：**TASK06 核心离线规划器软件实现 = PASS CANDIDATE；
+TASK06 整体 = PARTIAL**。原协议仍缺直接连接因 COLLISION 被拒绝的证明；原始结果、
+失败证据及数值门限不变。专项障碍物验证作为独立 P4 评估待办，尚未授权执行。
+本轮仅记录审查，提交后停止，不运行新实验或自动进入 TASK07。
+[分项审查记录](reports/TASK06_REVIEW_CLOSEOUT.md)。以下交付说明保留为审查前历史。
+
 最新交付（2026-10-12）：**TASK06 — P4 约束双向 RRTConnect = PARTIAL，等待审查**。
 已实现真实双树搜索，复用原 C/Jc、NR-SVD、RBS 与真实 FR3/FCL。简单及非平凡场景
 三个固定种子均成功；独立障碍场景种子 `20261012` 两次得到 553 节点、148 条解路径边，
@@ -45,7 +51,8 @@ Newton-Raphson 投影 PASS CANDIDATE**。194/194 邻域扰动与 293/293 原抓�
 ## 当前进度（2026-10-12）
 
 TASK03 离线闭链数学、TASK04 离线投影及 TASK05 真实 FR3/FCL 离散连接范围已获用户审查接受。
-TASK06 离线规划已交付 **PARTIAL**，需审查上述独立障碍测试的验收缺口，暂停后续实验。
+TASK06 核心离线规划器软件经用户审查接受为 **PASS CANDIDATE**；整体仍 **PARTIAL**。
+专项障碍物验证列为独立 P4 评估待办，原协议不追溯性判 PASS；当前停止，不执行新实验。
 TASK02 仍 IN_PROGRESS，TASK02-D PARTIAL / DEFERRED；Benchmark DRAFT / NOT FROZEN。
 原 TASK03 0.05 μm 历史精度 FAIL 与全部旧运行证据保持不变。
 

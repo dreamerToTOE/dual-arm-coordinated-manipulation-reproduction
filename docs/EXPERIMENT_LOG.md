@@ -1,5 +1,16 @@
 # EXPERIMENT_LOG
 
+## 2026-10-12 — TASK06 review annotation only; NO NEW EXPERIMENT
+
+D054 review of74d4276 accepts coreoffline softwarePASSCANDIDATE only; overall
+TASK06PARTIAL/rawsuiteFAILURE remain. Existing40artifactSHA256 checks andinventory
+readback pass;18fixedcalls/9repeatpairs/4NODE_LIMIT/both553node148edge paths retained.
+Directfailure remainsPROJECTION_JUMP with noFCLquery at rejected midpoint.
+No original result/log/metric/threshold rewritten; no planner/FCL/IK/physics/test
+suite invoked. This entry is review provenance, not an additional run or trial.
+Future standalone P4 obstacle evaluation pending separately, not authorized now.
+[Review](../reports/TASK06_REVIEW_CLOSEOUT.md).
+
 ## 2026-10-12 — TASK06 constrained_search01 compile-only; search02 sole fixed suite
 
 D052 protocol877decd/SHA74a1aa3864da… committed/pushed before experiments.

@@ -1,5 +1,18 @@
 # WORKLOG
 
+## 2026-10-12 — TASK06 scoped review recorded; no implementation or experiment
+
+Base74d4276, same task06branch. Read governance/active task/current evidence;
+documentation-only pretask, no replacement infrastructure. Record explicit D054
+core softwarePASSCANDIDATE versus overallPARTIAL, add separate unapproved P4
+obstacle evaluation backlog. Preserve old report/protocol/rawresults and all prior
+negative evidence; no source/parameter/model/scene/ACM/Benchmark modifications.
+Only saved-evidence hashes, result inventory, document links and Gitdiff checked;
+40artifacthashes match,18calls/9pairs/4NODE_LIMIT/two553node148edge successes retained.
+New planning/IK/FCL/physics calls0; no test-suite reexecution or TASK07. Stop after
+documents-only GitHub commit, leave5unrelated untracked TASK01 logs untouched.
+[Review / POST-TASK REPORT](../reports/TASK06_REVIEW_CLOSEOUT.md).
+
 ## 2026-10-12 — TASK06 fixed scientific suite complete; acceptance gap preserved
 
 Source29a9d5c compiled,72Python/CTest4of4 and all realTASK03–05 regressions pass.
