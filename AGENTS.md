@@ -2,7 +2,16 @@
 
 This repository is a scientific reproduction and benchmarking project. **Reproducibility, traceability, and progress toward the scientific objective have priority over “making the demo work” or perfecting an auxiliary engineering probe.**
 
-## 最新执行规则：五篇论文逐篇落地（2026-10-12，D055）
+## 最新优先级（2026-10-12，D062，覆盖下方D055历史执行顺序）
+
+- 用户按导师要求改为**论文原文驱动的核心算法+最小实验+中文科研报告优先**。依次完成：P4已有结果先整理报告（不补跑）→P2→P3→P5→P1→小改→集中Isaac场景验证。详见 `docs/PAPER_FIRST_REPRODUCTION_ORDER.md`。
+- 编码之前**必须实际阅读全文**：本地 `references/private_sources/P*_original.pdf` 或 `references/ORIGINAL_PAPERS.md` 的合法官方/作者入口。参考卡不是原文；原文未就绪就停止并报告。
+- 论文报告必须参照 `docs/PAPER_REPRODUCTION_REPORT_FORMAT.md`，按“数学模型/仿真复现实验”两大部分给出公式、图表、实际数据、与原文比较和复现差距，不能只写测试通过。用户提供DEFORM Word仅作为本地报告范例。
+- 本次新优先级**不授权任何新科学实验、P4路径捷径优化、Isaac/ROS/控制器或自动启动P2**；先完成P4已有成果报告并等待审查。D055的最终Isaac应用目标仍保留，但它要求的逐篇立即集成暂缓。
+- 公开仓库**不得提交未经确认可公开转载的原论文 PDF或参考DOCX**；个人副本位于 `references/private_sources/` 并已列入gitignore。只能提交引用、元数据、图表原创复现和合法链接。
+- 用户沟通状态使用中文词汇，原始实验的科学失败/限制不得改判。
+
+## 历史执行规则：五篇论文逐篇落地（2026-10-12，D055）
 
 - 统一路线见 `docs/REPRODUCTION_ROADMAP.md`。每篇论文分别通过**算法/数学实现、现有场景无命令适配、单独授权的 Isaac Sim GUI 物理执行、阶段对比与用户审查**四个关口；P2/P3 可先在 MuJoCo 研究接触和力控，但不能代替 Isaac 对标。
 - 对当前 P4，下一步是 `TASK06-IS-A`，**仅静态读取、现有模型核对与无运动命令的受限离线规划**。没有授权启动 Isaac GUI、ROS 服务、MoveIt 节点、执行器，也没有授权任何关节/吸盘/导轨命令。实际需要这些运行时资源时必须停止向用户请示。

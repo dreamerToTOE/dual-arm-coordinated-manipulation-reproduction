@@ -1,5 +1,14 @@
 # DECISIONS
 
+## D062 — 2026-10-12：论文原文核实与“论文复现报告优先”路线更新
+
+用户说明导师催促五篇论文算法复现，并指定用户上传的18页DEFORM Word复现汇总为报告格式。**当前优先级调整**为“P4 已有核心结果先整理中文科研报告 → P2 → P3 → P5 → P1”，每篇以论文全文的算法与公式、最小可复现实验、原始曲线、与原文对照和完整中文Word报告为交付，报告审查之后再启动下一篇。完成五篇阶段成果后再提小改并集中应用到 Isaac Sim 双FR3场景。
+
+D055“最终五种方法都要用到已有场景”的长期目标仍有效，**但逐篇立即进入Isaac的执行顺序暂缓**。TASK06-IS-B1路径优化、TASK06-IS-B/C、TASK02-D、正式Benchmark及 P2 大规模控制运行均未因本次文档修改自动授权。原TASK03旧抓取精度未通过、TASK06完整协议部分完成、A离线验收和B0执行不满足均保留不改。
+
+在公开仓库只提交完整原文索引/DOI/作者手稿/原始PDF的个人本地文件校验值、DEFORM报告结构提炼及Codex执行顺序。用户的五份论文 PDF 和DEFORM示例 DOCX 属于需核对公开转载许可的资料，不未经授权上传到公开 GitHub。用户可在本地工作树 `references/private_sources/` 放置私有副本，`.gitignore` 忽略该目录。Codex 必须读全文，没有文件须从合法来源核对或请求用户提供，不可把参考卡当原文。见 `references/ORIGINAL_PAPERS.md`、`docs/PAPER_FIRST_REPRODUCTION_ORDER.md`、`docs/PAPER_REPRODUCTION_REPORT_FORMAT.md`。
+
+
 ## D061 — B0 审查结果：保留原合格离线路径，拒绝自动升级执行
 
 2026-10-12，代理结果，不是用户新物理授权。D060协议c20c381、源码e1a2e22。

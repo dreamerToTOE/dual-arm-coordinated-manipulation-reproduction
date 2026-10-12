@@ -1,5 +1,13 @@
 # STATUS
 
+## 2026-10-12 — D062：原文与导师报告格式就绪，优先五篇核心复现
+
+已定位用户此前上传的五篇原始英文PDF，并核对 P1–P5 题名/DOI/算法主题；用户上传的18页DEFORM Word范例被解析为“数学模型+仿真复现实验”结构。公开仓库只提交 `references/ORIGINAL_PAPERS.md` 引文/合法链接/私有SHA256/位置、`docs/PAPER_FIRST_REPRODUCTION_ORDER.md` 和 `docs/PAPER_REPRODUCTION_REPORT_FORMAT.md`，全文在个人本地资料包中，**GitHub 并未上传 PDF/DOCX 原文二进制**。Codex必须由用户解压本地私有资料后再读，无法获取则停止，不编造原文。
+
+用户最新优先顺序：P4既有实验报告整理→P2→P3→P5→P1→算法小改→Isaac集中适配。B0审查结论原样保留，P4 IS-B1不启动、B/C不授权、TASK02-D暂缓、Benchmark草案。当前仅执行文档索引/路线治理修改，未重跑实验；下一步P4报告须用户明确授权并在报告完成后停止。
+[原文索引](../references/ORIGINAL_PAPERS.md) · [顺序](PAPER_FIRST_REPRODUCTION_ORDER.md) · [导师格式](PAPER_REPRODUCTION_REPORT_FORMAT.md)。
+
+
 ## 2026-10-12 — TASK06-IS-B0 审查完成：执行准备条件不满足
 
 用户接受f0a57c2的A离线适配；只批准B0固定路径审查，未批准仿真。

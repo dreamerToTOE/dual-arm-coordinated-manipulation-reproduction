@@ -1,5 +1,17 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+## 2026-10-12 最新路线：论文原文与复现报告优先
+
+导师要求的交付是**五篇论文逐篇的数学模型、核心方法、仿真实验数据、曲线、原论文对比和中文Word复现报告**。用户已提供DEFORM 18页Word范例。当前顺序是 **P4（整理已有成果）→P2→P3→P5→P1→小改→Isaac统一应用**；原每篇立即进入Isaac的路线暂缓，所有旧实验和失败证据保留。
+
+- [P1–P5 原文身份、DOI、作者入口、本地全文校验](references/ORIGINAL_PAPERS.md)（私有论文PDF和DEFORM示例DOCX**不在公开GitHub**，须在本地 `references/private_sources/` 放置）
+- [Codex 具体复现顺序及最小实验](docs/PAPER_FIRST_REPRODUCTION_ORDER.md)
+- [导师要求的两部分报告格式](docs/PAPER_REPRODUCTION_REPORT_FORMAT.md)
+- [最新执行入口](CODEX_START_HERE.md)
+
+**当前下一步是P4论文复现汇总报告，优先整理已保存图表，不重跑、不直接进入P2或Isaac。** 以下为之前科研/工程阶段的历史记录。
+
+
 ## 最新审查：TASK06-IS-B0 执行准备条件不满足（2026-10-12）
 
 A离线适配已由用户接受；固定1869点路径没有改动，但左J4在第861点距上限仅
