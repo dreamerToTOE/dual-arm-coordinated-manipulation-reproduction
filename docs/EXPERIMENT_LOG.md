@@ -1,5 +1,17 @@
 # EXPERIMENT_LOG
 
+## 2026-10-12 — P4报告存量出图：不是新增科学实验
+
+科学规划/IK/NR/FCL查询/物理/机器人调用均0；仅读取并校验原始结果。
+统计保持TASK03历史219/293位置超原0.05μm，TASK04 194/194邻域与293/293诊断，
+TASK05 10正例/3负例，TASK06 14SUCCESS+4NODE_LIMIT/18调用/9对重复；
+私有障碍直连仍PROJECTION_JUMP且被拒中点未FCL查询。IS-A原单次seed7
+96nodes/94edges/1869q/.213194502s计算；B0左J4 index860 .236039°不能执行。
+39来源SHA、18原gzip读回、1869q/残差/余量和原输入不变检查通过；
+1212个真实投影初值/更新仅派生CSV，不补零/延长。报告23页/16公式/10中文图；
+所有几何曲线无执行时间，min_distance仍UNAVAILABLE，不添加新统计显著性结论。
+[机器可读检查](../reports/p4_report_assets/delivery_check.json)。
+
 ## 2026-10-12 — B0 固定数据分析一次，非新规划或物理实验
 
 预声明c20c381，源码e1a2e22；run=20261012_TASK06_IS_B0_path_review01。

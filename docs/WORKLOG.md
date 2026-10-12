@@ -1,5 +1,18 @@
 # WORKLOG
 
+## 2026-10-12 — P4 paper-first中文Word交付（报告层，不重跑）
+
+fetch指定规划branch/commit，独立worktree `dual-arm-coordinated-manipulation-p4-report` 和
+branch `report-p4-paper-first`；原A分支及5个未跟踪日志未动。先读当前治理/原文索引/报告格式，
+六份本地资料SHA核对一致，再全文读P4八页/范例；协议266de05先提交。
+三项独立只读审计核对数学、原文忠实性、实际规划/执行审查证据。
+新增存量读取出图与Word生成器，未导入科学执行模块；只读18原gzip、9对确定性、
+293历史精度、194+293投影记录、1869q及闭链/余量。中文Noto字体/16原生OMML、10图，
+LibreOffice独立profile生成23页PDF并检查实际页面。报告层修正根节点null读取、图形指数字体、
+净变化绝对值/坐标映射措辞和空数学基底占位；不改原记录、模型或科研结论。
+报告提交待用户审查，原FAIL/PARTIAL/Benchmark草案保留；不Isaac/ROS/新实验/自动P2。
+[报告交付](../reports/P4_REPORT_POST_TASK.md) · [派生数据说明](../reports/p4_report_assets/README.md)。
+
 ## 2026-10-12 — TASK06-IS-B0 固定路径与旧执行条件审查
 
 从f0a57c2继续原A分支，保留5个旧未跟踪日志；fetch确认远程基线一致。

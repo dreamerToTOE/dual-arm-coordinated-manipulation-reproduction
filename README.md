@@ -9,7 +9,15 @@
 - [导师要求的两部分报告格式](docs/PAPER_REPRODUCTION_REPORT_FORMAT.md)
 - [最新执行入口](CODEX_START_HERE.md)
 
-**当前下一步是P4论文复现汇总报告，优先整理已保存图表，不重跑、不直接进入P2或Isaac。** 以下为之前科研/工程阶段的历史记录。
+**P4中文论文汇总已交付，等待用户审查，不自动进入P2或Isaac。**
+
+- [《第一篇P4闭链运动规划论文复现汇总》可编辑Word](reports/P4_论文复现汇总.docx)
+- [23页PDF预览](reports/P4_论文复现汇总.pdf) · [图表、数据和只重建报告的方法](reports/p4_report_assets/README.md)
+- [任务前协议](reports/P4_REPORT_PRE_TASK.md) · [交付/POST-TASK REPORT](reports/P4_REPORT_POST_TASK.md)
+
+已阅读全文P4及DEFORM范例、核对六份私有资料SHA；16个可编辑公式、10张中文原创图均源于原文分析/真实已保存日志。
+仅NR路线，RSS/PCS及三法性能对照未实现；TASK03历史精度未通过、TASK06整体部分完成、B0不能执行均保留。
+本轮新实验0次、原PDF/范例未上传、Benchmark未定稿。以下为此前科研/工程阶段的历史记录。
 
 
 ## 最新审查：TASK06-IS-B0 执行准备条件不满足（2026-10-12）

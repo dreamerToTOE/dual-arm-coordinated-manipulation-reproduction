@@ -1,5 +1,13 @@
 # P4 — Closed-Chain Motion Planning
 
+## 2026-10-12 论文式中文汇总（已有数据，不新增实验）
+
+主代理阅读全文P4八页及私有DEFORM范例，六份资料SHA匹配。
+[中文可编辑Word](../reports/P4_论文复现汇总.docx) / [PDF](../reports/P4_论文复现汇总.pdf) /
+[真实图表数据](../reports/p4_report_assets/README.md)。仅NR路线，RSS/PCS及三法对比尚未完成；
+原历史精度FAIL、TASK06整体PARTIAL与B0不能执行均保留，不能宣称完整P4/物理验收。
+报告待用户审查，不自动进入P2；私有原文/范例不上传。
+
 Paper: Avishai Sintov, Andy Borum, Timothy Bretl,
 *Motion Planning of Fully Actuated Closed Kinematic Chains With Revolute Joints:
 A Comparative Analysis*, IEEE RA-L 3(4), 2886–2893, 2018.

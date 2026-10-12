@@ -1,5 +1,15 @@
 # BUGS
 
+## 2026-10-12 — P4报告中的未完成项（保持原资格，不再扩展工程）
+
+- **KNOWN LIMITATION**：主要NR路线；RSS/PCS、原三策略/三规划器比较、可见性和一般奇异穿越未复现。
+- **KNOWN LIMITATION**：历史219/293位置超原精度、TASK06障碍直连PROJECTION_JUMP/FCL未查保持失败证据。
+- **TASK-BLOCKING仅未来执行**：B0左J4 .236039°和赋时/全程误差/起点对齐缺口；不阻塞本次报告完成。
+- **DEFERRED**：TASK02-D测量认证、物理执行及路径改进；新优先级不授权顺手修复。
+- **RESOLVED仅报告层**：绘图有符号净变化与absolute图例、坐标映射措辞、Word空基底数学占位修正；
+  原实验数值和算法完全不变，没有通过改门限制造成功。
+见[中文Word](../reports/P4_论文复现汇总.docx)和[交付检查](../reports/p4_report_assets/delivery_check.json)。
+
 ## 2026-10-12 — B0 执行资格缺口 [TASK-BLOCKING for execution]
 
 - **TASK-BLOCKING**：当前路径左J4 index860仅.236039°余量；旧终点容差.035/.06rad
