@@ -24,6 +24,8 @@ public:
   std::pair<p4::ArmSample, p4::ArmSample> sample(const p4::JointVector& q);
   double minimumJointMargin(const p4::JointVector& q) const;
   std::array<std::string, 14> jointNames() const;
+  // [ENGINEERING TASK06] 只读原生限位，给14维采样器；不更改模型或FK。
+  std::pair<p4::JointVector, p4::JointVector> positionBounds() const;
   Eigen::Isometry3d linkPose(const p4::JointVector& q, const std::string& link);
 
 private:

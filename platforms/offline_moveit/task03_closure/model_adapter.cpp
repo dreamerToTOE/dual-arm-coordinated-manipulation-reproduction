@@ -136,6 +136,21 @@ std::array<std::string, 14> DualFr3Model::jointNames() const
   return output;
 }
 
+std::pair<p4::JointVector, p4::JointVector> DualFr3Model::positionBounds() const
+{
+  p4::JointVector lower, upper;
+  const auto names = jointNames();
+  for (std::size_t joint = 0; joint < names.size(); ++joint)
+  {
+    const auto& bounds = model_->getVariableBounds(names[joint]);
+    if (!bounds.position_bounded_ || !std::isfinite(bounds.min_position_) ||
+        !std::isfinite(bounds.max_position_) || bounds.min_position_ >= bounds.max_position_)
+      throw std::runtime_error("Native finite sampling bounds unavailable");
+    lower[joint] = bounds.min_position_; upper[joint] = bounds.max_position_;
+  }
+  return {lower, upper};
+}
+
 Eigen::Isometry3d DualFr3Model::linkPose(const p4::JointVector& q, const std::string& link)
 {
   update(q);

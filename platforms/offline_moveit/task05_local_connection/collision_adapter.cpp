@@ -460,4 +460,17 @@ void CollisionAdapter::addNegativeWorldBox(const p4::JointVector& q)
   impl_->box(NEGATIVE_BOX, linkPose(q, LEFT_TCP), impl_->cube_size, true);
   impl_->integrity();
 }
+
+void CollisionAdapter::addPrivateWorldBox(const std::string& id,
+                                         const Eigen::Isometry3d& pose_world,
+                                         const Eigen::Vector3d& size_m)
+{
+  impl_->integrity();
+  if (id.rfind("task06_private_", 0) != 0 || id.size() <= 15 ||
+      impl_->model->hasLinkModel(id) || impl_->scene->getWorld()->hasObject(id) || id == CUBE)
+    throw std::invalid_argument("Private fixture must have a new task06_private_ ID");
+  impl_->box(id, pose_world, size_m);
+  impl_->evidence["world_objects"].back()["classification"] = "PRIVATE_ENGINEERING_FIXTURE_ONLY";
+  impl_->integrity();
+}
 }  // namespace task05_offline

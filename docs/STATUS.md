@@ -1,5 +1,14 @@
 # STATUS
 
+## 2026-10-12 — TASK06 offline constrained search authorized, protocol committed first
+
+TASK05 scoped discrete acceptance accepted by user; TASK06 IN_PROGRESS from91a1adc.
+Primary paper/author NR code audited; fixed protocol877decd pushed before real
+planning tests. Search composes unchanged TASK03/04/05, with only native-bound/
+private-fixture adapter additions. No scientific test result asserted yet.
+No Isaac/services/robot/Task26/Benchmark change; TASK02IN_PROGRESS, DDEFERRED,
+BenchmarkDRAFT. [Pre-task/protocol](../reports/TASK06_PRE_TASK_PROTOCOL.md).
+
 ## 2026-10-12 — TASK05 interrupted delivery resumed, no new experiment
 
 Saved run01/run02 artifact hashes verified; all final run02 source hashes match

@@ -24,6 +24,9 @@ public:
 
   // 只在独立负例实例中添加同尺寸盒；不移动/删除归档 table 或三面墙。
   void addNegativeWorldBox(const p4::JointVector& q);
+  // [ENGINEERING TASK06] 独立离线fixture，沿用原生box插入；禁止覆盖旧环境。
+  void addPrivateWorldBox(const std::string& id, const Eigen::Isometry3d& pose_world,
+                          const Eigen::Vector3d& size_m);
 
 private:
   struct Impl;
