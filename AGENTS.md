@@ -1,5 +1,16 @@
 # AGENTS.md — Mandatory rules for Codex / coding agents
 
+## 最新研究决定 D064（2026-10-13）：五篇原论文算法复现优先、现有场景不再作为前置条件
+
+**本节高于 D055/D062/D063 等历史阶段规则。** 当前 P4→P2→P3→P5→P1，先以原论文为对象完成核心算法、最小可复现实验、原论文实验结果对照、中文 Word 报告；五篇收尾后另行研究小改和在双 FR3 / Cube / 车厢 / Isaac Sim 场景中的应用。**不要求 P2/P3/P5/P1 使用本项目的 FR3、车厢、吸盘、Isaac、旧 Task26 的模型、起终点或控制架构。** 优先复用作者的模型/代码/实验设置；模型、软件、数据、硬件条件不具备时允许经审查的最小可复现替代，但必须在报告中列清偏差，不得称原文条件完全复现。
+
+复现质量判断依据：论文**具体创新的实现忠实度、对照实验与曲线的真实性、结果可重复、与原论文的差异及原因**，而不是能否放入我们的场景。不得提前增加“适应车厢”“增加FR3控制”“吸盘保持力”等优化要求；这些归后续应用与小改阶段，当前不设为通过门槛。
+
+导师报告篇幅与章节重心：第一部分深讲原论文研究问题、模型假设、算法/控制器组成、公式推导、算法流程及作用机理；第二部分只展示实际复现平台、参数、**与原论文实验对应**的曲线数据/图表/指标/失败；**最后独立开设“面向本课题场景的适用性差距与待研究问题”**，只做概念性、证据分级的差距分析，不做当前复现验收，不推出我们改进有效的结论。前两部分不得让本课题 FR3/车厢工程日志反客为主。
+
+P4 已提交原 23 页报告 `02f9346` 不删除不改历史科学结论；**需按本决定重构报告叙事/Word，保留原始报告作版本存档**。独立修订任务见 `docs/tasks/P4_REPORT_REFOCUS.md`。本轮规划本身不授权新实验、原论文 RSS/PCS 编码、Isaac/ROS/控制或自动进入 P2；修订报告经用户审查后才准进入 P2。
+
+
 This repository is a scientific reproduction and benchmarking project. **Reproducibility, traceability, and progress toward the scientific objective have priority over “making the demo work” or perfecting an auxiliary engineering probe.**
 
 ## 最新优先级（2026-10-12，D062，覆盖下方D055历史执行顺序）
