@@ -1,0 +1,51 @@
+{
+  "kind": "AUDIT_CONFIGURATION_VALIDATION_ONLY",
+  "does_not_qualify_physical_loop": true,
+  "closed_loop_runs": 0,
+  "checks": {
+    "draft_stop_gate": true,
+    "source_hash_matches_actual_audit": true,
+    "PDF_hash": true,
+    "budget_counts": true,
+    "seed_matrix": true,
+    "exp2_feedback_only_off": true,
+    "exp4_observer_only": true,
+    "all_P0_blocks_valid": true,
+    "rational_event_rates": true,
+    "grasp_R_SO3": true,
+    "initial_fixture_selection_ranks": true,
+    "declared_inertia_positive": true
+  },
+  "all_declared_configuration_checks": true,
+  "event_rates_hz": {
+    "filter_hz": 250.0,
+    "EE1_hz": 200.0,
+    "EE2_hz": 50.0,
+    "tactile_hz": 100.0,
+    "visual_hz": 15.0
+  },
+  "initial_A_fixture_W_ranks": {
+    "tight_tight": 6,
+    "tight_pivot": 6,
+    "tight_sliding": 6,
+    "pivot_tight": 6,
+    "pivot_pivot": 6,
+    "pivot_sliding": 6,
+    "sliding_tight": 6,
+    "sliding_pivot": 6,
+    "sliding_sliding": 4
+  },
+  "uniform_cuboid_inertia_kg_m2": {
+    "A": [
+      0.0005529,
+      0.004560000000000001,
+      0.004930500000000001
+    ],
+    "C": [
+      0.00011146666666666666,
+      0.004824416666666666,
+      0.004824416666666666
+    ]
+  },
+  "protocol_sha256": "6439179a3d3144f43c9be5ef4fd59968af62f7ba89119745b16dafd17a2f2891"
+}
