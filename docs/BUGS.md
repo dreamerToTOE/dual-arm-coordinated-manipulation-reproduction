@@ -1,5 +1,19 @@
 # BUGS
 
+## 2026-10-13 — P4三方法原文复现仍有缺口，交付停止
+
+- **TASK-BLOCKING（完整RSS）**：固定数学奇异桥通过，但313次随机请求没有合格奇异目标，20/20超时无全局路径。3/3修正用完，不继续调参。
+- **TASK-BLOCKING（原完整协议）**：RSS去计时完整重复载荷不同；保留未通过，不能解释后改判。
+- **KNOWN LIMITATION**：原20R精确几何/完整实验输入未获得，当前为同类重建，未覆盖原六环境、m增长及三规划器比较。
+- **KNOWN LIMITATION**：PCS两划分进入搜索，但最终解全p0、父子边转换0；E1未迫使成功路径绕障，不能夸大换链或复杂度结论。
+- **KNOWN LIMITATION**：5种子配对条件、Python/GEOS与原后端/步长不同；RSS失败耗时右截断；离散检查无连续安全证明。
+- **KNOWN LIMITATION（日志）**：round0在logger之前失败，仅保存修正1traceback片段；round2不完整PCS gzip完整保留，不冒充成功。
+- **RESOLVED（工程接口）**：修正1中文路径NUL、修正2已有合格奇异解身份保持、修正3NumPy标量等值JSON；旧错误证据不删。
+- **RESOLVED（报告排版）**：图9图例遮注释已另存修订稿，正文XML和原数值不变；原Word/PDF仍保留。
+- **DEFERRED / LEGACY**：FR3/Task26/Isaac、原NR历史失败不在本次继续修复范围。
+
+详见[P4补充审计](../reports/P4_THREE_METHOD_ORIGINAL_AUDIT.md)和[交付报告](../reports/P4_THREE_METHOD_POST_TASK.md)。
+
 ## 2026-10-12 — P4报告中的未完成项（保持原资格，不再扩展工程）
 
 - **KNOWN LIMITATION**：主要NR路线；RSS/PCS、原三策略/三规划器比较、可见性和一般奇异穿越未复现。

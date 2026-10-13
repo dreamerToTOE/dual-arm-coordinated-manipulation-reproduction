@@ -1,5 +1,12 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+> **2026-10-13 P4三方法成果已归档，科学状态：部分完成，等待审查。**
+> 20R同类重建统一60次运行：RSS 0/20，PCS 20/20，NR 20/20；三轮修正用满。
+> [正式Word](reports/第一篇P4闭链运动规划论文复现汇总.docx) · [18页PDF](reports/第一篇P4闭链运动规划论文复现汇总.pdf) ·
+> [交付说明及命令](reports/P4_THREE_METHOD_POST_TASK.md) · [原文审计](reports/P4_THREE_METHOD_ORIGINAL_AUDIT.md) ·
+> [全部统计](results/20261013_P4_three_methods_round3/trials.csv)。原始失败及历史NR结果保存。
+> RSS全局规划、完整重复、原六环境/m比较仍有缺口；不宣称全论文通过。上传后停止，不自动P2/Isaac。
+
 > **2026-10-13 D065：P4论文三策略（RSS/PCS/NR）都必须有真实实验与图表比较**；代码或伪代码不完整最多三轮有证据的小幅修正，仍有差距如实汇报。报告第一人称科研语言，不写“编写目的”；应用现有双FR3场景差距单放最后章节。见 [专项任务](docs/tasks/P4_THREE_METHOD_COMPARISON.md)。当前不启动P2或Isaac。
 
 

@@ -1,5 +1,27 @@
 # EXPERIMENT_LOG
 
+## 2026-10-13 — P4三方法既有实验归档及独立核验
+
+协议6d64b26；初版2ab2348；修正1/2/3分别41689ef/17202df/3d51ca0。
+真实科学运行命令见各run metadata；最终命令为：
+
+    /tmp/p4-three-source.sHcHgg/venv/bin/python scripts/run_p4_three_methods.py --run-id 20261013_P4_three_methods_round3
+
+round0启动路径错误未建logger；修正1保留traceback。round1为16/17测试、未规划；
+round2为17测试通过、完整RSS超时1次、PCS写gzip中断及ABORTED；这些不混入最终分母。
+round3：E0/E1×outer200/800×RSS/PCS/NR×seed[7,23,41,101,20261013]共60统计；
+每算法E0/200/seed7重复一次，共63份原件。共同5s/2000nodes/.6rad/.05rad/1e-8闭链；
+Python3.10.12、NumPy1.24.4、Shapely2.1.2/GEOS3.13.1、i7-10700F。
+RSS20超时，PCS20成功，NR20成功；全调用均时5.000134/.581200/.035464s。
+RSS313请求/9996构造/0合格奇异点；PCS树边520p16+92p0、解边92p0；3重复中RSS载荷不一致。
+原始数据在results/20261013_P4_three_methods_round1、round2、round3，全量保留。
+
+本轮只复核已有科学数据，没有重新运行统计套件或新增随机seed。
+新命令：python3 scripts/verify_p4_three_delivery.py --output reports/P4_THREE_METHOD_DELIVERY_QA.json；
+17项unittest复核、保存证据QA、报告图例排版及LibreOffice导出。
+独立几何3312点全部合格，净距与GEOS最大差2.78e-17m；131接手文件/561旧文件/9来源SHA不变。
+Word18页/16公式/10图；排版修订科研数值变化0。全部科学结论仍部分完成，没有物理执行。
+
 ## 2026-10-12 — P4报告存量出图：不是新增科学实验
 
 科学规划/IK/NR/FCL查询/物理/机器人调用均0；仅读取并校验原始结果。

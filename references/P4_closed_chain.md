@@ -1,5 +1,14 @@
 # P4 — Closed-Chain Motion Planning
 
+## 2026-10-13 当前三方法证据：部分完成，等待审查
+
+已重新阅读全文、图表及CKCplanning@909bd72的RSS/PCS/NR实现，见[补充原文审计](../reports/P4_THREE_METHOD_ORIGINAL_AUDIT.md)。
+协议6d64b26、源码3d51ca0：RSS/PCS/NR在同20R重建模型共60次统计、3次重复，RSS0/20、PCS/NR各20/20。
+原环境I完整几何未提供，本轮独立重建；RSS固定奇异桥通过但随机全局路径失败，PCS解边全部p0，
+RSS完整重复未过；原六环境、m增长和三规划器组合未全部复现。不得把这些数据称为原表I/II数值复现。
+读[18页正式Word](../reports/第一篇P4闭链运动规划论文复现汇总.docx)与[完整交付](../reports/P4_THREE_METHOD_POST_TASK.md)。
+三轮科学修正用满，上传后停止；下方仅NR路线和“不新增实验”的描述为历史任务，不覆盖D065/D066。
+
 ## 2026-10-12 论文式中文汇总（已有数据，不新增实验）
 
 主代理阅读全文P4八页及私有DEFORM范例，六份资料SHA匹配。
