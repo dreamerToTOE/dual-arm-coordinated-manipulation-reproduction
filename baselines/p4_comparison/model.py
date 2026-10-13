@@ -153,6 +153,16 @@ class PlanarModel:
             return IKResult(False, None, "NONFINITE_IK", float(cosine))
         if abs(cosine) > 1.0 + self.cosine_roundoff:
             return IKResult(False, None, "IK_UNREACHABLE", float(cosine))
+        # At an already-qualified exact passive singularity both analytic
+        # labels share this very solution. Recomputing acos(1-roundoff) can
+        # spuriously split them. Preserve the known solution, using only the
+        # original branch/closure/bounds checks; never snap a new candidate.
+        existing_residual = self.closure(vector)
+        if (self.branch(vector, p) == 0 and
+                np.linalg.norm(existing_residual[:2]) <= self.position_tolerance and
+                abs(existing_residual[2]) <= self.angle_tolerance and
+                np.all(vector >= self.lower) and np.all(vector <= self.upper)):
+            return IKResult(True, vector.copy(), "ALREADY_CLOSED_SINGULAR", float(cosine), 0)
         bounded = min(1.0, max(-1.0, cosine))
         middle = (1 if branch >= 0 else -1) * acos(bounded)
         if branch == 0 and abs(sin(middle)) > self.branch_epsilon:
