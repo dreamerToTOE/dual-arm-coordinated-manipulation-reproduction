@@ -35,11 +35,11 @@ def save(path,data):
 
 
 def protected():
-    names=subprocess.check_output(["git","ls-tree","-r","--name-only",
+    names=subprocess.check_output(["git","ls-tree","-r","--name-only","-z",
         "d5b5096bd287a09039b9b8c1911acdf5bfeb5a46","results","baselines/p4_closed_chain",
         "common","configs/benchmark","reports/P4_论文复现汇总.docx","reports/P4_论文复现汇总.pdf"],
-        cwd=ROOT,text=True).splitlines()
-    return {n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in names}
+        cwd=ROOT,text=True).split("\0")
+    return {n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in names if n}
 
 
 def without_timing(value):
