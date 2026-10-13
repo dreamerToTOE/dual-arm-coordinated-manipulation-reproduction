@@ -30,8 +30,14 @@ from common.interfaces.exchange import RunMetadata,BenchmarkResult,ResultStatus,
 from common.logging.run import RunLogger,source_ref
 
 
+def json_scalar(value):
+    if isinstance(value,np.generic):
+        return value.item()  # Same Boolean/numeric value; no decision/value change.
+    raise TypeError("unsupported JSON payload type: "+type(value).__name__)
+
+
 def save(path,data):
-    path.write_text(json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+"\n")
+    path.write_text(json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False,default=json_scalar)+"\n")
 
 
 def protected():
@@ -144,7 +150,7 @@ def main():
             result["independent_validation"]=validation
             filename=name+".json.gz"
             with gzip.open(out/filename,"wt",encoding="utf-8") as f:
-                json.dump(result,f,ensure_ascii=False,allow_nan=False)
+                json.dump(result,f,ensure_ascii=False,allow_nan=False,default=json_scalar)
             row={"environment":env,"budget":budget,"method":method,"seed":seed,"repeat":repeat,
                 "status":result["status"],"wall_sec":result["compute_wall_time_sec"],"nodes":result["node_count"],
                 "counters":result["counters"],"failure_counts":result["failure_counts"],
