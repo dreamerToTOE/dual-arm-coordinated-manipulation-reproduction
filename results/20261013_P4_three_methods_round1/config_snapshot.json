@@ -1,0 +1,58 @@
+{
+  "protocol": "reports/P4_THREE_METHOD_PRE_TASK.md",
+  "model": "PLANAR_20R_19_MOVING_PLUS_GROUND_ENVIRONMENT_I_FAMILY_RECONSTRUCTION",
+  "original_exact_geometry_available": false,
+  "methods": [
+    "RSS",
+    "PCS",
+    "NR"
+  ],
+  "environments": [
+    "E0_sparse",
+    "E1_clutter"
+  ],
+  "seeds": [
+    7,
+    23,
+    41,
+    101,
+    20261013
+  ],
+  "rng": "NumPy Generator(PCG64)",
+  "outer_iteration_budgets": [
+    200,
+    800
+  ],
+  "statistical_trials": 60,
+  "deterministic_repeat": {
+    "environment": "E0_sparse",
+    "seed": 7,
+    "budget": 200,
+    "count_per_method": 1
+  },
+  "algorithm": {
+    "extension_range_rad": 0.6,
+    "rbs_resolution_rad": 0.05,
+    "rbs_max_depth": 20,
+    "rbs_max_projections": 4096,
+    "nr_max_iterations": 100,
+    "position_tolerance_m": 1e-08,
+    "rotation_tolerance_rad": 1e-08,
+    "svd_absolute_cutoff": 1e-12,
+    "svd_relative_cutoff": 1e-10,
+    "stagnation_step_rad": 1e-14,
+    "max_nodes": 2000,
+    "connect_attempts": 25,
+    "max_compute_wall_sec": 5.0,
+    "singular_attempts": 32,
+    "singular_probability": 0.2,
+    "minimum_progress_rad": 1e-12,
+    "meeting_tolerance_rad": 1e-09
+  },
+  "joint_limits": "all [-pi,pi]; wrapping is coordinate representation, no clamping",
+  "collision": "GEOS Cartesian centerline distance minus exact capsule/circle radii; touching rejected",
+  "metric": "unweighted full joint Euclidean; NOT authors active-only metric",
+  "scientific_measurement": "OFFLINE_PLANNING_COMPUTE_AND_GEOMETRY_NO_PHYSICS_CLOCK",
+  "success_scope": "full saved discrete path and edge provenance; no continuous collision certificate",
+  "benchmark_frozen": false
+}

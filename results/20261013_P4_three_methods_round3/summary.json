@@ -1,0 +1,220 @@
+{
+  "trial_count": 60,
+  "deterministic_repeats": [
+    {
+      "method": "RSS",
+      "exact_nontiming_payload_match": false,
+      "statuses": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ],
+      "artifact": "E0_sparse_budget200_RSS_seed7_repeat.json.gz"
+    },
+    {
+      "method": "PCS",
+      "exact_nontiming_payload_match": true,
+      "statuses": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "artifact": "E0_sparse_budget200_PCS_seed7_repeat.json.gz"
+    },
+    {
+      "method": "NR",
+      "exact_nontiming_payload_match": true,
+      "statuses": [
+        "SUCCESS",
+        "SUCCESS"
+      ],
+      "artifact": "E0_sparse_budget200_NR_seed7_repeat.json.gz"
+    }
+  ],
+  "groups": [
+    {
+      "environment": "E0_sparse",
+      "budget": 200,
+      "method": "RSS",
+      "trials": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "status_counts": {
+        "TIME_LIMIT": 5
+      },
+      "wall_all_trials_mean": 5.000113023799713,
+      "wall_success_mean": null,
+      "nodes_mean": 288.2,
+      "path_length_success_mean": null
+    },
+    {
+      "environment": "E0_sparse",
+      "budget": 200,
+      "method": "PCS",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.5359314964003715,
+      "wall_success_mean": 0.5359314964003715,
+      "nodes_mean": 32.6,
+      "path_length_success_mean": 4.573955338990003
+    },
+    {
+      "environment": "E0_sparse",
+      "budget": 200,
+      "method": "NR",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.032235716200011665,
+      "wall_success_mean": 0.032235716200011665,
+      "nodes_mean": 5.0,
+      "path_length_success_mean": 1.2708074137927179
+    },
+    {
+      "environment": "E0_sparse",
+      "budget": 800,
+      "method": "RSS",
+      "trials": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "status_counts": {
+        "TIME_LIMIT": 5
+      },
+      "wall_all_trials_mean": 5.000072863600144,
+      "wall_success_mean": null,
+      "nodes_mean": 288.4,
+      "path_length_success_mean": null
+    },
+    {
+      "environment": "E0_sparse",
+      "budget": 800,
+      "method": "PCS",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.5254783563999809,
+      "wall_success_mean": 0.5254783563999809,
+      "nodes_mean": 32.6,
+      "path_length_success_mean": 4.573955338990003
+    },
+    {
+      "environment": "E0_sparse",
+      "budget": 800,
+      "method": "NR",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.032337047000328314,
+      "wall_success_mean": 0.032337047000328314,
+      "nodes_mean": 5.0,
+      "path_length_success_mean": 1.2708074137927179
+    },
+    {
+      "environment": "E1_clutter",
+      "budget": 200,
+      "method": "RSS",
+      "trials": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "status_counts": {
+        "TIME_LIMIT": 5
+      },
+      "wall_all_trials_mean": 5.00015836800012,
+      "wall_success_mean": null,
+      "nodes_mean": 248.0,
+      "path_length_success_mean": null
+    },
+    {
+      "environment": "E1_clutter",
+      "budget": 200,
+      "method": "PCS",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.632468367799811,
+      "wall_success_mean": 0.632468367799811,
+      "nodes_mean": 32.6,
+      "path_length_success_mean": 4.573955338990003
+    },
+    {
+      "environment": "E1_clutter",
+      "budget": 200,
+      "method": "NR",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.038776349399631725,
+      "wall_success_mean": 0.038776349399631725,
+      "nodes_mean": 5.0,
+      "path_length_success_mean": 1.2708074137927179
+    },
+    {
+      "environment": "E1_clutter",
+      "budget": 800,
+      "method": "RSS",
+      "trials": 5,
+      "success": 0,
+      "success_rate": 0.0,
+      "status_counts": {
+        "TIME_LIMIT": 5
+      },
+      "wall_all_trials_mean": 5.00019241379996,
+      "wall_success_mean": null,
+      "nodes_mean": 250.8,
+      "path_length_success_mean": null
+    },
+    {
+      "environment": "E1_clutter",
+      "budget": 800,
+      "method": "PCS",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.630923511599758,
+      "wall_success_mean": 0.630923511599758,
+      "nodes_mean": 32.6,
+      "path_length_success_mean": 4.573955338990003
+    },
+    {
+      "environment": "E1_clutter",
+      "budget": 800,
+      "method": "NR",
+      "trials": 5,
+      "success": 5,
+      "success_rate": 1.0,
+      "status_counts": {
+        "SUCCESS": 5
+      },
+      "wall_all_trials_mean": 0.03850576919976447,
+      "wall_success_mean": 0.03850576919976447,
+      "nodes_mean": 5.0,
+      "path_length_success_mean": 1.2708074137927179
+    }
+  ],
+  "protected_files": 561,
+  "protected_files_unchanged": true,
+  "physical_runs": 0,
+  "geometry_is_original_exact": false,
+  "rss_registered_bridge_qualified": true,
+  "overall_scope": "three-method same-model reconstruction; not full original-six-environment reproduction"
+}

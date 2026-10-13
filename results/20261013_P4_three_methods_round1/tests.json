@@ -1,0 +1,11 @@
+{
+  "tests": 17,
+  "passed": false,
+  "failures": [
+    {
+      "test": "test_singular_fixture_has_true_passive_rank_loss (test_p4_comparison_model.PlanarModelTests)",
+      "trace": "Traceback (most recent call last):\n  File \"/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-three-methods/tests/test_p4_comparison_model.py\", line 87, in test_singular_fixture_has_true_passive_rank_loss\n    self.assertLessEqual(np.linalg.norm(positive.q - negative.q), 1e-7)\nAssertionError: 4.39521109844431e-07 not less than or equal to 1e-07\n"
+    }
+  ],
+  "errors": []
+}

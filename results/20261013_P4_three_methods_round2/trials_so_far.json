@@ -1,0 +1,54 @@
+[
+  {
+    "environment": "E0_sparse",
+    "budget": 200,
+    "method": "RSS",
+    "seed": 7,
+    "repeat": false,
+    "status": "TIME_LIMIT",
+    "wall_sec": 5.000025635000384,
+    "nodes": 286,
+    "counters": {
+      "outer_iterations": 53,
+      "growth_attempts": 316,
+      "nearest_queries": 316,
+      "nearest_distance_evaluations": 29133,
+      "samples": 53,
+      "accepted_edges": 284,
+      "extension_rejections": 32,
+      "state_qualification_calls": 9011,
+      "collision_queries": 9011,
+      "geometry_queries": 1712090,
+      "ambient_samples": 53,
+      "rng_draws": 8637,
+      "projection_calls": 8750,
+      "ik_calls": 9102,
+      "ik_solver_calls": 9102,
+      "ik_failures": 380,
+      "projection_failures": 28,
+      "singular_sample_requests": 11,
+      "singular_construction_attempts": 352,
+      "singular_sample_failures": 11,
+      "local_connection_calls": 288,
+      "rbs_midpoint_projections": 8435,
+      "local_connections_accepted": 284,
+      "collision_rejections": 2,
+      "local_connection_failures": 4
+    },
+    "failure_counts": {
+      "IK_UNREACHABLE": 28,
+      "SINGULAR_SAMPLER_BUDGET": 11,
+      "COLLISION": 2,
+      "GOAL:COLLISION": 2,
+      "NO_COMMON_PASSIVE_BRANCH": 1,
+      "TIME_LIMIT": 1
+    },
+    "path_metrics": null,
+    "independent_validation": {
+      "status": "NOT_APPLICABLE_NO_QUALIFIED_PATH"
+    },
+    "artifact": "E0_sparse_budget200_RSS_seed7.json.gz",
+    "sha256": "04997b61ba2f32aa2168f1ab30b47e559ecf58e737fe57517ff478ade3e940ce",
+    "terminal_reason": "compute budget exhausted in RBS/qualification"
+  }
+]

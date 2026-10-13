@@ -1,0 +1,30 @@
+test_bad_inputs_bounds_and_unreachable_ik_rejected (test_p4_comparison_model.PlanarModelTests) ... ok
+test_both_analytic_branches_and_partition_invariance (test_p4_comparison_model.PlanarModelTests) ... ok
+test_jacobian_central_difference (test_p4_comparison_model.PlanarModelTests) ... ok
+test_preregistered_dimensions_and_endpoints (test_p4_comparison_model.PlanarModelTests) ... ok
+test_singular_fixture_has_true_passive_rank_loss (test_p4_comparison_model.PlanarModelTests) ... FAIL
+test_true_geos_version_and_collision_evidence (test_p4_comparison_model.PlanarModelTests) ... ok
+test_bounded_failure_keeps_verified_prefix (test_p4_comparison_strategies.StrategyTests) ... ok
+test_failed_state_does_not_get_zero_collision_evidence (test_p4_comparison_strategies.StrategyTests) ... ok
+test_nr_negative_input_and_bound (test_p4_comparison_strategies.StrategyTests) ... ok
+test_pcs_midpoint_budget_is_total_across_partition_trials (test_p4_comparison_strategies.StrategyTests) ... ok
+test_pcs_uses_actual_common_partition (test_p4_comparison_strategies.StrategyTests) ... ok
+test_registered_singular_fixture_preserves_actual_status (test_p4_comparison_strategies.StrategyTests) ... ok
+test_rss_rejects_different_regular_branch_without_nr (test_p4_comparison_strategies.StrategyTests) ... ok
+test_same_state_each_method (test_p4_comparison_strategies.StrategyTests) ... ok
+test_time_limit_is_not_projection_or_geometry_infeasibility (test_p4_comparison_strategies.StrategyTests) ... ok
+test_true_projection_rank_failure (test_p4_comparison_strategies.StrategyTests) ... ok
+test_zero_nr_and_fixed_neighbour (test_p4_comparison_strategies.StrategyTests) ... ok
+
+======================================================================
+FAIL: test_singular_fixture_has_true_passive_rank_loss (test_p4_comparison_model.PlanarModelTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-three-methods/tests/test_p4_comparison_model.py", line 87, in test_singular_fixture_has_true_passive_rank_loss
+    self.assertLessEqual(np.linalg.norm(positive.q - negative.q), 1e-7)
+AssertionError: 4.39521109844431e-07 not less than or equal to 1e-07
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.182s
+
+FAILED (failures=1)
