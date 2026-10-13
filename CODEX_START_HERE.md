@@ -1,5 +1,14 @@
 # CODEX_START_HERE.md
 
+## 最新研究任务 D067（2026-10-13，覆盖历史P4等待门禁）
+
+P4@79cc871阶段性审查通过，RSS失败与PCS换链优势未充分验证、全论文部分完成结论保留。P4不再修改/追加实验。
+当前独立 `reproduce-p2-paper-audit`：已阅读全文P2八页，交[审计](reports/P2_ORIGINAL_PAPER_AUDIT.md)与[协议](reports/P2_CLOSED_LOOP_EXPERIMENT_PROTOCOL.md)，[任务卡](docs/tasks/P2_PAPER_AUDIT_AND_PROTOCOL.md)。
+**当前暂停在式15接触运动学科学裁决**：正号在自由滑动反例中产生80μm/4ms形变；仅改负号还不足以认证有限形变。
+原式与诊断保留，不执行闭环，不自动修正、不P3。待决定后先完成模型推导/资格和协议冻结。
+最小模型允许原物块/Cartesian软接触，不强制双FR3、吸盘、Cube、车厢或Isaac；完整IESEKF/硬件未完成项必须明示。
+三轮后续小修预算本轮0/3；正式Benchmark与旧TASK07–10保持不变。
+
 ## 当前交付门禁（2026-10-13，D066）：P4三方法部分完成，停止等待审查
 
 分支reproduce-p4-three-methods；20R同类重建RSS/PCS/NR已各自运行，60统计与3重复、

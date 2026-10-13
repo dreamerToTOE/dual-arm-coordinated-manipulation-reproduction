@@ -1,5 +1,11 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+> **2026-10-13 D067：P4阶段性报告已接受，P2原文审计完成，实验协议待接触模型裁决。**
+> 新分支 `reproduce-p2-paper-audit` 基于79cc871，保留P4全部源码/数据/失败/报告。
+> [P2原文公式审计](reports/P2_ORIGINAL_PAPER_AUDIT.md) · [最小闭环协议草案](reports/P2_CLOSED_LOOP_EXPERIMENT_PROTOCOL.md) · [任务卡](docs/tasks/P2_PAPER_AUDIT_AND_PROTOCOL.md)。
+> 式15几何一致性争议已保存固定诊断；尚无P2闭环数据，协议不可执行，不自动P3或Isaac。
+> 下列P4“等待审查”及停止门禁是历史交付记录，当前以D067为准。
+
 > **2026-10-13 P4三方法成果已归档，科学状态：部分完成，等待审查。**
 > 20R同类重建统一60次运行：RSS 0/20，PCS 20/20，NR 20/20；三轮修正用满。
 > [正式Word](reports/第一篇P4闭链运动规划论文复现汇总.docx) · [18页PDF](reports/第一篇P4闭链运动规划论文复现汇总.pdf) ·

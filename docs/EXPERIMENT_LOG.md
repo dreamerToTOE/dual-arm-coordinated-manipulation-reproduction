@@ -1,5 +1,17 @@
 # EXPERIMENT_LOG
 
+## 2026-10-13 — P2原文数学一致性诊断（非控制实验）
+
+一次实际命令：
+
+    /tmp/p4-three-source.sHcHgg/venv/bin/python scripts/audit_p2_kinematic_identities.py --output results/20261013_P2_original_audit/kinematic_identity_audit.json
+
+Python3.10.12/NumPy1.24.4/SciPy1.8.0；固定解析输入，无随机采样/增益搜索。
+式15 D=I、自由x、EE静止、物体.01m/s、dt4ms：印刷正号D平移80μm，负号局部候选0；仅证明符号反例，不认证有限形变完整模型。
+式22对固定O/G的单接触弹性式9做独立矩阵Exp/Log中央差分；eps1e−4/1e−5/1e−6全部保存。1e−6时原印刷式平移导数分量误差约−.095183/−.133877/.009254N/s；直接微分残差<4.4e−10逐分量。
+结果为待裁决的不一致，不是论文公式全通过或内力控制实验。hK不是时变W/H/阻尼下完整hI导数。
+闭环run=0、小修0/3，所有未来主矩阵标NOT_EXECUTED；协议variant=null/executable=false。P4新实验/追加RSS=0。
+
 ## 2026-10-13 — P4三方法既有实验归档及独立核验
 
 协议6d64b26；初版2ab2348；修正1/2/3分别41689ef/17202df/3d51ca0。

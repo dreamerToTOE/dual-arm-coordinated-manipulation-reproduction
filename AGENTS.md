@@ -1,5 +1,15 @@
 # AGENTS.md — Mandatory rules for Codex / coding agents
 
+## 当前任务 D067（2026-10-13）：P4审查接受，P2原文审计交付，接触模型待裁决
+
+用户明确接受79cc871的P4阶段性报告；完整论文仍部分完成。P4全部源码、数据、失败和Word/PDF保留，禁止本轮继续P4/RSS。
+独立分支 `reproduce-p2-paper-audit` 从79cc871建立。当前只做P2原文/公式/作者资源审计与最小闭环协议，无FR3/Isaac前置要求，不自动P3。
+读[任务卡](docs/tasks/P2_PAPER_AUDIT_AND_PROTOCOL.md)、[原文审计](reports/P2_ORIGINAL_PAPER_AUDIT.md)、[协议草案](reports/P2_CLOSED_LOOP_EXPERIMENT_PROTOCOL.md)。
+式15自由方向抓取坐标更新与零形变描述有重大符号/坐标争议；式22有限变形推导有左右Jacobian疑点。
+`contact_kinematics_variant=null`、`executable=false`；闭环运行0、小修0/3。保持原控制式20/21/25；不自动改负号、重排投影或用式24生成伪曲线。
+**STOP FOR USER MODEL DECISION**：先由用户裁决是否允许有记录的几何一致接触运动学，然后完成有限形变资格并冻结协议，才可进入实现。Word正式实验部分待真实闭环数据。
+下方D066及此前P4“不得进入P2”是历史门禁；本次用户明确授权覆盖它，但不授权继续P4或P3。
+
 ## 当前交付门禁（2026-10-13，D066）：P4三方法部分完成，上传后等待审查
 
 已有协议6d64b26、科研源码3d51ca0、60统计/3重复、三轮修正3/3已结束。
