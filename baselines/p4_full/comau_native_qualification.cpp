@@ -17,8 +17,8 @@
 #include <stdexcept>
 #include <string>
 
-#include "apc_class.h"
 #include "kdl_class.h"
+#include "apc_class.h"
 
 #ifndef P4_COMAU_MODEL
 #error Compile with P4_COMAU_MODEL=4, 5, or 6.
