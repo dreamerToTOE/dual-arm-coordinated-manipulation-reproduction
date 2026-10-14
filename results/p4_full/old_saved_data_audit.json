@@ -1,0 +1,350 @@
+{
+  "scope": "Saved-data analysis only; no new stochastic samples, IK calls, planner calls or acceptance verdict changes.",
+  "baseline_commit": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+  "source_sha256": {
+    "baselines/p4_comparison/__init__.py": "90ba33ebeda61557c87f7f6d63d3c92a8cfa1ca0879dd4e502eb9e0375a0a702",
+    "baselines/p4_comparison/model.py": "917947f042fa835f67af5f5bb15677f35a1867701665e65bdf3acac263add627",
+    "baselines/p4_comparison/planner.py": "2d40fe27c8b738cebc0516ff7d9138bb853e22a8c19e382b9d7e0d39cce3482c",
+    "baselines/p4_comparison/strategies.py": "4865dd276677b578ac063fa66032d25a7a332829a162c339954c6531fc732d0d",
+    "configs/engineering/p4_three_methods_v1.json": "2ea7bac7891acad2f5b17e4e87b86ce3dd7bdff497cb29b9add5c61529db42eb"
+  },
+  "input_artifact_sha256": {
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_NR_seed101.json.gz": "dc08a44776d9faa762bf1ab9f946e0c7f196c2570fb7defdcdbdb1d9776f7701",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_NR_seed20261013.json.gz": "37ddbf5c8cd76320f3f833e748d0ea3006eee18bb0ae22f4aed9ce885b84a6eb",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_NR_seed23.json.gz": "088ff8b6b215c0e74488a8d76380f070e90687db49ec974b0ed433561cb82a1f",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_NR_seed41.json.gz": "4ede6190044deca6eca3f8905bda1bb69419924b06133094e49169a82abdf670",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_NR_seed7.json.gz": "fc7041c90e6e03b2e50c2f9eaac941925cdbe44b154b4f66888a5c3ebec3e9cf",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_PCS_seed101.json.gz": "283cb658a47cfc36ae9b58a2bda6c957251cdc3086df6788466c461f4aa044f8",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_PCS_seed20261013.json.gz": "9a71a0d638012605a1faad499b3d5587fd1da235c0939c9653912f3e9162b473",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_PCS_seed23.json.gz": "8d172cbc22ec7ff72e06593274d810bc494b3e7fe368d95e75d835a29404f512",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_PCS_seed41.json.gz": "ddd3ddfd8e9336c60a673bd83640bd552710ee4e4e3877b39f67aa9fd9d161d4",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_PCS_seed7.json.gz": "07524041959718419ff0791756a37036a3ae3557c537a9056873083c9688c890",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed101.json.gz": "f9a2f1ed0d546069c477e7f541dc8ed56a95990f392f8c57f543dbfae6af092b",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed20261013.json.gz": "9624d7ce9b78ce2e5f71c0da019bcfb88f2f307a9dd27799fdba3cde126d5e4b",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed23.json.gz": "bccbb51e4e896d3cfddde43649a8e73bd03fd803ffdde56f8c1ceb1a35b5ba45",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed41.json.gz": "5fdef17f1c1116ba54bff1d00a0908fb3a4ba8c333e80ad1602d809ee61d4f6b",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed7.json.gz": "e2b4d5a099148055c301327b73592b3573e6c778701b5ddfecb2f22024121b58",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_NR_seed101.json.gz": "c7c19108df349594916c6401482269a359fd74e982f606d87d1728f183d9471d",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_NR_seed20261013.json.gz": "b4fb8ba2c2570084c4292f4152cdd26c6f4776f6ff8808d19d5d5fb7c6b2d4bb",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_NR_seed23.json.gz": "6539f911fa32555a705ab65859fa2c418af7a3c19830ddfc0ec12138c033a6de",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_NR_seed41.json.gz": "5af362dcbe654fc03b29c9a56d48b3d164a6f0c0156dee25dfb51211f940d172",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_NR_seed7.json.gz": "7b65872d3b221ed1cd3c2072da08b955f82ad199a1b737669952189d30795eda",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_PCS_seed101.json.gz": "bed5ef5904ebaa6f763e6733528da3d7f1f64b3572f5421f98b1ffc5da63eae9",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_PCS_seed20261013.json.gz": "bc59dea061ab34b8ea493dafb85b1ed8cbe87168c23f6e1fda44ece1459bc796",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_PCS_seed23.json.gz": "45cdbea63c706813cb19e43db3b8740880274eca1dd3212eaf3056532c2069ca",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_PCS_seed41.json.gz": "2f7d3b2f86ed2040087d94db32fedef926353833f321585c4a446998cdd17eb2",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_PCS_seed7.json.gz": "eb73634b7de53c50c52f62e046cb8b57daffc2a705eb42ece548ccf64b424773",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed101.json.gz": "f243e0a1ea907960a141b8f6f945d84886af3db1c89a81838a332539e4024e1f",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed20261013.json.gz": "d73255fc241ada187eb1f93791e978327ef36c5a71c068e4fd2bc61cdb2ccc0d",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed23.json.gz": "259039c239d7b2c0800ce3b8f7f7befde2270a0ea44db232d7da086235e0b70d",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed41.json.gz": "c93af35467ef09a58c706471c2f4bd8959556603074df042685360007bbd3f83",
+    "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed7.json.gz": "03768684199606e9e19748575d9fad9c4f31455632f705ea86827ba6aa7787b8",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_NR_seed101.json.gz": "75b3bf888ea67b3b87462a798efc2f18d1031c73e58c52662d09b29543759c90",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_NR_seed20261013.json.gz": "48ac22bcc10672856d1cf28bd488ae3f6155582663c74d60473f8042defc29ee",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_NR_seed23.json.gz": "5d679bcb6d7c86422af4ebaf01fc95aeea4211031d5771861d2727af4d801147",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_NR_seed41.json.gz": "1dd3e2a4649fd958c5d0f8cf94bdcbb2127afb68f655999e352af4f7e006a336",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_NR_seed7.json.gz": "075fff7cc301c5d756d4103096f2ec255bef25d3b65719f076ecbafd6916ac37",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_PCS_seed101.json.gz": "cde7924749f050ab0db1c2dccba4f40987adf04fb843f078db476ccb09d4955f",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_PCS_seed20261013.json.gz": "827bf7fd5fb8b063676378999c9346a3c7b9a6dfe3aa69f9adc8439ac137c91d",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_PCS_seed23.json.gz": "1bb6dfc14a1cd4102903deed20eab52d29c2777bd9e56bd1c283e3340a71dfa5",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_PCS_seed41.json.gz": "97d3892e609b80a2c99cf3a19be40b242393f70bc248bdc16cd649988941f544",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_PCS_seed7.json.gz": "6a081b954f4296aa8c92ef1c99b977e079bc87ab1c29e56ee4994276134f482a",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed101.json.gz": "c05ed8a0f1bcef35872db257f7bf0fd7bceb13f1bd28506847a5535a3e893a3e",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed20261013.json.gz": "af3f47bce5f1aa2ad3c98018aaa7a3f80004867ad17d934ce70ea4beb586e77b",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed23.json.gz": "0774490db91132c76fd24807402f8ea781d61bac2f915f6d4c7590d69d2fa710",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed41.json.gz": "3be5d1f7b1fb9ee4ea4f36eb2a28d2c20b05c48a20b84a519d16fa2684c1fd4e",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed7.json.gz": "1f05c4d81a76e7716082dc8c4fe967ba5040e5552acee26b5aa3104e644dce7d",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_NR_seed101.json.gz": "c0d0d0bcaacfabfc8d401dba6eee9f3217e228ea60cafb9771c4af9dc483e09f",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_NR_seed20261013.json.gz": "01aec3a2826fb6800a3b6cffeef415139bfecc3d560ef530c0ef72ea5f4b375d",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_NR_seed23.json.gz": "4217dd0238e4b3983a214fbdf1fbfbd7652234fc40e020a55c8b4595acf8d8f1",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_NR_seed41.json.gz": "f2687d43734ba66a1edc10479d511e5f4456da9a947fca94d619d081e60ea9db",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_NR_seed7.json.gz": "5085641a2cab532ddfa1cd8d89481e9c316b5aaa30bbfbfab901cc9d3b5bc38d",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_PCS_seed101.json.gz": "848cc0617b5876019c4fb3b4101efbf0d94f98bede8b729458ab1124ae61ed48",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_PCS_seed20261013.json.gz": "e6e667e13acf358289449526467d74afddc18519319773660d95ef2e8443ab1d",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_PCS_seed23.json.gz": "7ecc4a02903a5d17a1a657ee8cb7f4d308622b93f4292a9afb520810781167b2",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_PCS_seed41.json.gz": "d9b11ae256b5b948f0b56748a94eacf505b791da3130c45c183a2c116622954a",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_PCS_seed7.json.gz": "9655be2a0b5ef08e8cf9a2da2014f2b396d775165d0adc6200ec1ef741e9a943",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed101.json.gz": "961f593f3c64ddf6ae1c250d401c12edbbd159a3245900970669c3441875f353",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed20261013.json.gz": "c08f3e643e94dd3ce0a5a825d34bb4aa866467be34a9076955a6b34f4afafe96",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed23.json.gz": "997d8290677695044303bedd2b4380a0e6e110936899e108bf06d620d7881f9b",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed41.json.gz": "5238ddf66f5b9137956ddd363fca3f36a3c090f34adff1036e7a61f166387244",
+    "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed7.json.gz": "cefad10b455b6ede64598a6350f2d530cd26d305845bf39dd7e356e42045d454"
+  },
+  "audit_source_sha256": "a9fa3e5304eb03aac982ea32f7eb16c03305002570cd406e21cb970d4b56e610",
+  "frozen_worktree_status_before": "",
+  "frozen_worktree_status_after": "",
+  "frozen_source_bytes_unchanged": true,
+  "RSS": {
+    "primary_trials": 20,
+    "saved_requests": 313,
+    "stored_attempts": 9996,
+    "unique_raw_q_and_generator_branch": 2720,
+    "stage_counts": {
+      "IK_UNREACHABLE": 9996
+    },
+    "straight_stage_counts": {
+      "IK_UNREACHABLE": 4910
+    },
+    "folded_stage_counts": {
+      "IK_UNREACHABLE": 5086
+    },
+    "link_length_m": 0.08257934547233232,
+    "wrist_reach_upper_bound_m": 0.16515869094466465,
+    "wrist_radius_quantiles_m": [
+      0.1827381923589296,
+      0.8673505180109572,
+      1.0262632126502225,
+      1.1839184940860423,
+      1.8236163076690561
+    ],
+    "minimum_cosine": 1.4484192245521958,
+    "maximum_cosine": 242.83388939529078,
+    "suffix_radius_quantiles_m": [
+      0.004582824159818003,
+      0.17675188538503742,
+      0.27434281030245755,
+      0.3922335323317084,
+      0.9015477979810527
+    ],
+    "independent_unreachable_count": 9996,
+    "minimum_wrist_record": {
+      "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed41.json.gz",
+      "singular_log_index": 407,
+      "wrist_radius_m": 0.1827381923589296,
+      "cosine": 1.4484192245521958,
+      "suffix_radius_m": 0.8229436054631235,
+      "q17_rad": 0.0,
+      "generator_branch": -1
+    },
+    "per_trial": [
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed101.json.gz",
+        "singular_requests": 24,
+        "stored_construction_attempts": 768,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 768
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed20261013.json.gz",
+        "singular_requests": 10,
+        "stored_construction_attempts": 320,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 320
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed23.json.gz",
+        "singular_requests": 14,
+        "stored_construction_attempts": 448,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 448
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed41.json.gz",
+        "singular_requests": 25,
+        "stored_construction_attempts": 800,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 800
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget200_RSS_seed7.json.gz",
+        "singular_requests": 12,
+        "stored_construction_attempts": 384,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 384
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed101.json.gz",
+        "singular_requests": 24,
+        "stored_construction_attempts": 768,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 768
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed20261013.json.gz",
+        "singular_requests": 10,
+        "stored_construction_attempts": 320,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 320
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed23.json.gz",
+        "singular_requests": 14,
+        "stored_construction_attempts": 448,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 448
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed41.json.gz",
+        "singular_requests": 25,
+        "stored_construction_attempts": 800,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 800
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E0_sparse_budget800_RSS_seed7.json.gz",
+        "singular_requests": 12,
+        "stored_construction_attempts": 384,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 384
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed101.json.gz",
+        "singular_requests": 23,
+        "stored_construction_attempts": 736,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 736
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed20261013.json.gz",
+        "singular_requests": 10,
+        "stored_construction_attempts": 320,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 320
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed23.json.gz",
+        "singular_requests": 9,
+        "stored_construction_attempts": 288,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 288
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed41.json.gz",
+        "singular_requests": 18,
+        "stored_construction_attempts": 576,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 576
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget200_RSS_seed7.json.gz",
+        "singular_requests": 8,
+        "stored_construction_attempts": 256,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 256
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed101.json.gz",
+        "singular_requests": 23,
+        "stored_construction_attempts": 736,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 736
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed20261013.json.gz",
+        "singular_requests": 10,
+        "stored_construction_attempts": 320,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 320
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed23.json.gz",
+        "singular_requests": 10,
+        "stored_construction_attempts": 300,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 300
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed41.json.gz",
+        "singular_requests": 24,
+        "stored_construction_attempts": 768,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 768
+        }
+      },
+      {
+        "artifact": "results/20261013_P4_three_methods_round3/E1_clutter_budget800_RSS_seed7.json.gz",
+        "singular_requests": 8,
+        "stored_construction_attempts": 256,
+        "rejection_stages": {
+          "IK_UNREACHABLE": 256
+        }
+      }
+    ]
+  },
+  "PCS": {
+    "accepted_tree_edge_partitions": {
+      "16": 520,
+      "0": 92
+    },
+    "qualified_solution_edge_partitions": {
+      "0": 92
+    },
+    "parent_child_edge_partition_pairs": {
+      "0->0": 52,
+      "16->16": 4
+    },
+    "accepted_node_candidate_projection_partitions": {
+      "16": 528,
+      "0": 64,
+      "None": 20
+    },
+    "actual_parent_child_switch_count": 0
+  },
+  "qualified_path_payload_sha256": {
+    "E0_sparse_budget200_NR_seed101.json.gz": "025b63f1f398b1475a6ea302c50b2a6347178cb77f87cb72fbfc7fa15d6bcfc5",
+    "E0_sparse_budget200_NR_seed20261013.json.gz": "dbcb4389fa86371bfc68e183dd24465d06635bdf114aaa638e7159a0c19ce927",
+    "E0_sparse_budget200_NR_seed23.json.gz": "7a3496dd38b68b1eee5e20a4ed36bef12b6f1294eaea8213cbcfd73cb99b672d",
+    "E0_sparse_budget200_NR_seed41.json.gz": "a1a91eb9a6a2a30bd59fdd0e2a386ab0afab73f20bf2c58001d3c0dedabff3f0",
+    "E0_sparse_budget200_NR_seed7.json.gz": "33977eed576602f77db124cfa6032d09e9ccc1bbfb5be3afa79eb463ac6128dd",
+    "E0_sparse_budget200_PCS_seed101.json.gz": "ba3f4953e9e021521bdc2ccb66df1d5214b4494b5747e3710941cdc4b29a8f88",
+    "E0_sparse_budget200_PCS_seed20261013.json.gz": "42575a550da4d5012d8d02acc658e125bda5f9ee46870bf10f5e8066b45f38cb",
+    "E0_sparse_budget200_PCS_seed23.json.gz": "de50732bed256fc5f1db306bc9d4e06a1dd53f95fe9649dd57ef45ade7ef6a8a",
+    "E0_sparse_budget200_PCS_seed41.json.gz": "61f60f00c8ff5c481e5e50f294a4731657ac455dd4ade2deb2eec026aecda7e2",
+    "E0_sparse_budget200_PCS_seed7.json.gz": "69b7960445fd9ad82aac3481ab93423c825a7d8fe3bc114f53f1b2b7dff9d10e",
+    "E0_sparse_budget800_NR_seed101.json.gz": "025b63f1f398b1475a6ea302c50b2a6347178cb77f87cb72fbfc7fa15d6bcfc5",
+    "E0_sparse_budget800_NR_seed20261013.json.gz": "dbcb4389fa86371bfc68e183dd24465d06635bdf114aaa638e7159a0c19ce927",
+    "E0_sparse_budget800_NR_seed23.json.gz": "7a3496dd38b68b1eee5e20a4ed36bef12b6f1294eaea8213cbcfd73cb99b672d",
+    "E0_sparse_budget800_NR_seed41.json.gz": "a1a91eb9a6a2a30bd59fdd0e2a386ab0afab73f20bf2c58001d3c0dedabff3f0",
+    "E0_sparse_budget800_NR_seed7.json.gz": "33977eed576602f77db124cfa6032d09e9ccc1bbfb5be3afa79eb463ac6128dd",
+    "E0_sparse_budget800_PCS_seed101.json.gz": "ba3f4953e9e021521bdc2ccb66df1d5214b4494b5747e3710941cdc4b29a8f88",
+    "E0_sparse_budget800_PCS_seed20261013.json.gz": "42575a550da4d5012d8d02acc658e125bda5f9ee46870bf10f5e8066b45f38cb",
+    "E0_sparse_budget800_PCS_seed23.json.gz": "de50732bed256fc5f1db306bc9d4e06a1dd53f95fe9649dd57ef45ade7ef6a8a",
+    "E0_sparse_budget800_PCS_seed41.json.gz": "61f60f00c8ff5c481e5e50f294a4731657ac455dd4ade2deb2eec026aecda7e2",
+    "E0_sparse_budget800_PCS_seed7.json.gz": "69b7960445fd9ad82aac3481ab93423c825a7d8fe3bc114f53f1b2b7dff9d10e",
+    "E1_clutter_budget200_NR_seed101.json.gz": "025b63f1f398b1475a6ea302c50b2a6347178cb77f87cb72fbfc7fa15d6bcfc5",
+    "E1_clutter_budget200_NR_seed20261013.json.gz": "dbcb4389fa86371bfc68e183dd24465d06635bdf114aaa638e7159a0c19ce927",
+    "E1_clutter_budget200_NR_seed23.json.gz": "7a3496dd38b68b1eee5e20a4ed36bef12b6f1294eaea8213cbcfd73cb99b672d",
+    "E1_clutter_budget200_NR_seed41.json.gz": "a1a91eb9a6a2a30bd59fdd0e2a386ab0afab73f20bf2c58001d3c0dedabff3f0",
+    "E1_clutter_budget200_NR_seed7.json.gz": "33977eed576602f77db124cfa6032d09e9ccc1bbfb5be3afa79eb463ac6128dd",
+    "E1_clutter_budget200_PCS_seed101.json.gz": "ba3f4953e9e021521bdc2ccb66df1d5214b4494b5747e3710941cdc4b29a8f88",
+    "E1_clutter_budget200_PCS_seed20261013.json.gz": "42575a550da4d5012d8d02acc658e125bda5f9ee46870bf10f5e8066b45f38cb",
+    "E1_clutter_budget200_PCS_seed23.json.gz": "de50732bed256fc5f1db306bc9d4e06a1dd53f95fe9649dd57ef45ade7ef6a8a",
+    "E1_clutter_budget200_PCS_seed41.json.gz": "61f60f00c8ff5c481e5e50f294a4731657ac455dd4ade2deb2eec026aecda7e2",
+    "E1_clutter_budget200_PCS_seed7.json.gz": "69b7960445fd9ad82aac3481ab93423c825a7d8fe3bc114f53f1b2b7dff9d10e",
+    "E1_clutter_budget800_NR_seed101.json.gz": "025b63f1f398b1475a6ea302c50b2a6347178cb77f87cb72fbfc7fa15d6bcfc5",
+    "E1_clutter_budget800_NR_seed20261013.json.gz": "dbcb4389fa86371bfc68e183dd24465d06635bdf114aaa638e7159a0c19ce927",
+    "E1_clutter_budget800_NR_seed23.json.gz": "7a3496dd38b68b1eee5e20a4ed36bef12b6f1294eaea8213cbcfd73cb99b672d",
+    "E1_clutter_budget800_NR_seed41.json.gz": "a1a91eb9a6a2a30bd59fdd0e2a386ab0afab73f20bf2c58001d3c0dedabff3f0",
+    "E1_clutter_budget800_NR_seed7.json.gz": "33977eed576602f77db124cfa6032d09e9ccc1bbfb5be3afa79eb463ac6128dd",
+    "E1_clutter_budget800_PCS_seed101.json.gz": "ba3f4953e9e021521bdc2ccb66df1d5214b4494b5747e3710941cdc4b29a8f88",
+    "E1_clutter_budget800_PCS_seed20261013.json.gz": "42575a550da4d5012d8d02acc658e125bda5f9ee46870bf10f5e8066b45f38cb",
+    "E1_clutter_budget800_PCS_seed23.json.gz": "de50732bed256fc5f1db306bc9d4e06a1dd53f95fe9649dd57ef45ade7ef6a8a",
+    "E1_clutter_budget800_PCS_seed41.json.gz": "61f60f00c8ff5c481e5e50f294a4731657ac455dd4ade2deb2eec026aecda7e2",
+    "E1_clutter_budget800_PCS_seed7.json.gz": "69b7960445fd9ad82aac3481ab93423c825a7d8fe3bc114f53f1b2b7dff9d10e"
+  },
+  "classification": {
+    "RSS_recorded_failure_mechanism": "Confirmed geometric unreachability of first-end 3R closure for every saved generator input.",
+    "RSS_primary_root_cause": "OUR-EXPERIMENT-DESIGN / MODEL-COVERAGE: uniform long-suffix generator gives zero feasible targets in the frozen finite budget; this is not evidence of an IK formula bug or paper failure.",
+    "RSS_new_sampler_or_model_choice": "UNKNOWN until original author model/code and justified reconstruction are qualified. No repair executed.",
+    "PCS_missing_advantage": "OUR-EXPERIMENT-DESIGN: endpoints share p0 and every solution edge uses p0; fixed-p0 ablation and switch-required complex environments are absent.",
+    "original_exact_planar_Comau_resources": "RESOURCE-LIMITATION candidate, subject to current source audit; old lack of resources does not prove current unavailability."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "P4_D079_R1_QUALIFICATION_V1",
+  "frozen": true,
+  "created_at": "2026-10-14T15:13:32.837003+00:00",
+  "classification": "INDEPENDENT_QUALIFICATION_NOT_FORMAL_PAPER_TRIALS",
+  "baseline_commit": "6276f78ce184d54185f299f0bd9a1a7a3267f73a",
+  "source_manifest": "configs/p4_full/author_source_manifest.json",
+  "total_wall_limit_s": 1800,
+  "build_single_limit_s": 120,
+  "diagnostic_single_limit_s": 120,
+  "max_build_targets": 6,
+  "rng": "std::mt19937_64; separate seeds per model; no success selection",
+  "seed": 20261014,
+  "fk_sample_count_per_model": 100,
+  "ik_branch_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "ik_roundtrip_sample_count_per_spatial_model": 10,
+  "projection_near_endpoint_count_per_model": 10,
+  "projection_joint_offsets_rad": [
+    -0.01,
+    0.01
+  ],
+  "negative_cases": [
+    "far_unreachable_target_translation_100000000_mm",
+    "closure_perturbation_first_joint_0.1_rad",
+    "regular_passive_jacobian_positive_control",
+    "wrist_singular_q5_zero",
+    "author_elbow_only_q3_minus_PI_over_2"
+  ],
+  "raw_endpoint_policy": "Evaluate source endpoints unchanged. Never project, reset, snap or repair original endpoint as successful input; raw errors are diagnostics until threshold/rounding provenance reviewed.",
+  "independent_fk_abs_translation_gate_mm": 1e-07,
+  "independent_fk_abs_rotation_matrix_gate": 1e-10,
+  "ik_projection_abs_translation_gate_mm": 1e-05,
+  "ik_projection_abs_rotation_matrix_gate": 1e-05,
+  "finite_difference_eps_rad": 1e-06,
+  "svd_rank_relative_threshold": 1e-06,
+  "singular_value_units": "Jacobian translation divided by 1000 to m, angular derivative rad/rad. Also log unscaled values.",
+  "singularity_fixed_q_rad": [
+    0.37,
+    0.21,
+    -1.5708,
+    0.48,
+    0.71,
+    -0.31
+  ],
+  "equation7_enumeration": "32 tuples shared_wrist_2 x elbow_A_4 x elbow_B_4; conditional and union probabilities distinct; preserve original equation",
+  "failure_policy": "Per-model component failures remain failures; no downstream planning. Independent static build/diagnostics on other models allowed within same budget. Any required scientific formula/model change pauses for user.",
+  "same_mechanism_repair_limit_before_root_review": 3,
+  "formal_planning_calls_authorized": 0,
+  "formal_scope_retained": "TableI all45cells 500each cutoff1000s; projection500000; Fig3 m1..20 time, m1,2,3,7,20 visibility; Fig4/TableII50000 legal pairs; all no-obstacle/fixed partition/T30 remain obligations",
+  "pending_decisions": [
+    "Full experiment resource envelope after qualified timing evidence",
+    "Unpublished profiling grids/repeats/production RNG and Fig3/5 detailed sampling denominators",
+    "Any demonstrated source/mathematical mechanism discrepancy requiring method changes"
+  ]
+}

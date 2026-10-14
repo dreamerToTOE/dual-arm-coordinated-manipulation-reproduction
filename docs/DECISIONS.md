@@ -897,3 +897,9 @@ Append-only architectural and scientific decisions.
 - Force boundary: TASK01 freezes geometry/frames/material/time/start-goal only. Isaac TCP/contact-wrench calibration moves to TASK10-IS, before P2 Isaac migration. P4 is not blocked by force sensing.
 - Nominal material candidate: retain the measured effective 0.5/0.5 static/dynamic friction for benchmark_v1 candidate; P3 may later vary friction as robustness perturbation. Final freeze still requires user review.
 - Historical evidence: no old result is deleted or re-labeled; old five-Cube reports remain historical evidence only.
+
+## 2026-10-14 — D079：全文接续R0来源和协议冻结
+
+同名已有分支同步6276f78，隔离worktree并保全五原工作树13未跟踪文件。全文8页/式1–9/Fig1–5/TableI–II已重读；找到全部六环境七作者快照，30父义务/169完整入口。旧RSS9996目标独立SE2回放全部不可达；旧PCS92解边全p0，不改旧失败/结论。
+R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单构建/诊断120s，正式规划0。完整TableI22500调用/最坏6250核小时待具体预算裁决。旧P4/P2文件1282条SHA保护；只追加治理记录。源码与资产外部固定引用，不重发布未授权原文/网格。当前P4整体仍部分完成，P2/Isaac不开展。
+证据：reports/p4_full_audit/ORIGINAL_FULL_COVERAGE_MATRIX.md，reports/P4_FULL_PRE_TASK_D079.md，reports/P4_FULL_SOURCE_ENVIRONMENT_AUDIT.md，reports/P4_FULL_FAILURE_ROOT_CAUSE_REVIEW_D079.md，reports/P4_FULL_BUDGET_AND_DECISIONS_D079.md。

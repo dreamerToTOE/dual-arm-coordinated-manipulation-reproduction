@@ -839,3 +839,9 @@ Resolution needed: Fix quantization/deadband with endpoint FK/tracking feedback,
 BUG-004: move_group again exits -11 at rclcpp::CallbackGroup destruction after stopping the incomplete run. Execution and shutdown failures are separate; no clean-lifecycle claim.
 BUG-006: Cube 01 final physical yaw -1.095465 deg versus legacy scaled-USD near-zero yaw. Oriented nearest-wall gap differs from center/axis-aligned gap; no physical orientation PASS from old telemetry.
 Evidence: results/20261003_TASK01_full_five_physical_v2/raw/{controller,moveit}.log and physics_contact_samples.jsonl; report above.
+
+## 2026-10-14 — D079：全文接续R0来源和协议冻结
+
+同名已有分支同步6276f78，隔离worktree并保全五原工作树13未跟踪文件。全文8页/式1–9/Fig1–5/TableI–II已重读；找到全部六环境七作者快照，30父义务/169完整入口。旧RSS9996目标独立SE2回放全部不可达；旧PCS92解边全p0，不改旧失败/结论。
+R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单构建/诊断120s，正式规划0。完整TableI22500调用/最坏6250核小时待具体预算裁决。旧P4/P2文件1282条SHA保护；只追加治理记录。源码与资产外部固定引用，不重发布未授权原文/网格。当前P4整体仍部分完成，P2/Isaac不开展。
+证据：reports/p4_full_audit/ORIGINAL_FULL_COVERAGE_MATRIX.md，reports/P4_FULL_PRE_TASK_D079.md，reports/P4_FULL_SOURCE_ENVIRONMENT_AUDIT.md，reports/P4_FULL_FAILURE_ROOT_CAUSE_REVIEW_D079.md，reports/P4_FULL_BUDGET_AND_DECISIONS_D079.md。
