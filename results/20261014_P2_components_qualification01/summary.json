@@ -1,0 +1,224 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "wall_s": 5.661578005001502,
+  "case_count": 35,
+  "passed": 35,
+  "cases": [
+    {
+      "name": "tests.test_p2_estimator.test_state_contract_and_no_plant_alias",
+      "time_s": 0.083,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_original_measurement_and_analytic_jacobian[EE1]",
+      "time_s": 0.199,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_original_measurement_and_analytic_jacobian[EE2]",
+      "time_s": 0.192,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_original_measurement_and_analytic_jacobian[hK1]",
+      "time_s": 0.184,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_original_measurement_and_analytic_jacobian[hK2]",
+      "time_s": 0.185,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_original_measurement_and_analytic_jacobian[visual1]",
+      "time_s": 0.205,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_original_measurement_and_analytic_jacobian[visual2]",
+      "time_s": 0.205,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_discrete_prediction_jacobian[modes0]",
+      "time_s": 0.757,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_discrete_prediction_jacobian[modes1]",
+      "time_s": 0.806,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_discrete_prediction_jacobian[modes2]",
+      "time_s": 0.811,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_right_reset_against_independent_matrix_oracle",
+      "time_s": 0.089,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_packet_iteration_keeps_one_prior",
+      "time_s": 0.052,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_schmidt_keeps_calibration_mean_and_covariance",
+      "time_s": 0.017,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_process_Q_scaling_at_actual_event_interval",
+      "time_s": 0.013,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_duplicate_and_wrong_timestamp_are_rejected",
+      "time_s": 0.011,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_equivalent_fast_geometry_against_canonical[tight]",
+      "time_s": 0.005,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_equivalent_fast_geometry_against_canonical[pivot]",
+      "time_s": 0.005,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_estimator.test_equivalent_fast_geometry_against_canonical[sliding]",
+      "time_s": 0.005,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_state_copy_right_retraction_and_no_plant_alias",
+      "time_s": 0.006,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_observation_copies_value_covariance_and_checks_delivery",
+      "time_s": 0.001,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_stream_id_registration_and_order_independent_sample_noise",
+      "time_s": 0.001,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_original_sensor_formula_bias_and_elastic_only",
+      "time_s": 0.011,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_reuses_true_contact_hK_and_never_adds_hB",
+      "time_s": 0.003,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_fixed_sensor_clocks_half_step_and_76_visual_off",
+      "time_s": 0.09,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_observations_qualification.test_75_pairs_calibration_direction_iteration_and_fresh_initialization",
+      "time_s": 0.12,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_original_laws_and_condition_switches[exp1]",
+      "time_s": 0.013,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_original_laws_and_condition_switches[exp2]",
+      "time_s": 0.013,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_original_laws_and_condition_switches[exp3]",
+      "time_s": 0.013,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_original_laws_and_condition_switches[exp4]",
+      "time_s": 0.013,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_old_published_input_is_the_only_model_input",
+      "time_s": 0.006,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_truth_requires_explicit_diagnostic_and_mechanics_state_is_not_controller_input",
+      "time_s": 0.003,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_manual_lift_and_feedback_timing",
+      "time_s": 0.022,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_geodesic_reference_body_velocity_and_own_segment_starts",
+      "time_s": 0.008,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_sliding_reference_independent_fixed_schedule",
+      "time_s": 0.004,
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "name": "tests.test_p2_control_qualification.test_command_limit_rejects_instead_of_saturation",
+      "time_s": 0.006,
+      "status": "PASS",
+      "failure": null
+    }
+  ],
+  "estimator_controller_components_qualified": true,
+  "multirate_runner_qualified": false,
+  "closed_loop_qualified": false,
+  "closed_loop_runs": 0,
+  "reason": null
+}
