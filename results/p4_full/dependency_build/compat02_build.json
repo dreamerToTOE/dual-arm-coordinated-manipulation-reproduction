@@ -1,0 +1,19 @@
+{
+  "task": "PQP1.3 modern compiler compatibility build",
+  "archive_url": "https://gamma.cs.unc.edu/software/downloads/SSV/pqp-1.3.tar.gz",
+  "archive_sha256": "00bdcb380206393349ed7ee9a773f894bf796059c66cec0d97c0a93649eb012f",
+  "original_build_status": "FAILED sqrt(float)/cos(float)/sin(float) overload conflicts",
+  "source_copy_preserved": true,
+  "unique_change": "remove redundant float math overloads; default PQP_REAL double unchanged",
+  "removed_lines": 4,
+  "before_sha256": "edb8ecae2a0f5336f22481f5409a3b5f4bfd5e96de9edb92d951d2d6fb6c6491",
+  "after_sha256": "e05dce007f2db29c5e75b2c1414569b615583d4a4c656b0dd6d00fc6eb7a0ea2",
+  "command": [
+    "make",
+    "library"
+  ],
+  "wall_s": 2.217883058998268,
+  "exit_code": 0,
+  "at_utc": "2026-10-14T15:34:27.722776+00:00",
+  "actual_collision_queries": 0
+}

@@ -1,0 +1,54 @@
+g++ -O2 -I. -c src/PQP.cpp -o lib/PQP.o
+src/PQP.cpp: In member function ‘int PQP_Model::MemUsage(int)’:
+src/PQP.cpp:253:38: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘PQP_Model*’ [-Wformat=]
+  253 |     fprintf(stderr,"Total for model %x: %d bytes\n", this, total_mem);
+      |                                     ~^               ~~~~
+      |                                      |               |
+      |                                      unsigned int    PQP_Model*
+src/PQP.cpp:254:44: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long unsigned int’ [-Wformat=]
+  254 |     fprintf(stderr,"BVs: %d alloced, take %d bytes each\n",
+      |                                           ~^
+      |                                            |
+      |                                            int
+      |                                           %ld
+  255 |             num_bvs, sizeof(BV));
+      |                      ~~~~~~~~~~             
+      |                      |
+      |                      long unsigned int
+src/PQP.cpp:256:45: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long unsigned int’ [-Wformat=]
+  256 |     fprintf(stderr,"Tris: %d alloced, take %d bytes each\n",
+      |                                            ~^
+      |                                             |
+      |                                             int
+      |                                            %ld
+  257 |             num_tris, sizeof(Tri));
+      |                       ~~~~~~~~~~~            
+      |                       |
+      |                       long unsigned int
+g++ -O2 -I. -c src/BV.cpp -o lib/BV.o
+In file included from src/BV.cpp:46:
+src/OBB_Disjoint.h: In function ‘int obb_disjoint(PQP_REAL (*)[3], PQP_REAL*, PQP_REAL*, PQP_REAL*)’:
+src/OBB_Disjoint.h:64:21: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+   64 |   register PQP_REAL t, s;
+      |                     ^
+src/OBB_Disjoint.h:64:24: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+   64 |   register PQP_REAL t, s;
+      |                        ^
+src/OBB_Disjoint.h:65:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+   65 |   register int r;
+      |                ^
+g++ -O2 -I. -c src/Build.cpp -o lib/Build.o
+g++ -O2 -I. -c src/TriDist.cpp -o lib/TriDist.o
+/bin/rm -f lib/libPQP.a
+ar ruv lib/libPQP.a lib/PQP.o lib/BV.o lib/Build.o lib/TriDist.o
+ar: `u' 修饰符被忽略，因为 `D' 为默认（参见 `U'）
+ar: 正在创建 lib/libPQP.a
+a - lib/PQP.o
+a - lib/BV.o
+a - lib/Build.o
+a - lib/TriDist.o
+cp src/PQP.h include/
+cp src/PQP_Compile.h include/
+cp src/PQP_Internal.h include/
+cp src/BV.h include/
+cp src/Tri.h include/

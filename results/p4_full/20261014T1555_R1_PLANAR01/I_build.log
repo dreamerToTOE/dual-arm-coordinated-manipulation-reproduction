@@ -1,0 +1,60 @@
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/planar_native_qualification.cpp: In function ‘bool {anonymous}::finite(const State&)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/planar_native_qualification.cpp:46:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   46 |     for (double x:v) if (!std::isfinite(x)) return false; return true;
+      |     ^~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/planar_native_qualification.cpp:46:59: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   46 |     for (double x:v) if (!std::isfinite(x)) return false; return true;
+      |                                                           ^~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp: In member function ‘bool ckc::project(State&, int, int)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp:126:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  126 |                 for (int i = 0; i < qr.size(); i++) {
+      |                                 ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp:128:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  128 |                         if (i==qr.size()-1)
+      |                             ~^~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp:175:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  175 |                 for (int i = 0; i < ql.size(); i++) {
+      |                                 ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp:177:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  177 |                         if (i==ql.size()-1)
+      |                             ~^~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp: In member function ‘void ckc::FK_left(State, int)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp:226:29: warning: unused variable ‘l’ [-Wunused-variable]
+  226 |         double x, y, theta, l;
+      |                             ^
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp: In member function ‘void ckc::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp:414:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  414 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp: In constructor ‘kdl::kdl(int, double)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:22:16: warning: unused variable ‘total_length’ [-Wunused-variable]
+   22 |         double total_length = 6.5;
+      |                ^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:23:16: warning: unused variable ‘base_links_ratio’ [-Wunused-variable]
+   23 |         double base_links_ratio = 0.3;
+      |                ^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp: In member function ‘bool kdl::GD(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:86:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+   86 |         for (int i = 0; i < chain.getNrOfJoints(); i++) {
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:110:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  110 |                 for (int i = 0; i < q.size()-1; i++) {
+      |                                 ~~^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:68:14: warning: unused variable ‘valid’ [-Wunused-variable]
+   68 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:155:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  155 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:159:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  159 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp: In member function ‘void kdl::log_q(State, bool)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:252:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  252 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp: In member function ‘State kdl::rand_q()’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp:261:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  261 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~

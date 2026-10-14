@@ -1,0 +1,13 @@
+--- /home/ubuntu2004/lmy/.p4_d079_dependency_audit/original01/pqp-1.3/PQP_v1.3/src/PQP_Compile.h	2002-04-22 02:25:30.000000000 +0800
++++ /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/src/PQP_Compile.h	2026-10-14 23:34:25.484811532 +0800
+@@ -44,10 +44,6 @@
+ // prevents compiler warnings when PQP_REAL is float
+ 
+ #include <math.h>
+-inline float sqrt(float x) { return (float)sqrt((double)x); }
+-inline float cos(float x) { return (float)cos((double)x); }
+-inline float sin(float x) { return (float)sin((double)x); }
+-inline float fabs(float x) { return (float)fabs((double)x); }
+ 
+ //-------------------------------------------------------------------------
+ //

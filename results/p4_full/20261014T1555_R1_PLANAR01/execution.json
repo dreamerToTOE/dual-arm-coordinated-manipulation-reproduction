@@ -1,0 +1,71 @@
+{
+  "schema": "P4_D079_NATIVE_QUALIFICATION_RUN_V1",
+  "run_id": "20261014T1555_R1_PLANAR01",
+  "started_at_utc": "2026-10-14T15:40:38.074385+00:00",
+  "source_commit": "4edab728ba62502dd4856f68d9408c753f1b1c94",
+  "git_status_at_start": "?? references/private_sources\n?? results/p4_full/20261014T1528_R1_ABB01/\n?? results/p4_full/20261014T1540_R1_COMAU01/\n?? results/p4_full/20261014T1545_R1_COMAU02/\n?? results/p4_full/20261014T1550_R1_VI03/\n",
+  "protocol_sha256": "81dee90f09c6d4eb37457fef2eba30568c55026b89cf45890027315139cfbc2a",
+  "source_manifest_sha256": "6d5dd1c4c353da51c9f6331afa60f98b01559b72b2b666e4375e003f8ca63cac",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "formal_planning_calls": 0,
+  "stages": [
+    {
+      "target": "I",
+      "author_commit": "e5edcb58e151b78baca43dd4922bfe27a48388cd",
+      "driver_sha256": "c835cbb52f67f703e3f4677170b58a5eb177f012da531553d7c05c6fc85dc6e4",
+      "author_source_hashes": {
+        "proj_classes/apc_class.cpp": "ecc2b665229b0b6f527cd1dabf4b87aa6f9fe490eb122aec0f23d1e5d0516d5a",
+        "proj_classes/apc_class.h": "74a1c56c0c1fe0dfe505981aa115dca72d9757b759226f30a73be1c95f35b747",
+        "proj_classes/kdl_class.cpp": "edff8331004ef33012dc8eea65468effc7705a9f0daadeb38756718b7bd95f1b",
+        "proj_classes/kdl_class.h": "79257aefa5cebcf8d7b3e7a0e5542970f7fea5f0a4b99503faa9a092aab7753f"
+      },
+      "build": {
+        "command": [
+          "g++",
+          "-std=c++17",
+          "-O2",
+          "-Wall",
+          "-Wextra",
+          "-I/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes",
+          "-I/usr/include/eigen3",
+          "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/planar_native_qualification.cpp",
+          "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/apc_class.cpp",
+          "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/planar_ckc/proj_classes/kdl_class.cpp",
+          "-lorocos-kdl",
+          "-o",
+          "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1555_R1_PLANAR01/I"
+        ],
+        "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+        "limit_s": 120,
+        "status": "COMPLETED",
+        "exit_code": 0,
+        "wall_s": 3.219765510002617,
+        "stdout_stderr": "results/p4_full/20261014T1555_R1_PLANAR01/I_build.log",
+        "log_sha256": "5f57f44549dfaad115dbf1509eb54729d11f8c088baa4cb57539a6a07eb0115e"
+      },
+      "binary_sha256": "68a9f3da9e3b2f8442b87c72f79db0f4a902e39411a66bca4bd6973c2bda4fba",
+      "diagnostics": [
+        {
+          "command": [
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1555_R1_PLANAR01/I",
+            "I",
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261014T1555_R1_PLANAR01/I_native.json"
+          ],
+          "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+          "limit_s": 120,
+          "status": "COMPLETED",
+          "exit_code": 0,
+          "wall_s": 0.015577468002447858,
+          "stdout_stderr": "results/p4_full/20261014T1555_R1_PLANAR01/I_native.log",
+          "log_sha256": "758d37a0919f22f59c49831639132fc3a18c08cb039ea1306c1297f45ddda514",
+          "native_data": "results/p4_full/20261014T1555_R1_PLANAR01/I_native.json",
+          "native_sha256": "1c1c969e72d5204da20ebc368ec05169b68831827409cde3bf6cd3d0882eafb2"
+        }
+      ]
+    }
+  ],
+  "copyright": "Only own test drivers/logs published. Author source and meshes external.",
+  "wall_s": 3.2437376210000366,
+  "status": "COMPONENT_DIAGNOSTICS_RECORDED",
+  "ended_at_utc": "2026-10-14T15:40:41.318109+00:00"
+}

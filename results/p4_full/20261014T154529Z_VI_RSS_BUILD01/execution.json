@@ -1,0 +1,28 @@
+{
+  "schema": "P4_VI_ORIGINAL_RSS_SYNTAX_QUALIFICATION",
+  "run_id": "20261014T154529Z_VI_RSS_BUILD01",
+  "at_utc": "2026-10-14T15:45:30.322978+00:00",
+  "source_commit": "4edab728ba62502dd4856f68d9408c753f1b1c94",
+  "author_commit": "25488a86947cd07377cc62c43850df719a70d9ee",
+  "command": [
+    "g++",
+    "-std=c++17",
+    "-fsyntax-only",
+    "-fmax-errors=25",
+    "-I/opt/ros/humble/include/ompl-1.7",
+    "-I/usr/include/eigen3",
+    "-I/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/src",
+    "-I/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/proj_classes",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp"
+  ],
+  "exit_code": 1,
+  "wall_s": 1.217090290003398,
+  "original_source_sha256": "0b6c611fb2fb053277310781eb2c54150956e55832fc9c9f29ee90175e015ddf",
+  "staged_source_sha256": "0b6c611fb2fb053277310781eb2c54150956e55832fc9c9f29ee90175e015ddf",
+  "header_before_sha256": "37c42b4de18c21a991e814dadb304052e8cfb54df8c711d6532b4bd4441515c2",
+  "header_after_sha256": "923a4481bee22d8ea0fb5282d7f8cdb60dd782eed95f17a234b4483224c1da5b",
+  "header_only_adapter": "omit unused GLUT; relocate upstream MatVec header; no numerical/RSS source changed",
+  "formal_planning_calls": 0,
+  "status": "FAILED_COMPILE",
+  "algorithm_failure_not_inferred": true
+}

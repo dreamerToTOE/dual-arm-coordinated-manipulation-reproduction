@@ -1,0 +1,3077 @@
+{
+  "schema": "P4_ABB_SAVED_FAILURE_CLOSED_FORM_REPLAY_V1",
+  "scope": "Derived analysis only: all native accepted outputs remain failed under the frozen qualification. No new configuration, solver, FK program, constant change, projection or planning executed.",
+  "native_run_id": "20261014T1528_R1_ABB01",
+  "input_sha256": {
+    "results/p4_full/20261014T1528_R1_ABB01/II_native.json": "b23a5e4f3aef707a5c2ee325f20ff9698786fd403e6f1db59053ecfa4f23b3d9",
+    "results/p4_full/20261014T1528_R1_ABB01/II_independent.json": "27415fe7f59b9dce428dd151d2ac56a6cd3b41e64198367095904cdcd7cb9350",
+    "results/p4_full/20261014T1528_R1_ABB01/III_native.json": "695971760c5947022f1889164455159b1ba9a2fded6f1c417eeb8929fff643c0",
+    "results/p4_full/20261014T1528_R1_ABB01/III_independent.json": "82d15462f740bc5ad1d7efb6bcb99692468580ddbe404c21921869c64c460675"
+  },
+  "input_bytes_unchanged": true,
+  "analysis_source_sha256": "312e3cb0791f074dcce2850af0b59af64d603d136f498d60584a687c1a684074",
+  "source_PI_literal": 3.1416,
+  "mathematical_pi": 3.141592653589793,
+  "PI_literal_error_rad": 7.346410206832132e-06,
+  "PI_over_2_error_rad": 3.673205103416066e-06,
+  "geometry_unchanged_mm": {
+    "b_plus_l1": 290,
+    "l2": 270,
+    "l3a": 70,
+    "l3b_plus_l4": 302,
+    "apc_l5_plus_lee": 132,
+    "kdl_l5_plus_lee": 132
+  },
+  "equations": {
+    "ik_wrist_prediction": "r_actual = r_branch cos(eta) + z sin(eta); z_actual=z cos(eta)-r_branch sin(eta), eta=sign_branch*(3.1416-pi)/2; yaw uses saved native q1.",
+    "physical_chain_relation": "T_left = B1 C_native S inv(B2) T_right, S=diag(-1,-1,1,1); base-only and chain-residual contributions add in position.",
+    "quantization_invariant": "before source output quantization, coaxial equal Jacobian columns preserve q1[5]-q2[5]; inferred presnap is labeled unobserved."
+  },
+  "environments": {
+    "II": {
+      "native_accepted_ik_count": 44,
+      "ik_rows": [
+        {
+          "row_index": 2,
+          "index": 0,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 435.6682959341793,
+          "target_wrist_height_above_shoulder_mm": 316.71487330111665,
+          "observed_translation_error_mm": [
+            -0.00030298572187348327,
+            0.0011232080186118765,
+            -0.001600301144662808
+          ],
+          "predicted_translation_error_mm": [
+            -0.0003029857218955767,
+            0.0011232080185274995,
+            -0.0016003011447626447
+          ],
+          "prediction_max_component_residual_mm": 9.98368054894172e-14,
+          "observed_translation_max_abs_mm": 0.001600301144662808,
+          "observed_translation_l2_mm": 0.0019784742490975985,
+          "orientation_max_abs_error": 8.881784197001252e-16
+        },
+        {
+          "row_index": 4,
+          "index": 0,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 435.6682959341793,
+          "target_wrist_height_above_shoulder_mm": 316.71487330111665,
+          "observed_translation_error_mm": [
+            -0.00030298572187348327,
+            0.0011232080186118765,
+            -0.001600301144662808
+          ],
+          "predicted_translation_error_mm": [
+            -0.0003029857218955767,
+            0.0011232080185274995,
+            -0.0016003011447626447
+          ],
+          "prediction_max_component_residual_mm": 9.98368054894172e-14,
+          "observed_translation_max_abs_mm": 0.001600301144662808,
+          "observed_translation_l2_mm": 0.0019784742490975985,
+          "orientation_max_abs_error": 8.743006318923108e-16
+        },
+        {
+          "row_index": 8,
+          "index": 0,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.3464102061431135e-06,
+          "target_wrist_rho_mm": 435.6682959341793,
+          "target_wrist_height_above_shoulder_mm": 316.71487330111665,
+          "observed_translation_error_mm": [
+            0.0027871700773403063,
+            0.0019567663564430404,
+            -0.001600301144662808
+          ],
+          "predicted_translation_error_mm": [
+            0.002787170077457657,
+            0.001956766356400852,
+            -0.0016003011446847903
+          ],
+          "prediction_max_component_residual_mm": 1.1735057370287905e-13,
+          "observed_translation_max_abs_mm": 0.0027871700773403063,
+          "observed_translation_l2_mm": 0.0037627404065836956,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 15,
+          "index": 1,
+          "robot": 2,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 93.22250026743228,
+          "target_wrist_height_above_shoulder_mm": 512.2245684024417,
+          "observed_translation_error_mm": [
+            0.00023648059072911565,
+            -0.0019882577789260836,
+            -0.00034242881929458235
+          ],
+          "predicted_translation_error_mm": [
+            0.000236480590800614,
+            -0.001988257779047764,
+            -0.00034242881942292414
+          ],
+          "prediction_max_component_residual_mm": 1.283417816466681e-13,
+          "observed_translation_max_abs_mm": 0.0019882577789260836,
+          "observed_translation_l2_mm": 0.0020313418130721273,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 20,
+          "index": 2,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0005820001396159569,
+            -0.0009128745326734133,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.0005820001396581453,
+            -0.0009128745327724452,
+            -0.0015381969405163787
+          ],
+          "prediction_max_component_residual_mm": 1.4299672557172016e-13,
+          "observed_translation_max_abs_mm": 0.001538196940373382,
+          "observed_translation_l2_mm": 0.001880987480631046,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 22,
+          "index": 2,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0005820001396159569,
+            -0.0009128745326734133,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.0005820001396728003,
+            -0.0009128745327687815,
+            -0.0015381969405163787
+          ],
+          "prediction_max_component_residual_mm": 1.4299672557172016e-13,
+          "observed_translation_max_abs_mm": 0.001538196940373382,
+          "observed_translation_l2_mm": 0.001880987480631046,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 24,
+          "index": 2,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0031760415052417557,
+            0.0007409613634763446,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.003176041505298599,
+            0.000740961363309478,
+            -0.0015381969405017237
+          ],
+          "prediction_max_component_residual_mm": 1.6686652060116103e-13,
+          "observed_translation_max_abs_mm": 0.0031760415052417557,
+          "observed_translation_l2_mm": 0.00360587204606002,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 26,
+          "index": 2,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0031760415052417557,
+            0.0007409613634763446,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.003176041505298599,
+            0.000740961363309478,
+            -0.0015381969405017237
+          ],
+          "prediction_max_component_residual_mm": 1.6686652060116103e-13,
+          "observed_translation_max_abs_mm": 0.0031760415052417557,
+          "observed_translation_l2_mm": 0.00360587204606002,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 31,
+          "index": 3,
+          "robot": 2,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 267.43778819682535,
+          "target_wrist_height_above_shoulder_mm": 137.6108103096758,
+          "observed_translation_error_mm": [
+            -0.0005054658996073158,
+            -2.2543578951372822e-06,
+            -0.0009823547767950913
+          ],
+          "predicted_translation_error_mm": [
+            -0.0005054658994256833,
+            -2.2543578943635956e-06,
+            -0.0009823547767493501
+          ],
+          "prediction_max_component_residual_mm": 1.816324868286756e-13,
+          "observed_translation_max_abs_mm": 0.0009823547767950913,
+          "observed_translation_l2_mm": 0.001104772268518488,
+          "orientation_max_abs_error": 8.326672684688674e-16
+        },
+        {
+          "row_index": 37,
+          "index": 4,
+          "robot": 1,
+          "branch": 0,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.0019847917764934664,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.000674586711795655,
+            0.0019847917765285494,
+            -0.0001475241823417628
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.0019847917764934664,
+          "observed_translation_l2_mm": 0.0021014825747718018,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 38,
+          "index": 4,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.001984791776436623,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.000674586711795655,
+            0.0019847917765432044,
+            -0.0001475241823417628
+          ],
+          "prediction_max_component_residual_mm": 1.0658141036401503e-13,
+          "observed_translation_max_abs_mm": 0.001984791776436623,
+          "observed_translation_l2_mm": 0.0021014825747181147,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 39,
+          "index": 4,
+          "robot": 1,
+          "branch": 2,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.001984791776521888,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006745867118103099,
+            0.0019847917765432044,
+            -0.0001475241823417628
+          ],
+          "prediction_max_component_residual_mm": 7.149836278586008e-14,
+          "observed_translation_max_abs_mm": 0.001984791776521888,
+          "observed_translation_l2_mm": 0.0021014825747986453,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 40,
+          "index": 4,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.001984791776436623,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006745867118103099,
+            0.0019847917765578593,
+            -0.00014752418234909026
+          ],
+          "prediction_max_component_residual_mm": 1.212363542890671e-13,
+          "observed_translation_max_abs_mm": 0.001984791776436623,
+          "observed_translation_l2_mm": 0.0021014825747181147,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 41,
+          "index": 4,
+          "robot": 1,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509127876,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.00039522492232890727,
+            0.002079739509184275,
+            -0.000147524182352754
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.002079739509127876,
+          "observed_translation_l2_mm": 0.002122093906826761,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 42,
+          "index": 4,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492232890727,
+            0.002079739509227352,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.00039522492235821716,
+            0.00207973950919893,
+            -0.00014752418234909026
+          ],
+          "prediction_max_component_residual_mm": 2.930988785010413e-14,
+          "observed_translation_max_abs_mm": 0.002079739509227352,
+          "observed_translation_l2_mm": 0.0021220939069348382,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 43,
+          "index": 4,
+          "robot": 1,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509127876,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0003952249223435622,
+            0.00207973950919893,
+            -0.000147524182352754
+          ],
+          "prediction_max_component_residual_mm": 7.149836278586008e-14,
+          "observed_translation_max_abs_mm": 0.002079739509127876,
+          "observed_translation_l2_mm": 0.002122093906826761,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 44,
+          "index": 4,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509213141,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.00039522492232890727,
+            0.002079739509184275,
+            -0.00014752418235641773
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.002079739509213141,
+          "observed_translation_l2_mm": 0.0021220939069103244,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 46,
+          "index": 5,
+          "robot": 2,
+          "branch": 0,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930703865597025e-05,
+            0.0003692040869509583,
+            -0.0020982086530807464
+          ],
+          "predicted_translation_error_mm": [
+            -1.09307039077855e-05,
+            0.0003692040868409352,
+            -0.002098208653122935
+          ],
+          "prediction_max_component_residual_mm": 1.1002310174035301e-13,
+          "observed_translation_max_abs_mm": 0.0020982086530807464,
+          "observed_translation_l2_mm": 0.0021304719406674212,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 47,
+          "index": 5,
+          "robot": 2,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930703865597025e-05,
+            0.00036920408683727146,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -1.09307039077855e-05,
+            0.000369204086829944,
+            -0.00209820865313759
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.002098208653023903,
+          "observed_translation_l2_mm": 0.002130471940591737,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 48,
+          "index": 5,
+          "robot": 2,
+          "branch": 2,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930703865597025e-05,
+            0.0003692040869509583,
+            -0.0020982086530807464
+          ],
+          "predicted_translation_error_mm": [
+            -1.0930703922440443e-05,
+            0.0003692040868409352,
+            -0.00209820865313759
+          ],
+          "prediction_max_component_residual_mm": 1.1002310174035301e-13,
+          "observed_translation_max_abs_mm": 0.0020982086530807464,
+          "observed_translation_l2_mm": 0.0021304719406674212,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 49,
+          "index": 5,
+          "robot": 2,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930703865597025e-05,
+            0.00036920408683727146,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -1.09307039077855e-05,
+            0.000369204086829944,
+            -0.002098208653122935
+          ],
+          "prediction_max_component_residual_mm": 9.903189379656396e-14,
+          "observed_translation_max_abs_mm": 0.002098208653023903,
+          "observed_translation_l2_mm": 0.002130471940591737,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 50,
+          "index": 5,
+          "robot": 2,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990288985,
+            0.0002450033792911199,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -0.00420551099030364,
+            0.00024500337920307924,
+            -0.00209820865313759
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.004205510990288985,
+          "observed_translation_l2_mm": 0.0047062542320756426,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 51,
+          "index": 5,
+          "robot": 2,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990288985,
+            0.0002450033791774331,
+            -0.00209820865313759
+          ],
+          "predicted_translation_error_mm": [
+            -0.00420551099030364,
+            0.0002450033791774331,
+            -0.002098208653152245
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.004205510990288985,
+          "observed_translation_l2_mm": 0.004706254232120409,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 52,
+          "index": 5,
+          "robot": 2,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990232142,
+            0.0002450033792911199,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -0.00420551099027433,
+            0.00024500337919575177,
+            -0.002098208653122935
+          ],
+          "prediction_max_component_residual_mm": 9.903189379656396e-14,
+          "observed_translation_max_abs_mm": 0.004205510990232142,
+          "observed_translation_l2_mm": 0.004706254232024847,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 53,
+          "index": 5,
+          "robot": 2,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990288985,
+            0.0002450033791774331,
+            -0.00209820865313759
+          ],
+          "predicted_translation_error_mm": [
+            -0.00420551099030364,
+            0.0002450033791774331,
+            -0.002098208653152245
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.004205510990288985,
+          "observed_translation_l2_mm": 0.004706254232120409,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 56,
+          "index": 6,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.0018325921963935343,
+            -0.0009000949424944338
+          ],
+          "predicted_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.0018325921963797676,
+            -0.0009000949426099525
+          ],
+          "prediction_max_component_residual_mm": 1.1551870571224754e-13,
+          "observed_translation_max_abs_mm": 0.0018325921963935343,
+          "observed_translation_l2_mm": 0.0020424272391721117,
+          "orientation_max_abs_error": 1.249000902703301e-16
+        },
+        {
+          "row_index": 58,
+          "index": 6,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.001832592196336691,
+            -0.0009000949424944338
+          ],
+          "predicted_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.00183259219637244,
+            -0.0009000949425989613
+          ],
+          "prediction_max_component_residual_mm": 1.0452749776845849e-13,
+          "observed_translation_max_abs_mm": 0.001832592196336691,
+          "observed_translation_l2_mm": 0.0020424272391211078,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 60,
+          "index": 6,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            0.0017451500049219248,
+            -0.0018858613958911974,
+            -0.0009000949426081206
+          ],
+          "predicted_translation_error_mm": [
+            0.0017451500049365798,
+            -0.0018858613958765424,
+            -0.0009000949426062888
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.0018858613958911974,
+          "observed_translation_l2_mm": 0.0027225342330079905,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 62,
+          "index": 6,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            0.0017451500049219248,
+            -0.0018858613958911974,
+            -0.0009000949426081206
+          ],
+          "predicted_translation_error_mm": [
+            0.0017451500049365798,
+            -0.0018858613958948611,
+            -0.0009000949426044569
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.0018858613958911974,
+          "observed_translation_l2_mm": 0.0027225342330079905,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 65,
+          "index": 7,
+          "robot": 2,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -4.440892098500626e-16,
+          "target_wrist_rho_mm": 546.9915438375089,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.0006157067005005956,
+            0.00027662122715810256,
+            -0.0020092108905984674
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006157067002732219,
+            0.0002766212270004509,
+            -0.0020092108906193396
+          ],
+          "prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "observed_translation_max_abs_mm": 0.0020092108905984674,
+          "observed_translation_l2_mm": 0.0021195618526608914,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 67,
+          "index": 7,
+          "robot": 2,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -4.440892098500626e-16,
+          "target_wrist_rho_mm": 546.9915438375089,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.0006157067005005956,
+            0.000276621227214946,
+            -0.0020092108905984674
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006157067002732219,
+            0.00027662122701510583,
+            -0.002009210890612012
+          ],
+          "prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "observed_translation_max_abs_mm": 0.0020092108905984674,
+          "observed_translation_l2_mm": 0.00211956185266831,
+          "orientation_max_abs_error": 6.106226635438361e-16
+        },
+        {
+          "row_index": 68,
+          "index": 7,
+          "robot": 2,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 546.9915438375089,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.002262525265905424,
+            -0.0033888504066226233,
+            -0.002009210890712154
+          ],
+          "predicted_translation_error_mm": [
+            -0.0022625252656780503,
+            -0.0033888504067225433,
+            -0.002009210890655977
+          ],
+          "prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "observed_translation_max_abs_mm": 0.0033888504066226233,
+          "observed_translation_l2_mm": 0.004543154857660375,
+          "orientation_max_abs_error": 4.440892098500626e-16
+        },
+        {
+          "row_index": 70,
+          "index": 7,
+          "robot": 2,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 546.9915438375089,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.002262525265905424,
+            -0.0033888504066226233,
+            -0.002009210890712154
+          ],
+          "predicted_translation_error_mm": [
+            -0.0022625252656780503,
+            -0.0033888504067225433,
+            -0.0020092108906486494
+          ],
+          "prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "observed_translation_max_abs_mm": 0.0033888504066226233,
+          "observed_translation_l2_mm": 0.004543154857660375,
+          "orientation_max_abs_error": 4.996003610813204e-16
+        },
+        {
+          "row_index": 73,
+          "index": 8,
+          "robot": 1,
+          "branch": 0,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931557517717,
+            -0.001881523491590542
+          ],
+          "predicted_translation_error_mm": [
+            0.0006676400629398449,
+            0.0006503931556234299,
+            -0.0018815234915190437
+          ],
+          "prediction_max_component_residual_mm": 1.283417816466681e-13,
+          "observed_translation_max_abs_mm": 0.001881523491590542,
+          "observed_translation_l2_mm": 0.0020997345451514654,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 74,
+          "index": 8,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931556380849,
+            -0.0018815234914200119
+          ],
+          "predicted_translation_error_mm": [
+            0.0006676400629361812,
+            0.0006503931556380849,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0018815234914200119,
+          "observed_translation_l2_mm": 0.002099734544963443,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 75,
+          "index": 8,
+          "robot": 1,
+          "branch": 2,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931557517717,
+            -0.001881523491590542
+          ],
+          "predicted_translation_error_mm": [
+            0.0006676400629398449,
+            0.0006503931556380849,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.001881523491590542,
+          "observed_translation_l2_mm": 0.0020997345451514654,
+          "orientation_max_abs_error": 2.7755575615628914e-16
+        },
+        {
+          "row_index": 76,
+          "index": 8,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931556380849,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.0006676400629435086,
+            0.0006503931556234299,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.0018815234915336987,
+          "observed_translation_l2_mm": 0.002099734545065315,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 77,
+          "index": 8,
+          "robot": 1,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.0020450826812066225,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.003293465338138235,
+            -0.002045082681164434,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 4.218847493575595e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567598507,
+          "orientation_max_abs_error": 3.0531133177191805e-16
+        },
+        {
+          "row_index": 78,
+          "index": 8,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.0020450826810929357,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.0032934653381455625,
+            -0.002045082681149779,
+            -0.0018815234915190437
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567544554,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 79,
+          "index": 8,
+          "robot": 1,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.0020450826812066225,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.003293465338138235,
+            -0.002045082681164434,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 4.218847493575595e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567598507,
+          "orientation_max_abs_error": 1.942890293094024e-16
+        },
+        {
+          "row_index": 80,
+          "index": 8,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.002045082681149779,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.0032934653381602175,
+            -0.002045082681149779,
+            -0.0018815234915190437
+          ],
+          "prediction_max_component_residual_mm": 4.263256414560601e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567571531,
+          "orientation_max_abs_error": 2.7755575615628914e-16
+        },
+        {
+          "row_index": 83,
+          "index": 9,
+          "robot": 2,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 158.9350928200764,
+          "target_wrist_height_above_shoulder_mm": 500.4253507308234,
+          "observed_translation_error_mm": [
+            -0.0005248119508678428,
+            -0.0017616523112451432,
+            -0.0005838045699420036
+          ],
+          "predicted_translation_error_mm": [
+            -0.0005248119508678428,
+            -0.001761652311338624,
+            -0.0005838045700410355
+          ],
+          "prediction_max_component_residual_mm": 9.903189379656396e-14,
+          "observed_translation_max_abs_mm": 0.0017616523112451432,
+          "observed_translation_l2_mm": 0.0019286456972119669,
+          "orientation_max_abs_error": 2.7755575615628914e-16
+        },
+        {
+          "row_index": 87,
+          "index": 9,
+          "robot": 2,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.3464102061431135e-06,
+          "target_wrist_rho_mm": 158.9350928200764,
+          "target_wrist_height_above_shoulder_mm": 500.4253507308234,
+          "observed_translation_error_mm": [
+            -0.0016438258790572036,
+            -0.0014282835968515428,
+            -0.0005838045699420036
+          ],
+          "predicted_translation_error_mm": [
+            -0.0016438258790223426,
+            -0.001428283596867086,
+            -0.0005838045700556904
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0016438258790572036,
+          "observed_translation_l2_mm": 0.002254547699557172,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 89,
+          "index": 9,
+          "robot": 2,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.3464102061431135e-06,
+          "target_wrist_rho_mm": 158.9350928200764,
+          "target_wrist_height_above_shoulder_mm": 500.4253507308234,
+          "observed_translation_error_mm": [
+            -0.0016438258790572036,
+            -0.0014282835968515428,
+            -0.0005838045699420036
+          ],
+          "predicted_translation_error_mm": [
+            -0.00164382587902967,
+            -0.0014282835968560947,
+            -0.0005838045700556904
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0016438258790572036,
+          "observed_translation_l2_mm": 0.002254547699557172,
+          "orientation_max_abs_error": 3.191891195797325e-16
+        }
+      ],
+      "nr_rows": [
+        {
+          "row_index": 199,
+          "index": 0,
+          "physical_translation_error_mm": [
+            -0.000663019870358994,
+            0.0014447865715965236,
+            2.574139443822787e-07
+          ],
+          "physical_translation_max_abs_mm": 0.0014447865715965236,
+          "physical_rotation_matrix_max_abs_error": 6.337697509128937e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0006633662709418786,
+            0.0014446812212867144,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            3.46400554462889e-07,
+            1.0535026717661822e-07,
+            2.574140012256976e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            -3.410605131648481e-13,
+            -6.122879980807738e-14,
+            1.4210854715202004e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 3.410605131648481e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.152006763666137e-09,
+          "q1_6_recorded_rad": 0.00030626481172212446,
+          "q2_6_recorded_rad": -1.9770837351882777,
+          "coaxial_joint_difference_change_rad": -2.220446049250313e-16,
+          "inferred_prequantization_q1_6_rad": 0.0003062648117222455,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 3.410605131648481e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.1520066138138844e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 200,
+          "index": 1,
+          "physical_translation_error_mm": [
+            -0.0018350964614199938,
+            0.0035231837758260554,
+            6.276598583099258e-07
+          ],
+          "physical_translation_max_abs_mm": 0.0035231837758260554,
+          "physical_rotation_matrix_max_abs_error": 6.817603668329841e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0018353732955915802,
+            0.003523012680204829,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            2.7683410053214175e-07,
+            1.7109550753957592e-07,
+            6.276599151533446e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 1.1102230246251565e-16,
+          "native_chain_target_translation_error_mm": [
+            1.1368683772161603e-13,
+            6.722400414105323e-14,
+            -1.9895196601282805e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 1.9895196601282805e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 9.284753530334289e-10,
+          "q1_6_recorded_rad": -0.0003910255564543663,
+          "q2_6_recorded_rad": -2.0158910255564546,
+          "coaxial_joint_difference_change_rad": 4.440892098500626e-16,
+          "inferred_prequantization_q1_6_rad": -0.00039102555645476045,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 3.979039320256561e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 9.284755268275748e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 201,
+          "index": 2,
+          "physical_translation_error_mm": [
+            -0.0006667181336581507,
+            0.0014433688548081136,
+            1.6131366464833263e-08
+          ],
+          "physical_translation_max_abs_mm": 0.0014433688548081136,
+          "physical_rotation_matrix_max_abs_error": 6.3367271881942244e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0006668360157675579,
+            0.0014435705045627856,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            1.1788216625063797e-07,
+            -2.0164974046110729e-07,
+            1.6131593838508707e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            1.1368683772161603e-13,
+            2.969846590872294e-14,
+            1.1368683772161603e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 1.1368683772161603e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 5.396158242465532e-10,
+          "q1_6_recorded_rad": 0.0006514717586308539,
+          "q2_6_recorded_rad": -1.9767385282413692,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": 0.0006514717586307839,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 1.1368683772161603e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 5.396157664503475e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 202,
+          "index": 3,
+          "physical_translation_error_mm": [
+            -0.0018290084205290214,
+            0.003530405797050662,
+            6.42401118966518e-07
+          ],
+          "physical_translation_max_abs_mm": 0.003530405797050662,
+          "physical_rotation_matrix_max_abs_error": 6.813630085200639e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.001829259108376391,
+            0.003530166629332143,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            2.506879468455736e-07,
+            2.3916769009701966e-07,
+            6.424011758099368e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 9.947598300641403e-14,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            0.0,
+            2.6334490144108713e-13,
+            1.4210854715202004e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.6334490144108713e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.19993021098898e-09,
+          "q1_6_recorded_rad": -0.0020796413621432582,
+          "q2_6_recorded_rad": -2.0175796413621425,
+          "coaxial_joint_difference_change_rad": -4.440892098500626e-16,
+          "inferred_prequantization_q1_6_rad": -0.00207964136214267,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 3.979039320256561e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.199929990532764e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 203,
+          "index": 4,
+          "physical_translation_error_mm": [
+            -0.0006664362924482248,
+            0.0014430032106531598,
+            -7.165681381593458e-09
+          ],
+          "physical_translation_max_abs_mm": 0.0014430032106531598,
+          "physical_rotation_matrix_max_abs_error": 6.342582037355271e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0006664537468736853,
+            0.001443064846810671,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            1.7454539147365722e-08,
+            -6.163608645692875e-08,
+            -7.165681381593458e-09
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 1.6653345369377348e-16,
+          "native_chain_target_translation_error_mm": [
+            2.2737367544323206e-13,
+            8.282263763703668e-14,
+            2.2737367544323206e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.9954604635330497e-10,
+          "q1_6_recorded_rad": 0.001486973601202803,
+          "q2_6_recorded_rad": -1.9759030263987973,
+          "coaxial_joint_difference_change_rad": 2.220446049250313e-16,
+          "inferred_prequantization_q1_6_rad": 0.0014869736012026458,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 1.7053025658242404e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.9954597663349767e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 204,
+          "index": 5,
+          "physical_translation_error_mm": [
+            -0.0018277804244917206,
+            0.003526388546248427,
+            5.276080514704518e-07
+          ],
+          "physical_translation_max_abs_mm": 0.003526388546248427,
+          "physical_rotation_matrix_max_abs_error": 6.823505591169177e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0018280370131265045,
+            0.0035262904720241295,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            2.565885210970009e-07,
+            9.807419587559707e-08,
+            5.276080514704518e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 3.3306690738754696e-16,
+          "native_chain_target_translation_error_mm": [
+            -1.1368683772161603e-13,
+            9.336975637097567e-14,
+            -8.526512829121202e-14
+          ],
+          "native_chain_target_translation_max_abs_mm": 1.1368683772161603e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.4787165381058287e-09,
+          "q1_6_recorded_rad": -0.0016084622341974478,
+          "q2_6_recorded_rad": -2.017108462234197,
+          "coaxial_joint_difference_change_rad": -4.440892098500626e-16,
+          "inferred_prequantization_q1_6_rad": -0.0016084622341971944,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 8.526512829121202e-14,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.4787165242740086e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 205,
+          "index": 6,
+          "physical_translation_error_mm": [
+            -0.0006647984107530647,
+            0.001441355952607637,
+            -2.8211331937200157e-08
+          ],
+          "physical_translation_max_abs_mm": 0.001441355952607637,
+          "physical_rotation_matrix_max_abs_error": 7.674131159622621e-05,
+          "base_approximate_pi_contribution_mm": [
+            -0.0006648611698665263,
+            0.0014415859778722506,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            6.275931241361832e-08,
+            -2.3002525040283217e-07,
+            -2.8211331937200157e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.9895196601282805e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            0.02064922697923066,
+            0.010400811202589122,
+            0.01656977949559746
+          ],
+          "native_chain_target_translation_max_abs_mm": 0.02064922697923066,
+          "native_chain_target_rotation_matrix_max_abs_error": 6.639288353310624e-05,
+          "q1_6_recorded_rad": 0.0,
+          "q2_6_recorded_rad": -1.9774673865518055,
+          "coaxial_joint_difference_change_rad": 7.738655180555831e-05,
+          "inferred_prequantization_q1_6_rad": -7.738655180555831e-05,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 7.334762468834205e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 206,
+          "index": 7,
+          "physical_translation_error_mm": [
+            -0.0018356407503290484,
+            0.0035237627674291616,
+            1.3729163583775517e-08
+          ],
+          "physical_translation_max_abs_mm": 0.0035237627674291616,
+          "physical_rotation_matrix_max_abs_error": 1.7658770050388295e-05,
+          "base_approximate_pi_contribution_mm": [
+            -0.0018356568223794056,
+            0.003523778216305118,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            1.607196509212372e-08,
+            -1.5448989643118693e-08,
+            1.3729106740356656e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            0.005394825888288324,
+            0.001179988062438908,
+            0.010282230606463827
+          ],
+          "native_chain_target_translation_max_abs_mm": 0.010282230606463827,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.7803146085959565e-05,
+          "q1_6_recorded_rad": 0.0,
+          "q2_6_recorded_rad": -2.0155191887359405,
+          "coaxial_joint_difference_change_rad": 1.9188735940645074e-05,
+          "inferred_prequantization_q1_6_rad": -1.9188735940645074e-05,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 1.1368683772161603e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 3.227385544716904e-11,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 207,
+          "index": 8,
+          "physical_translation_error_mm": [
+            -0.0006659226581859912,
+            0.0014482049833759447,
+            4.508200390773709e-08
+          ],
+          "physical_translation_max_abs_mm": 0.0014482049833759447,
+          "physical_rotation_matrix_max_abs_error": 6.343276358455885e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0006659865993299263,
+            0.001448193963952349,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            6.394094498318736e-08,
+            1.1019409384971368e-08,
+            4.508200390773709e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.9895196601282805e-13,
+          "combined_prediction_rotation_max_abs_residual": 3.3306690738754696e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            5.284661597215745e-14,
+            -2.842170943040401e-14
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 2.0099535924522627e-10,
+          "q1_6_recorded_rad": -0.00023660863752063957,
+          "q2_6_recorded_rad": -1.9776266086375207,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": -0.00023660863752072991,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 1.7053025658242404e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 2.009954116123118e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 208,
+          "index": 9,
+          "physical_translation_error_mm": [
+            -0.0018319018265202658,
+            0.00352638036676467,
+            1.9161922182320268e-07
+          ],
+          "physical_translation_max_abs_mm": 0.00352638036676467,
+          "physical_rotation_matrix_max_abs_error": 6.814368801899562e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0018319627343430511,
+            0.0035262837431275784,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            6.090749593568034e-08,
+            9.662355182626925e-08,
+            1.9161922182320268e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 3.268496584496461e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            -1.1368683772161603e-13,
+            1.9978463328129692e-13,
+            1.9895196601282805e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 1.9978463328129692e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 5.679912928879816e-10,
+          "q1_6_recorded_rad": 0.0008058753842916242,
+          "q2_6_recorded_rad": -2.014694124615708,
+          "coaxial_joint_difference_change_rad": -4.440892098500626e-16,
+          "inferred_prequantization_q1_6_rad": 0.0008058753842918875,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.8421709430404007e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 5.67991210761644e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        }
+      ],
+      "maximum_ik_prediction_residual_mm": 2.2737367544323206e-13,
+      "maximum_ik_orientation_error": 8.881784197001252e-16,
+      "ik_error_range_mm": [
+        0.0009823547767950913,
+        0.004205510990288985
+      ],
+      "maximum_nr_combined_prediction_residual_mm": 3.268496584496461e-13,
+      "maximum_nr_combined_rotation_prediction_residual": 3.3306690738754696e-16,
+      "nr_physical_error_range_mm": [
+        0.001441355952607637,
+        0.003530405797050662
+      ],
+      "nr_chain_translation_error_range_mm": [
+        1.1368683772161603e-13,
+        0.02064922697923066
+      ],
+      "snap_candidates": [
+        {
+          "row_index": 205,
+          "index": 6,
+          "physical_translation_error_mm": [
+            -0.0006647984107530647,
+            0.001441355952607637,
+            -2.8211331937200157e-08
+          ],
+          "physical_translation_max_abs_mm": 0.001441355952607637,
+          "physical_rotation_matrix_max_abs_error": 7.674131159622621e-05,
+          "base_approximate_pi_contribution_mm": [
+            -0.0006648611698665263,
+            0.0014415859778722506,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            6.275931241361832e-08,
+            -2.3002525040283217e-07,
+            -2.8211331937200157e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.9895196601282805e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            0.02064922697923066,
+            0.010400811202589122,
+            0.01656977949559746
+          ],
+          "native_chain_target_translation_max_abs_mm": 0.02064922697923066,
+          "native_chain_target_rotation_matrix_max_abs_error": 6.639288353310624e-05,
+          "q1_6_recorded_rad": 0.0,
+          "q2_6_recorded_rad": -1.9774673865518055,
+          "coaxial_joint_difference_change_rad": 7.738655180555831e-05,
+          "inferred_prequantization_q1_6_rad": -7.738655180555831e-05,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 7.334762468834205e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 206,
+          "index": 7,
+          "physical_translation_error_mm": [
+            -0.0018356407503290484,
+            0.0035237627674291616,
+            1.3729163583775517e-08
+          ],
+          "physical_translation_max_abs_mm": 0.0035237627674291616,
+          "physical_rotation_matrix_max_abs_error": 1.7658770050388295e-05,
+          "base_approximate_pi_contribution_mm": [
+            -0.0018356568223794056,
+            0.003523778216305118,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            1.607196509212372e-08,
+            -1.5448989643118693e-08,
+            1.3729106740356656e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            0.005394825888288324,
+            0.001179988062438908,
+            0.010282230606463827
+          ],
+          "native_chain_target_translation_max_abs_mm": 0.010282230606463827,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.7803146085959565e-05,
+          "q1_6_recorded_rad": 0.0,
+          "q2_6_recorded_rad": -2.0155191887359405,
+          "coaxial_joint_difference_change_rad": 1.9188735940645074e-05,
+          "inferred_prequantization_q1_6_rad": -1.9188735940645074e-05,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 1.1368683772161603e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 3.227385544716904e-11,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        }
+      ],
+      "native_fk_count": 100,
+      "maximum_independent_fk_translation_error_mm": 2.2737367544323206e-13,
+      "native_and_independent_jacobian_ranks": {
+        "author_elbow_only": {
+          "independent_analytic": 6,
+          "native_finite_difference": 6,
+          "independent_finite_difference": 6
+        },
+        "wrist_zero": {
+          "independent_analytic": 5,
+          "native_finite_difference": 5,
+          "independent_finite_difference": 5
+        },
+        "regular": {
+          "independent_analytic": 6,
+          "native_finite_difference": 6,
+          "independent_finite_difference": 6
+        }
+      },
+      "frozen_check_counts": {
+        "total": 348,
+        "passed": 292,
+        "failed": 56
+      }
+    },
+    "III": {
+      "native_accepted_ik_count": 44,
+      "ik_rows": [
+        {
+          "row_index": 2,
+          "index": 0,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 435.6682959341793,
+          "target_wrist_height_above_shoulder_mm": 316.71487330111665,
+          "observed_translation_error_mm": [
+            -0.00030298572187348327,
+            0.0011232080186118765,
+            -0.001600301144662808
+          ],
+          "predicted_translation_error_mm": [
+            -0.0003029857218955767,
+            0.0011232080185274995,
+            -0.0016003011447626447
+          ],
+          "prediction_max_component_residual_mm": 9.98368054894172e-14,
+          "observed_translation_max_abs_mm": 0.001600301144662808,
+          "observed_translation_l2_mm": 0.0019784742490975985,
+          "orientation_max_abs_error": 8.881784197001252e-16
+        },
+        {
+          "row_index": 4,
+          "index": 0,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 435.6682959341793,
+          "target_wrist_height_above_shoulder_mm": 316.71487330111665,
+          "observed_translation_error_mm": [
+            -0.00030298572187348327,
+            0.0011232080186118765,
+            -0.001600301144662808
+          ],
+          "predicted_translation_error_mm": [
+            -0.0003029857218955767,
+            0.0011232080185274995,
+            -0.0016003011447626447
+          ],
+          "prediction_max_component_residual_mm": 9.98368054894172e-14,
+          "observed_translation_max_abs_mm": 0.001600301144662808,
+          "observed_translation_l2_mm": 0.0019784742490975985,
+          "orientation_max_abs_error": 8.743006318923108e-16
+        },
+        {
+          "row_index": 8,
+          "index": 0,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.3464102061431135e-06,
+          "target_wrist_rho_mm": 435.6682959341793,
+          "target_wrist_height_above_shoulder_mm": 316.71487330111665,
+          "observed_translation_error_mm": [
+            0.0027871700773403063,
+            0.0019567663564430404,
+            -0.001600301144662808
+          ],
+          "predicted_translation_error_mm": [
+            0.002787170077457657,
+            0.001956766356400852,
+            -0.0016003011446847903
+          ],
+          "prediction_max_component_residual_mm": 1.1735057370287905e-13,
+          "observed_translation_max_abs_mm": 0.0027871700773403063,
+          "observed_translation_l2_mm": 0.0037627404065836956,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 15,
+          "index": 1,
+          "robot": 2,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 93.22250026743225,
+          "target_wrist_height_above_shoulder_mm": 512.2245684024417,
+          "observed_translation_error_mm": [
+            0.00023648059084280248,
+            -0.0019882577789260836,
+            -0.00034242881929458235
+          ],
+          "predicted_translation_error_mm": [
+            0.00023648059085745743,
+            -0.0019882577790193423,
+            -0.00034242881942292414
+          ],
+          "prediction_max_component_residual_mm": 1.283417816466681e-13,
+          "observed_translation_max_abs_mm": 0.0019882577789260836,
+          "observed_translation_l2_mm": 0.002031341813085362,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 20,
+          "index": 2,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0005820001396159569,
+            -0.0009128745326734133,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.0005820001396581453,
+            -0.0009128745327724452,
+            -0.0015381969405163787
+          ],
+          "prediction_max_component_residual_mm": 1.4299672557172016e-13,
+          "observed_translation_max_abs_mm": 0.001538196940373382,
+          "observed_translation_l2_mm": 0.001880987480631046,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 22,
+          "index": 2,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0005820001396159569,
+            -0.0009128745326734133,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.0005820001396728003,
+            -0.0009128745327687815,
+            -0.0015381969405163787
+          ],
+          "prediction_max_component_residual_mm": 1.4299672557172016e-13,
+          "observed_translation_max_abs_mm": 0.001538196940373382,
+          "observed_translation_l2_mm": 0.001880987480631046,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 24,
+          "index": 2,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0031760415052417557,
+            0.0007409613634763446,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.003176041505298599,
+            0.000740961363309478,
+            -0.0015381969405017237
+          ],
+          "prediction_max_component_residual_mm": 1.6686652060116103e-13,
+          "observed_translation_max_abs_mm": 0.0031760415052417557,
+          "observed_translation_l2_mm": 0.00360587204606002,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 26,
+          "index": 2,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410206832132e-06,
+          "target_wrist_rho_mm": 418.7609754476826,
+          "target_wrist_height_above_shoulder_mm": 294.7349455961139,
+          "observed_translation_error_mm": [
+            0.0031760415052417557,
+            0.0007409613634763446,
+            -0.001538196940373382
+          ],
+          "predicted_translation_error_mm": [
+            0.003176041505298599,
+            0.000740961363309478,
+            -0.0015381969405017237
+          ],
+          "prediction_max_component_residual_mm": 1.6686652060116103e-13,
+          "observed_translation_max_abs_mm": 0.0031760415052417557,
+          "observed_translation_l2_mm": 0.00360587204606002,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 31,
+          "index": 3,
+          "robot": 2,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 267.43778819682535,
+          "target_wrist_height_above_shoulder_mm": 137.6108103096758,
+          "observed_translation_error_mm": [
+            -0.0005054658996073158,
+            -2.2543578951372822e-06,
+            -0.0009823547767950913
+          ],
+          "predicted_translation_error_mm": [
+            -0.0005054658994256833,
+            -2.2543578943635956e-06,
+            -0.0009823547767493501
+          ],
+          "prediction_max_component_residual_mm": 1.816324868286756e-13,
+          "observed_translation_max_abs_mm": 0.0009823547767950913,
+          "observed_translation_l2_mm": 0.001104772268518488,
+          "orientation_max_abs_error": 8.326672684688674e-16
+        },
+        {
+          "row_index": 37,
+          "index": 4,
+          "robot": 1,
+          "branch": 0,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.0019847917764934664,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006745867117388116,
+            0.0019847917765285494,
+            -0.0001475241823417628
+          ],
+          "prediction_max_component_residual_mm": 3.5083047578154947e-14,
+          "observed_translation_max_abs_mm": 0.0019847917764934664,
+          "observed_translation_l2_mm": 0.0021014825747718018,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 38,
+          "index": 4,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.001984791776436623,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006745867117388116,
+            0.0019847917765432044,
+            -0.0001475241823417628
+          ],
+          "prediction_max_component_residual_mm": 1.0658141036401503e-13,
+          "observed_translation_max_abs_mm": 0.001984791776436623,
+          "observed_translation_l2_mm": 0.0021014825747181147,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 39,
+          "index": 4,
+          "robot": 1,
+          "branch": 2,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.001984791776521888,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006745867117534665,
+            0.0019847917765432044,
+            -0.0001475241823417628
+          ],
+          "prediction_max_component_residual_mm": 2.1316282072803006e-14,
+          "observed_translation_max_abs_mm": 0.001984791776521888,
+          "observed_translation_l2_mm": 0.0021014825747986453,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 40,
+          "index": 4,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.0006745867117388116,
+            0.001984791776436623,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006745867117534665,
+            0.0019847917765578593,
+            -0.00014752418234909026
+          ],
+          "prediction_max_component_residual_mm": 1.212363542890671e-13,
+          "observed_translation_max_abs_mm": 0.001984791776436623,
+          "observed_translation_l2_mm": 0.0021014825747181147,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 41,
+          "index": 4,
+          "robot": 1,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509127876,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509184275,
+            -0.000147524182352754
+          ],
+          "prediction_max_component_residual_mm": 5.639932965095795e-14,
+          "observed_translation_max_abs_mm": 0.002079739509127876,
+          "observed_translation_l2_mm": 0.002122093906826761,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 42,
+          "index": 4,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492232890727,
+            0.002079739509227352,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.00039522492230137374,
+            0.00207973950919893,
+            -0.00014752418234909026
+          ],
+          "prediction_max_component_residual_mm": 2.842170943040401e-14,
+          "observed_translation_max_abs_mm": 0.002079739509227352,
+          "observed_translation_l2_mm": 0.0021220939069348382,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 43,
+          "index": 4,
+          "robot": 1,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509127876,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.0003952249222867188,
+            0.00207973950919893,
+            -0.000147524182352754
+          ],
+          "prediction_max_component_residual_mm": 7.105427357601002e-14,
+          "observed_translation_max_abs_mm": 0.002079739509127876,
+          "observed_translation_l2_mm": 0.002122093906826761,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 44,
+          "index": 4,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 40.16120202860949,
+          "target_wrist_height_above_shoulder_mm": 570.7000532200658,
+          "observed_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509213141,
+            -0.000147524182352754
+          ],
+          "predicted_translation_error_mm": [
+            -0.00039522492227206385,
+            0.002079739509184275,
+            -0.00014752418235641773
+          ],
+          "prediction_max_component_residual_mm": 2.886579864025407e-14,
+          "observed_translation_max_abs_mm": 0.002079739509213141,
+          "observed_translation_l2_mm": 0.0021220939069103244,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 46,
+          "index": 5,
+          "robot": 2,
+          "branch": 0,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930704036127281e-05,
+            0.0003692040867235846,
+            -0.0020982086530807464
+          ],
+          "predicted_translation_error_mm": [
+            -1.0930704107625644e-05,
+            0.00036920408683727146,
+            -0.00209820865313759
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0020982086530807464,
+          "observed_translation_l2_mm": 0.002130471940628893,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 47,
+          "index": 5,
+          "robot": 2,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930704036127281e-05,
+            0.00036920408683727146,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -1.0930704107625644e-05,
+            0.00036920408684459893,
+            -0.002098208653122935
+          ],
+          "prediction_max_component_residual_mm": 9.903189379656396e-14,
+          "observed_translation_max_abs_mm": 0.002098208653023903,
+          "observed_translation_l2_mm": 0.002130471940592612,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 48,
+          "index": 5,
+          "robot": 2,
+          "branch": 2,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930704036127281e-05,
+            0.0003692040867235846,
+            -0.0020982086530807464
+          ],
+          "predicted_translation_error_mm": [
+            -1.0930704107625644e-05,
+            0.00036920408683727146,
+            -0.002098208653122935
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0020982086530807464,
+          "observed_translation_l2_mm": 0.002130471940628893,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 49,
+          "index": 5,
+          "robot": 2,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -1.0930704036127281e-05,
+            0.00036920408683727146,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -1.09307040929707e-05,
+            0.00036920408684826267,
+            -0.002098208653093625
+          ],
+          "prediction_max_component_residual_mm": 6.972200594645983e-14,
+          "observed_translation_max_abs_mm": 0.002098208653023903,
+          "observed_translation_l2_mm": 0.002130471940592612,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 50,
+          "index": 5,
+          "robot": 2,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990345829,
+            0.00024500337906374625,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -0.004205510990444861,
+            0.00024500337918476056,
+            -0.00209820865310828
+          ],
+          "prediction_max_component_residual_mm": 1.2101430968414206e-13,
+          "observed_translation_max_abs_mm": 0.004205510990345829,
+          "observed_translation_l2_mm": 0.004706254232114601,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 51,
+          "index": 5,
+          "robot": 2,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990402672,
+            0.0002450033791774331,
+            -0.0020982086530807464
+          ],
+          "predicted_translation_error_mm": [
+            -0.004205510990459516,
+            0.0002450033791664419,
+            -0.00209820865310828
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.004205510990402672,
+          "observed_translation_l2_mm": 0.004706254232196657,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 52,
+          "index": 5,
+          "robot": 2,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990402672,
+            0.00024500337906374625,
+            -0.002098208653023903
+          ],
+          "predicted_translation_error_mm": [
+            -0.0042055109904741705,
+            0.00024500337918476056,
+            -0.002098208653122935
+          ],
+          "prediction_max_component_residual_mm": 1.2101430968414206e-13,
+          "observed_translation_max_abs_mm": 0.004205510990402672,
+          "observed_translation_l2_mm": 0.004706254232165396,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 53,
+          "index": 5,
+          "robot": 2,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 571.2199334585173,
+          "target_wrist_height_above_shoulder_mm": 100.55787860580841,
+          "observed_translation_error_mm": [
+            -0.004205510990402672,
+            0.0002450033791774331,
+            -0.0020982086530807464
+          ],
+          "predicted_translation_error_mm": [
+            -0.004205510990459516,
+            0.0002450033791664419,
+            -0.00209820865310828
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.004205510990402672,
+          "observed_translation_l2_mm": 0.004706254232196657,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 56,
+          "index": 6,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.0018325921963935343,
+            -0.0009000949424944338
+          ],
+          "predicted_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.0018325921963797676,
+            -0.0009000949426099525
+          ],
+          "prediction_max_component_residual_mm": 1.1551870571224754e-13,
+          "observed_translation_max_abs_mm": 0.0018325921963935343,
+          "observed_translation_l2_mm": 0.0020424272391721117,
+          "orientation_max_abs_error": 1.249000902703301e-16
+        },
+        {
+          "row_index": 58,
+          "index": 6,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 2.220446049250313e-16,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.001832592196336691,
+            -0.0009000949424944338
+          ],
+          "predicted_translation_error_mm": [
+            -5.425830374861107e-05,
+            -0.00183259219637244,
+            -0.0009000949425989613
+          ],
+          "prediction_max_component_residual_mm": 1.0452749776845849e-13,
+          "observed_translation_max_abs_mm": 0.001832592196336691,
+          "observed_translation_l2_mm": 0.0020424272391211078,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 60,
+          "index": 6,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            0.0017451500049219248,
+            -0.0018858613958911974,
+            -0.0009000949426081206
+          ],
+          "predicted_translation_error_mm": [
+            0.0017451500049365798,
+            -0.0018858613958765424,
+            -0.0009000949426062888
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.0018858613958911974,
+          "observed_translation_l2_mm": 0.0027225342330079905,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 62,
+          "index": 6,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 7.346410207276222e-06,
+          "target_wrist_rho_mm": 245.0425582013914,
+          "target_wrist_height_above_shoulder_mm": 499.12728686661467,
+          "observed_translation_error_mm": [
+            0.0017451500049219248,
+            -0.0018858613958911974,
+            -0.0009000949426081206
+          ],
+          "predicted_translation_error_mm": [
+            0.0017451500049365798,
+            -0.0018858613958948611,
+            -0.0009000949426044569
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.0018858613958911974,
+          "observed_translation_l2_mm": 0.0027225342330079905,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 65,
+          "index": 7,
+          "robot": 2,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 546.9915438375087,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.0006157067002732219,
+            0.0002766212270444157,
+            -0.0020092108906695216
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006157067002732219,
+            0.0002766212270572943,
+            -0.0020092108906046846
+          ],
+          "prediction_max_component_residual_mm": 6.483702463810914e-14,
+          "observed_translation_max_abs_mm": 0.0020092108906695216,
+          "observed_translation_l2_mm": 0.00211956185264736,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 67,
+          "index": 7,
+          "robot": 2,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 546.9915438375087,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.0006157067002732219,
+            0.0002766212270444157,
+            -0.0020092108906695216
+          ],
+          "predicted_translation_error_mm": [
+            -0.0006157067002732219,
+            0.0002766212270572943,
+            -0.0020092108906046846
+          ],
+          "prediction_max_component_residual_mm": 6.483702463810914e-14,
+          "observed_translation_max_abs_mm": 0.0020092108906695216,
+          "observed_translation_l2_mm": 0.00211956185264736,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 68,
+          "index": 7,
+          "robot": 2,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 546.9915438375087,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.002262525265905424,
+            -0.0033888504066794667,
+            -0.0020092108906837325
+          ],
+          "predicted_translation_error_mm": [
+            -0.0022625252656927053,
+            -0.0033888504066794667,
+            -0.002009210890641322
+          ],
+          "prediction_max_component_residual_mm": 2.1271873151818e-13,
+          "observed_translation_max_abs_mm": 0.0033888504066794667,
+          "observed_translation_l2_mm": 0.004543154857690206,
+          "orientation_max_abs_error": 5.551115123125783e-16
+        },
+        {
+          "row_index": 70,
+          "index": 7,
+          "robot": 2,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 546.9915438375087,
+          "target_wrist_height_above_shoulder_mm": -183.76000668501175,
+          "observed_translation_error_mm": [
+            -0.002262525265905424,
+            -0.00338885040656578,
+            -0.0020092108906837325
+          ],
+          "predicted_translation_error_mm": [
+            -0.0022625252656780503,
+            -0.0033888504066648117,
+            -0.0020092108906486494
+          ],
+          "prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "observed_translation_max_abs_mm": 0.00338885040656578,
+          "observed_translation_l2_mm": 0.004543154857605404,
+          "orientation_max_abs_error": 3.3306690738754696e-16
+        },
+        {
+          "row_index": 73,
+          "index": 8,
+          "robot": 1,
+          "branch": 0,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931557517717,
+            -0.001881523491590542
+          ],
+          "predicted_translation_error_mm": [
+            0.000667640062925634,
+            0.0006503931556234299,
+            -0.0018815234915190437
+          ],
+          "prediction_max_component_residual_mm": 1.283417816466681e-13,
+          "observed_translation_max_abs_mm": 0.001881523491590542,
+          "observed_translation_l2_mm": 0.0020997345451514654,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 74,
+          "index": 8,
+          "robot": 1,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931556380849,
+            -0.0018815234914200119
+          ],
+          "predicted_translation_error_mm": [
+            0.0006676400629219703,
+            0.0006503931556380849,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0018815234914200119,
+          "observed_translation_l2_mm": 0.002099734544963443,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 75,
+          "index": 8,
+          "robot": 1,
+          "branch": 2,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931557517717,
+            -0.001881523491590542
+          ],
+          "predicted_translation_error_mm": [
+            0.000667640062925634,
+            0.0006503931556380849,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.001881523491590542,
+          "observed_translation_l2_mm": 0.0020997345451514654,
+          "orientation_max_abs_error": 2.7755575615628914e-16
+        },
+        {
+          "row_index": 76,
+          "index": 8,
+          "robot": 1,
+          "branch": 3,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 0.0,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.0006676400629430645,
+            0.0006503931556380849,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.0006676400629292978,
+            0.0006503931556234299,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 1.4654943925052066e-14,
+          "observed_translation_max_abs_mm": 0.0018815234915336987,
+          "observed_translation_l2_mm": 0.002099734545065315,
+          "orientation_max_abs_error": 1.6653345369377348e-16
+        },
+        {
+          "row_index": 77,
+          "index": 8,
+          "robot": 1,
+          "branch": 4,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.0020450826812066225,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.003293465338124024,
+            -0.002045082681164434,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 4.218847493575595e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567598507,
+          "orientation_max_abs_error": 3.0531133177191805e-16
+        },
+        {
+          "row_index": 78,
+          "index": 8,
+          "robot": 1,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.0020450826810929357,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.0032934653381313517,
+            -0.002045082681149779,
+            -0.0018815234915190437
+          ],
+          "prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567544554,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "row_index": 79,
+          "index": 8,
+          "robot": 1,
+          "branch": 6,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.0020450826812066225,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.003293465338124024,
+            -0.002045082681164434,
+            -0.0018815234915336987
+          ],
+          "prediction_max_component_residual_mm": 4.218847493575595e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567598507,
+          "orientation_max_abs_error": 1.942890293094024e-16
+        },
+        {
+          "row_index": 80,
+          "index": 8,
+          "robot": 1,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410207031292e-06,
+          "target_wrist_rho_mm": 512.2288918423732,
+          "target_wrist_height_above_shoulder_mm": 253.74936687126888,
+          "observed_translation_error_mm": [
+            0.003293465338117585,
+            -0.002045082681149779,
+            -0.0018815234915336987
+          ],
+          "predicted_translation_error_mm": [
+            0.0032934653381460066,
+            -0.002045082681149779,
+            -0.0018815234915190437
+          ],
+          "prediction_max_component_residual_mm": 2.842170943040401e-14,
+          "observed_translation_max_abs_mm": 0.003293465338117585,
+          "observed_translation_l2_mm": 0.004309223567571531,
+          "orientation_max_abs_error": 2.7755575615628914e-16
+        },
+        {
+          "row_index": 83,
+          "index": 9,
+          "robot": 2,
+          "branch": 1,
+          "q2_error_from_PI_over_2_rad": 3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": 8.881784197001252e-16,
+          "target_wrist_rho_mm": 158.9350928200764,
+          "target_wrist_height_above_shoulder_mm": 500.4253507308234,
+          "observed_translation_error_mm": [
+            -0.000524811950754156,
+            -0.0017616523113304083,
+            -0.0005838045699420036
+          ],
+          "predicted_translation_error_mm": [
+            -0.0005248119507468285,
+            -0.00176165231135883,
+            -0.0005838045700410355
+          ],
+          "prediction_max_component_residual_mm": 9.903189379656396e-14,
+          "observed_translation_max_abs_mm": 0.0017616523113304083,
+          "observed_translation_l2_mm": 0.0019286456972589135,
+          "orientation_max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "row_index": 87,
+          "index": 9,
+          "robot": 2,
+          "branch": 5,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410205254935e-06,
+          "target_wrist_rho_mm": 158.9350928200764,
+          "target_wrist_height_above_shoulder_mm": 500.4253507308234,
+          "observed_translation_error_mm": [
+            -0.0016438258790003601,
+            -0.0014282835968231211,
+            -0.0005838045699420036
+          ],
+          "predicted_translation_error_mm": [
+            -0.0016438258789086557,
+            -0.0014282835968332241,
+            -0.0005838045700556904
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0016438258790003601,
+          "observed_translation_l2_mm": 0.0022545476994977214,
+          "orientation_max_abs_error": 2.3592239273284576e-16
+        },
+        {
+          "row_index": 89,
+          "index": 9,
+          "robot": 2,
+          "branch": 7,
+          "q2_error_from_PI_over_2_rad": -3.673205103416066e-06,
+          "q1_error_from_PI_shoulder_flip_rad": -7.346410205254935e-06,
+          "target_wrist_rho_mm": 158.9350928200764,
+          "target_wrist_height_above_shoulder_mm": 500.4253507308234,
+          "observed_translation_error_mm": [
+            -0.0016438258790003601,
+            -0.0014282835968231211,
+            -0.0005838045699420036
+          ],
+          "predicted_translation_error_mm": [
+            -0.0016438258789086557,
+            -0.0014282835968368879,
+            -0.0005838045700556904
+          ],
+          "prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "observed_translation_max_abs_mm": 0.0016438258790003601,
+          "observed_translation_l2_mm": 0.0022545476994977214,
+          "orientation_max_abs_error": 2.220446049250313e-16
+        }
+      ],
+      "nr_rows": [
+        {
+          "row_index": 199,
+          "index": 0,
+          "physical_translation_error_mm": [
+            0.0020876685165944764,
+            0.0028310576238368412,
+            -1.737299442083895e-06
+          ],
+          "physical_translation_max_abs_mm": 0.0028310576238368412,
+          "physical_rotation_matrix_max_abs_error": 7.156639361904915e-06,
+          "base_approximate_pi_contribution_mm": [
+            0.002088510416513145,
+            0.002830558579546505,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            -8.41899918668787e-07,
+            4.990441766494769e-07,
+            -1.737299442083895e-06
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            4.547473508864641e-13,
+            2.3014923300479495e-13,
+            5.684341886080802e-14
+          ],
+          "native_chain_target_translation_max_abs_mm": 4.547473508864641e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 3.297980942426221e-09,
+          "q1_6_recorded_rad": -0.00032785827760195075,
+          "q2_6_recorded_rad": -0.09262185827760196,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": -0.00032785827760195563,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 4.547473508864641e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 3.2979810458526787e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 200,
+          "index": 1,
+          "physical_translation_error_mm": [
+            -0.002659140180298891,
+            0.0033181066597762765,
+            -3.362422944519494e-07
+          ],
+          "physical_translation_max_abs_mm": 0.0033181066597762765,
+          "physical_rotation_matrix_max_abs_error": 6.827040661905315e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0026587095883883194,
+            0.003317960014101118,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            -4.3059191057182034e-07,
+            1.466458456889086e-07,
+            -3.3624240813878714e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 1.7053025658242404e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.3592239273284576e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            1.4355183708403274e-13,
+            1.7053025658242404e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 8.098280266841751e-10,
+          "q1_6_recorded_rad": 0.0004904320335066502,
+          "q2_6_recorded_rad": 1.7495904320335067,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": 0.000490432033506627,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 8.098279797878386e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 201,
+          "index": 2,
+          "physical_translation_error_mm": [
+            0.002085143750377938,
+            0.0028258694959504282,
+            -9.95652271740255e-09
+          ],
+          "physical_translation_max_abs_mm": 0.0028258694959504282,
+          "physical_rotation_matrix_max_abs_error": 7.154854793162135e-06,
+          "base_approximate_pi_contribution_mm": [
+            0.0020851040403613297,
+            0.002825806310227108,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            3.971007345171529e-08,
+            6.318572332020267e-08,
+            -9.95657956082141e-09
+          ],
+          "combined_prediction_max_component_residual_mm": 5.684341886080802e-14,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            -5.440092820663267e-15,
+            -1.1368683772161603e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.0022283003507937e-10,
+          "q1_6_recorded_rad": 0.0008861549533340236,
+          "q2_6_recorded_rad": -0.09140784504666598,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": 0.0008861549533340229,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.0022286741726443e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 202,
+          "index": 3,
+          "physical_translation_error_mm": [
+            -0.002658128244775071,
+            0.003311644801044622,
+            1.2212240108055994e-07
+          ],
+          "physical_translation_max_abs_mm": 0.003311644801044622,
+          "physical_rotation_matrix_max_abs_error": 6.821073951779333e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0026583026795492515,
+            0.003311719670364255,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            1.7443477418055409e-07,
+            -7.486949016310973e-08,
+            1.2212234423714108e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 1.7053025658242404e-13,
+          "combined_prediction_rotation_max_abs_residual": 1.6653345369377348e-16,
+          "native_chain_target_translation_error_mm": [
+            2.2737367544323206e-13,
+            -1.1302070390684094e-13,
+            0.0
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 2.4145685451060217e-10,
+          "q1_6_recorded_rad": 0.00039160625954046786,
+          "q2_6_recorded_rad": 1.7494916062595405,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": 0.000391606259540378,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 4.547473508864641e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 2.4145681585531694e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 203,
+          "index": 4,
+          "physical_translation_error_mm": [
+            0.0020825291481969543,
+            0.0028293043554867836,
+            4.7935145630617626e-08
+          ],
+          "physical_translation_max_abs_mm": 0.0028293043554867836,
+          "physical_rotation_matrix_max_abs_error": 7.158773927734563e-06,
+          "base_approximate_pi_contribution_mm": [
+            0.002082435720808462,
+            0.0028292227182760143,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            9.342744533569203e-08,
+            8.163709708242095e-08,
+            4.7935145630617626e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.498001805406602e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            2.6645352591003757e-15,
+            1.1368683772161603e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 3.0059998934461873e-10,
+          "q1_6_recorded_rad": 0.0017499173329359361,
+          "q2_6_recorded_rad": -0.09054408266706405,
+          "coaxial_joint_difference_change_rad": -1.3877787807814457e-17,
+          "inferred_prequantization_q1_6_rad": 0.0017499173329359463,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 3.005999640141186e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 204,
+          "index": 5,
+          "physical_translation_error_mm": [
+            -0.00266061085437741,
+            0.003311714357892015,
+            2.010369826166425e-08
+          ],
+          "physical_translation_max_abs_mm": 0.003311714357892015,
+          "physical_rotation_matrix_max_abs_error": 6.820162573473176e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0026607120822745856,
+            0.0033118169893100458,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            1.0122806770596071e-07,
+            -1.0263141803079634e-07,
+            2.010375510508311e-08
+          ],
+          "combined_prediction_max_component_residual_mm": 1.7053025658242404e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            2.2737367544323206e-13,
+            -9.847678228425139e-14,
+            1.1368683772161603e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 2.50371667842586e-10,
+          "q1_6_recorded_rad": 0.0012207971261095191,
+          "q2_6_recorded_rad": 1.7503207971261094,
+          "coaxial_joint_difference_change_rad": 2.220446049250313e-16,
+          "inferred_prequantization_q1_6_rad": 0.0012207971261093409,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.8421709430404007e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 2.503716447523098e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 205,
+          "index": 6,
+          "physical_translation_error_mm": [
+            0.002087737068734441,
+            0.0028302114315579274,
+            -2.1555484863711172e-07
+          ],
+          "physical_translation_max_abs_mm": 0.0028302114315579274,
+          "physical_rotation_matrix_max_abs_error": 7.1566675031720095e-06,
+          "base_approximate_pi_contribution_mm": [
+            0.0020879925168060254,
+            0.002830354035381788,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            -2.554481284278154e-07,
+            -1.4260365333029767e-07,
+            -2.1555479179369286e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 1.7053025658242404e-13,
+          "combined_prediction_rotation_max_abs_residual": 1.3877787807814457e-16,
+          "native_chain_target_translation_error_mm": [
+            0.0,
+            2.829958489769524e-13,
+            -2.2737367544323206e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.829958489769524e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.003439148612191e-09,
+          "q1_6_recorded_rad": -0.0014505815325783471,
+          "q2_6_recorded_rad": -0.09374458153257835,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": -0.0014505815325783489,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.003439191258609e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 206,
+          "index": 7,
+          "physical_translation_error_mm": [
+            -0.0026569159095970463,
+            0.003319912148583626,
+            3.8203955909921206e-07
+          ],
+          "physical_translation_max_abs_mm": 0.003319912148583626,
+          "physical_rotation_matrix_max_abs_error": 6.8254119252320056e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.002656859617786722,
+            0.003319397473035224,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            -5.629203769785818e-08,
+            5.146754347151727e-07,
+            3.8203955909921206e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 2.2737367544323206e-13,
+          "combined_prediction_rotation_max_abs_residual": 3.3306690738754696e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            -2.9531932455029164e-14,
+            0.0
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 1.072749777897286e-09,
+          "q1_6_recorded_rad": 0.0003991319243632437,
+          "q2_6_recorded_rad": 1.7494991319243633,
+          "coaxial_joint_difference_change_rad": 0.0,
+          "inferred_prequantization_q1_6_rad": 0.0003991319243632496,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 1.7053025658242404e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 1.0727499554847729e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 207,
+          "index": 8,
+          "physical_translation_error_mm": [
+            0.002088750292216446,
+            0.0028237312598662356,
+            -1.377367141230934e-06
+          ],
+          "physical_translation_max_abs_mm": 0.0028237312598662356,
+          "physical_rotation_matrix_max_abs_error": 7.1587168197495554e-06,
+          "base_approximate_pi_contribution_mm": [
+            0.0020893364289804595,
+            0.0028232231322817825,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            -5.861369345439016e-07,
+            5.081276412965963e-07,
+            -1.377367198074353e-06
+          ],
+          "combined_prediction_max_component_residual_mm": 1.7053025658242404e-13,
+          "combined_prediction_rotation_max_abs_residual": 4.440892098500626e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            3.7969627442180354e-14,
+            -1.7053025658242404e-13
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 2.5846591123946275e-09,
+          "q1_6_recorded_rad": -0.0013328053103752076,
+          "q2_6_recorded_rad": -0.09362680531037522,
+          "coaxial_joint_difference_change_rad": 1.3877787807814457e-17,
+          "inferred_prequantization_q1_6_rad": -0.001332805310375218,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 5.684341886080802e-14,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 2.5846590824049897e-09,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        },
+        {
+          "row_index": 208,
+          "index": 9,
+          "physical_translation_error_mm": [
+            -0.0026559700355051064,
+            0.003318272032970526,
+            -6.32540718470409e-07
+          ],
+          "physical_translation_max_abs_mm": 0.003318272032970526,
+          "physical_rotation_matrix_max_abs_error": 6.835397312637825e-06,
+          "base_approximate_pi_contribution_mm": [
+            -0.0026555793555189666,
+            0.003318518097216838,
+            0.0
+          ],
+          "native_chain_residual_contribution_mm": [
+            -3.906799861397303e-07,
+            -2.4606435999885434e-07,
+            -6.325406047835713e-07
+          ],
+          "combined_prediction_max_component_residual_mm": 1.1368683772161603e-13,
+          "combined_prediction_rotation_max_abs_residual": 2.220446049250313e-16,
+          "native_chain_target_translation_error_mm": [
+            -2.2737367544323206e-13,
+            -3.8746783559417963e-14,
+            2.842170943040401e-14
+          ],
+          "native_chain_target_translation_max_abs_mm": 2.2737367544323206e-13,
+          "native_chain_target_rotation_matrix_max_abs_error": 9.681942469974558e-10,
+          "q1_6_recorded_rad": -0.0016093673822186291,
+          "q2_6_recorded_rad": 1.7474906326177813,
+          "coaxial_joint_difference_change_rad": 2.220446049250313e-16,
+          "inferred_prequantization_q1_6_rad": -0.0016093673822188403,
+          "source_quantization_threshold_rad": 0.0001,
+          "hypothetical_unquantized_chain_target_translation_max_abs_mm": 3.410605131648481e-13,
+          "hypothetical_unquantized_chain_target_rotation_matrix_max_abs_error": 9.68194393870713e-10,
+          "hypothesis_scope": "Saved matrices and coaxial-update invariant only. Presnap solver vector was not logged; no solver rerun or replacement output was generated."
+        }
+      ],
+      "maximum_ik_prediction_residual_mm": 2.2737367544323206e-13,
+      "maximum_ik_orientation_error": 8.881784197001252e-16,
+      "ik_error_range_mm": [
+        0.0009823547767950913,
+        0.004205510990402672
+      ],
+      "maximum_nr_combined_prediction_residual_mm": 2.2737367544323206e-13,
+      "maximum_nr_combined_rotation_prediction_residual": 4.440892098500626e-16,
+      "nr_physical_error_range_mm": [
+        0.0028237312598662356,
+        0.003319912148583626
+      ],
+      "nr_chain_translation_error_range_mm": [
+        2.2737367544323206e-13,
+        4.547473508864641e-13
+      ],
+      "snap_candidates": [],
+      "native_fk_count": 100,
+      "maximum_independent_fk_translation_error_mm": 4.547473508864641e-13,
+      "native_and_independent_jacobian_ranks": {
+        "author_elbow_only": {
+          "independent_analytic": 6,
+          "native_finite_difference": 6,
+          "independent_finite_difference": 6
+        },
+        "wrist_zero": {
+          "independent_analytic": 5,
+          "native_finite_difference": 5,
+          "independent_finite_difference": 5
+        },
+        "regular": {
+          "independent_analytic": 6,
+          "native_finite_difference": 6,
+          "independent_finite_difference": 6
+        }
+      },
+      "frozen_check_counts": {
+        "total": 348,
+        "passed": 294,
+        "failed": 54
+      }
+    }
+  }
+}

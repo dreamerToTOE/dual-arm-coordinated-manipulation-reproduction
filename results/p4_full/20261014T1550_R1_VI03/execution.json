@@ -1,0 +1,72 @@
+{
+  "schema": "P4_D079_NATIVE_QUALIFICATION_RUN_V1",
+  "run_id": "20261014T1550_R1_VI03",
+  "started_at_utc": "2026-10-14T15:39:36.482547+00:00",
+  "source_commit": "02356f75ba8867855a8c64c96ae0d63da53e8514",
+  "git_status_at_start": "?? baselines/p4_full/planar_native_qualification.cpp\n?? baselines/p4_full/verify_planar_native_qualification.py\n?? references/private_sources\n?? results/p4_full/20261014T1528_R1_ABB01/\n?? results/p4_full/20261014T1540_R1_COMAU01/\n?? results/p4_full/20261014T1545_R1_COMAU02/\n",
+  "protocol_sha256": "81dee90f09c6d4eb37457fef2eba30568c55026b89cf45890027315139cfbc2a",
+  "source_manifest_sha256": "6d5dd1c4c353da51c9f6331afa60f98b01559b72b2b666e4375e003f8ca63cac",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "formal_planning_calls": 0,
+  "stages": [
+    {
+      "target": "VI",
+      "author_commit": "25488a86947cd07377cc62c43850df719a70d9ee",
+      "driver_sha256": "40bc2ed78a6a511a10199d5062969cd2d1f155b5e20a0c18486fbc93b4fede3a",
+      "author_source_hashes": {
+        "proj_classes/apc_class.cpp": "8f52ae7296c4cdb6310ce957d65eac882ce8e56baba35710b8a8fd083e2b2522",
+        "proj_classes/apc_class.h": "210a1a6c594ed3dadd93ab40d9cc369da2d01b18aadc4e1ecd051929d1090be9",
+        "proj_classes/kdl_class.cpp": "25ba515a577de8b124682d83b584e872588d2c31712873f9ed123a21e9955f9c",
+        "proj_classes/kdl_class.h": "848d4589418faf92f9e71d7f01adc49797033267d32747cb69747e8fe64e9178"
+      },
+      "build": {
+        "command": [
+          "g++",
+          "-std=c++17",
+          "-O2",
+          "-Wall",
+          "-Wextra",
+          "-I/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes",
+          "-I/usr/include/eigen3",
+          "-DP4_COMAU_MODEL=6",
+          "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp",
+          "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp",
+          "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp",
+          "-lorocos-kdl",
+          "-o",
+          "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1550_R1_VI03/VI"
+        ],
+        "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+        "limit_s": 120,
+        "status": "COMPLETED",
+        "exit_code": 0,
+        "wall_s": 4.121173316001659,
+        "stdout_stderr": "results/p4_full/20261014T1550_R1_VI03/VI_build.log",
+        "log_sha256": "71edaee1a4747badcbb5c2105280525f6343cf71bbf481dceedfac76bb0b995b"
+      },
+      "binary_sha256": "c31d3e249c59b9c6df00c880dcd6bee842ead55304fc6e54a1c02c726ce26e56",
+      "diagnostics": [
+        {
+          "command": [
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1550_R1_VI03/VI",
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261014T1550_R1_VI03/VI_native.jsonl",
+            "20261014"
+          ],
+          "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+          "limit_s": 120,
+          "status": "COMPLETED",
+          "exit_code": 0,
+          "wall_s": 0.015666748004150577,
+          "stdout_stderr": "results/p4_full/20261014T1550_R1_VI03/VI_native.log",
+          "log_sha256": "6f66a150fdb956b3a188fc02a7f5a8a35805d329c6de4f7f0e1dcd64f6b86248",
+          "native_data": "results/p4_full/20261014T1550_R1_VI03/VI_native.jsonl",
+          "native_sha256": "42f0153a01fb8a1d1bddfd6dbd60f91bbe0bdd15a21ce016636515f993d859c8"
+        }
+      ]
+    }
+  ],
+  "copyright": "Only own test drivers/logs published. Author source and meshes external.",
+  "wall_s": 4.146704603997932,
+  "status": "COMPONENT_DIAGNOSTICS_RECORDED",
+  "ended_at_utc": "2026-10-14T15:39:40.629238+00:00"
+}

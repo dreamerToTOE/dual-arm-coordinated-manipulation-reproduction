@@ -1,0 +1,58 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:10,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:20:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/def.h:3:12: error: expected unqualified-id before numeric constant
+    3 | #define PI 3.1416
+      |            ^~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp: In member function ‘double two_robots::normDistance(State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp:406:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  406 |         for (int i=0; i<q_a.size(); i++) {
+      |                       ~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp: In member function ‘bool two_robots::InvertMatrix(Matrix, Matrix&)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp:513:9: warning: unused variable ‘i’ [-Wunused-variable]
+  513 |     int i;
+      |         ^
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp: In member function ‘void two_robots::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp:699:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  699 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘bool kdl::GD12(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:177:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  177 |         for (int i = 0; i < chain.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:193:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  193 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:147:14: warning: unused variable ‘valid’ [-Wunused-variable]
+  147 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:273:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  273 |         for (int i = 0; i < q_flip.size(); i++)
+      |                         ~~^~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:277:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  277 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK13(State, int)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:298:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  298 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:302:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  302 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘bool kdl::IK3(State, Matrix)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:351:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  351 |         for (int i = 0; i < rob3.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:361:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  361 |                 for (int i = 0; i < q3.size(); i++)
+      |                                 ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:367:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  367 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:330:14: warning: unused variable ‘valid’ [-Wunused-variable]
+  330 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘void kdl::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:451:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  451 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~

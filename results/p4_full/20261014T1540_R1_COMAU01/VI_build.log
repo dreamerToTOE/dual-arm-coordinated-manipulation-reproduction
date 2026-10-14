@@ -1,0 +1,203 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:10,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/def.h:3:12: error: expected unqualified-id before numeric constant
+    3 | #define PI 3.1416
+      |            ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp: In function ‘int main(int, char**)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:177:38: error: reference to ‘vector’ is ambiguous
+  177 |             << "\"joint_low_rad\":"; vector(out,low);
+      |                                      ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:178:40: error: reference to ‘vector’ is ambiguous
+  178 |         out << ",\"joint_high_rad\":"; vector(out,high);
+      |                                        ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:179:46: error: reference to ‘vector’ is ambiguous
+  179 |         out << ",\"author_properties_mm\":"; vector(out,apc.get_robots_properties());
+      |                                              ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:180:43: error: reference to ‘vector’ is ambiguous
+  180 |         out << ",\"kdl_properties_mm\":"; vector(out,nr.get_robots_properties());
+      |                                           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:203:13: error: reference to ‘vector’ is ambiguous
+  203 |             vector(out,q); out << ",\"author_fk\":"; all_fk(out,apc,q);
+      |             ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:218:17: error: reference to ‘vector’ is ambiguous
+  218 |                 vector(out,q_source); out << ",\"target\":"; matrix(out,target);
+      |                 ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:221:72: error: reference to ‘vector’ is ambiguous
+  221 |                 if (accepted) { const State result=ik_result(apc,arm); vector(out,result);
+      |                                                                        ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:240:13: error: reference to ‘vector’ is ambiguous
+  240 |             vector(out,original); out << ",\"offset_rad\":"; vector(out,offset);
+      |             ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:240:62: error: reference to ‘vector’ is ambiguous
+  240 |             vector(out,original); out << ",\"offset_rad\":"; vector(out,offset);
+      |                                                              ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:241:41: error: reference to ‘vector’ is ambiguous
+  241 |             out << ",\"input_q_rad\":"; vector(out,input);
+      |                                         ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:244:68: error: reference to ‘vector’ is ambiguous
+  244 |             if (accepted) { const State result=nr.get_GD_result(); vector(out,result);
+      |                                                                    ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:271:63: error: reference to ‘vector’ is ambiguous
+  271 |                     << "\",\"arm\":" << arm << ",\"q_rad\":"; vector(out,q);
+      |                                                               ^~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:39:6: note: candidates are: ‘void {anonymous}::vector(std::ostream&, const State&)’
+   39 | void vector(std::ostream& out, const State& x) {
+      |      ^~~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.h:5,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp:6:
+/usr/include/c++/11/bits/stl_vector.h:389:11: note:                 ‘template<class _Tp, class _Alloc> class std::vector’
+  389 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |           ^~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp: In member function ‘double two_robots::normDistance(State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp:406:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  406 |         for (int i=0; i<q_a.size(); i++) {
+      |                       ~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp: In member function ‘bool two_robots::InvertMatrix(Matrix, Matrix&)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp:513:9: warning: unused variable ‘i’ [-Wunused-variable]
+  513 |     int i;
+      |         ^
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp: In member function ‘void two_robots::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/apc_class.cpp:699:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  699 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘bool kdl::GD12(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:177:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  177 |         for (int i = 0; i < chain.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:193:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  193 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:147:14: warning: unused variable ‘valid’ [-Wunused-variable]
+  147 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:273:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  273 |         for (int i = 0; i < q_flip.size(); i++)
+      |                         ~~^~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:277:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  277 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK13(State, int)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:298:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  298 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:302:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  302 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘bool kdl::IK3(State, Matrix)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:351:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  351 |         for (int i = 0; i < rob3.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:361:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  361 |                 for (int i = 0; i < q3.size(); i++)
+      |                                 ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:367:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  367 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:330:14: warning: unused variable ‘valid’ [-Wunused-variable]
+  330 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp: In member function ‘void kdl::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/proj_classes/kdl_class.cpp:451:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  451 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~

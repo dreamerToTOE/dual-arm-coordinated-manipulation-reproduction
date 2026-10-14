@@ -1,0 +1,177 @@
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘bool StateValidityChecker::sampleSingular(ompl::base::State*)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:391:21: error: ‘IsRobotsFeasible_R2’ was not declared in this scope
+  391 |                 if (IsRobotsFeasible_R2(q2)) {
+      |                     ^~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:396:42: error: no matching function for call to ‘StateValidityChecker::updateStateVector(ompl::base::State*&, State&, State&)’
+  396 |                         updateStateVector(state, q1, q2);
+      |                         ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:43:6: note: candidate: ‘void StateValidityChecker::updateStateVector(const ompl::base::State*, State, State, State)’
+   43 | void StateValidityChecker::updateStateVector(const ob::State *state, State q1, State q2, State q3) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:43:6: note:   candidate expects 4 arguments, 3 provided
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:397:53: error: no match for ‘operator=’ (operand types are ‘State’ {aka ‘std::vector<double>’} and ‘Matrix’ {aka ‘std::vector<std::vector<double> >’})
+  397 |                         ik = identify_state_ik(state);
+      |                                                     ^
+In file included from /usr/include/c++/11/vector:72,
+                 from /usr/include/c++/11/bits/random.h:34,
+                 from /usr/include/c++/11/random:49,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/util/RandomNumbers.h:41,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/base/StateSampler.h:41,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/base/StateSpace.h:42,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/base/SpaceInformation.h:43,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:11,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/usr/include/c++/11/bits/vector.tcc:198:5: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = double; _Alloc = std::allocator<double>]’
+  198 |     vector<_Tp, _Alloc>::
+      |     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/vector.tcc:199:42: note:   no known conversion for argument 1 from ‘Matrix’ {aka ‘std::vector<std::vector<double> >’} to ‘const std::vector<double>&’
+  199 |     operator=(const vector<_Tp, _Alloc>& __x)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/include/c++/11/vector:67,
+                 from /usr/include/c++/11/bits/random.h:34,
+                 from /usr/include/c++/11/random:49,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/util/RandomNumbers.h:41,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/base/StateSampler.h:41,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/base/StateSpace.h:42,
+                 from /opt/ros/humble/include/ompl-1.7/ompl/base/SpaceInformation.h:43,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:11,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/usr/include/c++/11/bits/stl_vector.h:709:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = double; _Alloc = std::allocator<double>]’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:709:26: note:   no known conversion for argument 1 from ‘Matrix’ {aka ‘std::vector<std::vector<double> >’} to ‘std::vector<double>&&’
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |                 ~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_vector.h:730:7: note: candidate: ‘std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = double; _Alloc = std::allocator<double>]’
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:730:46: note:   no known conversion for argument 1 from ‘Matrix’ {aka ‘std::vector<std::vector<double> >’} to ‘std::initializer_list<double>’
+  730 |       operator=(initializer_list<value_type> __l)
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘double StateValidityChecker::stateDistance(const ompl::base::State*, const ompl::base::State*)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:546:28: error: no matching function for call to ‘StateValidityChecker::retrieveStateVector(const ompl::base::State*&, State&, State&)’
+  546 |         retrieveStateVector(s1, qa1, qa2);
+      |         ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:23:6: note: candidate: ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&, State&, State&)’
+   23 | void StateValidityChecker::retrieveStateVector(const ob::State *state, State &q1, State &q2, State &q3) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:23:6: note:   candidate expects 4 arguments, 3 provided
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:34:6: note: candidate: ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&)’
+   34 | void StateValidityChecker::retrieveStateVector(const ob::State *state, State &q) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:34:6: note:   candidate expects 2 arguments, 3 provided
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:547:28: error: no matching function for call to ‘StateValidityChecker::retrieveStateVector(const ompl::base::State*&, State&, State&)’
+  547 |         retrieveStateVector(s2, qb1, qb2);
+      |         ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:23:6: note: candidate: ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&, State&, State&)’
+   23 | void StateValidityChecker::retrieveStateVector(const ob::State *state, State &q1, State &q2, State &q3) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:23:6: note:   candidate expects 4 arguments, 3 provided
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:34:6: note: candidate: ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&)’
+   34 | void StateValidityChecker::retrieveStateVector(const ob::State *state, State &q) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:34:6: note:   candidate expects 2 arguments, 3 provided
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: At global scope:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:558:6: error: no declaration matches ‘bool StateValidityChecker::isValidRBS(State&, State&, State&, int, State)’
+  558 | bool StateValidityChecker::isValidRBS(State &q1, State &q2, State &q3, int active_chain, State IK_sol) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:40:14: note: candidate is: ‘bool StateValidityChecker::isValidRBS(State&, State&, State&, int, int)’
+   40 |         bool isValidRBS(State&, State&, State&, int, int);
+      |              ^~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:26:7: note: ‘class StateValidityChecker’ defined here
+   26 | class StateValidityChecker : public two_robots, public collisionDetection
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘bool StateValidityChecker::checkMotionRBS(State, State, State, State, State, State, int, State, int, int)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:604:51: error: cannot convert ‘State’ {aka ‘std::vector<double>’} to ‘int’
+  604 |         if (!isValidRBS(q1, q2, q3, active_chain, ik_sol)) // Also updates s_mid with the projected value
+      |                                                   ^~~~~~
+      |                                                   |
+      |                                                   State {aka std::vector<double>}
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:40:54: note:   initializing argument 5 of ‘bool StateValidityChecker::isValidRBS(State&, State&, State&, int, int)’
+   40 |         bool isValidRBS(State&, State&, State&, int, int);
+      |                                                      ^~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: At global scope:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:619:6: error: no declaration matches ‘bool StateValidityChecker::checkMotionRBS(const ompl::base::State*, const ompl::base::State*, int, int, State)’
+  619 | bool StateValidityChecker::checkMotionRBS(const ob::State *s1, const ob::State *s2, int sg, int active_chain, State ik_sol)
+      |      ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:48:14: note: candidates are: ‘bool StateValidityChecker::checkMotionRBS(State, State, State, State, State, State, State, State, State, int, State, int, int)’
+   48 |         bool checkMotionRBS(State, State, State, State, State, State, State, State, State, int, State, int, int);
+      |              ^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:47:14: note:                 ‘bool StateValidityChecker::checkMotionRBS(const ompl::base::State*, const ompl::base::State*, int, int, int)’
+   47 |         bool checkMotionRBS(const ob::State *, const ob::State *, int, int, int);
+      |              ^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:589:6: note:                 ‘bool StateValidityChecker::checkMotionRBS(State, State, State, State, State, State, int, State, int, int)’
+  589 | bool StateValidityChecker::checkMotionRBS(State qa1, State qa2, State qa3, State qb1, State qb2, State qb3, int active_chain, State ik_sol, int recursion_depth, int non_decrease_count) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:573:6: note:                 ‘bool StateValidityChecker::checkMotionRBS(const ompl::base::State*, const ompl::base::State*, int, State)’
+  573 | bool StateValidityChecker::checkMotionRBS(const ob::State *s1, const ob::State *s2, int active_chain, State ik_sol)
+      |      ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:26:7: note: ‘class StateValidityChecker’ defined here
+   26 | class StateValidityChecker : public two_robots, public collisionDetection
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘bool StateValidityChecker::checkMotionRBS(State, State, State, State, State, State, State, State, State, int, State, int, int)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:649:56: error: ‘q3’ was not declared in this scope; did you mean ‘T3’?
+  649 |         midpoint(qa1, qa2, qa3, qb1, qb2, qb3, q1, q2, q3);
+      |                                                        ^~
+      |                                                        T3
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:661:62: error: ‘dsg2’ was not declared in this scope; did you mean ‘qsg2’?
+  661 |         if ( checkMotionRBS(qa1, qa2, qa3, q1, q2, q3, qsg1, dsg2, qsg3, active_chain, ik_sol, recursion_depth+1, non_decrease_count) && checkMotionRBS(q1, q2, qb1, qb2, qsg1, dsg2, qsg3, active_chain, ik_sol, recursion_depth+1, non_decrease_count) )
+      |                                                              ^~~~
+      |                                                              qsg2
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘bool StateValidityChecker::reconstructRBS(State, State, State, State, State, State, int, State, Matrix&, int, int, int)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:719:51: error: cannot convert ‘State’ {aka ‘std::vector<double>’} to ‘int’
+  719 |         if (!isValidRBS(q1, q2, q3, active_chain, ik_sol)) // Also updates s_mid with the projected value
+      |                                                   ^~~~~~
+      |                                                   |
+      |                                                   State {aka std::vector<double>}
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:40:54: note:   initializing argument 5 of ‘bool StateValidityChecker::isValidRBS(State&, State&, State&, int, int)’
+   40 |         bool isValidRBS(State&, State&, State&, int, int);
+      |                                                      ^~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: At global scope:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:740:6: error: no declaration matches ‘bool StateValidityChecker::reconstructRBS(const ompl::base::State*, const ompl::base::State*, Matrix&, int, int, State)’
+  740 | bool StateValidityChecker::reconstructRBS(const ob::State *s1, const ob::State *s2, Matrix &Confs, int sg, int active_chain, State ik_sol)
+      |      ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:56:14: note: candidates are: ‘bool StateValidityChecker::reconstructRBS(State, State, State, State, State, State, State, State, State, int, State, Matrix&, int, int, int)’
+   56 |         bool reconstructRBS(State, State, State, State, State, State, State, State, State, int, State, Matrix &, int, int, int);
+      |              ^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:55:14: note:                 ‘bool StateValidityChecker::reconstructRBS(const ompl::base::State*, const ompl::base::State*, Matrix&, int, int, int)’
+   55 |         bool reconstructRBS(const ob::State *, const ob::State *, Matrix &, int, int, int);
+      |              ^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:701:6: note:                 ‘bool StateValidityChecker::reconstructRBS(State, State, State, State, State, State, int, State, Matrix&, int, int, int)’
+  701 | bool StateValidityChecker::reconstructRBS(State qa1, State qa2, State qa3, State qb1, State qb2, State qb3, int active_chain, State ik_sol, Matrix &M, int iteration, int last_index, int firstORsecond) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:689:6: note:                 ‘bool StateValidityChecker::reconstructRBS(const ompl::base::State*, const ompl::base::State*, Matrix&, int, State)’
+  689 | bool StateValidityChecker::reconstructRBS(const ob::State *s1, const ob::State *s2, Matrix &Confs, int active_chain, State ik_sol)
+      |      ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:26:7: note: ‘class StateValidityChecker’ defined here
+   26 | class StateValidityChecker : public two_robots, public collisionDetection
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘bool StateValidityChecker::reconstructRBS(State, State, State, State, State, State, State, State, State, int, State, Matrix&, int, int, int)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:776:51: error: cannot convert ‘State’ {aka ‘std::vector<double>’} to ‘int’
+  776 |         if (!isValidRBS(q1, q2, q3, active_chain, ik_sol)) // Also updates s_mid with the projected value
+      |                                                   ^~~~~~
+      |                                                   |
+      |                                                   State {aka std::vector<double>}
+In file included from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:13:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.h:40:54: note:   initializing argument 5 of ‘bool StateValidityChecker::isValidRBS(State&, State&, State&, int, int)’
+   40 |         bool isValidRBS(State&, State&, State&, int, int);
+      |                                                      ^~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp: In member function ‘void StateValidityChecker::log_q(ompl::base::State*)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:824:28: error: no matching function for call to ‘StateValidityChecker::retrieveStateVector(ompl::base::State*&, State&, State&)’
+  824 |         retrieveStateVector(s, q1, q2);
+      |         ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:23:6: note: candidate: ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&, State&, State&)’
+   23 | void StateValidityChecker::retrieveStateVector(const ob::State *state, State &q1, State &q2, State &q3) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:23:6: note:   candidate expects 4 arguments, 3 provided
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:34:6: note: candidate: ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&)’
+   34 | void StateValidityChecker::retrieveStateVector(const ob::State *state, State &q) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T154529Z_VI_RSS_BUILD01/validity_checkers/StateValidityCheckerRSS.cpp:34:6: note:   candidate expects 2 arguments, 3 provided

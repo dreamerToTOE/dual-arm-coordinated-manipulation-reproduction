@@ -1,0 +1,76 @@
+g++ -O2 -I. -c src/PQP.cpp -o lib/PQP.o
+In file included from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+src/PQP_Compile.h:47:26: error: ‘float sqrt(float)’ conflicts with a previous declaration
+   47 | inline float sqrt(float x) { return (float)sqrt((double)x); }
+      |                          ^
+In file included from /usr/include/c++/11/math.h:36,
+                 from src/PQP_Compile.h:46,
+                 from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+/usr/include/c++/11/cmath:463:3: note: previous declaration ‘constexpr float std::sqrt(float)’
+  463 |   sqrt(float __x)
+      |   ^~~~
+In file included from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+src/PQP_Compile.h:48:25: error: ‘float cos(float)’ conflicts with a previous declaration
+   48 | inline float cos(float x) { return (float)cos((double)x); }
+      |                         ^
+In file included from /usr/include/c++/11/math.h:36,
+                 from src/PQP_Compile.h:46,
+                 from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+/usr/include/c++/11/cmath:184:3: note: previous declaration ‘constexpr float std::cos(float)’
+  184 |   cos(float __x)
+      |   ^~~
+In file included from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+src/PQP_Compile.h:49:25: error: ‘float sin(float)’ conflicts with a previous declaration
+   49 | inline float sin(float x) { return (float)sin((double)x); }
+      |                         ^
+In file included from /usr/include/c++/11/math.h:36,
+                 from src/PQP_Compile.h:46,
+                 from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+/usr/include/c++/11/cmath:425:3: note: previous declaration ‘constexpr float std::sin(float)’
+  425 |   sin(float __x)
+      |   ^~~
+In file included from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+src/PQP_Compile.h:50:26: error: ‘float fabs(float)’ conflicts with a previous declaration
+   50 | inline float fabs(float x) { return (float)fabs((double)x); }
+      |                          ^
+In file included from /usr/include/c++/11/math.h:36,
+                 from src/PQP_Compile.h:46,
+                 from src/PQP.h:44,
+                 from src/PQP.cpp:43:
+/usr/include/c++/11/cmath:241:3: note: previous declaration ‘constexpr float std::fabs(float)’
+  241 |   fabs(float __x)
+      |   ^~~~
+src/PQP.cpp: In member function ‘int PQP_Model::MemUsage(int)’:
+src/PQP.cpp:253:38: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘PQP_Model*’ [-Wformat=]
+  253 |     fprintf(stderr,"Total for model %x: %d bytes\n", this, total_mem);
+      |                                     ~^               ~~~~
+      |                                      |               |
+      |                                      unsigned int    PQP_Model*
+src/PQP.cpp:254:44: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long unsigned int’ [-Wformat=]
+  254 |     fprintf(stderr,"BVs: %d alloced, take %d bytes each\n",
+      |                                           ~^
+      |                                            |
+      |                                            int
+      |                                           %ld
+  255 |             num_bvs, sizeof(BV));
+      |                      ~~~~~~~~~~             
+      |                      |
+      |                      long unsigned int
+src/PQP.cpp:256:45: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long unsigned int’ [-Wformat=]
+  256 |     fprintf(stderr,"Tris: %d alloced, take %d bytes each\n",
+      |                                            ~^
+      |                                             |
+      |                                             int
+      |                                            %ld
+  257 |             num_tris, sizeof(Tri));
+      |                       ~~~~~~~~~~~            
+      |                       |
+      |                       long unsigned int
+make: *** [Makefile:26：lib/PQP.o] 错误 1

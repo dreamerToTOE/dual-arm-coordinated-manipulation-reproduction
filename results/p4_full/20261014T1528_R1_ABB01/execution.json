@@ -1,0 +1,87 @@
+{
+  "schema": "P4_D079_NATIVE_QUALIFICATION_RUN_V1",
+  "run_id": "20261014T1528_R1_ABB01",
+  "started_at_utc": "2026-10-14T15:28:23.584199+00:00",
+  "source_commit": "8e7aa5ab42855be6a2fa0d143c5a7a22d327b551",
+  "git_status_at_start": "?? baselines/p4_full/abb_independent_oracle.py\n?? baselines/p4_full/analyze_comau_native_qualification.py\n?? baselines/p4_full/comau_native_qualification.cpp\n?? references/private_sources\n",
+  "protocol_sha256": "81dee90f09c6d4eb37457fef2eba30568c55026b89cf45890027315139cfbc2a",
+  "source_manifest_sha256": "6d5dd1c4c353da51c9f6331afa60f98b01559b72b2b666e4375e003f8ca63cac",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "formal_planning_calls": 0,
+  "stages": [
+    {
+      "target": "ABB",
+      "author_commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+      "driver_sha256": "64222313a66c194d474c917bba19620a9e0cc2723d5d4214b0fd3b1ef6b898e7",
+      "author_source_hashes": {
+        "proj_classes/apc_class.cpp": "c74ea9ade8bb7d80b0b980139c58b659e6911ab3d3cb61b853be980654ede22c",
+        "proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+        "proj_classes/kdl_class.cpp": "83a0ab6109fddb3d820d9987791c921c340287648630d18dc2a68e3728a21fd4",
+        "proj_classes/kdl_class.h": "6b8790a0f5d12811bdbcd1ffe45e6b5e37e9e72b25f306c9775004be1bf07fde"
+      },
+      "build": {
+        "command": [
+          "g++",
+          "-std=c++17",
+          "-O2",
+          "-Wall",
+          "-Wextra",
+          "-I/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes",
+          "-I/usr/include/eigen3",
+          "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/abb_native_qualification.cpp",
+          "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.cpp",
+          "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/kdl_class.cpp",
+          "-lorocos-kdl",
+          "-o",
+          "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1528_R1_ABB01/ABB"
+        ],
+        "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+        "limit_s": 120,
+        "status": "COMPLETED",
+        "exit_code": 0,
+        "wall_s": 3.9208526510046795,
+        "stdout_stderr": "results/p4_full/20261014T1528_R1_ABB01/ABB_build.log",
+        "log_sha256": "1992b740491bb7a2d96d3e8e92002f5fb8ce3baecffa397672290d2c677619c3"
+      },
+      "binary_sha256": "b05349c5763bbb9d6ccfe889c1e2b9b7950f173e6d988c9cd98b8eb4f70bf460",
+      "diagnostics": [
+        {
+          "command": [
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1528_R1_ABB01/ABB",
+            "II",
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261014T1528_R1_ABB01/II_native.json"
+          ],
+          "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+          "limit_s": 120,
+          "status": "COMPLETED",
+          "exit_code": 0,
+          "wall_s": 0.01569112200377276,
+          "stdout_stderr": "results/p4_full/20261014T1528_R1_ABB01/II_native.log",
+          "log_sha256": "8f1d904f96256982fd7ef81a79011eeb83d107b939d04e03a14283e79d16818a",
+          "native_data": "results/p4_full/20261014T1528_R1_ABB01/II_native.json",
+          "native_sha256": "b23a5e4f3aef707a5c2ee325f20ff9698786fd403e6f1db59053ecfa4f23b3d9"
+        },
+        {
+          "command": [
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261014T1528_R1_ABB01/ABB",
+            "III",
+            "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261014T1528_R1_ABB01/III_native.json"
+          ],
+          "cwd": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+          "limit_s": 120,
+          "status": "COMPLETED",
+          "exit_code": 0,
+          "wall_s": 0.007518790000176523,
+          "stdout_stderr": "results/p4_full/20261014T1528_R1_ABB01/III_native.log",
+          "log_sha256": "8f1d904f96256982fd7ef81a79011eeb83d107b939d04e03a14283e79d16818a",
+          "native_data": "results/p4_full/20261014T1528_R1_ABB01/III_native.json",
+          "native_sha256": "695971760c5947022f1889164455159b1ba9a2fded6f1c417eeb8929fff643c0"
+        }
+      ]
+    }
+  ],
+  "copyright": "Only own test drivers/logs published. Author source and meshes external.",
+  "wall_s": 3.9548993249991327,
+  "status": "COMPONENT_DIAGNOSTICS_RECORDED",
+  "ended_at_utc": "2026-10-14T15:28:27.539085+00:00"
+}

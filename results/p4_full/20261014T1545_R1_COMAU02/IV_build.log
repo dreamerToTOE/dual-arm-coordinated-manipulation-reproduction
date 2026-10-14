@@ -1,0 +1,54 @@
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp: In member function ‘double two_robots::normDistance(State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp:358:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  358 |         for (int i=0; i<q_a.size(); i++) {
+      |                       ~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp: In member function ‘bool two_robots::InvertMatrix(Matrix, Matrix&)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp:465:9: warning: unused variable ‘i’ [-Wunused-variable]
+  465 |     int i;
+      |         ^
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp: In member function ‘void two_robots::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp:651:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  651 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp: In constructor ‘kdl::kdl()’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:64:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+   64 |         for (int i = 0; i < nj; i++) {
+      |                         ~~^~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp: In member function ‘bool kdl::GD(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:108:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  108 |         for (int i = 0; i < chain.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:124:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  124 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:78:14: warning: unused variable ‘valid’ [-Wunused-variable]
+   78 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp: In member function ‘bool kdl::GD_JL(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:182:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  182 |         for (int i = 0; i < chain.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:198:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  198 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:152:14: warning: unused variable ‘valid’ [-Wunused-variable]
+  152 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:272:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  272 |         for (int i = 0; i < q_flip.size(); i++)
+      |                         ~~^~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:276:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  276 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK6(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:308:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  308 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:312:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  312 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp: In member function ‘void kdl::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp:378:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  378 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
