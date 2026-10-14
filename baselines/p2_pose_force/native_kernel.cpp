@@ -125,6 +125,17 @@ extern "C" int p2_field_fd50(const double*x,const double*u,const int*m,const dou
         }return 0;
     }catch(const std::exception&e){error_message=e.what();return 1;}
 }
+extern "C" int p2_field_fd5_50(const double*x,const double*u,const int*m,const double*p,double eps,double*A){
+    try {auto base=unpack(x);auto in=inputs(u,m);auto ph=params(p);Big e(eps);
+        for(int col=0;col<42;col++){
+            std::array<V42<Big>,4>ys;const int coefficients[4]={-2,-1,1,2};
+            for(int point=0;point<4;point++){State<Big> s;V42<Big>delta=V42<Big>::Zero();delta(col)=Big(coefficients[point])*e;
+                for(int j=0;j<6;j++)s.T[j]=base.T[j].cast<Big>()*expse3(V6<Big>(delta.segment<6>(pose_offsets[j])));
+                s.V=base.V.cast<Big>()+delta.segment<6>(6);ys[point]=field(s,in,ph);}
+            for(int row=0;row<42;row++)A[row*42+col]=((ys[0](row)-Big(8)*ys[1](row)+Big(8)*ys[2](row)-ys[3](row))/(Big(12)*e)).convert_to<double>();
+        }return 0;
+    }catch(const std::exception&e){error_message=e.what();return 1;}
+}
 extern "C" int p2_contact(const double*x,const double*u,const int*m,const double*p,double*out){
     try {auto s=unpack(x);auto in=inputs(u,m);auto c=contact(s,in,params(p));int n=0;for(int r=0;r<2;r++)for(int i=0;i<16;i++)out[n++]=c.D[r](i/4,i%4);
         for(auto*arrays:{&c.tau,&c.hK,&c.hB,&c.h})for(auto&v:*arrays)for(int i=0;i<6;i++)out[n++]=v(i);

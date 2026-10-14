@@ -46,6 +46,7 @@ class NativeModel:
         self.library.p2_last_error.restype=ctypes.c_char_p
         self.library.p2_field.argtypes=[self.ptr,self.ptr,self.iptr,self.ptr,self.ptr,self.ptr]
         self.library.p2_field_fd50.argtypes=[self.ptr,self.ptr,self.iptr,self.ptr,ctypes.c_double,self.ptr]
+        self.library.p2_field_fd5_50.argtypes=[self.ptr,self.ptr,self.iptr,self.ptr,ctypes.c_double,self.ptr]
         self.library.p2_contact.argtypes=[self.ptr,self.ptr,self.iptr,self.ptr,self.ptr]
         self.library.p2_advance.argtypes=[self.ptr,self.ptr,self.iptr,self.ptr,ctypes.c_double,ctypes.c_int,self.ptr,self.ptr,self.ptr]
         self._H={}
@@ -76,6 +77,12 @@ class NativeModel:
         """Qualification only: high precision central numerical derivative, no AD."""
         x,u,m,p=self.arguments(state,U,modes,physics);A=np.empty((42,42))
         self.check(self.library.p2_field_fd50(self.pointer(x),self.pointer(u),m.ctypes.data_as(self.iptr),self.pointer(p),float(epsilon),self.pointer(A)))
+        return A
+
+    def finite_difference_five_point_50digits(self,state,U,modes,physics,epsilon=1e-6):
+        """Approved v3 qualification-only five-point central derivative, no AD."""
+        x,u,m,p=self.arguments(state,U,modes,physics);A=np.empty((42,42))
+        self.check(self.library.p2_field_fd5_50(self.pointer(x),self.pointer(u),m.ctypes.data_as(self.iptr),self.pointer(p),float(epsilon),self.pointer(A)))
         return A
 
     def contact(self,state,U,modes,physics,*,decompose=True):
