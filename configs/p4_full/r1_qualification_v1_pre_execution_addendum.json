@@ -1,0 +1,29 @@
+{
+  "schema": "P4_R1_V1_PRE_EXECUTION_COORDINATE_ADDENDUM",
+  "parent_protocol_sha256": "81dee90f09c6d4eb37457fef2eba30568c55026b89cf45890027315139cfbc2a",
+  "created_before_any_native_qualification": true,
+  "reason": "Independent source review clarifies planar arbitrary link unit and author angle chart; no numeric tolerance is relaxed and no source endpoint is changed.",
+  "planar": {
+    "length_unit": "author_link_length_unit; L=1; not asserted m or mm",
+    "translation_numeric_gates": {"fk": 1e-7, "ik_projection": 1e-5},
+    "orientation_gates_unchanged": true,
+    "coordinate_chart": "q0..q18 in [-PI_,PI_], q19 in [0,2PI_]; KDL final joint angle PI_-q19",
+    "angle_scalar_diagnostic": "Author modulo2PI_ differs from physical rotation modulo true2pi; report both without changing either algorithm",
+    "jacobian_translation_scaling": "No /1000; author link unit unspecified",
+    "apc_diagnostic_calls": 40,
+    "apc_inputs": "unchanged author start, all20 passive partitions times2 branches; record failures without retry"
+  },
+  "spatial": {
+    "length_unit": "mm in author source, m only when explicitly /1000",
+    "ik_roundtrip_targets": 10,
+    "ik_calls_per_model": 80,
+    "fk_sample_count": 100,
+    "sampling": "Fixed mt19937_64 seed20261014; model source joint ranges; target robot cycles, no rejection/replacement",
+    "abb_nr_perturbations": "unchanged start/goal alternating, joint index floor(i/2) 0..4, +0.01/-0.01 rad",
+    "source_counter_initialization": "Explicit zeroing of public uninitialized diagnostic counters only; no author numerical source changed"
+  },
+  "formal_planning_calls": 0,
+  "total_wall_budget_unchanged_s": 1800,
+  "per_diagnostic_limit_unchanged_s": 120,
+  "unresolved_method_policy": "Retain original failures and independent diagnostics; no downstream planning for a failed or scientifically disputed model/strategy"
+}
