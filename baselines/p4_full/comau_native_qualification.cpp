@@ -3,8 +3,6 @@
 // Author literal endpoints: ckcComau2@80089340 run/plan_PCS.cpp:252-253;
 // ckcComau/industrialScene@ef6e9c4d run/plan_PCS.cpp:262-263;
 // ckcComau3@25488a86 run/plan_PCS.cpp:264-265. No endpoint is projected here.
-#include "apc_class.h"
-#include "kdl_class.h"
 
 #include <algorithm>
 #include <array>
@@ -18,6 +16,9 @@
 #include <random>
 #include <stdexcept>
 #include <string>
+
+#include "apc_class.h"
+#include "kdl_class.h"
 
 #ifndef P4_COMAU_MODEL
 #error Compile with P4_COMAU_MODEL=4, 5, or 6.
@@ -36,14 +37,14 @@ void number(std::ostream& out, double x) {
     else if (std::isnan(x)) out << "\"NaN\"";
     else out << (x < 0 ? "\"-Infinity\"" : "\"Infinity\"");
 }
-void vector(std::ostream& out, const State& x) {
+void write_state_json(std::ostream& out, const State& x) {
     out << '[';
     for (std::size_t i = 0; i < x.size(); ++i) { if (i) out << ','; number(out, x[i]); }
     out << ']';
 }
 void matrix(std::ostream& out, const Matrix& x) {
     out << '[';
-    for (std::size_t i = 0; i < x.size(); ++i) { if (i) out << ','; vector(out, x[i]); }
+    for (std::size_t i = 0; i < x.size(); ++i) { if (i) out << ','; write_state_json(out, x[i]); }
     out << ']';
 }
 State split(const State& q, int arm) {
@@ -85,7 +86,7 @@ void passive_fd(std::ostream& out, two_robots& model, const State& q, int arm, d
 }
 void closure_fd_record(std::ostream& out, two_robots& model, const char* name, const State& q) {
     out << "{\"type\":\"closure_fd_fixture\",\"name\":\"" << name
-        << "\",\"q_rad\":"; vector(out,q);
+        << "\",\"q_rad\":"; write_state_json(out,q);
     out << ",\"epsilon_rad\":1e-6,\"author_fk_reference\":"; all_fk(out,model,q);
     for (int sign : {1,-1}) {
         out << (sign==1?",\"author_fk_plus\":[":",\"author_fk_minus\":[");
@@ -132,7 +133,7 @@ const char* source_commit() {
 void state_record(std::ostream& out, two_robots& model, const char* type,
                   const char* name, const State& q) {
     out << "{\"type\":\"" << type << "\",\"name\":\"" << name << "\",\"q_rad\":";
-    vector(out, q); out << ",\"author_fk\":"; all_fk(out, model, q);
+    write_state_json(out, q); out << ",\"author_fk\":"; all_fk(out, model, q);
     out << '}' << std::endl;
 }
 }  // namespace
@@ -174,10 +175,10 @@ int main(int argc, char** argv) {
             << ",\"effective_seed\":" << effective_seed
             << ",\"seed_mapping\":\"base_seed+1000*model\",\"rng\":\"std::mt19937_64\",\"distribution\":\"uniform within declared author joint limits; no rejection or success selection\","
             << "\"fk_count\":100,\"ik_target_count\":10,\"ik_branch_count\":8,\"nr_near_count\":10,"
-            << "\"joint_low_rad\":"; vector(out,low);
-        out << ",\"joint_high_rad\":"; vector(out,high);
-        out << ",\"author_properties_mm\":"; vector(out,apc.get_robots_properties());
-        out << ",\"kdl_properties_mm\":"; vector(out,nr.get_robots_properties());
+            << "\"joint_low_rad\":"; write_state_json(out,low);
+        out << ",\"joint_high_rad\":"; write_state_json(out,high);
+        out << ",\"author_properties_mm\":"; write_state_json(out,apc.get_robots_properties());
+        out << ",\"kdl_properties_mm\":"; write_state_json(out,nr.get_robots_properties());
         out << ",\"base_xyz_yaw_mm_rad\":"; matrix(out,bases());
         out << ",\"grasp_transforms\":[";
 #if P4_COMAU_MODEL == 6
@@ -200,7 +201,7 @@ int main(int argc, char** argv) {
                     q[6*arm+j] = std::uniform_real_distribution<double>(low[j],high[j])(rng);
             fixed_samples.push_back(q);
             out << "{\"type\":\"fk_sample\",\"sample\":" << i << ",\"q_rad\":";
-            vector(out,q); out << ",\"author_fk\":"; all_fk(out,apc,q);
+            write_state_json(out,q); out << ",\"author_fk\":"; all_fk(out,apc,q);
             out << '}' << std::endl;
         }
 
@@ -215,10 +216,10 @@ int main(int argc, char** argv) {
                 const double call_s = std::chrono::duration<double>(Clock::now()-t0).count();
                 out << "{\"type\":\"ik_roundtrip\",\"sample\":" << i << ",\"arm\":" << arm
                     << ",\"branch\":" << branch << ",\"source_q_rad\":";
-                vector(out,q_source); out << ",\"target\":"; matrix(out,target);
+                write_state_json(out,q_source); out << ",\"target\":"; matrix(out,target);
                 out << ",\"accepted\":" << (accepted?"true":"false") << ",\"wall_s\":"; number(out,call_s);
                 out << ",\"q_result_rad\":";
-                if (accepted) { const State result=ik_result(apc,arm); vector(out,result);
+                if (accepted) { const State result=ik_result(apc,arm); write_state_json(out,result);
                     out << ",\"author_result_fk\":"; matrix(out,fk(apc,result,arm)); }
                 else out << "null,\"author_result_fk\":null";
                 out << '}' << std::endl;
@@ -237,11 +238,11 @@ int main(int argc, char** argv) {
             const double call_s=std::chrono::duration<double>(Clock::now()-t0).count();
             out << "{\"type\":\"nr_near_endpoint\",\"sample\":" << i << ",\"anchor\":\""
                 << (i%2?"goal":"start") << "\",\"anchor_q_rad\":";
-            vector(out,original); out << ",\"offset_rad\":"; vector(out,offset);
-            out << ",\"input_q_rad\":"; vector(out,input);
+            write_state_json(out,original); out << ",\"offset_rad\":"; write_state_json(out,offset);
+            out << ",\"input_q_rad\":"; write_state_json(out,input);
             out << ",\"accepted\":" << (accepted?"true":"false") << ",\"wall_s\":"; number(out,call_s);
             out << ",\"q_result_rad\":";
-            if (accepted) { const State result=nr.get_GD_result(); vector(out,result);
+            if (accepted) { const State result=nr.get_GD_result(); write_state_json(out,result);
                 out << ",\"author_result_fk\":"; all_fk(out,apc,result); }
             else out << "null,\"author_result_fk\":null";
             out << '}' << std::endl;
@@ -268,7 +269,7 @@ int main(int argc, char** argv) {
                 const char* name=mode==0?"regular_passive_jacobian_positive_control":
                     mode==1?"wrist_singular_q5_zero":"author_elbow_only_q3_minus_PI_over_2";
                 out << "{\"type\":\"passive_fixture\",\"name\":\"" << name
-                    << "\",\"arm\":" << arm << ",\"q_rad\":"; vector(out,q);
+                    << "\",\"arm\":" << arm << ",\"q_rad\":"; write_state_json(out,q);
                 out << ",\"author_fk\":"; matrix(out,fk(apc,q,arm));
                 out << ",\"epsilon_rad\":1e-6,\"author_fk_plus\":"; passive_fd(out,apc,q,arm,1);
                 out << ",\"author_fk_minus\":"; passive_fd(out,apc,q,arm,-1);
