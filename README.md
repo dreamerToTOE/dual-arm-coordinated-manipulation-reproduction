@@ -1,5 +1,11 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+> **2026-10-14 D076：P2独立动力学70/70、组件35/35、因果时序2/2通过；完整闭环部分完成。**
+> 原ID11 exp3/seed7真实运行至3.948s，估计接触域越界停止；未到7s/13s反馈开启，不能宣称联合控制效果。主1条失败/19未执行，其他10未执行；修正3/3已耗尽。
+> [当前17页Word](reports/第二篇P2物体位姿与内部作用力控制论文复现汇总_闭环资格审查.docx) · [PDF](reports/第二篇P2物体位姿与内部作用力控制论文复现汇总_闭环资格审查.pdf) · [审查摘要](reports/P2_CLOSED_LOOP_POST_TASK.md) · [数据/失败交付索引](reports/P2_CLOSED_LOOP_DELIVERY_INDEX.md)。
+> 原观察器式18/条件/指标保持，原源码/失败/报告及P4成果完整保留。后续预测解释须另行限定；不自动P3或Isaac。下列D068/D067为历史记录。
+
+
 > **2026-10-14 D068：P2接触几何68/68资格通过，原文审计与最小闭环协议已冻结。**
 > [数学推导](reports/P2_CONTACT_GEOMETRY_DERIVATION_RENDERED.md) · [冻结协议](reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md) · [本轮结果/限制](reports/P2_CONTACT_GEOMETRY_POST_TASK.md)。
 > 几何演化属于用户已批准偏离，原位姿/内力控制公式保留；完整控制/估计/动力学闭环尚未实施。

@@ -9,3 +9,7 @@
 ## 本次实际停点
 
 状态BLOCKED/TASK-BLOCKING数值资格，非完整完成；45/46首门，固定三点diagnosis支持FD截断。不得跳过原门。原新code存在但E/C未运行，30控制未执行。累计小修2/3余1；原冻结差分oracle更改须先裁决。报告及保全见P2_IMPLICIT_POST_TASK.md。
+
+## 最新D076实际结论
+
+v3 N/D70/70、E/C35/35、clock2/2通过；实际ID11止于3.948s估计pad域越界，P2 PARTIAL/BLOCKED。预算3/3余0，不追加代码小修，未到7/13s反馈及完整半步/四组主实验。全部原数据/失败/Word保留；本轮中文报告/交付见reports/P2_CLOSED_LOOP_POST_TASK.md。

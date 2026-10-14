@@ -1,0 +1,66 @@
+{
+  "title": "第二篇P2物体位姿与内部作用力控制论文复现汇总",
+  "builder_SHA": "e0ae77a10aac16f436e76c7c47fe9ea48944d4427d055be360f7e9bbe81b6e25",
+  "inherited_theory_builder_SHA": "a6bed1087d2381b25bceae549d0d3d1f2e525d3ad6e571f2c6d5f6548a5b0782",
+  "sources": {
+    "results/20261014_P2_implicit_qualification_v3_01": {
+      "cases.jsonl": "089a758d0ff37a60c9dbb05db628b0f1682c5ed385c44abc68d8afd7b8fa32ee",
+      "config_snapshot.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+      "high_moment_coarse.jsonl.gz": "aa775fceb4dbd59226c88c04773394474d4c1c2bfd11e2eef89b5a8095d0b237",
+      "high_moment_fine.jsonl.gz": "cace06c9bb77d03a00c329aa68b6ec05c54a7f480420cde4b44c0d5948f038a8",
+      "jac_sliding_pivot_pivot.npz": "b47c796d8e2e89b075904e1557b0c2e9e810c8e655aebf915c8454ffd03e608f",
+      "jac_sliding_pivot_sliding.npz": "08787296257ab4a17a219e2bbfb845031acff3b62519f94fb0b0f267b296c676",
+      "jac_sliding_tight_tight.npz": "308a4ff660161daac77c402f2d6496a4588597979cbeba0fc9bcae0a718de01b",
+      "jac_transport_pivot_pivot.npz": "891aeb1f8a520a2202bf9e5b831c09336d1f298688832577fbc11ce028a26450",
+      "jac_transport_pivot_sliding.npz": "0ddc47a2816fce256ece6fcfd4eb145d2cfa93d69795e73b9a02c42ee9b5475c",
+      "jac_transport_tight_tight.npz": "fb11a14f25dadd50a6a5fa341d043d42a5d0b449315f36746ca154f39bdd2788",
+      "metadata.json": "ca4913d7537dbcf76742b7da4a1f274b5b22c3071b763971165b92507d982170",
+      "sliding_coarse.jsonl.gz": "1cb48ffc3531869b61e2048ea62e0ae4c751a17fa37840bc016c3678c75ba080",
+      "sliding_fine.jsonl.gz": "f351ee0abd364e49bc2ceb1ab4b2c716a127565decae687b92288e08d1e90a73",
+      "summary.json": "c5c15aafaa3855961209b9641f4f64d85fc16afb0a99f3070613b4de7207af3f",
+      "transport_coarse.jsonl.gz": "7e808b0fb1fde8034cf887393d7e2e06a60808a13175a9d1ab3cec57a464ee25",
+      "transport_fine.jsonl.gz": "ebe2eae33753ab7c7f5b9d1deb714daabd73a98b109ebecb7220757b8e89fb4d"
+    },
+    "results/20261014_P2_closed_loop_suite02": {
+      "case_11_exp3_7/artifact_sha256.json": "17ebdb26eac5fe23a515899e6e64d38361ac0694c51d1e4126decea09e141224",
+      "case_11_exp3_7/calibration.json": "0e0ab6bc6a1f42c697e02a32b81f3bcc9302952ad81f2c8608c3d60467ea34cc",
+      "case_11_exp3_7/commands.jsonl.gz": "f4f3d5836ce390b858cda7a2d645b93c3d27a64edc12d5bfa708bfd744e2e809",
+      "case_11_exp3_7/config_snapshot.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+      "case_11_exp3_7/estimator.jsonl.gz": "30dfcad371859b6d4a2aaac1a61a62f288516f04404c46cb01b43387b9a7c0d2",
+      "case_11_exp3_7/events.jsonl": "3601920bb845677830ca53e123c9bcd1aeef7876ba51f511c85a54b6ca943930",
+      "case_11_exp3_7/failure_filter_matrices.npz": "adb910ebcbc454327d5f5bdf6f97bbcdf7e20f5752d969ee51c97639853db99d",
+      "case_11_exp3_7/initialization.json": "26da52a43e9c27b3260526270f9e4e22eb6608a3a255372b6d163bdf9582a2fa",
+      "case_11_exp3_7/metadata.json": "7319a994025e38bd24c0462874c07a08f9d5c9ce73880808950aed200f8fcadc",
+      "case_11_exp3_7/plant.jsonl.gz": "bd63d9ec2ab6bac7f347c76385e2ad7f167883602a35eee2c232dca49618fbf5",
+      "case_11_exp3_7/sensors.jsonl.gz": "2bb4d1c7da9ac2f852e3d95bdf277e7f5105cb874c2b6dee33000ccc1def612a",
+      "case_11_exp3_7/settling.jsonl.gz": "3d1ff9bdbc61d86521ad1e895e5825d140fb8ff3aa919f16a4b1bc7b876418d5",
+      "case_11_exp3_7/summary.json": "a0ca4e30d0a1601df4cb6c382024bb62bff2fb4a54999381ec2c4dc334114d7b",
+      "case_11_exp3_7/termination.json": "6e2af18a4e05653e54dce9702ca4eea9ee481e8e7cbf007b08ebe0ad8b9a8985",
+      "case_ledger.json": "9d53202f6dc0be0344d7cb64cd2fc8d3966bb9527f0ba1b8bb951e2915c6bcd1",
+      "config_snapshot.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+      "metadata.json": "d436fea997dabc6a0118b7615539bb62fb244a9c49fb0fe1e33fe35e9703844a",
+      "summary.json": "90b503594cef4a0871c1e520f420d8e6fa493a0b18eda8b380678ddcad71504a"
+    },
+    "results/20261014_P2_closed_loop_analysis01": {
+      "actual_paired_curves.npz": "abf68e975d2a20b0b13d567d028bea629d42bbbc5088324fd6b1abaa6aadf982",
+      "actual_prefix_metrics.json": "65035d5e5e4c4b35461e34a5ca6c402eeb9d15d60da165ab28d5bab531e627be",
+      "source_identity.json": "7100746178269978faea72d02aaa8cfee4d7ece4fdf421d2ebab0725ebca3c70"
+    }
+  },
+  "docx_SHA": "85421967fd9af4e9781c0b3ddfdecf6dde2e69e1502e277e628da99ed36a0d85",
+  "asset_SHA": {
+    "01_p2_control_flow.png": "70b8dfaf4c9988a91347b82f6d7f35d3445397ca9977bcdbc877ff04dfb20f04",
+    "02_six_real_dynamics.png": "4bd6a33538478e0f4c81d04c315983c023ced8f1bf90b80f9ecc347ee4fd119c",
+    "03_actual_motion_contact.png": "f4fb31373bc505b809c5bc8475491285650d8afbb7400910c2a5963e61fc987d",
+    "04_actual_internal_force_moment.png": "613f2581e2cc09c9cdc7973f7e5a90444f65956e06647f61e13a1084e0bf099c",
+    "05_actual_pose_estimation_error.png": "949fbff928a04e866bdbbdb483b2eab3589136490d5b88989836dcec55746de2",
+    "06_actual_velocity_estimation.png": "fa4fc3f7634b9935ea7cc1a4050223cee73074f0b9b674b21391da9ef9daac16",
+    "07_actual_commands.png": "8c06770c8dd28860766811b1c3744262ba1a32d32980413c148bcfcec53fb16e"
+  },
+  "closed_loop_cases_used": 1,
+  "closed_loop_complete_cases": 0,
+  "implicit_dynamics_trajectories_used": 6,
+  "corrections_used": 3,
+  "remaining_corrections": 0,
+  "no_experiment_execution_by_report": true
+}
