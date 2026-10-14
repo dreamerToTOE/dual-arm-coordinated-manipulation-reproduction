@@ -137,7 +137,7 @@ def half_step_gate(coarse,fine):
  return {'pass':bool(np.all(maxima<=np.array([5e-5,5e-4,.05,.002,.05,.002]))),'maxima':dict(zip(('position_m','angle_rad','raw_force_N','raw_moment_Nm','internal_force_N','internal_moment_Nm'),maxima.tolist())),'samples_compared':len(a),'thresholds_unchanged':True}
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--output-dir',required=True);args=ap.parse_args();out=Path(args.output_dir);out.mkdir(exist_ok=False)
+ ap=argparse.ArgumentParser();ap.add_argument('--output-dir',required=True);args=ap.parse_args();out=Path(args.output_dir).resolve();out.mkdir(exist_ok=False)
  cfgpath=ROOT/'configs/p2_closed_loop_protocol_v3.json';cfg=json.loads(cfgpath.read_text());gates=[ROOT/'results/20261014_P2_implicit_qualification_v3_01',ROOT/'results/20261014_P2_components_qualification01',ROOT/'results/20261014_P2_clock_qualification01']
  for gate in gates:assert json.loads((gate/'summary.json').read_text())['status']=='PASS'
  prior_wall=sum(json.loads((g/'summary.json').read_text()).get('wall_s',0) for g in gates);suite_started=time.perf_counter();native=NativeModel(build_native('/home/ubuntu2004/lmy/.p2_native_build_v3'))
