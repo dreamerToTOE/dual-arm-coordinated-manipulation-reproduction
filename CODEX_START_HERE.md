@@ -1,5 +1,10 @@
 # CODEX_START_HERE.md
 
+> **D079 — 2026-10-14 最新复现授权，优先于 D078 / D077 及更早阶段计划。**
+> **不新开分支。** 当前直接在已存在且Codex目前停止的 `p4-full-reproduction-pcs-study` 分支接续。先读 [全论文覆盖与失败根因规程](docs/REPRODUCTION_FULL_PAPER_COVERAGE_AND_ROOT_CAUSE_PROTOCOL.md)、[P4逐项29项完整义务表](docs/tasks/P4_ORIGINAL_FULL_COVERAGE_AND_RECOVERY_20261014.md)、[P2逐项33项完整义务表](docs/tasks/P2_ORIGINAL_FULL_COVERAGE_AND_RECOVERY_20261014.md) 及 [最终原文/实际范围对照表模板](reports/PAPER_ORIGINAL_VS_REPRODUCED_MATRIX_TEMPLATE.md)。旧 [P4 D078阶段任务书](docs/tasks/P4_FULL_ENVIRONMENTS_PCS_VALIDATION_20261014.md) 仍作步骤参考，但不能以“代表环境/小样本”代替全文实验。
+> **必须阅读全文后逐个核对原始公式、图、表、附录、算法对照及所有场景，先冻结逐项义务表，再编程和运行**；不得根据时间主动省掉实验。相同失败机制三次有证据修正仍失败后强制做独立根因复核；若是我方实现/建模问题，应提出新修复与预算方案继续攻克；若是论文资料不可得或原文疑似矛盾，必须逐项有证据归因，不能默认说论文错。**每篇结题更新完整原文与实测对照表、真实Word/PDF，先发给用户审核。**
+> 原冻结P4/P2科研记录全部保全，不做Isaac迁移，不自动执行下一篇。当前以P4先完成，P2为后续已规划任务；禁止只因规范上传就声称已跑实验。
+
 > **2026-10-14 D078：用户明确重新授权 P4 完整环境续研；此前最小复现范围不再满足本课题要求。**
 > 当前专项执行分支：p4-full-reproduction-pcs-study。Codex 请优先读取 [P4 六环境与 PCS 实证总任务](docs/tasks/P4_FULL_ENVIRONMENTS_PCS_VALIDATION_20261014.md)，按 Gate 0→1→2→3→4 依次完成环境审计、ABB/Comau/三臂搭建、RSS/PCS/NR 资格、复杂环境 PCS 消融、最终可迁移性判断。**任务尚未由本仓库文档上传自动执行，完成必须以真实源码、测试和日志证明。**
 > 原 P4 的 0/20、20/20、20/20，以及 P2 的冻结与失败均只读保留，不得覆盖、改判或将新样本混入旧统计。旧 P4 三次修正额度属于历史轮次，不是这次新续研的科学修改许可；所有新预算先独立冻结。
