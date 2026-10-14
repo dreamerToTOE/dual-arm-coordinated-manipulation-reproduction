@@ -1,5 +1,10 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+> **2026-10-14 D068：P2接触几何68/68资格通过，原文审计与最小闭环协议已冻结。**
+> [数学推导](reports/P2_CONTACT_GEOMETRY_DERIVATION_RENDERED.md) · [冻结协议](reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md) · [本轮结果/限制](reports/P2_CONTACT_GEOMETRY_POST_TASK.md)。
+> 几何演化属于用户已批准偏离，原位姿/内力控制公式保留；完整控制/估计/动力学闭环尚未实施。
+> 小修1/3、剩余2，原始记录与P4成果保留；下列D067待裁决是已解除的历史状态。
+
 > **2026-10-13 D067：P4阶段性报告已接受，P2原文审计完成，实验协议待接触模型裁决。**
 > 新分支 `reproduce-p2-paper-audit` 基于79cc871，保留P4全部源码/数据/失败/报告。
 > [P2原文公式审计](reports/P2_ORIGINAL_PAPER_AUDIT.md) · [最小闭环协议草案](reports/P2_CLOSED_LOOP_EXPERIMENT_PROTOCOL.md) · [任务卡](docs/tasks/P2_PAPER_AUDIT_AND_PROTOCOL.md)。

@@ -1,5 +1,16 @@
 # BUGS
 
+## 2026-10-14 — P2批准模型后资格与已知边界
+
+- **RESOLVED / USER_APPROVED**：式15几何争议已由用户批准新模型替代；Ng空间自由lift、Ac有限Log补偿68case资格通过。不是作者勘误/原样实现。
+- **RESOLVED（小修1）**：初版synthetic h差符号错误、恢复负例覆盖不齐；原PASS文件保留且交付资格INCOMPLETE，run02补齐通过。
+- **RESOLVED（启动）**：临时解释器失效，Python启动前exit127/case0；系统同版本可用，不计额外算法修正。
+- **KNOWN LIMITATION**：自由形变保持初值，不模拟已有预载释放；mode新释放/恢复需卸载，固定事件失守直接停止，不重锚或等待迫成功。
+- **KNOWN LIMITATION**：保留Rbar阻尼/Log弹性原近似；零功不代表整个接触模型被动、稳定或摩擦/硬件安全。
+- **DEFERRED / NOT IMPLEMENTED**：独立物体动力学、观测/42维IESEKF、原位姿/内力控制实际闭环和完整装配；几何PASS不能替代这些。
+- **KNOWN LIMITATION**：dualH转置虚功项仅代数自洽，未独立认证真实6D测量/作用点。
+- **LEGACY / DEFERRED**：P4不足、FR3/吸盘/Isaac场景及P3不在本轮修复范围。
+
 ## 2026-10-13 — P2原文审计停点
 
 - **TASK-BLOCKING / USER MODEL DECISION**：式15正号按式8/18更新不能消去自由方向形变；局部80μm反例。有限形变还涉及投影坐标次序/Rbar与Ad区别，未经裁决不改。

@@ -1,5 +1,7 @@
 # P2 — 原文公式审计与最小闭环协议
 
+> 2026-10-14更新：用户已批准几何一致路线；[接触资格任务](P2_CONTACT_GEOMETRY_QUALIFICATION.md)完成68/68数学检查，[实验协议冻结](../../reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md)。下文DRAFT/待裁决是59260fa时的历史任务记录；控制闭环尚未执行。
+
 Status: AUDIT_COMPLETE / PROTOCOL_DRAFT / STOP_FOR_MODEL_DECISION
 
 ## Scientific objective

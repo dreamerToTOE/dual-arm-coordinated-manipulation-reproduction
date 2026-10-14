@@ -1,5 +1,17 @@
 # EXPERIMENT_LOG
 
+## 2026-10-14 — P2有限接触几何资格（非控制实验）
+
+初版ac9e35d：results/20261013_P2_contact_geometry_qualification01/，66/66程序PASS；符号/覆盖问题使其交付资格INCOMPLETE，raw不改。
+修正1：b58e66f/51696a8，核心几何SHA47557da9…两轮相同；−KΔτ日志、恢复负例补齐，原输入/门限不改。
+
+    OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 scripts/qualify_p2_contact_geometry.py --output-dir results/20261014_P2_contact_geometry_qualification02
+
+68case=36有限导数+6坐标+2基+9H代数+9积分+6切换；全部资格通过。线性FD2.81893e−11m/s、角FD7.835997e−10rad/s，sliding自由漂移3.18535e−13m、pivot3.29656e−12rad。
+负切换为独立合成的released/restored无效预载，不是实际控制force；dualH转置功率项只代数自洽。所有数学状态/检查值/失败判断保存JSONL。
+原临时环境启动命令exit127，Python未启动/case0；失败另存environment/launch_failure.json。有效run版本与原一致。
+[原始/独立归档](../results/20261014_P2_contact_geometry_qualification02/independent_artifact_audit.json)。主闭环/GT控制/ODE/IESEKF矩阵均NOT_EXECUTED，小修1/3余2，P4/RSS/Isaac/ROS/P3运行0。
+
 ## 2026-10-13 — P2原文数学一致性诊断（非控制实验）
 
 一次实际命令：

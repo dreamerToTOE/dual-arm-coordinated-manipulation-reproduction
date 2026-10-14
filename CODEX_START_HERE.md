@@ -1,5 +1,14 @@
 # CODEX_START_HERE.md
 
+## 最新D068（2026-10-14）：P2原文审计与接触几何资格完成，协议冻结
+
+用户已批准几何一致路线；模型/有限形变检查/协议冻结完成，不能再次请求批准同一模型。
+读[冻结协议](reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md)、[本轮结果](reports/P2_CONTACT_GEOMETRY_POST_TASK.md)、[模型推导](reports/P2_CONTACT_GEOMETRY_DERIVATION_RENDERED.md)。
+68/68数学case通过，只标contact geometry资格；controller/42维IESEKF/独立物体动力学未实现，闭环0、协议frozen但不可执行。
+P2总小修1/3（日志符号/覆盖），余2；原66原始PASS与启动失败保存，原DRAFT不覆盖。
+下一实现阶段遵固定参数/seed/判据与trueplant/观测/估计/控制分离；不把数学积分当真实控制曲线。P4科学文件、旧P2资产保存，不自动P3/Isaac。
+下方D067等待模型裁决仅历史；同一几何路线已获用户明确批准。
+
 ## 最新研究任务 D067（2026-10-13，覆盖历史P4等待门禁）
 
 P4@79cc871阶段性审查通过，RSS失败与PCS换链优势未充分验证、全论文部分完成结论保留。P4不再修改/追加实验。

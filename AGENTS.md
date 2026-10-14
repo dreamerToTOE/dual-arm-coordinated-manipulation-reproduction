@@ -1,5 +1,16 @@
 # AGENTS.md — Mandatory rules for Codex / coding agents
 
+## 最新D068（2026-10-14）：接触几何已获批准并通过资格，P2协议冻结
+
+用户已明确批准重新推导几何一致接触模型，保留原位姿/内力控制器，记录差异，有限形变后冻结；不再次请求同一批准。
+模型`p2.spatial_free_log_constraint.v1`替代式15的G演化，属于已批[DEVIATION]；原式9/10/11/12及20/21/25保留，原阻尼近似/摩擦与释放缺项仍说明。
+读[冻结协议](reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md)、[接触推导](reports/P2_CONTACT_GEOMETRY_DERIVATION_RENDERED.md)、[资格任务](docs/tasks/P2_CONTACT_GEOMETRY_QUALIFICATION.md)。
+新配置`configs/p2_closed_loop_protocol_v1.json` frozen=true，接触几何68/68资格通过；完整动力学/IESEKF/控制尚未实现，executable=false，闭环run0。
+原run01程序66/66 PASS原样保留，交付资格INCOMPLETE；修正1修日志符号并补独立恢复负例，模型源码不变。P2总小修已用1/3，剩余2，不重置预算。
+切换在原定时刻检查新恢复/释放载荷及自由Log初态；失败停止，不重锚/等候改时刻/新增抓握控制迫成功。
+本轮完成审计、几何资格与冻结交付；后续实现沿冻结协议，重大新变化仍按用户规则停止。P4/RSS与P3/Isaac不自动开展。
+下方D067的模型待裁决状态为历史，已由本次明确批准及68项证据解除。
+
 ## 当前任务 D067（2026-10-13）：P4审查接受，P2原文审计交付，接触模型待裁决
 
 用户明确接受79cc871的P4阶段性报告；完整论文仍部分完成。P4全部源码、数据、失败和Word/PDF保留，禁止本轮继续P4/RSS。
