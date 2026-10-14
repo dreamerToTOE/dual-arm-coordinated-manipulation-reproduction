@@ -1,0 +1,61 @@
+{
+  "kind": "NATIVE_EQUIVALENCE_AND_IMPLICIT_DYNAMICS_QUALIFICATION_NO_CONTROL",
+  "date": "2026-10-14",
+  "command": [
+    "scripts/qualify_p2_implicit_v3.py",
+    "--output-dir",
+    "results/20261014_P2_implicit_qualification_v3_01"
+  ],
+  "source_commit": "45a547c80f79176e7566b72395a856ec33328881",
+  "source_sha256": {
+    "baselines/p2_pose_force/native_kernel.cpp": "5954502884798f76191da966e611a73d29f8a97641e5f77734b9770a29b3d66c",
+    "baselines/p2_pose_force/native_model.py": "429bcb05a91c9ee1fefc87d32ad3a0f6248d500b24b4b969f3ae3c3c72e817bf",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "baselines/p2_pose_force/estimator.py": "5c045a79b21038b64f8a97628923c654c784c30ba43ae9f09ea0733de3b96798",
+    "baselines/p2_pose_force/observations.py": "cc902ea092396c9164e27b33010e7639deae0b185798df34488b61f08e5d6665",
+    "scripts/qualify_p2_implicit_v3.py": "11508f9b17e9ac051b94a1d341a426bc4e1dbae79c827303e345449474f3cba8",
+    "reports/P2_IMPLICIT_V3_QUALIFICATION_SPEC.md": "485354ce54ea26479fb1389ed728c8485082e56fd85fafabee9ab080866eecd1"
+  },
+  "protocol_sha256": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "scipy": "1.8.0"
+  },
+  "build": {
+    "build_inputs": {
+      "source_sha256": "5954502884798f76191da966e611a73d29f8a97641e5f77734b9770a29b3d66c",
+      "flags": [
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-DNDEBUG",
+        "-shared",
+        "-fPIC",
+        "-I/usr/include/eigen3"
+      ],
+      "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+      "eigen_version": "3.4.0",
+      "boost_version": "1.74.0",
+      "machine_flags_use_local_CPU": true
+    },
+    "binary_sha256": "a3ff7b1bf26413f08e2fbc5e5021f34cf1512e2ca76591590ca403c21ab94949",
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-O3",
+      "-march=native",
+      "-DNDEBUG",
+      "-shared",
+      "-fPIC",
+      "-I/usr/include/eigen3",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2-audit/baselines/p2_pose_force/native_kernel.cpp",
+      "-o",
+      "/home/ubuntu2004/lmy/.p2_native_build_v3/p2_native.so"
+    ]
+  },
+  "corrections_used": 2,
+  "remaining_corrections": 1,
+  "FD_oracle": "50-digit five-point fourth-order; unchanged epsilon1e-6 and component atol1e-7"
+}
