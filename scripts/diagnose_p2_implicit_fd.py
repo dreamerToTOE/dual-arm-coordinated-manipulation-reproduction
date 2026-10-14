@@ -22,7 +22,7 @@ def main():
  for epsilon in (1e-6,2e-6,5e-7):
   fd=native.finite_difference_50digits(state,U,modes,physics,epsilon);e=A-fd;ind=np.unravel_index(np.abs(e).argmax(),e.shape)
   np.savez_compressed(out/('matrices_eps_'+format(epsilon,'.1e')+'.npz'),AD=A,FD50=fd,Python=ra)
-  rows.append({'epsilon':epsilon,'max_absolute_error':float(np.abs(e).max()),'max_index':list(ind),'AD_row9_col27':float(A[9,27]),'FD_row9_col27':float(fd[9,27]),'error_row9_col27':float(e[9,27]),'qualifying_epsilon':epsilon==1e-6})
+  rows.append({'epsilon':epsilon,'max_absolute_error':float(np.abs(e).max()),'max_index':[int(i) for i in ind],'AD_row9_col27':float(A[9,27]),'FD_row9_col27':float(fd[9,27]),'error_row9_col27':float(e[9,27]),'qualifying_epsilon':epsilon==1e-6})
  ratios={'double_epsilon_error_ratio':rows[1]['error_row9_col27']/rows[0]['error_row9_col27'],'half_epsilon_error_ratio':rows[2]['error_row9_col27']/rows[0]['error_row9_col27']}
  summary={'status':'DIAGNOSTIC_ONLY_ORIGINAL_FAIL_STOP_RETAINED','rows':rows,'ratios':ratios,'AD_minus_independent_Python_max':float(np.abs(A-ra).max()),'wall_s':time.perf_counter()-start,'no_state_integration':True,'no_parameter_or_threshold_change':True,'no_qualification_rerun':True}
  (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');(out/'fixture.json').write_text(json.dumps({'state':state.as_dict(),'U':np.array(U).tolist(),'modes':modes},indent=2)+'\n')
