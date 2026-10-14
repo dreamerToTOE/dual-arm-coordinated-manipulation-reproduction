@@ -1,5 +1,10 @@
 # EXPERIMENT_LOG
 
+## 2026-10-14 — P2 stage2运行前声明
+
+本轮控制实验尚0；动力学数学资格待冻结源码后运行。20主case、5代表case、5GT/步长诊断沿原协议，初套30/未来至多74；120s/case、7200s整体不扩展。首门失败保留日志并停止后续。
+
+
 ## 2026-10-14 — P2有限接触几何资格（非控制实验）
 
 初版ac9e35d：results/20261013_P2_contact_geometry_qualification01/，66/66程序PASS；符号/覆盖问题使其交付资格INCOMPLETE，raw不改。

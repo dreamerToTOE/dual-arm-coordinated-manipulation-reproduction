@@ -1,5 +1,12 @@
 # BUGS
 
+## 2026-10-14 — P2 stage2待资格与已知限制
+
+- TASK-BLOCKING / PENDING GATE：独立式16动力学、42维IESEKF、原联合控制/多率因果执行尚需资格；几何PASS不代表这些通过。
+- KNOWN LIMITATION：原Rbar阻尼有限形变近似、理想Cartesian速度端点、COM模拟观测/静态标定、低抓力预载释放与摩擦/关节未复现；本轮不自行补模型。
+- 保留历史失败、P4部分完成和原式15/22与修订差异。
+
+
 ## 2026-10-14 — P2批准模型后资格与已知边界
 
 - **RESOLVED / USER_APPROVED**：式15几何争议已由用户批准新模型替代；Ng空间自由lift、Ac有限Log补偿68case资格通过。不是作者勘误/原样实现。
