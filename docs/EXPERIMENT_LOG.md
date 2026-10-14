@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-14 — D071：批准隐式耦合Lie中点plant，原观察器保持
+
+用户明确批准“隐式耦合Lie中点plant：版本化数值协议，先做等价计算优化与求解/步长资格，再继续闭环”。eb2600a首门失败及385d08d数学风险不覆盖。v1原字节保留；v2仅改变plant积分/授权/来源元数据，接触几何、式9–12/16/19–21/25、观测/控制clock、原判据/预算不变。Eq18滤波Euler预测未获变更批准。先按[P2隐式资格声明](../reports/P2_IMPLICIT_QUALIFICATION_SPEC.md)执行N/D，再组件E/C及原exp3粗/半步；失败留证停门，不自动P3/Isaac/P4/RSS。小修累计1/3余2；此次用户科学数值路线批准单独登记，不重开预算。当前新实现尚未运行科学资格、正式控制0。
+
+本阶段尚未执行数值/滤波/控制资格或运输，编译不是科学PASS；首跑将在源码提交后单独归档。
+
+
 ## 2026-10-14 — P2 stage2资格FAIL_STOP；控制run0
 
 - science9194f9f：scripts/qualify_p2_dynamics.py → results/20261014_P2_stage2_dynamics01；11已完成检查通过，首条lockedEE5s在120秒限止t3.324s（最后250Hz日志3.32s/831条），整体资格wall120.050961s含前置/终止归档。未完成5s/halfstep；summary FAIL_STOP。
