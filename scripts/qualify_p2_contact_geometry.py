@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""66 fixed mathematical cases from P2_CONTACT_GEOMETRY_PRE_TASK.md.
+"""Original 66 mathematical cases plus 2 restored-preload negatives (correction 1).
 
 Prescribed kinematics only: no object ODE, feedback controller or sensor loop.
 Independent matrix exp/log oracles test the implemented finite-SE3 geometry.
@@ -93,9 +93,11 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     sources = [Path(__file__), ROOT/'baselines/p2_pose_force/contact_geometry.py',
                ROOT/'reports/P2_CONTACT_GEOMETRY_PRE_TASK.md',
+               ROOT/'reports/P2_CONTACT_GEOMETRY_CORRECTION01.md',
                ROOT/'configs/p2_closed_loop_protocol_v1_draft.json']
     metadata = {'kind': 'MATHEMATICAL_CONTACT_GEOMETRY_QUALIFICATION',
-                'model_id': g.MODEL_ID, 'expected_cases': 66, 'closed_loop_runs': 0,
+                'model_id': g.MODEL_ID, 'expected_cases': 68, 'closed_loop_runs': 0,
+                'qualification_correction_round': 1,
                 'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT).decode().strip(),
                 'command': sys.argv, 'environment': {'python': platform.python_version(),
                   'numpy': np.__version__, 'scipy': scipy.__version__},
@@ -205,6 +207,7 @@ def main():
             record('dual_H', f'{mode1}.{mode2}',
                    {'W_shape': W.shape, 'rank': np.linalg.matrix_rank(W),
                     'object_force_residual_N': residual[:3], 'object_moment_residual_Nm': residual[3:],
+                    'power_check_scope': 'transpose pairing algebra; not independent physical wrench metrology',
                     'power_error_W': float((W@h)@V-h@(W.T@V))},
                    {'shape': W.shape == (6, H1.shape[0]+H2.shape[0]),
                     'rank': np.linalg.matrix_rank(W) == expected_rank,
@@ -238,7 +241,7 @@ def main():
                     fine = solutions[k+1]
                     dg = log6(np.linalg.inv(row['G'])@fine['G'])
                     dtau = row['tau']-fine['tau']
-                    h_error = np.array(draft['original_parameters']['K_nominal'])*dtau
+                    h_error = -np.array(draft['original_parameters']['K_nominal'])*dtau
                     ratio = fine['drift']/row['drift'] if row['drift'] > 1e-12 else None
                     checks = {'free_Log_initial_preserved': row['drift'] <= FD_ATOL,
                               'refined_G_position': np.linalg.norm(dg[:3]) <= 5e-5,
@@ -248,9 +251,12 @@ def main():
                               'order_or_numerical_floor': ratio is None or ratio <= .5}
                     row.update({'half_step_difference_G_Log': dg, 'half_step_difference_tau': dtau,
                                 'synthetic_Eq9_h_difference': h_error, 'free_drift_half_step_ratio': ratio,
-                                'order_status': 'NUMERICAL_FLOOR' if ratio is None else 'REFINEMENT_CHECKED'})
+                                'synthetic_Eq9_h_difference_definition': 'coarse_hK_minus_fine_hK = -K*(coarse_tau-fine_tau)',
+                                'order_status': ('NO_FREE_DIRECTIONS' if mode == 'tight' else
+                                                 'NUMERICAL_FLOOR' if ratio is None else 'REFINEMENT_CHECKED')})
                 else:
                     checks = {'free_Log_initial_preserved': row['drift'] <= FD_ATOL}
+                    row['order_status'] = 'NO_FREE_DIRECTIONS' if mode == 'tight' else 'FINEST_REFERENCE'
                 record('finite_integration', f'{mode}.dt{k}', row, checks)
 
         K = np.array(draft['original_parameters']['K_nominal'])
@@ -268,7 +274,20 @@ def main():
                        guard, {'expected_guard': guard['eligible'] == accept,
                                'input_not_reset': np.array_equal(before, D),
                                'tau_not_zeroed': maximum(log6(D)-tau) <= ATOL})
-        metadata['status'] = 'PASS' if len(cases) == 66 and all(c['pass'] for c in cases) else 'FAIL'
+        for old, new in [('pivot', 'sliding'), ('sliding', 'pivot')]:
+            tau = np.array([0, 0, .0002, .04, -.03, 0.])
+            tau[5 if old == 'pivot' else 0] = .03 if old == 'pivot' else .0003
+            D = exp6(tau)
+            before = D.copy()
+            guard = g.mode_switch_guard(D, old, new, -K*tau)
+            record('mode_switch', f'{old}_to_{new}.reject_restored',
+                   {**guard, 'fixture_class': 'restored-only deliberate invalid preload',
+                    'force_source': 'static synthetic Eq9 hK; hB=0, not measured loop force'},
+                   {'restored_preload_rejected': not guard['eligible'],
+                    'restored_dimension_detected': bool(set(guard['restored_indices']) & set(guard['strain_failures'])),
+                    'input_not_reset': np.array_equal(before, D),
+                    'tau_not_zeroed': maximum(log6(D)-tau) <= ATOL})
+        metadata['status'] = 'PASS' if len(cases) == 68 and all(c['pass'] for c in cases) else 'FAIL'
     except Exception:
         metadata['status'] = 'ABORTED'
         (out/'termination.json').write_text(json.dumps({'traceback': traceback.format_exc()}, indent=2)+'\n')
