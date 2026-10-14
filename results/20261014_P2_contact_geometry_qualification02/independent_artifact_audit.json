@@ -1,0 +1,39 @@
+{
+  "kind": "READ_ONLY_ARTIFACT_AUDIT",
+  "checks": {
+    "source_hashes_match_current_files": true,
+    "raw_artifact_hash": true,
+    "core_geometry_unchanged": true,
+    "all_68_unique_cases_pass": true,
+    "original_66_names_preserved": true,
+    "original_kinematic_inputs_preserved": true,
+    "signed_Eq9_log_correct": true,
+    "both_restored_negatives_reject": true,
+    "released_negatives_reject": true,
+    "tight_has_no_false_convergence_claim": true
+  },
+  "all_checks_pass": true,
+  "case_categories": {
+    "finite_differential": 36,
+    "coordinate_change": 6,
+    "basis_change": 2,
+    "dual_H": 9,
+    "finite_integration": 9,
+    "mode_switch": 6
+  },
+  "units_separated_values": {
+    "max_FD_linear_error_m_s": 2.8189256484623115e-11,
+    "max_FD_angular_error_rad_s": 7.835996782001864e-10,
+    "max_free_drift_sliding_m": 3.1853484719284433e-13,
+    "max_free_drift_pivot_rad": 3.2965628529670693e-12,
+    "max_free_lift_power_residual_W": 8.673617379884035e-19,
+    "min_A_singular_value": 0.9989163668259337,
+    "max_A_condition_number": 1.0010846456240434
+  },
+  "accepted_run": "qualification02",
+  "run01_delivery_status": "INCOMPLETE_SIGN_AND_COVERAGE",
+  "run01_raw_status_preserved": "PASS",
+  "corrections_used": 1,
+  "remaining_corrections": 2,
+  "closed_loop_runs": 0
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "MATHEMATICAL_CONTACT_GEOMETRY_QUALIFICATION",
+  "model_id": "p2.spatial_free_log_constraint.v1",
+  "expected_cases": 68,
+  "closed_loop_runs": 0,
+  "qualification_correction_round": 1,
+  "git_commit": "51696a8b6ada556af3ce2f0acb4ebdf9cecca099",
+  "command": [
+    "scripts/qualify_p2_contact_geometry.py",
+    "--output-dir",
+    "results/20261014_P2_contact_geometry_qualification02"
+  ],
+  "interpreter": "/usr/bin/python3",
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "scipy": "1.8.0"
+  },
+  "source_sha256": {
+    "scripts/qualify_p2_contact_geometry.py": "d66ec492d54a1ea526e8422d796587dd741fc9efb07b9e48a7f36093eb7a1b9c",
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "reports/P2_CONTACT_GEOMETRY_PRE_TASK.md": "991918f20bd51f332ebb98a381c82fa4aca9316205340bc8cf48e0ce68b2dd04",
+    "reports/P2_CONTACT_GEOMETRY_CORRECTION01.md": "d9a01f056d3ac92fb63fa670109af1ea5e36ee57f445c5229564e466db679ba6",
+    "reports/P2_CONTACT_GEOMETRY_DERIVATION.md": "5294c960f4c88cf559b31a97f5edf42252b687b7927651748b058e047a049490",
+    "configs/p2_geometry_requirements.txt": "482fd0047ee2470498fb137eba92bd4e96ad9d801a5e5201210a2daaa35dd29b",
+    "configs/p2_closed_loop_protocol_v1_draft.json": "6439179a3d3144f43c9be5ef4fd59968af62f7ba89119745b16dafd17a2f2891"
+  },
+  "tolerances": {
+    "algebra": 1e-10,
+    "FD": 1e-07,
+    "FD_step_s": 1e-06,
+    "integration_free_drift": 1e-07,
+    "convergence_floor": 1e-12
+  },
+  "status": "PASS",
+  "actual_cases": 68,
+  "failed_cases": [],
+  "artifacts": {
+    "cases.jsonl": "68d8a4b744c6bbc3443d74744d63cc8e90ad1afd380cb083d93ff99909589630"
+  }
+}
