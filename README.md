@@ -1,5 +1,10 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+> **2026-10-14 D077：用户已接受P2本轮部分完成，交付冻结。**
+> 科研快照7787c75：动力学70/70、组件35/35、时序2/2，原ID11在3.948s估计接触域越界；联合反馈/四组结果仍未完成，修正3/3已耗尽。
+> [接受与冻结记录](reports/P2_DELIVERY_ACCEPTANCE_FREEZE.md) · [冻结SHA清单](reports/P2_ACCEPTED_DELIVERY_FREEZE_MANIFEST.json)。全部源码/数据/失败/Word及P4保留，新增实验0；等待新的明确任务，不自动开启后续阶段。下列状态为历史。
+
+
 > **2026-10-14 D076：P2独立动力学70/70、组件35/35、因果时序2/2通过；完整闭环部分完成。**
 > 原ID11 exp3/seed7真实运行至3.948s，估计接触域越界停止；未到7s/13s反馈开启，不能宣称联合控制效果。主1条失败/19未执行，其他10未执行；修正3/3已耗尽。
 > [当前17页Word](reports/第二篇P2物体位姿与内部作用力控制论文复现汇总_闭环资格审查.docx) · [PDF](reports/第二篇P2物体位姿与内部作用力控制论文复现汇总_闭环资格审查.pdf) · [审查摘要](reports/P2_CLOSED_LOOP_POST_TASK.md) · [数据/失败交付索引](reports/P2_CLOSED_LOOP_DELIVERY_INDEX.md)。

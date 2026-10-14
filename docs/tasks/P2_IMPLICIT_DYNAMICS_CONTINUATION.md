@@ -1,5 +1,9 @@
 # P2隐式动力学与原闭环继续实施
 
+## 最新D077：本轮交付已接受并冻结
+
+用户接受7787c75的P2部分完成；交付ACCEPTED/FROZEN，科研结论PARTIAL。预算3/3余0，全部科学文件按接受commit冻结，不继续本任务或自动进入P3。见[接受记录](../../reports/P2_DELIVERY_ACCEPTANCE_FREEZE.md)。下列实施/停门记录为历史，不能当新运行授权。
+
 状态IN_PROGRESS，输入eb2600a，授权D071。科学目标：在同物理方程/同观测与控制时刻下取得可核查独立动力学与真实联合控制响应。最小证据：native等价、隐式残差、三fixture固定settle/半步，再原组件资格、登记exp3粗/半步，最后冻结四组实验与报告。原文/六资料及既有批准几何沿用。
 
 首跑声明：[N/D与E/C](../../reports/P2_IMPLICIT_QUALIFICATION_SPEC.md)，[实施前记录](../../reports/P2_IMPLICIT_IMPLEMENTATION_PRE_TASK.md)，[数值协议v2](../../configs/p2_closed_loop_protocol_v2.json)。原v1/失败不改。严格顺序，不以GT诊断代替主估计控制，未执行不假报失败或零误差。
