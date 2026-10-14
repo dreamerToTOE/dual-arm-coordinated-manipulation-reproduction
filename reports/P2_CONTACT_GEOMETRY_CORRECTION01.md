@@ -28,3 +28,8 @@
 这是P2记录在案的小修**1/3**，用于资格程序数据/覆盖错误；剩余2轮，不在后续闭环时重置为3轮。
 控制闭环run仍0。本次数学资格不占控制矩阵的81run上限，亦不扩展该上限。
 若修正后合格，只冻结接触模型与实验协议；42维滤波/动力学闭环/真实实验未实现，不能据此称完整论文通过。
+
+## 执行环境恢复记录
+
+第二轮首次启动命令exit127：原`/tmp/p4-three-source.sHcHgg/venv/bin/python`路径已失效，Python程序尚未启动，资格case为0，输出目录未创建；证据另存[launch failure](../results/20261014_P2_contact_geometry_environment/launch_failure.json)。
+系统Python已验证为3.10.12、NumPy1.24.4、SciPy1.8.0，与首轮版本相同。改用`python3`和相同OPENBLAS/OMP线程设置；版本清单见configs/p2_geometry_requirements.txt。无需改几何模型、阈值或初始化，不额外计算法修正轮。
