@@ -1,5 +1,14 @@
 # BUGS
 
+## 2026-10-14 — P2 stage2首门停止的两个独立问题
+
+- TASK-BLOCKING / IMPLEMENTATION PERFORMANCE：canonical逐步SE3/Jac计算开销，5秒settle在120秒只到3.324秒；当前未通过资格，不扩大壁钟/不赋解析平衡。等价数值优化须另证明与原reference一致。
+- TASK-BLOCKING / NUMERICAL DECISION：C原惯量/阻尼下当前显式Lie中点主步局部快模态倍率2.730136，半步.654550；需要裁决数值实现解释，不自动改dt/physics/积分或observer。C真实轨迹未运行，不伪报实际失败。
+- KNOWN RISK / UNTESTED FILTER：原4ms Euler无测量线性预测倍率较大；完整IESEKF未实现/未执行，不能因此宣称实测滤波发散。
+- DEFERRED PENDING DYNAMICS：42维IESEKF、原联合控制、多率观测/queue及30case；草案归一化Jac门不是已批原物理误差门。
+- EDITORIAL RESOLVED：中文addfont与分页空段已在新报告解决，旧预览保留，无科学修正新增。
+
+
 ## 2026-10-14 — P2 stage2待资格与已知限制
 
 - TASK-BLOCKING / PENDING GATE：独立式16动力学、42维IESEKF、原联合控制/多率因果执行尚需资格；几何PASS不代表这些通过。

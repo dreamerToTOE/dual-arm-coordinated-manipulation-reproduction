@@ -1,5 +1,10 @@
 # CODEX_START_HERE.md
 
+## 2026-10-14 — P2 stage2最新停点
+
+动力学源9194f9f，首条5秒资格超时：120秒限到t3.324；11已完成数学检查不等于完整动力学PASS。固定数值审查C显式主步快模态倍率2.730136（不是C实际控制失败）。现在只读交付；IESEKF未实现、控制30case全未执行、修正1/3余2。见reports/P2_STAGE2_POST_TASK.md，未经数值路线裁决不继续科学运行，不自动P3/Isaac。
+
+
 ## 2026-10-14 — P2 stage2已授权，先独立动力学门
 
 从834bcc继续reproduce-p2-paper-audit。按P2_STAGE2_PRE_TASK及冻结protocol顺序执行，累计修正余2，资格未过不得主实验。历史P4及已验收P2几何保持；本次明确授权覆盖下文前阶段停点。不自动P3。

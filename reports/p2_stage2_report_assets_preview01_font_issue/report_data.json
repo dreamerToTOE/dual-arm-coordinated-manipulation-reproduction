@@ -1,0 +1,40 @@
+{
+  "title": "第二篇P2物体位姿与内部作用力控制论文复现汇总",
+  "materials_sha256": {
+    "reports/P2_ORIGINAL_PAPER_AUDIT.md": "94cd0f85b282b87aba4ad5f42b7162b5f540ba9c844f1ed775f6de29c6f5323d",
+    "reports/P2_CONTACT_GEOMETRY_DERIVATION_RENDERED.md": "131523c211ef1141586f984163cfa05e2a1d1714d93be344e6258a332bff5b28",
+    "reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md": "a7996a0fb0ffe8fe9df93a3a811ea77419ceae59586b530665d1b0cb969b4751",
+    "configs/p2_closed_loop_protocol_v1.json": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+    "reports/P2_CONTACT_GEOMETRY_POST_TASK.md": "c0f4fbbd59d9e13c668f799d5965d4548544a75c85f335008455bfde938bef7a",
+    "references/private_sources/P2_original.pdf": "0188b6be5f9029b40c99b377bcd1e2885ec6e6b56acc49276d6fe1fc72cc0346"
+  },
+  "runs": [
+    {
+      "path": "results/20261014_P2_stage2_dynamics01",
+      "metadata_sha256": "eb5e614c81c006980b8492e32de9f37adc27418586bbeae245ebfae4814a73ef",
+      "summary": {
+        "status": "FAIL_STOP",
+        "passed": 11,
+        "executed_checks": 11,
+        "wall_s": 120.05096074599987,
+        "closed_loop_runs": 0,
+        "estimator_qualified": false,
+        "controller_qualified": false
+      },
+      "saved_traces": {
+        "transport": {
+          "samples": 831,
+          "last_saved_time_s": 3.32
+        }
+      }
+    }
+  ],
+  "closed_loop_evidence_used": false,
+  "experiment_execution_by_report": false,
+  "output_docx_sha256": "ddca5db1a262c18ad341855f703a33927ea58fae84bbc62ba76eb9f0fecdb789",
+  "assets_sha256": {
+    "01_p2_control_flow.png": "ee98c6a900fd48a20249defa89dd71fc98c4f111557346e59ade75e7564d9572",
+    "02_20261014_P2_stage2_dynamics01_transport_contact.png": "21f1cb4d2e3f99ead8d673166fff3674f36c668ee9e5547bc0ad19586cd28069",
+    "02_20261014_P2_stage2_dynamics01_transport_response.png": "c153b58e1e3e68af023e60d6580f9923b5f2f92580e0197637bef84200714f67"
+  }
+}

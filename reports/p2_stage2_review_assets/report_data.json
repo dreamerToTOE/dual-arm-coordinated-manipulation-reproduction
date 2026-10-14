@@ -1,0 +1,610 @@
+{
+  "title": "第二篇P2物体位姿与内部作用力控制论文复现汇总",
+  "materials_sha256": {
+    "reports/P2_ORIGINAL_PAPER_AUDIT.md": "94cd0f85b282b87aba4ad5f42b7162b5f540ba9c844f1ed775f6de29c6f5323d",
+    "reports/P2_CONTACT_GEOMETRY_DERIVATION_RENDERED.md": "131523c211ef1141586f984163cfa05e2a1d1714d93be344e6258a332bff5b28",
+    "reports/P2_CLOSED_LOOP_FROZEN_PROTOCOL.md": "a7996a0fb0ffe8fe9df93a3a811ea77419ceae59586b530665d1b0cb969b4751",
+    "configs/p2_closed_loop_protocol_v1.json": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+    "reports/P2_CONTACT_GEOMETRY_POST_TASK.md": "c0f4fbbd59d9e13c668f799d5965d4548544a75c85f335008455bfde938bef7a",
+    "references/private_sources/P2_original.pdf": "0188b6be5f9029b40c99b377bcd1e2885ec6e6b56acc49276d6fe1fc72cc0346"
+  },
+  "report_builder_sha256": "a6bed1087d2381b25bceae549d0d3d1f2e525d3ad6e571f2c6d5f6548a5b0782",
+  "inherited_report_helper_sha256": "71e0ed5c77c12261533fd5d0a469cfef15e36c31e7985feb2a82dc3cfa147a37",
+  "runs": [
+    {
+      "path": "results/20261014_P2_stage2_dynamics01",
+      "metadata_sha256": "eb5e614c81c006980b8492e32de9f37adc27418586bbeae245ebfae4814a73ef",
+      "summary": {
+        "status": "FAIL_STOP",
+        "passed": 11,
+        "executed_checks": 11,
+        "wall_s": 120.05096074599987,
+        "closed_loop_runs": 0,
+        "estimator_qualified": false,
+        "controller_qualified": false
+      },
+      "saved_traces": {
+        "transport": {
+          "samples": 831,
+          "last_saved_time_s": 3.32
+        }
+      }
+    }
+  ],
+  "closed_loop_evidence_used": false,
+  "experiment_execution_by_report": false,
+  "prefix_audit": {
+    "path": "results/20261014_P2_stage2_delivery_audit01",
+    "hashes": {
+      "actual_prefix_metrics.json": "f1d636185bca9ee0f4326d8e5bf93f25bd7885631799c78d76e1cf5ee25c37c9",
+      "artifact_and_preservation_audit.json": "c88b38cb135eb9f1f67e9163ade5fa5f1e1636ff45a4d358c924073576a0e175",
+      "control_case_ledger.json": "3140a48879d34aa479a8bd4ed63e8889d2e1b112d3180dec6751d391bbc5adbb"
+    },
+    "metrics": {
+      "scope": "uncontrolled gravity-settling prefix only; no pose/force controller performance",
+      "sample_count": 831,
+      "first_log_time_s": 0.0,
+      "last_log_time_s": 3.32,
+      "last_integrated_time_s": 3.324,
+      "required_settle_duration_s": 5,
+      "wall_s": 120.05096074599987,
+      "final_logged_world_displacement_m": [
+        -1.2897833812125416e-26,
+        2.281612926459191e-17,
+        -0.0005947562488922142
+      ],
+      "max_linear_speed_components_m_s": [
+        1.0433512042420657e-20,
+        1.1457536341681236e-15,
+        0.03869728655401725
+      ],
+      "max_angular_speed_components_rad_s": [
+        9.756000095973135e-17,
+        4.2602749715406025e-17,
+        6.906315124778825e-15
+      ],
+      "max_tau_translation_components_m": [
+        [
+          0.000660396190048651,
+          1.3877787807814457e-17,
+          1.3877398428193737e-17
+        ],
+        [
+          0.000660396190048651,
+          1.3877787807814457e-17,
+          4.1633366893284824e-17
+        ]
+      ],
+      "max_tau_rotation_components_rad": [
+        [
+          1.5715487167107466e-16,
+          1.7860170158963154e-18,
+          7.222237291452134e-35
+        ],
+        [
+          1.5715487167107466e-16,
+          1.7860170158963154e-18,
+          7.222237291452134e-35
+        ]
+      ],
+      "final_logged_contact_force_components_N": [
+        [
+          3.355020000000001,
+          -7.870415514960342e-14,
+          -2.969202493509724e-14
+        ],
+        [
+          3.355020000000001,
+          -7.870415514960342e-14,
+          -2.969202491639808e-14
+        ]
+      ],
+      "final_logged_contact_moment_components_Nm": [
+        [
+          -2.9081644984519286e-16,
+          1.3539642592890936e-24,
+          -1.0124195377705173e-18
+        ],
+        [
+          -2.9081644984519286e-16,
+          -1.3539642592890936e-24,
+          1.0124195377705173e-18
+        ]
+      ],
+      "max_internal_force_norm_each_arm_N": [
+        9.085967164941664e-14,
+        9.085967164941658e-14
+      ],
+      "max_internal_moment_norm_each_arm_Nm": [
+        8.160778079783958e-15,
+        8.160778079783976e-15
+      ],
+      "final_logged_force_balance_N": [
+        5.8357603244877634e-30,
+        -1.8699158346991656e-23,
+        8.881784197001252e-16
+      ],
+      "final_logged_moment_balance_Nm": [
+        1.3539642593431632e-24,
+        -1.164980129439468e-37,
+        -2.320442376520118e-15
+      ],
+      "fixed_five_second_terminal_metrics": null,
+      "half_step_metrics": null,
+      "main_experiment_metrics": null
+    },
+    "ledger": {
+      "protocol_sha256": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+      "cases": [
+        {
+          "id": 1,
+          "kind": "primary_transport",
+          "condition": "exp1",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 2,
+          "kind": "primary_transport",
+          "condition": "exp1",
+          "seed": 23,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 3,
+          "kind": "primary_transport",
+          "condition": "exp1",
+          "seed": 41,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 4,
+          "kind": "primary_transport",
+          "condition": "exp1",
+          "seed": 101,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 5,
+          "kind": "primary_transport",
+          "condition": "exp1",
+          "seed": 20261013,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 6,
+          "kind": "primary_transport",
+          "condition": "exp2",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 7,
+          "kind": "primary_transport",
+          "condition": "exp2",
+          "seed": 23,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 8,
+          "kind": "primary_transport",
+          "condition": "exp2",
+          "seed": 41,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 9,
+          "kind": "primary_transport",
+          "condition": "exp2",
+          "seed": 101,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 10,
+          "kind": "primary_transport",
+          "condition": "exp2",
+          "seed": 20261013,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 11,
+          "kind": "primary_transport",
+          "condition": "exp3",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 12,
+          "kind": "primary_transport",
+          "condition": "exp3",
+          "seed": 23,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 13,
+          "kind": "primary_transport",
+          "condition": "exp3",
+          "seed": 41,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 14,
+          "kind": "primary_transport",
+          "condition": "exp3",
+          "seed": 101,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 15,
+          "kind": "primary_transport",
+          "condition": "exp3",
+          "seed": 20261013,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 16,
+          "kind": "primary_transport",
+          "condition": "exp4",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 17,
+          "kind": "primary_transport",
+          "condition": "exp4",
+          "seed": 23,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 18,
+          "kind": "primary_transport",
+          "condition": "exp4",
+          "seed": 41,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 19,
+          "kind": "primary_transport",
+          "condition": "exp4",
+          "seed": 101,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 20,
+          "kind": "primary_transport",
+          "condition": "exp4",
+          "seed": 20261013,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 21,
+          "kind": "representative_high_moment",
+          "condition": "exp1",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 22,
+          "kind": "representative_high_moment",
+          "condition": "exp3",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 23,
+          "kind": "representative_delay",
+          "condition": "exp1",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 24,
+          "kind": "representative_delay",
+          "condition": "exp3",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 25,
+          "kind": "conditional_sliding",
+          "condition": "exp3",
+          "seed": 7,
+          "duration_s": 30,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 26,
+          "kind": "diagnostic_GT",
+          "condition": "exp1",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 27,
+          "kind": "diagnostic_GT",
+          "condition": "exp2",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 28,
+          "kind": "diagnostic_GT",
+          "condition": "exp3",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 29,
+          "kind": "diagnostic_GT",
+          "condition": "exp4",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        },
+        {
+          "id": 30,
+          "kind": "full_dynamics_half_step",
+          "condition": "exp3",
+          "seed": 7,
+          "duration_s": 95,
+          "status": "NOT_EXECUTED",
+          "reason": "independent dynamics qualification stopped before estimator/control",
+          "result": null
+        }
+      ],
+      "planned_primary": 20,
+      "planned_control_cases": 30,
+      "executed_primary": 0,
+      "executed_control_cases": 0,
+      "not_executed_cases": 30,
+      "diagnostic_GT_runs": 0,
+      "correction_rounds_already_used": 1,
+      "remaining_correction_rounds": 2,
+      "control_wall_s": 0,
+      "component_qualification_wall_s": 120.05096074599987,
+      "counting_note": "Unexecuted controls are not fabricated failed trials. Prefix is one aborted no-control qualification."
+    }
+  },
+  "numerical_audit": {
+    "path": "results/20261014_P2_stage2_numerical_audit01",
+    "hashes": {
+      "config_snapshot.json": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+      "fixtures.jsonl": "d91c43b332acc93efb3e8cd92c40d2ba93df45aa7523db7e311459ba2436640d",
+      "metadata.json": "7e1f528bd29d90941a385c55e5dd48580895b4e8f3c7e7efed9d0d6baa4c1cc8",
+      "summary.json": "01ab91f98fd3aad006883b7627b6e065d280df32354486db91f78b0e4854fdb0"
+    },
+    "metadata": {
+      "kind": "LOCAL_NUMERICAL_RISK_DIAGNOSIS_NO_TRAJECTORY",
+      "date": "2026-10-14",
+      "command": [
+        "scripts/audit_p2_stage2_numerics.py",
+        "--output-dir",
+        "results/20261014_P2_stage2_numerical_audit01"
+      ],
+      "source_commit": "385d08d38d1b26a1efb81e86cedae265b104b3b3",
+      "source_sha256": {
+        "scripts/audit_p2_stage2_numerics.py": "f2dcef0453259a4793eaa0c923dde251ac8a94d7ced5069139b1b564295f5e98",
+        "reports/P2_STAGE2_NUMERICAL_DIAGNOSIS.md": "1337c668181275db54b79b5d125b4dd9e2af1ded362a8f689592ee5eb5864488",
+        "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+        "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+        "configs/p2_closed_loop_protocol_v1.json": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3"
+      },
+      "environment": {
+        "python": "3.10.12",
+        "numpy": "1.24.4",
+        "scipy": "1.8.0"
+      },
+      "protocol_sha256": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+      "fd_step": 1e-06,
+      "fd_step_units": "per coordinate: m,rad,m/s,rad/s following 42-state order",
+      "frozen_reference_Jacobian_atol": 1e-07,
+      "method": "central FD42 at fixed points; fixed-prior right output local for one-step map",
+      "state_order": [
+        "O",
+        "V",
+        "E1",
+        "E2",
+        "C",
+        "G1",
+        "G2"
+      ],
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "U_EE_body": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "fixtures": [
+        "A_nominal",
+        "A_analytic_equilibrium",
+        "C_nominal",
+        "C_analytic_equilibrium"
+      ],
+      "midpoint_steps_s": [
+        0.0003333333333333333,
+        0.00016666666666666666
+      ],
+      "observer_Euler_risk_delta_s": 0.004,
+      "no_new_acceptance_rule": true,
+      "closed_loop_runs": 0,
+      "new_ODE_trajectories": 0,
+      "actual_C_dynamics_gate_run": false,
+      "plant_reset": false,
+      "controller_or_estimator_run": false,
+      "corrections_used_before": 1,
+      "correction_consumed_by_this_audit": false,
+      "status": "COMPLETE_DIAGNOSIS",
+      "wall_s": 11.486919397999372,
+      "completed_fixtures": 4
+    },
+    "summary": {
+      "status": "COMPLETE_DIAGNOSIS",
+      "completed_fixtures": 4,
+      "closed_loop_runs": 0,
+      "new_ODE_trajectories": 0,
+      "no_new_acceptance_rule": true,
+      "dynamics_gate_reexecuted": false,
+      "actual_C_failure_claim": false,
+      "full_filter_divergence_claim": false,
+      "wall_s": 11.486919397999372,
+      "fixtures": [
+        {
+          "name": "A_nominal",
+          "fastest_continuous_real_per_s": -2183.06990210081,
+          "step_spectral_radii": [
+            1.0000000000287557,
+            1.0000000000287557
+          ],
+          "step_nonneutral_outside_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "A_analytic_equilibrium",
+          "fastest_continuous_real_per_s": -2183.0685176158177,
+          "step_spectral_radii": [
+            1.0000000000287557,
+            1.0000000000287557
+          ],
+          "step_nonneutral_outside_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "name": "C_nominal",
+          "fastest_continuous_real_per_s": -9335.806743430947,
+          "step_spectral_radii": [
+            2.7301359494502706,
+            1.0000000000287557
+          ],
+          "step_nonneutral_outside_counts": [
+            1,
+            0
+          ]
+        },
+        {
+          "name": "C_analytic_equilibrium",
+          "fastest_continuous_real_per_s": -9335.806743387517,
+          "step_spectral_radii": [
+            2.7301359494197106,
+            1.0000000000287557
+          ],
+          "step_nonneutral_outside_counts": [
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "output_docx_sha256": "4649ebd78e457c7c6d862d7daf99af4c67109d50729c042c458d04e50994d5e3",
+  "assets_sha256": {
+    "01_p2_control_flow.png": "70b8dfaf4c9988a91347b82f6d7f35d3445397ca9977bcdbc877ff04dfb20f04",
+    "02_20261014_P2_stage2_dynamics01_transport_contact.png": "95f8b9bb2f9b1b46d296db82853065e42f29083c5472d5db5fba12c450d1941e",
+    "02_20261014_P2_stage2_dynamics01_transport_response.png": "189e066541b20516790af006541938f9df98d841e908929a69e9c7cabfe0de11",
+    "04_20261014_P2_stage2_dynamics01_transport_internal.png": "e7d8d8f272d47e823e77941749ee541c502fe06173c1c0c7a5d1b8f49eeaa8b4"
+  }
+}

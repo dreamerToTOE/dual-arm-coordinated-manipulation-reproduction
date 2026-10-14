@@ -1,5 +1,12 @@
 # EXPERIMENT_LOG
 
+## 2026-10-14 — P2 stage2资格FAIL_STOP；控制run0
+
+- science9194f9f：scripts/qualify_p2_dynamics.py → results/20261014_P2_stage2_dynamics01；11已完成检查通过，首条lockedEE5s在120秒限止t3.324s（最后250Hz日志3.32s/831条），整体资格wall120.050961s含前置/终止归档。未完成5s/halfstep；summary FAIL_STOP。
+- science385d08d：scripts/audit_p2_stage2_numerics.py → results/20261014_P2_stage2_numerical_audit01；4固定数学点/FD42孤立map，wall11.486919s，无新ODE轨迹、无控制；C coarse倍率2.730136/half.654550，原4ms Euler未测量预测有风险但不证明IESEKF发散。
+- 控制ledger：主20、代表5、GT/半步诊断5全部NOT_EXECUTED，未补0指标、未称20次实际失败。小修仍1/3余2，30/74/81、120/7200预算不扩大。
+
+
 ## 2026-10-14 — P2 stage2运行前声明
 
 本轮控制实验尚0；动力学数学资格待冻结源码后运行。20主case、5代表case、5GT/步长诊断沿原协议，初套30/未来至多74；120s/case、7200s整体不扩展。首门失败保留日志并停止后续。

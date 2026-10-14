@@ -1,8 +1,8 @@
 # P2 — 独立动力学、视觉触觉估计与位姿/内部力联合控制
 
-Status: IN_PROGRESS
+Status: STOPPED_DYNAMICS_QUALIFICATION / AWAITING_NUMERICAL_DECISION
 
-2026-10-14：用户明确授权第二阶段实施；覆盖D068历史的“尚未授权后续实验”。已批准几何替代沿用，P4/RSS/P3/Isaac不在本任务内。
+2026-10-14：首条动力学资格超时，控制矩阵未执行，见 [本轮审查](../../reports/P2_STAGE2_POST_TASK.md)。用户明确授权第二阶段实施；覆盖D068历史的“尚未授权后续实验”。已批准几何替代沿用，P4/RSS/P3/Isaac不在本任务内。
 
 ## Scientific objective
 
