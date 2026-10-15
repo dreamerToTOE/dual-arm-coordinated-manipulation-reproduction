@@ -1,0 +1,22 @@
+{
+  "schema": "P4_R2_VI_RSS_INGRESS_COMPOSITE_EXPLICIT_USER_APPROVAL_V1",
+  "recorded_at_utc": "2026-10-15T08:16:01.447257+00:00",
+  "continuation_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.INGRESS_COMPOSITE_974_V1",
+  "explicit_user_approval": true,
+  "additional_candidate_cap": 14,
+  "new_composite_design_approved": true,
+  "cumulative_candidate_cap": 974,
+  "this_stage_max_candidate_constructions": 64,
+  "charge_original_remaining_first": 50,
+  "stage_wall_s": 30,
+  "stage_cpu_s": 60,
+  "cumulative_B_wall_s": 180,
+  "cumulative_B_cpu_s": 360,
+  "formal_planning_authorized": false,
+  "draft_protocol_before_approval_sha256": "cd2a80824788729a5d2361556b93ad9d274de49681b3d00dde76ba57a7dad2b4",
+  "runner_sha256": "3903e21f8429825b7e1d3a02819552b09644ebdbf0b10140ea7292d204538843",
+  "user_approval_evidence": {
+    "channel": "Human user reply to request_user_input_async in this conversation",
+    "verbatim": "批准方案 1。\n允许环境 VI 的 RSS 增加最多 14 次候选构造，总上限由 960 调整至 974。本次固定组合资格最多执行 64 次，其中 50 次使用原有剩余额度，新增额度不超过 14 次。\n保留本项 30 秒墙钟、60 秒 CPU 的限制，以及原累计 180 秒墙钟、360 秒 CPU 的限制，不批准额外时间预算或正式规划实验。\n同时批准对 regular↔fiber 组合连接进行独立、版本化的离散资格验证，但必须标记为 RECONSTRUCTED，不得将其直接认定为原作者 RSS/RBS 的忠实实现。\n严格使用已冻结的 64 点清单、原始解析分支、闭链与碰撞判据。不得在失败后更换节点、调整阈值或继续加深。\n必须保留原 Q2 失败结论、原始奇异中心、全部成功和失败记录。单独报告四条半桥是否真正接入，以及闭链、Jacobian 秩、IK 分支、关节限位、碰撞和叶距离的独立验证结果。\n通过离散资格不代表已经证明连续无碰撞、RSS 全局规划成功或原论文完整复现。完成本项后继续按 D079 执行其他环境和算法资格；涉及新增科学设计或扩大正式预算时再提交审批。"
+  }
+}

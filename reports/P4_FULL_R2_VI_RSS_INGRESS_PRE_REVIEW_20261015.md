@@ -15,3 +15,8 @@
 审查时runner SHA：`3903e21f8429825b7e1d3a02819552b09644ebdbf0b10140ea7292d204538843`；draft SHA：`cd2a80824788729a5d2361556b93ad9d274de49681b3d00dde76ba57a7dad2b4`。语法/帮助/静态配置验证通过，新增科学调用0。当前`frozen=false`，`additional14_candidates_approved=false`、`new_composite_design_approved=false`；必须有真实用户增量批准记录并提交冻结后才能执行。
 
 此项通过也不代表原作者原生RSS/RBS、全部奇异模式、全局规划、连续lift或CCD通过。211义务及原文正式规模保持；其他环境原PCS/NR整合在既有资格范围继续，不等待此增量执行，也不擅自消耗超出原960的候选。
+
+
+## 用户新增明确批准（覆盖上文待批准状态）
+
+用户已在本会话明确批准新增最多14至974、固定64（原50+新14）、30wall/60CPU且累计180/360不扩时间，并批准RECONSTRUCTED版本化组合离散资格；保原Q2、原center及所有判据、四半桥分别报告，失败不换点/阈值/加深，不正式规划。原始批准文字逐字保存至configs/p4_full/r2_vi_rss_ingress_composite_user_approval_20261015.json。只有approval和frozen字段依该授权更新，原64清单、数值源码和input哈希不改；提交后单次执行。
