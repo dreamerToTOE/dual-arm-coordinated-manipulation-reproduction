@@ -845,3 +845,7 @@ Evidence: results/20261003_TASK01_full_five_physical_v2/raw/{controller,moveit}.
 同名已有分支同步6276f78，隔离worktree并保全五原工作树13未跟踪文件。全文8页/式1–9/Fig1–5/TableI–II已重读；找到全部六环境七作者快照，30父义务/169完整入口。旧RSS9996目标独立SE2回放全部不可达；旧PCS92解边全p0，不改旧失败/结论。
 R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单构建/诊断120s，正式规划0。完整TableI22500调用/最坏6250核小时待具体预算裁决。旧P4/P2文件1282条SHA保护；只追加治理记录。源码与资产外部固定引用，不重发布未授权原文/网格。当前P4整体仍部分完成，P2/Isaac不开展。
 证据：reports/p4_full_audit/ORIGINAL_FULL_COVERAGE_MATRIX.md，reports/P4_FULL_PRE_TASK_D079.md，reports/P4_FULL_SOURCE_ENVIRONMENT_AUDIT.md，reports/P4_FULL_FAILURE_ROOT_CAUSE_REVIEW_D079.md，reports/P4_FULL_BUDGET_AND_DECISIONS_D079.md。
+
+## 2026-10-15 — P4 R2接续阻塞归因
+
+TASK-BLOCKING P4-R2-ENDPOINT：12原字面端点全未过闭链门；旧首根组件不能替换端点。本次批准最近同支恢复，原失败保留。TASK-BLOCKING P4-R2-VI-RSS：公开三臂RSS源码不完整，独立构造尚未运行；不得写成作者原生通过。P4-R2-IV-NR：6输出闭合后越界正确拒绝，其中3附加正例FAIL；锚点q3仅距下界.0008rad，原±.01完整性假设未有保证。已有start_0是附近合法闭合解见证，无数值发散证据，不归因论文错误。碰撞/RBS/完整规划资格仍未过。

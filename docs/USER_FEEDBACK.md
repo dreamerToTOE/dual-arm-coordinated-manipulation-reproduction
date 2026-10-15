@@ -588,3 +588,7 @@ Persistent user decisions/feedback that must influence future work.
 同名已有分支同步6276f78，隔离worktree并保全五原工作树13未跟踪文件。全文8页/式1–9/Fig1–5/TableI–II已重读；找到全部六环境七作者快照，30父义务/169完整入口。旧RSS9996目标独立SE2回放全部不可达；旧PCS92解边全p0，不改旧失败/结论。
 R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单构建/诊断120s，正式规划0。完整TableI22500调用/最坏6250核小时待具体预算裁决。旧P4/P2文件1282条SHA保护；只追加治理记录。源码与资产外部固定引用，不重发布未授权原文/网格。当前P4整体仍部分完成，P2/Isaac不开展。
 证据：reports/p4_full_audit/ORIGINAL_FULL_COVERAGE_MATRIX.md，reports/P4_FULL_PRE_TASK_D079.md，reports/P4_FULL_SOURCE_ENVIRONMENT_AUDIT.md，reports/P4_FULL_FAILURE_ROOT_CAUSE_REVIEW_D079.md，reports/P4_FULL_BUDGET_AND_DECISIONS_D079.md。
+
+## 2026-10-15 — 崩溃恢复与A/B明确授权
+
+用户要求接管原P4完整复现，沿p4-full-reproduction-pcs-study原工作树接续，禁止初始化/覆盖/重跑旧资格。D079最高优先，211义务与原统计规模保留。批准A原主动角不变、原解析支/合法周期代表的最近合格端点恢复（RECONSTRUCTED）；批准B原Comau三臂独立RSS候选资格最多960构造/180wall/360CPU，gamma=.2，计入总账且不得重复预算。仅资格，不自动授权大规模规划。原失败与候选全部保存；P4结题先交最新对照表审查，不P2/Isaac。完整接续定义见reports/P4_FULL_CRASH_RECOVERY_PRE_TASK_20261015.md。
