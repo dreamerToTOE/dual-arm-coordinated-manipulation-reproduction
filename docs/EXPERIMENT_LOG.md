@@ -905,3 +905,14 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 P4 R2 原RRT_PCS单目标工程实际执行
 
 冻结来源85acfd55e32882dfc4cf6b08a3a3c7a43c32a97c；命令 `python3 scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py --protocol configs/p4_full/r2_abb_rrt_pcs_e2e_engineering_v1.json`。唯一E2E_BUILD01 exit0、BUILT_NOT_QUERIED，wall17.12737691100483s、CPU23.727903s；query/solve/VI构造均0。66旧资产前后hash一致，34编译源码/头和20网格绑定，binary SHA6218557517f9f169fedcfdd25d8284407148de695755721f14651bc842a54ae1。工程成本保守扣R2，16execution累计302.4154392770006wall/288.16398300000003CPU；原科学失败不变。详见results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json。
+
+
+## 2026-10-15 — 原RRT_PCS取得第一条独立合格空间路径
+
+工程85acfd5来源E2E_BUILD01成功，wall17.12737691100483/CPU23.727903；1a5b811冻结E2E01，原RRT_PCS环境II、seed7、原采样盒与恒true callback、range2.6/goalBias.05、10s单次solve实测exact非approx，solve段.016837364s，整次wall.2776374349996331/CPU.19540999999999997。4里程点、6树节点/5树边、3段原成功回溯，连接角色/branch依次(0,3)→(1,3)→(0,0)，有2次真实角色切换。使用A01 RECONSTRUCTED端点和R2几何一致数值，原始端点及native失败保留，不能冒充原作者原输入直接通过。
+
+b4cbbff冻结完整路径后审PATH01：177/177原密集节点、176叶全部通过独立闭链、原机械限位、每边被动branch及v3对齐原离散碰撞策略，最大闭链位置3.410605131648481e-13mm、旋转4.440892098500626e-16；叶距max.04949053472601928<.05。实际354数学FK、354分支、177collision、708adapter内部FK/J、41064PQP；wall40.94035644100222/CPU1.1020530000000002。原source执行仍保留PENDING历史，独立后审新文件单独给PASS_DISCRETE_SOURCE_POLICY_START_TO_GOAL_PATH，不改写旧execution。
+
+18execution=16science+2engineering，R2总wall343.63343315300244/CPU289.461446，余3256.3665668469976/6910.538554；VI B974/974余0，正式Table I0/22500不变。最新211项新表保前73历史列，另8列本路径实证。新V5保全审查PASS：1028旧科学文件、57崩溃文件8482891bytes、tar57成员、另5工作树及13未提交文件、旧V4均保持。
+
+原导出随机IKproject/sample_q缺陷不在真实RRT调用链；CBiRRT activeDistance同点非零缺陷尚待版本化修复；原PQP638个BeginModel警告及原统计时间域差异保留。路径资格仅原离散策略，不保证CCD、完整实体杆件/省略碰撞对，也不证明PCS性能优势或完整论文。随后普通NR C++逐式移植/trace等价资格，与RSS解耦；大规模正式实验仍须端到端资格后成本pilot另审。全部原文211项义务保持，不P2/Isaac。详见reports/P4_FULL_R2_ABB_RRT_PCS_PATH_POST_TASK_20261015.md、最新ABB_RRT_PCS覆盖表及V5账本。

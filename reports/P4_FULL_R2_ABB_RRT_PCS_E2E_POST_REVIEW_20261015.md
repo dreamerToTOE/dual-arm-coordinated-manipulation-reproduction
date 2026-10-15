@@ -37,3 +37,9 @@ stderr保留638条PQP `BeginModel` 警告，未覆盖/删除；这是原source l
 独立177节点物理闭链、12角原机械限位、每条边被动解析分支meeting-set及v3 aligned离散碰撞仍待实际执行。本报告不消耗该资格预算，不启动重复审查，不提前PASS。完整trace既已保存，若独立门失败，保留原source Exact与具体失败节点并分别报告。
 
 此次只有1次资格solve，Table I正式调用仍0/22500，VI新增构造0。211条完整原文义务、三规划器、Fig.3–5/Table I–II、投影/可见性/被动链数量/复杂障碍/窄通道/固定链消融等全部保留。独立path结果完成后再新增V5实际账和211行范围快照，旧账本和所有原73列逐值保留。
+
+### PQP警告的只读源码定位
+
+`StateValidityChecker` 的两个基类分别是kinematics `two_robots` 和独立 `collisionDetection`；`two_robots` 本身没有碰撞基类，构造器仅有一次 `collisionDetection(...)->load_models()`，没有证据支持本次638警告来自多继承重复加载。直接原因是原 `collision_state` 每次调用都对同一成员 `rod` 执行 `BeginModel→AddTri→EndModel`。本次source collision计数639，首个empty rod建模无警告，其余638次在已建模rod上BeginModel，数量吻合。
+
+所绑定PQP_v1.3 `PQP_Model::BeginModel` 会先清除旧BV/tri、分配新tri，再对非empty旧状态输出警告，设 `PQP_BUILD_STATE_BEGUN` 并返回 `PQP_ERR_BUILD_OUT_OF_SEQUENCE`；作者忽略这个返回值并继续AddTri/EndModel。此处是原source重复重建rod及忽略返回码，不是新增观测层行为。静态因果定位不能代替实际物理碰撞资格；未改源码、未重跑、未删除警告。PQP源码文件外部保存，未纳入仓库。
