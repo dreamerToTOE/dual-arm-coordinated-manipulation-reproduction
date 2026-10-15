@@ -1,0 +1,41 @@
+{
+  "schema": "p4_planar_analytic_geometry_qualification_proposal_v1",
+  "status": "PROPOSAL_NOT_FROZEN_NOT_EXECUTED",
+  "source_model": {
+    "environment": "I",
+    "author_repository": "planar_ckc",
+    "author_commit": "e5edcb58e151b78baca43dd4922bfe27a48388cd",
+    "physical_encoder_offset_rad": 3.1416,
+    "period": "true 2*pi",
+    "ground_vector": [7.0, 4.0],
+    "link_length_unit": "source_link_length_unit",
+    "passive_label_to_cyclic_start": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,18],
+    "branch0_canonical_elbow_sign": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,-1,1,-1]
+  },
+  "qualification_suggestion": {
+    "independent_fk_fixed_input_count": 200,
+    "original_endpoint_apc_request_count": 80,
+    "original_endpoint_apc_factorization": "2 unchanged source endpoints * 20 labels * 2 branches",
+    "ground_and_chart_synthetic_inverse_case_count": 20,
+    "unreachable_singular_degenerate_case_count": 8,
+    "independent_jacobian_case_count": 20,
+    "total_fixed_input_tasks": 328,
+    "candidate_lifts_count_as_new_independent_samples": false,
+    "seeds_and_fixtures": "Must be fixed in the root unified protocol before execution.",
+    "position_threshold": "Use root frozen qualification threshold in source_link_length_unit.",
+    "orientation_threshold": "Use root frozen qualification threshold in rad.",
+    "source_regular_sin2_min_exclusive": 1e-6,
+    "silent_retry_count": 0,
+    "planner_calls": 0
+  },
+  "global_budget_reference": {
+    "maximum_cpu_core_hours": 2,
+    "maximum_wall_hours": 1,
+    "shared_across_all_new_geometry_qualification": true
+  },
+  "execution": {
+    "module_imports_or_runs_performed_during_preparation": 0,
+    "new_scientific_case_runs_performed_during_preparation": 0,
+    "compiled": false
+  }
+}
