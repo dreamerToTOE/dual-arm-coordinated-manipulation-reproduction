@@ -1,0 +1,108 @@
+{
+  "schema": "P4_R2_ABB_RRT_PCS_SAVED_ONLY_POST_REVIEW_V1",
+  "status": "SOURCE_TRACE_PROVENANCE_PASS_PENDING_INDEPENDENT_PATH_AUDIT",
+  "scientific_calls": 0,
+  "compile_calls": 0,
+  "source_execution_sha256": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+  "source_result_sha256": "eefb6673101fe7a4a47f319bac5e8a20498ae1cee88930ec7bca710ce8de45b4",
+  "verified_hash_map_counts": {
+    "build_assets_before_sha256": 129,
+    "build_assets_after_sha256": 129,
+    "own_source_sha256": 5,
+    "own_source_after_sha256": 5,
+    "endpoint_sources_after_sha256": 2,
+    "retained_run_files_sha256": 32,
+    "prior_execution_sha256": 16
+  },
+  "build_manifest_sha256": "e1d665a5ff6c99a3654cf9433e8c2465b50e4d22dea5f91a226b42974e5adc0c",
+  "build_manifest_equal_retained_execution": true,
+  "original_bodies_dewrapped_to_identical_source": true,
+  "original_body_sha256": {
+    "bool StateValidityChecker::reconstructRBS(const ob::State *s1, const ob::State *s2, Matrix &Confs, int active_chain, int ik_sol)": "fb3ac4578539a7e5a98a60ea4ab2b4663f6b7e56ba1be75d44460dad04df6915",
+    "State StateValidityChecker::identify_state_ik(State q1, State q2, State ik)": "d2a0e1793b0a2dd71d9353504f77e21d2661e3767c750efbf46ea52f42fde32b"
+  },
+  "raw_path_matches_default_6significant_digits_of_full_double_trace": true,
+  "complete_trace_milestone_tree_match": true,
+  "selected_tree_path": [
+    1,
+    2,
+    5,
+    0
+  ],
+  "milestones": 4,
+  "tree_vertices": 6,
+  "tree_edges": 5,
+  "reconstruction_completed": 3,
+  "identify_completed": 11,
+  "true_started": "UNOBSERVED_NO_START_HOOK",
+  "edge_trace": [
+    {
+      "edge": 0,
+      "active_chain": 0,
+      "branch": 3,
+      "nodes": 80,
+      "min_leaf_l2": 0.025098162328580666,
+      "max_leaf_l2": 0.04949053472601928,
+      "endpoint_l2": 2.525929452013416
+    },
+    {
+      "edge": 1,
+      "active_chain": 1,
+      "branch": 3,
+      "nodes": 65,
+      "min_leaf_l2": 0.04229497943264401,
+      "max_leaf_l2": 0.04617935003996265,
+      "endpoint_l2": 2.756491973773139
+    },
+    {
+      "edge": 2,
+      "active_chain": 0,
+      "branch": 0,
+      "nodes": 34,
+      "min_leaf_l2": 0.02479565184278439,
+      "max_leaf_l2": 0.04805629905574112,
+      "endpoint_l2": 0.7598746804749721
+    }
+  ],
+  "dense_nodes": 177,
+  "distinct_dense_nodes": 177,
+  "dense_leaves": 176,
+  "selected_path_role_changes": 2,
+  "source_perf_log_16_values": [
+    1.0,
+    4.25219,
+    0.012,
+    628.0,
+    0.003,
+    639.0,
+    0.014,
+    628.0,
+    4.0,
+    6.0,
+    0.010001,
+    10.0,
+    5.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "retained_source_warning_lines": 1914,
+  "pqp_BeginModel_warning_count": 638,
+  "first_warning_line": "PQP Warning! Called BeginModel() on a PQP_Model that ",
+  "prior_execution_count": 16,
+  "prior_wall_s": 302.4154392770006,
+  "prior_cpu_s": 288.16398300000003,
+  "execution_wall_s": 0.2776374349996331,
+  "execution_cpu_s": 0.19540999999999997,
+  "independent_path_qualified": false,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "limitations": [
+    "No physical FK/J, IK, collision, NR or planner was called in this review.",
+    "Source exact and structural path completeness are not physical path qualification.",
+    "Raw source counters are implementation-scoped, not observed native FK/IK/PQP started counts.",
+    "Source projection counter628 is incremented at IKproject entry, not IKsolve_rob; one call may make one or two analytic IK requests and identify also uses IK outside this counter.",
+    "total_runtime sourceCPU stops before save2file/reconstruction whereas logged accumulated counters include reconstruction; driver solve_wall includes save2file.",
+    "638 retained PQP BeginModel warnings remain raw evidence; this saved-only audit cannot declare their physical impact."
+  ]
+}
