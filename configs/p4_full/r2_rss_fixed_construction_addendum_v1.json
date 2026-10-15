@@ -1,0 +1,30 @@
+{
+  "schema": "P4_R2_FIXED_DOUBLE_ARM_RSS_COMPONENT_ADDENDUM_V1",
+  "frozen": true,
+  "created_at_utc": "2026-10-15T02:09:55.398043+00:00",
+  "authorization_basis": "Same explicitly proposed geometry-consistent RSS repair and2coreh/1wallh continuation. Pre-execution fixed construction details; no change to scientific success gates, no extra RNG, no new VI model.",
+  "run_id": "20261015_R2_RSS_CONSTRUCTION01",
+  "environments": [
+    "II",
+    "III",
+    "V"
+  ],
+  "prior_runs": [
+    "20261015_R2_SPATIAL01",
+    "20261015_R2_PLANAR01"
+  ],
+  "inputs": "Original R1 FK100 q per model, no RNG. ABB each source single-arm q assigned to passive arm2 in declared source index order; all3 modes stratified100 each, not iid originalRSS distribution. V original full100 arm2 q, original wrist-only mode1. IV remains blocked by3 NR qualification failures; VI new distribution undecided; planarRSS not yet reconstructed.",
+  "construction": "Fix passive arm2 designated singular coordinates from original geometry, T1*=T2 S Q^-1, call all8 analytic active arm1 branches, then check physical closure / both original joint bounds / passive analytic rank. No NR fallback or retry.",
+  "fixed_passive_targets": 700,
+  "active_IK_branch_attempts": 5600,
+  "gates": {
+    "position_maxabs_mm": 1e-05,
+    "rotation_matrix_maxabs": 1e-05,
+    "rank_relative": 1e-06,
+    "rank_translation_mm_to_m": 0.001,
+    "require_at_least_one_closed_rank_deficient_bounds_qualified_target_per_tested_mode": true,
+    "accepted_active_IK_must_pass_physical_closure": true
+  },
+  "failure_policy": "Keep all branch rejection reasons and original input denominator. A target not having collision/branchbridge/RBS tests is not declared globally legal or planning success.",
+  "cost": "Shares same2coreh/1wallh ledger, single process120s, previous actual costs subtracted. No formal planning and no collision calls."
+}
