@@ -1,0 +1,7 @@
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/physical_nr_abb_q1_driver_draft.cpp: In function ‘json mat(const Matrix&)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/physical_nr_abb_q1_driver_draft.cpp:16:9: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   16 |         for(Eigen::Index j=0;j<m.cols();++j)row.push_back(m(i,j));a.push_back(row);}return a;
+      |         ^~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/physical_nr_abb_q1_driver_draft.cpp:16:67: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   16 |         for(Eigen::Index j=0;j<m.cols();++j)row.push_back(m(i,j));a.push_back(row);}return a;
+      |                                                                   ^
