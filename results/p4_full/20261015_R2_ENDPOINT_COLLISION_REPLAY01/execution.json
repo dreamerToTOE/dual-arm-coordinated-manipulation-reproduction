@@ -1,0 +1,74 @@
+{
+  "schema": "P4_R2_ENDPOINT_COLLISION_OBSERVATION_CONTINUATION_V1",
+  "started_at_utc": "2026-10-15T05:44:26.761145+00:00",
+  "source_commit": "0465ad850da0a84ac3fbc22f3d79d4905deea210",
+  "git_status_at_start": "",
+  "protocol_sha256": "ee7808f8e6764e1e6a9d98217cbf0df5aa56b9776424bc55e888cc2a653329de",
+  "source_sha256": "f30e718a12acca976e1b7ebb5977e9008bb27b5e2a60e4b0d34f07321ac775b5",
+  "bound_files_sha256": {
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/IV_start.json": "c70f25d52a99c4941be7543f9341a71dd37583db7e329a6a44dcd9cdd29fafa8",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/IV_goal.json": "d3671a372afe354b244b41748577d1ea34e8d90b247f74991460392418cab933",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_start.json": "e714e75f8d79a2d288c12680e385cf7b134271a46674b52e7879d11a5724515d",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_goal.json": "4429cba418ef3e6f6da7da1b95c5e4978a170959b147be239c97be8b2db5dd14",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v2/manifest.json": "9ed2e7c634e4c5d58698101571145960c96417c94f8ff0f546d7a637e0e1d302",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/manifest.json": "c5df871adeea01d6487454dfd16fa217dde779958b5ba08b86ffff0e4f4a6388",
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/result.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "scripts/build_p4_full_collision_adapter_v3.py": "67ac61dfdabc5904720933dd62ec4b9809c22e3992e359601b7999dd3841f3d3",
+    "scripts/replay_p4_full_r2_endpoint_collision.py": "f30e718a12acca976e1b7ebb5977e9008bb27b5e2a60e4b0d34f07321ac775b5",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578"
+  },
+  "run_id": "20261015_R2_ENDPOINT_COLLISION_REPLAY01",
+  "classification": "RECONSTRUCTED",
+  "collision_adapter_calls_started": 4,
+  "collision_adapter_calls_completed": 4,
+  "new_ik_nr_sampling_planning_calls": 0,
+  "full_physical_geometry_or_CCD_qualified": false,
+  "status": "EVIDENCE_RECORDED",
+  "wall_s": 1.3214305180008523,
+  "cpu_s": 1.3246370000000003,
+  "endpoint_status_counts": {
+    "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED": 4
+  },
+  "endpoint_summary": [
+    {
+      "environment": "IV",
+      "endpoint": "start",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "source_candidate": {
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/IV_start.json",
+        "index": 22
+      }
+    },
+    {
+      "environment": "IV",
+      "endpoint": "goal",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "source_candidate": {
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/IV_goal.json",
+        "index": 44
+      }
+    },
+    {
+      "environment": "V",
+      "endpoint": "start",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "source_candidate": {
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_start.json",
+        "index": 52
+      }
+    },
+    {
+      "environment": "V",
+      "endpoint": "goal",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "source_candidate": {
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_goal.json",
+        "index": 22
+      }
+    }
+  ],
+  "bound_files_unchanged": true,
+  "a_total_wall_s": 8.771571746001428,
+  "a_total_cpu_s": 7.350284
+}
