@@ -1,0 +1,4770 @@
+{
+  "schema": "P4_COMAU_R1_READONLY_ROOT_CAUSE_V1",
+  "created_at": "2026-10-14T23:53:58.050398+08:00",
+  "classification": "DERIVED_READONLY_FROM_SAVED_R1_RECORDS; NO_NEW_SOLVES_OR_TRIALS",
+  "scientific_calls_added": 0,
+  "source_changes": 0,
+  "threshold_changes": 0,
+  "PI_literal": 3.1416,
+  "mathematical_PI": 3.141592653589793,
+  "PI_difference_rad": 7.346410206832132e-06,
+  "l1x_mm": 524.5,
+  "L34_mm": 1451.768662700776,
+  "alpha_rad": 1.4256359259259337,
+  "source_files": [
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp",
+      "sha256": "265c1718e3ce2a6081419b2a954794fa10c9a59dc7d4984b8541904c0333a923"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.h",
+      "sha256": "508ac232a81a0915b7a6c709fc8aa6dcb539936e4b648325dba82b04e6404402"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/kdl_class.cpp",
+      "sha256": "5bacd62f37a9fc2cf0ac0e1d92362363a016f77ca47cc0546010da25ccedcf10"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau_industrialScene/proj_classes/apc_class.cpp",
+      "sha256": "ad2e271952cfb4dbb726f817b8d5b08dfed0fb8c7a4616bd94d5fe0413d64933"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau_industrialScene/proj_classes/apc_class.h",
+      "sha256": "d57ffc7d5b3af7e00c5a633ae784dac18d24699341267cd3ae0af9797c9611f1"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau_industrialScene/proj_classes/kdl_class.cpp",
+      "sha256": "b893c0b0076a600f9a86173fee84fed9262eb9f9b4370a5596290723c65cff82"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/analyze_comau_native_qualification.py",
+      "sha256": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/comau_native_qualification.cpp",
+      "sha256": "40bc2ed78a6a511a10199d5062969cd2d1f155b5e20a0c18486fbc93b4fede3a"
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r1_qualification_v1.json",
+      "sha256": "81dee90f09c6d4eb37457fef2eba30568c55026b89cf45890027315139cfbc2a"
+    }
+  ],
+  "models": [
+    {
+      "model": "IV",
+      "input_raw_path": "results/p4_full/20261014T1545_R1_COMAU02/IV_native.jsonl",
+      "input_raw_sha256": "3ae03596a6e5e52ba9e4c5b99fa10e61c713dcb9741860c7064563e4ca87b2f6",
+      "input_analysis_path": "results/p4_full/20261014T1545_R1_COMAU02/IV_independent.json",
+      "input_analysis_sha256": "f0b03e756849458acb1a5abb8b3ef101581fc35e6ce144591cf3de2e815e2979",
+      "original_qualification_status": "FAIL_GATE",
+      "original_passed": 234,
+      "original_failed": 38,
+      "FK_terminal_comparisons": 200,
+      "FK_failed": 0,
+      "FK_position_abs_max_mm": 1.8189894035458565e-12,
+      "FK_rotation_matrix_abs_max": 4.440892098500626e-16,
+      "IK_attempts": 80,
+      "IK_accepted": 28,
+      "IK_records_derived": [
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            3.1136101894516433,
+            -0.5314602531593404,
+            -0.02774173123020307,
+            0.48698145822402883,
+            -1.8201754581020806,
+            2.6981569469154514
+          ],
+          "source_q_rad": [
+            3.113610189451643,
+            -0.9918017540904719,
+            -0.027741731230202404,
+            19.326824018631953,
+            -1.4107602396626633,
+            -3.7972009417317243
+          ],
+          "target_wristcenter_base_mm": [
+            -51.69463987048901,
+            1.446921081254132,
+            2560.6766815413
+          ],
+          "wrist_radial_norm_k_mm": 51.7148854001914,
+          "front_signed_radius_k_minus_l1x_mm": -472.7851145998086,
+          "shoulder_height_offset_mm": 2017.6766815412998,
+          "shoulder_wrist_distance_D_mm": 2072.3283899572157,
+          "gamma_existing_rad": 1.3978941946957306,
+          "cosine_numerator_A_mm": 1499.7650823290662,
+          "sine_numerator_B_mm": 1430.1222512950262,
+          "native_roundtrip_translation_l2_mm": 945.5776405383065,
+          "native_roundtrip_rotation_abs_max": 4.440892098500626e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007612087217940565,
+          "negative_signed_radius": true,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 472.79252593690273,
+          "first_three_position_height_mm": 2017.674944890992,
+          "signed_angle_psi_rad": -0.23016891386301375,
+          "source_abs_radius_angle_psi_rad": 0.23016891386301375,
+          "full_quadrant_beta_rad": 0.7616328402274577,
+          "source_positive_cosine_beta_rad": 0.7616328402274576,
+          "analytic_existing_return_error_prediction_mm": 945.5776405383064,
+          "prediction_minus_observed_mm": -1.1368683772161603e-13,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            3.1136101894516433,
+            -0.5314602531593404,
+            -0.02774173123020307,
+            -2.6546111953657645,
+            1.8201754581020806,
+            -0.4434357066743416
+          ],
+          "source_q_rad": [
+            3.113610189451643,
+            -0.9918017540904719,
+            -0.027741731230202404,
+            19.326824018631953,
+            -1.4107602396626633,
+            -3.7972009417317243
+          ],
+          "target_wristcenter_base_mm": [
+            -51.69463987048901,
+            1.446921081254132,
+            2560.6766815413
+          ],
+          "wrist_radial_norm_k_mm": 51.7148854001914,
+          "front_signed_radius_k_minus_l1x_mm": -472.7851145998086,
+          "shoulder_height_offset_mm": 2017.6766815412998,
+          "shoulder_wrist_distance_D_mm": 2072.3283899572157,
+          "gamma_existing_rad": 1.3978941946957306,
+          "cosine_numerator_A_mm": 1499.7650823290662,
+          "sine_numerator_B_mm": 1430.1222512950262,
+          "native_roundtrip_translation_l2_mm": 945.5776405383065,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007612087217940565,
+          "negative_signed_radius": true,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 472.79252593690273,
+          "first_three_position_height_mm": 2017.674944890992,
+          "signed_angle_psi_rad": -0.23016891386301375,
+          "source_abs_radius_angle_psi_rad": 0.23016891386301375,
+          "full_quadrant_beta_rad": 0.7616328402274577,
+          "source_positive_cosine_beta_rad": 0.7616328402274576,
+          "analytic_existing_return_error_prediction_mm": 945.5776405383064,
+          "prediction_minus_observed_mm": -1.1368683772161603e-13,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 5,
+          "existing_q_result_rad": [
+            -0.027989810548356253,
+            -1.022691677864602,
+            -0.05817374134166253,
+            0.9779875089561854,
+            0.5785190726020056,
+            -1.4666646926389726
+          ],
+          "source_q_rad": [
+            3.113610189451643,
+            -0.9918017540904719,
+            -0.027741731230202404,
+            19.326824018631953,
+            -1.4107602396626633,
+            -3.7972009417317243
+          ],
+          "target_wristcenter_base_mm": [
+            -51.69463987048901,
+            1.446921081254132,
+            2560.6766815413
+          ],
+          "wrist_radial_norm_k_mm": 51.7148854001914,
+          "front_signed_radius_k_minus_l1x_mm": -472.7851145998086,
+          "shoulder_height_offset_mm": 2017.6766815412998,
+          "shoulder_wrist_distance_D_mm": 2072.3283899572157,
+          "gamma_existing_rad": 1.3674621845842712,
+          "cosine_numerator_A_mm": 1543.1642141569073,
+          "sine_numerator_B_mm": 1421.860398751496,
+          "native_roundtrip_translation_l2_mm": 0.007717002705505812,
+          "native_roundtrip_rotation_abs_max": 4.85722573273506e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007612087217940565,
+          "negative_signed_radius": true,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": -576.2222967365874,
+          "first_three_position_height_mm": 2017.6745649722307,
+          "classification": "BACK_SHOULDER_PI_CONTRIBUTIONS_NOT_SEPARATELY_ISOLATED"
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 7,
+          "existing_q_result_rad": [
+            -0.027989810548356253,
+            -1.022691677864602,
+            -0.05817374134166253,
+            -2.1636051446336078,
+            -0.5785190726020056,
+            1.6749279609508207
+          ],
+          "source_q_rad": [
+            3.113610189451643,
+            -0.9918017540904719,
+            -0.027741731230202404,
+            19.326824018631953,
+            -1.4107602396626633,
+            -3.7972009417317243
+          ],
+          "target_wristcenter_base_mm": [
+            -51.69463987048901,
+            1.446921081254132,
+            2560.6766815413
+          ],
+          "wrist_radial_norm_k_mm": 51.7148854001914,
+          "front_signed_radius_k_minus_l1x_mm": -472.7851145998086,
+          "shoulder_height_offset_mm": 2017.6766815412998,
+          "shoulder_wrist_distance_D_mm": 2072.3283899572157,
+          "gamma_existing_rad": 1.3674621845842712,
+          "cosine_numerator_A_mm": 1543.1642141569073,
+          "sine_numerator_B_mm": 1421.860398751496,
+          "native_roundtrip_translation_l2_mm": 0.007717002705506353,
+          "native_roundtrip_rotation_abs_max": 6.38378239159465e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007612087217940565,
+          "negative_signed_radius": true,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": -576.2222967365874,
+          "first_three_position_height_mm": 2017.6745649722307,
+          "classification": "BACK_SHOULDER_PI_CONTRIBUTIONS_NOT_SEPARATELY_ISOLATED"
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -0.5313042842622884,
+            0.8652059285872225,
+            -1.0523719496574413,
+            1.4443171197033247,
+            -1.7333375096178245,
+            -1.2399231211907236
+          ],
+          "source_q_rad": [
+            -0.5313042842622884,
+            0.8652022553821168,
+            -1.0523719496574375,
+            -23.688424706563758,
+            -1.7333370462703344,
+            -1.239926813724991
+          ],
+          "target_wristcenter_base_mm": [
+            2455.7116811335786,
+            -1443.149058438313,
+            1827.2421758836103
+          ],
+          "wrist_radial_norm_k_mm": 2848.367789757372,
+          "front_signed_radius_k_minus_l1x_mm": 2323.867789757372,
+          "shoulder_height_offset_mm": 1284.2421758836103,
+          "shoulder_wrist_distance_D_mm": 2655.115716986754,
+          "gamma_existing_rad": 0.3732639762684924,
+          "cosine_numerator_A_mm": 2601.802888236034,
+          "sine_numerator_B_mm": 529.3970167621998,
+          "native_roundtrip_translation_l2_mm": 0.00975278460235603,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.009752784601790469,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2323.8725070266096,
+          "first_three_position_height_mm": 1284.2336398319217,
+          "signed_angle_psi_rad": 1.0659351364511909,
+          "source_abs_radius_angle_psi_rad": 1.0659351364511909,
+          "full_quadrant_beta_rad": 0.20073288106907197,
+          "source_positive_cosine_beta_rad": 0.20073288106907197,
+          "analytic_existing_return_error_prediction_mm": 0.009752784601790469,
+          "prediction_minus_observed_mm": -5.655614865318626e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -0.5313042842622884,
+            0.8652059285872225,
+            -1.0523719496574413,
+            -1.6972755338864687,
+            1.7333375096178245,
+            1.9016695323990698
+          ],
+          "source_q_rad": [
+            -0.5313042842622884,
+            0.8652022553821168,
+            -1.0523719496574375,
+            -23.688424706563758,
+            -1.7333370462703344,
+            -1.239926813724991
+          ],
+          "target_wristcenter_base_mm": [
+            2455.7116811335786,
+            -1443.149058438313,
+            1827.2421758836103
+          ],
+          "wrist_radial_norm_k_mm": 2848.367789757372,
+          "front_signed_radius_k_minus_l1x_mm": 2323.867789757372,
+          "shoulder_height_offset_mm": 1284.2421758836103,
+          "shoulder_wrist_distance_D_mm": 2655.115716986754,
+          "gamma_existing_rad": 0.3732639762684924,
+          "cosine_numerator_A_mm": 2601.802888236034,
+          "sine_numerator_B_mm": 529.3970167621998,
+          "native_roundtrip_translation_l2_mm": 0.00975278460235603,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.009752784601790469,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2323.8725070266096,
+          "first_three_position_height_mm": 1284.2336398319217,
+          "signed_angle_psi_rad": 1.0659351364511909,
+          "source_abs_radius_angle_psi_rad": 1.0659351364511909,
+          "full_quadrant_beta_rad": 0.20073288106907197,
+          "source_positive_cosine_beta_rad": 0.20073288106907197,
+          "analytic_existing_return_error_prediction_mm": 0.009752784601790469,
+          "prediction_minus_observed_mm": -5.655614865318626e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            0.540648828972965,
+            1.5619637443654772,
+            -0.011573472093103554,
+            0.2899866096054269,
+            -0.23496481959309506,
+            -0.704452402930522
+          ],
+          "source_q_rad": [
+            0.540648828972965,
+            1.5619600711603736,
+            -0.011573472093103332,
+            0.2899909971957726,
+            -0.23496129975504143,
+            5.5787283926944715
+          ],
+          "target_wristcenter_base_mm": [
+            1726.5164442259904,
+            1036.4484187434018,
+            -877.8698972567449
+          ],
+          "wrist_radial_norm_k_mm": 2013.7240021657526,
+          "front_signed_radius_k_minus_l1x_mm": 1489.2240021657526,
+          "shoulder_height_offset_mm": -1420.869897256745,
+          "shoulder_wrist_distance_D_mm": 2058.3146974058595,
+          "gamma_existing_rad": 1.4140624538328301,
+          "cosine_numerator_A_mm": 1476.61085742279,
+          "sine_numerator_B_mm": 1433.9734200110222,
+          "native_roundtrip_translation_l2_mm": 0.0075606120513714205,
+          "native_roundtrip_rotation_abs_max": 4.718447854656915e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007560612050943249,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1489.2187830091482,
+          "first_three_position_height_mm": -1420.8753674723646,
+          "signed_angle_psi_rad": 2.3327101832396315,
+          "source_abs_radius_angle_psi_rad": 2.3327101832396315,
+          "full_quadrant_beta_rad": 0.7707501120792577,
+          "source_positive_cosine_beta_rad": 0.7707501120792577,
+          "analytic_existing_return_error_prediction_mm": 0.007560612050943249,
+          "prediction_minus_observed_mm": -4.2817138723449943e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            0.540648828972965,
+            1.5619637443654772,
+            -0.011573472093103554,
+            -2.8516060439843662,
+            0.23496481959309506,
+            2.4371402506592714
+          ],
+          "source_q_rad": [
+            0.540648828972965,
+            1.5619600711603736,
+            -0.011573472093103332,
+            0.2899909971957726,
+            -0.23496129975504143,
+            5.5787283926944715
+          ],
+          "target_wristcenter_base_mm": [
+            1726.5164442259904,
+            1036.4484187434018,
+            -877.8698972567449
+          ],
+          "wrist_radial_norm_k_mm": 2013.7240021657526,
+          "front_signed_radius_k_minus_l1x_mm": 1489.2240021657526,
+          "shoulder_height_offset_mm": -1420.869897256745,
+          "shoulder_wrist_distance_D_mm": 2058.3146974058595,
+          "gamma_existing_rad": 1.4140624538328301,
+          "cosine_numerator_A_mm": 1476.61085742279,
+          "sine_numerator_B_mm": 1433.9734200110222,
+          "native_roundtrip_translation_l2_mm": 0.0075606120513714205,
+          "native_roundtrip_rotation_abs_max": 4.996003610813204e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007560612050943249,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1489.2187830091482,
+          "first_three_position_height_mm": -1420.8753674723646,
+          "signed_angle_psi_rad": 2.3327101832396315,
+          "source_abs_radius_angle_psi_rad": 2.3327101832396315,
+          "full_quadrant_beta_rad": 0.7707501120792577,
+          "source_positive_cosine_beta_rad": 0.7707501120792577,
+          "analytic_existing_return_error_prediction_mm": 0.007560612050943249,
+          "prediction_minus_observed_mm": -4.2817138723449943e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -0.6805778351347241,
+            1.0078297344110114,
+            0.2060081654945538,
+            1.8561598495943226,
+            -0.998135129088785,
+            0.45429804436444027
+          ],
+          "source_q_rad": [
+            -0.680577835134724,
+            1.007826061205908,
+            0.2060081654945538,
+            30.13049600435039,
+            0.9981361631231365,
+            -2.6872988029383
+          ],
+          "target_wristcenter_base_mm": [
+            1772.2777018898232,
+            -1434.8670826392076,
+            -62.44117147946872
+          ],
+          "wrist_radial_norm_k_mm": 2280.30958368758,
+          "front_signed_radius_k_minus_l1x_mm": 1755.80958368758,
+          "shoulder_height_offset_mm": -605.4411714794687,
+          "shoulder_wrist_distance_D_mm": 1857.263122525073,
+          "gamma_existing_rad": 1.6316440914204875,
+          "cosine_numerator_A_mm": 1161.7176225166338,
+          "sine_numerator_B_mm": 1449.0819410322813,
+          "native_roundtrip_translation_l2_mm": 0.006822108379832359,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.0068221083800417215,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1755.8073597661341,
+          "first_three_position_height_mm": -605.4476209241074,
+          "signed_angle_psi_rad": 1.9028504959586214,
+          "source_abs_radius_angle_psi_rad": 1.9028504959586214,
+          "full_quadrant_beta_rad": 0.8950244347527132,
+          "source_positive_cosine_beta_rad": 0.8950244347527133,
+          "analytic_existing_return_error_prediction_mm": 0.006822108379835524,
+          "prediction_minus_observed_mm": 3.1650029819196845e-15,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -0.6805778351347241,
+            1.0078297344110114,
+            0.2060081654945538,
+            -1.2854328039954708,
+            0.998135129088785,
+            -2.687294609225353
+          ],
+          "source_q_rad": [
+            -0.680577835134724,
+            1.007826061205908,
+            0.2060081654945538,
+            30.13049600435039,
+            0.9981361631231365,
+            -2.6872988029383
+          ],
+          "target_wristcenter_base_mm": [
+            1772.2777018898232,
+            -1434.8670826392076,
+            -62.44117147946872
+          ],
+          "wrist_radial_norm_k_mm": 2280.30958368758,
+          "front_signed_radius_k_minus_l1x_mm": 1755.80958368758,
+          "shoulder_height_offset_mm": -605.4411714794687,
+          "shoulder_wrist_distance_D_mm": 1857.263122525073,
+          "gamma_existing_rad": 1.6316440914204875,
+          "cosine_numerator_A_mm": 1161.7176225166338,
+          "sine_numerator_B_mm": 1449.0819410322813,
+          "native_roundtrip_translation_l2_mm": 0.0068221083798054895,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.0068221083800417215,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1755.8073597661341,
+          "first_three_position_height_mm": -605.4476209241074,
+          "signed_angle_psi_rad": 1.9028504959586214,
+          "source_abs_radius_angle_psi_rad": 1.9028504959586214,
+          "full_quadrant_beta_rad": 0.8950244347527132,
+          "source_positive_cosine_beta_rad": 0.8950244347527133,
+          "analytic_existing_return_error_prediction_mm": 0.006822108379835524,
+          "prediction_minus_observed_mm": 3.003413490132445e-14,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -0.4281610790649948,
+            -0.18553924024750468,
+            -0.054343419650063174,
+            -3.052401230328862,
+            -1.0398639220348487,
+            -0.5481395991391118
+          ],
+          "source_q_rad": [
+            -0.4281610790649948,
+            -0.1855429134526081,
+            -0.054343419650063396,
+            -12.477179383210036,
+            1.0398675806392914,
+            -3.689731873313294
+          ],
+          "target_wristcenter_base_mm": [
+            1491.3865216771987,
+            -680.6646167275142,
+            2316.833163946541
+          ],
+          "wrist_radial_norm_k_mm": 1639.3712445645822,
+          "front_signed_radius_k_minus_l1x_mm": 1114.8712445645822,
+          "shoulder_height_offset_mm": 1773.833163946541,
+          "shoulder_wrist_distance_D_mm": 2095.0947437940786,
+          "gamma_existing_rad": 1.3712925062758705,
+          "cosine_numerator_A_mm": 1537.7158941894309,
+          "sine_numerator_B_mm": 1422.9728789512385,
+          "native_roundtrip_translation_l2_mm": 0.0076957127049553506,
+          "native_roundtrip_rotation_abs_max": 4.440892098500626e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007695712705040258,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1114.877760210091,
+          "first_three_position_height_mm": 1773.8290687838291,
+          "signed_angle_psi_rad": 0.5611191219265214,
+          "source_abs_radius_angle_psi_rad": 0.5611191219265214,
+          "full_quadrant_beta_rad": 0.7466620353791293,
+          "source_positive_cosine_beta_rad": 0.7466620353791295,
+          "analytic_existing_return_error_prediction_mm": 0.007695712704807656,
+          "prediction_minus_observed_mm": -1.4769435674466536e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -0.4281610790649948,
+            -0.18553924024750468,
+            -0.054343419650063174,
+            0.08919142326093116,
+            1.0398639220348487,
+            2.5934530544506815
+          ],
+          "source_q_rad": [
+            -0.4281610790649948,
+            -0.1855429134526081,
+            -0.054343419650063396,
+            -12.477179383210036,
+            1.0398675806392914,
+            -3.689731873313294
+          ],
+          "target_wristcenter_base_mm": [
+            1491.3865216771987,
+            -680.6646167275142,
+            2316.833163946541
+          ],
+          "wrist_radial_norm_k_mm": 1639.3712445645822,
+          "front_signed_radius_k_minus_l1x_mm": 1114.8712445645822,
+          "shoulder_height_offset_mm": 1773.833163946541,
+          "shoulder_wrist_distance_D_mm": 2095.0947437940786,
+          "gamma_existing_rad": 1.3712925062758705,
+          "cosine_numerator_A_mm": 1537.7158941894309,
+          "sine_numerator_B_mm": 1422.9728789512385,
+          "native_roundtrip_translation_l2_mm": 0.0076957127049553506,
+          "native_roundtrip_rotation_abs_max": 4.996003610813204e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007695712705040258,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1114.877760210091,
+          "first_three_position_height_mm": 1773.8290687838291,
+          "signed_angle_psi_rad": 0.5611191219265214,
+          "source_abs_radius_angle_psi_rad": 0.5611191219265214,
+          "full_quadrant_beta_rad": 0.7466620353791293,
+          "source_positive_cosine_beta_rad": 0.7466620353791295,
+          "analytic_existing_return_error_prediction_mm": 0.007695712704807656,
+          "prediction_minus_observed_mm": -1.4769435674466536e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 0,
+          "existing_q_result_rad": [
+            0.7117003793530119,
+            2.0307631972860345,
+            -1.4535848864827856,
+            0.19530419583022826,
+            0.6828661483091764,
+            2.182081950651331
+          ],
+          "source_q_rad": [
+            0.7117003793530121,
+            2.030759524080937,
+            -1.4535848864827965,
+            -6.08788198770165,
+            0.6828697516821234,
+            -4.101102226867904
+          ],
+          "target_wristcenter_base_mm": [
+            2243.717963856353,
+            1935.1834032271659,
+            -619.750652631024
+          ],
+          "wrist_radial_norm_k_mm": 2962.9723430125996,
+          "front_signed_radius_k_minus_l1x_mm": 2438.4723430125996,
+          "shoulder_height_offset_mm": -1162.750652631024,
+          "shoulder_wrist_distance_D_mm": 2701.5063294079528,
+          "gamma_existing_rad": -0.02794896055685192,
+          "cosine_numerator_A_mm": 2701.201679132491,
+          "sine_numerator_B_mm": -40.57014275349297,
+          "native_roundtrip_translation_l2_mm": 0.009923186835867156,
+          "native_roundtrip_rotation_abs_max": 2.7755575615628914e-16,
+          "plain_PI_half_turn_prediction_mm": 0.009923186836086518,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2438.4680719745174,
+          "first_three_position_height_mm": -1162.7596096322343,
+          "signed_angle_psi_rad": 2.0157413590596827,
+          "source_abs_radius_angle_psi_rad": 2.0157413590596827,
+          "full_quadrant_beta_rad": -0.015018165021248482,
+          "source_positive_cosine_beta_rad": -0.015018165021248479,
+          "analytic_existing_return_error_prediction_mm": 0.009923186836077146,
+          "prediction_minus_observed_mm": 2.0999001149046848e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            0.7117003793530119,
+            2.0007268672435377,
+            -1.3976869653690818,
+            -2.9398527072169296,
+            -0.6575123152627315,
+            -0.9677219897439062
+          ],
+          "source_q_rad": [
+            0.7117003793530121,
+            2.030759524080937,
+            -1.4535848864827965,
+            -6.08788198770165,
+            0.6828697516821234,
+            -4.101102226867904
+          ],
+          "target_wristcenter_base_mm": [
+            2243.717963856353,
+            1935.1834032271659,
+            -619.750652631024
+          ],
+          "wrist_radial_norm_k_mm": 2962.9723430125996,
+          "front_signed_radius_k_minus_l1x_mm": 2438.4723430125996,
+          "shoulder_height_offset_mm": -1162.750652631024,
+          "shoulder_wrist_distance_D_mm": 2701.5063294079528,
+          "gamma_existing_rad": 0.02794896055685192,
+          "cosine_numerator_A_mm": 2701.201679132491,
+          "sine_numerator_B_mm": 40.57014275349297,
+          "native_roundtrip_translation_l2_mm": 0.009923186835962876,
+          "native_roundtrip_rotation_abs_max": 4.440892098500626e-16,
+          "plain_PI_half_turn_prediction_mm": 0.009923186836086518,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2438.4680719745174,
+          "first_three_position_height_mm": -1162.7596096322345,
+          "signed_angle_psi_rad": 2.0157413590596827,
+          "source_abs_radius_angle_psi_rad": 2.0157413590596827,
+          "full_quadrant_beta_rad": 0.015018165021248482,
+          "source_positive_cosine_beta_rad": 0.015018165021248479,
+          "analytic_existing_return_error_prediction_mm": 0.009923186836095891,
+          "prediction_minus_observed_mm": 1.3301512669094961e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 2,
+          "existing_q_result_rad": [
+            0.7117003793530119,
+            2.0307631972860345,
+            -1.4535848864827856,
+            -2.946288457759565,
+            -0.6828661483091764,
+            -0.9595107029384621
+          ],
+          "source_q_rad": [
+            0.7117003793530121,
+            2.030759524080937,
+            -1.4535848864827965,
+            -6.08788198770165,
+            0.6828697516821234,
+            -4.101102226867904
+          ],
+          "target_wristcenter_base_mm": [
+            2243.717963856353,
+            1935.1834032271659,
+            -619.750652631024
+          ],
+          "wrist_radial_norm_k_mm": 2962.9723430125996,
+          "front_signed_radius_k_minus_l1x_mm": 2438.4723430125996,
+          "shoulder_height_offset_mm": -1162.750652631024,
+          "shoulder_wrist_distance_D_mm": 2701.5063294079528,
+          "gamma_existing_rad": -0.02794896055685192,
+          "cosine_numerator_A_mm": 2701.201679132491,
+          "sine_numerator_B_mm": -40.57014275349297,
+          "native_roundtrip_translation_l2_mm": 0.009923186835867156,
+          "native_roundtrip_rotation_abs_max": 2.7755575615628914e-16,
+          "plain_PI_half_turn_prediction_mm": 0.009923186836086518,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2438.4680719745174,
+          "first_three_position_height_mm": -1162.7596096322343,
+          "signed_angle_psi_rad": 2.0157413590596827,
+          "source_abs_radius_angle_psi_rad": 2.0157413590596827,
+          "full_quadrant_beta_rad": -0.015018165021248482,
+          "source_positive_cosine_beta_rad": -0.015018165021248479,
+          "analytic_existing_return_error_prediction_mm": 0.009923186836077146,
+          "prediction_minus_observed_mm": 2.0999001149046848e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            0.7117003793530119,
+            2.0007268672435377,
+            -1.3976869653690818,
+            0.2017399463728635,
+            0.6575123152627315,
+            2.173870663845887
+          ],
+          "source_q_rad": [
+            0.7117003793530121,
+            2.030759524080937,
+            -1.4535848864827965,
+            -6.08788198770165,
+            0.6828697516821234,
+            -4.101102226867904
+          ],
+          "target_wristcenter_base_mm": [
+            2243.717963856353,
+            1935.1834032271659,
+            -619.750652631024
+          ],
+          "wrist_radial_norm_k_mm": 2962.9723430125996,
+          "front_signed_radius_k_minus_l1x_mm": 2438.4723430125996,
+          "shoulder_height_offset_mm": -1162.750652631024,
+          "shoulder_wrist_distance_D_mm": 2701.5063294079528,
+          "gamma_existing_rad": 0.02794896055685192,
+          "cosine_numerator_A_mm": 2701.201679132491,
+          "sine_numerator_B_mm": 40.57014275349297,
+          "native_roundtrip_translation_l2_mm": 0.009923186835962876,
+          "native_roundtrip_rotation_abs_max": 4.440892098500626e-16,
+          "plain_PI_half_turn_prediction_mm": 0.009923186836086518,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2438.4680719745174,
+          "first_three_position_height_mm": -1162.7596096322345,
+          "signed_angle_psi_rad": 2.0157413590596827,
+          "source_abs_radius_angle_psi_rad": 2.0157413590596827,
+          "full_quadrant_beta_rad": 0.015018165021248482,
+          "source_positive_cosine_beta_rad": 0.015018165021248479,
+          "analytic_existing_return_error_prediction_mm": 0.009923186836095891,
+          "prediction_minus_observed_mm": 1.3301512669094961e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            1.873163952306015,
+            1.384251864801888,
+            1.249850240025365,
+            -1.4594558498763799,
+            -1.1015700272782183,
+            2.420381550377842
+          ],
+          "source_q_rad": [
+            1.8731639523060148,
+            1.2407242999744734,
+            1.2498502400253653,
+            20.45801797047629,
+            1.090861127987421,
+            5.7229225695077295
+          ],
+          "target_wristcenter_base_mm": [
+            -205.9438336853112,
+            660.2195712360314,
+            -89.42326960493199
+          ],
+          "wrist_radial_norm_k_mm": 691.5943499451772,
+          "front_signed_radius_k_minus_l1x_mm": 167.0943499451772,
+          "shoulder_height_offset_mm": -632.423269604932,
+          "shoulder_wrist_distance_D_mm": 654.1251514208835,
+          "gamma_existing_rad": 2.6754861659512987,
+          "cosine_numerator_A_mm": -46.90101451144233,
+          "sine_numerator_B_mm": 652.441574824284,
+          "native_roundtrip_translation_l2_mm": 93.80442557444509,
+          "native_roundtrip_rotation_abs_max": 3.885780586188048e-16,
+          "plain_PI_half_turn_prediction_mm": 0.0024027358444706458,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": true,
+          "first_three_position_radial_mm": 74.91737117986337,
+          "first_three_position_height_mm": -649.8208223940603,
+          "signed_angle_psi_rad": 2.8832825725805287,
+          "source_abs_radius_angle_psi_rad": 2.8832825725805287,
+          "full_quadrant_beta_rad": 1.6425582726060548,
+          "source_positive_cosine_beta_rad": 1.4990343809837454,
+          "analytic_existing_return_error_prediction_mm": 93.8044255744442,
+          "prediction_minus_observed_mm": -8.952838470577262e-13,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            1.873163952306015,
+            1.384251864801888,
+            1.249850240025365,
+            1.6821368037134135,
+            1.1015700272782183,
+            -0.7212111032119513
+          ],
+          "source_q_rad": [
+            1.8731639523060148,
+            1.2407242999744734,
+            1.2498502400253653,
+            20.45801797047629,
+            1.090861127987421,
+            5.7229225695077295
+          ],
+          "target_wristcenter_base_mm": [
+            -205.9438336853112,
+            660.2195712360314,
+            -89.42326960493199
+          ],
+          "wrist_radial_norm_k_mm": 691.5943499451772,
+          "front_signed_radius_k_minus_l1x_mm": 167.0943499451772,
+          "shoulder_height_offset_mm": -632.423269604932,
+          "shoulder_wrist_distance_D_mm": 654.1251514208835,
+          "gamma_existing_rad": 2.6754861659512987,
+          "cosine_numerator_A_mm": -46.90101451144233,
+          "sine_numerator_B_mm": 652.441574824284,
+          "native_roundtrip_translation_l2_mm": 93.80442557444509,
+          "native_roundtrip_rotation_abs_max": 1.6653345369377348e-16,
+          "plain_PI_half_turn_prediction_mm": 0.0024027358444706458,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": true,
+          "first_three_position_radial_mm": 74.91737117986337,
+          "first_three_position_height_mm": -649.8208223940603,
+          "signed_angle_psi_rad": 2.8832825725805287,
+          "source_abs_radius_angle_psi_rad": 2.8832825725805287,
+          "full_quadrant_beta_rad": 1.6425582726060548,
+          "source_positive_cosine_beta_rad": 1.4990343809837454,
+          "analytic_existing_return_error_prediction_mm": 93.8044255744442,
+          "prediction_minus_observed_mm": -8.952838470577262e-13,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -1.103686862478288,
+            1.984663300842003,
+            0.5413923235219169,
+            -1.6214280562028063,
+            -1.562377031861633,
+            2.86753411441431
+          ],
+          "source_q_rad": [
+            -1.103686862478288,
+            1.9846596276368995,
+            0.5413923235219169,
+            20.369720488039192,
+            1.5623772177629642,
+            6.009130436631968
+          ],
+          "target_wristcenter_base_mm": [
+            278.0083747883896,
+            -551.2376954228912,
+            -960.5789088690966
+          ],
+          "wrist_radial_norm_k_mm": 617.374807801243,
+          "front_signed_radius_k_minus_l1x_mm": 92.87480780124304,
+          "shoulder_height_offset_mm": -1503.5789088690967,
+          "shoulder_wrist_distance_D_mm": 1506.444577513591,
+          "gamma_existing_rad": 1.9670282494478506,
+          "cosine_numerator_A_mm": 689.6972060480406,
+          "sine_numerator_B_mm": 1339.2882546672422,
+          "native_roundtrip_translation_l2_mm": 0.00553347991054957,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.005533479910133271,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 92.86928484689508,
+          "first_three_position_height_mm": -1503.5792500071711,
+          "signed_angle_psi_rad": 3.079901871790459,
+          "source_abs_radius_angle_psi_rad": 3.079901871790459,
+          "full_quadrant_beta_rad": 1.0952422441535596,
+          "source_positive_cosine_beta_rad": 1.0952422441535594,
+          "analytic_existing_return_error_prediction_mm": 0.005533479910467769,
+          "prediction_minus_observed_mm": -8.180088550968634e-14,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -1.103686862478288,
+            1.984663300842003,
+            0.5413923235219169,
+            1.5201645973869868,
+            1.562377031861633,
+            -0.274058539175483
+          ],
+          "source_q_rad": [
+            -1.103686862478288,
+            1.9846596276368995,
+            0.5413923235219169,
+            20.369720488039192,
+            1.5623772177629642,
+            6.009130436631968
+          ],
+          "target_wristcenter_base_mm": [
+            278.0083747883896,
+            -551.2376954228912,
+            -960.5789088690966
+          ],
+          "wrist_radial_norm_k_mm": 617.374807801243,
+          "front_signed_radius_k_minus_l1x_mm": 92.87480780124304,
+          "shoulder_height_offset_mm": -1503.5789088690967,
+          "shoulder_wrist_distance_D_mm": 1506.444577513591,
+          "gamma_existing_rad": 1.9670282494478506,
+          "cosine_numerator_A_mm": 689.6972060480406,
+          "sine_numerator_B_mm": 1339.2882546672422,
+          "native_roundtrip_translation_l2_mm": 0.005533479910600228,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.005533479910133271,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 92.86928484689508,
+          "first_three_position_height_mm": -1503.5792500071711,
+          "signed_angle_psi_rad": 3.079901871790459,
+          "source_abs_radius_angle_psi_rad": 3.079901871790459,
+          "full_quadrant_beta_rad": 1.0952422441535596,
+          "source_positive_cosine_beta_rad": 1.0952422441535594,
+          "analytic_existing_return_error_prediction_mm": 0.005533479910467769,
+          "prediction_minus_observed_mm": -1.3245914781689905e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 0,
+          "existing_q_result_rad": [
+            1.3209697665543403,
+            2.0860879141360997,
+            -1.5036367793963208,
+            -2.8485431540895165,
+            1.0937703487976183,
+            -0.6816081736379447
+          ],
+          "source_q_rad": [
+            1.3209697665543403,
+            2.086084240930998,
+            -1.5036367793963235,
+            9.717828008682645,
+            1.0937668321910512,
+            5.601575939108387
+          ],
+          "target_wristcenter_base_mm": [
+            723.7463957703039,
+            2836.4727641209056,
+            -687.7816251193786
+          ],
+          "wrist_radial_norm_k_mm": 2927.3514628397793,
+          "front_signed_radius_k_minus_l1x_mm": 2402.8514628397793,
+          "shoulder_height_offset_mm": -1230.7816251193785,
+          "shoulder_wrist_distance_D_mm": 2699.7256455430365,
+          "gamma_existing_rad": -0.0780008534703871,
+          "cosine_numerator_A_mm": 2697.3545244811066,
+          "sine_numerator_B_mm": -113.12440260204228,
+          "native_roundtrip_translation_l2_mm": 0.009916646018831207,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991664601902634,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2402.846941910223,
+          "first_three_position_height_mm": -1230.7904512773312,
+          "signed_angle_psi_rad": 2.0441697846186053,
+          "source_abs_radius_angle_psi_rad": 2.0441697846186053,
+          "full_quadrant_beta_rad": -0.041914456312391185,
+          "source_positive_cosine_beta_rad": -0.04191445631239118,
+          "analytic_existing_return_error_prediction_mm": 0.009916646019007607,
+          "prediction_minus_observed_mm": 1.7640056082512956e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            1.3209697665543403,
+            2.0022590015113173,
+            -1.3476350724555466,
+            0.2833274168419606,
+            -1.162970002737724,
+            2.4826781690115083
+          ],
+          "source_q_rad": [
+            1.3209697665543403,
+            2.086084240930998,
+            -1.5036367793963235,
+            9.717828008682645,
+            1.0937668321910512,
+            5.601575939108387
+          ],
+          "target_wristcenter_base_mm": [
+            723.7463957703039,
+            2836.4727641209056,
+            -687.7816251193786
+          ],
+          "wrist_radial_norm_k_mm": 2927.3514628397793,
+          "front_signed_radius_k_minus_l1x_mm": 2402.8514628397793,
+          "shoulder_height_offset_mm": -1230.7816251193785,
+          "shoulder_wrist_distance_D_mm": 2699.7256455430365,
+          "gamma_existing_rad": 0.0780008534703871,
+          "cosine_numerator_A_mm": 2697.3545244811066,
+          "sine_numerator_B_mm": 113.12440260204228,
+          "native_roundtrip_translation_l2_mm": 0.009916646018831207,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991664601902634,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2402.846941910223,
+          "first_three_position_height_mm": -1230.790451277331,
+          "signed_angle_psi_rad": 2.0441697846186053,
+          "source_abs_radius_angle_psi_rad": 2.0441697846186053,
+          "full_quadrant_beta_rad": 0.041914456312391185,
+          "source_positive_cosine_beta_rad": 0.04191445631239118,
+          "analytic_existing_return_error_prediction_mm": 0.009916646019045074,
+          "prediction_minus_observed_mm": 2.1386711845927664e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 2,
+          "existing_q_result_rad": [
+            1.3209697665543403,
+            2.0860879141360997,
+            -1.5036367793963208,
+            0.2930494995002765,
+            -1.0937703487976183,
+            2.4599844799518484
+          ],
+          "source_q_rad": [
+            1.3209697665543403,
+            2.086084240930998,
+            -1.5036367793963235,
+            9.717828008682645,
+            1.0937668321910512,
+            5.601575939108387
+          ],
+          "target_wristcenter_base_mm": [
+            723.7463957703039,
+            2836.4727641209056,
+            -687.7816251193786
+          ],
+          "wrist_radial_norm_k_mm": 2927.3514628397793,
+          "front_signed_radius_k_minus_l1x_mm": 2402.8514628397793,
+          "shoulder_height_offset_mm": -1230.7816251193785,
+          "shoulder_wrist_distance_D_mm": 2699.7256455430365,
+          "gamma_existing_rad": -0.0780008534703871,
+          "cosine_numerator_A_mm": 2697.3545244811066,
+          "sine_numerator_B_mm": -113.12440260204228,
+          "native_roundtrip_translation_l2_mm": 0.009916646018831207,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991664601902634,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2402.846941910223,
+          "first_three_position_height_mm": -1230.7904512773312,
+          "signed_angle_psi_rad": 2.0441697846186053,
+          "source_abs_radius_angle_psi_rad": 2.0441697846186053,
+          "full_quadrant_beta_rad": -0.041914456312391185,
+          "source_positive_cosine_beta_rad": -0.04191445631239118,
+          "analytic_existing_return_error_prediction_mm": 0.009916646019007607,
+          "prediction_minus_observed_mm": 1.7640056082512956e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            1.3209697665543403,
+            2.0022590015113173,
+            -1.3476350724555466,
+            -2.8582652367478327,
+            1.162970002737724,
+            -0.6589144845782848
+          ],
+          "source_q_rad": [
+            1.3209697665543403,
+            2.086084240930998,
+            -1.5036367793963235,
+            9.717828008682645,
+            1.0937668321910512,
+            5.601575939108387
+          ],
+          "target_wristcenter_base_mm": [
+            723.7463957703039,
+            2836.4727641209056,
+            -687.7816251193786
+          ],
+          "wrist_radial_norm_k_mm": 2927.3514628397793,
+          "front_signed_radius_k_minus_l1x_mm": 2402.8514628397793,
+          "shoulder_height_offset_mm": -1230.7816251193785,
+          "shoulder_wrist_distance_D_mm": 2699.7256455430365,
+          "gamma_existing_rad": 0.0780008534703871,
+          "cosine_numerator_A_mm": 2697.3545244811066,
+          "sine_numerator_B_mm": 113.12440260204228,
+          "native_roundtrip_translation_l2_mm": 0.009916646018831207,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991664601902634,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2402.846941910223,
+          "first_three_position_height_mm": -1230.790451277331,
+          "signed_angle_psi_rad": 2.0441697846186053,
+          "source_abs_radius_angle_psi_rad": 2.0441697846186053,
+          "full_quadrant_beta_rad": 0.041914456312391185,
+          "source_positive_cosine_beta_rad": 0.04191445631239118,
+          "analytic_existing_return_error_prediction_mm": 0.009916646019045074,
+          "prediction_minus_observed_mm": 2.1386711845927664e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            2.6562745594583994,
+            -0.24655362889140098,
+            0.09326378127941415,
+            2.573521291612526,
+            -0.4703457572477224,
+            2.4430963430238455
+          ],
+          "source_q_rad": [
+            -0.48531809413139415,
+            -1.0207253486830772,
+            -1.229406168856017,
+            -9.694356202794403,
+            1.1567629234922938,
+            -1.105063539995454
+          ],
+          "target_wristcenter_base_mm": [
+            -1421.4392935389155,
+            749.6516780960283,
+            2182.0801837519757
+          ],
+          "wrist_radial_norm_k_mm": 1607.0056949770285,
+          "front_signed_radius_k_minus_l1x_mm": 1082.5056949770285,
+          "shoulder_height_offset_mm": 1639.0801837519757,
+          "shoulder_wrist_distance_D_mm": 1964.281657101677,
+          "gamma_existing_rad": 1.5188997072053478,
+          "cosine_numerator_A_mm": 1325.3080713704444,
+          "sine_numerator_B_mm": 1449.8141068379987,
+          "native_roundtrip_translation_l2_mm": 0.007215209408044495,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007215209407408391,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1082.511715647422,
+          "first_three_position_height_mm": 1639.0762074754746,
+          "signed_angle_psi_rad": 0.5836758595111198,
+          "source_abs_radius_angle_psi_rad": 0.5836758595111198,
+          "full_quadrant_beta_rad": 0.8302331616076244,
+          "source_positive_cosine_beta_rad": 0.8302331616076245,
+          "analytic_existing_return_error_prediction_mm": 0.007215209407190312,
+          "prediction_minus_observed_mm": -8.541830437414077e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            2.6562745594583994,
+            -0.24655362889140098,
+            0.09326378127941415,
+            -0.568071361977267,
+            0.4703457572477224,
+            -0.6984963105659479
+          ],
+          "source_q_rad": [
+            -0.48531809413139415,
+            -1.0207253486830772,
+            -1.229406168856017,
+            -9.694356202794403,
+            1.1567629234922938,
+            -1.105063539995454
+          ],
+          "target_wristcenter_base_mm": [
+            -1421.4392935389155,
+            749.6516780960283,
+            2182.0801837519757
+          ],
+          "wrist_radial_norm_k_mm": 1607.0056949770285,
+          "front_signed_radius_k_minus_l1x_mm": 1082.5056949770285,
+          "shoulder_height_offset_mm": 1639.0801837519757,
+          "shoulder_wrist_distance_D_mm": 1964.281657101677,
+          "gamma_existing_rad": 1.5188997072053478,
+          "cosine_numerator_A_mm": 1325.3080713704444,
+          "sine_numerator_B_mm": 1449.8141068379987,
+          "native_roundtrip_translation_l2_mm": 0.007215209408044495,
+          "native_roundtrip_rotation_abs_max": 2.7755575615628914e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007215209407408391,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1082.511715647422,
+          "first_three_position_height_mm": 1639.0762074754746,
+          "signed_angle_psi_rad": 0.5836758595111198,
+          "source_abs_radius_angle_psi_rad": 0.5836758595111198,
+          "full_quadrant_beta_rad": 0.8302331616076244,
+          "source_positive_cosine_beta_rad": 0.8302331616076245,
+          "analytic_existing_return_error_prediction_mm": 0.007215209407190312,
+          "prediction_minus_observed_mm": -8.541830437414077e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 5,
+          "existing_q_result_rad": [
+            -0.4853254405416001,
+            -1.0207290218881804,
+            -1.229406168856018,
+            2.8720216521224415,
+            1.1567581537188458,
+            -1.105067330948192
+          ],
+          "source_q_rad": [
+            -0.48531809413139415,
+            -1.0207253486830772,
+            -1.229406168856017,
+            -9.694356202794403,
+            1.1567629234922938,
+            -1.105063539995454
+          ],
+          "target_wristcenter_base_mm": [
+            -1421.4392935389155,
+            749.6516780960283,
+            2182.0801837519757
+          ],
+          "wrist_radial_norm_k_mm": 1607.0056949770285,
+          "front_signed_radius_k_minus_l1x_mm": 1082.5056949770285,
+          "shoulder_height_offset_mm": 1639.0801837519757,
+          "shoulder_wrist_distance_D_mm": 1964.281657101677,
+          "gamma_existing_rad": 0.19622975706991563,
+          "cosine_numerator_A_mm": 2673.9072505951676,
+          "sine_numerator_B_mm": 283.0554569382303,
+          "native_roundtrip_translation_l2_mm": 0.015392354752513377,
+          "native_roundtrip_rotation_abs_max": 2.7755575615628914e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007215209407408391,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": -2131.5117156403453,
+          "first_three_position_height_mm": 1639.0723542833214,
+          "classification": "BACK_SHOULDER_PI_CONTRIBUTIONS_NOT_SEPARATELY_ISOLATED"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 7,
+          "existing_q_result_rad": [
+            -0.4853254405416001,
+            -1.0207290218881804,
+            -1.229406168856018,
+            -0.2695710014673517,
+            -1.1567581537188458,
+            2.036525322641601
+          ],
+          "source_q_rad": [
+            -0.48531809413139415,
+            -1.0207253486830772,
+            -1.229406168856017,
+            -9.694356202794403,
+            1.1567629234922938,
+            -1.105063539995454
+          ],
+          "target_wristcenter_base_mm": [
+            -1421.4392935389155,
+            749.6516780960283,
+            2182.0801837519757
+          ],
+          "wrist_radial_norm_k_mm": 1607.0056949770285,
+          "front_signed_radius_k_minus_l1x_mm": 1082.5056949770285,
+          "shoulder_height_offset_mm": 1639.0801837519757,
+          "shoulder_wrist_distance_D_mm": 1964.281657101677,
+          "gamma_existing_rad": 0.19622975706991563,
+          "cosine_numerator_A_mm": 2673.9072505951676,
+          "sine_numerator_B_mm": 283.0554569382303,
+          "native_roundtrip_translation_l2_mm": 0.015392354752513377,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007215209407408391,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": -2131.5117156403453,
+          "first_three_position_height_mm": 1639.0723542833214,
+          "classification": "BACK_SHOULDER_PI_CONTRIBUTIONS_NOT_SEPARATELY_ISOLATED"
+        }
+      ],
+      "NR_records_derived": [
+        {
+          "sample": 0,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.6,
+            1.47,
+            -1.56,
+            -1.37,
+            -0.39,
+            -0.01,
+            1.0044,
+            0.494505,
+            -0.13966399999999998,
+            1.6156,
+            -1.18541,
+            0.167832
+          ],
+          "physical_closure_error_mm": [
+            -0.0156721989280868,
+            0.010812216366048233,
+            -6.54906566524005e-05
+          ],
+          "physical_closure_l2_mm": 0.019040118986337114,
+          "implied_KDL_post_return_base_transform": [
+            [
+              0.9999999999999993,
+              -1.189127832686235e-09,
+              2.228498668843854e-08,
+              5999.999999999998
+            ],
+            [
+              1.1891275222480562e-09,
+              0.9999999999999999,
+              1.5329672979235342e-08,
+              4.547473508864641e-13
+            ],
+            [
+              -2.2284986894115478e-08,
+              -1.5329673029932322e-08,
+              0.9999999999999997,
+              -1.1368683772161603e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 1.8189894035458565e-12,
+          "KDL_post_chain_rotation_abs_max": 2.2284986894115478e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.01564003359862416,
+            0.010830848068922191,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -3.216532970502077e-05,
+            -1.8631703316754294e-05,
+            -6.549065638731754e-05
+          ],
+          "exact_decomposition_residual_mm": 5.701618962527057e-13,
+          "yaw_only_remaining_l2_mm": 7.530454753988222e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 1,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            0.5700000000000001,
+            0.82,
+            -0.56,
+            -1.37,
+            0.49,
+            0.01,
+            -0.776965,
+            0.6328239999999999,
+            0.30689099999999997,
+            2.3645500000000004,
+            1.47212,
+            -1.17054
+          ],
+          "physical_closure_error_mm": [
+            0.011877819157689373,
+            0.012803608020021784,
+            -0.00013952964695818082
+          ],
+          "physical_closure_l2_mm": 0.0174652350340761,
+          "implied_KDL_post_return_base_transform": [
+            [
+              0.9999999999999997,
+              -4.570107850689101e-09,
+              -2.5948718569974207e-08,
+              6000.0
+            ],
+            [
+              4.570104987077618e-09,
+              0.9999999999999934,
+              -1.1432430469599207e-07,
+              -2.2737367544323206e-13
+            ],
+            [
+              2.594871914475574e-08,
+              1.1432430456927156e-07,
+              0.9999999999999934,
+              6.821210263296962e-13
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 6.821210263296962e-13,
+          "KDL_post_chain_rotation_abs_max": 1.1432430469599207e-07,
+          "base_yaw_discrepancy_prediction_mm": [
+            0.011856021350489004,
+            0.012732145771316533,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            2.179780694554445e-05,
+            7.14622489483564e-05,
+            -0.00013952964696961953
+          ],
+          "exact_decomposition_residual_mm": 3.5237364754277086e-13,
+          "yaw_only_remaining_l2_mm": 0.00015827355991772637,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 2,
+          "accepted": false,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.6,
+            1.49,
+            -1.58,
+            -1.37,
+            -0.41000000000000003,
+            -0.01,
+            1.0244,
+            0.514505,
+            -0.159664,
+            1.6156,
+            -1.18541,
+            0.147832
+          ],
+          "classification": "REJECTION_REASON_UNKNOWN_FROM_CURRENT_LOG; KDL failure vs post joint-limit rejection not exposed"
+        },
+        {
+          "sample": 3,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            0.55,
+            0.82,
+            -0.54,
+            -1.37,
+            0.49,
+            0.01,
+            -0.796965,
+            0.6328239999999999,
+            0.326891,
+            2.3645500000000004,
+            1.47212,
+            -1.19054
+          ],
+          "physical_closure_error_mm": [
+            0.011732286789765567,
+            0.012684431252637296,
+            -1.4696297512273304e-08
+          ],
+          "physical_closure_l2_mm": 0.017278349154951272,
+          "implied_KDL_post_return_base_transform": [
+            [
+              1.0,
+              7.754028556268679e-10,
+              -1.7064638128044318e-10,
+              6000.000000000001
+            ],
+            [
+              -7.754029562981434e-10,
+              1.0000000000000002,
+              -1.9369814920753824e-10,
+              -4.547473508864641e-13
+            ],
+            [
+              1.706462755712109e-10,
+              1.9369799572973783e-10,
+              0.9999999999999998,
+              1.1368683772161603e-13
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 7.754029562981434e-10,
+          "base_yaw_discrepancy_prediction_mm": [
+            0.011733431354835445,
+            0.01268566365239531,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -1.1445657781233042e-06,
+            -1.2323997965926632e-06,
+            -1.469621697186647e-08
+          ],
+          "exact_decomposition_residual_mm": 7.138534509750688e-13,
+          "yaw_only_remaining_l2_mm": 1.6819792935398117e-06,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 4,
+          "accepted": false,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.6,
+            1.49,
+            -1.58,
+            -1.35,
+            -0.39,
+            -0.01,
+            1.0044,
+            0.494505,
+            -0.159664,
+            1.6156,
+            -1.18541,
+            0.167832
+          ],
+          "classification": "REJECTION_REASON_UNKNOWN_FROM_CURRENT_LOG; KDL failure vs post joint-limit rejection not exposed"
+        },
+        {
+          "sample": 5,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            0.5700000000000001,
+            0.84,
+            -0.54,
+            -1.37,
+            0.51,
+            0.01,
+            -0.796965,
+            0.652824,
+            0.326891,
+            2.38455,
+            1.47212,
+            -1.19054
+          ],
+          "physical_closure_error_mm": [
+            0.011731804198007012,
+            0.01276483406263651,
+            -5.221205697125697e-05
+          ],
+          "physical_closure_l2_mm": 0.017337212708100267,
+          "implied_KDL_post_return_base_transform": [
+            [
+              0.9999999999999998,
+              5.24768726086671e-09,
+              -1.4577024950008317e-08,
+              6000.0
+            ],
+            [
+              -5.247688104814138e-09,
+              0.9999999999999988,
+              -4.853246706454043e-08,
+              -4.547473508864641e-13
+            ],
+            [
+              1.4577024823837433e-08,
+              4.8532467128739665e-08,
+              0.9999999999999989,
+              2.2737367544323206e-13
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 4.547473508864641e-13,
+          "KDL_post_chain_rotation_abs_max": 4.8532467128739665e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            0.011732540719996432,
+            0.012748490032525478,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -7.36522190200712e-07,
+            1.6344030437320905e-05,
+            -5.221205689282022e-05
+          ],
+          "exact_decomposition_residual_mm": 3.9106274233330883e-13,
+          "yaw_only_remaining_l2_mm": 5.4715342254992665e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 6,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.58,
+            1.47,
+            -1.58,
+            -1.35,
+            -0.41000000000000003,
+            -0.01,
+            1.0244,
+            0.494505,
+            -0.13966399999999998,
+            1.5956,
+            -1.16541,
+            0.167832
+          ],
+          "physical_closure_error_mm": [
+            -0.015799830095375,
+            0.010846193094494083,
+            -0.00021392126473074313
+          ],
+          "physical_closure_l2_mm": 0.0191656019470632,
+          "implied_KDL_post_return_base_transform": [
+            [
+              0.9999999999999908,
+              1.8625597309459328e-09,
+              1.3754145311771376e-07,
+              5999.999999999999
+            ],
+            [
+              -1.8625606765666427e-09,
+              0.9999999999999999,
+              5.022936199990943e-09,
+              -4.547473508864641e-13
+            ],
+            [
+              -1.3754145304173644e-07,
+              -5.022936481116858e-09,
+              0.9999999999999907,
+              4.547473508864641e-13
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 1.3754145311771376e-07,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.015623397430763047,
+            0.010855533196586182,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -0.00017643266441256963,
+            -9.340102496176877e-06,
+            -0.0002139212647595658
+          ],
+          "exact_decomposition_residual_mm": 4.515125922234245e-13,
+          "yaw_only_remaining_l2_mm": 0.000277449148769942,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 7,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            0.5700000000000001,
+            0.84,
+            -0.56,
+            -1.35,
+            0.49,
+            -0.01,
+            -0.776965,
+            0.6328239999999999,
+            0.30689099999999997,
+            2.3645500000000004,
+            1.4921200000000001,
+            -1.17054
+          ],
+          "physical_closure_error_mm": [
+            0.011838011348800137,
+            0.01268140538741136,
+            -1.1826407785520132e-05
+          ],
+          "physical_closure_l2_mm": 0.0173481035032106,
+          "implied_KDL_post_return_base_transform": [
+            [
+              0.9999999999999998,
+              5.921529064697398e-09,
+              6.535454375962261e-09,
+              5999.999999999999
+            ],
+            [
+              -5.921529126762267e-09,
+              1.0,
+              -3.32200592501564e-10,
+              -1.1368683772161603e-12
+            ],
+            [
+              -6.5354546077433515e-09,
+              3.32200641006436e-10,
+              0.9999999999999999,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 1.1368683772161603e-12,
+          "KDL_post_chain_rotation_abs_max": 6.5354546077433515e-09,
+          "base_yaw_discrepancy_prediction_mm": [
+            0.011851081830197343,
+            0.01269145646951438,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -1.3070481564930553e-05,
+            -1.0051081811934105e-05,
+            -1.182640783325259e-05
+          ],
+          "exact_decomposition_residual_mm": 3.3932534704489875e-13,
+          "yaw_only_remaining_l2_mm": 2.029102403787885e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 8,
+          "accepted": false,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.6,
+            1.49,
+            -1.58,
+            -1.35,
+            -0.39,
+            0.01,
+            1.0044,
+            0.514505,
+            -0.159664,
+            1.6156,
+            -1.16541,
+            0.167832
+          ],
+          "classification": "REJECTION_REASON_UNKNOWN_FROM_CURRENT_LOG; KDL failure vs post joint-limit rejection not exposed"
+        },
+        {
+          "sample": 9,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            0.5700000000000001,
+            0.84,
+            -0.56,
+            -1.37,
+            0.49,
+            -0.01,
+            -0.776965,
+            0.6328239999999999,
+            0.326891,
+            2.38455,
+            1.47212,
+            -1.17054
+          ],
+          "physical_closure_error_mm": [
+            0.011659614732934642,
+            0.012635305317417078,
+            -5.265919162411592e-05
+          ],
+          "physical_closure_l2_mm": 0.017193031413199868,
+          "implied_KDL_post_return_base_transform": [
+            [
+              0.9999999999999997,
+              2.579830856465322e-08,
+              1.4099027088438905e-08,
+              5999.999999999999
+            ],
+            [
+              -2.579830820692611e-08,
+              0.9999999999999997,
+              -1.7783796015833124e-08,
+              -6.821210263296962e-13
+            ],
+            [
+              -1.4099027697394902e-08,
+              1.778379574816428e-08,
+              0.9999999999999999,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              1.0,
+              -0.0,
+              0.0,
+              6000.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 2.579830856465322e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            0.011708331596444842,
+            0.012670211787791333,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -4.8716863080453513e-05,
+            -3.4906470454370834e-05,
+            -5.265919162689835e-05
+          ],
+          "exact_decomposition_residual_mm": 4.371592958882721e-13,
+          "yaw_only_remaining_l2_mm": 7.977960219733812e-05,
+          "returned_zero_joint_count": 0
+        }
+      ],
+      "passive_rank_records": [
+        {
+          "name": "regular_passive_jacobian_positive_control",
+          "arm": 1,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07606853686979685
+        },
+        {
+          "name": "wrist_singular_q5_zero",
+          "arm": 1,
+          "native_rank": 5,
+          "independent_rank": 5,
+          "native_smallest_singular_m_rad": 1.462248647596361e-12
+        },
+        {
+          "name": "author_elbow_only_q3_minus_PI_over_2",
+          "arm": 1,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07606853686979685
+        },
+        {
+          "name": "regular_passive_jacobian_positive_control",
+          "arm": 2,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07606853687837492
+        },
+        {
+          "name": "wrist_singular_q5_zero",
+          "arm": 2,
+          "native_rank": 5,
+          "independent_rank": 5,
+          "native_smallest_singular_m_rad": 1.4622033933446368e-12
+        },
+        {
+          "name": "author_elbow_only_q3_minus_PI_over_2",
+          "arm": 2,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07606853687837492
+        }
+      ],
+      "all_rejected_IK_records": [
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 6
+        }
+      ]
+    },
+    {
+      "model": "V",
+      "input_raw_path": "results/p4_full/20261014T1545_R1_COMAU02/V_native.jsonl",
+      "input_raw_sha256": "431d54db72d84cb5df3808d973608c58f9c7287767eb42323584196a08655ced",
+      "input_analysis_path": "results/p4_full/20261014T1545_R1_COMAU02/V_independent.json",
+      "input_analysis_sha256": "ece097bf404247937a56c3a4b0b7024221bcd59841a863e9ee06d6640fb7401b",
+      "original_qualification_status": "FAIL_GATE",
+      "original_passed": 237,
+      "original_failed": 34,
+      "FK_terminal_comparisons": 200,
+      "FK_failed": 0,
+      "FK_position_abs_max_mm": 1.8189894035458565e-12,
+      "FK_rotation_matrix_abs_max": 3.3306690738754696e-16,
+      "IK_attempts": 80,
+      "IK_accepted": 24,
+      "IK_records_derived": [
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -1.7041523531247504,
+            0.3458064749327405,
+            0.6479730029815862,
+            1.343730921865609,
+            -0.9380463713729846,
+            2.495855283815887
+          ],
+          "source_q_rad": [
+            -1.7041523531247504,
+            0.34580280172763733,
+            0.6479730029815864,
+            -45.78015625743188,
+            0.9380455444685789,
+            -0.6457418078956323
+          ],
+          "target_wristcenter_base_mm": [
+            -253.66882063502993,
+            -1890.9029262932784,
+            629.6468925086936
+          ],
+          "wrist_radial_norm_k_mm": 1907.8421704184157,
+          "front_signed_radius_k_minus_l1x_mm": 1383.3421704184157,
+          "shoulder_height_offset_mm": 86.64689250869355,
+          "shoulder_wrist_distance_D_mm": 1386.053117466768,
+          "gamma_existing_rad": 2.07360892890752,
+          "cosine_numerator_A_mm": 550.4043977757387,
+          "sine_numerator_B_mm": 1272.0842123650748,
+          "native_roundtrip_translation_l2_mm": 0.005091257384173138,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.005091257384681819,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1383.3424886808912,
+          "first_three_position_height_mm": 86.6418112085895,
+          "signed_angle_psi_rad": 1.5082421390654661,
+          "source_abs_radius_angle_psi_rad": 1.5082421390654661,
+          "full_quadrant_beta_rad": 1.1624393373378286,
+          "source_positive_cosine_beta_rad": 1.1624393373378286,
+          "analytic_existing_return_error_prediction_mm": 0.005091257384681819,
+          "prediction_minus_observed_mm": 5.08680771116321e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -1.7041523531247504,
+            0.3458064749327405,
+            0.6479730029815862,
+            -1.7978617317241843,
+            0.9380463713729846,
+            -0.6457373697739063
+          ],
+          "source_q_rad": [
+            -1.7041523531247504,
+            0.34580280172763733,
+            0.6479730029815864,
+            -45.78015625743188,
+            0.9380455444685789,
+            -0.6457418078956323
+          ],
+          "target_wristcenter_base_mm": [
+            -253.66882063502993,
+            -1890.9029262932784,
+            629.6468925086936
+          ],
+          "wrist_radial_norm_k_mm": 1907.8421704184157,
+          "front_signed_radius_k_minus_l1x_mm": 1383.3421704184157,
+          "shoulder_height_offset_mm": 86.64689250869355,
+          "shoulder_wrist_distance_D_mm": 1386.053117466768,
+          "gamma_existing_rad": 2.07360892890752,
+          "cosine_numerator_A_mm": 550.4043977757387,
+          "sine_numerator_B_mm": 1272.0842123650748,
+          "native_roundtrip_translation_l2_mm": 0.0050912573844000665,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.005091257384681819,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1383.3424886808912,
+          "first_three_position_height_mm": 86.6418112085895,
+          "signed_angle_psi_rad": 1.5082421390654661,
+          "source_abs_radius_angle_psi_rad": 1.5082421390654661,
+          "full_quadrant_beta_rad": 1.1624393373378286,
+          "source_positive_cosine_beta_rad": 1.1624393373378286,
+          "analytic_existing_return_error_prediction_mm": 0.005091257384681819,
+          "prediction_minus_observed_mm": 2.8175205224467703e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            2.3885717805547975,
+            1.7616396605431364,
+            -0.444207029498883,
+            -1.5893765315304524,
+            -1.2451794062140107,
+            0.9029017988316549
+          ],
+          "source_q_rad": [
+            2.388571780554797,
+            1.7616359873380332,
+            -0.44420702949888313,
+            1.5522148820714676,
+            1.2451794744612639,
+            -2.2386869785037646
+          ],
+          "target_wristcenter_base_mm": [
+            -1689.2184342412859,
+            1583.2284331821531,
+            -1032.1025797190887
+          ],
+          "wrist_radial_norm_k_mm": 2315.182755252163,
+          "front_signed_radius_k_minus_l1x_mm": 1790.6827552521631,
+          "shoulder_height_offset_mm": -1575.1025797190887,
+          "shoulder_wrist_distance_D_mm": 2384.8465079738794,
+          "gamma_existing_rad": 0.9814288964270507,
+          "cosine_numerator_A_mm": 2056.9442466380838,
+          "sine_numerator_B_mm": 1206.844328328097,
+          "native_roundtrip_translation_l2_mm": 0.00876003036374366,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.008760030363948713,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1790.6769695652492,
+          "first_three_position_height_mm": -1575.1091572534979,
+          "signed_angle_psi_rad": 2.2922313807506605,
+          "source_abs_radius_angle_psi_rad": 2.2922313807506605,
+          "full_quadrant_beta_rad": 0.5305953934126272,
+          "source_positive_cosine_beta_rad": 0.5305953934126274,
+          "analytic_existing_return_error_prediction_mm": 0.00876003036341917,
+          "prediction_minus_observed_mm": -3.2449043452231763e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            2.3885717805547975,
+            1.7616396605431364,
+            -0.444207029498883,
+            1.552216122059341,
+            1.2451794062140107,
+            -2.2386908547581386
+          ],
+          "source_q_rad": [
+            2.388571780554797,
+            1.7616359873380332,
+            -0.44420702949888313,
+            1.5522148820714676,
+            1.2451794744612639,
+            -2.2386869785037646
+          ],
+          "target_wristcenter_base_mm": [
+            -1689.2184342412859,
+            1583.2284331821531,
+            -1032.1025797190887
+          ],
+          "wrist_radial_norm_k_mm": 2315.182755252163,
+          "front_signed_radius_k_minus_l1x_mm": 1790.6827552521631,
+          "shoulder_height_offset_mm": -1575.1025797190887,
+          "shoulder_wrist_distance_D_mm": 2384.8465079738794,
+          "gamma_existing_rad": 0.9814288964270507,
+          "cosine_numerator_A_mm": 2056.9442466380838,
+          "sine_numerator_B_mm": 1206.844328328097,
+          "native_roundtrip_translation_l2_mm": 0.008760030363572936,
+          "native_roundtrip_rotation_abs_max": 3.3306690738754696e-16,
+          "plain_PI_half_turn_prediction_mm": 0.008760030363948713,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1790.6769695652492,
+          "first_three_position_height_mm": -1575.1091572534979,
+          "signed_angle_psi_rad": 2.2922313807506605,
+          "source_abs_radius_angle_psi_rad": 2.2922313807506605,
+          "full_quadrant_beta_rad": 0.5305953934126272,
+          "source_positive_cosine_beta_rad": 0.5305953934126274,
+          "analytic_existing_return_error_prediction_mm": 0.00876003036341917,
+          "prediction_minus_observed_mm": -1.5376588891058418e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -0.9266762629088879,
+            -0.6393827735580897,
+            1.2051891872295484,
+            -1.6111131357153832,
+            -2.0121075383956852,
+            1.2489961907718825
+          ],
+          "source_q_rad": [
+            -0.926676262908888,
+            -0.6858173067067153,
+            1.2051891872295482,
+            -23.580293178616692,
+            2.013469712733607,
+            -1.8412462880840232
+          ],
+          "target_wristcenter_base_mm": [
+            651.0378187687406,
+            -866.932005735353,
+            979.6995090052314
+          ],
+          "wrist_radial_norm_k_mm": 1084.168503524928,
+          "front_signed_radius_k_minus_l1x_mm": 559.6685035249279,
+          "shoulder_height_offset_mm": 436.69950900523145,
+          "shoulder_wrist_distance_D_mm": 709.8840010897854,
+          "gamma_existing_rad": 2.630825113155482,
+          "cosine_numerator_A_mm": -16.47878199870297,
+          "sine_numerator_B_mm": 709.6927114935601,
+          "native_roundtrip_translation_l2_mm": 32.960170844242356,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.0026075495356349503,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": true,
+          "first_three_position_radial_mm": 579.3358943811218,
+          "first_three_position_height_mm": 410.2501876719473,
+          "signed_angle_psi_rad": 0.9081944500599414,
+          "source_abs_radius_angle_psi_rad": 0.9081944500599414,
+          "full_quadrant_beta_rad": 1.594011756766656,
+          "source_positive_cosine_beta_rad": 1.5475808968231248,
+          "analytic_existing_return_error_prediction_mm": 32.96017084424875,
+          "prediction_minus_observed_mm": 6.394884621840902e-12,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -0.9266762629088879,
+            -0.6393827735580897,
+            1.2051891872295484,
+            1.5304795178744102,
+            2.0121075383956852,
+            -1.8925964628179108
+          ],
+          "source_q_rad": [
+            -0.926676262908888,
+            -0.6858173067067153,
+            1.2051891872295482,
+            -23.580293178616692,
+            2.013469712733607,
+            -1.8412462880840232
+          ],
+          "target_wristcenter_base_mm": [
+            651.0378187687406,
+            -866.932005735353,
+            979.6995090052314
+          ],
+          "wrist_radial_norm_k_mm": 1084.168503524928,
+          "front_signed_radius_k_minus_l1x_mm": 559.6685035249279,
+          "shoulder_height_offset_mm": 436.69950900523145,
+          "shoulder_wrist_distance_D_mm": 709.8840010897854,
+          "gamma_existing_rad": 2.630825113155482,
+          "cosine_numerator_A_mm": -16.47878199870297,
+          "sine_numerator_B_mm": 709.6927114935601,
+          "native_roundtrip_translation_l2_mm": 32.96017084424199,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.0026075495356349503,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": true,
+          "first_three_position_radial_mm": 579.3358943811218,
+          "first_three_position_height_mm": 410.2501876719473,
+          "signed_angle_psi_rad": 0.9081944500599414,
+          "source_abs_radius_angle_psi_rad": 0.9081944500599414,
+          "full_quadrant_beta_rad": 1.594011756766656,
+          "source_positive_cosine_beta_rad": 1.5475808968231248,
+          "analytic_existing_return_error_prediction_mm": 32.96017084424875,
+          "prediction_minus_observed_mm": 6.757261417078553e-12,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -1.5381364714535977,
+            1.6794168409347787,
+            -0.5136703677334302,
+            -3.0763120563341038,
+            -0.6334820019154691,
+            0.15963432803856795
+          ],
+          "source_q_rad": [
+            -1.5381364714535979,
+            1.6794131677296757,
+            -0.5136703677334311,
+            -6.217905036172809,
+            0.6334856672966058,
+            -2.9819579207608973
+          ],
+          "target_wristcenter_base_mm": [
+            82.4912941572154,
+            -2524.872231852306,
+            -830.0102702942744
+          ],
+          "wrist_radial_norm_k_mm": 2526.219428472233,
+          "front_signed_radius_k_minus_l1x_mm": 2001.7194284722332,
+          "shoulder_height_offset_mm": -1373.0102702942745,
+          "shoulder_wrist_distance_D_mm": 2427.3520289930675,
+          "gamma_existing_rad": 0.9119655581925035,
+          "cosine_numerator_A_mm": 2138.7622490627045,
+          "sine_numerator_B_mm": 1147.9259186206239,
+          "native_roundtrip_translation_l2_mm": 0.008916161860660103,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.008916161860679665,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2001.7143851103974,
+          "first_three_position_height_mm": -1373.0176230110321,
+          "signed_angle_psi_rad": 2.1720068917470656,
+          "source_abs_radius_angle_psi_rad": 2.1720068917470656,
+          "full_quadrant_beta_rad": 0.4925937240173901,
+          "source_positive_cosine_beta_rad": 0.4925937240173901,
+          "analytic_existing_return_error_prediction_mm": 0.008916161860679665,
+          "prediction_minus_observed_mm": 1.9562476638590454e-14,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -1.5381364714535977,
+            1.6794168409347787,
+            -0.5136703677334302,
+            0.06528059725568959,
+            0.6334820019154691,
+            -2.981958325551225
+          ],
+          "source_q_rad": [
+            -1.5381364714535979,
+            1.6794131677296757,
+            -0.5136703677334311,
+            -6.217905036172809,
+            0.6334856672966058,
+            -2.9819579207608973
+          ],
+          "target_wristcenter_base_mm": [
+            82.4912941572154,
+            -2524.872231852306,
+            -830.0102702942744
+          ],
+          "wrist_radial_norm_k_mm": 2526.219428472233,
+          "front_signed_radius_k_minus_l1x_mm": 2001.7194284722332,
+          "shoulder_height_offset_mm": -1373.0102702942745,
+          "shoulder_wrist_distance_D_mm": 2427.3520289930675,
+          "gamma_existing_rad": 0.9119655581925035,
+          "cosine_numerator_A_mm": 2138.7622490627045,
+          "sine_numerator_B_mm": 1147.9259186206239,
+          "native_roundtrip_translation_l2_mm": 0.008916161860847606,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.008916161860679665,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 2001.7143851103974,
+          "first_three_position_height_mm": -1373.0176230110321,
+          "signed_angle_psi_rad": 2.1720068917470656,
+          "source_abs_radius_angle_psi_rad": 2.1720068917470656,
+          "full_quadrant_beta_rad": 0.4925937240173901,
+          "source_positive_cosine_beta_rad": 0.4925937240173901,
+          "analytic_existing_return_error_prediction_mm": 0.008916161860679665,
+          "prediction_minus_observed_mm": -1.6794031443279067e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 0,
+          "existing_q_result_rad": [
+            -0.1965020906360456,
+            0.8085012564853375,
+            -1.4879724609849727,
+            2.6426537690179726,
+            1.6287810745490945,
+            -2.524118298229604
+          ],
+          "source_q_rad": [
+            -0.1965020906360455,
+            0.7415042427717489,
+            -1.3632993908669067,
+            18.34830749809622,
+            -1.679397245556977,
+            6.872910291091544
+          ],
+          "target_wristcenter_base_mm": [
+            2367.60231185475,
+            -471.3208598737708,
+            2472.2663850986432
+          ],
+          "wrist_radial_norm_k_mm": 2414.0596637308095,
+          "front_signed_radius_k_minus_l1x_mm": 1889.5596637308095,
+          "shoulder_height_offset_mm": 1929.2663850986432,
+          "shoulder_wrist_distance_D_mm": 2700.4637578516167,
+          "gamma_existing_rad": -0.06233653505903902,
+          "cosine_numerator_A_mm": 2698.9489029880306,
+          "sine_numerator_B_mm": -90.43962919971645,
+          "native_roundtrip_translation_l2_mm": 0.009919357256793064,
+          "native_roundtrip_rotation_abs_max": 2.7755575615628914e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991935725692511,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1889.5667503091936,
+          "first_three_position_height_mm": 1929.259444345428,
+          "signed_angle_psi_rad": 0.7750009130259882,
+          "source_abs_radius_angle_psi_rad": 0.7750009130259882,
+          "full_quadrant_beta_rad": -0.03349667025424596,
+          "source_positive_cosine_beta_rad": -0.03349667025424596,
+          "analytic_existing_return_error_prediction_mm": 0.00991935725692511,
+          "prediction_minus_observed_mm": 1.3204541626787858e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -0.1965020906360456,
+            0.7415079159768456,
+            -1.3632993908668947,
+            -0.5012486158888095,
+            -1.6794004668965363,
+            0.5897232083999803
+          ],
+          "source_q_rad": [
+            -0.1965020906360455,
+            0.7415042427717489,
+            -1.3632993908669067,
+            18.34830749809622,
+            -1.679397245556977,
+            6.872910291091544
+          ],
+          "target_wristcenter_base_mm": [
+            2367.60231185475,
+            -471.3208598737708,
+            2472.2663850986432
+          ],
+          "wrist_radial_norm_k_mm": 2414.0596637308095,
+          "front_signed_radius_k_minus_l1x_mm": 1889.5596637308095,
+          "shoulder_height_offset_mm": 1929.2663850986432,
+          "shoulder_wrist_distance_D_mm": 2700.4637578516167,
+          "gamma_existing_rad": 0.06233653505903902,
+          "cosine_numerator_A_mm": 2698.9489029880306,
+          "sine_numerator_B_mm": 90.43962919971645,
+          "native_roundtrip_translation_l2_mm": 0.009919357256483232,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991935725692511,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1889.5667503091934,
+          "first_three_position_height_mm": 1929.2594443454282,
+          "signed_angle_psi_rad": 0.7750009130259882,
+          "source_abs_radius_angle_psi_rad": 0.7750009130259882,
+          "full_quadrant_beta_rad": 0.03349667025424596,
+          "source_positive_cosine_beta_rad": 0.03349667025424596,
+          "analytic_existing_return_error_prediction_mm": 0.00991935725692511,
+          "prediction_minus_observed_mm": 4.418774374181922e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 2,
+          "existing_q_result_rad": [
+            -0.1965020906360456,
+            0.8085012564853375,
+            -1.4879724609849727,
+            -0.49893888457182045,
+            -1.6287810745490945,
+            0.6174743553601891
+          ],
+          "source_q_rad": [
+            -0.1965020906360455,
+            0.7415042427717489,
+            -1.3632993908669067,
+            18.34830749809622,
+            -1.679397245556977,
+            6.872910291091544
+          ],
+          "target_wristcenter_base_mm": [
+            2367.60231185475,
+            -471.3208598737708,
+            2472.2663850986432
+          ],
+          "wrist_radial_norm_k_mm": 2414.0596637308095,
+          "front_signed_radius_k_minus_l1x_mm": 1889.5596637308095,
+          "shoulder_height_offset_mm": 1929.2663850986432,
+          "shoulder_wrist_distance_D_mm": 2700.4637578516167,
+          "gamma_existing_rad": -0.06233653505903902,
+          "cosine_numerator_A_mm": 2698.9489029880306,
+          "sine_numerator_B_mm": -90.43962919971645,
+          "native_roundtrip_translation_l2_mm": 0.009919357256804958,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991935725692511,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1889.5667503091936,
+          "first_three_position_height_mm": 1929.259444345428,
+          "signed_angle_psi_rad": 0.7750009130259882,
+          "source_abs_radius_angle_psi_rad": 0.7750009130259882,
+          "full_quadrant_beta_rad": -0.03349667025424596,
+          "source_positive_cosine_beta_rad": -0.03349667025424596,
+          "analytic_existing_return_error_prediction_mm": 0.00991935725692511,
+          "prediction_minus_observed_mm": 1.201521521165816e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -0.1965020906360456,
+            0.7415079159768456,
+            -1.3632993908668947,
+            2.6403440377009835,
+            1.6794004668965363,
+            -2.551869445189813
+          ],
+          "source_q_rad": [
+            -0.1965020906360455,
+            0.7415042427717489,
+            -1.3632993908669067,
+            18.34830749809622,
+            -1.679397245556977,
+            6.872910291091544
+          ],
+          "target_wristcenter_base_mm": [
+            2367.60231185475,
+            -471.3208598737708,
+            2472.2663850986432
+          ],
+          "wrist_radial_norm_k_mm": 2414.0596637308095,
+          "front_signed_radius_k_minus_l1x_mm": 1889.5596637308095,
+          "shoulder_height_offset_mm": 1929.2663850986432,
+          "shoulder_wrist_distance_D_mm": 2700.4637578516167,
+          "gamma_existing_rad": 0.06233653505903902,
+          "cosine_numerator_A_mm": 2698.9489029880306,
+          "sine_numerator_B_mm": 90.43962919971645,
+          "native_roundtrip_translation_l2_mm": 0.009919357256793498,
+          "native_roundtrip_rotation_abs_max": 1.6653345369377348e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00991935725692511,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1889.5667503091934,
+          "first_three_position_height_mm": 1929.2594443454282,
+          "signed_angle_psi_rad": 0.7750009130259882,
+          "source_abs_radius_angle_psi_rad": 0.7750009130259882,
+          "full_quadrant_beta_rad": 0.03349667025424596,
+          "source_positive_cosine_beta_rad": 0.03349667025424596,
+          "analytic_existing_return_error_prediction_mm": 0.00991935725692511,
+          "prediction_minus_observed_mm": 1.3161173539888438e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            -1.3002445925546937,
+            1.704731114142188,
+            0.16193312085111256,
+            -1.6312423768716138,
+            -0.5185529354547754,
+            -2.606244457347001
+          ],
+          "source_q_rad": [
+            -1.3002445925546935,
+            1.7047274409370843,
+            0.16193312085111278,
+            -26.763990030800954,
+            -0.5185531573621123,
+            -2.6062370596088877
+          ],
+          "target_wristcenter_base_mm": [
+            413.01400229633623,
+            -1489.131764623879,
+            -1059.2276558420353
+          ],
+          "wrist_radial_norm_k_mm": 1545.3459090134693,
+          "front_signed_radius_k_minus_l1x_mm": 1020.8459090134693,
+          "shoulder_height_offset_mm": -1602.2276558420353,
+          "shoulder_wrist_distance_D_mm": 1899.8052087239366,
+          "gamma_existing_rad": 1.5875690467770462,
+          "cosine_numerator_A_mm": 1225.6510324378405,
+          "sine_numerator_B_mm": 1451.5644587060735,
+          "native_roundtrip_translation_l2_mm": 0.006978374187868248,
+          "native_roundtrip_rotation_abs_max": 1.6653345369377348e-16,
+          "plain_PI_half_turn_prediction_mm": 0.006978374188177265,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1020.8400236957806,
+          "first_three_position_height_mm": -1602.2314056076293,
+          "signed_angle_psi_rad": 2.574309896652494,
+          "source_abs_radius_angle_psi_rad": 2.574309896652494,
+          "full_quadrant_beta_rad": 0.8695824557154092,
+          "source_positive_cosine_beta_rad": 0.8695824557154094,
+          "analytic_existing_return_error_prediction_mm": 0.006978374187755424,
+          "prediction_minus_observed_mm": -1.1282381279231757e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            -1.3002445925546937,
+            1.704731114142188,
+            0.16193312085111256,
+            1.5103502767181796,
+            0.5185529354547754,
+            0.5353481962427922
+          ],
+          "source_q_rad": [
+            -1.3002445925546935,
+            1.7047274409370843,
+            0.16193312085111278,
+            -26.763990030800954,
+            -0.5185531573621123,
+            -2.6062370596088877
+          ],
+          "target_wristcenter_base_mm": [
+            413.01400229633623,
+            -1489.131764623879,
+            -1059.2276558420353
+          ],
+          "wrist_radial_norm_k_mm": 1545.3459090134693,
+          "front_signed_radius_k_minus_l1x_mm": 1020.8459090134693,
+          "shoulder_height_offset_mm": -1602.2276558420353,
+          "shoulder_wrist_distance_D_mm": 1899.8052087239366,
+          "gamma_existing_rad": 1.5875690467770462,
+          "cosine_numerator_A_mm": 1225.6510324378405,
+          "sine_numerator_B_mm": 1451.5644587060735,
+          "native_roundtrip_translation_l2_mm": 0.006978374187868248,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.006978374188177265,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1020.8400236957806,
+          "first_three_position_height_mm": -1602.2314056076293,
+          "signed_angle_psi_rad": 2.574309896652494,
+          "source_abs_radius_angle_psi_rad": 2.574309896652494,
+          "full_quadrant_beta_rad": 0.8695824557154092,
+          "source_positive_cosine_beta_rad": 0.8695824557154094,
+          "analytic_existing_return_error_prediction_mm": 0.006978374187755424,
+          "prediction_minus_observed_mm": -1.1282381279231757e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            2.5159726673132394,
+            1.3343816063024114,
+            1.1927810071593814,
+            0.8016813822148627,
+            -1.346876623998168,
+            -1.020176687921869
+          ],
+          "source_q_rad": [
+            2.5159726673132385,
+            1.8072147204924867,
+            1.1927810071593812,
+            -18.067195414837556,
+            -1.682166786646511,
+            -6.96783765782617
+          ],
+          "target_wristcenter_base_mm": [
+            -281.4741223265494,
+            203.34466812267988,
+            -160.4009638594548
+          ],
+          "wrist_radial_norm_k_mm": 347.24160982437587,
+          "front_signed_radius_k_minus_l1x_mm": -177.25839017562413,
+          "shoulder_height_offset_mm": -703.4009638594548,
+          "shoulder_wrist_distance_D_mm": 725.3919305079592,
+          "gamma_existing_rad": 2.618416933085315,
+          "cosine_numerator_A_mm": -7.575518861574437,
+          "sine_numerator_B_mm": 725.3523725473309,
+          "native_roundtrip_translation_l2_mm": 339.80313783356854,
+          "native_roundtrip_rotation_abs_max": 2.7755575615628914e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00266451334111717,
+          "negative_signed_radius": true,
+          "negative_beta_cosine_numerator": true,
+          "first_three_position_radial_mm": 162.5262105792252,
+          "first_three_position_height_mm": -706.9502696235579,
+          "signed_angle_psi_rad": -2.8947307241265166,
+          "source_abs_radius_angle_psi_rad": 2.8947307241265166,
+          "full_quadrant_beta_rad": 1.5812398625605837,
+          "source_positive_cosine_beta_rad": 1.560352791029219,
+          "analytic_existing_return_error_prediction_mm": 339.8031378335759,
+          "prediction_minus_observed_mm": 7.332801033044234e-12,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            2.5159726673132394,
+            1.3343816063024114,
+            1.1927810071593814,
+            -2.3399112713749304,
+            1.346876623998168,
+            2.121415965667924
+          ],
+          "source_q_rad": [
+            2.5159726673132385,
+            1.8072147204924867,
+            1.1927810071593812,
+            -18.067195414837556,
+            -1.682166786646511,
+            -6.96783765782617
+          ],
+          "target_wristcenter_base_mm": [
+            -281.4741223265494,
+            203.34466812267988,
+            -160.4009638594548
+          ],
+          "wrist_radial_norm_k_mm": 347.24160982437587,
+          "front_signed_radius_k_minus_l1x_mm": -177.25839017562413,
+          "shoulder_height_offset_mm": -703.4009638594548,
+          "shoulder_wrist_distance_D_mm": 725.3919305079592,
+          "gamma_existing_rad": 2.618416933085315,
+          "cosine_numerator_A_mm": -7.575518861574437,
+          "sine_numerator_B_mm": 725.3523725473309,
+          "native_roundtrip_translation_l2_mm": 339.80313783356854,
+          "native_roundtrip_rotation_abs_max": 2.220446049250313e-16,
+          "plain_PI_half_turn_prediction_mm": 0.00266451334111717,
+          "negative_signed_radius": true,
+          "negative_beta_cosine_numerator": true,
+          "first_three_position_radial_mm": 162.5262105792252,
+          "first_three_position_height_mm": -706.9502696235579,
+          "signed_angle_psi_rad": -2.8947307241265166,
+          "source_abs_radius_angle_psi_rad": 2.8947307241265166,
+          "full_quadrant_beta_rad": 1.5812398625605837,
+          "source_positive_cosine_beta_rad": 1.560352791029219,
+          "analytic_existing_return_error_prediction_mm": 339.8031378335759,
+          "prediction_minus_observed_mm": 7.332801033044234e-12,
+          "classification": "SIGNED_RADIUS_AND_OR_COSINE_QUADRANT_LOSS"
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            2.1404617248423676,
+            -0.6168545058103729,
+            -0.01642538590855369,
+            -3.1046135943009823,
+            -0.09898608469164266,
+            1.927030408328808
+          ],
+          "source_q_rad": [
+            2.140461724842368,
+            -0.6168581790154762,
+            -0.01642538590855347,
+            -15.670985576042867,
+            -0.09898975538565957,
+            1.9270317824382035
+          ],
+          "target_wristcenter_base_mm": [
+            -450.39818689921844,
+            703.2015454039316,
+            2582.0167631440527
+          ],
+          "wrist_radial_norm_k_mm": 835.0754099005557,
+          "front_signed_radius_k_minus_l1x_mm": 310.57540990055566,
+          "shoulder_height_offset_mm": 2039.0167631440527,
+          "shoulder_wrist_distance_D_mm": 2062.533986536306,
+          "gamma_existing_rad": 1.40921054001738,
+          "cosine_numerator_A_mm": 1483.5656782469393,
+          "sine_numerator_B_mm": 1432.857049375494,
+          "native_roundtrip_translation_l2_mm": 0.0075761103656794984,
+          "native_roundtrip_rotation_abs_max": 1.3322676295501878e-15,
+          "plain_PI_half_turn_prediction_mm": 0.007576110365309985,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 310.5828996252403,
+          "first_three_position_height_mm": 2039.0156223231165,
+          "signed_angle_psi_rad": 0.15115446640184263,
+          "source_abs_radius_angle_psi_rad": 0.15115446640184263,
+          "full_quadrant_beta_rad": 0.7680126454173187,
+          "source_positive_cosine_beta_rad": 0.7680126454173187,
+          "analytic_existing_return_error_prediction_mm": 0.007576110365309985,
+          "prediction_minus_observed_mm": -3.695134476178197e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            2.1404617248423676,
+            -0.6168545058103729,
+            -0.01642538590855369,
+            0.036979059288810893,
+            0.09898608469164266,
+            -1.2145622452609854
+          ],
+          "source_q_rad": [
+            2.140461724842368,
+            -0.6168581790154762,
+            -0.01642538590855347,
+            -15.670985576042867,
+            -0.09898975538565957,
+            1.9270317824382035
+          ],
+          "target_wristcenter_base_mm": [
+            -450.39818689921844,
+            703.2015454039316,
+            2582.0167631440527
+          ],
+          "wrist_radial_norm_k_mm": 835.0754099005557,
+          "front_signed_radius_k_minus_l1x_mm": 310.57540990055566,
+          "shoulder_height_offset_mm": 2039.0167631440527,
+          "shoulder_wrist_distance_D_mm": 2062.533986536306,
+          "gamma_existing_rad": 1.40921054001738,
+          "cosine_numerator_A_mm": 1483.5656782469393,
+          "sine_numerator_B_mm": 1432.857049375494,
+          "native_roundtrip_translation_l2_mm": 0.0075761103656794984,
+          "native_roundtrip_rotation_abs_max": 1.3322676295501878e-15,
+          "plain_PI_half_turn_prediction_mm": 0.007576110365309985,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 310.5828996252403,
+          "first_three_position_height_mm": 2039.0156223231165,
+          "signed_angle_psi_rad": 0.15115446640184263,
+          "source_abs_radius_angle_psi_rad": 0.15115446640184263,
+          "full_quadrant_beta_rad": 0.7680126454173187,
+          "source_positive_cosine_beta_rad": 0.7680126454173187,
+          "analytic_existing_return_error_prediction_mm": 0.007576110365309985,
+          "prediction_minus_observed_mm": -3.695134476178197e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 1,
+          "existing_q_result_rad": [
+            1.817103470430537,
+            0.24052239037461698,
+            0.6997840795326751,
+            -0.274623845599707,
+            -2.086694330075958,
+            2.2854134656443184
+          ],
+          "source_q_rad": [
+            1.817103470430537,
+            0.24051871716951334,
+            0.6997840795326753,
+            46.849266523170385,
+            2.086690794515585,
+            -0.856178042787497
+          ],
+          "target_wristcenter_base_mm": [
+            -448.3347091100963,
+            1783.2670843388987,
+            720.5086121686238
+          ],
+          "wrist_radial_norm_k_mm": 1838.7619491058085,
+          "front_signed_radius_k_minus_l1x_mm": 1314.2619491058085,
+          "shoulder_height_offset_mm": 177.5086121686238,
+          "shoulder_wrist_distance_D_mm": 1326.1952263001967,
+          "gamma_existing_rad": 2.1254200054586088,
+          "cosine_numerator_A_mm": 485.46461130457203,
+          "sine_numerator_B_mm": 1234.1466239601882,
+          "native_roundtrip_translation_l2_mm": 0.00487138707372352,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.004871387073369169,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1314.2626011224822,
+          "first_three_position_height_mm": 177.50378461372782,
+          "signed_angle_psi_rad": 1.4365453903191139,
+          "source_abs_radius_angle_psi_rad": 1.4365453903191139,
+          "full_quadrant_beta_rad": 1.1960266731496003,
+          "source_positive_cosine_beta_rad": 1.1960266731495999,
+          "analytic_existing_return_error_prediction_mm": 0.004871387073958118,
+          "prediction_minus_observed_mm": 2.3459793135893747e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 3,
+          "existing_q_result_rad": [
+            1.817103470430537,
+            0.24052239037461698,
+            0.6997840795326751,
+            2.8669688079900864,
+            2.086694330075958,
+            -0.8561791879454749
+          ],
+          "source_q_rad": [
+            1.817103470430537,
+            0.24051871716951334,
+            0.6997840795326753,
+            46.849266523170385,
+            2.086690794515585,
+            -0.856178042787497
+          ],
+          "target_wristcenter_base_mm": [
+            -448.3347091100963,
+            1783.2670843388987,
+            720.5086121686238
+          ],
+          "wrist_radial_norm_k_mm": 1838.7619491058085,
+          "front_signed_radius_k_minus_l1x_mm": 1314.2619491058085,
+          "shoulder_height_offset_mm": 177.5086121686238,
+          "shoulder_wrist_distance_D_mm": 1326.1952263001967,
+          "gamma_existing_rad": 2.1254200054586088,
+          "cosine_numerator_A_mm": 485.46461130457203,
+          "sine_numerator_B_mm": 1234.1466239601882,
+          "native_roundtrip_translation_l2_mm": 0.00487138707372352,
+          "native_roundtrip_rotation_abs_max": 1.1102230246251565e-16,
+          "plain_PI_half_turn_prediction_mm": 0.004871387073369169,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 1314.2626011224822,
+          "first_three_position_height_mm": 177.50378461372782,
+          "signed_angle_psi_rad": 1.4365453903191139,
+          "source_abs_radius_angle_psi_rad": 1.4365453903191139,
+          "full_quadrant_beta_rad": 1.1960266731496003,
+          "source_positive_cosine_beta_rad": 1.1960266731495999,
+          "analytic_existing_return_error_prediction_mm": 0.004871387073958118,
+          "prediction_minus_observed_mm": 2.3459793135893747e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 1,
+          "existing_q_result_rad": [
+            2.8719333985748356,
+            -0.48067453622752443,
+            -0.15006110254448402,
+            -0.6907551404343966,
+            -0.4711106481247357,
+            1.42659954952053
+          ],
+          "source_q_rad": [
+            -0.2696592550149579,
+            -0.9061719226560858,
+            -0.8882573103285519,
+            -21.258373555531414,
+            0.4470298955977787,
+            0.11004422269607339
+          ],
+          "target_wristcenter_base_mm": [
+            -947.2677888327568,
+            261.8166003110663,
+            2668.110538307007
+          ],
+          "wrist_radial_norm_k_mm": 982.7839009459531,
+          "front_signed_radius_k_minus_l1x_mm": 458.28390094595306,
+          "shoulder_height_offset_mm": 2125.110538307007,
+          "shoulder_wrist_distance_D_mm": 2173.9638759394643,
+          "gamma_existing_rad": 1.2755748233814497,
+          "cosine_numerator_A_mm": 1672.3946735558952,
+          "sine_numerator_B_mm": 1388.9618388392132,
+          "native_roundtrip_translation_l2_mm": 0.007985415204371415,
+          "native_roundtrip_rotation_abs_max": 3.608224830031759e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007985415203738523,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 458.2917069097364,
+          "first_three_position_height_mm": 2125.1088549219066,
+          "signed_angle_psi_rad": 0.2123990729233747,
+          "source_abs_radius_angle_psi_rad": 0.2123990729233747,
+          "full_quadrant_beta_rad": 0.6930772823560027,
+          "source_positive_cosine_beta_rad": 0.6930772823560026,
+          "analytic_existing_return_error_prediction_mm": 0.00798541520397988,
+          "prediction_minus_observed_mm": -3.9153402742186927e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 3,
+          "existing_q_result_rad": [
+            2.8719333985748356,
+            -0.48067453622752443,
+            -0.15006110254448402,
+            2.4508375131553968,
+            0.4711106481247357,
+            -1.7149931040692632
+          ],
+          "source_q_rad": [
+            -0.2696592550149579,
+            -0.9061719226560858,
+            -0.8882573103285519,
+            -21.258373555531414,
+            0.4470298955977787,
+            0.11004422269607339
+          ],
+          "target_wristcenter_base_mm": [
+            -947.2677888327568,
+            261.8166003110663,
+            2668.110538307007
+          ],
+          "wrist_radial_norm_k_mm": 982.7839009459531,
+          "front_signed_radius_k_minus_l1x_mm": 458.28390094595306,
+          "shoulder_height_offset_mm": 2125.110538307007,
+          "shoulder_wrist_distance_D_mm": 2173.9638759394643,
+          "gamma_existing_rad": 1.2755748233814497,
+          "cosine_numerator_A_mm": 1672.3946735558952,
+          "sine_numerator_B_mm": 1388.9618388392132,
+          "native_roundtrip_translation_l2_mm": 0.007985415204430626,
+          "native_roundtrip_rotation_abs_max": 3.0531133177191805e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007985415203738523,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": 458.2917069097364,
+          "first_three_position_height_mm": 2125.1088549219066,
+          "signed_angle_psi_rad": 0.2123990729233747,
+          "source_abs_radius_angle_psi_rad": 0.2123990729233747,
+          "full_quadrant_beta_rad": 0.6930772823560027,
+          "source_positive_cosine_beta_rad": 0.6930772823560026,
+          "analytic_existing_return_error_prediction_mm": 0.00798541520397988,
+          "prediction_minus_observed_mm": -4.507453438273856e-13,
+          "classification": "PRECISION_ONLY"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 5,
+          "existing_q_result_rad": [
+            -0.26966660142516385,
+            -0.9061755958611886,
+            -0.8882573103285533,
+            -2.4088028188046433,
+            0.4470282551184639,
+            0.11003573714719775
+          ],
+          "source_q_rad": [
+            -0.2696592550149579,
+            -0.9061719226560858,
+            -0.8882573103285519,
+            -21.258373555531414,
+            0.4470298955977787,
+            0.11004422269607339
+          ],
+          "target_wristcenter_base_mm": [
+            -947.2677888327568,
+            261.8166003110663,
+            2668.110538307007
+          ],
+          "wrist_radial_norm_k_mm": 982.7839009459531,
+          "front_signed_radius_k_minus_l1x_mm": 458.28390094595306,
+          "shoulder_height_offset_mm": 2125.110538307007,
+          "shoulder_wrist_distance_D_mm": 2173.9638759394643,
+          "gamma_existing_rad": 0.5373786155973804,
+          "cosine_numerator_A_mm": 2497.1469232297404,
+          "sine_numerator_B_mm": 743.1398265996733,
+          "native_roundtrip_translation_l2_mm": 0.011988098438371089,
+          "native_roundtrip_rotation_abs_max": 4.440892098500626e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007985415203738523,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": -1507.29170690266,
+          "first_three_position_height_mm": 2125.105001729754,
+          "classification": "BACK_SHOULDER_PI_CONTRIBUTIONS_NOT_SEPARATELY_ISOLATED"
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 7,
+          "existing_q_result_rad": [
+            -0.26966660142516385,
+            -0.9061755958611886,
+            -0.8882573103285533,
+            0.7327898347851498,
+            -0.4470282551184639,
+            -3.0315569164425953
+          ],
+          "source_q_rad": [
+            -0.2696592550149579,
+            -0.9061719226560858,
+            -0.8882573103285519,
+            -21.258373555531414,
+            0.4470298955977787,
+            0.11004422269607339
+          ],
+          "target_wristcenter_base_mm": [
+            -947.2677888327568,
+            261.8166003110663,
+            2668.110538307007
+          ],
+          "wrist_radial_norm_k_mm": 982.7839009459531,
+          "front_signed_radius_k_minus_l1x_mm": 458.28390094595306,
+          "shoulder_height_offset_mm": 2125.110538307007,
+          "shoulder_wrist_distance_D_mm": 2173.9638759394643,
+          "gamma_existing_rad": 0.5373786155973804,
+          "cosine_numerator_A_mm": 2497.1469232297404,
+          "sine_numerator_B_mm": 743.1398265996733,
+          "native_roundtrip_translation_l2_mm": 0.011988098438371089,
+          "native_roundtrip_rotation_abs_max": 5.551115123125783e-16,
+          "plain_PI_half_turn_prediction_mm": 0.007985415203738523,
+          "negative_signed_radius": false,
+          "negative_beta_cosine_numerator": false,
+          "first_three_position_radial_mm": -1507.29170690266,
+          "first_three_position_height_mm": 2125.105001729754,
+          "classification": "BACK_SHOULDER_PI_CONTRIBUTIONS_NOT_SEPARATELY_ISOLATED"
+        }
+      ],
+      "NR_records_derived": [
+        {
+          "sample": 0,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.019999999999999997,
+            0.32,
+            -0.04,
+            0.01,
+            1.3008,
+            -1.5908,
+            0.0083141,
+            1.05015,
+            -1.2672700000000001,
+            -0.183255,
+            0.19075499999999998,
+            0.199466
+          ],
+          "physical_closure_error_mm": [
+            -0.013172039618211784,
+            -0.0009613842961471164,
+            -0.00175082458417819
+          ],
+          "physical_closure_l2_mm": 0.013322622646955886,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -7.792743486465824e-08,
+              -0.9999999999999967,
+              -1.3291205304031212e-08,
+              2338.2449999999994
+            ],
+            [
+              0.9999999999998729,
+              -7.79274414871844e-08,
+              4.976296665393864e-07,
+              4199.999999999999
+            ],
+            [
+              -4.976296676156079e-07,
+              -1.3291166520673174e-08,
+              0.9999999999998759,
+              -899.9999999999993
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 4.976296676156079e-07,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.012919891807364808,
+            -0.0001366992041294666,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -0.0002521478110496836,
+            -0.000824685092654539,
+            -0.0017508245841958913
+          ],
+          "exact_decomposition_residual_mm": 6.686042471533175e-13,
+          "yaw_only_remaining_l2_mm": 0.0019516840789620162,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 1,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            1.58,
+            0.56,
+            0.72,
+            0.01,
+            0.3008,
+            -0.0008000000000000004,
+            -1.13171,
+            0.858895,
+            -0.023455200000000002,
+            -1.22367,
+            -1.2659,
+            0.671756
+          ],
+          "physical_closure_error_mm": [
+            -0.00598573095271604,
+            0.008590866689701215,
+            7.068265085763414e-05
+          ],
+          "physical_closure_l2_mm": 0.010470766999396607,
+          "implied_KDL_post_return_base_transform": [
+            [
+              1.2088147821310376e-08,
+              -0.9999999999999996,
+              -2.8319568060857656e-08,
+              2338.2450000000013
+            ],
+            [
+              0.9999999999999999,
+              1.2088147832288808e-08,
+              -2.5875016873662357e-09,
+              4200.000000000001
+            ],
+            [
+              2.5875019251923197e-09,
+              -2.831956799141872e-08,
+              0.9999999999999996,
+              -899.9999999999998
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 2.8319568060857656e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.006017281112491665,
+            0.008618154756122496,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            3.1550159651675826e-05,
+            -2.7288066649849028e-05,
+            7.068265086303103e-05
+          ],
+          "exact_decomposition_residual_mm": 2.600696305274626e-13,
+          "yaw_only_remaining_l2_mm": 8.20736759451036e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 2,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.04,
+            0.34,
+            -0.04,
+            -0.01,
+            1.2808,
+            -1.5708,
+            0.028314100000000002,
+            1.05015,
+            -1.2672700000000001,
+            -0.183255,
+            0.19075499999999998,
+            0.179466
+          ],
+          "physical_closure_error_mm": [
+            -0.01298205626426352,
+            -0.00018764961521355872,
+            -5.9185561894992134e-05
+          ],
+          "physical_closure_l2_mm": 0.012983547287137298,
+          "implied_KDL_post_return_base_transform": [
+            [
+              6.3640522328032625e-09,
+              -0.9999999999999994,
+              3.183770448918832e-08,
+              2338.2450000000003
+            ],
+            [
+              0.9999999999999994,
+              6.364052762089219e-09,
+              1.7177490413639126e-08,
+              4200.0
+            ],
+            [
+              -1.7177490569847787e-08,
+              3.183770433084337e-08,
+              0.9999999999999993,
+              -900.0000000000003
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 3.410605131648481e-13,
+          "KDL_post_chain_rotation_abs_max": 3.183770448918832e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.012952506210671939,
+            -0.00015987575869623238,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -2.9550053724226236e-05,
+            -2.7773856528035838e-05,
+            -5.9185562027747296e-05
+          ],
+          "exact_decomposition_residual_mm": 1.8797209071609778e-13,
+          "yaw_only_remaining_l2_mm": 7.174624387336425e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 3,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            1.56,
+            0.56,
+            0.72,
+            -0.01,
+            0.2808,
+            -0.0008000000000000004,
+            -1.11171,
+            0.858895,
+            -0.023455200000000002,
+            -1.20367,
+            -1.2859,
+            0.671756
+          ],
+          "physical_closure_error_mm": [
+            -0.006153388770371748,
+            0.008557640412163892,
+            -0.00014927972978284743
+          ],
+          "physical_closure_l2_mm": 0.010541332326654053,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -7.047773564931685e-09,
+              -0.9999999999999961,
+              9.029195957955976e-08,
+              2338.2450000000003
+            ],
+            [
+              0.999999999999999,
+              -7.047776798566529e-09,
+              -3.628852034387242e-08,
+              4199.999999999999
+            ],
+            [
+              3.628852105870016e-08,
+              9.029195931224829e-08,
+              0.9999999999999953,
+              -899.9999999999998
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 9.029195957955976e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.006106009057205828,
+            0.008526946319577466,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -4.737971305612556e-05,
+            3.069409217490715e-05,
+            -0.00014927972973540748
+          ],
+          "exact_decomposition_residual_mm": 4.285477379411237e-13,
+          "yaw_only_remaining_l2_mm": 0.00015959762612090738,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 4,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.019999999999999997,
+            0.34,
+            -0.04,
+            0.01,
+            1.3008,
+            -1.5908,
+            0.028314100000000002,
+            1.05015,
+            -1.2672700000000001,
+            -0.20325500000000002,
+            0.210755,
+            0.179466
+          ],
+          "physical_closure_error_mm": [
+            -0.012989917629056436,
+            -0.00019613753499925224,
+            -0.0001051561168878834
+          ],
+          "physical_closure_l2_mm": 0.01299182388085775,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -1.0667593333711643e-08,
+              -0.9999999999999996,
+              1.236722525686136e-08,
+              2338.245000000001
+            ],
+            [
+              0.9999999999999992,
+              -1.066759296190034e-08,
+              3.000848371754557e-08,
+              4200.000000000001
+            ],
+            [
+              -3.0008483631410075e-08,
+              1.2367225593270942e-08,
+              0.9999999999999993,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 3.000848371754557e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.01293211862477745,
+            -0.00014659547722941307,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -5.779900406633351e-05,
+            -4.954205808860077e-05,
+            -0.00010515611681032001
+          ],
+          "exact_decomposition_residual_mm": 3.909553299499851e-13,
+          "yaw_only_remaining_l2_mm": 0.00012981890964975214,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 5,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            1.56,
+            0.54,
+            0.72,
+            -0.01,
+            0.2808,
+            0.019200000000000002,
+            -1.13171,
+            0.858895,
+            -0.023455200000000002,
+            -1.20367,
+            -1.2859,
+            0.651756
+          ],
+          "physical_closure_error_mm": [
+            -0.006098576998738281,
+            0.0085410307847269,
+            -5.60191892873263e-10
+          ],
+          "physical_closure_l2_mm": 0.010494848654229966,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -8.559900480399739e-14,
+              -1.0,
+              2.3385768726528074e-13,
+              2338.245000000002
+            ],
+            [
+              1.0,
+              -8.560763517394467e-14,
+              9.65064707786028e-15,
+              4200.0
+            ],
+            [
+              -9.545185821250231e-15,
+              2.337394080515049e-13,
+              1.0,
+              -899.9999999999991
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 1.8189894035458565e-12,
+          "KDL_post_chain_rotation_abs_max": 2.3385768726528074e-13,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.006098576762207321,
+            0.008541030589002798,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -2.3753785768461674e-10,
+            1.953407901813572e-10,
+            -5.602534344927611e-10
+          ],
+          "exact_decomposition_residual_mm": 1.079147192783381e-12,
+          "yaw_only_remaining_l2_mm": 6.388033937043578e-10,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 6,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.019999999999999997,
+            0.34,
+            -0.060000000000000005,
+            0.01,
+            1.2808,
+            -1.5708,
+            0.0083141,
+            1.07015,
+            -1.24727,
+            -0.20325500000000002,
+            0.210755,
+            0.179466
+          ],
+          "physical_closure_error_mm": [
+            -0.013580975378999938,
+            -0.00013471059912717465,
+            0.00010366499941483198
+          ],
+          "physical_closure_l2_mm": 0.013582039081913414,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -1.7582886008687474e-07,
+              -0.9999999999999846,
+              1.4460702854373277e-08,
+              2338.245000000001
+            ],
+            [
+              0.999999999999984,
+              -1.7582886051331105e-07,
+              -2.923661321620777e-08,
+              4199.999999999999
+            ],
+            [
+              2.9236615782421997e-08,
+              1.4460697727656535e-08,
+              0.9999999999999994,
+              -899.9999999999995
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 9.094947017729282e-13,
+          "KDL_post_chain_rotation_abs_max": 1.7582886057454338e-07,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.012938033745400543,
+            -0.00017413731474381328,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -0.0006429416331744924,
+            3.942671512418461e-05,
+            0.000103664999335974
+          ],
+          "exact_decomposition_residual_mm": 6.551880056067184e-13,
+          "yaw_only_remaining_l2_mm": 0.0006524376155797966,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 7,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            1.56,
+            0.56,
+            0.74,
+            -0.01,
+            0.2808,
+            0.019200000000000002,
+            -1.13171,
+            0.858895,
+            -0.0034552000000000003,
+            -1.20367,
+            -1.2859,
+            0.671756
+          ],
+          "physical_closure_error_mm": [
+            -0.006113785764000568,
+            0.008530860789505823,
+            -1.3318014680407941e-05
+          ],
+          "physical_closure_l2_mm": 0.010495434223867965,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -3.966528055961415e-09,
+              -0.9999999999999996,
+              2.017956878713267e-08,
+              2338.245
+            ],
+            [
+              1.0000000000000002,
+              -3.966528515929008e-09,
+              -2.0147242654918112e-08,
+              4200.0
+            ],
+            [
+              2.014724296929919e-08,
+              2.0179568695774536e-08,
+              0.9999999999999992,
+              -899.999999999999
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 1.0231815394945443e-12,
+          "KDL_post_chain_rotation_abs_max": 2.017956878713267e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.006099137345988721,
+            0.008513618026333063,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -1.4648417963507e-05,
+            1.7242763306259842e-05,
+            -1.331801464031712e-05
+          ],
+          "exact_decomposition_residual_mm": 1.4753364993845963e-13,
+          "yaw_only_remaining_l2_mm": 2.6253733965080788e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 8,
+          "accepted": true,
+          "anchor": "start",
+          "input_q_rad": [
+            -0.019999999999999997,
+            0.34,
+            -0.060000000000000005,
+            0.01,
+            1.3008,
+            -1.5708,
+            0.028314100000000002,
+            1.05015,
+            -1.2672700000000001,
+            -0.183255,
+            0.210755,
+            0.179466
+          ],
+          "physical_closure_error_mm": [
+            -0.012931067164117849,
+            -0.00017112355737936014,
+            2.453242041156045e-05
+          ],
+          "physical_closure_l2_mm": 0.0129322226672165,
+          "implied_KDL_post_return_base_transform": [
+            [
+              -3.1887522392917827e-09,
+              -1.0000000000000002,
+              1.040215448442054e-08,
+              2338.245000000001
+            ],
+            [
+              1.0,
+              -3.188752297910955e-09,
+              -6.837064790048526e-09,
+              4200.0
+            ],
+            [
+              6.8370648052008884e-09,
+              1.0402154561549403e-08,
+              0.9999999999999997,
+              -899.9999999999986
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 1.3642420526593924e-12,
+          "KDL_post_chain_rotation_abs_max": 1.0402154561549403e-08,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.012902607358995693,
+            -0.000182309098099904,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            -2.845980527933156e-05,
+            1.1185540034053599e-05,
+            2.453242026584604e-05
+          ],
+          "exact_decomposition_residual_mm": 7.191701253092514e-13,
+          "yaw_only_remaining_l2_mm": 3.9203526372656864e-05,
+          "returned_zero_joint_count": 0
+        },
+        {
+          "sample": 9,
+          "accepted": true,
+          "anchor": "goal",
+          "input_q_rad": [
+            1.58,
+            0.56,
+            0.72,
+            -0.01,
+            0.3008,
+            -0.0008000000000000004,
+            -1.11171,
+            0.858895,
+            -0.023455200000000002,
+            -1.22367,
+            -1.2659,
+            0.671756
+          ],
+          "physical_closure_error_mm": [
+            -0.005895378788409289,
+            0.008411152660301013,
+            0.00023162568396628558
+          ],
+          "physical_closure_l2_mm": 0.01027407565629083,
+          "implied_KDL_post_return_base_transform": [
+            [
+              6.455584853291721e-08,
+              -0.9999999999999895,
+              -1.2982974403760013e-07,
+              2338.2449999999985
+            ],
+            [
+              0.9999999999999969,
+              6.455584292029115e-08,
+              4.345096577438446e-08,
+              4200.0
+            ],
+            [
+              -4.345095755804401e-08,
+              -1.298297468130348e-07,
+              0.9999999999999905,
+              -899.9999999999998
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "declared_KDL_target_transform": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0.0,
+              2338.2450000000003
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0,
+              4200.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -900.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "KDL_post_chain_translation_abs_max_mm": 1.8189894035458565e-12,
+          "KDL_post_chain_rotation_abs_max": 1.298297468130348e-07,
+          "base_yaw_discrepancy_prediction_mm": [
+            -0.006055105334092424,
+            0.008579781688882957,
+            0.0
+          ],
+          "remaining_internal_rotation_lever_prediction_mm": [
+            0.0001597265465149718,
+            -0.00016862902912155307,
+            0.00023162568400666517
+          ],
+          "exact_decomposition_residual_mm": 9.923513541578998e-13,
+          "yaw_only_remaining_l2_mm": 0.0003280225238443334,
+          "returned_zero_joint_count": 0
+        }
+      ],
+      "passive_rank_records": [
+        {
+          "name": "regular_passive_jacobian_positive_control",
+          "arm": 1,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07182339962140126
+        },
+        {
+          "name": "wrist_singular_q5_zero",
+          "arm": 1,
+          "native_rank": 5,
+          "independent_rank": 5,
+          "native_smallest_singular_m_rad": 1.5115059997188695e-12
+        },
+        {
+          "name": "author_elbow_only_q3_minus_PI_over_2",
+          "arm": 1,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07182339962140126
+        },
+        {
+          "name": "regular_passive_jacobian_positive_control",
+          "arm": 2,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07182339979995195
+        },
+        {
+          "name": "wrist_singular_q5_zero",
+          "arm": 2,
+          "native_rank": 5,
+          "independent_rank": 5,
+          "native_smallest_singular_m_rad": 1.5115434474944873e-12
+        },
+        {
+          "name": "author_elbow_only_q3_minus_PI_over_2",
+          "arm": 2,
+          "native_rank": 6,
+          "independent_rank": 6,
+          "native_smallest_singular_m_rad": 0.07182339979995195
+        }
+      ],
+      "all_rejected_IK_records": [
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 0,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 1,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 2,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 3,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 4,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 5,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 6,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 5
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 6
+        },
+        {
+          "sample": 7,
+          "arm": 2,
+          "branch": 7
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 0
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 2
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 4
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 5
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 6
+        },
+        {
+          "sample": 8,
+          "arm": 1,
+          "branch": 7
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 0
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 2
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 4
+        },
+        {
+          "sample": 9,
+          "arm": 2,
+          "branch": 6
+        }
+      ]
+    }
+  ],
+  "rejected_interpretation": {
+    "model": "V",
+    "wrong_implied_second_base_yaw": 1.5707963267948966,
+    "outcome": "rejected by source chain identity; actual implied yaw is -pi/2 because T_pose=Rz(pi/2) then FLIP=Rz(pi)",
+    "reason": "An early derived yaw-only check used T_pose yaw without the terminal flip; it predicted multi-meter errors and was rejected, not used in conclusions."
+  },
+  "interpretation_limits": [
+    "Not a modified IK/NR execution or revised qualification outcome",
+    "Source normalization / zeroing and raw KDL ret cannot be isolated where pre-return data was not logged",
+    "I/V formal planning and collision coverage remain unexecuted here",
+    "Original paper algorithm validity is not adjudicated from implementation failures"
+  ]
+}

@@ -1,0 +1,117 @@
+"""Chinese scientific stage report, using saved R1 data and existing Word helpers."""
+from __future__ import annotations
+import argparse
+from datetime import datetime, timezone
+import json
+import sys
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
+import build_p4_paper_report as word
+from docx.oxml.ns import qn
+from docx.shared import Pt
+from docx.enum.text import WD_LINE_SPACING
+
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--assets',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
+ if args.output.exists():raise FileExistsError(args.output)
+ word.ASSETS=args.assets.resolve();d=json.loads((word.ASSETS/'report_data.json').read_text());r=word.Report()
+ r.doc.sections[0].header.paragraphs[0].text='P4 闭链运动规划  |  原作者六环境模型资格与失败复核'
+ r.doc.sections[0].footer.paragraphs[0].text='原生模型组件证据 · 完整论文仍部分完成'
+ r.doc.core_properties.title='P4完整复现：原生模型资格与失败根因'
+ r.doc.core_properties.subject='六环境真实运动学/投影资格；不含新的全局规划性能结果'
+ r.doc.core_properties.keywords='P4,RSS,PCS,NR,ABB,Comau,20R,独立资格,失败根因'
+ r.doc.core_properties.created=datetime.now(timezone.utc)
+ r.doc.core_properties.modified=datetime.now(timezone.utc)
+ r.doc.add_heading('P4闭链运动规划完整复现\n原生模型资格与失败根因',0)
+ r.doc.add_paragraph('2026年10月15日 · 原论文六环境续研阶段结果',style='Subtitle')
+ r.p('我重新核对了原论文八页作者稿、六种环境和三种规划策略，并从作者七个固定源码快照恢复平面20R、双ABB、双Comau及三Comau的原生运动学核。此前未找到的Comau和三臂模型已经获得，现阶段的主要问题转为公开程序的逆解、坐标条件与实际几何一致性。')
+ r.p('我完成了600组固定FK输入、五个空间环境合计400次IK分支尝试、平面40次APC调用和六环境合计60次近端点NR输入。另有原端点、不可达、雅可比与有限差分诊断。六环境合计1826项组件检查中1580项通过、246项失败。这些条目具有不同含义和数量，不能折算为规划成功率。')
+ r.p('目前没有新的合格全局路径，也没有正式Table I规划试次。原RSS 0/20、PCS与NR各20/20属于此前独立20R模型的历史结果，全部保留；不能混入本次作者环境。完整论文仍部分完成，PCS换链优势、复杂障碍排序和原图表数值尚未得到本次实证。')
+ r.p('论文：Avishai Sintov、Andy Borum、Timothy Bretl，Motion Planning of Fully-actuated Closed Kinematic Chains with Revolute Joints: A Comparative Analysis，IEEE RA-L 3(4):2886–2893，2018，DOI 10.1109/LRA.2018.2846806。所读版本为accepted June 2018作者稿，SHA256 193710e5a9d4284cf62b30ff189a1df038a9d5c5ce3f1545525dc2f78bea08c6；未将其冒称已核实的最终出版社PDF。')
+ r.page('第一部分：原论文模型与三种规划策略')
+ r.h('1 刚性闭链与可行空间')
+ r.p('原文把全驱动转动关节闭链写成构型q和闭合约束C(q)=0。单平面回路有三个独立位姿约束，单空间回路有六个。抓持物体与夹爪被视为刚体的一部分；本论文讨论运动规划，没有验证吸盘柔性、内部力或接触控制。')
+ r.eq([word.sub('C','cl'),'={q∈C:C(q)=0}'],'原式1')
+ r.eq([word.sub('C','o'),'=',word.sub('C','cl'),'∩',word.sub('C','free')],'原式2')
+ r.p('闭合只解决约束的一部分。限位、机器人自碰撞、物体及障碍碰撞必须单独检查。一个IK或NR接口返回true，不等于它返回的状态属于可行空间。我的组件资格先独立回代几何，再开放碰撞与局部连接；本次没有执行碰撞或规划资格。')
+ r.h('2 APC与NR投影')
+ r.p('APC在每次计算中把非冗余关节子链声明为被动链，其余关节作为主动链采样。空间六关节臂常有肩、肘、腕的多个解析分支。被动只是一种计算划分，不代表机器人存在无驱动关节。所有返回分支仍须经过FK闭合、限位和碰撞验证。')
+ r.eq(['C(',word.sub('q','a'),',',word.sub('q','p'),')=0,  ',word.sub('q','p'),'=IK(',word.sub('q','a'),',k)'],'APC计算关系')
+ r.p('NR从环境空间的初值迭代减小全链约束残差，利用雅可比伪逆更新；原文使用KDL和SVD。作者程序常用10000次上限和1e−5逆链求解精度，还包含小角度清零、近似π取模与限位拒绝。这些实现细节需要与物体端的实际闭合分量分别核对。')
+ r.eq([word.sub('q','k+1'),'=',word.sub('q','k'),'−',word.sup('J','†'),'(',word.sub('q','k'),')C(',word.sub('q','k'),')'],'NR基本更新')
+ r.h('3 RBS、RSS与PCS')
+ r.p('RBS递归投影两端点的中点，再检查左右子段。RSS以gamma概率请求人工奇异构型，通过被动链不同IK分支之间的桥接扩展搜索。PCS则在多个被动划分之间选择具有共同IK分支的局部连接，使原先对某一划分奇异的状态可以在另一划分下连接。')
+ r.eq([word.sub('q','mid'),'=(',word.sub('q','a'),'+',word.sub('q','b'),')/2'],'RBS中点')
+ r.eq(['rank(∂C/∂',word.sub('q','p'),')<',word.sub('n','c')],'RSS人工奇异条件')
+ r.p('我分别记录搜索树参与的划分和最终解边的划分。树中调用过两种被动划分，并不能证明解路径发生换链。旧PCS的92条解边全部使用p0，因而原先20/20只能证明那些任务可解，不能证明换链优势。')
+ r.page('4 可见性理论与完整实验范围')
+ r.eq(['V(q)={q′∈',word.sub('C','o'),':valid_edge(q,q′)}'],'原式3')
+ r.eq(['μ(V(q))≤μ(',word.sub('M','k'),')=μ(',word.sub('C','cl'),')p'],'原式4')
+ r.eq([word.sub('V','m'),'(q)⊆∪',word.sub('M','ki')],'原式5')
+ r.eq([word.sub('P','m'),'=∏(1−',word.sub('p','k'),'),  ',word.sub('p','k'),'=1/',word.sub('ξ','k')],'原式6，独立划分假设')
+ r.eq(['p̃=(1−1/',word.sub('ξ','i'),')/(',word.sub('ξ','j'),'−',word.sub('ξ','ij'),')'],'保留原式7')
+ r.eq([word.sub('P','m'),'=∏(1−',word.sub('p','k'),')∏(1−p̃k)'],'原式8，原假设适用时')
+ r.eq(['μ(',word.sub('V','m'),'(q))≤(1−',word.sub('P','m'),')μ(',word.sub('C','cl'),')'],'原式9')
+ r.p('这些是有适用假设的上界，不是碰撞环境中的精确成功率。独立枚举共享腕2种、左右肘各4种的32个分支标签时，两划分并集占7/32，条件概率P(B同分支|A不同分支)为3/28；原式7在该例取7/32。这里暴露的是文字条件概率标签与并集数值的语义区别，我保留原式，没有据此改PCS，也没有把抽象标签均匀分布当作实际流形测度。三臂多回路的分析还需要两个被动臂共同满足分支连接条件。')
+ r.table(['原环境','作者资源/机构','本次实际层级'],[
+  ['I','planar_ckc；20R、19个单位杆、末端(7,4)','原生APC/KDL与独立SE(2)'],
+  ['II','CKCplanning；双ABB，基距900mm、杆300mm','原生FK/IK/NR'],
+  ['III','同双ABB，基距1200mm、杆500mm','原生FK/IK/NR'],
+  ['IV','ckcComau2；双Comau、杆1800mm','原生FK/IK/NR'],
+  ['V','ckcComau工业分支；吸盘搬箱原刚抓变换','原生FK/IK/NR'],
+  ['VI','ckcComau3；三臂、18关节、两闭合回路','原生FK/IK/顺序NR与RSS编译诊断']
+ ],size=8.4)
+ r.p('完整覆盖表现有30个父义务、211个追踪入口。Fig.3下图要求全部m=1…20；空间Table I有45单元、每单元500次与1000s截断，共22500调用，最坏6250核小时。APC/NR各500000投影、可见性50000合法点对、Fig.5、去障碍和固定划分消融均保留，尚未运行的项目未填零值。作者各raw文件与最终论文图表的生产链仍待核实。')
+ r.page('第二部分：六环境真实组件资格')
+ r.h('5 输入、单位与独立验证')
+ r.p('作者源码和网格在仓库外固定保存，1194个文件有哈希；本项目公开独立驱动、配置与运行日志。平面末轴保持作者[0,2PI_]坐标，KDL末关节为PI_−q19，不能改成普通20角求和。平面长度记源杆长单位；空间源为mm，旋转矩阵误差无量纲。雅可比SVD只按预声明行缩放判秩，不把不同单位物理误差混成总范数。')
+ r.p('R1总额度1800s、单构建/诊断120s；seed为20261014，Comau分别使用预声明的模型派生stream。所有输入固定，无拒绝后挑种子。原端点保持原字面精度，仅诊断，不以投影或重置后状态替代原点。编译中的名称/头文件问题有两个独立工程修正及首失败日志，作者算法字节不变。')
+ r.table(['环境','通过项','失败项','实际结论'],[[x['environment'],x['passed'],x['failed'],'组件资格未通过'] for x in d['environments']],size=9)
+ r.fig('qualification_counts','图1 真实检查条目数；各环境条目构成不同，不能作为算法规划成功率。',width=6.3)
+ r.h('6 原生FK与独立几何')
+ r.fig('fk_independent_error','图2 相同保存输入的作者FK与独立串联变换之差；平面与空间单位分列。',width=6.3)
+ r.p('双ABB各100个末端对照通过，最大平移差在10⁻¹³mm量级。Comau IV/V各100组双臂向量的200个末端对照全部通过，最大平移差约1.82×10⁻¹²mm。VI少数旋转矩阵元素被原FK的1e−4清零处理影响，出现旋转矩阵门外差，不能仅看平移一致就认定所有FK合格。作者只暴露末端FK，独立程序保存的中间段不冒充作者逐段读数。')
+ r.page('7 APC与解析IK的真实回代失败')
+ r.fig('ik_roundtrip_error','图3 原生IK返回true的分支回代误差。未返回的分支仍留在CSV分母中；图中仅展示有返回误差的点。',width=6.3)
+ r.p('ABB每环境80个分支尝试有44个原生接受；这些接受输出的回代平移误差约0.00098–0.00421mm，全部未过固定1e−5mm门。角度偏差与PI_=3.1416参与半角、肩回转及取模有关。对全部44个保存输出，无拟合的几何预测与实际误差最大相差约2.27×10⁻¹³mm，因此不是根据一次失败猜测精度原因。')
+ r.p('Comau不只有微小π误差。IV固定样本0的signed radius被平方和正根丢失后，出现945.58mm回代差；样本6的余弦象限丢失产生约93.80mm差。V还出现约32.96mm和339.80mm反例。保存状态的腕心方程可以统一解释这些差，前肩分支预测与原日志最大差分别约8.95×10⁻¹³mm和7.33×10⁻¹²mm。原生FK与独立FK一致，作者自身FK回代也有同量级错误；不能把这些大差归为本项目换了坐标系。')
+ r.eq(['r=A sin(',word.sub('q','2'),')+B cos(',word.sub('q','2'),'),  z=A cos(',word.sub('q','2'),')−B sin(',word.sub('q','2'),')'],'保存关节的独立腕心关系')
+ r.p('上述反例是数学资格，不是原规划分布下的APC成功率。当前驱动覆盖作者关节范围，包含多圈轴；不能据此填写原文500000投影的7.92%或性能倍数。')
+ r.fig('planar_apc_closure','图4 原平面起点在20划分×2分支中的实际APC闭合误差，长度为源杆长单位。',width=6.3)
+ r.page('8 NR内部残差与真实刚抓闭合')
+ r.fig('nr_rigid_closure','图5 返回NR状态的独立物理闭合分量。三臂取两回路较大分量；原生返回false保留为缺测，不补零。',width=6.3)
+ r.p('ABB的逆链内部求解与实际双臂闭合存在固定基座方位差：APC基座用3.1416，逆链目标隐含精确π。II另外两条还受到返回后1e−4rad清零影响。同一保存状态的矩阵恒等式能把基座项与内部残差分开，不能用逆链一个小数值代替物体端闭合。')
+ r.p('Comau IV十个输入有七个返回true，三个false的原始KDL ret与限位阶段未记录，归因仍UNKNOWN；V十个均返回true。17个returned状态的逆链内部平移目标差不超过约1.82×10⁻¹²mm，但物理闭合仍未过门。近似基座方位、精确置换目标与小角残差乘长杆的项共同解释保存误差；不能把一切归为截零或直接改环境方位。')
+ r.p('VI公开默认NR先投影12维臂1–2，再对第三臂做单臂NR，并非默认18维同时求解。当前仅按该原生版本保存组件读数，未把它写成论文完整多闭环方法验证。')
+ r.page('9 RSS真实奇异条件与三臂程序')
+ r.fig('rss_rank_witness','图6 同一ABB固定fixture的原生FK中央差分奇异值；行缩放用于秩诊断，不是物理误差范数。',width=6.3)
+ r.p('原ABB sampleSingular把q3=−PI_/2称为肘奇异，但原几何有70mm偏置。作者FK真实差分与独立解析Jacobian均得到rank6，最小缩放奇异值0.02495；仅把q5设零时双方rank5。原文的RSS要求被动Jacobian秩缺陷，公开程序的固定角不等于该条件。改变这个采样集合需要明确的新版本；我尚未执行修改后的RSS。')
+ r.eq(['α=atan2(302,70),  sin(',word.sub('q','3'),'+α)=0'],'ABB肘奇异几何条件')
+ r.p('VI RSS在隔离头路径和非可视依赖之后进行真实编译，仍报两臂接口遗留、未定义q3/dsg2和递归参数不符。原RSS正文与采样机制未改。这是取得的公开实现不完整的证据，不能据此推断RSS理论不适用于三臂，也不能跳过VI或以双臂实验替代。')
+ r.page('10 与原文对应的实际范围及待验证结论')
+ r.table(['原文内容','本次证据','当前状态'],[
+  ['六环境模型/源输入','全部来源、原生核构建与固定输入读数','模型核部分完成；碰撞/路径未资格'],
+  ['APC/NR投影','有限回代和近端点输入，保留真实失败','组件未通过；500000正式投影未做'],
+  ['RSS奇异跨分支','固定Jacobian反例及VI原生编译失败','未得到新合法随机目标/全局路径'],
+  ['PCS划分与换链','旧解92边全p0；新原生APC资格失败','复杂障碍/固定划分消融未开放'],
+  ['Fig3–5、TableI–II','30父义务/211入口、完整45cell保留','正式性能结果未执行'],
+  ['无障碍/多闭环/分布','作者源已找回，后续协议问题明确','没有新成功率、排序或分布结论']
+ ],size=8.4)
+ r.p('当前可确认的是公开实现存在可定位的精度、象限和数值坐标问题；这些问题已通过独立FK、解析Jacobian、保存状态的代数回放及真实编译交叉验证。它们不等于论文RSS/PCS/NR理论错误。原生产代码版本、精确未截断端点和raw到最终图表的链条仍需核查。')
+ r.p('下一步先区分工程数值一致修复与科学采样集合变更。候选修复保持原基座、抓持、原字面端点和成功门，重新推导完整IK象限关系与相同物理闭合的NR目标；RSS和VI的重建路线另有明确裁决点。原生版本和本轮失败全部保留，不追写为修复后通过。')
+ r.h('与我当前双FR3课题的证据边界')
+ r.p('现阶段没有新增的合格空间规划路径，因此尚不能把PCS复杂障碍优势或RSS跨分支能力列为我方双FR3方法选择依据。现有NR/RBS离线工程证据与本次ABB/Comau组件诊断属于不同模型，仍须分开。7R冗余、吸盘柔性与刚抓假设、共同搬运和单臂推入的拓扑差异，保留为全文实证完成后逐方法分析的问题。此次没有进行Isaac或现有FR3场景改造。')
+ r.h('数据和复核入口')
+ r.p('原始目录：results/p4_full/20261014T1528_R1_ABB01、20261014T1545_R1_COMAU02、20261014T1550_R1_VI03、20261014T1555_R1_PLANAR01；首编失败与RSS三臂编译另有独立run_id。图表只读取对应*_independent.json，分支拒绝、非合格输出和诊断原端点均保留。')
+ r.p('完整清单：reports/p4_full_audit/ORIGINAL_FULL_COVERAGE_MATRIX_v3.csv；阶段实测覆盖另列reports/P4_FULL_R1_ORIGINAL_VS_REPRODUCED_COVERAGE.csv。源、协议、输入、命令、编译器输出和独立矩阵均有可复核记录；本阶段不以未执行项作论文最终结题。')
+ for p in r.doc.paragraphs:
+  if list(p._p.iter(qn('m:oMath'))):
+   p.paragraph_format.line_spacing=Pt(24)
+   p.paragraph_format.line_spacing_rule=WD_LINE_SPACING.AT_LEAST
+   p.paragraph_format.space_before=Pt(7)
+   p.paragraph_format.space_after=Pt(8)
+ args.output.parent.mkdir(parents=True,exist_ok=True);r.doc.save(args.output)
+ print(str(args.output))
+
+if __name__=='__main__':main()

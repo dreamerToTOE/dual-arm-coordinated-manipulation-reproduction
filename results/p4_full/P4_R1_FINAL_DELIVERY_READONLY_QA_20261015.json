@@ -1,0 +1,120 @@
+{
+  "schema": "P4_R1_DELIVERY_READONLY_QA_20261015_V1",
+  "reviewer": "p4_paper_full_audit",
+  "science_or_solver_runs_added": 0,
+  "delivery_files": {
+    "reports/P4完整复现_原生模型资格与失败根因_20261015_交付版.docx": "75c18da30b07205c21c04717557a3be956d183f5c9283d995d1c55e1c73430bb",
+    "reports/P4完整复现_原生模型资格与失败根因_20261015_交付版.pdf": "625cd14fcbbc43df71b692f95bf6104bd76322c370efa08c5b67c623c28b2f71",
+    "scripts/build_p4_full_r1_assets.py": "683d26a67a4ab67f721dec032154fb9e333c544a2bde6dd440185f703dc45448",
+    "reports/p4_full_r1_assets_20261015_v3/report_data.json": "39e1b032727c710a3fb12a647a7f38ed592a5483e7e7849a248868103b6d3565",
+    "reports/P4_FULL_R1_ORIGINAL_VS_REPRODUCED_COVERAGE.csv": "2848a61b9321ebfcdb974c2d1275a95c1fe63892baeeb75bbc101b74103e21ed",
+    "reports/P4_FULL_R1_ORIGINAL_VS_REPRODUCED_COVERAGE.md": "1351bc80781b8b068a5dc7965e0c30128b16ecc7de0ee4ee3d64f879ae38f966"
+  },
+  "saved_data_denominators": {
+    "fk_input_vectors": 600,
+    "spatial_ik_branch_attempts": 400,
+    "planar_apc_calls": 40,
+    "near_endpoint_nr_inputs": 60,
+    "check_total": 1826,
+    "check_pass": 1580,
+    "check_fail": 246,
+    "formal_planning_calls": 0
+  },
+  "raw_hash_chain": [
+    {
+      "environment": "I",
+      "raw_hash_matches_independent": true,
+      "raw_sha256": "1c1c969e72d5204da20ebc368ec05169b68831827409cde3bf6cd3d0882eafb2"
+    },
+    {
+      "environment": "II",
+      "raw_hash_matches_independent": true,
+      "raw_sha256": "b23a5e4f3aef707a5c2ee325f20ff9698786fd403e6f1db59053ecfa4f23b3d9"
+    },
+    {
+      "environment": "III",
+      "raw_hash_matches_independent": true,
+      "raw_sha256": "695971760c5947022f1889164455159b1ba9a2fded6f1c417eeb8929fff643c0"
+    },
+    {
+      "environment": "IV",
+      "raw_hash_matches_independent": true,
+      "raw_sha256": "3ae03596a6e5e52ba9e4c5b99fa10e61c713dcb9741860c7064563e4ca87b2f6"
+    },
+    {
+      "environment": "V",
+      "raw_hash_matches_independent": true,
+      "raw_sha256": "431d54db72d84cb5df3808d973608c58f9c7287767eb42323584196a08655ced"
+    },
+    {
+      "environment": "VI",
+      "raw_hash_matches_independent": true,
+      "raw_sha256": "42f0153a01fb8a1d1bddfd6dbd60f91bbe0bdd15a21ce016636515f993d859c8"
+    }
+  ],
+  "saved_matrix_svd_checks": [
+    {
+      "fixture": "author_elbow_only",
+      "sigma_matches_saved": true,
+      "spectral_norm": 1.8483288178585695,
+      "sigma_max": 1.8483288178585695,
+      "rank": 6,
+      "sigma_min": 0.024950575429679756
+    },
+    {
+      "fixture": "wrist_zero",
+      "sigma_matches_saved": true,
+      "spectral_norm": 1.850450275471995,
+      "sigma_max": 1.850450275471995,
+      "rank": 5,
+      "sigma_min": 4.4288431307331264e-13
+    },
+    {
+      "fixture": "regular",
+      "sigma_matches_saved": true,
+      "spectral_norm": 1.792141419399171,
+      "sigma_max": 1.792141419399171,
+      "rank": 6,
+      "sigma_min": 0.13371822014251405
+    }
+  ],
+  "coverage_statuses": {
+    "PARTIAL": 20,
+    "NOT_ATTEMPTED": 170,
+    "UNKNOWN": 8,
+    "DEFERRED": 1,
+    "FAILED": 12
+  },
+  "unexecuted_rows_marked_PASS_or_FULL": [],
+  "document_qa": {
+    "pdf_pages": 9,
+    "editable_OMML": 15,
+    "embedded_png_count": 6,
+    "all_embedded_images_match_v3_png_bytes": true,
+    "delivery_word_created_utc": "2026-10-15T01:42:07Z",
+    "delivery_word_modified_utc": "2026-10-15T01:42:07Z",
+    "all_document_body_text_equal_preserved_previous_word": true,
+    "visual_pages_reviewed": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "confirmed_resolved": [
+      "Template2013metadata removed in delivery version, original preserved",
+      "RSS short overflow page reflowed into own section",
+      "T06 parent records actual abstract enumeration PARTIAL; EQ7 UNKNOWN/EQ8 PARTIAL"
+    ],
+    "remaining_blocking_delivery_defects": []
+  },
+  "plot_review": {
+    "jacobian_svd_is_explicitly_scaled_diagnostic_not_physical_error_norm": true,
+    "NR_figure_scope": "II-VI spatial50 inputs; planar10 retained in saved I logs",
+    "optional_improvement": "Plot NaN breaks for IV NR false indices2/4/8 rather than connecting retained accepted samples; add figure caption spatialII-VI.",
+    "plotted_error_metrics_componentwise_max_not_spectral_norm": true
+  },
+  "tooling_failures": "v1/v2 source hashes match failures.json, no figures/summary; v3 only effective; no scientific data modified",
+  "scope_limit": "Deliverable is R1 component qualification failure/partial evidence, not paper full reproduction or planning ranking."
+}

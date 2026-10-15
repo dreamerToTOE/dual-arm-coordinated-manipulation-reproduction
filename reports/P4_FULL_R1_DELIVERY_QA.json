@@ -1,0 +1,124 @@
+{
+  "schema": "P4_R1_DELIVERY_INTEGRITY_V1",
+  "source_commit": "f8f8d64a21f5474fa5a5a8c7569dc69f06fefc40",
+  "checks": [
+    {
+      "check": "analysis_source_hash:results/p4_full/20261014T1555_R1_PLANAR01/I_independent.json",
+      "passed": true,
+      "evidence": "4caf0b52abf9ae6cb6e34c3401318c3208c74d5f799bf2aadf4d1558f82171e0"
+    },
+    {
+      "check": "analysis_source_hash:results/p4_full/20261014T1528_R1_ABB01/II_independent.json",
+      "passed": true,
+      "evidence": "27415fe7f59b9dce428dd151d2ac56a6cd3b41e64198367095904cdcd7cb9350"
+    },
+    {
+      "check": "analysis_source_hash:results/p4_full/20261014T1528_R1_ABB01/III_independent.json",
+      "passed": true,
+      "evidence": "82d15462f740bc5ad1d7efb6bcb99692468580ddbe404c21921869c64c460675"
+    },
+    {
+      "check": "analysis_source_hash:results/p4_full/20261014T1545_R1_COMAU02/IV_independent.json",
+      "passed": true,
+      "evidence": "f0b03e756849458acb1a5abb8b3ef101581fc35e6ce144591cf3de2e815e2979"
+    },
+    {
+      "check": "analysis_source_hash:results/p4_full/20261014T1545_R1_COMAU02/V_independent.json",
+      "passed": true,
+      "evidence": "ece097bf404247937a56c3a4b0b7024221bcd59841a863e9ee06d6640fb7401b"
+    },
+    {
+      "check": "analysis_source_hash:results/p4_full/20261014T1550_R1_VI03/VI_independent.json",
+      "passed": true,
+      "evidence": "a14b2c803a2ed1adb1b2f6dbaf3ada5aab897e11aedfc46891983b10cf8da39a"
+    },
+    {
+      "check": "component_totals",
+      "passed": true,
+      "evidence": "1826=1580+246 component items; no planning-success-rate interpretation"
+    },
+    {
+      "check": "separate_denominators",
+      "passed": true,
+      "evidence": "5 spatial*80 IK; 5 spatial*10 NR plus10 planar NR; 40 planar APC"
+    },
+    {
+      "check": "planar_fixture_ids",
+      "passed": true,
+      "evidence": [
+        {
+          "check_id": "unique_fixture_ids",
+          "status": "PASS",
+          "detail": {
+            "expected_unique": 152,
+            "observed_unique": 152
+          }
+        }
+      ]
+    },
+    {
+      "check": "formal_calls_zero",
+      "passed": true,
+      "evidence": "No native planner executed"
+    },
+    {
+      "check": "complete_obligation_ids",
+      "passed": true,
+      "evidence": "30 parents and211 total entries; original29 retained"
+    },
+    {
+      "check": "no_false_full_claim",
+      "passed": true,
+      "evidence": "Current stage does not qualify the full paper or complete paths"
+    },
+    {
+      "check": "docx_real_log_figures",
+      "passed": true,
+      "evidence": "Six embedded PNGs equal generated evidence figures"
+    },
+    {
+      "check": "editable_equations",
+      "passed": true,
+      "evidence": "15 OMML equations"
+    },
+    {
+      "check": "scientific_report_tone",
+      "passed": true,
+      "evidence": "Chinese research narrative; no instruction prose"
+    },
+    {
+      "check": "explicit_partial_scope",
+      "passed": true,
+      "evidence": "First page states no formal planning and no full-paper success"
+    },
+    {
+      "check": "document_real_date",
+      "passed": true,
+      "evidence": "Template dates replaced with real generation date"
+    },
+    {
+      "check": "pdf_rendered",
+      "passed": true,
+      "evidence": "PDF9 pages; main figure/formula pages visually inspected"
+    },
+    {
+      "check": "frozen_original_bytes",
+      "passed": true,
+      "evidence": {
+        "checked": 1282,
+        "changed": []
+      }
+    },
+    {
+      "check": "private_pdf_not_tracked",
+      "passed": true,
+      "evidence": "Private PDF and source page images excluded"
+    }
+  ],
+  "passed": 20,
+  "failed": 0,
+  "report_docx_sha256": "75c18da30b07205c21c04717557a3be956d183f5c9283d995d1c55e1c73430bb",
+  "report_pdf_sha256": "625cd14fcbbc43df71b692f95bf6104bd76322c370efa08c5b67c623c28b2f71",
+  "fresh_scientific_calls": 0,
+  "scope": "Artifact integrity only; all original qualification failures unchanged"
+}

@@ -1,0 +1,136 @@
+"""Scientific figures from immutable R1 logs only; no solver or planner imports."""
+from __future__ import annotations
+import csv
+import hashlib
+import json
+from pathlib import Path
+import argparse
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib import font_manager
+import numpy as np
+
+ROOT=Path(__file__).resolve().parents[1]
+PATHS={
+ 'I':'20261014T1555_R1_PLANAR01',
+ 'II':'20261014T1528_R1_ABB01','III':'20261014T1528_R1_ABB01',
+ 'IV':'20261014T1545_R1_COMAU02','V':'20261014T1545_R1_COMAU02',
+ 'VI':'20261014T1550_R1_VI03'}
+
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
+ out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
+ for preferred in ['Noto Sans CJK SC','Noto Sans CJK JP','WenQuanYi Zen Hei']:
+  if any(f.name==preferred for f in font_manager.fontManager.ttflist):
+   plt.rcParams['font.sans-serif']=[preferred];break
+ plt.rcParams.update({'axes.unicode_minus':False,'font.size':10,'figure.dpi':160})
+ sources={};summary=[];checks=[];ik=[];nr=[];ranks=[];planar=[]
+ for env,run in PATHS.items():
+  p=ROOT/'results/p4_full'/run/(env+'_independent.json');d=json.loads(p.read_text())
+  sources[str(p.relative_to(ROOT))]=digest(p)
+  row={'environment':env,'run_id':run,'formal_planning_calls':0,'status':'COMPONENT_QUALIFICATION_FAILED'}
+  if env=='I':
+   row.update(passed=d['check_counts']['PASS'],failed=d['check_counts']['FAIL'],
+              fk_max_position=d['fk_max_errors'][0],fk_max_rotation_matrix=d['fk_max_errors'][1],
+              position_unit='source_link_length_unit',fk_configuration_count=100)
+   for c in d['checks']:checks.append([env,c['check_id'],c['status'],str(p.relative_to(ROOT))])
+   planar=d['apc_projection_details'];row['apc_returned']=len([x for x in planar if x['state']=='RETURNED'])
+   row['apc_rejected']=len(d['apc_source_rejects'])
+  elif env in ['II','III']:
+   ev=d['evidence'];fk=[x['errors'] for x in ev if x['kind']=='fk']
+   row.update(passed=d['checks_passed'],failed=d['checks_failed'],fk_max_position=max(x['translation_max_abs_mm'] for x in fk),
+              fk_max_rotation_matrix=max(x['rotation_matrix_max_abs'] for x in fk),position_unit='mm',fk_configuration_count=100)
+   for c in d['checks']:checks.append([env,c['check'],'PASS' if c['passed'] else 'FAIL',str(p.relative_to(ROOT))])
+   counter=0
+   for x in ev:
+    if x['kind']=='ik':
+     err=x.get('target_errors',{});ik.append({'environment':env,'attempt':counter,'accepted':x['native_success'],
+      'position_abs_max_mm':err.get('translation_max_abs_mm'),'rotation_matrix_abs_max':err.get('rotation_matrix_max_abs')});counter+=1
+    if x['kind']=='nr':
+     err=x.get('geometry',{}).get('physical_rigid_grasp_closure',{})
+     nr.append({'environment':env,'sample':len([r for r in nr if r['environment']==env]),'accepted':x['native_success'],
+      'position_abs_max_mm':err.get('translation_max_abs_mm'),'rotation_matrix_abs_max':err.get('rotation_matrix_max_abs')})
+    if env=='II' and x['kind']=='jacobian_fixture':
+     z=x['native_finite_difference'];ranks.append({'fixture':x['name'],'rank':z['rank'],
+        'sigma':z['singular_values_translation_m'],'cutoff':z['cutoff']})
+  else:
+   ev=d['details'];fk=[err for x in ev if x['type']=='fk_sample' for err in x['fk_errors']]
+   row.update(passed=d['checks_passed'],failed=d['checks_failed'],fk_max_position=max(x['translation_abs_max_mm'] for x in fk),
+              fk_max_rotation_matrix=max(x['rotation_matrix_abs_max'] for x in fk),position_unit='mm',fk_configuration_count=100)
+   for c in d['checks']:checks.append([env,c['name'],c['status'],str(p.relative_to(ROOT))])
+   counter=0
+   for x in ev:
+    if x['type']=='ik_roundtrip':
+     err=x.get('independent_target_error') or {};ik.append({'environment':env,'attempt':counter,'accepted':x['accepted'],
+      'position_abs_max_mm':err.get('translation_abs_max_mm'),'rotation_matrix_abs_max':err.get('rotation_matrix_abs_max')});counter+=1
+    if x['type']=='nr_near_endpoint':
+     errors=x.get('independent_closure_errors') or []
+     nr.append({'environment':env,'sample':x['sample'],'accepted':x['accepted'],
+      'position_abs_max_mm':max((v['translation_abs_max_mm'] for v in errors),default=None),
+      'rotation_matrix_abs_max':max((v['rotation_matrix_abs_max'] for v in errors),default=None)})
+  summary.append(row)
+ def csvout(name,rows,fields=None):
+  with (out/name).open('w',newline='') as f:
+   if fields:
+    w=csv.writer(f);w.writerow(fields);w.writerows(rows)
+   else:
+    w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+ csvout('checks.csv',checks,['environment','check','status','source_analysis'])
+ csvout('ik_roundtrip.csv',ik);csvout('nr_rigid_closure.csv',nr)
+ csvout('planar_apc.csv',[[x.get(k) for k in ['partition','branch','state','position_source_units','rotation_matrix']] for x in planar],
+        ['partition','branch','state','position_source_units','rotation_matrix'])
+ def save(stem,fig):
+  fig.savefig(out/(stem+'.png'),dpi=200,bbox_inches='tight');fig.savefig(out/(stem+'.svg'),bbox_inches='tight');plt.close(fig)
+ fig,ax=plt.subplots(figsize=(8,3.7));x=np.arange(6)
+ ax.bar(x,[r['passed'] for r in summary],label='通过',color='#428477')
+ ax.bar(x,[r['failed'] for r in summary],bottom=[r['passed'] for r in summary],label='失败',color='#ba6150')
+ ax.set_xticks(x,[r['environment'] for r in summary]);ax.set(xlabel='原环境',ylabel='组件检查条目数',title='原生模型资格检查：条目数量不同，不能视为规划成功率')
+ for i,r in enumerate(summary):ax.text(i,r['passed']+r['failed']+3,str(r['failed'])+'失败',ha='center',fontsize=8)
+ ax.legend();ax.set_ylim(0,430);save('qualification_counts',fig)
+ fig,axs=plt.subplots(2,2,figsize=(9,6))
+ for ax,key,label in [(axs[0,0],'fk_max_position','平移分量最大差（源杆长单位）'),(axs[0,1],'fk_max_rotation_matrix','旋转矩阵分量最大差（无量纲）')]:
+  ax.scatter(['I'],[summary[0][key]],s=45);ax.set_yscale('log');ax.set_ylabel(label);ax.set_title('平面原生FK对独立SE(2)')
+ for ax,key,label in [(axs[1,0],'fk_max_position','平移分量最大差（mm）'),(axs[1,1],'fk_max_rotation_matrix','旋转矩阵分量最大差（无量纲）')]:
+  ax.plot([r['environment'] for r in summary[1:]],[r[key] for r in summary[1:]],'o-');ax.set_yscale('log');ax.set_ylabel(label);ax.set_xlabel('空间原环境');ax.grid(alpha=.2)
+ axs[1,1].axhline(1e-10,color='#b85144',ls='--',label='旋转矩阵资格门');axs[1,1].legend(fontsize=8)
+ fig.tight_layout();save('fk_independent_error',fig)
+ fig,axs=plt.subplots(1,2,figsize=(10,3.6))
+ for ax,envs,title in [(axs[0],['II','III'],'双ABB'),(axs[1],['IV','V','VI'],'Comau')]:
+  for env in envs:
+   rr=[r for r in ik if r['environment']==env and r['accepted'] and r['position_abs_max_mm'] is not None]
+   ax.scatter([r['attempt'] for r in rr],[r['position_abs_max_mm'] for r in rr],s=17,label=env,alpha=.7)
+  ax.set_yscale('log');ax.axhline(1e-5,ls='--',color='#b85144',label='固定资格门');ax.set(xlabel='预声明IK分支尝试序号',ylabel='回代平移分量最大误差（mm）',title=title);ax.grid(alpha=.2);ax.legend(fontsize=8)
+ fig.tight_layout();save('ik_roundtrip_error',fig)
+ fig,axs=plt.subplots(1,2,figsize=(10,3.6))
+ for env in PATHS:
+  if env=='I':continue
+  rr=[r for r in nr if r['environment']==env and r['accepted']]
+  for ax,key in [(axs[0],'position_abs_max_mm'),(axs[1],'rotation_matrix_abs_max')]:
+   ax.plot([r['sample'] for r in rr],[r[key] for r in rr],'o-',ms=3,label=env,alpha=.8)
+ for ax in axs:
+  ax.set_yscale('log');ax.axhline(1e-5,ls='--',color='#b85144',label='固定资格门');ax.set_xlabel('预声明近端点NR输入序号');ax.grid(alpha=.2);ax.legend(fontsize=8,ncol=3)
+ axs[0].set_ylabel('真实刚抓闭合平移分量最大误差（mm）');axs[1].set_ylabel('真实刚抓闭合旋转矩阵最大误差（无量纲）')
+ fig.tight_layout();save('nr_rigid_closure',fig)
+ fig,ax=plt.subplots(figsize=(8,3.5))
+ for branch in [0,1]:
+  rr=[r for r in planar if r['state']=='RETURNED' and r['branch']==branch]
+  ax.plot([r['partition'] for r in rr],[r['position_source_units'] for r in rr],'o-',ms=3,label='分支'+str(branch))
+ ax.set_yscale('log');ax.axhline(1e-5,ls='--',color='#b85144',label='固定资格门');ax.set(xlabel='被动划分索引',ylabel='闭合平移误差（源杆长单位）',title='原平面起点：20划分×2分支的实际APC返回');ax.legend();ax.grid(alpha=.2);save('planar_apc_closure',fig)
+ fig,ax=plt.subplots(figsize=(8,3.5))
+ for r in ranks:
+  label={'author_elbow_only':'作者仅肘固定值','wrist_zero':'腕部零角','regular':'常规对照'}[r['fixture']]
+  ax.plot(range(1,7),r['sigma'],'o-',label=label+'，rank='+str(r['rank']))
+ ax.set_yscale('log');ax.set(xlabel='奇异值序号',ylabel='预声明行缩放后的奇异值',title='ABB原生FK差分：平移行/1000，秩采用相对门1e−6');ax.legend(fontsize=8);ax.grid(alpha=.2);save('rss_rank_witness',fig)
+ result={'schema':'P4_R1_SAVED_LOG_REPORT_DATA_V1','sources':sources,'environments':summary,
+  'checks_total':len(checks),'checks_passed':sum(r['passed'] for r in summary),'checks_failed':sum(r['failed'] for r in summary),
+  'formal_planning_calls':0,'fresh_fk_configuration_vectors':600,'fresh_spatial_ik_branch_attempts':400,'fresh_planar_apc_calls':40,
+  'fresh_nr_inputs':60,'ik_attempts':ik,'nr_outputs':nr,'rss_rank_diagnostics':ranks,
+  'scope':'Component evidence only. Source branch rejections and NR false returns preserved; no collisions/RBS/global path qualified.',
+  'figure_data_tables':['checks.csv','ik_roundtrip.csv','nr_rigid_closure.csv','planar_apc.csv'],
+  'figures':[p.name for p in out.glob('*.png')]}
+ (out/'report_data.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+ print(json.dumps({k:result[k] for k in ['checks_total','checks_passed','checks_failed','formal_planning_calls']}))
+
+if __name__=='__main__':main()
