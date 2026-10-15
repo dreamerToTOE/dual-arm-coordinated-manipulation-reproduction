@@ -92,9 +92,16 @@ def check_collision(environment,q,*,timeout_s=30.,manifest_path=None):
     mesh, pair, tolerance, link frame, grasp or source obstacle coordinate.
     Caller owns execution budget; no retries or alternative input is attempted.
     """
+    started=time.monotonic()
     answer={'environment':environment,'collision':None,'status':'UNKNOWN','scope':'AUTHOR_DISCRETE_COLLISION_POLICY',
             'continuous_collision_certificate':False,'variants':{},'source_command':None}
     try:
+        timeout_s=float(timeout_s)
+        if not math.isfinite(timeout_s) or timeout_s<=0:raise ValueError('INVALID_TOTAL_COLLISION_TIMEOUT')
+        def remaining():
+            left=timeout_s-(time.monotonic()-started)
+            if left<=0:raise TimeoutError('COLLISION_ADAPTER_TOTAL_DEADLINE')
+            return left
         env=str(environment);q=[float(x) for x in q];count={'I':20,'II':12,'III':12,'IV':12,'V':12,'VI':18}[env]
         if len(q)!=count or not all(math.isfinite(x) for x in q):raise ValueError('INVALID_CONFIGURATION')
         # No new principal-angle gate: source legally allows many 2pi lifts.
@@ -102,17 +109,19 @@ def check_collision(environment,q,*,timeout_s=30.,manifest_path=None):
         manifest=json.loads(path.read_text());answer['manifest_sha256']=sha(path)
         answer['manifest_path']=str(path);model='abb' if env in ('II','III') else env
         for variant in (['native'] if env in ('I','VI') else ['native','aligned']):
+            remaining()
             entry=next(r for r in manifest['entries'] if r['model']==model and r['variant']==variant)
             if entry['exit_code']!=0:raise ValueError('COLLISION_BUILD_NOT_SUCCESSFUL')
             key=(str(path),env,variant)
             if key not in _sessions:_sessions[key]=NativeSession(entry,env)
-            row=_sessions[key].query(q,timeout_s)
+            row=_sessions[key].query(q,remaining())
             row['provenance']={k:entry[k] for k in ['source_root','source_commit','source_files_sha256',
                             'mesh_sha256','binary_sha256','physical_alignment_changes']}
             row['pose_consistency']=_evaluate_pose(env,q,row)
             row['native_collision']=None if row.get('native_result') not in (0,1) else bool(row['native_result'])
             row['query_error_codes']=[x for x in row.get('query_codes',[]) if x!=0]
             answer['variants'][variant]=row
+            remaining()
         preferred=answer['variants'].get('aligned',answer['variants']['native'])
         answer['source_command']=preferred['source_command'];answer['selected_variant']='aligned' if 'aligned' in answer['variants'] else 'native'
         if preferred['native_collision'] is None or preferred['query_error_codes']:
@@ -129,6 +138,7 @@ def check_collision(environment,q,*,timeout_s=30.,manifest_path=None):
             answer['limitations'].append('Source setP supplies collinear rod triangle vertices; preserved as source policy, not a rod surface or CCD certificate.')
     except Exception as e:
         answer['status']='COLLISION_ADAPTER_ERROR';answer['error']=repr(e)
+    answer['total_adapter_wall_s']=time.monotonic()-started
     return answer
 
 def main():
