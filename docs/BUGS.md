@@ -854,3 +854,8 @@ TASK-BLOCKING P4-R2-ENDPOINT：12原字面端点全未过闭链门；旧首根�
 ## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
 
 P4-R2-TCP-CAPTURE（OUR-IMPLEMENTATION）已根因修复并新run验证：IV读未赋值T7、V混淆mesh和TCP造成2mm。观测修正版与v2去观测行后完全相同，原pair/mesh/8mm不变，四保存候选续验4/4；旧UNKNOWN不覆写。P4-R2-IV-NR-EXTRA-POSITIVE：旧额外必成功假设无先验证据，原6拒绝/3FAIL保留，新24local PASS范围独立；不加限位策略。P4-R2-VI-RSS-BRIDGE：36点均合格但32严格叶未达h，原腕族与active直弦极限可能不一致，UNKNOWN待数学根因，不以加深/shortcut代替连续性。完整source物理geometry/CCD仍未验证。
+
+
+## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
+
+TASK-BLOCKING：VI原center固定active直弦与rank5像不匹配，由直接中心J支持；归OUR-RECONSTRUCTION局部投影图设计问题，不能归论文理论错。6fiber只解决奇异fiber组件，regular接入待审。TASK-BLOCKING：V本批8RSS分支全碰撞、source未给逐pair身份，具体根因UNKNOWN；六支保存高度诊断通过仍碰撞。source-native/物理aligned、source原值/重建区别保留。最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。

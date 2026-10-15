@@ -277,3 +277,8 @@ Before implementing TASK02 or later, read `docs/POST_TASK01_REUSE_MAP.md` and co
 ## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
 
 最新阶段入口：reports/P4_FULL_R2_RECOVERY_POST_TASK_20261015.md、reports/P4_FULL_R2_RECOVERY_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.md、results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER.json。原工作树与分支接续；57崩溃前文件已保全0792acf，无重做R0/R1。原12端点FAIL保持；最新RECONSTRUCTED12/12通过闭链、原支、原界和source离散碰撞策略。A01四UNKNOWN保留，v3只修我方TCP观测（IV未赋值T7、V少2mm），A02仅4已存候选回放4/4。B Q1 868构造/13888IK、7/30请求合格；Q2再36构造全部节点合格，但四半严格h=.0025在depth3仍UNKNOWN，不能算RSS/RBS规划PASS。IV新增24固定±h全关节原NR局部24/24合格，不替旧6拒绝/3FAIL；全24主动角被NR改变。9run总80.902103069wall/30.799802CPU；精确中心数学诊断待单独冻结。保持原B剩56构造，禁止重启原one-shot脚本。
+
+
+## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
+
+继续原p4-full-reproduction-pcs-study工作树，R0/R1及崩溃前57文件保全。CENTER_IMAGE01仅2固定active FK/J；FIBER_COMPONENT01固定6节点6/6，54FK/J、6源碰撞/798PQP，原Q2严格桥UNKNOWN及regular↔fiber未验证保持。旧48数学合格RSS分支一次补验：II10clear/8碰撞、III16clear/6碰撞、V0clear/8碰撞，96native/aligned、192内部FK/J、9996PQP API返回无错误；未重做700目标/5600IK，未执行原checkEE。V具体碰撞pair根因UNKNOWN，未据该批判整个模式无解。 当前12run自身成本合计95.365357389998wall秒/45.058033CPU秒，R2余3504.634642610002/7154.941967。VI B累计910构造、54.513982463999wall/13.327177CPU，余50构造/125.486017536001wall/346.672823CPU。旧48仅扣R2、不扣B。不得重置claim、重跑原预算或重复加cumulative。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。 普通PCS/NR与原搜索器薄整合草稿准备中，0solve；VI完整regular接入还需明确新协议/预算，不能拿fiber组件冒充原作者RBS。

@@ -65,3 +65,8 @@ R2当前9科学run累计wall80.902103069s/CPU30.799802s（各execution自身字�
 |IV-NR|b686e7b|`python3 scripts/qualify_p4_full_r2_iv_nr_local.py --protocol configs/p4_full/r2_iv_nr_local_qualification_v1.json`|
 
 source完整SHA、源码与配置/依赖/输入SHA、stdout/stderr及事件前缀均在各run。原controls及A01相关工具见5fb7a6a/17da8c3/8188e93；崩溃前未提交原字节归档0792acf。源码、失败、候选与参数版本均可从提交回溯，未重写旧历史。
+
+
+## 后续接续快照（保留上文9run历史）
+
+继续原p4-full-reproduction-pcs-study工作树，R0/R1及崩溃前57文件保全。CENTER_IMAGE01仅2固定active FK/J；FIBER_COMPONENT01固定6节点6/6，54FK/J、6源碰撞/798PQP，原Q2严格桥UNKNOWN及regular↔fiber未验证保持。旧48数学合格RSS分支一次补验：II10clear/8碰撞、III16clear/6碰撞、V0clear/8碰撞，96native/aligned、192内部FK/J、9996PQP API返回无错误；未重做700目标/5600IK，未执行原checkEE。V具体碰撞pair根因UNKNOWN，未据该批判整个模式无解。 当前12run自身成本合计95.365357389998wall秒/45.058033CPU秒，R2余3504.634642610002/7154.941967。VI B累计910构造、54.513982463999wall/13.327177CPU，余50构造/125.486017536001wall/346.672823CPU。旧48仅扣R2、不扣B。不得重置claim、重跑原预算或重复加cumulative。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。 最新详细POST：reports/P4_FULL_R2_CONTINUATION_POST_TASK_20261015.md。

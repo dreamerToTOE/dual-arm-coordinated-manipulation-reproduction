@@ -895,3 +895,8 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
 
 实际命令与配置、seed、source commit、hash、终止原因详各results/p4_full/20261015_R2_*/execution.json。A01 wall7.450141228/CPU6.025647，A02 1.321430518/1.324637；VI Q1 45.133593772/5.641175，seed[7,23,41,101,20261013]；VI Q2固定219/643、无RNG、36/576IK、7.987086492/6.310368、四桥UNKNOWN_DEPTH_CAP；IV local固定24、2.651571520/.882651、24/24。9run总80.902103069/30.799802，sum自身时长不重复累计；正式规划0。具体账本results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER.json。
+
+
+## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
+
+继续原p4-full-reproduction-pcs-study工作树，R0/R1及崩溃前57文件保全。CENTER_IMAGE01仅2固定active FK/J；FIBER_COMPONENT01固定6节点6/6，54FK/J、6源碰撞/798PQP，原Q2严格桥UNKNOWN及regular↔fiber未验证保持。旧48数学合格RSS分支一次补验：II10clear/8碰撞、III16clear/6碰撞、V0clear/8碰撞，96native/aligned、192内部FK/J、9996PQP API返回无错误；未重做700目标/5600IK，未执行原checkEE。V具体碰撞pair根因UNKNOWN，未据该批判整个模式无解。 当前12run自身成本合计95.365357389998wall秒/45.058033CPU秒，R2余3504.634642610002/7154.941967。VI B累计910构造、54.513982463999wall/13.327177CPU，余50构造/125.486017536001wall/346.672823CPU。旧48仅扣R2、不扣B。不得重置claim、重跑原预算或重复加cumulative。 实际命令及完整依赖SHA见reports/P4_FULL_R2_CONTINUATION_POST_TASK_20261015.md与各run execution；本三项均固定保存输入，无新随机种子/规划事件。

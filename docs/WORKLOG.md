@@ -788,3 +788,8 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
 
 接管a39e963(本地领先5)/远程356a3b1，先归档57文件再fetch，无分叉和残留实验进程。新增source/protocol先提交，再A恢复、v3观测续验、VI Q1/Q2及IV NR local；各run原参数/全候选/事件/失败/source hash均保存。独立只读A/B/Q2/IV审查完成。原工作树与分支接续；57崩溃前文件已保全0792acf，无重做R0/R1。原12端点FAIL保持；最新RECONSTRUCTED12/12通过闭链、原支、原界和source离散碰撞策略。A01四UNKNOWN保留，v3只修我方TCP观测（IV未赋值T7、V少2mm），A02仅4已存候选回放4/4。B Q1 868构造/13888IK、7/30请求合格；Q2再36构造全部节点合格，但四半严格h=.0025在depth3仍UNKNOWN，不能算RSS/RBS规划PASS。IV新增24固定±h全关节原NR局部24/24合格，不替旧6拒绝/3FAIL；全24主动角被NR改变。已推b686e7b，后续实际NR和报告继续提交。
+
+
+## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
+
+source57ca473固定中心诊断；sourceb6e40a4执行6fiber；sourceca2c553补旧48碰撞。每项先冻结源码/协议、单次执行，输入/stdout/stderr/独占claim齐存。继续原p4-full-reproduction-pcs-study工作树，R0/R1及崩溃前57文件保全。CENTER_IMAGE01仅2固定active FK/J；FIBER_COMPONENT01固定6节点6/6，54FK/J、6源碰撞/798PQP，原Q2严格桥UNKNOWN及regular↔fiber未验证保持。旧48数学合格RSS分支一次补验：II10clear/8碰撞、III16clear/6碰撞、V0clear/8碰撞，96native/aligned、192内部FK/J、9996PQP API返回无错误；未重做700目标/5600IK，未执行原checkEE。V具体碰撞pair根因UNKNOWN，未据该批判整个模式无解。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。

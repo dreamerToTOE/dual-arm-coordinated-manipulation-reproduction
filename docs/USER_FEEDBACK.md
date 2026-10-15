@@ -597,3 +597,8 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
 
 用户要求接管原窗口崩溃中断的P4研究，先保全真实本地进度/未提交/进程/工作树，不能从头或覆盖历史；D079最高优先。明确批准A与B有限版本化资格，B总960构造/180wall/360CPU，已用不得重复。随后用户再次“继续”，接续原目标和预算，不是新增额度或解除正式规划审批。P4完成后须最新完整范围表给用户审查，不能自动P2/Isaac。
+
+
+## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
+
+用户“继续”是接续原P4完整项目，原A/B批准持续有效，未重开R0/R1或重置预算。完成本轮固定资格并保留所有原失败，完整211义务和原正式规模不缩水。继续原p4-full-reproduction-pcs-study工作树，R0/R1及崩溃前57文件保全。CENTER_IMAGE01仅2固定active FK/J；FIBER_COMPONENT01固定6节点6/6，54FK/J、6源碰撞/798PQP，原Q2严格桥UNKNOWN及regular↔fiber未验证保持。旧48数学合格RSS分支一次补验：II10clear/8碰撞、III16clear/6碰撞、V0clear/8碰撞，96native/aligned、192内部FK/J、9996PQP API返回无错误；未重做700目标/5600IK，未执行原checkEE。V具体碰撞pair根因UNKNOWN，未据该批判整个模式无解。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。

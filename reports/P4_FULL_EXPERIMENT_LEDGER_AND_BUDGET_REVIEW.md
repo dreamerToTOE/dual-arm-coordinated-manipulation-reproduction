@@ -131,3 +131,8 @@ Q01需保证2h是整体上限，不能把每子项上限分别追加造成隐性
 9run自身字段合计wall80.9021030690028s/CPU30.799802s；R2原3600/7200帽，余3519.097896931/7169.200198s。不得再次相加execution内cumulative字段。工程v2 compile合计wall7.612339770s（旧manifest无CPU字段，不能补0作测量）；controls准备wall1.053867114/CPU.863996；v3全build wall3.419461395/CPU3.420515，均另账。
 
 B Q1+Q2共904/960构造，wall53.12068026400084/180s、CPU11.951543/360s，余56/126.879319736/348.048457。原claim与Q2续claim保留，不可换run名重开。A累计wall8.771571746/CPU7.350284，IV local单独2.651571520/.882651。尚无正式规划，22500完整义务和其他原实验分母不缩；正式成本需全部相关资格后pilot实测，不将组件时长当planner耗时。新fixed-center数学诊断若执行，另run记录并从B/R2 wallCPU扣除，不能沿用本快照余额当最新值。
+
+
+## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
+
+当前12run自身成本合计95.365357389998wall秒/45.058033CPU秒，R2余3504.634642610002/7154.941967。VI B累计910构造、54.513982463999wall/13.327177CPU，余50构造/125.486017536001wall/346.672823CPU。旧48仅扣R2、不扣B。不得重置claim、重跑原预算或重复加cumulative。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。 本轮新增center0构造、fiber6构造、旧48补碰撞0构造。未用source阈值改变.strict h=.0025或.gamma=.2；formal planning=0。
