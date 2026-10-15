@@ -1,0 +1,206 @@
+{
+  "schema": "P4_R2_VI_RSS_BRIDGE_QUALIFICATION_V1",
+  "frozen": true,
+  "run_id": "20261015_R2_VI_RSS_BRIDGE01",
+  "authorization_budget_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015",
+  "continuation_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.Q2_BRIDGE_V1",
+  "classification": "RECONSTRUCTED / INDEPENDENT-RECONSTRUCTION / LOCAL-WRIST-BRIDGE-ONLY",
+  "parent_run": "20261015_R2_VI_RSS_RECONSTRUCTED01",
+  "parent_execution_sha256": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+  "parent_events_sha256": "ef019b0586c1218b75e69a726c7076ee85a2f5cd54dc5b7bedd3086ea9bc5555",
+  "parent_claim": "results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.claim.json",
+  "parent_claim_sha256": "9667249aef06684853f8da4cbfc27d5592779885341ff28d080a8a8d96bb5c7b",
+  "parent_consumed": {
+    "candidate_constructions": 868,
+    "wall_s": 45.133593771999585,
+    "cpu_s": 5.6411750000000005
+  },
+  "parent_remaining_before_continuation": {
+    "candidate_constructions": 92,
+    "wall_s": 134.86640622800041,
+    "cpu_s": 354.358825,
+    "r2_total_wall_s": 3531.0579854609996,
+    "r2_total_cpu_s": 7177.717854,
+    "policy": "Not executable by rerunning this script. Preserve this prefix and freeze any evidenced continuation against these remaining caps; do not reset or duplicate sampled candidates."
+  },
+  "parent_source_hashes": {
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "configs/p4_full/r2_vi_rss_reconstructed_qualification_v1.json": "c53238eee4d50ebcf6ae5eb645ef2cde128a6e3bb72f56a991d6bb51a07ec8f4",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075"
+  },
+  "prior_executions": {
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774"
+  },
+  "budget": {
+    "max_candidate_constructions": 40,
+    "wall_s": 60.0,
+    "cpu_s": 120.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "budget_scope": "These caps consume the remaining original960/180wall/360CPU authorization; original868/45.133593771999585/5.6411750000000005 are not reset. Eight explicit curve constructions plus at most4*7 midpoint constructions=36;40 is a hard conservative ceiling.",
+  "active_arm": 1,
+  "rss_gamma": 0.2,
+  "planner_gamma_events": 0,
+  "random_draws": 0,
+  "formal_planning_calls": 0,
+  "fixed_fixtures": [
+    {
+      "construction": 219,
+      "designated_passive_arm": 3,
+      "seed": 23,
+      "request": 0,
+      "attempt": 26,
+      "q_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91646772223891,
+        0.0,
+        -3.947822858635717
+      ],
+      "q_sha256": "78297f987676f3c8a294f4e5f73e19d45297a613ff59d84568e9fcefcc5c83c3",
+      "parent_event_line_sha256": "1d406f718c9ccc30ccf7a78a14b77d39c36bdc2b1990d29f2eb03b69610a0b49",
+      "event_line_hash_scope": "UTF8 event line excluding newline"
+    },
+    {
+      "construction": 643,
+      "designated_passive_arm": 2,
+      "seed": 101,
+      "request": 3,
+      "attempt": 31,
+      "q_rad": [
+        -0.45081720023503885,
+        0.04723312235440813,
+        0.250207286644899,
+        -0.6952425814547049,
+        -1.4128820027600142,
+        -0.08233521342308002,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.085295915921684,
+        0.0,
+        5.285848643627319,
+        0.37111974294611577,
+        0.29956646223514555,
+        -0.643951347100347,
+        -0.27078445813327373,
+        1.542062663751414,
+        -0.0401245583841674
+      ],
+      "q_sha256": "19c8bcfecf3f0114e0eb63133bb613dd5127dc5f040814c8de0cf667ec4c6e18",
+      "parent_event_line_sha256": "b1ec68d48744e630eb7643115105c919f8796a8d66eb34bba2914a0eb1c16d22",
+      "event_line_hash_scope": "UTF8 event line excluding newline"
+    }
+  ],
+  "strict_discrete": {
+    "delta_rad": 0.01,
+    "curve_t_rad": [
+      -0.01,
+      -0.005,
+      0.005,
+      0.01
+    ],
+    "leaf_full18_distance_rad": 0.0025,
+    "max_depth": 3,
+    "max_midpoints_per_half": 8,
+    "depth_root": 0,
+    "depth_rule": "At depth>=3 inspect the leaf only; d>=h is UNKNOWN_DEPTH_CAP. No projection at depth3.",
+    "distance": "Euclidean norm of all18 original joint coordinates, no angular wrapping; pass iff d<h.",
+    "midpoint": "All18 arithmetic midpoint; keep active arm1 first6 bitwise equal to the unprojected midpoint; project arms2/3 only.",
+    "lift_reference": "Explicit curve: saved center per-arm q. RBS: corresponding passive6 of the full18 unprojected midpoint.",
+    "lift_rule": "Enumerate all source-limit-legal true2pi integer copies of the one fixed analytic branch. Minimize squared raw6 distance to reference; exact ties use q lexicographic order. No pi wrist-family changes.",
+    "designated_branch_negative": 1,
+    "designated_branch_positive": 3,
+    "other_passive_branch": 3,
+    "curve_active_arm1_branch": 1,
+    "center_policy": "Reuse saved center unchanged, including actual q4/q6. No IK/canonical replacement of center.",
+    "half_order": [
+      "negative_endpoint_to_center",
+      "center_to_positive_endpoint"
+    ],
+    "seed_reuse": "The +/-delta/2 curve points are separate evidence; never reused as RBS midpoints."
+  },
+  "source_rbs_text_semantics": {
+    "classification": "SOURCE_TEXT_AUDIT_ONLY / INDEPENDENT_THREE_ARM_ADAPTATION",
+    "tolerance_rad": 0.05,
+    "max_depth": 150,
+    "singular_shortcut_multiplier": 7,
+    "singular_shortcut_rad": 0.35000000000000003,
+    "distance": "normDistanceDuo: raw full18 Euclidean norm; no wrapping.",
+    "order": "d<.05 before projection; depth>150 rejects; arithmetic midpoint then fixed-branch IK and collision; singular variant returns when projected midpoint distance to saved singular endpoint<7*.05.",
+    "execution": "Derive ordinary and singular textual traversal only from the strict tree already evaluated; no extra scientific calls. Missing projected tree nodes mean UNKNOWN_UNEVALUATED_NODE.",
+    "vacuous": "Any d<.05 leaf without a projected midpoint is VACUOUS_THRESHOLD_PASS, never evidence that RBS projection or continuity passed.",
+    "source_compile_defects": [
+      "singular checkMotionRBS declares q1/q2 but uses undeclared q3",
+      "line661 uses dsg2 instead of qsg2 and inconsistent recursive arity"
+    ],
+    "native_original_execution": false
+  },
+  "gates": {
+    "position_maxabs_mm": 1e-05,
+    "rotation_matrix_maxabs": 1e-05,
+    "fk_position_maxabs_mm": 1e-07,
+    "fk_rotation_matrix_maxabs": 1e-10,
+    "rank_relative": 1e-06,
+    "rank_position_mm_to_m": 0.001,
+    "jacobian_fd_epsilon": 1e-06,
+    "jacobian_position_maxabs": 5e-06,
+    "jacobian_angular_maxabs": 5e-07,
+    "require_full_constraint_rank": 12,
+    "branch_zero_relative_epsilon": 1.4210854715202004e-14
+  },
+  "author_source_hashes": {
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/validity_checkers/StateValidityCheckerRSS.cpp": "0b6c611fb2fb053277310781eb2c54150956e55832fc9c9f29ee90175e015ddf",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/validity_checkers/StateValidityCheckerRSS.h": "2dfb86e6c37aa6bcfb65a1a78282286f22ee3e31e912be6bcdd0e092e2a329fc"
+  },
+  "ik_binary": "build/p4_full/20261015_R2_SPATIAL01/comau_vi_batch",
+  "ik_binary_sha256": "8653b2e001b4100f33822da0f37055b7a7b8b0d292f0fedc9933aa2fcbed0cb8",
+  "collision_checker_command": [
+    "/usr/bin/python3",
+    "-m",
+    "baselines.p4_full.geometry_consistent.collision_adapter"
+  ],
+  "collision_manifest": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v2/manifest.json",
+  "collision_manifest_sha256": "9ed2e7c634e4c5d58698101571145960c96417c94f8ff0f546d7a637e0e1d302",
+  "collision_controls_result": "results/p4_full/20261015_R2_COLLISION_CONTROLS01/result.json",
+  "collision_controls_result_sha256": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+  "collision_success_statuses": [
+    "CHECKED"
+  ],
+  "collision_qualification_scope": "Qualified original discrete source pair/mesh/tolerance policy only; complete physical geometry, omitted pairs and CCD remain unverified.",
+  "positive_gate": "Both fixed fixtures need all4 regular explicit curve points and both strict discrete half-connections. Every retained node is closure/bounds/expected-rank/branch/source-policy-collision qualified; all final full18 leaf distances<h. No fixture/branch/delta replacement, canonical center or shortcut PASS.",
+  "failure_policy": "Preserve each failure; continue only the other predeclared fixtures/halves while within the same cap. Unsound accepted IK, inconsistent independent ranks, protocol or process errors stop all new scientific calls. Depth/branch-family/locality uncertainty is UNKNOWN, no adaptive solver or retry.",
+  "claims_not_established": [
+    "original native VI RSS runnable equivalence",
+    "all RSS modes",
+    "global RSS/PCS/NR planning",
+    "original TableI/II statistics",
+    "complete physical collision geometry or CCD",
+    "continuous mathematical path certificate"
+  ],
+  "one_shot_policy": "Create a new atomic fixed Q2 continuation claim; never change/delete original claim. Any prior sibling continuation claim prevents execution. Preserve interrupted prefix and charge it; no restart flag."
+}
