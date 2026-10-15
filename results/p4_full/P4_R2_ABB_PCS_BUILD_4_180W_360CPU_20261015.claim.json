@@ -1,0 +1,26 @@
+{
+  "schema": "P4_R2_ABB_PCS_ENGINEERING_CLAIM_V1",
+  "claim_id": "P4_R2_ABB_PCS_BUILD_4_180W_360CPU_20261015",
+  "protocol": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_pcs_engineering_v1.json",
+  "protocol_sha256": "98eb2f1b5659a8397ded0f8556253108f9ec9869d9bce4176ea9782b21782fc4",
+  "budget": {
+    "wall_s": 180.0,
+    "cpu_s": 360.0,
+    "single_wall_s": 45.0,
+    "single_cpu_s": 90.0
+  },
+  "source_commit": "aa57c24a63edb24e6a4f7b30d4383cb1972793c3",
+  "own_source_sha256": {
+    "scripts/build_p4_full_r2_abb_pcs.py": "918af0d33cb4bd0223c457f850367a4a54fde34285731ea15a3c1a1612684c43",
+    "baselines/p4_full/geometry_consistent/pcs_source_trace.hpp": "63366eeebe7822947c50f5b151aab4c03321d7be3339ae3f6bdc85aea204d366",
+    "baselines/p4_full/geometry_consistent/abb_pcs_qualification_driver.cpp": "fe6f849fa862efc4bfa528adede742b4fdab24f187233528ea191650ae8d485e",
+    "baselines/p4_full/geometry_consistent/spatial_ik_patch.py": "3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8",
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "reports/P4_FULL_R2_ORDINARY_PCS_NR_INTEGRATION_PRE_DRAFT_20261015.md": "3f603c1d8408309773f9561e508345b28a4fd308848f80e65895b333c3a4edf5"
+  },
+  "author_commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+  "query_calls": 0,
+  "solve_calls": 0,
+  "retain_failed_stage": true,
+  "created_at_utc": "2026-10-15T08:31:28.156968+00:00"
+}
