@@ -1,0 +1,192 @@
+{
+  "schema": "P4_R2_POST_RUN_HAND_SELECTED_ANALYTIC_CANDIDATE_V1",
+  "scope": "One explicitly selected point; elementary algebra only; no IK/FK, RNG or planning",
+  "changes_original_fixed_0_of_100": false,
+  "passive_q_rad": [
+    0.0,
+    1.2,
+    -1.3430303610541368,
+    0.48,
+    0.0,
+    -0.31
+  ],
+  "source_base2_yaw_rad": 3.1416,
+  "source_bounds_first3_rad": [
+    [
+      -2.8798000000000004,
+      2.8798000000000004
+    ],
+    [
+      -1.9198666666666668,
+      1.9198666666666668
+    ],
+    [
+      -1.9198666666666668,
+      1.2217333333333333
+    ]
+  ],
+  "annulus_mm": [
+    40.00645154577023,
+    580.0064515457702
+  ],
+  "environments": {
+    "II": {
+      "source_d_mm": 900.0,
+      "source_rod_length_mm": 300.0,
+      "active_shoulder_to_wrist_vector_mm": [
+        -198.8294444259077,
+        -0.008072451846108825,
+        290.5641896307559
+      ],
+      "active_shoulder_to_wrist_distance_mm": 352.0805253513143,
+      "cosine_law_factor": -0.26907028836278907,
+      "annulus_necessary_condition": true,
+      "first3_identity_candidates": [
+        {
+          "shoulder_pi_added": false,
+          "elbow_sign": 1,
+          "first3_angle_identity_rad": [
+            -3.141552053708498,
+            1.6123526776062698,
+            3.0969310300249617
+          ],
+          "source_first3_bounds_by_joint": [
+            false,
+            true,
+            false
+          ],
+          "source_first3_bounds_all_satisfied": false
+        },
+        {
+          "shoulder_pi_added": false,
+          "elbow_sign": -1,
+          "first3_angle_identity_rad": [
+            -3.141552053708498,
+            -0.4121473882080696,
+            0.5001935550463508
+          ],
+          "source_first3_bounds_by_joint": [
+            false,
+            true,
+            true
+          ],
+          "source_first3_bounds_all_satisfied": false
+        },
+        {
+          "shoulder_pi_added": true,
+          "elbow_sign": 1,
+          "first3_angle_identity_rad": [
+            4.0599881295122486e-05,
+            0.41214738820806984,
+            3.0969310300249617
+          ],
+          "source_first3_bounds_by_joint": [
+            true,
+            true,
+            false
+          ],
+          "source_first3_bounds_all_satisfied": false
+        },
+        {
+          "shoulder_pi_added": true,
+          "elbow_sign": -1,
+          "first3_angle_identity_rad": [
+            4.0599881295122486e-05,
+            -1.6123526776062693,
+            0.5001935550463508
+          ],
+          "source_first3_bounds_by_joint": [
+            true,
+            true,
+            true
+          ],
+          "source_first3_bounds_all_satisfied": true
+        }
+      ],
+      "full_active_ik": "NOT_EXECUTED",
+      "wrist_bounds": "NOT_CHECKED",
+      "physical_closure": "NOT_EXECUTED",
+      "collision_and_RBS": "NOT_EXECUTED",
+      "classification": "ANALYTIC_WITNESS_CANDIDATE_ONLY"
+    },
+    "III": {
+      "source_d_mm": 1200.0,
+      "source_rod_length_mm": 500.0,
+      "active_shoulder_to_wrist_vector_mm": [
+        -96.78716126515656,
+        -0.009526730437619788,
+        319.0728258955243
+      ],
+      "active_shoulder_to_wrist_distance_mm": 333.4294871505542,
+      "cosine_law_factor": -0.3454454816222046,
+      "annulus_necessary_condition": true,
+      "first3_identity_candidates": [
+        {
+          "shoulder_pi_added": false,
+          "elbow_sign": 1,
+          "first3_angle_identity_rad": [
+            -3.1414942238984755,
+            1.3548426045420685,
+            3.016645170660363
+          ],
+          "source_first3_bounds_by_joint": [
+            false,
+            true,
+            false
+          ],
+          "source_first3_bounds_all_satisfied": false
+        },
+        {
+          "shoulder_pi_added": false,
+          "elbow_sign": -1,
+          "first3_angle_identity_rad": [
+            -3.1414942238984755,
+            -0.7658084572670485,
+            0.5804794144109495
+          ],
+          "source_first3_bounds_by_joint": [
+            false,
+            true,
+            true
+          ],
+          "source_first3_bounds_all_satisfied": false
+        },
+        {
+          "shoulder_pi_added": true,
+          "elbow_sign": 1,
+          "first3_angle_identity_rad": [
+            9.842969131756973e-05,
+            0.7658084572670485,
+            3.016645170660363
+          ],
+          "source_first3_bounds_by_joint": [
+            true,
+            true,
+            false
+          ],
+          "source_first3_bounds_all_satisfied": false
+        },
+        {
+          "shoulder_pi_added": true,
+          "elbow_sign": -1,
+          "first3_angle_identity_rad": [
+            9.842969131756973e-05,
+            -1.3548426045420685,
+            0.5804794144109495
+          ],
+          "source_first3_bounds_by_joint": [
+            true,
+            true,
+            true
+          ],
+          "source_first3_bounds_all_satisfied": true
+        }
+      ],
+      "full_active_ik": "NOT_EXECUTED",
+      "wrist_bounds": "NOT_CHECKED",
+      "physical_closure": "NOT_EXECUTED",
+      "collision_and_RBS": "NOT_EXECUTED",
+      "classification": "ANALYTIC_WITNESS_CANDIDATE_ONLY"
+    }
+  }
+}

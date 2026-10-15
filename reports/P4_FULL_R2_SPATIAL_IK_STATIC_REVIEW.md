@@ -25,6 +25,6 @@ SHA256：3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8。
 
 ## 平面候选的独立限位提醒
 
-平面 source chart 为 q0…q18∈[-3.1416,3.1416]、q19∈[0,2×3.1416]，原机械限位 qminmax=179.9/180×3.1416 与此不同。新 planar_geometry.py 的 chart lifts 仅证明坐标代表处于 source 运行 chart；它不是机械关节限位合法或不考虑关节限位的投影实验资格保证。下游 runner 必须按原 source 机械限位分别判定，尤其 q19 需按原机械限位函数的基座角含义处理，不能直接与对称 chart 混同。
+平面 source chart 为 q0…q18∈[-3.1416,3.1416]、q19∈[0,2×3.1416]，原机械限位 qminmax=179.9/180×3.1416 与此不同。新 planar_geometry.py 的 chart lifts 仅证明坐标代表处于 source 运行 chart；它不是机械关节限位合法或不考虑关节限位的投影实验资格保证。原 PCS/GD check_angles(f=1) 对 q0…18 用 ±qminmax、对 q19 只要求非负；source run chart 另加 q19 上界。另一个 KDL check_angle_limits helper 对全部20维用对称绝对值门，二者不能混同。runner 必须分别保留其含义和结果。
 
 此审查没有新科学结果、没有资格 PASS、没有修正原 R1 失败结论。所有新增统计需以根任务冻结协议、源码提交和真实日志为准。
