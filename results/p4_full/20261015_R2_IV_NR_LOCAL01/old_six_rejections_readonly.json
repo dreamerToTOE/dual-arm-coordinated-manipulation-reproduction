@@ -1,0 +1,434 @@
+{
+  "source": "results/p4_full/20261015_R2_SPATIAL01/IV/observations.json",
+  "rerun_nr_calls": 0,
+  "original_rejections_retained": 6,
+  "original_failed_positive_gates_retained": [
+    "NR_positive_start_3",
+    "NR_positive_start_6",
+    "NR_positive_start_8"
+  ],
+  "records_unchanged": [
+    {
+      "kind": "nr_reference",
+      "fixture_kind": "original_input",
+      "fixture": "2",
+      "result": {
+        "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+        "input_q_rad": [
+          -0.6,
+          1.49,
+          -1.58,
+          -1.37,
+          -0.41000000000000003,
+          -0.01,
+          1.0244,
+          0.514505,
+          -0.159664,
+          1.6156,
+          -1.18541,
+          0.147832
+        ],
+        "candidate_q_rad": [
+          -0.5930607559657614,
+          1.4867478263116085,
+          -1.581180774985104,
+          -1.3615775999138287,
+          -0.4015666006032355,
+          -0.0032078882279741416,
+          1.013807481139839,
+          0.5136338034017106,
+          -0.16657172844444654,
+          1.612857431307806,
+          -1.1750395978262353,
+          0.15462411177202584
+        ],
+        "metrics": {
+          "translation_max_abs": 5.787389909528429e-06,
+          "rotation_matrix_max_abs": 4.188672214633371e-09,
+          "rotation_angle_max_rad": 4.6282904133643015e-09,
+          "position_unit": "mm"
+        },
+        "trace": [
+          {
+            "iteration": 0,
+            "translation_max_abs": 32.221092510734024,
+            "rotation_matrix_max_abs": 0.028264671914944473,
+            "rotation_angle_max_rad": 0.02995033157970409,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 1,
+            "translation_max_abs": 0.19136583571275878,
+            "rotation_matrix_max_abs": 7.221920819569516e-05,
+            "rotation_angle_max_rad": 7.60243115544651e-05,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 2,
+            "translation_max_abs": 5.787389909528429e-06,
+            "rotation_matrix_max_abs": 4.188672214633371e-09,
+            "rotation_angle_max_rad": 4.62829041511649e-09,
+            "position_unit": "mm"
+          }
+        ],
+        "wall_s": 0.004011145000276883,
+        "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+        "collision_checked": false
+      }
+    },
+    {
+      "kind": "nr_reference",
+      "fixture_kind": "original_input",
+      "fixture": "4",
+      "result": {
+        "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+        "input_q_rad": [
+          -0.6,
+          1.49,
+          -1.58,
+          -1.35,
+          -0.39,
+          -0.01,
+          1.0044,
+          0.494505,
+          -0.159664,
+          1.6156,
+          -1.18541,
+          0.167832
+        ],
+        "candidate_q_rad": [
+          -0.5871877175594016,
+          1.4870666452301213,
+          -1.5819901219627654,
+          -1.3558648896306227,
+          -0.3922540917347203,
+          -0.015439467592886526,
+          1.0149186979229465,
+          0.5039075919360791,
+          -0.15454789636282684,
+          1.6146794831198932,
+          -1.1791819545345483,
+          0.16239253240711346
+        ],
+        "metrics": {
+          "translation_max_abs": 1.1368683772161603e-12,
+          "rotation_matrix_max_abs": 8.881784197001252e-16,
+          "rotation_angle_max_rad": 9.168186763987841e-16,
+          "position_unit": "mm"
+        },
+        "trace": [
+          {
+            "iteration": 0,
+            "translation_max_abs": 86.02431987794125,
+            "rotation_matrix_max_abs": 0.030895460164463456,
+            "rotation_angle_max_rad": 0.03173549849842514,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 1,
+            "translation_max_abs": 0.7279223687546619,
+            "rotation_matrix_max_abs": 0.0003835105333983013,
+            "rotation_angle_max_rad": 0.00040066961791045255,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 2,
+            "translation_max_abs": 6.987124470470008e-05,
+            "rotation_matrix_max_abs": 4.356257354842796e-08,
+            "rotation_angle_max_rad": 5.981969605496926e-08,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 3,
+            "translation_max_abs": 1.1368683772161603e-12,
+            "rotation_matrix_max_abs": 8.604228440844963e-16,
+            "rotation_angle_max_rad": 8.928271280345007e-16,
+            "position_unit": "mm"
+          }
+        ],
+        "wall_s": 0.00546303999999509,
+        "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+        "collision_checked": false
+      }
+    },
+    {
+      "kind": "nr_reference",
+      "fixture_kind": "original_input",
+      "fixture": "8",
+      "result": {
+        "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+        "input_q_rad": [
+          -0.6,
+          1.49,
+          -1.58,
+          -1.35,
+          -0.39,
+          0.01,
+          1.0044,
+          0.514505,
+          -0.159664,
+          1.6156,
+          -1.16541,
+          0.167832
+        ],
+        "candidate_q_rad": [
+          -0.5924970747829815,
+          1.4913187003175161,
+          -1.582877689408338,
+          -1.358957214780714,
+          -0.4017130076673435,
+          0.0003002674065730728,
+          1.0145021202732152,
+          0.5137248497557982,
+          -0.15751422260621428,
+          1.6074866192761503,
+          -1.1754921600532287,
+          0.15813226740657307
+        ],
+        "metrics": {
+          "translation_max_abs": 1.5916157281026244e-12,
+          "rotation_matrix_max_abs": 7.494005416219807e-16,
+          "rotation_angle_max_rad": 9.99615606434473e-16,
+          "position_unit": "mm"
+        },
+        "trace": [
+          {
+            "iteration": 0,
+            "translation_max_abs": 70.19657395039076,
+            "rotation_matrix_max_abs": 0.0352965630999465,
+            "rotation_angle_max_rad": 0.03847765255755741,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 1,
+            "translation_max_abs": 0.4762705947534869,
+            "rotation_matrix_max_abs": 0.000320021498180334,
+            "rotation_angle_max_rad": 0.000392353037332229,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 2,
+            "translation_max_abs": 6.071515463190735e-05,
+            "rotation_matrix_max_abs": 3.9090889053516875e-08,
+            "rotation_angle_max_rad": 5.600069359320887e-08,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 3,
+            "translation_max_abs": 1.5916157281026244e-12,
+            "rotation_matrix_max_abs": 7.494005416219807e-16,
+            "rotation_angle_max_rad": 9.99615606434473e-16,
+            "position_unit": "mm"
+          }
+        ],
+        "wall_s": 0.005228809000072943,
+        "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+        "collision_checked": false
+      }
+    },
+    {
+      "kind": "nr_reference",
+      "fixture_kind": "known_closed_neighborhood",
+      "fixture": "start_3",
+      "result": {
+        "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+        "input_q_rad": [
+          -0.59,
+          1.49,
+          -1.57,
+          -1.36,
+          -0.4,
+          0.0,
+          1.0143994237017788,
+          0.5045011684058095,
+          -0.14966439024697054,
+          1.6056018785912483,
+          -1.1754052599345206,
+          0.15782776040972268
+        ],
+        "candidate_q_rad": [
+          -0.5902263309637074,
+          1.4843561674431547,
+          -1.5742046977393118,
+          -1.3583687403827764,
+          -0.40024283855370024,
+          0.0004998609478153793,
+          1.0145604377390944,
+          0.50610457303434,
+          -0.14873952922474387,
+          1.6051750018357211,
+          -1.1753935805372064,
+          0.15832762135753808
+        ],
+        "metrics": {
+          "translation_max_abs": 4.956201792083448e-06,
+          "rotation_matrix_max_abs": 7.573827121021282e-10,
+          "rotation_angle_max_rad": 7.772698676271545e-10,
+          "position_unit": "mm"
+        },
+        "trace": [
+          {
+            "iteration": 0,
+            "translation_max_abs": 44.24489865052851,
+            "rotation_matrix_max_abs": 0.009108142890610044,
+            "rotation_angle_max_rad": 0.009999999999999945,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 1,
+            "translation_max_abs": 0.15790887685329835,
+            "rotation_matrix_max_abs": 2.3170327493327036e-06,
+            "rotation_angle_max_rad": 2.41781797135488e-06,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 2,
+            "translation_max_abs": 4.956201792083448e-06,
+            "rotation_matrix_max_abs": 7.573827121021282e-10,
+            "rotation_angle_max_rad": 7.772698716338683e-10,
+            "position_unit": "mm"
+          }
+        ],
+        "wall_s": 0.004027417000088462,
+        "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+        "collision_checked": false
+      }
+    },
+    {
+      "kind": "nr_reference",
+      "fixture_kind": "known_closed_neighborhood",
+      "fixture": "start_6",
+      "result": {
+        "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+        "input_q_rad": [
+          -0.59,
+          1.48,
+          -1.58,
+          -1.36,
+          -0.4,
+          0.0,
+          1.0143994237017788,
+          0.5045011684058095,
+          -0.14966439024697054,
+          1.6056018785912483,
+          -1.1754052599345206,
+          0.15782776040972268
+        ],
+        "candidate_q_rad": [
+          -0.5898034578333005,
+          1.484204861208845,
+          -1.5764101399139498,
+          -1.3609789813215682,
+          -0.3995150168480367,
+          0.00020108110510741873,
+          1.0141222768083118,
+          0.5040795659827839,
+          -0.1498501371309888,
+          1.6074202437135015,
+          -1.174754620786006,
+          0.1580288415148301
+        ],
+        "metrics": {
+          "translation_max_abs": 1.8892856132879388e-06,
+          "rotation_matrix_max_abs": 2.948015442871821e-10,
+          "rotation_angle_max_rad": 2.9929575161809373e-10,
+          "position_unit": "mm"
+        },
+        "trace": [
+          {
+            "iteration": 0,
+            "translation_max_abs": 31.725324281306712,
+            "rotation_matrix_max_abs": 0.009091749504881952,
+            "rotation_angle_max_rad": 0.010000000000000061,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 1,
+            "translation_max_abs": 0.09508373165158446,
+            "rotation_matrix_max_abs": 1.27933922555723e-06,
+            "rotation_angle_max_rad": 1.429822569225581e-06,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 2,
+            "translation_max_abs": 1.8892856132879388e-06,
+            "rotation_matrix_max_abs": 2.948015442871821e-10,
+            "rotation_angle_max_rad": 2.9929575161809373e-10,
+            "position_unit": "mm"
+          }
+        ],
+        "wall_s": 0.00396645399996487,
+        "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+        "collision_checked": false
+      }
+    },
+    {
+      "kind": "nr_reference",
+      "fixture_kind": "known_closed_neighborhood",
+      "fixture": "start_8",
+      "result": {
+        "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+        "input_q_rad": [
+          -0.59,
+          1.48,
+          -1.57,
+          -1.37,
+          -0.4,
+          0.0,
+          1.0143994237017788,
+          0.5045011684058095,
+          -0.14966439024697054,
+          1.6056018785912483,
+          -1.1754052599345206,
+          0.15782776040972268
+        ],
+        "candidate_q_rad": [
+          -0.5900121369634452,
+          1.4783683737009916,
+          -1.570979544216887,
+          -1.3672572924733968,
+          -0.3996358323446468,
+          0.0023843346714121664,
+          1.0139650114199417,
+          0.5032585136627244,
+          -0.1512855590804562,
+          1.6061228516224009,
+          -1.1750141701743304,
+          0.16021209508113485
+        ],
+        "metrics": {
+          "translation_max_abs": 6.927302820258774e-08,
+          "rotation_matrix_max_abs": 5.71412084315881e-11,
+          "rotation_angle_max_rad": 5.991553740889091e-11,
+          "position_unit": "mm"
+        },
+        "trace": [
+          {
+            "iteration": 0,
+            "translation_max_abs": 7.359644224667363,
+            "rotation_matrix_max_abs": 0.008979724283567858,
+            "rotation_angle_max_rad": 0.009999999999999974,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 1,
+            "translation_max_abs": 0.019445194910531427,
+            "rotation_matrix_max_abs": 1.4233739387553568e-05,
+            "rotation_angle_max_rad": 1.454896091721161e-05,
+            "position_unit": "mm"
+          },
+          {
+            "iteration": 2,
+            "translation_max_abs": 6.927302820258774e-08,
+            "rotation_matrix_max_abs": 5.71412084315881e-11,
+            "rotation_angle_max_rad": 5.991553740889091e-11,
+            "position_unit": "mm"
+          }
+        ],
+        "wall_s": 0.004006683999705274,
+        "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+        "collision_checked": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "case_id": "goal_q1_plus",
+  "center_endpoint": "goal",
+  "input_q_rad": [
+    0.5601,
+    0.83,
+    -0.55,
+    -1.36,
+    0.5,
+    0.0,
+    -0.7869651650485752,
+    0.6428202658438026,
+    0.3168909743191781,
+    2.3745547715304225,
+    1.4821217518943377,
+    -1.1805411850672507
+  ],
+  "coordinate0": 0,
+  "sign": 1,
+  "h_rad_frozen": 0.0001,
+  "classification": "RECONSTRUCTED / INDEPENDENT-NR-REFERENCE / FINITE-LOCAL-PROPERTY",
+  "nr": {
+    "status": "CONVERGED",
+    "input_q_rad": [
+      0.5601,
+      0.83,
+      -0.55,
+      -1.36,
+      0.5,
+      0.0,
+      -0.7869651650485752,
+      0.6428202658438026,
+      0.3168909743191781,
+      2.3745547715304225,
+      1.4821217518943377,
+      -1.1805411850672507
+    ],
+    "candidate_q_rad": [
+      0.5600114250787841,
+      0.8300032910282487,
+      -0.5500055216196449,
+      -1.3600001790545535,
+      0.5000201580327346,
+      3.943784635333981e-06,
+      -0.7869644187104741,
+      0.6428284811862179,
+      0.31687429239246007,
+      2.3745626294274125,
+      1.4821105675915713,
+      -1.1805372412826154
+    ],
+    "metrics": {
+      "translation_max_abs": 5.684341886080801e-13,
+      "rotation_matrix_max_abs": 3.3306690738754696e-16,
+      "rotation_angle_max_rad": 3.386799698371776e-16,
+      "position_unit": "mm"
+    },
+    "trace": [
+      {
+        "iteration": 0,
+        "translation_max_abs": 0.42670989879593435,
+        "rotation_matrix_max_abs": 9.987785110979544e-05,
+        "rotation_angle_max_rad": 0.00010000000000020444,
+        "position_unit": "mm"
+      },
+      {
+        "iteration": 1,
+        "translation_max_abs": 2.0394078092067502e-05,
+        "rotation_matrix_max_abs": 9.926873906218603e-11,
+        "rotation_angle_max_rad": 1.3527307628179682e-10,
+        "position_unit": "mm"
+      },
+      {
+        "iteration": 2,
+        "translation_max_abs": 5.684341886080801e-13,
+        "rotation_matrix_max_abs": 3.3306690738754696e-16,
+        "rotation_angle_max_rad": 3.386799698371776e-16,
+        "position_unit": "mm"
+      }
+    ],
+    "wall_s": 0.004145947998040356,
+    "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+    "collision_checked": false
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "case_id": "start_q5_minus",
+  "center_endpoint": "start",
+  "input_q_rad": [
+    -0.59,
+    1.48,
+    -1.57,
+    -1.36,
+    -0.4001,
+    0.0,
+    1.0143994237017788,
+    0.5045011684058095,
+    -0.14966439024697054,
+    1.6056018785912483,
+    -1.1754052599345206,
+    0.15782776040972268
+  ],
+  "coordinate0": 4,
+  "sign": -1,
+  "h_rad_frozen": 9.999999999996123e-05,
+  "classification": "RECONSTRUCTED / INDEPENDENT-NR-REFERENCE / FINITE-LOCAL-PROPERTY",
+  "nr": {
+    "status": "CONVERGED",
+    "input_q_rad": [
+      -0.59,
+      1.48,
+      -1.57,
+      -1.36,
+      -0.4001,
+      0.0,
+      1.0143994237017788,
+      0.5045011684058095,
+      -0.14966439024697054,
+      1.6056018785912483,
+      -1.1754052599345206,
+      0.15782776040972268
+    ],
+    "candidate_q_rad": [
+      -0.5900215072570228,
+      1.4800023938839004,
+      -1.5699951461779942,
+      -1.3599963635538248,
+      -0.40005516821093917,
+      9.709375849154546e-07,
+      1.0143897388804048,
+      0.5045068471097914,
+      -0.14966821573339317,
+      1.6055904445483091,
+      -1.1753640931762488,
+      0.1578287313473076
+    ],
+    "metrics": {
+      "translation_max_abs": 5.004902959626634e-06,
+      "rotation_matrix_max_abs": 3.046747576451736e-10,
+      "rotation_angle_max_rad": 3.735316942899528e-10,
+      "position_unit": "mm"
+    },
+    "trace": [
+      {
+        "iteration": 0,
+        "translation_max_abs": 0.1887774540969076,
+        "rotation_matrix_max_abs": 9.738326236621853e-05,
+        "rotation_angle_max_rad": 0.00010000000000023777,
+        "position_unit": "mm"
+      },
+      {
+        "iteration": 1,
+        "translation_max_abs": 5.004902959626634e-06,
+        "rotation_matrix_max_abs": 3.046747576451736e-10,
+        "rotation_angle_max_rad": 3.735316942899528e-10,
+        "position_unit": "mm"
+      }
+    ],
+    "wall_s": 0.002998269999807235,
+    "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+    "collision_checked": false
+  }
+}

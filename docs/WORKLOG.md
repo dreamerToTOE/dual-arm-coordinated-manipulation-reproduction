@@ -783,3 +783,8 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4崩溃断点恢复
 
 真实原工作树为/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full，接管HEAD a39e963，本地已有R2五提交及57未提交文件。已先备份哈希再fetch，未reset/clean/pull/checkout；原6工作树和13其他未跟踪文件保留。已完成独立只读分工核对端点、RSS预算与全文覆盖；无残留P4科学进程。A/B尚未运行；B额度原未用；旧R2wall16.337196963/CPU10.593126。见恢复PRE-TASK和保全manifest。
+
+
+## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
+
+接管a39e963(本地领先5)/远程356a3b1，先归档57文件再fetch，无分叉和残留实验进程。新增source/protocol先提交，再A恢复、v3观测续验、VI Q1/Q2及IV NR local；各run原参数/全候选/事件/失败/source hash均保存。独立只读A/B/Q2/IV审查完成。原工作树与分支接续；57崩溃前文件已保全0792acf，无重做R0/R1。原12端点FAIL保持；最新RECONSTRUCTED12/12通过闭链、原支、原界和source离散碰撞策略。A01四UNKNOWN保留，v3只修我方TCP观测（IV未赋值T7、V少2mm），A02仅4已存候选回放4/4。B Q1 868构造/13888IK、7/30请求合格；Q2再36构造全部节点合格，但四半严格h=.0025在depth3仍UNKNOWN，不能算RSS/RBS规划PASS。IV新增24固定±h全关节原NR局部24/24合格，不替旧6拒绝/3FAIL；全24主动角被NR改变。已推b686e7b，后续实际NR和报告继续提交。

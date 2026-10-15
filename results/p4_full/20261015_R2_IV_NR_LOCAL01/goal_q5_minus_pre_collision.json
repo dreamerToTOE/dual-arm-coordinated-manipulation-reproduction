@@ -1,0 +1,160 @@
+{
+  "case_id": "goal_q5_minus",
+  "center_endpoint": "goal",
+  "input_q_rad": [
+    0.56,
+    0.83,
+    -0.55,
+    -1.36,
+    0.4999,
+    0.0,
+    -0.7869651650485752,
+    0.6428202658438026,
+    0.3168909743191781,
+    2.3745547715304225,
+    1.4821217518943377,
+    -1.1805411850672507
+  ],
+  "coordinate0": 4,
+  "sign": -1,
+  "h_rad_frozen": 0.0001,
+  "classification": "RECONSTRUCTED / INDEPENDENT-NR-REFERENCE / FINITE-LOCAL-PROPERTY",
+  "nr": {
+    "status": "CONVERGED",
+    "input_q_rad": [
+      0.56,
+      0.83,
+      -0.55,
+      -1.36,
+      0.4999,
+      0.0,
+      -0.7869651650485752,
+      0.6428202658438026,
+      0.3168909743191781,
+      2.3745547715304225,
+      1.4821217518943377,
+      -1.1805411850672507
+    ],
+    "candidate_q_rad": [
+      0.5599798426818619,
+      0.8299899581702854,
+      -0.5499865146431767,
+      -1.3599983923067178,
+      0.4999492462928677,
+      -7.545604860717864e-07,
+      -0.7869745934276036,
+      0.6428157349201481,
+      0.3168973003587758,
+      2.374519032543109,
+      1.4821412511122118,
+      -1.1805419396277368
+    ],
+    "metrics": {
+      "translation_max_abs": 5.329012310539838e-06,
+      "rotation_matrix_max_abs": 5.069823449943556e-10,
+      "rotation_angle_max_rad": 5.675892529842179e-10,
+      "position_unit": "mm"
+    },
+    "trace": [
+      {
+        "iteration": 0,
+        "translation_max_abs": 0.19361308250813636,
+        "rotation_matrix_max_abs": 9.987778308422762e-05,
+        "rotation_angle_max_rad": 0.00010000000000023399,
+        "position_unit": "mm"
+      },
+      {
+        "iteration": 1,
+        "translation_max_abs": 5.329012310539838e-06,
+        "rotation_matrix_max_abs": 5.069823449943556e-10,
+        "rotation_angle_max_rad": 5.675892529842179e-10,
+        "position_unit": "mm"
+      }
+    ],
+    "wall_s": 0.0030771349993301556,
+    "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+    "collision_checked": false
+  },
+  "native": {
+    "command": [
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_NR_LOCAL01/goal_q5_minus_native_output.jsonl"
+    ],
+    "native_vs_independent_fk": [
+      {
+        "arm": 1,
+        "position_max_abs": 2.2737367544323206e-13,
+        "rotation_matrix_max_abs": 1.1102230246251565e-16
+      },
+      {
+        "arm": 2,
+        "position_max_abs": 2.2737367544323206e-13,
+        "rotation_matrix_max_abs": 1.1102230246251565e-16
+      }
+    ],
+    "native_loop_error": {
+      "position_max_abs": 5.329012310539838e-06,
+      "rotation_matrix_max_abs": 5.069824005055068e-10
+    },
+    "closed": true
+  },
+  "independent_closure": {
+    "position_unit": "mm",
+    "loops": [
+      {
+        "position_max_abs": 5.329012310539838e-06,
+        "rotation_matrix_max_abs": 5.069823449943556e-10
+      }
+    ],
+    "position_max_abs": 5.329012310539838e-06,
+    "rotation_matrix_max_abs": 5.069823449943556e-10
+  },
+  "limits": {
+    "legal": true,
+    "violations": [],
+    "source_literal_pi_preserved": 3.1416,
+    "planar_q19_policy": null
+  },
+  "output_minus_input_rad": [
+    -2.0157318138203095e-05,
+    -1.0041829714535488e-05,
+    1.348535682332841e-05,
+    1.6076932822794987e-06,
+    4.9246292867677344e-05,
+    -7.545604860717864e-07,
+    -9.428379028397771e-06,
+    -4.5309236544888165e-06,
+    6.3260395976594275e-06,
+    -3.573898731357161e-05,
+    1.949921787414155e-05,
+    -7.545604860936805e-07
+  ],
+  "output_minus_center_rad": [
+    -2.0157318138203095e-05,
+    -1.0041829714535488e-05,
+    1.348535682332841e-05,
+    1.6076932822794987e-06,
+    -5.075370713231164e-05,
+    -7.545604860717864e-07,
+    -9.428379028397771e-06,
+    -4.5309236544888165e-06,
+    6.3260395976594275e-06,
+    -3.573898731357161e-05,
+    1.949921787414155e-05,
+    -7.545604860936805e-07
+  ],
+  "passive_branch_diagnostic": {
+    "unique": true,
+    "branch_set": [
+      3
+    ],
+    "signed_shoulder_radius_mm": 2270.0092276536275,
+    "elbow_factor": -0.9852894276560664,
+    "wrist_factor": 0.9960727120717917,
+    "shoulder_sign": 1,
+    "elbow_sign": -1,
+    "wrist_sign": 1,
+    "invariant_rule": "shoulder signed radius; -sin(q3+atan2(c,a)); sin(q5)"
+  },
+  "same_unique_passive_branch_as_center_diagnostic": true
+}

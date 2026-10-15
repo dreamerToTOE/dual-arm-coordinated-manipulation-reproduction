@@ -1,0 +1,120 @@
+{
+  "schema": "P4_R2_RECOVERY_ACTUAL_LEDGER_V1",
+  "created_at_utc": "2026-10-15T06:28:54.614451+00:00",
+  "science_runs": [
+    {
+      "run_id": "20261015_R2_COLLISION_CONTROLS01",
+      "execution": "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json",
+      "execution_sha256": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+      "source_commit": "17da8c393b7e53cfdf571df45a64a5b3faae4d46",
+      "status": "SOURCE_POLICY_QUALIFIED",
+      "wall_s": 0.021082576000480913,
+      "cpu_s": 0.022197999999999996,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_ENDPOINT_COLLISION_REPLAY01",
+      "execution": "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json",
+      "execution_sha256": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+      "source_commit": "0465ad850da0a84ac3fbc22f3d79d4905deea210",
+      "status": "EVIDENCE_RECORDED",
+      "wall_s": 1.3214305180008523,
+      "cpu_s": 1.3246370000000003,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_ENDPOINT_RECONSTRUCTED01",
+      "execution": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json",
+      "execution_sha256": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+      "source_commit": "8188e93257cc4962d30c0db10204dbcee649eaba",
+      "status": "QUALIFICATION_EVIDENCE_RECORDED",
+      "wall_s": 7.450141228000575,
+      "cpu_s": 6.025647,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_IV_NR_LOCAL01",
+      "execution": "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json",
+      "execution_sha256": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+      "source_commit": "b686e7b2f7ade5ef90600dbdb61109ae88621078",
+      "status": "FINITE_LOCAL_PROPERTY_PASS",
+      "wall_s": 2.6515715200002887,
+      "cpu_s": 0.882651,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_PLANAR01",
+      "execution": "results/p4_full/20261015_R2_PLANAR01/execution.json",
+      "execution_sha256": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+      "source_commit": "28cd986a5a3f488afdeea0a2eda4834070c90d1b",
+      "status": "COMPONENT_EVIDENCE_RECORDED",
+      "wall_s": 0.11132641699987289,
+      "cpu_s": 0.112283,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_RSS_CONSTRUCTION01",
+      "execution": "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json",
+      "execution_sha256": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+      "source_commit": "98d999a13d247c8643812e77b17a4bb3678d9c8b",
+      "status": "FIXED_COMPONENT_CONSTRUCTION_RECORDED",
+      "wall_s": 1.5027174159999959,
+      "cpu_s": 1.015161,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_SPATIAL01",
+      "execution": "results/p4_full/20261015_R2_SPATIAL01/execution.json",
+      "execution_sha256": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+      "source_commit": "1fa17785123575af9895fb7dfface8e3e36af3f2",
+      "status": "COMPONENT_EVIDENCE_RECORDED",
+      "wall_s": 14.7231531299999,
+      "cpu_s": 9.465682,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_VI_RSS_BRIDGE01",
+      "execution": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "execution_sha256": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+      "source_commit": "2f465d6a0406e76c6668a6c2f7b60f94f94e8e89",
+      "status": "LOCAL_BRIDGE_QUALIFICATION_RECORDED",
+      "wall_s": 7.987086492001254,
+      "cpu_s": 6.310368,
+      "formal_planning_calls": 0
+    },
+    {
+      "run_id": "20261015_R2_VI_RSS_RECONSTRUCTED01",
+      "execution": "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json",
+      "execution_sha256": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+      "source_commit": "3fad1b59a17181b941785d56323a38da749be15d",
+      "status": "CANDIDATE_CONSTRUCTION_RECORDED",
+      "wall_s": 45.133593771999585,
+      "cpu_s": 5.6411750000000005,
+      "formal_planning_calls": 0
+    }
+  ],
+  "count": 9,
+  "sum_wall_s": 80.9021030690028,
+  "sum_cpu_s": 30.799802,
+  "r2_caps": {
+    "wall_s": 3600,
+    "cpu_s": 7200
+  },
+  "r2_remaining": {
+    "wall_s": 3519.097896930997,
+    "cpu_s": 7169.2001980000005
+  },
+  "vi_B_consumed": {
+    "constructs": 904,
+    "wall_s": 53.12068026400084,
+    "cpu_s": 11.951543000000001
+  },
+  "vi_B_remaining": {
+    "candidate_constructions": 56,
+    "wall_s": 126.87931973599916,
+    "cpu_s": 348.04845700000004
+  },
+  "double_counting_rule": "Sum only each execution own wall_s/cpu_s, never cumulative fields. Original controls result/execute are byte-identical; include execution exactly once. Engineering preparation/build, analysis and Git operations separate from science.",
+  "formal_table_I_calls": 0,
+  "formal_table_I_required_calls": 22500
+}

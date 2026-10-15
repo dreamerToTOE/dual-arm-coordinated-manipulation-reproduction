@@ -849,3 +849,8 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4 R2接续阻塞归因
 
 TASK-BLOCKING P4-R2-ENDPOINT：12原字面端点全未过闭链门；旧首根组件不能替换端点。本次批准最近同支恢复，原失败保留。TASK-BLOCKING P4-R2-VI-RSS：公开三臂RSS源码不完整，独立构造尚未运行；不得写成作者原生通过。P4-R2-IV-NR：6输出闭合后越界正确拒绝，其中3附加正例FAIL；锚点q3仅距下界.0008rad，原±.01完整性假设未有保证。已有start_0是附近合法闭合解见证，无数值发散证据，不归因论文错误。碰撞/RBS/完整规划资格仍未过。
+
+
+## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
+
+P4-R2-TCP-CAPTURE（OUR-IMPLEMENTATION）已根因修复并新run验证：IV读未赋值T7、V混淆mesh和TCP造成2mm。观测修正版与v2去观测行后完全相同，原pair/mesh/8mm不变，四保存候选续验4/4；旧UNKNOWN不覆写。P4-R2-IV-NR-EXTRA-POSITIVE：旧额外必成功假设无先验证据，原6拒绝/3FAIL保留，新24local PASS范围独立；不加限位策略。P4-R2-VI-RSS-BRIDGE：36点均合格但32严格叶未达h，原腕族与active直弦极限可能不一致，UNKNOWN待数学根因，不以加深/shortcut代替连续性。完整source物理geometry/CCD仍未验证。

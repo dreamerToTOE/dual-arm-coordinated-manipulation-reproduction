@@ -1,0 +1,721 @@
+{
+  "case_id": "start_q1_plus",
+  "center_endpoint": "start",
+  "input_q_rad": [
+    -0.5899,
+    1.48,
+    -1.57,
+    -1.36,
+    -0.4,
+    0.0,
+    1.0143994237017788,
+    0.5045011684058095,
+    -0.14966439024697054,
+    1.6056018785912483,
+    -1.1754052599345206,
+    0.15782776040972268
+  ],
+  "coordinate0": 0,
+  "sign": 1,
+  "h_rad_frozen": 9.999999999996123e-05,
+  "classification": "RECONSTRUCTED / INDEPENDENT-NR-REFERENCE / FINITE-LOCAL-PROPERTY",
+  "nr": {
+    "status": "CONVERGED",
+    "input_q_rad": [
+      -0.5899,
+      1.48,
+      -1.57,
+      -1.36,
+      -0.4,
+      0.0,
+      1.0143994237017788,
+      0.5045011684058095,
+      -0.14966439024697054,
+      1.6056018785912483,
+      -1.1754052599345206,
+      0.15782776040972268
+    ],
+    "candidate_q_rad": [
+      -0.5899894355828911,
+      1.4799977412097718,
+      -1.570001970077016,
+      -1.359999821760169,
+      -0.3999784931065237,
+      -1.805499303446667e-06,
+      1.0144021886972225,
+      0.5044887464561252,
+      -0.14965365818030116,
+      1.605607642301275,
+      -1.1754177658247495,
+      0.15782595491041923
+    ],
+    "metrics": {
+      "translation_max_abs": 4.547473508864641e-13,
+      "rotation_matrix_max_abs": 1.942890293094024e-16,
+      "rotation_angle_max_rad": 1.7268549488467174e-16,
+      "position_unit": "mm"
+    },
+    "trace": [
+      {
+        "iteration": 0,
+        "translation_max_abs": 0.4519981869411822,
+        "rotation_matrix_max_abs": 9.738313516188812e-05,
+        "rotation_angle_max_rad": 0.00010000000000026328,
+        "position_unit": "mm"
+      },
+      {
+        "iteration": 1,
+        "translation_max_abs": 2.200396829721285e-05,
+        "rotation_matrix_max_abs": 3.9977493537790565e-11,
+        "rotation_angle_max_rad": 4.303305990148039e-11,
+        "position_unit": "mm"
+      },
+      {
+        "iteration": 2,
+        "translation_max_abs": 4.547473508864641e-13,
+        "rotation_matrix_max_abs": 1.942890293094024e-16,
+        "rotation_angle_max_rad": 1.7268549488467174e-16,
+        "position_unit": "mm"
+      }
+    ],
+    "wall_s": 0.004325330999563448,
+    "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+    "collision_checked": false
+  },
+  "native": {
+    "command": [
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_NR_LOCAL01/start_q1_plus_native_output.jsonl"
+    ],
+    "native_vs_independent_fk": [
+      {
+        "arm": 1,
+        "position_max_abs": 2.5579538487363607e-13,
+        "rotation_matrix_max_abs": 2.220446049250313e-16
+      },
+      {
+        "arm": 2,
+        "position_max_abs": 4.547473508864641e-13,
+        "rotation_matrix_max_abs": 2.220446049250313e-16
+      }
+    ],
+    "native_loop_error": {
+      "position_max_abs": 6.821210263296962e-13,
+      "rotation_matrix_max_abs": 3.3306690738754696e-16
+    },
+    "closed": true
+  },
+  "independent_closure": {
+    "position_unit": "mm",
+    "loops": [
+      {
+        "position_max_abs": 4.547473508864641e-13,
+        "rotation_matrix_max_abs": 1.942890293094024e-16
+      }
+    ],
+    "position_max_abs": 4.547473508864641e-13,
+    "rotation_matrix_max_abs": 1.942890293094024e-16
+  },
+  "limits": {
+    "legal": true,
+    "violations": [],
+    "source_literal_pi_preserved": 3.1416,
+    "planar_q19_policy": null
+  },
+  "output_minus_input_rad": [
+    -8.943558289109532e-05,
+    -2.258790228193419e-06,
+    -1.9700770159669645e-06,
+    1.7823983111675545e-07,
+    2.1506893476297417e-05,
+    -1.805499303446667e-06,
+    2.7649954437158897e-06,
+    -1.242194968431587e-05,
+    1.073206666937776e-05,
+    5.7637100268070895e-06,
+    -1.2505890228942107e-05,
+    -1.8054993034533062e-06
+  ],
+  "output_minus_center_rad": [
+    1.0564417108893664e-05,
+    -2.258790228193419e-06,
+    -1.9700770159669645e-06,
+    1.7823983111675545e-07,
+    2.1506893476297417e-05,
+    -1.805499303446667e-06,
+    2.7649954437158897e-06,
+    -1.242194968431587e-05,
+    1.073206666937776e-05,
+    5.7637100268070895e-06,
+    -1.2505890228942107e-05,
+    -1.8054993034533062e-06
+  ],
+  "passive_branch_diagnostic": {
+    "unique": true,
+    "branch_set": [
+      1
+    ],
+    "signed_shoulder_radius_mm": 2548.672935500284,
+    "elbow_factor": -0.9568561862245948,
+    "wrist_factor": -0.9228508248687375,
+    "shoulder_sign": 1,
+    "elbow_sign": -1,
+    "wrist_sign": -1,
+    "invariant_rule": "shoulder signed radius; -sin(q3+atan2(c,a)); sin(q5)"
+  },
+  "same_unique_passive_branch_as_center_diagnostic": true,
+  "collision": {
+    "environment": "IV",
+    "collision": false,
+    "status": "CHECKED",
+    "scope": "AUTHOR_DISCRETE_COLLISION_POLICY",
+    "continuous_collision_certificate": false,
+    "variants": {
+      "native": {
+        "native_result": 0,
+        "cpu_s": 4.3e-05,
+        "poses": [
+          [
+            0.9680234245075893,
+            0.18944472590116532,
+            0.16444252927035644,
+            -222.55399741666312,
+            -0.18988342447260564,
+            0.12496497483692037,
+            0.9738213594774782,
+            -1796.1449026796545,
+            0.16393576399052143,
+            -0.9739067978468168,
+            0.15694143618752782,
+            1017.3140259664764
+          ],
+          [
+            -0.9680234245075893,
+            -0.18944472590116515,
+            0.16444252927035644,
+            1519.8881666160423,
+            0.18988342447260576,
+            -0.12496497483692048,
+            0.9738213594774782,
+            -2137.9571059609643,
+            -0.1639357639905213,
+            0.9739067978468168,
+            0.15694143618752782,
+            1312.3984011494151
+          ]
+        ],
+        "query_codes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_stdout": "P4_COLLISION_RESULT {\"native_result\":0,\"cpu_s\":4.3000000000000002e-05,\"poses\":[[0.96802342450758927,0.18944472590116532,0.16444252927035644,-222.55399741666312,-0.18988342447260564,0.12496497483692037,0.97382135947747817,-1796.1449026796545,0.16393576399052143,-0.97390679784681677,0.15694143618752782,1017.3140259664764],[-0.96802342450758927,-0.18944472590116515,0.16444252927035644,1519.8881666160423,0.18988342447260576,-0.12496497483692048,0.97382135947747817,-2137.9571059609643,-0.16393576399052129,0.97390679784681677,0.15694143618752782,1312.3984011494151]],\"query_codes\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}\n",
+        "source_stderr": "merged into source_stdout",
+        "source_command": [
+          "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/IV_native/collision_batch",
+          "IV"
+        ],
+        "wall_s": 0.29219312900022487,
+        "provenance": {
+          "source_root": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2",
+          "source_commit": "80089340f0f1f6822e5b2821a63c998b6ae0413f",
+          "source_files_sha256": {
+            "validity_checkers/collisionDetection.cpp": "fd5419b1261d5bedd1027c241c15f46ab4ff953147af122c73e54eb49b36d4a8",
+            "validity_checkers/collisionDetection.h": "f9bbe6aa02782fef237fa485196ae83a6de943bc9d398c071c954718ca81cb7f",
+            "validity_checkers/model.h": "8ca45fd6439a78876f5085f94db3070f6fd33abca1f17a5a46e14f1e13619176",
+            "simulator/MatVec.h": "f435b10b9b5808eff905bbbba3094818d0763642e323a9040b77cece78b0121a",
+            "proj_classes/def.h": "2641b21bb889ef7aa1b685a767aa5bd5ad718b7a7f5c7650263b864b5e6f91bb"
+          },
+          "mesh_sha256": {
+            "EE_r.tris": "b6e2b7af54d6e2d90dde325f3d52b680abff884d6f31e0fbc7b25eec132c87ca",
+            "b1.tris": "97a4556be9eea7d682dbfa5cd9bc00f196af965f4a8f15500af95162dd277a6c",
+            "b2.tris": "63fd3512e80b39ec2e01d7192962145ccfb154d52e92e8835c86d09e7aadc72d",
+            "base.tris": "9f87dbbc37376f79ccf258865e95c98e68593dbcca4d7b78fe0ead98c6fca57b",
+            "base_r.tris": "a27e383930830088c12f9eb956ca4970d968aaa29baea5f5495957ce3f0bdc13",
+            "ee.tris": "18406c3115c061937862add9a65643c169864d93d03c2e89593b3407ab12a04b",
+            "floor.tris": "691b11cd4e74097fbf954ba443da3dede08607f9fd1f53f5028366530bcd3705",
+            "link1.tris": "7b4aa1a0c238fe67b6e096f3df3131623358a74c420faca0957f02263d8557ec",
+            "link1_r.tris": "0f65cd974bd25a4ff71fa55f5f8144314e6626dc211b0f62b295b32db7011648",
+            "link2.tris": "49a576cb3fee1af8f91679d8a5384cc6d30473ac28a76efbc7cd5c58f28e4ee2",
+            "link2_r.tris": "d31af789f830b69e4e26b66bd1ffaa80d6558c1da519f70426130c0f33129f0e",
+            "link3.tris": "f38bf7d6207f707e0b0d466547cd1a5a968464df7ede22030bcd43758dded949",
+            "link3_r.tris": "65913e144f9a83f6bba07bdabf5f904b1a248256de10f271c17cfb84eccd0dd4",
+            "link4.tris": "e6d6207b394c2f37eee3ac651e1a18b0256df5f8e7088e31cf7fa8b324d7ba07",
+            "link4_r.tris": "866e9268bb03b9c6964d39a4b77c87adeae9ee2ef5cdbdb56b6867ac46f7953d",
+            "link5.tris": "48e550c18d5dc56e4f30bd90e9b1e81e2eb33eaafdd9fb83384c22f433dd2131",
+            "link5_r.tris": "666379ccd63a96f682cc71d59fdd155565e859a0db60b54781f2b0044f43dda9",
+            "link6.tris": "5de974bed40796f87323ef8e52feeecfef9f676ff8b5c3eed369ebf8fa074b65",
+            "obs.tris": "d37a6ec7cce8c230374384b4b35214a48c1ddc04305066744613faf49bbb1b45",
+            "obs1.tris": "2ca88b053d90e8b45ecab6b8e9d02ddffd31cd8517f58b9d6292e95af238719a",
+            "obs2.tris": "324cddc6a24d6b5939a2ced1518388e6caed8ffa38f16391cabce6f7cbb1c94e",
+            "rod.tris": "4516edccf5114c212f55f343ab53bd790a8fcff8622e53a8937580504a4956bd",
+            "room.tris": "d6818413dfd407f1730f760006179a16dfb4f5b9555effd790e1358ddb62f865",
+            "table.tris": "756597cb4dbf32b731375844be6adf94d1d77e57775f4506cf31442723fc1bce"
+          },
+          "binary_sha256": "7597047a19d1124e0df38def61ac3be53d0284ea32a50be1b7d58772ef65234c",
+          "physical_alignment_changes": []
+        },
+        "pose_consistency": {
+          "status": "COLLISION_PHYSICAL_TCP_MISMATCH",
+          "passed": false,
+          "position_gate_mm": 1e-05,
+          "rotation_matrix_gate": 1e-05,
+          "errors": [
+            {
+              "arm": 1,
+              "translation_maxabs_mm": 2.2737367544323206e-13,
+              "rotation_maxabs": 2.220446049250313e-16,
+              "collision_TCP": [
+                [
+                  0.9680234245075893,
+                  0.18944472590116532,
+                  0.16444252927035644,
+                  -222.55399741666312
+                ],
+                [
+                  -0.18988342447260564,
+                  0.12496497483692037,
+                  0.9738213594774782,
+                  -1796.1449026796545
+                ],
+                [
+                  0.16393576399052143,
+                  -0.9739067978468168,
+                  0.15694143618752782,
+                  1017.3140259664764
+                ]
+              ],
+              "independent_TCP": [
+                [
+                  0.9680234245075893,
+                  0.18944472590116535,
+                  0.1644425292703564,
+                  -222.5539974166629
+                ],
+                [
+                  -0.18988342447260578,
+                  0.12496497483692037,
+                  0.9738213594774784,
+                  -1796.1449026796547
+                ],
+                [
+                  0.16393576399052143,
+                  -0.9739067978468168,
+                  0.15694143618752782,
+                  1017.3140259664764
+                ]
+              ]
+            },
+            {
+              "arm": 2,
+              "translation_maxabs_mm": 0.02203923061961177,
+              "rotation_maxabs": 1.1102230246251565e-16,
+              "collision_TCP": [
+                [
+                  -0.9680234245075893,
+                  -0.18944472590116515,
+                  0.16444252927035644,
+                  1519.8881666160423
+                ],
+                [
+                  0.18988342447260576,
+                  -0.12496497483692048,
+                  0.9738213594774782,
+                  -2137.9571059609643
+                ],
+                [
+                  -0.1639357639905213,
+                  0.9739067978468168,
+                  0.15694143618752782,
+                  1312.3984011494151
+                ]
+              ],
+              "independent_TCP": [
+                [
+                  -0.9680234245075894,
+                  -0.18944472590116515,
+                  0.1644425292703564,
+                  1519.8881666969974
+                ],
+                [
+                  0.18988342447260573,
+                  -0.12496497483692039,
+                  0.9738213594774783,
+                  -2137.9350667303447
+                ],
+                [
+                  -0.1639357639905213,
+                  0.9739067978468168,
+                  0.15694143618752782,
+                  1312.3984011494151
+                ]
+              ]
+            }
+          ]
+        },
+        "native_collision": false,
+        "query_error_codes": []
+      },
+      "aligned": {
+        "native_result": 0,
+        "cpu_s": 4.5e-05,
+        "poses": [
+          [
+            0.9680234245075893,
+            0.18944472590116532,
+            0.16444252927035644,
+            -222.55399741666312,
+            -0.18988342447260564,
+            0.12496497483692037,
+            0.9738213594774782,
+            -1796.1449026796545,
+            0.16393576399052143,
+            -0.9739067978468168,
+            0.15694143618752782,
+            1017.3140259664764
+          ],
+          [
+            -0.9680234245075893,
+            -0.18944472590116515,
+            0.16444252927035644,
+            1519.8881666969974,
+            0.18988342447260576,
+            -0.12496497483692048,
+            0.9738213594774782,
+            -2137.9350667303447,
+            -0.1639357639905213,
+            0.9739067978468168,
+            0.15694143618752782,
+            1312.3984011494151
+          ]
+        ],
+        "query_codes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_stdout": "P4_COLLISION_RESULT {\"native_result\":0,\"cpu_s\":4.5000000000000003e-05,\"poses\":[[0.96802342450758927,0.18944472590116532,0.16444252927035644,-222.55399741666312,-0.18988342447260564,0.12496497483692037,0.97382135947747817,-1796.1449026796545,0.16393576399052143,-0.97390679784681677,0.15694143618752782,1017.3140259664764],[-0.96802342450758927,-0.18944472590116515,0.16444252927035644,1519.8881666969974,0.18988342447260576,-0.12496497483692048,0.97382135947747817,-2137.9350667303447,-0.16393576399052129,0.97390679784681677,0.15694143618752782,1312.3984011494151]],\"query_codes\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}\n",
+        "source_stderr": "merged into source_stdout",
+        "source_command": [
+          "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/IV_aligned/collision_batch",
+          "IV"
+        ],
+        "wall_s": 0.2919195319991559,
+        "provenance": {
+          "source_root": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2",
+          "source_commit": "80089340f0f1f6822e5b2821a63c998b6ae0413f",
+          "source_files_sha256": {
+            "validity_checkers/collisionDetection.cpp": "fd5419b1261d5bedd1027c241c15f46ab4ff953147af122c73e54eb49b36d4a8",
+            "validity_checkers/collisionDetection.h": "f9bbe6aa02782fef237fa485196ae83a6de943bc9d398c071c954718ca81cb7f",
+            "validity_checkers/model.h": "8ca45fd6439a78876f5085f94db3070f6fd33abca1f17a5a46e14f1e13619176",
+            "simulator/MatVec.h": "f435b10b9b5808eff905bbbba3094818d0763642e323a9040b77cece78b0121a",
+            "proj_classes/def.h": "2641b21bb889ef7aa1b685a767aa5bd5ad718b7a7f5c7650263b864b5e6f91bb"
+          },
+          "mesh_sha256": {
+            "EE_r.tris": "b6e2b7af54d6e2d90dde325f3d52b680abff884d6f31e0fbc7b25eec132c87ca",
+            "b1.tris": "97a4556be9eea7d682dbfa5cd9bc00f196af965f4a8f15500af95162dd277a6c",
+            "b2.tris": "63fd3512e80b39ec2e01d7192962145ccfb154d52e92e8835c86d09e7aadc72d",
+            "base.tris": "9f87dbbc37376f79ccf258865e95c98e68593dbcca4d7b78fe0ead98c6fca57b",
+            "base_r.tris": "a27e383930830088c12f9eb956ca4970d968aaa29baea5f5495957ce3f0bdc13",
+            "ee.tris": "18406c3115c061937862add9a65643c169864d93d03c2e89593b3407ab12a04b",
+            "floor.tris": "691b11cd4e74097fbf954ba443da3dede08607f9fd1f53f5028366530bcd3705",
+            "link1.tris": "7b4aa1a0c238fe67b6e096f3df3131623358a74c420faca0957f02263d8557ec",
+            "link1_r.tris": "0f65cd974bd25a4ff71fa55f5f8144314e6626dc211b0f62b295b32db7011648",
+            "link2.tris": "49a576cb3fee1af8f91679d8a5384cc6d30473ac28a76efbc7cd5c58f28e4ee2",
+            "link2_r.tris": "d31af789f830b69e4e26b66bd1ffaa80d6558c1da519f70426130c0f33129f0e",
+            "link3.tris": "f38bf7d6207f707e0b0d466547cd1a5a968464df7ede22030bcd43758dded949",
+            "link3_r.tris": "65913e144f9a83f6bba07bdabf5f904b1a248256de10f271c17cfb84eccd0dd4",
+            "link4.tris": "e6d6207b394c2f37eee3ac651e1a18b0256df5f8e7088e31cf7fa8b324d7ba07",
+            "link4_r.tris": "866e9268bb03b9c6964d39a4b77c87adeae9ee2ef5cdbdb56b6867ac46f7953d",
+            "link5.tris": "48e550c18d5dc56e4f30bd90e9b1e81e2eb33eaafdd9fb83384c22f433dd2131",
+            "link5_r.tris": "666379ccd63a96f682cc71d59fdd155565e859a0db60b54781f2b0044f43dda9",
+            "link6.tris": "5de974bed40796f87323ef8e52feeecfef9f676ff8b5c3eed369ebf8fa074b65",
+            "obs.tris": "d37a6ec7cce8c230374384b4b35214a48c1ddc04305066744613faf49bbb1b45",
+            "obs1.tris": "2ca88b053d90e8b45ecab6b8e9d02ddffd31cd8517f58b9d6292e95af238719a",
+            "obs2.tris": "324cddc6a24d6b5939a2ced1518388e6caed8ffa38f16391cabce6f7cbb1c94e",
+            "rod.tris": "4516edccf5114c212f55f343ab53bd790a8fcff8622e53a8937580504a4956bd",
+            "room.tris": "d6818413dfd407f1730f760006179a16dfb4f5b9555effd790e1358ddb62f865",
+            "table.tris": "756597cb4dbf32b731375844be6adf94d1d77e57775f4506cf31442723fc1bce"
+          },
+          "binary_sha256": "b0756031814ffaad419dd9853036d4d67e1b0070a8e27cb8059b39b5b7c8f3fd",
+          "physical_alignment_changes": [
+            "arm2 world base translation uses source APC global coordinates; no mesh local frame changed"
+          ]
+        },
+        "pose_consistency": {
+          "status": "PASS",
+          "passed": true,
+          "position_gate_mm": 1e-05,
+          "rotation_matrix_gate": 1e-05,
+          "errors": [
+            {
+              "arm": 1,
+              "translation_maxabs_mm": 2.2737367544323206e-13,
+              "rotation_maxabs": 2.220446049250313e-16,
+              "collision_TCP": [
+                [
+                  0.9680234245075893,
+                  0.18944472590116532,
+                  0.16444252927035644,
+                  -222.55399741666312
+                ],
+                [
+                  -0.18988342447260564,
+                  0.12496497483692037,
+                  0.9738213594774782,
+                  -1796.1449026796545
+                ],
+                [
+                  0.16393576399052143,
+                  -0.9739067978468168,
+                  0.15694143618752782,
+                  1017.3140259664764
+                ]
+              ],
+              "independent_TCP": [
+                [
+                  0.9680234245075893,
+                  0.18944472590116535,
+                  0.1644425292703564,
+                  -222.5539974166629
+                ],
+                [
+                  -0.18988342447260578,
+                  0.12496497483692037,
+                  0.9738213594774784,
+                  -1796.1449026796547
+                ],
+                [
+                  0.16393576399052143,
+                  -0.9739067978468168,
+                  0.15694143618752782,
+                  1017.3140259664764
+                ]
+              ]
+            },
+            {
+              "arm": 2,
+              "translation_maxabs_mm": 0.0,
+              "rotation_maxabs": 1.1102230246251565e-16,
+              "collision_TCP": [
+                [
+                  -0.9680234245075893,
+                  -0.18944472590116515,
+                  0.16444252927035644,
+                  1519.8881666969974
+                ],
+                [
+                  0.18988342447260576,
+                  -0.12496497483692048,
+                  0.9738213594774782,
+                  -2137.9350667303447
+                ],
+                [
+                  -0.1639357639905213,
+                  0.9739067978468168,
+                  0.15694143618752782,
+                  1312.3984011494151
+                ]
+              ],
+              "independent_TCP": [
+                [
+                  -0.9680234245075894,
+                  -0.18944472590116515,
+                  0.1644425292703564,
+                  1519.8881666969974
+                ],
+                [
+                  0.18988342447260573,
+                  -0.12496497483692039,
+                  0.9738213594774783,
+                  -2137.9350667303447
+                ],
+                [
+                  -0.1639357639905213,
+                  0.9739067978468168,
+                  0.15694143618752782,
+                  1312.3984011494151
+                ]
+              ]
+            }
+          ]
+        },
+        "native_collision": false,
+        "query_error_codes": []
+      }
+    },
+    "source_command": [
+      "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/IV_aligned/collision_batch",
+      "IV"
+    ],
+    "manifest_sha256": "c5df871adeea01d6487454dfd16fa217dde779958b5ba08b86ffff0e4f4a6388",
+    "manifest_path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/manifest.json",
+    "selected_variant": "aligned",
+    "source_stdout": "P4_COLLISION_RESULT {\"native_result\":0,\"cpu_s\":4.5000000000000003e-05,\"poses\":[[0.96802342450758927,0.18944472590116532,0.16444252927035644,-222.55399741666312,-0.18988342447260564,0.12496497483692037,0.97382135947747817,-1796.1449026796545,0.16393576399052143,-0.97390679784681677,0.15694143618752782,1017.3140259664764],[-0.96802342450758927,-0.18944472590116515,0.16444252927035644,1519.8881666969974,0.18988342447260576,-0.12496497483692048,0.97382135947747817,-2137.9350667303447,-0.16393576399052129,0.97390679784681677,0.15694143618752782,1312.3984011494151]],\"query_codes\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}\n",
+    "source_stderr": "merged into source_stdout",
+    "limitations": [
+      "Original mesh pair list and 8mm PQP tolerance retained; no omitted pair inferred clear.",
+      "TCP consistency is checked per query; source CAD mesh frame policy is retained."
+    ],
+    "total_adapter_wall_s": 0.6203780369978631
+  },
+  "passed": true
+}

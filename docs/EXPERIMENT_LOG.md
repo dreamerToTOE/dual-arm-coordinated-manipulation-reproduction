@@ -890,3 +890,8 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4恢复读账（不是新实验）
 
 只读核对旧R2三run execution.json：20261015_R2_SPATIAL01、20261015_R2_PLANAR01、20261015_R2_RSS_CONSTRUCTION01，合计wall16.337196963s/CPU10.593126s。保存原样，无新IK/NR/采样/规划。端点恢复与VI RSS待新协议/源码提交后执行，VI批准预算尚未消耗。
+
+
+## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
+
+实际命令与配置、seed、source commit、hash、终止原因详各results/p4_full/20261015_R2_*/execution.json。A01 wall7.450141228/CPU6.025647，A02 1.321430518/1.324637；VI Q1 45.133593772/5.641175，seed[7,23,41,101,20261013]；VI Q2固定219/643、无RNG、36/576IK、7.987086492/6.310368、四桥UNKNOWN_DEPTH_CAP；IV local固定24、2.651571520/.882651、24/24。9run总80.902103069/30.799802，sum自身时长不重复累计；正式规划0。具体账本results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER.json。

@@ -272,3 +272,8 @@ Before implementing TASK02 or later, read `docs/POST_TASK01_REUSE_MAP.md` and co
 
 实测1826项=1580通过+246失败，六环境组件资格均未通过；正式规划0。保存400空间IK/40平面APC/60NR的独立分母，近似π、Comau带符号几何、RSS非真奇异和VI源码缺项分别有证据，不改判旧失败。211项全文对照和9页中文Word/PDF已生成；交付完整性20/20，不等于科学通过。1282原科学文件、1194作者文件、五原工作树及13未跟踪文件均保全。
 见 reports/P4_FULL_R1_POST_TASK_20261015.md。用户在具体有限修复提案后回复“继续”，下一阶段仅在独立R2命名空间按2核小时/1小时墙时进行数值一致修复资格；原模型尺寸/基座/抓持/端点/判据不变，正式22500调用预算另审。P4仍部分完成，不启动P2/Isaac/FR3适配。
+
+
+## 2026-10-15 — P4 R2恢复：A端点完成、IV NR局部完成、VI严格桥仍UNKNOWN
+
+最新阶段入口：reports/P4_FULL_R2_RECOVERY_POST_TASK_20261015.md、reports/P4_FULL_R2_RECOVERY_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.md、results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER.json。原工作树与分支接续；57崩溃前文件已保全0792acf，无重做R0/R1。原12端点FAIL保持；最新RECONSTRUCTED12/12通过闭链、原支、原界和source离散碰撞策略。A01四UNKNOWN保留，v3只修我方TCP观测（IV未赋值T7、V少2mm），A02仅4已存候选回放4/4。B Q1 868构造/13888IK、7/30请求合格；Q2再36构造全部节点合格，但四半严格h=.0025在depth3仍UNKNOWN，不能算RSS/RBS规划PASS。IV新增24固定±h全关节原NR局部24/24合格，不替旧6拒绝/3FAIL；全24主动角被NR改变。9run总80.902103069wall/30.799802CPU；精确中心数学诊断待单独冻结。保持原B剩56构造，禁止重启原one-shot脚本。
