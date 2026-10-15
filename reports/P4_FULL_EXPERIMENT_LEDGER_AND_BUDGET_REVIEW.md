@@ -136,3 +136,14 @@ B Q1+Q2共904/960构造，wall53.12068026400084/180s、CPU11.951543/360s，余56
 ## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
 
 当前12run自身成本合计95.365357389998wall秒/45.058033CPU秒，R2余3504.634642610002/7154.941967。VI B累计910构造、54.513982463999wall/13.327177CPU，余50构造/125.486017536001wall/346.672823CPU。旧48仅扣R2、不扣B。不得重置claim、重跑原预算或重复加cumulative。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。 本轮新增center0构造、fiber6构造、旧48补碰撞0构造。未用source阈值改变.strict h=.0025或.gamma=.2；formal planning=0。
+
+
+## 2026-10-15 — R2用户批准974上限及固定64点组合离散资格实测
+
+用户明确批准原剩50加新增14，VI B总上限960→974；单项30wall/60CPU及累计180wall/360CPU保持，无正式规划预算。批准原文逐字保存于configs/p4_full/r2_vi_rss_ingress_composite_user_approval_20261015.json，源码/协议冻结243fa05。固定清单、原解析支、δ=.01、h=.0025、γ=.2未变，不换点或加深；原Q2 UNKNOWN、原center、六fiber及所有失败保留。
+
+单次INGRESS_COMPOSITE01实际64/64节点及四条regular↔fiber接入离散门通过，PASS_RECONSTRUCTED_COMPOSITE_DISCRETE_ONLY。96条regular叶和6条保存fiber叶均严格<h；四半regular最大叶距分别.001726025161094/.001850849712175/.001488951615670/.001491095303782rad。数学FK/J704、adapter内部192（合896）、IK1024、源碰撞64；实际wall14.198019690000/CPU10.876665。此为明确标记的独立重建组合，不是原作者RSS/RBS忠实实现证明、连续无碰撞或全局RSS规划成功。
+
+VI B累计974构造，余额0；累计wall68.712002153999/CPU24.203842，余111.287997846001wall/335.796158CPU。13run自身消耗逐份计入R2总账，合wall109.563377079999/CPU55.934698，余3490.436622920001/7144.065302。不得使用旧快照余50再次构造，不重置claim。新账本results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V3.json，旧9/12run账本不改。
+
+最新211项对照reports/P4_FULL_R2_INGRESS_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md保存全部历史列，另列本次组合资格；13run报告P4_FULL_R2_VI_RSS_INGRESS_POST_TASK_20261015.md及独立POST审查。正式Table I仍0/22500，500000配对投影、约50000合法点对、全部Fig.3–5/Table I–II及消融义务不缩。继续II/III普通PCS固定branch/RBS/回溯与三搜索器链接资格，先冻结版本/原返回对照/预算，0solve；工程成本另列并保守扣R2总帽，不扣已耗尽的VI候选账。P4仍部分完成，不P2/Isaac，不提前结题。
