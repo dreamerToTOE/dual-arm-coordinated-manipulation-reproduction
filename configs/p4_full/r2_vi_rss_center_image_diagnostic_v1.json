@@ -1,0 +1,139 @@
+{
+  "schema": "P4_R2_VI_RSS_CENTER_IMAGE_DIAGNOSTIC_V1",
+  "frozen": true,
+  "run_id": "20261015_R2_VI_RSS_CENTER_IMAGE01",
+  "authorization_budget_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015",
+  "diagnostic_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.CENTER_IMAGE_V1",
+  "authorization_scope": "Within the user existing B qualification authorization960/180wall/360CPU; root agent freezes exactly2 fixed mathematical diagnostics. No new authorization or additional candidate budget.",
+  "classification": "RECONSTRUCTED / FIXED-CENTER-FIRST-ORDER-DIAGNOSTIC",
+  "runner_source_sha256": "95881dab8fefbd9b198c9a81468a2635896eb727b2b5f05c4e2512851c2b07e0",
+  "dependency_source_sha256": {
+    "scripts/qualify_p4_full_r2_vi_rss_bridge.py": "4cde4164c4ee0a68d2f0c4ca17f108728374a580b0bfb79f565620e84b0db666",
+    "configs/p4_full/r2_vi_rss_bridge_qualification_v1.json": "2362b4f46f324dab4f587af85bc78cfaba2cc9a3e51e169984f9b4a824739d31",
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "configs/p4_full/r2_vi_rss_reconstructed_qualification_v1.json": "c53238eee4d50ebcf6ae5eb645ef2cde128a6e3bb72f56a991d6bb51a07ec8f4",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp": "9d997c32f9f4a40d7945e2cd563145b0ff27b267c32d5a24407f6c48baa47dea",
+    "baselines/p4_full/geometry_consistent/spatial_ik_patch.py": "3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8"
+  },
+  "input_sha256": {
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/events.jsonl": "ef019b0586c1218b75e69a726c7076ee85a2f5cd54dc5b7bedd3086ea9bc5555",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/events.jsonl": "16ecfe7df04716ac9e5314837df094d0b74579f962d92593367f8ff2928c457f",
+    "results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.claim.json": "9667249aef06684853f8da4cbfc27d5592779885341ff28d080a8a8d96bb5c7b",
+    "results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.Q2_BRIDGE_V1.claim.json": "848b557cd4ff55862b0b241c3ea4b5a9c7338e96fd6bdc815ffbf08909b1f6fe",
+    "reports/P4_FULL_R2_VI_RSS_BRIDGE_ROOT_CAUSE_20261015.json": "39fef243b054d2283069fc4b92366b6e65e41043169f36821820847aae09e20a"
+  },
+  "prior_executions": {
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774"
+  },
+  "parent_B_and_Q2_consumed": {
+    "candidate_constructions": 904,
+    "wall_s": 53.12068026400084,
+    "cpu_s": 11.951543
+  },
+  "parent_remaining_before_diagnostic": {
+    "candidate_constructions": 56,
+    "wall_s": 126.87931973599916,
+    "cpu_s": 348.04845700000004,
+    "r2_total_wall_s": 3521.7494684509975,
+    "r2_total_cpu_s": 7170.082848999999,
+    "policy": "Retained prefix, no repeat execution; any evidenced continuation needs a distinct frozen reviewed protocol charging this remaining budget."
+  },
+  "fixed_fixture_order": [
+    219,
+    643
+  ],
+  "active_arm": 1,
+  "fixed_inputs": [
+    {
+      "parent_construction": 219,
+      "q18_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91646772223891,
+        0.0,
+        -3.947822858635717
+      ],
+      "designated_arm": 3,
+      "parent_event_line_sha256": "1d406f718c9ccc30ccf7a78a14b77d39c36bdc2b1990d29f2eb03b69610a0b49"
+    },
+    {
+      "parent_construction": 643,
+      "q18_rad": [
+        -0.45081720023503885,
+        0.04723312235440813,
+        0.250207286644899,
+        -0.6952425814547049,
+        -1.4128820027600142,
+        -0.08233521342308002,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.085295915921684,
+        0.0,
+        5.285848643627319,
+        0.37111974294611577,
+        0.29956646223514555,
+        -0.643951347100347,
+        -0.27078445813327373,
+        1.542062663751414,
+        -0.0401245583841674
+      ],
+      "designated_arm": 2,
+      "parent_event_line_sha256": "b1ec68d48744e630eb7643115105c919f8796a8d66eb34bba2914a0eb1c16d22"
+    }
+  ],
+  "budget": {
+    "wall_s": 5.0,
+    "cpu_s": 10.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "max_active_FK_J_calls": 2,
+  "candidate_constructions": 0,
+  "IK_NR_sampling_collision_planning_calls": 0,
+  "method": "One existing independent analytic arm_fk_jac(center[:6],VI,1) per fixed center. Validate its pose against the original saved native arm1 IK round-trip T. Use literal original grasps and lever offset to compute both target Jacobian blocks. Multiply each fixed center-to-nonzero-endpoint active chord; project onto the exact saved designated-center rank5 image. No finite differences or FK of other arms.",
+  "target_velocity": "world target linear J=J1_linear-skew(R1*grasp_translation)*J1_angular; world target angular J=J1_angular; lambda0=center/lambda1=fixed nonzero side endpoint.",
+  "wrist_fiber_diagnostic": "At q5=0, q4+theta/q6-theta preserves pose analytically for original X-Y-X wrist. Basis=[J1,J2,J3,J4,J5,cross_axis4(J5)] from saved designated center J. Solve target tangent for c/d on last two columns; choose theta=atan2(sign*d,sign*c), sign=-1 for negative q5 branch1 and +1 for positive branch3. No fiber configuration is constructed or checked.",
+  "numerical_diagnostic_gates": {
+    "rank_relative": 1e-06,
+    "position_mm_to_m": 0.001,
+    "image_residual_report_zero_absolute": 1e-10,
+    "native_fk_position_maxabs_mm": 1e-07,
+    "native_fk_rotation_matrix_maxabs": 1e-10
+  },
+  "limitations": [
+    "Exact-center means evaluated at that fixed state, not arbitrary precision or new native-J measurement.",
+    "Nonzero image residual tests a finite differentiable local lift condition; it is not a global continuity impossibility proof.",
+    "Fiber endpoint/connector remains hypothetical and unconstructed; no original Q2 UNKNOWN is upgraded.",
+    "No original-author runnable VI RSS equivalence, continuous collision certificate or planning success."
+  ],
+  "one_shot_policy": "Separate atomic retained diagnostic claim; do not alter original/B/Q2 claims or inputs. No repeat after failure. Sum each execution actual wall_s/cpu_s once, never cumulative totals."
+}

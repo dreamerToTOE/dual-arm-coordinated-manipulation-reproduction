@@ -31,3 +31,14 @@ PRIOR-ASSET：原631b1f6记录和有界执行模式THIN_ADAPTER；B Evidence/Run
 冻结前代码复核：audit_coverage对脚本SHA4cde4164c4ee0a68d2f0c4ca17f108728374a580b0bfb79f565620e84b0db666独立只读复核未发现阻断执行的问题；父余额、固定首fixture、active中点、真2π副本、严格门与source文本旁审、timeout前缀及one-shot claim均与声明一致。
 
 IV-NR冻结前独立代码复核：audit_coverage逐项核对24固定数组、原NR全12更新不变、旧失败保留、native52F/24碰撞及60wall120CPU帽、Q2后8份ledger、CONVERGED独立soundness和前缀留证，未发现阻断项。源码SHA a2d0530295404a4dd150b8c3d6c3374a984492b5bd8b77b1163894d6ab76a3fa；h_start=9.999999999996123e-5、h_goal=1e-4 rad；冻结前R2累计wall78.25053154900252/CPU29.917151。
+
+
+## VI固定中心精确求值的一阶数学诊断 PRE-TASK
+
+用户既有B预算内部，固定219/643保存中心各调用一次原独立arm1 FK/J，总2次；无新构型、IK/NR/碰撞/随机/规划，候选数0。预算5wall/10CPU从B原余126.879319736/348.048457与R2总账扣；全部prior9 execution、B/Q2 claim、原source和保存根因JSON先绑定。另建不可重复claim，原56候选余额不变。
+
+目的：去掉保存数据active J向center外推的不确定性，直接测试原腕族rank5像的一阶相容。以原Q/S杠杆得到目标J，将固定active弦方向投影至B保存的指定奇异center J像；保存SVD、残差、6basis condition、非零q5导数与条件性的fiber角推断。active FK与原生IK保存T交叉。只检查有限可微lift的必要条件，不升格为无连续路径/全RSS失败/论文错误，也不构造推断fiber端点。
+
+复用B RunBudget/Evidence和原已资格arm_fk_jac；新增最小代数诊断，既有几何、阈值和原Q2 UNKNOWN保留。独立代码审查后源码/协议提交再执行；同名已有run/claim拒绝复跑。source/pose/J秩矛盾、预算到达即保存前缀不重启。
+
+独立代码审查audit_endpoints确认仅2固定active模型调用、targetJ负activeblock与原约束一致、保存nativeT可交叉、rank5/sixbasis/θ符号正确、budget及声明边界匹配；脚本SHA95881dab8fefbd9b198c9a81468a2635896eb727b2b5f05c4e2512851c2b07e0。未新增科学运行。
