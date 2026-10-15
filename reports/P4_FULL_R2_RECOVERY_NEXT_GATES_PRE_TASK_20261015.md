@@ -42,3 +42,17 @@ IV-NR冻结前独立代码复核：audit_coverage逐项核对24固定数组、�
 复用B RunBudget/Evidence和原已资格arm_fk_jac；新增最小代数诊断，既有几何、阈值和原Q2 UNKNOWN保留。独立代码审查后源码/协议提交再执行；同名已有run/claim拒绝复跑。source/pose/J秩矛盾、预算到达即保存前缀不重启。
 
 独立代码审查audit_endpoints确认仅2固定active模型调用、targetJ负activeblock与原约束一致、保存nativeT可交叉、rank5/sixbasis/θ符号正确、budget及声明边界匹配；脚本SHA95881dab8fefbd9b198c9a81468a2635896eb727b2b5f05c4e2512851c2b07e0。未新增科学运行。
+
+## VI固定6点奇异fiber组件资格 PRE-TASK（接续同一B授权）
+
+固定中心一阶诊断已执行并由audit_endpoints只读重算：四条主动直弦的目标twist均不在原指定奇异center的rank5像内。仅支持OUR-RECONSTRUCTION局部投影图不匹配，不能推为无连续路径或原论文理论错误；Q2原UNKNOWN保持。详见新增CENTER_IMAGE_REVIEW报告，已绑定的旧保存归约JSON/MD保持原字节。
+
+当前最小科学问题：条件性推得的四个同位姿奇异fiber端点及219两侧各一个theta/2中点，是否通过原几何、两闭环、branch、rank、限位和源离散碰撞策略，以及原center到各端点的短叶门。只6个固定构造，按exact-center保存theta逐值绑定，不新IK/NR/RNG/规划。只改指定臂q4+=theta*f、q6-=theta*f，其余16角保持且q5=0。219各两叶、643各一叶，全18原坐标欧氏距离严格<.0025。
+
+预算6构造/10wall/20CPU从原B余56构造/126.671165572wall/347.840265CPU扣；原960/180/360与R2总3600/7200均不重置。数学arm FK/J36、源碰撞适配器内部TCP对照18，总54；6逻辑collision/native查询。内部请求、确认完成和中断不确定前缀分开记账，拒绝/失败不换点重试。保留独占claim、全部矩阵、输入、过程日志和真实成本。
+
+这只是已批独立三臂RSS重建内部的奇异fiber离散组件资格；没有regular↔fiber接入、作者原生RBS、连续碰撞或RSS规划通过的结论。若之后采用新通用局部连接规则，先提供相对原RBS的数学差异、固定条件和新预算供科学审查，不将组件通过冒充新算法已被批准。
+
+PRIOR-ASSET：复用已冻结B的RunBudget/Evidence、physical_nr/rss_geometry、原位姿与Q2保存节点、原已资格collision adapter。原固定631b1f6工程及复用分类沿既有PRE记录；只新增6点组件runner和独立协议，旧FR3/Isaac模型仅REFERENCE_ONLY，不替换作者几何。科学执行前源码/协议和全部输入须提交冻结；已有run/claim立即拒绝复跑。
+
+冻结前独立代码复核audit_endpoints：runner SHA baf3eba251f14f0b8dc5e7c1b98ea39f2d3261f2d10338877bf99a33deeb395b，固定6点schedule、全部秩/branch/原界/位姿/叶门、54个FK/J计数、原B及R2余额、独占claim与前缀、Q2 UNKNOWN及仅组件边界均匹配，无阻断项；源码与协议提交后单次执行。

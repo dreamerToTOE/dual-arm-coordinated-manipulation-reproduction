@@ -1,0 +1,606 @@
+{
+  "schema": "P4_R2_VI_RSS_CENTER_IMAGE_DIAGNOSTIC_V1",
+  "run_id": "20261015_R2_VI_RSS_CENTER_IMAGE01",
+  "diagnostic_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.CENTER_IMAGE_V1",
+  "authorization_budget_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015",
+  "classification": "RECONSTRUCTED / FIXED-CENTER-FIRST-ORDER-DIAGNOSTIC",
+  "started_at_utc": "2026-10-15T06:45:16.691744+00:00",
+  "protocol_sha256": "dc4d5606b09f1b184324b3f77f0c03a4d3b5fda77cd0f26742bf11f79839c43c",
+  "source_hashes": {
+    "scripts/diagnose_p4_full_r2_vi_rss_center_image.py": "95881dab8fefbd9b198c9a81468a2635896eb727b2b5f05c4e2512851c2b07e0",
+    "configs/p4_full/r2_vi_rss_center_image_diagnostic_v1.json": "dc4d5606b09f1b184324b3f77f0c03a4d3b5fda77cd0f26742bf11f79839c43c",
+    "scripts/qualify_p4_full_r2_vi_rss_bridge.py": "4cde4164c4ee0a68d2f0c4ca17f108728374a580b0bfb79f565620e84b0db666",
+    "configs/p4_full/r2_vi_rss_bridge_qualification_v1.json": "2362b4f46f324dab4f587af85bc78cfaba2cc9a3e51e169984f9b4a824739d31",
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "configs/p4_full/r2_vi_rss_reconstructed_qualification_v1.json": "c53238eee4d50ebcf6ae5eb645ef2cde128a6e3bb72f56a991d6bb51a07ec8f4",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp": "9d997c32f9f4a40d7945e2cd563145b0ff27b267c32d5a24407f6c48baa47dea",
+    "baselines/p4_full/geometry_consistent/spatial_ik_patch.py": "3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8"
+  },
+  "input_sha256": {
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/events.jsonl": "ef019b0586c1218b75e69a726c7076ee85a2f5cd54dc5b7bedd3086ea9bc5555",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/events.jsonl": "16ecfe7df04716ac9e5314837df094d0b74579f962d92593367f8ff2928c457f",
+    "results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.claim.json": "9667249aef06684853f8da4cbfc27d5592779885341ff28d080a8a8d96bb5c7b",
+    "results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.Q2_BRIDGE_V1.claim.json": "848b557cd4ff55862b0b241c3ea4b5a9c7338e96fd6bdc815ffbf08909b1f6fe",
+    "reports/P4_FULL_R2_VI_RSS_BRIDGE_ROOT_CAUSE_20261015.json": "39fef243b054d2283069fc4b92366b6e65e41043169f36821820847aae09e20a"
+  },
+  "prior_execution_hashes": {
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774"
+  },
+  "previous_wall_s": 80.9021030690028,
+  "previous_cpu_s": 30.799802,
+  "source_commit": "57ca47373c5075a0b6352a916dc4ab1568beb907",
+  "candidate_constructions": 0,
+  "IK_NR_sampling_collision_planning_calls": 0,
+  "original_Q2_unknown_unchanged": true,
+  "full_RSS_or_planning_pass": false,
+  "limitations": [
+    "Exact-center means evaluated at that fixed state, not arbitrary precision or new native-J measurement.",
+    "Nonzero image residual tests a finite differentiable local lift condition; it is not a global continuity impossibility proof.",
+    "Fiber endpoint/connector remains hypothetical and unconstructed; no original Q2 UNKNOWN is upgraded.",
+    "No original-author runnable VI RSS equivalence, continuous collision certificate or planning success."
+  ],
+  "status": "FIXED_CENTER_FIRST_ORDER_DIAGNOSTIC_RECORDED",
+  "counts": {
+    "active_FK_J_calls": 2
+  },
+  "wall_s": 0.20815416400000686,
+  "cpu_s": 0.20819200000000004,
+  "ended_at_utc": "2026-10-15T06:45:16.899843+00:00",
+  "fixed_center_results": [
+    {
+      "parent_construction": 219,
+      "designated_passive_arm": 3,
+      "active_pose": [
+        [
+          0.9525623448815892,
+          0.11944409779034952,
+          0.2799251446668158,
+          -322.32627434687754
+        ],
+        [
+          -0.12879351660444158,
+          0.9915552876009652,
+          0.015177012592354296,
+          872.8610148356398
+        ],
+        [
+          -0.2757484527505997,
+          -0.05050959447091665,
+          0.959901855228978,
+          1970.6931316240627
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "active_world_geometric_J": [
+        [
+          -872.8610148356398,
+          1318.6026904601983,
+          216.67117006496508,
+          -13.845549777371087,
+          34.623519751924775,
+          -3.774758283725532e-15
+        ],
+        [
+          2277.6737256531223,
+          547.3523753466769,
+          89.94026818101825,
+          41.02410624002357,
+          117.43054995624345,
+          -5.5067062021407764e-14
+        ],
+        [
+          0.0,
+          -1913.775547697422,
+          -1540.9202291384381,
+          -66.98999789863404,
+          64.75745375601403,
+          1.2878587085651816e-14
+        ],
+        [
+          0.0,
+          -0.3833823692378767,
+          -0.3833823692378767,
+          0.9227013536111399,
+          0.17358088274728947,
+          0.9525623448815892
+        ],
+        [
+          0.0,
+          0.9235897135403536,
+          0.9235897135403536,
+          0.38301361076276075,
+          -0.5143169241787933,
+          -0.12879351660444158
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.043849583973426455,
+          0.8398498548240257,
+          -0.2757484527505997
+        ]
+      ],
+      "target_J": [
+        [
+          -452.0997011759026,
+          1181.9559518441138,
+          80.02443144888053,
+          -52.06288524976192,
+          464.0939504164735,
+          -96.96905167183716
+        ],
+        [
+          2807.8336168257083,
+          490.6302728468049,
+          33.21816568114625,
+          200.78670109397396,
+          588.3668575112206,
+          -5.257478816502339
+        ],
+        [
+          0.0,
+          -2242.1133004015846,
+          -1869.2579818426004,
+          -658.2854857592795,
+          264.3915380558959,
+          -332.5202268284317
+        ],
+        [
+          0.0,
+          -0.3833823692378767,
+          -0.3833823692378767,
+          0.9227013536111399,
+          0.17358088274728947,
+          0.9525623448815892
+        ],
+        [
+          0.0,
+          0.9235897135403536,
+          0.9235897135403536,
+          0.38301361076276075,
+          -0.5143169241787933,
+          -0.12879351660444158
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.043849583973426455,
+          0.8398498548240257,
+          -0.2757484527505997
+        ]
+      ],
+      "grasp_offset_world_mm": [
+        530.1598911725861,
+        -420.7613136597372,
+        -147.95177621920772
+      ],
+      "native_fk_errors": {
+        "position_maxabs_mm": 4.547473508864641e-13,
+        "rotation_matrix_maxabs": 2.220446049250313e-16
+      },
+      "saved_loop_metrics": {
+        "position_maxabs_mm": 5.684341886080802e-14,
+        "rotation_matrix_maxabs": 2.220446049250313e-16
+      },
+      "saved_designated_J_rank": 5,
+      "saved_designated_J_singular_values": [
+        3.4223643718222387,
+        3.1104925477534575,
+        1.4135141655749293,
+        0.9025115089024235,
+        0.45518020687336774,
+        4.033200430022194e-17
+      ],
+      "saved_right_null_vector": [
+        0.0,
+        9.92261828258734e-16,
+        -1.6299295959959145e-15,
+        -0.7071067811865471,
+        -2.1646821301056229e-16,
+        0.7071067811865479
+      ],
+      "wrist_basis_singular_values": [
+        3.4545265226315403,
+        3.119425301342345,
+        1.0000470801573556,
+        0.9329759527580084,
+        0.8906494704706137,
+        0.31352814456525957
+      ],
+      "wrist_basis_condition": 11.018234192090194,
+      "halves": [
+        {
+          "half": "negative_endpoint_to_center",
+          "lambda_definition": "0=saved center;1=fixed nonzero side endpoint",
+          "fixed_active_chord_q6_rad": [
+            -0.0012786161097155246,
+            -0.007021520200925613,
+            0.01173854436074473,
+            -0.003063108602048281,
+            0.011575299237627568,
+            -0.00156407345400833
+          ],
+          "target_world_twist_scaled": [
+            -0.0010985279511709098,
+            -0.0004414647074739282,
+            -0.0006024267473722547,
+            -0.0041153851686974345,
+            -0.0025685470732750727,
+            0.008739872071616486
+          ],
+          "image_projection_residual_vector_scaled": [
+            -3.192420696979375e-06,
+            4.547034215745833e-06,
+            5.917370864664748e-06,
+            -6.831618054072876e-06,
+            -2.385361794314707e-06,
+            -3.6665059391545463e-06
+          ],
+          "image_projection_residual_norm_scaled": 1.1475476893968945e-05,
+          "image_projection_residual_signed_left_null": -1.1475476893969567e-05,
+          "target_twist_norm_scaled": 0.010083836854887377,
+          "numerical_outside_rank5_image": true,
+          "wrist_six_basis_coefficients": [
+            -1.1567957729324306e-05,
+            -6.485703164136465e-05,
+            6.368718446485584e-05,
+            -1.289976058746542e-05,
+            -0.010006609124430244,
+            1.7865290180453274e-05
+          ],
+          "wrist_six_basis_reconstruction_maxabs": 5.421010862427522e-20,
+          "hypothetical_regular_branch_fiber_limit_q4_offset_rad": -0.0017853471617246882,
+          "hypothetical_regular_branch_fiber_limit_q6_offset_rad": 0.0017853471617246882,
+          "hypothetical_regular_branch_fiber_limit_full18_gap_rad": 0.002524862169655366,
+          "nonzero_q5_first_derivative_rad_per_lambda": -0.010006625072307039,
+          "designated_branch": 1,
+          "scope": "First-order algebra at the fixed center; no fiber configuration or connector constructed, no global non-continuity claim."
+        },
+        {
+          "half": "center_to_positive_endpoint",
+          "lambda_definition": "0=saved center;1=fixed nonzero side endpoint",
+          "fixed_active_chord_q6_rad": [
+            0.0012355157151218155,
+            0.007108435709439198,
+            -0.011900130761965944,
+            0.003096615750752818,
+            -0.011590915112991707,
+            0.0014796295495900225
+          ],
+          "target_world_twist_scaled": [
+            0.0012070098026007862,
+            0.00035570563481913633,
+            0.0007114923312472188,
+            0.00409178106288788,
+            0.002531322835272607,
+            -0.00877133290634932
+          ],
+          "image_projection_residual_vector_scaled": [
+            -3.46243614650593e-06,
+            4.931623091798817e-06,
+            6.417863032089251e-06,
+            -7.409437393964685e-06,
+            -2.5871160736750526e-06,
+            -3.976619593748856e-06
+          ],
+          "image_projection_residual_norm_scaled": 1.24460745520019e-05,
+          "image_projection_residual_signed_left_null": -1.2446074552000148e-05,
+          "target_twist_norm_scaled": 0.010108222841658512,
+          "numerical_outside_rank5_image": true,
+          "wrist_six_basis_coefficients": [
+            -1.1634675584852918e-05,
+            -6.463808046809496e-05,
+            6.242959682172586e-05,
+            -1.3439156719727993e-05,
+            0.009993051799408645,
+            1.9376339260979294e-05
+          ],
+          "wrist_six_basis_reconstruction_maxabs": 1.734723475976807e-18,
+          "hypothetical_regular_branch_fiber_limit_q4_offset_rad": 0.0019389787391517854,
+          "hypothetical_regular_branch_fiber_limit_q6_offset_rad": -0.0019389787391517854,
+          "hypothetical_regular_branch_fiber_limit_full18_gap_rad": 0.002742130030061539,
+          "nonzero_q5_first_derivative_rad_per_lambda": 0.009993070584569465,
+          "designated_branch": 3,
+          "scope": "First-order algebra at the fixed center; no fiber configuration or connector constructed, no global non-continuity claim."
+        }
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "designated_passive_arm": 2,
+      "active_pose": [
+        [
+          0.6110031531426855,
+          0.22869960544787407,
+          -0.7578731010648702,
+          -698.5525327261466
+        ],
+        [
+          0.40705484546503096,
+          0.7303342755666294,
+          0.5485601140403906,
+          -823.0805910053107
+        ],
+        [
+          0.678956183883125,
+          -0.6436678774030543,
+          0.3531432626658917,
+          1665.4194286468833
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "active_world_geometric_J": [
+        [
+          823.0805910053107,
+          1010.2800163152822,
+          -113.57935494894286,
+          -22.64963259133107,
+          107.21485422223867,
+          4.707345624410664e-14
+        ],
+        [
+          1901.4474672738534,
+          -489.039530547367,
+          54.97960320613695,
+          -105.72496849804313,
+          -67.39929160774163,
+          -6.927791673660977e-14
+        ],
+        [
+          -0.0,
+          -1545.593643059124,
+          -1486.574190912666,
+          83.7680825282581,
+          -56.07638116782095,
+          -8.881784197001252e-16
+        ],
+        [
+          0.0,
+          0.43570123437449904,
+          0.43570123437449904,
+          0.8605681294313168,
+          0.165595690656409,
+          0.6110031531426855
+        ],
+        [
+          0.0,
+          0.9000913477889552,
+          0.9000913477889552,
+          -0.4165694928382905,
+          0.7729749746475549,
+          0.40705484546503096
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.2930739706004851,
+          -0.6124440838187915,
+          0.678956183883125
+        ]
+      ],
+      "target_J": [
+        [
+          325.8524569809111,
+          1176.256614008762,
+          52.39724274453684,
+          46.259690701066646,
+          554.2756565600216,
+          -262.535314522486
+        ],
+        [
+          2347.2728201201717,
+          -569.3827186804061,
+          -25.363584926902128,
+          -395.07330191815583,
+          -370.97819131938763,
+          190.0270663673517
+        ],
+        [
+          -0.0,
+          -1730.2342740208933,
+          -1671.2148218744353,
+          697.3840088559025,
+          -318.3493857138731,
+          122.332587612911
+        ],
+        [
+          0.0,
+          0.43570123437449904,
+          0.43570123437449904,
+          0.8605681294313168,
+          0.165595690656409,
+          0.6110031531426855
+        ],
+        [
+          0.0,
+          0.9000913477889552,
+          0.9000913477889552,
+          -0.4165694928382905,
+          0.7729749746475549,
+          0.40705484546503096
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.2930739706004851,
+          -0.6124440838187915,
+          0.678956183883125
+        ]
+      ],
+      "grasp_offset_world_mm": [
+        445.8253528463183,
+        497.2281340243996,
+        184.39972576249707
+      ],
+      "native_fk_errors": {
+        "position_maxabs_mm": 4.547473508864641e-13,
+        "rotation_matrix_maxabs": 1.1102230246251565e-16
+      },
+      "saved_loop_metrics": {
+        "position_maxabs_mm": 5.684341886080801e-13,
+        "rotation_matrix_maxabs": 2.8275992658421956e-16
+      },
+      "saved_designated_J_rank": 5,
+      "saved_designated_J_singular_values": [
+        3.515140066509858,
+        3.193530528319757,
+        1.4105826441625156,
+        0.9110033222350001,
+        0.32865064544304934,
+        6.587210533673715e-17
+      ],
+      "saved_right_null_vector": [
+        -0.0,
+        -2.498001805406602e-16,
+        5.620756012927246e-16,
+        0.7071067811865475,
+        2.5214326327599823e-16,
+        -0.7071067811865477
+      ],
+      "wrist_basis_singular_values": [
+        3.5406801521153186,
+        3.2048511470683723,
+        1.0002505751642188,
+        0.9303049062017466,
+        0.8966020003983225,
+        0.15607842641623285
+      ],
+      "wrist_basis_condition": 22.685263001518013,
+      "halves": [
+        {
+          "half": "negative_endpoint_to_center",
+          "lambda_definition": "0=saved center;1=fixed nonzero side endpoint",
+          "fixed_active_chord_q6_rad": [
+            0.0016972625044860412,
+            -0.004281996196538795,
+            0.008268318374868633,
+            0.00981704069986189,
+            -7.082099905608708e-05,
+            -0.00990515012614214
+          ],
+          "target_world_twist_scaled": [
+            -0.0010351014907491512,
+            0.00047789432722885206,
+            -0.0007522092652876047,
+            0.004121272233667817,
+            -0.004588107777155031,
+            -0.007861645621521932
+          ],
+          "image_projection_residual_vector_scaled": [
+            -3.0558536754047433e-06,
+            -3.866802982714981e-06,
+            3.7330219020051793e-06,
+            2.6888643010272717e-06,
+            -1.1311678768050407e-06,
+            1.873449814815062e-06
+          ],
+          "image_projection_residual_norm_scaled": 7.088385268659824e-06,
+          "image_projection_residual_signed_left_null": 7.088385268657835e-06,
+          "target_twist_norm_scaled": 0.010084975287035657,
+          "numerical_outside_rank5_image": true,
+          "wrist_six_basis_coefficients": [
+            -5.616614447299485e-06,
+            -9.534945308913698e-05,
+            0.00013203737329616188,
+            4.81448910894776e-05,
+            -0.009965883597222216,
+            -1.6081544167103875e-05
+          ],
+          "wrist_six_basis_reconstruction_maxabs": 7.589415207398531e-19,
+          "hypothetical_regular_branch_fiber_limit_q4_offset_rad": 0.0016136582423436588,
+          "hypothetical_regular_branch_fiber_limit_q6_offset_rad": -0.0016136582423436588,
+          "hypothetical_regular_branch_fiber_limit_full18_gap_rad": 0.002282057371357533,
+          "nonzero_q5_first_derivative_rad_per_lambda": -0.00996589657228318,
+          "designated_branch": 1,
+          "scope": "First-order algebra at the fixed center; no fiber configuration or connector constructed, no global non-continuity claim."
+        },
+        {
+          "half": "center_to_positive_endpoint",
+          "lambda_definition": "0=saved center;1=fixed nonzero side endpoint",
+          "fixed_active_chord_q6_rad": [
+            -0.001646962324607093,
+            0.004333782783249807,
+            -0.00833929852053572,
+            -0.00977540423657497,
+            -7.098726963805646e-06,
+            0.009899134707260171
+          ],
+          "target_world_twist_scaled": [
+            0.0010690034216655402,
+            -0.0003761981871388915,
+            0.0008343358283609368,
+            -0.004110382488420439,
+            0.004490808736762198,
+            0.007943380507148726
+          ],
+          "image_projection_residual_vector_scaled": [
+            -3.16048464001073e-06,
+            -3.99920046276111e-06,
+            3.860838782006044e-06,
+            2.780929725416416e-06,
+            -1.1698985225285993e-06,
+            1.9375958381848135e-06
+          ],
+          "image_projection_residual_norm_scaled": 7.331088181477882e-06,
+          "image_projection_residual_signed_left_null": 7.331088181479007e-06,
+          "target_twist_norm_scaled": 0.010106448973733029,
+          "numerical_outside_rank5_image": true,
+          "wrist_six_basis_coefficients": [
+            -5.563081813953282e-06,
+            -9.44728460587652e-05,
+            0.00013035242656004624,
+            4.796634258859921e-05,
+            0.010033242651623824,
+            -1.6632168528520423e-05
+          ],
+          "wrist_six_basis_reconstruction_maxabs": 8.673617379884035e-19,
+          "hypothetical_regular_branch_fiber_limit_q4_offset_rad": -0.001657704679438176,
+          "hypothetical_regular_branch_fiber_limit_q6_offset_rad": 0.001657704679438176,
+          "hypothetical_regular_branch_fiber_limit_full18_gap_rad": 0.0023443484400708127,
+          "nonzero_q5_first_derivative_rad_per_lambda": 0.01003325643723878,
+          "designated_branch": 3,
+          "scope": "First-order algebra at the fixed center; no fiber configuration or connector constructed, no global non-continuity claim."
+        }
+      ]
+    }
+  ],
+  "cumulative_execution_wall_s": 81.11025723300281,
+  "cumulative_execution_cpu_s": 31.007994,
+  "authorization_budget_remaining": {
+    "candidate_constructions": 56,
+    "wall_s": 126.67116557199915,
+    "cpu_s": 347.84026500000004,
+    "r2_total_wall_s": 3518.889742766997,
+    "r2_total_cpu_s": 7168.992006,
+    "policy": "Fixed mathematical diagnosis consumes VI original wall/CPU but no candidate. No reset or automatic repeat."
+  }
+}
