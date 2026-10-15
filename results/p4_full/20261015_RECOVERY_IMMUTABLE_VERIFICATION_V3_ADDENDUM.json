@@ -1,0 +1,43 @@
+{
+  "schema": "P4_RECOVERY_IMMUTABLE_VERIFICATION_ARITHMETIC_ADDENDUM_V3",
+  "created_at_utc": "2026-10-15T08:13:58.049115+00:00",
+  "previous_V2_path": "results/p4_full/20261015_RECOVERY_IMMUTABLE_VERIFICATION_V2.json",
+  "previous_V2_sha256": "bd8f04922e96a973e7d786039c82f294a7ff7c2001b6259ee3f1afedea6fa7c6",
+  "previous_V2_unchanged_passed_false_preserved": true,
+  "ledger_V2_path": "results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json",
+  "ledger_V2_sha256": "3f4cedc3036396c6871e095f0fdf4bdb96c05edf27a8dae595f0da67368b4197",
+  "numeric_resolution": {
+    "wall_s": {
+      "n": 12,
+      "stored_sequential_sum": 95.36535738999828,
+      "recomputed_sequential_sum": 95.36535738999828,
+      "faithfully_summed_reference": 95.36535738999828,
+      "absolute_difference": 0.0,
+      "binary64_forward_rounding_bound": 1.2356992443618236e-13,
+      "within_rounding_bound": true,
+      "stored_value_reproduced_exactly": true
+    },
+    "cpu_s": {
+      "n": 12,
+      "stored_sequential_sum": 45.058032999999995,
+      "recomputed_sequential_sum": 45.058032999999995,
+      "faithfully_summed_reference": 45.058033,
+      "absolute_difference": 7.105427357601002e-15,
+      "binary64_forward_rounding_bound": 5.857962592781271e-14,
+      "within_rounding_bound": true,
+      "stored_value_reproduced_exactly": true
+    }
+  },
+  "reason": "The ledger uses Python sequential sum of12 binary64 execution costs. math.fsum differs by7.105427357601002e-15 CPU seconds. Stored values exactly reproduce sequential addition; differences satisfy the positive-sum IEEE754 forward rounding bound gamma_(n-1)*sum(abs(values)) plus half an ulp for the reference. No timing value, execution, source, budget or scientific acceptance gate is changed.",
+  "all_nonledger_preservation_checks_passed": true,
+  "preserved_counts": {
+    "old_scientific": 1028,
+    "crash_files": 57,
+    "other_worktrees": 5,
+    "other_uncommitted": 13,
+    "coverage_IDs": 211,
+    "formal_required_calls": 22500
+  },
+  "new_scientific_calls": 0,
+  "passed": true
+}
