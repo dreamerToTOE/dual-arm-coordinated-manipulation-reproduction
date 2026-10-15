@@ -1,0 +1,231 @@
+{
+  "schema": "P4_COLLISION_CONTROLS_EXECUTION_V1",
+  "started_at_utc": "2026-10-15T05:27:13.534741+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "scripts/qualify_p4_full_collision_controls.py",
+    "--run",
+    "--protocol",
+    "configs/p4_full/r2_collision_controls_v1.json",
+    "--output",
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01"
+  ],
+  "protocol_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_collision_controls_v1.json",
+  "protocol_sha256": "3f7ea84e504ee7150a53d459ade131ea2f58d7a2cff0b9149fa474a23a3afe05",
+  "source_commit": "17da8c393b7e53cfdf571df45a64a5b3faae4d46",
+  "script_sha256": "fadd61c520292880e54a03799ee9c3e23987f5332297d2888e6a3ceb0cd47528",
+  "processes": [
+    {
+      "model": "abb",
+      "command": [
+        "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/pqp_engine_controls",
+        "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/simulator/Base_r.tris"
+      ],
+      "stdin": "",
+      "timeout_s": 59.99628171599943,
+      "query_count_submitted_upper_bound": 2,
+      "stdout": "{\"triangles\":1000,\"tolerance_mm\":8,\"aabb_low\":[-203.672211,-90.261864000000003,-0.00042400000000000001],\"aabb_high\":[90,90.261864000000003,166.00294500000001],\"aabb_diagonal_mm\":382.60854983128206,\"far_translation_x_mm\":774.21709966256412,\"same_query_code\":0,\"same_closer_than_tolerance\":1,\"far_query_code\":0,\"far_closer_than_tolerance\":0,\"passed\":true}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "mesh_sha256": "eee302c275cf58a88e0a64206f25867202a717261bf04d072d668cf3603d5085",
+      "binary_sha256": "a9bf1178d38237cefd4f66b59dc246613157c040f5f6f847b94daa65fa868d9a",
+      "result": {
+        "triangles": 1000,
+        "tolerance_mm": 8,
+        "aabb_low": [
+          -203.672211,
+          -90.261864,
+          -0.000424
+        ],
+        "aabb_high": [
+          90,
+          90.261864,
+          166.002945
+        ],
+        "aabb_diagonal_mm": 382.60854983128206,
+        "far_translation_x_mm": 774.2170996625641,
+        "same_query_code": 0,
+        "same_closer_than_tolerance": 1,
+        "far_query_code": 0,
+        "far_closer_than_tolerance": 0,
+        "passed": true
+      },
+      "passed": true,
+      "wall_s": 0.005276416999549838,
+      "cpu_s": 0.005461999999999995
+    },
+    {
+      "model": "IV",
+      "command": [
+        "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/pqp_engine_controls",
+        "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/simulator/base_r.tris"
+      ],
+      "stdin": "",
+      "timeout_s": 59.990578866998476,
+      "query_count_submitted_upper_bound": 2,
+      "stdout": "{\"triangles\":332,\"tolerance_mm\":8,\"aabb_low\":[-393.43689000000001,-333.76237900000001,2.1766030000000001],\"aabb_high\":[288.03632499999998,330.33585399999998,353.17663599999997],\"aabb_diagonal_mm\":1014.2155732398115,\"far_translation_x_mm\":2037.4311464796231,\"same_query_code\":0,\"same_closer_than_tolerance\":1,\"far_query_code\":0,\"far_closer_than_tolerance\":0,\"passed\":true}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "mesh_sha256": "a27e383930830088c12f9eb956ca4970d968aaa29baea5f5495957ce3f0bdc13",
+      "binary_sha256": "a9bf1178d38237cefd4f66b59dc246613157c040f5f6f847b94daa65fa868d9a",
+      "result": {
+        "triangles": 332,
+        "tolerance_mm": 8,
+        "aabb_low": [
+          -393.43689,
+          -333.762379,
+          2.176603
+        ],
+        "aabb_high": [
+          288.036325,
+          330.335854,
+          353.176636
+        ],
+        "aabb_diagonal_mm": 1014.2155732398115,
+        "far_translation_x_mm": 2037.431146479623,
+        "same_query_code": 0,
+        "same_closer_than_tolerance": 1,
+        "far_query_code": 0,
+        "far_closer_than_tolerance": 0,
+        "passed": true
+      },
+      "passed": true,
+      "wall_s": 0.002739084999120678,
+      "cpu_s": 0.0029540000000000052
+    },
+    {
+      "model": "V",
+      "command": [
+        "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/pqp_engine_controls",
+        "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau_industrialScene/simulator/base_r.tris"
+      ],
+      "stdin": "",
+      "timeout_s": 59.98739122099869,
+      "query_count_submitted_upper_bound": 2,
+      "stdout": "{\"triangles\":332,\"tolerance_mm\":8,\"aabb_low\":[-393.43689000000001,-333.76237900000001,2.1766030000000001],\"aabb_high\":[288.03632499999998,330.33585399999998,353.17663599999997],\"aabb_diagonal_mm\":1014.2155732398115,\"far_translation_x_mm\":2037.4311464796231,\"same_query_code\":0,\"same_closer_than_tolerance\":1,\"far_query_code\":0,\"far_closer_than_tolerance\":0,\"passed\":true}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "mesh_sha256": "a27e383930830088c12f9eb956ca4970d968aaa29baea5f5495957ce3f0bdc13",
+      "binary_sha256": "a9bf1178d38237cefd4f66b59dc246613157c040f5f6f847b94daa65fa868d9a",
+      "result": {
+        "triangles": 332,
+        "tolerance_mm": 8,
+        "aabb_low": [
+          -393.43689,
+          -333.762379,
+          2.176603
+        ],
+        "aabb_high": [
+          288.036325,
+          330.335854,
+          353.176636
+        ],
+        "aabb_diagonal_mm": 1014.2155732398115,
+        "far_translation_x_mm": 2037.431146479623,
+        "same_query_code": 0,
+        "same_closer_than_tolerance": 1,
+        "far_query_code": 0,
+        "far_closer_than_tolerance": 0,
+        "passed": true
+      },
+      "passed": true,
+      "wall_s": 0.0029508700008591404,
+      "cpu_s": 0.003153999999999997
+    },
+    {
+      "model": "VI",
+      "command": [
+        "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/pqp_engine_controls",
+        "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau3/simulator/base_r.tris"
+      ],
+      "stdin": "",
+      "timeout_s": 59.983985505999954,
+      "query_count_submitted_upper_bound": 2,
+      "stdout": "{\"triangles\":332,\"tolerance_mm\":8,\"aabb_low\":[-393.43689000000001,-333.76237900000001,2.1766030000000001],\"aabb_high\":[288.03632499999998,330.33585399999998,353.17663599999997],\"aabb_diagonal_mm\":1014.2155732398115,\"far_translation_x_mm\":2037.4311464796231,\"same_query_code\":0,\"same_closer_than_tolerance\":1,\"far_query_code\":0,\"far_closer_than_tolerance\":0,\"passed\":true}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "mesh_sha256": "a27e383930830088c12f9eb956ca4970d968aaa29baea5f5495957ce3f0bdc13",
+      "binary_sha256": "a9bf1178d38237cefd4f66b59dc246613157c040f5f6f847b94daa65fa868d9a",
+      "result": {
+        "triangles": 332,
+        "tolerance_mm": 8,
+        "aabb_low": [
+          -393.43689,
+          -333.762379,
+          2.176603
+        ],
+        "aabb_high": [
+          288.036325,
+          330.335854,
+          353.176636
+        ],
+        "aabb_diagonal_mm": 1014.2155732398115,
+        "far_translation_x_mm": 2037.431146479623,
+        "same_query_code": 0,
+        "same_closer_than_tolerance": 1,
+        "far_query_code": 0,
+        "far_closer_than_tolerance": 0,
+        "passed": true
+      },
+      "passed": true,
+      "wall_s": 0.003066113999011577,
+      "cpu_s": 0.0033120000000000094
+    },
+    {
+      "model": "I",
+      "command": [
+        "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/planar_controls"
+      ],
+      "stdin": "",
+      "timeout_s": 59.9807259829995,
+      "query_count_submitted_upper_bound": 4,
+      "stdout": "{\"self_cross_clear\":false,\"self_straight_clear\":true,\"obstacle_hit_clear\":false,\"obstacle_away_clear\":true}\n",
+      "stderr": "",
+      "exit_code": 0,
+      "preparation": {
+        "source_function_sha256": "dcb9e75a5ead5e6c9815d4514d8c3047f3124fb0cf64fd101a1feb4e653f909a",
+        "control_source_sha256": "519e23e36f042707e1c03df2e948e91fff902421f3970717e80e9e8bb3df7adf",
+        "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/planar_controls",
+        "binary_sha256": "f37466138e9dfcc12c4d6a1e1377234a68f141e9ce78c6b34186de65d93656e8",
+        "build_command": [
+          "g++",
+          "-std=c++17",
+          "-O2",
+          "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/planar_controls_external.cpp",
+          "-o",
+          "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_controls_v2/planar_controls"
+        ],
+        "build_exit_code": 0,
+        "query_count": 0
+      },
+      "binary_sha256": "f37466138e9dfcc12c4d6a1e1377234a68f141e9ce78c6b34186de65d93656e8",
+      "result": {
+        "self_cross_clear": false,
+        "self_straight_clear": true,
+        "obstacle_hit_clear": false,
+        "obstacle_away_clear": true
+      },
+      "passed": true,
+      "wall_s": 0.001782363999154768,
+      "cpu_s": 0.0019929999999999948
+    }
+  ],
+  "query_count_started_upper_bound": 12,
+  "query_count_completed_from_output": 12,
+  "status": "SOURCE_POLICY_QUALIFIED",
+  "passed": true,
+  "wall_limit_s": 60.0,
+  "cpu_limit_s": 120.0,
+  "preparation_sha256": "c974803a73649d03eaaf6ddeead980b49558df5b6cbff1e930e2060eb22d1fe2",
+  "collision_adapter_manifest_sha256": "9ed2e7c634e4c5d58698101571145960c96417c94f8ff0f546d7a637e0e1d302",
+  "wall_s": 0.021082576000480913,
+  "cpu_s": 0.022197999999999996,
+  "ended_at_utc": "2026-10-15T05:27:13.555819+00:00",
+  "full_geometry_qualified": false,
+  "continuous_collision_certificate": false,
+  "limitations": [
+    "Engine controls use real original meshes; pair parity certifies exact active source policy only.",
+    "ABB source collinear rod triangles are not an independently validated solid rod collision mesh.",
+    "No omitted-pair coverage, complete physical geometry, CCD, endpoints, RSS, RBS or planning qualification."
+  ]
+}
