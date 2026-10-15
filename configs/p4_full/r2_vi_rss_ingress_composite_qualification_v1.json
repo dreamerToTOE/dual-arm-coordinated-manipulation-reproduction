@@ -1,0 +1,3699 @@
+{
+  "schema": "P4_R2_VI_RSS_INGRESS_COMPOSITE_QUALIFICATION_V1",
+  "frozen": false,
+  "run_id": "20261015_R2_VI_RSS_INGRESS_COMPOSITE01",
+  "authorization_budget_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015",
+  "continuation_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.INGRESS_COMPOSITE_974_V1",
+  "classification": "RECONSTRUCTED / FIBER-COMPOSITE-DISCRETE-QUALIFICATION",
+  "approval": {
+    "additional14_candidates_approved": false,
+    "new_composite_design_approved": false,
+    "approval_record": null,
+    "approval_record_sha256": null
+  },
+  "execution_scope": "Requires explicit approval of14 added candidates AND the independent composite design. Draft creation/validation never authorizes execution.",
+  "runner_source_sha256": "3903e21f8429825b7e1d3a02819552b09644ebdbf0b10140ea7292d204538843",
+  "dependency_source_sha256": {
+    "scripts/qualify_p4_full_r2_vi_rss_fiber_component.py": "baf3eba251f14f0b8dc5e7c1b98ea39f2d3261f2d10338877bf99a33deeb395b",
+    "configs/p4_full/r2_vi_rss_fiber_component_qualification_v1.json": "4b491ce2be9d222e35a28c2609c3aac9284ca61b56b804dcdbf0790089fb03b2",
+    "scripts/diagnose_p4_full_r2_vi_rss_center_image.py": "95881dab8fefbd9b198c9a81468a2635896eb727b2b5f05c4e2512851c2b07e0",
+    "configs/p4_full/r2_vi_rss_center_image_diagnostic_v1.json": "dc4d5606b09f1b184324b3f77f0c03a4d3b5fda77cd0f26742bf11f79839c43c",
+    "scripts/qualify_p4_full_r2_vi_rss_bridge.py": "4cde4164c4ee0a68d2f0c4ca17f108728374a580b0bfb79f565620e84b0db666",
+    "configs/p4_full/r2_vi_rss_bridge_qualification_v1.json": "2362b4f46f324dab4f587af85bc78cfaba2cc9a3e51e169984f9b4a824739d31",
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "configs/p4_full/r2_vi_rss_reconstructed_qualification_v1.json": "c53238eee4d50ebcf6ae5eb645ef2cde128a6e3bb72f56a991d6bb51a07ec8f4",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp": "9d997c32f9f4a40d7945e2cd563145b0ff27b267c32d5a24407f6c48baa47dea",
+    "baselines/p4_full/geometry_consistent/spatial_ik_patch.py": "3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8"
+  },
+  "input_sha256": {
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/events.jsonl": "ef019b0586c1218b75e69a726c7076ee85a2f5cd54dc5b7bedd3086ea9bc5555",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/events.jsonl": "16ecfe7df04716ac9e5314837df094d0b74579f962d92593367f8ff2928c457f",
+    "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json": "d164ccf903d5b3259db4710409537f62394c74b47163b09d0b828a496fbc64b7",
+    "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/events.jsonl": "6047d3f684b163c33810e5dd7a2f1e3bf28d48f98aab51acd4f27249cc927e6e",
+    "reports/P4_FULL_R2_VI_RSS_INGRESS_COST_AND_FIXED_SCHEDULE_20261015.json": "803cee65f7886050e8ae5fdb411ebd65c1dafd04e0e65318eb7782a4c0391bb7",
+    "reports/P4_FULL_R2_VI_RSS_INGRESS_COST_AND_FIXED_SCHEDULE_20261015.md": "30e191db82976544cae2c7484b04dbd94f4ea63650fe88e6870e8237ad95e4ab",
+    "scripts/analyze_p4_full_r2_vi_rss_ingress_schedule.py": "ea3bc9ea67d8692e52eba2e74619cb91e1d183c6960692216232fa5167ed034b",
+    "results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.FIBER_COMPONENT_V1.claim.json": "3c7aa3aaedfd5aef4a4680d84ebbcc1446a16de84324ba32bbd0bd0de978c23a"
+  },
+  "prior_executions": {
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json": "f06a0afa82da9cea66224d7b2e438673570aabbefb022c8b00fffedd02ab5f8f",
+    "results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json": "765214ce7de64254126ea6da4b3bf69a3626f2a8896a879504e4f2a6561b91cc",
+    "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json": "d164ccf903d5b3259db4710409537f62394c74b47163b09d0b828a496fbc64b7",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774"
+  },
+  "parent_actual_remaining": {
+    "candidate_constructions": 50,
+    "wall_s": 125.48601753600087,
+    "cpu_s": 346.67282300000005,
+    "r2_total_wall_s": 3517.704594730999,
+    "r2_total_cpu_s": 7167.8245640000005,
+    "policy": "Actual fixed candidates and wall/CPU charged to original authorization; preserve prefix, no reset/repeat."
+  },
+  "candidate_ledger": {
+    "original_cap": 960,
+    "already_consumed": 910,
+    "original_remaining": 50,
+    "additional_requested": 14,
+    "proposed_cap_after_explicit_approval": 974,
+    "this_stage_max": 64,
+    "charge_rule": "Charge first50 actual new candidates to original remaining; at most next14 to explicit extension. Never reset prior910."
+  },
+  "budget": {
+    "max_candidate_constructions": 64,
+    "wall_s": 30.0,
+    "cpu_s": 60.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "cumulative_B_limits": {
+    "wall_s": 180.0,
+    "cpu_s": 360.0,
+    "no_time_extension": true
+  },
+  "rss_gamma": 0.2,
+  "delta_rad": 0.01,
+  "leaf_full18_distance_rad": 0.0025,
+  "gates": {
+    "position_maxabs_mm": 1e-05,
+    "rotation_matrix_maxabs": 1e-05,
+    "fk_position_maxabs_mm": 1e-07,
+    "fk_rotation_matrix_maxabs": 1e-10,
+    "rank_relative": 1e-06,
+    "rank_position_mm_to_m": 0.001,
+    "jacobian_fd_epsilon": 1e-06,
+    "jacobian_position_maxabs": 5e-06,
+    "jacobian_angular_maxabs": 5e-07,
+    "require_full_constraint_rank": 12,
+    "branch_zero_relative_epsilon": 1.4210854715202004e-14
+  },
+  "active_arm": 1,
+  "random_draws": 0,
+  "formal_planning_calls": 0,
+  "saved_nodes": {
+    "f219_original_center": {
+      "q18_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91646772223891,
+        0.0,
+        -3.947822858635717
+      ],
+      "kind": "SAVED_ORIGINAL_SINGULAR_CENTER",
+      "source": "B construction_finished",
+      "parent_construction": 219,
+      "parent_event_line_sha256": "1d406f718c9ccc30ccf7a78a14b77d39c36bdc2b1990d29f2eb03b69610a0b49"
+    },
+    "f643_original_center": {
+      "q18_rad": [
+        -0.45081720023503885,
+        0.04723312235440813,
+        0.250207286644899,
+        -0.6952425814547049,
+        -1.4128820027600142,
+        -0.08233521342308002,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.085295915921684,
+        0.0,
+        5.285848643627319,
+        0.37111974294611577,
+        0.29956646223514555,
+        -0.643951347100347,
+        -0.27078445813327373,
+        1.542062663751414,
+        -0.0401245583841674
+      ],
+      "kind": "SAVED_ORIGINAL_SINGULAR_CENTER",
+      "source": "B construction_finished",
+      "parent_construction": 643,
+      "parent_event_line_sha256": "b1ec68d48744e630eb7643115105c919f8796a8d66eb34bba2914a0eb1c16d22"
+    },
+    "f219_negative_fiber_midpoint": {
+      "q18_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91736039581977,
+        0.0,
+        -3.9469301850548546
+      ],
+      "kind": "SAVED_QUALIFIED_SINGULAR_FIBER",
+      "source": "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "saved_candidate": 1,
+      "fixed_spec": {
+        "parent_construction": 219,
+        "designated_arm": 3,
+        "half": "negative_endpoint_to_center",
+        "theta_rad": -0.0017853471617246882,
+        "theta_fraction": 0.5,
+        "kind": "MIDPOINT"
+      }
+    },
+    "f219_negative_fiber_endpoint": {
+      "q18_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.918253069400635,
+        0.0,
+        -3.9460375114739925
+      ],
+      "kind": "SAVED_QUALIFIED_SINGULAR_FIBER",
+      "source": "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "saved_candidate": 2,
+      "fixed_spec": {
+        "parent_construction": 219,
+        "designated_arm": 3,
+        "half": "negative_endpoint_to_center",
+        "theta_rad": -0.0017853471617246882,
+        "theta_fraction": 1.0,
+        "kind": "ENDPOINT"
+      }
+    },
+    "f219_positive_fiber_midpoint": {
+      "q18_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.915498232869332,
+        0.0,
+        -3.948792348005293
+      ],
+      "kind": "SAVED_QUALIFIED_SINGULAR_FIBER",
+      "source": "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "saved_candidate": 3,
+      "fixed_spec": {
+        "parent_construction": 219,
+        "designated_arm": 3,
+        "half": "center_to_positive_endpoint",
+        "theta_rad": 0.0019389787391517854,
+        "theta_fraction": 0.5,
+        "kind": "MIDPOINT"
+      }
+    },
+    "f219_positive_fiber_endpoint": {
+      "q18_rad": [
+        0.39345572416076796,
+        0.3028945718003926,
+        -0.34675822017429736,
+        2.143094755180602,
+        -0.6137232023149511,
+        -2.1313567422279567,
+        -0.223617546801547,
+        -0.5040495226023893,
+        0.562966070697734,
+        2.6943471996269523,
+        0.26806030529036606,
+        -2.9059753019617554,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91452874349976,
+        0.0,
+        -3.949761837374869
+      ],
+      "kind": "SAVED_QUALIFIED_SINGULAR_FIBER",
+      "source": "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "saved_candidate": 4,
+      "fixed_spec": {
+        "parent_construction": 219,
+        "designated_arm": 3,
+        "half": "center_to_positive_endpoint",
+        "theta_rad": 0.0019389787391517854,
+        "theta_fraction": 1.0,
+        "kind": "ENDPOINT"
+      }
+    },
+    "f643_negative_fiber_endpoint": {
+      "q18_rad": [
+        -0.45081720023503885,
+        0.04723312235440813,
+        0.250207286644899,
+        -0.6952425814547049,
+        -1.4128820027600142,
+        -0.08233521342308002,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.08368225767934,
+        0.0,
+        5.284234985384975,
+        0.37111974294611577,
+        0.29956646223514555,
+        -0.643951347100347,
+        -0.27078445813327373,
+        1.542062663751414,
+        -0.0401245583841674
+      ],
+      "kind": "SAVED_QUALIFIED_SINGULAR_FIBER",
+      "source": "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "saved_candidate": 5,
+      "fixed_spec": {
+        "parent_construction": 643,
+        "designated_arm": 2,
+        "half": "negative_endpoint_to_center",
+        "theta_rad": 0.0016136582423436588,
+        "theta_fraction": 1.0,
+        "kind": "ENDPOINT"
+      }
+    },
+    "f643_positive_fiber_endpoint": {
+      "q18_rad": [
+        -0.45081720023503885,
+        0.04723312235440813,
+        0.250207286644899,
+        -0.6952425814547049,
+        -1.4128820027600142,
+        -0.08233521342308002,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.086953620601122,
+        0.0,
+        5.287506348306757,
+        0.37111974294611577,
+        0.29956646223514555,
+        -0.643951347100347,
+        -0.27078445813327373,
+        1.542062663751414,
+        -0.0401245583841674
+      ],
+      "kind": "SAVED_QUALIFIED_SINGULAR_FIBER",
+      "source": "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "saved_candidate": 6,
+      "fixed_spec": {
+        "parent_construction": 643,
+        "designated_arm": 2,
+        "half": "center_to_positive_endpoint",
+        "theta_rad": -0.001657704679438176,
+        "theta_fraction": 1.0,
+        "kind": "ENDPOINT"
+      }
+    },
+    "f219_negative_saved_k7": {
+      "q18_rad": [
+        0.39233693506476686,
+        0.2967507416245827,
+        -0.3364869938586457,
+        2.14041453515381,
+        -0.603594815482027,
+        -2.132725306500214,
+        -0.22766734505015057,
+        -0.5005484153146605,
+        0.5630478500692884,
+        2.6669629209533143,
+        0.2775721765449702,
+        -2.874046730567351,
+        -0.13974721888679661,
+        0.7407853571936539,
+        -0.8350560527507148,
+        -20.916693510871237,
+        -0.008750737429458061,
+        -3.9475984758861244
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerLLR"
+    },
+    "f219_negative_saved_k8": {
+      "q18_rad": [
+        0.39217710805105244,
+        0.295873051599467,
+        -0.33501967581355263,
+        2.140031646578554,
+        -0.6021479030773236,
+        -2.132920815681965,
+        -0.2282484770018972,
+        -0.50004167275684,
+        0.5630599486074435,
+        2.6632033211381363,
+        0.27895774083585173,
+        -2.8696432712237407,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91646772223891,
+        -0.01,
+        -3.947822858635717
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerLLL"
+    },
+    "f219_negative_saved_k6": {
+      "q18_rad": [
+        0.39249676207848133,
+        0.2976284316496984,
+        -0.3379543119037388,
+        2.140797423729066,
+        -0.6050417278867305,
+        -2.1325297973184627,
+        -0.2270868528486797,
+        -0.5010535012270743,
+        0.5630358440630974,
+        2.6707599400750834,
+        0.27619316261388266,
+        -2.878488950024858,
+        -0.1397481240919083,
+        0.7407802923306827,
+        -0.8350510851723827,
+        -20.91691855798426,
+        -0.007501261062867827,
+        -3.947374434217062
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerLRL"
+    },
+    "f219_negative_saved_k5": {
+      "q18_rad": [
+        0.3926565890921958,
+        0.29850612167481405,
+        -0.3394216299488319,
+        2.1411803123043223,
+        -0.606488640291434,
+        -2.132334288136712,
+        -0.22650700419512898,
+        -0.501556935771342,
+        0.5630239363166307,
+        2.6745947240700305,
+        0.27482076361881713,
+        -2.8829702703956896,
+        -0.13974866653178192,
+        0.7407772524725466,
+        -0.835048100978976,
+        -20.91714286001377,
+        -0.006251572436299082,
+        -3.947150736567411
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerLRR"
+    },
+    "f219_negative_saved_k4": {
+      "q18_rad": [
+        0.3928164161059102,
+        0.2993838116999298,
+        -0.340888947993925,
+        2.141563200879578,
+        -0.6079355526961374,
+        -2.132138778954961,
+        -0.22592780288343686,
+        -0.5020587242237888,
+        0.5630121325397479,
+        2.6784676184633045,
+        0.2734550448822436,
+        -2.8874910324432017,
+        -0.13974884658542908,
+        0.7407762381276979,
+        -0.8350471021625397,
+        -20.917366413398813,
+        -0.005001673097725222,
+        -3.9469273858762315
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerRLL"
+    },
+    "f219_negative_saved_k3": {
+      "q18_rad": [
+        0.39297624311962465,
+        0.3002615017250455,
+        -0.3423562660390181,
+        2.1419460894548337,
+        -0.6093824651008408,
+        -2.1319432697732097,
+        -0.2253492527037862,
+        -0.5025588718596832,
+        0.5630004384243905,
+        2.6823789685736186,
+        0.27209607247664275,
+        -2.8920515767297226,
+        -0.1397486646324366,
+        0.7407772498193779,
+        -0.8350480907508429,
+        -20.91758921458205,
+        -0.0037515646070344936,
+        -3.9467043850823584
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerRLR"
+    },
+    "f219_negative_saved_k2": {
+      "q18_rad": [
+        0.39313607013333907,
+        0.3011391917501612,
+        -0.3438235840841112,
+        2.14232897803009,
+        -0.6108293775055442,
+        -2.131747760591459,
+        -0.22477135744255597,
+        -0.5030573839531183,
+        0.5629888596445636,
+        2.6863291193409604,
+        0.27074391322794145,
+        -2.896652243444313,
+        -0.13974812105296186,
+        0.7407802880856109,
+        -0.8350510688073685,
+        -20.91781126000964,
+        -0.0025012485360354953,
+        -3.9464817371248753
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerRRL"
+    },
+    "f219_negative_saved_k1": {
+      "q18_rad": [
+        0.3932958971470535,
+        0.30201688177527686,
+        -0.34529090212920427,
+        2.142711866605346,
+        -0.6122762899102476,
+        -2.131552251409708,
+        -0.22419412088227003,
+        -0.5035542657768916,
+        0.5629774018563178,
+        2.6903184151468524,
+        0.2693986347186055,
+        -2.901293372223066,
+        -0.13974721622772712,
+        0.7407853534792117,
+        -0.8350560384313233,
+        -20.918032546131503,
+        -0.0012507264684662042,
+        -3.9462594449422754
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_negative_endpoint_to_centerRRR"
+    },
+    "f219_positive_saved_k1": {
+      "q18_rad": [
+        0.3936101636251582,
+        0.3037831262640725,
+        -0.3482457365195431,
+        2.143481832149446,
+        -0.6151720667040752,
+        -2.131171788534258,
+        -0.22302679501238265,
+        -0.5045449056423154,
+        0.562947575396922,
+        2.6984674767433967,
+        0.26671203195218507,
+        -2.9107451930533874,
+        -0.13974722263705183,
+        0.7407853762311152,
+        -0.8350561712282925,
+        -20.914773775753794,
+        0.0012492438971966262,
+        -3.9495182757978764
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointLLR"
+    },
+    "f219_positive_saved_k2": {
+      "q18_rad": [
+        0.3937646030895484,
+        0.3046716807277524,
+        -0.34973325286478885,
+        2.1438689091182903,
+        -0.6166209310931992,
+        -2.1309868348405594,
+        -0.2224367128567819,
+        -0.5050386251380532,
+        0.5629292112690689,
+        2.702628950746431,
+        0.2653710043869643,
+        -2.9155576289935534,
+        -0.139748130518216,
+        0.7407803250389522,
+        -0.8350512883138373,
+        -20.915018055119344,
+        0.0024987069249084773,
+        -3.9492750482308825
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointLRL"
+    },
+    "f219_positive_saved_k3": {
+      "q18_rad": [
+        0.3939190425539386,
+        0.3055602351914323,
+        -0.3512207692100346,
+        2.1442559860871344,
+        -0.6180697954823231,
+        -2.1308018811468603,
+        -0.22184730422593735,
+        -0.5055306865713375,
+        0.5629109841043036,
+        2.706831976095713,
+        0.264037295885003,
+        -2.9204129593189863,
+        -0.1397486745613432,
+        0.7407772934488502,
+        -0.8350483549524005,
+        -20.915261578048558,
+        0.0037483875475528543,
+        -3.949032157559912
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointLRR"
+    },
+    "f219_positive_saved_k4": {
+      "q18_rad": [
+        0.39407348201832887,
+        0.3064487896551122,
+        -0.35270828555528033,
+        2.1446430630559785,
+        -0.619518659871447,
+        -2.1306169274531617,
+        -0.22125857300673787,
+        -0.5060210954220823,
+        0.5628928996739959,
+        2.71107690564116,
+        0.262710980544785,
+        -2.925311531962792,
+        -0.13974885514680682,
+        0.740776281932995,
+        -0.8350473731175828,
+        -20.915504340996712,
+        0.004998284217560031,
+        -3.9487896066711827
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointRLL"
+    },
+    "f219_positive_saved_k5": {
+      "q18_rad": [
+        0.3942279214827191,
+        0.3073373441187921,
+        -0.3541958019005261,
+        2.1450301400248226,
+        -0.620967524260571,
+        -2.130431973759463,
+        -0.22067052308171692,
+        -0.5065098571682544,
+        0.5628749637307375,
+        2.7153640903808243,
+        0.2613921332737098,
+        -2.9302536930123844,
+        -0.13974867265551194,
+        0.7407772909782022,
+        -0.8350483448184469,
+        -20.91574634042372,
+        0.006248395375371636,
+        -3.948547398449875
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointRLR"
+    },
+    "f219_positive_saved_k6": {
+      "q18_rad": [
+        0.3943823609471093,
+        0.30822589858247196,
+        -0.3556833182457718,
+        2.1454172169936667,
+        -0.622416388649695,
+        -2.130247020065764,
+        -0.22008315832900194,
+        -0.5069969772857564,
+        0.5628571820083275,
+        2.7196938792093563,
+        0.2600808297882839,
+        -2.935239786457983,
+        -0.13974812746889176,
+        0.7407803210859156,
+        -0.835051272099515,
+        -20.91598757279364,
+        0.007498719449428712,
+        -3.9483055357806762
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointRRL"
+    },
+    "f219_positive_saved_k7": {
+      "q18_rad": [
+        0.3945368004114995,
+        0.30911445304615187,
+        -0.35717083459101756,
+        2.145804293962511,
+        -0.6238652530388189,
+        -2.1300620663720653,
+        -0.21949648262226218,
+        -0.5074824612483054,
+        0.5628395602217624,
+        2.7240666186569187,
+        0.258777146613756,
+        -2.940270153931572,
+        -0.1397472199689023,
+        0.7407853727722071,
+        -0.8350561570407635,
+        -20.91622803457466,
+        0.0087492548561648,
+        -3.9480640215479252
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointRRR"
+    },
+    "f219_positive_saved_k8": {
+      "q18_rad": [
+        0.3946912398758898,
+        0.3100030075098318,
+        -0.3586583509362633,
+        2.146191370931355,
+        -0.6253141174279429,
+        -2.1298771126783667,
+        -0.21891049983065897,
+        -0.5079663145273074,
+        0.5628221040672126,
+        2.728482652618311,
+        0.2574811610831411,
+        -2.945345134436071,
+        -0.13974595053801586,
+        0.7407924465677826,
+        -0.8350630017576316,
+        -20.91646772223891,
+        0.01,
+        -3.947822858635717
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f219_center_to_positive_endpointRRR"
+    },
+    "f643_negative_saved_k7": {
+      "q18_rad": [
+        -0.44933209554361353,
+        0.043486375682436684,
+        0.257442065222909,
+        -0.6866526708423257,
+        -1.4129439711341885,
+        -0.0910022197834544,
+        -0.018530561560244053,
+        0.9186710538784145,
+        -1.1383875900949385,
+        -4.085088860713537,
+        -0.008746309174107013,
+        5.285646861496526,
+        0.37338818854611916,
+        0.30294443332647486,
+        -0.6457225525087027,
+        -0.279056081410672,
+        1.54320043371501,
+        -0.03331739139437906
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerLLR"
+    },
+    "f643_negative_saved_k8": {
+      "q18_rad": [
+        -0.4491199377305528,
+        0.042951126157869335,
+        0.25847560501976763,
+        -0.685425540754843,
+        -1.4129528237590703,
+        -0.09224036354922216,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.085295915921684,
+        -0.01,
+        5.285848643627319,
+        0.37371171473023723,
+        0.3034263324895851,
+        -0.6459707487208262,
+        -0.28023373847870997,
+        1.5433622068128043,
+        -0.03233704320960541
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerLLL"
+    },
+    "f643_negative_saved_k6": {
+      "q18_rad": [
+        -0.4495442533566743,
+        0.044021625207004034,
+        0.25640852542605047,
+        -0.6878798009298084,
+        -1.4129351185093064,
+        -0.08976407601768663,
+        -0.01853099845526703,
+        0.9186636121852869,
+        -1.1383772966227572,
+        -4.08488330289864,
+        -0.007493663406465648,
+        5.285445068402703,
+        0.3730645257864905,
+        0.30246237331397124,
+        -0.6454731588652625,
+        -0.27787741569362356,
+        1.5430384779981752,
+        -0.03429576561660993
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerLRL"
+    },
+    "f643_negative_saved_k5": {
+      "q18_rad": [
+        -0.4497564111697351,
+        0.04455687473157138,
+        0.2553749856291919,
+        -0.6891069310172911,
+        -1.4129262658844244,
+        -0.08852593225191886,
+        -0.018531261494335278,
+        0.9186591439302048,
+        -1.1383711107596595,
+        -4.084679257692047,
+        -0.006242067368423333,
+        5.285243280439291,
+        0.37274072755114995,
+        0.30198014935494244,
+        -0.6452225623460864,
+        -0.2766977452286011,
+        1.5428763352927393,
+        -0.03527216586307203
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerLRR"
+    },
+    "f643_negative_saved_k4": {
+      "q18_rad": [
+        -0.4499685689827958,
+        0.04509212425613873,
+        0.2543414458323333,
+        -0.6903340611047739,
+        -1.4129174132595423,
+        -0.0872877884861511,
+        -0.018531350173506392,
+        0.9186576508222349,
+        -1.1383690377654276,
+        -4.084476740369699,
+        -0.004991525779459854,
+        5.285041513762852,
+        0.37241679494296154,
+        0.30149775835610537,
+        -0.6449707575215343,
+        -0.27551707391541874,
+        1.5427140012254537,
+        -0.036246592140373346
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerRLL"
+    },
+    "f643_negative_saved_k3": {
+      "q18_rad": [
+        -0.4501807267958566,
+        0.04562737378070608,
+        0.2533079060354747,
+        -0.6915611911922567,
+        -1.4129085606346603,
+        -0.08604964472038333,
+        -0.018531263991802768,
+        0.9186591346660473,
+        -1.1383710830830944,
+        -4.084275766269065,
+        -0.003742043407389806,
+        5.284839784593846,
+        0.37209272906785196,
+        0.301015197228085,
+        -0.6447177389768555,
+        -0.27433540565264447,
+        1.5425514714195188,
+        -0.03721904447495336
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerRLR"
+    },
+    "f643_negative_saved_k2": {
+      "q18_rad": [
+        -0.45039288460891735,
+        0.04616262330527343,
+        0.25227436623861615,
+        -0.6927883212797394,
+        -1.4128997080097783,
+        -0.08481150095461557,
+        -0.018531002451213092,
+        0.9186635973622206,
+        -1.1383772523395,
+        -4.084076350794874,
+        -0.0024936250685573505,
+        5.284638109222713,
+        0.37176853103480595,
+        0.3005324628854791,
+        -0.6444635013123036,
+        -0.27315274433757736,
+        1.5423887414947175,
+        -0.03818952291308046
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerRRL"
+    },
+    "f643_negative_saved_k1": {
+      "q18_rad": [
+        -0.4506050424219781,
+        0.04669787282984078,
+        0.2512408264417576,
+        -0.6940154513672221,
+        -1.4128908553848962,
+        -0.08357335718884779,
+        -0.018530565056693604,
+        0.9186710409076256,
+        -1.138387551345988,
+        -4.083878509418491,
+        -0.0012462756280665346,
+        5.28443650400934,
+        0.3714442019558637,
+        0.30004955224692087,
+        -0.6442080391432601,
+        -0.27196909386622375,
+        1.5422258070675596,
+        -0.039158027520847315
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_negative_endpoint_to_centerRRR"
+    },
+    "f643_positive_saved_k1": {
+      "q18_rad": [
+        -0.45102307052561474,
+        0.047774845202314356,
+        0.24916487432983203,
+        -0.6964645069842768,
+        -1.4128828901008847,
+        -0.08109782158467249,
+        -0.018530560363753428,
+        0.9186711325288803,
+        -1.1383877228379515,
+        -4.086741272357717,
+        0.001253642861959718,
+        5.287299245381533,
+        0.37079050829270843,
+        0.29909149527222484,
+        -0.6437101633351662,
+        -0.26960137499401166,
+        1.5419112464267166,
+        -0.041109989503016246
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointLLR"
+    },
+    "f643_positive_saved_k2": {
+      "q18_rad": [
+        -0.4512289408161906,
+        0.04831656805022058,
+        0.24812246201476507,
+        -0.6976864325138485,
+        -1.412883777441755,
+        -0.07986042974626498,
+        -0.018530996398520076,
+        0.9186637471314841,
+        -1.1383775243901373,
+        -4.086530361650736,
+        0.0025062542776681765,
+        5.287092079612662,
+        0.37046113509258627,
+        0.29861636146324333,
+        -0.6434677589798805,
+        -0.2684172884184908,
+        1.541759637292123,
+        -0.042093449304543125
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointLRL"
+    },
+    "f643_positive_saved_k3": {
+      "q18_rad": [
+        -0.4514348111067665,
+        0.04885829089812681,
+        0.2470800496996981,
+        -0.6989083580434204,
+        -1.4128846647826254,
+        -0.07862303790785746,
+        -0.018531258916391895,
+        0.9186593127612845,
+        -1.13837139573314,
+        -4.086320903238196,
+        0.003757829620559731,
+        5.286884866613461,
+        0.37013162444657743,
+        0.2981410577123345,
+        -0.6432241286140097,
+        -0.26723220226821387,
+        1.5416078319883928,
+        -0.043074937839619354
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointLRR"
+    },
+    "f643_positive_saved_k4": {
+      "q18_rad": [
+        -0.45164068139734237,
+        0.049400013746033034,
+        0.24603763738463114,
+        -0.7001302835729923,
+        -1.412885552123496,
+        -0.07738564606944993,
+        -0.018531347416240136,
+        0.9186578310694017,
+        -1.1383693420236598,
+        -4.086112911928928,
+        0.005008364216901445,
+        5.286677622050977,
+        0.3698019774585303,
+        0.2976655809275362,
+        -0.6429792668318968,
+        -0.2660461204033617,
+        1.5414558261528646,
+        -0.044054455179039484
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointRLL"
+    },
+    "f643_positive_saved_k5": {
+      "q18_rad": [
+        -0.45184655168791826,
+        0.04994173659393926,
+        0.24499522506956417,
+        -0.7013522091025642,
+        -1.4128864394643665,
+        -0.0761482542310424,
+        -0.018531261399887457,
+        0.9186593038007098,
+        -1.1383713685981536,
+        -4.0859064025882965,
+        0.006257853345595164,
+        5.2864703616512285,
+        0.36947219523531,
+        0.297189928020849,
+        -0.6427331682428205,
+        -0.2648590466827703,
+        1.5413036154195947,
+        -0.045032001413516994
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointRLR"
+    },
+    "f643_positive_saved_k6": {
+      "q18_rad": [
+        -0.45205242197849416,
+        0.050483459441845485,
+        0.2439528127544972,
+        -0.7025741346321361,
+        -1.412887326805237,
+        -0.07491086239263489,
+        -0.01853100037211096,
+        0.9186637327941681,
+        -1.13837748097344,
+        -4.085701390140862,
+        0.0075062922379705325,
+        5.286263101202772,
+        0.36914227888679585,
+        0.29671409590830966,
+        -0.6424858274711267,
+        -0.26367098496390884,
+        1.541151195419499,
+        -0.0460075766536795
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointRRL"
+    },
+    "f643_positive_saved_k7": {
+      "q18_rad": [
+        -0.45225829226907005,
+        0.05102518228975171,
+        0.24291040043943024,
+        -0.7037960601617079,
+        -1.4128882141461077,
+        -0.07367347055422738,
+        -0.018530563840642594,
+        0.918671119983143,
+        -1.1383876848472774,
+        -4.085497889569686,
+        0.008753676077587695,
+        5.286055856555656,
+        0.3688122295258748,
+        0.29623808151004394,
+        -0.6422372391563252,
+        -0.2624819391028555,
+        1.5409985617804827,
+        -0.04698118103006365
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointRRR"
+    },
+    "f643_positive_saved_k8": {
+      "q18_rad": [
+        -0.45246416255964594,
+        0.05156690513765794,
+        0.24186798812436328,
+        -0.7050179856912798,
+        -1.412889101486978,
+        -0.07243607871581985,
+        -0.01852995131617119,
+        0.9186814673957948,
+        -1.1384019860990775,
+        -4.085295915921684,
+        0.01,
+        5.285848643627319,
+        0.3684820482684398,
+        0.29576188175033874,
+        -0.6419873979532291,
+        -0.2612919129542759,
+        1.5408457101275914,
+        -0.047952814693108796
+      ],
+      "kind": "SAVED_QUALIFIED_REGULAR_Q2_NODE",
+      "source": "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "original_leaf_node_id": "f643_center_to_positive_endpointRRR"
+    }
+  },
+  "fixed_new_midpoints": [
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k00_M",
+      "left_endpoint_ref": "f219_negative_fiber_endpoint",
+      "right_endpoint_ref": "f219_negative_saved_k1",
+      "active_center_to_outer_lambda": {
+        "exact": "1/16",
+        "numerator": 1,
+        "denominator": 16,
+        "float": 0.0625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3933758106539107,
+        0.3024557267878347,
+        -0.34602456115175084,
+        2.142903310892974,
+        -0.6129997461125993,
+        -2.131454496818832
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k00_ML",
+      "left_endpoint_ref": "f219_negative_fiber_endpoint",
+      "right_endpoint_ref": "f219_negative_k00_M",
+      "active_center_to_outer_lambda": {
+        "exact": "1/32",
+        "numerator": 1,
+        "denominator": 32,
+        "float": 0.03125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3934157674073393,
+        0.30267514929411365,
+        -0.3463913906630241,
+        2.142999033036788,
+        -0.6133614742137752,
+        -2.1314056195233944
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k00_MR",
+      "left_endpoint_ref": "f219_negative_k00_M",
+      "right_endpoint_ref": "f219_negative_saved_k1",
+      "active_center_to_outer_lambda": {
+        "exact": "3/32",
+        "numerator": 3,
+        "denominator": 32,
+        "float": 0.09375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3933358539004821,
+        0.3022363042815558,
+        -0.34565773164047753,
+        2.14280758874916,
+        -0.6126380180114235,
+        -2.1315033741142697
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k01_M",
+      "left_endpoint_ref": "f219_negative_saved_k1",
+      "right_endpoint_ref": "f219_negative_saved_k2",
+      "active_center_to_outer_lambda": {
+        "exact": "3/16",
+        "numerator": 3,
+        "denominator": 16,
+        "float": 0.1875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3932159836401963,
+        0.301578036762719,
+        -0.3445572431066577,
+        2.142520422317718,
+        -0.6115528337078959,
+        -2.1316500060005836
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k01_ML",
+      "left_endpoint_ref": "f219_negative_saved_k1",
+      "right_endpoint_ref": "f219_negative_k01_M",
+      "active_center_to_outer_lambda": {
+        "exact": "5/32",
+        "numerator": 5,
+        "denominator": 32,
+        "float": 0.15625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3932559403936249,
+        0.3017974592689979,
+        -0.344924072617931,
+        2.142616144461532,
+        -0.6119145618090718,
+        -2.131601128705146
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k01_MR",
+      "left_endpoint_ref": "f219_negative_k01_M",
+      "right_endpoint_ref": "f219_negative_saved_k2",
+      "active_center_to_outer_lambda": {
+        "exact": "7/32",
+        "numerator": 7,
+        "denominator": 32,
+        "float": 0.21875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39317602688676767,
+        0.30135861425644006,
+        -0.34419041359538444,
+        2.142424700173904,
+        -0.6111911056067201,
+        -2.1316988832960213
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k02_M",
+      "left_endpoint_ref": "f219_negative_saved_k2",
+      "right_endpoint_ref": "f219_negative_saved_k3",
+      "active_center_to_outer_lambda": {
+        "exact": "5/16",
+        "numerator": 5,
+        "denominator": 16,
+        "float": 0.3125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39305615662648186,
+        0.3007003467376034,
+        -0.34308992506156466,
+        2.1421375337424617,
+        -0.6101059213031925,
+        -2.1318455151823343
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k02_ML",
+      "left_endpoint_ref": "f219_negative_saved_k2",
+      "right_endpoint_ref": "f219_negative_k02_M",
+      "active_center_to_outer_lambda": {
+        "exact": "9/32",
+        "numerator": 9,
+        "denominator": 32,
+        "float": 0.28125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39309611337991046,
+        0.3009197692438823,
+        -0.3434567545728379,
+        2.1422332558862758,
+        -0.6104676494043684,
+        -2.1317966378868967
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k02_MR",
+      "left_endpoint_ref": "f219_negative_k02_M",
+      "right_endpoint_ref": "f219_negative_saved_k3",
+      "active_center_to_outer_lambda": {
+        "exact": "11/32",
+        "numerator": 11,
+        "denominator": 32,
+        "float": 0.34375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39301619987305325,
+        0.30048092423132444,
+        -0.34272309555029135,
+        2.1420418115986477,
+        -0.6097441932020167,
+        -2.131894392477772
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k03_M",
+      "left_endpoint_ref": "f219_negative_saved_k3",
+      "right_endpoint_ref": "f219_negative_saved_k4",
+      "active_center_to_outer_lambda": {
+        "exact": "7/16",
+        "numerator": 7,
+        "denominator": 16,
+        "float": 0.4375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39289632961276744,
+        0.29982265671248765,
+        -0.3416226070164715,
+        2.1417546451672056,
+        -0.6086590088984891,
+        -2.132041024364085
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k03_ML",
+      "left_endpoint_ref": "f219_negative_saved_k3",
+      "right_endpoint_ref": "f219_negative_k03_M",
+      "active_center_to_outer_lambda": {
+        "exact": "13/32",
+        "numerator": 13,
+        "denominator": 32,
+        "float": 0.40625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39293628636619604,
+        0.3000420792187666,
+        -0.34198943652774483,
+        2.1418503673110196,
+        -0.609020736999665,
+        -2.1319921470686474
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k03_MR",
+      "left_endpoint_ref": "f219_negative_k03_M",
+      "right_endpoint_ref": "f219_negative_saved_k4",
+      "active_center_to_outer_lambda": {
+        "exact": "15/32",
+        "numerator": 15,
+        "denominator": 32,
+        "float": 0.46875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39285637285933883,
+        0.2996032342062087,
+        -0.34125577750519825,
+        2.1416589230233916,
+        -0.6082972807973133,
+        -2.1320899016595227
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k04_M",
+      "left_endpoint_ref": "f219_negative_saved_k4",
+      "right_endpoint_ref": "f219_negative_saved_k5",
+      "active_center_to_outer_lambda": {
+        "exact": "9/16",
+        "numerator": 9,
+        "denominator": 16,
+        "float": 0.5625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.392736502599053,
+        0.2989449666873719,
+        -0.3401552889713785,
+        2.1413717565919503,
+        -0.6072120964937857,
+        -2.1322365335458366
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k04_ML",
+      "left_endpoint_ref": "f219_negative_saved_k4",
+      "right_endpoint_ref": "f219_negative_k04_M",
+      "active_center_to_outer_lambda": {
+        "exact": "17/32",
+        "numerator": 17,
+        "denominator": 32,
+        "float": 0.53125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3927764593524816,
+        0.29916438919365085,
+        -0.34052211848265174,
+        2.1414674787357644,
+        -0.6075738245949616,
+        -2.132187656250399
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k04_MR",
+      "left_endpoint_ref": "f219_negative_k04_M",
+      "right_endpoint_ref": "f219_negative_saved_k5",
+      "active_center_to_outer_lambda": {
+        "exact": "19/32",
+        "numerator": 19,
+        "denominator": 32,
+        "float": 0.59375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3926965458456244,
+        0.298725544181093,
+        -0.33978845946010516,
+        2.1412760344481363,
+        -0.6068503683926099,
+        -2.1322854108412743
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k05_M",
+      "left_endpoint_ref": "f219_negative_saved_k5",
+      "right_endpoint_ref": "f219_negative_saved_k6",
+      "active_center_to_outer_lambda": {
+        "exact": "11/16",
+        "numerator": 11,
+        "denominator": 16,
+        "float": 0.6875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3925766755853386,
+        0.2980672766622562,
+        -0.33868797092628533,
+        2.140988868016694,
+        -0.6057651840890823,
+        -2.1324320427275874
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k05_ML",
+      "left_endpoint_ref": "f219_negative_saved_k5",
+      "right_endpoint_ref": "f219_negative_k05_M",
+      "active_center_to_outer_lambda": {
+        "exact": "21/32",
+        "numerator": 21,
+        "denominator": 32,
+        "float": 0.65625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3926166323387672,
+        0.2982866991685351,
+        -0.33905480043755865,
+        2.1410845901605082,
+        -0.6061269121902582,
+        -2.1323831654321497
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k05_MR",
+      "left_endpoint_ref": "f219_negative_k05_M",
+      "right_endpoint_ref": "f219_negative_saved_k6",
+      "active_center_to_outer_lambda": {
+        "exact": "23/32",
+        "numerator": 23,
+        "denominator": 32,
+        "float": 0.71875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39253671883191,
+        0.29784785415597725,
+        -0.33832114141501207,
+        2.14089314587288,
+        -0.6054034559879065,
+        -2.132480920023025
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k06_M",
+      "left_endpoint_ref": "f219_negative_saved_k6",
+      "right_endpoint_ref": "f219_negative_saved_k7",
+      "active_center_to_outer_lambda": {
+        "exact": "13/16",
+        "numerator": 13,
+        "denominator": 16,
+        "float": 0.8125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39241684857162407,
+        0.29718958663714057,
+        -0.3372206528811923,
+        2.140605979441438,
+        -0.6043182716843787,
+        -2.132627551909338
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k06_ML",
+      "left_endpoint_ref": "f219_negative_saved_k6",
+      "right_endpoint_ref": "f219_negative_k06_M",
+      "active_center_to_outer_lambda": {
+        "exact": "25/32",
+        "numerator": 25,
+        "denominator": 32,
+        "float": 0.78125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39245680532505267,
+        0.2974090091434195,
+        -0.33758748239246555,
+        2.140701701585252,
+        -0.6046799997855545,
+        -2.1325786746139004
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k06_MR",
+      "left_endpoint_ref": "f219_negative_k06_M",
+      "right_endpoint_ref": "f219_negative_saved_k7",
+      "active_center_to_outer_lambda": {
+        "exact": "27/32",
+        "numerator": 27,
+        "denominator": 32,
+        "float": 0.84375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39237689181819546,
+        0.29697016413086164,
+        -0.336853823369919,
+        2.140510257297624,
+        -0.6039565435832028,
+        -2.1326764292047757
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k07_M",
+      "left_endpoint_ref": "f219_negative_saved_k7",
+      "right_endpoint_ref": "f219_negative_saved_k8",
+      "active_center_to_outer_lambda": {
+        "exact": "15/16",
+        "numerator": 15,
+        "denominator": 16,
+        "float": 0.9375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39225702155790965,
+        0.29631189661202484,
+        -0.33575333483609915,
+        2.140223090866182,
+        -0.6028713592796753,
+        -2.1328230610910897
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k07_ML",
+      "left_endpoint_ref": "f219_negative_saved_k7",
+      "right_endpoint_ref": "f219_negative_k07_M",
+      "active_center_to_outer_lambda": {
+        "exact": "29/32",
+        "numerator": 29,
+        "denominator": 32,
+        "float": 0.90625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39229697831133825,
+        0.29653131911830377,
+        -0.33612016434737246,
+        2.140318813009996,
+        -0.6032330873808511,
+        -2.132774183795652
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_negative_k07_MR",
+      "left_endpoint_ref": "f219_negative_k07_M",
+      "right_endpoint_ref": "f219_negative_saved_k8",
+      "active_center_to_outer_lambda": {
+        "exact": "31/32",
+        "numerator": 31,
+        "denominator": 32,
+        "float": 0.96875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39221706480448104,
+        0.2960924741057459,
+        -0.3353865053248259,
+        2.140127368722368,
+        -0.6025096311784994,
+        -2.1328719383865273
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k00_M",
+      "left_endpoint_ref": "f219_positive_fiber_endpoint",
+      "right_endpoint_ref": "f219_positive_saved_k1",
+      "active_center_to_outer_lambda": {
+        "exact": "1/16",
+        "numerator": 1,
+        "denominator": 16,
+        "float": 0.0625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3935329438929631,
+        0.3033388490322325,
+        -0.3475019783469202,
+        2.143288293665024,
+        -0.6144476345095131,
+        -2.131264265381107
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k00_ML",
+      "left_endpoint_ref": "f219_positive_fiber_endpoint",
+      "right_endpoint_ref": "f219_positive_k00_M",
+      "active_center_to_outer_lambda": {
+        "exact": "1/32",
+        "numerator": 1,
+        "denominator": 32,
+        "float": 0.03125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3934943340268655,
+        0.30311671041631255,
+        -0.3471300992606088,
+        2.143191524422813,
+        -0.6140854184122322,
+        -2.131310503804532
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k00_MR",
+      "left_endpoint_ref": "f219_positive_k00_M",
+      "right_endpoint_ref": "f219_positive_saved_k1",
+      "active_center_to_outer_lambda": {
+        "exact": "3/32",
+        "numerator": 3,
+        "denominator": 32,
+        "float": 0.09375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39357155375906067,
+        0.30356098764815254,
+        -0.3478738574332316,
+        2.1433850629072353,
+        -0.6148098506067942,
+        -2.131218026957683
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k01_M",
+      "left_endpoint_ref": "f219_positive_saved_k1",
+      "right_endpoint_ref": "f219_positive_saved_k2",
+      "active_center_to_outer_lambda": {
+        "exact": "3/16",
+        "numerator": 3,
+        "denominator": 16,
+        "float": 0.1875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3936873833573533,
+        0.3042274034959125,
+        -0.348989494692166,
+        2.1436753706338685,
+        -0.6158964988986372,
+        -2.131079311687409
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k01_ML",
+      "left_endpoint_ref": "f219_positive_saved_k1",
+      "right_endpoint_ref": "f219_positive_k01_M",
+      "active_center_to_outer_lambda": {
+        "exact": "5/32",
+        "numerator": 5,
+        "denominator": 32,
+        "float": 0.15625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39364877349125577,
+        0.30400526487999247,
+        -0.3486176156058546,
+        2.143578601391657,
+        -0.6155342828013561,
+        -2.1311255501108333
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k01_MR",
+      "left_endpoint_ref": "f219_positive_k01_M",
+      "right_endpoint_ref": "f219_positive_saved_k2",
+      "active_center_to_outer_lambda": {
+        "exact": "7/32",
+        "numerator": 7,
+        "denominator": 32,
+        "float": 0.21875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39372599322345087,
+        0.30444954211183245,
+        -0.3493613737784774,
+        2.1437721398760794,
+        -0.6162587149959182,
+        -2.131033073263984
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k02_M",
+      "left_endpoint_ref": "f219_positive_saved_k2",
+      "right_endpoint_ref": "f219_positive_saved_k3",
+      "active_center_to_outer_lambda": {
+        "exact": "5/16",
+        "numerator": 5,
+        "denominator": 16,
+        "float": 0.3125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3938418228217435,
+        0.30511595795959234,
+        -0.3504770110374117,
+        2.144062447602712,
+        -0.6173453632877611,
+        -2.13089435799371
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k02_ML",
+      "left_endpoint_ref": "f219_positive_saved_k2",
+      "right_endpoint_ref": "f219_positive_k02_M",
+      "active_center_to_outer_lambda": {
+        "exact": "9/32",
+        "numerator": 9,
+        "denominator": 32,
+        "float": 0.28125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39380321295564596,
+        0.3048938193436724,
+        -0.35010513195110027,
+        2.1439656783605012,
+        -0.6169831471904801,
+        -2.1309405964171346
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k02_MR",
+      "left_endpoint_ref": "f219_positive_k02_M",
+      "right_endpoint_ref": "f219_positive_saved_k3",
+      "active_center_to_outer_lambda": {
+        "exact": "11/32",
+        "numerator": 11,
+        "denominator": 32,
+        "float": 0.34375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39388043268784106,
+        0.3053380965755123,
+        -0.3508488901237231,
+        2.1441592168449235,
+        -0.6177075793850422,
+        -2.130848119570285
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k03_M",
+      "left_endpoint_ref": "f219_positive_saved_k3",
+      "right_endpoint_ref": "f219_positive_saved_k4",
+      "active_center_to_outer_lambda": {
+        "exact": "7/16",
+        "numerator": 7,
+        "denominator": 16,
+        "float": 0.4375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3939962622861337,
+        0.3060045124232722,
+        -0.3519645273826575,
+        2.1444495245715567,
+        -0.6187942276768851,
+        -2.1307094043000108
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k03_ML",
+      "left_endpoint_ref": "f219_positive_saved_k3",
+      "right_endpoint_ref": "f219_positive_k03_M",
+      "active_center_to_outer_lambda": {
+        "exact": "13/32",
+        "numerator": 13,
+        "denominator": 32,
+        "float": 0.40625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39395765242003616,
+        0.30578237380735224,
+        -0.35159264829634607,
+        2.1443527553293453,
+        -0.618432011579604,
+        -2.1307556427234355
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k03_MR",
+      "left_endpoint_ref": "f219_positive_k03_M",
+      "right_endpoint_ref": "f219_positive_saved_k4",
+      "active_center_to_outer_lambda": {
+        "exact": "15/32",
+        "numerator": 15,
+        "denominator": 32,
+        "float": 0.46875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3940348721522313,
+        0.3062266510391922,
+        -0.3523364064689689,
+        2.1445462938137676,
+        -0.6191564437741661,
+        -2.1306631658765864
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k04_M",
+      "left_endpoint_ref": "f219_positive_saved_k4",
+      "right_endpoint_ref": "f219_positive_saved_k5",
+      "active_center_to_outer_lambda": {
+        "exact": "9/16",
+        "numerator": 9,
+        "denominator": 16,
+        "float": 0.5625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.394150701750524,
+        0.30689306688695217,
+        -0.3534520437279032,
+        2.1448366015404003,
+        -0.620243092066009,
+        -2.1305244506063126
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k04_ML",
+      "left_endpoint_ref": "f219_positive_saved_k4",
+      "right_endpoint_ref": "f219_positive_k04_M",
+      "active_center_to_outer_lambda": {
+        "exact": "17/32",
+        "numerator": 17,
+        "denominator": 32,
+        "float": 0.53125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3941120918844264,
+        0.30667092827103215,
+        -0.35308016464159175,
+        2.1447398322981894,
+        -0.619880875968728,
+        -2.130570689029737
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k04_MR",
+      "left_endpoint_ref": "f219_positive_k04_M",
+      "right_endpoint_ref": "f219_positive_saved_k5",
+      "active_center_to_outer_lambda": {
+        "exact": "19/32",
+        "numerator": 19,
+        "denominator": 32,
+        "float": 0.59375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3941893116166216,
+        0.30711520550287214,
+        -0.3538239228142146,
+        2.1449333707826117,
+        -0.6206053081632901,
+        -2.130478212182888
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k05_M",
+      "left_endpoint_ref": "f219_positive_saved_k5",
+      "right_endpoint_ref": "f219_positive_saved_k6",
+      "active_center_to_outer_lambda": {
+        "exact": "11/16",
+        "numerator": 11,
+        "denominator": 16,
+        "float": 0.6875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3943051412149142,
+        0.30778162135063203,
+        -0.354939560073149,
+        2.145223678509245,
+        -0.621691956455133,
+        -2.1303394969126135
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k05_ML",
+      "left_endpoint_ref": "f219_positive_saved_k5",
+      "right_endpoint_ref": "f219_positive_k05_M",
+      "active_center_to_outer_lambda": {
+        "exact": "21/32",
+        "numerator": 21,
+        "denominator": 32,
+        "float": 0.65625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3942665313488167,
+        0.30755948273471206,
+        -0.35456768098683755,
+        2.1451269092670335,
+        -0.6213297403578519,
+        -2.1303857353360383
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k05_MR",
+      "left_endpoint_ref": "f219_positive_k05_M",
+      "right_endpoint_ref": "f219_positive_saved_k6",
+      "active_center_to_outer_lambda": {
+        "exact": "23/32",
+        "numerator": 23,
+        "denominator": 32,
+        "float": 0.71875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3943437510810118,
+        0.308003759966552,
+        -0.3553114391594604,
+        2.145320447751456,
+        -0.622054172552414,
+        -2.1302932584891887
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k06_M",
+      "left_endpoint_ref": "f219_positive_saved_k6",
+      "right_endpoint_ref": "f219_positive_saved_k7",
+      "active_center_to_outer_lambda": {
+        "exact": "13/16",
+        "numerator": 13,
+        "denominator": 16,
+        "float": 0.8125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3944595806793044,
+        0.3086701758143119,
+        -0.35642707641839466,
+        2.1456107554780885,
+        -0.6231408208442569,
+        -2.1301545432189144
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k06_ML",
+      "left_endpoint_ref": "f219_positive_saved_k6",
+      "right_endpoint_ref": "f219_positive_k06_M",
+      "active_center_to_outer_lambda": {
+        "exact": "25/32",
+        "numerator": 25,
+        "denominator": 32,
+        "float": 0.78125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3944209708132069,
+        0.3084480371983919,
+        -0.35605519733208324,
+        2.1455139862358776,
+        -0.6227786047469759,
+        -2.130200781642339
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k06_MR",
+      "left_endpoint_ref": "f219_positive_k06_M",
+      "right_endpoint_ref": "f219_positive_saved_k7",
+      "active_center_to_outer_lambda": {
+        "exact": "27/32",
+        "numerator": 27,
+        "denominator": 32,
+        "float": 0.84375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39449819054540197,
+        0.3088923144302319,
+        -0.3567989555047061,
+        2.1457075247203,
+        -0.623503036941538,
+        -2.13010830479549
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k07_M",
+      "left_endpoint_ref": "f219_positive_saved_k7",
+      "right_endpoint_ref": "f219_positive_saved_k8",
+      "active_center_to_outer_lambda": {
+        "exact": "15/16",
+        "numerator": 15,
+        "denominator": 16,
+        "float": 0.9375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3946140201436946,
+        0.30955873027799186,
+        -0.35791459276364046,
+        2.145997832446933,
+        -0.6245896852333809,
+        -2.129969589525216
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k07_ML",
+      "left_endpoint_ref": "f219_positive_saved_k7",
+      "right_endpoint_ref": "f219_positive_k07_M",
+      "active_center_to_outer_lambda": {
+        "exact": "29/32",
+        "numerator": 29,
+        "denominator": 32,
+        "float": 0.90625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.39457541027759707,
+        0.30933659166207184,
+        -0.35754271367732904,
+        2.1459010632047217,
+        -0.6242274691360998,
+        -2.1300158279486405
+      ]
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f219_positive_k07_MR",
+      "left_endpoint_ref": "f219_positive_k07_M",
+      "right_endpoint_ref": "f219_positive_saved_k8",
+      "active_center_to_outer_lambda": {
+        "exact": "31/32",
+        "numerator": 31,
+        "denominator": 32,
+        "float": 0.96875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        0.3946526300097922,
+        0.3097808688939118,
+        -0.3582864718499519,
+        2.146094601689144,
+        -0.6249519013306619,
+        -2.1299233511017914
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRRR",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k00_M",
+      "left_endpoint_ref": "f643_negative_fiber_endpoint",
+      "right_endpoint_ref": "f643_negative_saved_k1",
+      "active_center_to_outer_lambda": {
+        "exact": "1/16",
+        "numerator": 1,
+        "denominator": 16,
+        "float": 0.0625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.45071112132850844,
+        0.046965497592124456,
+        0.2507240565433283,
+        -0.6946290164109634,
+        -1.4128864290724552,
+        -0.08295428530596391
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRRL",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k01_M",
+      "left_endpoint_ref": "f643_negative_saved_k1",
+      "right_endpoint_ref": "f643_negative_saved_k2",
+      "active_center_to_outer_lambda": {
+        "exact": "3/16",
+        "numerator": 3,
+        "denominator": 16,
+        "float": 0.1875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4504989635154477,
+        0.046430248067557106,
+        0.2517575963401869,
+        -0.6934018863234808,
+        -1.4128952816973372,
+        -0.08419242907173168
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRLR",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k02_M",
+      "left_endpoint_ref": "f643_negative_saved_k2",
+      "right_endpoint_ref": "f643_negative_saved_k3",
+      "active_center_to_outer_lambda": {
+        "exact": "5/16",
+        "numerator": 5,
+        "denominator": 16,
+        "float": 0.3125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.450286805702387,
+        0.04589499854298976,
+        0.2527911361370454,
+        -0.6921747562359981,
+        -1.4129041343222193,
+        -0.08543057283749944
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRLL",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k03_M",
+      "left_endpoint_ref": "f643_negative_saved_k3",
+      "right_endpoint_ref": "f643_negative_saved_k4",
+      "active_center_to_outer_lambda": {
+        "exact": "7/16",
+        "numerator": 7,
+        "denominator": 16,
+        "float": 0.4375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.45007464788932616,
+        0.04535974901842241,
+        0.253824675933904,
+        -0.6909476261485152,
+        -1.4129129869471013,
+        -0.08666871660326722
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLRR",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k04_M",
+      "left_endpoint_ref": "f643_negative_saved_k4",
+      "right_endpoint_ref": "f643_negative_saved_k5",
+      "active_center_to_outer_lambda": {
+        "exact": "9/16",
+        "numerator": 9,
+        "denominator": 16,
+        "float": 0.5625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.44986249007626544,
+        0.04482449949385506,
+        0.2548582157307626,
+        -0.6897204960610326,
+        -1.4129218395719834,
+        -0.08790686036903497
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLRL",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k05_M",
+      "left_endpoint_ref": "f643_negative_saved_k5",
+      "right_endpoint_ref": "f643_negative_saved_k6",
+      "active_center_to_outer_lambda": {
+        "exact": "11/16",
+        "numerator": 11,
+        "denominator": 16,
+        "float": 0.6875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4496503322632047,
+        0.04428924996928771,
+        0.2558917555276212,
+        -0.6884933659735497,
+        -1.4129306921968654,
+        -0.08914500413480275
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLLR",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k06_M",
+      "left_endpoint_ref": "f643_negative_saved_k6",
+      "right_endpoint_ref": "f643_negative_saved_k7",
+      "active_center_to_outer_lambda": {
+        "exact": "13/16",
+        "numerator": 13,
+        "denominator": 16,
+        "float": 0.8125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4494381744501439,
+        0.04375400044472036,
+        0.2569252953244797,
+        -0.6872662358860671,
+        -1.4129395448217474,
+        -0.0903831479005705
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLLL",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 1,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_negative_k07_M",
+      "left_endpoint_ref": "f643_negative_saved_k7",
+      "right_endpoint_ref": "f643_negative_saved_k8",
+      "active_center_to_outer_lambda": {
+        "exact": "15/16",
+        "numerator": 15,
+        "denominator": 16,
+        "float": 0.9375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.44922601663708317,
+        0.04321875092015301,
+        0.2579588351213383,
+        -0.6860391057985844,
+        -1.4129483974466295,
+        -0.09162129166633828
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLLL",
+      "leaf_center_outward_index": 0,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k00_M",
+      "left_endpoint_ref": "f643_positive_fiber_endpoint",
+      "right_endpoint_ref": "f643_positive_saved_k1",
+      "active_center_to_outer_lambda": {
+        "exact": "1/16",
+        "numerator": 1,
+        "denominator": 16,
+        "float": 0.0625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4509201353803268,
+        0.04750398377836124,
+        0.2496860804873655,
+        -0.6958535442194909,
+        -1.4128824464304495,
+        -0.08171651750387626
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLLR",
+      "leaf_center_outward_index": 1,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k01_M",
+      "left_endpoint_ref": "f643_positive_saved_k1",
+      "right_endpoint_ref": "f643_positive_saved_k2",
+      "active_center_to_outer_lambda": {
+        "exact": "3/16",
+        "numerator": 3,
+        "denominator": 16,
+        "float": 0.1875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.45112600567090266,
+        0.04804570662626747,
+        0.24864366817229855,
+        -0.6970754697490626,
+        -1.4128833337713198,
+        -0.08047912566546873
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLRL",
+      "leaf_center_outward_index": 2,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k02_M",
+      "left_endpoint_ref": "f643_positive_saved_k2",
+      "right_endpoint_ref": "f643_positive_saved_k3",
+      "active_center_to_outer_lambda": {
+        "exact": "5/16",
+        "numerator": 5,
+        "denominator": 16,
+        "float": 0.3125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4513318759614785,
+        0.048587429474173695,
+        0.24760125585723158,
+        -0.6982973952786344,
+        -1.4128842211121904,
+        -0.07924173382706122
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLRR",
+      "leaf_center_outward_index": 3,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k03_M",
+      "left_endpoint_ref": "f643_positive_saved_k3",
+      "right_endpoint_ref": "f643_positive_saved_k4",
+      "active_center_to_outer_lambda": {
+        "exact": "7/16",
+        "numerator": 7,
+        "denominator": 16,
+        "float": 0.4375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.45153774625205445,
+        0.04912915232207992,
+        0.24655884354216462,
+        -0.6995193208082064,
+        -1.4128851084530607,
+        -0.07800434198865369
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRLL",
+      "leaf_center_outward_index": 4,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k04_M",
+      "left_endpoint_ref": "f643_positive_saved_k4",
+      "right_endpoint_ref": "f643_positive_saved_k5",
+      "active_center_to_outer_lambda": {
+        "exact": "9/16",
+        "numerator": 9,
+        "denominator": 16,
+        "float": 0.5625
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4517436165426303,
+        0.049670875169986146,
+        0.24551643122709765,
+        -0.7007412463377782,
+        -1.4128859957939313,
+        -0.07676695015024618
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRLR",
+      "leaf_center_outward_index": 5,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k05_M",
+      "left_endpoint_ref": "f643_positive_saved_k5",
+      "right_endpoint_ref": "f643_positive_saved_k6",
+      "active_center_to_outer_lambda": {
+        "exact": "11/16",
+        "numerator": 11,
+        "denominator": 16,
+        "float": 0.6875
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.45194948683320624,
+        0.05021259801789237,
+        0.2444740189120307,
+        -0.7019631718673502,
+        -1.4128868831348018,
+        -0.07552955831183865
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRRL",
+      "leaf_center_outward_index": 6,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k06_M",
+      "left_endpoint_ref": "f643_positive_saved_k6",
+      "right_endpoint_ref": "f643_positive_saved_k7",
+      "active_center_to_outer_lambda": {
+        "exact": "13/16",
+        "numerator": 13,
+        "denominator": 16,
+        "float": 0.8125
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.4521553571237821,
+        0.0507543208657986,
+        0.24343160659696372,
+        -0.703185097396922,
+        -1.4128877704756724,
+        -0.07429216647343113
+      ]
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRRR",
+      "leaf_center_outward_index": 7,
+      "designated_regular_branch": 3,
+      "other_passive_branch": 3,
+      "new_node_id": "f643_positive_k07_M",
+      "left_endpoint_ref": "f643_positive_saved_k7",
+      "right_endpoint_ref": "f643_positive_saved_k8",
+      "active_center_to_outer_lambda": {
+        "exact": "15/16",
+        "numerator": 15,
+        "denominator": 16,
+        "float": 0.9375
+      },
+      "raw_full18_reference_rule": "Arithmetic midpoint of referenced qualified endpoints; retain its active first6 exactly.",
+      "frozen_active6_midpoint_q_rad": [
+        -0.452361227414358,
+        0.051296043713704824,
+        0.24238919428189676,
+        -0.7044070229264938,
+        -1.4128886578165427,
+        -0.0730547746350236
+      ]
+    }
+  ],
+  "fixed_final_regular_edges": [
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "a_ref": "f219_negative_fiber_endpoint",
+      "b_ref": "f219_negative_k00_ML",
+      "is_new_regular_to_fiber_ingress_leaf": true
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "a_ref": "f219_negative_k00_ML",
+      "b_ref": "f219_negative_k00_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "a_ref": "f219_negative_k00_M",
+      "b_ref": "f219_negative_k00_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRR",
+      "a_ref": "f219_negative_k00_MR",
+      "b_ref": "f219_negative_saved_k1",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "a_ref": "f219_negative_saved_k1",
+      "b_ref": "f219_negative_k01_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "a_ref": "f219_negative_k01_ML",
+      "b_ref": "f219_negative_k01_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "a_ref": "f219_negative_k01_M",
+      "b_ref": "f219_negative_k01_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRRL",
+      "a_ref": "f219_negative_k01_MR",
+      "b_ref": "f219_negative_saved_k2",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "a_ref": "f219_negative_saved_k2",
+      "b_ref": "f219_negative_k02_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "a_ref": "f219_negative_k02_ML",
+      "b_ref": "f219_negative_k02_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "a_ref": "f219_negative_k02_M",
+      "b_ref": "f219_negative_k02_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLR",
+      "a_ref": "f219_negative_k02_MR",
+      "b_ref": "f219_negative_saved_k3",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "a_ref": "f219_negative_saved_k3",
+      "b_ref": "f219_negative_k03_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "a_ref": "f219_negative_k03_ML",
+      "b_ref": "f219_negative_k03_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "a_ref": "f219_negative_k03_M",
+      "b_ref": "f219_negative_k03_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerRLL",
+      "a_ref": "f219_negative_k03_MR",
+      "b_ref": "f219_negative_saved_k4",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "a_ref": "f219_negative_saved_k4",
+      "b_ref": "f219_negative_k04_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "a_ref": "f219_negative_k04_ML",
+      "b_ref": "f219_negative_k04_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "a_ref": "f219_negative_k04_M",
+      "b_ref": "f219_negative_k04_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRR",
+      "a_ref": "f219_negative_k04_MR",
+      "b_ref": "f219_negative_saved_k5",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "a_ref": "f219_negative_saved_k5",
+      "b_ref": "f219_negative_k05_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "a_ref": "f219_negative_k05_ML",
+      "b_ref": "f219_negative_k05_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "a_ref": "f219_negative_k05_M",
+      "b_ref": "f219_negative_k05_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLRL",
+      "a_ref": "f219_negative_k05_MR",
+      "b_ref": "f219_negative_saved_k6",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "a_ref": "f219_negative_saved_k6",
+      "b_ref": "f219_negative_k06_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "a_ref": "f219_negative_k06_ML",
+      "b_ref": "f219_negative_k06_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "a_ref": "f219_negative_k06_M",
+      "b_ref": "f219_negative_k06_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLR",
+      "a_ref": "f219_negative_k06_MR",
+      "b_ref": "f219_negative_saved_k7",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "a_ref": "f219_negative_saved_k7",
+      "b_ref": "f219_negative_k07_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "a_ref": "f219_negative_k07_ML",
+      "b_ref": "f219_negative_k07_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "a_ref": "f219_negative_k07_M",
+      "b_ref": "f219_negative_k07_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f219_negative_endpoint_to_centerLLL",
+      "a_ref": "f219_negative_k07_MR",
+      "b_ref": "f219_negative_saved_k8",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "a_ref": "f219_positive_fiber_endpoint",
+      "b_ref": "f219_positive_k00_ML",
+      "is_new_regular_to_fiber_ingress_leaf": true
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "a_ref": "f219_positive_k00_ML",
+      "b_ref": "f219_positive_k00_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "a_ref": "f219_positive_k00_M",
+      "b_ref": "f219_positive_k00_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLL",
+      "a_ref": "f219_positive_k00_MR",
+      "b_ref": "f219_positive_saved_k1",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "a_ref": "f219_positive_saved_k1",
+      "b_ref": "f219_positive_k01_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "a_ref": "f219_positive_k01_ML",
+      "b_ref": "f219_positive_k01_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "a_ref": "f219_positive_k01_M",
+      "b_ref": "f219_positive_k01_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLLR",
+      "a_ref": "f219_positive_k01_MR",
+      "b_ref": "f219_positive_saved_k2",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "a_ref": "f219_positive_saved_k2",
+      "b_ref": "f219_positive_k02_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "a_ref": "f219_positive_k02_ML",
+      "b_ref": "f219_positive_k02_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "a_ref": "f219_positive_k02_M",
+      "b_ref": "f219_positive_k02_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRL",
+      "a_ref": "f219_positive_k02_MR",
+      "b_ref": "f219_positive_saved_k3",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "a_ref": "f219_positive_saved_k3",
+      "b_ref": "f219_positive_k03_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "a_ref": "f219_positive_k03_ML",
+      "b_ref": "f219_positive_k03_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "a_ref": "f219_positive_k03_M",
+      "b_ref": "f219_positive_k03_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointLRR",
+      "a_ref": "f219_positive_k03_MR",
+      "b_ref": "f219_positive_saved_k4",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "a_ref": "f219_positive_saved_k4",
+      "b_ref": "f219_positive_k04_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "a_ref": "f219_positive_k04_ML",
+      "b_ref": "f219_positive_k04_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "a_ref": "f219_positive_k04_M",
+      "b_ref": "f219_positive_k04_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLL",
+      "a_ref": "f219_positive_k04_MR",
+      "b_ref": "f219_positive_saved_k5",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "a_ref": "f219_positive_saved_k5",
+      "b_ref": "f219_positive_k05_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "a_ref": "f219_positive_k05_ML",
+      "b_ref": "f219_positive_k05_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "a_ref": "f219_positive_k05_M",
+      "b_ref": "f219_positive_k05_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRLR",
+      "a_ref": "f219_positive_k05_MR",
+      "b_ref": "f219_positive_saved_k6",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "a_ref": "f219_positive_saved_k6",
+      "b_ref": "f219_positive_k06_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "a_ref": "f219_positive_k06_ML",
+      "b_ref": "f219_positive_k06_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "a_ref": "f219_positive_k06_M",
+      "b_ref": "f219_positive_k06_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRL",
+      "a_ref": "f219_positive_k06_MR",
+      "b_ref": "f219_positive_saved_k7",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "a_ref": "f219_positive_saved_k7",
+      "b_ref": "f219_positive_k07_ML",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "a_ref": "f219_positive_k07_ML",
+      "b_ref": "f219_positive_k07_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "a_ref": "f219_positive_k07_M",
+      "b_ref": "f219_positive_k07_MR",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f219_center_to_positive_endpointRRR",
+      "a_ref": "f219_positive_k07_MR",
+      "b_ref": "f219_positive_saved_k8",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRRR",
+      "a_ref": "f643_negative_fiber_endpoint",
+      "b_ref": "f643_negative_k00_M",
+      "is_new_regular_to_fiber_ingress_leaf": true
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRRR",
+      "a_ref": "f643_negative_k00_M",
+      "b_ref": "f643_negative_saved_k1",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRRL",
+      "a_ref": "f643_negative_saved_k1",
+      "b_ref": "f643_negative_k01_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRRL",
+      "a_ref": "f643_negative_k01_M",
+      "b_ref": "f643_negative_saved_k2",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRLR",
+      "a_ref": "f643_negative_saved_k2",
+      "b_ref": "f643_negative_k02_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRLR",
+      "a_ref": "f643_negative_k02_M",
+      "b_ref": "f643_negative_saved_k3",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRLL",
+      "a_ref": "f643_negative_saved_k3",
+      "b_ref": "f643_negative_k03_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerRLL",
+      "a_ref": "f643_negative_k03_M",
+      "b_ref": "f643_negative_saved_k4",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLRR",
+      "a_ref": "f643_negative_saved_k4",
+      "b_ref": "f643_negative_k04_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLRR",
+      "a_ref": "f643_negative_k04_M",
+      "b_ref": "f643_negative_saved_k5",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLRL",
+      "a_ref": "f643_negative_saved_k5",
+      "b_ref": "f643_negative_k05_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLRL",
+      "a_ref": "f643_negative_k05_M",
+      "b_ref": "f643_negative_saved_k6",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLLR",
+      "a_ref": "f643_negative_saved_k6",
+      "b_ref": "f643_negative_k06_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLLR",
+      "a_ref": "f643_negative_k06_M",
+      "b_ref": "f643_negative_saved_k7",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLLL",
+      "a_ref": "f643_negative_saved_k7",
+      "b_ref": "f643_negative_k07_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "saved_leaf_node_id": "f643_negative_endpoint_to_centerLLL",
+      "a_ref": "f643_negative_k07_M",
+      "b_ref": "f643_negative_saved_k8",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLLL",
+      "a_ref": "f643_positive_fiber_endpoint",
+      "b_ref": "f643_positive_k00_M",
+      "is_new_regular_to_fiber_ingress_leaf": true
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLLL",
+      "a_ref": "f643_positive_k00_M",
+      "b_ref": "f643_positive_saved_k1",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLLR",
+      "a_ref": "f643_positive_saved_k1",
+      "b_ref": "f643_positive_k01_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLLR",
+      "a_ref": "f643_positive_k01_M",
+      "b_ref": "f643_positive_saved_k2",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLRL",
+      "a_ref": "f643_positive_saved_k2",
+      "b_ref": "f643_positive_k02_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLRL",
+      "a_ref": "f643_positive_k02_M",
+      "b_ref": "f643_positive_saved_k3",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLRR",
+      "a_ref": "f643_positive_saved_k3",
+      "b_ref": "f643_positive_k03_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointLRR",
+      "a_ref": "f643_positive_k03_M",
+      "b_ref": "f643_positive_saved_k4",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRLL",
+      "a_ref": "f643_positive_saved_k4",
+      "b_ref": "f643_positive_k04_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRLL",
+      "a_ref": "f643_positive_k04_M",
+      "b_ref": "f643_positive_saved_k5",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRLR",
+      "a_ref": "f643_positive_saved_k5",
+      "b_ref": "f643_positive_k05_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRLR",
+      "a_ref": "f643_positive_k05_M",
+      "b_ref": "f643_positive_saved_k6",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRRL",
+      "a_ref": "f643_positive_saved_k6",
+      "b_ref": "f643_positive_k06_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRRL",
+      "a_ref": "f643_positive_k06_M",
+      "b_ref": "f643_positive_saved_k7",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRRR",
+      "a_ref": "f643_positive_saved_k7",
+      "b_ref": "f643_positive_k07_M",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "saved_leaf_node_id": "f643_center_to_positive_endpointRRR",
+      "a_ref": "f643_positive_k07_M",
+      "b_ref": "f643_positive_saved_k8",
+      "is_new_regular_to_fiber_ingress_leaf": false
+    }
+  ],
+  "saved_fiber_edges": [
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "a_ref": "f219_original_center",
+      "b_ref": "f219_negative_fiber_midpoint",
+      "saved_full18_distance_rad": 0.001262431084826697,
+      "reused_without_scientific_recalculation": true
+    },
+    {
+      "parent_construction": 219,
+      "half": "negative_endpoint_to_center",
+      "a_ref": "f219_negative_fiber_midpoint",
+      "b_ref": "f219_negative_fiber_endpoint",
+      "saved_full18_distance_rad": 0.001262431084828895,
+      "reused_without_scientific_recalculation": true
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "a_ref": "f219_original_center",
+      "b_ref": "f219_positive_fiber_midpoint",
+      "saved_full18_distance_rad": 0.001371065015031822,
+      "reused_without_scientific_recalculation": true
+    },
+    {
+      "parent_construction": 219,
+      "half": "center_to_positive_endpoint",
+      "a_ref": "f219_positive_fiber_midpoint",
+      "b_ref": "f219_positive_fiber_endpoint",
+      "saved_full18_distance_rad": 0.00137106501502931,
+      "reused_without_scientific_recalculation": true
+    },
+    {
+      "parent_construction": 643,
+      "half": "negative_endpoint_to_center",
+      "a_ref": "f643_original_center",
+      "b_ref": "f643_negative_fiber_endpoint",
+      "saved_full18_distance_rad": 0.0022820573713580885,
+      "reused_without_scientific_recalculation": true
+    },
+    {
+      "parent_construction": 643,
+      "half": "center_to_positive_endpoint",
+      "a_ref": "f643_original_center",
+      "b_ref": "f643_positive_fiber_endpoint",
+      "saved_full18_distance_rad": 0.002344348440070782,
+      "reused_without_scientific_recalculation": true
+    }
+  ],
+  "midpoint_rule": "All18 arithmetic midpoint; keep active arm1 first6 bitwise equal to the unprojected midpoint; project arms2/3 only.",
+  "lift_rule": "Enumerate all source-limit-legal true2pi integer copies of the one fixed analytic branch. Minimize squared raw6 distance to reference; exact ties use q lexicographic order. No pi wrist-family changes.",
+  "source_RBS_differences": [
+    "Original author VI singular RBS source is incomplete; no native execution equivalence claimed.",
+    "Explicit same-pose singular fiber anchors and retained original-center fiber paths are new independent composite design.",
+    "Use strict raw full18 h=.0025; no source .05 early return or7*.05 singular shortcut.",
+    "Only2 fixed fixtures/4 designated wrist halves, not all RSS modes or a planner."
+  ],
+  "expected_new_regular_ranks": {
+    "arm2": 6,
+    "arm3": 6,
+    "passive": 12,
+    "full": 12
+  },
+  "call_accounting": {
+    "per_node_IK_branch_requests": 16,
+    "per_node_native_F_operation": 1,
+    "exact_inprocess_arm_FK_J_counting": "Temporary count-only forwarding wrappers for base and physical_nr arm_fk_jac bindings; identical original function/arguments/results. Starts/completions logged individually, no source edit or numerical change.",
+    "per_fully_checked_node_arm_FK_J": "target1+accepted-root-roundtrip A+body3+physical3+adapter3=10+A; A in0..16 recorded, not assumed4.",
+    "adapter": "Before collision dispatch request3 pose-consistency FK/J. An observed native result confirms1 query; an observed3-arm pose-consistency error list confirms3 FK/J starts/completions even if later gated. Failed dispatch leaves any unconfirmed requested prefix unresolved, never assumed completed.",
+    "IK_requests_cap": 1024,
+    "native_F_operations_cap": 64,
+    "inprocess_arm_FK_J_cap": 1472,
+    "adapter_internal_arm_FK_J_cap": 192,
+    "total_arm_FK_J_cap": 1664,
+    "native_collision_queries_cap": 64
+  },
+  "old_tree_reuse_gate": "All40 saved q18 nodes are retained exactly under unchanged original model/source/gates/branches/PQP hashes;4 extra +/-delta/2 explicit-curve nodes are not used. Original Q2 UNKNOWN stays unchanged.",
+  "new_ingress_gate": "All64 new regular nodes qualified by dual closure/source limits/unique fixed branches/6,6,12,12 body and independent physical ranks/actual source-PQP. All96 actual final regular edges AND6 saved fiber edges must have raw full18 norm strictly<h. The4 regular-to-fiber ingress leaves are reported separately; original centers remain in composite paths.",
+  "failure_policy": "One fixed schedule only. Retain every failure; stop whole run before descendants of a failed node, process/protocol/rank/branch soundness inconsistency, budget limit or missing dependency. No node replacement, adaptive subdivision, fixture/branch/delta/h change, retry or rerun. Non-PASS edge leaves composite UNKNOWN.",
+  "claims_not_established": [
+    "Old Q2 status improvement",
+    "Author-native RBS equivalence",
+    "All singular modes",
+    "Global RSS/PCS/NR planning",
+    "Continuous lift/path or CCD certificate",
+    "Full collision geometry or original TableI/II statistics"
+  ],
+  "ik_binary": "build/p4_full/20261015_R2_SPATIAL01/comau_vi_batch",
+  "ik_binary_sha256": "8653b2e001b4100f33822da0f37055b7a7b8b0d292f0fedc9933aa2fcbed0cb8",
+  "collision_checker_command": [
+    "/usr/bin/python3",
+    "-m",
+    "baselines.p4_full.geometry_consistent.collision_adapter"
+  ],
+  "collision_manifest": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v2/manifest.json",
+  "collision_manifest_sha256": "9ed2e7c634e4c5d58698101571145960c96417c94f8ff0f546d7a637e0e1d302",
+  "collision_controls_result": "results/p4_full/20261015_R2_COLLISION_CONTROLS01/result.json",
+  "collision_controls_result_sha256": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+  "collision_success_statuses": [
+    "CHECKED"
+  ],
+  "collision_qualification_scope": "Qualified original discrete source pair/mesh/tolerance policy only; complete physical geometry, omitted pairs and CCD remain unverified.",
+  "one_shot_policy": "Separate atomic retained INGRESS_COMPOSITE_974_V1 claim; original/B/Q2/CENTER/FIBER claims never modified. Any interrupted prefix consumes the approved budget and prevents repeat."
+}
