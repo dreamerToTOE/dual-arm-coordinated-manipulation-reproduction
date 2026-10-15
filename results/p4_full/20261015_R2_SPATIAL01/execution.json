@@ -1,0 +1,85 @@
+{
+  "run_id": "20261015_R2_SPATIAL01",
+  "started_at_utc": "2026-10-15T02:04:03.026655+00:00",
+  "source_commit": "1fa17785123575af9895fb7dfface8e3e36af3f2",
+  "git_status_at_start": "",
+  "protocol_sha256": "c9f604257071f4890ade2d836f78f7ccf80a2bd2995df1af3a092220db0b3107",
+  "stages": [
+    {
+      "environment": "II",
+      "checks": 330,
+      "passed": 330,
+      "failed": 0,
+      "nr_status_counts": {
+        "CONVERGED": 32
+      },
+      "original_input_sha256": "b23a5e4f3aef707a5c2ee325f20ff9698786fd403e6f1db59053ecfa4f23b3d9",
+      "formal_planning_calls": 0,
+      "collision_checked": false
+    },
+    {
+      "environment": "III",
+      "checks": 330,
+      "passed": 330,
+      "failed": 0,
+      "nr_status_counts": {
+        "CONVERGED": 32
+      },
+      "original_input_sha256": "695971760c5947022f1889164455159b1ba9a2fded6f1c417eeb8929fff643c0",
+      "formal_planning_calls": 0,
+      "collision_checked": false
+    },
+    {
+      "environment": "IV",
+      "checks": 430,
+      "passed": 427,
+      "failed": 3,
+      "nr_status_counts": {
+        "CONVERGED": 26,
+        "CLOSED_BUT_JOINT_LIMIT_REJECTED": 6
+      },
+      "original_input_sha256": "3ae03596a6e5e52ba9e4c5b99fa10e61c713dcb9741860c7064563e4ca87b2f6",
+      "formal_planning_calls": 0,
+      "collision_checked": false
+    },
+    {
+      "environment": "V",
+      "checks": 430,
+      "passed": 430,
+      "failed": 0,
+      "nr_status_counts": {
+        "CONVERGED": 32
+      },
+      "original_input_sha256": "431d54db72d84cb5df3808d973608c58f9c7287767eb42323584196a08655ced",
+      "formal_planning_calls": 0,
+      "collision_checked": false
+    },
+    {
+      "environment": "VI",
+      "checks": 571,
+      "passed": 571,
+      "failed": 0,
+      "nr_status_counts": {
+        "CONVERGED": 32
+      },
+      "original_input_sha256": "42f0153a01fb8a1d1bddfd6dbd60f91bbe0bdd15a21ce016636515f993d859c8",
+      "formal_planning_calls": 0,
+      "collision_checked": false
+    }
+  ],
+  "formal_planning_calls": 0,
+  "source_files": {
+    "baselines/p4_full/geometry_consistent/PLANAR_GEOMETRY_SPEC.md": "13e234b8d3c17e03f9fdbafededccb4e7763d67eeac6044d479805d405c6bd17",
+    "baselines/p4_full/geometry_consistent/PLANAR_QUALIFICATION_PROPOSAL.json": "712b5d90749ca59d781710f26005259082f635f935a3a96f73c89abc63656b59",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/planar_geometry.py": "ae6991a9a2972635d738511606d4edf3a6ae6fbe2880d9355f6375c4ab155086",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "baselines/p4_full/geometry_consistent/run_qualification.py": "01741414dedd3fb3cb4e1a0c347b4b7cc4beff99f1cb36e1cd18795593f11005",
+    "baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp": "9d997c32f9f4a40d7945e2cd563145b0ff27b267c32d5a24407f6c48baa47dea",
+    "baselines/p4_full/geometry_consistent/spatial_ik_patch.py": "3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8"
+  },
+  "status": "COMPONENT_EVIDENCE_RECORDED",
+  "wall_s": 14.7231531299999,
+  "cpu_s": 9.465682,
+  "ended_at_utc": "2026-10-15T02:04:17.749726+00:00"
+}

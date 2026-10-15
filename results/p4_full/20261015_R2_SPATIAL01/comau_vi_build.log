@@ -1,0 +1,16 @@
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp: In member function ‘bool two_robots::IKsolve_rob(Matrix, int, int)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp:148:16: warning: unused variable ‘q2_sign’ [-Wunused-variable]
+  148 |         double q2_sign[NUM_IK_SOLUTIONS] = { -1, -1, -1, -1,  1,  1,  1,  1};
+      |                ^~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp: In member function ‘double two_robots::normDistance(State, State)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp:400:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  400 |         for (int i=0; i<q_a.size(); i++) {
+      |                       ~^~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp: In member function ‘bool two_robots::InvertMatrix(Matrix, Matrix&)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp:507:9: warning: unused variable ‘i’ [-Wunused-variable]
+  507 |     int i;
+      |         ^
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp: In member function ‘void two_robots::log_q(State)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau3/proj_classes/apc_class.cpp:693:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  693 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~

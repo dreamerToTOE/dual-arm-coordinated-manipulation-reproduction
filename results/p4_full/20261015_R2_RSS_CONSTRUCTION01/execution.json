@@ -1,0 +1,92 @@
+{
+  "source_commit": "98d999a13d247c8643812e77b17a4bb3678d9c8b",
+  "git_status_at_start": " M reports/P4_FULL_R2_SPATIAL_IK_STATIC_REVIEW.md\n?? results/p4_full/20261015_R2_PLANAR01/\n?? results/p4_full/20261015_R2_SPATIAL01/\n",
+  "started_at_utc": "2026-10-15T02:09:55.499450+00:00",
+  "protocol_sha256": "c9f604257071f4890ade2d836f78f7ccf80a2bd2995df1af3a092220db0b3107",
+  "addendum_sha256": "f9366f918a1c0a5d9afbca97b7aab1977f9f15833ffbc4ab011632c36d2ac8b8",
+  "previous_wall_s": 14.834479546999773,
+  "previous_cpu_s": 9.577964999999999,
+  "models": [
+    {
+      "environment": "II",
+      "fixed_passive_targets": 300,
+      "qualified_passive_targets": 7,
+      "counts": {
+        "branch_attempts": 2400,
+        "mode0_branch_attempts": 800,
+        "ACTIVE_IK_REJECTED": 2382,
+        "mode1_branch_attempts": 800,
+        "mode2_branch_attempts": 800,
+        "active_ik_accepted": 18,
+        "qualified_branch_candidates": 18,
+        "mode0_qualified_targets": 0,
+        "mode1_qualified_targets": 3,
+        "mode2_qualified_targets": 4
+      },
+      "checks": 2403,
+      "passed": 2402,
+      "failed": 1,
+      "source_sha256": "b23a5e4f3aef707a5c2ee325f20ff9698786fd403e6f1db59053ecfa4f23b3d9",
+      "binary_sha256": "03fccdee5f0693202210ab033721208976fa2a68794b48a2412531839d23f2b3",
+      "collision_checked": false,
+      "RBS_or_branch_bridge_checked": false,
+      "formal_planning_calls": 0
+    },
+    {
+      "environment": "III",
+      "fixed_passive_targets": 300,
+      "qualified_passive_targets": 8,
+      "counts": {
+        "branch_attempts": 2400,
+        "mode0_branch_attempts": 800,
+        "ACTIVE_IK_REJECTED": 2378,
+        "mode1_branch_attempts": 800,
+        "mode2_branch_attempts": 800,
+        "active_ik_accepted": 22,
+        "qualified_branch_candidates": 22,
+        "mode0_qualified_targets": 0,
+        "mode1_qualified_targets": 3,
+        "mode2_qualified_targets": 5
+      },
+      "checks": 2403,
+      "passed": 2402,
+      "failed": 1,
+      "source_sha256": "695971760c5947022f1889164455159b1ba9a2fded6f1c417eeb8929fff643c0",
+      "binary_sha256": "03fccdee5f0693202210ab033721208976fa2a68794b48a2412531839d23f2b3",
+      "collision_checked": false,
+      "RBS_or_branch_bridge_checked": false,
+      "formal_planning_calls": 0
+    },
+    {
+      "environment": "V",
+      "fixed_passive_targets": 100,
+      "qualified_passive_targets": 4,
+      "counts": {
+        "branch_attempts": 800,
+        "mode1_branch_attempts": 800,
+        "ACTIVE_IK_REJECTED": 792,
+        "active_ik_accepted": 8,
+        "qualified_branch_candidates": 8,
+        "mode1_qualified_targets": 4
+      },
+      "checks": 801,
+      "passed": 801,
+      "failed": 0,
+      "source_sha256": "431d54db72d84cb5df3808d973608c58f9c7287767eb42323584196a08655ced",
+      "binary_sha256": "4a5c58285718a6f969b4a4e422ea4deb12b4719ae96c058c9fd24048264db538",
+      "collision_checked": false,
+      "RBS_or_branch_bridge_checked": false,
+      "formal_planning_calls": 0
+    }
+  ],
+  "formal_planning_calls": 0,
+  "collision_queries": 0,
+  "new_rng_draws": 0,
+  "classification": "DETERMINISTIC_STRATIFIED_COMPONENT_INPUTS_NOT_RSS_DISTRIBUTION_TRIALS",
+  "status": "FIXED_COMPONENT_CONSTRUCTION_RECORDED",
+  "wall_s": 1.5027174159999959,
+  "cpu_s": 1.015161,
+  "cumulative_execution_wall_s": 16.33719696299977,
+  "cumulative_execution_cpu_s": 10.593125999999998,
+  "ended_at_utc": "2026-10-15T02:09:56.995038+00:00"
+}

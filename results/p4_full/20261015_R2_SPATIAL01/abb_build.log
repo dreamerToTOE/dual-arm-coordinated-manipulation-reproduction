@@ -1,0 +1,12 @@
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp: In member function ‘bool two_robots::IKsolve_rob(Matrix, int, int)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp:120:16: warning: unused variable ‘q2_sign’ [-Wunused-variable]
+  120 |         double q2_sign[NUM_IK_SOLUTIONS] = { -1, -1, -1, -1,  1,  1,  1,  1};
+      |                ^~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp: In member function ‘double two_robots::normDistance(State, State)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp:338:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  338 |         for (int i=0; i<q_a.size(); i++) {
+      |                       ~^~~~~~~~~~~
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp: In member function ‘bool two_robots::InvertMatrix(Matrix, Matrix&)’:
+/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp:445:9: warning: unused variable ‘i’ [-Wunused-variable]
+  445 |     int i;
+      |         ^

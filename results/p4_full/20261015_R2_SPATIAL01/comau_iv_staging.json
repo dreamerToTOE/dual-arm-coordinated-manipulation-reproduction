@@ -1,0 +1,23 @@
+{
+  "model": "comau_iv",
+  "stage_root": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau2",
+  "manifest": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau2/p4_geometry_consistent_apc_stage_manifest.json",
+  "manifest_sha256": "ebe7da673f87e20232bbf9b28c6cd898cc56309d661963b25a2473506f387b82",
+  "cpp_after_sha256": "2c3621b19533ce14d41e6399f7d292bdcff13f29147df6514761ee0b91990c80",
+  "status": "STAGED_NOT_COMPILED_OR_QUALIFIED",
+  "build_command": [
+    "g++",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-I/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes",
+    "-DP4_MODEL=4",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/apc_class.cpp",
+    "-o",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch"
+  ],
+  "build_wall_s": 1.7169239689997084,
+  "exit_code": 0
+}
