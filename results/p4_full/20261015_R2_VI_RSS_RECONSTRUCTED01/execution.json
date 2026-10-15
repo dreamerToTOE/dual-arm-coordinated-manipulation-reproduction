@@ -1,0 +1,92 @@
+{
+  "schema": "P4_R2_VI_RSS_RECONSTRUCTED_QUALIFICATION_V1",
+  "run_id": "20261015_R2_VI_RSS_RECONSTRUCTED01",
+  "authorization_budget_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015",
+  "started_at_utc": "2026-10-15T05:29:01.661176+00:00",
+  "source_commit": "3fad1b59a17181b941785d56323a38da749be15d",
+  "git_status_at_start": "?? results/p4_full/P4_R2_VI_RSS_USER_960_180W_360CPU_20261015.claim.json\n",
+  "source_hashes": {
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "configs/p4_full/r2_vi_rss_reconstructed_qualification_v1.json": "c53238eee4d50ebcf6ae5eb645ef2cde128a6e3bb72f56a991d6bb51a07ec8f4",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075"
+  },
+  "protocol_sha256": "c53238eee4d50ebcf6ae5eb645ef2cde128a6e3bb72f56a991d6bb51a07ec8f4",
+  "ik_binary_sha256": "8653b2e001b4100f33822da0f37055b7a7b8b0d292f0fedc9933aa2fcbed0cb8",
+  "previous_wall_s": 23.808420767000825,
+  "previous_cpu_s": 16.640970999999997,
+  "prior_execution_hashes": {
+    "20261015_R2_SPATIAL01": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "20261015_R2_PLANAR01": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "20261015_R2_RSS_CONSTRUCTION01": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "20261015_R2_COLLISION_CONTROLS01": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "20261015_R2_ENDPOINT_RECONSTRUCTED01": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749"
+  },
+  "collision_controls_result_sha256": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+  "collision_qualification_scope": "Qualified original discrete source pair/mesh/tolerance policy only; complete physical geometry, omitted pairs and CCD remain unverified.",
+  "formal_planning_calls": 0,
+  "RBS_or_branch_bridge_checked": false,
+  "classification": "RECONSTRUCTED / INDEPENDENT-RECONSTRUCTION",
+  "thread_environment_before": {
+    "OPENBLAS_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "NUMEXPR_NUM_THREADS": null,
+    "VECLIB_MAXIMUM_THREADS": null
+  },
+  "rss_gamma": 0.2,
+  "gamma_used_for_planner_events": false,
+  "status": "CANDIDATE_CONSTRUCTION_RECORDED",
+  "counts": {
+    "requests_started": 30,
+    "candidate_constructions": 868,
+    "ik_branch_evaluations_requested": 13888,
+    "sampled_arm_native_fk_requests": 868,
+    "ik_branch_evaluations_completed": 13888,
+    "ACTIVE_ARM1_NO_SOURCE_BOUND_LEGAL_ROOT": 811,
+    "OTHER_PASSIVE_NO_SOURCE_BOUND_LEGAL_ROOT": 816,
+    "requests_completed": 30,
+    "requests_failed_32_constructions": 23,
+    "collision_queries_started": 12,
+    "collision_queries_completed": 12,
+    "ORIGINAL_PQP_COLLISION": 5,
+    "fully_qualified_candidates": 7,
+    "fully_qualified_designated_arm3": 5,
+    "requests_success": 7,
+    "fully_qualified_designated_arm2": 2
+  },
+  "wall_s": 45.133593771999585,
+  "cpu_s": 5.6411750000000005,
+  "ended_at_utc": "2026-10-15T05:29:46.800530+00:00",
+  "cumulative_execution_wall_s": 68.94201453900041,
+  "cumulative_execution_cpu_s": 22.282145999999997,
+  "retained_native_output_rows": {
+    "K": 13888,
+    "F": 868
+  },
+  "authorization_budget_remaining": {
+    "candidate_constructions": 92,
+    "wall_s": 134.86640622800041,
+    "cpu_s": 354.358825,
+    "r2_total_wall_s": 3531.0579854609996,
+    "r2_total_cpu_s": 7177.717854,
+    "policy": "Not executable by rerunning this script. Preserve this prefix and freeze any evidenced continuation against these remaining caps; do not reset or duplicate sampled candidates."
+  },
+  "candidate_coverage_by_designated_arm": {
+    "2": {
+      "fully_qualified": 2,
+      "has_at_least_one": true
+    },
+    "3": {
+      "fully_qualified": 5,
+      "has_at_least_one": true
+    }
+  },
+  "candidate_coverage_gate_passed": true,
+  "coverage_gate_status": "PASS",
+  "full_RSS_or_planning_pass": false,
+  "scope_limitation": "Candidates only. Adjacent branch identities are geometric, no RBS bridge, visibility, planner or original-author VI sampler equivalence validated."
+}
