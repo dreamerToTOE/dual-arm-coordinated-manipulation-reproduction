@@ -1,0 +1,571 @@
+{
+  "case_id": "II_original_input_0",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "status",
+      "passed": true,
+      "actual": "CONVERGED",
+      "reference": "CONVERGED"
+    },
+    {
+      "check": "input",
+      "passed": true,
+      "actual": [
+        0.5336,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0,
+        1.004278,
+        0.2729,
+        0.9486,
+        -1.15011,
+        1.81001,
+        -1.97739
+      ],
+      "reference": [
+        0.5336,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0,
+        1.004278,
+        0.2729,
+        0.9486,
+        -1.15011,
+        1.81001,
+        -1.97739
+      ]
+    },
+    {
+      "check": "collision_checked",
+      "passed": true,
+      "actual": false,
+      "reference": false
+    },
+    {
+      "check": "observer_errors",
+      "passed": true,
+      "actual": [],
+      "reference": []
+    },
+    {
+      "check": "accepted_updates",
+      "passed": true,
+      "actual": 2,
+      "reference": 2
+    },
+    {
+      "check": "trace_length",
+      "passed": true,
+      "actual": 3,
+      "reference": 3
+    },
+    {
+      "check": "candidate",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 2.220446049250313e-16,
+      "minimum_margin": 9.999977795539508e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "final_metrics.keys",
+      "passed": true,
+      "actual": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ],
+      "reference": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ]
+    },
+    {
+      "check": "final_metrics.unit",
+      "passed": true,
+      "actual": "mm",
+      "reference": "mm"
+    },
+    {
+      "check": "final_metrics.translation_max_abs",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.1368683772161603e-13,
+      "minimum_margin": 9.999886313162279e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "final_metrics.rotation_matrix_max_abs",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 3.677613769070831e-16,
+      "minimum_margin": 9.999632238623092e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "final_metrics.rotation_angle_max_rad",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 3.4066814259230857e-16,
+      "minimum_margin": 9.999659331857407e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.iteration",
+      "passed": true,
+      "actual": 0,
+      "reference": 0
+    },
+    {
+      "check": "iteration0.rank",
+      "passed": true,
+      "actual": 6,
+      "reference": 6
+    },
+    {
+      "check": "iteration0.q_before",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 0.0,
+      "minimum_margin": 1e-10,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.q_next",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 5.551115123125783e-17,
+      "minimum_margin": 9.999994448884877e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.observed_delta_q",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 5.551115123125783e-17,
+      "minimum_margin": 9.999994448884877e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.update_pattern",
+      "passed": true,
+      "actual": true,
+      "reference": true
+    },
+    {
+      "check": "iteration0.g_position",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.4210854715202004e-14,
+      "minimum_margin": 9.999985789145285e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.g_rotation",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 6.245004513516506e-17,
+      "minimum_margin": 9.999937549954864e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.J_position",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.1368683772161603e-13,
+      "minimum_margin": 9.999886313162279e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.J_rotation",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 4.440892098500626e-16,
+      "minimum_margin": 9.99955591079015e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.singular_values",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 1e-10,
+      "max_abs_error": 1.4779288903810084e-12,
+      "minimum_margin": 1.0131569847162432e-08,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.cutoff",
+      "passed": true,
+      "absolute": 1e-18,
+      "relative": 1e-10,
+      "max_abs_error": 1.0339757656912846e-25,
+      "minimum_margin": 1.0851919485220397e-18,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.metrics.keys",
+      "passed": true,
+      "actual": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ],
+      "reference": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ]
+    },
+    {
+      "check": "iteration0.metrics.unit",
+      "passed": true,
+      "actual": "mm",
+      "reference": "mm"
+    },
+    {
+      "check": "iteration0.metrics.translation_max_abs",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.4210854715202004e-14,
+      "minimum_margin": 9.999985789145285e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.metrics.rotation_matrix_max_abs",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 0.0,
+      "minimum_margin": 1e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration0.metrics.rotation_angle_max_rad",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 6.245004513516506e-17,
+      "minimum_margin": 9.999937549954864e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.iteration",
+      "passed": true,
+      "actual": 1,
+      "reference": 1
+    },
+    {
+      "check": "iteration1.rank",
+      "passed": true,
+      "actual": 6,
+      "reference": 6
+    },
+    {
+      "check": "iteration1.q_before",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 5.551115123125783e-17,
+      "minimum_margin": 9.999994448884877e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.q_next",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 2.220446049250313e-16,
+      "minimum_margin": 9.999977795539508e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.observed_delta_q",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 2.220446049250313e-16,
+      "minimum_margin": 9.999977795539508e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.update_pattern",
+      "passed": true,
+      "actual": true,
+      "reference": true
+    },
+    {
+      "check": "iteration1.g_position",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 5.684341886080802e-14,
+      "minimum_margin": 9.99994315658114e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.g_rotation",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 6.023314815396374e-17,
+      "minimum_margin": 9.999939766851845e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.J_position",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.1368683772161603e-13,
+      "minimum_margin": 9.999886313162279e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.J_rotation",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 2.220446049250313e-16,
+      "minimum_margin": 9.999777955395074e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.singular_values",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 1e-10,
+      "max_abs_error": 6.252776074688882e-13,
+      "minimum_margin": 1.0131573857943993e-08,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.cutoff",
+      "passed": true,
+      "absolute": 1e-18,
+      "relative": 1e-10,
+      "max_abs_error": 1.0339757656912846e-25,
+      "minimum_margin": 1.085164372615805e-18,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.metrics.keys",
+      "passed": true,
+      "actual": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ],
+      "reference": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ]
+    },
+    {
+      "check": "iteration1.metrics.unit",
+      "passed": true,
+      "actual": "mm",
+      "reference": "mm"
+    },
+    {
+      "check": "iteration1.metrics.translation_max_abs",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 5.684341886080802e-14,
+      "minimum_margin": 9.99994315658114e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.metrics.rotation_matrix_max_abs",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 9.71445146547012e-17,
+      "minimum_margin": 9.999902855485345e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration1.metrics.rotation_angle_max_rad",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 6.091543319297708e-17,
+      "minimum_margin": 9.999939084566806e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.iteration",
+      "passed": true,
+      "actual": 2,
+      "reference": 2
+    },
+    {
+      "check": "iteration2.rank",
+      "passed": true,
+      "actual": 0,
+      "reference": 0
+    },
+    {
+      "check": "iteration2.q_before",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 2.220446049250313e-16,
+      "minimum_margin": 9.999977795539508e-11,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.q_next",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 0.0,
+      "minimum_margin": 1e-10,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.observed_delta_q",
+      "passed": true,
+      "absolute": 1e-10,
+      "relative": 0.0,
+      "max_abs_error": 0.0,
+      "minimum_margin": 1e-10,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.update_pattern",
+      "passed": true,
+      "actual": false,
+      "reference": false
+    },
+    {
+      "check": "iteration2.g_position",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.1368683772161603e-13,
+      "minimum_margin": 9.999886313162279e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.g_rotation",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 3.082524022183524e-16,
+      "minimum_margin": 9.999691747597781e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.J_position",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.4921397450962104e-13,
+      "minimum_margin": 9.99985078602549e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.J_rotation",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 2.220446049250313e-16,
+      "minimum_margin": 9.999777955395074e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.singular_values",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 1e-10,
+      "max_abs_error": 0.0,
+      "minimum_margin": 1e-08,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.cutoff",
+      "passed": true,
+      "absolute": 1e-18,
+      "relative": 1e-10,
+      "max_abs_error": 0.0,
+      "minimum_margin": 1e-18,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.metrics.keys",
+      "passed": true,
+      "actual": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ],
+      "reference": [
+        "position_unit",
+        "rotation_angle_max_rad",
+        "rotation_matrix_max_abs",
+        "translation_max_abs"
+      ]
+    },
+    {
+      "check": "iteration2.metrics.unit",
+      "passed": true,
+      "actual": "mm",
+      "reference": "mm"
+    },
+    {
+      "check": "iteration2.metrics.translation_max_abs",
+      "passed": true,
+      "absolute": 1e-08,
+      "relative": 0.0,
+      "max_abs_error": 1.1368683772161603e-13,
+      "minimum_margin": 9.999886313162279e-09,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.metrics.rotation_matrix_max_abs",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 3.677613769070831e-16,
+      "minimum_margin": 9.999632238623092e-12,
+      "shape_valid": true
+    },
+    {
+      "check": "iteration2.metrics.rotation_angle_max_rad",
+      "passed": true,
+      "absolute": 1e-11,
+      "relative": 0.0,
+      "max_abs_error": 3.4066814259230857e-16,
+      "minimum_margin": 9.999659331857407e-12,
+      "shape_valid": true
+    }
+  ],
+  "plain_trace_exact_non_cost_equality": true
+}

@@ -60,3 +60,10 @@ PRIOR-ASSET：复用已冻结B的RunBudget/Evidence、physical_nr/rss_geometry�
 ## 旧48 RSS候选碰撞补验冻结前复核
 
 根代理逐行审查runner SHA ad6a30f253ee28b99002547f54b0235b0a570320d3699ab994d180fa432c6481；独立读取旧observations与固定48数组、原顺序及ID，177文件绑定和11run账目一致。每条仅一次v3 adapter，96 native/aligned及192内部FK/J以实际worker事件计数，全部PQP pair返回原样留证。普通碰撞拒绝不换候选，格式/来源/选定TCP矛盾停前缀。30wall/60CPU从原R2余量扣，VI B子预算不扣；0新候选/IK/NR/RNG/RBS/规划。V原checkEE未执行，碰撞clear不冒称完整源RSS通过。详细PRE及复用分类另见P4_FULL_R2_SAVED_RSS_COLLISION_PRE_TASK_20261015.md。源码/协议提交冻结后单次执行，不重做700目标/5600分支。
+
+
+## 2026-10-15 — ABB NR固定64移植资格实际通过
+
+c68fa76冻结后的唯一Q1执行完成：II32+III32、C++plain64/trace64/原Python64共192派发与192完成，64跨语言、64历史重放、64独立终态全部通过。q最大差4.440892098500626e-16rad；终态最大位置8.342067303601652e-7mm、旋转矩阵1.50461743064767e-9，原1e-5门不变。Python原NR内部864/864 armFKJ，独立终态128/128；C++内部started/completed仍UNOBSERVED。actual7.05127794699365wall/7.9173490000000015CPU。详细源码、命令、版本和差异见reports/P4_FULL_R2_NR_ABB_Q1_POST_TASK_20261015.md；独立保存证据审查另存，不借0exit或同失败证明能力。
+
+20execution=17科学+3工程保守总359.4902552519934wall/309.65925300000004CPU，旧V5保持，新V6逐own实耗一次。资格标签仅PASS_FIXED64_NUMERICAL_TRANSFER / RECONSTRUCTED_PHYSICAL_FULL_NR_CPP，不是作者KDL轨迹/公平速度或全随机空间投影能力。下一步原GD薄接缝、原NR非平凡RBS/回溯和原RRT入口，先独立PRE/版本/预算冻结；源sample_q未达调用链问题不捆修。VI974余0、正式0/22500、全部211义务不缩。原失败保持，不P2/Isaac。
