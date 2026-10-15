@@ -1,0 +1,79 @@
+{
+  "schema": "P4_R2_VI_RSS_RECONSTRUCTED_QUALIFICATION_V1",
+  "frozen": true,
+  "run_id": "20261015_R2_VI_RSS_RECONSTRUCTED01",
+  "authorization_budget_id": "P4_R2_VI_RSS_USER_960_180W_360CPU_20261015",
+  "classification": "RECONSTRUCTED / INDEPENDENT-RECONSTRUCTION",
+  "active_arm": 1,
+  "designated_passive_arms": [
+    2,
+    3
+  ],
+  "designated_passive_probabilities": [
+    0.5,
+    0.5
+  ],
+  "singular_mode": 1,
+  "rss_gamma": 0.2,
+  "gamma_scope": "Preserved planner parameter; this is a conditional singular-request qualification, no planner Bernoulli events.",
+  "seeds": [
+    7,
+    23,
+    41,
+    101,
+    20261013
+  ],
+  "requests_per_seed": 6,
+  "attempts_per_request": 32,
+  "budget": {
+    "max_candidate_constructions": 960,
+    "wall_s": 180.0,
+    "cpu_s": 360.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "prior_runs": [
+    "20261015_R2_SPATIAL01",
+    "20261015_R2_PLANAR01",
+    "20261015_R2_RSS_CONSTRUCTION01",
+    "20261015_R2_COLLISION_CONTROLS01",
+    "20261015_R2_ENDPOINT_RECONSTRUCTED01"
+  ],
+  "gates": {
+    "position_maxabs_mm": 1e-05,
+    "rotation_matrix_maxabs": 1e-05,
+    "fk_position_maxabs_mm": 1e-07,
+    "fk_rotation_matrix_maxabs": 1e-10,
+    "rank_relative": 1e-06,
+    "rank_position_mm_to_m": 0.001,
+    "jacobian_fd_epsilon": 1e-06,
+    "jacobian_position_maxabs": 5e-06,
+    "jacobian_angular_maxabs": 5e-07,
+    "require_full_constraint_rank": 12,
+    "branch_zero_relative_epsilon": 1.4210854715202004e-14
+  },
+  "random_stream": "Python random.Random(seed), separate seed streams. Per request: one random()<0.5 selects s, held for all retries. Each construction draws all6 uniform source-limit angles then sets q5=0. After all8 roots/arm, one random() chooses uniformly from ascending source-bound-legal roots, for arm1 then other arm. No root replacement after collision.",
+  "ik_branches_per_construct": "All8 for arm1 and all8 for other passive arm, even if either list is empty; no designated-arm IK/re-solving.",
+  "root_policy": "Original0..7 numbered, source-accepted finite source-bound-legal roots. Every accepted root must independently round-trip; a soundness failure stops the run. Duplicated roots retain their source branch multiplicity.",
+  "ik_binary": "build/p4_full/20261015_R2_SPATIAL01/comau_vi_batch",
+  "ik_binary_sha256": "8653b2e001b4100f33822da0f37055b7a7b8b0d292f0fedc9933aa2fcbed0cb8",
+  "saved_q0_observations": "results/p4_full/20261015_R2_SPATIAL01/VI/observations.json",
+  "saved_q0_observations_sha256": "f36ea6c22495455b7d150cda8d655f9bd080914a32634a08b3fd04eeae1a9b38",
+  "collision_checker_command": [
+    "/usr/bin/python3",
+    "-m",
+    "baselines.p4_full.geometry_consistent.collision_adapter"
+  ],
+  "collision_manifest": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v2/manifest.json",
+  "collision_manifest_sha256": "9ed2e7c634e4c5d58698101571145960c96417c94f8ff0f546d7a637e0e1d302",
+  "collision_controls_result": "results/p4_full/20261015_R2_COLLISION_CONTROLS01/result.json",
+  "collision_controls_result_sha256": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+  "collision_qualification_scope": "Qualified original discrete source pair/mesh/tolerance policy only; complete physical geometry, omitted pairs and CCD remain unverified.",
+  "collision_checker_contract": "stdin one JSON line {environment:VI,q:[18 angles]}; stdout exactly one JSON object with status and collision bool/null. Only actual qualified original-PQP call with collision=false can qualify.",
+  "collision_success_statuses": [
+    "CHECKED"
+  ],
+  "positive_coverage_gate": "At least one fully closure/bounds/rank/collision-qualified candidate with each designated passive arm2/3. Request failures remain failures; this gate is not RSS/RBS/planning PASS.",
+  "q2_branch_bridge": "NOT_IMPLEMENTED_NOT_EXECUTED; no global RSS success claim",
+  "no_reset_policy": "Atomic fixed authorization claim; this runner refuses any second launch, including after crash. Claim is not a claim that all960 were used. Preserve prefix and actual remaining; an evidenced correction may continue within those remaining limits only under a new frozen continuation protocol/source, without resetting the original authorization."
+}

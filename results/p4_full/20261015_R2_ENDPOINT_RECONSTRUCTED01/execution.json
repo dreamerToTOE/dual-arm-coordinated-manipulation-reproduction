@@ -1,0 +1,146 @@
+{
+  "run_id": "20261015_R2_ENDPOINT_RECONSTRUCTED01",
+  "started_at_utc": "2026-10-15T05:27:38.161406+00:00",
+  "source_commit": "8188e93257cc4962d30c0db10204dbcee649eaba",
+  "git_status_at_start": "",
+  "protocol_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_endpoint_reconstruction_execution_v1.json",
+  "protocol_sha256": "8cc10b46ae48e00e6d4277df92cfdf994fb47dd8f1d0c51642c05aca27f03c25",
+  "collision_controls_result_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_COLLISION_CONTROLS01/result.json",
+  "collision_controls_result_sha256": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+  "collision_controls_status": "SOURCE_POLICY_QUALIFIED",
+  "full_physical_geometry_or_CCD_qualified": false,
+  "inputs_sha256_before": {
+    "results/p4_full/20261015_R2_PLANAR01/I_geometry_consistent_raw.jsonl": "bc6b824438e816e0078364363b7eb4d8814c5a198d2e59950f0f4cf100b9210a",
+    "results/p4_full/20261015_R2_SPATIAL01/II/observations.json": "b0f519b146ef84f6870d9243e673c2e7b312439417296388057958eda4670300",
+    "results/p4_full/20261015_R2_SPATIAL01/III/observations.json": "5278544f1ae6ceda39b05c0398a1ce1e7d684cf321aadbfbcbcd6b69a7b300c5",
+    "results/p4_full/20261015_R2_SPATIAL01/IV/observations.json": "3db5d2f9fb1e93b8b864c8b0d40325da9fd346a7f5521047ec854d7835075b2b",
+    "results/p4_full/20261015_R2_SPATIAL01/V/observations.json": "4fa86bd97cb4181c065a81d27eca156935bb5b78323db828712ec09b47c7e180",
+    "results/p4_full/20261015_R2_SPATIAL01/VI/observations.json": "f36ea6c22495455b7d150cda8d655f9bd080914a32634a08b3fd04eeae1a9b38"
+  },
+  "source_files_sha256": {
+    "scripts/recover_p4_full_r2_endpoints.py": "4723c08f33a85e4ea85d9067544979d222212c588c82d004934b293253bb555f",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578"
+  },
+  "new_ik_calls": 0,
+  "new_nr_calls": 0,
+  "new_sampling_calls": 0,
+  "formal_planning_calls": 0,
+  "classification": "RECONSTRUCTED",
+  "status": "QUALIFICATION_EVIDENCE_RECORDED",
+  "wall_s": 7.450141228000575,
+  "cpu_s": 6.025647,
+  "ended_at_utc": "2026-10-15T05:27:45.599945+00:00",
+  "endpoint_results": [
+    {
+      "environment": "I",
+      "endpoint": "c_start",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 0,
+      "candidate_count": 2,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "I",
+      "endpoint": "c_goal",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 0,
+      "candidate_count": 2,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "II",
+      "endpoint": "0",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 2,
+      "candidate_count": 4,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "II",
+      "endpoint": "1",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 0,
+      "candidate_count": 17,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "III",
+      "endpoint": "0",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 1,
+      "candidate_count": 5,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "III",
+      "endpoint": "1",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 3,
+      "candidate_count": 8,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "IV",
+      "endpoint": "start",
+      "status": "UNKNOWN_COLLISION_QUALIFICATION",
+      "selected_candidate_index": null,
+      "candidate_count": 75,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "IV",
+      "endpoint": "goal",
+      "status": "UNKNOWN_COLLISION_QUALIFICATION",
+      "selected_candidate_index": null,
+      "candidate_count": 60,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "V",
+      "endpoint": "start",
+      "status": "UNKNOWN_COLLISION_QUALIFICATION",
+      "selected_candidate_index": null,
+      "candidate_count": 75,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "V",
+      "endpoint": "goal",
+      "status": "UNKNOWN_COLLISION_QUALIFICATION",
+      "selected_candidate_index": null,
+      "candidate_count": 75,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "VI",
+      "endpoint": "start",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 435,
+      "candidate_count": 3600,
+      "original_closure_qualified": false
+    },
+    {
+      "environment": "VI",
+      "endpoint": "goal",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 675,
+      "candidate_count": 4500,
+      "original_closure_qualified": false
+    }
+  ],
+  "endpoint_status_counts": {
+    "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED": 8,
+    "UNKNOWN_COLLISION_QUALIFICATION": 4
+  },
+  "inputs_sha256_after": {
+    "results/p4_full/20261015_R2_PLANAR01/I_geometry_consistent_raw.jsonl": "bc6b824438e816e0078364363b7eb4d8814c5a198d2e59950f0f4cf100b9210a",
+    "results/p4_full/20261015_R2_SPATIAL01/II/observations.json": "b0f519b146ef84f6870d9243e673c2e7b312439417296388057958eda4670300",
+    "results/p4_full/20261015_R2_SPATIAL01/III/observations.json": "5278544f1ae6ceda39b05c0398a1ce1e7d684cf321aadbfbcbcd6b69a7b300c5",
+    "results/p4_full/20261015_R2_SPATIAL01/IV/observations.json": "3db5d2f9fb1e93b8b864c8b0d40325da9fd346a7f5521047ec854d7835075b2b",
+    "results/p4_full/20261015_R2_SPATIAL01/V/observations.json": "4fa86bd97cb4181c065a81d27eca156935bb5b78323db828712ec09b47c7e180",
+    "results/p4_full/20261015_R2_SPATIAL01/VI/observations.json": "f36ea6c22495455b7d150cda8d655f9bd080914a32634a08b3fd04eeae1a9b38"
+  },
+  "all_original_inputs_unchanged": true
+}
