@@ -6,6 +6,7 @@ from collections import Counter
 import datetime as dt
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import resource
@@ -318,6 +319,57 @@ def run_spatial(env, out, binary, budget, protocol):
     return summary
 
 
+def run_planar_nr(out, budget):
+    from baselines.p4_full.geometry_consistent import planar_geometry as pg
+    source = json.loads((ROOT/'results/p4_full/20261014T1555_R1_PLANAR01/I_native.json').read_text())
+    records, checks = [], []
+    inputs = [('original_input', str(r['index']), r['q_input']) for r in source['records']
+              if r['kind'] == 'nr_projection']
+    for r in source['records']:
+        if r['kind'] != 'raw_endpoint': continue
+        q = np.array(r['q'])
+        branches = [pg.project_apc(q, 0, b) for b in range(2)]
+        choices = [c for b in branches for c in b['candidates']
+                   if c['source_regular_eligible'] and np.all(
+                       (source_limits('I')[:,0] <= c['q']) & (c['q'] <= source_limits('I')[:,1]))]
+        checks.append({'check':'known_closed_fixture_'+str(r['endpoint']), 'passed':bool(choices)})
+        if not choices: continue
+        q_closed = np.array(choices[0]['q'])
+        records.append({'kind':'additional_component_fixture_only', 'original_q':q.tolist(),
+                        'q':q_closed.tolist(), 'delta_q':(q_closed-q).tolist(),
+                        'formal_endpoint_replaced':False})
+        for k in range(11):
+            shifted=q_closed.copy()
+            if k: shifted[(k-1)//2] += .01 if k%2 else -.01
+            inputs.append(('known_closed_neighborhood',str(r['endpoint'])+'_'+str(k),shifted.tolist()))
+    statuses=Counter()
+    for kind, idx, q in inputs:
+        result=project_nr(q,'I',wall_limit_s=budget.remaining()); statuses[result['status']]+=1
+        candidate=result['candidate_q_rad']
+        if candidate is None:
+            checks.append({'check':'NR_finite_'+kind+'_'+idx, 'passed':False}); continue
+        full=pg.full_chain(candidate)
+        # Recover the endpoint matrix H=F*T(7,4) for an independent score.
+        endpoint=full@pg.SE2(7.,4.,0.)
+        pe=max(abs(endpoint.x-7),abs(endpoint.y-4))
+        re=max(abs(math.sin(endpoint.angle)),abs(1-math.cos(endpoint.angle)))
+        valid=pe <= 1e-5 and re <= 1e-5
+        checks.append({'check':'NR_sound_'+kind+'_'+idx,
+                       'passed':result['status']!='CONVERGED' or valid,
+                       'status':result['status'], 'position_abs_source_units':pe, 'rotation_matrix_abs':re})
+        if kind=='known_closed_neighborhood':
+            checks.append({'check':'NR_positive_'+idx,'passed':result['status']=='CONVERGED' and valid,
+                           'status':result['status']})
+        records.append({'kind':'nr_reference','fixture_kind':kind,'fixture':idx,'result':result,
+                        'independent_matrix_errors':{'position_source_units':pe,'rotation_matrix':re}})
+    summary={'environment':'I_NR','checks':len(checks),'passed':sum(c['passed'] for c in checks),
+             'failed':sum(not c['passed'] for c in checks),'nr_status_counts':dict(statuses),
+             'formal_planning_calls':0,'collision_checked':False}
+    dump_new(out/'I_nr_records.json',records); dump_new(out/'I_nr_checks.json',checks)
+    dump_new(out/'I_nr_summary.json',summary)
+    return summary
+
+
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--run-id', required=True)
     ap.add_argument('--targets', nargs='+', choices=['I','II','III','IV','V','VI'], required=True)
@@ -336,7 +388,8 @@ def main():
             budget.remaining()
             if env == 'I':
                 from baselines.p4_full.geometry_consistent.qualify_planar import run_planar_suite
-                record['stages'].append(run_planar_suite(ROOT,out,protocol)); continue
+                record['stages'].append(run_planar_suite(ROOT,out,PROTOCOL))
+                record['stages'].append(run_planar_nr(out,budget)); continue
             model, dirname, macro=SPECS[env]
             if model not in staged:
                 stage=stage_spatial_ik(model,SOURCE_ROOT/dirname,build/dirname)
