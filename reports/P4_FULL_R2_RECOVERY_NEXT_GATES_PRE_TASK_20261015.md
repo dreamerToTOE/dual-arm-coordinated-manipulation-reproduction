@@ -56,3 +56,7 @@ IV-NR冻结前独立代码复核：audit_coverage逐项核对24固定数组、�
 PRIOR-ASSET：复用已冻结B的RunBudget/Evidence、physical_nr/rss_geometry、原位姿与Q2保存节点、原已资格collision adapter。原固定631b1f6工程及复用分类沿既有PRE记录；只新增6点组件runner和独立协议，旧FR3/Isaac模型仅REFERENCE_ONLY，不替换作者几何。科学执行前源码/协议和全部输入须提交冻结；已有run/claim立即拒绝复跑。
 
 冻结前独立代码复核audit_endpoints：runner SHA baf3eba251f14f0b8dc5e7c1b98ea39f2d3261f2d10338877bf99a33deeb395b，固定6点schedule、全部秩/branch/原界/位姿/叶门、54个FK/J计数、原B及R2余额、独占claim与前缀、Q2 UNKNOWN及仅组件边界均匹配，无阻断项；源码与协议提交后单次执行。
+
+## 旧48 RSS候选碰撞补验冻结前复核
+
+根代理逐行审查runner SHA ad6a30f253ee28b99002547f54b0235b0a570320d3699ab994d180fa432c6481；独立读取旧observations与固定48数组、原顺序及ID，177文件绑定和11run账目一致。每条仅一次v3 adapter，96 native/aligned及192内部FK/J以实际worker事件计数，全部PQP pair返回原样留证。普通碰撞拒绝不换候选，格式/来源/选定TCP矛盾停前缀。30wall/60CPU从原R2余量扣，VI B子预算不扣；0新候选/IK/NR/RNG/RBS/规划。V原checkEE未执行，碰撞clear不冒称完整源RSS通过。详细PRE及复用分类另见P4_FULL_R2_SAVED_RSS_COLLISION_PRE_TASK_20261015.md。源码/协议提交冻结后单次执行，不重做700目标/5600分支。
