@@ -1,0 +1,310 @@
+{
+  "schema": "P4_R2_IV_NR_SAVED_ROOT_CAUSE_20261015",
+  "scientific_solver_calls": 0,
+  "source_sha256": "3db5d2f9fb1e93b8b864c8b0d40325da9fd346a7f5521047ec854d7835075b2b",
+  "original_failures_retained": 6,
+  "additional_failed_assertions_retained": 3,
+  "anchor_source": "nr_reference/known_closed_neighborhood/start_0",
+  "anchor": {
+    "status": "CONVERGED",
+    "input_q_rad": [
+      -0.59,
+      1.48,
+      -1.57,
+      -1.36,
+      -0.4,
+      0.0,
+      1.0143994237017788,
+      0.5045011684058095,
+      -0.14966439024697054,
+      1.6056018785912483,
+      -1.1754052599345206,
+      0.15782776040972268
+    ],
+    "candidate_q_rad": [
+      -0.59,
+      1.48,
+      -1.57,
+      -1.36,
+      -0.4,
+      0.0,
+      1.0143994237017788,
+      0.5045011684058095,
+      -0.14966439024697054,
+      1.6056018785912483,
+      -1.1754052599345206,
+      0.15782776040972268
+    ],
+    "metrics": {
+      "translation_max_abs": 4.547473508864641e-13,
+      "rotation_matrix_max_abs": 3.3306690738754696e-16,
+      "rotation_angle_max_rad": 2.6710382976860115e-16,
+      "position_unit": "mm"
+    },
+    "trace": [
+      {
+        "iteration": 0,
+        "translation_max_abs": 4.547473508864641e-13,
+        "rotation_matrix_max_abs": 3.3306690738754696e-16,
+        "rotation_angle_max_rad": 2.6710382976860115e-16,
+        "position_unit": "mm"
+      }
+    ],
+    "wall_s": 0.0018215310001323815,
+    "method": "Paper full-Jacobian pseudoinverse NR, NumPy reference",
+    "collision_checked": false
+  },
+  "cases": [
+    {
+      "fixture_kind": "original_input",
+      "fixture": "2",
+      "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+      "input_q3": -1.58,
+      "output_q3": -1.581180774985104,
+      "q3_lower": -1.5707999999999998,
+      "input_q3_out_of_bounds": true,
+      "distance_to_saved_legal_closed_anchor_l2": 0.03464177896305093,
+      "saved_output_metrics": {
+        "translation_max_abs": 5.787389909528429e-06,
+        "rotation_matrix_max_abs": 4.188672214633371e-09,
+        "rotation_angle_max_rad": 4.6282904133643015e-09,
+        "position_unit": "mm"
+      },
+      "trace": [
+        {
+          "iteration": 0,
+          "translation_max_abs": 32.221092510734024,
+          "rotation_matrix_max_abs": 0.028264671914944473,
+          "rotation_angle_max_rad": 0.02995033157970409,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 1,
+          "translation_max_abs": 0.19136583571275878,
+          "rotation_matrix_max_abs": 7.221920819569516e-05,
+          "rotation_angle_max_rad": 7.60243115544651e-05,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 2,
+          "translation_max_abs": 5.787389909528429e-06,
+          "rotation_matrix_max_abs": 4.188672214633371e-09,
+          "rotation_angle_max_rad": 4.62829041511649e-09,
+          "position_unit": "mm"
+        }
+      ]
+    },
+    {
+      "fixture_kind": "original_input",
+      "fixture": "4",
+      "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+      "input_q3": -1.58,
+      "output_q3": -1.5819901219627654,
+      "q3_lower": -1.5707999999999998,
+      "input_q3_out_of_bounds": true,
+      "distance_to_saved_legal_closed_anchor_l2": 0.03464168179577177,
+      "saved_output_metrics": {
+        "translation_max_abs": 1.1368683772161603e-12,
+        "rotation_matrix_max_abs": 8.881784197001252e-16,
+        "rotation_angle_max_rad": 9.168186763987841e-16,
+        "position_unit": "mm"
+      },
+      "trace": [
+        {
+          "iteration": 0,
+          "translation_max_abs": 86.02431987794125,
+          "rotation_matrix_max_abs": 0.030895460164463456,
+          "rotation_angle_max_rad": 0.03173549849842514,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 1,
+          "translation_max_abs": 0.7279223687546619,
+          "rotation_matrix_max_abs": 0.0003835105333983013,
+          "rotation_angle_max_rad": 0.00040066961791045255,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 2,
+          "translation_max_abs": 6.987124470470008e-05,
+          "rotation_matrix_max_abs": 4.356257354842796e-08,
+          "rotation_angle_max_rad": 5.981969605496926e-08,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 3,
+          "translation_max_abs": 1.1368683772161603e-12,
+          "rotation_matrix_max_abs": 8.604228440844963e-16,
+          "rotation_angle_max_rad": 8.928271280345007e-16,
+          "position_unit": "mm"
+        }
+      ]
+    },
+    {
+      "fixture_kind": "original_input",
+      "fixture": "8",
+      "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+      "input_q3": -1.58,
+      "output_q3": -1.582877689408338,
+      "q3_lower": -1.5707999999999998,
+      "input_q3_out_of_bounds": true,
+      "distance_to_saved_legal_closed_anchor_l2": 0.03464115729573633,
+      "saved_output_metrics": {
+        "translation_max_abs": 1.5916157281026244e-12,
+        "rotation_matrix_max_abs": 7.494005416219807e-16,
+        "rotation_angle_max_rad": 9.99615606434473e-16,
+        "position_unit": "mm"
+      },
+      "trace": [
+        {
+          "iteration": 0,
+          "translation_max_abs": 70.19657395039076,
+          "rotation_matrix_max_abs": 0.0352965630999465,
+          "rotation_angle_max_rad": 0.03847765255755741,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 1,
+          "translation_max_abs": 0.4762705947534869,
+          "rotation_matrix_max_abs": 0.000320021498180334,
+          "rotation_angle_max_rad": 0.000392353037332229,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 2,
+          "translation_max_abs": 6.071515463190735e-05,
+          "rotation_matrix_max_abs": 3.9090889053516875e-08,
+          "rotation_angle_max_rad": 5.600069359320887e-08,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 3,
+          "translation_max_abs": 1.5916157281026244e-12,
+          "rotation_matrix_max_abs": 7.494005416219807e-16,
+          "rotation_angle_max_rad": 9.99615606434473e-16,
+          "position_unit": "mm"
+        }
+      ]
+    },
+    {
+      "fixture_kind": "known_closed_neighborhood",
+      "fixture": "start_3",
+      "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+      "input_q3": -1.57,
+      "output_q3": -1.5742046977393118,
+      "q3_lower": -1.5707999999999998,
+      "input_q3_out_of_bounds": false,
+      "distance_to_saved_legal_closed_anchor_l2": 0.010000000000000009,
+      "saved_output_metrics": {
+        "translation_max_abs": 4.956201792083448e-06,
+        "rotation_matrix_max_abs": 7.573827121021282e-10,
+        "rotation_angle_max_rad": 7.772698676271545e-10,
+        "position_unit": "mm"
+      },
+      "trace": [
+        {
+          "iteration": 0,
+          "translation_max_abs": 44.24489865052851,
+          "rotation_matrix_max_abs": 0.009108142890610044,
+          "rotation_angle_max_rad": 0.009999999999999945,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 1,
+          "translation_max_abs": 0.15790887685329835,
+          "rotation_matrix_max_abs": 2.3170327493327036e-06,
+          "rotation_angle_max_rad": 2.41781797135488e-06,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 2,
+          "translation_max_abs": 4.956201792083448e-06,
+          "rotation_matrix_max_abs": 7.573827121021282e-10,
+          "rotation_angle_max_rad": 7.772698716338683e-10,
+          "position_unit": "mm"
+        }
+      ]
+    },
+    {
+      "fixture_kind": "known_closed_neighborhood",
+      "fixture": "start_6",
+      "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+      "input_q3": -1.58,
+      "output_q3": -1.5764101399139498,
+      "q3_lower": -1.5707999999999998,
+      "input_q3_out_of_bounds": true,
+      "distance_to_saved_legal_closed_anchor_l2": 0.010000000000000009,
+      "saved_output_metrics": {
+        "translation_max_abs": 1.8892856132879388e-06,
+        "rotation_matrix_max_abs": 2.948015442871821e-10,
+        "rotation_angle_max_rad": 2.9929575161809373e-10,
+        "position_unit": "mm"
+      },
+      "trace": [
+        {
+          "iteration": 0,
+          "translation_max_abs": 31.725324281306712,
+          "rotation_matrix_max_abs": 0.009091749504881952,
+          "rotation_angle_max_rad": 0.010000000000000061,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 1,
+          "translation_max_abs": 0.09508373165158446,
+          "rotation_matrix_max_abs": 1.27933922555723e-06,
+          "rotation_angle_max_rad": 1.429822569225581e-06,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 2,
+          "translation_max_abs": 1.8892856132879388e-06,
+          "rotation_matrix_max_abs": 2.948015442871821e-10,
+          "rotation_angle_max_rad": 2.9929575161809373e-10,
+          "position_unit": "mm"
+        }
+      ]
+    },
+    {
+      "fixture_kind": "known_closed_neighborhood",
+      "fixture": "start_8",
+      "status": "CLOSED_BUT_JOINT_LIMIT_REJECTED",
+      "input_q3": -1.57,
+      "output_q3": -1.570979544216887,
+      "q3_lower": -1.5707999999999998,
+      "input_q3_out_of_bounds": false,
+      "distance_to_saved_legal_closed_anchor_l2": 0.010000000000000009,
+      "saved_output_metrics": {
+        "translation_max_abs": 6.927302820258774e-08,
+        "rotation_matrix_max_abs": 5.71412084315881e-11,
+        "rotation_angle_max_rad": 5.991553740889091e-11,
+        "position_unit": "mm"
+      },
+      "trace": [
+        {
+          "iteration": 0,
+          "translation_max_abs": 7.359644224667363,
+          "rotation_matrix_max_abs": 0.008979724283567858,
+          "rotation_angle_max_rad": 0.009999999999999974,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 1,
+          "translation_max_abs": 0.019445194910531427,
+          "rotation_matrix_max_abs": 1.4233739387553568e-05,
+          "rotation_angle_max_rad": 1.454896091721161e-05,
+          "position_unit": "mm"
+        },
+        {
+          "iteration": 2,
+          "translation_max_abs": 6.927302820258774e-08,
+          "rotation_matrix_max_abs": 5.71412084315881e-11,
+          "rotation_angle_max_rad": 5.991553740889091e-11,
+          "position_unit": "mm"
+        }
+      ]
+    }
+  ],
+  "classification": "OUR-IMPLEMENTATION / EXPERIMENT-DESIGN completeness assertion, not numerical divergence or a demonstrated paper-method error",
+  "established": "A legal closed configuration exists near each failed input, but unconstrained NR converged to a different limit-invalid state and correctly rejected it. The original unconditional +/-0.01-rad completeness gate remains failed.",
+  "still_unknown": "Existence of a legal same-passive-branch solution with every perturbed active coordinate held fixed; original paper NR does not require fixed active coordinates. Collision freedom is independently pending."
+}

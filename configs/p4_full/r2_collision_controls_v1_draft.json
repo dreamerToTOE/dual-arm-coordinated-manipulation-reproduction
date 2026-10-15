@@ -1,0 +1,28 @@
+{
+  "schema": "P4_R2_COLLISION_ENGINE_AND_SOURCE_POLICY_CONTROLS_V1",
+  "frozen": false,
+  "status": "DRAFT_NO_SCIENTIFIC_QUERY",
+  "scope": "Engine controls plus exact active source pair-call parity; never complete physical geometry or CCD qualification",
+  "pqp_controls": {
+    "models": ["abb", "IV", "V", "VI"],
+    "meshes": ["CKCplanning/simulator/Base_r.tris", "ckcComau2/simulator/base_r.tris", "ckcComau_industrialScene/simulator/base_r.tris", "ckcComau3/simulator/base_r.tris"],
+    "same_pose": "same actual original PQP mesh, identity rotations, both zero translations; query_code=0 and CloserThanTolerance=1",
+    "far_pose": "same mesh, translation x=2*AABB_diagonal+8+1 millimeters; query_code=0 and CloserThanTolerance=0",
+    "tolerance_mm": 8,
+    "calls": 8,
+    "timeout_per_mesh_s": 30
+  },
+  "planar_source_function_controls": {
+    "self_positive": "q=[0,pi/2,-pi,0,...] first and third nonadjacent segments intersect at (1,0); source self_collision must be false; this is a function control, no joint-limit claim",
+    "self_negative": "all q=0 gives separated nonadjacent collinear segments; source self_collision must be true",
+    "obstacle_positive": "q0=atan2(2,8), remaining q=0; eighth vertex within original circle center(8,2) and inflated radius(0.8+0.3); source obstacle_collision=false",
+    "obstacle_negative": "q0=-pi/2, remaining q=0; downward vertices clear all original circles plus original f=0.3 margin; source obstacle_collision=true",
+    "source_f": {"self": 1, "obstacle": 0.3},
+    "original_functions_extracted_from_pinned_source": true
+  },
+  "pair_audit": "Strip comments only, compare complete active PQP_Tolerance argument strings in source with instrumented p4_query arguments for native/aligned; require exact parity, preserve original omissions",
+  "source_policy_status_requires": "all fixed controls pass and all active source-pair arguments match",
+  "raw_query_status": "CHECKED; means one real source-policy query with source TCP/independent FK agreement; does not itself mean engine controls passed",
+  "qualified_status": "SOURCE_POLICY_QUALIFIED; only after this fixed control result is bound by hash in the calling qualification protocol",
+  "non_goals": ["No endpoint, IK, NR, RSS, RBS or planning calls", "No mesh, pair, tolerance or source policy change", "No solid-volume interpretation of source ABB collinear rod triangles"]
+}
