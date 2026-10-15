@@ -1,0 +1,21 @@
+# ABB NR 原接口工程独立冻结审查
+
+2026-10-15。根代理独立审查通过，仅允许一次工程构建，未查询任何科学模型。
+
+已逐项读取builder、driver、轻量观测头、唯一kernel TU、PRE及保存输入清单；与已合格Q1 core、原KDL/SVC/RRT接口对照。仅原GD body转接已合格physical NR，原完整cpp保全，成功才更新q_solution；不再次倒序或wrap。SVC/RBS/回溯原body完整保留，碰撞只包既有142站点，无额外RNG/model查询。原RRT_NR cpp/header字节不变且当前没有solve入口。
+
+457外部资产含Q1的379 compiler/library资产逐SHA绑定，20prior执行逐自身成本一次合359.4902552519934wall/309.65925300000004CPU；新单目标45wall/90CPU，不查询binary。fresh stage/claim/execution，墙钟及进程组live CPU watchdog，失败保留完整prefix，不重试。原Q1数值门、模型、机械限位与所有历史失败保持。
+
+normal false返回完整q/path；C++异常仅实际响应中的Confs可称已保存，kill未返回状态为UNOBSERVED。trace资源帽产生UNKNOWN，不能作普通false或成功。工程成功仅BUILT_NOT_QUERIED；局部20请求与真实planner必须另行冻结。VI974/974余0、正式0/22500和211项义务保持。
+
+静态证据：P4_FULL_R2_ABB_NR_INTERFACE_SOURCE_STATIC_20261015.json。协议精确源SHA如下，构建前必须经提交验证。
+
+- scripts/build_p4_full_r2_abb_nr_interface_draft.py: `5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8`
+- baselines/p4_full/geometry_consistent/abb_nr_interface_observation_draft.hpp: `0b7db692f6154fed5d7c2a28a77aa15717ad5eb3e5ea26e4816414cb42746bbf`
+- baselines/p4_full/geometry_consistent/abb_nr_interface_draft.cpp: `6042af3d2014594d9e813fa6e737f6da1786b98de225be2034d48f9c21de9fb3`
+- baselines/p4_full/geometry_consistent/abb_nr_interface_kernel_draft.cpp: `2d5d61ac8742330611c39243c740df5a6e5e15fbe13a72ad6ea50973917c930b`
+- baselines/p4_full/geometry_consistent/physical_nr_abb_cpp_draft.hpp: `e387e7c4b625ffa41d63d47093a4cf0c75a04d07d1f1b8d4693162653814449e`
+- reports/P4_FULL_R2_ABB_NR_INTERFACE_SAVED_INPUTS_20261015.json: `d260581947908ef59a1adc9b72ae38eca8d1f55c23a51cb2d78efed758aa24fb`
+- reports/P4_FULL_R2_ABB_NR_INTERFACE_PRE_DRAFT_20261015.md: `c40c8b7e874e7b4994b747efd343fb3a623d702d9a222e10c0f32018a74a2e07`
+- scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py: `a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7`
+- baselines/p4_full/geometry_consistent/pcs_source_trace.hpp: `63366eeebe7822947c50f5b151aab4c03321d7be3339ae3f6bdc85aea204d366`

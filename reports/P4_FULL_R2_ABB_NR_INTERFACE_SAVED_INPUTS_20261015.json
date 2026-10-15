@@ -1,0 +1,311 @@
+{
+  "schema": "P4_R2_ABB_NR_INTERFACE_SAVED_INPUTS_V1",
+  "classification": "SAVED_ONLY_EXACT_JSON_VALUES_NO_FK_J_NR_COLLISION_OR_SAMPLING",
+  "source_commit_at_inventory": "d2d6450fc92ae423d7f9c4b011b8cc8fea436169",
+  "source_files_sha256": {
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json": "b39d945cd5d49e4649aba22e57aae9f302694e4d8e0880389542f1ad828b112f",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json": "991c2efe8e68add65c17375d89c89bbb637711d7125b15a34c84a19a2dc15430",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json": "85550cbc3ffbf80c80519b5e592e85401dcf1e96ce747f0df5f3d97c97065c6a",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json": "50db8b75e8c29c9dfc42646e5165c22f31dd8e2853858686572405c3cd91cc12",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/result.json": "eefb6673101fe7a4a47f319bac5e8a20498ae1cee88930ec7bca710ce8de45b4",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+    "results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json": "e2e545675f48b14981846c145820ca9450a75f7ce0d835d6d3746ebeefd24340",
+    "reports/P4_FULL_R2_NR_ABB_Q1_INDEPENDENT_SAVED_POST_REVIEW_20261015.json": "ac586e9b5e3f68b5ce445cc7b65204a6c2e378b3337524f147784e138a92df49"
+  },
+  "project_cases": [
+    {
+      "id": "II_0",
+      "environment": "II",
+      "op": "project_q12",
+      "q12": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0,
+        1.0042713284452618,
+        0.2729059574498862,
+        0.9485892867539307,
+        -1.1501189067527977,
+        1.8100179182011582,
+        -1.977396290726386
+      ],
+      "source_path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json",
+      "source_json_pointer": "/selected_q_rad",
+      "classification": "RECONSTRUCTED_A01_ENDPOINT_NO_NEW_CONSTRUCTION"
+    },
+    {
+      "id": "II_1",
+      "environment": "II",
+      "op": "project_q12",
+      "q12": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0,
+        0.7096069035980488,
+        1.8033460368176983,
+        -1.7064142899195036,
+        -1.6286748910337208,
+        1.914257188961649,
+        -2.015718262850188
+      ],
+      "source_path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json",
+      "source_json_pointer": "/selected_q_rad",
+      "classification": "RECONSTRUCTED_A01_ENDPOINT_NO_NEW_CONSTRUCTION"
+    },
+    {
+      "id": "III_0",
+      "environment": "III",
+      "op": "project_q12",
+      "q12": [
+        1.1,
+        1.1,
+        0.0,
+        1.24,
+        -1.5708,
+        0.0,
+        -0.7956767394876946,
+        0.6013499919735118,
+        0.43858465895086485,
+        -0.7498567848138379,
+        -1.007402838209791,
+        -0.09229082698089044
+      ],
+      "source_path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json",
+      "source_json_pointer": "/selected_q_rad",
+      "classification": "RECONSTRUCTED_A01_ENDPOINT_NO_NEW_CONSTRUCTION"
+    },
+    {
+      "id": "III_1",
+      "environment": "III",
+      "op": "project_q12",
+      "q12": [
+        -1.1,
+        1.35,
+        -0.2,
+        -1.0,
+        -1.9,
+        0.0,
+        0.8087382126071632,
+        0.7236337031288231,
+        -0.4789107998249562,
+        -1.0483682097585365,
+        0.7327791349708244,
+        1.7490553228878079
+      ],
+      "source_path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json",
+      "source_json_pointer": "/selected_q_rad",
+      "classification": "RECONSTRUCTED_A01_ENDPOINT_NO_NEW_CONSTRUCTION"
+    }
+  ],
+  "edge_cases": [
+    {
+      "id": "II_PCS_MILESTONE_EDGE_00",
+      "environment": "II",
+      "edge_index": 0,
+      "qa12": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0,
+        1.0042713284452618,
+        0.2729059574498862,
+        0.9485892867539307,
+        -1.1501189067527977,
+        1.8100179182011582,
+        -1.977396290726386
+      ],
+      "qb12": [
+        0.47906889317412565,
+        0.636666536988159,
+        -0.493406585710517,
+        -2.0642827036542326,
+        1.2216636481391336,
+        -0.25597867323791995,
+        0.9477899462945305,
+        -0.4081116500225961,
+        -0.13667555391308883,
+        -1.229087927806335,
+        1.788422626316107,
+        -3.0635004446441685
+      ],
+      "source_path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/result.json",
+      "source_json_pointers": [
+        "/milestones_q12/0",
+        "/milestones_q12/1"
+      ],
+      "full12_raw_L2_rad_saved_scalar_only": 2.525929452013416,
+      "classification": "SAVED_PCS_MILESTONE_EDGE_AS_NR_INPUT_NO_NEW_SAMPLING",
+      "NR_fixed_active_chain_requirement": false,
+      "NR_fixed_branch_requirement": false
+    },
+    {
+      "id": "II_PCS_MILESTONE_EDGE_01",
+      "environment": "II",
+      "edge_index": 1,
+      "qa12": [
+        0.47906889317412565,
+        0.636666536988159,
+        -0.493406585710517,
+        -2.0642827036542326,
+        1.2216636481391336,
+        -0.25597867323791995,
+        0.9477899462945305,
+        -0.4081116500225961,
+        -0.13667555391308883,
+        -1.229087927806335,
+        1.788422626316107,
+        -3.0635004446441685
+      ],
+      "qb12": [
+        0.4534066220024748,
+        0.02230515755028395,
+        0.7004274124665775,
+        -1.5914821361247244,
+        1.60227345835935,
+        -0.21164075613913108,
+        0.7595487419095452,
+        1.3396511365487749,
+        -1.3772739898485822,
+        -1.5448901375812503,
+        1.887872399723526,
+        -2.2354155499299573
+      ],
+      "source_path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/result.json",
+      "source_json_pointers": [
+        "/milestones_q12/1",
+        "/milestones_q12/2"
+      ],
+      "full12_raw_L2_rad_saved_scalar_only": 2.756491973773139,
+      "classification": "SAVED_PCS_MILESTONE_EDGE_AS_NR_INPUT_NO_NEW_SAMPLING",
+      "NR_fixed_active_chain_requirement": false,
+      "NR_fixed_branch_requirement": false
+    },
+    {
+      "id": "II_PCS_MILESTONE_EDGE_02",
+      "environment": "II",
+      "edge_index": 2,
+      "qa12": [
+        0.4534066220024748,
+        0.02230515755028395,
+        0.7004274124665775,
+        -1.5914821361247244,
+        1.60227345835935,
+        -0.21164075613913108,
+        0.7595487419095452,
+        1.3396511365487749,
+        -1.3772739898485822,
+        -1.5448901375812503,
+        1.887872399723526,
+        -2.2354155499299573
+      ],
+      "qb12": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0,
+        0.7096069035980488,
+        1.8033460368176983,
+        -1.7064142899195036,
+        -1.6286748910337208,
+        1.914257188961649,
+        -2.015718262850188
+      ],
+      "source_path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/result.json",
+      "source_json_pointers": [
+        "/milestones_q12/2",
+        "/milestones_q12/3"
+      ],
+      "full12_raw_L2_rad_saved_scalar_only": 0.7598746804749721,
+      "classification": "SAVED_PCS_MILESTONE_EDGE_AS_NR_INPUT_NO_NEW_SAMPLING",
+      "NR_fixed_active_chain_requirement": false,
+      "NR_fixed_branch_requirement": false
+    }
+  ],
+  "milestones_q12": [
+    [
+      0.5236,
+      1.7453,
+      -1.8326,
+      -1.4835,
+      1.5708,
+      0.0,
+      1.0042713284452618,
+      0.2729059574498862,
+      0.9485892867539307,
+      -1.1501189067527977,
+      1.8100179182011582,
+      -1.977396290726386
+    ],
+    [
+      0.47906889317412565,
+      0.636666536988159,
+      -0.493406585710517,
+      -2.0642827036542326,
+      1.2216636481391336,
+      -0.25597867323791995,
+      0.9477899462945305,
+      -0.4081116500225961,
+      -0.13667555391308883,
+      -1.229087927806335,
+      1.788422626316107,
+      -3.0635004446441685
+    ],
+    [
+      0.4534066220024748,
+      0.02230515755028395,
+      0.7004274124665775,
+      -1.5914821361247244,
+      1.60227345835935,
+      -0.21164075613913108,
+      0.7595487419095452,
+      1.3396511365487749,
+      -1.3772739898485822,
+      -1.5448901375812503,
+      1.887872399723526,
+      -2.2354155499299573
+    ],
+    [
+      0.5236,
+      0.34907,
+      0.69813,
+      -1.3963,
+      1.5708,
+      0.0,
+      0.7096069035980488,
+      1.8033460368176983,
+      -1.7064142899195036,
+      -1.6286748910337208,
+      1.914257188961649,
+      -2.015718262850188
+    ]
+  ],
+  "fixed_counts": {
+    "A01_project_inputs": 4,
+    "consecutive_saved_edges": 3,
+    "plain_trace_top_level_project": 8,
+    "plain_trace_top_level_RBS": 6,
+    "plain_trace_top_level_reconstruct": 6,
+    "all_top_level": 20
+  },
+  "selection_rule": "All four II/III A01 endpoints and all three consecutive first saved PCS milestone edges in original order, without success-based filtering. Do not replace or synthesize another fixture.",
+  "executed_by_this_inventory": {
+    "model_calls": 0,
+    "new_VI_candidates": 0,
+    "solve": 0,
+    "rng": 0
+  },
+  "limitations": [
+    "PCS path qualification is historical input provenance only; it is not new NR output qualification.",
+    "NR may change all12 coordinates; no fixed active-chain/branch acceptance requirement.",
+    "Three source PCS edges need not all be connectable under the full12 NR projection."
+  ]
+}

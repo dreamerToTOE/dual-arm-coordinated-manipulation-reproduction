@@ -1,0 +1,59 @@
+{
+  "schema": "P4_R2_ABB_NR_INTERFACE_SOURCE_STATIC_V1",
+  "classification": "BYTE_ONLY_ZERO_COMPILE_ZERO_SCIENCE",
+  "status": "STATIC_CANDIDATE_CHECKED_PENDING_ROOT_REVIEW",
+  "builder_ast_parsed": true,
+  "static_instrumentation_changes": [
+    {
+      "file": "proj_classes/kdl_class.cpp",
+      "before": "83a0ab6109fddb3d820d9987791c921c340287648630d18dc2a68e3728a21fd4",
+      "after": "985bfbfb5eba4ca7fffc8d34b4da58c93daa6617fbf480c8d71bebaaf10dba31",
+      "original_GD_body_sha256": "83e8e9e41dde8f9db1c82f4335e6115c5cec1272e5b66b0a6753626d74bcf32e",
+      "preserved_original": "preserved_originals/proj_classes/kdl_class.cpp",
+      "preserved_original_sha256": "83a0ab6109fddb3d820d9987791c921c340287648630d18dc2a68e3728a21fd4",
+      "kind": "GD_ONLY_NUMERICAL_SEAM"
+    },
+    {
+      "file": "validity_checkers/StateValidityCheckerNR.cpp",
+      "before": "d9f49d2fb8a600fe85f6885bbf153c3b2f86d0185f945f23a181eca287f8827d",
+      "after": "7d8bcc5dfd5da07446ba7921f0b25706b535cfb1318f97852735db339428b988",
+      "body_sha256": {
+        "bool StateValidityChecker::IKproject(State &q, bool includeObs)": "5b74f8ffb6cc7cfc102fac30d246f59a710ada870502a8ebc2f4d25f072fc3e4",
+        "bool StateValidityChecker::isValidRBS(State &q)": "a3c19e4dfe1ec8f94dfd615662f896be8234a310adf88743a9fb1774b0d27d43",
+        "bool StateValidityChecker::checkMotionRBS(State s1, State s2, int recursion_depth, int non_decrease_count)": "377f5d3054fbedb9884051b2362a38d1ac24ba96c9e2ba2cfc3e8bc768b68972",
+        "bool StateValidityChecker::reconstructRBS(State q1, State q2, Matrix &M, int iteration, int last_index, int firstORsecond)": "25e9bbd5cd521ec61066d744ac13ddff9db801024604efd82461d1b8c3cb1109"
+      },
+      "kind": "ORIGINAL_NR_BODIES_WITH_OBSERVATION"
+    },
+    {
+      "file": "validity_checkers/collisionDetection.cpp",
+      "before": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+      "after": "48822daae0510db029f8d6e7f0cd0c378c8e02d4f607ff2eaaa04a16eaa241a0",
+      "kind": "EXISTING_PQP_OBSERVATION_ONLY",
+      "pqp_call_sites": 142
+    }
+  ],
+  "original_GD_complete_file_preserved": true,
+  "unchanged_headers_and_RRT_NR": true,
+  "template_asset_count": 457,
+  "Q1_library_header_binding_count": 379,
+  "prior_executions": 20,
+  "previous_r2_wall_s": 359.4902552519934,
+  "previous_r2_cpu_s": 309.65925300000004,
+  "calls": {
+    "compile": 0,
+    "FK_J_NR_IK_collision_RBS_solve_rng": 0
+  },
+  "source_sha256": {
+    "scripts/build_p4_full_r2_abb_nr_interface_draft.py": "5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_observation_draft.hpp": "0b7db692f6154fed5d7c2a28a77aa15717ad5eb3e5ea26e4816414cb42746bbf",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_draft.cpp": "6042af3d2014594d9e813fa6e737f6da1786b98de225be2034d48f9c21de9fb3",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_kernel_draft.cpp": "2d5d61ac8742330611c39243c740df5a6e5e15fbe13a72ad6ea50973917c930b",
+    "baselines/p4_full/geometry_consistent/physical_nr_abb_cpp_draft.hpp": "e387e7c4b625ffa41d63d47093a4cf0c75a04d07d1f1b8d4693162653814449e",
+    "reports/P4_FULL_R2_ABB_NR_INTERFACE_SAVED_INPUTS_20261015.json": "d260581947908ef59a1adc9b72ae38eca8d1f55c23a51cb2d78efed758aa24fb",
+    "reports/P4_FULL_R2_ABB_NR_INTERFACE_PRE_DRAFT_20261015.md": "c40c8b7e874e7b4994b747efd343fb3a623d702d9a222e10c0f32018a74a2e07",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "baselines/p4_full/geometry_consistent/pcs_source_trace.hpp": "63366eeebe7822947c50f5b151aab4c03321d7be3339ae3f6bdc85aea204d366"
+  },
+  "draft_protocol_sha256": "749cc5a7df9e8954d900e6ac93e7900fd0c79a0332e37dbd94b909e5b34e9f73"
+}
