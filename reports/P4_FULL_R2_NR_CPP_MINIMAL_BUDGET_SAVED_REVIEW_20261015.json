@@ -1,0 +1,60 @@
+{
+  "schema": "P4_R2_NR_CPP_MINIMAL_BUDGET_SAVED_SCALAR_REVIEW",
+  "new_scientific_calls": 0,
+  "compile_calls": 0,
+  "sources": [
+    {
+      "environment": "II",
+      "source_path": "results/p4_full/20261015_R2_SPATIAL01/II/observations.json",
+      "source_sha256": "b0f519b146ef84f6870d9243e673c2e7b312439417296388057958eda4670300",
+      "saved_call_count": 32,
+      "saved_wall_sum_s": 0.1348879250012942,
+      "max_saved_call_wall_s": 0.0045941779999338905,
+      "saved_metric_trace_rows": 92,
+      "max_saved_metric_rows_per_call": 3,
+      "saved_update_count": 60,
+      "saved_statuses": [
+        "CONVERGED"
+      ]
+    },
+    {
+      "environment": "III",
+      "source_path": "results/p4_full/20261015_R2_SPATIAL01/III/observations.json",
+      "source_sha256": "5278544f1ae6ceda39b05c0398a1ce1e7d684cf321aadbfbcbcd6b69a7b300c5",
+      "saved_call_count": 32,
+      "saved_wall_sum_s": 0.13428192400078842,
+      "max_saved_call_wall_s": 0.004815119999875606,
+      "saved_metric_trace_rows": 92,
+      "max_saved_metric_rows_per_call": 3,
+      "saved_update_count": 60,
+      "saved_statuses": [
+        "CONVERGED"
+      ]
+    }
+  ],
+  "Q1_proposed_calls": {
+    "C++plain": 64,
+    "C++trace": 64,
+    "Python_detailed_reference_trace": 64,
+    "total_top_NR_calls": 192
+  },
+  "historical_update_count_per_64": 120,
+  "projection_if_same_trajectory_only": {
+    "metric_rows_3_variants": 552,
+    "SVD_updates_3_variants": 360
+  },
+  "proposed_budget_not_frozen": {
+    "wall_s": 60,
+    "cpu_s": 120,
+    "deduct_existing_R2_total": true
+  },
+  "assessment": "Reasonable bounded first qualification; historical scalar costs support a small one-shot budget, not a runtime guarantee. Same64 inputs in same order, no resampling; any divergence/cap keeps prefix and unresolved tail. Not a new64 scientific qualification of old physics.",
+  "requirements": [
+    "Engineering build separate and completed before Q1 freeze.",
+    "One persistent batch process per C++variant avoids192 individual interpreter startups.",
+    "Python detailed trace must observe original operations without adding extra FK/J/SVD.",
+    "Saved trace lacks q/g/J/sigma/delta; new detailed replay must count real scientific cost.",
+    "No nativeKDL trajectory-equivalence or fair-speed claim from Q1 alone.",
+    "No solvercalls during this saved-only report."
+  ]
+}
