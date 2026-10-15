@@ -602,3 +602,10 @@ R1有限资格协议 configs/p4_full/r1_qualification_v1.json：总1800s，单�
 ## 2026-10-15 — P4 R2接续12run：fiber组件通过、旧48真实碰撞已补齐
 
 用户“继续”是接续原P4完整项目，原A/B批准持续有效，未重开R0/R1或重置预算。完成本轮固定资格并保留所有原失败，完整211义务和原正式规模不缩水。继续原p4-full-reproduction-pcs-study工作树，R0/R1及崩溃前57文件保全。CENTER_IMAGE01仅2固定active FK/J；FIBER_COMPONENT01固定6节点6/6，54FK/J、6源碰撞/798PQP，原Q2严格桥UNKNOWN及regular↔fiber未验证保持。旧48数学合格RSS分支一次补验：II10clear/8碰撞、III16clear/6碰撞、V0clear/8碰撞，96native/aligned、192内部FK/J、9996PQP API返回无错误；未重做700目标/5600IK，未执行原checkEE。V具体碰撞pair根因UNKNOWN，未据该批判整个模式无解。 最新211项对照为reports/P4_FULL_R2_CONTINUATION_ORIGINAL_VS_REPRODUCED_COVERAGE_20261015.csv/.md，前47历史列逐值保留；12run新账为results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V2.json，原9run快照不改。正式TableI仍0/22500，500000配对投影/约50000合法点对/Fig3–5/TableI–II及全部消融义务完整保留。P4全文仍部分完成，不P2/Isaac。
+
+
+## 2026-10-15 — 用户接续优先级：先PCS/NR真实入口，RSS解耦
+
+用户明确要求先完成ABB PCS冻结局部资格，再验证PCS/NR原生规划入口并取得独立检查合格的空间起终点路径；随后RSS诊断解耦推进。LOCAL01已经单次完成，10/16局部边通过、6拒绝和plain/trace一致性保持，不重跑。VI 974/974耗尽，不以剩余时间追加构造。正式大规模实验须端到端资格后成本pilot再申请，22500调用及其他211项原论文义务不缩减。
+
+首个入口选择原RRT_PCS、环境II、A01 RECONSTRUCTED端点、seed7、原main采样盒与恒true callback、原环境II range2.6/goalBias.05；solve10s，外部执行帽30wall/60CPU。单目标工程构建45wall/90CPU；完整保存路径独立离散审查120wall/240CPU、最多2048唯一原节点，所有成本保守扣原R2总帽。每阶段先独立审查、冻结提交，单次claim，无换种子/重采/修路径；当前未运行此build/solve。原helper随机IKproject返回缺陷未被三个PCS planner实际调用，不再误设为前置门，已提交POST保持，补充说明另存。首路径资格不等于连续无碰撞、正式统计、PCS优势或全文完成。P2/Isaac暂缓。

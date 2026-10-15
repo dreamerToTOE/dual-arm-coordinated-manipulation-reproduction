@@ -816,3 +816,10 @@ VI B累计974构造，余额0；累计wall68.712002153999/CPU24.203842，余111.
 R2数值10/16固定局部边通过非阈值提前返回的真实RBS/回溯、闭链、原branch/限位及source aligned离散碰撞；6拒绝分5源投影false+1碰撞，保存目标必要代数门独立确认3几何workspace拒绝、2原q3下界拒绝，未新FK/IK，不能称全部几何不可达。II start主动arm2、II goal主动arm1缺本固定h正例，整体FIXED_LOCAL_ABB_PCS_PARTIAL。作者原数值16局部端点全拒绝，原失败留存；未换h/中心/分支重试。44个下游模板依预置gate未执行，不是超时丢尾；三个planner solve/RNG0，不推出全局PCS或优势。
 
 新15execution为14science+1新engineering，逐自身实耗保守计R2合wall285.288062365996/CPU264.436080，余3314.711937634004/6935.563920；工程不当science成功，VI B仍974/974余0。新账V4保V3及旧12/9run原字节，新ABB_PCS完整211表保前68历史列，正式TableI仍0/22500及全部原分母不缩。继续固定失败根因、IV100×8原wrist数学资格及其余环境/方法门，先独立冻结预算、无正式规划/P2/Isaac。实际记录results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json；审查reports/P4_FULL_R2_ABB_PCS_FIXED_LOCAL_POST_REVIEW_20261015.md。
+
+
+## 2026-10-15 — 用户接续优先级：先PCS/NR真实入口，RSS解耦
+
+用户明确要求先完成ABB PCS冻结局部资格，再验证PCS/NR原生规划入口并取得独立检查合格的空间起终点路径；随后RSS诊断解耦推进。LOCAL01已经单次完成，10/16局部边通过、6拒绝和plain/trace一致性保持，不重跑。VI 974/974耗尽，不以剩余时间追加构造。正式大规模实验须端到端资格后成本pilot再申请，22500调用及其他211项原论文义务不缩减。
+
+首个入口选择原RRT_PCS、环境II、A01 RECONSTRUCTED端点、seed7、原main采样盒与恒true callback、原环境II range2.6/goalBias.05；solve10s，外部执行帽30wall/60CPU。单目标工程构建45wall/90CPU；完整保存路径独立离散审查120wall/240CPU、最多2048唯一原节点，所有成本保守扣原R2总帽。每阶段先独立审查、冻结提交，单次claim，无换种子/重采/修路径；当前未运行此build/solve。原helper随机IKproject返回缺陷未被三个PCS planner实际调用，不再误设为前置门，已提交POST保持，补充说明另存。首路径资格不等于连续无碰撞、正式统计、PCS优势或全文完成。P2/Isaac暂缓。
