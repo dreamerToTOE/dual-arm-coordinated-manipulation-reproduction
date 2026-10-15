@@ -29,3 +29,5 @@ PRIOR-ASSET：原631b1f6记录和有界执行模式THIN_ADAPTER；B Evidence/Run
 本两组通过也不能解除全部规划gate：还需六环境各RSS/PCS/NR、原RBS/分支转移、所有planner构建/稠密路径验证和资格成本pilot。完整211行、22500正式规划、500000投影、50000点对、Fig3–5/TableI–II及全部消融/复杂障碍保持。正式大规模统计仍须在合格pilot成本后单独预算审查；P2/Isaac不开展。
 
 冻结前代码复核：audit_coverage对脚本SHA4cde4164c4ee0a68d2f0c4ca17f108728374a580b0bfb79f565620e84b0db666独立只读复核未发现阻断执行的问题；父余额、固定首fixture、active中点、真2π副本、严格门与source文本旁审、timeout前缀及one-shot claim均与声明一致。
+
+IV-NR冻结前独立代码复核：audit_coverage逐项核对24固定数组、原NR全12更新不变、旧失败保留、native52F/24碰撞及60wall120CPU帽、Q2后8份ledger、CONVERGED独立soundness和前缀留证，未发现阻断项。源码SHA a2d0530295404a4dd150b8c3d6c3374a984492b5bd8b77b1163894d6ab76a3fa；h_start=9.999999999996123e-5、h_goal=1e-4 rad；冻结前R2累计wall78.25053154900252/CPU29.917151。
