@@ -1,0 +1,89 @@
+{
+  "schema": "P4_D079_R2_GEOMETRY_CONSISTENT_QUALIFICATION_V1",
+  "frozen": true,
+  "created_at_utc": "2026-10-15T01:59:11.725924+00:00",
+  "baseline_commit": "356a3b1",
+  "authorization": {
+    "user_text": "继续",
+    "context": "Reply following specific recommended geometry-consistent numerical repair proposal, max2 core-hours/1 hour wall. Recorded as ordinary continuation; not a structured option selection or new D080.",
+    "scope": "Independent R2 namespace only; preserve native R1 as failed and all original scientific data."
+  },
+  "budget": {
+    "total_cpu_s": 7200,
+    "total_execution_wall_s": 3600,
+    "single_build_or_diagnostic_wall_s": 120,
+    "max_same_root_repairs_before_review": 3,
+    "formal_planning_calls": 0,
+    "full_tableI_calls_22500_authorized": false
+  },
+  "preserve": [
+    "physical link dimensions",
+    "source physical approximate-pi base yaws and grasp transforms",
+    "source joint limits",
+    "unchanged raw start and goal configurations",
+    "R1 source files, raw data, all failed qualification records",
+    "R1 physical residual and rank gates"
+  ],
+  "variants": {
+    "spatial_ik": "Staged pinned author APC: mathematical pi/trig identities, signed radial per shoulder and atan2 quadrant, no angular/FK clipping, R03^T R spherical wrist with floating-zero canonical representative. This is numerical/source correction, not byte-exact author code.",
+    "physical_nr": "Paper pseudoinverse NR on independently constructed actual closure g=[p_j-p_1Q, log(R_j R_1Q^T)], source mm/rad, 10000 iteration cap, no damping/APC fallback/backtracking. Full12x18 simultaneous VI differs from public default two-stage12D NR. Python reference is qualification only, never fair speed benchmark.",
+    "planar_apc": "General cyclic3R analytic solver preserving Ai=R(qi)Tx1 for0..18 and A19=R(3.1416-q19)T(-7,-4), all20 native labels and all true2pi lifts. Source physical constant kept.",
+    "rss": "ABB original three equal modes with true elbow angle; Comau source wrist-only mode unchanged. Comau3mode is diagnostic only. VI constructive sampler specification INDEPENDENT_RECONSTRUCTION remains scientifically undecided; do not execute new random VI RSS distribution."
+  },
+  "fixtures": {
+    "source_r1_replay": "Same 100 FK inputs/model, 10 single-arm targets x8 spatial branches/model, 40 planar APC inputs, 10 original near-endpoint NR inputs/model. Retain original clipped target and precision-preserving recomputed target separately.",
+    "additional_spatial_wrist_per_arm": [
+      [
+        0.37,
+        0.21,
+        -0.7,
+        0.48,
+        0.0,
+        -0.31
+      ],
+      [
+        0.37,
+        0.21,
+        -0.7,
+        0.48,
+        1e-08,
+        -0.31
+      ],
+      [
+        0.37,
+        0.21,
+        -0.7,
+        0.48,
+        -1e-08,
+        -0.31
+      ],
+      [
+        0.37,
+        0.21,
+        -0.7,
+        0.48,
+        1e-05,
+        -0.31
+      ]
+    ],
+    "additional_rss_rank": "per spatial model: regular [0.37,0.21,-0.7,0.48,0.71,-0.31], original elbow, true elbow, wrist0, true elbow+wrist0; all arms. Deterministic rank fixtures only, not legal global RSS targets.",
+    "nr_positive": "Attempt all8 branches at raw source start active coordinates, choose first ascending legal closed branch solely as declared deterministic component fixture; also goal. No formal endpoints replaced. If no closed branches, preserve failure; no seed search. For each successful fixture run unchanged and +/-0.01 on first5 coordinates (11 cases).",
+    "jacobian": "At each raw source start and goal, compare analytic physical Jacobian against central difference eps1e-6. Translation maxabs<=5e-6 source units, angular<=5e-7; analytic geometric6R separately vs saved nativeFD eps1e-6.",
+    "planar_extended": "All20 cyclic labels x2 branches on same original qstart; plus unreachable desired closure and elbow0/pi singular positive/negative conditions; no random search."
+  },
+  "gates": {
+    "fk_translation_mm": 1e-07,
+    "fk_rotation_matrix": 1e-10,
+    "projection_translation_maxabs_mm_or_planar_source_units": 1e-05,
+    "projection_rotation_matrix_maxabs": 1e-05,
+    "rank_relative": 1e-06,
+    "rank_translation_scale_mm_to_m": 0.001,
+    "nr_max_iterations": 10000,
+    "nr_svd_cutoff_relative": 1e-12,
+    "nr_joint_bound_policy": "Return post-projection source-limit rejection distinctly, preserve finite candidate and residual. Rejections on original ambient fixtures never changed to prior PASS; known closed positive fixtures separately test soundness/completeness.",
+    "pi_principal_chart": "SO3 principal logarithm; near-pi undefined derivative logged CHART_AMBIGUITY not silent workaround.",
+    "nonfinite": "stop affected model downstream; preserve trace. Failed fixed qualification blocks collision/RBS/global planning."
+  },
+  "raw_endpoint_policy": "Read/evaluate unchanged. Exact reclosure used only explicitly new component fixture with delta recorded. Formal start/goal precision restoration or reclosure requires a separate decision.",
+  "obligations": "All211 entries and all paper denominators remain; this finite qualification cannot replace22500 plans/500k projection/50k visibility or no-obstacle/fixed-partition experiments."
+}
