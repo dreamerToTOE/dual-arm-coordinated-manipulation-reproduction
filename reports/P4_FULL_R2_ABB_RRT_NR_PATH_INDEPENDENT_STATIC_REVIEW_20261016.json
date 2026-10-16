@@ -1,0 +1,171 @@
+{
+  "schema": "P4_R2_ABB_RRT_NR_PATH_INDEPENDENT_STATIC_REVIEW_V1",
+  "created_at_utc": "2026-10-16T01:30:22.194377+00:00",
+  "reviewer": "nr_entry_review (not path runner author)",
+  "status": "PASS_STATIC_PENDING_ACTUAL_SOURCE_FREEZE",
+  "checks_total": 30,
+  "checks_passed": 30,
+  "checks_failed": 0,
+  "zero_scientific_calls": true,
+  "zero_compile_calls": true,
+  "array_tests_are_algorithm_free_metadata_only": true,
+  "actual_source_present": false,
+  "worker_numerics_unchanged": true,
+  "source_sha256": {
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_draft.cpp": "6042af3d2014594d9e813fa6e737f6da1786b98de225be2034d48f9c21de9fb3",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_kernel_draft.cpp": "2d5d61ac8742330611c39243c740df5a6e5e15fbe13a72ad6ea50973917c930b",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_observation_draft.hpp": "0b7db692f6154fed5d7c2a28a77aa15717ad5eb3e5ea26e4816414cb42746bbf",
+    "baselines/p4_full/geometry_consistent/abb_rrt_nr_e2e_driver_draft.cpp": "4a8749f2df2b820892f8cb0c2fcf335257db22e937323ac8f7eee0a9468e6aeb",
+    "baselines/p4_full/geometry_consistent/abb_rrt_nr_e2e_observation_draft.hpp": "9cc10b2fa41c09fb96f4d06ddbe61f325c17ebfdb9b2ef5d6dac15240b51f5f5",
+    "baselines/p4_full/geometry_consistent/abb_rrt_pcs_e2e_observation.hpp": "b597b56199279bd02a7030375e0dd055d650c9a0bb4bee80aef6d4242755381c",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/geometry_consistent/pcs_source_trace.hpp": "63366eeebe7822947c50f5b151aab4c03321d7be3339ae3f6bdc85aea204d366",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/physical_nr_abb_cpp_draft.hpp": "e387e7c4b625ffa41d63d47093a4cf0c75a04d07d1f1b8d4693162653814449e",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf",
+    "reports/P4_FULL_R2_ABB_NR_INTERFACE_PRE_DRAFT_20261015.md": "c40c8b7e874e7b4994b747efd343fb3a623d702d9a222e10c0f32018a74a2e07",
+    "reports/P4_FULL_R2_ABB_NR_INTERFACE_SAVED_INPUTS_20261015.json": "d260581947908ef59a1adc9b72ae38eca8d1f55c23a51cb2d78efed758aa24fb",
+    "reports/P4_FULL_R2_ABB_NR_LOCAL_INTERFACE_PRE_DRAFT_20261015.md": "9e9e4c3fe3e65641eb13d74ecbc80ae22d99670f0ff628f870a3a3b6ff145e7b",
+    "reports/P4_FULL_R2_ABB_RRT_NR_ENTRY_PRE_DRAFT_20261015.md": "1cc97318ea056ef51ee5a2ead09d49b79565c4fae9c7437e503e2b54c7899c85",
+    "reports/P4_FULL_R2_ABB_RRT_NR_PATH_PRE_DRAFT_20261015.md": "0a209d063fef09ad6d9b821b70b352ae149c389169b7af9a6e6bcf14a158b59d",
+    "scripts/build_p4_full_r2_abb_nr_interface_draft.py": "5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8",
+    "scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py": "b9754474468f2c72f5151db337e15cf8ef0baf9106a2339611f2cbea3739a4bb",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "scripts/qualify_p4_full_r2_abb_nr_local_draft.py": "6c2e5bad7b0b16c4657e454e04b50195a226ec4779b16e1b7580ba1239772467",
+    "scripts/qualify_p4_full_r2_abb_pcs.py": "776700587300eb2a16c7a6cb5ecdba13ea3bce35e717485bdbe38b2de7017dc4",
+    "scripts/qualify_p4_full_r2_abb_rrt_nr_e2e_draft.py": "3831a2c1c89fca10150b0251bccb5cdb910b3e53e5654f78178ab57fc4e4973e",
+    "scripts/qualify_p4_full_r2_abb_rrt_nr_path_draft.py": "2b9ec39b195a8470a00c58cd82788d67543b824c8c2039c6609ef88535801fc8",
+    "scripts/qualify_p4_full_r2_vi_rss_reconstructed.py": "1ba1e8ab96cedc98c796a81b311244209fc304cf0872a65dce3c360046c1079c",
+    "scripts/recover_p4_full_r2_endpoints.py": "4723c08f33a85e4ea85d9067544979d222212c588c82d004934b293253bb555f"
+  },
+  "checks": [
+    {
+      "check": "AST path runner",
+      "passed": true
+    },
+    {
+      "check": "array full queue preserves all refs",
+      "passed": true
+    },
+    {
+      "check": "every unique node collision required",
+      "passed": true
+    },
+    {
+      "check": "source false retains queue and blocks gate",
+      "passed": true
+    },
+    {
+      "check": "incomplete dense path gate false",
+      "passed": true
+    },
+    {
+      "check": "extra original attempt blocks no cherry pick",
+      "passed": true
+    },
+    {
+      "check": "leaf exactly .05 rejected",
+      "passed": true
+    },
+    {
+      "check": "complete dense interior added",
+      "passed": true
+    },
+    {
+      "check": "signed zero node identity retained",
+      "passed": true
+    },
+    {
+      "check": "wrong exact endpoint fails closed",
+      "passed": true
+    },
+    {
+      "check": "missing directed tree edge fails closed",
+      "passed": true
+    },
+    {
+      "check": "reversed directed tree edge fails closed",
+      "passed": true
+    },
+    {
+      "check": "source frozen execution/claim/build links",
+      "passed": true
+    },
+    {
+      "check": "source result/jsonl complete exact",
+      "passed": true
+    },
+    {
+      "check": "all prior own cost not cumulative",
+      "passed": true
+    },
+    {
+      "check": "fullqueue preserved before cap",
+      "passed": true
+    },
+    {
+      "check": "over2048 zero worker query",
+      "passed": true
+    },
+    {
+      "check": "worker metadata adaptation only",
+      "passed": true
+    },
+    {
+      "check": "worker live parent and full queue hash",
+      "passed": true
+    },
+    {
+      "check": "all nodes complete exact",
+      "passed": true
+    },
+    {
+      "check": "independent physical strict gates",
+      "passed": true
+    },
+    {
+      "check": "aligned TCP / all PQP codes",
+      "passed": true
+    },
+    {
+      "check": "parent hardwall+live group CPU",
+      "passed": true
+    },
+    {
+      "check": "adapter inherits worker process group",
+      "passed": true
+    },
+    {
+      "check": "kill and reap entire group",
+      "passed": true
+    },
+    {
+      "check": "tail output and original assets preserved",
+      "passed": true
+    },
+    {
+      "check": "final tail budget prevents PASS",
+      "passed": true
+    },
+    {
+      "check": "all bound model/reused source in OWN",
+      "passed": true
+    },
+    {
+      "check": "no branch gate or repair",
+      "passed": true
+    },
+    {
+      "check": "current actual source absent",
+      "passed": true
+    }
+  ],
+  "remaining_before_execution": [
+    "Actual unique RRT_NR E2E exact result and complete JSONL must exist.",
+    "Regenerate complete bound candidate including all nodes/refs/source provenance and latest own-cost prior ledger.",
+    "Root reviews actual full source queue then commits/freeze; this static review alone never opens scientific execution."
+  ],
+  "scope": "Complete independent discrete source-policy path qualification only, no CCD/full paper/performance claim."
+}
