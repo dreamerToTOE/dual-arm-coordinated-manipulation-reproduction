@@ -1,0 +1,169 @@
+{
+  "schema": "P4_NR_PATH_PERSONNEL_INDEPENDENT_STDLIB_SAVED_POST_V1",
+  "created_at_utc": "2026-10-16T01:44:11.587071+00:00",
+  "run_id": "20261015_R2_ABB_RRT_NR_PATH01",
+  "reviewer": "nr_entry_review (not path runner author)",
+  "personnel_independent": true,
+  "status": "PASS_SAVED_EVIDENCE_AUDIT",
+  "checks_total": 24448,
+  "checks_passed": 24448,
+  "checks_failed": 0,
+  "check_groups": {
+    "raw": {
+      "total": 9,
+      "passed": 9
+    },
+    "metadata": {
+      "total": 13,
+      "passed": 13
+    },
+    "provenance": {
+      "total": 1400,
+      "passed": 1400
+    },
+    "source_path": {
+      "total": 29,
+      "passed": 29
+    },
+    "leaves": {
+      "total": 392,
+      "passed": 392
+    },
+    "queue": {
+      "total": 3,
+      "passed": 3
+    },
+    "tree": {
+      "total": 15,
+      "passed": 15
+    },
+    "nodes": {
+      "total": 2751,
+      "passed": 2751
+    },
+    "poses": {
+      "total": 786,
+      "passed": 786
+    },
+    "limits": {
+      "total": 5109,
+      "passed": 5109
+    },
+    "collision": {
+      "total": 6288,
+      "passed": 6288
+    },
+    "collision_pose": {
+      "total": 5109,
+      "passed": 5109
+    },
+    "events": {
+      "total": 1179,
+      "passed": 1179
+    },
+    "accounting": {
+      "total": 9,
+      "passed": 9
+    },
+    "budget": {
+      "total": 3,
+      "passed": 3
+    },
+    "preservation": {
+      "total": 1353,
+      "passed": 1353
+    }
+  },
+  "failed_checks": [],
+  "zero_new_scientific_calls": true,
+  "zero_compile_calls": true,
+  "audit_script_sha256": "8804b901a65a7d378b63b3fc32b20b8caf8bc565c7e2da20b9e0c9a6c2fcd0db",
+  "execution_sha256": "fd74acd7ce5f747cc7123cacef8c9467b1fa985d9d88afdcac47aee0956a5754",
+  "protocol_sha256": "aea8521ed41edd36aec466e575c8a8076683295b9baf7d04b4da4460df64ba66",
+  "source_execution_sha256": "573a1e0bb11a345811ff380a838eb4818000963e98adb90664dfaace755a58b7",
+  "source_result_sha256": "b36049d6c2b62b61d9514ffb4a4b8f1a5222d869c90a72eecbed8e7b2ff689fe",
+  "summary": {
+    "unique_nodes": 393,
+    "qualified_nodes": 393,
+    "reconstruction_edges": 6,
+    "full_dense_leaf_count": 392,
+    "max_leaf_full12_L2_rad": 0.0478001489336342,
+    "max_saved_pose_closure_position_mm": 9.793997321594361e-06,
+    "max_saved_pose_closure_rotation_matrix": 3.0701365727470176e-08,
+    "min_original_mechanical_limit_margin_rad": 0.046633132713711944,
+    "source_tree_vertices": 55,
+    "source_tree_edges": 54,
+    "source_tree_vertex_path": [
+      1,
+      4,
+      12,
+      41,
+      44,
+      48,
+      0
+    ],
+    "edge_summaries": [
+      {
+        "edge_index": 0,
+        "dense_nodes": 65,
+        "leaves": 64,
+        "max_leaf_L2_rad": 0.0478001489336342
+      },
+      {
+        "edge_index": 1,
+        "dense_nodes": 65,
+        "leaves": 64,
+        "max_leaf_L2_rad": 0.031101554325702295
+      },
+      {
+        "edge_index": 2,
+        "dense_nodes": 129,
+        "leaves": 128,
+        "max_leaf_L2_rad": 0.027767633178715244
+      },
+      {
+        "edge_index": 3,
+        "dense_nodes": 65,
+        "leaves": 64,
+        "max_leaf_L2_rad": 0.04276574430820428
+      },
+      {
+        "edge_index": 4,
+        "dense_nodes": 65,
+        "leaves": 64,
+        "max_leaf_L2_rad": 0.04236131076725132
+      },
+      {
+        "edge_index": 5,
+        "dense_nodes": 9,
+        "leaves": 8,
+        "max_leaf_L2_rad": 0.04583352357856132
+      }
+    ],
+    "worker_events_actual": {
+      "math_arm_FK_started": 786,
+      "math_arm_FK_completed": 786,
+      "collision_started": 393,
+      "adapter_arm_FK_J_started": 1572,
+      "adapter_arm_FK_J_completed": 1572,
+      "collision_completed": 393
+    },
+    "PQP_queries_actual": {
+      "native": 45588,
+      "aligned": 45588
+    },
+    "native_TCP_mismatch_nodes": 393,
+    "native_collision_result_counts": {
+      "0": 393
+    },
+    "bound_asset_count": 1352,
+    "scientific_path_wall_s": 3.7730926529998214,
+    "scientific_path_cpu_s": 3.9572699999999985
+  },
+  "evidence_boundary": [
+    "Only stored arrays/matrices/events, literal mechanical limits and file/source hashes were examined.",
+    "No FK/IK/NR/Jacobian/collision/PQP/RNG/binary/compile execution was performed.",
+    "Native TCP inconsistency is retained separately; only aligned v3 source discrete policy is qualified.",
+    "One RECONSTRUCTED physical-NR/A01 path does not establish author KDL equivalence, random success statistics, performance, CCD or complete P4."
+  ]
+}
