@@ -199,3 +199,14 @@ S02 source4065ac6，固定II/seed7/原range2.6/10秒solve，只改我方接收�
 人员独立S02保存POST实际5284/5284、失败0，schema P4_SOLVE02_SAVED_INDEPENDENT_POST_V1/status PASS_SOLVE02_TRANSPORT_EVIDENCE_INDEPENDENT_POST，SHA730dbb69ff3749975639dd9cad2fe1f31ca45cb2bf370c0470cfddd329d64412。入口/费用true，independent_path_qualified仍false。外层9.55wall/8.75CPU替换内部sample一次；S01+S02共享累计10.99/9.89<原30/60，不重开帽、不回写旧false字段或S01失败。
 
 V17已实际35execution=28科学账+7工程，charged580.675705375994wall/530.628923CPU、R2余额上界3019.324294624006/6669.371077；历史未测尾部仍UNKNOWN。范围表211行154列保前150，stem CBIRRT_D_SOLVE02；V17保全passed=true无mismatch，旧科学/崩溃文件、其他工作树和历史列保留。主POST见 reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE02_POST_TASK_20261016.md，personnel_independent=false。下一P全413/412独立物理门待冻结，120/240/2048帽、不截尾、不重新solve。本补记零科学调用。原D/H STOP与UNKNOWN、旧PCS177/NR393保持；VI974/974余0、正式0/22500及211论文义务不缩减，不提前正式大规模/P2/Isaac。
+
+
+## 2026-10-16 CBiRRT D P完整413节点离散路径独立通过，V18交付
+
+c5e4d2e冻结P唯一运行，环境II/RECONSTRUCTED A01/版本化几何和D距离接口，原S02候选四真M109/145/33/129完整413唯一节点/412叶；P没有再solve/RBS/IK/NR/采样。原五回溯[T,T,F,T,T]及M[109,145,2,33,129]全保留，role0 false29266/M2→role1 true29271/M33不改判。413/413全数学/限位/关联被动branch/离散collision通过，独立保存POST58152/58152、失败0、external/path true，SHA2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0；原execution/charge false及S02候选状态不回写。
+
+真实数学臂FK826/branch826/collision413/adapter内部FKJ1652/PQP95816；双worker88329/88330 exit0/reaped、起闭组及EOF/pending/tail真门通过。保存闭链max4.547473508864641e-13mm/6.730727086790012e-16，限位最小余.016467847389747492rad、叶max.049872908712302065<.05。四段主动[0,0,1,1]/branch均3只是切换机制见证，无优势统计。独立variant附录1659/1659、SHA287a9dd1877b17e3cf439aca891c5832869f5b40973e9757f6314c8822be705a：native413全部TCP pose mismatch，最大.003531998994674268mm/6.824437533303751e-6，native物理pose未合格；aligned413全部pose通过，最大3.410605131648481e-13mm/4.440892098500626e-16。两raw collision均0、各47908PQP，接纳仅原已冻aligned策略，不称native几何全过。
+
+外层104.88wall/11.8CPU（原GNUtime104.87/10.53/1.25/0）在120/240内，仅替换内部样本一次，包含完整物理/保存链核验与清理/持久化，不作论文性能样本。V18实际36execution=29科学账+7工程，charged685.555705375994wall/542.4289229999999CPU，余额仅上界2914.444294624006/6657.5710770000005；历史未测尾部UNKNOWN保持。最新CBIRRT_D_PATH完整表211×158保前154；V18保全实际PASS、七组mismatch空，1028旧科学文件、57崩溃文件8482891B/tar、5其他工作树13未提交、旧V17与历史列保留。主POST见reports/P4_FULL_R2_ABB_CBIRRT_D_PATH_POST_TASK_20261016.md，personnel_independent=false。
+
+此证书只覆盖本版本完整离散source-policy起终路径，不证明CCD/实体杆/省略pair/原native几何/RSS分布/复杂障碍PCS优势/成功率或论文完整。原S01/D64/H STOP与UNKNOWN、split证书边界、旧PCS177/NR393保持；VI974/974余0、正式0/22500、全部211义务及原统计规模不缩。下一继续其余原生搜索器和环境资格，RSS解耦诊断；端到端后成本pilot再申请正式预算，不自动正式大规模/P2/Isaac/结题Word。
