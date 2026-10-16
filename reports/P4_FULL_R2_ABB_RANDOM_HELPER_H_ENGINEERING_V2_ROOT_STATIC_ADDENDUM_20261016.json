@@ -1,0 +1,556 @@
+{
+  "schema": "P4_H_ENGINEERING_V2_PERSONNEL_STATIC_ADDENDUM_V1",
+  "created_at_utc": "2026-10-16T01:49:22.558100+00:00",
+  "reviewer": "nr_entry_review (not H builder author)",
+  "status": "PASS_STATIC_PENDING_ROOT_FREEZE_AND_BUILD",
+  "checks_total": 132,
+  "checks_passed": 132,
+  "checks_failed": 0,
+  "failed_checks": [],
+  "zero_compile_query_solve_RNG": true,
+  "engineering_draft": "configs/p4_full/r2_abb_random_helper_h_engineering_v2.draft.json",
+  "engineering_draft_sha256": "02f2ebfbbc7217fb19bced7e116dc96a79d5a3a56be4bbd9c918c52bf447e76b",
+  "builder_sha256": "b7981258ed0e7f91364dcc5f5fd3e83e584d0f8ccc0404e78e965c7156907675",
+  "scientific_runner_sha256": "09e4362f4a813e18d2eff42d78e66ca6d9c45429664d991c1c415a2502eddc27",
+  "PRE_sha256": "0bfa91985e6a612246323b3d48d20fc9ee291a486f387f7571912be872393762",
+  "prior_execution_count": 25,
+  "prior_own_wall_s": 419.4056698739944,
+  "prior_own_cpu_s": 385.449026,
+  "template_asset_count": 68,
+  "checks": [
+    {
+      "check": "builder AST",
+      "passed": true
+    },
+    {
+      "check": "exact current engineering draft validates zeroquery",
+      "passed": true
+    },
+    {
+      "check": "draft remains unfrozen",
+      "passed": true
+    },
+    {
+      "check": "latest25 execution set exact",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_NR_INTERFACE_BUILD01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_NR_LOCAL01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_PCS_BUILD01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_PCS_LOCAL01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_RRT_NR_E2E01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_RRT_NR_E2E_BUILD01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_RRT_NR_PATH01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_RRT_PATH01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_RRT_PCS_E2E01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ABB_RRT_PCS_E2E_BUILD01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_COLLISION_CONTROLS01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ENDPOINT_COLLISION_REPLAY01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_ENDPOINT_RECONSTRUCTED01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_IV_NR_LOCAL01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_NR_ABB_Q1_01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_NR_ABB_Q1_BUILD01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_PLANAR01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_RSS_CONSTRUCTION01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_SAVED_RSS_COLLISION01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_SPATIAL01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_VI_RSS_BRIDGE01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_VI_RSS_CENTER_IMAGE01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_VI_RSS_FIBER_COMPONENT01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_VI_RSS_INGRESS_COMPOSITE01",
+      "passed": true
+    },
+    {
+      "check": "prior SHA 20261015_R2_VI_RSS_RECONSTRUCTED01",
+      "passed": true
+    },
+    {
+      "check": "own wall sum once exact",
+      "passed": true
+    },
+    {
+      "check": "own CPU sum once exact",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA scripts/build_p4_full_r2_abb_random_helper_draft.py",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA baselines/p4_full/geometry_consistent/abb_helper_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA baselines/p4_full/geometry_consistent/abb_helper_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA reports/P4_FULL_R2_ABB_RANDOM_HELPER_H_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA baselines/p4_full/geometry_consistent/abb_helper_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "check": "bound own SHA baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/manifest.json",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_PCS.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_NR.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_RLX.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_RSS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/GoalVisitor.hpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/PRM_NR.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/PRM_PCS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/PRM_RLX.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_NR.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_PCS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_RLX.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_RSS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_NR.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_RLX.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_RSS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/kdl_class.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_NR.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_PCS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_RLX.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_RSS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/MatVec.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/model.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerNR.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerRLX.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerRSS.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/model.h",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Base_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/EE_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link1_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link2_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link3_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r1.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r2.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r3.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link5_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link6.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/cone.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/cyl2_r.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/floor.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/obs.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/obs1.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/room.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/table.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/table1.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/tableCenter.tris",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/p4_abb_pcs_thin",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_pcs_engineering_v1.json",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/P4_R2_ABB_PCS_BUILD_4_180W_360CPU_20261015.claim.json",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/author_source_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/lib/libPQP.a",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /opt/ros/humble/lib/x86_64-linux-gnu/libompl.so",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /usr/include/nlohmann/json.hpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_PCS.cpp",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /usr/bin/x86_64-linux-gnu-g++-11",
+      "passed": true
+    },
+    {
+      "check": "template/compiler asset SHA /usr/include/c++/11/bits/stl_algo.h",
+      "passed": true
+    },
+    {
+      "check": "final engineering builder expected hash",
+      "passed": true
+    },
+    {
+      "check": "actual final scientific runner hash",
+      "passed": true
+    },
+    {
+      "check": "actual latest PRE hash",
+      "passed": true
+    },
+    {
+      "check": "engineering exact budget60/120 single45/90",
+      "passed": true
+    },
+    {
+      "check": "exact two R2only targets sourcecontrol/break",
+      "passed": true
+    },
+    {
+      "check": "native numerics rerun unavailable",
+      "passed": true
+    },
+    {
+      "check": "no planner/D link",
+      "passed": true
+    },
+    {
+      "check": "original shuffle stdlib preserved",
+      "passed": true
+    },
+    {
+      "check": "compiler exact pinned",
+      "passed": true
+    },
+    {
+      "check": "zero queries/solve/formalVI claims",
+      "passed": true
+    },
+    {
+      "check": "H independently exact single break insertion",
+      "passed": true
+    },
+    {
+      "check": "H correction changes one file/no combinedD",
+      "passed": true
+    },
+    {
+      "check": "source_control exact preview bound",
+      "passed": true
+    },
+    {
+      "check": "source_control 8wholebody wrappers3marks nocaps",
+      "passed": true
+    },
+    {
+      "check": "source_control APC collision unchanged except observations",
+      "passed": true
+    },
+    {
+      "check": "success_break exact preview bound",
+      "passed": true
+    },
+    {
+      "check": "success_break 8wholebody wrappers3marks nocaps",
+      "passed": true
+    },
+    {
+      "check": "success_break APC collision unchanged except observations",
+      "passed": true
+    },
+    {
+      "check": "external target total live CPU watchdog",
+      "passed": true
+    },
+    {
+      "check": "hardwall watchdog and killgroup reap",
+      "passed": true
+    },
+    {
+      "check": "final asset rehash precedes measured totals",
+      "passed": true
+    },
+    {
+      "check": "final cap actively demotes successful build",
+      "passed": true
+    },
+    {
+      "check": "final cap does not erase earlier failure",
+      "passed": true
+    },
+    {
+      "check": "new stage claim prevents retry",
+      "passed": true
+    },
+    {
+      "check": "actual H build stage absent",
+      "passed": true
+    },
+    {
+      "check": "post-logrepair review exact hash binds runnerPRE",
+      "passed": true
+    }
+  ],
+  "acceptance_boundary": [
+    "Only saved bytes, pure text transforms, AST and SHA bookkeeping reviewed. No staging or C++ compile/helper/model execution.",
+    "Engineering recipe binds PRE/builder/driver/header/instrumentation and exact dependencies; scientific runner hash is recorded in this addendum, then must separately be bound by its actual post-build scientific protocol.",
+    "Original v1 draft and older static reviews are preserved. New v2 remains unfrozen; root decides final freeze/commit/build once.",
+    "Successful engineering is not helper scientific qualification, native PCS planner qualification, performance evidence or formal sample."
+  ]
+}

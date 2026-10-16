@@ -1,0 +1,153 @@
+{
+  "schema": "P4_R2_ABB_RANDOM_HELPER_H_SCIENCE_INDEPENDENT_STATIC_V1",
+  "created_at_utc": "2026-10-16T01:34:38.513798+00:00",
+  "reviewer": "nr_entry_review (not H author)",
+  "status": "FAIL_STATIC_REVIEW",
+  "checks_total": 28,
+  "checks_passed": 27,
+  "checks_failed": 1,
+  "zero_compile_query_solve_RNG": true,
+  "pure_array_tests_not_scientific_fixtures": true,
+  "runner_sha256": "9a88d715af2f34456cecb7784e757aeca7b51e9c397985b46295f388e43b972e",
+  "source_sha256": {
+    "scripts/qualify_p4_full_r2_abb_random_helper_h_draft.py": "9a88d715af2f34456cecb7784e757aeca7b51e9c397985b46295f388e43b972e",
+    "scripts/build_p4_full_r2_abb_random_helper_draft.py": "b7981258ed0e7f91364dcc5f5fd3e83e584d0f8ccc0404e78e965c7156907675",
+    "baselines/p4_full/geometry_consistent/abb_helper_observation_draft.hpp": "fb31019d2024d1a1cd9a5da87c00041ce74bf7536fc89f5ea3b5e42324db2b56",
+    "baselines/p4_full/geometry_consistent/abb_helper_driver_draft.cpp": "2e1c1201f68547094cb0afe932d579f2d8b50e839e7a99c64684db89b959a396",
+    "reports/P4_FULL_R2_ABB_RANDOM_HELPER_H_PRE_DRAFT_20261015.md": "45f1f23081dc6e3d5bf2a20abc445c6992d53d73d6db4f770ad3e10f3e80f38b",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "baselines/p4_full/geometry_consistent/abb_helper_instrumentation_draft.py": "909ae99056d216ea527646fdede78a499ce575eee6cef3c36943a72fc108e665",
+    "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+    "scripts/recover_p4_full_r2_endpoints.py": "4723c08f33a85e4ea85d9067544979d222212c588c82d004934b293253bb555f",
+    "baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf"
+  },
+  "checks": [
+    {
+      "check": "AST scientific runner",
+      "passed": true
+    },
+    {
+      "check": "source_control entire source byte inverse",
+      "passed": true
+    },
+    {
+      "check": "source_control only H separate factor",
+      "passed": true
+    },
+    {
+      "check": "success_break entire source byte inverse",
+      "passed": true
+    },
+    {
+      "check": "success_break only H separate factor",
+      "passed": true
+    },
+    {
+      "check": "source control unmodified",
+      "passed": true
+    },
+    {
+      "check": "synthetic first success prefix",
+      "passed": true
+    },
+    {
+      "check": "wrong source bool fails closed",
+      "passed": true
+    },
+    {
+      "check": "break returns false fails closed",
+      "passed": true
+    },
+    {
+      "check": "break final candidate changed fails closed",
+      "passed": true
+    },
+    {
+      "check": "changed shuffle prefix fails closed",
+      "passed": true
+    },
+    {
+      "check": "open trace tail fails closed",
+      "passed": true
+    },
+    {
+      "check": "binary64 signed-zero parity",
+      "passed": true
+    },
+    {
+      "check": "source identity missing stays unobserved",
+      "passed": true
+    },
+    {
+      "check": "fixed64 every source dispatch before physical",
+      "passed": true
+    },
+    {
+      "check": "all64 false and true outputs physical",
+      "passed": true
+    },
+    {
+      "check": "all64 collision no screening",
+      "passed": true
+    },
+    {
+      "check": "separate boolean and physical gates",
+      "passed": true
+    },
+    {
+      "check": "source true branch closure soundness",
+      "passed": true
+    },
+    {
+      "check": "srand/source rand remains distinct",
+      "passed": false
+    },
+    {
+      "check": "thread env and descendants CPU charged",
+      "passed": true
+    },
+    {
+      "check": "complete UNKNOWN tail preserved",
+      "passed": true
+    },
+    {
+      "check": "finalization cap blocks pass",
+      "passed": true
+    },
+    {
+      "check": "native aligned both exact PQP zero",
+      "passed": true
+    },
+    {
+      "check": "exact raw bound binary/source/mesh chain",
+      "passed": true
+    },
+    {
+      "check": "no reset retry claim",
+      "passed": true
+    },
+    {
+      "check": "concurrent global budget admission",
+      "passed": true
+    },
+    {
+      "check": "old v1 intentionally not runnable new science schema",
+      "passed": true
+    }
+  ],
+  "execution_readiness": "NOT_FROZEN_NOT_BUILT",
+  "remaining": [
+    "Regenerate engineering prior after NR runs, freeze/commit and build two exact H targets once.",
+    "Generate new scientific candidate with this runner --describe-protocol; legacy v1 draft belongs to older builder schema/prior20 and must be retained.",
+    "Independently recheck exact built binaries/assets and source hashes before root scientific freeze."
+  ],
+  "limitations": [
+    "Only fixed local three-argument exported helper; absent from actual three PCS planner grow paths.",
+    "No native-numerics repetition; D activeDistance is independent and not patched here.",
+    "Final physical rejection may be normal, source true mathematical/branch inconsistency blocks; no all64 physical-pass expectation."
+  ]
+}

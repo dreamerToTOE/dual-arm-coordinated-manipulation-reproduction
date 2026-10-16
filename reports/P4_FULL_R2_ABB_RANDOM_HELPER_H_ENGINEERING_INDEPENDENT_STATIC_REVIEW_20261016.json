@@ -1,0 +1,263 @@
+{
+  "schema": "P4_ABB_RANDOM_HELPER_H_ENGINEERING_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "PASS_SOURCE_STATIC_PENDING_FRESH_PROTOCOL",
+  "generated_at_utc": "2026-10-16T01:26:29.022770+00:00",
+  "reviewer": "nr_local_independent_post (not H author)",
+  "checks_total": 40,
+  "checks_passed": 40,
+  "checks_failed": 0,
+  "reviewed_source_sha256": {
+    "scripts/build_p4_full_r2_abb_random_helper_draft.py": "b7981258ed0e7f91364dcc5f5fd3e83e584d0f8ccc0404e78e965c7156907675",
+    "baselines/p4_full/geometry_consistent/abb_helper_observation_draft.hpp": "fb31019d2024d1a1cd9a5da87c00041ce74bf7536fc89f5ea3b5e42324db2b56",
+    "baselines/p4_full/geometry_consistent/abb_helper_driver_draft.cpp": "2e1c1201f68547094cb0afe932d579f2d8b50e839e7a99c64684db89b959a396",
+    "reports/P4_FULL_R2_ABB_RANDOM_HELPER_H_PRE_DRAFT_20261015.md": "45f1f23081dc6e3d5bf2a20abc445c6992d53d73d6db4f770ad3e10f3e80f38b",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "baselines/p4_full/geometry_consistent/abb_helper_instrumentation_draft.py": "909ae99056d216ea527646fdede78a499ce575eee6cef3c36943a72fc108e665",
+    "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf"
+  },
+  "current_prior_execution_count": 22,
+  "current_previous_r2_wall_s": 385.7659771849949,
+  "current_previous_r2_cpu_s": 345.13823,
+  "current_template_assets_count": 68,
+  "source_transform_previews": {
+    "source_control": {
+      "factor": "source_control",
+      "correction": null,
+      "observer_reversible_to_corrected_bytes": true,
+      "source_control_reversible_to_original_bytes": true,
+      "complete_body_wrappers": 8,
+      "helper_observation_insertions": 3,
+      "original_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "corrected_pre_observation_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "instrumented_sha256": {
+        "proj_classes/apc_class.cpp": "bf4b3f2fb43d4386b33142a1710401cf62ffb4fa473d49dc4d38212188a44156",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "1c66bf4e69f7f2a186d7287930f60a9fcbf62935e0111f8f56a791db1e1b8356",
+        "validity_checkers/collisionDetection.cpp": "1c82c0d1c607a5f1de16d073aca0c57fb2e685e19967d3b78eafb98529f9adc8"
+      },
+      "query_calls": 0,
+      "compile_calls": 0,
+      "scientific_calls": 0,
+      "internal_caps": false
+    },
+    "success_break": {
+      "factor": "success_break",
+      "correction": {
+        "factor": "HELPER_FIRST_IDENTIFIED_SUCCESS_BREAK",
+        "relative_file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain)",
+        "original_sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "candidate_sha256": "c8e302ccbe786590d62e9f2d803e3ee058fc115d2059d8f5cbb97e4aba6d34cb",
+        "original_body_sha256": "98d2efcdb94077221b2054ce5296aa761bf62aa29180d18d2010cd22cfda58c1",
+        "candidate_body_sha256": "bb7a051f2cd133e92447d0947b4d1be37ddfeac0fba0de0f47438313c2063f7b",
+        "whole_file_reversible": true,
+        "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+        "combined_factors": false,
+        "files_changed": 1,
+        "scientific_calls": 0,
+        "compile_calls": 0
+      },
+      "observer_reversible_to_corrected_bytes": true,
+      "source_control_reversible_to_original_bytes": false,
+      "complete_body_wrappers": 8,
+      "helper_observation_insertions": 3,
+      "original_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "corrected_pre_observation_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "c8e302ccbe786590d62e9f2d803e3ee058fc115d2059d8f5cbb97e4aba6d34cb",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "instrumented_sha256": {
+        "proj_classes/apc_class.cpp": "bf4b3f2fb43d4386b33142a1710401cf62ffb4fa473d49dc4d38212188a44156",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "f0c2bfe95732f2f13976381d924519886a6e11e146381d4f11a9a3fa969b1e05",
+        "validity_checkers/collisionDetection.cpp": "1c82c0d1c607a5f1de16d073aca0c57fb2e685e19967d3b78eafb98529f9adc8"
+      },
+      "query_calls": 0,
+      "compile_calls": 0,
+      "scientific_calls": 0,
+      "internal_caps": false
+    }
+  },
+  "archive": "/home/ubuntu2004/Documents/Codex/2026-10-15/codex-p4-https-github-com-dreamertotoe/work/h_engineering_final_cap_recovery_20261016/manifest.json",
+  "new_compile_calls": 0,
+  "new_scientific_calls": 0,
+  "configuration_ready": false,
+  "required_before_freeze": [
+    "Regenerate engineering protocol from current source, all22 prior executions and final source hashes; old draft is stale.",
+    "Root binds this independent review and freezes fresh protocol, validates and commits exact source/config before unique build.",
+    "Build status only engineering; scientific runner requires separate independent review/freeze."
+  ],
+  "checks": [
+    {
+      "check": "AST scripts/build_p4_full_r2_abb_random_helper_draft.py",
+      "passed": true
+    },
+    {
+      "check": "AST baselines/p4_full/geometry_consistent/abb_helper_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "check": "AST baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py",
+      "passed": true
+    },
+    {
+      "check": "absolute g++11",
+      "passed": true
+    },
+    {
+      "check": "compiler bound",
+      "passed": true
+    },
+    {
+      "check": "libstdcxx11 shuffle header bound",
+      "passed": true
+    },
+    {
+      "check": "two R2 targets",
+      "passed": true
+    },
+    {
+      "check": "only three original sources",
+      "passed": true
+    },
+    {
+      "check": "runtime plain trace",
+      "passed": true
+    },
+    {
+      "check": "engineering no science",
+      "passed": true
+    },
+    {
+      "check": "fresh build stage",
+      "passed": true
+    },
+    {
+      "check": "fresh build ledger",
+      "passed": true
+    },
+    {
+      "check": "60w120cpu total /45w90cpu single",
+      "passed": true
+    },
+    {
+      "check": "final mandatory tail budget gate",
+      "passed": true
+    },
+    {
+      "check": "fresh exclusive claim",
+      "passed": true
+    },
+    {
+      "check": "exact commit and frozen gate",
+      "passed": true
+    },
+    {
+      "check": "process group kills + rlimits",
+      "passed": true
+    },
+    {
+      "check": "source_control full-source reverse proof",
+      "passed": true
+    },
+    {
+      "check": "source_control unchanged external source",
+      "passed": true
+    },
+    {
+      "check": "source_control eight wrappers",
+      "passed": true
+    },
+    {
+      "check": "source_control no science/build calls",
+      "passed": true
+    },
+    {
+      "check": "source_control no internal caps",
+      "passed": true
+    },
+    {
+      "check": "source_control exact preview",
+      "passed": true
+    },
+    {
+      "check": "source_control no D planner edit",
+      "passed": true
+    },
+    {
+      "check": "success_break full-source reverse proof",
+      "passed": true
+    },
+    {
+      "check": "success_break unchanged external source",
+      "passed": true
+    },
+    {
+      "check": "success_break eight wrappers",
+      "passed": true
+    },
+    {
+      "check": "success_break no science/build calls",
+      "passed": true
+    },
+    {
+      "check": "success_break no internal caps",
+      "passed": true
+    },
+    {
+      "check": "success_break exact preview",
+      "passed": true
+    },
+    {
+      "check": "success_break no D planner edit",
+      "passed": true
+    },
+    {
+      "check": "actual three-argument overload",
+      "passed": true
+    },
+    {
+      "check": "exact one srand before helper",
+      "passed": true
+    },
+    {
+      "check": "no source rand inferred",
+      "passed": true
+    },
+    {
+      "check": "no post-helper scientific functions",
+      "passed": true
+    },
+    {
+      "check": "same runtime observer source",
+      "passed": true
+    },
+    {
+      "check": "immediate durable entry stderr",
+      "passed": true
+    },
+    {
+      "check": "observer no RNG",
+      "passed": true
+    },
+    {
+      "check": "observer no scientific function",
+      "passed": true
+    },
+    {
+      "check": "source control all eight still false",
+      "passed": true
+    }
+  ]
+}

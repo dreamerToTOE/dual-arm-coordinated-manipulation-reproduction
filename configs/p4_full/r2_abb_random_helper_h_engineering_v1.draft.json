@@ -1,0 +1,223 @@
+{
+  "schema": "P4_R2_ABB_RANDOM_HELPER_H_ENGINEERING_DRAFT_V1",
+  "frozen": false,
+  "reviews": {
+    "independent_static_review_passed": false,
+    "root_freeze_approved": false
+  },
+  "run_id": "20261015_R2_ABB_RANDOM_HELPER_H_BUILD01",
+  "claim_id": "P4_R2_ABB_RANDOM_HELPER_H_BUILD_2_60W_120CPU_20261015",
+  "author_commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+  "classification": "ENGINEERING_BUILD_ONLY",
+  "template_stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain",
+  "build_root": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_random_helper_h_v1",
+  "template_assets_sha256": {
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/manifest.json": "b05d53d3ff65e9122179f785836eff6162eca1c4221ecd0513fd901854e657aa",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_PCS.cpp": "db236f3d24b566e8c2737040936d2dfc3ea71f1aec345285b52dc598125a5509",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_NR.h": "fe47f4b4d0bd9ab38792ca42c6c3280f622f8a4b0babbce910b4600ba8303338",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.h": "714076be551bf08383402076466fbe4a15ed0e36cb1b3300e9533a67aa1f91b7",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_RLX.h": "5cc1e9860e6212e2d4acb7e5165f86edf5f472a715cb4d514b53c16bfbff620d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_RSS.h": "343413dcd016aa762d3f979680baf3fd030928b8dc1f32f075b39b069bcbc8b8",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/GoalVisitor.hpp": "07d3390ca2dc5ad48ad1fa218088156d6b6c7d36041fb661f101848a74a05fbd",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/PRM_NR.h": "0e5a557b429771c5bb26e1285b2c5f834456fdb91e05051f77417a2419817041",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/PRM_PCS.h": "9609b2dbb279cf44b50f7fd9ca03f7fdea95cbd2b861d8517828e761925de0d7",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/PRM_RLX.h": "c3e915b592e2fd3a064414f974b1af6a830198e890f254152ca9cdefa54aa797",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_NR.h": "323615bb356cbb164947c604f183ce20648e923ad1dcf3da9271e6440a28b58b",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_PCS.h": "93ae661e0af0b7e38bd2f3742e60bf24d1084d1b1f73d87fc0246bcc9a0d6fab",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_RLX.h": "0176c9b229ecfdefc16578c51a8f0909eb3d481b4801bd5a407ab0a4e5f53c88",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/RRT_RSS.h": "cb033afa2163e4e5a0757112632b34441aff6f4d25d80e061eccd76a5580c13a",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_NR.h": "348074a250eb8d5fcf2b5956aaba9d8c1763d9e2210c9f95366a1b22e6132a21",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_RLX.h": "5cee4282d641ed38854ebb16d955a71477f34f0215a396fc44283fc7ee5d77da",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_RSS.h": "ffc33c566a5d0af38475644f29e20dd162088e7974c94c67693eb16fcbc2aef2",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/kdl_class.h": "6b8790a0f5d12811bdbcd1ffe45e6b5e37e9e72b25f306c9775004be1bf07fde",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_NR.h": "0665bf61a2a9f79729ee04883929710c205c0c3561703b1af8812538e179f598",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_PCS.h": "9f17572b376249b3c6a8683a949e39d816354308ce702c00e6cf7b9b0e6254dd",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_RLX.h": "4d68ac97f8ad234e8db548907946281f68760e7f9dbbdc4a8cc53dea8b1cc3ab",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_RSS.h": "a6ceb577339467cd1d8af103e5f3409abc8d902e2a8f9a6e971290389f0f7d08",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/MatVec.h": "f435b10b9b5808eff905bbbba3094818d0763642e323a9040b77cece78b0121a",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/model.h": "8ca45fd6439a78876f5085f94db3070f6fd33abca1f17a5a46e14f1e13619176",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerNR.h": "9755ac49c7ac032da4fd6713144f2d8de95ac115da4f7c3d48bc92fd6b1a97c3",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.h": "e9f2f8af3bc8768fcd05cf9c9d36f5940a9dcd66893ac4f18715bcaa3f6ef6b5",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerRLX.h": "2a34c85e59318fa6399e698554707cd9f1ef03fa1066c847aee140e92816596b",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerRSS.h": "c7bcf881fb451eab6ff20b03a4ecc0c279c639ef85ba4a3a1b6b6cda8c6cdd11",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.h": "d4753e4e56568868e26dfe08826d9d19210ee1d16f7751bdb4053b25b355d598",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/model.h": "8ca45fd6439a78876f5085f94db3070f6fd33abca1f17a5a46e14f1e13619176",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Base_r.tris": "eee302c275cf58a88e0a64206f25867202a717261bf04d072d668cf3603d5085",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/EE_r.tris": "b6e2b7af54d6e2d90dde325f3d52b680abff884d6f31e0fbc7b25eec132c87ca",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link1_r.tris": "f3ec4f811dfc1ef33e4703e82c350d9d99fd01474fbb81125b930d1ee8c7bff8",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link2_r.tris": "5e9da2c8ddcc4bf549dd675626fdca629146d120be381c7178dd73e4107f1747",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link3_r.tris": "bee15986ab5fe4064c5b97ab0109d88b2a1981b3a765ecd8c99210c96793b954",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r.tris": "c0b04b1c8f8dd3234d73d027c1e8f77392d28d7caba1c11c621c03ae185f5859",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r1.tris": "c0b04b1c8f8dd3234d73d027c1e8f77392d28d7caba1c11c621c03ae185f5859",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r2.tris": "1f909e2153cf62ef44df0f7d818eae401437a01571efc045a6c30c1cecc0e370",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link4_r3.tris": "ec78fc444b18e33160a683fd6b2afe32a6473ed37f2d8020ca1c017ff895fa56",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link5_r.tris": "8a734337bc601235fb80062fdc3674b6dc996d3e318ec7ded3474363995577a2",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/Link6.tris": "74cf29a9e69615f49324e11ce4c93e436c996210da4851771858f96113f545ec",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/cone.tris": "d22e702fbe3fd649678e9d0d85dd165c2a8cdf9aaf3047da526e5a84a096821d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/cyl2_r.tris": "cbfdafdcd65b3f163631f734283427f8786567f726d16e5c1a7c213492253b44",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/floor.tris": "b12240e1274e8ba0f5429b8e7bce460fd60b7b794ee84032477343d60642ec46",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/obs.tris": "76b04d378e0084c19ff31957f0c9425eae6056622fd88300ac0a8a651fbd93b8",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/obs1.tris": "fc25818c04ae22d357d45d37abb06206aa001d3b374e4b2813764710542483d8",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/room.tris": "fa3860857a05f76de3a51c6ba2a3ddc2b6f430e9d72957d954a238e1aa707d44",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/table.tris": "756597cb4dbf32b731375844be6adf94d1d77e57775f4506cf31442723fc1bce",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/table1.tris": "a1bfc04950bf40070b144c2cceefe66e2c9fc99d979578f6e6338479df54fc9f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/simulator/tableCenter.tris": "756597cb4dbf32b731375844be6adf94d1d77e57775f4506cf31442723fc1bce",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/p4_abb_pcs_thin": "a461f6908ba1df041a951836804fb5114e0921eb3d8b80641364c442662330aa",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_pcs_engineering_v1.json": "98eb2f1b5659a8397ded0f8556253108f9ec9869d9bce4176ea9782b21782fc4",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/P4_R2_ABB_PCS_BUILD_4_180W_360CPU_20261015.claim.json": "e298f7c63fdfbce6befcada10bba61de7e36cc609ba14914b4e2af5068f2a5ee",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json": "25bb3f0c6c62334a217ecc79b16f1fc94e3ef7f04eeca71e4dcba502bde8a582",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/author_source_manifest.json": "6d5dd1c4c353da51c9f6331afa60f98b01559b72b2b666e4375e003f8ca63cac",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/lib/libPQP.a": "02b174db0cb68b17d54ad326d130974b62af29ddc2e1ed65c2b459fb7702bc71",
+    "/opt/ros/humble/lib/x86_64-linux-gnu/libompl.so": "25e9cbdc7c1c3b1e7c56221e954e72c4f5cb96e6c45253631773655cac71499e",
+    "/usr/include/nlohmann/json.hpp": "7262f190c3a2f2bb334236b3b74acaa1ac1ffb72920c4654bcaf02a7db1a4ec0",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/run/plan_PCS.cpp": "af868b6ed9bb1253fc2283f6d4d2fe8f3437a91ab349414bc44521892c4b3f69",
+    "/usr/bin/x86_64-linux-gnu-g++-11": "2360901d864cf10bfd6296e261cb2c14053552a80377761ab07146ec9ec9a2c0",
+    "/usr/include/c++/11/bits/stl_algo.h": "a6ab2375b2a806e2ea2adf2eced5956bbad1e2e490bf2bcd48eb1272150f7375"
+  },
+  "own_source_sha256": {
+    "scripts/build_p4_full_r2_abb_random_helper_draft.py": "a37c4fb8eee2d79bdcdd1951742d32ef4aac85f48f5c7f973e684b63ae5764bc",
+    "baselines/p4_full/geometry_consistent/abb_helper_observation_draft.hpp": "fb31019d2024d1a1cd9a5da87c00041ce74bf7536fc89f5ea3b5e42324db2b56",
+    "baselines/p4_full/geometry_consistent/abb_helper_driver_draft.cpp": "2e1c1201f68547094cb0afe932d579f2d8b50e839e7a99c64684db89b959a396",
+    "reports/P4_FULL_R2_ABB_RANDOM_HELPER_H_PRE_DRAFT_20261015.md": "ff2510fa01e6c5aadd36bd01fd20d8c98a43a5cdb0227514c5e6d103bb5afa75",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "baselines/p4_full/geometry_consistent/abb_helper_instrumentation_draft.py": "909ae99056d216ea527646fdede78a499ce575eee6cef3c36943a72fc108e665",
+    "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf"
+  },
+  "source_transform_previews": {
+    "source_control": {
+      "factor": "source_control",
+      "correction": null,
+      "observer_reversible_to_corrected_bytes": true,
+      "source_control_reversible_to_original_bytes": true,
+      "complete_body_wrappers": 8,
+      "helper_observation_insertions": 3,
+      "original_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "corrected_pre_observation_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "instrumented_sha256": {
+        "proj_classes/apc_class.cpp": "bf4b3f2fb43d4386b33142a1710401cf62ffb4fa473d49dc4d38212188a44156",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "1c66bf4e69f7f2a186d7287930f60a9fcbf62935e0111f8f56a791db1e1b8356",
+        "validity_checkers/collisionDetection.cpp": "1c82c0d1c607a5f1de16d073aca0c57fb2e685e19967d3b78eafb98529f9adc8"
+      },
+      "query_calls": 0,
+      "compile_calls": 0,
+      "scientific_calls": 0,
+      "internal_caps": false
+    },
+    "success_break": {
+      "factor": "success_break",
+      "correction": {
+        "factor": "HELPER_FIRST_IDENTIFIED_SUCCESS_BREAK",
+        "relative_file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain)",
+        "original_sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "candidate_sha256": "c8e302ccbe786590d62e9f2d803e3ee058fc115d2059d8f5cbb97e4aba6d34cb",
+        "original_body_sha256": "98d2efcdb94077221b2054ce5296aa761bf62aa29180d18d2010cd22cfda58c1",
+        "candidate_body_sha256": "bb7a051f2cd133e92447d0947b4d1be37ddfeac0fba0de0f47438313c2063f7b",
+        "whole_file_reversible": true,
+        "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+        "combined_factors": false,
+        "files_changed": 1,
+        "scientific_calls": 0,
+        "compile_calls": 0
+      },
+      "observer_reversible_to_corrected_bytes": true,
+      "source_control_reversible_to_original_bytes": false,
+      "complete_body_wrappers": 8,
+      "helper_observation_insertions": 3,
+      "original_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "corrected_pre_observation_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "c8e302ccbe786590d62e9f2d803e3ee058fc115d2059d8f5cbb97e4aba6d34cb",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3"
+      },
+      "instrumented_sha256": {
+        "proj_classes/apc_class.cpp": "bf4b3f2fb43d4386b33142a1710401cf62ffb4fa473d49dc4d38212188a44156",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "f0c2bfe95732f2f13976381d924519886a6e11e146381d4f11a9a3fa969b1e05",
+        "validity_checkers/collisionDetection.cpp": "1c82c0d1c607a5f1de16d073aca0c57fb2e685e19967d3b78eafb98529f9adc8"
+      },
+      "query_calls": 0,
+      "compile_calls": 0,
+      "scientific_calls": 0,
+      "internal_caps": false
+    }
+  },
+  "targets": [
+    {
+      "factor": "source_control",
+      "stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_random_helper_h_v1/source_control",
+      "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_random_helper_h_v1/source_control/p4_abb_random_helper_h"
+    },
+    {
+      "factor": "success_break",
+      "stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_random_helper_h_v1/success_break",
+      "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_random_helper_h_v1/success_break/p4_abb_random_helper_h"
+    }
+  ],
+  "linked_author_cpp": [
+    "proj_classes/apc_class.cpp",
+    "validity_checkers/StateValidityCheckerPCS.cpp",
+    "validity_checkers/collisionDetection.cpp"
+  ],
+  "runtime_observation_modes": [
+    "plain",
+    "trace"
+  ],
+  "prior_execution_sha256": {
+    "results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json": "25bb3f0c6c62334a217ecc79b16f1fc94e3ef7f04eeca71e4dcba502bde8a582",
+    "results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json": "e0793f6ca95cec240b32a6be36d20b0e3df31cd307054fbe4d7cf97789990c6b",
+    "results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json": "f3b5a3b30a9067c1b92a069edf4a2ac72acb3b0f378e63fc486c73399f837c97",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json": "1e70eb0edf9a163ef1c5fbdcc16e15ac6598a368f21f75aa93792ca65d7e409b",
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json": "e2e545675f48b14981846c145820ca9450a75f7ce0d835d6d3746ebeefd24340",
+    "results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json": "53bd4479d42d92698eaaedc918e4d994c92e8c5cdbb37edbbcd4a96736709f4e",
+    "results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json": "f06a0afa82da9cea66224d7b2e438673570aabbefb022c8b00fffedd02ab5f8f",
+    "results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json": "765214ce7de64254126ea6da4b3bf69a3626f2a8896a879504e4f2a6561b91cc",
+    "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json": "d164ccf903d5b3259db4710409537f62394c74b47163b09d0b828a496fbc64b7",
+    "results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json": "784dcf0be2e85e28114c8cf9b54b96cff76b2775607967b68caf5af22840fb3a",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774"
+  },
+  "previous_r2_wall_s": 359.4902552519934,
+  "previous_r2_cpu_s": 309.65925300000004,
+  "budget": {
+    "wall_s": 60.0,
+    "cpu_s": 120.0,
+    "single_wall_s": 45.0,
+    "single_cpu_s": 90.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "query_calls": 0,
+  "solve_calls": 0,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "scientific_execution_authorized": false,
+  "source_policy": "Only already-qualified R2 numerical base. H success-break versus original complete control flow; original shuffle/IK/identify/limits and collision-free helper contract. Observer no caps/model/RNG. D absent.",
+  "one_shot": "Fresh exclusive claim/stages/ledger; preserve partial build/logs; no retry/reset/resume."
+}

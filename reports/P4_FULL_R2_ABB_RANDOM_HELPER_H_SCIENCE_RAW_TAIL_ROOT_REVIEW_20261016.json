@@ -1,0 +1,258 @@
+{
+  "schema": "P4_H_SCIENCE_INDEPENDENT_STATIC_METADATA_REVIEW_V1",
+  "status": "PASS_STATIC_METADATA_PENDING_BUILD_AND_FRESH_PROTOCOL",
+  "checks_total": 55,
+  "checks_passed": 55,
+  "checks_failed": 0,
+  "scientific_runner_original_author": false,
+  "logging_repair_implemented_by_reviewer": true,
+  "new_scientific_calls": 0,
+  "new_compile_calls": 0,
+  "new_helper_dispatches": 0,
+  "source_sha256": "09e4362f4a813e18d2eff42d78e66ca6d9c45429664d991c1c415a2502eddc27",
+  "PRE_sha256": "0bfa91985e6a612246323b3d48d20fc9ee291a486f387f7571912be872393762",
+  "review_script_sha256": "08632e55e507901abef95785f77f35fca5b70e5138005d48065e06ef64209b91",
+  "required_next": "Root reviews logging-only change; actual two-target build succeeds; generate new scientific protocol from this runner with actual newest prior ledger, then separately freeze/commit. Existing v1 draft is superseded preparation, not executable.",
+  "failed_checks": [],
+  "checks": [
+    {
+      "check": "stdlib_and_pure_builder_top_imports",
+      "passed": true,
+      "imports": [
+        "from __future__ import annotations",
+        "import argparse",
+        "from collections import Counter",
+        "import hashlib",
+        "import json",
+        "import math",
+        "import os",
+        "from pathlib import Path",
+        "import resource",
+        "import selectors",
+        "import signal",
+        "import struct",
+        "import subprocess",
+        "import sys",
+        "import time",
+        "import build_p4_full_r2_abb_random_helper_draft as builder"
+      ]
+    },
+    {
+      "check": "explicit_raw_log_gates",
+      "passed": true
+    },
+    {
+      "check": "exact_signed_zero_distinguishes",
+      "passed": true
+    },
+    {
+      "check": "exact_binary64_distinguishes_adjacent",
+      "passed": true
+    },
+    {
+      "check": "exact_bool_not_integer",
+      "passed": true
+    },
+    {
+      "check": "exact_identical_nested_shape",
+      "passed": true
+    },
+    {
+      "check": "fixed_all16_contexts",
+      "passed": true
+    },
+    {
+      "check": "exact_4centers_2roles_2seeds",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_0_role0_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_0_role0_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_0_role1_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_0_role1_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_1_role0_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_1_role0_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_1_role1_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.II_1_role1_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_0_role0_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_0_role0_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_0_role1_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_0_role1_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_1_role0_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_1_role0_seed17",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_1_role1_seed7",
+      "passed": true
+    },
+    {
+      "check": "fixed_center_bits.III_1_role1_seed17",
+      "passed": true
+    },
+    {
+      "check": "64_fixed_dispatches_no_new_fixture",
+      "passed": true
+    },
+    {
+      "check": "32_plain_trace_binary64_pairs",
+      "passed": true
+    },
+    {
+      "check": "16_first_success_prefixes",
+      "passed": true
+    },
+    {
+      "check": "source_original_false_and_all8",
+      "passed": true
+    },
+    {
+      "check": "no_success_identical_final_and_trace",
+      "passed": true
+    },
+    {
+      "check": "active_bits_exact_all_outputs",
+      "passed": true
+    },
+    {
+      "check": "all64_false_and_true_final_queue",
+      "passed": true
+    },
+    {
+      "check": "missing_source_identity_not_guessed",
+      "passed": true
+    },
+    {
+      "check": "dual_source_label_arm_mapping",
+      "passed": true
+    },
+    {
+      "check": "direct_label_passive_mapping",
+      "passed": true
+    },
+    {
+      "check": "separate_source_and_physical_gates",
+      "passed": true
+    },
+    {
+      "check": "true_closure_or_branch_soundness_stop",
+      "passed": true
+    },
+    {
+      "check": "ordinary_collision_or_limit_reject_not_source_bool",
+      "passed": true
+    },
+    {
+      "check": "all_outputs_collision_no_screen",
+      "passed": true
+    },
+    {
+      "check": "bound_aligned_pose_policy",
+      "passed": true
+    },
+    {
+      "check": "adapter_CHECKED_requires_aligned_physical_TCP",
+      "passed": true
+    },
+    {
+      "check": "budget_current_r2_caps",
+      "passed": true
+    },
+    {
+      "check": "budget_own_reaped_and_live_descendants",
+      "passed": true
+    },
+    {
+      "check": "final_cost_includes_cleanup_and_hashes",
+      "passed": true
+    },
+    {
+      "check": "final_budget_cancels_pass",
+      "passed": true
+    },
+    {
+      "check": "complete_unknown_tail_not_trimmed",
+      "passed": true
+    },
+    {
+      "check": "raw_false_true_unmodified_saved_first",
+      "passed": true
+    },
+    {
+      "check": "raw_collision_before_added_provenance",
+      "passed": true
+    },
+    {
+      "check": "plain_internal_and_rand_unobserved",
+      "passed": true
+    },
+    {
+      "check": "no_scientific_retry_or_seed_change",
+      "passed": true
+    },
+    {
+      "check": "EOF_not_fixed_read_rounds",
+      "passed": true
+    },
+    {
+      "check": "raw_binary64_completed_response_binding",
+      "passed": true
+    },
+    {
+      "check": "extra_tail_and_incomplete_trace_cancel_PASS",
+      "passed": true
+    },
+    {
+      "check": "mock_6chunk_tail_fully_preserved",
+      "passed": true,
+      "select_calls": 8
+    },
+    {
+      "check": "mock_both_pipe_EOF_and_closed",
+      "passed": true
+    },
+    {
+      "check": "mock_no_invented_stdout_tail",
+      "passed": true
+    }
+  ]
+}

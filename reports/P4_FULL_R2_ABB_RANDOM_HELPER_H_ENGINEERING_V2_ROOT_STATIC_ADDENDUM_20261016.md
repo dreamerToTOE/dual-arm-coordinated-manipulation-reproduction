@@ -1,0 +1,9 @@
+# H 工程 v2 冻结前独立静态补充审查
+
+2026-10-16，`PASS_STATIC_PENDING_ROOT_FREEZE_AND_BUILD`，132/132通过。0 compile/query/solve/RNG；未修改工程/科学代码或freeze。
+
+工程v2绑定最新25execution，逐own实耗wall419.4056698739944/CPU385.449026，并核对全部68旧资产/编译器SHA、最终builder和PRE。两个R2目标只有source_control/success_break；唯一H科学控制流改动是在原双身份失败continue之后增加success break，独立全文字节逆变换通过；D没有混入或链接。原shuffle/IK/identify/界保持，所有观察可逆且无内部caps。
+
+合计60wall/120CPU、单目标45/90及累计3600/7200保持；最终旧资产重哈希成本计入，超帽成功build必须降为STOP_FINAL_BUDGET_EXCEEDED，旧失败原因不覆盖，日志/stage/claim保留，不自动重试。最终科学runner raw-tail补强SHA `09e4362f4a813e18d2eff42d78e66ca6d9c45429664d991c1c415a2502eddc27`和PRE `0bfa91985e6a612246323b3d48d20fc9ee291a486f387f7571912be872393762`与55项保存审查吻合。
+
+工程draft SHA `02f2ebfbbc7217fb19bced7e116dc96a79d5a3a56be4bbd9c918c52bf447e76b`，仍frozen=false/reviews=false，stage尚不存在。该recipe不执行scientific runner；其当前SHA在本审查登记，actual两build成功后仍须另生scientific协议绑定实际binary/manifest/最新成本，再独立审查和root冻结。旧资格v1不能直接代入新runner。
