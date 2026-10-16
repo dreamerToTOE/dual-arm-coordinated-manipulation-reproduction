@@ -1,0 +1,106 @@
+{
+  "schema": "P4_R2_IV_RSS_WRIST_FIXED100_RUN02_INDEPENDENT_SAVED_REVIEW_V1",
+  "date": "2026-10-16",
+  "reviewer": "nr_path_prepare; distinct from v3 implementer and runner; saved-only review did not implement or execute the qualification",
+  "personnel_independent": true,
+  "status": "SAVED_ONLY_INDEPENDENT_PASS",
+  "method": "Python stdlib only; read raw inputs/native JSON/logs/events and scalar arithmetic on already saved matrices. Independent symmetric Jacobi Gram eigensolver for stored6x6/6x12 J spectra/ranks; no scientific imports, FK/J/IK/model or binary invocation.",
+  "check_count": 5667,
+  "passed_check_count": 5667,
+  "failures": [],
+  "accepted_G0_G1_cases": [
+    "IV_s040_b1",
+    "IV_s040_b3",
+    "IV_s056_b1",
+    "IV_s056_b3",
+    "IV_s092_b1",
+    "IV_s092_b3"
+  ],
+  "G0_branches": 6,
+  "G1_branches": 6,
+  "G0_G1_target_samples": [
+    40,
+    56,
+    92
+  ],
+  "fixed_target_denominator": 100,
+  "branch_denominator": 800,
+  "rejected_branches": 794,
+  "rank_counts": {
+    "passive": {
+      "5": 100
+    },
+    "accepted_active": {
+      "6": 6
+    },
+    "accepted_full_constraint": {
+      "6": 6
+    }
+  },
+  "audit_numeric_limits": {
+    "saved_spectrum_absolute_comparison": 1e-07,
+    "target_or_pose_or_position_metric_compare_mm": 1e-09,
+    "rotation_metric_compare": 1e-14,
+    "constraint_J_assembly_compare": 1e-08,
+    "branch_factor_compare": 1e-09,
+    "actual_scientific_thresholds": "Unchanged closure1e-5mm/1e-5rotation, relative rank1e-6, exact original bounds and geometric branch labels. Audit rounding comparisons do not modify scientific acceptance."
+  },
+  "maxima": {
+    "target_matrix_difference": 0.0,
+    "spectrum_abs_difference": 3.2073515606180824e-08,
+    "active_roundtrip_position_mm": 6.821210263296962e-13,
+    "active_roundtrip_rotation": 2.498001805406602e-16,
+    "physical_closure_position_mm": 7.105427357601002e-13,
+    "physical_closure_rotation": 2.498001805406602e-16,
+    "assembled_constraint_J_difference": 4.547473508864641e-13
+  },
+  "event_counts": {
+    "run_started": 1,
+    "mathematical_arm_FK_J_started": 106,
+    "mathematical_arm_FK_J_completed": 106,
+    "target_ready": 100,
+    "external_K_dispatched": 100,
+    "process_started": 100,
+    "process_finished": 100,
+    "branch_diagnostics_completed": 800
+  },
+  "bound_sha256": {
+    "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_02/execution.json": "8dc596f33a20a6ba4d4ed57b060992689e549b20e2c2603763386449695e6069",
+    "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_02/events.jsonl": "c12fa46c7458340a896b50b1b64a028f77b4b1662be446e7632a867b34faf3ea",
+    "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v5.json": "100e36166bbe7a303774be3b4063633ae2435e84ba4400f30e9c068d0cfd628b",
+    "results/p4_full/P4_R2_IV_RSS_WRIST_FIXED100_800IK_SHARED30W_60CPU_02_20261015.claim.json": "4cfd57e3ed9baf93ff680bda834e0b77294296f53190536e0d0811e3cd0fb0e0",
+    "scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v3.py": "23b564dfe9af4feeb52a8d2be66054716f212387780dac7ff41c64ca80eb8869"
+  },
+  "actual_cost": {
+    "run02_wall_s": 5.185225903000173,
+    "run02_cpu_s": 2.800878,
+    "shared01_plus02_wall_s": 5.221941273000084,
+    "shared01_plus02_cpu_s": 2.837645
+  },
+  "limitations": [
+    "Saved-only check validates recorded arithmetic, provenance, completeness and claimed mathematical gates; it does not re-query robot FK/J or independently reconstruct model outputs.",
+    "No collision, checkEE, RBS, RSS distribution, continuous local path or planning qualification follows.",
+    "Native true internal IK/FK started lacks a hook and remains UNOBSERVED;800JSON and6accepted nativeFK are observed returns.",
+    "first01 failure preserved; original source failures, VI974/974, Table I0/22500 and211 full-paper obligations unchanged."
+  ],
+  "new_counts": {
+    "scientific_import": 0,
+    "model_FK_J": 0,
+    "IK": 0,
+    "native_binary": 0,
+    "compile": 0,
+    "collision": 0,
+    "RBS": 0,
+    "NR": 0,
+    "RNG": 0,
+    "solve": 0,
+    "VI_construction": 0,
+    "claim": 0,
+    "protocol": 0,
+    "commit": 0
+  },
+  "audit_source": {
+    "path": "reports/p4_full_audit/recovery_tools/review_iv_wrist_run02_saved_independent_20261016.py",
+    "sha256": "6aca6ddabcc9fc7de23d7e4adf28b30bfdca1a42da186d4aef86f072bd5b4c9d"
+  }
+}

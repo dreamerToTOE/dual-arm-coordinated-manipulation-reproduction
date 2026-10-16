@@ -1,0 +1,239 @@
+{
+  "schema": "P4_R2_IV_RSS_WRIST_FIXED100_V3_INDEPENDENT_STATIC_POST_REVIEW_V1",
+  "date": "2026-10-16",
+  "status": "INDEPENDENT_STATIC_PASS_PENDING_ROOT_FREEZE",
+  "reviewer": "nr_path_prepare",
+  "personnel_independent_of_v3_implementation": true,
+  "scope": "Read saved bytes and stdlib AST/arithmetic only; no scientific module import, protocol describe/validate invocation or model/native process. This report records already completed independent checks without rerunning them.",
+  "check_count": 35,
+  "passed_check_count": 35,
+  "checks": [
+    {
+      "check": "six_scientific_function_AST_exact",
+      "passed": true
+    },
+    {
+      "check": "all5_preloop_assignments_exact",
+      "passed": true
+    },
+    {
+      "check": "run_only_preloop_guard_changed",
+      "passed": true
+    },
+    {
+      "check": "run_entire_scientific_loop_AST_exact",
+      "passed": true
+    },
+    {
+      "check": "physical_source_identical_to_first01",
+      "passed": true
+    },
+    {
+      "check": "fixed_inputs_and_gates_exact_first01",
+      "passed": true
+    },
+    {
+      "check": "same_request_order",
+      "passed": true
+    },
+    {
+      "check": "same_passive_rule",
+      "passed": true
+    },
+    {
+      "check": "same_target_rule",
+      "passed": true
+    },
+    {
+      "check": "same_G0_gate",
+      "passed": true
+    },
+    {
+      "check": "same_G1_gate",
+      "passed": true
+    },
+    {
+      "check": "same_positive_component_gate",
+      "passed": true
+    },
+    {
+      "check": "same_soundness_stop",
+      "passed": true
+    },
+    {
+      "check": "same_zero_calls",
+      "passed": true
+    },
+    {
+      "check": "same_call_accounting",
+      "passed": true
+    },
+    {
+      "check": "saved_raw100_exact_transcription",
+      "passed": true
+    },
+    {
+      "check": "separate_representation_exact",
+      "passed": true
+    },
+    {
+      "check": "metadata_literal_exact",
+      "passed": true
+    },
+    {
+      "check": "geometry_else_exact",
+      "passed": true
+    },
+    {
+      "check": "only_q1_each_side_one_ULP",
+      "passed": true
+    },
+    {
+      "check": "first01_exact_guard_stop",
+      "passed": true
+    },
+    {
+      "check": "first01_zero_recorded_queries",
+      "passed": true
+    },
+    {
+      "check": "first01_preserved_hashes",
+      "passed": true
+    },
+    {
+      "check": "shared_original_30_60_after_first01_owncost",
+      "passed": true
+    },
+    {
+      "check": "V10_all28_prior_exact",
+      "passed": true
+    },
+    {
+      "check": "V10_prior_each_SHA_owncost_exact",
+      "passed": true
+    },
+    {
+      "check": "V10_owncost_fsum_exact",
+      "passed": true
+    },
+    {
+      "check": "V10_science_engineering_separate",
+      "passed": true
+    },
+    {
+      "check": "bound_all64_current_exact",
+      "passed": true
+    },
+    {
+      "check": "legacy_all7_exact",
+      "passed": true
+    },
+    {
+      "check": "diff_exact_actual_byte_transform",
+      "passed": true
+    },
+    {
+      "check": "run02_unfrozen_unclaimed_unexecuted",
+      "passed": true
+    },
+    {
+      "check": "VI_no_quota_or_formal_change",
+      "passed": true
+    },
+    {
+      "check": "first01_only_started_and_guard_stopped_events",
+      "passed": true
+    },
+    {
+      "check": "first01_no_native_process_files",
+      "passed": true
+    }
+  ],
+  "bound_files_sha256": {
+    "scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v3.py": "23b564dfe9af4feeb52a8d2be66054716f212387780dac7ff41c64ca80eb8869",
+    "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v5.draft.json": "c4cd46e0884013076aa10c5bb3c1ecaf2815778fa34522319abc7611dbe8d53b",
+    "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V3_DRAFT_20261016.md": "ba9ffe6e276807285ad0f3320d51028a6159aa305cb3e642a8f7a3d7c7990da7",
+    "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_V3_EXACT_RECOVERY_DIFF_20261016.patch": "67826bec12b501b9be1be0054eeade7f0d66d6d7bf39610117ed2ef5347be071",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V10.json": "f4a8e3be297c234192b60cf0e57fa3fcc14d147653ba4b393b8d84d618f774d6",
+    "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json": "cab65679252fc04ee65c699e09bcb5fd6662657c4047494177a8212c75859514"
+  },
+  "scientific_AST": {
+    "unchanged_functions": [
+      "fixed_inputs",
+      "rank_data",
+      "cached_closure",
+      "Qualification.fk",
+      "Qualification.native",
+      "Qualification.native_prefix_accounting"
+    ],
+    "run_statement_count": 7,
+    "unchanged_prefix_assignment_count": 5,
+    "only_changed_statement": "Qualification.run pre-loop If exact source-bound representation guard",
+    "complete_for_loop_AST_sha256": "5d2ff7d1768813455a0c23b9fe133520a9d0206dc897736ea7b77d6259c3c442",
+    "actual_candidate_legality": "Original bounds=physical.source_limits(IV) and np.all((bounds[:,0]<=q)&(q<=bounds[:,1])) unchanged."
+  },
+  "ULP_evidence": {
+    "changed_coordinates_only": "joint1 low/high, same bound repeated for arm2",
+    "literal_positive_hex": "0x1.921ff2e48e8a7p+1",
+    "runtime_positive_hex": "0x1.921ff2e48e8a6p+1",
+    "negative_values": "Corresponding signed hex values differ in the same final digit.",
+    "absolute_difference_rad_each": 4.440892098500626e-16,
+    "ULP_each": 1.0,
+    "other_five_joint_ten_bounds_exact": true
+  },
+  "first01": {
+    "status": "STOP_PREFIX_RETAINED",
+    "termination_reason": "StopQualification('RUNTIME_GEOMETRY_OR_SOURCE_LIMITS_CHANGED')",
+    "wall_s": 0.03671536999991076,
+    "cpu_s": 0.036766999999999994,
+    "recorded_scientific_or_native_queries": 0,
+    "unexecuted_branch_denominator": 800,
+    "events": [
+      "run_started",
+      "run_stopped"
+    ],
+    "directory_files": [
+      "events.jsonl",
+      "execution.json"
+    ],
+    "protocol_claim_and_bound_before_after_hashes_exact": true
+  },
+  "shared_budget": {
+    "total_wall_s": 30.0,
+    "total_cpu_s": 60.0,
+    "run02_wall_s": 29.96328463000009,
+    "run02_cpu_s": 59.963233,
+    "same_fixed_targets": 100,
+    "same_K_requests": 800,
+    "no_quota_reset": true
+  },
+  "prior_ledger": {
+    "version": "V10",
+    "count": 28,
+    "science_count": 22,
+    "engineering_count": 6,
+    "own_cost_wall_s": 504.47186458199417,
+    "own_cost_cpu_s": 457.738928,
+    "all_actual_execution_paths_hashes_own_costs_and_fsum_exact": true
+  },
+  "bound_asset_count": 64,
+  "preserved_legacy_asset_count": 7,
+  "blocking_findings": [],
+  "limits": [
+    "Static review only; run02 mathematical qualification has not executed.",
+    "Root freeze/commit and a separate one-shot run02 claim remain required.",
+    "No actual bounds, fixed input, IK, FK/J, branch, closure or rank acceptance criterion changed.",
+    "First01 remains a preserved failed pre-query guard result; run02 is a new version inside the same shared30/60 budget.",
+    "VI remains974/974 with zero remaining constructions; no RSS planning or continuous path claim.",
+    "No Table I statistics or any of the211 full-paper obligations were reduced."
+  ],
+  "new_counts": {
+    "scientific_import": 0,
+    "model_query": 0,
+    "native_process": 0,
+    "compile": 0,
+    "claim": 0,
+    "protocol_or_prior_generated": 0,
+    "commit": 0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "case_id": "IV_s002_b1",
+  "sample": 2,
+  "branch": 1,
+  "native_active_ik": {
+    "schema": "P4_SPATIAL_BATCH_V1",
+    "input_line": 2,
+    "model": 4,
+    "environment": "IV",
+    "op": "K",
+    "arm": 1,
+    "branch": 1,
+    "q": null,
+    "target": [
+      [
+        0.23231902448769565,
+        0.9679265157430097,
+        0.09563540653273934,
+        468.3162946675248
+      ],
+      [
+        -0.06699426319874197,
+        -0.08216779294730303,
+        0.994364230300259,
+        730.0662735866176
+      ],
+      [
+        0.9703296550964229,
+        -0.2374167515651876,
+        0.04575638225090405,
+        -3291.987568662951
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "success": false,
+    "finite": false,
+    "solution": null,
+    "T": null,
+    "canonical_wrist": false,
+    "canonical_wrist_note": null,
+    "error": null,
+    "raw_input": "K 1 1 0.23231902448769565 0.9679265157430097 0.095635406532739345 468.3162946675248 -0.066994263198741966 -0.082167792947303031 0.994364230300259 730.06627358661763 0.97032965509642288 -0.2374167515651876 0.045756382250904053 -3291.9875686629512 0 0 0 1"
+  },
+  "source_accepted": false,
+  "candidate_q12_rad": null,
+  "G0_qualified": false,
+  "G1_qualified": false,
+  "G0_reasons": [
+    "ACTIVE_IK_REJECTED"
+  ],
+  "G1_additional_reasons": [],
+  "collision_checked": false,
+  "RBS_checked": false,
+  "full_RSS_or_planning_pass": false
+}
