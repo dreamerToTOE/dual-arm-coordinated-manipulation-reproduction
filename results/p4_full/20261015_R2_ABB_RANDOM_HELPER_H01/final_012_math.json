@@ -1,0 +1,130 @@
+{
+  "dispatch_index": 12,
+  "case_id": "III_1_role0_seed7",
+  "factor": "source_control",
+  "mode": "plain",
+  "environment": "III",
+  "source_returned": false,
+  "q12": [
+    -1.1,
+    1.35,
+    -0.2,
+    -1.0,
+    -1.9,
+    0.0,
+    0.8087382126071629,
+    0.7236337031288238,
+    -0.4789107998249571,
+    2.093224443831257,
+    -0.7327791349708244,
+    -1.3925373307019862
+  ],
+  "stage": "MATH_COMPLETED",
+  "poses": [
+    [
+      [
+        0.861439109147882,
+        0.13313037163585822,
+        -0.4901009746762413,
+        -281.85336320090363
+      ],
+      [
+        0.06297053930487657,
+        0.9295836514063556,
+        0.3631927122309592,
+        -393.3568191184032
+      ],
+      [
+        0.503941834352097,
+        -0.34373032916244917,
+        0.7923964212461575,
+        168.59153855281158
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        -0.8614391091478822,
+        -0.13313037163585806,
+        -0.49010097467624125,
+        148.86619137303714
+      ],
+      [
+        -0.06297053930487642,
+        -0.9295836514063559,
+        0.36319271223095895,
+        -361.87154946596496
+      ],
+      [
+        -0.5039418343520969,
+        0.34373032916244883,
+        0.7923964212461578,
+        420.56245572886013
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  ],
+  "branches": [
+    {
+      "unique": true,
+      "branch_set": [
+        1
+      ],
+      "signed_shoulder_radius_mm": 450.7019895784499,
+      "elbow_factor": -0.9098947842727544,
+      "wrist_factor": -0.9463000876874145,
+      "shoulder_sign": 1,
+      "elbow_sign": -1,
+      "wrist_sign": -1,
+      "invariant_rule": "shoulder signed radius; -sin(q3+atan2(c,a)); sin(q5)"
+    },
+    {
+      "unique": true,
+      "branch_set": [
+        1
+      ],
+      "signed_shoulder_radius_mm": 488.7321642707585,
+      "elbow_factor": -0.7605238808089752,
+      "wrist_factor": -0.6689379972662094,
+      "shoulder_sign": 1,
+      "elbow_sign": -1,
+      "wrist_sign": -1,
+      "invariant_rule": "shoulder signed radius; -sin(q3+atan2(c,a)); sin(q5)"
+    }
+  ],
+  "closure": {
+    "position_max_abs": 2.5579538487363607e-13,
+    "rotation_matrix_max_abs": 3.3306690738754696e-16
+  },
+  "limits": {
+    "legal": true,
+    "violations": [],
+    "source_literal_pi_preserved": 3.1416,
+    "planar_q19_policy": null
+  },
+  "source_identity": {
+    "status": "OBSERVED_MATCHING_FINAL_CANDIDATE",
+    "source_identify_ik": [
+      1.0,
+      1.0
+    ],
+    "direct_branch": 1,
+    "loop_index": 6
+  },
+  "direct_branch_membership": true,
+  "dual_source_label_membership": true,
+  "active_input_unchanged": true,
+  "closed": true,
+  "physical_closed_and_limits": true,
+  "source_true_math_sound": true
+}
