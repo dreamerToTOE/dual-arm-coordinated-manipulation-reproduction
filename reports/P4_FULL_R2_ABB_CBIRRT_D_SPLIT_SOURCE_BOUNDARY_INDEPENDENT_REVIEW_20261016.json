@@ -1,0 +1,142 @@
+{
+  "schema": "P4_CBIRRT_D_SPLIT_SOURCE_BOUNDARY_INDEPENDENT_REVIEW_V1",
+  "status": "CONDITIONAL_SOURCE_BOUNDARY_OK_NOT_RUNNER_APPROVAL",
+  "generated_at_utc": "2026-10-16T07:23:32.220933+00:00",
+  "reviewer": "nr_path_prepare, independent of D64 and proposed tail runner implementer",
+  "checks_total": 22,
+  "checks_passed": 22,
+  "checks": [
+    {
+      "id": "original_stop_preserved",
+      "passed": true
+    },
+    {
+      "id": "original_completed_0_through60_only",
+      "passed": true
+    },
+    {
+      "id": "original_unknown61_62_63",
+      "passed": true
+    },
+    {
+      "id": "old_no_retry_reset_resume_true",
+      "passed": true
+    },
+    {
+      "id": "old_15wall30cpu_8process_contract",
+      "passed": true
+    },
+    {
+      "id": "actual62_raw_returns_retained",
+      "passed": true
+    },
+    {
+      "id": "missing62_63_never_dispatched",
+      "passed": true
+    },
+    {
+      "id": "index61_original_runner_unqualified",
+      "passed": true
+    },
+    {
+      "id": "index61_complete_saved_json_matches_plain45_request",
+      "passed": true
+    },
+    {
+      "id": "index61_saved_distance_and_states_match_plain45",
+      "passed": true
+    },
+    {
+      "id": "index61_one_real_body_entered_completed",
+      "passed": true
+    },
+    {
+      "id": "original_process8_reaped_last_sigkill",
+      "passed": true
+    },
+    {
+      "id": "original_failed_raw_and_body_gates_remain_false",
+      "passed": true
+    },
+    {
+      "id": "tail_exact_original_DtraceIII_roles0_1",
+      "passed": true
+    },
+    {
+      "id": "tail_requests_have_saved_plain46_47",
+      "passed": true
+    },
+    {
+      "id": "probe_assigns_explicit_role_every_distance",
+      "passed": true
+    },
+    {
+      "id": "driver_writes_each_state_before_real_dispatch",
+      "passed": true
+    },
+    {
+      "id": "driver_seed_once_before_constructor_and_request_loop",
+      "passed": true
+    },
+    {
+      "id": "distance_body_reads_only_state_vectors_and_explicit_role",
+      "passed": true
+    },
+    {
+      "id": "retrieveStateVector_reads_12_values",
+      "passed": true
+    },
+    {
+      "id": "L12_old_single_run_gate_still_strict",
+      "passed": true
+    },
+    {
+      "id": "L12_does_not_accept_split_yet",
+      "passed": true
+    }
+  ],
+  "scope": "Only saved bytes, Python AST, original frozen protocol and C++ source text were read; no runner/model imported or scientific query executed. Proposed tail runner not yet reviewed.",
+  "unchanged_original_status": "STOP_FINAL_WALL_OR_CPU_BUDGET",
+  "unchanged_original_completed": 61,
+  "unchanged_original_UNKNOWN": [
+    61,
+    62,
+    63
+  ],
+  "new_success_label_required": "SPLIT_SAVED_PREFIX_PLUS_MISSING_TWO",
+  "requirements_before_freeze": [
+    "New frozen run, new claim, own 5 wall / 10 CPU cap charged once to actual R2 cost; old 15/30 is exhausted and never restarted.",
+    "Only original never-dispatched IDs62/63 may query; old IDs0..61 are saved-only references with source raw bytes and independent certificate bindings.",
+    "Original D64 execution, protocol, claim, raw streams and UNKNOWN61/62/63 remain byte-identical. No original D64 PASS is manufactured.",
+    "Aggregate gate rechecks all64 actual response records under unchanged math/state/role/plain-trace gates; no formula is used as evidence of an unexecuted body.",
+    "New tail has one D-fixed / III / trace process, setSeed7 once before constructor, original source and input bits unchanged; no H, FK/IK/RBS/solve, VI or formal calls.",
+    "Expected cumulative accounting if successful is 62+2 actual dispatch/returns, 8+1 constructors and structural direct RNG members; library seed draws remain UNOBSERVED.",
+    "Expected cumulative trace counts if successful are mesh_load5 and activeDistance32; plain32 internal source-body calls remain UNOBSERVED. Each construction counted once per process.",
+    "Original final process SIGKILL and false raw exit0 gate stay visible. New split gate can qualify complete saved response-prefix evidence but cannot certify that original process ended normally.",
+    "New tail stdout/stderr raw EOF, no extra stdout or unpaired trace, process membership, kill/reap registry, final own cost and all before/after hashes are mandatory.",
+    "Comparison partners are tail62/plain46/control-trace30 and tail63/plain47/control-trace31, including full original64 symmetry and role0 cross-source gates.",
+    "Success label must be separately versioned SPLIT_SAVED_PREFIX_PLUS_MISSING_TWO, never PASS_FIXED16_ACTIVE_DISTANCE_INTERFACE for original run01.",
+    "L12 accepts no split before a separately reviewed new prerequisite contract binds successful tail, complete aggregate64 gates and both frozen provenance chains. Its old hard gate remains unchanged now."
+  ],
+  "L12_current_gate": "FAIL_CLOSED_UNTIL_ORIGINAL_SINGLE_RUN_PASS; no split accepted",
+  "source_sha256": {
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_DISTANCE01/execution.json": "6e18068ea1ffad849c01faa377e5268fe892448029640feb4421c3c05941e140",
+    "configs/p4_full/r2_abb_cbirrt_d_distance_fixed64_v1.json": "3c1c1d6c25b21579bd67832e4c70df6bcc7538ab21514c91b69e61fa26d38f14",
+    "results/p4_full/P4_R2_ABB_CBIRRT_D_FIXED64_DISTANCE_15W_30CPU_20261016.claim.json": "616ac0828d792f9a492471442a8de16f7573a690640548bcea6b9e2fdf15bdee",
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_local_draft.py": "622a25ffdf23f95aba437309fa511d564ebaeab172323666d050a89598739e36",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_d_v1/distance_destination_fix/planners/CBiRRT_PCS.cpp": "ca6cc52b5b1b058fecd82b2ff11f873aa27bd7a6f4184d80dcae0c03a67003ca",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_d_v1/distance_destination_fix/validity_checkers/StateValidityCheckerPCS.cpp": "10c687846eb498e224005d603bf59b0e898192a3979351fc1b2f309fffd8d618",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE01_STOP_RAW_PREFIX_INDEPENDENT_POST_V2_20261016.json": "15fd13b857b663a46656600b1318d65c49aebcdf6785e1a3e660c47f5264917d",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE01_SAVED_WALL_DIAGNOSIS_20261016.json": "da0f8e9babca3b268a674860dd3b24ddee48655679d70a1f47949def006b2e99",
+    "docs/REPRODUCTION_FULL_PAPER_COVERAGE_AND_ROOT_CAUSE_PROTOCOL.md": "8c74ebfecea1581bce5fc8bd61957eee81bb63c52f8aead7b01f2857358c583d",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_PRE_DRAFT_20261016.md": "ebfef1b95fb9339aaf85493670c1c74a38f023a8aee768127686a36d7e81d58f",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_STAGED_QUALIFICATION_PRE_DRAFT_20261016.md": "bc9c8d809b8cfe4a927adc434783d29c58d62e234fbc4cb1616c03b2ee3b0898"
+  },
+  "new_execution_calls": 0,
+  "new_claims": 0,
+  "new_protocols": 0,
+  "new_prior_snapshots": 0,
+  "new_compile_calls": 0,
+  "is_execution_authorization": false
+}
