@@ -1,0 +1,27 @@
+{
+  "schema": "P4_NR_LOCAL_SAVED_POST_LOSSLESS_ARCHIVE_V1",
+  "original_files_retained_unchanged": true,
+  "zero_new_scientific_calls": true,
+  "reason": "The first saved-only audit JSON exceeds GitHub per-file 100MB; both original JSONs remain local and exact deterministic gzip archives are versioned.",
+  "restore": "Read gzip member and write original path exclusively if absent, then verify original_sha256; no scientific recomputation.",
+  "files": [
+    {
+      "original": "reports/P4_FULL_R2_ABB_NR_LOCAL_INDEPENDENT_POST_20261015.json",
+      "original_sha256": "46a2f95d5cd1a0f5b1cacdc5805e223cd2bf4b30e766eb9ddc4579efdd89f77b",
+      "original_bytes": 116381685,
+      "gzip": "reports/P4_FULL_R2_ABB_NR_LOCAL_INDEPENDENT_POST_20261015.json.gz",
+      "gzip_sha256": "618a74889b0da1982946dcf5c99e668c7c5819f2b8d3ca27d51a8635aff24ea9",
+      "gzip_bytes": 5635459,
+      "lossless_verified": true
+    },
+    {
+      "original": "reports/P4_FULL_R2_ABB_NR_LOCAL_ROOT_INDEPENDENT_POST_20261015.json",
+      "original_sha256": "6a0874507f5a837b07d705c0126b6233dfe19b6ca151bbb9e4791011ae34b382",
+      "original_bytes": 75123572,
+      "gzip": "reports/P4_FULL_R2_ABB_NR_LOCAL_ROOT_INDEPENDENT_POST_20261015.json.gz",
+      "gzip_sha256": "3984df7fe5c5964a74d2dc41c137590ae037048e4d71b5fc2cbe656ad739c840",
+      "gzip_bytes": 3693843,
+      "lossless_verified": true
+    }
+  ]
+}
