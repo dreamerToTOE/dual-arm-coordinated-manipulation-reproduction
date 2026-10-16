@@ -1,0 +1,70 @@
+{
+  "schema": "P4_SOLVE02_LOSSLESS_DELIVERY_INDEPENDENT_REVIEW_V1",
+  "status": "PASS_LOSSLESS_GZIP_DELIVERY_ONLY",
+  "generated_at_utc": "2026-10-16T10:50:42.494968+00:00",
+  "reviewer": "nr_entry_review; independent saved-only delivery review",
+  "personnel_independent": true,
+  "checks_total": 10,
+  "checks_passed": 10,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "manifest exact paths and schema",
+      "passed": true
+    },
+    {
+      "check": "original retained exact known SHA and length",
+      "passed": true
+    },
+    {
+      "check": "archive exact known SHA and length",
+      "passed": true
+    },
+    {
+      "check": "complete gzip stream CRC EOF lossless bytes",
+      "passed": true
+    },
+    {
+      "check": "execution original exact journal hash remains",
+      "passed": true
+    },
+    {
+      "check": "original preservation and no scientific change",
+      "passed": true
+    },
+    {
+      "check": "ignore delta only exact single raw path",
+      "passed": true
+    },
+    {
+      "check": "actual ignore matches exact anchored pattern",
+      "passed": true
+    },
+    {
+      "check": "archive and manifest are not ignored",
+      "passed": true
+    },
+    {
+      "check": "original and archive unchanged after full read",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "original_sha256": "c297a6a8c9f3107bf756e70381eedca7b3799d5ef78b283eaeca35b84aa885df",
+  "original_bytes": 132278298,
+  "archive_sha256": "a5545be34dfb45896d79d4735e8f324c3f393b4f815ca48d50f475541a314113",
+  "archive_bytes": 22012155,
+  "decompressed_sha256": "c297a6a8c9f3107bf756e70381eedca7b3799d5ef78b283eaeca35b84aa885df",
+  "decompressed_bytes": 132278298,
+  "manifest_sha256": "fe466a7e50e284bfaaf119f18af85a809afac30c6438e94ef1eb655f7b976be5",
+  "gitignore_sha256": "832d293597d05fdcd8a9b772a2ce95b20906355d02dc6bc840838429a676976f",
+  "actual_ignore_rule": ".gitignore:55:/results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/evidence.jsonl\tresults/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/evidence.jsonl",
+  "audit_script_sha256": "15f01fa20caa65373e30e59c0574d3cd89964954cded0d3e8e3e210a570d4dc7",
+  "new_scientific_calls": 0,
+  "parsed_scientific_jsonl_records": 0,
+  "limitations": [
+    "Streaming saved-byte delivery only; original journal remains local and unchanged.",
+    "Does not rerun or reinterpret S02 transport, candidate path or physical qualification.",
+    "Decompression was streamed in memory, never extracted or overwritten."
+  ]
+}
