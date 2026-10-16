@@ -1,0 +1,96 @@
+{
+  "schema": "P4_R2_ABB_CBIRRT_D_TAIL02_SAVED_BYTE_INVENTORY_V1",
+  "qualification_audit": false,
+  "scientific_calls": 0,
+  "runner_imports": 0,
+  "source_files_modified": 0,
+  "experimental_files_modified": 0,
+  "independent_POST_still_required": true,
+  "summary": {
+    "execution_present": true,
+    "charge_present": true,
+    "status": "SPLIT_SAVED_PREFIX_PLUS_MISSING_TWO",
+    "classification": "SPLIT_SAVED_PREFIX_PLUS_MISSING_TWO",
+    "completed_new_dispatch_ids": [
+      62,
+      63
+    ],
+    "UNKNOWN_new_dispatch_ids": [],
+    "counts": {
+      "source_process_start_attempted": 1,
+      "source_process_started": 1,
+      "distance_dispatch_attempted": 2,
+      "distance_dispatched": 2,
+      "raw_response_lines_observed": 2
+    },
+    "source_process_registry": [
+      {
+        "pid": 68712,
+        "reaped": true,
+        "returncode": 0
+      }
+    ],
+    "internal_wall_s": 0.9946544039994478,
+    "internal_cpu_s": 0.9409050000000001,
+    "external_charge_wall_s": 1.21,
+    "external_charge_cpu_s": 0.99,
+    "external_time_fields": [
+      "1.20",
+      "0.80",
+      "0.17",
+      "0"
+    ],
+    "external_timing_valid": true,
+    "external_caps_pass": true,
+    "external_process_exit0": true,
+    "termination_reason": null,
+    "diagnostics": []
+  },
+  "files": [
+    {
+      "path": "configs/p4_full/r2_abb_cbirrt_d_tail02_v1.json",
+      "bytes": 366506,
+      "sha256": "c1192c8c53ba0cb320c83bb03c651a4676d7d8a6405b767c06fe2472e6d55c70"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02/cost_receipt.jsonl",
+      "bytes": 415,
+      "sha256": "033e8a31eb3c6075f02a4aa4e1d9ddeeb9243f86f6ac70ed86d0f2775b0b3c0a"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02/evidence.jsonl",
+      "bytes": 154641,
+      "sha256": "4fa06a2bb695fc8b5a85f38fc2e6835a60118f1a1daf221271025751b1f66f67"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02/execution.json",
+      "bytes": 218699,
+      "sha256": "2b7241928d8180b47efe083abfba1a108cdac29f6e5cdd76962db755e5d581a7"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02.supervision.charge.json",
+      "bytes": 1770,
+      "sha256": "dfb57b102d08eae483ac9b826d57818612cec5965b6df51b8f0ea0279bd7547c"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02.supervision.jsonl",
+      "bytes": 1606,
+      "sha256": "dc0446fbadb5e53a5aed2d7eb244ab541c933e954d35e3d8082e6ba2c0484112"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02.supervision.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02.supervision.time.txt",
+      "bytes": 17,
+      "sha256": "66a2d36f842809f07fcc72b5233b6651a1a8110368b7af603fdbd07073c4a2ac"
+    },
+    {
+      "path": "results/p4_full/P4_R2_ABB_CBIRRT_D_TAIL02_ONLY62_63_5W_10CPU_20261016.claim.json",
+      "bytes": 495,
+      "sha256": "53ef4f582b6722cdb0782bb5568b435f5fd46685d466e0009fe471f06a4e68bb"
+    }
+  ]
+}
