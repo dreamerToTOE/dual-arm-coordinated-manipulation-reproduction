@@ -1,0 +1,70 @@
+{
+  "schema": "P4_R2_ABB_CBIRRT_D_LOCAL_STATIC_SAVED_FIXTURE_REVIEW_V1",
+  "date": "2026-10-16",
+  "status": "SELF_REVIEW_STDLIB_AST_AND_SAVED_FIXTURES_PASS_NOT_PROTOCOL",
+  "personnel_independent": false,
+  "runner_sha256": "622a25ffdf23f95aba437309fa511d564ebaeab172323666d050a89598739e36",
+  "PRE_sha256": "01a894ca390715ea8f59e0c010d9df4796d132b1443e60c58fe16f8641b20637",
+  "transport_sha256": "cb705dfd347030ef13aa37181306357227c9c1262e533f126b32e5b4c98a907f",
+  "fixed_edges": [
+    {
+      "edge_index": 0,
+      "active_chain": 0,
+      "branch": 3,
+      "node_count": 80,
+      "midpoint_count": 78
+    },
+    {
+      "edge_index": 1,
+      "active_chain": 1,
+      "branch": 3,
+      "node_count": 65,
+      "midpoint_count": 63
+    },
+    {
+      "edge_index": 2,
+      "active_chain": 0,
+      "branch": 0,
+      "node_count": 34,
+      "midpoint_count": 32
+    }
+  ],
+  "dispatch_count": 12,
+  "process_dispatch_counts": {
+    "distance_destination_fix/plain/II": 6,
+    "distance_destination_fix/trace/II": 6
+  },
+  "old177_saved_proofs_bound_count": 1103,
+  "old177_qualified_nodes": 177,
+  "imports": [
+    "from __future__ import annotations",
+    "import argparse",
+    "from collections import Counter",
+    "import hashlib",
+    "import json",
+    "import math",
+    "import os",
+    "from pathlib import Path",
+    "import signal",
+    "import subprocess",
+    "import sys",
+    "import time",
+    "import qualify_p4_full_r2_abb_cbirrt_d_distance_draft as transport"
+  ],
+  "new_counts": {
+    "runner_import": 0,
+    "transport_import": 0,
+    "draft_protocol": 0,
+    "prerequisites": 0,
+    "prior_snapshot": 0,
+    "query": 0,
+    "compile": 0,
+    "claim": 0,
+    "commit": 0
+  },
+  "limits": [
+    "No L12 protocol generated; actual D64 PASS remains a prerequisite.",
+    "Only pure saved-source functions fixed_edges/saved_certificate/schedule were executed in an isolated stdlib namespace.",
+    "All model outputs inherited only after exactM equality during future authorized run."
+  ]
+}

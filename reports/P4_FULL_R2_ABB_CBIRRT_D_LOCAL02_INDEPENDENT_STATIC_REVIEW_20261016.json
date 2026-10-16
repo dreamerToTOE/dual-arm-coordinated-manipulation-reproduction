@@ -1,0 +1,425 @@
+{
+  "schema": "P4_ABB_CBIRRT_D_LOCAL02_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "BLOCKED_STATIC",
+  "generated_at_utc": "2026-10-16T08:28:11.888873+00:00",
+  "reviewer": "nr_entry_review; independent of L v2 implementation",
+  "personnel_independent": true,
+  "checks_total": 43,
+  "checks_passed": 41,
+  "checks_failed": 2,
+  "checks": [
+    {
+      "check": "stable scripts/qualify_p4_full_r2_abb_cbirrt_d_local_v2_draft.py",
+      "passed": false,
+      "evidence": "0c318300e6c67b43c798e66571a96958577233d35338c560f38d75fec3494bf2"
+    },
+    {
+      "check": "stable scripts/supervise_p4_full_r2_abb_cbirrt_d_local_v2_draft.py",
+      "passed": true,
+      "evidence": "a1778df2cf662ede973168d0d8d3da062c6c00fa3c14df1af0718ecffc758739"
+    },
+    {
+      "check": "stable reports/P4_FULL_R2_ABB_CBIRRT_D_LOCAL_V2_PRE_DRAFT_20261016.md",
+      "passed": false,
+      "evidence": "c44e207af8ef47a4bf77070701407e89e6374fafa78d57269acaed44a1f2a5dc"
+    },
+    {
+      "check": "unchanged scientific AST fixed_edges",
+      "passed": true,
+      "evidence": "Exact full AST against preserved original L draft; no execution/import."
+    },
+    {
+      "check": "unchanged scientific AST saved_certificate",
+      "passed": true,
+      "evidence": "Exact full AST against preserved original L draft; no execution/import."
+    },
+    {
+      "check": "unchanged scientific AST schedule",
+      "passed": true,
+      "evidence": "Exact full AST against preserved original L draft; no execution/import."
+    },
+    {
+      "check": "unchanged scientific AST trace_audit",
+      "passed": true,
+      "evidence": "Exact full AST against preserved original L draft; no execution/import."
+    },
+    {
+      "check": "unchanged original L required",
+      "passed": true,
+      "evidence": [
+        "ORIGINAL_L_SHA='622a25ffdf23f95aba437309fa511d564ebaeab172323666d050a89598739e36'",
+        "require(sha(ORIGINAL_L)==ORIGINAL_L_SHA"
+      ]
+    },
+    {
+      "check": "actual exact split certificate AND",
+      "passed": true,
+      "evidence": [
+        "TAIL_POST_SHA='4c6d30b2e8106394235e8990de7b6738d0d587bf198a94d314d6fe49736ff2ca'",
+        "TAIL_EXEC_SHA='2b7241928d8180b47efe083abfba1a108cdac29f6e5cdd76962db755e5d581a7'",
+        "post['checks_total']==post['checks_passed']==1374",
+        "post['external_supervision_qualified']is True",
+        "post['aggregate_actual_responses']==64",
+        "post['aggregate_source_processes']==9",
+        "post['aggregate_plain_trace_pairs']==32"
+      ]
+    },
+    {
+      "check": "original STOP negative exit raw61 boundary",
+      "passed": true,
+      "evidence": [
+        "original_D64_status='STOP_FINAL_WALL_OR_CPU_BUDGET'",
+        "original_completed=61",
+        "original_UNKNOWN=[61,62,63]",
+        "original_tail_exit=-9",
+        "original_full_raw_gate=False",
+        "post['old_index61_runner_qualified']is False",
+        "post['original_single_run_PASS']is False"
+      ]
+    },
+    {
+      "check": "saved group limitation retained",
+      "passed": true,
+      "evidence": [
+        "post['source_group_evidence']['close_group']=='SOURCE_GATE_INFERRED_NOT_SAVED_SNAPSHOT'"
+      ]
+    },
+    {
+      "check": "real retained/post/recipe/journal chain",
+      "passed": true,
+      "evidence": [
+        "for name,want in post['retained_sha256'].items():require(sha(name)==want",
+        "sha(e['protocol'])==e['protocol_sha256']==e['protocol_after_sha256']",
+        "sha(e['claim'])==e['claim_sha256']==e['claim_after_sha256']",
+        "sha(e['evidence_journal'])==e['evidence_journal_sha256']",
+        "aggregate=tail.check_all64(recipe,[r['response']for r in new])",
+        "exact(aggregate,e['aggregate_saved_only_qualification'])"
+      ]
+    },
+    {
+      "check": "tail time charge receipt proof hashes",
+      "passed": true,
+      "evidence": [
+        "charge['receipt_sha256']==sha(receipt_path)",
+        "sha(ext['charge_path'])==post['external_charge_sha256']",
+        "charge['time_sha256']==sha(ext['sibling_path'])==post['external_time_sha256']",
+        "charge['metadata_sha256']==sha(ext['metadata_path'])",
+        "charge['stderr_sha256']==sha(ext['stderr_path'])",
+        "charge['timing_valid']is True",
+        "charge['time_inode_unchanged']is True"
+      ]
+    },
+    {
+      "check": "authoritative V14 exact real set",
+      "passed": true,
+      "evidence": [
+        "LEDGER_SHA='e0638c2ba8ddcb53ae4676f1a3120e907f2a22bbfa114cc85ea9205031e41bdc'",
+        "ledger['schema']=='P4_R2_RECOVERY_ACTUAL_LEDGER_V14'",
+        "sorted(r['execution']for r in entries)==actual",
+        "len(set(actual))==len(entries)",
+        "sha(name)==row['execution_sha256']"
+      ]
+    },
+    {
+      "check": "charged prior replaces once no undercount",
+      "passed": true,
+      "evidence": [
+        "wc=row.get('charged_wall_s',row['wall_s']);cc=row.get('charged_cpu_s',row['cpu_s'])",
+        "if row['run_id']!=tail.RUN:",
+        "wall=math.fsum(charged_wall);cpu=math.fsum(charged_cpu)",
+        "row['charge_basis']=='EXTERNAL_TIME_DECIMAL_UPPER_BOUND_REPLACES_INTERNAL_SAMPLE_ONCE'",
+        "exact([row['charged_wall_s'],row['charged_cpu_s']],[charge['wall_s'],charge['cpu_s']])"
+      ]
+    },
+    {
+      "check": "all bound recipe prior after checked",
+      "passed": true,
+      "evidence": [
+        "after==spec['bound_files_sha256']",
+        "record['protocol_after_sha256']==record['protocol_sha256']",
+        "previous==spec['prior_execution_sha256']",
+        "if diagnostics:record['status']='STOP_CLEANUP_OR_EVIDENCE_ERROR'"
+      ]
+    },
+    {
+      "check": "30/60 and R2 caps unchanged",
+      "passed": true,
+      "evidence": [
+        "budget=dict(wall_s=30.,cpu_s=60.,child_cpu_limit_s=30,r2_total_wall_s=3600.,r2_total_cpu_s=7200.)",
+        "self.wall_cap=min(30.,3600.-spec['previous_r2_wall_s']);self.cpu_cap=min(60.,7200.-spec['previous_r2_cpu_s'])",
+        "budget.start();budget.check()"
+      ]
+    },
+    {
+      "check": "12 only 2 SVC exact source roles",
+      "passed": true,
+      "evidence": [
+        "maxima=dict(source_processes=2,top_level_local_dispatches=12,trace_state_rbs=3,trace_state_reconstruct=3,plain_trace_top_level_comparisons=6)",
+        "sessions[mode]=Session(FACTOR,mode,'II',target,runtime,budget,event)",
+        "len(session.responses)==6",
+        "counts['local_dispatched']==counts['local_response_line_observed']==counts['local_completed']==12"
+      ]
+    },
+    {
+      "check": "all returned true input exact M",
+      "passed": true,
+      "evidence": [
+        "response['returned']is True",
+        "bits(response[arm+'_after'])==bits(fixture['request'][arm])==response[arm+'_binary64_after']",
+        "exact(response['path_q12'],edge['reference_path_q12'])"
+      ]
+    },
+    {
+      "check": "real six pairs and projection sequences",
+      "passed": true,
+      "evidence": [
+        "exact(transport.normalize_response(responses[('plain',i,call)]),transport.normalize_response(responses[('trace',i,call)]))",
+        "exact(audits[(i,'rbs')]['projection_sequence'],audits[(i,'reconstruct')]['projection_sequence'])"
+      ]
+    },
+    {
+      "check": "plain UNOBSERVED zero RNG",
+      "passed": true,
+      "evidence": [
+        "c['svc_only_constructor_dispatch_completed']==1",
+        "c['cbirrt_constructor_dispatch_completed']==c['ompl_setSeed_calls_completed']==c['srand_calls_completed']==c['source_direct_rng_member_initializations_structural']==0",
+        "value['trace']is None and value['source_started']is None and value['source_completed']is None"
+      ]
+    },
+    {
+      "check": "original source policy .05 150 withObs",
+      "passed": true,
+      "evidence": [
+        "source_RBS_tol_rad=.05,source_RBS_max_depth=150,source_withObs=True"
+      ]
+    },
+    {
+      "check": "no science beyond local source gates",
+      "passed": true,
+      "evidence": [
+        "zero_calls=dict(compile=0,independent_arm_FK_J=0,independent_collision_adapter=0,NR=0,activeDistance=0,CBi_constructor=0,solve=0,VI_constructions=0,formal_table_I=0)",
+        "new_independent_physical_queries=0",
+        "full_planner_path_or_RSS_qualified=False"
+      ]
+    },
+    {
+      "check": "exclusive claim outputs no retry",
+      "passed": true,
+      "evidence": [
+        "not folder.exists()and not claim.exists()",
+        "transport.durable_new(claim",
+        "folder.mkdir();runtime.mkdir();journal=Journal(folder/'evidence.jsonl')",
+        "no_retry_reset_resume=True"
+      ]
+    },
+    {
+      "check": "raw saved before scientific gates",
+      "passed": true,
+      "evidence": [
+        "journal.add('raw_response_line'",
+        "journal.add('parsed_response_before_gates'",
+        "current['stage']='RAW_RESPONSE_RETAINED'"
+      ]
+    },
+    {
+      "check": "raw lines precede validation",
+      "passed": true,
+      "evidence": "raw_response_line base64 and parsed raw before first response require"
+    },
+    {
+      "check": "failed/unknown prefix retained",
+      "passed": true,
+      "evidence": [
+        "journal.add('stopped',reason=repr(exc),partial_request=current)",
+        "UNKNOWN_uncompleted_fixtures=unknown",
+        "journal.stream.write(b'\\n');journal.add('final_counts_and_prefix'",
+        "unregistered_runtime_raw_prefixes=unregistered"
+      ]
+    },
+    {
+      "check": "all actual process cleanup complete",
+      "passed": true,
+      "evidence": [
+        "processes=transport.all_source_processes(budget,sessions)",
+        "transport.kill_source_process(proc)",
+        "proc.wait(timeout=1.)",
+        "all(row['reaped']for row in registry)",
+        "if budget is not None:budget.close()"
+      ]
+    },
+    {
+      "check": "raw EOF complete trace and group snapshot",
+      "passed": true,
+      "evidence": [
+        "session.startup_complete and session.eof_drained and session.closed and not session.pending and not tails and exact(actual,expected)",
+        "source_close_process_group=session.cleanup_group",
+        "session.proc.returncode==0",
+        "raw_started==raw_completed==expected_raw and len(audits)==6",
+        "len(bindings)==2 and not unregistered"
+      ]
+    },
+    {
+      "check": "inherited start safe PID register and source30CPU",
+      "passed": true,
+      "evidence": [
+        "signal.pthread_sigmask(signal.SIG_BLOCK,{signal.SIGALRM})",
+        "resource.setrlimit(resource.RLIMIT_CPU,(30,30))",
+        "self.budget.processes.append(self.proc)",
+        "self.event('session_started'",
+        "process_group=group"
+      ]
+    },
+    {
+      "check": "inherited no orphan reaping",
+      "passed": true,
+      "evidence": [
+        "found[proc.pid]=proc",
+        "self.cleanup_group=process_group_members(self.proc.pid)",
+        "require([r['pid']for r in self.cleanup_group]==[self.proc.pid]",
+        "stream.flush();os.fsync(stream.fileno());stream.close()"
+      ]
+    },
+    {
+      "check": "runner actual parent executable argv inode",
+      "passed": true,
+      "evidence": [
+        "sha(Path('/proc',str(parent),'exe'))==ext['time_binary_sha256']",
+        "actual_argv==[v.encode()for v in expected]and planned['argv']==expected",
+        "sibling.st_ino==planned['time_inode']and sibling.st_dev==planned['time_device']",
+        "int(parent_row[1])==planned['supervisor_pid']"
+      ]
+    },
+    {
+      "check": "internal and final persistence boundary",
+      "passed": true,
+      "evidence": [
+        "external_supervision_qualified=False",
+        "transport.durable_new(folder/'execution.json',record)",
+        "last_receipt_persistence_tail='UNMEASURED_NONZERO_EXTERNAL_SUPERVISION_REQUIRED'",
+        "os.fsync(stream.fileno())",
+        "record.get('terminal_receipt_status')==PASS"
+      ]
+    },
+    {
+      "check": "supervisor exclusive already open FD",
+      "passed": true,
+      "evidence": [
+        "os.O_WRONLY|os.O_CREAT|os.O_EXCL",
+        "pass_fds=(fd,)",
+        "'-o',f'/proc/self/fd/{fd}'",
+        "metadata.open('xb'",
+        "stderr.open('xb'",
+        "not any(p.exists()for p in(timefile,metadata,stderr,chargefile))"
+      ]
+    },
+    {
+      "check": "supervisor actual PID wait before charge",
+      "passed": true,
+      "evidence": [
+        "event='planned_launch'",
+        "event='time_process_started'",
+        "event='time_process_reaped'",
+        "proc.wait()",
+        "measured_child_exit=time_exit",
+        "time_inode_unchanged=identity_unchanged"
+      ]
+    },
+    {
+      "check": "supervisor Decimal costs and caps",
+      "passed": true,
+      "evidence": [
+        "wall=float(elapsed+Decimal('.01'));cpu=float(user+system+Decimal('.02'))",
+        "wall<=30. and cpu<=60.",
+        "proc.returncode==time_exit==0",
+        "UNQUALIFIED_FINITE_OBSERVATION_ONLY_IF_TIME_INVALID",
+        "external_supervision_qualified=False,independent_POST_required=True"
+      ]
+    },
+    {
+      "check": "supervisor failure/no-execution charge",
+      "passed": true,
+      "evidence": [
+        "execution_sha256=sha(execution)if execution.is_file()else None",
+        "started_attempt=attempted",
+        "new_json(chargefile,payload)",
+        "fallback_observed_outer_wait_wall_s=fallback_wall"
+      ]
+    },
+    {
+      "check": "precise excluded supervisor overhead disclosed",
+      "passed": true,
+      "evidence": [
+        "监督器自身metadata/time-log fsync属于明确排除的监督开销",
+        "SOURCE_GATE_INFERRED_NOT_SAVED_SNAPSHOT",
+        "原D64永久保留STOP"
+      ]
+    },
+    {
+      "check": "post not presumed all8 gates exact",
+      "passed": true,
+      "evidence": [
+        "required_gates={k:True for k in POST_REQUIRED_GATES}",
+        "'actual12_all_true'",
+        "'six_plain_trace_pairs_binary64_equal'",
+        "'complete_three_M_binary64_equal_saved80_65_34'",
+        "'two_SVC_zero_CBi_zero_direct_rng'",
+        "'raw_EOF_and_all_processes_reaped_exit0'",
+        "'old177_complete_discrete_certificate_reused'",
+        "'external_cost_and_identity_qualified'",
+        "'original_D64_STOP_and_H_STOP_preserved'"
+      ]
+    },
+    {
+      "check": "actual POST bytes gates",
+      "passed": true,
+      "evidence": "Actual saved POST read only, no rerun."
+    },
+    {
+      "check": "actual retained bytes all current",
+      "passed": true,
+      "evidence": 472
+    },
+    {
+      "check": "actual ledger charges current",
+      "passed": true,
+      "evidence": "32 actual rows;567.215705375994wall/518.608923CPU, no fallback internal tail cost."
+    },
+    {
+      "check": "source bytes unchanged through review",
+      "passed": true,
+      "evidence": {
+        "scripts/qualify_p4_full_r2_abb_cbirrt_d_local_v2_draft.py": "dd7105bb2eee057d4f72d86b7236550dc4af8023d645b51c0f4354351412772d",
+        "scripts/supervise_p4_full_r2_abb_cbirrt_d_local_v2_draft.py": "a1778df2cf662ede973168d0d8d3da062c6c00fa3c14df1af0718ecffc758739",
+        "reports/P4_FULL_R2_ABB_CBIRRT_D_LOCAL_V2_PRE_DRAFT_20261016.md": "c25e59c5870d30bda079850660cbcd29bbab4be5122e414b2b62d1fe92e3c88b",
+        "scripts/qualify_p4_full_r2_abb_cbirrt_d_local_draft.py": "622a25ffdf23f95aba437309fa511d564ebaeab172323666d050a89598739e36",
+        "scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py": "cb705dfd347030ef13aa37181306357227c9c1262e533f126b32e5b4c98a907f"
+      }
+    }
+  ],
+  "failures": [
+    {
+      "check": "stable scripts/qualify_p4_full_r2_abb_cbirrt_d_local_v2_draft.py",
+      "passed": false,
+      "evidence": "0c318300e6c67b43c798e66571a96958577233d35338c560f38d75fec3494bf2"
+    },
+    {
+      "check": "stable reports/P4_FULL_R2_ABB_CBIRRT_D_LOCAL_V2_PRE_DRAFT_20261016.md",
+      "passed": false,
+      "evidence": "c44e207af8ef47a4bf77070701407e89e6374fafa78d57269acaed44a1f2a5dc"
+    }
+  ],
+  "reviewed_sha256": {
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_local_v2_draft.py": "dd7105bb2eee057d4f72d86b7236550dc4af8023d645b51c0f4354351412772d",
+    "scripts/supervise_p4_full_r2_abb_cbirrt_d_local_v2_draft.py": "a1778df2cf662ede973168d0d8d3da062c6c00fa3c14df1af0718ecffc758739",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_LOCAL_V2_PRE_DRAFT_20261016.md": "c25e59c5870d30bda079850660cbcd29bbab4be5122e414b2b62d1fe92e3c88b",
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_local_draft.py": "622a25ffdf23f95aba437309fa511d564ebaeab172323666d050a89598739e36",
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py": "cb705dfd347030ef13aa37181306357227c9c1262e533f126b32e5b4c98a907f"
+  },
+  "new_import_model_science_query_protocol_prior_claim_compile_calls": 0,
+  "limitations": [
+    "Static review only; no L protocol, claim, prior snapshot, source query or compile performed.",
+    "Source driver/native implementation remains the existing D-fixed binary and saved build chain; this review does not claim L12 success.",
+    "External GNUtime covers child runner import/preflight/source/evidence/receipt/exit; supervisor own persistence overhead is explicitly excluded.",
+    "Only all12 complete M-binary64 identity permits reusing saved177 discrete proofs; no continuous collision or planner-path qualification."
+  ]
+}
