@@ -1,0 +1,9 @@
+# H 三参随机helper双目标工程实际 POST
+
+2026-10-16，来源cdf53f0，唯一BUILD01为BUILT_NOT_QUERIED，两个目标均exit0，0科学/模型/随机helper/solve/VI构造。命令python3 scripts/build_p4_full_r2_abb_random_helper_draft.py --protocol configs/p4_full/r2_abb_random_helper_h_engineering_v2.json。实耗24.520090279000215秒墙钟/33.067454999999995秒CPU，60/120总帽及45/90单目标帽内，最终资产保全成本计入。
+
+source_control binary SHA76b59d600eefe6c1b9d782918cc7e63fa46b854f9b328481cec050f42b4bb540；success_break SHA f4af5a7c14b50dd6f738f9f893c37dd1050c99b65968708cc53a4601ee952695。manifest SHA aee402dd051a73b807ae6e8cd9bd1d361f8ebf0f0a0a5ef1f158845232056fdc；manifest原字节及两个完整编译日志已复制run，原warning保留，不重编。
+
+全部68旧资产前后保持，两个stage原数学基底、仅成功break补丁及可逆观察单独绑定。独立保存工程POST见P4_FULL_R2_ABB_RANDOM_HELPER_H_BUILD_SAVED_POST_20261016.json/.md，不由构建推出接口资格。
+
+随后科学元数据preflight发现builder.prior本为工程排除自身，science复用会漏计刚完成工程；在任何科学claim前停止并留证，只修改未执行science runner的专用prior读取。实际26笔own-cost443.9257601529946wall/418.516481CPU，新科学草案须绑定该真实成本、两个binary及完整270资产，独立审查并另冻固定64helper/60wall/120CPU。旧draft、修前runner、原25prior和冻结工程源码/PRE均保留。VI974/974余0、正式0/22500和211义务保持，不P2/Isaac。

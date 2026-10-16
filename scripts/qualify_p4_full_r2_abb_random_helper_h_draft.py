@@ -107,8 +107,16 @@ def build_assets():
                 'H_TRANSFORM_PREVIEW_CHAIN')
         targets[factor]={'stage':str(stage),'binary':str(binary),'binary_sha256':entry['binary_sha256']}
     return {'status':'BUILT_NOT_QUERIED','source_commit':manifest['source_commit'],'files':files,'targets':targets}
+def science_prior():
+    # The engineering reader excludes its own build RUN. This science run must
+    # charge that completed build and exclude only its own science execution.
+    files=sorted(p for p in (ROOT/'results/p4_full').glob('20261015_R2_*/execution.json')
+        if p.parent.name!=RUN)
+    rows=[load(p) for p in files]
+    return ({str(p.relative_to(ROOT)):sha(p) for p in files},
+            math.fsum(row['wall_s'] for row in rows),math.fsum(row['cpu_s'] for row in rows))
 def draft_protocol():
-    base=builder.science_draft();prior,wall,cpu=builder.prior();assets=build_assets();files={}
+    base=builder.science_draft();prior,wall,cpu=science_prior();assets=build_assets();files={}
     for name in OWN:bind(files,name)
     for name,wanted in prior.items():bind(files,name,wanted)
     for name,wanted in base['endpoint_sources_sha256'].items():bind(files,name,wanted)
