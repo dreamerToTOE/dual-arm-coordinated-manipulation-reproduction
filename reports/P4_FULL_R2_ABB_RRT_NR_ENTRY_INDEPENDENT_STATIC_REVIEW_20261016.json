@@ -1,0 +1,242 @@
+{
+  "schema": "P4_R2_ABB_RRT_NR_ENTRY_PERSONNEL_STATIC_REVIEW_V1",
+  "created_at_utc": "2026-10-16T01:25:08.027497+00:00",
+  "reviewer": "nr_entry_review (not entry author)",
+  "status": "PASS_STATIC_ENGINEERING_AND_SCIENCE_DRAFT_REVIEW",
+  "checks_total": 38,
+  "checks_passed": 38,
+  "checks_failed": 0,
+  "zero_compile_query_solve_RNG": true,
+  "changes_science": "None. Only local saved-evidence acceptance gate and PRE metadata updated; core/kernel/local sources untouched.",
+  "engineering_draft_sha256": "e0a61f792d3e157b9368a7f31312ba0a3c987f02a6998ab69d389c1c2c4f061c",
+  "science_draft_sha256": "2629a77814e66fb6aa7ca38d4056a496fb716ce456d598a01e6e365ca590d034",
+  "asset_count": 1201,
+  "prior_executions": 22,
+  "local_gate": {
+    "ready": true,
+    "execution_gate_ready": true,
+    "protocol_gate_ready": true,
+    "saved_POST_gate_ready": true,
+    "personnel_independent_POST_gate_ready": true,
+    "personnel_independent_raw_link_gate_ready": true,
+    "status": "FIXED_LOCAL_ABB_NR_QUALIFIED",
+    "execution": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+    "execution_sha256": "d9e548a26dcaa2488e6556e7e235f64fa83511ef517289d985e5b8b61eacc8a8",
+    "saved_POST": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_NR_LOCAL_INDEPENDENT_POST_20261015.json",
+    "protocol": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_nr_local_qualification_v1.json",
+    "protocol_sha256": "de02be92ab1bad0385f01d03f23aa1d626daf0f2633090db6bb1ae4f455cc230",
+    "saved_POST_sha256": "46a2f95d5cd1a0f5b1cacdc5805e223cd2bf4b30e766eb9ddc4579efdd89f77b",
+    "saved_POST_contract": {
+      "schema": "P4_R2_ABB_NR_LOCAL_SAVED_POST_V1",
+      "status": "PASS_SAVED_EVIDENCE_POST",
+      "checks_total": 117258,
+      "checks_passed": 117258,
+      "checks_failed": 0,
+      "personnel_independent": false,
+      "execution_and_protocol_sha256_required": true,
+      "result.next_environment_II_planner_gate": true
+    },
+    "personnel_independent_POST": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_NR_LOCAL_ROOT_INDEPENDENT_POST_20261015.json",
+    "personnel_independent_POST_sha256": "6a0874507f5a837b07d705c0126b6233dfe19b6ca151bbb9e4791011ae34b382",
+    "personnel_independent_POST_contract": {
+      "schema": "P4_NR_LOCAL_PERSONNEL_INDEPENDENT_STDLIB_SAVED_POST_V1",
+      "status": "PASS_SAVED_EVIDENCE_AUDIT",
+      "checks_total": 218766,
+      "checks_passed": 218766,
+      "checks_failed": 0,
+      "reviewer": "nr_local_independent_post (not runner author)",
+      "zero_new_scientific_calls": true,
+      "zero_compile_calls": true
+    },
+    "personnel_independent_raw_link_POST": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_NR_LOCAL_ROOT_RAW_LINK_ADDENDUM_20261015.json",
+    "personnel_independent_raw_link_POST_sha256": "2a227a225c8200f8c42fca6672d085a67cd4505a530b668397b124e1cc4027c0",
+    "personnel_independent_raw_link_POST_contract": {
+      "schema": "P4_NR_LOCAL_ROOT_RAW_LINK_ADDENDUM_V1",
+      "status": "PASS_RAW_LINK_ADDENDUM",
+      "checks_total": 666,
+      "checks_passed": 666,
+      "checks_failed": 0,
+      "main_report_sha256_required": true,
+      "zero_new_scientific_calls": true,
+      "zero_compile_calls": true
+    }
+  },
+  "source_sha256": {
+    "scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py": "b9754474468f2c72f5151db337e15cf8ef0baf9106a2339611f2cbea3739a4bb",
+    "baselines/p4_full/geometry_consistent/abb_rrt_nr_e2e_observation_draft.hpp": "9cc10b2fa41c09fb96f4d06ddbe61f325c17ebfdb9b2ef5d6dac15240b51f5f5",
+    "baselines/p4_full/geometry_consistent/abb_rrt_nr_e2e_driver_draft.cpp": "4a8749f2df2b820892f8cb0c2fcf335257db22e937323ac8f7eee0a9468e6aeb",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_kernel_draft.cpp": "2d5d61ac8742330611c39243c740df5a6e5e15fbe13a72ad6ea50973917c930b",
+    "baselines/p4_full/geometry_consistent/physical_nr_abb_cpp_draft.hpp": "e387e7c4b625ffa41d63d47093a4cf0c75a04d07d1f1b8d4693162653814449e",
+    "reports/P4_FULL_R2_ABB_NR_INTERFACE_SAVED_INPUTS_20261015.json": "d260581947908ef59a1adc9b72ae38eca8d1f55c23a51cb2d78efed758aa24fb",
+    "reports/P4_FULL_R2_ABB_RRT_NR_ENTRY_PRE_DRAFT_20261015.md": "1cc97318ea056ef51ee5a2ead09d49b79565c4fae9c7437e503e2b54c7899c85",
+    "scripts/build_p4_full_r2_abb_nr_interface_draft.py": "5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_observation_draft.hpp": "0b7db692f6154fed5d7c2a28a77aa15717ad5eb3e5ea26e4816414cb42746bbf",
+    "baselines/p4_full/geometry_consistent/abb_rrt_pcs_e2e_observation.hpp": "b597b56199279bd02a7030375e0dd055d650c9a0bb4bee80aef6d4242755381c",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "baselines/p4_full/geometry_consistent/pcs_source_trace.hpp": "63366eeebe7822947c50f5b151aab4c03321d7be3339ae3f6bdc85aea204d366",
+    "scripts/qualify_p4_full_r2_abb_rrt_nr_e2e_draft.py": "3831a2c1c89fca10150b0251bccb5cdb910b3e53e5654f78178ab57fc4e4973e",
+    "configs/p4_full/r2_abb_rrt_nr_e2e_engineering_v1.draft.json": "53434c055264a3e21c72a1c8753788fb1d44b42e42db7be7ce2c03fb2f13f44b",
+    "configs/p4_full/r2_abb_rrt_nr_e2e_qualification_v1.draft.json": "33c6a5bb2fa01695656d842ec687107cf0cb24efc064cb278b23efee0f74598d",
+    "configs/p4_full/r2_abb_rrt_nr_e2e_engineering_v2.draft.json": "e0a61f792d3e157b9368a7f31312ba0a3c987f02a6998ab69d389c1c2c4f061c",
+    "configs/p4_full/r2_abb_rrt_nr_e2e_qualification_v2.draft.json": "2629a77814e66fb6aa7ca38d4056a496fb716ce456d598a01e6e365ca590d034"
+  },
+  "checks": [
+    {
+      "check": "AST scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py",
+      "passed": true
+    },
+    {
+      "check": "AST scripts/qualify_p4_full_r2_abb_rrt_nr_e2e_draft.py",
+      "passed": true
+    },
+    {
+      "check": "work unchanged planners/RRT_NR.h",
+      "passed": true
+    },
+    {
+      "check": "work unchanged validity_checkers/StateValidityCheckerNR.h",
+      "passed": true
+    },
+    {
+      "check": "work unchanged proj_classes/kdl_class.h",
+      "passed": true
+    },
+    {
+      "check": "work unchanged validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "check": "author exact template proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "check": "author exact template validity_checkers/StateValidityCheckerNR.cpp",
+      "passed": true
+    },
+    {
+      "check": "author exact template planners/RRT_NR.cpp",
+      "passed": true
+    },
+    {
+      "check": "RRT unique IO replacement inverse",
+      "passed": true
+    },
+    {
+      "check": "SVC unique wrapper",
+      "passed": true
+    },
+    {
+      "check": "SVC wrapper inverse entire author cpp",
+      "passed": true
+    },
+    {
+      "check": "KDL GD-only replacement",
+      "passed": true
+    },
+    {
+      "check": "KDL preserved entire cpp",
+      "passed": true
+    },
+    {
+      "check": "original resolution .1",
+      "passed": true
+    },
+    {
+      "check": "original true callback",
+      "passed": true
+    },
+    {
+      "check": "one solve10",
+      "passed": true
+    },
+    {
+      "check": "seed7",
+      "passed": true
+    },
+    {
+      "check": "native env1 Range2.6",
+      "passed": true
+    },
+    {
+      "check": "no smoothing",
+      "passed": true
+    },
+    {
+      "check": "full planner vertices/edges",
+      "passed": true
+    },
+    {
+      "check": "full Confs both returns",
+      "passed": true
+    },
+    {
+      "check": "internal plain trace disabled",
+      "passed": true
+    },
+    {
+      "check": "source exact pending independent",
+      "passed": true
+    },
+    {
+      "check": "fresh one shot",
+      "passed": true
+    },
+    {
+      "check": "fixed compiler O1 g0",
+      "passed": true
+    },
+    {
+      "check": "separate path cap",
+      "passed": true
+    },
+    {
+      "check": "NR no fixed active/analytic branch gate",
+      "passed": true
+    },
+    {
+      "check": "actual multilayer gate opens",
+      "passed": true
+    },
+    {
+      "check": "gate fails closed execution.json:soundness_passed",
+      "passed": true
+    },
+    {
+      "check": "gate fails closed P4_FULL_R2_ABB_NR_LOCAL_INDEPENDENT_POST_20261015.json:protocol_sha256",
+      "passed": true
+    },
+    {
+      "check": "gate fails closed P4_FULL_R2_ABB_NR_LOCAL_INDEPENDENT_POST_20261015.json:status",
+      "passed": true
+    },
+    {
+      "check": "gate fails closed P4_FULL_R2_ABB_NR_LOCAL_ROOT_INDEPENDENT_POST_20261015.json:checks_failed",
+      "passed": true
+    },
+    {
+      "check": "gate fails closed P4_FULL_R2_ABB_NR_LOCAL_ROOT_RAW_LINK_ADDENDUM_20261015.json:main_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "engineering current draft validates",
+      "passed": true
+    },
+    {
+      "check": "qualification current draft validates",
+      "passed": true
+    },
+    {
+      "check": "engineering remains unfrozen",
+      "passed": true
+    },
+    {
+      "check": "science still cannot run without actual build",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Static review is not build success, planner/path qualification, continuous collision certificate or statistical performance evidence.",
+    "Only root may freeze/commit/run the separately bounded engineering and science protocols.",
+    "Science draft must be re-described after the exact successful build; independent path audit requires separate claim/protocol."
+  ]
+}

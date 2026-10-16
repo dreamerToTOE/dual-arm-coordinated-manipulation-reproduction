@@ -1,0 +1,65 @@
+{
+  "schema": "P4_R2_ABB_RRT_NR_ENTRY_SOURCE_STATIC_V1",
+  "status": "STATIC_DRAFT_CHECKED_NOT_FROZEN",
+  "classification": "ZERO_COMPILE_ZERO_QUERY_ZERO_SOLVE",
+  "AST_passed": true,
+  "changes_on_work_copy_only": [
+    {
+      "file": "proj_classes/kdl_class.cpp",
+      "before": "83a0ab6109fddb3d820d9987791c921c340287648630d18dc2a68e3728a21fd4",
+      "after": "985bfbfb5eba4ca7fffc8d34b4da58c93daa6617fbf480c8d71bebaaf10dba31"
+    },
+    {
+      "file": "validity_checkers/StateValidityCheckerNR.cpp",
+      "before": "d9f49d2fb8a600fe85f6885bbf153c3b2f86d0185f945f23a181eca287f8827d",
+      "after": "f4b92f7a1df9bf3360bd92788bb18d06c9b68a809af2969019acfca7df3afdb6"
+    },
+    {
+      "file": "planners/RRT_NR.cpp",
+      "before": "ab11fe1e5164f6d4f7b7d1fc8526bda847180611e8085ca6cd836544874dc1e3",
+      "after": "750dd53df114b782215803583610741f44e66748327a437398516a72a7e029b3"
+    }
+  ],
+  "source_state_reconstruct_body_retained_once": true,
+  "collision_source_unchanged": true,
+  "source_resolution": 0.1,
+  "fixed_draft": {
+    "environment": "II",
+    "seed": 7,
+    "range_rad": 2.6,
+    "goal_bias": 0.05,
+    "solve_seconds": 10.0
+  },
+  "draft_protocol_sha256": {
+    "configs/p4_full/r2_abb_rrt_nr_e2e_engineering_v1.draft.json": "53434c055264a3e21c72a1c8753788fb1d44b42e42db7be7ce2c03fb2f13f44b",
+    "configs/p4_full/r2_abb_rrt_nr_e2e_qualification_v1.draft.json": "33c6a5bb2fa01695656d842ec687107cf0cb24efc064cb278b23efee0f74598d"
+  },
+  "source_sha256": {
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_kernel_draft.cpp": "2d5d61ac8742330611c39243c740df5a6e5e15fbe13a72ad6ea50973917c930b",
+    "baselines/p4_full/geometry_consistent/abb_nr_interface_observation_draft.hpp": "0b7db692f6154fed5d7c2a28a77aa15717ad5eb3e5ea26e4816414cb42746bbf",
+    "baselines/p4_full/geometry_consistent/abb_rrt_nr_e2e_driver_draft.cpp": "4a8749f2df2b820892f8cb0c2fcf335257db22e937323ac8f7eee0a9468e6aeb",
+    "baselines/p4_full/geometry_consistent/abb_rrt_nr_e2e_observation_draft.hpp": "9cc10b2fa41c09fb96f4d06ddbe61f325c17ebfdb9b2ef5d6dac15240b51f5f5",
+    "baselines/p4_full/geometry_consistent/abb_rrt_pcs_e2e_observation.hpp": "b597b56199279bd02a7030375e0dd055d650c9a0bb4bee80aef6d4242755381c",
+    "baselines/p4_full/geometry_consistent/pcs_source_trace.hpp": "63366eeebe7822947c50f5b151aab4c03321d7be3339ae3f6bdc85aea204d366",
+    "baselines/p4_full/geometry_consistent/physical_nr_abb_cpp_draft.hpp": "e387e7c4b625ffa41d63d47093a4cf0c75a04d07d1f1b8d4693162653814449e",
+    "reports/P4_FULL_R2_ABB_NR_INTERFACE_SAVED_INPUTS_20261015.json": "d260581947908ef59a1adc9b72ae38eca8d1f55c23a51cb2d78efed758aa24fb",
+    "reports/P4_FULL_R2_ABB_RRT_NR_ENTRY_PRE_DRAFT_20261015.md": "ccb9603b9c701db66ccb43168a9756813f32e283464b16c522fce3aaa4ab7b7b",
+    "scripts/build_p4_full_r2_abb_nr_interface_draft.py": "5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8",
+    "scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py": "4aaa20a773432fa26e3305a8420dd09803ac859206d217c1940097ecfc525df7",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "scripts/qualify_p4_full_r2_abb_rrt_nr_e2e_draft.py": "3831a2c1c89fca10150b0251bccb5cdb910b3e53e5654f78178ab57fc4e4973e"
+  },
+  "local_gate": {
+    "ready": false,
+    "execution_gate_ready": true,
+    "status": "FIXED_LOCAL_ABB_NR_QUALIFIED",
+    "execution": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+    "execution_sha256": "d9e548a26dcaa2488e6556e7e235f64fa83511ef517289d985e5b8b61eacc8a8",
+    "saved_POST": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_NR_LOCAL_INDEPENDENT_POST_20261015.json",
+    "saved_POST_sha256": "MUST_PASS_SAVED_POST_BEFORE_FREEZE",
+    "saved_POST_contract": "MUST_BIND_ACTUAL_REVIEWED_POST_SCHEMA_AND_PASS_STATUS_BEFORE_FREEZE"
+  },
+  "build_exists": false,
+  "scientific_call_counts": 0,
+  "static_harness_repair": "Initial ad-hoc assert used chained comparison incorrectly; corrected source-text assert only, no build/model call occurred."
+}
