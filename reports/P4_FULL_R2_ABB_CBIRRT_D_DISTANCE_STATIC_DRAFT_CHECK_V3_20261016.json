@@ -1,0 +1,203 @@
+{
+  "schema": "P4_D64_STATIC_CLEANUP_DELTA_V3",
+  "created_at_utc": "2026-10-16T06:49:14.899524+00:00",
+  "status": "PASS_STDLIB_AST_AND_SAVED_BYTES_ONLY_NOT_EXECUTION",
+  "personnel_independent": false,
+  "runner_sha256": "cb705dfd347030ef13aa37181306357227c9c1262e533f126b32e5b4c98a907f",
+  "PRE_sha256": "ebfef1b95fb9339aaf85493670c1c74a38f023a8aee768127686a36d7e81d58f",
+  "preserved_draft_manifest": "work/preserved_d64_distance_draft_390be3_20261016/manifest.json",
+  "preserved_draft_manifest_sha256": "3b32af4137413c09c509ecd6267006c03da5314c675dda1f629d1e21f9f24467",
+  "previous_static_report": "reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_STATIC_DRAFT_CHECK_V2_20261016.json",
+  "previous_static_report_sha256": "f43cf371c82849f5306ad0d44efc05a34a12d2abbad0579cf9e27ef5c26d5552",
+  "delta_patch": "work/preserved_d64_distance_draft_390be3_20261016/cleanup_delta_v3.patch",
+  "delta_patch_sha256": "18ea4c9288c6ba0138c5825507c3aa23b7af3cfef9ae8e7baf5d99499cfb3b1b",
+  "check_count": 36,
+  "passed_check_count": 36,
+  "checks": [
+    {
+      "check": "preserved_original_bytes:scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_STATIC_DRAFT_CHECK_20261016.json",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_STATIC_DRAFT_CHECK_V2_20261016.json",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_INDEPENDENT_STATIC_REVIEW_20261016.json",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_INDEPENDENT_STATIC_REVIEW_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_INDEPENDENT_STATIC_REVIEW_V1_20261016.json",
+      "passed": true
+    },
+    {
+      "check": "preserved_original_bytes:reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_INDEPENDENT_STATIC_REVIEW_V1_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "all_other_original_function_AST_unchanged",
+      "passed": true,
+      "details": [
+        "StopQualification",
+        "require",
+        "path",
+        "load",
+        "sha",
+        "durable_new",
+        "canonical",
+        "exact",
+        "bits",
+        "driver_no_fork_assertions",
+        "fixed_contexts",
+        "schedule",
+        "prior",
+        "build_assets",
+        "draft_protocol",
+        "validate",
+        "own_reaped_cpu",
+        "stat_row",
+        "direct_live_cpu",
+        "process_group_members",
+        "trace_file",
+        "assert_trace",
+        "normalize_response",
+        "main"
+      ]
+    },
+    {
+      "check": "Session_init_no_Popen_no_finish_no_start",
+      "passed": true
+    },
+    {
+      "check": "Session_start_one_actual_Popen",
+      "passed": true
+    },
+    {
+      "check": "Session_before_Popen_registered_in_parent",
+      "passed": true
+    },
+    {
+      "check": "Budget_owned_before_timer_started",
+      "passed": true
+    },
+    {
+      "check": "Popen_PID_registered_before_parent_mask_restored",
+      "passed": true
+    },
+    {
+      "check": "Popen_mask_finally_and_child_restore",
+      "passed": true
+    },
+    {
+      "check": "Post_registration_immediate_budget_check",
+      "passed": true
+    },
+    {
+      "check": "No_query_in_masked_start",
+      "passed": true
+    },
+    {
+      "check": "Popen_source_RLIMIT_unchanged_30CPU",
+      "passed": true
+    },
+    {
+      "check": "Alarm_no_throw_during_close",
+      "passed": true
+    },
+    {
+      "check": "Close_disables_timer_consumes_pending_and_restores_mask",
+      "passed": true
+    },
+    {
+      "check": "Exception_first_action_closes_timer",
+      "passed": true
+    },
+    {
+      "check": "Central_process_union_budget_and_session",
+      "passed": true
+    },
+    {
+      "check": "Central_kill_precedes_drain_and_reap",
+      "passed": true
+    },
+    {
+      "check": "Cleanup_registers_actual_Popen_pipes_after_partial_start",
+      "passed": true
+    },
+    {
+      "check": "Pipe_closure_after_post_reap_EOF",
+      "passed": true
+    },
+    {
+      "check": "Registry_events_sessions_separately_reported",
+      "passed": true
+    },
+    {
+      "check": "Full_PASS_requires_eight_PID_eight_events_all_reaped",
+      "passed": true
+    },
+    {
+      "check": "Unreaped_live_CPU_measured_in_final_total",
+      "passed": true
+    },
+    {
+      "check": "Existing_final_caps_unchanged",
+      "passed": true
+    },
+    {
+      "check": "Startup_incomplete_cannot_PASS",
+      "passed": true
+    },
+    {
+      "check": "Unregistered_raw_prefix_and_actual_trace_totals_retained",
+      "passed": true
+    },
+    {
+      "check": "frozen_engineering_unchanged:scripts/build_p4_full_r2_abb_cbirrt_d_draft.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_engineering_unchanged:baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "check": "frozen_engineering_unchanged:baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "check": "frozen_engineering_unchanged:baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "check": "D64_no_run_folder_no_claim",
+      "passed": true
+    }
+  ],
+  "new_counts": {
+    "runner_import": 0,
+    "draft_protocol": 0,
+    "prior_snapshot": 0,
+    "model_query": 0,
+    "binary": 0,
+    "compile": 0,
+    "claim": 0,
+    "commit": 0
+  },
+  "limitations": [
+    "Static-only cleanup review does not exercise real process creation, asynchronous alarms, EOF transport or reaping.",
+    "SIGALRM deferral spans fixed fork/setrlimit/exec handshake and PID registration; startup stalls still count toward final cap and must STOP. No exact15s reaping guarantee is inferred.",
+    "Pending two independent delta reviews and root freeze; no D64 scientific execution authorized by this report."
+  ]
+}

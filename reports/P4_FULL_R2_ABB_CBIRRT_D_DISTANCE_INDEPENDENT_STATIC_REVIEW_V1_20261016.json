@@ -1,0 +1,61 @@
+{
+  "schema": "P4_D64_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "BLOCKED_ENGINEERING_CLEANUP_ACCOUNTING_BEFORE_FREEZE",
+  "generated_at_utc": "2026-10-16T06:18:04.663548+00:00",
+  "reviewer": "nr_entry_review; independent of D64 implementation",
+  "personnel_independent": true,
+  "bound_files_sha256": {
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py": "390be3a6e9e0c2431609d699e8393bf2d6bb22ac90deec49086ec3e60a65307d",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_DISTANCE_PRE_DRAFT_20261016.md": "b7d72f8ce352cf03ce98203ca6d15697793fa8eb8328904f82058c59bcb9da13"
+  },
+  "static_checks": {
+    "runner SHA matches reviewed final snapshot": true,
+    "PRE exact final SHA": true,
+    "Python AST parses": true,
+    "no numerical or scientific imports": true,
+    "explicit complete fixed64 schedule": true,
+    "actual build before draft assets": true,
+    "original sixteen contexts and endpoint hashes": true,
+    "source control expected wrong formula remains": true,
+    "strict frozen current recipe": true,
+    "new exclusive run claim before execution": true,
+    "wall15 CPU30 and cumulative cap": true,
+    "live self reaped direct CPU": true,
+    "child CPU RLIMIT30": true,
+    "direct binary fixed distance only": true,
+    "source actual Popen starts separated from registered sessions": true,
+    "raw response before gates": true,
+    "full64 no prefix PASS": true,
+    "plain trace preserve true fields": true,
+    "input immutable binary64": true,
+    "full raw EOF and dualstream retention": true,
+    "unregistered stderr actual counter repair": true,
+    "raw true mesh4 distance32 gate": true,
+    "plain internals RNG unobserved": true,
+    "final original asset claim prior gate": true,
+    "final cost gate includes hash tails": true
+  },
+  "checks_total": 25,
+  "checks_passed": 25,
+  "failed_checks": [],
+  "blocking_findings": [
+    {
+      "id": "D64_CONSTRUCTOR_TIMEOUT_REAP_ACCOUNTING",
+      "severity": "BLOCKING_BEFORE_FREEZE",
+      "runner_lines": [
+        212,
+        215,
+        292,
+        384
+      ],
+      "finding": "Periodic Budget alarm can trigger after Popen but before sessions registration. Session constructor except kills then finish waits while periodic alarm remains active; a second alarm can interrupt cleanup. Parent finally visits only sessions; registered budget.processes can contain an unregistered child not reaped. Final own_reaped_cpu can omit that child. This is failure cleanup/accounting, not a scientific-method defect.",
+      "required": "Guarantee every actual Popen in the parent process registry is killed/reaped after timers are disabled; retain raw prefixes and count process attempts/start separately. Do not retry science or enlarge budget."
+    }
+  ],
+  "new_compile_binary_model_query_claim_protocol_prior_commit_calls": 0,
+  "limits": [
+    "No driver/runtime/model executed; no protocol/prior snapshot generated.",
+    "The 301/301 saved D engineering audit remains separate and unchanged.",
+    "Static admissibility is not a distance/RBS/planner/path qualification."
+  ]
+}

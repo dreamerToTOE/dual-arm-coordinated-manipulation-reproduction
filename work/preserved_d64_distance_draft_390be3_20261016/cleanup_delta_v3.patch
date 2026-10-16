@@ -1,0 +1,208 @@
+--- preserved_390be3.py
++++ scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py
+@@ -190,35 +190,59 @@
+         require(min(self.wall_cap,self.cpu_cap)>0,'D64_TOTAL_BUDGET_EXHAUSTED')
+         self.previous=signal.getsignal(signal.SIGALRM)
+         require(signal.getitimer(signal.ITIMER_REAL)==(0.,0.),'EXISTING_TIMER_REFUSE_REPLACE')
++        self.closed=False;self.closing=False
++    def start(self):
++        # The owner stores this Budget before enabling asynchronous exceptions.
+         signal.signal(signal.SIGALRM,self.alarm);signal.setitimer(signal.ITIMER_REAL,.02,.02)
+-    def alarm(self,*_):self.check()
++    def alarm(self,*_):
++        if not self.closing:self.check()
+     def check(self):
+         if time.monotonic()-self.started>=self.wall_cap:raise TimeoutError('D64_AGGREGATE_HARD_WALL_CAP')
+         if own_reaped_cpu()-self.cpu_start+direct_live_cpu(self.processes)>=self.cpu_cap:raise TimeoutError('D64_SELF_REAPED_AND_REGISTERED_LIVE_CPU_CAP')
+     def remaining(self):
+         self.check();return min(self.wall_cap-(time.monotonic()-self.started),self.cpu_cap-(own_reaped_cpu()-self.cpu_start+direct_live_cpu(self.processes)))
+-    def close(self):signal.setitimer(signal.ITIMER_REAL,0);signal.signal(signal.SIGALRM,self.previous)
++    def close(self):
++        if self.closed:return
++        self.closing=True
++        previous_mask=signal.pthread_sigmask(signal.SIG_BLOCK,{signal.SIGALRM})
++        try:
++            signal.setitimer(signal.ITIMER_REAL,0)
++            # Consume our pending alarm before restoring the pre-run handler.
++            while signal.SIGALRM in signal.sigpending():signal.sigwait({signal.SIGALRM})
++            signal.signal(signal.SIGALRM,self.previous);self.closed=True
++        finally:signal.pthread_sigmask(signal.SIG_SETMASK,previous_mask)
+ class Session:
++    OPERATION='distance'
+     def __init__(self,factor,mode,env,target,runtime,budget,event):
+         self.factor=factor;self.mode=mode;self.env=env;self.budget=budget;self.event=event
+         self.base=runtime/f'{factor}_{mode}_{env}';self.proc=None;self.pending=b'';self.closed=False;self.eof_drained=False
+         self.raw_trace=[];self.responses=[];self.construction=None;self.cleanup_group=None
+         self.selector=selectors.DefaultSelector();self.stdout=self.stderr=None
+-        self.command=[target['binary'],env,target['stage'],'distance',mode]
++        self.command=[target['binary'],env,target['stage'],self.OPERATION,mode]
++        self.startup_complete=False
++    def start(self):
++        # execute() registers this object before any file/Popen operation.
++        # Defer only SIGALRM across the fixed fork/setrlimit/exec handshake and
++        # PID registration. No distance request is sent in this short section;
++        # an expired cap is delivered on unmask and checked immediately after.
++        self.stdout=self.base.with_suffix('.stdout').open('xb');self.stderr=self.base.with_suffix('.stderr').open('xb')
++        previous_mask=signal.pthread_sigmask(signal.SIG_BLOCK,{signal.SIGALRM})
+         try:
+-            self.stdout=self.base.with_suffix('.stdout').open('xb');self.stderr=self.base.with_suffix('.stderr').open('xb')
+-            def limits():resource.setrlimit(resource.RLIMIT_CPU,(30,30))
+-            event('source_process_start_attempted',factor=factor,mode=mode,environment=env,command=self.command)
++            def limits():
++                signal.pthread_sigmask(signal.SIG_SETMASK,previous_mask)
++                resource.setrlimit(resource.RLIMIT_CPU,(30,30))
++            self.event('source_process_start_attempted',factor=self.factor,mode=self.mode,environment=self.env,command=self.command)
+             self.proc=subprocess.Popen(self.command,cwd=ROOT,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+                 bufsize=0,start_new_session=True,preexec_fn=limits,env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8',**builder.THREADS})
+-            budget.processes.append(self.proc)
+-            event('source_process_started',factor=factor,mode=mode,environment=env,pid=self.proc.pid,command=self.command)
+-            for channel in ('stdout','stderr'):
+-                stream=getattr(self.proc,channel);os.set_blocking(stream.fileno(),False);self.selector.register(stream,selectors.EVENT_READ,channel)
+-            group=process_group_members(self.proc.pid);require([r['pid']for r in group]==[self.proc.pid],'UNEXPECTED_SOURCE_START_PROCESS_GROUP_MEMBER')
+-            event('session_started',factor=factor,mode=mode,environment=env,pid=self.proc.pid,command=self.command,process_group=group)
+-        except BaseException:
+-            self.kill();self.finish(time.monotonic()+2.,normal=False);raise
++            self.budget.processes.append(self.proc)
++            self.event('source_process_started',factor=self.factor,mode=self.mode,environment=self.env,pid=self.proc.pid,command=self.command)
++        finally:signal.pthread_sigmask(signal.SIG_SETMASK,previous_mask)
++        self.budget.check()
++        for channel in ('stdout','stderr'):
++            stream=getattr(self.proc,channel);os.set_blocking(stream.fileno(),False);self.selector.register(stream,selectors.EVENT_READ,channel)
++        group=process_group_members(self.proc.pid);require([r['pid']for r in group]==[self.proc.pid],'UNEXPECTED_SOURCE_START_PROCESS_GROUP_MEMBER')
++        self.event('session_started',factor=self.factor,mode=self.mode,environment=self.env,pid=self.proc.pid,command=self.command,process_group=group)
++        self.startup_complete=True
+     def pump(self,wait=.02,enforce_budget=True):
+         if enforce_budget:self.budget.check();wait=min(wait,max(0.,self.budget.remaining()))
+         for key,_ in self.selector.select(max(0.,wait)):
+@@ -246,6 +270,12 @@
+     def finish(self,deadline,normal):
+         if self.closed:return
+         if self.proc is not None:
++            # A budget alarm can occur before start() registers either pipe.
++            # Cleanup still drains every actual pipe into its original raw log.
++            for channel in ('stdout','stderr'):
++                stream=getattr(self.proc,channel)
++                if stream is not None and not stream.closed and stream not in [key.fileobj for key in self.selector.get_map().values()]:
++                    os.set_blocking(stream.fileno(),False);self.selector.register(stream,selectors.EVENT_READ,channel)
+             if normal:
+                 self.cleanup_group=process_group_members(self.proc.pid)
+                 require([r['pid']for r in self.cleanup_group]==[self.proc.pid],'UNEXPECTED_SOURCE_CLOSE_PROCESS_GROUP_MEMBER')
+@@ -259,11 +289,23 @@
+             # Read EOF after reaping too, not just the first available chunks.
+             while self.selector.get_map()and time.monotonic()<deadline:self.pump(0.,enforce_budget=False)
+             self.eof_drained=not self.selector.get_map()
++            for stream in (self.proc.stdin,self.proc.stdout,self.proc.stderr):
++                if stream is not None and not stream.closed:stream.close()
+         for stream in (self.stdout,self.stderr):
+             if stream is not None and not stream.closed:stream.flush();os.fsync(stream.fileno());stream.close()
+         self.selector.close();self.closed=True
+         if normal:
+             require(self.eof_drained and not self.pending and self.proc.returncode==0,'SOURCE_EOF_TAIL_OR_EXIT_UNQUALIFIED')
++def all_source_processes(budget,sessions):
++    # Union remains complete even if startup failed between the two registries.
++    found={}
++    for proc in ([]if budget is None else budget.processes)+[s.proc for s in sessions.values()]:
++        if proc is not None:found[proc.pid]=proc
++    return list(found.values())
++def kill_source_process(proc):
++    if proc.returncode is None:
++        try:os.killpg(proc.pid,signal.SIGKILL)
++        except ProcessLookupError:pass
+ def trace_file(filename):
+     events=[];tails=[]
+     for i,line in enumerate(filename.read_bytes().splitlines(keepends=True),1):
+@@ -305,11 +347,14 @@
+         durable_new(claim,dict(schema='P4_R2_ABB_CBIRRT_D_FIXED64_DISTANCE_CLAIM_DRAFT_V1',claim_id=CLAIM,
+             source_commit=commit,created_at_utc=builder.utc(),protocol=record['protocol'],protocol_sha256=record['protocol_sha256'],budget=spec['budget'],no_retry_reset_or_resume=True))
+         record['claim_sha256']=sha(claim);folder.mkdir();runtime.mkdir();durable_new(folder/'setup_started.json',record)
+-        events=(folder/'events.jsonl').open('x',buffering=1);budget=Budget(spec,begun,cpu_start)
++        events=(folder/'events.jsonl').open('x',buffering=1);budget=Budget(spec,begun,cpu_start);budget.start()
+         for fixture in spec['fixed_schedule']:
+             budget.check();i=fixture['dispatch_index'];key=(fixture['factor'],fixture['mode'],fixture['environment'])
+             current=dict(fixture=fixture,stage='REQUEST_RETAINED');durable_new(folder/f'distance_{i:03d}_request.json',fixture['request'])
+-            if key not in sessions:sessions[key]=Session(*key,spec['build_assets']['targets'][fixture['factor']],runtime,budget,event)
++            if key not in sessions:
++                session=Session(*key,spec['build_assets']['targets'][fixture['factor']],runtime,budget,event)
++                sessions[key]=session
++                session.start()
+             session=sessions[key];current['stage']='SOURCE_DISPATCH_STARTED';event('distance_dispatch_started',fixture=fixture)
+             raw=session.query(fixture['request'],counts)
+             with(folder/f'distance_{i:03d}_raw_response_line.bin').open('xb')as stream:stream.write(raw+b'\n');stream.flush();os.fsync(stream.fileno())
+@@ -369,6 +414,8 @@
+         durable_new(folder/'plain_trace_comparisons.json',comparisons);record['plain_trace_comparisons']=len(comparisons)
+         record['status']='PASS_FIXED16_ACTIVE_DISTANCE_INTERFACE'
+     except BaseException as exc:
++        # Disable periodic exceptions before evidence work or any wait/drain.
++        if budget is not None:budget.close()
+         error=exc;record['termination_reason']=repr(exc)
+         if current is not None and folder.is_dir():
+             try:durable_new(folder/'stopped_partial_request.json',current)
+@@ -379,12 +426,21 @@
+         if budget is not None:budget.close()
+         # No more source requests. Kill every still-active group immediately
+         # before serial EOF drain so cleanup cannot continue scientific work.
+-        for session in sessions.values():
+-            if not session.closed:session.kill()
++        processes=all_source_processes(budget,sessions)
++        for proc in processes:
++            try:kill_source_process(proc)
++            except BaseException as exc:diagnostics.append(dict(stage='central_source_kill',pid=proc.pid,error=repr(exc)))
+         cleanup_deadline=time.monotonic()+2.
+         for session in sessions.values():
+             try:session.finish(cleanup_deadline,normal=False)
+             except BaseException as exc:diagnostics.append(dict(stage='session_cleanup',factor=session.factor,mode=session.mode,environment=session.env,error=repr(exc)))
++        # Reap every Popen even when pipe/evidence cleanup failed, before final
++        # RUSAGE_CHILDREN measurement. This registry is independent of events.
++        for proc in processes:
++            try:
++                kill_source_process(proc);proc.wait(timeout=1.)
++            except BaseException as exc:diagnostics.append(dict(stage='central_source_reap',pid=proc.pid,error=repr(exc)))
++        process_registry=[dict(pid=proc.pid,returncode=proc.returncode,reaped=proc.returncode is not None)for proc in processes]
+         bindings={};stream_started=Counter();stream_completed=Counter()
+         for key,session in sessions.items():
+             try:
+@@ -394,10 +450,11 @@
+                     for response in session.responses:expected.extend(response['trace'])
+                 exact_binding=exact(actual,expected)
+                 binding=dict(completed_responses=len(session.responses),pipe_EOF_drained=session.eof_drained,cleanup_closed=session.closed,
+-                    unexpected_stdout_tail_bytes=len(session.pending),process_returncode=session.proc.returncode,
++                    startup_complete=session.startup_complete,unexpected_stdout_tail_bytes=len(session.pending),
++                    process_returncode=None if session.proc is None else session.proc.returncode,
+                     source_close_process_group=session.cleanup_group,actual_trace_events=len(actual),expected_trace_events=len(expected),
+                     raw_trace_binary64_matches=exact_binding,unparseable_trace_tails=tails,
+-                    complete_raw_evidence_gate=bool(session.eof_drained and session.closed and not session.pending and not tails and exact_binding and session.proc.returncode==0))
++                    complete_raw_evidence_gate=bool(session.startup_complete and session.eof_drained and session.closed and not session.pending and not tails and exact_binding and session.proc is not None and session.proc.returncode==0))
+                 binding['raw_streams']={channel:dict(path=str(session.base.with_suffix('.'+channel).relative_to(ROOT)),
+                     sha256=sha(session.base.with_suffix('.'+channel)),bytes=session.base.with_suffix('.'+channel).stat().st_size)
+                     for channel in ('stdout','stderr')}
+@@ -425,6 +482,8 @@
+             except BaseException as exc:diagnostics.append(dict(stage='unregistered_raw_prefix',path=str(filename),error=repr(exc)))
+         record['unregistered_runtime_raw_prefixes']=unregistered
+         raw_complete=len(bindings)==8 and not unregistered and all(row['complete_raw_evidence_gate']for row in bindings.values())
++        process_registry_complete=len(processes)==counts['source_process_started_events']==8 and all(row['reaped']for row in process_registry)
++        if record['status']=='PASS_FIXED16_ACTIVE_DISTANCE_INTERFACE'and not process_registry_complete:record['status']='STOP_SOURCE_PROCESS_REGISTRY_OR_REAP_UNQUALIFIED'
+         if record['status']=='PASS_FIXED16_ACTIVE_DISTANCE_INTERFACE'and not raw_complete:record['status']='STOP_RAW_TRACE_EOF_OR_STDOUT_TAIL_UNQUALIFIED'
+         record['full_run_raw_body_count_gate']=dict(stream_started)==dict(stream_completed)=={'mesh_load':4,'activeDistance':32}
+         if record['status']=='PASS_FIXED16_ACTIVE_DISTANCE_INTERFACE'and not record['full_run_raw_body_count_gate']:record['status']='STOP_ACTUAL_RAW_BODY_COUNTS_UNQUALIFIED'
+@@ -443,7 +502,9 @@
+         completed_ids=[f['dispatch_index']for f in spec['fixed_schedule']if(f['factor'],f['mode'],f['case_id'])in responses]
+         unknown=[f for f in spec['fixed_schedule']if f['dispatch_index']not in completed_ids]
+         record.update(counts=dict(counts),completed_dispatch_ids=completed_ids,UNKNOWN_uncompleted_fixtures=unknown,
+-            source_processes_started=counts['source_process_started_events'],registered_transport_sessions=len(sessions),
++            source_processes_started=len(processes),source_process_started_events=counts['source_process_started_events'],
++            source_process_registry=process_registry,source_process_registry_complete_gate=process_registry_complete,
++            registered_transport_sessions=len(sessions),
+             completed_CBIRRT_constructor_dispatches=sum(s.construction is not None for s in sessions.values()),
+             direct_rng_member_initializations_structural=sum(s.construction is not None for s in sessions.values()),
+             source_body_plain_true_started_completed='UNOBSERVED_NO_PLAIN_BODY_TRACE',source_raw_trace_bindings=bindings,
+@@ -453,7 +514,9 @@
+             try:durable_new(folder/'unknown_tail.json',dict(status='UNKNOWN_NOT_COMPLETED_NO_PREFIX_PASS',fixtures=unknown))
+             except BaseException as exc:diagnostics.append(dict(stage='save_unknown',error=repr(exc)))
+         if events is not None:events.flush();events.close()
+-        record.update(wall_s=time.monotonic()-begun,cpu_s=own_reaped_cpu()-cpu_start)
++        final_reaped_cpu=own_reaped_cpu()-cpu_start;final_live_cpu=direct_live_cpu(processes)
++        record.update(wall_s=time.monotonic()-begun,cpu_s=final_reaped_cpu+final_live_cpu,
++            final_self_and_reaped_children_cpu_s=final_reaped_cpu,final_unreaped_registered_live_cpu_s=final_live_cpu)
+         if record['wall_s']>=min(15.,3600.-spec['previous_r2_wall_s'])or record['cpu_s']>=min(30.,7200.-spec['previous_r2_cpu_s']):record['status']='STOP_FINAL_WALL_OR_CPU_BUDGET'
+         if diagnostics:record['status']='STOP_CLEANUP_OR_EVIDENCE_ERROR'
+         if folder.is_dir():durable_new(folder/'execution.json',record)
