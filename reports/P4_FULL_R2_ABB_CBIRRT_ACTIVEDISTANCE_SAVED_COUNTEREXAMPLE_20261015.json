@@ -1,0 +1,519 @@
+{
+  "schema": "P4_R2_ABB_CBIRRT_ACTIVEDISTANCE_SAVED_ARRAY_COUNTEREXAMPLE_V1",
+  "classification": "STATIC_SOURCE_SEMANTICS_AND_SAVED_ANGLE_ARITHMETIC_ONLY",
+  "bound_source_sha256": {
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/author_native_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93"
+  },
+  "candidate_module_sha256": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+  "formula_scope": "Original role1 leaves qa zero, overwrites qb with b.arm2; therefore d(a,b)=norm(b.arm2), independent of a. Values below are formula-derived saved-array arithmetic, not execution of original C++ method.",
+  "points": [
+    {
+      "id": "II_0",
+      "environment": "II",
+      "q12": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0,
+        1.0042713284452618,
+        0.2729059574498862,
+        0.9485892867539307,
+        -1.1501189067527977,
+        1.8100179182011582,
+        -1.977396290726386
+      ],
+      "source": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json",
+      "source_sha256": "b39d945cd5d49e4649aba22e57aae9f302694e4d8e0880389542f1ad828b112f"
+    },
+    {
+      "id": "II_1",
+      "environment": "II",
+      "q12": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0,
+        0.7096069035980488,
+        1.8033460368176983,
+        -1.7064142899195036,
+        -1.6286748910337208,
+        1.914257188961649,
+        -2.015718262850188
+      ],
+      "source": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json",
+      "source_sha256": "991c2efe8e68add65c17375d89c89bbb637711d7125b15a34c84a19a2dc15430"
+    },
+    {
+      "id": "III_0",
+      "environment": "III",
+      "q12": [
+        1.1,
+        1.1,
+        0.0,
+        1.24,
+        -1.5708,
+        0.0,
+        -0.7956767394876946,
+        0.6013499919735118,
+        0.43858465895086485,
+        -0.7498567848138379,
+        -1.007402838209791,
+        -0.09229082698089044
+      ],
+      "source": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json",
+      "source_sha256": "85550cbc3ffbf80c80519b5e592e85401dcf1e96ce747f0df5f3d97c97065c6a"
+    },
+    {
+      "id": "III_1",
+      "environment": "III",
+      "q12": [
+        -1.1,
+        1.35,
+        -0.2,
+        -1.0,
+        -1.9,
+        0.0,
+        0.8087382126071632,
+        0.7236337031288231,
+        -0.4789107998249562,
+        -1.0483682097585365,
+        0.7327791349708244,
+        1.7490553228878079
+      ],
+      "source": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json",
+      "source_sha256": "50db8b75e8c29c9dfc42646e5165c22f31dd8e2853858686572405c3cd91cc12"
+    }
+  ],
+  "cases": [
+    {
+      "a": "II_0",
+      "b": "II_0",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0
+      ],
+      "original_formula_value_rad": 0.0,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_0",
+      "b": "II_0",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        1.0042713284452618,
+        0.2729059574498862,
+        0.9485892867539307,
+        -1.1501189067527977,
+        1.8100179182011582,
+        -1.977396290726386
+      ],
+      "original_formula_value_rad": 3.239119425422773,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": true,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_0",
+      "b": "II_1",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0
+      ],
+      "original_formula_value_rad": 2.891652881277419,
+      "corrected_formula_value_rad": 2.891652881277419,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_0",
+      "b": "II_1",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.7096069035980488,
+        1.8033460368176983,
+        -1.7064142899195036,
+        -1.6286748910337208,
+        1.914257188961649,
+        -2.015718262850188
+      ],
+      "original_formula_value_rad": 4.128865608898457,
+      "corrected_formula_value_rad": 3.1176061619713678,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_1",
+      "b": "II_0",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0
+      ],
+      "original_formula_value_rad": 2.891652881277419,
+      "corrected_formula_value_rad": 2.891652881277419,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_1",
+      "b": "II_0",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        1.0042713284452618,
+        0.2729059574498862,
+        0.9485892867539307,
+        -1.1501189067527977,
+        1.8100179182011582,
+        -1.977396290726386
+      ],
+      "original_formula_value_rad": 3.239119425422773,
+      "corrected_formula_value_rad": 3.1176061619713678,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_1",
+      "b": "II_1",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.5236,
+        0.34907,
+        0.69813,
+        -1.3963,
+        1.5708,
+        0.0
+      ],
+      "original_formula_value_rad": 0.0,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "II_1",
+      "b": "II_1",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.7096069035980488,
+        1.8033460368176983,
+        -1.7064142899195036,
+        -1.6286748910337208,
+        1.914257188961649,
+        -2.015718262850188
+      ],
+      "original_formula_value_rad": 4.128865608898457,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": true,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_0",
+      "b": "III_0",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        1.1,
+        1.1,
+        0.0,
+        1.24,
+        -1.5708,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        1.1,
+        1.1,
+        0.0,
+        1.24,
+        -1.5708,
+        0.0
+      ],
+      "original_formula_value_rad": 0.0,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_0",
+      "b": "III_0",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        -0.7956767394876946,
+        0.6013499919735118,
+        0.43858465895086485,
+        -0.7498567848138379,
+        -1.007402838209791,
+        -0.09229082698089044
+      ],
+      "original_formula_value_rad": 1.665155567082146,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": true,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_0",
+      "b": "III_1",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        1.1,
+        1.1,
+        0.0,
+        1.24,
+        -1.5708,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        -1.1,
+        1.35,
+        -0.2,
+        -1.0,
+        -1.9,
+        0.0
+      ],
+      "original_formula_value_rad": 3.1730856654052064,
+      "corrected_formula_value_rad": 3.1730856654052064,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_0",
+      "b": "III_1",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.8087382126071632,
+        0.7236337031288231,
+        -0.4789107998249562,
+        -1.0483682097585365,
+        0.7327791349708244,
+        1.7490553228878079
+      ],
+      "original_formula_value_rad": 2.4702822659418953,
+      "corrected_formula_value_rad": 3.152585696794821,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_1",
+      "b": "III_0",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        -1.1,
+        1.35,
+        -0.2,
+        -1.0,
+        -1.9,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        1.1,
+        1.1,
+        0.0,
+        1.24,
+        -1.5708,
+        0.0
+      ],
+      "original_formula_value_rad": 3.1730856654052064,
+      "corrected_formula_value_rad": 3.1730856654052064,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_1",
+      "b": "III_0",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        -0.7956767394876946,
+        0.6013499919735118,
+        0.43858465895086485,
+        -0.7498567848138379,
+        -1.007402838209791,
+        -0.09229082698089044
+      ],
+      "original_formula_value_rad": 1.665155567082146,
+      "corrected_formula_value_rad": 3.152585696794821,
+      "diagonal": false,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_1",
+      "b": "III_1",
+      "active_chain": 0,
+      "source_qa_after_retrieve": [
+        -1.1,
+        1.35,
+        -0.2,
+        -1.0,
+        -1.9,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        -1.1,
+        1.35,
+        -0.2,
+        -1.0,
+        -1.9,
+        0.0
+      ],
+      "original_formula_value_rad": 0.0,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": false,
+      "arithmetic_only_no_original_function_execution": true
+    },
+    {
+      "a": "III_1",
+      "b": "III_1",
+      "active_chain": 1,
+      "source_qa_after_retrieve": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source_qb_after_retrieve": [
+        0.8087382126071632,
+        0.7236337031288231,
+        -0.4789107998249562,
+        -1.0483682097585365,
+        0.7327791349708244,
+        1.7490553228878079
+      ],
+      "original_formula_value_rad": 2.4702822659418953,
+      "corrected_formula_value_rad": 0.0,
+      "diagonal": true,
+      "zero_self_distance_counterexample": true,
+      "arithmetic_only_no_original_function_execution": true
+    }
+  ],
+  "diagonal_counterexamples": 4,
+  "original_function_calls": 0,
+  "mathematical_model_calls": 0,
+  "compile_calls": 0,
+  "limitations": [
+    "No repaired source was staged, compiled, or executed.",
+    "Pure distance counterexample does not establish planner runtime or success-rate impact.",
+    "No statement about paper theoretical metric or PCS method follows from this implementation defect."
+  ]
+}

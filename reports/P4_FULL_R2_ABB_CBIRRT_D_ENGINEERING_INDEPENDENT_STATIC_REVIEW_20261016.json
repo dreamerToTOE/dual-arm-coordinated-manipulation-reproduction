@@ -1,0 +1,112 @@
+{
+  "schema": "P4_R2_ABB_CBIRRT_D_INDEPENDENT_STATIC_REVIEW_V1",
+  "date": "2026-10-16",
+  "status": "STATIC_REVIEW_PASS_PENDING_ROOT_FREEZE_AND_UNIQUE_ENGINEERING_BUILD",
+  "reviewer": "nr_path_prepare; distinct from D implementation author nr_local_independent_post",
+  "personnel_independent_of_D_builder_driver": true,
+  "scope": "Read-only inspection, Python stdlib AST and pure-memory source transforms; no current-prior protocol generation.",
+  "bound_files_sha256": {
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp": "93e7a32a8e5cd55ad4447f587b798e082c23649e5f8844eccb7d29ac7f35ad0a",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": "45111720edc6773690846949ebd97e6ccc308dea30921bbb3bee771333801b94",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "scripts/build_p4_full_r2_abb_cbirrt_d_draft.py": "ac3c3737cbdbc1ed6281c75b7d96db1fad0b243b952fed5c7435c7a618f72cd2",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_ENGINEERING_IMPLEMENTATION_DRAFT_20261016.md": "b3e2e95150938290893078006a0b2be3bee625e247e47249d469df09a7d69080",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_ENGINEERING_STATIC_CHECK_20261016.json": "399bb5c63e5a9d576f034a7f3c46ac294ecf4e6cf133af79997259df608e0b92"
+  },
+  "original_external_sources_sha256": {
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93"
+  },
+  "checks": {
+    "python_AST_instrumentation": true,
+    "python_AST_builder": true,
+    "source_control_13_original_complete_body_hooks": true,
+    "fixed_13_original_complete_body_hooks": true,
+    "source_control_complete_file_inverse": true,
+    "fixed_complete_file_inverse": true,
+    "two_targets_APC_SVC_collision_identical": true,
+    "two_targets_CBi_exact_single_token_difference": true,
+    "no_H_break_factor": true,
+    "one_retained_temp_IO_change_each": true,
+    "save_source_mpaths_before_original_body_hook": true,
+    "three_driver_modes": true,
+    "true_RealVector_12_state_space": true,
+    "probe_borrows_real_states_without_Motion_si_allocation": true,
+    "probe_explicit_role": true,
+    "local_uses_SVC_si_constructor": true,
+    "RNG_initialization_separately_UNOBSERVED": true,
+    "no_local_RNG_setSeed": true,
+    "solve_only_C_srand": true,
+    "sampler_box_resolution_and_true_callback": true,
+    "no_RRT_goalBias_API": true,
+    "single_solve_dispatch_code_site": true,
+    "local_all_validation_before_dispatch": true,
+    "fresh_both_original_paths_before_use": true,
+    "snapshot_root_parent_connection_identity": true,
+    "PlannerData_state_identity_export": true,
+    "PlannerData_only_exact": true,
+    "whole_solve_wall_and_solution_metadata": true,
+    "source_exact_pending_independent_path": true,
+    "builder_timer_refuses_before_claim": true,
+    "builder_two_target_caps_live_CPU_and_child_RLIMIT": true,
+    "builder_after_bound_sources_and_prior": true,
+    "builder_final_caps_prevent_false_build_PASS": true,
+    "builder_no_binary_Popen": true
+  },
+  "check_count": 34,
+  "passed_check_count": 34,
+  "source_control_output_sha256": {
+    "proj_classes/apc_class.cpp": "73f0e885ecf3d092cd0ddf8fa94b097992da4516a1e8985d91e41fe6c7777b8a",
+    "validity_checkers/StateValidityCheckerPCS.cpp": "10c687846eb498e224005d603bf59b0e898192a3979351fc1b2f309fffd8d618",
+    "validity_checkers/collisionDetection.cpp": "b7771f56f8fab30992138eefaab0435c08f5b53d6d4426d8e4e524a758d8f197",
+    "planners/CBiRRT_PCS.cpp": "f971ddd936796cac7a74a03c5cefbd280a6054be7d20409038b97924905e81ee"
+  },
+  "D_fixed_output_sha256": {
+    "proj_classes/apc_class.cpp": "73f0e885ecf3d092cd0ddf8fa94b097992da4516a1e8985d91e41fe6c7777b8a",
+    "validity_checkers/StateValidityCheckerPCS.cpp": "10c687846eb498e224005d603bf59b0e898192a3979351fc1b2f309fffd8d618",
+    "validity_checkers/collisionDetection.cpp": "b7771f56f8fab30992138eefaab0435c08f5b53d6d4426d8e4e524a758d8f197",
+    "planners/CBiRRT_PCS.cpp": "ca6cc52b5b1b058fecd82b2ff11f873aa27bd7a6f4184d80dcae0c03a67003ca"
+  },
+  "blocking_findings_remaining": [],
+  "resolved_before_this_snapshot": [
+    "PlannerData vertex now exports state_id for same-q distinct Motion mapping.",
+    "local branch/operation validates before source_dispatch_started increments.",
+    "Existing timer refusal precedes claim/stage mutation.",
+    "solve wall scope and solution count/difference captured.",
+    "source_mpaths emits before original save body for interruption prefix retention."
+  ],
+  "manual_technical_assessment": {
+    "constructor_state_and_cleanup": "Real SVC(si), original CBi constructor and seed init; borrowed ScopedState fixture; no setup/solve in distance branch; no uninitialized temporary Motion branch fields read.",
+    "observation_semantics": "13 original bodies remain once and are wholly reversible; source started/completed events separated; model and RNG methods are not added by observers.",
+    "paths_and_failures": "Both original relative paths newly created inside runner-authorized new run; raw original false reconstruction prefix retained; exact is pending full independent path audit.",
+    "two_tree_data": "Actual Motion/state IDs, parent/root, branch labels, connection endpoints, source high precision mpaths/milestones, exact-only PlannerData state IDs/tags/directed edges enable independent bridge and reversed-goal-tree checks.",
+    "engineering_budget": "60/120 aggregate,45/90 per target,20ms live group CPU guard,90CPU child RLIMIT; post-source/log/hash tails cannot produce successful build on overshoot."
+  },
+  "limitations": [
+    "C++ has not been compiled or executed; syntax/type/link success is not claimed.",
+    "No algorithm qualification, original C++ distance result, path result or performance evidence is produced by this review.",
+    "No claim/protocol/prior/compile/binary execution is authorized by this static review.",
+    "Future root freeze must rebind actual complete ledger after IV/H and other preceding execution settlement.",
+    "Future driver requires science runner to enforce new exclusive parent run directory and exact frozen requests; driver alone does not certify that authorization.",
+    "Original unhooked OMPL RNG seed generation remains UNOBSERVED, not zero.",
+    "An interrupted original solve may retain trace but no returned full-tree snapshot; unobserved suffix cannot be counted qualified."
+  ],
+  "new_counts": {
+    "compile": 0,
+    "binary_execution": 0,
+    "activeDistance": 0,
+    "FK_J": 0,
+    "IK": 0,
+    "NR": 0,
+    "collision": 0,
+    "RBS": 0,
+    "RNG": 0,
+    "solve": 0,
+    "VI_construction": 0,
+    "claim": 0,
+    "protocol_or_prior_generated": 0,
+    "commit": 0
+  }
+}

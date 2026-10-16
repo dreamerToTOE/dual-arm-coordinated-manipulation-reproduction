@@ -1,0 +1,352 @@
+{
+  "schema": "P4_R2_ABB_CBIRRT_D_STATIC_PRE_EVIDENCE_V1",
+  "status": "STATIC_ONLY_PRE_DRAFT_NOT_FROZEN_UNBUILT_UNEXECUTED",
+  "date": "2026-10-16",
+  "provenance_sha256": {
+    "reports/P4_FULL_R2_ABB_CBIRRT_ACTIVEDISTANCE_SAVED_COUNTEREXAMPLE_20261015.json": "de6e1a7cb15ef519af7ea8f45e2892e582305184c2bea2ec62025a4c56515149",
+    "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+    "configs/p4_full/r2_abb_pcs_source_corrections_v1.draft.json": "f2670ed825b35e61bcdeca47c43f64097e34fbc7cb912e8645366d3136cdd204",
+    "reports/P4_FULL_R2_ABB_PCS_SOURCE_CORRECTIONS_PRE_DRAFT_20261015.md": "8129dc6fd6712e44121639ac418419cf55622587bec1cca2f4b0c094338680b4",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/reconstruction_attempts.jsonl": "2aea2a4b79c280d09543a3d2f7f675422c3479c6440d4802e33ca5c66f7c2b26",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/result.json": "eefb6673101fe7a4a47f319bac5e8a20498ae1cee88930ec7bca710ce8de45b4",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+    "results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json": "f3b5a3b30a9067c1b92a069edf4a2ac72acb3b0f378e63fc486c73399f837c97",
+    "configs/p4_full/r2_abb_rrt_path_qualification_v1.json": "2ff16d0958675a5a357a7f253b2357ba393fc48d770bbbe515cd5ad2a46bccf7",
+    "results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json": "25bb3f0c6c62334a217ecc79b16f1fc94e3ef7f04eeca71e4dcba502bde8a582",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json": "1e70eb0edf9a163ef1c5fbdcc16e15ac6598a368f21f75aa93792ca65d7e409b",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json": "fd74acd7ce5f747cc7123cacef8c9467b1fa985d9d88afdcac47aee0956a5754",
+    "baselines/p4_full/geometry_consistent/abb_pcs_qualification_driver.cpp": "fe6f849fa862efc4bfa528adede742b4fdab24f187233528ea191650ae8d485e",
+    "baselines/p4_full/geometry_consistent/abb_rrt_pcs_e2e_driver.cpp": "eeb5e4bce07ef6e7f466086374b6b304258684c110dc7cb9b8048fdeb16c2478",
+    "baselines/p4_full/geometry_consistent/abb_rrt_pcs_e2e_observation.hpp": "b597b56199279bd02a7030375e0dd055d650c9a0bb4bee80aef6d4242755381c",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json": "b39d945cd5d49e4649aba22e57aae9f302694e4d8e0880389542f1ad828b112f",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json": "991c2efe8e68add65c17375d89c89bbb637711d7125b15a34c84a19a2dc15430",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json": "85550cbc3ffbf80c80519b5e592e85401dcf1e96ce747f0df5f3d97c97065c6a",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json": "50db8b75e8c29c9dfc42646e5165c22f31dd8e2853858686572405c3cd91cc12",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/CBiRRT_PCS.h": "714076be551bf08383402076466fbe4a15ed0e36cb1b3300e9533a67aa1f91b7",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/run/plan_PCS.cpp": "af868b6ed9bb1253fc2283f6d4d2fe8f3437a91ab349414bc44521892c4b3f69",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.h": "e9f2f8af3bc8768fcd05cf9c9d36f5940a9dcd66893ac4f18715bcaa3f6ef6b5",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/author_native_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/opt/ros/humble/include/ompl-1.7/ompl/util/RandomNumbers.h": "7ae08229324368ad62ece41f755c0bab0babf39973ed39984a82baf45cbabe62"
+  },
+  "single_factor_in_memory_verification": {
+    "factor": "CBIRRT_ROLE1_FIRST_STATE_DESTINATION",
+    "relative_file": "planners/CBiRRT_PCS.cpp",
+    "signature": "double ompl::geometric::CBiRRT::activeDistance(const Motion *a, const Motion *b)",
+    "original_sha256": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "candidate_sha256": "5b87ed08d674251594efc899ad922398f9c29a0a42f74494cafa7fa2424ae5c2",
+    "original_body_sha256": "5b578c42649f5a4e6b215141ff4f7fdc03ccea58b26ab1ac25c5386b3801d7c4",
+    "candidate_body_sha256": "227320c939a98f23459473dcdd14462f9c849258a4895eff0c256252c79c1b73",
+    "whole_file_reversible": true,
+    "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+    "combined_factors": false,
+    "files_changed": 1,
+    "scientific_calls": 0,
+    "compile_calls": 0
+  },
+  "static_source_checks": {
+    "original_resolution_002": true,
+    "original_cbirrt_ranges_26_10": true,
+    "nearest_neighbor_uses_full_si_distance": true,
+    "both_tree_NN_bind_distanceFunction": true,
+    "RBS_tol_005": true,
+    "RBS_max_depth_150": true,
+    "State_is_vector_double": true,
+    "grow_original_random_role": true,
+    "extend_connect_original_iteration_limits": true,
+    "original_save_reconstruction_before_solution_added": true,
+    "original_CBiRRT_owns_RNG_member": true,
+    "bound_OMPL_RNG_constructor_initializes_seed": true
+  },
+  "saved_arithmetic_cases": [
+    {
+      "a": "II_0",
+      "b": "II_0",
+      "role": 0,
+      "saved_original_formula_rad": 0.0,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_0",
+      "b": "II_0",
+      "role": 1,
+      "saved_original_formula_rad": 3.239119425422773,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_0",
+      "b": "II_1",
+      "role": 0,
+      "saved_original_formula_rad": 2.891652881277419,
+      "six_dimensional_L2_reference_rad": 2.891652881277419,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_0",
+      "b": "II_1",
+      "role": 1,
+      "saved_original_formula_rad": 4.128865608898457,
+      "six_dimensional_L2_reference_rad": 3.1176061619713673,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_1",
+      "b": "II_0",
+      "role": 0,
+      "saved_original_formula_rad": 2.891652881277419,
+      "six_dimensional_L2_reference_rad": 2.891652881277419,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_1",
+      "b": "II_0",
+      "role": 1,
+      "saved_original_formula_rad": 3.239119425422773,
+      "six_dimensional_L2_reference_rad": 3.1176061619713673,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_1",
+      "b": "II_1",
+      "role": 0,
+      "saved_original_formula_rad": 0.0,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "II_1",
+      "b": "II_1",
+      "role": 1,
+      "saved_original_formula_rad": 4.128865608898457,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_0",
+      "b": "III_0",
+      "role": 0,
+      "saved_original_formula_rad": 0.0,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_0",
+      "b": "III_0",
+      "role": 1,
+      "saved_original_formula_rad": 1.6651555670821458,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_0",
+      "b": "III_1",
+      "role": 0,
+      "saved_original_formula_rad": 3.1730856654052064,
+      "six_dimensional_L2_reference_rad": 3.1730856654052064,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_0",
+      "b": "III_1",
+      "role": 1,
+      "saved_original_formula_rad": 2.4702822659418953,
+      "six_dimensional_L2_reference_rad": 3.152585696794821,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_1",
+      "b": "III_0",
+      "role": 0,
+      "saved_original_formula_rad": 3.1730856654052064,
+      "six_dimensional_L2_reference_rad": 3.1730856654052064,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_1",
+      "b": "III_0",
+      "role": 1,
+      "saved_original_formula_rad": 1.6651555670821458,
+      "six_dimensional_L2_reference_rad": 3.152585696794821,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_1",
+      "b": "III_1",
+      "role": 0,
+      "saved_original_formula_rad": 0.0,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    },
+    {
+      "a": "III_1",
+      "b": "III_1",
+      "role": 1,
+      "saved_original_formula_rad": 2.4702822659418953,
+      "six_dimensional_L2_reference_rad": 0.0,
+      "matches_saved_arithmetic": true,
+      "actual_original_cpp_calls": 0
+    }
+  ],
+  "saved_arithmetic_case_count": 16,
+  "saved_arithmetic_mismatch_count": 0,
+  "original_CPP_function_execution_evidence": false,
+  "inherited_saved_nontrivial_edges": [
+    {
+      "original_attempt_index": 0,
+      "role": 0,
+      "branch": 3,
+      "saved_dense_node_count": 80,
+      "root_full12_L2_rad": 2.525929452013416,
+      "max_saved_leaf_full12_L2_rad": 0.04949053472601928,
+      "nontrivial_fixture_from_saved_data": true,
+      "original_new_RBS_or_reconstruction_calls": 0
+    },
+    {
+      "original_attempt_index": 1,
+      "role": 1,
+      "branch": 3,
+      "saved_dense_node_count": 65,
+      "root_full12_L2_rad": 2.756491973773139,
+      "max_saved_leaf_full12_L2_rad": 0.04617935003996265,
+      "nontrivial_fixture_from_saved_data": true,
+      "original_new_RBS_or_reconstruction_calls": 0
+    },
+    {
+      "original_attempt_index": 2,
+      "role": 0,
+      "branch": 0,
+      "saved_dense_node_count": 34,
+      "root_full12_L2_rad": 0.7598746804749721,
+      "max_saved_leaf_full12_L2_rad": 0.04805629905574112,
+      "nontrivial_fixture_from_saved_data": true,
+      "original_new_RBS_or_reconstruction_calls": 0
+    }
+  ],
+  "inherited_PCS_unique_path_nodes": 177,
+  "inherited_NR_unique_path_nodes": 393,
+  "historical_cost_reference": [
+    {
+      "run_id": "20261015_R2_ABB_PCS_BUILD01",
+      "wall_s": 94.59233520399721,
+      "cpu_s": 130.109068,
+      "historical_saved_only": true
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_PCS_E2E_BUILD01",
+      "wall_s": 17.12737691100483,
+      "cpu_s": 23.727903,
+      "historical_saved_only": true
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_PCS_E2E01",
+      "wall_s": 0.2776374349996331,
+      "cpu_s": 0.19540999999999997,
+      "historical_saved_only": true
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_PATH01",
+      "wall_s": 40.94035644100222,
+      "cpu_s": 1.1020530000000002,
+      "historical_saved_only": true
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_NR_PATH01",
+      "wall_s": 3.7730926529998214,
+      "cpu_s": 3.9572699999999985,
+      "historical_saved_only": true
+    }
+  ],
+  "proposal_caps_not_frozen": {
+    "engineering": {
+      "targets": 2,
+      "wall_s": 60,
+      "cpu_s": 120,
+      "per_target_wall_s": 45,
+      "per_target_cpu_s": 90
+    },
+    "distance": {
+      "fixed_saved_cases": 16,
+      "source_variants": 2,
+      "observation_modes": 2,
+      "original_activeDistance_top_calls": 64,
+      "wall_s": 15,
+      "cpu_s": 30,
+      "fresh_processes": 8,
+      "original_planner_constructions": 8,
+      "direct_original_planner_RNG_member_initializations": 8,
+      "RNG_sampling_draws_in_distance_or_observer": 0,
+      "C_rand_shuffle_sampleUniform_calls": 0,
+      "unhooked_library_seed_generation_draws": "UNOBSERVED_NOT_ZERO"
+    },
+    "local_seam": {
+      "original_saved_edges": 3,
+      "operations": 2,
+      "observation_modes": 2,
+      "source_variants": 1,
+      "original_state_level_top_calls": 12,
+      "wall_s": 30,
+      "cpu_s": 60
+    },
+    "single_II_seed7_solve": {
+      "solve_calls": 1,
+      "solve_seconds": 10,
+      "wall_s": 30,
+      "cpu_s": 60
+    },
+    "post_solve_full_path": {
+      "wall_s": 120,
+      "cpu_s": 240,
+      "maximum_unique_nodes": 2048,
+      "maximum_math_arm_FK_J_branch": 4096,
+      "maximum_collision_adapter_requests": 2048,
+      "maximum_adapter_internal_arm_FK_J": 8192,
+      "queue_not_yet_known_must_freeze_after_solve": true
+    },
+    "all_stage_cap_sum_wall_s": 255,
+    "all_stage_cap_sum_cpu_s": 510
+  },
+  "current_budget_balance_bound": false,
+  "reason_current_budget_not_bound": "Parent proceeds with independent H and other stages; all actual executions and fresh root ledger must be rebound at each future freeze.",
+  "new_execution_counts": {
+    "compile": 0,
+    "activeDistance": 0,
+    "FK_J": 0,
+    "IK": 0,
+    "NR": 0,
+    "collision": 0,
+    "RBS": 0,
+    "reconstruction": 0,
+    "RNG": 0,
+    "solve": 0,
+    "VI_constructions": 0,
+    "formal_table_I": 0
+  },
+  "limitations": [
+    "Saved formula arithmetic is not original C++ interface execution.",
+    "activeDistance is not NN distance in this source.",
+    "Original exact status does not imply complete successful reconstruction.",
+    "D stage must not include H patch.",
+    "No performance effect, success probability, CCD, full geometry, RSS qualification, or paper FULL follows.",
+    "Constructing the real CBiRRT also constructs its RNG member; method sampling is zero but library seed initialization is separately recorded, never represented as zero RNG activity."
+  ]
+}

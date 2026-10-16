@@ -1,0 +1,293 @@
+{
+  "schema": "P4_ABB_CBIRRT_D_ENGINEERING_SAVED_SOURCE_STATIC_CHECK_V1",
+  "generated_at_utc": "2026-10-16T02:49:15.909971+00:00",
+  "status": "PASS_SAVED_SOURCE_TRANSFORMS_AND_PYTHON_AST_ONLY_NOT_CPP_BUILD_OR_QUALIFICATION",
+  "personnel_independent": false,
+  "source_files_sha256": {
+    "scripts/build_p4_full_r2_abb_cbirrt_d_draft.py": "ac3c3737cbdbc1ed6281c75b7d96db1fad0b243b952fed5c7435c7a618f72cd2",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": "45111720edc6773690846949ebd97e6ccc308dea30921bbb3bee771333801b94",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp": "93e7a32a8e5cd55ad4447f587b798e082c23649e5f8844eccb7d29ac7f35ad0a",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_ENGINEERING_IMPLEMENTATION_DRAFT_20261016.md": "b3e2e95150938290893078006a0b2be3bee625e247e47249d469df09a7d69080"
+  },
+  "syntax": [
+    {
+      "path": "scripts/build_p4_full_r2_abb_cbirrt_d_draft.py",
+      "AST_parse": true
+    },
+    {
+      "path": "baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py",
+      "AST_parse": true
+    }
+  ],
+  "target_previews": {
+    "source_control": {
+      "factor": "source_control",
+      "H_patch_present": false,
+      "whole_files_byte_reversible": true,
+      "original_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+        "planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93"
+      },
+      "staged_sha256": {
+        "proj_classes/apc_class.cpp": "73f0e885ecf3d092cd0ddf8fa94b097992da4516a1e8985d91e41fe6c7777b8a",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "10c687846eb498e224005d603bf59b0e898192a3979351fc1b2f309fffd8d618",
+        "validity_checkers/collisionDetection.cpp": "b7771f56f8fab30992138eefaab0435c08f5b53d6d4426d8e4e524a758d8f197",
+        "planners/CBiRRT_PCS.cpp": "f971ddd936796cac7a74a03c5cefbd280a6054be7d20409038b97924905e81ee"
+      },
+      "changes": [
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "double ompl::geometric::CBiRRT::activeDistance(const Motion *a, const Motion *b)",
+          "body_sha256": "5b578c42649f5a4e6b215141ff4f7fdc03ccea58b26ab1ac25c5386b3801d7c4",
+          "observation_kind": "activeDistance"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::checkMotionRBS(const ob::State *s1, const ob::State *s2, int active_chain, int ik_sol)",
+          "body_sha256": "1f6b2ed5f3fa4ca609b92f307f899b8df35e597f814733e08561588c409e460e",
+          "observation_kind": "state_rbs"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::checkMotionRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, int recursion_depth, int non_decrease_count)",
+          "body_sha256": "0faac5d358617dd8b5b9a477c8af3b686500e309f4d0ed410cb57344c3b32646",
+          "observation_kind": "vector_rbs"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::reconstructRBS(const ob::State *s1, const ob::State *s2, Matrix &Confs, int active_chain, int ik_sol)",
+          "body_sha256": "fb3ac4578539a7e5a98a60ea4ab2b4663f6b7e56ba1be75d44460dad04df6915",
+          "observation_kind": "state_reconstruct"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::reconstructRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, Matrix &M, int iteration, int last_index, int firstORsecond)",
+          "body_sha256": "8cbc58f9c0561073b94059f5030a9e20f77bb0b8fdca95bcfad2835bbff57b37",
+          "observation_kind": "vector_reconstruct"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain, int ik_sol)",
+          "body_sha256": "9a9876e8fededaeef3ca4c75d144e03440b1508183659dfb897e9a4263e5a4cf",
+          "observation_kind": "fixed_branch_project"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "State StateValidityChecker::identify_state_ik(State q1, State q2, State ik)",
+          "body_sha256": "d2a0e1793b0a2dd71d9353504f77e21d2661e3767c750efbf46ea52f42fde32b",
+          "observation_kind": "identify"
+        },
+        {
+          "file": "proj_classes/apc_class.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "void two_robots::FKsolve_rob(State q, int robot_num)",
+          "body_sha256": "e4c1967d0a26c07c4385884699591a80f80a5e0068ae9d03269b513b385ced31",
+          "observation_kind": "native_fk"
+        },
+        {
+          "file": "proj_classes/apc_class.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool two_robots::IKsolve_rob(Matrix T, int robot_num, int solution_num)",
+          "body_sha256": "0ea29e6a82f3e5f5b8e71d683d9bda81e513d0af00e71022466cace5e91ea14f",
+          "observation_kind": "native_ik"
+        },
+        {
+          "file": "validity_checkers/collisionDetection.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "int collisionDetection::collision_state(Matrix M, State q1, State q2)",
+          "body_sha256": "5486d1e04102a2b636320c7aea18a34921d364a07eede459024ffb27a783bb6f",
+          "observation_kind": "collision"
+        },
+        {
+          "file": "validity_checkers/collisionDetection.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "void collisionDetection::load_models()",
+          "body_sha256": "dba3cc1bf839a0042a2e30a9d25e63b8104e27850045b5ced8da04b48a526170",
+          "observation_kind": "mesh_load"
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "ompl::geometric::CBiRRT::Motion* ompl::geometric::CBiRRT::growTree(TreeData &tree, TreeGrowingInfo &tgi, Motion *nmotion, Motion *tmotion, Motion *rmotion, int mode, int count_iterations)",
+          "body_sha256": "56d7e077b84a08f29e6fd2ae77aa54ac69e2fbac0b458eeab296ba1250ee08f4",
+          "observation_kind": "growTree"
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "void ompl::geometric::CBiRRT::save2file(vector<Motion*> mpath1, vector<Motion*> mpath2)",
+          "body_sha256": "b3499c7a0c79fb23518a60b32bf9aa7be2f873cdccd4a9854873e377328b2ca9",
+          "observation_kind": "save2file"
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "RETAIN_TEMP_IO_ONLY"
+        }
+      ],
+      "observer_model_calls": 0,
+      "observer_RNG_draws": 0,
+      "unhooked_source_RNG_internals": "UNOBSERVED_NOT_INFERRED_FROM_SOURCE_RETURNS"
+    },
+    "distance_destination_fix": {
+      "factor": "distance_destination_fix",
+      "H_patch_present": false,
+      "whole_files_byte_reversible": true,
+      "original_sha256": {
+        "proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+        "planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93"
+      },
+      "staged_sha256": {
+        "proj_classes/apc_class.cpp": "73f0e885ecf3d092cd0ddf8fa94b097992da4516a1e8985d91e41fe6c7777b8a",
+        "validity_checkers/StateValidityCheckerPCS.cpp": "10c687846eb498e224005d603bf59b0e898192a3979351fc1b2f309fffd8d618",
+        "validity_checkers/collisionDetection.cpp": "b7771f56f8fab30992138eefaab0435c08f5b53d6d4426d8e4e524a758d8f197",
+        "planners/CBiRRT_PCS.cpp": "ca6cc52b5b1b058fecd82b2ff11f873aa27bd7a6f4184d80dcae0c03a67003ca"
+      },
+      "changes": [
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "D_SINGLE_TOKEN",
+          "manifest": {
+            "factor": "CBIRRT_ROLE1_FIRST_STATE_DESTINATION",
+            "relative_file": "planners/CBiRRT_PCS.cpp",
+            "signature": "double ompl::geometric::CBiRRT::activeDistance(const Motion *a, const Motion *b)",
+            "original_sha256": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+            "candidate_sha256": "5b87ed08d674251594efc899ad922398f9c29a0a42f74494cafa7fa2424ae5c2",
+            "original_body_sha256": "5b578c42649f5a4e6b215141ff4f7fdc03ccea58b26ab1ac25c5386b3801d7c4",
+            "candidate_body_sha256": "227320c939a98f23459473dcdd14462f9c849258a4895eff0c256252c79c1b73",
+            "whole_file_reversible": true,
+            "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+            "combined_factors": false,
+            "files_changed": 1,
+            "scientific_calls": 0,
+            "compile_calls": 0
+          }
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "double ompl::geometric::CBiRRT::activeDistance(const Motion *a, const Motion *b)",
+          "body_sha256": "227320c939a98f23459473dcdd14462f9c849258a4895eff0c256252c79c1b73",
+          "observation_kind": "activeDistance"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::checkMotionRBS(const ob::State *s1, const ob::State *s2, int active_chain, int ik_sol)",
+          "body_sha256": "1f6b2ed5f3fa4ca609b92f307f899b8df35e597f814733e08561588c409e460e",
+          "observation_kind": "state_rbs"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::checkMotionRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, int recursion_depth, int non_decrease_count)",
+          "body_sha256": "0faac5d358617dd8b5b9a477c8af3b686500e309f4d0ed410cb57344c3b32646",
+          "observation_kind": "vector_rbs"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::reconstructRBS(const ob::State *s1, const ob::State *s2, Matrix &Confs, int active_chain, int ik_sol)",
+          "body_sha256": "fb3ac4578539a7e5a98a60ea4ab2b4663f6b7e56ba1be75d44460dad04df6915",
+          "observation_kind": "state_reconstruct"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::reconstructRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, Matrix &M, int iteration, int last_index, int firstORsecond)",
+          "body_sha256": "8cbc58f9c0561073b94059f5030a9e20f77bb0b8fdca95bcfad2835bbff57b37",
+          "observation_kind": "vector_reconstruct"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain, int ik_sol)",
+          "body_sha256": "9a9876e8fededaeef3ca4c75d144e03440b1508183659dfb897e9a4263e5a4cf",
+          "observation_kind": "fixed_branch_project"
+        },
+        {
+          "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "State StateValidityChecker::identify_state_ik(State q1, State q2, State ik)",
+          "body_sha256": "d2a0e1793b0a2dd71d9353504f77e21d2661e3767c750efbf46ea52f42fde32b",
+          "observation_kind": "identify"
+        },
+        {
+          "file": "proj_classes/apc_class.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "void two_robots::FKsolve_rob(State q, int robot_num)",
+          "body_sha256": "e4c1967d0a26c07c4385884699591a80f80a5e0068ae9d03269b513b385ced31",
+          "observation_kind": "native_fk"
+        },
+        {
+          "file": "proj_classes/apc_class.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "bool two_robots::IKsolve_rob(Matrix T, int robot_num, int solution_num)",
+          "body_sha256": "0ea29e6a82f3e5f5b8e71d683d9bda81e513d0af00e71022466cace5e91ea14f",
+          "observation_kind": "native_ik"
+        },
+        {
+          "file": "validity_checkers/collisionDetection.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "int collisionDetection::collision_state(Matrix M, State q1, State q2)",
+          "body_sha256": "5486d1e04102a2b636320c7aea18a34921d364a07eede459024ffb27a783bb6f",
+          "observation_kind": "collision"
+        },
+        {
+          "file": "validity_checkers/collisionDetection.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "void collisionDetection::load_models()",
+          "body_sha256": "dba3cc1bf839a0042a2e30a9d25e63b8104e27850045b5ced8da04b48a526170",
+          "observation_kind": "mesh_load"
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "ompl::geometric::CBiRRT::Motion* ompl::geometric::CBiRRT::growTree(TreeData &tree, TreeGrowingInfo &tgi, Motion *nmotion, Motion *tmotion, Motion *rmotion, int mode, int count_iterations)",
+          "body_sha256": "56d7e077b84a08f29e6fd2ae77aa54ac69e2fbac0b458eeab296ba1250ee08f4",
+          "observation_kind": "growTree"
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "OBSERVE_COMPLETE_BODY",
+          "signature": "void ompl::geometric::CBiRRT::save2file(vector<Motion*> mpath1, vector<Motion*> mpath2)",
+          "body_sha256": "b3499c7a0c79fb23518a60b32bf9aa7be2f873cdccd4a9854873e377328b2ca9",
+          "observation_kind": "save2file"
+        },
+        {
+          "file": "planners/CBiRRT_PCS.cpp",
+          "kind": "RETAIN_TEMP_IO_ONLY"
+        }
+      ],
+      "observer_model_calls": 0,
+      "observer_RNG_draws": 0,
+      "unhooked_source_RNG_internals": "UNOBSERVED_NOT_INFERRED_FROM_SOURCE_RETURNS"
+    }
+  },
+  "target_differing_source_files": [
+    "planners/CBiRRT_PCS.cpp"
+  ],
+  "D_token_reverse_makes_observed_targets_equal": true,
+  "new_compile_calls": 0,
+  "new_binary_calls": 0,
+  "new_scientific_calls": 0,
+  "new_stages_created": 0,
+  "new_claims_created": 0,
+  "prior_snapshot_generated": false,
+  "limits": [
+    "C++ types/link and executable behavior unverified until reviewed frozen one-shot engineering run.",
+    "No D64, L12, S solve or path external gate has been run by this preparation.",
+    "Original H STOP, VI zero construction balance and full paper obligations unchanged."
+  ]
+}

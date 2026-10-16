@@ -1,0 +1,37 @@
+{
+  "schema": "P4_R2_ABB_CBIRRT_D_INDEPENDENT_DOCSTRING_APPEND_V1",
+  "date": "2026-10-16",
+  "reviewer": "nr_path_prepare; personnel independent of implementation",
+  "status": "STATIC_APPEND_PASS_NO_EXECUTABLE_AST_CHANGE",
+  "original_review": "reports/P4_FULL_R2_ABB_CBIRRT_D_ENGINEERING_INDEPENDENT_STATIC_REVIEW_20261016.json",
+  "original_review_sha256": "6efcb0ec4dcacdf24321d748913d8aed8a46ae4673d573e77c21863d5c94376e",
+  "builder": "scripts/build_p4_full_r2_abb_cbirrt_d_draft.py",
+  "old_builder_sha256": "ac3c3737cbdbc1ed6281c75b7d96db1fad0b243b952fed5c7435c7a618f72cd2",
+  "new_builder_sha256": "1d20decdd36fcaba9141770ad0ed4ab4511635049efe3e04d541216a2eb87f45",
+  "exact_delta": {
+    "old": "The frozen H and RRT builders are imported read-only for no execution.",
+    "new": "The frozen RRT saved-asset reader is reused read-only; H is unchanged.",
+    "line_ending": "LF",
+    "replacement_count": 1
+  },
+  "check_count": 9,
+  "passed_check_count": 9,
+  "checks": {
+    "new_docstring_occurs_once": true,
+    "reverse_old_exact_SHA": true,
+    "new_exact_SHA": true,
+    "all_other_AST_exact": true,
+    "unchanged_baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp": true,
+    "unchanged_baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": true,
+    "unchanged_baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": true,
+    "unchanged_reports/P4_FULL_R2_ABB_CBIRRT_D_ENGINEERING_IMPLEMENTATION_DRAFT_20261016.md": true,
+    "unchanged_reports/P4_FULL_R2_ABB_CBIRRT_D_ENGINEERING_STATIC_CHECK_20261016.json": true
+  },
+  "prior_review_retained": true,
+  "new_scientific_compile_query_claim_protocol_or_commit_counts": 0,
+  "limits": [
+    "Only a module docstring line changed; previous34/34 engineering static review continues for executable behavior.",
+    "No C++ compile or runtime qualification is inferred.",
+    "This append does not bind any future D64 runner or permit scientific execution."
+  ]
+}
