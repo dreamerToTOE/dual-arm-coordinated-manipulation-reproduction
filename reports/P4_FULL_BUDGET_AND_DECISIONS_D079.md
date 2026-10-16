@@ -210,3 +210,12 @@ c5e4d2e冻结P唯一运行，环境II/RECONSTRUCTED A01/版本化几何和D距�
 外层104.88wall/11.8CPU（原GNUtime104.87/10.53/1.25/0）在120/240内，仅替换内部样本一次，包含完整物理/保存链核验与清理/持久化，不作论文性能样本。V18实际36execution=29科学账+7工程，charged685.555705375994wall/542.4289229999999CPU，余额仅上界2914.444294624006/6657.5710770000005；历史未测尾部UNKNOWN保持。最新CBIRRT_D_PATH完整表211×158保前154；V18保全实际PASS、七组mismatch空，1028旧科学文件、57崩溃文件8482891B/tar、5其他工作树13未提交、旧V17与历史列保留。主POST见reports/P4_FULL_R2_ABB_CBIRRT_D_PATH_POST_TASK_20261016.md，personnel_independent=false。
 
 此证书只覆盖本版本完整离散source-policy起终路径，不证明CCD/实体杆/省略pair/原native几何/RSS分布/复杂障碍PCS优势/成功率或论文完整。原S01/D64/H STOP与UNKNOWN、split证书边界、旧PCS177/NR393保持；VI974/974余0、正式0/22500、全部211义务及原统计规模不缩。下一继续其余原生搜索器和环境资格，RSS解耦诊断；端到端后成本pilot再申请正式预算，不自动正式大规模/P2/Isaac/结题Word。
+
+
+## 2026-10-16 CBiRRT_NR BUILD01依赖留证停止与V19实际账
+
+203c6ff唯一工程compiler exit0/reaped、前后空组，但-MD配-o实际只生成最后TU同名.d，未满足六TU独立依赖留证；STOP_PREFIX_RETAINED保留。二进制848464B/7c6ac348...实际存在但无成功manifest，binary/query/solve/VI/formal均0。独立保存13720/13720仅证明失败/费用一致，engineering_build_qualified=false；根因为我们工程设计与V4静态审查错误，不归因作者算法或论文。原源码/协议/claim/stage/二进制/完整日志/唯一.d/旧报告全部保留，禁止补造缺失依赖或复用该claim。见CBIRRT_NR_BUILD_POST_TASK、BUILD_ROOT_INDEPENDENT_POST及BUILD01_FAILURE_ROOT_CAUSE。
+
+GNUtime33.95 44.43 11.03 1，上界33.96wall/55.48CPU已独立确认并替换内部样本一次。V19实际37=29科学账+8工程，累计719.515705375994wall/597.908923CPU，余额上界2880.484294624006/6602.091077；历史未测尾UNKNOWN不改。完整211×162表保前158列；V19保全PASS，旧1028科学/57崩溃文件及tar/另5工作树13未提交/V18全部保持。
+
+下一项仅新版本BUILD02，依据GCC官方-MF -让六TU规则完整写独占stdout，再逐raw规则/TU/保护依赖留证；原算法body与数值源码不改。新45wall/90CPU扣R2总3600/7200，先独立静态/协议/commit冻结后唯一构建，不是同claim重试或预算重置；科学solve仍另冻。VI974/974余0，Table I0/22500，211义务及全部原规模不缩；不P2/Isaac/提前结题。

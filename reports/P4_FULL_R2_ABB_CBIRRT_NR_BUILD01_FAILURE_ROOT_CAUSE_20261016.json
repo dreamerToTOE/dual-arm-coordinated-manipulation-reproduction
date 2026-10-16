@@ -1,0 +1,69 @@
+{
+  "schema": "P4_CBIRRT_NR_BUILD01_INDEPENDENT_ENGINEERING_FAILURE_ROOT_CAUSE_V1",
+  "status": "CONFIRMED_OUR_BUILD_DEPENDENCY_RECORDING_ERROR",
+  "generated_at_utc": "2026-10-16T12:15:56.743765+00:00",
+  "personnel_independent": true,
+  "execution": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD01/execution.json",
+  "execution_sha256": "a6f84e38ecef47649d9dc12cf7316a9ebc68429e6b126bd6cc1b23e4845d8b4d",
+  "protocol": "configs/p4_full/r2_abb_cbirrt_nr_engineering_v1.json",
+  "protocol_sha256": "1909272b19708ddcbaeb5b26a835c4fcc280fc4a2e7fa41232d4e8ad65a8e703",
+  "source_commit": "203c6ff95dd3d2367223ccd7c63f21b39e7eca13",
+  "compiler_exit_code": 0,
+  "compiler_pid": 93400,
+  "observed_dependency_file": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr.d",
+  "observed_dependency_sha256": "05621e65d40d89bccbacac84cdefd03aa9adc69fcede097545ced2dcd33e5538",
+  "actual_translation_units": [
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/planners/CBiRRT_NR.cpp"
+  ],
+  "expected_translation_units": [
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_nr_interface_kernel_draft.cpp",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/proj_classes/kdl_class.cpp",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/validity_checkers/collisionDetection.cpp",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/planners/CBiRRT_NR.cpp"
+  ],
+  "missing_required_dependency_files": [
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr-abb_cbirrt_nr_driver_draft.d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr-abb_nr_interface_kernel_draft.d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr-kdl_class.d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr-StateValidityCheckerNR.d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr-collisionDetection.d",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v1/physical_nr_observed/p4_abb_cbirrt_nr-CBiRRT_NR.d"
+  ],
+  "dependency_evidence_complete": false,
+  "engineering_build_qualified": false,
+  "original_author_or_paper_error_claim": false,
+  "root_cause": "Our multi-input compile-and-link -MD -o recipe assumed general auxiliary-output naming applied to .d. Actual only output-derived .d remains and names only the last CBiRRT_NR TU. Independent static review incorrectly endorsed default six-file naming. This is our engineering/validation error, not evidence against author implementation or paper mathematics.",
+  "competing_explanations": {
+    "compiler_failure": "excluded by actual compiler0 and ELF",
+    "source_numerical_failure": "not tested: binary never executed",
+    "source_or_manifest_change": "excluded by actual before/after and frozen bytes",
+    "full6_dependency_evidence": "missing; cannot reconstruct retroactively by accepting binary"
+  },
+  "repair_route": "Separate new versioned fresh engineering run/claim/stage; compile each TU exactly once with explicit unique -c -MD -MF dependency and -o object, then one link over saved objects under unchanged45/90 and original cumulative caps. Freeze exact commands, source and actual prior first; do not rerun old claim or change science thresholds. Actual six .d evidence is mandatory; no probe compiler invocation or retroactive PASS.",
+  "official_documentation": [
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Preprocessor-Options.html",
+      "supported": "MD-specific default uses -o argument with .d suffix; MF overrides this default."
+    },
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc-11.4.0/gcc/Overall-Options.html",
+      "supported": "General auxiliary compile/link naming was wrongly generalized to MD dependency output; retain V4 incorrect assumption as history."
+    }
+  ],
+  "prior_independent_static_report": "reports/P4_FULL_R2_ABB_CBIRRT_NR_ENGINEERING_INDEPENDENT_STATIC_REVIEW_V4_20261016.json",
+  "prior_independent_static_sha256": "04449391db8bc675959fba588ef68b34f4fd213318834ea4d009983e16a2d46f",
+  "prior_report_not_rewritten": true,
+  "external_timing_qualified": true,
+  "external_cost_qualified": true,
+  "external_time_fields": [
+    "33.95",
+    "44.43",
+    "11.03",
+    "1"
+  ],
+  "upper_wall_s": 33.96,
+  "upper_cpu_s": 55.48,
+  "new_science_compile_binary_claim_protocol_calls": 0
+}
