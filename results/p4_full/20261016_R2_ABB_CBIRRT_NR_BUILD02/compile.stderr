@@ -1,0 +1,351 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.h:46,
+                 from /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp:4:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:181:34: warning: ‘StateValidityChecker::mysi_’ will be initialized after [-Wreorder]
+  181 |         ob::SpaceInformation    *mysi_;
+      |                                  ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:38:101: warning:   base ‘kdl’ [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:38:101: warning: base ‘kdl’ will be initialized after [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:38:101: warning:   base ‘collisionDetection’ [-Wreorder]
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h: In constructor ‘StateValidityChecker::StateValidityChecker(int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:45:101: warning: base ‘kdl’ will be initialized after [-Wreorder]
+   45 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:45:101: warning:   base ‘collisionDetection’ [-Wreorder]
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:43:9: warning:   when initialized here [-Wreorder]
+   43 |         StateValidityChecker(int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp: In constructor ‘kdl::kdl(double, double)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:56:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+   56 |         for (int i = 0; i < nj; i++) {
+      |                         ~~^~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp: In member function ‘bool kdl::GD_JL(State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:109:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  109 |         for (int i = 0; i < chain.getNrOfJoints(); i++)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:125:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  125 |                 for (int i = 0; i < q.size(); i++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:79:14: warning: unused variable ‘valid’ [-Wunused-variable]
+   79 |         bool valid = true;
+      |              ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp: In member function ‘void kdl::FK(State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:199:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  199 |         for (int i = 0; i < q_flip.size(); i++)
+      |                         ~~^~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:203:14: warning: variable ‘kinematics_status’ set but not used [-Wunused-but-set-variable]
+  203 |         bool kinematics_status;
+      |              ^~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp: In member function ‘void kdl::log_q(State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/proj_classes/kdl_class.cpp:267:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  267 |         for (int i = 0; i < q.size(); i++)
+      |                         ~~^~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:13:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:181:34: warning: ‘StateValidityChecker::mysi_’ will be initialized after [-Wreorder]
+  181 |         ob::SpaceInformation    *mysi_;
+      |                                  ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:38:101: warning:   base ‘kdl’ [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:38:101: warning: base ‘kdl’ will be initialized after [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:38:101: warning:   base ‘collisionDetection’ [-Wreorder]
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h: In constructor ‘StateValidityChecker::StateValidityChecker(int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:45:101: warning: base ‘kdl’ will be initialized after [-Wreorder]
+   45 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:45:101: warning:   base ‘collisionDetection’ [-Wreorder]
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.h:43:9: warning:   when initialized here [-Wreorder]
+   43 |         StateValidityChecker(int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘void StateValidityChecker::retrieveStateVector(const ompl::base::State*, State&)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:27:32: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+   27 |         for (unsigned i = 0; i < n; i++) {
+      |                              ~~^~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘void StateValidityChecker::updateStateVector(const ompl::base::State*, State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:36:32: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+   36 |         for (unsigned i = 0; i < n; i++) {
+      |                              ~~^~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘void StateValidityChecker::printStateVector(const ompl::base::State*)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:47:32: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+   47 |         for (unsigned i = 0; i < n; i++) {
+      |                              ~~^~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘State StateValidityChecker::sample_q()’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:60:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   60 |                 for (int i = 0; i < q.size(); i++)
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In lambda function:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:131:17: warning: unused variable ‘s’ [-Wunused-variable]
+  131 |         clock_t s = clock();
+      |                 ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘double StateValidityChecker::normDistance(State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:269:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  269 |         for (int i=0; i < a1.size(); i++)
+      |                       ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘void StateValidityChecker::Join_States(State&, State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:284:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  284 |         for (int i = 0; i < q1.size(); i++)
+      |                         ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:288:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  288 |         for (int i = q1.size(); i < q1.size()+q1.size(); i++) {
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp: In member function ‘void StateValidityChecker::seperate_Vector(State, State&, State&)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:296:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  296 |         for (int i = 0; i < q1.size(); i++)
+      |                         ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/StateValidityCheckerNR.cpp:300:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  300 |         for (int i = q1.size(); i < q1.size()+q1.size(); i++) {
+      |                                 ~~^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp: In lambda function:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:54:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   54 |         for (int i=0; i<M.size()/3; i++){  //for each point, want for every 3 points
+      |                       ~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:432:38: warning: unused variable ‘Robs’ [-Wunused-variable]
+  432 |                 PQP_REAL Mobs[3][3], Robs[3][3], Tobs[3];
+      |                                      ^~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:72:16: warning: unused variable ‘oglm’ [-Wunused-variable]
+   72 |         double oglm[16];
+      |                ^~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp: In lambda function:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:511:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  511 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:517:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  517 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  518 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:532:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  532 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:538:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  538 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  539 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:553:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  553 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:559:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  559 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  560 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:574:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  574 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:580:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  580 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  581 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:595:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  595 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:601:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  601 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  602 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:616:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  616 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:622:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  622 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  623 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:637:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  637 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:643:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  643 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  644 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:658:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  658 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:664:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  664 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  665 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:679:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  679 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:685:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  685 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  686 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:700:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  700 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:706:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  706 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  707 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:721:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  721 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:727:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  727 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  728 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:742:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  742 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:748:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  748 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  749 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:763:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  763 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:769:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  769 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  770 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:784:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  784 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:790:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  790 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  791 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:805:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  805 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:811:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  811 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  812 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:826:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  826 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:832:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  832 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  833 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:847:15: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  847 |         fscanf(fp,"%d",&ntris);
+      |         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:853:23: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  853 |                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  854 |                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:870:31: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  870 |                         fscanf(fp,"%d",&ntris);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:876:39: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  876 |                                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  877 |                                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:890:31: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  890 |                         fscanf(fp,"%d",&ntris);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:896:39: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  896 |                                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  897 |                                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:910:31: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  910 |                         fscanf(fp,"%d",&ntris);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:916:39: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  916 |                                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  917 |                                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:932:31: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  932 |                         fscanf(fp,"%d",&ntris);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:938:39: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  938 |                                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  939 |                                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:952:31: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  952 |                         fscanf(fp,"%d",&ntris);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/validity_checkers/collisionDetection.cpp:958:39: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  958 |                                 fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf %lf %lf",
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  959 |                                                 &p1x,&p1y,&p1z,&p2x,&p2y,&p2z,&p3x,&p3y,&p3z);
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.h:46,
+                 from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:41:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:181:34: warning: ‘StateValidityChecker::mysi_’ will be initialized after [-Wreorder]
+  181 |         ob::SpaceInformation    *mysi_;
+      |                                  ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:38:101: warning:   base ‘kdl’ [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:38:101: warning: base ‘kdl’ will be initialized after [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:38:101: warning:   base ‘collisionDetection’ [-Wreorder]
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h: In constructor ‘StateValidityChecker::StateValidityChecker(int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:45:101: warning: base ‘kdl’ will be initialized after [-Wreorder]
+   45 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:45:101: warning:   base ‘collisionDetection’ [-Wreorder]
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/../validity_checkers/StateValidityCheckerNR.h:43:9: warning:   when initialized here [-Wreorder]
+   43 |         StateValidityChecker(int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp: In member function ‘ompl::geometric::CBiRRT::Motion* ompl::geometric::CBiRRT::growTree(ompl::geometric::CBiRRT::TreeData&, ompl::geometric::CBiRRT::TreeGrowingInfo&, ompl::geometric::CBiRRT::Motion*, ompl::geometric::CBiRRT::Motion*, ompl::geometric::CBiRRT::Motion*, int, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:132:148: warning: unused parameter ‘rmotion’ [-Wunused-parameter]
+  132 | ompl::geometric::CBiRRT::Motion* ompl::geometric::CBiRRT::growTree(TreeData &tree, TreeGrowingInfo &tgi, Motion *nmotion, Motion *tmotion, Motion *rmotion, int mode, int count_iterations)
+      |                                                                                                                                            ~~~~~~~~^~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp: In member function ‘void ompl::geometric::CBiRRT::smoothPath(std::vector<ompl::geometric::CBiRRT::Motion*>&)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:465:33: warning: comparison of integer expressions of different signedness: ‘std::vector<ompl::geometric::CBiRRT::Motion*>::size_type’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+  465 |                 if (path.size() == s)
+      |                     ~~~~~~~~~~~~^~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp: In lambda function:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:532:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  532 |                 for (int j = 0; j < q.size(); j++) {
+      |                                 ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:538:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<ompl::geometric::CBiRRT::Motion*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  538 |                 for (int i = 1; i < path.size(); i++) {
+      |                                 ~~^~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:549:43: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  549 |                         for (int k = 1; k < M.size(); k++) {
+      |                                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v2/physical_nr_observed/planners/CBiRRT_NR.cpp:551:51: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  551 |                                 for (int j = 0; j < M[k].size(); j++) {
+      |                                                 ~~^~~~~~~~~~~~~

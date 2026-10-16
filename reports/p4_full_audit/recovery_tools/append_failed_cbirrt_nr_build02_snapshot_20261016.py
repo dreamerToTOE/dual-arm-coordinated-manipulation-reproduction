@@ -1,0 +1,240 @@
+"""Saved-only failed engineering successor: preserve V19 and charge actual STOP once.
+
+Preserve every prior row, sample, failure, and coverage column. Consume an
+actual personnel-independent cost certificate; never create one here. This
+module is not imported by science runners and is invoked only after review.
+"""
+from pathlib import Path
+from decimal import Decimal
+import argparse
+import csv
+import hashlib
+import itertools
+import json
+import math
+
+R = Path(__file__).resolve().parents[3]
+O = Path('/home/ubuntu2004/Documents/Codex/2026-10-15/codex-p4-https-github-com-dreamertotoe/outputs')
+
+
+def load(p):
+    return json.loads(p.read_text())
+
+
+def sha(p):
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def require(ok, reason):
+    if not ok:
+        raise RuntimeError(reason)
+
+
+def new(p, value):
+    with p.open('x') as f:
+        json.dump(value, f, ensure_ascii=False, indent=2, allow_nan=False)
+        f.write('\n')
+
+
+def nonnegative(value):
+    return type(value) in (int, float) and math.isfinite(value) and value >= 0
+
+
+def charge(row, key):
+    return row.get('charged_' + key, row[key])
+
+
+a = argparse.ArgumentParser(description=__doc__)
+for name in ('execution', 'old-csv', 'stem', 'scope', 'status', 'external-post', 'external-log'):
+    a.add_argument('--' + name, required=True)
+a.add_argument('--external-post-sha256', required=True)
+a.add_argument('--entry-kind', required=True, choices=('engineering', 'science'))
+a.add_argument('--related-item-ids', nargs='+', default=[
+    'P4-T05', 'P4-T08', 'P4-T09', 'P4-T11', 'P4-T12', 'P4-T17', 'P4-T25'])
+a.add_argument('--expected-old-columns', type=int, default=162)
+a.add_argument('--version', type=int, required=True)
+x = a.parse_args()
+require(x.version >= 20 and x.expected_old_columns >= 162, 'V2_SUCCESSOR_AFTER_V19_REQUIRED')
+op = R / f'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V{x.version-1}.json'
+old = load(op)
+old_hashes = {str(op): sha(op), str(R/x.old_csv): sha(R/x.old_csv)}
+ep = R / x.execution
+e = load(ep)
+postp = R / x.external_post
+post = load(postp)
+logp = R / x.external_log
+require(sha(postp) == x.external_post_sha256, 'EXPLICIT_INDEPENDENT_POST_SHA_CHANGED')
+old_hashes.update({str(ep): sha(ep), str(postp): sha(postp), str(logp): sha(logp)})
+
+# The entry kind is explicit and must agree with its actual execution label.
+# Engineering success cannot increase the scientific-execution count.
+classification = e['classification']
+require(isinstance(classification, str) and classification, 'ACTUAL_CLASSIFICATION_REQUIRED')
+label_engineering = (classification == 'ENGINEERING_BUILD_ONLY' or
+                     classification.startswith('ENGINEERING_BUILD_ONLY_'))
+engineering = x.entry_kind == 'engineering'
+require(engineering == label_engineering, 'ENTRY_KIND_CLASSIFICATION_MISMATCH')
+if 'engineering_only' in e:
+    require(type(e['engineering_only']) is bool and e['engineering_only'] == engineering,
+            'EXECUTION_ENGINEERING_FIELD_MISMATCH')
+for field in ('formal_planning_calls', 'formal_table_I_calls', 'new_VI_candidate_constructions'):
+    require(type(e.get(field, 0)) is int and e.get(field, 0) == 0, 'NEW_FORMAL_OR_VI_CALLS ' + field)
+if engineering:
+    for field in ('query_calls', 'solve_calls', 'binary_execution_calls'):
+        require(type(e.get(field)) is int and e[field] == 0, 'ENGINEERING_NOT_RUNTIME_ZERO ' + field)
+    require(e.get('scientific_execution_authorized', False) is False,
+            'ENGINEERING_CANNOT_AUTHORIZE_SCIENCE')
+
+# A real independent POST certifies the exact execution/time identities. New
+# failed engineering entry only; a stopped build never grants runtime access.
+require(post['personnel_independent'] is True, 'PERSONNEL_INDEPENDENT_POST_REQUIRED')
+require(post['checks_failed'] == 0 and post['checks_passed'] == post['checks_total']
+        and post['checks_total'] > 0, 'COMPLETE_INDEPENDENT_POST_REQUIRED')
+require(post['external_supervision_qualified'] is True, 'EXTERNAL_COST_CERTIFICATE_REQUIRED')
+require(post['execution_sha256'] == sha(ep), 'POST_EXECUTION_SHA_MISMATCH')
+require(post['external_time_sha256'] == sha(logp), 'POST_TIME_SHA_MISMATCH')
+fields_time = logp.read_text().split()
+require(len(fields_time) == 4, 'EXACT_FOUR_EXTERNAL_TIME_FIELDS_REQUIRED')
+elapsed, user, system = (Decimal(v) for v in fields_time[:3])
+require(fields_time[3] == '1' and all(v.is_finite() and v >= 0 for v in (elapsed, user, system)),
+        'ACTUAL_FAILED_BUILD_FINITE_EXTERNAL_COST_REQUIRED')
+require(engineering and e['run_id'] == '20261016_R2_ABB_CBIRRT_NR_BUILD02'
+        and e['status'] == 'STOP_PREFIX_RETAINED'
+        and e['termination_reason'] == "RuntimeError('ACTUAL_PROTECTED_DEPENDENCY_NOT_IN_FROZEN_MANIFEST')"
+        and e['exit_code'] == 0 and e['compiler_reaped'] is True
+        and e['compiler_group_members_after_cleanup'] == [] and e['diagnostics'] == [],
+        'EXACT_SAVED_FAILED_ENGINEERING_EVIDENCE_REQUIRED')
+require(post['status'] == 'STOP_BUILD_PROTECTED_DEPENDENCY_UNFROZEN'
+        and post['external_timing_qualified'] is True and post['external_cost_qualified'] is True
+        and post['engineering_build_qualified'] is False
+        and post['external_time_fields'] == fields_time, 'FAILED_BUILD_POST_BOUNDARY_REQUIRED')
+wall = float(elapsed + Decimal('.01'))
+cpu = float(user + system + Decimal('.02'))
+require(all(nonnegative(v) for v in (wall, cpu, e['wall_s'], e['cpu_s'])), 'FINITE_SAMPLE_COST_REQUIRED')
+require(wall == post['upper_wall_s'] and cpu == post['upper_cpu_s'], 'POST_UPPER_COST_MISMATCH')
+require(wall <= e['budget']['wall_s'] and cpu <= e['budget']['cpu_s'], 'EXECUTION_CAP_EXCEEDED')
+require(wall >= e['wall_s'] and cpu >= e['cpu_s'], 'EXTERNAL_UPPER_BELOW_INTERNAL_SAMPLE')
+require(x.execution not in {r['execution'] for r in old['executions']}, 'EXECUTION_ALREADY_CHARGED')
+require(e['run_id'] not in {r['run_id'] for r in old['executions']}, 'RUN_ALREADY_CHARGED')
+require(ep.parent.name == e['run_id'], 'EXECUTION_PATH_RUN_ID_MISMATCH')
+
+for row in old['executions']:
+    require(type(row['engineering_only']) is bool, 'PRIOR_EXPLICIT_ENTRY_KIND_REQUIRED')
+    require(sha(R/row['execution']) == row['execution_sha256'], 'PRIOR_EXECUTION_SHA_CHANGED')
+    require(all(nonnegative(charge(row, key)) for key in ('wall_s', 'cpu_s')), 'PRIOR_COST_INVALID')
+    if 'charged_wall_s' in row or 'charged_cpu_s' in row:
+        require('charged_wall_s' in row and 'charged_cpu_s' in row, 'PRIOR_PARTIAL_EXTERNAL_REPLACEMENT')
+        pp, tp = R/row['external_post'], R/row['external_time']
+        require(sha(pp) == row['external_post_sha256'] and sha(tp) == row['external_time_sha256'],
+                'PRIOR_INDEPENDENT_CERTIFICATE_SHA_CHANGED')
+        old_hashes.update({str(pp): sha(pp), str(tp): sha(tp)})
+require(old['count'] == len(old['executions'])
+        and old['science_count'] == sum(not r['engineering_only'] for r in old['executions'])
+        and old['engineering_count'] == sum(r['engineering_only'] for r in old['executions']),
+        'PRIOR_ENTRY_COUNTS_MISMATCH')
+require(all(math.fsum(charge(r, key) for r in old['executions']) == old['conservative_r2_sum_' + key]
+            for key in ('wall_s', 'cpu_s')), 'PRIOR_CHARGED_SUM_MISMATCH')
+
+entry = dict(run_id=e['run_id'], execution=x.execution,
+    execution_sha256=sha(ep), source_commit=e['source_commit'], status=e['status'],
+    classification=classification, engineering_only=engineering,
+    wall_s=e['wall_s'], cpu_s=e['cpu_s'], counts=e.get('counts', {}),
+    authorization_budget_id=e.get('authorization_budget_id'), formal_planning_calls=0,
+    formal_table_I_calls=0, new_VI_candidate_constructions=0,
+    charged_wall_s=wall, charged_cpu_s=cpu,
+    charge_basis='EXTERNAL_TIME_DECIMAL_UPPER_BOUND_REPLACES_INTERNAL_SAMPLE_ONCE',
+    external_post=x.external_post, external_post_sha256=sha(postp),
+    external_time=x.external_log, external_time_sha256=sha(logp))
+rows = sorted(old['executions'] + [entry], key=lambda r: r['execution'])
+require(len(rows) == len({r['execution'] for r in rows}) == len({r['run_id'] for r in rows}),
+        'DISTINCT_EXECUTIONS_AND_RUN_IDS_REQUIRED')
+# Cross-date recovery: an Oct16 build must be included alongside Oct15 runs.
+actual = {str(p.relative_to(R)): sha(p) for p in (R/'results/p4_full').glob('*_R2_*/execution.json')}
+require(actual == {r['execution']: r['execution_sha256'] for r in rows}, 'ALL_ACTUAL_R2_EXECUTIONS_REQUIRED')
+for p in (R/'results/p4_full').glob('*_R2_*.supervision.charge.json'):
+    run = p.name.removesuffix('.supervision.charge.json')
+    require((p.parent/run/'execution.json').is_file(), 'ORPHAN_SUPERVISED_ATTEMPT_REQUIRES_ACCOUNTING ' + run)
+charged = {k: math.fsum(charge(r, k) for r in rows) for k in ('wall_s', 'cpu_s')}
+measured = {k: math.fsum(r[k] for r in rows) for k in ('wall_s', 'cpu_s')}
+sci = [r for r in rows if not r['engineering_only']]
+eng = [r for r in rows if r['engineering_only']]
+require(len(sci) == old['science_count'] + int(not engineering)
+        and len(eng) == old['engineering_count'] + int(engineering), 'SUCCESSOR_ENTRY_KIND_COUNTS_MISMATCH')
+if x.version == 20:
+    require(len(rows) == 38 and len(sci) == 29 and len(eng) == 9 and engineering,
+            'V20_CBIRRT_NR_BUILD_MUST_BE_29_SCIENCE_9_ENGINEERING')
+
+lp = R / f'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V{x.version}.json'
+l = {**old, 'schema': f'P4_R2_RECOVERY_ACTUAL_LEDGER_V{x.version}',
+    'previous_snapshot': str(op.relative_to(R)), 'previous_snapshot_sha256': sha(op),
+    'executions': rows, 'count': len(rows), 'science_count': len(sci), 'engineering_count': len(eng),
+    'science_wall_s': math.fsum(charge(r, 'wall_s') for r in sci),
+    'science_cpu_s': math.fsum(charge(r, 'cpu_s') for r in sci),
+    'engineering_wall_s': math.fsum(charge(r, 'wall_s') for r in eng),
+    'engineering_cpu_s': math.fsum(charge(r, 'cpu_s') for r in eng),
+    'measured_internal_own_cost_sum': measured,
+    'conservative_r2_sum_wall_s': charged['wall_s'],
+    'conservative_r2_sum_cpu_s': charged['cpu_s'],
+    'r2_remaining': {k: old['r2_caps'][k] - charged[k] for k in charged},
+    'scope': x.scope, 'saved_only_analysis': True, 'new_scientific_calls': 0,
+    'coverage_related_item_ids': x.related_item_ids,
+    'last_actual_execution': entry,
+    'double_counting_rule': 'Each execution once; charged_wall_s/cpu_s replace the internal pre-save sample for supervised runs, never add both. Old entries and historical UNKNOWN boundaries retained.',
+    'resource_charge_policy': 'Use charged_wall_s/cpu_s when present, otherwise the stored own sample. External upper covers worker import, preflight, execution, receipt persistence, exit; supervisor own record tail remains outside worker cost.',
+    'cost_measurement_limitations': {**old['cost_measurement_limitations'],
+        'ledger_sum_meaning': 'Mixed charge ledger: old stored own samples plus external decimal upper bounds for supervised runs. Each execution charged once. measured_internal_own_cost_sum separately preserves all original samples.',
+        'remaining_meaning': 'Cap minus charge ledger. Historical unsupervised recording tail remains UNKNOWN, so this is still an upper bound on remaining resource, not a fully measured exact remainder.'},
+}
+require(l['vi_B_candidate_cap'] == 974 and l['vi_B_remaining']['candidate_constructions'] == 0
+        and l['vi_B_consumed'] == old['vi_B_consumed'] and l['vi_B_remaining'] == old['vi_B_remaining'],
+        'VI974_EXHAUSTED_HISTORY_REQUIRED')
+require(l['formal_table_I_calls'] == 0 and l['formal_table_I_required_calls'] == 22500
+        and min(l['r2_remaining'].values()) > 0, 'FORMAL_ZERO_OR_R2_REMAINING_INVALID')
+with (R/x.old_csv).open(newline='') as f:
+    rd = csv.DictReader(f); fields = rd.fieldnames; before = list(rd)
+require(len(before) == 211 and len({r['item_id'] for r in before}) == 211
+        and len(fields) == len(set(fields)) == x.expected_old_columns, 'FULL211_OLD_COLUMN_CONTRACT_REQUIRED')
+require(len(x.related_item_ids) == len(set(x.related_item_ids))
+        and set(x.related_item_ids) <= {r['item_id'] for r in before},
+        'RELATED_ITEM_IDS_MUST_BE_DISTINCT_EXISTING_OBLIGATIONS')
+formal = [r for r in before if r['item_id'].startswith('P4-T18-')]
+expected = set(itertools.product(['II', 'III', 'IV', 'V', 'VI'], ['RRT', 'Bi-RRT', 'SBL'], ['RSS', 'PCS', 'NR']))
+require({tuple(r['item_id'].removeprefix('P4-T18-').split('_')) for r in formal} == expected
+        and all(r['original_repeats'] == '500' and r['original_duration_budget'] == '1000s/call' for r in formal),
+        'ORIGINAL45_CELLS_22500_TRIALS_SCALE_REQUIRED')
+extra = [f'v{x.version}_{k}' for k in ('status', 'scope', 'execution', 'ledger')]
+require(not set(extra) & set(fields), 'SUCCESSOR_COLUMNS_ALREADY_EXIST')
+updated = []
+for row in before:
+    related = row['item_id'] in x.related_item_ids
+    v = dict(row)
+    v.update(zip(extra, [x.status if related else 'NO_NEW_EVIDENCE_FOR_THIS_OBLIGATION',
+        x.scope if related else '本阶段本义务无新科学结论，原完整义务保持。',
+        x.execution if related else 'NOT_APPLICABLE', str(lp.relative_to(R))]))
+    updated.append(v)
+require([{k: r[k] for k in fields} for r in updated] == before, 'HISTORICAL_COVERAGE_VALUES_CHANGED')
+cp = R/f'reports/{x.stem}.csv'; mp = cp.with_suffix('.md')
+destinations = (lp, cp, mp, *(O/p.name for p in (lp, cp, mp)))
+require(not any(p.exists() for p in destinations), 'OLD_SNAPSHOT_COVERAGE_OR_MIRROR_EXISTS')
+require(all(sha(Path(p)) == h for p, h in old_hashes.items()), 'INPUT_BYTES_CHANGED_BEFORE_APPEND')
+new(lp, l)
+with cp.open('x', newline='') as f:
+    w = csv.DictWriter(f, fieldnames=fields+extra); w.writeheader(); w.writerows(updated)
+with cp.open(newline='') as f:
+    require([{k: r[k] for k in fields} for r in csv.DictReader(f)] == before,
+            'SAVED_HISTORICAL_COLUMNS_NOT_IDENTICAL')
+with mp.open('x') as f:
+    f.write(f'# P4全文范围：{x.stem}\n\n211行前{len(fields)}列逐值保留，新增4列。{x.scope}\n\n')
+    f.write(f'{len(rows)}execution={len(sci)}科学账+{len(eng)}工程。按独立监督上界替换新运行内部样本一次，累计wall{charged["wall_s"]:.17g}/CPU{charged["cpu_s"]:.17g}；历史未测尾部仍UNKNOWN。VI974余0、正式0/22500，全部原文实验规模保持。不P2/Isaac。\n\n')
+    f.write('|ID|原完整义务|原规模|本次范围|\n|---|---|---|---|\n')
+    for row in updated:
+        f.write('|' + '|'.join(str(row[k]).replace('|', '\\|').replace('\n', '<br>') for k in ('item_id', 'original_requirement', 'original_repeats', extra[1])) + '|\n')
+for p in (lp, cp, mp):
+    mirror = O/p.name
+    with mirror.open('xb') as f:
+        f.write(p.read_bytes())
+    require(mirror.read_bytes() == p.read_bytes(), 'OUTPUT_MIRROR_BYTES_CHANGED')
+require(all(sha(Path(p)) == h for p, h in old_hashes.items()), 'INPUT_BYTES_CHANGED_AFTER_APPEND')
+print(json.dumps(dict(ledger=str(lp.relative_to(R)), executions=len(rows), science_count=len(sci),
+    engineering_count=len(eng), entry_kind=x.entry_kind, charged=charged,
+    measured_internal=measured, columns=len(fields)+4, related_item_ids=x.related_item_ids)))

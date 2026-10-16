@@ -1,0 +1,40 @@
+{
+  "schema": "P4_CBIRRT_NR_BUILD02_INDEPENDENT_ENGINEERING_FAILURE_ROOT_CAUSE_V1",
+  "status": "CONFIRMED_OUR_FROZEN_PQP_HEADER_OMISSION",
+  "personnel_independent": true,
+  "execution": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD02/execution.json",
+  "execution_sha256": "dcc96bbef72e47e663e51eb2dcbe8ae8f1bb99cef1e31d5eabad17f056fe15df",
+  "protocol": "configs/p4_full/r2_abb_cbirrt_nr_engineering_v2.json",
+  "protocol_sha256": "374bfa916b60591a090be26cc2ac30cf75f74ee916e6bb839bc9bafcbe2e5018",
+  "source_commit": "909d6aa4f41bd28de85676f3d32b4a82d5d96e20",
+  "compiler_exit_code": 0,
+  "dependency_stdout": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD02/compile.stdout",
+  "dependency_stdout_sha256": "0b7c5fc52ace8c9e0112b2cf4ca92624d7cbfcb61d635dab579aee2082b22084",
+  "dependency_stdout_bytes": 196455,
+  "actual_rules": 6,
+  "actual_translation_units": 6,
+  "dependency_transport_complete": true,
+  "actual_dependency_count": 743,
+  "only_missing_protected_assets": {
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/BV.h": "3861336bea7a475cb8dab1e64c95e749f7b14fe3ea2896b658b8c87839f8a213",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP.h": "4c35d6ac10e1518d84e3845fde918a308db904b740a2d8e04d627a1a58dd79c2",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP_Compile.h": "e05dce007f2db29c5e75b2c1414569b615583d4a4c656b0dd6d00fc6eb7a0ea2",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP_Internal.h": "76fe69dcf588b0ba39d0fa75584265093a0f1310d405a8f7d60758c5dafb4c7f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/Tri.h": "da184954a2bcbabd69cbc63e9670ded5df76d733c8327208ca14723249827102"
+  },
+  "missing_assets_are_not_aliases": true,
+  "engineering_build_qualified": false,
+  "original_author_or_paper_theory_error_claim": false,
+  "root_cause": "Our frozen dependency inventory inherited libPQP.a but omitted five actually compiled PQP include headers. Six actual stdout rules correctly exposed the omission and gate STOP. Independent static review did not establish complete protected header inventory. No author implementation, model or paper mathematical failure is inferred.",
+  "repair_route": "New fresh version/claim/stage only: add precisely these five PQP header path+SHA before freeze, independently compare complete saved actual six-TU dependencies after new-stage path normalization against proposed frozen/staged maps to establish zero remaining protected omissions; unchanged scientific3/source transformer, -MD -MF - transport,45wall/90CPU and original cumulative caps. Preserve both prior STOPs and cost; never retroactively qualify either binary.",
+  "external_cost_qualified": true,
+  "external_time_fields": [
+    "33.56",
+    "43.99",
+    "10.98",
+    "1"
+  ],
+  "upper_wall_s": 33.57,
+  "upper_cpu_s": 54.99,
+  "new_science_compile_binary_claim_protocol_calls": 0
+}

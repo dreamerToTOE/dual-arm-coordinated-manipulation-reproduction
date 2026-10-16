@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v2_draft.py", line 394, in <module>
+    if __name__=='__main__':main()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v2_draft.py", line 393, in main
+    build(spec,protocol)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v2_draft.py", line 384, in build
+    if failure is not None:raise failure
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v2_draft.py", line 328, in build
+    actual_dependencies(record,spec,[ROOT/DRIVER,ROOT/KERNEL,*sources],folder/'compile.stdout');check()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v2_draft.py", line 181, in actual_dependencies
+    require(not missing,'ACTUAL_PROTECTED_DEPENDENCY_NOT_IN_FROZEN_MANIFEST')
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v2_draft.py", line 63, in require
+    if not ok:raise RuntimeError(reason)
+RuntimeError: ACTUAL_PROTECTED_DEPENDENCY_NOT_IN_FROZEN_MANIFEST

@@ -950,3 +950,12 @@ c5e4d2e冻结P唯一运行，环境II/RECONSTRUCTED A01/版本化几何和D距�
 GNUtime33.95 44.43 11.03 1，上界33.96wall/55.48CPU已独立确认并替换内部样本一次。V19实际37=29科学账+8工程，累计719.515705375994wall/597.908923CPU，余额上界2880.484294624006/6602.091077；历史未测尾UNKNOWN不改。完整211×162表保前158列；V19保全PASS，旧1028科学/57崩溃文件及tar/另5工作树13未提交/V18全部保持。
 
 下一项仅新版本BUILD02，依据GCC官方-MF -让六TU规则完整写独占stdout，再逐raw规则/TU/保护依赖留证；原算法body与数值源码不改。新45wall/90CPU扣R2总3600/7200，先独立静态/协议/commit冻结后唯一构建，不是同claim重试或预算重置；科学solve仍另冻。VI974/974余0，Table I0/22500，211义务及全部原规模不缩；不P2/Isaac/提前结题。
+
+
+## 2026-10-16 CBiRRT_NR BUILD02六规则完成、五PQP头未冻停止与V20
+
+909d6aa唯一BUILD02 compiler exit0/reaped/空组，-MD -MF -完整196455B六TU原raw规则/TU once/派生切片均已形成；末门发现BV.h/PQP.h/PQP_Compile.h/PQP_Internal.h/Tri.h五PQP头未冻，STOP_PREFIX_RETAINED。五真实SHA在bound无同值别名，其他743实际依赖中受管无额外缺项；这是我们工程资产冻结遗漏，不归因算法或论文。原BUILD01与本次所有源码/参数/协议/claim/ELF/raw/失败保留，不运行后补清单改判，不复用claim。
+
+独立保存13762/13762只证明失败/费用/六规则事实一致，engineering_build_qualified=false，外层监督true。GNUtime33.56 43.99 10.98 1，上界33.57wall/54.99CPU只替换内部样本一次。V20实际38=29科学账+9工程，累计753.085705375994wall/652.898923CPU，余额上界2846.914294624006/6547.101077，历史未测尾UNKNOWN。211×166保前162列，V20七组保全PASS，旧1028科学/57crash及tar/另5树13未提交/V19保持。见BUILD02_POST_TASK、BUILD02_ROOT_INDEPENDENT_POST与BUILD02_FAILURE_ROOT_CAUSE。
+
+下一新BUILD03仅补五PQP头冻结，并依据已保存全部实际依赖做静态完整核对；原科学源不改，新45wall/90CPU仍扣R2总3600/7200。先静态/PRE/协议/commit冻结后唯一工程；binary/query/solve/VI/formal目前0。VI974余0、TableI0/22500、211义务与全部原规模保持，不P2/Isaac或提前结题。
