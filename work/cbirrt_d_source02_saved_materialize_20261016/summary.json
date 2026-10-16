@@ -1,0 +1,117 @@
+{
+  "schema": "P4_CBIRRT_D_SOURCE02_SAVED_ONLY_MATERIALIZATION_V1",
+  "scope": "Saved original arrays only; not a frozen P protocol or independent physical qualification.",
+  "helper_sha256": "eb8438312a001aec63c18fb277b32e56f30c66a000e37b0526f0faf58bbb7e4e",
+  "source_execution": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/execution.json",
+  "source_execution_sha256": "c7cbd868da1cd9feb149bc057c4a63ff3e722b81123998e1a8cc5e8e1bab5906",
+  "source_stdout_sha256": "594e6614121bf7955f3fcd77dc1133d05849b9a75414569ccabdc95ab30755d5",
+  "full_queue": "work/cbirrt_d_source02_saved_materialize_20261016/full_queue.json",
+  "full_queue_sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+  "node_count": 413,
+  "edge_count": 4,
+  "attempt_count": 5,
+  "source_identity_audit": {
+    "source_motion_path": [
+      1,
+      4,
+      6,
+      5,
+      3
+    ],
+    "source_tree_vertex_path": [
+      0,
+      1,
+      2,
+      5,
+      4
+    ],
+    "source_bridge_milestone_edge_index": 2,
+    "source_bridge_state_ids": [
+      10,
+      13
+    ],
+    "complete_tree_motion_count": 6,
+    "complete_tree_vertex_count": 6,
+    "complete_tree_edge_count": 5,
+    "same_q_motion_policy": "Actual Motion/state identities remain distinct even when complete q12 bytes coincide."
+  },
+  "false_attempt_indices": [
+    2
+  ],
+  "edges": [
+    {
+      "edge_index": 0,
+      "motion_pair": [
+        1,
+        4
+      ],
+      "edge_kind": "start_parent_to_child",
+      "role": 0,
+      "branch": 3,
+      "selected_attempt": 0,
+      "consumed_attempts": [
+        0
+      ],
+      "nodes": 109,
+      "leaves": 108,
+      "max_leaf_rad": 0.049872908712302065
+    },
+    {
+      "edge_index": 1,
+      "motion_pair": [
+        4,
+        6
+      ],
+      "edge_kind": "start_parent_to_child",
+      "role": 0,
+      "branch": 3,
+      "selected_attempt": 1,
+      "consumed_attempts": [
+        1
+      ],
+      "nodes": 145,
+      "leaves": 144,
+      "max_leaf_rad": 0.049003850978920994
+    },
+    {
+      "edge_index": 2,
+      "motion_pair": [
+        6,
+        5
+      ],
+      "edge_kind": "actual_cross_tree_bridge",
+      "role": 1,
+      "branch": 3,
+      "selected_attempt": 3,
+      "consumed_attempts": [
+        2,
+        3
+      ],
+      "nodes": 33,
+      "leaves": 32,
+      "max_leaf_rad": 0.04288789195357552
+    },
+    {
+      "edge_index": 3,
+      "motion_pair": [
+        5,
+        3
+      ],
+      "edge_kind": "goal_child_to_parent",
+      "role": 1,
+      "branch": 3,
+      "selected_attempt": 4,
+      "consumed_attempts": [
+        4
+      ],
+      "nodes": 129,
+      "leaves": 128,
+      "max_leaf_rad": 0.034781812342410415
+    }
+  ],
+  "total_leaf_references": 412,
+  "total_successful_M_node_references": 416,
+  "under_2048": true,
+  "no_new_physical_source_RBS_IK_NR_collision_solve_calls": 0,
+  "independent_path_qualified": false
+}
