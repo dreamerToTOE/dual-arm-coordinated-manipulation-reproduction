@@ -1,0 +1,522 @@
+{
+  "schema": "P4_CBIRRT_D_SOLVE_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "PASS_STATIC_DRAFT_ONLY_NO_EXECUTION",
+  "reviewer": "nr_path_prepare: LOCAL02 implementer; not S runner/supervisor/PRE implementer",
+  "personnel_independent": true,
+  "reviewed_source_sha256": {
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_solve_draft.py": "7f0327f56bb86246d22f897743b0b2abad6fd54e9527eb0a55e79fdbe4589a46",
+    "scripts/supervise_p4_full_r2_abb_cbirrt_d_solve_draft.py": "b4c25d0dcb91a7c79efbc5ee0e341e60bd0c2ec068dd3cc1224b4cfe7f135834",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE_PRE_DRAFT_20261016.md": "ccf9ec7cd130f1d4aef3e3a2604aa052b90638e6771d3011e37ee58174b586fc",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE_RUNNER_DESIGN_PRE_DRAFT_20261016.md": "ad23f19ed6cc74e5f1c178935a4e556e83896eb2969abdac411fc678f645ca09"
+  },
+  "retained_sha256": {
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_solve_draft.py": "7f0327f56bb86246d22f897743b0b2abad6fd54e9527eb0a55e79fdbe4589a46",
+    "scripts/supervise_p4_full_r2_abb_cbirrt_d_solve_draft.py": "b4c25d0dcb91a7c79efbc5ee0e341e60bd0c2ec068dd3cc1224b4cfe7f135834",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE_PRE_DRAFT_20261016.md": "ccf9ec7cd130f1d4aef3e3a2604aa052b90638e6771d3011e37ee58174b586fc",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE_RUNNER_DESIGN_PRE_DRAFT_20261016.md": "ad23f19ed6cc74e5f1c178935a4e556e83896eb2969abdac411fc678f645ca09",
+    "reports/P4_FULL_R2_ABB_CBIRRT_ACTIVEDISTANCE_SAVED_COUNTEREXAMPLE_20261015.json": "de6e1a7cb15ef519af7ea8f45e2892e582305184c2bea2ec62025a4c56515149",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json": "b39d945cd5d49e4649aba22e57aae9f302694e4d8e0880389542f1ad828b112f",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json": "991c2efe8e68add65c17375d89c89bbb637711d7125b15a34c84a19a2dc15430",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp": "93e7a32a8e5cd55ad4447f587b798e082c23649e5f8844eccb7d29ac7f35ad0a",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": "45111720edc6773690846949ebd97e6ccc308dea30921bbb3bee771333801b94"
+  },
+  "checks_total": 55,
+  "checks_passed": 55,
+  "checks_failed": 0,
+  "failures": [],
+  "full_checks": [
+    {
+      "id": "exact_source_scripts/qualify_p4_full_r2_abb_cbirrt_d_solve_draft.py",
+      "passed": true,
+      "evidence": "7f0327f56bb86246d22f897743b0b2abad6fd54e9527eb0a55e79fdbe4589a46"
+    },
+    {
+      "id": "exact_source_scripts/supervise_p4_full_r2_abb_cbirrt_d_solve_draft.py",
+      "passed": true,
+      "evidence": "b4c25d0dcb91a7c79efbc5ee0e341e60bd0c2ec068dd3cc1224b4cfe7f135834"
+    },
+    {
+      "id": "exact_source_reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE_PRE_DRAFT_20261016.md",
+      "passed": true,
+      "evidence": "ccf9ec7cd130f1d4aef3e3a2604aa052b90638e6771d3011e37ee58174b586fc"
+    },
+    {
+      "id": "exact_source_reports/P4_FULL_R2_ABB_CBIRRT_D_SOLVE_RUNNER_DESIGN_PRE_DRAFT_20261016.md",
+      "passed": true,
+      "evidence": "ad23f19ed6cc74e5f1c178935a4e556e83896eb2969abdac411fc678f645ca09"
+    },
+    {
+      "id": "both_python_AST_parse",
+      "passed": true,
+      "evidence": "ast.parse only; no compile/import"
+    },
+    {
+      "id": "missing_actual_L_rejects_before_protocol",
+      "passed": true,
+      "evidence": [
+        "old.path(L_DIR+'/execution.json').is_file()",
+        "old.path(L_POST).is_file()",
+        "WAIT_ACTUAL_D_SPLIT_AND_LOCAL02_INDEPENDENT_POST_NO_PLACEHOLDER_PROTOCOL"
+      ]
+    },
+    {
+      "id": "known_D_L_orphan_charge_guard",
+      "passed": true,
+      "evidence": [
+        "for run in(tail.RUN,Path(L_DIR).name)",
+        "'.supervision.charge.json').is_file()or(prefix/'execution.json').is_file()",
+        "KNOWN_D_OR_L_ORPHAN_SUPERVISION_CHARGE_REQUIRES_AUTHORITATIVE_ACCOUNTING"
+      ]
+    },
+    {
+      "id": "D_exact_independent_split_contract",
+      "passed": true,
+      "evidence": [
+        "sha(D_POST)==D_POST_SHA",
+        "d['schema']=='P4_TAIL02_SAVED_INDEPENDENT_AGGREGATE_POST_V1'",
+        "d['checks_total']==d['checks_passed']==1374",
+        "d['aggregate_actual_responses']==64",
+        "d['aggregate_source_processes']==9",
+        "d['aggregate_plain_trace_pairs']==32",
+        "d['original_single_run_PASS']is False",
+        "de['completed_new_dispatch_ids']==[62,63]",
+        "de['UNKNOWN_new_dispatch_ids']==[]"
+      ]
+    },
+    {
+      "id": "L_exact_schema_actual_PASS_and_independence",
+      "passed": true,
+      "evidence": [
+        "lp['schema']=='P4_LOCAL02_SAVED_INDEPENDENT_POST_V1'",
+        "lp['status']=='PASS_LOCAL02_SAVED_DISCRETE_SEAM_INDEPENDENT_POST'",
+        "lp['personnel_independent']is True",
+        "lp['external_supervision_qualified']is True",
+        "lp['checks_total']==lp['checks_passed']and lp['checks_total']>0 and lp['checks_failed']==0",
+        "lp['execution_sha256']==sha(L_DIR+'/execution.json')",
+        "le['status']=='PASS_FIXED3_LOCAL_SEAM_SAVED_DISCRETE_CERTIFICATE_REUSED'"
+      ]
+    },
+    {
+      "id": "exact_eight_L_required_gate_names",
+      "passed": true,
+      "evidence": [
+        "actual12_all_true",
+        "six_plain_trace_pairs_binary64_equal",
+        "complete_three_M_binary64_equal_saved80_65_34",
+        "two_SVC_zero_CBi_zero_direct_rng",
+        "raw_EOF_and_all_processes_reaped_exit0",
+        "old177_complete_discrete_certificate_reused",
+        "external_cost_and_identity_qualified",
+        "original_D64_STOP_and_H_STOP_preserved"
+      ]
+    },
+    {
+      "id": "L_all_eight_gates_strict_AND_no_status_OR",
+      "passed": true,
+      "evidence": [
+        "set(lp.get('required_gates',{}))==set(required)",
+        "all(lp['required_gates'][k]is True for k in required)"
+      ]
+    },
+    {
+      "id": "D_L_full_original_files_rebound",
+      "passed": true,
+      "evidence": [
+        "e['bound_files_sha256']==e['bound_files_after_sha256']",
+        "sha(e['protocol'])==e['protocol_sha256']==e['protocol_after_sha256']",
+        "sha(e['claim'])==e['claim_sha256']==e['claim_after_sha256']",
+        "files.update(audit['retained_sha256'])",
+        "for n,h in files.items():require(sha(n)==h"
+      ]
+    },
+    {
+      "id": "latest_authoritative_ledger_actual_execution_set",
+      "passed": true,
+      "evidence": [
+        "max(ledgers,key=lambda p:int(p.stem.rsplit('V',1)[1]))",
+        "{r['execution']:r['execution_sha256']for r in saved['executions']}==actual"
+      ]
+    },
+    {
+      "id": "charged_cost_replaces_internal_once",
+      "passed": true,
+      "evidence": [
+        "math.fsum(r.get('charged_wall_s',r['wall_s'])for r in saved['executions'])",
+        "math.fsum(r.get('charged_cpu_s',r['cpu_s'])for r in saved['executions'])",
+        "wall==saved['conservative_r2_sum_wall_s']",
+        "cpu==saved['conservative_r2_sum_cpu_s']"
+      ]
+    },
+    {
+      "id": "prior_external_certificates_bound",
+      "passed": true,
+      "evidence": [
+        "sha(r['external_post'])==r['external_post_sha256']",
+        "post['personnel_independent']is True",
+        "post['external_supervision_qualified']is True",
+        "post['execution_sha256']==r['execution_sha256']",
+        "post['upper_wall_s']==r['charged_wall_s']",
+        "post['upper_cpu_s']==r['charged_cpu_s']",
+        "sha(r['external_time'])==r['external_time_sha256']==post['external_time_sha256']",
+        "RETAINED_UNKNOWN; CHARGED_REMAINING_IS_UPPER_BOUND"
+      ]
+    },
+    {
+      "id": "frozen_binary_and_twenty_meshes_only",
+      "passed": true,
+      "evidence": [
+        "assets=old.build_assets()",
+        "assets['targets']['distance_destination_fix']['stage']",
+        "require(len(meshes)==20",
+        "runtime_meshes_sha256=meshes",
+        "'/usr/bin/time':sha('/usr/bin/time')"
+      ]
+    },
+    {
+      "id": "fixed_S_scope_and_caps",
+      "passed": true,
+      "evidence": [
+        "wall_s=30.,cpu_s=60.,child_cpu_limit_s=60,r2_total_wall_s=3600.,r2_total_cpu_s=7200.",
+        "new_processes=1,source_requests=1,solve_calls=1,source_seed=7,source_solve_seconds=10.",
+        "old_distance_requery=0,local_seam_requery=0,VI_constructions=0,formal_table_I=0"
+      ]
+    },
+    {
+      "id": "committed_source_and_exact_current_protocol_required",
+      "passed": true,
+      "evidence": [
+        "expected=draft_protocol()",
+        "set(spec)==set(expected)",
+        "spec['frozen']and all(spec['reviews'].values())",
+        "['git','ls-files','--error-unmatch',n]",
+        "['git','status','--porcelain','--',n]",
+        "COMMIT_BLOB_MISMATCH"
+      ]
+    },
+    {
+      "id": "source_argv_II_solve_trace_and_CPU60",
+      "passed": true,
+      "evidence": [
+        "self.command=[target['binary'],'II',str(work),'solve','trace']",
+        "resource.setrlimit(resource.RLIMIT_CPU,(60,60))"
+      ]
+    },
+    {
+      "id": "signal_mask_covers_Popen_and_registry",
+      "passed": true,
+      "evidence": [
+        "signal.pthread_sigmask(signal.SIG_BLOCK,{signal.SIGALRM})",
+        "self.budget.processes.append(self.proc)",
+        "signal.pthread_sigmask(signal.SIG_SETMASK,previous_mask)"
+      ]
+    },
+    {
+      "id": "one_small_request_no_retry_raw_before_parse",
+      "passed": true,
+      "evidence": [
+        "require(len(raw)<4096",
+        "require(sent==len(raw),'INCOMPLETE_REQUEST_NO_RETRY')",
+        "self.journal.add('raw_response_line'",
+        "response=json.loads(line)"
+      ]
+    },
+    {
+      "id": "raw_journal_precedes_response_parse",
+      "passed": true,
+      "evidence": "Exact raw bytes journaled before JSON parsing"
+    },
+    {
+      "id": "start_and_close_group_saved",
+      "passed": true,
+      "evidence": [
+        "self.journal.add('source_start_group',members=group)",
+        "self.journal.add('source_close_group',members=self.close_group)"
+      ]
+    },
+    {
+      "id": "supervisor_actual_parent_identity_and_FD_proof",
+      "passed": true,
+      "evidence": [
+        "sha(Path('/proc',str(parent),'exe'))==ext['time_binary_sha256']",
+        "Path('/proc',str(parent),'cmdline').read_bytes()",
+        "planned['argv']==expected",
+        "sibling.st_ino==planned['time_inode']and sibling.st_dev==planned['time_device']"
+      ]
+    },
+    {
+      "id": "response_one_completed_solve_only",
+      "passed": true,
+      "evidence": [
+        "response['source_dispatch_started']==response['source_dispatch_completed']==response['solve_calls']==1",
+        "response['formal_table_I_calls']==0 and response['independent_path_qualified']is False",
+        "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT",
+        "SOURCE_NONEXACT_RETAINED_PREFIX"
+      ]
+    },
+    {
+      "id": "construction_RNG_boundary_truthful",
+      "passed": true,
+      "evidence": [
+        "c['cbirrt_constructor_dispatch_completed']==c['ompl_setSeed_calls_completed']==c['srand_calls_completed']==1",
+        "c['svc_only_constructor_dispatch_completed']==0 and c['source_direct_rng_member_initializations_structural']==1",
+        "UNOBSERVED_LIBRARY_NOT_HOOKED",
+        "UNOBSERVED_NOT_REPORTED_ZERO"
+      ]
+    },
+    {
+      "id": "trace_strict_nested_actual_counts",
+      "passed": true,
+      "evidence": [
+        "stack.append(key);started[event['kind']]+=1",
+        "stack.pop()==key",
+        "dict(started)==observed['source_started']and dict(completed)==observed['source_completed']",
+        "c['source_started']==c['source_completed']=={'mesh_load':1}"
+      ]
+    },
+    {
+      "id": "existing_observed_save_mark_allowed_without_fake_completion",
+      "passed": true,
+      "evidence": [
+        "elif event['event']=='observed':",
+        "event['kind']=='save_source_mpaths'and 'source_mpaths'in event['args']",
+        "ONLY_EXISTING_SOURCE_MPATHS_OBSERVATION_ALLOWED"
+      ]
+    },
+    {
+      "id": "tree_and_milestones_preserved_not_qualified",
+      "passed": true,
+      "evidence": [
+        "isinstance(response['trees']['nodes'],list)and isinstance(response['milestones_q12'],list)",
+        "These objects are independently audited after S; no path PASS is asserted here."
+      ]
+    },
+    {
+      "id": "single_exclusive_run_claim_no_live_overlap",
+      "passed": true,
+      "evidence": [
+        "require(not folder.exists()and not claim.exists(),'EXCLUSIVE_SINGLE_SOLVE_NO_RETRY')",
+        "require(not old.builder.active_p4(),'OTHER_ACTIVE_P4_EXECUTION')",
+        "require(signal.getitimer(signal.ITIMER_REAL)==(0.,0.),'EXISTING_TIMER_REFUSE_REPLACE')"
+      ]
+    },
+    {
+      "id": "exclusive_mesh_copy_and_fresh_native_outputs",
+      "passed": true,
+      "evidence": [
+        "(work/'simulator').mkdir(parents=True)",
+        "target.open('xb')",
+        "RUNTIME_MESH_CHANGED",
+        "not(work/'paths').exists()and not(folder/'paths').exists()"
+      ]
+    },
+    {
+      "id": "one_session_query_and_raw_full_trace_bound",
+      "passed": true,
+      "evidence": [
+        "session=Session(spec['build_assets']['targets']['distance_destination_fix'],work,budget,journal,counts);session.start()",
+        "response=session.query(spec['request']);journal.add('parsed_response_before_gates',response=response)",
+        "RAW_BODY_TRACE_MUST_MATCH_FULL_SOURCE_RESPONSE",
+        "EXACT_ONE_COMPLETE_SOURCE_STDOUT_REQUIRED",
+        "counts['solve_dispatched']==counts['raw_response_lines_observed']==1"
+      ]
+    },
+    {
+      "id": "exactly_one_source_Session_and_query_site",
+      "passed": true,
+      "evidence": "No second science site or retry loop in execute"
+    },
+    {
+      "id": "timer_disabled_before_cleanup_and_all_actual_children_reaped",
+      "passed": true,
+      "evidence": [
+        "if budget is not None:budget.close()",
+        "else[session.proc])}.values())",
+        "old.kill_source_process(proc);proc.wait(timeout=1.)",
+        "'STOP_PROCESS_EOF_OR_EXIT_UNQUALIFIED'"
+      ]
+    },
+    {
+      "id": "mandatory_original_hashes_and_current_prior_recheck",
+      "passed": true,
+      "evidence": [
+        "BOUND_ASSET_CHANGED",
+        "RECIPE_CHANGED",
+        "latest=current_prior()",
+        "PRIOR_OR_AUTHORITATIVE_LEDGER_CHANGED"
+      ]
+    },
+    {
+      "id": "complete_raw_streams_preserved_and_fsynced",
+      "passed": true,
+      "evidence": [
+        "journal.add('final_complete_raw_streams'",
+        "(folder/f'source_{channel}.bin').open('xb')",
+        "stream.flush();os.fsync(stream.fileno())",
+        "journal.finish()"
+      ]
+    },
+    {
+      "id": "all_original_native_path_and_partial_files_retained_fsynced",
+      "passed": true,
+      "evidence": [
+        "for base in(folder/'paths',folder/'work/paths')",
+        "base.rglob('*')",
+        "record['original_native_output_sha256']",
+        "with p.open('rb')as stream:os.fsync(stream.fileno())"
+      ]
+    },
+    {
+      "id": "internal_record_never_self_certifies_external_or_path",
+      "passed": true,
+      "evidence": [
+        "external_supervision_qualified=False,independent_saved_POST_required=True",
+        "independent_path_qualified=False",
+        "last_receipt_persistence_tail='UNMEASURED_NONZERO_EXTERNAL_SUPERVISION_REQUIRED'"
+      ]
+    },
+    {
+      "id": "final_cost_gate_and_exclusive_execution_receipt",
+      "passed": true,
+      "evidence": [
+        "record['status']='STOP_FINAL_WALL_OR_CPU_BUDGET'",
+        "old.durable_new(folder/'execution.json',record)",
+        "with(folder/'cost_receipt.jsonl').open('xb')",
+        "wall_s_through_execution_persistence=",
+        "cpu_s_through_execution_persistence="
+      ]
+    },
+    {
+      "id": "exclusive_GNUtime_FD_and_actual_wait",
+      "passed": true,
+      "evidence": [
+        "os.O_WRONLY|os.O_CREAT|os.O_EXCL",
+        "f'/proc/self/fd/{fd}'",
+        "pass_fds=(fd,)",
+        "planned=dict(event='planned_launch'",
+        "proc.wait()"
+      ]
+    },
+    {
+      "id": "supervisor_fixed_sources_and_no_old_artifact_retry",
+      "passed": true,
+      "evidence": [
+        "FROZEN_SUPERVISOR_AND_RUNNER_REQUIRED",
+        "OLD_RUN_OR_CLAIM_NO_RETRY",
+        "OLD_SUPERVISION_ARTIFACT_NO_RETRY"
+      ]
+    },
+    {
+      "id": "external_Decimal_upper_bounds_and_exact_cap",
+      "passed": true,
+      "evidence": [
+        "wall=float(elapsed+Decimal('.01'));cpu=float(user+system+Decimal('.02'))",
+        "wall<=min(30.,3600.-spec['previous_r2_wall_s'])",
+        "cpu<=min(60.,7200.-spec['previous_r2_cpu_s'])"
+      ]
+    },
+    {
+      "id": "supervisor_retains_failed_attempt_and_no_self_external_certification",
+      "passed": true,
+      "evidence": [
+        "started_attempt=attempted",
+        "external_supervision_qualified=False,independent_POST_required=True",
+        "Supervisor own journal/fsync cost excluded.",
+        "new_json(chargefile,payload)"
+      ]
+    },
+    {
+      "id": "PRE_no_full_path_or_planning_claim_and_latest_ledger",
+      "passed": true,
+      "evidence": [
+        "DRAFT_ONLY / NOT_FROZEN / NO_PROTOCOL / NO_PRIOR_SNAPSHOT / NO_CLAIM / NO_EXECUTION",
+        "最新权威实际 ledger",
+        "S 不自动启动 P 或正式成本 pilot",
+        "只有人员独立实际 POST"
+      ]
+    },
+    {
+      "id": "A01_II_0_original_exact_binary64_and_hash",
+      "passed": true,
+      "evidence": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json"
+    },
+    {
+      "id": "A01_II_0_within_native_sampler_box",
+      "passed": true,
+      "evidence": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json"
+    },
+    {
+      "id": "A01_II_0_saved_reconstructed_qualified",
+      "passed": true,
+      "evidence": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json"
+    },
+    {
+      "id": "A01_II_1_original_exact_binary64_and_hash",
+      "passed": true,
+      "evidence": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json"
+    },
+    {
+      "id": "A01_II_1_within_native_sampler_box",
+      "passed": true,
+      "evidence": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json"
+    },
+    {
+      "id": "A01_II_1_saved_reconstructed_qualified",
+      "passed": true,
+      "evidence": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json"
+    },
+    {
+      "id": "actual_driver_fixed_single_II_solve_source_and_request",
+      "passed": true,
+      "evidence": [
+        "(operation==\"solve\"&&(env!=\"II\"||mode!=\"trace\"))",
+        "if(++requests>(operation==\"solve\"?1u:8u))",
+        "request.at(\"seed\")!=7||request.at(\"range_rad\")!=2.6||request.at(\"solve_seconds\")!=10.",
+        "planner->solve(ob::timedPlannerTerminationCondition(10.))"
+      ]
+    },
+    {
+      "id": "actual_driver_retains_both_trees_high_precision_path_and_exact_only_PlannerData",
+      "passed": true,
+      "evidence": [
+        "out[\"trees\"]=planner->snapshot()",
+        "out[\"milestones_q12\"].push_back(p4cb::q12(state))",
+        "if(problem->hasExactSolution()) {",
+        "out[\"planner_data\"]={{\"vertices\",vertices},{\"edges\",edges}};",
+        "else out[\"planner_data\"]=nullptr;"
+      ]
+    },
+    {
+      "id": "actual_observer_mark_is_existing_observed_event",
+      "passed": true,
+      "evidence": [
+        "inline void mark(",
+        "{{\"event\",\"observed\"}"
+      ]
+    },
+    {
+      "id": "actual_transform_captures_original_save_paths",
+      "passed": true,
+      "evidence": [
+        "p4cb::mark(\"save_source_mpaths\"",
+        "\"source_mpaths\",p4_paths",
+        "for(const auto& side:{mpath1,mpath2})"
+      ]
+    },
+    {
+      "id": "source_hashes_unchanged_during_review",
+      "passed": true,
+      "evidence": "Review locked to exact four draft hashes"
+    }
+  ],
+  "no_runner_import_describe_protocol_prior_claim_compile_or_scientific_execution": true,
+  "external_supervision_qualified": false,
+  "independent_path_qualified": false,
+  "actual_S_execution_not_reviewed": true,
+  "limitations": [
+    "Static/source/saved-byte review only; actual L independent POST and latest authoritative charged ledger remain hard runtime requirements.",
+    "Existing native source can return EXACT despite false reconstruction. Only SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT is accepted; saved independent tree/bridge/path P audit remains mandatory.",
+    "S time includes original observation/save I/O and is not a paper statistical timing sample. Supervisor own journal tail is outside scientific child cost; historical unmeasured tails stay UNKNOWN.",
+    "No claim of continuous collision proof, RSS qualification, PCS advantage, full paper reproduction, or formal Table I trials."
+  ]
+}
