@@ -1,0 +1,843 @@
+{
+  "schema": "P4_IV_WRIST_V3_EXACT_ULP_ENGINEERING_RECOVERY_STATIC_REVIEW_V1",
+  "status": "PASS_STATIC_PENDING_ROOT_REVIEW_FREEZE",
+  "created_at_utc": "2026-10-16T02:51:45.167594+00:00",
+  "checks_total": 157,
+  "checks_passed": 157,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "unchanged_scientific_AST_fixed_inputs",
+      "passed": true
+    },
+    {
+      "check": "unchanged_scientific_AST_rank_data",
+      "passed": true
+    },
+    {
+      "check": "unchanged_scientific_AST_cached_closure",
+      "passed": true
+    },
+    {
+      "check": "unchanged_scientific_AST_Qualification.fk",
+      "passed": true
+    },
+    {
+      "check": "unchanged_scientific_AST_Qualification.native",
+      "passed": true
+    },
+    {
+      "check": "unchanged_scientific_AST_Qualification.native_prefix_accounting",
+      "passed": true
+    },
+    {
+      "check": "run_only_exact_guard_changed",
+      "passed": true
+    },
+    {
+      "check": "unchanged_engineering_AST_LiveEvidence",
+      "passed": true
+    },
+    {
+      "check": "unchanged_engineering_AST_validate",
+      "passed": true
+    },
+    {
+      "check": "unchanged_engineering_AST_Qualification.__init__",
+      "passed": true
+    },
+    {
+      "check": "unchanged_engineering_AST_main",
+      "passed": true
+    },
+    {
+      "check": "source_validity_gate_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_allclose_or_relaxation",
+      "passed": true
+    },
+    {
+      "check": "old_v2_exact_preserved",
+      "passed": true
+    },
+    {
+      "check": "old_first_execution_exact",
+      "passed": true
+    },
+    {
+      "check": "old_first_no_model_query",
+      "passed": true
+    },
+    {
+      "check": "first_stop_guard_precise",
+      "passed": true
+    },
+    {
+      "check": "new_identity_not_resume",
+      "passed": true
+    },
+    {
+      "check": "same_fixed100_and_request_order",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_gates",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_source_seed",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_source_effective_seed",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_source_rng_not_rerun",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_source_singular_mode",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_passive_rule",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_target_rule",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_G0_gate",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_G1_gate",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_positive_component_gate",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_soundness_stop",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_call_accounting",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_binary",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_binary_sha256",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_zero_calls",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_VI_B_candidate_cap",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_VI_B_candidate_remaining",
+      "passed": true
+    },
+    {
+      "check": "same_original_scientific_condition_full_RSS_or_planning_pass",
+      "passed": true
+    },
+    {
+      "check": "same_actual_geometry_except_extra_representation",
+      "passed": true
+    },
+    {
+      "check": "exact_two_1ULP_sides_only",
+      "passed": true
+    },
+    {
+      "check": "runtime_full12_exact_repeated_twoarms",
+      "passed": true
+    },
+    {
+      "check": "literalR1_exact_metadata",
+      "passed": true
+    },
+    {
+      "check": "runtime_source_formula_readonly",
+      "passed": true
+    },
+    {
+      "check": "metadata_fixed_base_and_grasp_unaffected",
+      "passed": true
+    },
+    {
+      "check": "shared_same30_60_not_reset",
+      "passed": true
+    },
+    {
+      "check": "first_cost_bound_once",
+      "passed": true
+    },
+    {
+      "check": "shared_science_count_unspent",
+      "passed": true
+    },
+    {
+      "check": "same_original_cap_max_fixed_targets",
+      "passed": true
+    },
+    {
+      "check": "same_original_cap_max_K_requests",
+      "passed": true
+    },
+    {
+      "check": "same_original_cap_max_mathematical_arm_FK_J",
+      "passed": true
+    },
+    {
+      "check": "same_original_cap_max_native_accepted_K_internal_FK",
+      "passed": true
+    },
+    {
+      "check": "same_original_cap_r2_total_wall_s",
+      "passed": true
+    },
+    {
+      "check": "same_original_cap_r2_total_cpu_s",
+      "passed": true
+    },
+    {
+      "check": "shared_guard_no_quota_if_old_nonzero",
+      "passed": true
+    },
+    {
+      "check": "latest28_V10_exact",
+      "passed": true
+    },
+    {
+      "check": "owncost_exact_not_cumulative",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_PLANAR01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_SPATIAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "prior_exact_results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v3.py",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V3_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_vi_rss_reconstructed.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/physical_nr.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/analyze_comau_native_qualification.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/abb_independent_oracle.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/rss_geometry.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/spatial_ik_patch.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261014T1545_R1_COMAU02/IV_native.jsonl",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V10.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v4.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/P4_R2_IV_RSS_WRIST_FIXED100_800IK_30W_60CPU_20261015.claim.json",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/p4_geometry_consistent_apc_stage_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/author_source_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_geometry_consistent_qualification_v1.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_rss_fixed_construction_addendum_v1.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_iv_nr_local_qualification_v1.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/IV/observations.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/IV/checks.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/comau_iv_staging.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_PLANAR01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/def.h",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/def.h",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/validity_checkers/StateValidityCheckerRSS.cpp",
+      "passed": true
+    },
+    {
+      "check": "64_bound_assets",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "legacy_preserved_configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v4.json",
+      "passed": true
+    },
+    {
+      "check": "unfrozen_no_claim_no_execution",
+      "passed": true
+    },
+    {
+      "check": "liveCPU_and_finalhash_caps_unchanged",
+      "passed": true
+    }
+  ],
+  "runner": "scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v3.py",
+  "runner_sha256": "23b564dfe9af4feeb52a8d2be66054716f212387780dac7ff41c64ca80eb8869",
+  "PRE": "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V3_DRAFT_20261016.md",
+  "PRE_sha256": "ba9ffe6e276807285ad0f3320d51028a6159aa305cb3e642a8f7a3d7c7990da7",
+  "candidate": "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v5.draft.json",
+  "candidate_sha256": "c4cd46e0884013076aa10c5bb3c1ecaf2815778fa34522319abc7611dbe8d53b",
+  "exact_diff": "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_V3_EXACT_RECOVERY_DIFF_20261016.patch",
+  "exact_diff_sha256": "67826bec12b501b9be1be0054eeade7f0d66d6d7bf39610117ed2ef5347be071",
+  "root_cause": "Our qualification guard compared R1 literal ±3.1416 to unchanged runtime degree*3.1416/180, differing by one binary64 ULP at q1 only. No physical model or mathematical gate changed.",
+  "ULP_evidence": [
+    {
+      "joint_index0": 0,
+      "side": "low",
+      "R1_literal": -3.1416,
+      "R1_hex": "-0x1.921ff2e48e8a7p+1",
+      "R1_binary64_big_endian": "c00921ff2e48e8a7",
+      "runtime": -3.1415999999999995,
+      "runtime_hex": "-0x1.921ff2e48e8a6p+1",
+      "runtime_binary64_big_endian": "c00921ff2e48e8a6",
+      "abs_difference_rad": 4.440892098500626e-16,
+      "ULP_of_literal": 4.440892098500626e-16,
+      "difference_in_ULP": 1.0
+    },
+    {
+      "joint_index0": 0,
+      "side": "high",
+      "R1_literal": 3.1416,
+      "R1_hex": "0x1.921ff2e48e8a7p+1",
+      "R1_binary64_big_endian": "400921ff2e48e8a7",
+      "runtime": 3.1415999999999995,
+      "runtime_hex": "0x1.921ff2e48e8a6p+1",
+      "runtime_binary64_big_endian": "400921ff2e48e8a6",
+      "abs_difference_rad": 4.440892098500626e-16,
+      "ULP_of_literal": 4.440892098500626e-16,
+      "difference_in_ULP": 1.0
+    },
+    {
+      "joint_index0": 1,
+      "side": "low",
+      "R1_literal": -1.0472000000000001,
+      "R1_hex": "-0x1.0c154c985f070p+0",
+      "R1_binary64_big_endian": "bff0c154c985f070",
+      "runtime": -1.0472000000000001,
+      "runtime_hex": "-0x1.0c154c985f070p+0",
+      "runtime_binary64_big_endian": "bff0c154c985f070",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 2.220446049250313e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 1,
+      "side": "high",
+      "R1_literal": 2.1816666666666666,
+      "R1_hex": "0x1.1740da740da74p+1",
+      "R1_binary64_big_endian": "4001740da740da74",
+      "runtime": 2.1816666666666666,
+      "runtime_hex": "0x1.1740da740da74p+1",
+      "runtime_binary64_big_endian": "4001740da740da74",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 4.440892098500626e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 2,
+      "side": "low",
+      "R1_literal": -1.5707999999999998,
+      "R1_hex": "-0x1.921ff2e48e8a6p+0",
+      "R1_binary64_big_endian": "bff921ff2e48e8a6",
+      "runtime": -1.5707999999999998,
+      "runtime_hex": "-0x1.921ff2e48e8a6p+0",
+      "runtime_binary64_big_endian": "bff921ff2e48e8a6",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 2.220446049250313e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 2,
+      "side": "high",
+      "R1_literal": 1.309,
+      "R1_hex": "0x1.4f1a9fbe76c8bp+0",
+      "R1_binary64_big_endian": "3ff4f1a9fbe76c8b",
+      "runtime": 1.309,
+      "runtime_hex": "0x1.4f1a9fbe76c8bp+0",
+      "runtime_binary64_big_endian": "3ff4f1a9fbe76c8b",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 2.220446049250313e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 3,
+      "side": "low",
+      "R1_literal": -47.123999999999995,
+      "R1_hex": "-0x1.78fdf3b645a1cp+5",
+      "R1_binary64_big_endian": "c0478fdf3b645a1c",
+      "runtime": -47.123999999999995,
+      "runtime_hex": "-0x1.78fdf3b645a1cp+5",
+      "runtime_binary64_big_endian": "c0478fdf3b645a1c",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 7.105427357601002e-15,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 3,
+      "side": "high",
+      "R1_literal": 47.123999999999995,
+      "R1_hex": "0x1.78fdf3b645a1cp+5",
+      "R1_binary64_big_endian": "40478fdf3b645a1c",
+      "runtime": 47.123999999999995,
+      "runtime_hex": "0x1.78fdf3b645a1cp+5",
+      "runtime_binary64_big_endian": "40478fdf3b645a1c",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 7.105427357601002e-15,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 4,
+      "side": "low",
+      "R1_literal": -2.0944000000000003,
+      "R1_hex": "-0x1.0c154c985f070p+1",
+      "R1_binary64_big_endian": "c000c154c985f070",
+      "runtime": -2.0944000000000003,
+      "runtime_hex": "-0x1.0c154c985f070p+1",
+      "runtime_binary64_big_endian": "c000c154c985f070",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 4.440892098500626e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 4,
+      "side": "high",
+      "R1_literal": 2.0944000000000003,
+      "R1_hex": "0x1.0c154c985f070p+1",
+      "R1_binary64_big_endian": "4000c154c985f070",
+      "runtime": 2.0944000000000003,
+      "runtime_hex": "0x1.0c154c985f070p+1",
+      "runtime_binary64_big_endian": "4000c154c985f070",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 4.440892098500626e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 5,
+      "side": "low",
+      "R1_literal": -6.981333333333333,
+      "R1_hex": "-0x1.bece2a53490b9p+2",
+      "R1_binary64_big_endian": "c01bece2a53490b9",
+      "runtime": -6.981333333333333,
+      "runtime_hex": "-0x1.bece2a53490b9p+2",
+      "runtime_binary64_big_endian": "c01bece2a53490b9",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 8.881784197001252e-16,
+      "difference_in_ULP": 0.0
+    },
+    {
+      "joint_index0": 5,
+      "side": "high",
+      "R1_literal": 6.981333333333333,
+      "R1_hex": "0x1.bece2a53490b9p+2",
+      "R1_binary64_big_endian": "401bece2a53490b9",
+      "runtime": 6.981333333333333,
+      "runtime_hex": "0x1.bece2a53490b9p+2",
+      "runtime_binary64_big_endian": "401bece2a53490b9",
+      "abs_difference_rad": 0.0,
+      "ULP_of_literal": 8.881784197001252e-16,
+      "difference_in_ULP": 0.0
+    }
+  ],
+  "first01_execution_sha256": "cab65679252fc04ee65c699e09bcb5fd6662657c4047494177a8212c75859514",
+  "first01_status": "STOP_PREFIX_RETAINED",
+  "first01_queries": 0,
+  "shared_budget": {
+    "shared_total_wall_s": 30.0,
+    "shared_total_cpu_s": 60.0,
+    "first_execution": "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json",
+    "first_execution_sha256": "cab65679252fc04ee65c699e09bcb5fd6662657c4047494177a8212c75859514",
+    "first_protocol": "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v4.json",
+    "first_protocol_sha256": "e9bb797ecca5c8196fa26d4c2d68a1ad82174b8127288a1d49be1dd6a1ca35fb",
+    "first_claim": "results/p4_full/P4_R2_IV_RSS_WRIST_FIXED100_800IK_30W_60CPU_20261015.claim.json",
+    "first_claim_sha256": "c18305bf892dde0de35786424021217a5ce2088af14df79a304dfe7f7877ff6e",
+    "first_wall_s": 0.03671536999991076,
+    "first_cpu_s": 0.036766999999999994,
+    "remaining_wall_s": 29.96328463000009,
+    "remaining_cpu_s": 59.963233,
+    "shared_max_fixed_targets": 100,
+    "shared_max_K_requests": 800,
+    "first_fixed_targets_started": 0,
+    "first_K_dispatched": 0,
+    "first_all_mathematical_or_native_queries": 0,
+    "new_execution_not_resume_or_overwrite": true
+  },
+  "prior_execution_count": 28,
+  "previous_r2_wall_s": 504.47186458199417,
+  "previous_r2_cpu_s": 457.738928,
+  "new_scientific_calls": 0,
+  "new_compile_calls": 0,
+  "new_claims": 0,
+  "reviewer_implemented_this_new_engineering_version": true,
+  "root_independent_review_required": true,
+  "limits": [
+    "Six scientific function ASTs unchanged; run AST differs only in pre-loop exact representation guard.",
+    "No real bound, fixed input, IK, branch identity, FK/J, rank, collision or success threshold was changed.",
+    "First01 source/PRE/protocol/claim/STOP/results remain immutable; run02 is a separately claimed version within original shared budget.",
+    "Describe/validate only; no run02 model query or native process/compilation.",
+    "If shared30/60 is exhausted, stop; no new VI quota or formal planning is authorized."
+  ]
+}

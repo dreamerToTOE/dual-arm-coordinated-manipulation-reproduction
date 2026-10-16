@@ -1,0 +1,180 @@
+--- scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py
++++ scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v3.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""V2 IV fixed100 wrist mathematics only; no sampling, collision or planner.
++"""V3 IV fixed100 exact bound-representation recovery; no sampling, collision or planner.
+ 
+ Describe/validate read saved evidence only. Execution requires independent
+ review, root freeze, committed sources and a fresh one-shot claim. Existing
+@@ -31,22 +31,26 @@
+ from baselines.p4_full.geometry_consistent.rss_geometry import apply_mode
+ from build_p4_full_r2_abb_rrt_pcs_e2e import live_group_cpu
+ 
+-SCHEMA = 'P4_R2_IV_RSS_WRIST_FIXED100_MATH_QUALIFICATION_V2'
+-RUN_ID = '20261015_R2_IV_RSS_WRIST_FIXED100_01'
+-CLAIM_ID = 'P4_R2_IV_RSS_WRIST_FIXED100_800IK_30W_60CPU_20261015'
+-PRE = 'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md'
++SCHEMA = 'P4_R2_IV_RSS_WRIST_FIXED100_MATH_QUALIFICATION_V3'
++RUN_ID = '20261015_R2_IV_RSS_WRIST_FIXED100_02'
++CLAIM_ID = 'P4_R2_IV_RSS_WRIST_FIXED100_800IK_SHARED30W_60CPU_02_20261015'
++PRE = 'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V3_DRAFT_20261016.md'
+ RAW = 'results/p4_full/20261014T1545_R1_COMAU02/IV_native.jsonl'
+ RAW_SHA = '3ae03596a6e5e52ba9e4c5b99fa10e61c713dcb9741860c7064563e4ca87b2f6'
+ BINARY = 'build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch'
+ BINARY_SHA = 'acb44b837629fb8d822c4a238ab5014f78fd594dd1eb2e075015645e7370882a'
+ STAGE = 'build/p4_full/20261015_R2_SPATIAL01/ckcComau2'
+ AUTHOR = '/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2'
+-LEDGER = 'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V9.json'
++LEDGER = 'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V10.json'
+ ABB_EXECUTION = 'results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json'
+ LEGACY = ['scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py',
+     'configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json',
+     'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md',
+-    'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md']
++    'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md',
++    'scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py',
++    'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md',
++    'configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v4.json']
++FAILED_EXECUTION = 'results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json'
+ SOURCES = [str(Path(__file__).resolve().relative_to(ROOT)), PRE,
+     'scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py',
+     'scripts/qualify_p4_full_r2_vi_rss_reconstructed.py',
+@@ -70,6 +74,53 @@
+ 
+ def load(value):
+     return json.loads(path(value).read_text())
++
++
++def source_limit_representations(metadata):
++    """Pin both exact representations without evaluating any robot model."""
++    degrees = [(-180, 180), (-60, 125), (-90, 75),
++        (-2700, 2700), (-120, 120), (-400, 400)]
++    runtime_arm = [[lo*3.1416/180., hi*3.1416/180.] for lo, hi in degrees]
++    r1_arm = [list(row) for row in runtime_arm]; r1_arm[0] = [-3.1416, 3.1416]
++    if (metadata['joint_low_rad'] != [row[0] for row in r1_arm]
++            or metadata['joint_high_rad'] != [row[1] for row in r1_arm]):
++        raise common.StopQualification('R1_LITERAL_LIMIT_REPRESENTATION_CHANGED')
++    return {'R1_literal_arm_bounds_rad': r1_arm,
++        'runtime_degree_times_author_pi_div_180_arm_bounds_rad': runtime_arm,
++        'runtime_full12_bounds_rad': runtime_arm*2,
++        'comparison_policy': 'Exact equality of separately frozen representations, never allclose. Actual candidate validity still uses unchanged physical.source_limits bounds.',
++        'source_literal_pi': 3.1416}
++
++
++def shared_budget_state():
++    """The failed first guard consumed time only; never reset the shared cap."""
++    first = load(FAILED_EXECUTION); first_protocol = load(first['protocol'])
++    if (first['status'] != 'STOP_PREFIX_RETAINED'
++            or first['termination_reason'] != "StopQualification('RUNTIME_GEOMETRY_OR_SOURCE_LIMITS_CHANGED')"
++            or first['target_results'] != [] or first['branch_observations'] != []
++            or any(v != 0 for v in first['counts'].values())
++            or first['native_call_accounting']['external_K_dispatched'] != 0
++            or first['native_call_accounting']['external_K_JSON_completed'] != 0
++            or len(first['uncompleted_branch_diagnostic_ids']) != 800
++            or common.sha(path(first['protocol'])) != first['protocol_sha256']
++            or first['protocol_after_sha256'] != first['protocol_sha256']
++            or first['claim_after_sha256'] != first['claim_sha256']
++            or common.sha(path(first['claim'])) != first['claim_sha256']
++            or first['bound_files_after_sha256'] != first['bound_files_sha256']):
++        raise common.StopQualification('SHARED_FIRST_ATTEMPT_MUST_BE_EXACT_ZERO_QUERY_GUARD_STOP')
++    remaining_wall = 30.-first['wall_s']; remaining_cpu = 60.-first['cpu_s']
++    if min(remaining_wall, remaining_cpu) <= 0:
++        raise common.StopQualification('SHARED_IV_WRIST_BUDGET_EXHAUSTED')
++    return {'shared_total_wall_s': 30., 'shared_total_cpu_s': 60.,
++        'first_execution': FAILED_EXECUTION, 'first_execution_sha256': common.sha(path(FAILED_EXECUTION)),
++        'first_protocol': first['protocol'], 'first_protocol_sha256': first['protocol_sha256'],
++        'first_claim': first['claim'], 'first_claim_sha256': first['claim_sha256'],
++        'first_wall_s': first['wall_s'], 'first_cpu_s': first['cpu_s'],
++        'remaining_wall_s': remaining_wall, 'remaining_cpu_s': remaining_cpu,
++        'shared_max_fixed_targets': 100, 'shared_max_K_requests': 800,
++        'first_fixed_targets_started': 0, 'first_K_dispatched': 0,
++        'first_all_mathematical_or_native_queries': 0,
++        'new_execution_not_resume_or_overwrite': True}, first_protocol
+ 
+ 
+ def fixed_inputs():
+@@ -107,7 +158,7 @@
+     actual = sorted(str(p.relative_to(ROOT)) for p in (ROOT/'results/p4_full').glob(
+         '20261015_R2_*/execution.json') if p.parent.name != RUN_ID)
+     entries = ledger['executions']
+-    if (ledger['schema'] != 'P4_R2_RECOVERY_ACTUAL_LEDGER_V9'
++    if (ledger['schema'] != 'P4_R2_RECOVERY_ACTUAL_LEDGER_V10'
+             or ledger['count'] != len(actual)
+             or ledger['science_count']+ledger['engineering_count'] != len(actual) or ABB_EXECUTION not in actual
+             or sorted(r['execution'] for r in entries) != actual
+@@ -129,6 +180,11 @@
+ 
+ def draft_protocol():
+     metadata, rows = fixed_inputs(); prior, ledger, wall, cpu = prior_state()
++    representations = source_limit_representations(metadata)
++    shared, first_protocol = shared_budget_state()
++    if (rows != first_protocol['fixed_inputs'] or GATES != first_protocol['gates']
++            or BINARY != first_protocol['binary'] or BINARY_SHA != first_protocol['binary_sha256']):
++        raise common.StopQualification('SHARED_FIXED100_SCIENTIFIC_CONDITIONS_CHANGED')
+     manifest = load(STAGE+'/p4_geometry_consistent_apc_stage_manifest.json')
+     built = load('results/p4_full/20261015_R2_SPATIAL01/comau_iv_staging.json')
+     if (common.sha(path(BINARY)) != BINARY_SHA
+@@ -145,7 +201,7 @@
+             or manifest['patcher_sha256'] != common.sha(path('baselines/p4_full/geometry_consistent/spatial_ik_patch.py'))
+             or manifest['source_provenance']['sha256'] != common.sha(path('configs/p4_full/author_source_manifest.json'))):
+         raise common.StopQualification('SAVED_IV_SUCCESSFUL_BUILD_SOURCE_CHAIN_CHANGED')
+-    files = SOURCES+[RAW, BINARY, LEDGER,
++    files = SOURCES+[RAW, BINARY, LEDGER, FAILED_EXECUTION, shared['first_protocol'], shared['first_claim'],
+         STAGE+'/p4_geometry_consistent_apc_stage_manifest.json',
+         'configs/p4_full/author_source_manifest.json',
+         'configs/p4_full/r2_geometry_consistent_qualification_v1.json',
+@@ -163,7 +219,8 @@
+         'execution_readiness': 'WAIT_INDEPENDENT_STATIC_REVIEW_AND_ROOT_FREEZE',
+         'reviews': {'independent_static_review_passed': False, 'root_freeze_approved': False,
+             'prior_execution_ledger_confirmed': False},
+-        'prerequisite_history': 'Original V1 remains byte-preserved and unexecuted; V2 only refreshes actual root V9 own-cost ledger/source provenance and hard live-CPU/finalization guards. Fixed100/800 scientific inputs, mode, geometry and gates unchanged.',
++        'prerequisite_history': 'V1/V2 and first01 guard STOP remain byte-preserved. V3 separately freezes R1 literal and unchanged runtime degree-derived bounds exactly; same fixed100/800 and shared30wall/60CPU cap less first01 own cost. No model or native query ran in first01.',
++        'shared_fixed100_budget': shared,
+         'environment': 'IV', 'active_arm': 1, 'passive_arm': 2, 'source_singular_mode': 1,
+         'source_seed': metadata['seed'], 'source_effective_seed': metadata['effective_seed'],
+         'source_rng_not_rerun': metadata['rng'], 'fixed_inputs': rows,
+@@ -174,11 +231,13 @@
+             'bases_mm_rad': metadata['base_xyz_yaw_mm_rad'],
+             'grasp_transforms': metadata['grasp_transforms'],
+             'limits_low_rad': metadata['joint_low_rad'], 'limits_high_rad': metadata['joint_high_rad'],
++            'source_limit_representations': representations,
+             'author_pi_for_base_and_limits': 3.1416},
+         'binary': BINARY, 'binary_sha256': BINARY_SHA,
+         'gates': GATES, 'budget': {'max_fixed_targets': 100, 'max_K_requests': 800,
+             'max_mathematical_arm_FK_J': 900, 'max_native_accepted_K_internal_FK': 800,
+-            'wall_s': 30., 'cpu_s': 60., 'r2_total_wall_s': 3600., 'r2_total_cpu_s': 7200.},
++            'wall_s': shared['remaining_wall_s'], 'cpu_s': shared['remaining_cpu_s'],
++            'r2_total_wall_s': 3600., 'r2_total_cpu_s': 7200.},
+         'call_accounting': {'mathematical_FK_J': 'One passive call/started target + one active call/source-accepted finite root; same pose/J reused for roundtrip, closure and full physical6x12 J. Fully completed total100+A<=900, actual starts/completions logged separately.',
+             'native': 'external_K_dispatched records requests, valid saved JSON rows confirm JSON_completed. Existing K internally executes one native FK per accepted root; native_accepted_FK_observed counts finite accepted JSON returns. No explicit F requests. Internal true K/FK started has no start hook: UNOBSERVED, never inferred from dispatched or caps. Interrupted unreported rows remain UNKNOWN.',
+             'full_constraint_J': 'physical_nr closure derivative assembled from cached T1,J1,T2,J2 with its skew/log_so3/left_jacobian_inverse; no extra arm FK/J, FD or NR.',
+@@ -196,7 +255,9 @@
+         'prior_science_count': ledger['science_count'], 'prior_engineering_count': ledger['engineering_count'],
+         'prior_budget_rule': 'Each actual execution own cost once; engineering cost conservatively included in R2 cap and separately labelled. No cumulative field or science/engineering conflation.',
+         'legacy_v1_preserved': {p: common.sha(path(p)) for p in LEGACY},
+-        'engineering_only_v2_delta': ['Refresh root actual V9 ledger and every prior own cost/source hash.',
++        'engineering_only_v3_delta': ['Refresh root actual V10 ledger and every prior own cost/source hash.',
++            'Freeze R1 literal and unchanged runtime degree-derived bounds separately; exact runtime comparison only.',
++            'Link first01 zero-query guard STOP; subtract its own wall/CPU from same shared30/60 cap, no scientific quota reset.',
+             'Bind original successful comau_iv_staging build record and unchanged V1 assets.',
+             'Add parent plus live process-group CPU guard, preserve raw process prefix on stop.',
+             'Final wall/CPU or preservation error cannot receive mathematical-component PASS.'],
+@@ -331,8 +392,7 @@
+         expected = self.spec['geometry']
+         if (geometry['bases'] != expected['bases_mm_rad']
+                 or grasp.tolist() != expected['grasp_transforms'][0]
+-                or bounds[:6, 0].tolist() != expected['limits_low_rad']
+-                or bounds[:6, 1].tolist() != expected['limits_high_rad']):
++                or bounds.tolist() != expected['source_limit_representations']['runtime_full12_bounds_rad']):
+             raise common.StopQualification('RUNTIME_GEOMETRY_OR_SOURCE_LIMITS_CHANGED')
+         for item in self.spec['fixed_inputs']:
+             self.budget.remaining(); sample = item['sample']
+@@ -455,6 +515,7 @@
+         'claim_sha256':common.sha(ROOT/'results/p4_full'/(CLAIM_ID+'.claim.json')),
+         'bound_files_sha256': spec['bound_files_sha256'], 'prior_executions': spec['prior_executions'],
+         'previous_r2_wall_s': spec['previous_r2_wall_s'], 'previous_r2_cpu_s': spec['previous_r2_cpu_s'],
++        'shared_fixed100_budget': spec['shared_fixed100_budget'],
+         'seed': {'source': 20261014, 'effective': 20265014, 'new_RNG_draws': 0},
+         'VI_B_budget_charged': False, 'new_VI_candidate_constructions': 0,
+         'collision_queries': 0, 'RBS_calls': 0, 'NR_calls': 0, 'RNG_calls': 0,
