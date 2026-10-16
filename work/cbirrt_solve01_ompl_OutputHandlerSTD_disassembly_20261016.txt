@@ -1,0 +1,156 @@
+
+/opt/ros/humble/lib/x86_64-linux-gnu/libompl.so：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000450bb0 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base>:
+  450bb0:	f3 0f 1e fa          	endbr64 
+  450bb4:	41 57                	push   %r15
+  450bb6:	41 56                	push   %r14
+  450bb8:	41 55                	push   %r13
+  450bba:	41 54                	push   %r12
+  450bbc:	44 8d 62 02          	lea    0x2(%rdx),%r12d
+  450bc0:	55                   	push   %rbp
+  450bc1:	53                   	push   %rbx
+  450bc2:	48 89 f3             	mov    %rsi,%rbx
+  450bc5:	48 83 ec 08          	sub    $0x8,%rsp
+  450bc9:	83 fa 01             	cmp    $0x1,%edx
+  450bcc:	0f 8e ee 00 00 00    	jle    450cc0 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x110>
+  450bd2:	48 8b 05 5f d8 16 00 	mov    0x16d85f(%rip),%rax        # 5be438 <stderr@GLIBC_2.2.5>
+  450bd9:	48 89 cd             	mov    %rcx,%rbp
+  450bdc:	45 89 c6             	mov    %r8d,%r14d
+  450bdf:	4d 63 e4             	movslq %r12d,%r12
+  450be2:	48 8b 38             	mov    (%rax),%rdi
+  450be5:	e8 26 b0 cd ff       	call   12bc10 <fileno@plt>
+  450bea:	89 c7                	mov    %eax,%edi
+  450bec:	e8 bf 94 cd ff       	call   12a0b0 <isatty@plt>
+  450bf1:	41 89 c7             	mov    %eax,%r15d
+  450bf4:	85 c0                	test   %eax,%eax
+  450bf6:	0f 85 54 01 00 00    	jne    450d50 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x1a0>
+  450bfc:	48 8d 05 fd 9b 15 00 	lea    0x159bfd(%rip),%rax        # 5aa800 <ompl::control::Syclop::Defaults::PROB_SHORTEST_PATH@@Base+0xbf9e0>
+  450c03:	4c 8b 2d 26 eb 16 00 	mov    0x16eb26(%rip),%r13        # 5bf730 <std::cerr@GLIBCXX_3.4>
+  450c0a:	4e 8b 24 e0          	mov    (%rax,%r12,8),%r12
+  450c0e:	4d 85 e4             	test   %r12,%r12
+  450c11:	0f 84 67 01 00 00    	je     450d7e <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x1ce>
+  450c17:	4c 89 e7             	mov    %r12,%rdi
+  450c1a:	e8 51 5c cd ff       	call   126870 <strlen@plt>
+  450c1f:	4c 89 e6             	mov    %r12,%rsi
+  450c22:	4c 89 ef             	mov    %r13,%rdi
+  450c25:	48 89 c2             	mov    %rax,%rdx
+  450c28:	e8 23 9c cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450c2d:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  450c31:	48 8b 33             	mov    (%rbx),%rsi
+  450c34:	4c 89 ef             	mov    %r13,%rdi
+  450c37:	e8 14 9c cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450c3c:	48 89 c7             	mov    %rax,%rdi
+  450c3f:	e8 bc 9e cd ff       	call   12ab00 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+  450c44:	ba 11 00 00 00       	mov    $0x11,%edx
+  450c49:	48 8d 35 00 04 09 00 	lea    0x90400(%rip),%rsi        # 4e1050 <typeinfo name for ompl::base::Planner::declareParam<double, ompl::geometric::SPARSdb*, void (ompl::geometric::SPARSdb::*)(double), double (ompl::geometric::SPARSdb::*)() const>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::geometric::SPARSdb* const&, void (ompl::geometric::SPARSdb::* const&)(double), double (ompl::geometric::SPARSdb::* const&)() const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(double)#1}@@Base+0xf0>
+  450c50:	4c 89 ef             	mov    %r13,%rdi
+  450c53:	e8 f8 9b cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450c58:	44 89 f6             	mov    %r14d,%esi
+  450c5b:	4c 89 ef             	mov    %r13,%rdi
+  450c5e:	e8 1d 54 cd ff       	call   126080 <std::ostream::operator<<(int)@plt>
+  450c63:	ba 04 00 00 00       	mov    $0x4,%edx
+  450c68:	48 8d 35 f3 03 09 00 	lea    0x903f3(%rip),%rsi        # 4e1062 <typeinfo name for ompl::base::Planner::declareParam<double, ompl::geometric::SPARSdb*, void (ompl::geometric::SPARSdb::*)(double), double (ompl::geometric::SPARSdb::*)() const>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::geometric::SPARSdb* const&, void (ompl::geometric::SPARSdb::* const&)(double), double (ompl::geometric::SPARSdb::* const&)() const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(double)#1}@@Base+0x102>
+  450c6f:	48 89 c7             	mov    %rax,%rdi
+  450c72:	49 89 c4             	mov    %rax,%r12
+  450c75:	e8 d6 9b cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450c7a:	48 85 ed             	test   %rbp,%rbp
+  450c7d:	0f 84 3d 01 00 00    	je     450dc0 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x210>
+  450c83:	48 89 ef             	mov    %rbp,%rdi
+  450c86:	e8 e5 5b cd ff       	call   126870 <strlen@plt>
+  450c8b:	48 89 ee             	mov    %rbp,%rsi
+  450c8e:	4c 89 e7             	mov    %r12,%rdi
+  450c91:	48 89 c2             	mov    %rax,%rdx
+  450c94:	e8 b7 9b cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450c99:	4c 89 e7             	mov    %r12,%rdi
+  450c9c:	e8 5f 9e cd ff       	call   12ab00 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+  450ca1:	45 85 ff             	test   %r15d,%r15d
+  450ca4:	0f 85 f6 00 00 00    	jne    450da0 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x1f0>
+  450caa:	48 83 c4 08          	add    $0x8,%rsp
+  450cae:	4c 89 ef             	mov    %r13,%rdi
+  450cb1:	5b                   	pop    %rbx
+  450cb2:	5d                   	pop    %rbp
+  450cb3:	41 5c                	pop    %r12
+  450cb5:	41 5d                	pop    %r13
+  450cb7:	41 5e                	pop    %r14
+  450cb9:	41 5f                	pop    %r15
+  450cbb:	e9 30 64 cd ff       	jmp    1270f0 <std::ostream::flush()@plt>
+  450cc0:	48 8b 05 f9 d4 16 00 	mov    0x16d4f9(%rip),%rax        # 5be1c0 <stdout@GLIBC_2.2.5>
+  450cc7:	4d 63 e4             	movslq %r12d,%r12
+  450cca:	48 8b 38             	mov    (%rax),%rdi
+  450ccd:	e8 3e af cd ff       	call   12bc10 <fileno@plt>
+  450cd2:	89 c7                	mov    %eax,%edi
+  450cd4:	e8 d7 93 cd ff       	call   12a0b0 <isatty@plt>
+  450cd9:	89 c5                	mov    %eax,%ebp
+  450cdb:	85 c0                	test   %eax,%eax
+  450cdd:	0f 85 fd 00 00 00    	jne    450de0 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x230>
+  450ce3:	48 8d 05 16 9b 15 00 	lea    0x159b16(%rip),%rax        # 5aa800 <ompl::control::Syclop::Defaults::PROB_SHORTEST_PATH@@Base+0xbf9e0>
+  450cea:	4c 8b 2d 2f d0 16 00 	mov    0x16d02f(%rip),%r13        # 5bdd20 <std::cout@GLIBCXX_3.4>
+  450cf1:	4e 8b 24 e0          	mov    (%rax,%r12,8),%r12
+  450cf5:	4d 85 e4             	test   %r12,%r12
+  450cf8:	0f 84 10 01 00 00    	je     450e0e <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x25e>
+  450cfe:	4c 89 e7             	mov    %r12,%rdi
+  450d01:	e8 6a 5b cd ff       	call   126870 <strlen@plt>
+  450d06:	4c 89 e6             	mov    %r12,%rsi
+  450d09:	4c 89 ef             	mov    %r13,%rdi
+  450d0c:	48 89 c2             	mov    %rax,%rdx
+  450d0f:	e8 3c 9b cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450d14:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+  450d18:	48 8b 33             	mov    (%rbx),%rsi
+  450d1b:	4c 89 ef             	mov    %r13,%rdi
+  450d1e:	e8 2d 9b cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450d23:	48 89 c7             	mov    %rax,%rdi
+  450d26:	e8 d5 9d cd ff       	call   12ab00 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+  450d2b:	85 ed                	test   %ebp,%ebp
+  450d2d:	0f 84 77 ff ff ff    	je     450caa <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0xfa>
+  450d33:	48 8d 35 2d 03 09 00 	lea    0x9032d(%rip),%rsi        # 4e1067 <typeinfo name for ompl::base::Planner::declareParam<double, ompl::geometric::SPARSdb*, void (ompl::geometric::SPARSdb::*)(double), double (ompl::geometric::SPARSdb::*)() const>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::geometric::SPARSdb* const&, void (ompl::geometric::SPARSdb::* const&)(double), double (ompl::geometric::SPARSdb::* const&)() const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(double)#1}@@Base+0x107>
+  450d3a:	4c 89 ef             	mov    %r13,%rdi
+  450d3d:	e8 5e 6a cd ff       	call   1277a0 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@plt>
+  450d42:	e9 63 ff ff ff       	jmp    450caa <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0xfa>
+  450d47:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  450d4e:	00 00 
+  450d50:	4c 8b 2d d9 e9 16 00 	mov    0x16e9d9(%rip),%r13        # 5bf730 <std::cerr@GLIBCXX_3.4>
+  450d57:	48 8d 05 e2 9a 15 00 	lea    0x159ae2(%rip),%rax        # 5aa840 <ompl::control::Syclop::Defaults::PROB_SHORTEST_PATH@@Base+0xbfa20>
+  450d5e:	4a 8b 34 e0          	mov    (%rax,%r12,8),%rsi
+  450d62:	4c 89 ef             	mov    %r13,%rdi
+  450d65:	e8 36 6a cd ff       	call   1277a0 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@plt>
+  450d6a:	48 8d 05 8f 9a 15 00 	lea    0x159a8f(%rip),%rax        # 5aa800 <ompl::control::Syclop::Defaults::PROB_SHORTEST_PATH@@Base+0xbf9e0>
+  450d71:	4e 8b 24 e0          	mov    (%rax,%r12,8),%r12
+  450d75:	4d 85 e4             	test   %r12,%r12
+  450d78:	0f 85 99 fe ff ff    	jne    450c17 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x67>
+  450d7e:	49 8b 45 00          	mov    0x0(%r13),%rax
+  450d82:	48 8b 78 e8          	mov    -0x18(%rax),%rdi
+  450d86:	4c 01 ef             	add    %r13,%rdi
+  450d89:	8b 77 20             	mov    0x20(%rdi),%esi
+  450d8c:	83 ce 01             	or     $0x1,%esi
+  450d8f:	e8 3c a9 cd ff       	call   12b6d0 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@plt>
+  450d94:	e9 94 fe ff ff       	jmp    450c2d <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0x7d>
+  450d99:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  450da0:	ba 04 00 00 00       	mov    $0x4,%edx
+  450da5:	48 8d 35 bb 02 09 00 	lea    0x902bb(%rip),%rsi        # 4e1067 <typeinfo name for ompl::base::Planner::declareParam<double, ompl::geometric::SPARSdb*, void (ompl::geometric::SPARSdb::*)(double), double (ompl::geometric::SPARSdb::*)() const>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::geometric::SPARSdb* const&, void (ompl::geometric::SPARSdb::* const&)(double), double (ompl::geometric::SPARSdb::* const&)() const, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda(double)#1}@@Base+0x107>
+  450dac:	4c 89 ef             	mov    %r13,%rdi
+  450daf:	e8 9c 9a cd ff       	call   12a850 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+  450db4:	e9 f1 fe ff ff       	jmp    450caa <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0xfa>
+  450db9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  450dc0:	49 8b 04 24          	mov    (%r12),%rax
+  450dc4:	48 8b 78 e8          	mov    -0x18(%rax),%rdi
+  450dc8:	4c 01 e7             	add    %r12,%rdi
+  450dcb:	8b 77 20             	mov    0x20(%rdi),%esi
+  450dce:	83 ce 01             	or     $0x1,%esi
+  450dd1:	e8 fa a8 cd ff       	call   12b6d0 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@plt>
+  450dd6:	e9 be fe ff ff       	jmp    450c99 <ompl::msg::OutputHandlerSTD::log(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ompl::msg::LogLevel, char const*, int)@@Base+0xe9>
+  450ddb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  450de0:	4c 8b 2d 39 cf 16 00 	mov    0x16cf39(%rip),%r13        # 5bdd20 <std::cout@GLIBCXX_3.4>
+  450de7:	48 8d 05 52 9a 15 00 	lea    0x159a52(%rip),%rax        # 5aa840 <ompl::control::Syclop::Defaults::PROB_SHORTEST_PATH@@Base+0xbfa20>
+  450dee:	4a 8b 34 e0          	mov    (%rax,%r12,8),%rsi
+  450df2:	4c 89 ef             	mov    %r13,%rdi
+  450df5:	e8 a6 69 cd ff       	call   1277a0 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@plt>
+  450dfa:	48                   	rex.W
+  450dfb:	8d                   	.byte 0x8d
+  450dfc:	05                   	.byte 0x5
+  450dfd:	ff                   	.byte 0xff
+  450dfe:	99                   	cltd   
+  450dff:	15                   	.byte 0x15

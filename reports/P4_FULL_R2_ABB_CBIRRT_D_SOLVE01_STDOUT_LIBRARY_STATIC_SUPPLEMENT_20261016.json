@@ -1,0 +1,18 @@
+{
+  "schema": "P4_SOLVE01_SAVED_LIBRARY_STDOUT_STATIC_SUPPLEMENT_V1",
+  "scope": "Read actual already bound linked library disassembly only; no library code called or science run.",
+  "library": "/opt/ros/humble/lib/x86_64-linux-gnu/libompl.so",
+  "library_sha256": "25e9cbdc7c1c3b1e7c56221e954e72c4f5cb96e6c45253631773655cac71499e",
+  "disassembly": "work/cbirrt_solve01_ompl_OutputHandlerSTD_disassembly_20261016.txt",
+  "disassembly_sha256": "33189e00f15b3c37b76c5bb994f9d0b00059e8da0dd2de42fad63adc271e861f",
+  "source_symbol": "ompl::msg::OutputHandlerSTD::log",
+  "addresses": [
+    "0x450ce3..0x450d26: LOG_DEBUG/LOG_INFO loads std::cout and calls __ostream_insert/endl",
+    "0x450bfc..0x450c3f: higher levels load std::cerr"
+  ],
+  "inference": "The existing driver Redirect swaps std::cout rdbuf during original solve and getPlannerData, so normal solve Info messages follow stderr. Setup is outside Redirect, explaining the one observed stdout Debug preamble.",
+  "limits": [
+    "This is static binary evidence, not an observed complete S02 run. All unknown stdout lines still stop; no broader logging whitelist is authorized.",
+    "No actual source/RNG/IK/FK/collision/solve/compile was invoked."
+  ]
+}

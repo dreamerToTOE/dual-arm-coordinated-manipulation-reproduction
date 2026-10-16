@@ -1,0 +1,134 @@
+{
+  "schema": "P4_SOLVE01_STDOUT_SOURCE_TIMELINE_SAVED_DIAGNOSIS_V1",
+  "reviewer": "nr_path_prepare",
+  "personnel_independent": true,
+  "scope": "Saved bytes and source-only control-flow reasoning; no runner import, replay, compile, model or new science.",
+  "execution_sha256": "99c5cc5e980bf52489b154d5a678df903a1897a1e9e966c341ea6b5229533fdd",
+  "original_status": "STOP_PREFIX_RETAINED",
+  "original_termination_reason": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+  "actual_dispatched_requests": 1,
+  "actual_final_JSON_response_count": 0,
+  "original_raw_response_lines_observed_semantics": "Count1 includes one non-JSON preamble, not a completed planner JSON.",
+  "original_stdout_bytes": 55,
+  "original_stdout_utf8": "Debug:   CBiRRT: Planner range detected to be 3.415829\n",
+  "original_stdout_sha256": "daa344847b00a40924a64df3aebb4f859fa26327791294bb30f793a0edaba532",
+  "exact_candidate_preamble_whitelist": {
+    "allowed_bytes_utf8": "Debug:   CBiRRT: Planner range detected to be 3.415829\n",
+    "maximum_occurrences": 1,
+    "position": "Only before the one final JSON response",
+    "unknown_nonJSON_or_duplicate_line": "STOP, preserve every original byte; no broad Debug-prefix swallowing",
+    "after_response_tail": "STOP even when it resembles the same known preamble"
+  },
+  "source_solve_started": true,
+  "source_solve_completed": "UNKNOWN_NO_FINAL_RESPONSE",
+  "source_path_result": "UNKNOWN_NOT_A_PLANNING_FAILURE_OR_SUCCESS",
+  "constructor_mesh_trace": {
+    "entered": 1,
+    "completed": 1
+  },
+  "saved_source_body_counts": [
+    {
+      "kind": "collision",
+      "event": "entered",
+      "count": 1
+    },
+    {
+      "kind": "identify",
+      "event": "completed",
+      "count": 1
+    },
+    {
+      "kind": "identify",
+      "event": "entered",
+      "count": 1
+    },
+    {
+      "kind": "mesh_load",
+      "event": "completed",
+      "count": 1
+    },
+    {
+      "kind": "mesh_load",
+      "event": "entered",
+      "count": 1
+    },
+    {
+      "kind": "native_fk",
+      "event": "completed",
+      "count": 2
+    },
+    {
+      "kind": "native_fk",
+      "event": "entered",
+      "count": 2
+    },
+    {
+      "kind": "native_ik",
+      "event": "completed",
+      "count": 16
+    },
+    {
+      "kind": "native_ik",
+      "event": "entered",
+      "count": 16
+    }
+  ],
+  "last_raw_source_event": {
+    "args": {
+      "q12": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        1.5708,
+        0.0,
+        1.0042713284452618,
+        0.2729059574498862,
+        0.9485892867539307,
+        -1.1501189067527977,
+        1.8100179182011582,
+        -1.977396290726386
+      ]
+    },
+    "event": "entered",
+    "id": 20,
+    "kind": "collision"
+  },
+  "source_registry": [
+    {
+      "pid": 78833,
+      "reaped": true,
+      "returncode": -9
+    }
+  ],
+  "complete_source_raw_evidence_gate": false,
+  "timeline": [
+    "Driver builds planner under Redirect quiet and later receives the fixed II/seed7 request.",
+    "Driver calls planner->setup() outside Redirect. Source setup runs SelfConfig.configurePlannerRange(maxDistance_) and emits the exact stdout Debug line.",
+    "Driver then sets source_dispatch_started/solve_calls and invokes original solve under Redirect quiet.",
+    "Original solve begins initiate_log_parameters, allocState, setRange(Range). Constructor Range=maxStep=2.6, setter writes maxDistance_=2.6.",
+    "Original growTree uses maxDistance_ for its distance threshold and interpolation. Setup log3.415829 is temporary, not the actual solve range.",
+    "Raw stderr contains actual identify complete,16nativeIK complete,2nativeFK complete, then start collision entered. These occur in original solve start qualification.",
+    "Parent treated first stdout log as JSON and raised JSONDecodeError, then killed/reaped source-9. It did not observe a final solve result or complete snapshot."
+  ],
+  "charged_outer_upper_wall_s": 1.44,
+  "charged_outer_upper_cpu_s": 1.14,
+  "external_supervision_qualified": false,
+  "own_new_scientific_calls": 0,
+  "retained_sha256": {
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/execution.json": "99c5cc5e980bf52489b154d5a678df903a1897a1e9e966c341ea6b5229533fdd",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/evidence.jsonl": "943670b6fc1a36678df3e6271374d67f59e001590c5a2cef21e30c5e87b2215d",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/source_stdout.bin": "daa344847b00a40924a64df3aebb4f859fa26327791294bb30f793a0edaba532",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/source_stderr.bin": "884ad123208c452b47dc4e8477ae1ce9bf34c80aff42e6e9c74d446d45d0749c",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01.supervision.charge.json": "45261f27a5a52a0f32273af0278bd0c71c553887ef51a21bf69dc3aab876be45",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_d_v1/distance_destination_fix/preserved_originals/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_d_v1/distance_destination_fix/planners/CBiRRT_PCS.h": "714076be551bf08383402076466fbe4a15ed0e36cb1b3300e9533a67aa1f91b7"
+  },
+  "limits": [
+    "No timing inference between separate stdout/stderr buffers beyond saved order per channel and source control-flow.",
+    "Do not report0solve: the actual source start-qualification bodies prove entry.",
+    "Source01 STOP/UNKNOWN/raw/claim/protocol remain unchanged.",
+    "Any S02 engineering correction requires separate exact source review/freeze and the original shared30/60 caps; this report does not launch it."
+  ]
+}
