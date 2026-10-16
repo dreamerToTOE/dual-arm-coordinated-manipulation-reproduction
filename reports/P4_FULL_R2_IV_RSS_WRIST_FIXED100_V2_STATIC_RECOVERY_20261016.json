@@ -1,0 +1,109 @@
+{
+  "schema": "P4_R2_IV_RSS_FIXED100_V2_STATIC_RECOVERY_V1",
+  "preparation_date_Asia_Shanghai": "2026-10-16",
+  "state": "DRAFT_NOT_FROZEN_NOT_EXECUTED",
+  "author_prepared_v2": true,
+  "personnel_independent": false,
+  "new_scientific_calls": {
+    "compile": 0,
+    "FK_J": 0,
+    "IK": 0,
+    "collision": 0,
+    "RBS": 0,
+    "NR": 0,
+    "RNG": 0,
+    "solve": 0,
+    "VI": 0
+  },
+  "scientific_authorization_assessment": "Previously prepared original-IV sMode1 wrist-only fixed-input mathematical component remains within authorized versioned qualification. No new sampling set/probability/model/gates or formal planning is proposed. Root and independent review/freeze still required.",
+  "unchanged_scientific_AST": [
+    {
+      "function": "fixed_inputs",
+      "AST_equal": true
+    },
+    {
+      "function": "rank_data",
+      "AST_equal": true
+    },
+    {
+      "function": "cached_closure",
+      "AST_equal": true
+    },
+    {
+      "function": "Qualification.fk",
+      "AST_equal": true
+    },
+    {
+      "function": "Qualification.native",
+      "AST_equal": true
+    },
+    {
+      "function": "Qualification.run",
+      "AST_equal": true
+    },
+    {
+      "function": "Qualification.native_prefix_accounting",
+      "AST_equal": true
+    }
+  ],
+  "identical_v1_v2_protocol_scientific_fields": {
+    "fixed_inputs": true,
+    "geometry": true,
+    "gates": true,
+    "budget": true,
+    "environment": true,
+    "active_arm": true,
+    "passive_arm": true,
+    "source_singular_mode": true,
+    "request_order": true,
+    "passive_rule": true,
+    "target_rule": true,
+    "G0_gate": true,
+    "G1_gate": true,
+    "positive_component_gate": true,
+    "zero_calls": true,
+    "binary": true,
+    "binary_sha256": true
+  },
+  "legacy_preserved_sha256": {
+    "scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py": "600ca71fe2056a7ced3ca796cadbcf92e51a6b6ad533cc668955b1d461cd404d",
+    "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json": "1632a50ca3382cb7c8b1a7107214e57703ee2a4c34fe67aee16f340186aa851a",
+    "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md": "31126e0b061531c4dff5958ca572d4a85153e5b087a7f4738f0dcaf94575081f",
+    "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md": "c4deb2f15aab020478b321023c1b8195c3034061513ff45d504572e8c566d235"
+  },
+  "candidate": "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v2.draft.json",
+  "candidate_sha256": "077f0c83af22cb17a86ba8e6945637cc1dc0074137486e76e69d7d6734d150db",
+  "candidate_fixed_targets": 100,
+  "candidate_K_requests": 800,
+  "candidate_prior_count": 25,
+  "candidate_prior_science": 20,
+  "candidate_prior_engineering": 5,
+  "candidate_prior_wall_s": 419.4056698739944,
+  "candidate_prior_cpu_s": 385.449026,
+  "candidate_bound_file_count": 57,
+  "candidate_bound_current_hash_matches": true,
+  "root_ledger": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V8.json",
+  "current_actual_prior_count": 26,
+  "new_prior_since_candidate": [
+    "results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json"
+  ],
+  "validation_after_new_prior": "REFUSED_ROOT_PRIOR_LEDGER_REQUIRES_NEW_REVIEW: H engineering actual execution increased count25 to26; expected stale-candidate protection, zero scientific start.",
+  "must_rebind_latest_ledger_before_freeze": true,
+  "budget": {
+    "max_fixed_targets": 100,
+    "max_K_requests": 800,
+    "max_mathematical_arm_FK_J": 900,
+    "max_native_accepted_K_internal_FK": 800,
+    "wall_s": 30.0,
+    "cpu_s": 60.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "VI_B_remaining": 0,
+  "run_directory_exists": false,
+  "claim_exists": false,
+  "engineering_diff": "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_V2_ENGINEERING_DIFF_20261016.patch",
+  "engineering_diff_sha256": "5f96c569d0133599f365d0b6a6d4c9a85865157798567b5ad86650baa082b2da",
+  "v2_script_sha256": "f366d885ac9f81f853ccb01c99819a2ca16e1d77ed4335bc8714ce6f93ca9f1c",
+  "v2_PRE_sha256": "e4fa276337afea4d4b2f81aa444a03af626ba3b11ab41360fd91d2a68d6e7529"
+}

@@ -1,0 +1,206 @@
+--- scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py
++++ scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Draft IV fixed100 wrist mathematics only; no sampling, collision or planner.
++"""V2 IV fixed100 wrist mathematics only; no sampling, collision or planner.
+ 
+ Describe/validate read saved evidence only. Execution requires independent
+ review, root freeze, committed sources and a fresh one-shot claim. Existing
+@@ -14,6 +14,7 @@
+ import math
+ import os
+ from pathlib import Path
++import signal
+ import subprocess
+ import sys
+ import time
+@@ -28,20 +29,26 @@
+ import qualify_p4_full_r2_vi_rss_reconstructed as common
+ from baselines.p4_full.geometry_consistent import physical_nr as physical
+ from baselines.p4_full.geometry_consistent.rss_geometry import apply_mode
+-
+-SCHEMA = 'P4_R2_IV_RSS_WRIST_FIXED100_MATH_QUALIFICATION_V1'
++from build_p4_full_r2_abb_rrt_pcs_e2e import live_group_cpu
++
++SCHEMA = 'P4_R2_IV_RSS_WRIST_FIXED100_MATH_QUALIFICATION_V2'
+ RUN_ID = '20261015_R2_IV_RSS_WRIST_FIXED100_01'
+ CLAIM_ID = 'P4_R2_IV_RSS_WRIST_FIXED100_800IK_30W_60CPU_20261015'
+-PRE = 'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md'
++PRE = 'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md'
+ RAW = 'results/p4_full/20261014T1545_R1_COMAU02/IV_native.jsonl'
+ RAW_SHA = '3ae03596a6e5e52ba9e4c5b99fa10e61c713dcb9741860c7064563e4ca87b2f6'
+ BINARY = 'build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch'
+ BINARY_SHA = 'acb44b837629fb8d822c4a238ab5014f78fd594dd1eb2e075015645e7370882a'
+ STAGE = 'build/p4_full/20261015_R2_SPATIAL01/ckcComau2'
+ AUTHOR = '/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2'
+-LEDGER = 'results/p4_full/20261015_RECOVERY_ACTUAL_LEDGER_V4.json'
++LEDGER = 'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V8.json'
+ ABB_EXECUTION = 'results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json'
++LEGACY = ['scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py',
++    'configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json',
++    'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md',
++    'reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md']
+ SOURCES = [str(Path(__file__).resolve().relative_to(ROOT)), PRE,
++    'scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py',
+     'scripts/qualify_p4_full_r2_vi_rss_reconstructed.py',
+     'baselines/p4_full/geometry_consistent/physical_nr.py',
+     'baselines/p4_full/analyze_comau_native_qualification.py',
+@@ -100,9 +107,9 @@
+     actual = sorted(str(p.relative_to(ROOT)) for p in (ROOT/'results/p4_full').glob(
+         '20261015_R2_*/execution.json') if p.parent.name != RUN_ID)
+     entries = ledger['executions']
+-    if (ledger['schema'] != 'P4_R2_RECOVERY_ACTUAL_LEDGER_V4'
+-            or ledger['count'] != 15 or ledger['science_count'] != 14
+-            or ledger['engineering_count'] != 1 or ABB_EXECUTION not in actual
++    if (ledger['schema'] != 'P4_R2_RECOVERY_ACTUAL_LEDGER_V8'
++            or ledger['count'] != len(actual)
++            or ledger['science_count']+ledger['engineering_count'] != len(actual) or ABB_EXECUTION not in actual
+             or sorted(r['execution'] for r in entries) != actual
+             or ledger['vi_B_candidate_cap'] != 974
+             or ledger['vi_B_remaining']['candidate_constructions'] != 0):
+@@ -123,11 +130,21 @@
+ def draft_protocol():
+     metadata, rows = fixed_inputs(); prior, ledger, wall, cpu = prior_state()
+     manifest = load(STAGE+'/p4_geometry_consistent_apc_stage_manifest.json')
++    built = load('results/p4_full/20261015_R2_SPATIAL01/comau_iv_staging.json')
+     if (common.sha(path(BINARY)) != BINARY_SHA
+             or manifest['source_provenance']['commit'] != '80089340f0f1f6822e5b2821a63c998b6ae0413f'
+             or common.sha(path(STAGE+'/proj_classes/apc_class.cpp')) != manifest['cpp_after_sha256']
+             or common.sha(path(STAGE+'/proj_classes/apc_class.h')) != manifest['header_unchanged_sha256']):
+         raise common.StopQualification('EXISTING_IV_BINARY_OR_STAGE_CHANGED')
++    if (built['exit_code'] != 0 or built['model'] != 'comau_iv'
++            or path(built['manifest']).resolve() != path(STAGE+'/p4_geometry_consistent_apc_stage_manifest.json').resolve()
++            or built['manifest_sha256'] != common.sha(path(STAGE+'/p4_geometry_consistent_apc_stage_manifest.json'))
++            or built['cpp_after_sha256'] != manifest['cpp_after_sha256']
++            or '-DP4_MODEL=4' not in built['build_command']
++            or path(built['build_command'][-1]).resolve() != path(BINARY).resolve()
++            or manifest['patcher_sha256'] != common.sha(path('baselines/p4_full/geometry_consistent/spatial_ik_patch.py'))
++            or manifest['source_provenance']['sha256'] != common.sha(path('configs/p4_full/author_source_manifest.json'))):
++        raise common.StopQualification('SAVED_IV_SUCCESSFUL_BUILD_SOURCE_CHAIN_CHANGED')
+     files = SOURCES+[RAW, BINARY, LEDGER,
+         STAGE+'/p4_geometry_consistent_apc_stage_manifest.json',
+         'configs/p4_full/author_source_manifest.json',
+@@ -136,7 +153,8 @@
+         'configs/p4_full/r2_iv_nr_local_qualification_v1.json',
+         'results/p4_full/20261015_R2_SPATIAL01/IV/observations.json',
+         'results/p4_full/20261015_R2_SPATIAL01/IV/checks.json',
+-        'results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json']+prior
++        'results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json',
++        'results/p4_full/20261015_R2_SPATIAL01/comau_iv_staging.json']+prior+LEGACY
+     files += [root+'/'+name for root in (STAGE, AUTHOR) for name in (
+         'proj_classes/apc_class.cpp', 'proj_classes/apc_class.h', 'proj_classes/def.h')]
+     files += [AUTHOR+'/validity_checkers/StateValidityCheckerRSS.cpp']
+@@ -145,7 +163,7 @@
+         'execution_readiness': 'WAIT_INDEPENDENT_STATIC_REVIEW_AND_ROOT_FREEZE',
+         'reviews': {'independent_static_review_passed': False, 'root_freeze_approved': False,
+             'prior_execution_ledger_confirmed': False},
+-        'prerequisite_history': 'Prepared while ABB LOCAL01 was running; its actual execution and BUILD engineering are now bound through root V4. Their completion never authorizes this draft to execute.',
++        'prerequisite_history': 'Original V1 remains byte-preserved and unexecuted; V2 only refreshes actual root V8 own-cost ledger/source provenance and hard live-CPU/finalization guards. Fixed100/800 scientific inputs, mode, geometry and gates unchanged.',
+         'environment': 'IV', 'active_arm': 1, 'passive_arm': 2, 'source_singular_mode': 1,
+         'source_seed': metadata['seed'], 'source_effective_seed': metadata['effective_seed'],
+         'source_rng_not_rerun': metadata['rng'], 'fixed_inputs': rows,
+@@ -177,6 +195,12 @@
+         'root_prior_ledger': LEDGER, 'previous_r2_wall_s': wall, 'previous_r2_cpu_s': cpu,
+         'prior_science_count': ledger['science_count'], 'prior_engineering_count': ledger['engineering_count'],
+         'prior_budget_rule': 'Each actual execution own cost once; engineering cost conservatively included in R2 cap and separately labelled. No cumulative field or science/engineering conflation.',
++        'legacy_v1_preserved': {p: common.sha(path(p)) for p in LEGACY},
++        'engineering_only_v2_delta': ['Refresh root actual V8 ledger and every prior own cost/source hash.',
++            'Bind original successful comau_iv_staging build record and unchanged V1 assets.',
++            'Add parent plus live process-group CPU guard, preserve raw process prefix on stop.',
++            'Final wall/CPU or preservation error cannot receive mathematical-component PASS.'],
++        'resource_guard': 'Parent hard wall timer and live aggregate child-process-group CPU sampled every<=20ms; one-thread environment; actual cleanup/finalization cost included once.',
+         'bound_files_sha256': {p: common.sha(path(p)) for p in dict.fromkeys(files)},
+         'one_shot_policy': 'Atomic fixed claim, no reset/retry/resume on crash; retain prefix and actual cost. No new VI candidate quota.'}
+ 
+@@ -195,7 +219,7 @@
+         if (not spec['frozen'] or not all(spec['reviews'].values())
+                 or spec['execution_readiness'] != 'FROZEN_REVIEWED_READY'):
+             raise common.StopQualification('INDEPENDENT_REVIEW_ROOT_FREEZE_REQUIRED')
+-        for relative in SOURCES+[str(protocol.relative_to(ROOT))]:
++        for relative in SOURCES+LEGACY+[str(protocol.relative_to(ROOT))]:
+             subprocess.run(['git', 'ls-files', '--error-unmatch', relative], cwd=ROOT,
+                 check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+             if subprocess.check_output(['git', 'status', '--porcelain', '--', relative], cwd=ROOT, text=True):
+@@ -223,10 +247,39 @@
+         'constraint_jacobian_6_by_12': j.tolist(), 'full_rank_report': rank_data(j)}
+ 
+ 
++class LiveEvidence(common.Evidence):
++    """Existing evidence API with the already-qualified live group CPU guard."""
++    def process(self, command, input_text, label, environment=None):
++        self.budget.remaining(); self.process_number += 1
++        stem = f'{self.process_number:05d}_{label}'
++        inp, stdout, stderr = [self.folder/(stem+s) for s in ('.input.txt','.stdout.txt','.stderr.txt')]
++        with inp.open('x') as f: f.write(input_text)
++        begun=time.monotonic(); proc=None
++        self.event('process_started',label=label,command=command,input=str(inp.relative_to(ROOT)))
++        try:
++            with inp.open() as fin, stdout.open('x') as out, stderr.open('x') as err:
++                proc=subprocess.Popen(command,stdin=fin,stdout=out,stderr=err,cwd=ROOT,
++                    start_new_session=True,env={**os.environ,**(environment or {})})
++                while proc.poll() is None:
++                    self.budget.remaining()
++                    if self.budget.cpu()-self.budget.cpu_start+live_group_cpu(proc.pid)>=self.budget.cpu_cap:
++                        raise common.StopQualification('IV_WRIST_PARENT_PLUS_LIVE_GROUP_CPU_CAP')
++                    try:proc.wait(timeout=.02)
++                    except subprocess.TimeoutExpired:pass
++        except BaseException:
++            if proc is not None and proc.poll() is None:os.killpg(proc.pid,signal.SIGKILL);proc.wait()
++            self.event('process_interrupted',label=label,wall_s=time.monotonic()-begun);raise
++        self.event('process_finished',label=label,exit_code=proc.returncode,wall_s=time.monotonic()-begun,
++            stdout_sha256=common.sha(stdout),stderr_sha256=common.sha(stderr))
++        self.budget.remaining()
++        if proc.returncode:raise common.StopQualification('PROCESS_FAILED_'+label+'_'+str(proc.returncode))
++        return stdout.read_text()
++
++
+ class Qualification:
+     def __init__(self, spec, folder, budget):
+         self.spec, self.folder, self.budget = spec, folder, budget
+-        self.evidence = common.Evidence(folder, budget); self.counts = Counter()
++        self.evidence = LiveEvidence(folder, budget); self.counts = Counter()
+         self.targets, self.observations, self.dispatched = [], [], []
+         self.native_batches = []
+ 
+@@ -382,6 +435,7 @@
+ 
+ 
+ def execute(spec, protocol):
++    started=time.monotonic();cpu_start=common.RunBudget.cpu()
+     folder = ROOT/'results/p4_full'/RUN_ID
+     if folder.exists(): raise common.StopQualification('OUTPUT_EXISTS_NO_OVERWRITE')
+     common.new_json(ROOT/'results/p4_full'/(CLAIM_ID+'.claim.json'),
+@@ -389,11 +443,16 @@
+          'created_at_utc': common.utc(), 'budget': spec['budget'], 'no_retry_or_reset': True})
+     folder.mkdir(parents=True, exist_ok=False)
+     budget = common.RunBudget(spec, spec['previous_r2_wall_s'], spec['previous_r2_cpu_s'])
++    budget.started=started;budget.cpu_start=cpu_start
++    signal.setitimer(signal.ITIMER_REAL,max(.000001,budget.wall_cap-(time.monotonic()-started)))
+     q = Qualification(spec, folder, budget); error = None
+     record = {'schema': SCHEMA, 'run_id': RUN_ID, 'classification': spec['classification'],
+         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+         'command': [sys.executable, str(Path(__file__).resolve()), '--protocol', str(protocol)],
+         'started_at_utc': common.utc(), 'protocol_sha256': common.sha(protocol),
++        'protocol':str(protocol.relative_to(ROOT)),
++        'claim':str((ROOT/'results/p4_full'/(CLAIM_ID+'.claim.json')).relative_to(ROOT)),
++        'claim_sha256':common.sha(ROOT/'results/p4_full'/(CLAIM_ID+'.claim.json')),
+         'bound_files_sha256': spec['bound_files_sha256'], 'prior_executions': spec['prior_executions'],
+         'previous_r2_wall_s': spec['previous_r2_wall_s'], 'previous_r2_cpu_s': spec['previous_r2_cpu_s'],
+         'seed': {'source': 20261014, 'effective': 20265014, 'new_RNG_draws': 0},
+@@ -435,6 +494,15 @@
+         record['cumulative_execution_cpu_s'] = spec['previous_r2_cpu_s']+record['cpu_s']
+         record['r2_remaining'] = {'wall_s': 3600.-record['cumulative_execution_wall_s'],
+             'cpu_s': 7200.-record['cumulative_execution_cpu_s']}
++        record['protocol_after_sha256']=common.sha(protocol)
++        record['claim_after_sha256']=common.sha(ROOT/record['claim'])
++        if (record['protocol_after_sha256']!=record['protocol_sha256']or
++                record['claim_after_sha256']!=record['claim_sha256']):
++            record.update(status='STOP_PROTOCOL_OR_CLAIM_CHANGED',mathematical_component_gate='UNKNOWN_OR_FAILED')
++            error=error or common.StopQualification('PROTOCOL_OR_CLAIM_CHANGED')
++        if record['wall_s']>=budget.wall_cap or record['cpu_s']>=budget.cpu_cap:
++            record.update(status='STOP_WALL_OR_CPU_BUDGET_PREFIX_RETAINED',mathematical_component_gate='UNKNOWN_OR_FAILED')
++            error=error or common.StopQualification('WALL_OR_CPU_FINALIZATION_CAP')
+         common.new_json(folder/'execution.json', record); q.evidence.events.close()
+     print(json.dumps({'status': record['status'], 'counts': record['counts'],
+         'component_gate': record['mathematical_component_gate'],

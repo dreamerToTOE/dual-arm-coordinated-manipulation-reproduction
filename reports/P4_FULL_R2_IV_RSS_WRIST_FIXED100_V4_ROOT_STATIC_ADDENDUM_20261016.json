@@ -1,0 +1,980 @@
+{
+  "schema": "P4_IV_FIXED100_V4_FINAL_HASH_COST_PERSONNEL_STATIC_ADDENDUM_V1",
+  "status": "PASS_STATIC_PENDING_ROOT_FREEZE",
+  "created_at_utc": "2026-10-16T02:38:22.615886+00:00",
+  "checks_total": 237,
+  "checks_passed": 237,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "exact_V8_to_V9_only_four_metadata_replacements",
+      "passed": true
+    },
+    {
+      "check": "PRE_root_final27_append_preserves_before_bytes",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_fixed_inputs",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_rank_data",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_cached_closure",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_Qualification.fk",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_Qualification.native",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_Qualification.run",
+      "passed": true
+    },
+    {
+      "check": "scientific_AST_unchanged_from_v1_Qualification.native_prefix_accounting",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_path",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_load",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_fixed_inputs",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_prior_state",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_draft_protocol",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_validate",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_rank_data",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_cached_closure",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_LiveEvidence",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_LiveEvidence.process",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_Qualification",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_Qualification.__init__",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_Qualification.fk",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_Qualification.native",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_Qualification.run",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_Qualification.native_prefix_accounting",
+      "passed": true
+    },
+    {
+      "check": "final_hash_patch_unchanged_AST_main",
+      "passed": true
+    },
+    {
+      "check": "minimal_final_hash_patch_full_byte_inverse",
+      "passed": true
+    },
+    {
+      "check": "cost_after_protocol_and_claim_hash_before_cap",
+      "passed": true
+    },
+    {
+      "check": "after_bound_hash_before_cost",
+      "passed": true
+    },
+    {
+      "check": "single_final_cost_sample",
+      "passed": true
+    },
+    {
+      "check": "final_cap_cannot_PASS",
+      "passed": true
+    },
+    {
+      "check": "protocol_claim_drift_cannot_PASS",
+      "passed": true
+    },
+    {
+      "check": "live_CPU_guard_before_wait20ms",
+      "passed": true
+    },
+    {
+      "check": "live_process_group_reaped_on_error",
+      "passed": true
+    },
+    {
+      "check": "one_thread_environment",
+      "passed": true
+    },
+    {
+      "check": "one_shot_source_commit_and_freeze",
+      "passed": true
+    },
+    {
+      "check": "actual_v4_not_frozen",
+      "passed": true
+    },
+    {
+      "check": "same_v3_every_field_except_two_asset_hashes",
+      "passed": true
+    },
+    {
+      "check": "latest27_actual_V9_exact",
+      "passed": true
+    },
+    {
+      "check": "own_cost_exact_wall",
+      "passed": true
+    },
+    {
+      "check": "own_cost_exact_cpu",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_PLANAR01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_SPATIAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "own_prior_hash_cost_results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_vi_rss_reconstructed.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/physical_nr.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/analyze_comau_native_qualification.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/abb_independent_oracle.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/rss_geometry.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/spatial_ik_patch.py",
+      "passed": true
+    },
+    {
+      "check": "bound_baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261014T1545_R1_COMAU02/IV_native.jsonl",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/comau_iv_batch",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V9.json",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/p4_geometry_consistent_apc_stage_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/author_source_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_geometry_consistent_qualification_v1.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_rss_fixed_construction_addendum_v1.json",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_iv_nr_local_qualification_v1.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/IV/observations.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/IV/checks.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/comau_iv_staging.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_PLANAR01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_SPATIAL01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "check": "bound_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py",
+      "passed": true
+    },
+    {
+      "check": "bound_configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "bound_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "check": "bound_build/p4_full/20261015_R2_SPATIAL01/ckcComau2/proj_classes/def.h",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/proj_classes/def.h",
+      "passed": true
+    },
+    {
+      "check": "bound_/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau2/validity_checkers/StateValidityCheckerRSS.cpp",
+      "passed": true
+    },
+    {
+      "check": "59_current_assets",
+      "passed": true
+    },
+    {
+      "check": "fixed100_order",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_0",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_1",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_2",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_3",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_4",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_5",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_6",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_7",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_8",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_9",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_10",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_11",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_12",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_13",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_14",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_15",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_16",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_17",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_18",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_19",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_20",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_21",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_22",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_23",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_24",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_25",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_26",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_27",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_28",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_29",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_30",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_31",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_32",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_33",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_34",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_35",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_36",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_37",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_38",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_39",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_40",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_41",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_42",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_43",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_44",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_45",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_46",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_47",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_48",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_49",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_50",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_51",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_52",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_53",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_54",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_55",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_56",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_57",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_58",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_59",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_60",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_61",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_62",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_63",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_64",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_65",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_66",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_67",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_68",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_69",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_70",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_71",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_72",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_73",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_74",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_75",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_76",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_77",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_78",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_79",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_80",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_81",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_82",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_83",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_84",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_85",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_86",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_87",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_88",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_89",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_90",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_91",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_92",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_93",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_94",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_95",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_96",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_97",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_98",
+      "passed": true
+    },
+    {
+      "check": "fixed_saved_input_99",
+      "passed": true
+    },
+    {
+      "check": "budget30_60_and800_900",
+      "passed": true
+    },
+    {
+      "check": "zero_VI_and_other_algorithms",
+      "passed": true
+    },
+    {
+      "check": "mathematics_only_classification",
+      "passed": true
+    },
+    {
+      "check": "claim_output_fresh",
+      "passed": true
+    },
+    {
+      "check": "legacy_v1_scripts/qualify_p4_full_r2_iv_rss_wrist_fixed100.py",
+      "passed": true
+    },
+    {
+      "check": "legacy_v1_configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v1.draft.json",
+      "passed": true
+    },
+    {
+      "check": "legacy_v1_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "check": "legacy_v1_reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_REVIEW_20261015.md",
+      "passed": true
+    }
+  ],
+  "candidate": "configs/p4_full/r2_iv_rss_wrist_fixed100_qualification_v4.draft.json",
+  "candidate_sha256": "d640b70d64a7e0fe17a13520ead1d826f381a9945ae1ce11653f6853be8ca346",
+  "runner_sha256": "b9ba227ad803ab24d888f6c58c728a3034d46da72328f3141a203b21c4dee259",
+  "PRE_sha256": "24bcb631c7d651c08950aa0a93fd71516f4f8cc74860f9199da139f4624a0236",
+  "independent_scientific_review": true,
+  "engineering_hash_cost_patch_implemented_by_this_reviewer_under_root_authorization": true,
+  "before_patch_archive": "work/iv_wrist_final_hash_cap_recovery_20261016",
+  "prior_execution_count": 27,
+  "previous_r2_wall_s": 504.43514921199426,
+  "previous_r2_cpu_s": 457.702161,
+  "bound_assets": 59,
+  "new_scientific_calls": 0,
+  "new_compile_calls": 0,
+  "new_candidate_constructions": 0,
+  "fixed_targets": 100,
+  "fixed_branch_requests": 800,
+  "limitations": [
+    "No run, model evaluation, branch/root construction, build or science capability result.",
+    "Final metadata SHA costs now precede final own-cost sample/cap; seven scientific functions AST identical to V1.",
+    "Final serialization itself follows cost sample; raw process/evidence failure never yields mathematical PASS.",
+    "Root must freeze/commit exact current candidate and own bound sources before unique execution."
+  ]
+}
