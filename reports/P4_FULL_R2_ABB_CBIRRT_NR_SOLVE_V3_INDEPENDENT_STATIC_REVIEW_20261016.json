@@ -1,0 +1,755 @@
+{
+  "schema": "P4_CBIRRT_NR_SOLVE_V3_PERSONNEL_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "PASS_SINGLE_SOLVE_V3_ENTRY_STATIC_REVIEW",
+  "personnel_independent": true,
+  "reviewer": "nr_entry_review; source AST saved evidence only; not builder driver or runner author",
+  "generated_at_utc": "2026-10-16T12:58:28.747061+00:00",
+  "reviewed_source_sha256": {
+    "scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py": "8bf5eccb53bb1fa62c6cb98b5a334ec6b67d4f4ddff73722ca5f9f0cc6ee2afd",
+    "scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py": "f2fb4774776ea930013ca51193641a578d5728ce3fd146390d0c285df58c073d",
+    "reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V3_PRE_DRAFT_20261016.md": "ff8695e50346e29dbd4ba442eea017c002813d3da7ae9122658c42a96abe89f5"
+  },
+  "checks": [
+    {
+      "group": "source",
+      "check": "stable reviewed SHA scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "source",
+      "check": "stable reviewed SHA scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "source",
+      "check": "stable reviewed SHA reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V3_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "group": "history",
+      "check": "old v2 original bytes retained scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "history",
+      "check": "old v2 original bytes retained scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "history",
+      "check": "old v2 original bytes retained reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V2_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "whole v3 runner AST inverse exactly v2 except explicit engineering/file/schema identities",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body prerequisites",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body current_prior",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body endpoints",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body validate",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body Budget",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body Session",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body kill_source_group",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body raw_trace",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body supervisor_proof",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body check_response",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "entire unchanged source body main",
+      "passed": true
+    },
+    {
+      "group": "inverse",
+      "check": "whole v3 supervisor AST inverse exactly v2 with two fixed identities",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/build_p4_full_r2_abb_cbirrt_d_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/build_p4_full_r2_abb_nr_interface_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/qualify_p4_full_r2_abb_cbirrt_d_tail02_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "only inert declared paths/constants/list/regex at import scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py",
+      "passed": true
+    },
+    {
+      "group": "import",
+      "check": "complete actual local project import graph11 modules",
+      "passed": true
+    },
+    {
+      "group": "build",
+      "check": "real build absent refuses before protocol/prior",
+      "passed": true
+    },
+    {
+      "group": "build",
+      "check": "actual successful compiler lifecycle and zero science required",
+      "passed": true
+    },
+    {
+      "group": "build",
+      "check": "true personnel independent engineering success required",
+      "passed": true
+    },
+    {
+      "group": "build",
+      "check": "true six TU raw dependencies and unchanged stage gates",
+      "passed": true
+    },
+    {
+      "group": "build",
+      "check": "receipt paths both internal and external required",
+      "passed": true
+    },
+    {
+      "group": "build",
+      "check": "bound saved bytes binary recipe checked with no run",
+      "passed": true
+    },
+    {
+      "group": "prerequisites",
+      "check": "saved complete local218766 raw666 and NR393 path24448 only",
+      "passed": true
+    },
+    {
+      "group": "prior",
+      "check": "all date actual executions exact latest charged ledger",
+      "passed": true
+    },
+    {
+      "group": "prior",
+      "check": "true independent prior external replacement once and orphan guard",
+      "passed": true
+    },
+    {
+      "group": "endpoints",
+      "check": "unchanged RECONSTRUCTED qualified frozen A01 finite original sampler",
+      "passed": true
+    },
+    {
+      "group": "protocol",
+      "check": "real build first then prerequisites endpoints and latest prior",
+      "passed": true
+    },
+    {
+      "group": "protocol",
+      "check": "one process request solve original seed/time strict30/60 originalR2caps",
+      "passed": true
+    },
+    {
+      "group": "protocol",
+      "check": "no success or formal claim in draft",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "exact current protocol frozen review commit tracked clean blobs",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "single registered new process CPU60 hardcap dedicated group",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "one exact compact requestwrite with bytes SHA no short retry",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "exactly1 source os.write in query body",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "stdin close in finally immediately after write EOF driver contract",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "actual each pipeEOF only on zero read and fullraw chunks retained",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "normal close live singleton startticks or actual poll0 emptygroup",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "normal dual actual EOF exit0 reaped emptygroup mandatory",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "group examined even source already exited in cleanup",
+      "passed": true
+    },
+    {
+      "group": "trace",
+      "check": "full raw stderr trace lines must endLF",
+      "passed": true
+    },
+    {
+      "group": "trace",
+      "check": "true nested startedcompleted actual perkind only13plusmpaths",
+      "passed": true
+    },
+    {
+      "group": "trace",
+      "check": "NR tree/root/parent saved without PCS chain/branch",
+      "passed": true
+    },
+    {
+      "group": "source status",
+      "check": "source exact only candidate pending independent audit",
+      "passed": true
+    },
+    {
+      "group": "execute",
+      "check": "unique claim/run noactive source exclusive durable data no retry",
+      "passed": true
+    },
+    {
+      "group": "execute",
+      "check": "same original request checked actual response fully strict oneJSONline",
+      "passed": true
+    },
+    {
+      "group": "execute",
+      "check": "complete bothraw evidence original native including failures retained",
+      "passed": true
+    },
+    {
+      "group": "execute",
+      "check": "exception tail final processregistry cleanup hashes prior gates",
+      "passed": true
+    },
+    {
+      "group": "execute",
+      "check": "final receipt cost nonzero tail external required no qualificationpreclaim",
+      "passed": true
+    },
+    {
+      "group": "supervisor proof",
+      "check": "actual parentGNUtime argv inode heldFD protocol source links",
+      "passed": true
+    },
+    {
+      "group": "supervisor",
+      "check": "outer no import runner only exact selected file",
+      "passed": true
+    },
+    {
+      "group": "supervisor",
+      "check": "outer time and every artifact exclusive heldFD inode",
+      "passed": true
+    },
+    {
+      "group": "supervisor",
+      "check": "outer1launch no retry and reaps interrupted child",
+      "passed": true
+    },
+    {
+      "group": "supervisor",
+      "check": "outer exact finiteGNUtime4 Decimal upper padding and caps",
+      "passed": true
+    },
+    {
+      "group": "supervisor",
+      "check": "outer binds real execution receipt time metadata hashes",
+      "passed": true
+    },
+    {
+      "group": "supervisor",
+      "check": "outer full measuredchild exit0 required qualification waits independentPOST",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "real independent BUILD03 status13927 pass true engineering",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build POST real saved execution SHA",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build POST real saved manifest SHA",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build POST real saved protocol SHA",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build POST real saved claim SHA",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build POST real saved receipt SHA",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build POST real saved internal_receipt SHA",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual BUILD03 successful solely engine unique expectedsource",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build zero query_calls",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build zero solve_calls",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build zero binary_execution_calls",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build zero formal_table_I_calls",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual build zero new_VI_candidate_constructions",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual source retained immutable scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual source retained immutable scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual source retained immutable baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual source retained immutable baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "group": "actual build",
+      "check": "actual source retained immutable baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "exact unchanged reviewed builtdriver SHA",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "exact argv environmentII one solve and one request EOF beforedispatch",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "original fixed seed7 range2.6 solve10 once",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "original full12 native bounds alwaysTRUE resolution.1",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "constructor andsetup outputs redirected strict responseonly",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "actualMotionstate roots parent bridge side saved without q merging",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "sourceexact candidate only no fullpath pass",
+      "passed": true
+    },
+    {
+      "group": "driver",
+      "check": "exactlyone original source solve callsite",
+      "passed": true
+    },
+    {
+      "group": "scope",
+      "check": "PRE explicitly preserves211VI974formal0andRECONSTRUCTED",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V3_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V2_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_d_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_nr_interface_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_tail02_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_CBIRRT_NR_BUILD03_ROOT_INDEPENDENT_POST_20261016.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_cbirrt_nr_engineering_v3.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v3/manifest.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/P4_R2_ABB_CBIRRT_NR_BUILD_3_45W_90CPU_20261016.claim.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03.supervision.charge.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/cost_receipt.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_v3_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "reviewed bytes stable /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp",
+      "passed": true
+    }
+  ],
+  "checks_total": 122,
+  "checks_passed": 122,
+  "checks_failed": 0,
+  "failures": [],
+  "project_import_graph_top_level_calls": {
+    "scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py": [
+      "list",
+      "dict.fromkeys",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py": [
+      "sys.path.insert",
+      "str",
+      "Path",
+      "Path",
+      "Path",
+      "Path",
+      "Path",
+      "re.compile",
+      "list",
+      "dict.fromkeys",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py": [],
+    "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": [],
+    "scripts/build_p4_full_r2_abb_cbirrt_d_draft.py": [
+      "Path(__file__).resolve",
+      "Path",
+      "sys.path.insert",
+      "str",
+      "Path",
+      "Path",
+      "Path",
+      "Path",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": [],
+    "scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py": [
+      "Path",
+      "Path",
+      "Path",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "scripts/build_p4_full_r2_abb_nr_interface_draft.py": [
+      "Path",
+      "Path",
+      "Path",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": [
+      "Path(__file__).resolve",
+      "Path",
+      "Path",
+      "Path",
+      "Path",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_tail02_draft.py": [
+      "list",
+      "dict.fromkeys",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ],
+    "scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py": [
+      "list",
+      "dict.fromkeys",
+      "str",
+      "Path(__file__).resolve().relative_to",
+      "Path(__file__).resolve",
+      "Path"
+    ]
+  },
+  "actual_BUILD03_independent_POST": "reports/P4_FULL_R2_ABB_CBIRRT_NR_BUILD03_ROOT_INDEPENDENT_POST_20261016.json",
+  "actual_BUILD03_independent_POST_sha256": "40f574479d5814e4614c38e1d71f602eee07db19342e74f7600c15acfd8242ee",
+  "actual_BUILD03_execution": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/execution.json",
+  "actual_BUILD03_execution_sha256": "4e33b3769abf2447f2c31b9e5f68fdd9e621189b28442af6c13db052b85dfce9",
+  "retained_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py": "8bf5eccb53bb1fa62c6cb98b5a334ec6b67d4f4ddff73722ca5f9f0cc6ee2afd",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py": "f2fb4774776ea930013ca51193641a578d5728ce3fd146390d0c285df58c073d",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V3_PRE_DRAFT_20261016.md": "ff8695e50346e29dbd4ba442eea017c002813d3da7ae9122658c42a96abe89f5",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v2_draft.py": "7cce813353c8cad2f4088640c0b7c5f45681a8fca004fc9e48847e9916074a04",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v2_draft.py": "06c566e9c01bcfeb10317147f8f502ae194f3dd639bafe5f3e6dc26888283143",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V2_PRE_DRAFT_20261016.md": "285c1263d60acb2c4e95958256f22fe3f88a2482096b0130eee3fb21e4c27811",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py": "bc4786bc562d0925b177b02bb60d34573b4798092ca0802252f1455561cbf9de",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py": "07f5632ca92843b0be96ebece15cc8a64060768cdf4dc466242e176505a04c3e",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_d_draft.py": "1d20decdd36fcaba9141770ad0ed4ab4511635049efe3e04d541216a2eb87f45",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": "45111720edc6773690846949ebd97e6ccc308dea30921bbb3bee771333801b94",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py": "b9754474468f2c72f5151db337e15cf8ef0baf9106a2339611f2cbea3739a4bb",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_nr_interface_draft.py": "5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_tail02_draft.py": "6f5155583ba63686eaf990f0125f2d1169704633471dda77e4d160699bbd0025",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py": "cb705dfd347030ef13aa37181306357227c9c1262e533f126b32e5b4c98a907f",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_CBIRRT_NR_BUILD03_ROOT_INDEPENDENT_POST_20261016.json": "40f574479d5814e4614c38e1d71f602eee07db19342e74f7600c15acfd8242ee",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/execution.json": "4e33b3769abf2447f2c31b9e5f68fdd9e621189b28442af6c13db052b85dfce9",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_cbirrt_nr_engineering_v3.json": "d34e149e952b82145816e3a5dce4b84355ced46004b53732ff0e904e253ee438",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_cbirrt_nr_v3/manifest.json": "9f5223a1ef9bce39f28e02ec3893badcb8e8ff16cb9730b69a2c28c715805c7d",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/P4_R2_ABB_CBIRRT_NR_BUILD_3_45W_90CPU_20261016.claim.json": "7378b9a5221051eb71e4faa48632058d6bfa9932f562b6414f26465675485490",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03.supervision.charge.json": "c1dbf86ae83cd172102e14302a2be90cfc2327a9948aefa9b8625e7744ac08dd",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/cost_receipt.json": "c604fa60d219f050538e3dd0e1fcb8dfc359302bb684d75824db329574d1f7d9",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_v3_draft.py": "749304444585532bc7489818a3a5ae1135fd01bafa9af1f5cf755dad68d45112",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp": "65c95cdb2fe09e916a9f564baf01906901d80e136ccb48014c8ce9633b1bf0e7",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp": "74917caa8fab59821776617b44c119f57762153135e0c773bbc22dd180b190e4"
+  },
+  "new_runner_model_import_describe_compile_binary_query_solve_protocol_prior_claim_calls": 0,
+  "scope": "Static support for root reviewed freeze of one original CBiRRT_NR environment II A01 seed7 range2.6 solve10 request;30wall60CPU within original3600/7200. Physical-GD seam remains RECONSTRUCTED.",
+  "limitations": [
+    "Static source review is not execution or path qualification. A source EXACT response remains candidate pending whole saved source native path independent physical/discrete audit.",
+    "No continuous collision/global planning/RSS/full paper or formal statistical success claim.211 obligationsVI974/974remaining0formal0/22500 persist.",
+    "No concrete protocol/prior/claim constructed, no implementation module imported, no binary or science called by reviewer. Actual root external supervision and independent POST still required."
+  ]
+}
