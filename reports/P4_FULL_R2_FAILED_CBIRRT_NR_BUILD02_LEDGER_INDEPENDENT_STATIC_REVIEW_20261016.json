@@ -1,0 +1,40 @@
+{
+  "schema": "P4_FAILED_CBIRRT_NR_BUILD02_LEDGER_STATIC_REVIEW_V1",
+  "status": "PASS_FAILED_BUILD02_LEDGER_STATIC_REVIEW",
+  "personnel_independent": true,
+  "generated_at_utc": "2026-10-16T12:41:27.915132+00:00",
+  "source": "reports/p4_full_audit/recovery_tools/append_failed_cbirrt_nr_build02_snapshot_20261016.py",
+  "source_sha256": "4e73f69ae07ae8456f93d2d643f3f9382c453efb1dd72b1d9f0b7d1867dfccc3",
+  "checks_total": 6,
+  "checks_passed": 6,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "exact root proposed writer SHA",
+      "passed": true
+    },
+    {
+      "check": "all writer AST unchanged except documented successor literals",
+      "passed": true
+    },
+    {
+      "check": "real independent STOP/cost certificate exact",
+      "passed": true
+    },
+    {
+      "check": "actual time and once replacement exact",
+      "passed": true
+    },
+    {
+      "check": "hard failed boundary and no runtime permission",
+      "passed": true
+    },
+    {
+      "check": "only exclusive output writes preserved and211 full scope",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "real_post_sha256": "56a9800f2b7fd70c71e52ebe088c8a870406f46ec60d8f85efb1df3d1cea9737",
+  "new_writer_compile_binary_science_protocol_prior_claim_calls": 0
+}
