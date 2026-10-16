@@ -1,0 +1,86 @@
+{
+  "schema": "P4_V21_PRESERVATION_INDEPENDENT_STATIC_REVIEW_ADDENDUM_V1",
+  "status": "PASS_STATIC_REVIEW",
+  "personnel_independent": true,
+  "reviewer": "nr_entry_review",
+  "reviewed_source": "reports/p4_full_audit/recovery_tools/audit_preservation_v21.py",
+  "reviewed_source_sha256": "6afcecebb1b31210ac0b83c391dfadc9f5f8d577052963e0a01ab1f6eacadea4",
+  "original_false_negative_report": "reports/P4_FULL_R2_V21_PRESERVATION_INDEPENDENT_STATIC_REVIEW_20261016.json",
+  "original_report_sha256": "b88fabbdabd51c6066f86c528afa42b2f54d80d69ebffec32736c4267cb845ad",
+  "correction": "Original final check incorrectly required future report absence. Root independently executed V21 concurrently. File presence does not indicate this reviewer invoked it; discard only that reviewer assumption, preserve original report bytes. Actual17 source/AST/diff checks remain true.",
+  "checks": [
+    {
+      "check": "exact reviewed V21 source SHA",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper read",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper sha",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper git",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper mismatch_file",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper csvread",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper arithmetic",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper rule_tokens",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper absolute",
+      "passed": true
+    },
+    {
+      "check": "exclusive new verification output no old output write",
+      "passed": true
+    },
+    {
+      "check": "all 39 executions classified29science10engineering and old rows retained",
+      "passed": true
+    },
+    {
+      "check": "211coverage all166previous columns preserved grows170 without formal scale reduction",
+      "passed": true
+    },
+    {
+      "check": "BUILD03 real success POST strict engineering true and receipt links",
+      "passed": true
+    },
+    {
+      "check": "6raw actual compiler rules byte slices source first source occurrences actual TU SHA",
+      "passed": true
+    },
+    {
+      "check": "old BUILD01 and BUILD02 STOP permanently enforced",
+      "passed": true
+    },
+    {
+      "check": "actual old V20 snapshot hashes frozen",
+      "passed": true
+    },
+    {
+      "check": "VI974exhausted formal0/22500 unchanged",
+      "passed": true
+    }
+  ],
+  "checks_total": 17,
+  "checks_passed": 17,
+  "checks_failed": 0,
+  "actual_audit_invocations": 0,
+  "limitations": "This is source review only; root actual preservation result is separate and is not inferred."
+}

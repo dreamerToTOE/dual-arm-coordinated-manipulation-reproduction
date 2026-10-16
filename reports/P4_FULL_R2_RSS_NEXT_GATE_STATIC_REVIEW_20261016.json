@@ -1,0 +1,352 @@
+{
+  "schema": "P4_R2_RSS_NEXT_GATE_SAVED_STATIC_REVIEW_V1",
+  "created_at_utc": "2026-10-16T12:43:39.852454+00:00",
+  "review_base_commit": "909d6aa4f41bd28de85676f3d32b4a82d5d96e20",
+  "scope": "Read existing reports, source text and saved JSON/CSV only; append these two review reports exclusively. No source/protocol/claim/ledger/matrix mutation.",
+  "zero_execution_counts": {
+    "compiler": 0,
+    "project_module_import": 0,
+    "protocol_or_prior_or_claim_generation": 0,
+    "binary": 0,
+    "FK": 0,
+    "IK": 0,
+    "Jacobian": 0,
+    "collision": 0,
+    "sampling": 0,
+    "RBS": 0,
+    "solve": 0,
+    "new_candidates": 0,
+    "formal_planning": 0
+  },
+  "preservation": {
+    "all_inputs_unchanged_after_review": true,
+    "old_R0_R1_not_repeated": true,
+    "VI_candidate_cap": 974,
+    "VI_consumed": 974,
+    "VI_remaining": 0,
+    "IV_fixed100_800_exhausted": true,
+    "formal_TableI_calls": 0,
+    "formal_TableI_required": 22500,
+    "all_211_obligations_retained": true,
+    "P2_Isaac_FR3_implementation": false
+  },
+  "pinned_matrix": {
+    "path": "reports/P4_FULL_R2_CBIRRT_NR_BUILD_ORIGINAL_VS_REPRODUCED_COVERAGE_20261016.csv",
+    "rows": 211,
+    "columns": 162,
+    "interpretation": "Legacy current_status is retained history; IV later iv_fixed100_actual_status explicitly records math-only PASS. Do not overwrite history or use legacy status alone.",
+    "RSS_rows": {
+      "P4-T07-RSS_I": {
+        "current_status": "NOT_ATTEMPTED",
+        "ingress_status": "NOT_ATTEMPTED",
+        "ingress_remaining_gate": "不沿用旧R2错误的PARTIAL映射；需独立冻结平面RSS资格。",
+        "iv_fixed100_actual_status": "NO_NEW_IV_EVIDENCE",
+        "iv_fixed100_remaining_gate": "不沿用旧R2错误的PARTIAL映射；需独立冻结平面RSS资格。"
+      },
+      "P4-T07-RSS_II": {
+        "current_status": "PARTIAL",
+        "ingress_status": "PARTIAL",
+        "ingress_remaining_gate": "保存mode0腕心均超可达包络证据；不能推出整个mode0集合为空。其余模式归因、完整合法目标、桥接及规划未证。",
+        "iv_fixed100_actual_status": "NO_NEW_IV_EVIDENCE",
+        "iv_fixed100_remaining_gate": "保存mode0腕心均超可达包络证据；不能推出整个mode0集合为空。其余模式归因、完整合法目标、桥接及规划未证。"
+      },
+      "P4-T07-RSS_III": {
+        "current_status": "PARTIAL",
+        "ingress_status": "PARTIAL",
+        "ingress_remaining_gate": "保存mode0腕心均超可达包络证据；不能推出整个mode0集合为空。其余模式归因、完整合法目标、桥接及规划未证。",
+        "iv_fixed100_actual_status": "NO_NEW_IV_EVIDENCE",
+        "iv_fixed100_remaining_gate": "保存mode0腕心均超可达包络证据；不能推出整个mode0集合为空。其余模式归因、完整合法目标、桥接及规划未证。"
+      },
+      "P4-T07-RSS_IV": {
+        "current_status": "NOT_ATTEMPTED",
+        "ingress_status": "NOT_ATTEMPTED",
+        "ingress_remaining_gate": "需独立冻结IV RSS模式/真实被动秩及完整候选资格；NR local独立24项通过，原NR旧3FAIL保留。",
+        "iv_fixed100_actual_status": "PASS_RECONSTRUCTED_MATH_ONLY",
+        "iv_fixed100_remaining_gate": "RSS碰撞、原RBS、原分布及规划入口仍待；不追加VI，不以3正例称RSS总体通过。"
+      },
+      "P4-T07-RSS_V": {
+        "current_status": "PARTIAL",
+        "ingress_status": "PARTIAL",
+        "ingress_remaining_gate": "不能将端点source-policy或VI候选的碰撞结果外推到V的RSS样本；其他理论奇异子集、桥接和规划未证。",
+        "iv_fixed100_actual_status": "NO_NEW_IV_EVIDENCE",
+        "iv_fixed100_remaining_gate": "不能将端点source-policy或VI候选的碰撞结果外推到V的RSS样本；其他理论奇异子集、桥接和规划未证。"
+      },
+      "P4-T07-RSS_VI": {
+        "current_status": "PARTIAL",
+        "ingress_status": "PARTIAL",
+        "ingress_remaining_gate": "原Q2四半depth3 UNKNOWN原字节保留；新组合通过单独报告。作者VI原生完整RSS/RBS与原分布等价、其余奇异模式、局部可见性、全局规划/完整几何/连续碰撞均未证；不可将新离散组件升级为全文完成。 原完整义务仍为：真实合法人工奇异目标、多个模式、被动rank、全链闭合/界/碰撞/分支桥及完整RSS规划；不得NR冒名。",
+        "iv_fixed100_actual_status": "NO_NEW_IV_EVIDENCE",
+        "iv_fixed100_remaining_gate": "原Q2四半depth3 UNKNOWN原字节保留；新组合通过单独报告。作者VI原生完整RSS/RBS与原分布等价、其余奇异模式、局部可见性、全局规划/完整几何/连续碰撞均未证；不可将新离散组件升级为全文完成。 原完整义务仍为：真实合法人工奇异目标、多个模式、被动rank、全链闭合/界/碰撞/分支桥及完整RSS规划；不得NR冒名。"
+      }
+    }
+  },
+  "pinned_ledger": {
+    "count": 37,
+    "science_count": 29,
+    "engineering_count": 8,
+    "conservative_r2_sum_wall_s": 719.515705375994,
+    "conservative_r2_sum_cpu_s": 597.908923,
+    "vi_B_consumed": {
+      "candidate_constructions": 974,
+      "wall_s": 68.71200215399949,
+      "cpu_s": 24.203841999999998
+    },
+    "vi_B_remaining": {
+      "candidate_constructions": 0,
+      "wall_s": 111.28799784600051,
+      "cpu_s": 335.796158
+    },
+    "formal_table_I_calls": 0,
+    "formal_table_I_required_calls": 22500
+  },
+  "author_snapshot_manifest_revisions": [
+    {
+      "repository": "CKCplanning",
+      "branch": "master",
+      "commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+      "tree": "31817128aab8c9713f8cce8b8deedc4a98ad01d7"
+    },
+    {
+      "repository": "planar_ckc",
+      "branch": "master",
+      "commit": "e5edcb58e151b78baca43dd4922bfe27a48388cd",
+      "tree": "e1a0fb2b575160a56f7f0bd939ee5accc3bb4274"
+    },
+    {
+      "repository": "ckcComau",
+      "branch": "industrialScene",
+      "commit": "ef6e9c4df34d2ca1605b34c86f6fe9a689c757ca",
+      "tree": "19cc373dbe69f5fed132371efcdf9a8345d557c7"
+    },
+    {
+      "repository": "ckcComau2",
+      "branch": "master",
+      "commit": "80089340f0f1f6822e5b2821a63c998b6ae0413f",
+      "tree": "16ccde8a37954cd85d1d3e48033ac9a5a570f594"
+    },
+    {
+      "repository": "ckcComau3",
+      "branch": "master",
+      "commit": "25488a86947cd07377cc62c43850df719a70d9ee",
+      "tree": "22772508872cb02b7138c0d8cb4740825381581f"
+    }
+  ],
+  "construction_summary_saved": {
+    "II": {
+      "fixed_passive_targets": 300,
+      "qualified_passive_targets": 7,
+      "counts": {
+        "branch_attempts": 2400,
+        "mode0_branch_attempts": 800,
+        "ACTIVE_IK_REJECTED": 2382,
+        "mode1_branch_attempts": 800,
+        "mode2_branch_attempts": 800,
+        "active_ik_accepted": 18,
+        "qualified_branch_candidates": 18,
+        "mode0_qualified_targets": 0,
+        "mode1_qualified_targets": 3,
+        "mode2_qualified_targets": 4
+      },
+      "collision_checked": false,
+      "RBS_or_branch_bridge_checked": false
+    },
+    "III": {
+      "fixed_passive_targets": 300,
+      "qualified_passive_targets": 8,
+      "counts": {
+        "branch_attempts": 2400,
+        "mode0_branch_attempts": 800,
+        "ACTIVE_IK_REJECTED": 2378,
+        "mode1_branch_attempts": 800,
+        "mode2_branch_attempts": 800,
+        "active_ik_accepted": 22,
+        "qualified_branch_candidates": 22,
+        "mode0_qualified_targets": 0,
+        "mode1_qualified_targets": 3,
+        "mode2_qualified_targets": 5
+      },
+      "collision_checked": false,
+      "RBS_or_branch_bridge_checked": false
+    },
+    "V": {
+      "fixed_passive_targets": 100,
+      "qualified_passive_targets": 4,
+      "counts": {
+        "branch_attempts": 800,
+        "mode1_branch_attempts": 800,
+        "ACTIVE_IK_REJECTED": 792,
+        "active_ik_accepted": 8,
+        "qualified_branch_candidates": 8,
+        "mode1_qualified_targets": 4
+      },
+      "collision_checked": false,
+      "RBS_or_branch_bridge_checked": false
+    }
+  },
+  "environment_gates": [
+    {
+      "environment": "I",
+      "status": "NOT_ATTEMPTED_RSS",
+      "saved_evidence": "Planar math/NR qualification does not qualify RSS. Source scan of run/planners/validity_checkers has no RSS/sampleSingular/gamma hit; HB uses GD projection plus APC branch-role RBS.",
+      "native_RBS": "HB RBS exists, but no mapped RSS singular-endpoint entry.",
+      "RSS_distribution": "UNKNOWN; no qualified planar RSS production mapping.",
+      "planner_entry": "RRT_hb/CBiRRT_hb/SBL_hb available; cannot relabel HB as RSS.",
+      "earliest_unpassed_gate": "Resolve planar RSS source/resource mapping and define its actual passive singular subset/branch bridge.",
+      "route_and_review": "Source inventory is zero-call diagnosis. A new planar singular constructor/bridge would be RECONSTRUCTED scientific design and needs review before execution."
+    },
+    {
+      "environment": "II",
+      "status": "PARTIAL_MATH_AND_DISCRETE_COLLISION",
+      "saved_evidence": "300 fixed targets/2400 branches: 7 math-qualified targets,18 branches; corrected modes0/1/2 target counts0/3/4. Saved aligned source-policy collision10clear/8collision,3 of7 targets have clear branches.",
+      "native_RBS": "Original regular/singular RBS and reconstruct source exists; no independently qualified RSS bridge/path. ABB leaf .05, maxdepth150, singular proximity shortcut15*.05.",
+      "RSS_distribution": "Author modes selected once by rand()%3 outside retry loop; RRT/CBiRRT singular request threshold .20, SBL .05. Qualified fixed strata are not production random-rate evidence.",
+      "planner_entry": "Author RRT_RSS/CBiRRT_RSS/SBL_RSS exists; no qualified RSS start-to-goal path.",
+      "earliest_unpassed_gate": "Static branch/singular flag and check/reconstruct semantics contract, then frozen finite nontrivial RBS qualification on existing exact candidates.",
+      "route_and_review": "Exact saved-candidate/source-policy diagnostic has a known test route, requiring frozen call/cost recipe. New mode0 input replacement, shoulder subset, or connector changes need separate prereview; do not silently retry."
+    },
+    {
+      "environment": "III",
+      "status": "PARTIAL_MATH_AND_DISCRETE_COLLISION",
+      "saved_evidence": "300 fixed targets/2400 branches:8 math-qualified targets,22 branches; corrected modes0/1/2 target counts0/3/5. Saved aligned source-policy collision16clear/6collision,5 of8 targets have clear branches.",
+      "native_RBS": "Same ABB original code contract as II; no independently qualified RSS bridge/path.",
+      "RSS_distribution": "Same ABB .20 RRT/CBiRRT and .05 SBL source discrepancy; no production-distribution qualification.",
+      "planner_entry": "Author source present; no qualified RSS start-to-goal path.",
+      "earliest_unpassed_gate": "Same static/source RBS and branch mapping gate as II; environment-specific collision inputs retained.",
+      "route_and_review": "Use saved clear candidates only under frozen finite qualification; do not infer II qualifies III or vice versa."
+    },
+    {
+      "environment": "IV",
+      "status": "PASS_RECONSTRUCTED_MATH_ONLY_RSS_STILL_PARTIAL",
+      "saved_evidence": "Fixed100/800 run02 complete;6 accepted roots on targets040/056/092 branches1/3,794 rejected. True passive rank5, accepted active/full constraint rank6; all6 pass independent closure/limits/branch.",
+      "native_RBS": "Source .05/maxdepth150, singular shortcut7*.05; no actual RSS collision/RBS/trace qualification. Native sampleSingular has collision/checkEE acceptance line commented, while isValidRBS includes both when withObs.",
+      "RSS_distribution": "Author mode hardcoded1 (wrist-only), not equal3 modes. RRT/CBiRRT .20; SBL .05. Fixed100 is math qualification only.",
+      "planner_entry": "plan_SG and three SG planners exist; no qualified RSS path.",
+      "earliest_unpassed_gate": "Static six-candidate exact linkage, source collision/checkEE predicate mapping; then finite saved-six collision qualification before RBS.",
+      "route_and_review": "Known validation route uses exact six saved roots and unchanged source-policy thresholds; freeze finite recipe/budget first. Do not rerun100/800 or spend time remainder on new targets; new modes/connectors need review."
+    },
+    {
+      "environment": "V",
+      "status": "PARTIAL_SAVED_COLLISION_FAILED_ROOT_UNKNOWN",
+      "saved_evidence": "100 wrist targets/800 branches:4 math-qualified targets/8branches; selected aligned source-policy all8 collision. TCPheight check from saved poses fails2,passes6; original checkEE not executed. Pair identities absent.",
+      "native_RBS": "Source exists; same Comau .05/maxdepth150 and7*.05 semantics; no qualified RSS bridge.",
+      "RSS_distribution": "Original wrist-only sample acceptance requires !collision_state AND checkEE; no valid production random-rate evidence. RRT/CBiRRT .20; SBL .05.",
+      "planner_entry": "plan_SG and three source planners exist; no qualified RSS path.",
+      "earliest_unpassed_gate": "Pair-level observability/source instrumentation contract for old8; aggregate PQP API return0 cannot identify colliding entity.",
+      "route_and_review": "Root cause remains UNKNOWN. A frozen bounded replay of exact old8 can diagnose pairs under explicit budget; do not replace failed samples, infer wrist set empty, or blame paper."
+    },
+    {
+      "environment": "VI",
+      "status": "PASS_RECONSTRUCTED_COMPOSITE_DISCRETE_ONLY_ORIGINAL_INCOMPLETE",
+      "saved_evidence": "974/974 candidate budget exhausted. Q2 strict four half bridges UNKNOWN_OR_FAILED preserved. Approved fixed64 new nodes plus saved fiber nodes attach all4 half bridges:104nodes/102edges; finite closure/rank/branch/limits/source-policy collision/leaf distance pass.",
+      "native_RBS": "Original source has q3 undeclared in singular overload, dsg2 typo and two-arm recursive argument remnants. Original native RBS not executed/qualified; reconstructed fiber composition is not author RBS.",
+      "RSS_distribution": "Two-arm wrist-only sampleSingular fragment does not define valid three-arm production sampler, singular-arm distribution or branch-pair policy; UNKNOWN. Preserve gamma=.2 in reconstruction.",
+      "planner_entry": "plan_SG/SG files available but incomplete RSS implementation; no qualified RSS production entry/path.",
+      "earliest_unpassed_gate": "Static mathematical contract for general three-arm candidate distribution, branch-pair identity, regular/singular/fiber connector and source RBS provenance.",
+      "route_and_review": "No further candidate authority remains. Generalizing fixed composition or choosing production singular-arm probabilities is new RECONSTRUCTED scientific design and requires review plus new explicit budget before execution."
+    }
+  ],
+  "cross_cutting_findings": [
+    {
+      "id": "RSS-S01",
+      "classification": "AUTHOR_CODE_VS_FROZEN_PAPER_CONDITIONS",
+      "finding": "Every inspected spatial SBL source uses if uniform01()>0.05 then regular else sampleSingular, despite20% comment. RRT uses .2 in nongGoal branch; CBiRRT .20. This is a source parameter discrepancy, not measured sampling frequency or proof of theory error.",
+      "source_locations": [
+        "CKCplanning/planners/SBL_RSS.cpp:193",
+        "ckcComau2/planners/SBL_SG.cpp:193",
+        "ckcComau_industrialScene/planners/SBL_SG.cpp:193",
+        "ckcComau3/planners/SBL_SG.cpp:193"
+      ],
+      "action": "Keep frozen gamma=.2. Before SBL RSS execution document author-literal .05 versus paper/frozen .2 as separate variants and obtain scientific decision if correcting; no silent change."
+    },
+    {
+      "id": "RSS-S02",
+      "classification": "SOURCE_RBS_SEMANTICS_NOT_STRICT_CERTIFICATE",
+      "finding": "Original singular RBS may return true near singular center before both halves reach ordinary leaf resolution; ABB15*.05,Comau7*.05. check and reconstruct have matching early-return families; original nearest-center shortcut must be separately reported from strict independent leaves.",
+      "source_locations": [
+        "CKCplanning/validity_checkers/StateValidityCheckerRSS.cpp:468-495",
+        "CKCplanning/validity_checkers/StateValidityCheckerRSS.cpp:588-624",
+        "ckcComau2/validity_checkers/StateValidityCheckerRSS.cpp:599-626"
+      ],
+      "action": "Next static map sg flags/branches/trace for RRT,CBiRRT,SBL; then finite regular and singular exact-source tests plus independent residual/rank/branch/limits/collision and leaf audit. Do not infer continuous collision."
+    },
+    {
+      "id": "RSS-S03",
+      "classification": "FIXED_MODE0_TARGET_REACH_FAILURE_NOT_SET_EMPTINESS",
+      "finding": "Saved II and III100mode0 each exceed active shoulder-wrist max580.0064515457702mm; ranges II685.0462470619344..2008.5904405295767,III815.2071419649943..2498.7581592467827mm. This explains fixed targets, not every potential mode0 target.",
+      "action": "Keep old0/100 failures. Analytic witness candidate file is hand-selected, no full IK/closure/collision/RBS execution; a new frozen input qualification is needed before using it."
+    },
+    {
+      "id": "RSS-S04",
+      "classification": "IMPLEMENTATION_GEOMETRY_NOT_PAPER_THEORY",
+      "finding": "Independent R1 Jacobian counterexample invalidates author fixed q3=-PI_/2 as general elbow singularity for offset geometry. Corrected sin(q3+alpha)=0 with alpha ABBatan2(302,70),Comauatan2(1436.5,210); original RSS passive-rank definition remains separate.",
+      "action": "Retain SOURCE-CORRECTION provenance and independent true ranks. No proof original3modes cover shoulder rho=0 or connect every branch."
+    }
+  ],
+  "recommended_next_static_work": "ABB source-native RBS sg/branch/check/reconstruct contract using saved clear singular candidates; no new model calls. In parallel finish IV saved-six collision/checkEE recipe and V pair-observability source design. VI generalization remains scientific review item, I source mapping unresolved.",
+  "next_runtime_policy": "This review creates no runtime authorization. Any finite source diagnostic must have frozen exact inputs, call/cost limits, failure retention and authorization coverage first. New scientific geometry/distribution/connector or extra VI candidates require explicit decision.",
+  "input_sha256": {
+    "CODEX_START_HERE.md": "a9d114fc007bea1ede4481746e4f340e469d4c48b92da21e70e092f26448cebd",
+    "docs/REPRODUCTION_FULL_PAPER_COVERAGE_AND_ROOT_CAUSE_PROTOCOL.md": "8c74ebfecea1581bce5fc8bd61957eee81bb63c52f8aead7b01f2857358c583d",
+    "configs/p4_full/author_source_manifest.json": "6d5dd1c4c353da51c9f6331afa60f98b01559b72b2b666e4375e003f8ca63cac",
+    "configs/p4_full/paper_source_manifest.json": "40a17e664d624f0174c3fb600ea8eef1b25e051415d78c6d09624d3d7bb069a9",
+    "reports/P4_FULL_RSS_SCIENTIFIC_DECISION_R1.md": "3817c114212022b69d8329752c42bdf09681373b18d556c16efea29fd8c14f00",
+    "reports/P4_FULL_R2_RSS_GEOMETRY_SPEC.md": "1f81aac0fe172a5aca3914aa7cc91ebd3cb40173bf296a10a78ad1dfd57464c2",
+    "reports/P4_FULL_R2_COMPONENT_RESULT_REVIEW.md": "3236875f2f1119064dd544649b879d5f6518306d42afc8f3396730beaf85e589",
+    "reports/P4_FULL_R2_RSS_MODE0_SAVED_TARGET_REVIEW.json": "b5c1bf20cbd08e656071c687ab45aee74441fd27f251e136ec7260b839f295fc",
+    "reports/P4_FULL_R2_RSS_ANALYTIC_WITNESS_CANDIDATE.json": "5a3793d2c84705dadf27d2fa844422da0028c20c25045b564a31fb011d193b8a",
+    "reports/P4_FULL_R2_SAVED_RSS_COLLISION_POST_REVIEW_20261015.md": "5fc0672fbc8513f551c102fbef512676235ce9c6e4e9022886bda9c9efeb0727",
+    "reports/P4_FULL_R2_SAVED_RSS_COLLISION_SECOND_REVIEW_20261015.md": "2b77cbe1810caffc52e6e5f22b1b2b133aae05d17fb66f90ee41273151d3b8d7",
+    "reports/P4_FULL_R2_VI_RSS_INGRESS_POST_TASK_20261015.md": "377395e06ce1c3d7d0c8c002a86adaf2961c09fe266e136b82c332d4f86e1119",
+    "reports/P4_FULL_R2_VI_RSS_BRIDGE_ROOT_CAUSE_20261015.md": "a497148e8c194ca43b029279667fa766f3ccb055811306193c5a7149d96c9a13",
+    "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_POST_TASK_20261016.md": "eb1ecfd898cb8eb5485be67307c84c9d4fa3e3da4ac63d2802f0ea77efc8c2e5",
+    "reports/P4_FULL_R2_IV_RSS_WRIST_FIXED100_RUN02_INDEPENDENT_SAVED_REVIEW_20261016.json": "4c2dd97d58d645bb3f58b791d75c65b77945622b3b55c0165df4ad225769d5b5",
+    "reports/p4_full_audit/ORIGINAL_FULL_COVERAGE_MATRIX_v3.md": "1981846e0780b6eae66246e33c844f199a1102c055c17a88e01d8a8f14b1d7f3",
+    "reports/P4_FULL_R2_CBIRRT_NR_BUILD_ORIGINAL_VS_REPRODUCED_COVERAGE_20261016.csv": "9f5ca144542bfb788f3e220c3ada045db751a9ea45ad41d201de1b41e1836a94",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V19.json": "10f8a8f335d0fa95e6dbfe764a3b016d669c6aaff86f5a4ba8d66523d2edd18a",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/II/summary.json": "f67df920078bb057af6d190d61edd0ec0a6bc2f7e7f880e39dd64bb4f9214b86",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/III/summary.json": "8f167b80864dcc5a214ac6f8fc1d67420373d428c8cc6f2dbea4ef68d0336353",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/V/summary.json": "384282e72141391ed5bd870dc64ba745662c58e0392c07aca8f212c08291eb85",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json": "f06a0afa82da9cea66224d7b2e438673570aabbefb022c8b00fffedd02ab5f8f",
+    "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_02/execution.json": "8dc596f33a20a6ba4d4ed57b060992689e549b20e2c2603763386449695e6069",
+    "results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json": "784dcf0be2e85e28114c8cf9b54b96cff76b2775607967b68caf5af22840fb3a",
+    "baselines/p4_full/geometry_consistent/rss_geometry.py": "7f1eb7cdf4251afe85fabf7f485cb6e0d862073ce4c9ac1d0bbd8e157707ddcf"
+  },
+  "author_source_sha256": {
+    "CKCplanning/validity_checkers/StateValidityCheckerRSS.cpp": "133e1f7036583b3e6a5ae9d9df978a679df9af88c5103d195e727546934fd8c6",
+    "CKCplanning/run/plan_RSS.cpp": "3ec456d9a74d08e7a26a6c78104a503f6f5040c6dd18fdaaa8ce760be554ef1b",
+    "CKCplanning/validity_checkers/StateValidityCheckerRSS.h": "c7bcf881fb451eab6ff20b03a4ecc0c279c639ef85ba4a3a1b6b6cda8c6cdd11",
+    "CKCplanning/run/plan_RSS.h": "a6ceb577339467cd1d8af103e5f3409abc8d902e2a8f9a6e971290389f0f7d08",
+    "CKCplanning/planners/RRT_RSS.cpp": "3c86eeb3f9fcc1a4e984bcbbda89cef90f493f70b92b32874bf9c6e1afe15486",
+    "CKCplanning/planners/CBiRRT_RSS.cpp": "3d5a84a999637beef574c22fe436963c85376acc96727c0da0ea86762f94912a",
+    "CKCplanning/planners/SBL_RSS.cpp": "1a52d9fae20d0aa98f7c22c28139c581ac6e20451f8a4ab17f6e242826a9c2fc",
+    "ckcComau2/validity_checkers/StateValidityCheckerRSS.cpp": "a8d4d705419b47657f95b0ed4cbf7c00e147f15f927e7c2a6d6b9b6057c0eaf1",
+    "ckcComau2/run/plan_SG.cpp": "91305027176af22e8b3b56c7e3bc2d26be392f443628976b889463a05161ec71",
+    "ckcComau2/validity_checkers/StateValidityCheckerRSS.h": "b7b9830619fb81c254bace9ea95a46c4931f8bff01bd10b71735f8d732d1e864",
+    "ckcComau2/run/plan_SG.h": "570a6683bc629c5555f7e0cd9d7b6f82ffe43954ff561a56808405a35c6aa9a5",
+    "ckcComau2/planners/RRT_SG.cpp": "899f2117b6254dc5565b3c721962237ba7c0eaf0526b52dbcdd01a9046e3f8d6",
+    "ckcComau2/planners/CBiRRT_SG.cpp": "e158a28282046826c980d2a03f1bb6dade959bea5a133ca0afdc85095f551ad1",
+    "ckcComau2/planners/SBL_SG.cpp": "b41fdaedd48f2461059614b65df7c31547539ccf32c586ab6ab6f7f45c27ad95",
+    "ckcComau_industrialScene/validity_checkers/StateValidityCheckerRSS.cpp": "50223b4723583984e4b994eaa0bfb577aacbe7ce76a72e9da50a55075f28745f",
+    "ckcComau_industrialScene/run/plan_SG.cpp": "e95883d2cdecec95ec79920eda20fbccacc41cc8b819edc69d62ed5304908bc8",
+    "ckcComau_industrialScene/validity_checkers/StateValidityCheckerRSS.h": "b7b9830619fb81c254bace9ea95a46c4931f8bff01bd10b71735f8d732d1e864",
+    "ckcComau_industrialScene/run/plan_SG.h": "570a6683bc629c5555f7e0cd9d7b6f82ffe43954ff561a56808405a35c6aa9a5",
+    "ckcComau_industrialScene/planners/RRT_SG.cpp": "899f2117b6254dc5565b3c721962237ba7c0eaf0526b52dbcdd01a9046e3f8d6",
+    "ckcComau_industrialScene/planners/CBiRRT_SG.cpp": "1cae1891572dbf05f0ac993bd56ecf3ee9ae509d7c101d9fd84c745d228f062b",
+    "ckcComau_industrialScene/planners/SBL_SG.cpp": "b41fdaedd48f2461059614b65df7c31547539ccf32c586ab6ab6f7f45c27ad95",
+    "ckcComau3/validity_checkers/StateValidityCheckerRSS.cpp": "0b6c611fb2fb053277310781eb2c54150956e55832fc9c9f29ee90175e015ddf",
+    "ckcComau3/run/plan_SG.cpp": "a05dff425139af439ea345409b7ec81c5a357fcb1bdb06ac81fa251a216d350e",
+    "ckcComau3/validity_checkers/StateValidityCheckerRSS.h": "2dfb86e6c37aa6bcfb65a1a78282286f22ee3e31e912be6bcdd0e092e2a329fc",
+    "ckcComau3/run/plan_SG.h": "570a6683bc629c5555f7e0cd9d7b6f82ffe43954ff561a56808405a35c6aa9a5",
+    "ckcComau3/planners/RRT_SG.cpp": "38f103dec2d93f77795a673b54fee5d1ea66cf8864360fd5c0200063941087be",
+    "ckcComau3/planners/CBiRRT_SG.cpp": "ab6b1373aa7d677c0001370ea6d569ba0ce4121bb371d55ba31db6a9d88dae8d",
+    "ckcComau3/planners/SBL_SG.cpp": "03733cc24350bf2473fb4a390acb8ce54460fa8e923578ef8656d71562a04fa6",
+    "planar_ckc/validity_checkers/StateValidityCheckerHB.cpp": "fa5831876bbd7bcaa15155da5e7f0cd9202309bf085b83aca8399ead05d44259",
+    "planar_ckc/run/plan_HB.cpp": "4735c8c238cc6b7ce67c91c083d41914828b69a3b35b6cef4a6684940cbe2724",
+    "planar_ckc/validity_checkers/StateValidityCheckerHB.h": "6ad900e74b76b43814323b130cdc770f6eca4229b24717e816ef6f55ccc36172",
+    "planar_ckc/run/plan_HB.h": "dfdca1e1bdd8dddb3c65cf8d34cccc668ae1daf2c049cbf4ede45a299bb0cb38",
+    "planar_ckc/planners/RRT_hb.cpp": "56506a8e64ce408998f55584688c6cff31ef46adb67149290fa4d55fb7f4785f",
+    "planar_ckc/planners/CBiRRT_hb.cpp": "b85c1257296ada547cd2cc14548b8b29cbb506c6e9cc712034b33ffcef61e43d",
+    "planar_ckc/planners/SBL_hb.cpp": "1030b5f768b04db4054ea901b21289daa4cbde80a4e0e8919508a5e69633f237"
+  },
+  "companion_markdown": "reports/P4_FULL_R2_RSS_NEXT_GATE_STATIC_REVIEW_20261016.md"
+}

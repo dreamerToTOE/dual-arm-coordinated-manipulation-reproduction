@@ -1,0 +1,87 @@
+{
+  "schema": "P4_V21_PRESERVATION_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "FAIL_STATIC_REVIEW",
+  "reviewed_source": "reports/p4_full_audit/recovery_tools/audit_preservation_v21.py",
+  "reviewed_source_sha256": "6afcecebb1b31210ac0b83c391dfadc9f5f8d577052963e0a01ab1f6eacadea4",
+  "personnel_independent": true,
+  "reviewer": "nr_entry_review",
+  "checks": [
+    {
+      "check": "exact reviewed V21 source SHA",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper read",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper sha",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper git",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper mismatch_file",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper csvread",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper arithmetic",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper rule_tokens",
+      "passed": true
+    },
+    {
+      "check": "unchanged saved-only helper absolute",
+      "passed": true
+    },
+    {
+      "check": "exclusive new verification output no old output write",
+      "passed": true
+    },
+    {
+      "check": "all 39 executions classified29science10engineering and old rows retained",
+      "passed": true
+    },
+    {
+      "check": "211coverage all166previous columns preserved grows170 without formal scale reduction",
+      "passed": true
+    },
+    {
+      "check": "BUILD03 real success POST strict engineering true and receipt links",
+      "passed": true
+    },
+    {
+      "check": "6raw actual compiler rules byte slices source first source occurrences actual TU SHA",
+      "passed": true
+    },
+    {
+      "check": "old BUILD01 and BUILD02 STOP permanently enforced",
+      "passed": true
+    },
+    {
+      "check": "actual old V20 snapshot hashes frozen",
+      "passed": true
+    },
+    {
+      "check": "VI974exhausted formal0/22500 unchanged",
+      "passed": true
+    },
+    {
+      "check": "no actual audit executed by this review",
+      "passed": false
+    }
+  ],
+  "checks_total": 18,
+  "checks_passed": 17,
+  "checks_failed": 1,
+  "actual_audit_invocations": 0,
+  "limitation": "Source/AST/diff review only; root must execute against actual V21 ledger and CSV; no preservation success predicted."
+}

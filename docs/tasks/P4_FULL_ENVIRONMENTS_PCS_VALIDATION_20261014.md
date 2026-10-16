@@ -274,3 +274,12 @@ GNUtime33.95 44.43 11.03 1，上界33.96wall/55.48CPU已独立确认并替换内
 独立保存13762/13762只证明失败/费用/六规则事实一致，engineering_build_qualified=false，外层监督true。GNUtime33.56 43.99 10.98 1，上界33.57wall/54.99CPU只替换内部样本一次。V20实际38=29科学账+9工程，累计753.085705375994wall/652.898923CPU，余额上界2846.914294624006/6547.101077，历史未测尾UNKNOWN。211×166保前162列，V20七组保全PASS，旧1028科学/57crash及tar/另5树13未提交/V19保持。见BUILD02_POST_TASK、BUILD02_ROOT_INDEPENDENT_POST与BUILD02_FAILURE_ROOT_CAUSE。
 
 下一新BUILD03仅补五PQP头冻结，并依据已保存全部实际依赖做静态完整核对；原科学源不改，新45wall/90CPU仍扣R2总3600/7200。先静态/PRE/协议/commit冻结后唯一工程；binary/query/solve/VI/formal目前0。VI974余0、TableI0/22500、211义务与全部原规模保持，不P2/Isaac或提前结题。
+
+
+## 2026-10-16 CBiRRT_NR BUILD03仅工程独立通过，V21实际交付
+
+c5a75ab唯一BUILD03 BUILT_NOT_QUERIED、compiler exit0/reaped/空组/diag0，六TU完整raw规则/743实际依赖/全部受管预冻SHA/派生切片均合格。独立POST13927/13927，engineering_build_qualified与external监督true，binary/query/solve/VI/formal仍0。前两STOP/原源码/ELF/raw/claim和全部费用保留；只补五PQP头预先绑定，科学三稿/full12 NN/双树/RBS/回溯/physicalGD接缝不改，继续RECONSTRUCTED。见BUILD03_POST_TASK及BUILD03_ROOT_INDEPENDENT_POST。
+
+GNUtime33.73 44.96 9.87 0，上界33.74wall/54.85CPU只替换内部样本一次。V21实际39=29科学账+10工程，累计786.8257053759941wall/707.748923CPU，余额上界2813.174294624006/6492.251077，历史未测尾UNKNOWN。211×170保前166列，V21七组保全PASS，旧1028科学/57crash及tar/另5树13未提交/V20保持。
+
+下一仅另冻II/A01/seed7/range2.6/原10秒单solve外30/60；EXACT候选需完整原M独立路径另120/240/max2048资格。RSS静态下一门报告已另交，SBL源码.05与γ=.2差异保留待裁决；不新增VI。VI974余0、正式0/22500、211全部义务与原规模不缩，端到端后成本pilot/正式预算另审，不P2/Isaac/提前结题。
