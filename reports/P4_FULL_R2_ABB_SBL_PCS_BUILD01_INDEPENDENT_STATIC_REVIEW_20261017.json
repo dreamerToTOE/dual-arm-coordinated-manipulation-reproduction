@@ -1,0 +1,877 @@
+{
+  "schema": "P4_SBL_PCS_BUILD01_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "FAIL_SBL_PCS_BUILD01_ENGINEERING_ONLY_STATIC_REVIEW",
+  "generated_at_utc": "2026-10-17T07:24:41.793507+00:00",
+  "reviewer": "nr_entry_review; independent of SBL implementation",
+  "personnel_independent": true,
+  "independent_static_review_passed": false,
+  "engineering_build_qualified": false,
+  "scientific_runtime_qualified": false,
+  "checks": [
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "reviewed eight draft bytes reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_SOURCE_CONFIGURATION_CORRECTIONS_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "standard-library AST only scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "standard-library AST only scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "standard-library AST only baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact16 literal scientific/lifecycle wrappers",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool StateValidityChecker::checkMotionRBS(const ob::State *s1, const ob::State *s2, int active_chain, int ik_sol)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool StateValidityChecker::checkMotionRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, int recursion_depth, int non_decrease_count)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool StateValidityChecker::reconstructRBS(const ob::State *s1, const ob::State *s2, Matrix &Confs, int active_chain, int ik_sol)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool StateValidityChecker::reconstructRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, Matrix &M, int iteration, int last_index, int firstORsecond)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain, int ik_sol)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature State StateValidityChecker::identify_state_ik(State q1, State q2, State ik)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature void two_robots::FKsolve_rob(State q, int robot_num)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool two_robots::IKsolve_rob(Matrix T, int robot_num, int solution_num)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature int collisionDetection::collision_state(Matrix M, State q1, State q2)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature void collisionDetection::load_models()",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature void ompl::geometric::SBL::addMotion(TreeData &tree, Motion *motion)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature void ompl::geometric::SBL::removeMotion(TreeData &tree, Motion *motion)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature void ompl::geometric::SBL::freeGridMotions(Grid<MotionInfo> &grid)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool ompl::geometric::SBL::isPathValid(TreeData &tree, Motion *motion)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature bool ompl::geometric::SBL::checkSolution(bool start, TreeData &tree, TreeData &otherTree, Motion *motion, std::vector<Motion*> &solution)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "exact existing original signature void ompl::geometric::SBL::save2file(vector<Motion*> mpath1, vector<Motion*> mpath2)",
+      "passed": true
+    },
+    {
+      "group": "author",
+      "check": "author/template exact unchanged planners/SBL_PCS.cpp",
+      "passed": true
+    },
+    {
+      "group": "author",
+      "check": "author/template exact unchanged planners/SBL_PCS.h",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "EXACT_AUTHOR_SBL_BYTES_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "COMPLETE_AUTHOR_BODY_ONCE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "INVERSE_SBL_WRAPPER_BODY_MISMATCH",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "WHOLE_SBL_SOURCE_BYTES_NOT_REVERSIBLE",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "for file,signature,inserted,body in reversed(inverse)",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "H_or_D_or_NR_correction_present=False",
+      "passed": true
+    },
+    {
+      "group": "wrapper",
+      "check": "observer_model_calls=0,observer_RNG_draws=0",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "++next_lifetime,++generations[m],++next_state",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "const bool connect=connection_scope!=0",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "!connect",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "UNINITIALIZED_NOT_READ",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "x.a_chain_initialized?json(m->a_chain):json(nullptr)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "original_children_before_parent_null",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "mark(\"motion_before_native_retirement\",before)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "state_to_motion.erase(item.state);live.erase(it)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "RETIRE_EXACT_LIFETIME_TOKEN",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "NO_RESET_WHILE_SBL_OBJECTS_LIVE",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::register_motion(&tree,motion)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::prepare_retirement(motion)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::retire(p4_retirement)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::prepare_grid(grid)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::retire_grid(p4_retirements)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::ConnectionScope p4_connection_scope",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "p4sbl::paths_snapshot(mpath1,mpath2)",
+      "passed": true
+    },
+    {
+      "group": "lifecycle",
+      "check": "original_save_may_read_uninitialized_historical_connect_a_chain",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "std::string(argv[3])!=\"setup\"",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "SEPARATE_SETUP_QUALIFICATION_REQUIRED_NO_SOLVE",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "og::SBL(si,.8,1)",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "ompl::RNG::setSeed(7);std::srand(7)",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "std::make_shared<ob::RealVectorStateSpace>(12)",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "setStateValidityCheckingResolution(.02)",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "start_grid_dim==dim&&goal_grid_dim==dim",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "{\"grid_dimensions\",{start_grid_dim,goal_grid_dim}}",
+      "passed": false
+    },
+    {
+      "group": "setup-only",
+      "check": "REGISTRY_MUST_BE_EMPTY_AFTER_DESTRUCTION",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "OBSERVED_LINEAR_ACTION_MATRIX_NOT_PROTECTED_STORAGE_BYTES",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "sampler_allocated_by_observer",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "no driver solve dispatch",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "seed before first state-space construction",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "sample<13",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "p->project(input.get(),output)",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "FINITE_PUBLIC_LINEAR_ACTION_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "PUBLIC_LINEAR_ACTION_ORIGIN_MUST_BE_ZERO",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "output_binary64",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "actual_setup_library_RNG_draws",
+      "passed": true
+    },
+    {
+      "group": "setup-only",
+      "check": "UNOBSERVED",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "getDimension() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "getCellSizes() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "hasBounds() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "getBounds() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "userConfigured() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "Eigen::Ref<Eigen::VectorXd>",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "explicit ScopedState(StateSpacePtr space)",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "getName() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "getDimension() const",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "class RealVectorLinearProjectionEvaluator",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "class RealVectorRandomLinearProjectionEvaluator",
+      "passed": true
+    },
+    {
+      "group": "actual C++ API",
+      "check": "ProjectionMatrix projection_",
+      "passed": true
+    },
+    {
+      "group": "author-original",
+      "check": "step = {0.8, 0.6};",
+      "passed": true
+    },
+    {
+      "group": "author-original",
+      "check": "step[env-1]",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "'-MD','-MF','-'",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "EXACTLY_FIVE_REAL_COMPILER_STDOUT_RULES_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "FIVE_DISTINCT_FROZEN_TRANSLATION_UNITS_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "EXACT_COMPLETE_FIVE_TU_COVERAGE_ONCE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "ACTUAL_PROTECTED_DEPENDENCY_NOT_IN_FROZEN_MANIFEST",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "compiler_created_individual_d_file=False",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "SYSTEM_SBL_HEADER_MUST_NOT_REPLACE_AUTHOR_CLASS",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "LINKED=(APC,SVC,COL,SBL)",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "NAMESPACE_ROOTS=(OMPL_HEADERS,KDL_HEADERS,EIGEN_HEADERS,JSON_HEADERS)",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "BOOST_MACRO_SUPPORT=",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "ADDED_HEADER_NAMESPACE_SET_OR_SHA_CHANGED",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "five specific fixed PQP headers",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "actual prefrozen PQP BV.h",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "actual prefrozen PQP PQP.h",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "actual prefrozen PQP PQP_Compile.h",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "actual prefrozen PQP PQP_Internal.h",
+      "passed": true
+    },
+    {
+      "group": "dependencies",
+      "check": "actual prefrozen PQP Tri.h",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "budget=dict(wall_s=45.,cpu_s=90.,r2_total_wall_s=3600.,r2_total_cpu_s=7200.)",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "LATEST_LEDGER_MUST_COVER_ALL_ACTUAL_EXECUTIONS",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "PRIOR_ONE_EXTERNAL_REPLACEMENT_CERTIFICATE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "ORPHAN_SUPERVISED_ATTEMPT_REQUIRES_ACCOUNTING",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "UNCOMMITTED_BUILD_SOURCE_OR_PROTOCOL",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "EXCLUSIVE_FRESH_SBL_PCS_STAGE_RUN_CLAIM_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "OTHER_ACTIVE_P4_EXECUTION",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "BUILT_NOT_QUERIED",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "STOP_FINAL_WALL_OR_CPU_BUDGET",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "compiler_group_members_after_cleanup",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "ACTUAL_COMPILER_GROUP_NOT_EMPTY_AFTER_KILL_WAIT",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "builder timer starts accounting before validate; installed after preflight",
+      "passed": true
+    },
+    {
+      "group": "gate",
+      "check": "only compiler Popen in builder",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "os.O_WRONLY|os.O_CREAT|os.O_EXCL",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "pass_fds=(fd,)",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "proc.wait()",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "%e %U %S %x",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "Decimal('.01')",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "Decimal('.02')",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "wall<=min(45.,3600.-spec",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "cpu<=min(90.,7200.-spec",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "independent_POST_required=True",
+      "passed": true
+    },
+    {
+      "group": "scope",
+      "check": "211",
+      "passed": true
+    },
+    {
+      "group": "scope",
+      "check": "22500",
+      "passed": true
+    },
+    {
+      "group": "scope",
+      "check": "974/974",
+      "passed": true
+    },
+    {
+      "group": "scope",
+      "check": "BUILT_NOT_QUERIED",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_SOURCE_CONFIGURATION_CORRECTIONS_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /opt/ros/humble/include/ompl-1.7/ompl/base/ProjectionEvaluator.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /opt/ros/humble/include/ompl-1.7/ompl/base/ScopedState.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /opt/ros/humble/include/ompl-1.7/ompl/base/ValidStateSampler.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /opt/ros/humble/include/ompl-1.7/ompl/datastructures/Grid.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateProjections.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/run/plan_PCS.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/BV.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP_Compile.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP_Internal.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "review input preserved /home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/Tri.h",
+      "passed": true
+    }
+  ],
+  "checks_total": 158,
+  "checks_passed": 157,
+  "checks_failed": 1,
+  "failures": [
+    {
+      "group": "setup-only",
+      "check": "{\"grid_dimensions\",{start_grid_dim,goal_grid_dim}}",
+      "passed": false
+    }
+  ],
+  "reviewed_source_sha256": {
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp": "7507648eb8ede25eea1cadcc32270a0bdf27633b1520de717718f6a907b986ac",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py": "cf5f5192840883634dfd3f18ea117dd505b66a8f1648391ae15113508ae2a237",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp": "899fbabf80d2bf8b01e59efea81aa21077a3b113662c579661e044d6f66df7b9",
+    "scripts/build_p4_full_r2_abb_sbl_pcs_draft.py": "251f44b0f931a34a2c1e5cfb91c13632c11362392cc3fb339fba1bafd2427628",
+    "scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py": "411b522f9533fe663d61f4fa12dd30687febc380dc4d84de6759f8eb593b4ca0",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md": "bbbe51a38d49d3367db42533f1817cc155b347307104bf52fc21c79af610ed44",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md": "ebc95d713092f5dc6da73fd2fd22517e0fa170c9b27f79bd5c0612390702d878",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_SOURCE_CONFIGURATION_CORRECTIONS_20261017.md": "b0e9a909ca5da9c9e912b02d0da20063e12e75b1e0f16a228a4eca9f6e5a9925"
+  },
+  "retained_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp": "7507648eb8ede25eea1cadcc32270a0bdf27633b1520de717718f6a907b986ac",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py": "cf5f5192840883634dfd3f18ea117dd505b66a8f1648391ae15113508ae2a237",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp": "899fbabf80d2bf8b01e59efea81aa21077a3b113662c579661e044d6f66df7b9",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py": "251f44b0f931a34a2c1e5cfb91c13632c11362392cc3fb339fba1bafd2427628",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py": "411b522f9533fe663d61f4fa12dd30687febc380dc4d84de6759f8eb593b4ca0",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md": "bbbe51a38d49d3367db42533f1817cc155b347307104bf52fc21c79af610ed44",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md": "ebc95d713092f5dc6da73fd2fd22517e0fa170c9b27f79bd5c0612390702d878",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_SOURCE_CONFIGURATION_CORRECTIONS_20261017.md": "b0e9a909ca5da9c9e912b02d0da20063e12e75b1e0f16a228a4eca9f6e5a9925",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ProjectionEvaluator.h": "e6d38f478826365f110fee87e0bca58ab20686a354d91f98a1c391ada0c7ea4d",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ScopedState.h": "a0abd723c30fed33b3ff40a1b9322bd41724688e9bb7f2d2a26bd77cb129ef19",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ValidStateSampler.h": "81934f16ec2dbf42672472aaef58757c1e86fc2aa296639ae137ca778a64f96d",
+    "/opt/ros/humble/include/ompl-1.7/ompl/datastructures/Grid.h": "93987f454c7d0627dbd5f5c811c356401f6c3162ba38c6dfc4daad4b00ad38fb",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateProjections.h": "34fc567e726e8cafef27e1169c60b90d21e0f2091c1461919220120535ed9ead",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/run/plan_PCS.cpp": "af868b6ed9bb1253fc2283f6d4d2fe8f3437a91ab349414bc44521892c4b3f69",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/BV.h": "3861336bea7a475cb8dab1e64c95e749f7b14fe3ea2896b658b8c87839f8a213",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP.h": "4c35d6ac10e1518d84e3845fde918a308db904b740a2d8e04d627a1a58dd79c2",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP_Compile.h": "e05dce007f2db29c5e75b2c1414569b615583d4a4c656b0dd6d00fc6eb7a0ea2",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/PQP_Internal.h": "76fe69dcf588b0ba39d0fa75584265093a0f1310d405a8f7d60758c5dafb4c7f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/compat02/PQP_v1.3/include/Tri.h": "da184954a2bcbabd69cbc63e9670ded5df76d733c8327208ca14723249827102"
+  },
+  "new_execution_counts": {
+    "project_import": 0,
+    "describe": 0,
+    "transform": 0,
+    "compile": 0,
+    "binary": 0,
+    "setup": 0,
+    "model": 0,
+    "FK": 0,
+    "IK": 0,
+    "collision": 0,
+    "RBS": 0,
+    "solve": 0,
+    "protocol": 0,
+    "claim": 0,
+    "prior": 0,
+    "VI": 0,
+    "formal": 0
+  },
+  "byte_reversal_executed": false,
+  "limits": [
+    "Static source/AST/actual-header review only. Source reversal guards and complete-body policy reviewed; transform not invoked. Actual compiler/dependency/source/ELF/external-cost POST remains required.",
+    "Whole GNUtime child measures import/preflight/header scans/validation/compiler/final persistence/exit; preflight has no installed hard watchdog. Actual full-child upper must meet45wall/90CPU. Supervisor own metadata/fsync costs excluded.",
+    "Original historical connect a_chain read in save remains; setup-only driver refuses solve before model construction. Future solve requires separate root-cause qualification.",
+    "Future public13 observes only existing linear action, not protected storage bytes. Bound actual lib project pure multiplication evidence remains a separate pre-setup gate; setup RNG internals UNOBSERVED.",
+    "211 obligations,VI974/974 remaining0,formal0/22500 persist; no path/performance/RSS/PCS advantage or full-paper inference."
+  ]
+}
