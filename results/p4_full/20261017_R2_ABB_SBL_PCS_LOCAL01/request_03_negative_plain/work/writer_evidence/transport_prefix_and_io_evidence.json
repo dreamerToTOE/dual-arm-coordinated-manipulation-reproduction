@@ -1,0 +1,411 @@
+{
+  "continuous_collision_certificate": false,
+  "formal_table_I_calls": 0,
+  "independent_path_qualified": false,
+  "local": {
+    "after": {
+      "identity_policy": "LIVE_MOTION_LIFETIME_GENERATION_NO_Q_MERGE",
+      "native_tree_sizes": [
+        1,
+        0
+      ],
+      "nodes": [
+        {
+          "a_chain": 0,
+          "a_chain_provenance": "ROOT_ASSIGNED",
+          "address_generation": 1,
+          "ik_q1_active": 3,
+          "ik_q2_active": 0,
+          "motion_id": 1,
+          "parent_motion_id": 0,
+          "q12": [
+            0.5236,
+            1.7453,
+            -1.8326,
+            -1.4835,
+            1.5708,
+            0.0,
+            1.0042713284452618,
+            0.2729059574498862,
+            0.9485892867539307,
+            -1.1501189067527977,
+            1.8100179182011582,
+            -1.977396290726386
+          ],
+          "root_motion_id": 1,
+          "state_id": 1,
+          "tree": "start",
+          "valid": true
+        }
+      ]
+    },
+    "before": {
+      "identity_policy": "LIVE_MOTION_LIFETIME_GENERATION_NO_Q_MERGE",
+      "native_tree_sizes": [
+        3,
+        0
+      ],
+      "nodes": [
+        {
+          "a_chain": 0,
+          "a_chain_provenance": "ROOT_ASSIGNED",
+          "address_generation": 1,
+          "ik_q1_active": 3,
+          "ik_q2_active": 0,
+          "motion_id": 1,
+          "parent_motion_id": 0,
+          "q12": [
+            0.5236,
+            1.7453,
+            -1.8326,
+            -1.4835,
+            1.5708,
+            0.0,
+            1.0042713284452618,
+            0.2729059574498862,
+            0.9485892867539307,
+            -1.1501189067527977,
+            1.8100179182011582,
+            -1.977396290726386
+          ],
+          "root_motion_id": 1,
+          "state_id": 1,
+          "tree": "start",
+          "valid": true
+        },
+        {
+          "a_chain": 1,
+          "a_chain_provenance": "GROW_ASSIGNED",
+          "address_generation": 1,
+          "ik_q1_active": 0,
+          "ik_q2_active": 3,
+          "motion_id": 2,
+          "parent_motion_id": 1,
+          "q12": [
+            0.40885199981991366,
+            0.01849238795162944,
+            0.6459138299902185,
+            -1.7768245551413935,
+            1.6154608473930387,
+            -1.3588914646405181,
+            0.786271429949172,
+            1.1378404567787406,
+            -1.3493685849416543,
+            -1.4375901677622904,
+            1.8852759521248772,
+            -1.277221972579762
+          ],
+          "root_motion_id": 1,
+          "state_id": 2,
+          "tree": "start",
+          "valid": false
+        },
+        {
+          "a_chain": 1,
+          "a_chain_provenance": "GROW_ASSIGNED",
+          "address_generation": 1,
+          "ik_q1_active": 0,
+          "ik_q2_active": 3,
+          "motion_id": 3,
+          "parent_motion_id": 2,
+          "q12": [
+            0.4109855242063004,
+            0.02064905149456231,
+            0.6507950763574779,
+            -1.7691212338242281,
+            1.6182197835971526,
+            -1.334011372227266,
+            0.784824929451981,
+            1.1503971658360794,
+            -1.3561052963563307,
+            -1.4411955398994873,
+            1.8858227679142503,
+            -1.2911558648490153
+          ],
+          "root_motion_id": 1,
+          "state_id": 3,
+          "tree": "start",
+          "valid": false
+        }
+      ]
+    },
+    "fixture_adapter": "RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES",
+    "fixture_id": "CBI_SAVED_NODE0_359_360_NATURAL_BRANCH_MISMATCH_RECURSIVE_REMOVAL",
+    "kind": "lazy_chain",
+    "no_retry_or_fixture_replacement": true,
+    "saved_input_references": [
+      {
+        "json_pointer": "/",
+        "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+        "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f"
+      },
+      {
+        "json_pointer": "/",
+        "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+        "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0"
+      },
+      {
+        "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+        "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+      },
+      {
+        "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+        "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+        "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+      }
+    ],
+    "source_isPathValid_returned": false
+  },
+  "mode": "plain",
+  "native_file_evidence": [
+    {
+      "absence_retained": true,
+      "exists": false,
+      "name": "parent/path_milestones.txt",
+      "original_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_LOCAL01/request_03_negative_plain/paths/path_milestones.txt",
+      "original_stream_open_write_flush_flags": "UNOBSERVED",
+      "readback_bytes_saved": false
+    },
+    {
+      "absence_retained": true,
+      "exists": false,
+      "name": "parent/ik_path.txt",
+      "original_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_LOCAL01/request_03_negative_plain/paths/ik_path.txt",
+      "original_stream_open_write_flush_flags": "UNOBSERVED",
+      "readback_bytes_saved": false
+    },
+    {
+      "absence_retained": true,
+      "exists": false,
+      "name": "work/path.txt",
+      "original_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_LOCAL01/request_03_negative_plain/work/paths/path.txt",
+      "original_stream_open_write_flush_flags": "UNOBSERVED",
+      "readback_bytes_saved": false
+    },
+    {
+      "absence_retained": true,
+      "exists": false,
+      "name": "work/temp.txt",
+      "original_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_LOCAL01/request_03_negative_plain/work/paths/temp.txt",
+      "original_stream_open_write_flush_flags": "UNOBSERVED",
+      "readback_bytes_saved": false
+    },
+    {
+      "absence_retained": true,
+      "exists": false,
+      "name": "work/perf_log.txt",
+      "original_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_LOCAL01/request_03_negative_plain/work/paths/perf_log.txt",
+      "original_stream_open_write_flush_flags": "UNOBSERVED",
+      "readback_bytes_saved": false
+    }
+  ],
+  "native_output_capture_complete": true,
+  "new_VI_candidate_constructions": 0,
+  "operation": "local",
+  "public_project_observations": 0,
+  "remaining_live_motions": 0,
+  "request": {
+    "environment": "II",
+    "fixture": {
+      "fixture_id": "CBI_SAVED_NODE0_359_360_NATURAL_BRANCH_MISMATCH_RECURSIVE_REMOVAL",
+      "kind": "lazy_chain",
+      "saved_input_references": [
+        {
+          "json_pointer": "/",
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+          "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f"
+        },
+        {
+          "json_pointer": "/",
+          "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+          "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0"
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+          "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+          "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+          "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+          "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+        }
+      ],
+      "separately_frozen_local_fixture": true,
+      "start_chain": [
+        {
+          "assigned_active_role": 0,
+          "ik": [
+            3,
+            0
+          ],
+          "q12": [
+            0.5236,
+            1.7453,
+            -1.8326,
+            -1.4835,
+            1.5708,
+            0.0,
+            1.0042713284452618,
+            0.2729059574498862,
+            0.9485892867539307,
+            -1.1501189067527977,
+            1.8100179182011582,
+            -1.977396290726386
+          ],
+          "saved_edge_index": 0,
+          "saved_node_id": 0
+        },
+        {
+          "assigned_active_role": 1,
+          "ik": [
+            0,
+            3
+          ],
+          "q12": [
+            0.40885199981991366,
+            0.01849238795162944,
+            0.6459138299902185,
+            -1.7768245551413935,
+            1.6154608473930387,
+            -1.3588914646405181,
+            0.786271429949172,
+            1.1378404567787406,
+            -1.3493685849416543,
+            -1.4375901677622904,
+            1.8852759521248772,
+            -1.277221972579762
+          ],
+          "saved_edge_index": 3,
+          "saved_node_id": 359
+        },
+        {
+          "assigned_active_role": 1,
+          "ik": [
+            0,
+            3
+          ],
+          "q12": [
+            0.4109855242063004,
+            0.02064905149456231,
+            0.6507950763574779,
+            -1.7691212338242281,
+            1.6182197835971526,
+            -1.334011372227266,
+            0.784824929451981,
+            1.1503971658360794,
+            -1.3561052963563307,
+            -1.4411955398994873,
+            1.8858227679142503,
+            -1.2911558648490153
+          ],
+          "saved_edge_index": 3,
+          "saved_node_id": 360
+        }
+      ]
+    },
+    "goal_q12": [
+      0.5236,
+      0.34907,
+      0.69813,
+      -1.3963,
+      1.5708,
+      0.0,
+      0.7096069035980488,
+      1.8033460368176983,
+      -1.7064142899195036,
+      -1.6286748910337208,
+      1.914257188961649,
+      -2.015718262850188
+    ],
+    "operation": "local",
+    "range_rad": 0.8,
+    "seed": 7,
+    "separately_frozen_runtime_qualification": true,
+    "start_q12": [
+      0.5236,
+      1.7453,
+      -1.8326,
+      -1.4835,
+      1.5708,
+      0.0,
+      1.0042713284452618,
+      0.2729059574498862,
+      0.9485892867539307,
+      -1.1501189067527977,
+      1.8100179182011582,
+      -1.977396290726386
+    ]
+  },
+  "schema": "P4_ABB_SBL_PCS_SHADOW_V2_RUNTIME_DRAFT",
+  "setup_dispatches": 1,
+  "setup_metadata": {
+    "additional_public_project_observations": 0,
+    "cell_sizes": [
+      0.09401987353262707,
+      0.0731507039721386,
+      0.07248321696072735
+    ],
+    "native_grid_dimensions": [
+      3,
+      3
+    ],
+    "observer_rng_draws": 0,
+    "original_solve_Range": 0.8,
+    "projection_dimension": 3,
+    "projection_dynamic_type": "N4ompl4base41RealVectorRandomLinearProjectionEvaluatorE",
+    "setup_getRange": 3.4158286519086403,
+    "setup_internal_rng_draws": "UNOBSERVED",
+    "user_configured": false
+  },
+  "setup_scope": "NECESSARY_RUNTIME_SETUP_NOT_REPEATED_PUBLIC13_QUALIFICATION",
+  "shadow_final_text_readback_matches_attempts": false,
+  "shadow_sidecar_path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_LOCAL01/request_03_negative_plain/work/writer_evidence/ik_path_shadow_v2.json",
+  "shadow_sidecar_saved_and_readback_equal": true,
+  "solve_calls": 0,
+  "source_completed": null,
+  "source_counts_observed": false,
+  "source_dispatch_completed": 1,
+  "source_dispatch_started": 1,
+  "source_started": null,
+  "status": "SOURCE_LOCAL_OBSERVED_PENDING_INDEPENDENT_QUALIFICATION",
+  "trace": null,
+  "trees_before_destruction": {
+    "identity_policy": "LIVE_MOTION_LIFETIME_GENERATION_NO_Q_MERGE",
+    "native_tree_sizes": [
+      1,
+      0
+    ],
+    "nodes": [
+      {
+        "a_chain": 0,
+        "a_chain_provenance": "ROOT_ASSIGNED",
+        "address_generation": 1,
+        "ik_q1_active": 3,
+        "ik_q2_active": 0,
+        "motion_id": 1,
+        "parent_motion_id": 0,
+        "q12": [
+          0.5236,
+          1.7453,
+          -1.8326,
+          -1.4835,
+          1.5708,
+          0.0,
+          1.0042713284452618,
+          0.2729059574498862,
+          0.9485892867539307,
+          -1.1501189067527977,
+          1.8100179182011582,
+          -1.977396290726386
+        ],
+        "root_motion_id": 1,
+        "state_id": 1,
+        "tree": "start",
+        "valid": true
+      }
+    ]
+  },
+  "writer_metadata_attempts": []
+}

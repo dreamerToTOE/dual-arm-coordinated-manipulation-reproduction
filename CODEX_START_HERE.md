@@ -515,3 +515,10 @@ D080新表reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv/.
 V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923CPU，R2余额仅上界2760.674294624006/6428.411077，旧账原字节不改、历史未测尾UNKNOWN。VI974/974余额0且D080禁止后续VI研究。新scope/budget overlay独立保存；旧RSS/V26草稿未科学执行，不能直接执行其过期六环境/22500-current-scope guard。独立范围后审通过并核旧43execution/94文件与tar成员，原审查器嵌套字段误用失败留存、补记纠正，科学数据未改。
 
 接续优先SBL PCS：setup复用，writer-only shadow两输出的纯文本逆恢复通过，实际新工程/sidecar/local/lazy/solve/路径仍待；并行V→III→IV的PCS/NR资产与资格，RSS解耦。目标14–21天取决于真实成本；pilot草案108调用尚不可执行、资源待冻结，不以pilot替正式。新增科学假设、扩大预算、正式18k、再删范围和结题请示；普通已授权工程连续推进。不P2/Isaac/FR3新实验。
+
+
+## 2026-10-17 D080：SBL BUILD02与固定lazy局部资格完成
+
+原SETUP01/II四路径直接复用。新writer-shadow目标BUILD02独立通过，费用22.37墙钟/37.05CPU；随后固定正负两lazy链各trace/plain四请求实际独立通过：正例107投影/215递归RBS/108叶，输出逐binary64匹配旧109节点证书；负例真实分支不匹配、0RBS/2递归删除，plain/trace语义一致。仍无SBL全局完整路径、local没有connect/save/reconstruct，不将构建或局部当论文规划统计。见reports/P4_D080_SBL_LOCAL01_STAGE_POST_20261017.md。
+
+最新实际V27 45execution=33科学账+12工程，charged869.885705375994墙钟/811.528923CPU，R2余上界2730.114294624006/6388.471077；历史UNKNOWN保留，实际source solve仍5。211新表追加到204列；TableI原22500历史与D08018000分别保留，正式0/18000。VI974只读归档。下一项另冻单II/A01/seed7/.8/10秒SBL solve与完整路径独审；V PCS工程并行、RSS不阻塞。不P2/Isaac/FR3新实验。
