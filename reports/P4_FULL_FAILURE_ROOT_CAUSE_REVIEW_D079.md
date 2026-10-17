@@ -291,3 +291,14 @@ GNUtime1.94/1.46/.20/0，上界1.95wall/1.68CPU，在原10/20内，只替换内�
 执行前POST审查器prefix错误比较及journal空行位置断言已保全旧稿后纠正，仅保存证据复核，没有重跑setup或修改raw。主报告reports/P4_FULL_R2_ABB_SBL_PCS_SETUP01_POST_TASK_20261017.md；最新表reports/P4_FULL_R2_SBL_PCS_SETUP01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv/.md。该证书限公有13点线性作用及元数据，不证明protected矩阵字节、GOT实际读数、库内部setup RNG（仍UNOBSERVED）、机器人或SBL完整路径。原connect a_chain未初始化输出风险仍TASK-BLOCKING，下一步先版本化最小writer/shadow修复静审与工程冻结；RSS固定32数学资格独立推进，监督v2待审未运行。
 
 VI974/974余额0，不新增VI构造/中点/RBS/solve。正式TableI0/22500，全部211原文义务、45×500/1000s、投影/局部可见性/复杂障碍/固定链消融/Fig3–5/TableI–II规模保持。端到端资格后先可重复cost pilot，再申请正式预算。不P2、Isaac或提前结题Word/PDF。
+
+
+## 2026-10-17 D080 M0：安全恢复、211范围附列与阶段排程
+
+先将bb3ca7e1/V25后的94个未提交文件1121261B逐字归档并逐成员核验，再ff-only接入dc810b78；无残留科学进程、不覆盖本地草稿。SBL setup真实独立验收已完成（旧D080 handoff的待运行描述为更早快照），四条II合格离散路径177/393/413/689直接复用，不重跑。新科学执行0。
+
+D080新表reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv/.md为211×196，前186历史列逐值保持；21个VI专属只读存档、30跨环境部分范围、160其余保留，公式/原事实和旧失败不删。TableI原22500=本次II–V18000+VI存档4500，原500/1000s保持；18k唯一job清单仅DRAFT_NOT_AUTHORIZED/NOT_RUN，正式0/18000。完整计划及图表清单见reports/P4_D080_RECOVERY_AND_STAGE_PLAN_20261017.md。
+
+V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923CPU，R2余额仅上界2760.674294624006/6428.411077，旧账原字节不改、历史未测尾UNKNOWN。VI974/974余额0且D080禁止后续VI研究。新scope/budget overlay独立保存；旧RSS/V26草稿未科学执行，不能直接执行其过期六环境/22500-current-scope guard。独立范围后审通过并核旧43execution/94文件与tar成员，原审查器嵌套字段误用失败留存、补记纠正，科学数据未改。
+
+接续优先SBL PCS：setup复用，writer-only shadow两输出的纯文本逆恢复通过，实际新工程/sidecar/local/lazy/solve/路径仍待；并行V→III→IV的PCS/NR资产与资格，RSS解耦。目标14–21天取决于真实成本；pilot草案108调用尚不可执行、资源待冻结，不以pilot替正式。新增科学假设、扩大预算、正式18k、再删范围和结题请示；普通已授权工程连续推进。不P2/Isaac/FR3新实验。

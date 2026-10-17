@@ -1,0 +1,43 @@
+{
+  "schema": "P4_D080_SCOPE_MAPPING_V1",
+  "source": "reports/P4_FULL_R2_SBL_PCS_SETUP01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+  "source_sha256": "2b34a55a39f3678d1d5a7ec1ca1d1c0bf13c828fad9ec6f2f4cfe7461604a491",
+  "output": "reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv",
+  "output_sha256": "c9599003f3a2369e1f9ce106884ac2ebc5453d1774b185899eb6a397191bd3b7",
+  "rows": 211,
+  "historical_columns": 186,
+  "new_columns": [
+    "d080_scope",
+    "d080_reason",
+    "d080_environments",
+    "d080_actual_evidence",
+    "d080_status",
+    "d080_original_table_I_trials",
+    "d080_approved_table_I_trials",
+    "d080_formal_trials_completed",
+    "d080_statistical_scale",
+    "d080_next_action"
+  ],
+  "total_columns": 196,
+  "historical_column_value_differences": 0,
+  "scope_counts": {
+    "PARTIAL_SCOPE_I_V_VI_ARCHIVED": 30,
+    "IN_SCOPE_FULL": 84,
+    "IN_SCOPE_METHOD_BENCHMARK": 54,
+    "IN_SCOPE_FULL_APPLICATION_PRIORITY": 21,
+    "ARCHIVED_OUT_OF_APPROVED_SCOPE": 21,
+    "IN_SCOPE_APPLICATION_ANALYSIS_ONLY": 1
+  },
+  "original_cells": 45,
+  "approved_cells": 36,
+  "archived_VI_cells": 9,
+  "original_trials": 22500,
+  "approved_trials": 18000,
+  "archived_trials": 4500,
+  "job_manifest": "configs/p4_d080/formal_18000_jobs_DRAFT_NOT_AUTHORIZED_v1.csv",
+  "job_manifest_sha256": "1662de2bbf3a5e1a8783d8629c19d081a1e8e8aba8256dc9702c56e5c039d60d",
+  "unique_jobs": 18000,
+  "job_status": "DRAFT_NOT_AUTHORIZED",
+  "formal_trials_completed": 0,
+  "new_scientific_calls": 0
+}

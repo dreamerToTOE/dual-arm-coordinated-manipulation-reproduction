@@ -1,0 +1,75 @@
+{
+  "schema": "P4_RSS_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_V1",
+  "status": "DRAFT_STATIC_ONLY_NOT_EXECUTED",
+  "created_at_utc": "2026-10-17T08:41:59.620266+00:00",
+  "reason": "Root-authorized minimal evidence-only storage for future independently saved closure/rank audit; no new science.",
+  "previous_bytes_backup_manifest": "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/manifest.json",
+  "previous_bytes_backup_manifest_sha256": "38134630486a208032bbf30f8e30f85254a5a4e1f2bbf6f2bf1b9242c5811422",
+  "files_sha256": {
+    "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "4839efdf5b6bb921e1ec82a06074d20dda007365b1d8744f9e72abd343a49862",
+    "scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "d182443483d429014e1d7cc0016ae3482daf12bcd5cd1e8d08c083d7fec11b02"
+  },
+  "checks": [
+    {
+      "name": "AST_parse_only",
+      "passed": true
+    },
+    {
+      "name": "eight_prior_stable_bytes_preserved",
+      "passed": true
+    },
+    {
+      "name": "only_two_evidence_output_keywords_removed",
+      "passed": true
+    },
+    {
+      "name": "original4x8_math_AST_same_after_exact_removal",
+      "passed": true
+    },
+    {
+      "name": "supervisor_and_config_unchanged",
+      "passed": true
+    },
+    {
+      "name": "only_existing_arrays_serialized",
+      "passed": true
+    },
+    {
+      "name": "original_unscaled_units_and_rank_scaling_explicit",
+      "passed": true
+    },
+    {
+      "name": "original_V1_inputs_and_gates_retained",
+      "passed": true
+    },
+    {
+      "name": "no_model_or_SVD_addition",
+      "passed": true
+    },
+    {
+      "name": "original_budget_and_callcaps_unchanged",
+      "passed": true
+    }
+  ],
+  "static_checks_total": 10,
+  "static_checks_passed": 10,
+  "static_checks_failed": 0,
+  "source_imported": false,
+  "protocol_described": false,
+  "compiler_invoked": false,
+  "draft_executed": false,
+  "project_scientific_calls": 0,
+  "added_FK_J_SVD_calls": 0,
+  "AST_comparison_rule": "Remove exactly2 keyword arguments named independent_already_computed from the new original4x8 scientific block; remainingAST is identical to unchangedV1 originalblock. This replaces the previous byte-exact-loop statement for current candidate; oldstaticrecords refer to archivedoldSHA.",
+  "removed_output_expressions": [
+    "dict(environment=env, arm_order=[1, 2], q6_rad_by_arm=[q1, q2], world_T_by_arm=[one.tolist(), two.tolist()], world_geometric_J_by_arm=[j1.tolist(), j2.tolist()], pose_translation_unit='mm', joint_unit='rad', Jacobian_row_order='linear_xyz_then_angular_xyz', Jacobian_linear_unit='mm/rad', Jacobian_angular_unit='rad/rad', stored_J_is_unscaled=True, rank_position_row_scaling_factor=0.001, rank_position_row_scaling='rank() divides first3 translation rows by1000; stored full J remains unscaled')",
+    "dict(environment=env, arm=2, q6_rad=solved, world_T=outpose.tolist(), world_geometric_J=j.tolist(), pose_translation_unit='mm', joint_unit='rad', Jacobian_row_order='linear_xyz_then_angular_xyz', Jacobian_linear_unit='mm/rad', Jacobian_angular_unit='rad/rad', stored_J_is_unscaled=True, rank_position_row_scaling_factor=0.001, rank_position_row_scaling='rank() divides first3 translation rows by1000; stored full J remains unscaled')"
+  ],
+  "limitations": [
+    "The stored matrices are future actualcomputedvalues; no current matrices, outcomes orcounts predicted.",
+    "ndarray.tolist and extraJSON persistence cost remains within original10wall20CPU, unmeasured; nocompletion guarantee.",
+    "Personnel-independent reviewer must append its own newSHA review; priorPASS applies archivedoldcandidate."
+  ]
+}

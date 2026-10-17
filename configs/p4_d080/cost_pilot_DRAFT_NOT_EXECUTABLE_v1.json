@@ -1,0 +1,74 @@
+{
+  "schema": "P4_D080_COST_PILOT_DRAFT_V1",
+  "status": "DRAFT_NOT_EXECUTABLE_NOT_LAUNCHED",
+  "executable": false,
+  "created_at_utc": "2026-10-17T08:56:46.546439+00:00",
+  "purpose": "Cost measurement only; no formal sample substitution.",
+  "environments": [
+    "II",
+    "III",
+    "IV",
+    "V"
+  ],
+  "planners": [
+    "RRT",
+    "Bi-RRT",
+    "SBL"
+  ],
+  "methods": [
+    "RSS",
+    "PCS",
+    "NR"
+  ],
+  "groups": 36,
+  "proposed_paired_seeds_per_cell": 3,
+  "proposed_calls": 108,
+  "seeds": "PENDING_SOURCE_RNG_REVIEW_AND_PILOT_FREEZE",
+  "solve_timeout_s": 1000,
+  "configured_solve_caps_sum_s": 108000,
+  "scope": "Proposed complete pilot, not current R2 spending authorization. Bounded qualified subsets may run only after separate exact protocol and available authorized resources.",
+  "new_budget_approved": false,
+  "requested_wall_s": null,
+  "requested_cpu_s": null,
+  "qualification_prerequisite": "Per-cell source identity and end-to-end/path acceptance or evidenced root-cause outcome; RSS cannot block PCS/NR engineering.",
+  "timing_fields": [
+    "source_solve_wall_s",
+    "source_solve_CPU_s",
+    "path_verification_wall_s",
+    "path_verification_CPU_s",
+    "IO_durable_wall_s",
+    "full_child_wall_s",
+    "full_child_CPU_s",
+    "peak_RSS_bytes",
+    "machine_load",
+    "CPU_affinity",
+    "concurrent_jobs"
+  ],
+  "aggregation": [
+    "Per-cell P50/P95/min/max, with n=3 exploratory only; explicit censoring/timeouts; report unknown rather than infer tails.",
+    "Separate attempted dispatch, exact result, discrete path accepted, native/aligned collision, censored timeout and infrastructure error."
+  ],
+  "scheduler": {
+    "key": [
+      "environment",
+      "planner",
+      "method",
+      "seed",
+      "source_SHA",
+      "protocol_SHA"
+    ],
+    "paired_seed_order": "Frozen paired seeds; deterministic interleaved method/planner order.",
+    "claim": "Exclusive immutable job attempt; record restart after interruption as new attempt linked to old evidence, never double-count.",
+    "initial_timing_concurrency": 1,
+    "engineering_concurrency": "Independent builds/reviews may run in parallel; isolate actual scientific timings.",
+    "candidate_concurrency_tests": [
+      1,
+      2,
+      4
+    ],
+    "parallelism_limit": "Determine from measured memory/CPU isolation; logical16 does not imply16 fair workers.",
+    "thread_caps": 1
+  },
+  "formal_forecast": "Sum observed censored per-cell solve+verification+IO costs over500; separate CPU from wall and feasible concurrency, uncertainty and timeout scenarios.",
+  "approval_gate": "Submit measured pilot costs and resource plan before formal18000. Pilot resource extension beyond R2 also requires approval."
+}

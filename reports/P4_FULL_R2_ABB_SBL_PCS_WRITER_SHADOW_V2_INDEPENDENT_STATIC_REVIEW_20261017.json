@@ -1,0 +1,177 @@
+{
+  "schema": "P4_SBL_PCS_WRITER_SHADOW_V2_INDEPENDENT_STATIC_REVIEW_V1",
+  "classification": "PURE_TEXT_ENGINEERING_REVIEW_ONLY_NOT_BUILT_NOT_RUN",
+  "created_utc": "2026-10-17T08:48:45.948234+00:00",
+  "reviewer": "sbl_shadow_independent",
+  "personnel_independent": true,
+  "source_head_at_read": "dc810b78f490950bf11f609a8dbf1a60b688dece",
+  "scientific_calls": 0,
+  "compile_calls": 0,
+  "model_calls": 0,
+  "setup_calls": 0,
+  "solve_calls": 0,
+  "stage_writes": 0,
+  "original_or_candidate_mutations": 0,
+  "pure_text_transform_calls": {
+    "v1": 0,
+    "v2": 0
+  },
+  "inputs_sha256": {
+    "TEMPLATE/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "TEMPLATE/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "TEMPLATE/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "AUTHOR/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "AUTHOR/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+    "abb_sbl_pcs_instrumentation_draft.py": "cf5f5192840883634dfd3f18ea117dd505b66a8f1648391ae15113508ae2a237",
+    "abb_sbl_pcs_observation_draft.hpp": "7507648eb8ede25eea1cadcc32270a0bdf27633b1520de717718f6a907b986ac",
+    "abb_sbl_pcs_instrumentation_shadow_v2_draft.py": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209",
+    "abb_sbl_pcs_observation_shadow_v2_draft.hpp": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3",
+    "P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md": "0e84c42cba0e82fc3b30cedbf1301f76225acbb353a9805f8253617602e69642",
+    "P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md": "dc71819a3d3d85c5cb5e04548a4843b8ea2be570df2366947bb4c036e97c97f8"
+  },
+  "checks": [
+    {
+      "name": "pinned_abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true,
+      "detail": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3"
+    },
+    {
+      "name": "pinned_abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true,
+      "detail": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209"
+    },
+    {
+      "name": "pinned_P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md",
+      "passed": true,
+      "detail": "0e84c42cba0e82fc3b30cedbf1301f76225acbb353a9805f8253617602e69642"
+    },
+    {
+      "name": "pinned_P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md",
+      "passed": true,
+      "detail": "dc71819a3d3d85c5cb5e04548a4843b8ea2be570df2366947bb4c036e97c97f8"
+    },
+    {
+      "name": "author_exact_three_assignments",
+      "passed": true,
+      "detail": [
+        "0",
+        "0",
+        "active_chain"
+      ]
+    },
+    {
+      "name": "author_exact_five_member_occurrences",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "author_exact_two_writer_reads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "author_exact_four_addMotion_calls",
+      "passed": true,
+      "detail": [
+        "tStart_, motion",
+        "tGoal_, motion",
+        "tree, motion",
+        "tree, connect"
+      ]
+    },
+    {
+      "name": "author_two_ctors_do_not_initialize_a_chain",
+      "passed": false,
+      "detail": null
+    },
+    {
+      "name": "no_algorithm_a_chain_read_isPathValid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "review_exception_free",
+      "passed": false,
+      "detail": {
+        "type": "TypeError",
+        "message": "slice indices must be integers or None or have an __index__ method"
+      }
+    },
+    {
+      "name": "input_bytes_unchanged_TEMPLATE/proj_classes/apc_class.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_TEMPLATE/validity_checkers/StateValidityCheckerPCS.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_TEMPLATE/validity_checkers/collisionDetection.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_AUTHOR/planners/SBL_PCS.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_AUTHOR/planners/SBL_PCS.h",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_pcs_source_corrections_draft.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_observation_draft.hpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "exception": {
+    "type": "TypeError",
+    "message": "slice indices must be integers or None or have an __index__ method"
+  },
+  "checks_total": 23,
+  "checks_passed": 21,
+  "checks_failed": 2,
+  "status": "FAIL_RETAINED_INDEPENDENT_STATIC_REVIEW",
+  "D080": "I-V approved scope; VI archived, no new VI work; original 211/22500 facts retained; future formal D080 18000 requires pilot and separate approval.",
+  "limitations": [
+    "No C++ compilation or execution; no runtime shadow fixture or actual historical connect UB occurrence observed.",
+    "No sidecar exists: header records in-memory expression attempts only; file write success remains unknown.",
+    "Not a SBL local/solve/path certificate; future builder/driver/protocol must explicitly select v2 and independently persist/check actual writer outputs.",
+    "Scientific control bytes unchanged outside two documented writer expressions; no equivalence claim for undefined original output or timing/allocation effects."
+  ]
+}

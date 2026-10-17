@@ -1,0 +1,377 @@
+{
+  "schema": "P4_SBL_PCS_WRITER_SHADOW_V2_INDEPENDENT_STATIC_REVIEW_V1",
+  "classification": "PURE_TEXT_ENGINEERING_REVIEW_ONLY_NOT_BUILT_NOT_RUN",
+  "created_utc": "2026-10-17T08:49:53.115977+00:00",
+  "reviewer": "sbl_shadow_independent",
+  "personnel_independent": true,
+  "source_head_at_read": "dc810b78f490950bf11f609a8dbf1a60b688dece",
+  "scientific_calls": 0,
+  "compile_calls": 0,
+  "model_calls": 0,
+  "setup_calls": 0,
+  "solve_calls": 0,
+  "stage_writes": 0,
+  "original_or_candidate_mutations": 0,
+  "pure_text_transform_calls": {
+    "v1": 1,
+    "v2": 1
+  },
+  "inputs_sha256": {
+    "TEMPLATE/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "TEMPLATE/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "TEMPLATE/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "AUTHOR/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "AUTHOR/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+    "abb_sbl_pcs_instrumentation_draft.py": "cf5f5192840883634dfd3f18ea117dd505b66a8f1648391ae15113508ae2a237",
+    "abb_sbl_pcs_observation_draft.hpp": "7507648eb8ede25eea1cadcc32270a0bdf27633b1520de717718f6a907b986ac",
+    "abb_sbl_pcs_instrumentation_shadow_v2_draft.py": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209",
+    "abb_sbl_pcs_observation_shadow_v2_draft.hpp": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3",
+    "P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md": "0e84c42cba0e82fc3b30cedbf1301f76225acbb353a9805f8253617602e69642",
+    "P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md": "dc71819a3d3d85c5cb5e04548a4843b8ea2be570df2366947bb4c036e97c97f8"
+  },
+  "checks": [
+    {
+      "name": "pinned_abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true,
+      "detail": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3"
+    },
+    {
+      "name": "pinned_abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true,
+      "detail": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209"
+    },
+    {
+      "name": "pinned_P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md",
+      "passed": true,
+      "detail": "0e84c42cba0e82fc3b30cedbf1301f76225acbb353a9805f8253617602e69642"
+    },
+    {
+      "name": "pinned_P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md",
+      "passed": true,
+      "detail": "dc71819a3d3d85c5cb5e04548a4843b8ea2be570df2366947bb4c036e97c97f8"
+    },
+    {
+      "name": "author_exact_three_assignments",
+      "passed": true,
+      "detail": [
+        "0",
+        "0",
+        "active_chain"
+      ]
+    },
+    {
+      "name": "author_exact_five_member_occurrences",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "author_exact_two_writer_reads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "author_exact_four_addMotion_calls",
+      "passed": true,
+      "detail": [
+        "tStart_, motion",
+        "tGoal_, motion",
+        "tree, motion",
+        "tree, connect"
+      ]
+    },
+    {
+      "name": "author_two_ctors_do_not_initialize_a_chain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_algorithm_a_chain_read_isPathValid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_algorithm_a_chain_read_save2file",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "connect_never_assigned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "historical_connect_can_survive_other_tree_failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "future_parent_and_path_can_include_old_connect",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "shadow_only_member_read_guarded_nonconnect",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_added_Motion_member_write",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "optional_unknown_initialized_empty",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "connection_origin_pinned",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "known_roles_checked_0_or_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "generation_increment_and_lifetime_increment",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "duplicate_live_pointer_and_state_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "live_map_record_only_inserted_then_erased",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exact_token_retirement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "shadow_only_json snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "shadow_only_int writer_a_chain",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "plain_trace_both_collect_attempts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "unknown_text_sentinel_minus1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "unknown_json_null_and_provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "attempt_write_success_unknown",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "buffer_getter_const",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "header_does_not_open_file",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "buffer_is_cleared_on_reset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "new_cpp17_optional_explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "v2_literal_two_writer_edits",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_dictionary_not_mutated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "v1_exact16_wrappers",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "v1_body_state_rbs",
+      "passed": true,
+      "detail": {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "1f6b2ed5f3fa4ca609b92f307f899b8df35e597f814733e08561588c409e460e"
+      }
+    },
+    {
+      "name": "v1_body_vector_rbs",
+      "passed": true,
+      "detail": {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "0faac5d358617dd8b5b9a477c8af3b686500e309f4d0ed410cb57344c3b32646"
+      }
+    },
+    {
+      "name": "v1_body_state_reconstruct",
+      "passed": true,
+      "detail": {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "fb3ac4578539a7e5a98a60ea4ab2b4663f6b7e56ba1be75d44460dad04df6915"
+      }
+    },
+    {
+      "name": "v1_body_vector_reconstruct",
+      "passed": true,
+      "detail": {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "8cbc58f9c0561073b94059f5030a9e20f77bb0b8fdca95bcfad2835bbff57b37"
+      }
+    },
+    {
+      "name": "v1_body_fixed_branch_project",
+      "passed": true,
+      "detail": {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "9a9876e8fededaeef3ca4c75d144e03440b1508183659dfb897e9a4263e5a4cf"
+      }
+    },
+    {
+      "name": "v1_body_identify",
+      "passed": true,
+      "detail": {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "sha256": "d2a0e1793b0a2dd71d9353504f77e21d2661e3767c750efbf46ea52f42fde32b"
+      }
+    },
+    {
+      "name": "v1_body_native_fk",
+      "passed": true,
+      "detail": {
+        "file": "proj_classes/apc_class.cpp",
+        "sha256": "e4c1967d0a26c07c4385884699591a80f80a5e0068ae9d03269b513b385ced31"
+      }
+    },
+    {
+      "name": "v1_body_native_ik",
+      "passed": true,
+      "detail": {
+        "file": "proj_classes/apc_class.cpp",
+        "sha256": "0ea29e6a82f3e5f5b8e71d683d9bda81e513d0af00e71022466cace5e91ea14f"
+      }
+    },
+    {
+      "name": "review_exception_free",
+      "passed": false,
+      "detail": {
+        "type": "ValueError",
+        "message": "INDEPENDENT_RETURNING_LAMBDA_REQUIRED"
+      }
+    },
+    {
+      "name": "input_bytes_unchanged_TEMPLATE/proj_classes/apc_class.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_TEMPLATE/validity_checkers/StateValidityCheckerPCS.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_TEMPLATE/validity_checkers/collisionDetection.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_AUTHOR/planners/SBL_PCS.cpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_AUTHOR/planners/SBL_PCS.h",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_pcs_source_corrections_draft.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_observation_draft.hpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "input_bytes_unchanged_P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "prior_retained_review_sha256": {
+    "reports/p4_full_audit/recovery_tools/audit_sbl_pcs_shadow_v2_independent_20261017.py": "b963005c2fa09e0b632ece19abfafc56b104590f84f7f83f03fe105d96c4c31b",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_INDEPENDENT_STATIC_REVIEW_20261017.json": "bc709d7affe2d6102852a1af1cf4fe561a49e28e0231ba9efe48bea51fc6ca03",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_INDEPENDENT_STATIC_REVIEW_20261017.md": "29e6d0ea6b9a93b0749f1591a0ab34b6b2c30723e62012285d411e771234d5f6"
+  },
+  "addendum_reason": "Initial checker miscounted constructors using substring Motion( and shadowed slice index inside generator; exception occurred before either transform call (both 0). Original script/JSON/MD are retained. Its fixed narrative describing future inverse checks is not evidence; only actual JSON checks/call counts apply.",
+  "exception": {
+    "type": "ValueError",
+    "message": "INDEPENDENT_RETURNING_LAMBDA_REQUIRED"
+  },
+  "checks_total": 57,
+  "checks_passed": 56,
+  "checks_failed": 1,
+  "status": "FAIL_RETAINED_INDEPENDENT_STATIC_REVIEW",
+  "D080": "I-V approved scope; VI archived, no new VI work; original 211/22500 facts retained; future formal D080 18000 requires pilot and separate approval.",
+  "limitations": [
+    "No C++ compilation or execution; no runtime shadow fixture or actual historical connect UB occurrence observed.",
+    "No sidecar exists: header records in-memory expression attempts only; file write success remains unknown.",
+    "Not a SBL local/solve/path certificate; future builder/driver/protocol must explicitly select v2 and independently persist/check actual writer outputs.",
+    "Scientific control bytes unchanged outside two documented writer expressions; no equivalence claim for undefined original output or timing/allocation effects."
+  ]
+}

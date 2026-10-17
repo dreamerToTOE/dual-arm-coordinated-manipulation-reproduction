@@ -1,0 +1,4295 @@
+{
+  "schema": "P4_D080_SCOPE_SAVED_INDEPENDENT_REVIEW_V1",
+  "status": "FAIL_D080_SCOPE_SAVED_INDEPENDENT_REVIEW",
+  "personnel_independent": true,
+  "saved_data_only": true,
+  "generator_rerun": false,
+  "model_imports": 0,
+  "new_scientific_calls": 0,
+  "checks_total": 1028,
+  "checks_passed": 1027,
+  "checks_failed": 1,
+  "source_rows": 211,
+  "historical_columns": 186,
+  "output_columns": 196,
+  "historical_value_differences": 0,
+  "archived_VI_rows": 21,
+  "partial_scope_rows": 30,
+  "other_retained_rows": 160,
+  "formal_original_trials": 22500,
+  "formal_D080_scope_trials": 18000,
+  "formal_completed": 0,
+  "local_preserved_files": 94,
+  "local_archive_sha256": "f1871eef7d8068c20c5bfbd8855f402fc1ce0ba2138b5cabc063fca9a979e4f1",
+  "retained_sha256": {
+    "reports/P4_FULL_R2_SBL_PCS_SETUP01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv": "2b34a55a39f3678d1d5a7ec1ca1d1c0bf13c828fad9ec6f2f4cfe7461604a491",
+    "reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv": "c9599003f3a2369e1f9ce106884ac2ebc5453d1774b185899eb6a397191bd3b7",
+    "reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.md": "b9a64c91dc1ba5b9217d86f8f9002612b0606aa427df3d658451d62fe42677c7",
+    "reports/P4_D080_SCOPE_MAPPING_VALIDATION_20261017.json": "24279baad273984dee379c67dfb335278bbad3aec94cc176173359893baf24ef",
+    "results/p4_d080/20261017_SCOPE_RECOVERY/budget_scope_overlay.json": "7fe6eb5eaaf9002c7e1f62192acb472788225bd6207dc181a5d41baca4f52ac7",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V25.json": "ce612e7c9706666a338aae6deda581274f1aadb229e2be999cd6ee836499e64a",
+    "reports/P4_D080_PRE_SWITCH_LOCAL_PRESERVATION_20261017.json": "5becf2bf3cedd751dc66d939d1d4051293f7b5759143ce35c0dc4ec4a98cadd2",
+    "results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V25.json": "b3a0ab365ef415673f2e0ab7a5fb45365d5a86e33ec7c0584b5bf875c15c07d5",
+    "configs/p4_d080/formal_18000_jobs_DRAFT_NOT_AUTHORIZED_v1.csv": "1662de2bbf3a5e1a8783d8629c19d081a1e8e8aba8256dc9702c56e5c039d60d",
+    "scripts/p4_d080/map_scope.py": "c8783c4175d6d53b417534b19d624fc3e1279c08b8f711ab2b8d1ffb5abef621",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_BUILD01/execution.json": "7452d2010e8e36f309fe4a52f50899718b2f65eec8cc113f8d2ab0bb87569a18",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_DISTANCE01/execution.json": "6e18068ea1ffad849c01faa377e5268fe892448029640feb4421c3c05941e140",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_LOCAL02/execution.json": "5151df50119bc6847ab2a0c68dd0e36e346d22bea3a43253c6419ed838e5d48a",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/execution.json": "8e51edb83293d57e9bb8a4d40188d6b9fcf0aff880505f64a8bfb914791df024",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/execution.json": "99c5cc5e980bf52489b154d5a678df903a1897a1e9e966c341ea6b5229533fdd",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/execution.json": "c7cbd868da1cd9feb149bc057c4a63ff3e722b81123998e1a8cc5e8e1bab5906",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02/execution.json": "2b7241928d8180b47efe083abfba1a108cdac29f6e5cdd76962db755e5d581a7",
+    "results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json": "313415a50f36aaa7432958d833b4833c7311e44ddb788f1802e8ca513056eb72",
+    "results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json": "d9e548a26dcaa2488e6556e7e235f64fa83511ef517289d985e5b8b61eacc8a8",
+    "results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json": "25bb3f0c6c62334a217ecc79b16f1fc94e3ef7f04eeca71e4dcba502bde8a582",
+    "results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json": "e0793f6ca95cec240b32a6be36d20b0e3df31cd307054fbe4d7cf97789990c6b",
+    "results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json": "d33b1ca3073f09708c2ae039b853a1e48e52518a139d62839af1fc24b2ce1ce2",
+    "results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json": "1a5b1651a53e5fc8b8107dc890fd457d5e231f008793a2b572b6bcca3800a7ea",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json": "573a1e0bb11a345811ff380a838eb4818000963e98adb90664dfaace755a58b7",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json": "0ac531d740436bdb9cf8e1a11be92f3679935d9dab2514af117f67df7555577d",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json": "fd74acd7ce5f747cc7123cacef8c9467b1fa985d9d88afdcac47aee0956a5754",
+    "results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json": "f3b5a3b30a9067c1b92a069edf4a2ac72acb3b0f378e63fc486c73399f837c97",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+    "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json": "1e70eb0edf9a163ef1c5fbdcc16e15ac6598a368f21f75aa93792ca65d7e409b",
+    "results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json": "cab65679252fc04ee65c699e09bcb5fd6662657c4047494177a8212c75859514",
+    "results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_02/execution.json": "8dc596f33a20a6ba4d4ed57b060992689e549b20e2c2603763386449695e6069",
+    "results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json": "e2e545675f48b14981846c145820ca9450a75f7ce0d835d6d3746ebeefd24340",
+    "results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json": "53bd4479d42d92698eaaedc918e4d994c92e8c5cdbb37edbbcd4a96736709f4e",
+    "results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json": "f06a0afa82da9cea66224d7b2e438673570aabbefb022c8b00fffedd02ab5f8f",
+    "results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json": "765214ce7de64254126ea6da4b3bf69a3626f2a8896a879504e4f2a6561b91cc",
+    "results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json": "d164ccf903d5b3259db4710409537f62394c74b47163b09d0b828a496fbc64b7",
+    "results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json": "784dcf0be2e85e28114c8cf9b54b96cff76b2775607967b68caf5af22840fb3a",
+    "results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD01/execution.json": "a6f84e38ecef47649d9dc12cf7316a9ebc68429e6b126bd6cc1b23e4845d8b4d",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD02/execution.json": "dcc96bbef72e47e663e51eb2dcbe8ae8f1bb99cef1e31d5eabad17f056fe15df",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/execution.json": "4e33b3769abf2447f2c31b9e5f68fdd9e621189b28442af6c13db052b85dfce9",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/execution.json": "ee8691a2e6ca2318e2ef4a8a2c8a2b3cc2f5a18c4d6e319a3d1857112a3ab025",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/execution.json": "bc30019b1e5282817adee945fbb4b86a7bb9f30e6f419a6def0e559815a7b1b6",
+    "results/p4_full/20261017_R2_ABB_SBL_PCS_BUILD01/execution.json": "17d788c53bfceb4741d550cb95758ee1d1cac6f7c834909131184ff3845ac434",
+    "results/p4_full/20261017_R2_ABB_SBL_PCS_SETUP01/execution.json": "107b8fe30b5e2f02c0a2ad035a2cee62d42f5b604c39d8de4bcd1952505b56e4",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_shadow_v2_draft.py": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_shadow_v2_draft.hpp": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3",
+    "configs/p4_full/r2_abb_pcs_source_corrections_v1.draft.json": "f2670ed825b35e61bcdeca47c43f64097e34fbc7cb912e8645366d3136cdd204",
+    "configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "reports/P4_FULL_R2_ABB_PCS_SOURCE_CORRECTIONS_PRE_DRAFT_20261015.md": "8129dc6fd6712e44121639ac418419cf55622587bec1cca2f4b0c094338680b4",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_20261017.json": "1b390358b929e44d62bacd53e5da15f4c95c7532e3e74a6967f89bfba7439d14",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_20261017.md": "07a146fb359838d99bc42fb88b39345845db70ea3aad96f3a30d5944065bed7a",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json": "5f97952d130c939591cc470e44b8f388132583fc56b8c4dd5bd38e49d58b1b10",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.md": "fde46fef416a209dcf3f459db8806d07c37ca8989fd984f22337ee1ee0ba62a8",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.json": "f8fea0a45e447e65a65b15eefb7043fc19a102101939914a9db93363daf8b1a6",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.md": "844304f885ee7bb7067da4ec6d11702e5c779916f716759c9512407b299df2c8",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "d182443483d429014e1d7cc0016ae3482daf12bcd5cd1e8d08c083d7fec11b02",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.json": "7d766b0ff139752846d28df31a17b2dbb39f45f79c92c0d00f1a35f82bc525a3",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.md": "70402d80ba1d92ba206c0921bf679b3fdf1a78bf4b29586548ea7abba77b27df",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md": "0e84c42cba0e82fc3b30cedbf1301f76225acbb353a9805f8253617602e69642",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md": "dc71819a3d3d85c5cb5e04548a4843b8ea2be570df2366947bb4c036e97c97f8",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/manifest.json": "38134630486a208032bbf30f8e30f85254a5a4e1f2bbf6f2bf1b9242c5811422",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json": "5f97952d130c939591cc470e44b8f388132583fc56b8c4dd5bd38e49d58b1b10",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.md": "fde46fef416a209dcf3f459db8806d07c37ca8989fd984f22337ee1ee0ba62a8",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "5cb8fc1944973c6487de853dc5c2a1599b605f2f73b596c3d6608c910be1f66c",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.json": "7d766b0ff139752846d28df31a17b2dbb39f45f79c92c0d00f1a35f82bc525a3",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.md": "70402d80ba1d92ba206c0921bf679b3fdf1a78bf4b29586548ea7abba77b27df",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "d456f7dae9caa3f2d5bb4f564e5db89431d4c1898279aba887f502ba3b036c81",
+    "reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "reports/p4_full_audit/recovery_tools/audit_preservation_v26.py": "69dcd28ad93ceda14366dd1722ee53223eedafbd5ee89bda13ac5de4ea34d9c6",
+    "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "4839efdf5b6bb921e1ec82a06074d20dda007365b1d8744f9e72abd343a49862",
+    "scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "work/archive_nr_local_saved_posts.py": "8b18180eb53dd2ad1fbfa1a76d3b9b987d6c2f2777028851fd7b2d1d9725e450",
+    "work/audit_rrt_saved.py": "1d90e6ed0b7bf3487aebf02404c2e08f2f40cef4d6224864fe1284ddb46851c6",
+    "work/cbirrt_nr_static_previews_20261016/engineering_v2_static_self_check.json": "eb49ece26b418f05d82af802d305d1394d5b32f64b0ef0a916aafbb7641ce55c",
+    "work/cbirrt_nr_static_previews_20261016/engineering_v2_static_self_check_optimized.json": "ecfd892a783dbbd932c39a5674b4b082142baa23277a91e5caf9a7e63aae19b7",
+    "work/cbirrt_nr_static_previews_20261016/implementer_static_self_check.json": "8c07e7e7fec653dad8cdcd1f9111d17736aca88c93ed74e37d1a80fcf3e33f7d",
+    "work/cbirrt_nr_static_previews_20261016/source_transform_preview.json": "4afb9323df1e18e6ad3d5bd9a6182089c59f7d294fe20ee4c48abab96dffc5d5",
+    "work/cbirrt_path_original_pcs_loop_20261016.txt": "cd547bebb4cb743eaa5f60601487c269cc181c92c39f41d4773edd11ddc247d6",
+    "work/iv_wrist_final_hash_cap_recovery_20261016/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md": "d91b372a56578437f1890fe167286f3a22372bfdff90eefd5a19e97d6a11e5c3",
+    "work/iv_wrist_final_hash_cap_recovery_20261016/manifest.json": "7f908ec6a48e8346bd64de53ed33e3af6af129aaf9e8feaa6f68fb626c0b6416",
+    "work/iv_wrist_final_hash_cap_recovery_20261016/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py": "d23a474ce1fc849cdd36c2e7221af9f55d8b4c61bc984d76ae69117e2ab9bf37",
+    "work/iv_wrist_v2_v8_metadata_recovery_20261016/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md": "e4fa276337afea4d4b2f81aa444a03af626ba3b11ab41360fd91d2a68d6e7529",
+    "work/iv_wrist_v2_v8_metadata_recovery_20261016/manifest.json": "f1af852ed7b18270dc0b4358c4cde281c53dfcf477a29facc77ccd20e936a824",
+    "work/iv_wrist_v2_v8_metadata_recovery_20261016/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py": "f366d885ac9f81f853ccb01c99819a2ca16e1d77ed4335bc8714ce6f93ca9f1c",
+    "work/nr_entry_h_audit_recovery_20261016/audit_h_root_saved_v1_md_render_error.py": "890b71d6d38fb04ccad59585dc5d0bc2340cd54c91edd896cee6b9a8b6765f62",
+    "work/nr_entry_h_audit_recovery_20261016/failure.json": "4ecfcaa4641a0bf7b81e71b23629c8d001eb4a69e2f87c1046abbeb440632d9e",
+    "work/nr_interface_source_static_20261015/planners/RRT_NR.cpp": "ab11fe1e5164f6d4f7b7d1fc8526bda847180611e8085ca6cd836544874dc1e3",
+    "work/nr_interface_source_static_20261015/planners/RRT_NR.h": "323615bb356cbb164947c604f183ce20648e923ad1dcf3da9271e6440a28b58b",
+    "work/nr_interface_source_static_20261015/preserved_originals/proj_classes/kdl_class.cpp": "83a0ab6109fddb3d820d9987791c921c340287648630d18dc2a68e3728a21fd4",
+    "work/nr_interface_source_static_20261015/proj_classes/kdl_class.cpp": "985bfbfb5eba4ca7fffc8d34b4da58c93daa6617fbf480c8d71bebaaf10dba31",
+    "work/nr_interface_source_static_20261015/proj_classes/kdl_class.h": "6b8790a0f5d12811bdbcd1ffe45e6b5e37e9e72b25f306c9775004be1bf07fde",
+    "work/nr_interface_source_static_20261015/validity_checkers/StateValidityCheckerNR.cpp": "7d8bcc5dfd5da07446ba7921f0b25706b535cfb1318f97852735db339428b988",
+    "work/nr_interface_source_static_20261015/validity_checkers/StateValidityCheckerNR.h": "9755ac49c7ac032da4fd6713144f2d8de95ac115da4f7c3d48bc92fd6b1a97c3",
+    "work/nr_interface_source_static_20261015/validity_checkers/collisionDetection.cpp": "48822daae0510db029f8d6e7f0cd0c378c8e02d4f607ff2eaaa04a16eaa241a0",
+    "work/prepare_pcs_source_candidates_saved.py": "086b00d095b77bca86385c085add9b74ba8b4cc315b914202cc7238d76fb329c",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp": "65c95cdb2fe09e916a9f564baf01906901d80e136ccb48014c8ce9633b1bf0e7",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py": "07f5632ca92843b0be96ebece15cc8a64060768cdf4dc466242e176505a04c3e",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp": "74917caa8fab59821776617b44c119f57762153135e0c773bbc22dd180b190e4",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/manifest.json": "597703d8f5b59e8e7ab657d6f29591064b4321632530ed88597ec6f0b2558320",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/reports/P4_FULL_R2_ABB_CBIRRT_NR_ENGINEERING_PRE_DRAFT_20261016.md": "abc5acdd961300587f9b66d55d49c0e19b3c974c5bd218004c1b47fa73b46f6e",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/scripts/build_p4_full_r2_abb_cbirrt_nr_draft.py": "f4b0f1a47306ac447d98cc086f3531972d386b48dbe8d5550d3a2f9c3deecd47",
+    "work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_draft.py": "a979515b29cfcca934d28a6b83723a62424b9684d1190c29d20a95d8a4ba9b33",
+    "work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp": "e96a80072172818557ce3e0b137e66f78485af382ba965d5cac57655e3147114",
+    "work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/preserved_before_grid_range_sha256.json": "c5b715fd50ab19172940ec3111fdd9e604651806a321d60bc3e40710f522ca59",
+    "work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md": "2d02def43f8e1b71b7dc4a2bf08be2c497046532371be425615bab86901f725e",
+    "work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py": "f6262f3647bdeddbf08dc3273a216c6fe616b670293d802eaae7a055109b9858",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp": "e96a80072172818557ce3e0b137e66f78485af382ba965d5cac57655e3147114",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py": "cf5f5192840883634dfd3f18ea117dd505b66a8f1648391ae15113508ae2a237",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp": "7507648eb8ede25eea1cadcc32270a0bdf27633b1520de717718f6a907b986ac",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/preserved_original_draft_sha256.json": "b316077be4eecbcaf04861f3b06e28d2738eb27f9a976da6f981afeceedd686d",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md": "2d02def43f8e1b71b7dc4a2bf08be2c497046532371be425615bab86901f725e",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md": "ebc95d713092f5dc6da73fd2fd22517e0fa170c9b27f79bd5c0612390702d878",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py": "18dbfe05567fe8115abde03a13cb160a8cd1463ace4ad1bbe55a898ccf3703dc",
+    "work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py": "411b522f9533fe663d61f4fa12dd30687febc380dc4d84de6759f8eb593b4ca0",
+    "work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/preserved_before_contract_fix_sha256.json": "49ed5ba433b0b81b90e39935d80868f88dcb7aa5b6ac46f3d4ab3e9289ecd05a",
+    "work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md": "a7843eea35023c2d018001e28f989ad29549f93722393443ee08ab54823259d2",
+    "work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py": "6384f0ec0de60032b48cfd72386ceb7fa72871557f1ecd0788f174a067c43353",
+    "work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py": "26c8027abdc6c1bd7affa3dd825319a644a62aadcf2af5131b9d15402b26da24",
+    "work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/preserved_before_runtime_mesh_fix_sha256.json": "6a41101f3fd8ec342dbd062116bffea346add4dc4422c363d64f7f3b206c08cd",
+    "work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md": "3440bd31e205690598fa59c4f6ef692447c54c94e99b9c816486f5adaf8091ec",
+    "work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py": "02249ade33f45c71e8020ff859c7fe060af13ce7fdc96635b33a7c650f60a659",
+    "work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/preserved_setup_draft_sha256.json": "95c9560ec1e88f39aaf4cfa7c996ef81a5310748fb144795e13edca061d746ef",
+    "work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md": "c7ddc603f7718e317dabc144d6d0279d80b0e07033c50166e740a09e4f5845bb",
+    "work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py": "16a739c71eda64496bc79965344e50d89a167f0d27195c282f70a197449592cf",
+    "work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py": "26c8027abdc6c1bd7affa3dd825319a644a62aadcf2af5131b9d15402b26da24",
+    "work/rrt_nr_e2e_static_20261015/planners/RRT_NR.cpp": "750dd53df114b782215803583610741f44e66748327a437398516a72a7e029b3",
+    "work/rrt_nr_e2e_static_20261015/planners/RRT_NR.h": "323615bb356cbb164947c604f183ce20648e923ad1dcf3da9271e6440a28b58b",
+    "work/rrt_nr_e2e_static_20261015/preserved_originals/proj_classes/kdl_class.cpp": "83a0ab6109fddb3d820d9987791c921c340287648630d18dc2a68e3728a21fd4",
+    "work/rrt_nr_e2e_static_20261015/proj_classes/kdl_class.cpp": "985bfbfb5eba4ca7fffc8d34b4da58c93daa6617fbf480c8d71bebaaf10dba31",
+    "work/rrt_nr_e2e_static_20261015/proj_classes/kdl_class.h": "6b8790a0f5d12811bdbcd1ffe45e6b5e37e9e72b25f306c9775004be1bf07fde",
+    "work/rrt_nr_e2e_static_20261015/validity_checkers/StateValidityCheckerNR.cpp": "f4b92f7a1df9bf3360bd92788bb18d06c9b68a809af2969019acfca7df3afdb6",
+    "work/rrt_nr_e2e_static_20261015/validity_checkers/StateValidityCheckerNR.h": "9755ac49c7ac032da4fd6713144f2d8de95ac115da4f7c3d48bc92fd6b1a97c3",
+    "work/rrt_nr_e2e_static_20261015/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "work/write_nr_local_snapshot_v7.py": "d389e388cf6279254bb4cbd8a3a925cf91ec7ee2e4059d094770637a2885e454",
+    "work/write_nr_path_snapshot_v8.py": "7664c108e5d556cb764297c3486c7ffc42eb117e6c5fab833c37c8eb4905cc88",
+    "work/write_nr_q1_snapshot_v6.py": "94c885ed7fb67c2550c08f34496e98fd772adf32cb88c56df5128f1f1b950a05",
+    "work/write_rrt_snapshot_v5.py": "e016ee692f76f891c186d0fe7dd5e76ee00013659033331bddece3619cd96dce"
+  },
+  "checks": [
+    {
+      "name": "fixed_source_sha",
+      "passed": true
+    },
+    {
+      "name": "fixed_matrix_sha",
+      "passed": true
+    },
+    {
+      "name": "source_shape",
+      "passed": true
+    },
+    {
+      "name": "output_shape_and_field_order",
+      "passed": true
+    },
+    {
+      "name": "ordered_item_ids_preserved",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T04",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T04",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T09",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T09",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T10",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T10",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T11",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T11",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T12",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T12",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T13",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T13",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T14",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T14",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T15",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T15",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T21",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T21",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T22",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T22",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T25",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T25",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T26",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T26",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T27",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T27",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T28",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T28",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T29",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T29",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01-EQ1",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01-EQ1",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01-EQ2",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01-EQ2",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ3",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ3",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ4",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ4",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ5",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ5",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ6",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ6",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ7",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ7",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ8",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ8",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T06-EQ9",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T06-EQ9",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01-FIG1a",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01-FIG1a",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01-FIG1b",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01-FIG1b",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01-FIG1c",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01-FIG1c",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T01-FIG1d",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T01-FIG1d",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02-I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02-I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03-I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03-I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16-I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16-I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23-I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23-I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30-I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30-I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02-II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02-II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03-II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03-II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16-II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16-II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23-II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23-II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30-II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30-II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02-III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02-III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03-III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03-III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16-III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16-III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23-III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23-III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30-III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30-III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02-IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02-IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03-IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03-IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16-IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16-IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23-IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23-IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30-IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30-IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02-V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02-V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03-V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03-V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16-V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16-V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23-V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23-V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30-V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30-V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T02-VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T02-VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T03-VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T03-VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T16-VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T16-VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T23-VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T23-VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T30-VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T30-VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T04-APC",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T04-APC",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T04-NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T04-NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-VIS_M1",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-VIS_M1",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-VIS_M2",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-VIS_M2",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-VIS_M3",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-VIS_M3",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-VIS_M7",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-VIS_M7",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-VIS_M20",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-VIS_M20",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-VIS_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-VIS_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M1",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M1",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M2",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M2",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M3",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M3",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M4",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M4",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M5",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M5",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M6",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M6",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M7",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M7",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M8",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M8",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M9",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M9",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M10",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M10",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M11",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M11",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M12",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M12",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M13",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M13",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M14",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M14",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M15",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M15",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M16",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M16",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M17",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M17",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M18",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M18",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M19",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M19",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_M20",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_M20",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-TIME_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-TIME_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T19-PLANAR_PROJECTION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T19-PLANAR_PROJECTION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-II_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-II_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-III_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-III_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-IV_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-IV_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-V_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-V_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T18-VI_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T18-VI_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T21-RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T21-RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T21-PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T21-PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T21-NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T21-NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-visibility",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-visibility",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-step",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-step",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-samples",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-samples",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-failed_samples",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-failed_samples",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-sampling_time_fraction",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-sampling_time_fraction",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-local_cost",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-local_cost",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-local_checks_per_s",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-local_checks_per_s",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-local_time_fraction",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-local_time_fraction",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-tree_nodes",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-tree_nodes",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-path_nodes",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-path_nodes",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T22-APC",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T22-APC",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T22-NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T22-NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08-I_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08-I_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08-II_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08-II_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08-III_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08-III_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08-IV_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08-IV_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08-V_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08-V_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T08-VI_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T08-VI_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07-RSS_I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07-RSS_I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-I_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-I_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-I_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-I_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-I_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-I_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-STEP_I",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-STEP_I",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07-RSS_II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07-RSS_II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-II_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-II_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-II_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-II_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-II_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-II_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-STEP_II",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-STEP_II",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07-RSS_III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07-RSS_III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-III_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-III_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-III_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-III_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-III_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-III_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-STEP_III",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-STEP_III",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07-RSS_IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07-RSS_IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-IV_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-IV_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-IV_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-IV_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-IV_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-IV_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-STEP_IV",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-STEP_IV",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07-RSS_V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07-RSS_V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-V_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-V_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-V_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-V_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-V_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-V_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-STEP_V",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-STEP_V",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T07-RSS_VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T07-RSS_VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-VI_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-VI_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-VI_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-VI_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T05-VI_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T05-VI_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-STEP_VI",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-STEP_VI",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T17-I_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T17-I_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T24-GAMMA",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T24-GAMMA",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T20-NN_COST",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T20-NN_COST",
+      "passed": true
+    },
+    {
+      "name": "historical_values:P4-T25-AUTHOR_RAW_LINEAGE",
+      "passed": true
+    },
+    {
+      "name": "original_statistics_retained:P4-T25-AUTHOR_RAW_LINEAGE",
+      "passed": true
+    },
+    {
+      "name": "independent_closed_lists",
+      "passed": true
+    },
+    {
+      "name": "exact_vi_archival_set",
+      "passed": true
+    },
+    {
+      "name": "exact_partial_scope_set",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T04",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T09",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T10",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T11",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T12",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T13",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T14",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T15",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T15",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T21",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T22",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T25",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T26",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T27",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T28",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T29",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01-EQ1",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01-EQ2",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ3",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ4",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ5",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ6",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ7",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ8",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T06-EQ9",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01-FIG1a",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01-FIG1b",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01-FIG1c",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T01-FIG1d",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02-I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03-I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16-I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23-I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30-I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02-II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03-II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16-II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23-II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30-II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02-III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03-III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16-III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23-III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30-III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02-IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03-IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16-IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23-IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30-IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02-V",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03-V",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16-V",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23-V",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30-V",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T02-VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T02-VI",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T03-VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T03-VI",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T16-VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T16-VI",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T23-VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T23-VI",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T30-VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T30-VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T04-APC",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T04-NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-VIS_M1",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-VIS_M2",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-VIS_M3",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-VIS_M7",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-VIS_M20",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-VIS_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M1",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M2",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M3",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M4",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M5",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M6",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M7",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M8",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M9",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M10",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M11",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M12",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M13",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M14",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M15",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M16",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M17",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M18",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M19",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_M20",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-TIME_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T19-PLANAR_PROJECTION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-II_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-III_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-IV_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-V_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T18-VI_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T18-VI_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T21-RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T21-PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T21-NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-visibility",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-step",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-samples",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-failed_samples",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-sampling_time_fraction",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-local_cost",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-local_checks_per_s",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-local_time_fraction",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-tree_nodes",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-path_nodes",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T22-APC",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T22-NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08-I_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08-II_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08-III_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08-IV_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08-V_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T08-VI_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T08-VI_ABLATION",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07-RSS_I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-I_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-I_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-I_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-STEP_I",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07-RSS_II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-II_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-II_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-II_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-STEP_II",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07-RSS_III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-III_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-III_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-III_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-STEP_III",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07-RSS_IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-IV_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-IV_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-IV_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-STEP_IV",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07-RSS_V",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-V_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-V_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-V_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-STEP_V",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T07-RSS_VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T07-RSS_VI",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T05-VI_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-VI_RSS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T05-VI_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-VI_PCS",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T05-VI_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T05-VI_NR",
+      "passed": true
+    },
+    {
+      "name": "vi_stop_and_original_status:P4-T24-STEP_VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-STEP_VI",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T17-I_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T24-GAMMA",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T20-NN_COST",
+      "passed": true
+    },
+    {
+      "name": "scope_semantics:P4-T25-AUTHOR_RAW_LINEAGE",
+      "passed": true
+    },
+    {
+      "name": "scope_counts_21_30_160",
+      "passed": true
+    },
+    {
+      "name": "nn_cost_not_silently_restricted_to_II",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ4",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ9",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ8",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ5",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ7",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T01-EQ2",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T01-EQ1",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ6",
+      "passed": true
+    },
+    {
+      "name": "full_theory_retained:P4-T06-EQ3",
+      "passed": true
+    },
+    {
+      "name": "fig4_ambiguity_retained:P4-T21",
+      "passed": true
+    },
+    {
+      "name": "fig4_ambiguity_retained:P4-T21-RSS",
+      "passed": true
+    },
+    {
+      "name": "fig4_ambiguity_retained:P4-T21-PCS",
+      "passed": true
+    },
+    {
+      "name": "fig4_ambiguity_retained:P4-T21-NR",
+      "passed": true
+    },
+    {
+      "name": "fr3_analysis_only_no_automatic_execution",
+      "passed": true
+    },
+    {
+      "name": "tableI_exact_45_cells",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-II_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-III_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-IV_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-V_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "tableI_cell_scale:P4-T18-VI_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "tableI_22500_18000_4500",
+      "passed": true
+    },
+    {
+      "name": "tableI_parent_denominators",
+      "passed": true
+    },
+    {
+      "name": "existing_path_not_counted_formal:RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "existing_path_not_counted_formal:RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "existing_path_not_counted_formal:Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "existing_path_not_counted_formal:Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "sbl_setup_not_promoted_to_path",
+      "passed": true
+    },
+    {
+      "name": "markdown_all_211_ordered_rows",
+      "passed": true
+    },
+    {
+      "name": "markdown_denominators",
+      "passed": true
+    },
+    {
+      "name": "job_fields",
+      "passed": true
+    },
+    {
+      "name": "jobs_18000_unique",
+      "passed": true
+    },
+    {
+      "name": "all_jobs_draft_unexecuted_exact_conditions",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "jobs_exact_36_nonVI_groups",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-III_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-II_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-IV_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_Bi-RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_Bi-RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_Bi-RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_RRT_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_RRT_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_RRT_RSS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_SBL_NR",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_SBL_PCS",
+      "passed": true
+    },
+    {
+      "name": "job_group_exact_500:P4-T18-V_SBL_RSS",
+      "passed": true
+    },
+    {
+      "name": "mapping_validation_hashes",
+      "passed": true
+    },
+    {
+      "name": "mapping_validation_totals_and_no_science",
+      "passed": true
+    },
+    {
+      "name": "v25_fixed_sha",
+      "passed": true
+    },
+    {
+      "name": "v25_count",
+      "passed": true
+    },
+    {
+      "name": "v25_original_formal_obligation_retained",
+      "passed": true
+    },
+    {
+      "name": "v25_vi_original_budget_retained",
+      "passed": false
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_DISTANCE01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_LOCAL02",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_PATH01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_SOLVE01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_SOLVE02",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_CBIRRT_D_TAIL02",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_NR_INTERFACE_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_NR_LOCAL01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_PCS_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_PCS_LOCAL01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RANDOM_HELPER_H01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RANDOM_HELPER_H_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RRT_NR_E2E01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RRT_NR_E2E_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RRT_NR_PATH01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RRT_PATH01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RRT_PCS_E2E01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ABB_RRT_PCS_E2E_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_COLLISION_CONTROLS01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ENDPOINT_COLLISION_REPLAY01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_ENDPOINT_RECONSTRUCTED01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_IV_NR_LOCAL01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_IV_RSS_WRIST_FIXED100_01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_IV_RSS_WRIST_FIXED100_02",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_NR_ABB_Q1_01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_NR_ABB_Q1_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_PLANAR01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_RSS_CONSTRUCTION01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_SAVED_RSS_COLLISION01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_SPATIAL01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_VI_RSS_BRIDGE01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_VI_RSS_CENTER_IMAGE01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_VI_RSS_FIBER_COMPONENT01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_VI_RSS_INGRESS_COMPOSITE01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261015_R2_VI_RSS_RECONSTRUCTED01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261016_R2_ABB_CBIRRT_NR_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261016_R2_ABB_CBIRRT_NR_BUILD02",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261016_R2_ABB_CBIRRT_NR_BUILD03",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261016_R2_ABB_CBIRRT_NR_PATH01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261016_R2_ABB_CBIRRT_NR_SOLVE01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261017_R2_ABB_SBL_PCS_BUILD01",
+      "passed": true
+    },
+    {
+      "name": "v25_execution_sha:20261017_R2_ABB_SBL_PCS_SETUP01",
+      "passed": true
+    },
+    {
+      "name": "original_git_blob_unchanged:reports/P4_FULL_R2_SBL_PCS_SETUP01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+      "passed": true
+    },
+    {
+      "name": "original_git_blob_unchanged:results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V25.json",
+      "passed": true
+    },
+    {
+      "name": "original_git_blob_unchanged:results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V25.json",
+      "passed": true
+    },
+    {
+      "name": "v25_preservation_passed_retained",
+      "passed": true
+    },
+    {
+      "name": "overlay_ledger_binding",
+      "passed": true
+    },
+    {
+      "name": "overlay_counts_retained",
+      "passed": true
+    },
+    {
+      "name": "overlay_costs_and_caps_retained",
+      "passed": true
+    },
+    {
+      "name": "overlay_remaining_arithmetic",
+      "passed": true
+    },
+    {
+      "name": "overlay_no_formal_authorization_or_execution",
+      "passed": true
+    },
+    {
+      "name": "overlay_scope_denominators_and_VI_stop",
+      "passed": true
+    },
+    {
+      "name": "preserve_94_manifest_count",
+      "passed": true
+    },
+    {
+      "name": "preserve_local_archive_hash_and_size",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_exact_members",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:configs/p4_full/r2_abb_pcs_source_corrections_v1.draft.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:configs/p4_full/r2_abb_pcs_source_corrections_v1.draft.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_PCS_SOURCE_CORRECTIONS_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_PCS_SOURCE_CORRECTIONS_PRE_DRAFT_20261015.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_SBL_PCS_A_CHAIN_OUTPUT_MINIMAL_FIX_STATIC_DESIGN_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_IMPLEMENTATION_STATIC_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_STATIC_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/draft_archive/RSS_FIXED32_SUPERVISED_V2_PRE_MATRIX_EVIDENCE_20261017/scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:reports/p4_full_audit/recovery_tools/audit_preservation_v26.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:reports/p4_full_audit/recovery_tools/audit_preservation_v26.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/archive_nr_local_saved_posts.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/archive_nr_local_saved_posts.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/audit_rrt_saved.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/audit_rrt_saved.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/cbirrt_nr_static_previews_20261016/engineering_v2_static_self_check.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/cbirrt_nr_static_previews_20261016/engineering_v2_static_self_check.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/cbirrt_nr_static_previews_20261016/engineering_v2_static_self_check_optimized.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/cbirrt_nr_static_previews_20261016/engineering_v2_static_self_check_optimized.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/cbirrt_nr_static_previews_20261016/implementer_static_self_check.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/cbirrt_nr_static_previews_20261016/implementer_static_self_check.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/cbirrt_nr_static_previews_20261016/source_transform_preview.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/cbirrt_nr_static_previews_20261016/source_transform_preview.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/cbirrt_path_original_pcs_loop_20261016.txt",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/cbirrt_path_original_pcs_loop_20261016.txt",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/iv_wrist_final_hash_cap_recovery_20261016/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/iv_wrist_final_hash_cap_recovery_20261016/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/iv_wrist_final_hash_cap_recovery_20261016/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/iv_wrist_final_hash_cap_recovery_20261016/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/iv_wrist_final_hash_cap_recovery_20261016/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/iv_wrist_final_hash_cap_recovery_20261016/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/iv_wrist_v2_v8_metadata_recovery_20261016/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/iv_wrist_v2_v8_metadata_recovery_20261016/P4_FULL_R2_IV_RSS_WRIST_FIXED100_PRE_V2_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/iv_wrist_v2_v8_metadata_recovery_20261016/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/iv_wrist_v2_v8_metadata_recovery_20261016/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/iv_wrist_v2_v8_metadata_recovery_20261016/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/iv_wrist_v2_v8_metadata_recovery_20261016/qualify_p4_full_r2_iv_rss_wrist_fixed100_v2.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_entry_h_audit_recovery_20261016/audit_h_root_saved_v1_md_render_error.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_entry_h_audit_recovery_20261016/audit_h_root_saved_v1_md_render_error.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_entry_h_audit_recovery_20261016/failure.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_entry_h_audit_recovery_20261016/failure.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/planners/RRT_NR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/planners/RRT_NR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/planners/RRT_NR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/planners/RRT_NR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/preserved_originals/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/preserved_originals/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/proj_classes/kdl_class.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/proj_classes/kdl_class.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/validity_checkers/StateValidityCheckerNR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/validity_checkers/StateValidityCheckerNR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/validity_checkers/StateValidityCheckerNR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/validity_checkers/StateValidityCheckerNR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/nr_interface_source_static_20261015/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/nr_interface_source_static_20261015/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/prepare_pcs_source_candidates_saved.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/prepare_pcs_source_candidates_saved.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/reports/P4_FULL_R2_ABB_CBIRRT_NR_ENGINEERING_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/reports/P4_FULL_R2_ABB_CBIRRT_NR_ENGINEERING_PRE_DRAFT_20261016.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/scripts/build_p4_full_r2_abb_cbirrt_nr_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/scripts/build_p4_full_r2_abb_cbirrt_nr_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_cbirrt_nr_build_v1_before_independent_static_fixes_20261016/scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/preserved_before_grid_range_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/preserved_before_grid_range_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_before_grid_range_source_fix_20261017/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/preserved_original_draft_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/preserved_original_draft_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_ENGINEERING_V1_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_HISTORICAL_CONNECT_STATIC_CORRECTION_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/scripts/build_p4_full_r2_abb_sbl_pcs_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_pcs_engineering_draft_before_static_self_fixes_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/preserved_before_contract_fix_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/preserved_before_contract_fix_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_contract_fix_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/preserved_before_runtime_mesh_fix_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/preserved_before_runtime_mesh_fix_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_independent_runtime_mesh_fix_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/preserved_setup_draft_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/preserved_setup_draft_sha256.json",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/preserved_sbl_setup_draft_before_static_self_review_fixes_20261017/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/planners/RRT_NR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/planners/RRT_NR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/planners/RRT_NR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/planners/RRT_NR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/preserved_originals/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/preserved_originals/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/proj_classes/kdl_class.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/proj_classes/kdl_class.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/proj_classes/kdl_class.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/validity_checkers/StateValidityCheckerNR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/validity_checkers/StateValidityCheckerNR.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/validity_checkers/StateValidityCheckerNR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/validity_checkers/StateValidityCheckerNR.h",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/rrt_nr_e2e_static_20261015/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/rrt_nr_e2e_static_20261015/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/write_nr_local_snapshot_v7.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/write_nr_local_snapshot_v7.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/write_nr_path_snapshot_v8.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/write_nr_path_snapshot_v8.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/write_nr_q1_snapshot_v6.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/write_nr_q1_snapshot_v6.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_original_local_file:work/write_rrt_snapshot_v5.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_archive_byte_equality:work/write_rrt_snapshot_v5.py",
+      "passed": true
+    },
+    {
+      "name": "preserve_branch_baseline_and_local_only_policy",
+      "passed": true
+    },
+    {
+      "name": "generator_stdlib_saved_data_imports",
+      "passed": true
+    },
+    {
+      "name": "generator_no_scientific_dispatch_names",
+      "passed": true
+    },
+    {
+      "name": "generator_writes_new_outputs_only",
+      "passed": true
+    },
+    {
+      "name": "generator_was_not_imported_by_auditor",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "范围与已保存证据审查，不是新增算法、路径或统计资格。",
+    "PARTIAL只限制VI经验复现，九公式全文数学核对保留。",
+    "18,000条目为未批准的待冻结清单；不构成正式计算预算授权。",
+    "原四条II路径的离散/重建端点/aligned碰撞边界保留，未新增连续碰撞或RSS规划证书。",
+    "仅核对94文件和本地归档原字节；归档含历史作者源码，报告仅发布manifest/hash。"
+  ]
+}

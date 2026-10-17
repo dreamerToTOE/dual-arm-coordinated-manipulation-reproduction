@@ -1,0 +1,923 @@
+{
+  "schema": "P4_RSS_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "FAIL_RSS_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW",
+  "generated_at_utc": "2026-10-17T08:38:22.811456+00:00",
+  "reviewer": "nr_entry_review; independent of RSS v2 drafts",
+  "personnel_independent": true,
+  "independent_static_review_passed": false,
+  "scientific_execution_qualified": false,
+  "checks": [
+    {
+      "group": "stable",
+      "check": "exact reviewed draft scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "exact reviewed draft scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "exact reviewed draft configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json",
+      "passed": true
+    },
+    {
+      "group": "stable",
+      "check": "exact reviewed draft reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "runner and supervisor standard-library top-level only",
+      "passed": true
+    },
+    {
+      "group": "template",
+      "check": "unfrozen three false reviews no concrete prior",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field run_id",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field classification",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field runtime_layer",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field literal_native_scope",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field active_arm",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field passive_arm",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field passive_branches_in_order",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field fixed_cases",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field ik_binary",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field ik_binary_sha256",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field budget",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field gates",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field target_policy",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field branch_policy",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field collision_scope",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field positive_coverage_gate",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field stop_policy",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field new_VI_candidate_constructions",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field formal_table_I_calls",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field zero_calls",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged original protocol field RSS_gamma_preserved",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_draft.py",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved baselines/p4_full/geometry_consistent/physical_nr.py",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved baselines/p4_full/abb_independent_oracle.py",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved baselines/p4_full/analyze_comau_native_qualification.py",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved scripts/recover_p4_full_r2_endpoints.py",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved configs/p4_full/r2_saved_rss_collision_qualification_v1.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved configs/p4_full/r2_endpoint_reconstruction_execution_v1.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SPATIAL01/abb_staging.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SPATIAL01/abb_staging_full_manifest.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SPATIAL01/II/summary.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SPATIAL01/III/summary.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved build/p4_full/20261015_R2_SPATIAL01/abb_batch",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_RSS_CONSTRUCTION01/II/observations.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_RSS_CONSTRUCTION01/III/observations.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0681.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0689.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1065.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual original bound bytes preserved results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1073.json",
+      "passed": true
+    },
+    {
+      "group": "original bound",
+      "check": "actual legacy protocol exact bytes pinned",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "entire case science loop AST exactly original v1",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged full numerical helper AST errors",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "unchanged full numerical helper AST close",
+      "passed": false
+    },
+    {
+      "group": "original science",
+      "check": "unchanged full numerical helper AST fk_agrees",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "rank result formula original AST unchanged",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "rank original matrix/SVD assignment scaled",
+      "passed": true
+    },
+    {
+      "group": "original science",
+      "check": "rank original matrix/SVD assignment sigma",
+      "passed": true
+    },
+    {
+      "group": "fixed inputs",
+      "check": "fixed four IDs original order",
+      "passed": true
+    },
+    {
+      "group": "fixed inputs",
+      "check": "II_obs0681 complete saved q12 and provenance unchanged",
+      "passed": true
+    },
+    {
+      "group": "fixed inputs",
+      "check": "II_obs0689 complete saved q12 and provenance unchanged",
+      "passed": true
+    },
+    {
+      "group": "fixed inputs",
+      "check": "III_obs1065 complete saved q12 and provenance unchanged",
+      "passed": true
+    },
+    {
+      "group": "fixed inputs",
+      "check": "III_obs1073 complete saved q12 and provenance unchanged",
+      "passed": true
+    },
+    {
+      "group": "fixed inputs",
+      "check": "activearm1 passivearm2 original eight branches",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "original10/20 caps exactly retained",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "8.5/18 active and9.7/19.7 outer reserved within10/20",
+      "passed": true
+    },
+    {
+      "group": "process lifecycle",
+      "check": "SIGALRM block spans Popen registration and pipe setup",
+      "passed": true
+    },
+    {
+      "group": "process lifecycle",
+      "check": "only one native Popen and sole write site",
+      "passed": true
+    },
+    {
+      "group": "process lifecycle",
+      "check": "actual source PID group executable argv environment before request",
+      "passed": true
+    },
+    {
+      "group": "process lifecycle",
+      "check": "native same raw stdout exact complete one response and retained error",
+      "passed": true
+    },
+    {
+      "group": "process lifecycle",
+      "check": "success requires actual dual EOF exit0 empty group36 complete",
+      "passed": true
+    },
+    {
+      "group": "counts",
+      "check": "IK32 sourceF4 independent40 rank36 guarded",
+      "passed": true
+    },
+    {
+      "group": "counts",
+      "check": "internal FK actual returns separate from UNKNOWN starts/interruption",
+      "passed": true
+    },
+    {
+      "group": "cleanup",
+      "check": "alarm closes before finally kill/drain/persist",
+      "passed": true
+    },
+    {
+      "group": "cleanup",
+      "check": "independent terminal receipt attempted despite execution failure",
+      "passed": true
+    },
+    {
+      "group": "supervision",
+      "check": "actual parent time grandparent starttick argv heldFD source protocol proof",
+      "passed": true
+    },
+    {
+      "group": "supervision",
+      "check": "exclusive inherited timeFD and direct GNUtime child",
+      "passed": true
+    },
+    {
+      "group": "supervision",
+      "check": "global exact native exe and ancestry cleanup tracked",
+      "passed": true
+    },
+    {
+      "group": "supervision",
+      "check": "full time actual caps and fallback never qualified",
+      "passed": true
+    },
+    {
+      "group": "prior",
+      "check": "exact actualV25 authoritative SHA and successful preservation",
+      "passed": true
+    },
+    {
+      "group": "prior",
+      "check": "current source fixed exact latestV25 no older or newer automatic fallback",
+      "passed": true
+    },
+    {
+      "group": "prior",
+      "check": "all actual43 prior execution identities exactly V25",
+      "passed": true
+    },
+    {
+      "group": "prior",
+      "check": "actual prior fsum charged scope retained",
+      "passed": true
+    },
+    {
+      "group": "scope",
+      "check": "math outcomes do not transfer old collision/RSS/path資格",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_rss_branch_fixed32_math_v1.draft.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/physical_nr.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/abb_independent_oracle.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/analyze_comau_native_qualification.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/recover_p4_full_r2_endpoints.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_saved_rss_collision_qualification_v1.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_endpoint_reconstruction_execution_v1.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/abb_staging.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/abb_staging_full_manifest.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/II/summary.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/III/summary.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/abb_batch",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_RSS_CONSTRUCTION01/II/observations.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_RSS_CONSTRUCTION01/III/observations.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0681.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0689.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1065.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1073.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V25.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V25.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_LOCAL02/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_PLANAR01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_DISTANCE01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_SETUP01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_02/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD02/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/execution.json",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all reviewed bytes remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json",
+      "passed": true
+    }
+  ],
+  "checks_total": 157,
+  "checks_passed": 156,
+  "checks_failed": 1,
+  "failures": [
+    {
+      "group": "original science",
+      "check": "unchanged full numerical helper AST close",
+      "passed": false
+    }
+  ],
+  "reviewed_source_sha256": {
+    "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "d456f7dae9caa3f2d5bb4f564e5db89431d4c1898279aba887f502ba3b036c81",
+    "scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "5cb8fc1944973c6487de853dc5c2a1599b605f2f73b596c3d6608c910be1f66c"
+  },
+  "retained_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "d456f7dae9caa3f2d5bb4f564e5db89431d4c1898279aba887f502ba3b036c81",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "5cb8fc1944973c6487de853dc5c2a1599b605f2f73b596c3d6608c910be1f66c",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_abb_rss_branch_fixed32_math_v1.draft.json": "1bea1b060542c1ef6f478581817e1dda963622600bd9ad3119c99616601da656",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_draft.py": "9ef810d81bc87bb670dc68baefcbaf7974abd926655817e428c4ed6b661c585a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp": "9d997c32f9f4a40d7945e2cd563145b0ff27b267c32d5a24407f6c48baa47dea",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/abb_independent_oracle.py": "573af526968476f8b41b94b2ead5a555b45874eae6b080255e03c8aba489b075",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/recover_p4_full_r2_endpoints.py": "4723c08f33a85e4ea85d9067544979d222212c588c82d004934b293253bb555f",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_saved_rss_collision_qualification_v1.json": "0c4dd6276093593c0f7012042300e9f385392fdbc0d325cdcaf7d4a203a80d78",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_full/r2_endpoint_reconstruction_execution_v1.json": "8cc10b46ae48e00e6d4277df92cfdf994fb47dd8f1d0c51642c05aca27f03c25",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/abb_staging.json": "348acf70351e441180f02de99d4d8fc38ae5df9a6795cf2bd08b57de73403539",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/abb_staging_full_manifest.json": "17819d52dd9af765a08e850587571bd42d27f0f86802a3a30bdb92e7309ff380",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/II/summary.json": "2031d170483410c84a6178a67cd0a64d03b5217f7438d8299135d4d2172e3a6c",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/III/summary.json": "9a18758240b7a8852bc290008df8a506015f5a04fe610e2763c5798e27bb65a1",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/abb_batch": "03fccdee5f0693202210ab033721208976fa2a68794b48a2412531839d23f2b3",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/CKCplanning/proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.cpp": "c74ea9ade8bb7d80b0b980139c58b659e6911ab3d3cb61b853be980654ede22c",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_RSS_CONSTRUCTION01/II/observations.json": "b9b4102138c2e2b3871b4668c9180b3cfa20b4ec1fc8efa93761de05ca27ca60",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_RSS_CONSTRUCTION01/III/observations.json": "7850423c4929512bddf4da5feef68038b7b1df3737cc8308f95aa29e20dc5d14",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0681.json": "a0b77906214eaed667dcfd47f09c20f895409ed22ebaf4b72a33ef2aced9b9db",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0689.json": "f140e08885863a448a3a0e85d039008cbb9f11b57643c1a32977e5f05f92e1e4",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1065.json": "5b86a929975f78e0bd5e7a431b7cece7db8334f94583448cd9ee3049e64d428a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1073.json": "258eca5e2c3086833d18a7591b87864e05e65abfb2b6270542e83b60ce1c9607",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V25.json": "ce612e7c9706666a338aae6deda581274f1aadb229e2be999cd6ee836499e64a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V25.json": "b3a0ab365ef415673f2e0ab7a5fb45365d5a86e33ec7c0584b5bf875c15c07d5",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_LOCAL02/execution.json": "5151df50119bc6847ab2a0c68dd0e36e346d22bea3a43253c6419ed838e5d48a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_COLLISION_CONTROLS01/execution.json": "782eed92903d3d8353392566f262921b21543129a1aa6bb2515960438cd7eabe",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_BUILD01/execution.json": "7452d2010e8e36f309fe4a52f50899718b2f65eec8cc113f8d2ab0bb87569a18",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_PLANAR01/execution.json": "1016baef8be41bb4f14d8371078eca2bd02ff32ca53c08b7817915a7fcd23449",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_RECONSTRUCTED01/execution.json": "9f898ec5068a39151352b4397f9dc2df2a4354498043b599d45543a834249774",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_DISTANCE01/execution.json": "6e18068ea1ffad849c01faa377e5268fe892448029640feb4421c3c05941e140",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD03/execution.json": "4e33b3769abf2447f2c31b9e5f68fdd9e621189b28442af6c13db052b85dfce9",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_SETUP01/execution.json": "107b8fe30b5e2f02c0a2ad035a2cee62d42f5b604c39d8de4bcd1952505b56e4",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_NR_ABB_Q1_BUILD01/execution.json": "53bd4479d42d92698eaaedc918e4d994c92e8c5cdbb37edbbcd4a96736709f4e",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_TAIL02/execution.json": "2b7241928d8180b47efe083abfba1a108cdac29f6e5cdd76962db755e5d581a7",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_NR_E2E_BUILD01/execution.json": "0ac531d740436bdb9cf8e1a11be92f3679935d9dab2514af117f67df7555577d",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/execution.json": "8e51edb83293d57e9bb8a4d40188d6b9fcf0aff880505f64a8bfb914791df024",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_PATH01/execution.json": "f3b5a3b30a9067c1b92a069edf4a2ac72acb3b0f378e63fc486c73399f837c97",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/execution.json": "99c5cc5e980bf52489b154d5a678df903a1897a1e9e966c341ea6b5229533fdd",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/execution.json": "fd74acd7ce5f747cc7123cacef8c9467b1fa985d9d88afdcac47aee0956a5754",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD01/execution.json": "a6f84e38ecef47649d9dc12cf7316a9ebc68429e6b126bd6cc1b23e4845d8b4d",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_NR_INTERFACE_BUILD01/execution.json": "313415a50f36aaa7432958d833b4833c7311e44ddb788f1802e8ca513056eb72",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/execution.json": "ee8691a2e6ca2318e2ef4a8a2c8a2b3cc2f5a18c4d6e319a3d1857112a3ab025",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261017_R2_ABB_SBL_PCS_BUILD01/execution.json": "17d788c53bfceb4741d550cb95758ee1d1cac6f7c834909131184ff3845ac434",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_PCS_LOCAL01/execution.json": "e0793f6ca95cec240b32a6be36d20b0e3df31cd307054fbe4d7cf97789990c6b",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_PCS_E2E_BUILD01/execution.json": "1e70eb0edf9a163ef1c5fbdcc16e15ac6598a368f21f75aa93792ca65d7e409b",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/execution.json": "c7cbd868da1cd9feb149bc057c4a63ff3e722b81123998e1a8cc5e8e1bab5906",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_FIBER_COMPONENT01/execution.json": "d164ccf903d5b3259db4710409537f62394c74b47163b09d0b828a496fbc64b7",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json": "f06a0afa82da9cea66224d7b2e438673570aabbefb022c8b00fffedd02ab5f8f",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_01/execution.json": "cab65679252fc04ee65c699e09bcb5fd6662657c4047494177a8212c75859514",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H_BUILD01/execution.json": "1a5b1651a53e5fc8b8107dc890fd457d5e231f008793a2b572b6bcca3800a7ea",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_BRIDGE01/execution.json": "3565ac9acebf8507e6788c2f09946842ef9e0ee46b257aa6be53291052fa8eca",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_CENTER_IMAGE01/execution.json": "765214ce7de64254126ea6da4b3bf69a3626f2a8896a879504e4f2a6561b91cc",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_SPATIAL01/execution.json": "a8cbe8f0901f9472a9df91815d73f1b3259e14801e063866843a2bb986431863",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_PCS_BUILD01/execution.json": "25bb3f0c6c62334a217ecc79b16f1fc94e3ef7f04eeca71e4dcba502bde8a582",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RANDOM_HELPER_H01/execution.json": "d33b1ca3073f09708c2ae039b853a1e48e52518a139d62839af1fc24b2ce1ce2",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json": "573a1e0bb11a345811ff380a838eb4818000963e98adb90664dfaace755a58b7",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ABB_NR_LOCAL01/execution.json": "d9e548a26dcaa2488e6556e7e235f64fa83511ef517289d985e5b8b61eacc8a8",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_RSS_CONSTRUCTION01/execution.json": "8879a3fbf9e75c5869d57884dfad9273f393b29e98a27385a968b5e6adfbd94c",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_IV_RSS_WRIST_FIXED100_02/execution.json": "8dc596f33a20a6ba4d4ed57b060992689e549b20e2c2603763386449695e6069",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_NR_ABB_Q1_01/execution.json": "e2e545675f48b14981846c145820ca9450a75f7ce0d835d6d3746ebeefd24340",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_BUILD02/execution.json": "dcc96bbef72e47e663e51eb2dcbe8ae8f1bb99cef1e31d5eabad17f056fe15df",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/execution.json": "bc30019b1e5282817adee945fbb4b86a7bb9f30e6f419a6def0e559815a7b1b6",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_VI_RSS_INGRESS_COMPOSITE01/execution.json": "784dcf0be2e85e28114c8cf9b54b96cff76b2775607967b68caf5af22840fb3a"
+  },
+  "original_science_case_loop_AST_identical": true,
+  "original_policy_fields_compared": [
+    "run_id",
+    "classification",
+    "runtime_layer",
+    "literal_native_scope",
+    "active_arm",
+    "passive_arm",
+    "passive_branches_in_order",
+    "fixed_cases",
+    "ik_binary",
+    "ik_binary_sha256",
+    "budget",
+    "gates",
+    "target_policy",
+    "branch_policy",
+    "collision_scope",
+    "positive_coverage_gate",
+    "stop_policy",
+    "new_VI_candidate_constructions",
+    "formal_table_I_calls",
+    "zero_calls",
+    "RSS_gamma_preserved"
+  ],
+  "actual_prior_ledger": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V25.json",
+  "actual_prior_ledger_sha256": "ce612e7c9706666a338aae6deda581274f1aadb229e2be999cd6ee836499e64a",
+  "new_import_describe_transform_compile_science_model_FK_IK_J_collision_RBS_solve_protocol_claim_prior_calls": 0,
+  "limits": [
+    "Static source/AST/saved-input review only; no runner/project import or describe, model, source binary or math execution. Root freeze and actual external independent POST required.",
+    "Original complete4q12x8 case loop AST and science protocol fields preserved, activearm1 fixed; branch identity respects coalescence and numerical rank gate. Old collision certificates cover original inputs only; new outputs collision UNKNOWN.",
+    "36 short process and fsync cost remains unmeasured. Active8.5wall18CPU and outer9.7wall19.7CPU reserve within10wall20CPU; observed full-child final upper must pass, no restart or budget increase.",
+    "External watchdog scope ancestry plus unique frozen native executable; PID/startticks guard kills and actual empty-group/EOF/raw proof required. No historical orphan completeness inferred from final emptiness alone.",
+    "Source batch internal FK starts remain UNOBSERVED, interrupted internal FK UNKNOWN. Successful returnedK proves one source internalFK completed; caps are not actual calls.",
+    "Supervisor own watchdog/journal/fsync finite observation is outside GNUtime child charge, with final supervisor persistence tail unmeasured; retained budget boundary explicit.",
+    "All211 paper obligations,VI974/974 remaining0 and formal0/22500 persist. No RSS global success/RBS/distribution/PCS advantage/full-paper inference."
+  ]
+}

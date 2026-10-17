@@ -1,0 +1,34 @@
+{
+  "schema": "P4_D080_EXECUTION_SCOPE_V1",
+  "decision": "docs/decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md",
+  "decision_commit": "dc810b78",
+  "allowed_environments": [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V"
+  ],
+  "VI_future_science_authorized": false,
+  "VI_history_preserved": true,
+  "formal_table_I_original": 22500,
+  "formal_table_I_D080": 18000,
+  "formal_trials_per_cell": 500,
+  "formal_solve_timeout_s": 1000,
+  "formal_execution_authorized": false,
+  "qualification_budget_ledger": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V25.json",
+  "qualification_budget_does_not_authorize_formal_statistics": true,
+  "reuse_environment_II_paths": [
+    "RRT_PCS_177",
+    "RRT_NR_393",
+    "Bi-RRT_PCS_413",
+    "Bi-RRT_NR_689"
+  ],
+  "source_layers_separate": [
+    "AUTHOR_NATIVE",
+    "CORRECTED",
+    "RECONSTRUCTED_ENDPOINT_OR_METHOD"
+  ],
+  "legacy_protocols": "Do not execute old frozen protocols with full-VI/22500-current-scope guards. Preserve them; bind D080 and latest actual costs in new protocols.",
+  "new_model_geometry_threshold_or_algorithm_requires_user_approval": true
+}

@@ -1,0 +1,201 @@
+{
+  "schema": "P4_RSS_FIXED32_SUPERVISED_V2_DRAFT_STATIC_PREPARATION_V1",
+  "status": "DRAFT_STATIC_ONLY_NOT_EXECUTED_NOT_INDEPENDENT_QUALIFICATION",
+  "created_at_utc": "2026-10-17T08:36:04.295658+00:00",
+  "files_sha256": {
+    "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "d456f7dae9caa3f2d5bb4f564e5db89431d4c1898279aba887f502ba3b036c81",
+    "scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "5cb8fc1944973c6487de853dc5c2a1599b605f2f73b596c3d6608c910be1f66c"
+  },
+  "checks": [
+    {
+      "name": "syntax_only",
+      "passed": true,
+      "detail": "ast.parse runner/supervisor and json.loads static template; neither Python project file was imported or executed."
+    },
+    {
+      "name": "runner_top_level_stdlib_only",
+      "passed": true,
+      "detail": [
+        "pathlib",
+        "argparse",
+        "base64",
+        "collections",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "resource",
+        "selectors",
+        "signal",
+        "subprocess",
+        "sys",
+        "time"
+      ]
+    },
+    {
+      "name": "runner_main_guard",
+      "passed": true,
+      "detail": "No top-level execute or describe call."
+    },
+    {
+      "name": "supervisor_top_level_stdlib_only",
+      "passed": true,
+      "detail": [
+        "pathlib",
+        "decimal",
+        "argparse",
+        "hashlib",
+        "json",
+        "os",
+        "resource",
+        "signal",
+        "subprocess",
+        "sys",
+        "time"
+      ]
+    },
+    {
+      "name": "supervisor_main_guard",
+      "passed": true,
+      "detail": "No top-level execute or describe call."
+    },
+    {
+      "name": "v1_all_four_files_preserved",
+      "passed": true,
+      "detail": {
+        "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_draft.py": "9ef810d81bc87bb670dc68baefcbaf7974abd926655817e428c4ed6b661c585a",
+        "configs/p4_full/r2_abb_rss_branch_fixed32_math_v1.draft.json": "1bea1b060542c1ef6f478581817e1dda963622600bd9ad3119c99616601da656",
+        "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_PRE_DRAFT_20261017.md": "0265856392197a93172ddee41df6bd89a167a701e4c65813545c791cce9b301f",
+        "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_STATIC_ADDENDUM_20261017.md": "c02004ff3431347e1503b7087c67ab2518c791cf7b7985fd8f159c65965b2990"
+      }
+    },
+    {
+      "name": "exact_legacy_scientific_contract",
+      "passed": true,
+      "detail": [
+        "run_id",
+        "classification",
+        "runtime_layer",
+        "literal_native_scope",
+        "active_arm",
+        "passive_arm",
+        "passive_branches_in_order",
+        "fixed_cases",
+        "ik_binary",
+        "ik_binary_sha256",
+        "budget",
+        "gates",
+        "target_policy",
+        "branch_policy",
+        "collision_scope",
+        "positive_coverage_gate",
+        "stop_policy",
+        "new_VI_candidate_constructions",
+        "formal_table_I_calls",
+        "zero_calls",
+        "RSS_gamma_preserved"
+      ]
+    },
+    {
+      "name": "original_math_loop_exact_text",
+      "passed": true,
+      "detail": "Exact unchanged original4x8 scientific loop including targets, branch checks, limits, gates, outputs and outcome order."
+    },
+    {
+      "name": "exact_legacy_bound_prefix",
+      "passed": true,
+      "detail": "Every oldbound path+SHA remains in V2 template."
+    },
+    {
+      "name": "template_refuses_execution",
+      "passed": true,
+      "detail": "Static template has no futureprior, ownSHA map orapproval; run is rejected."
+    },
+    {
+      "name": "fixed_actual_v25_anchor",
+      "passed": true,
+      "detail": "Actual root-delivered V25; highest ledger must still be exactbound V25 when frozen. Newer state needs review, not silent reuse."
+    },
+    {
+      "name": "independent_counts_original_caps",
+      "passed": true,
+      "detail": "4x8K+4sourceF / at most40 independentarmFKJ /36existingrankSVD; no new mathcalls now."
+    },
+    {
+      "name": "native_structure_same36_shortprocess",
+      "passed": true,
+      "detail": "Same perrequestshortprocess structure; performance unknown."
+    },
+    {
+      "name": "timer_creation_registration_mask",
+      "passed": true,
+      "detail": "SIGALRM blocked throughPopen/self+budget registry/starttick/bothpipe selector registration."
+    },
+    {
+      "name": "live_external_parent_fd_proof",
+      "passed": true,
+      "detail": "True parentGNUtime andsupervisor PID/startticks, command/rawargv, FDinode."
+    },
+    {
+      "name": "exclusive_time_and_single_launch",
+      "passed": true,
+      "detail": "One GNUtime Popen; exclusive outputinode inheritedFD; no retry."
+    },
+    {
+      "name": "native_exact_raw_stdin_stdout_eof_group",
+      "passed": true,
+      "detail": "Saved original request/full singlewrite+stdinclose, rawstdout/stderr/native, actual dualEOF and groupreap gate."
+    },
+    {
+      "name": "cleanup_reserve_inside_original_budget",
+      "passed": true,
+      "detail": "No extra time; activephase stop8.5/18 reserves1.5/2 for same10/20 total. Actual outer upper must pass; polling is not a proven realtime guarantee."
+    },
+    {
+      "name": "cleanup_no_internal_timer_reentry",
+      "passed": true,
+      "detail": "Firstcleanup action closes internalalarm, thenkill/drain/wait/reap; externalwatchdog still active."
+    },
+    {
+      "name": "durable_separate_receipt_and_hash_failure_isolation",
+      "passed": true,
+      "detail": "Mandatoryhash failures collected perfile, not beforecleanup; independent compactterminalreceipt attempted ifexecution fails; outercharge remains separate."
+    },
+    {
+      "name": "outer_failure_and_raw_cost_remain_unqualified",
+      "passed": true,
+      "detail": "Actual GNUtime validity/exit/emptygroup/completegate needed; fallback does not become a qualified complete charge."
+    },
+    {
+      "name": "internal_fk_unknown_retained",
+      "passed": true,
+      "detail": "InterruptedK internalFK remains UNKNOWN; complete success count read only from complete returnedraw."
+    },
+    {
+      "name": "no_full_rss_or_collision_upgrade",
+      "passed": true,
+      "detail": "Mathonly; collision/RBS/RSSplanning distinctunpassedgates."
+    }
+  ],
+  "static_checks_total": 23,
+  "static_checks_passed": 23,
+  "static_checks_failed": 0,
+  "source_imported": false,
+  "protocol_described": false,
+  "draft_executed": false,
+  "compiler_invoked": false,
+  "project_scientific_calls": 0,
+  "new_claims_created": 0,
+  "new_executions_created": 0,
+  "new_ledger_created": false,
+  "limitations": [
+    "No costpilot orexecution:36shortprocess+fsync feasibility remains UNKNOWN.",
+    "External /proc watchdog polling is an implementationcandidate, not a measured realtime hardlimit proof; actual GNUtime gate and independentPOST decide qualification.",
+    "A hardstop can leave missingworkerreceipt orprefix; outercharge/rawfailure remain andno retry is authorized.",
+    "OriginalsourceFK internaltrace is absent; max32 is not actualinterruptedinternalcalls.",
+    "Supervisor own watchdog/metadata/fsync cost is observedseparately; finalsupervisorrecordtail remains outside thatsample.",
+    "Sourcegroups are discovered byancestry and frozenexactexe afterstartup refusal ofexistingexactexe; concurrencyandorphanbehavior remain independentreview items."
+  ]
+}
