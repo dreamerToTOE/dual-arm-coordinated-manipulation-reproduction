@@ -1,5 +1,7 @@
 # P4 续研任务：六环境重建、三算法实证、PCS 复杂障碍优势验证
 
+> **D080 2026-10-17 范围覆盖提示**：这份D078/D079六环境计划保留为历史原论文审计，不再授权环境VI的三臂完整复现。当前执行环境I–V，TableI II–V 18,000次，参照 [最新批准决策](../decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md) 及 [新的Codex任务](P4_D080_FAST_TRACK_IMPLEMENTATION_20261017.md)。禁止据旧计划自动续跑VI或原22,500次；旧数据和失败不改。
+
 日期：2026-10-14。状态：USER-AUTHORIZED / TASK SPECIFICATION；**不是已经完成的实验**。
 当前执行分支：p4-full-reproduction-pcs-study。基线为已归档 P2 文档分支提交 4cb0e96；原 P4 和 P2 已接受历史结果均不得覆盖。
 **Codex 从本文开始逐门推进；每个关口提交实际源码、可复查结果与报告。无证据不得宣称完成。**
