@@ -1,0 +1,84 @@
+#!/usr/bin/python3
+"""Freeze candidate input bytes from saved evidence only. No model imports/calls."""
+import copy
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path('/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full')
+BASE=ROOT/'results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01'
+QUEUE=BASE/'complete_original_saved_queue.json'
+POST=ROOT/'reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json'
+AUTHOR=Path('/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning')
+IDENTIFY=AUTHOR/'validity_checkers/StateValidityCheckerPCS.cpp'
+SBL=AUTHOR/'planners/SBL_PCS.cpp'
+CONFIG=ROOT/'configs/p4_full/r2_abb_sbl_pcs_local_fixed_saved_v1.draft.json'
+PRE=ROOT/'reports/P4_FULL_R2_ABB_SBL_PCS_LOCAL_FIXED_SAVED_PRE_DRAFT_20261017.md'
+REPORT=ROOT/'reports/P4_FULL_R2_ABB_SBL_PCS_LOCAL_FIXED_SAVED_SELECTION_STATIC_20261017.json'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(p):return json.loads(p.read_text())
+def ref(p,pointer):return dict(path=str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p),sha256=sha(p),json_pointer=pointer)
+def require(ok,label):
+ if not ok:raise RuntimeError(label)
+q=load(QUEUE);post=load(POST); checks=[]
+def ck(label,value):checks.append(dict(name=label,passed=bool(value)));require(value,label)
+ck('original_saved_queue_expected_SHA',sha(QUEUE)=='38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f')
+ck('original_complete_path_POST_pass',post['checks_failed']==0 and post['personnel_independent'] is True and post['independent_path_qualified'] is True and post['continuous_collision_certificate'] is False)
+ck('POST_saved_queue_binding',post['retained_sha256'].get(str(QUEUE.relative_to(ROOT)))==sha(QUEUE))
+ck('original_path_nodes_413',len(q['nodes'])==413)
+ck('positive_is_saved_edge_zero',q['edges'][0]['node_ids']==list(range(109)) and q['edges'][0]['active_chain']==0 and q['edges'][0]['branch']==3)
+identify=IDENTIFY.read_text();mapping=identify[identify.index('State StateValidityChecker::identify_state_ik(State q1'):identify.index('// --------------------------------------------',identify.index('State StateValidityChecker::identify_state_ik(State q1'))]
+ck('ik0_maps_passive_arm2',mapping.index('if (ik[0] == -1)')<mapping.index('ik[0] = get_valid_IK_solutions_indices_2(i)'))
+ck('ik1_maps_passive_arm1',mapping.index('if (ik[1] == -1)')<mapping.index('ik[1] = get_valid_IK_solutions_indices_1(i)'))
+sbl=SBL.read_text();lazy=sbl[sbl.index('bool ompl::geometric::SBL::isPathValid('):sbl.index('ompl::geometric::SBL::Motion* ompl::geometric::SBL::selectMotion')]
+ck('source_lazy_root_to_child_checks', 'for (int i = mpath.size() - 1 ; i >= 0 ; --i)' in lazy)
+ck('source_both_branch_equal_guards_before_remove', 'parent->ik_q1_active == mpath[i]->ik_q1_active' in lazy and 'parent->ik_q2_active == mpath[i]->ik_q2_active' in lazy and 'removeMotion(tree, mpath[i]);' in lazy)
+nodes={}
+for index in (0,108,359,360):
+ saved=load(BASE/f'node_{index:05}.json');math=load(BASE/f'node_{index:05}_math.json')
+ ck(f'node_{index}_exact_saved_queue_q12',saved['q12']==math['q12']==q['nodes'][index])
+ ck(f'node_{index}_saved_qualified',saved['qualified'] is True and saved['math_qualified'] is True and saved['stage']=='COMPLETED' and saved['limits']['legal'] is True and saved['collision']['collision'] is False and saved['collision']['selected_variant']=='aligned')
+ ck(f'node_{index}_two_unique_saved_branches',len(saved['branches'])==2 and all(b['unique'] is True and len(b['branch_set'])==1 for b in saved['branches']))
+ ck(f'node_{index}_final_and_math_branch_agree',saved['branches']==math['branches'])
+ saved_refs=[ref(QUEUE,f'/nodes/{index}'),ref(BASE/f'node_{index:05}.json','/'),ref(BASE/f'node_{index:05}_math.json','/')]
+ role=0 if index in (0,108) else 1;edge=0 if role==0 else 3
+ ck(f'node_{index}_assigned_role_from_saved_edge',any(a['edge']==edge and a['role']==role and a['branch_pass'] is True for a in saved['edge_assignments']) and index in q['edges'][edge]['node_ids'])
+ nodes[index]=dict(q12=saved['q12'],ik=[saved['branches'][1]['branch_set'][0],saved['branches'][0]['branch_set'][0]],assigned_active_role=role,saved_node_id=index,saved_edge_index=edge,source_provenance=saved_refs,saved_node_qualified=True)
+ck('positive_branch_pair_natural_and_shared',nodes[0]['ik']==nodes[108]['ik']==[3,0])
+ck('negative_branch_pair_natural_and_different',nodes[359]['ik']==nodes[360]['ik']==[0,3] and all(a!=b for a,b in zip(nodes[0]['ik'],nodes[359]['ik'])))
+refs=[ref(QUEUE,'/'),ref(POST,'/'),dict(path=str(IDENTIFY),sha256=sha(IDENTIFY),source_lines='275-321; ik[0]=arm2 branch, ik[1]=arm1 branch'),dict(path=str(SBL),sha256=sha(SBL),source_lines='367-405 and 410-464; original lazy and recursive removal')]
+positive=dict(kind='lazy_chain',fixture_id='CBI_SAVED_EDGE0_NODE0_TO108_POSITIVE_NONTRIVIAL_RBS',separately_frozen_local_fixture=False,saved_input_references=refs,start_chain=[nodes[0],nodes[108]],expected_observations=dict(source_isPathValid_returned=True,native_tree_sizes_before=[2,0],native_tree_sizes_after=[2,0],nonroot_valid_after=True,minimum_checkMotionRBS_dispatches=2,removeMotion_dispatches=0,source_save_dispatches=0,observer_rng_draws=0),classification='RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES',scientific_claim='Saved edge endpoints only; actual SBL recursive calls and pass remain to be observed. Existing CBi path certificate is not a new SBL certificate.')
+negative=dict(kind='lazy_chain',fixture_id='CBI_SAVED_NODE0_359_360_NATURAL_BRANCH_MISMATCH_RECURSIVE_REMOVAL',separately_frozen_local_fixture=False,saved_input_references=refs,start_chain=[nodes[0],nodes[359],nodes[360]],expected_observations=dict(source_isPathValid_returned=False,native_tree_sizes_before=[3,0],native_tree_sizes_after=[1,0],checkMotionRBS_dispatches=0,removeMotion_dispatches=2,source_save_dispatches=0,observer_rng_draws=0),classification='RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES',scientific_claim='Deliberately synthetic ancestry using individually saved qualified states and their true branches; no CBi edge or SBL growth claim for node0 to359. Original branch equality guards must reject naturally before RBS, then delete child and grandchild.')
+start=q['nodes'][0];goal=q['nodes'][412]
+schedule=[]
+for fixture_name,fixture in [('positive',positive),('negative',negative)]:
+ for mode in ('trace','plain'):
+  schedule.append(dict(schedule_index=len(schedule),fixture_name=fixture_name,mode=mode,request=dict(operation='local',environment='II',seed=7,range_rad=.8,separately_frozen_runtime_qualification=False,start_q12=start,goal_q12=goal,fixture=copy.deepcopy(fixture))))
+config=dict(schema='P4_R2_ABB_SBL_PCS_LOCAL_FIXED_SAVED_INPUT_DRAFT_V1',frozen=False,classification='RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES',draft_not_runtime_protocol=True,budget=dict(wall_s=15.,cpu_s=30.,r2_total_wall_s=3600.,r2_total_cpu_s=7200.),source_model_queries=0,new_sampling=0,read_existing_saved_path_only=True,fixture_count=2,maximum_source_processes=4,maximum_original_lazy_calls=4,maximum_solve_calls=0,maximum_connect_fixture_calls=0,project_public13_calls=0,new_VI_candidate_constructions=0,fixtures=dict(positive=positive,negative=negative),schedule=schedule,freeze_policy='Root creates separately reviewed runtime protocol with these exact four requests, changing only declared frozen booleans. No retry, node/branch/role replacement or extra dispatch.',plain_trace_comparison='Compare semantic local return, exact q12 binary64/IK/roles/valid ancestry and final tree content, setup metadata, no native save, remaining lifetimes, and output evidence; ignore trace-only serial counters and timing. Trace requires source entered/completed balanced and raw stderr trace equality.',connect_policy='No connect fixture. The separately frozen single seed7 original ten-second trace solve may naturally observe connect; if absent retain qualification gap.',limitations=['Input selection uses saved independent discrete source-policy checks, not new model or collision computations.','SBL artificial ancestry is explicitly reconstructed. Negative parent-child edge is intentionally not asserted a valid physical edge.','No continuous collision, global planner or paper performance claim. Build and local protocol review/commit plus successful BUILD02 independent POST remain required.'])
+with CONFIG.open('x')as f:json.dump(config,f,ensure_ascii=False,allow_nan=False,indent=2);f.write('\n')
+pre='''# D080 SBL_PCS 固定保存节点 local 资格 PRE-TASK 草案
+
+2026-10-17。状态 `DRAFT_SAVED_INPUT_ONLY_NOT_FROZEN_NOT_RUN`。本独立 PRE 不修改已审 BUILD02 工程 PRE/driver/header/transform/builder/supervisor。
+
+root 已批准正、负两项 lazy fixture，各 trace/plain，严格四进程合计 15 秒墙钟 / 30 秒 CPU，仍扣 R2 总额 3600/7200。当前仅从旧 CBi 完整离散合格路径读取原始保存字节与独立 POST（58152/58152），无模型计算、采样、identify、投影、编译或二进制运行。来源 queue 的旧 pending 标记原样保留；后续独立 POST 及每节点 qualified=true 是已完成证据，不能改写 queue。
+
+## 固定输入与真实分支
+
+正例固定原 queue edge0 的 node0→108：q12 原字节、role0、两节点真实 SBL ik=[3,0]。原 CBi edge0 是109节点的独立合格离散段；本次仅将其端点放入重建的 root/grow 树，实际执行原 SBL isPathValid 和递归 RBS。既有 CBi 成功不预判 SBL 成功；要求实际 nontrivial RBS dispatch>1、true、节点保留及 child valid=true。
+
+负例固定 root node0→child359→grandchild360。node359/360 原 edge3 role1，真实 SBL ik=[0,3]；根仍原 root role0、ik=[3,0]。原 identify_state_ik 的静态映射明确 ik[0] 是被动 arm2 分支、ik[1] 是被动 arm1 分支，没有新增 identify。三节点各有已保存闭链、分支、限位和 aligned 源策略碰撞资格。root→359 是有意重建的 ancestry，不声称它是旧 CBi 原边或可行 SBL 边；双方两个真实分支自然不同，原 lazy guard 应不调 RBS，真实返回 false，原 removeMotion 递归退役 child+grandchild，根保留。不得改分支制造失败。
+
+四条 schedule 顺序固定 positive trace、positive plain、negative trace、negative plain。每个进程一次必要原 setup，不重做13点 projection 观察；原 seed7、Range=.8、II、A01 完整 start/goal 保持。无 connect fixture，不保存路径、不 solve、不 retry。所有输入来源 SHA 与 JSON 指针保存在单独 draft JSON；最终协议只允许改显式冻结布尔，不更换节点、关节角、branch、role、顺序或阈值。
+
+## 待独立判据
+
+读取实际原返回与前后树、全部 trace/raw字节、live lifetime、parent/null-before-delete 与 recursive remove；正例最少2次RBS，负例0次RBS/2次remove。trace source started/completed 一一配对、原 stderr marker 与 JSON events 一致。plain/trace 比较语义结果、q12 binary64、分支、shadow角色、valid、父子身份和保存的文件/sidecar；时间、仅观察计数和事件序号分开保留。原 writer 在local不应触达，attempt空只能说明未见writer，不能证明写成功。
+
+保留真实 false、异常、超时、缺文件、额外文件和所有partial trace；任一不符立即停止本固定清单，不换输入重跑。root冻结提交、BUILD02成功且独立POST后才运行。完成local独审并全额入账后，再另冻单次seed7原10秒trace solve（建议20wall/40CPU，尚未由本PRE授权）；connect仅由该solve自然观察，未观察到即保留缺项。
+
+本项为 `RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES`，不代表连续碰撞、RSS、SBL全局成功、原作者原生输入直接成功或正式性能。D080 I–V 范围、原22500事实与D08018000义务保留；VI974/974只读存档。无P2/Isaac/正式规划或结题文档。
+'''
+with PRE.open('x')as f:f.write(pre)
+result=dict(schema='P4_SBL_SHADOW_V2_LOCAL_SAVED_SELECTION_STATIC_V1',status='PASS_SAVED_BYTES_ONLY_DRAFT_NOT_EXECUTED',personnel_independent=False,checks_total=len(checks),checks_passed=len(checks),checks_failed=0,checks=checks,source_sha256={str(p.relative_to(ROOT))if p.is_relative_to(ROOT)else str(p):sha(p)for p in [QUEUE,POST,IDENTIFY,SBL,CONFIG,PRE,Path(__file__),*[BASE/f'node_{i:05}{suffix}.json'for i in (0,108,359,360)for suffix in ('','_math')]]},new_import_model_sampling_identify_compile_binary_setup_local_solve_calls=0,derived_input_only=True)
+with REPORT.open('x')as f:json.dump(result,f,ensure_ascii=False,indent=2);f.write('\n')
+print(json.dumps(dict(status=result['status'],checks=len(checks),config_sha256=sha(CONFIG),PRE_sha256=sha(PRE),report_sha256=sha(REPORT))))

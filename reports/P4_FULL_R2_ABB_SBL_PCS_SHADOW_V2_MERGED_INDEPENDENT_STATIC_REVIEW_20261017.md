@@ -1,0 +1,9 @@
+# SBL shadow v2 合并工程独立静审
+
+状态：PASS_SBL_PCS_SHADOW_V2_ENGINEERING_ONLY_STATIC_REVIEW；实际62/62检查通过，失败0。只读源码/AST和已保存证书；未describe、import实施模块、编译、模型查询或运行二进制。
+
+冻结前发现的local guard位置问题已在新driver改为纯JSON前置检查，位于work目录写入、seed及模型构造之前。未改变作者body、header或transform。BUILD01不变函数AST与shadow104证书直接复用；新工程保留45秒墙钟/90秒CPU、单目标和零runtime，D080原22500/新18000分别绑定。
+
+最小local固定建议为正lazy node0→108和拒绝lazy node0→359→360，来自旧CBiPCS完整合格路径；trace/plain共4进程、15秒墙钟/30秒CPU。仅触达SBL lazy/RBS与递归删除；不加connect fixture。checkSolution、真实historical connect及unknown writer由另冻单solve观察。地址复用若未实际出现仍UNKNOWN。
+
+新driver分开expression attempt、原文件最终字节复制读回及sidecar持久化；不把sidecar成功当原fstream内部成功或物理路径资格。D080账本v4为v3增量，原历史和费用/solve函数保持，另记18000范围与VI只读；本次未执行账本工具。

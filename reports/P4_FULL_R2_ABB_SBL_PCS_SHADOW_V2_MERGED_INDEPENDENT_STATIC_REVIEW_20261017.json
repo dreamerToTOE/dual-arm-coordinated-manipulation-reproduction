@@ -1,0 +1,312 @@
+{
+  "schema": "P4_SBL_PCS_SHADOW_V2_MERGED_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "PASS_SBL_PCS_SHADOW_V2_ENGINEERING_ONLY_STATIC_REVIEW",
+  "personnel_independent": true,
+  "static_read_only": true,
+  "checks_total": 62,
+  "checks_passed": 62,
+  "checks_failed": 0,
+  "reviewed_source_sha256": {
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_shadow_v2_draft.cpp": "5e6a78ac051d9f2a32b4abad3bb41c466e82bfc8f56b3a08c624b387de9a7cda",
+    "scripts/build_p4_full_r2_abb_sbl_pcs_shadow_v2_draft.py": "fac6cde1ca4cd03cdc8f14d131af9f3ff1c6d9323f4c52717f7f771f7c6ae94f",
+    "scripts/supervise_p4_full_r2_abb_sbl_pcs_build_shadow_v2_draft.py": "32ba34ea2e800204b0f3372ed62102b0b30ae80bb51b940d43a757de03d36078",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_SHADOW_V2_ENGINEERING_PRE_DRAFT_20261017.md": "c229fa7dc56fcafdc7c69434742b7a14b052e7ea15348fe89cd7cbe7ca994c08",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_shadow_v2_draft.hpp": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_shadow_v2_draft.py": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209"
+  },
+  "retained_sha256": {
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_shadow_v2_draft.cpp": "5e6a78ac051d9f2a32b4abad3bb41c466e82bfc8f56b3a08c624b387de9a7cda",
+    "scripts/build_p4_full_r2_abb_sbl_pcs_shadow_v2_draft.py": "fac6cde1ca4cd03cdc8f14d131af9f3ff1c6d9323f4c52717f7f771f7c6ae94f",
+    "scripts/supervise_p4_full_r2_abb_sbl_pcs_build_shadow_v2_draft.py": "32ba34ea2e800204b0f3372ed62102b0b30ae80bb51b940d43a757de03d36078",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_SHADOW_V2_ENGINEERING_PRE_DRAFT_20261017.md": "c229fa7dc56fcafdc7c69434742b7a14b052e7ea15348fe89cd7cbe7ca994c08",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_shadow_v2_draft.hpp": "3c0d3031d53532bb077e7eabb3911aa9f911f771bb34216406cf0a71fb9108c3",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_shadow_v2_draft.py": "926592eb43ef8ad90a6434a30aa613c2c6c41416e9f9120c734b76adc3a39209",
+    "scripts/build_p4_full_r2_abb_sbl_pcs_draft.py": "251f44b0f931a34a2c1e5cfb91c13632c11362392cc3fb339fba1bafd2427628",
+    "scripts/supervise_p4_full_r2_abb_sbl_pcs_build_draft.py": "411b522f9533fe663d61f4fa12dd30687febc380dc4d84de6759f8eb593b4ca0",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_WRITER_SHADOW_V2_INDEPENDENT_OUTPUT_SUPPLEMENT_20261017.json": "85c3a7f9df949d7059f1a99fed85337c9ef29376736a79e5b1bff69dcdc7e365",
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_draft.cpp": "899fbabf80d2bf8b01e59efea81aa21077a3b113662c579661e044d6f66df7b9",
+    "configs/p4_full/r2_abb_sbl_pcs_setup_v1.json": "ef7432f1b577e072dc531dc234a3817aeca1aab61dd94f60603e449570d47a77",
+    "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_v3_20261016.py": "dff638047bbf66768d85df8967ddcbfd1f263759466484c950f03b8f9ca410f0",
+    "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_d080_v4_20261017.py": "b9c8d6759a3be055e0d3651e7a571f2107ad09e9c93e6fb796818eeb9ed1379b"
+  },
+  "checks": [
+    {
+      "name": "stable_final_source:baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_shadow_v2_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "stable_final_source:scripts/build_p4_full_r2_abb_sbl_pcs_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "stable_final_source:scripts/supervise_p4_full_r2_abb_sbl_pcs_build_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "stable_final_source:reports/P4_FULL_R2_ABB_SBL_PCS_SHADOW_V2_ENGINEERING_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "stable_final_source:baselines/p4_full/geometry_consistent/abb_sbl_pcs_observation_shadow_v2_draft.hpp",
+      "passed": true
+    },
+    {
+      "name": "stable_final_source:baselines/p4_full/geometry_consistent/abb_sbl_pcs_instrumentation_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "builder_function_set_reused",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:require",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:path",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:durable_new",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:cpu",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:current_prior",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:added_header_assets",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:protected_dependency",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:make_rule_tokens",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:dependency_rules",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:actual_dependencies",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:compiler_group_members",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:assets",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:preview",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:validate",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:supervisor_proof",
+      "passed": true
+    },
+    {
+      "name": "reused_builder_function_AST:main",
+      "passed": true
+    },
+    {
+      "name": "reused_build_body_AST_except_prefix_label",
+      "passed": true
+    },
+    {
+      "name": "supervisor_function_set_reused",
+      "passed": true
+    },
+    {
+      "name": "reused_supervisor_function_AST:sha",
+      "passed": true
+    },
+    {
+      "name": "reused_supervisor_function_AST:require",
+      "passed": true
+    },
+    {
+      "name": "reused_supervisor_function_AST:new_json",
+      "passed": true
+    },
+    {
+      "name": "reused_supervisor_function_AST:child_cpu",
+      "passed": true
+    },
+    {
+      "name": "reused_supervisor_function_AST:main",
+      "passed": true
+    },
+    {
+      "name": "reuse_shadow104_exact_certificate",
+      "passed": true
+    },
+    {
+      "name": "new_engineering_identity_and_stage",
+      "passed": true
+    },
+    {
+      "name": "only_new_shadow_header_driver_transform_bound",
+      "passed": true
+    },
+    {
+      "name": "d080_explicit_scale_and_separate_runtime_auth",
+      "passed": true
+    },
+    {
+      "name": "engineering_one_target_45_90_and_zero_runtime",
+      "passed": true
+    },
+    {
+      "name": "freeze_and_current_charged_prior_reused",
+      "passed": true
+    },
+    {
+      "name": "driver_args_II_local_or_solve_plain_trace_only",
+      "passed": true
+    },
+    {
+      "name": "single_request_eof_and_runtime_approval",
+      "passed": true
+    },
+    {
+      "name": "pure_json_preflight_before_output_rng_and_models",
+      "passed": true
+    },
+    {
+      "name": "preflight_bounded_all_node_json_conditions",
+      "passed": true
+    },
+    {
+      "name": "preflight_has_no_model_or_rng_calls",
+      "passed": true
+    },
+    {
+      "name": "reused_complete_binary64_input:START",
+      "passed": true
+    },
+    {
+      "name": "reused_complete_binary64_input:GOAL",
+      "passed": true
+    },
+    {
+      "name": "reused_complete_binary64_input:LOW",
+      "passed": true
+    },
+    {
+      "name": "reused_complete_binary64_input:HIGH",
+      "passed": true
+    },
+    {
+      "name": "original_native1_range08_and_single_ten_second_solve",
+      "passed": true
+    },
+    {
+      "name": "no_public13_or_new_project_queries",
+      "passed": true
+    },
+    {
+      "name": "fixture_adaptation_explicit_root_grow_only",
+      "passed": true
+    },
+    {
+      "name": "checkSolution_only_author_body_one_dispatch_interface",
+      "passed": true
+    },
+    {
+      "name": "no_simplifier_repeated_solve_or_NR_fallback",
+      "passed": true
+    },
+    {
+      "name": "lifetime_before_native_destruction_and_empty_after",
+      "passed": true
+    },
+    {
+      "name": "final_evidence_is_exclusive_durable_readback",
+      "passed": true
+    },
+    {
+      "name": "fresh_original_parent_and_work_paths",
+      "passed": true
+    },
+    {
+      "name": "all_expected_native_outputs_captured_and_unknown_internal_streams",
+      "passed": true
+    },
+    {
+      "name": "attempts_not_equated_with_native_write_success",
+      "passed": true
+    },
+    {
+      "name": "sidecar_persistence_separate_from_math_and_source_status",
+      "passed": true
+    },
+    {
+      "name": "errors_and_unknown_timing_boundary_retained",
+      "passed": true
+    },
+    {
+      "name": "pre_no_runtime_or_fixture_pass_claim",
+      "passed": true
+    },
+    {
+      "name": "d080_ledger_all_functions_AST_reused",
+      "passed": true
+    },
+    {
+      "name": "d080_ledger_original_history_kept_via_old_copy",
+      "passed": true
+    },
+    {
+      "name": "d080_ledger_new_scope_separate_and_no_VI_execution",
+      "passed": true
+    },
+    {
+      "name": "d080_ledger_inherits_196_columns_and_adds_four",
+      "passed": true
+    }
+  ],
+  "blockers": [],
+  "describe_calls": 0,
+  "compiler_calls": 0,
+  "model_queries": 0,
+  "binary_calls": 0,
+  "scientific_runs": 0,
+  "engineering_only": true,
+  "runtime_qualified": false,
+  "source_path_qualified": false,
+  "local_fixture_recommendation": {
+    "positive": "Saved CBiPCS edge0, nodes0→108; 109-point original successful reconstruction; fresh SBL isPathValid only.",
+    "negative": "Saved physical nodes0→359→360; real branches differ at root/child for both passive roles, original lazy rejection recursively removes child and grandchild.",
+    "modes": [
+      "trace",
+      "plain"
+    ],
+    "processes": 4,
+    "wall_cap_s": 15,
+    "cpu_cap_s": 30,
+    "no_connect_fixture": true,
+    "address_reuse": "UNOBSERVED_UNLESS_ALLOCATOR_ACTUALLY_REUSES; no forced address",
+    "remaining_checkSolution_and_unknown_writer": "Observe in separately frozen single native solve, retain unobserved if absent; do not fabricate historical connect."
+  },
+  "limits": [
+    "复用已审BUILD01函数AST与shadow104证书，未重做原setup或文本transform。",
+    "该静审只允许root进一步describe/冻结工程协议；不授权运行local、solve或正式统计。",
+    "新fixture adapter明示RECONSTRUCTED，作者科学body不变，历史connect不赋值。",
+    "写盘只能由实际最终字节/sidecar读回证明，原fstream内部状态仍UNKNOWN。",
+    "D080账本工具仅静态diff审查，未执行或更新任何账本。"
+  ]
+}

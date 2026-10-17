@@ -1,0 +1,48 @@
+{
+  "schema": "P4_SBL_SHADOW_V2_ENGINEERING_STATIC_SELF_CHECK_LABEL_ADDENDUM_V1",
+  "status": "PASS_STATIC_SELF_CHECK_LABEL_CORRECTION_NO_SOURCE_CHANGE",
+  "personnel_independent": false,
+  "checks": [
+    {
+      "name": "original_single_failed_assertion_was_wrong_expected_label",
+      "passed": true
+    },
+    {
+      "name": "correct_actual_protected_dependency_fail_gate",
+      "passed": true
+    },
+    {
+      "name": "saved_selfcheck_source_still_same_scripts/build_p4_full_r2_abb_sbl_pcs_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "saved_selfcheck_source_still_same_scripts/supervise_p4_full_r2_abb_sbl_pcs_build_shadow_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "saved_selfcheck_source_still_same_baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_shadow_v2_draft.cpp",
+      "passed": true
+    },
+    {
+      "name": "saved_selfcheck_source_still_same_reports/P4_FULL_R2_ABB_SBL_PCS_SHADOW_V2_ENGINEERING_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "name": "saved_selfcheck_source_still_same_reports/p4_full_audit/recovery_tools/selfcheck_sbl_shadow_v2_engineering_draft_20261017.py",
+      "passed": true
+    }
+  ],
+  "checks_total": 7,
+  "checks_passed": 7,
+  "checks_failed": 0,
+  "inherited_correct_checks": 52,
+  "corrected_expected_label_checks": 1,
+  "original_report_sha256": "7e1203217d0ef6cb3f37482c98b8dae65cabde02f8ad2d7dc50d2ef60afdd429",
+  "no_source_change": true,
+  "project_imports": 0,
+  "transform_calls": 0,
+  "describe_calls": 0,
+  "compile_calls": 0,
+  "runtime_calls": 0,
+  "reason": "Self-check expected uppercase UNFROZEN_PROTECTED token which the reused known-good builder never used. Actual retained fail condition is ACTUAL_PROTECTED_DEPENDENCY_NOT_IN_FROZEN_MANIFEST; all five dependency conditions pass. Original failed self-check remains unchanged."
+}

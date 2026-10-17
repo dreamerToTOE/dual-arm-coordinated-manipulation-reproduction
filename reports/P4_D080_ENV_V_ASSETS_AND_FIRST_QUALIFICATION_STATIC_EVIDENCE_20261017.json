@@ -1,0 +1,533 @@
+{
+  "schema": "P4_D080_ENV_V_SOURCE_AND_SAVED_ASSET_STATIC_INDEX_V1",
+  "date": "2026-10-17",
+  "baseline_head": "dc810b78f490950bf11f609a8dbf1a60b688dece",
+  "branch": "p4-full-reproduction-pcs-study",
+  "kind": "READ_ONLY_SOURCE_AND_SAVED_DATA_REVIEW",
+  "report": "reports/P4_D080_ENV_V_ASSETS_AND_FIRST_QUALIFICATION_STATIC_REVIEW_20261017.md",
+  "report_sha256": "e5beedda43b8ced4657ba6f0b123b41cec2738f8dd80f9e78ce5f0d04628b4da",
+  "new_scientific_calls": {
+    "FK": 0,
+    "Jacobian": 0,
+    "IK": 0,
+    "NR": 0,
+    "PQP": 0,
+    "RBS": 0,
+    "solve": 0,
+    "RNG": 0,
+    "candidate_construction": 0,
+    "compile": 0,
+    "describe_protocol": 0,
+    "validate_draft": 0
+  },
+  "execution_authorized_by_this_report": false,
+  "new_result_is_not_runtime_qualification": true,
+  "input_files_sha256": {
+    "AGENTS.md": "9c494a440350ef9f0cf0883819fe49da2a0b693916358242dc0d75a6cef6d905",
+    "CODEX_START_HERE.md": "7877f90d68a365071756a71494e545bd688a10e04aad9c087992dfc96b833de5",
+    "docs/decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md": "bf719599f65b9e20ae458ae94661902290c226a081abfd1513674380920399cf",
+    "docs/tasks/P4_D080_FAST_TRACK_IMPLEMENTATION_20261017.md": "12abf60931bb96ca4729dff701b2f66beb8ef7ab84150401a6f4fe6090cb2c76",
+    "reports/P4_D080_PROGRESS_SCOPE_HANDOFF_20261017.md": "156ee30407fdf7c0ee13436e47fee0ac5e943a59d7c137bba8cf91d25918da0e",
+    "results/p4_full/20261015_R2_SPATIAL01/V/summary.json": "d9955c78e161f84be3c71b2e938841a2ccb3018467a1c69f5d23017ee5c829fe",
+    "results/p4_full/20261015_R2_SPATIAL01/V/checks.json": "f2204bc7f0421dc1e3cc2b14926714bd37228393d6725e3edd005b55d4f034d9",
+    "results/p4_full/20261015_R2_SPATIAL01/V/observations.json": "4fa86bd97cb4181c065a81d27eca156935bb5b78323db828712ec09b47c7e180",
+    "results/p4_full/20261015_R2_SPATIAL01/comau_v_staging.json": "da4a2769a47e8af63d7cd058714e958c18fe77b3444b21a9b42e5a515cd28f3f",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_start.json": "e714e75f8d79a2d288c12680e385cf7b134271a46674b52e7879d11a5724515d",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_goal.json": "4429cba418ef3e6f6da7da1b95c5e4978a170959b147be239c97be8b2db5dd14",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/V_start.json": "f906a6b61999c71efe15c8d86188edbded704d66dcba18f9833d940ccfa6c405",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/V_goal.json": "feae5fd78837327db9c83d66621e2aa4fc9eec72a46c0d0dfc1e98cbc9d88737",
+    "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/execution.json": "a0659ba57223aacd28eba1bc88a553078541b354fadbf32323e257eb63213977",
+    "reports/P4_FULL_R2_COLLISION_TCP_INSTRUMENTATION_REVIEW_20261015.md": "d98271f9ae6b85dbb706b6e899b5326991cda9444b5ba6e31cea05caa5bad411",
+    "reports/P4_FULL_R2_SAVED_RSS_COLLISION_SECOND_REVIEW_20261015.md": "2b77cbe1810caffc52e6e5f22b1b2b133aae05d17fb66f90ee41273151d3b8d7",
+    "reports/P4_FULL_R2_RSS_NEXT_GATE_STATIC_REVIEW_20261016.md": "ad631e958614446ad08b1734bd8accd27c621025ab03ffb3ae68bbcbd1deb4b9",
+    "results/p4_full/20261015_R2_SPATIAL01/III/summary.json": "9a18758240b7a8852bc290008df8a506015f5a04fe610e2763c5798e27bb65a1",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json": "85550cbc3ffbf80c80519b5e592e85401dcf1e96ce747f0df5f3d97c97065c6a",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json": "50db8b75e8c29c9dfc42646e5165c22f31dd8e2853858686572405c3cd91cc12",
+    "results/p4_full/20261015_R2_SPATIAL01/IV/summary.json": "3305090f9eae032b5809204ceb5df6409b0bb33ee4449caf99a4e88de67969fc",
+    "results/p4_full/20261015_R2_IV_NR_LOCAL01/execution.json": "b52356406e2f729916ef9c27282eca3f21c294bef55ace7115a033c8f13982b8",
+    "reports/P4_FULL_R2_IV_NR_LOCAL_INDEPENDENT_REVIEW_20261015.md": "440f35ea2401313e81b63fb5b8c0175249db709b35d263b1f1e6235e261d7989",
+    "baselines/p4_full/analyze_comau_native_qualification.py": "58e320d64f945f2c913a571a936b7203508c9e5494cedc56aeec8e479cd8d321",
+    "baselines/p4_full/geometry_consistent/physical_nr.py": "e2dc41936190c7fe335a442c1fee2952681ea5c1be5b94393590188f0fb87d43",
+    "baselines/p4_full/geometry_consistent/physical_nr_abb_cpp_draft.hpp": "e387e7c4b625ffa41d63d47093a4cf0c75a04d07d1f1b8d4693162653814449e",
+    "baselines/p4_full/geometry_consistent/spatial_ik_patch.py": "3f2a2e195e9abd0f8de82938cf6a38697581fd1edf7fdac86fe6af4acd516fe8",
+    "baselines/p4_full/geometry_consistent/collision_adapter.py": "b14c48231048498c9b3b77e90ad26fca2aaa7db54c1ef1eeda08a1453dcb5578",
+    "baselines/p4_full/geometry_consistent/collision_batch_driver.cpp": "bcfc2fc626f31b69cbe95e672a4d2ca2bf71546f672499777eb8f31e85b322c4",
+    "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+    "scripts/build_p4_full_r2_abb_pcs.py": "918af0d33cb4bd0223c457f850367a4a54fde34285731ea15a3c1a1612684c43",
+    "scripts/build_p4_full_r2_abb_rrt_pcs_e2e.py": "a76c67a53690a9e04dcb6fdb087bc65595192d09f69675667ab4ff271d8506e7",
+    "scripts/build_p4_full_r2_abb_nr_interface_draft.py": "5f55e3d6358f122b08beec736f476fd5e09e53fdd56e782ae08d77afa951bfb8",
+    "scripts/build_p4_full_r2_abb_rrt_nr_e2e_draft.py": "b9754474468f2c72f5151db337e15cf8ef0baf9106a2339611f2cbea3739a4bb"
+  },
+  "author_provenance": {
+    "repository": "ckcComau",
+    "branch": "industrialScene",
+    "commit": "ef6e9c4df34d2ca1605b34c86f6fe9a689c757ca",
+    "root": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/ckcComau_industrialScene",
+    "files_sha256": {
+      "proj_classes/apc_class.cpp": "ad2e271952cfb4dbb726f817b8d5b08dfed0fb8c7a4616bd94d5fe0413d64933",
+      "proj_classes/apc_class.h": "d57ffc7d5b3af7e00c5a633ae784dac18d24699341267cd3ae0af9797c9611f1",
+      "proj_classes/def.h": "b675c59567eca7169a706b765604058646802cb1866688e0321fbf85d56b981e",
+      "proj_classes/kdl_class.cpp": "b893c0b0076a600f9a86173fee84fed9262eb9f9b4370a5596290723c65cff82",
+      "proj_classes/kdl_class.h": "f45a459bb0c302d8acb57ce1f05b41d6ea0f768372b7b72a4e488af8730832cf",
+      "validity_checkers/StateValidityCheckerPCS.cpp": "beae1a631a7112179bde95b94d518014b6d8ea5cbb7903384189e8fa34ee177e",
+      "validity_checkers/StateValidityCheckerPCS.h": "613c7e28264e9894a703953093d2d9845e85a791bef4dbaabbe4df4181e109f3",
+      "validity_checkers/StateValidityCheckerGD.cpp": "905b5271f3ed5e09739eab523d5d342866cafed493fb5fd531dd4d52878ea8c2",
+      "validity_checkers/StateValidityCheckerGD.h": "8cc3990a5692cb49eb2b0ddb9cd252d4e8a248e07a8734460b9c686d04e54cc0",
+      "validity_checkers/collisionDetection.cpp": "36e983922cb311a6935c808bf230bc8eaa3d9ecaf6944e3f9b536b22306e6228",
+      "validity_checkers/collisionDetection.h": "b6b78e9d89bee656174d044c8bf0691c75e758f7ce4b88eafce1d98be127bfb7",
+      "validity_checkers/model.h": "8ca45fd6439a78876f5085f94db3070f6fd33abca1f17a5a46e14f1e13619176",
+      "run/plan_PCS.cpp": "f5699228cd1c5864a3983a27e077e5a2551f213c78d4305b6413f512c17c8e31",
+      "run/plan_GD.cpp": "1b2523e317ae263e45110567118e29ebaf412c07127e3cb0675769634706234e",
+      "planners/RRT_PCS.cpp": "4ea1a052a5e9f2668fd62918c39f5a3820fc0300158f9cef0d51def3cb226b0f",
+      "planners/CBiRRT_PCS.cpp": "2cf31b3d8dfc89f88c69d21c36208c95484d4829d7b6457738cd67047c42e530",
+      "planners/RRT_GD.cpp": "b1683f5304fb3f52f35e53ccd9e53c2cf8c5533719306b86556e54b4808c31f2",
+      "planners/CBiRRT_GD.cpp": "34e944611ebfd3d8285340e03ecb52aff1c585c9fe82ee78c9e1a435b71f26cf",
+      "planners/SBL_GD.cpp": "dd7b543f60e7ad3e0ce967d5f1d6b19dcb6162253634aeabad8771470afd0cb4"
+    }
+  },
+  "endpoints_saved_only": [
+    {
+      "endpoint": "start",
+      "classification": "RECONSTRUCTED",
+      "historical_status_unchanged": "UNKNOWN_COLLISION_QUALIFICATION",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "source_candidate": {
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_start.json",
+        "index": 52
+      },
+      "branch": [
+        3
+      ],
+      "true_2pi_lifts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "active_coordinates_exactly_unchanged": true,
+      "independent_closure_metrics": {
+        "position_unit": "mm",
+        "loops": [
+          {
+            "position_max_abs": 4.547473508864641e-13,
+            "rotation_matrix_max_abs": 1.1102230246251565e-16
+          }
+        ],
+        "position_max_abs": 4.547473508864641e-13,
+        "rotation_matrix_max_abs": 1.1102230246251565e-16
+      },
+      "limits": {
+        "legal": true,
+        "violations": [],
+        "source_literal_pi_preserved": 3.1416,
+        "planar_q19_policy": null
+      },
+      "passive_l2_delta_rad": 1.0588340994903246e-05,
+      "passive_linf_delta_rad": 8.168801626795563e-06,
+      "selected_q_rad": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ],
+      "full_physical_geometry_or_CCD_qualified": false,
+      "original": {
+        "q_rad": [
+          -0.03,
+          0.33,
+          -0.05,
+          0.0,
+          1.2908,
+          -1.5808,
+          0.0183141,
+          1.06015,
+          -1.25727,
+          -0.193255,
+          0.200755,
+          0.189466
+        ],
+        "independent_metrics": {
+          "position_unit": "mm",
+          "loops": [
+            {
+              "position_max_abs": 0.005602716454632173,
+              "rotation_matrix_max_abs": 5.359871821213135e-06
+            }
+          ],
+          "position_max_abs": 0.005602716454632173,
+          "rotation_matrix_max_abs": 5.359871821213135e-06
+        },
+        "closure_qualified": false,
+        "limits": {
+          "legal": true,
+          "violations": [],
+          "source_literal_pi_preserved": 3.1416,
+          "planar_q19_policy": null
+        },
+        "branch_identity": {
+          "2": {
+            "unique": true,
+            "branch_set": [
+              3
+            ],
+            "signed_shoulder_radius_mm": 2982.5900792802295,
+            "elbow_factor": -0.16757160539318658,
+            "wrist_factor": 0.19940922436779304,
+            "shoulder_sign": 1,
+            "elbow_sign": -1,
+            "wrist_sign": 1,
+            "invariant_rule": "shoulder signed radius; -sin(q3+atan2(c,a)); sin(q5)"
+          }
+        }
+      },
+      "collision": {
+        "status": "CHECKED",
+        "collision": false,
+        "scope": "AUTHOR_DISCRETE_COLLISION_POLICY",
+        "selected_variant": "aligned",
+        "manifest_path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/manifest.json",
+        "manifest_sha256": "c5df871adeea01d6487454dfd16fa217dde779958b5ba08b86ffff0e4f4a6388",
+        "continuous_collision_certificate": false,
+        "variants": {
+          "native": {
+            "native_result": 0,
+            "native_collision": false,
+            "query_count": 87,
+            "query_error_codes": [],
+            "pose_passed": false,
+            "pose_errors": [
+              {
+                "arm": 1,
+                "translation_maxabs_mm": 2.2737367544323206e-13,
+                "rotation_maxabs": 1.1102230246251565e-16
+              },
+              {
+                "arm": 2,
+                "translation_maxabs_mm": 0.015427453546863035,
+                "rotation_maxabs": 1.1102230246251565e-16
+              }
+            ]
+          },
+          "aligned": {
+            "native_result": 0,
+            "native_collision": false,
+            "query_count": 87,
+            "query_error_codes": [],
+            "pose_passed": true,
+            "pose_errors": [
+              {
+                "arm": 1,
+                "translation_maxabs_mm": 2.2737367544323206e-13,
+                "rotation_maxabs": 1.1102230246251565e-16
+              },
+              {
+                "arm": 2,
+                "translation_maxabs_mm": 2.2737367544323206e-13,
+                "rotation_maxabs": 1.1102230246251565e-16
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "endpoint": "goal",
+      "classification": "RECONSTRUCTED",
+      "historical_status_unchanged": "UNKNOWN_COLLISION_QUALIFICATION",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "source_candidate": {
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/V_goal.json",
+        "index": 22
+      },
+      "branch": [
+        1
+      ],
+      "true_2pi_lifts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "active_coordinates_exactly_unchanged": true,
+      "independent_closure_metrics": {
+        "position_unit": "mm",
+        "loops": [
+          {
+            "position_max_abs": 6.821210263296962e-13,
+            "rotation_matrix_max_abs": 3.3306690738754696e-16
+          }
+        ],
+        "position_max_abs": 6.821210263296962e-13,
+        "rotation_matrix_max_abs": 3.3306690738754696e-16
+      },
+      "limits": {
+        "legal": true,
+        "violations": [],
+        "source_literal_pi_preserved": 3.1416,
+        "planar_q19_policy": null
+      },
+      "passive_l2_delta_rad": 6.908982370946026e-06,
+      "passive_linf_delta_rad": 4.893931728755518e-06,
+      "selected_q_rad": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ],
+      "full_physical_geometry_or_CCD_qualified": false,
+      "original": {
+        "q_rad": [
+          1.57,
+          0.55,
+          0.73,
+          0.0,
+          0.2908,
+          0.0092,
+          -1.12171,
+          0.868895,
+          -0.0134552,
+          -1.21367,
+          -1.2759,
+          0.661756
+        ],
+        "independent_metrics": {
+          "position_unit": "mm",
+          "loops": [
+            {
+              "position_max_abs": 0.006258998285090911,
+              "rotation_matrix_max_abs": 7.30940705960732e-06
+            }
+          ],
+          "position_max_abs": 0.006258998285090911,
+          "rotation_matrix_max_abs": 7.30940705960732e-06
+        },
+        "closure_qualified": false,
+        "limits": {
+          "legal": true,
+          "violations": [],
+          "source_literal_pi_preserved": 3.1416,
+          "planar_q19_policy": null
+        },
+        "branch_identity": {
+          "2": {
+            "unique": true,
+            "branch_set": [
+              1
+            ],
+            "signed_shoulder_radius_mm": 2579.721486378592,
+            "elbow_factor": -0.9874468972514884,
+            "wrist_factor": -0.956832279111155,
+            "shoulder_sign": 1,
+            "elbow_sign": -1,
+            "wrist_sign": -1,
+            "invariant_rule": "shoulder signed radius; -sin(q3+atan2(c,a)); sin(q5)"
+          }
+        }
+      },
+      "collision": {
+        "status": "CHECKED",
+        "collision": false,
+        "scope": "AUTHOR_DISCRETE_COLLISION_POLICY",
+        "selected_variant": "aligned",
+        "manifest_path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/manifest.json",
+        "manifest_sha256": "c5df871adeea01d6487454dfd16fa217dde779958b5ba08b86ffff0e4f4a6388",
+        "continuous_collision_certificate": false,
+        "variants": {
+          "native": {
+            "native_result": 0,
+            "native_collision": false,
+            "query_count": 87,
+            "query_error_codes": [],
+            "pose_passed": false,
+            "pose_errors": [
+              {
+                "arm": 1,
+                "translation_maxabs_mm": 2.2737367544323206e-13,
+                "rotation_maxabs": 7.497766242505616e-17
+              },
+              {
+                "arm": 2,
+                "translation_maxabs_mm": 0.015427453546863035,
+                "rotation_maxabs": 1.1102230246251565e-16
+              }
+            ]
+          },
+          "aligned": {
+            "native_result": 0,
+            "native_collision": false,
+            "query_count": 87,
+            "query_error_codes": [],
+            "pose_passed": true,
+            "pose_errors": [
+              {
+                "arm": 1,
+                "translation_maxabs_mm": 2.2737367544323206e-13,
+                "rotation_maxabs": 7.497766242505616e-17
+              },
+              {
+                "arm": 2,
+                "translation_maxabs_mm": 4.547473508864641e-13,
+                "rotation_maxabs": 1.1102230246251565e-16
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "collision_manifest": {
+    "path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/manifest.json",
+    "sha256": "c5df871adeea01d6487454dfd16fa217dde779958b5ba08b86ffff0e4f4a6388",
+    "V_current_byte_comparisons": [
+      {
+        "variant": "native",
+        "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/V_native/collision_batch",
+        "binary_sha256_saved": "6e91ed66c64d5952537865c26afe2ff91ebf8488ab270c92d766c4aa16a528ce",
+        "binary_sha256_current": "6e91ed66c64d5952537865c26afe2ff91ebf8488ab270c92d766c4aa16a528ce",
+        "binary_hash_matches": true,
+        "source_hashes_match": true,
+        "all_manifest_mesh_hashes_match": true,
+        "manifest_mesh_count": 27,
+        "physical_alignment_changes": [],
+        "active_call_statement_count_saved": 87,
+        "tcp_capture_statement": "p4_pose(R6,T6,422.7); p4_pose(R62,T72,400.7);"
+      },
+      {
+        "variant": "aligned",
+        "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/collision_adapter_v3/V_aligned/collision_batch",
+        "binary_sha256_saved": "f3a0a1bccc479a70743f89326df1cfd9369faa155073bd98a29cfc1583a881e5",
+        "binary_sha256_current": "f3a0a1bccc479a70743f89326df1cfd9369faa155073bd98a29cfc1583a881e5",
+        "binary_hash_matches": true,
+        "source_hashes_match": true,
+        "all_manifest_mesh_hashes_match": true,
+        "manifest_mesh_count": 27,
+        "physical_alignment_changes": [
+          "arm2 world base translation uses source APC global coordinates; no mesh local frame changed"
+        ],
+        "active_call_statement_count_saved": 87,
+        "tcp_capture_statement": "p4_pose(R6,T6,422.7); p4_pose(R62,T72,400.7);"
+      }
+    ]
+  },
+  "corrected_apc_stage_saved_record": {
+    "model": "comau_v",
+    "stage_root": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau_industrialScene",
+    "manifest": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau_industrialScene/p4_geometry_consistent_apc_stage_manifest.json",
+    "manifest_sha256": "0253983631c567e81738bc3a911d84a46d77b816cdfb091938a7e0423b81443b",
+    "cpp_after_sha256": "825465213d855f623948c9ee7e263053f67baed7e6907eae4f1549473f516d12",
+    "status": "STAGED_NOT_COMPILED_OR_QUALIFIED",
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-I/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau_industrialScene/proj_classes",
+      "-DP4_MODEL=5",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/spatial_batch_driver.cpp",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/ckcComau_industrialScene/proj_classes/apc_class.cpp",
+      "-o",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/build/p4_full/20261015_R2_SPATIAL01/comau_v_batch"
+    ],
+    "build_wall_s": 1.6671503029997439,
+    "exit_code": 0
+  },
+  "corrected_apc_stage_current_byte_comparisons": {
+    "cpp_hash_matches": true,
+    "manifest_hash_matches": true
+  },
+  "collision_source_static_inventory": {
+    "active_pair_count": 87,
+    "categories": [
+      {
+        "category": "arm1_self",
+        "first_line": 274,
+        "last_line": 287,
+        "active_calls": 14
+      },
+      {
+        "category": "arm2_self",
+        "first_line": 290,
+        "last_line": 303,
+        "active_calls": 14
+      },
+      {
+        "category": "inter_arm",
+        "first_line": 306,
+        "last_line": 321,
+        "active_calls": 16
+      },
+      {
+        "category": "EE_other_arm",
+        "first_line": 324,
+        "last_line": 331,
+        "active_calls": 8
+      },
+      {
+        "category": "box_arm",
+        "first_line": 340,
+        "last_line": 348,
+        "active_calls": 9
+      },
+      {
+        "category": "chassis",
+        "first_line": 364,
+        "last_line": 376,
+        "active_calls": 13
+      },
+      {
+        "category": "conveyor",
+        "first_line": 385,
+        "last_line": 397,
+        "active_calls": 13
+      }
+    ],
+    "load_reference_count": 21,
+    "loaded_unique_files": [
+      "b1.tris",
+      "b2.tris",
+      "base.tris",
+      "base_r.tris",
+      "box_r.tris",
+      "chassis_r.tris",
+      "conveyor_r.tris",
+      "ee.tris",
+      "link1.tris",
+      "link1_r.tris",
+      "link2.tris",
+      "link2_r.tris",
+      "link3.tris",
+      "link3_r.tris",
+      "link4.tris",
+      "link4_r.tris",
+      "link5.tris",
+      "link5_r.tris",
+      "link6.tris"
+    ],
+    "loaded_unique_file_count": 19,
+    "saved_pose_fields": "TCP only; no Rbox/Tbox or per-pair boolean in v3 output",
+    "pair_identity_dynamic_qualification": "NOT_EXECUTED_BY_THIS_REVIEW"
+  },
+  "earliest_missing_gate": "V-specific source tool/box observation contract and PCS/GD local projection, nontrivial RBS, reconstruction and plain/trace qualification. Existing endpoints reused; no V full path established.",
+  "approved_scope": "D080 I method benchmark; II-V full; VI read-only archived; no formal18000 authorization"
+}
