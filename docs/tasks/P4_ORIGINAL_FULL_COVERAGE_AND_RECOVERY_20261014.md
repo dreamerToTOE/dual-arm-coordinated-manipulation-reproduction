@@ -1,5 +1,7 @@
 # P4 全文实验义务与失败恢复任务（D079，不缩减）
 
+> **D080 2026-10-17 用户新批准范围说明**：本文D079逐项原文义务/六环境/22,500次是必须保存的**原论文事实和历史审计基线**，不是D080后要求Codex继续执行的全六环境任务。新授权仅复现环境I–V，正式Table I目标II–V共18,000次；VI三臂及其4,500次完整规划改为只读归档，不追加。D079质量门、原始数据、根因诊断与原文对照不变。执行见 [D080范围决策](../decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md) 与 [D080任务书](P4_D080_FAST_TRACK_IMPLEMENTATION_20261017.md)。
+
 **论文**：Sintov, Borum & Bretl, *Motion Planning of Fully-actuated Closed Kinematic Chains with Revolute Joints: A Comparative Analysis*, IEEE RA-L 2018，DOI 10.1109/LRA.2018.2846806，作者预印本8页。私有原版资料从用户 Library 已核对；执行环境中必须重读作者稿、附录和作者仓库固定版本909bd72。旧审计见 reports/P4_THREE_METHOD_ORIGINAL_AUDIT.md。
 
 **目的**：不再采用“两个平面环境+60调用”替代全论文。下面每条都是应处理的科研义务；旧结果如实标注、不能重新定义成PASS。原论文可复现性不佳时独立重建并明确与原文差异，但**不以重建结果冒充原论文原条件**。
