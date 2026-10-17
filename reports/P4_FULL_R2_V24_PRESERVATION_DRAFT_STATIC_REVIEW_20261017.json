@@ -1,0 +1,44 @@
+{
+  "schema": "P4_V24_PRESERVATION_DRAFT_STATIC_REVIEW_V1",
+  "status": "PASS_STATIC_DRAFT_ONLY_NOT_RUN",
+  "created_at_utc": "2026-10-17T07:36:07.045194+00:00",
+  "source": {
+    "path": "reports/p4_full_audit/recovery_tools/audit_preservation_v24.py",
+    "sha256": "0e3213361fc543a0f5ac71d9fe5a546d4e231352952bc463916fcc9503bf418a"
+  },
+  "checks": {
+    "AST_parse_only_no_import_or_tool_execution": true,
+    "only_standard_library_imports": true,
+    "baseline_tar_other_worktree_foundation_exact_V23_copy": true,
+    "fixed_baseline_SHA_1028_57_8482891_passed_gate": true,
+    "actual_POST_path_and_SHA_required_parameters": true,
+    "no_future_POST_SHA_or_checktotal_predicted": true,
+    "engineering_personnel_external_true_required": true,
+    "old41_new42_science31_engineering11": true,
+    "coverage178_to182_exact_prefix_211_formal45x500": true,
+    "explicit_requested_SBL_related_set": true,
+    "fixed_V23_history_HEAD_and_real_SHA": true,
+    "zero_engineering_runtime_and_compiler_reap_empty_group": true,
+    "complete5TU_dependency_audit_delegated_to_real_POST_bindings": true,
+    "source5_new0_VI974_remaining0_formal0_22500": true,
+    "exclusive_one_new_output_only": true,
+    "main_guard": true
+  },
+  "checks_passed": 16,
+  "checks_failed": 0,
+  "fixed_V23_files": {
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V23.json": "a8435b0c6321062e9bb4627012c5288c120af176b048a6195ea46db795df0ca7",
+    "reports/P4_FULL_R2_CBIRRT_NR_PATH_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv": "cd0c5d21c8ff4333863d88f580e9d86f9e34842e2be621ce23da8bbd87380aad",
+    "results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V23.json": "b61dfee56fa04b8589ccc870f824d651c403d152086b2fc145323be9022aed02"
+  },
+  "execution_preconditions": [
+    "Actual SBL BUILD01 execution and real independent engineering POST with personnel/external/engineering true; no future SHA/checktotal prediction",
+    "Root supplies --external-post and --external-post-sha256 from actual certificate and --new-csv from actual V24 coverage",
+    "Actual V24 ledger42=31science+11engineering, coverage178->182 and external actual charge must already exist",
+    "Independent review of this draft before invoking it"
+  ],
+  "new_scientific_calls": 0,
+  "new_compiles": 0,
+  "new_claims": 0,
+  "new_ledger_or_preservation_outputs": 0
+}

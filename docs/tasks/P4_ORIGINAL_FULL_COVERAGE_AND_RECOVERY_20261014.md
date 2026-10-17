@@ -261,3 +261,12 @@ GNUtime9.05 7.51 1.18 0，上界9.06wall/8.71CPU替换内部样本一次。V22�
 NR393 counted/科学loop/即时close writer逐AST不变，完整散文件与3447成员tar逐字核验/fsync，真双worker EOF/exit0/reaped/空组/diag0。GNUtime19.58 15.94 1.87 0，费用上界19.59wall/17.83CPU替换内部样本一次；P无新solve/RBS/IK/投影/采样。V23真实41execution=31科学账+10工程，charged815.475705375994/734.288923，余额仅上界2784.524294624006/6465.711077，历史未测尾UNKNOWN保持。v3账保留旧费用/历史并逐execution明确source累计5、本P新增0；211×178保前174，V23七组保全实际PASS空mismatch，1028旧科学、57崩溃文件8482891B/tar、五其他工作树13未提交及V22完整保持。
 
 离散证书不证明CCD、实体rod/省略pair安全、nativeKDL等价、全局成功率、RSS或PCS复杂障碍优势；全部211义务、原45×500/1000s与投影/点对/Fig3–5/TableI–II/消融不缩。VI974/974余0、正式0/22500。下一SBL专属默认projection公有线性作用观察、lazy删树代际/未初始化a_chain不读、原bridge/M契约，先工程版本化静审与冻结；RSS独立继续原RBS/分布/入口诊断，不增VI。端到端后可重复cost pilot和正式预算另审，不P2/Isaac/提前结题Word/PDF。
+
+
+## 2026-10-17 SBL_PCS 单目标构建资格通过与 V24
+
+973378be 冻结唯一 BUILD01，原 SBL 控制/既有 R2 PCS 数值、五TU/667真实依赖/157277B完整stdout、受管遗漏0，16原body及全五文件独立逆恢复；compiler exit0/reaped/前后空组/diag空。独立POST13129/13129、零失败，SHA f05c21a119c60d4e9fd6ddfd6382b7fa9cd47604161e28fe00a225f863ac2e47；只工程 BUILT_NOT_QUERIED，binary/setup/query/solve/VI/formal均0。执行前纠正我方DIAGNOSIS拼接、SBL原step=.8（非RRT2.6）和两grid维数观察，修前字节保全；原historical connect a_chain风险不改，driver拒绝solve。
+
+GNUtime21.89/29.17/6.43/0，上界21.90wall/35.62CPU在45/90内，只替换内部样本一次。V24实际42execution=31科学账+11工程，累计837.375705375994/769.908923，剩额仅上界2762.624294624006/6430.091077，历史未测尾UNKNOWN。真实source solve累计5/本项新增0；完整211×182保前178、相关T02/T05/T08/T11/T17/T25仅工程证据。V24七组保全实际PASS，旧1028科学/57崩溃8482891B及tar/另5树13未提交/V23全保持。主POST reports/P4_FULL_R2_ABB_SBL_PCS_BUILD01_POST_TASK_20261017.md；最新表 P4_FULL_R2_SBL_PCS_BUILD01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv/.md，原短stem表及逐字别名补记均保留。
+
+下一首次setup公有13/默认projection/实际库绑定须独立静审与另冻10/20；未运行，不把公有映射冒称protected存储。ABB RSS固定32数学草案已准备但监督/收尾未齐，不执行或当完整RSS。原失败/UNKNOWN保持；VI974/974余0、正式0/22500、211全部义务与原统计规模不缩。端到端后可重复cost pilot/正式预算另审，不P2/Isaac/提前结题Word/PDF。

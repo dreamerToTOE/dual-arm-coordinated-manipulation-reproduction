@@ -1,0 +1,140 @@
+{
+  "schema": "P4_RECOVERY_IMMUTABLE_VERIFICATION_V24",
+  "created_at_utc": "2026-10-17T07:40:08.675444+00:00",
+  "head_at_verification": "973378be9a311e70b789f5b1c5f64b2e879331be",
+  "analysis_source": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/p4_full_audit/recovery_tools/audit_preservation_v24.py",
+  "analysis_source_sha256": "0e3213361fc543a0f5ac71d9fe5a546d4e231352952bc463916fcc9503bf418a",
+  "baseline_manifest": "results/p4_full/20261015_RECOVERY_BASELINE_MANIFEST.json",
+  "baseline_manifest_sha256": "ed334ff481e304037acdbf3897c386cf8246e64b9439d841ec18c14e0fb60235",
+  "old_scientific_files": 1028,
+  "old_scientific_mismatches": [],
+  "crash_uncommitted_files": 57,
+  "crash_uncommitted_bytes": 8482891,
+  "crash_uncommitted_mismatches": [],
+  "external_archive": {
+    "path": "/home/ubuntu2004/Documents/Codex/2026-10-15/codex-p4-https-github-com-dreamertotoe/work/recovery_20261015/preexisting_uncommitted.tar.gz",
+    "expected_sha256": "2a0dff95fd040b98124358289b61a6dc24daa9d94f747315f15deeb31f06618c",
+    "actual_sha256": "2a0dff95fd040b98124358289b61a6dc24daa9d94f747315f15deeb31f06618c",
+    "sha_matches": true,
+    "file_members": 57,
+    "archive_member_mismatches": [],
+    "read_policy": "Stream file member bytes only; no extraction or overwrite."
+  },
+  "other_worktrees": 5,
+  "other_uncommitted_files": 13,
+  "other_worktree_results": [
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction",
+      "expected_head": "fe7d3dbe996652ffba7c43de6fcae054ca5cf956",
+      "actual_head": "fe7d3dbe996652ffba7c43de6fcae054ca5cf956",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 5,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2",
+      "expected_head": "c0012b3d4a5cec4cf0ec84342c386f8eb1ba7ca3",
+      "actual_head": "c0012b3d4a5cec4cf0ec84342c386f8eb1ba7ca3",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 8,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2-audit",
+      "expected_head": "f4f9d3b97e80481dbc74ca419ac9b390447e4eef",
+      "actual_head": "f4f9d3b97e80481dbc74ca419ac9b390447e4eef",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 0,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-report",
+      "expected_head": "02f93464b3362a5b52c6c68ed624d67a091ef541",
+      "actual_head": "02f93464b3362a5b52c6c68ed624d67a091ef541",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 0,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-three-methods",
+      "expected_head": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+      "actual_head": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 0,
+      "uncommitted_mismatches": []
+    }
+  ],
+  "other_worktree_mismatches": [],
+  "coverage": {
+    "old_csv": "reports/P4_FULL_R2_CBIRRT_NR_PATH_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+    "new_csv": "reports/P4_FULL_R2_SBL_PCS_BUILD01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+    "old_sha256": "cd0c5d21c8ff4333863d88f580e9d86f9e34842e2be621ce23da8bbd87380aad",
+    "new_sha256": "8536a239e117d4008363b86b4e7e331ac3b25a96d97fc4ba5a77950ab001a3bd",
+    "rows": 211,
+    "previous_columns_preserved": 178,
+    "new_column_count": 182,
+    "tableI_cells": 45,
+    "formal_trials": 0,
+    "formal_required": 22500,
+    "mismatches": []
+  },
+  "ledger": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V24.json",
+    "sha256": "adee31c9150354e4b145718b91f70a4451eaf9bf0f300e067905d6776b48d81e",
+    "count": 42,
+    "science_count": 31,
+    "engineering_count": 11,
+    "r2_remaining": {
+      "wall_s": 2762.624294624006,
+      "cpu_s": 6430.091077
+    },
+    "mismatches": []
+  },
+  "engineering_build": {
+    "run_id": "20261017_R2_ABB_SBL_PCS_BUILD01",
+    "execution": "results/p4_full/20261017_R2_ABB_SBL_PCS_BUILD01/execution.json",
+    "execution_sha256": "17d788c53bfceb4741d550cb95758ee1d1cac6f7c834909131184ff3845ac434",
+    "actual_post": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_BUILD01_SAVED_INDEPENDENT_POST_20261017.json",
+    "actual_post_sha256": "f05c21a119c60d4e9fd6ddfd6382b7fa9cd47604161e28fe00a225f863ac2e47",
+    "actual_independent_checks": 13129,
+    "translation_units_certified_by_actual_post": 5
+  },
+  "authoritative_source_solve_accounting": {
+    "previous": 5,
+    "new": 0,
+    "total": 5,
+    "executions_enumerated": 42
+  },
+  "historical_snapshots": [
+    {
+      "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V23.json",
+      "sha256": "a8435b0c6321062e9bb4627012c5288c120af176b048a6195ea46db795df0ca7",
+      "fixed_sha256": "a8435b0c6321062e9bb4627012c5288c120af176b048a6195ea46db795df0ca7",
+      "matches80e2b9e": true
+    },
+    {
+      "path": "reports/P4_FULL_R2_CBIRRT_NR_PATH_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+      "sha256": "cd0c5d21c8ff4333863d88f580e9d86f9e34842e2be621ce23da8bbd87380aad",
+      "fixed_sha256": "cd0c5d21c8ff4333863d88f580e9d86f9e34842e2be621ce23da8bbd87380aad",
+      "matches80e2b9e": true
+    },
+    {
+      "path": "results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V23.json",
+      "sha256": "b61dfee56fa04b8589ccc870f824d651c403d152086b2fc145323be9022aed02",
+      "fixed_sha256": "b61dfee56fa04b8589ccc870f824d651c403d152086b2fc145323be9022aed02",
+      "matches80e2b9e": true
+    }
+  ],
+  "historical_mismatches": [],
+  "new_scientific_calls": 0,
+  "analysis_cost": {
+    "wall_s": 1.7988788319999003,
+    "cpu_s": 1.757432652
+  },
+  "passed": true
+}

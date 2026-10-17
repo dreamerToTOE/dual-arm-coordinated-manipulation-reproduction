@@ -1,0 +1,43 @@
+{
+  "schema": "P4_ABB_RSS_FIXED32_STATIC_PREPARATION_V1",
+  "status": "PASS_STATIC_PREPARATION_ONLY_NOT_EXECUTION_READY",
+  "created_at_utc": "2026-10-17T07:13:08.139576+00:00",
+  "checks": {
+    "AST_parse_no_project_import_or_execution": true,
+    "four_fixed_saved_case_ids": true,
+    "exact32_fixed_arm2_branches": true,
+    "original_arm1_provenance_not_passive_identity": true,
+    "draft_and_accounting_not_frozen": true,
+    "fixed10wall20CPU": true,
+    "all23_bound_files_match_current_saved_bytes": true,
+    "corrected_binary_fixed": true,
+    "native_and_corrected_separate_no_new_build": true,
+    "new_outputs_collision_unknown_separate_gate": true,
+    "no_VI_RBS_solve_sampling_formal": true
+  },
+  "checks_passed": 11,
+  "checks_failed": 0,
+  "files": [
+    {
+      "path": "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_draft.py",
+      "sha256": "9ef810d81bc87bb670dc68baefcbaf7974abd926655817e428c4ed6b661c585a"
+    },
+    {
+      "path": "configs/p4_full/r2_abb_rss_branch_fixed32_math_v1.draft.json",
+      "sha256": "1bea1b060542c1ef6f478581817e1dda963622600bd9ad3119c99616601da656"
+    },
+    {
+      "path": "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_PRE_DRAFT_20261017.md",
+      "sha256": "0265856392197a93172ddee41df6bd89a167a701e4c65813545c791cce9b301f"
+    }
+  ],
+  "pending_before_science": [
+    "Independent/root static review of draft runner and protocol",
+    "Root freezes latest actual accounting snapshot SHA and remaining10/20 within3600/7200",
+    "Reviewed external one-shot launcher and hard envelope, not yet prepared",
+    "Commit/freeze final source/protocol before one actual execution; real independent POST afterwards"
+  ],
+  "new_scientific_calls": 0,
+  "new_claims": 0,
+  "new_builds": 0
+}
