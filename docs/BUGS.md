@@ -1027,3 +1027,12 @@ c5a75ab唯一BUILD03 BUILT_NOT_QUERIED、compiler exit0/reaped/空组/diag0，�
 GNUtime33.73 44.96 9.87 0，上界33.74wall/54.85CPU只替换内部样本一次。V21实际39=29科学账+10工程，累计786.8257053759941wall/707.748923CPU，余额上界2813.174294624006/6492.251077，历史未测尾UNKNOWN。211×170保前166列，V21七组保全PASS，旧1028科学/57crash及tar/另5树13未提交/V20保持。
 
 下一仅另冻II/A01/seed7/range2.6/原10秒单solve外30/60；EXACT候选需完整原M独立路径另120/240/max2048资格。RSS静态下一门报告已另交，SBL源码.05与γ=.2差异保留待裁决；不新增VI。VI974余0、正式0/22500、211全部义务与原规模不缩，端到端后成本pilot/正式预算另审，不P2/Isaac/提前结题。
+
+
+## 2026-10-17 CBiRRT_NR SOLVE01完整候选与V22接续交付
+
+119a1b3冻结唯一II/A01/seed7/range2.6/原10秒solve，source EXACT非approximate、16Motion、12里程点、11真实回溯全true。原M长度65/65/17/65/129/129/65/33/33/33/65，699引用完整连接689唯一节点/688叶，bridge16→14两端q不同保留。原stdout/stderr/原生paths、GD29/project45/midpoint44/vectorRBS365/stateRBS46 false全保存；单write/EOF、严格唯一JSON、双actualEOF、exit0/reaped/空组、diag0。独立保存POST16711/16711，SHA549d585f1fb2be390b28a0d64dfb90815e58092a9efd7e3c4d478abebe381ef1，只证入口/完整素材/费用，source状态与independent_path_qualified=false不回写。主POST见reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE01_POST_TASK_20261016.md。
+
+GNUtime9.05 7.51 1.18 0，上界9.06wall/8.71CPU替换内部样本一次。V22真实40execution=30科学账+10工程，charged795.885705375994/716.458923，余额仅上界2804.114294624006/6483.541077，历史未测尾UNKNOWN保持。完整211×174保前170。旧账遗留solve累计字段未覆盖所有新入口，原字节保留；V22_ADDENDUM按真实dispatch逐run修正为此前4+本次1=5（含PCS CBi S01失败），正式仍0/22500，不将5调用当5合格路径。
+
+下一完整689节点P先独立静审/真实证书及V22账绑定、源码协议commit冻结，再唯一120wall/240CPU/max2048；不重solve/RBS、补点或截尾。旧413逐文件fsync耗104.88wall已识别工程成本风险，P拟沿NR393原即时close写法与科学AST，最终逐字单tar/fsync耐久证据及全预算核验；实际资格尚未执行。RSS新静态契约保留SBL .05/冻结γ=.2差异、RRT禁exact、CBi serial导出与SBL -2风险，仅源码证据，0新RSS/VI。VI974/974余0、全部211义务及原45×500/1000s/投影/可见性/图表/消融不缩；端到端后先可重复成本pilot再申请正式预算，不P2/Isaac/提前结题。

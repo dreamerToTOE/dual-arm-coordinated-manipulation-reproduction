@@ -1,0 +1,555 @@
+{
+  "schema": "P4_R2_ABB_RSS_SOURCE_CONTRACT_STATIC_V1",
+  "created_at_utc": "2026-10-16T13:03:43.600026+00:00",
+  "review_base_commit": "b67668db77df5b442288bd12614a402bb2c4bcf2",
+  "author_commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+  "source_root": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning",
+  "scope": "Saved/source text only. Append this Markdown/JSON. No algorithm/sample/protocol/claim changes.",
+  "zero_calls": {
+    "compiler": 0,
+    "project_import": 0,
+    "binary": 0,
+    "FK": 0,
+    "IK": 0,
+    "Jacobian": 0,
+    "collision": 0,
+    "random": 0,
+    "sampling": 0,
+    "RBS": 0,
+    "solve": 0,
+    "protocol_claim_generation": 0,
+    "new_candidates": 0,
+    "VI_candidates": 0
+  },
+  "contracts": {
+    "state_and_branch": {
+      "q_order": "[arm1 q0..5, arm2 q0..5]",
+      "active_chain_0": "q1 fixed; calc_specific_IK_solution_R1(Q,q1,b) solves arm2 q2",
+      "ik_vector_0": "arm2 IK branch when arm1 active",
+      "ik_vector_1": "arm1 IK branch when arm2 active",
+      "minus2": "Planner-assigned singular-sample marker, not a Jacobian rank result",
+      "saved_active_branch_warning": "fixed_candidates.active_branch/native_active_ik.branch is K arm1 from given singular arm2. It is not the RBS active_chain=0 passive-arm2 ik_sol.",
+      "identify_match": "derived StateValidityChecker normDistance is raw Euclidean q distance; match<0.1; returns first matching enumerated branch, not full singular branch set",
+      "locations": [
+        "StateValidityCheckerRSS.cpp:23-40",
+        "StateValidityCheckerRSS.cpp:140-161",
+        "StateValidityCheckerRSS.cpp:322-362",
+        "StateValidityCheckerRSS.cpp:367-371"
+      ]
+    },
+    "sampler": {
+      "probability": "RRT nongGoal .2; CBiRRT .20; SBL .05 despite20%comment. Frozen gamma .2 retained; no parameter changed.",
+      "modes": "rand()%3 once outside retry:mode0 q2[2]=-PI_/2,q2[4]=0;mode1 q2[4]=0;mode2 q2[2]=-PI_/2",
+      "acceptance": "IsRobotsFeasible_R2(Qinv,q2), random feasible arm1 root, update state, identify_state_ik only ik[1]!=-1 explicitly required, !collision_state(getPMatrix(),q1,q2)",
+      "bounds_and_rank": "No separate joint-bounds, true-Jacobian-rank or physical closure gate in sampleSingular; solved arm1 IK checks its original bounds but given arm2 sampled in[-PI_,PI_] does not receive a full-12 check there.",
+      "termination": "do/while(!valid) has no cap/ptc. mode fixed through retry. Outer solve ptc cannot be polled while sampler blocks. All3 callers ignore boolean result then set singular marker; current function returns only aftervalid.",
+      "locations": [
+        "StateValidityCheckerRSS.cpp:255-305",
+        "RRT_RSS.cpp:154-170",
+        "CBiRRT_RSS.cpp:349-357",
+        "SBL_RSS.cpp:192-212"
+      ]
+    },
+    "RRT": {
+      "singular_state": "sg=true after sampleSingular; node -2 only if sg&&reach. A range-truncated target is projected and stored as ordinary branch.",
+      "branch_regular": "inherit parent branch; from -2 parent randomly choose0 or3 only",
+      "branch_target": "goal reached uses ik_goal[0] and requires regular parent samebranch; singular target reached uses regular parentbranch and refuses -2 parent",
+      "RBS_arguments": "regular->singular check(s1,s2,sg=2,a=0,b=parent); singular->regular check(...sg=1,a=0,b=selected); ordinary check(s1,s2,a=0,b)",
+      "reconstruct": "same ordered endpoint marker rules; final path reverses parent chain. Singular end uses sg2,parentbranch; singular start uses sg1,nextbranch; ordinary equalbranch only.",
+      "exact_goal_control": "if(0&&sat) disables exact assignment/break. With initial solution=nullptr, nonnull approxsol is ultimately marked approximate; final_solved=false. Solved print and bool PlannerStatus are insufficient exact proof.",
+      "locations": [
+        "RRT_RSS.cpp:187-240",
+        "RRT_RSS.cpp:248-275",
+        "RRT_RSS.cpp:292-323",
+        "RRT_RSS.cpp:393-407"
+      ]
+    },
+    "CBiRRT": {
+      "mode": "1 ordinary extend;2 connect to tree target;3 singular-sample extend. solve calls grow(mode1or3,count500), otherTree grow(mode2,count500). grow loop has no ptc.",
+      "branch_regular": "from -2 parent rand()%8, otherwise inherit; mode2 reach takes targetbranch, rejects both-2 or mismatched regular branches; mode3 reach takes parentbranch and rejects -2 parent",
+      "RBS_arguments": "mode3&&reach sg2; else parent-2 sg1; else ordinary,a0,b. node -2 only mode3&&reach.",
+      "singular_connect_gap": "mode2 reach regular parent->-2 target is not routed to sg2; it uses ordinary RBS and stores inherited regular branch. mode2 from-2 parent->regular does use sg1. This asymmetry is literal source; runtime reachability/impact untested.",
+      "reconstruct": "save2file uses independent serial reconstruct, not reconstructRBS. n=int(si_distance/.1); fori0..n interpolate i/n, choose regular sidebranch, calc_specific_IK_solution_R1, push point; no collision callback. n0 divides0; both-2 or unequalordinary leaves ik_sol uninitialized.",
+      "postprocess": "smoothPath call commented. No successful reconstruction return propagated from void save2file to solve.",
+      "locations": [
+        "CBiRRT_RSS.cpp:130-251",
+        "CBiRRT_RSS.cpp:349-372",
+        "CBiRRT_RSS.cpp:423-428",
+        "CBiRRT_RSS.cpp:565-661"
+      ]
+    },
+    "SBL": {
+      "singular_state": "sg=true after sampler; choose parent from same occupied projection grid cell, no explicit tree-internal both-2 exclusion; newnode valid=false forlazycheck and branch=-2",
+      "branch_regular": "from -2 parent uses current tree root endpoint branch; startTree toggled before this expression. Else inherit parentbranch. No RRT0/3 random or CBiRRT8-way choice.",
+      "lazy_arguments": "parent-2 priority->sg1,b=child; else child-2->sg2,b=parent; else equalregular ordinary,a0,b=child",
+      "reconstruct": "final path startside reversed,goalside forward; currentend-2 priority->sg2,b=previous; else previous-2->sg1,b=current; else equalregular ordinary. Exactlyonesingular direction andbranch consistent under reversal.",
+      "both_singular": "tree-interconnect rejectsboth-2, but treeinternal relation notexcluded by sample creation. lazy uses sg1,b=-2; reconstruct uses sg2,b=-2. IKsolve_rob indexes8-element arrays with givenbranch and has no lowerbound guard; do not execute this undefinedbehavior path merely toconfirm.",
+      "failure_propagation": "save2filevoid; reconstructionfalse prints/returns locally; checkSolution continues true andsolve canaddsolution.",
+      "locations": [
+        "SBL_RSS.cpp:155-157",
+        "SBL_RSS.cpp:192-264",
+        "SBL_RSS.cpp:304-362",
+        "SBL_RSS.cpp:380-411",
+        "SBL_RSS.cpp:611-624",
+        "SBL_RSS.h:164-170"
+      ]
+    },
+    "RBS_and_trace": {
+      "distance": "raw12angleEuclidean; arithmetic component midpoint, no periodic shortestdistance",
+      "ordinary_checker": "leaf d<.05 first; then fail depth>150; midpoint->fixedbranch projection->conditionalcollision; recurse left thenright shortcircuit; depthinitial0",
+      "singular_checker": "sg1 referencefirst,else referencesecond. Sameleaf/depth first; projectmidpoint; if midpoint->reference distance<15*.05=.75 returntrue. Otherwise calls ordinary overload forbothchildren, dropping reference.",
+      "ordinary_trace": "push exacttwoendpoints first; iteration++ before leaf/depth; projectmidpoint,insert inorderedlist,recurseordinary. Therefore one-nonleaf-depth stricter thanchecker at boundary.",
+      "singular_trace": "samefirstlayerreference/shortcut, but shortcut return happens BEFORE midpointinsertion. Childrecursionordinary. Can return true withonly endpoints whilehaving checked a midpoint notin output.",
+      "return_relation": "RRT/SBL caller directions agree for exactlyonesingular; depth/shortcut output gaps still need independentaudit. CBiRRT has entirelydifferent exportedpath control.",
+      "locations": [
+        "StateValidityCheckerRSS.cpp:388-496",
+        "StateValidityCheckerRSS.cpp:501-624",
+        "StateValidityCheckerRSS.h:222-224"
+      ]
+    },
+    "predicate_policy": {
+      "isValidRBS": "IKproject fixedbranch false->false; !withObs or !collision_state(P,q1,q2)->true; elsefalse; withObs defaulttrue",
+      "checkEE": "No checkEE function/call in inspected ABB RSS source; must not import Comau TCPz>=10 predicate into ABB byname.",
+      "limits": "fixedbranch IK only checks solved arm bounds withinclude_joint_limits=true; no separate completeactive+passive jointbounds call in isValidRBS. Independentfull12 bounds audit remainsnecessary.",
+      "collision_return": "source collision_state returns1 for CloserThanTolerance==1;2 on rodinvalid condition;0 else. Boolean !predicate requires0; APIquery returncodes0 aredistinct. Source PQPtolerance8 retained.",
+      "endpoint_assumption": "checker assumesvalidendpoints; leaf mayreturnwithoutmidpoint/collision. plan_RSS global isStateValid returnstrue; planning bounds roundmanyangles and q6±PI_ unlike originalmechanical±400degrees. Mustfreeze these distinctions.",
+      "locations": [
+        "StateValidityCheckerRSS.cpp:140-161",
+        "StateValidityCheckerRSS.cpp:388-398",
+        "StateValidityCheckerRSS.h:222",
+        "apc_class.cpp:114-244",
+        "collisionDetection.cpp:263",
+        "collisionDetection.cpp:480-493",
+        "plan_RSS.cpp:41-43",
+        "plan_RSS.cpp:79-104"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "C01",
+      "fact": "All main RSS localcheck paths fix active_chain0, but leave-singularity branchchoices differ: RRT{0,3},CBiRRT{0..7},SBL current-rootbranch.",
+      "classification": "AUTHOR_CONTROL_NOT_UNIFIED",
+      "qualification": "No proof these choices cover mathematically adjacentbranches; do not harmonize silently."
+    },
+    {
+      "id": "C02",
+      "fact": "CBiRRT mode2 regular->singular target uses ordinarycheck; mode3 singularsample uses sg2.",
+      "classification": "DEFINITE_SOURCE_ASYMMETRY_RUNTIME_EFFECT_UNKNOWN"
+    },
+    {
+      "id": "C03",
+      "fact": "CBiRRT exportedpath is .1serial projection withoutcollision check, not its .05RBS checker/reconstructRBS.",
+      "classification": "DEFINITE_CHECK_EXPORT_DIFFERENCE_RUNTIME_EFFECT_UNKNOWN"
+    },
+    {
+      "id": "C04",
+      "fact": "RRT exactgoal branch disabled if0; approximatefallback remains.",
+      "classification": "DEFINITE_ENTRY_CONTROL_BLOCKER_FOR_LITERAL_EXACT_STATUS"
+    },
+    {
+      "id": "C05",
+      "fact": "RBScheck vsRBSreconstruct differs maxnonleaf depth byone andsingularshortcut outputomits acceptedmidpoint.",
+      "classification": "DEFINITE_STATIC_DIFFERENCE_NO_ACTUAL_COUNTEREXAMPLE_RUN"
+    },
+    {
+      "id": "C06",
+      "fact": "SBLbothsingular treeedge canpassto branch-2; lazy andtrace chooseopposite singularpriorities.",
+      "classification": "STATIC_NEGATIVE_INDEX_RISK_NOT_RUN"
+    },
+    {
+      "id": "C07",
+      "fact": "voidsave2filefailure notpropagated tosolver.",
+      "classification": "DEFINITE_CONTROLFLOW_REQUIRES_INDEPENDENT_PATH_GATE"
+    },
+    {
+      "id": "C08",
+      "fact": "sampleSingular infiniteconditionalretry hasno ptc, andno explicittrue rank/fullbounds gate.",
+      "classification": "AUTHOR_IMPLEMENTATION_RUNTIME_TERMINATION_UNKNOWN"
+    },
+    {
+      "id": "C09",
+      "fact": "Sourceall-branch IKproject(q1,q2,active_chain) helper hasnomatchbreak andfallsafterfull loop i==8; inspectedmainRSSproduction/RBS calls usefixedbranch helperinstead. Auxiliarysample_q conjunctivecollision&&badlimits differs singularsampler andisnotmainuniformsource.",
+      "classification": "AUXILIARY_SOURCE_ONLY_NOT_SUBSTITUTE_FOR_MAIN_PATH",
+      "locations": [
+        "StateValidityCheckerRSS.cpp:165-193",
+        "StateValidityCheckerRSS.cpp:196-251"
+      ]
+    }
+  ],
+  "saved_clear_fixtures": [
+    {
+      "case_id": "II_obs0681",
+      "environment": "II",
+      "source_index": 28,
+      "mode": 1,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "7e60418abd9d15d8d89ab8ddb87781ba3235867777b18d26875d3749be117a40"
+    },
+    {
+      "case_id": "II_obs0683",
+      "environment": "II",
+      "source_index": 28,
+      "mode": 1,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "e8b4c2f23eb5efb0664acc8d16dc4283663901ae500c06ebf1cdd7f50df90c39"
+    },
+    {
+      "case_id": "II_obs0685",
+      "environment": "II",
+      "source_index": 28,
+      "mode": 1,
+      "active_branch": 5,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "f8d266026b575f74c63b8a7fdbaa8963b7b5141e1588abf3574c8ca536974bd9"
+    },
+    {
+      "case_id": "II_obs0687",
+      "environment": "II",
+      "source_index": 28,
+      "mode": 1,
+      "active_branch": 7,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "a1639d769b31334455399b0abf443c26ca707873fb69675689b32efe5fc3186c"
+    },
+    {
+      "case_id": "II_obs0689",
+      "environment": "II",
+      "source_index": 28,
+      "mode": 2,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "1964e1e5716987f53735ee873761dea9d7400760af4e0287a140ee24e1235dec"
+    },
+    {
+      "case_id": "II_obs0691",
+      "environment": "II",
+      "source_index": 28,
+      "mode": 2,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "9f8963ad1b15c3c6043fdaacbfe4599d5433528784826e0885c387efdcdb1dc4"
+    },
+    {
+      "case_id": "II_obs2097",
+      "environment": "II",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "79b8e329fc64dc0135042eef0853d81c08fa9bb874962a57db7bdce12818efd2"
+    },
+    {
+      "case_id": "II_obs2099",
+      "environment": "II",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "0e9e8129396be47660d6edddd35d4a80a3e671419e459857bbf5de2f4d6c1ab1"
+    },
+    {
+      "case_id": "II_obs2101",
+      "environment": "II",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 5,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "a67483fb030c9a12647b3435b122fe73232a3072031cd138f17a1ff2138a9a1c"
+    },
+    {
+      "case_id": "II_obs2103",
+      "environment": "II",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 7,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "9680e6f40129a1b64ef3cbc48f09d8c88be62bbf0f4518106c64dd25949736e3"
+    },
+    {
+      "case_id": "III_obs1065",
+      "environment": "III",
+      "source_index": 44,
+      "mode": 1,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "6fd19619d1b4781a5367f496de0a3176d0c250c6558c0f5f7eb60f5c63f8a670"
+    },
+    {
+      "case_id": "III_obs1067",
+      "environment": "III",
+      "source_index": 44,
+      "mode": 1,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "4fe931d42ad6a492e89dbfb1a0ab38b6b957beae8dcad157fc079d2dfd2fc0be"
+    },
+    {
+      "case_id": "III_obs1073",
+      "environment": "III",
+      "source_index": 44,
+      "mode": 2,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "d173020bd06ee258822e10479dc9c90ad31ded254a3f8a4f745dd71567cdfb04"
+    },
+    {
+      "case_id": "III_obs1075",
+      "environment": "III",
+      "source_index": 44,
+      "mode": 2,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "a69db38bb22b8c36f937da92d0d1b9668f9d28bb31c33c1679ed14414d1c19de"
+    },
+    {
+      "case_id": "III_obs2009",
+      "environment": "III",
+      "source_index": 83,
+      "mode": 2,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "9f1656f7839dc8acf65a77c131b8ff2c51310918559d2e46d9ab9d2b5ef7af03"
+    },
+    {
+      "case_id": "III_obs2011",
+      "environment": "III",
+      "source_index": 83,
+      "mode": 2,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "03fbdd749723ab79583e85b6601f7ab4388c5a3e90dc1c9fc5f42fd10b20cddf"
+    },
+    {
+      "case_id": "III_obs2096",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 0,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "2494885f7f736100b609be286d4d8f98a31242f3d18e9c267831ac8e40bfd4c8"
+    },
+    {
+      "case_id": "III_obs2097",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "0f099d06db093dcdbce8c449ddc33f9615670fcad420c46fbc944bdf76aa836b"
+    },
+    {
+      "case_id": "III_obs2098",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 2,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "d41b14ae2d220ac5061f64776833b77b4a6f22688a4bc37d7b8a40a5bfffdcc8"
+    },
+    {
+      "case_id": "III_obs2099",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "0a6a2146913ad26b9af91d8a099c4fd2d7b9618c46f306ebbfb265e0f00e19b3"
+    },
+    {
+      "case_id": "III_obs2100",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 4,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "2f1910d9a9d24da7ac97d8e4a35a676d4482df63b7d3b094bf60d51d2a86d6d1"
+    },
+    {
+      "case_id": "III_obs2101",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 5,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "789a11f705d6cc982ac22db221af71717788eed5cdf74f62d6dceee49522e753"
+    },
+    {
+      "case_id": "III_obs2102",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 6,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "beb7ac8283b5d3fdaa31a63df27133a0ad3829b23031378f3f5c90510e05f728"
+    },
+    {
+      "case_id": "III_obs2103",
+      "environment": "III",
+      "source_index": 87,
+      "mode": 1,
+      "active_branch": 7,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "0e53e9142d4cc07029332901c7a5fe711a8ac470a933ad2dc86d3f3e2cba0bf9"
+    },
+    {
+      "case_id": "III_obs2201",
+      "environment": "III",
+      "source_index": 91,
+      "mode": 2,
+      "active_branch": 1,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "90e7699fdf190eb2bf48f30766d930a467eb7f9c14b8029740586b4f117ceeb3"
+    },
+    {
+      "case_id": "III_obs2203",
+      "environment": "III",
+      "source_index": 91,
+      "mode": 2,
+      "active_branch": 3,
+      "saved_passive_rank": 5,
+      "original_record_sha256_canonical_json": "ee91cc168863a7adc743a8509cf9959faea3ff31b7850b39cd72f85d11e8696e"
+    }
+  ],
+  "saved_clear_counts": {
+    "II": 10,
+    "III": 16
+  },
+  "saved_regular_endpoint_metadata": [
+    {
+      "id": "II_0",
+      "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 2,
+      "passive_arm2_branch": [
+        3
+      ],
+      "source_regular_eligible": true,
+      "independent_branch_verified": true,
+      "all_qualifications_passed": true
+    },
+    {
+      "id": "II_1",
+      "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 0,
+      "passive_arm2_branch": [
+        0
+      ],
+      "source_regular_eligible": true,
+      "independent_branch_verified": true,
+      "all_qualifications_passed": true
+    },
+    {
+      "id": "III_0",
+      "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 1,
+      "passive_arm2_branch": [
+        1
+      ],
+      "source_regular_eligible": true,
+      "independent_branch_verified": true,
+      "all_qualifications_passed": true
+    },
+    {
+      "id": "III_1",
+      "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json",
+      "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+      "selected_candidate_index": 3,
+      "passive_arm2_branch": [
+        3
+      ],
+      "source_regular_eligible": true,
+      "independent_branch_verified": true,
+      "all_qualifications_passed": true
+    }
+  ],
+  "finite_qualification_route_recommendation": {
+    "status": "RECOMMENDATION_ONLY_NOT_FROZEN_NOT_AUTHORIZED_BY_THIS_REPORT",
+    "is_execution_protocol": false,
+    "saved_pool": "Exact old10II/16III clearroots retained withallidentities; allaresingular notregularneighbors. Keepmode0 failures. Selectionmustbefrozenbeforecalls.",
+    "earliest_gate": "Audit branchrole mapping andexactsource/correctedIK/alignedcollision provenance. Old active_branch isarm1, cannotfeed directlyto passivearm2RBS branch.",
+    "first_finite_diagnostic": "Propose4fixedrepresentatives, firstcase_id perenvironment/mode amongsavedclear:II_obs0681(mode1),II_obs0689(mode2),III_obs1065(mode1),III_obs1073(mode2). Enumerateonly originalpassiveIKbranches0..7 atsameexactinput formax32 deterministicroundtriprequests; retainalloutputqchanges/closure/limits/truebranch/rank/collision includingcanonicalwrist shifts. No RNG/sampler/midpoint yet. This isdiagnosis, notnewRSS-rateevidence orguaranteedacceptedbridge.",
+    "then_minimum_bridge": "Afterfixedbranchrole/soundness qualification, a separatelyfrozenminimum coulduseII_obs0681 withsavedII_0 passivebranch3, andIII_obs1065 withsavedIII_1 passivebranch3, eachbothorientations:4singularchecker+4RBSreconstruct operations. Fixbranch3 beforeexecution; ifnotadjacent orfails, recordineligible/failure anddo notchooseanotherfixture. No guaranteea bridgeexists. Firstcheck exactsourcecontrol; do notmasqueradecorrectedIK asaliteralbinary.",
+    "finite_operation_stops": "Beforeanyexecution, chooseexplicit globalwall/CPU andouteroperation capfrombudgetreview; retainnative .05/.75/maxdepth150. Asanexample offiniteproposal, atmost16midpointprojections percheckortrace operation=>128 total across8operations, externalabortmarkUNKNOWN_BUDGET_STOP notfalse/PASS, noresume/deepen. Exactcounts/timeareproposalonly, notnewbudget. AnyCBiRRTserialexport requiresseparatepointcapandn0guardreview andshouldnotbeincludedasRBS-equivalent.",
+    "audit_requirements": [
+      "exactfixedinputandendpoints",
+      "sourcevsapprovedcorrectedIKversion",
+      "branchrolesandbothsingularlabels",
+      "checkbooleanandalltraceevents",
+      "midpointscheckedbutnotemitted",
+      "exactendpointsunchanged",
+      "trueclosureandJacobianrank",
+      "fulloriginalmechanicallimits",
+      "activeandpassivebranchidentity",
+      "alignedsourcepolicycollisionplusnativemismatchreport",
+      "orderedpathendpointstoleavesandmaxrawdistance",
+      "no continuouscollisionorRSSglobalpassclaim"
+    ],
+    "engineering_vs_scientific_decisions": "Observationalwrappers,savedbindings,returnstatuspropagation,n0/negative-indexfailclosedguards andsource/correctedvariantcomparisons canbeversionedengineeringdiagnostics afterreviewwithoutchangingcriteria. Choosingnewneighbors,perturbingcenter,changingbranchpolicy,retainingfiber/generalconnector,changing.05/.75/depth,unifyingSBL .05to.2 orsupplyingshouldermode isnewscientificdesign/parameterdecision; requestexplicitcoveragebeforeexecution.",
+    "VI_boundary": "NoVI inputs,candidates,midsorbudgetborrow. 974/974remains. ABB futuremidpointsneedownexplicitR2accounting; no authoritygrantedbytimespare."
+  },
+  "independent_static_review": "A separate read-only subagent inspected SBL cpp/h andSVC cpp/h; sourcehashesandmapping agree. Noexecution; nofilescreatedbyreviewer.",
+  "all_original_211_obligations_retained": true,
+  "source_sha256": {
+    "validity_checkers/StateValidityCheckerRSS.cpp": "133e1f7036583b3e6a5ae9d9df978a679df9af88c5103d195e727546934fd8c6",
+    "validity_checkers/StateValidityCheckerRSS.h": "c7bcf881fb451eab6ff20b03a4ecc0c279c639ef85ba4a3a1b6b6cda8c6cdd11",
+    "planners/RRT_RSS.cpp": "3c86eeb3f9fcc1a4e984bcbbda89cef90f493f70b92b32874bf9c6e1afe15486",
+    "planners/RRT_RSS.h": "cb033afa2163e4e5a0757112632b34441aff6f4d25d80e061eccd76a5580c13a",
+    "planners/CBiRRT_RSS.cpp": "3d5a84a999637beef574c22fe436963c85376acc96727c0da0ea86762f94912a",
+    "planners/CBiRRT_RSS.h": "343413dcd016aa762d3f979680baf3fd030928b8dc1f32f075b39b069bcbc8b8",
+    "planners/SBL_RSS.cpp": "1a52d9fae20d0aa98f7c22c28139c581ac6e20451f8a4ab17f6e242826a9c2fc",
+    "planners/SBL_RSS.h": "ffc33c566a5d0af38475644f29e20dd162088e7974c94c67693eb16fcbc2aef2",
+    "run/plan_RSS.cpp": "3ec456d9a74d08e7a26a6c78104a503f6f5040c6dd18fdaaa8ce760be554ef1b",
+    "run/plan_RSS.h": "a6ceb577339467cd1d8af103e5f3409abc8d902e2a8f9a6e971290389f0f7d08",
+    "proj_classes/apc_class.cpp": "c74ea9ade8bb7d80b0b980139c58b659e6911ab3d3cb61b853be980654ede22c",
+    "proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+    "validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "validity_checkers/collisionDetection.h": "a7616c3b7a526f5c7125a4e101cd98cf88ee3c902a4ac82b5830d38c504899e5"
+  },
+  "input_sha256": {
+    "reports/P4_FULL_R2_RSS_NEXT_GATE_STATIC_REVIEW_20261016.md": "ad631e958614446ad08b1734bd8accd27c621025ab03ffb3ae68bbcbd1deb4b9",
+    "reports/P4_FULL_R2_RSS_NEXT_GATE_STATIC_REVIEW_20261016.json": "1b5fdb2a4379a5dc3e7c52b8fe337816e342903592f45a30d2107e47ef906ac2",
+    "reports/P4_FULL_RSS_SCIENTIFIC_DECISION_R1.md": "3817c114212022b69d8329752c42bdf09681373b18d556c16efea29fd8c14f00",
+    "reports/P4_FULL_R2_RSS_GEOMETRY_SPEC.md": "1f81aac0fe172a5aca3914aa7cc91ebd3cb40173bf296a10a78ad1dfd57464c2",
+    "reports/P4_FULL_R2_SAVED_RSS_COLLISION_SECOND_REVIEW_20261015.md": "2b77cbe1810caffc52e6e5f22b1b2b133aae05d17fb66f90ee41273151d3b8d7",
+    "configs/p4_full/r2_saved_rss_collision_qualification_v1.json": "0c4dd6276093593c0f7012042300e9f385392fdbc0d325cdcaf7d4a203a80d78",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/execution.json": "f06a0afa82da9cea66224d7b2e438673570aabbefb022c8b00fffedd02ab5f8f",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/execution.json": "4073e36584adab529f96bee066e16d0d2f2d7563b150ef1b7fc3f44794191749",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0681.json": "a0b77906214eaed667dcfd47f09c20f895409ed22ebaf4b72a33ef2aced9b9db",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0683.json": "f7e2eb63da1779e81aee83b94aec5b5c5f7bd604a8d48b27cf2a1516ac4ecf5d",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0685.json": "255e0b84f2ad8ee498003a723791d9111b0c5b88afda2fff765248e0cd274435",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0687.json": "2e3d35e057dcbbc9a4bb2f2629ea1c5d7f1d558fa213b3aed12ed991d69f63ec",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0689.json": "f140e08885863a448a3a0e85d039008cbb9f11b57643c1a32977e5f05f92e1e4",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0691.json": "19133a8b286e5884e4669fe878a3c3c6f10a1917b5b44a3c9f3fdf81275c3a11",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs2097.json": "b2b28dfb2f1dcd675a6c0dc0114cad7cd60056fc4ab2520398823fe1921cc939",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs2099.json": "6dcda366545e690982bff7a922a5ef266cd86bf18e57087dc2e46016ab1f2346",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs2101.json": "ab1101cdb49752367948f597415f014a1e0b84b436487e639341cb21c935f7a8",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs2103.json": "30a36aa55adf8be271d449a90d97f0bb9ed708532dc0ff5af92f711fc0275fde",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1065.json": "5b86a929975f78e0bd5e7a431b7cece7db8334f94583448cd9ee3049e64d428a",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1067.json": "d238b80bdd034361848d8356affac7e6286c3a2a36d6af0164e7bae90e75d31f",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1073.json": "258eca5e2c3086833d18a7591b87864e05e65abfb2b6270542e83b60ce1c9607",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1075.json": "da1bfdd55e6eac615cd6f692cf8a6c9ec64e1125c304dac26aad667351c81048",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2009.json": "f15988b129bdc0f4fc7581ada4f0ca1d246e198edd60dffa75f4b043ec78f8dd",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2011.json": "1b78536163529bf97976087b5e45672d1e409b5a77f6c5c339e9c2377603c3d0",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2096.json": "54d3d564007529c74bf5dbee08adc0a4f0392f4699f750388b7950bcdd4e6925",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2097.json": "a54484b79cc14be6197158624857b81e028c38eda9ad4d0da7b25b998e71198e",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2098.json": "18fdcd35b4349a124d4fc24a2248a15f79933dd0bb99d17f601446100a7d913b",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2099.json": "3995677c23f49271004e98329c87058955b0c855013aea62119075f4fb09be0d",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2100.json": "43f55aea155c96b85eba088c04885a93ed8e3b1884db572c35231fba69f3cf23",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2101.json": "ecb5ce0a0c020b7bfd1b84141c15abb76805d347e6e6dedead113f866ea73c38",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2102.json": "becc0eb52424dccc78b869a4cfa40b17f3bd181a4e875f2c97922e98b3610c73",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2103.json": "c24c9c789a42677cb2c6d407aae2c3e0b5905e2b0f13b2119a9aa14a6eb8d108",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2201.json": "bb5b54d581e102ed226e37c08930ee2671b82d8395f935468259c3f0159a148b",
+    "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs2203.json": "4fed81f2174246d7433c6235532555687ce9651ece3ce21a4615e0d1abd23e10",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json": "b39d945cd5d49e4649aba22e57aae9f302694e4d8e0880389542f1ad828b112f",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json": "991c2efe8e68add65c17375d89c89bbb637711d7125b15a34c84a19a2dc15430",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json": "85550cbc3ffbf80c80519b5e592e85401dcf1e96ce747f0df5f3d97c97065c6a",
+    "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json": "50db8b75e8c29c9dfc42646e5165c22f31dd8e2853858686572405c3cd91cc12"
+  },
+  "all_bound_inputs_unchanged": true,
+  "companion_markdown": "reports/P4_FULL_R2_ABB_RSS_SOURCE_CONTRACT_STATIC_V1_20261016.md"
+}

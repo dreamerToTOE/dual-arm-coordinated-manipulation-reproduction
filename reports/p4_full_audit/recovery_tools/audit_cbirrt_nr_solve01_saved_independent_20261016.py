@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""Independent saved-only CBiRRT_NR transport/tree/reconstruction/cost POST.
+Never import implementation modules, run binary/model, write recipes or science.
+"""
+from pathlib import Path
+from collections import Counter,defaultdict
+from decimal import Decimal
+import argparse,base64,datetime,hashlib,json,math,struct,subprocess
+ROOT=Path(__file__).resolve().parents[3]
+RUN='20261016_R2_ABB_CBIRRT_NR_SOLVE01'
+OUT=ROOT/'reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE01_SAVED_INDEPENDENT_POST_20261016.json'
+MARKER=b'P4_CBIRRT_NR_TRACE '
+KINDS={'distanceFunction','nr_gd','state_project','vector_project','nr_valid_midpoint','state_rbs','vector_rbs','state_reconstruct','vector_reconstruct','collision','mesh_load','growTree','save2file'}
+STATIC='reports/P4_FULL_R2_ABB_CBIRRT_NR_SOLVE_V3_INDEPENDENT_STATIC_REVIEW_20261016.json'
+STATIC_SHA='37a4bad6c3195f8e7bfb4392832503c1b7988cde42eddab70b0e38e3527f908e'
+def exact(a,b):
+    if isinstance(a,bool)or isinstance(b,bool):return type(a)is type(b)and a==b
+    if type(a)in(int,float)and type(b)in(int,float):return struct.pack('>d',a)==struct.pack('>d',b)
+    if type(a)is not type(b):return False
+    if isinstance(a,list):return len(a)==len(b)and all(exact(x,y)for x,y in zip(a,b))
+    if isinstance(a,dict):return set(a)==set(b)and all(exact(a[k],b[k])for k in a)
+    return a==b
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('--protocol-sha256',required=True);args=ap.parse_args()
+    if OUT.exists()or OUT.with_suffix('.md').exists():raise SystemExit('EXISTING_POST_PRESERVED')
+    retained={};checks=[];groups=defaultdict(lambda:dict(total=0,passed=0))
+    def path(n):return Path(n)if Path(n).is_absolute()else ROOT/n
+    def raw(n):
+        p=path(n);b=p.read_bytes();retained[str(p)]=hashlib.sha256(b).hexdigest();return b
+    def sha(n):return hashlib.sha256(raw(n)).hexdigest()
+    def load(n):return json.loads(raw(n))
+    def ck(g,n,ok):
+        ok=bool(ok);checks.append(dict(group=g,check=n,passed=ok));groups[g]['total']+=1;groups[g]['passed']+=ok
+    folder=ROOT/'results/p4_full'/RUN;ex=str((folder/'execution.json').relative_to(ROOT));e=load(ex);p=load(e['protocol']);claim=load(e['claim']);ext=p['external_supervision'];charge=load(ext['charge_path']);static=load(STATIC)
+    ck('freeze','reviewed exact122 static report and actual stable3sources',sha(STATIC)==STATIC_SHA and static['status']=='PASS_SINGLE_SOLVE_V3_ENTRY_STATIC_REVIEW'and static['checks_total']==static['checks_passed']==122 and static['checks_failed']==0 and all(sha(n)==h==p['own_source_sha256'][n]for n,h in static['reviewed_source_sha256'].items()))
+    ck('recipe','actual committed frozen one solve candidate scope',e['schema']=='P4_R2_ABB_CBIRRT_NR_SOLVE01_EXECUTION_V3'and p['schema']=='P4_R2_ABB_CBIRRT_NR_SINGLE_SOLVE_DRAFT_V3'and p['frozen']is True and all(type(v)is bool and v for v in p['reviews'].values())and e['classification']==p['classification']=='R2_RECONSTRUCTED_PHYSICAL_NR_SINGLE_ORIGINAL_CBIRRT_NR_SOLVE'and e['run_id']==p['run_id']==RUN and e['independent_path_qualified']is False)
+    ck('recipe','exact original30wall60CPU caps and one dispatch',p['budget']==e['budget']==dict(wall_s=30.,cpu_s=60.,child_cpu_limit_s=60,r2_total_wall_s=3600.,r2_total_cpu_s=7200.)and p['maxima']==dict(new_processes=1,source_requests=1,solve_calls=1,source_seed=7,source_solve_seconds=10.)and p['no_retry_reset_resume']is True)
+    ck('recipe','exact root frozen protocol and immutable claim',sha(e['protocol'])==args.protocol_sha256==e['protocol_sha256']==e['protocol_after_sha256']==claim['protocol_sha256']and sha(e['claim'])==e['claim_sha256']==e['claim_after_sha256']and claim['source_commit']==e['source_commit']and claim['run_id']==RUN and claim['no_retry_reset_resume']is True)
+    ck('recipe','allbound before after unchanged',p['bound_files_sha256']==e['bound_files_sha256']==e['bound_files_after_sha256'])
+    for n,h in p['bound_files_sha256'].items():ck('bound','actual unchanged '+n,sha(n)==h)
+    for n,h in p['own_source_sha256'].items():ck('commit','actual clean committed '+n,sha(n)==h==hashlib.sha256(subprocess.check_output(['git','show',e['source_commit']+':'+n],cwd=ROOT)).hexdigest())
+    ck('commit','exact committed frozen protocol',hashlib.sha256(subprocess.check_output(['git','show',e['source_commit']+':'+e['protocol']],cwd=ROOT)).hexdigest()==args.protocol_sha256)
+    prior=p['actual_charge_prior'];ledger=load(prior['ledger']);pw=math.fsum(r.get('charged_wall_s',r['wall_s'])for r in ledger['executions']);pc=math.fsum(r.get('charged_cpu_s',r['cpu_s'])for r in ledger['executions'])
+    ck('prior','exact all39 actual prior executions no hidden run',len(ledger['executions'])==39 and {r['execution']:r['execution_sha256']for r in ledger['executions']}==p['prior_execution_sha256']==e['prior_execution_sha256']==e['prior_execution_after_sha256']==prior['execution_sha256']and {str(q.relative_to(ROOT)):sha(q)for q in(ROOT/'results/p4_full').glob('*_R2_*/execution.json')if q.parent.name!=RUN}==prior['execution_sha256'])
+    ck('prior','onlycurrent newcost prior cumulative effective unchanged',sha(prior['ledger'])==prior['ledger_sha256']and pw==prior['wall_s']==p['previous_r2_wall_s']==e['previous_r2_wall_s']and pc==prior['cpu_s']==p['previous_r2_cpu_s']==e['previous_r2_cpu_s']and e['actual_charge_prior']==prior)
+    bp=load(p['build_assets']['personnel_independent_POST']);be=load(p['build_assets']['execution']);ck('build','actual BUILD03 qualified engine remainszeroquery',bp['engineering_build_qualified']is bp['personnel_independent']is bp['external_supervision_qualified']is True and bp['checks_total']==bp['checks_passed']==13927 and bp['checks_failed']==0 and bp['execution_sha256']==sha(p['build_assets']['execution'])and be['status']=='BUILT_NOT_QUERIED'and be['query_calls']==be['solve_calls']==be['binary_execution_calls']==0)
+    rows=[json.loads(x)for x in raw(e['evidence_journal']).splitlines()if x.strip()];events=Counter(x['event']for x in rows);snaps=[x for x in rows if x['event']=='final_complete_raw_streams'];ck('journal','exact original journal unchanged onefinal snapshot',sha(e['evidence_journal'])==e['evidence_journal_sha256']and len(snaps)==1)
+    snap=snaps[0];streams={}
+    for event in ['setup','source_process_start_attempted','source_process_started','source_start_group','solve_request_exact_bytes','single_request_write_and_stdin_close','raw_response_line','parsed_response_before_gates','source_close_group','source_after_reap_group','final_complete_raw_streams','final_counts']:ck('journal','actualevent once '+event,events[event]==1)
+    eofrows=[x for x in rows if x['event']=='actual_pipe_EOF_observed'];ck('journal','twoactualEOF channelsonce',Counter(x['channel']for x in eofrows)==Counter(stdout=1,stderr=1))
+    for channel,info in snap['streams'].items():
+        b=base64.b64decode(info['base64'],validate=True);streams[channel]=b;chunks=b''.join(base64.b64decode(x['base64'],validate=True)for x in rows if x['event']=='raw_pipe_chunk'and x['channel']==channel)
+        ck('raw',channel+' complete chunks final snapshot and actualfile binarysame',b==chunks==raw(folder/f'source_{channel}.bin')and len(b)==info['bytes']and hashlib.sha256(b).hexdigest()==info['sha256'])
+    ck('raw','both actual streams saved',set(streams)=={'stdout','stderr'})
+    lines=streams['stdout'].splitlines(keepends=True);rrow=next(x for x in rows if x['event']=='raw_response_line');response=next(x['response']for x in rows if x['event']=='parsed_response_before_gates')
+    ck('raw','strict exactlyone JSONLF no preamble tail duplicates',len(lines)==1 and lines[0].startswith(b'{')and lines[0].endswith(b'\n')and exact(json.loads(lines[0]),response)and base64.b64decode(rrow['base64'],validate=True)==lines[0]and rrow['bytes']==len(lines[0]))
+    req=next(x for x in rows if x['event']=='solve_request_exact_bytes');sent=next(x for x in rows if x['event']=='single_request_write_and_stdin_close');reqbytes=json.dumps(p['request'],allow_nan=False,separators=(',',':')).encode()+b'\n'
+    ck('request','intended actual unique fullwritten bytes base64 SHA EOF',base64.b64decode(req['base64'],validate=True)==base64.b64decode(sent['sent_bytes_base64'],validate=True)==reqbytes and req['bytes']==sent['actual_sent']==len(reqbytes)and req['sha256']==sent['sent_sha256']==hashlib.sha256(reqbytes).hexdigest()and sent['exact_full_request_written']is sent['stdin_closed']is True and exact(req['request'],p['request'])and exact(response['request'],p['request']))
+    ck('response','actual exact1source solve no formal or independentpath',response['schema']=='P4_ABB_CBIRRT_NR_TRANSPORT_DRAFT_V1'and response['environment']=='II'and response['operation']=='solve'and response['mode']=='trace'and response['source_dispatch_started']==response['source_dispatch_completed']==response['solve_calls']==1 and response['formal_table_I_calls']==0 and response['independent_path_qualified']is response['continuous_collision_certificate']is False and 'error'not in response)
+    ck('response','honest complete exact or nonexact sourcestatus no independentpath',response['status']==e['status']and e['status']in('SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT','SOURCE_NONEXACT_RETAINED_PREFIX')and response['exact']is e['source_exact']and response['has_solution']is e['source_has_solution']and response['approximate']is e['source_approximate']and response['planner_status']==e['source_planner_status']and response['exact']is(e['status']=='SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT'))
+    ck('response','originalfull12NRdistance alwaysTRUE resolution.1 noPCScontrols',response['distance_policy']=='ORIGINAL_FULL12_SI_DISTANCE_NO_ACTIVE_ROLE_OR_ANALYTIC_BRANCH'and response['state_validity_callback']=='ORIGINAL_MAIN_ALWAYS_TRUE_NO_FK'and response['resolution']==.1 and response['solution_path_simplification']is False)
+    c=response['construction'];ck('construction','actualoneconstructor/seed structuralRNG libraryunknown',c['cbirrt_constructor_dispatch_completed']==c['ompl_setSeed_calls_completed']==c['srand_calls_completed']==c['source_direct_rng_member_initializations_structural']==1 and c['source_direct_rng_member_true_started_completed']=='UNOBSERVED_LIBRARY_NOT_HOOKED'and c['library_internal_seed_draws']=='UNOBSERVED_NOT_REPORTED_ZERO'and c['source_started']==c['source_completed']=={'mesh_load':1}and len(c['trace'])==2)
+    rawtrace=[];bad=[]
+    for line in streams['stderr'].splitlines(keepends=True):
+        if MARKER not in line:continue
+        try:
+            rawtrace.append(json.loads(line.split(MARKER,1)[1]))
+            if not line.endswith(b'\n'):bad.append(hashlib.sha256(line).hexdigest())
+        except(ValueError,UnicodeDecodeError):bad.append(hashlib.sha256(line).hexdigest())
+    ck('trace','full raw constructionplus source trace binarysame',not bad and exact(rawtrace,c['trace']+response['trace']))
+    pairs=[];observations=[];attempts=[];false=Counter();total_start=Counter();total_end=Counter();saves=[]
+    for tag,observed in [('construction',c),('solve',response)]:
+        stack=[];starts=Counter();ends=Counter();serial=0;good=True
+        for x in observed['trace']:
+            good=good and(x['kind']in KINDS or x['kind']=='save_source_mpaths')
+            if x['event']=='entered':serial+=1;good=good and x['id']==serial;stack.append(x);starts[x['kind']]+=1
+            elif x['event']=='observed':serial+=1;good=good and x['id']==serial and x['kind']=='save_source_mpaths'and set(x['args'])=={'source_mpaths'};observations.append(x)
+            elif x['event']=='completed':
+                a=stack.pop()if stack else {};good=good and a.get('id')==x['id']and a.get('kind')==x['kind'];ends[x['kind']]+=1;pairs.append((a,x))
+                if x.get('result',{}).get('returned')is False:false[x['kind']]+=1
+                if x['kind']=='state_reconstruct':attempts.append(dict(trace_id=x['id'],input=a['args'],returned=x['result']['returned'],path_q12=x['result']['path_q12']))
+                if x['kind']=='save2file':saves.append(x)
+            else:good=False
+        ck('trace',tag+' allactual nested entry/return unique serial/counters',good and not stack and starts==ends and dict(starts)==observed['source_started']==observed['source_completed']and observed['source_counts_observed']is True);total_start.update(starts);total_end.update(ends)
+    ck('trace','recorded whole source totals exact actual',dict(total_start-Counter(mesh_load=1))==e['actual_source_started']==e['actual_source_completed']and total_start==total_end)
+    nodes=response['trees']['nodes'];byid={n['motion_id']:n for n in nodes};stateids={n['state_id']for n in nodes};roots={n['tree']:n for n in nodes if n['parent_motion_id']==0}
+    ck('tree','allactual liveMotion/state distinct bothroots12finite',len(nodes)==len(byid)==len(stateids)and len(roots)==2 and set(roots)=={'start','goal'}and all(set(n)=={'motion_id','tree','state_id','parent_motion_id','root_state_id','root_motion_id','q12','root_q12'}and len(n['q12'])==12 and all(math.isfinite(v)for v in n['q12'])for n in nodes))
+    ck('tree','actualrootmatches fullfrozen endpoints',exact(roots['start']['q12'],p['request']['start_q12'])and exact(roots['goal']['q12'],p['request']['goal_q12']))
+    for n in nodes:
+        cur=n;seen=set();good=True
+        while cur['parent_motion_id']:
+            if cur['motion_id']in seen or cur['parent_motion_id']not in byid:good=False;break
+            seen.add(cur['motion_id']);cur=byid[cur['parent_motion_id']];good=good and cur['tree']==n['tree']
+        ck('tree',str(n['motion_id'])+' parentroot trueactual identity',good and cur['motion_id']==n['root_motion_id']==roots[n['tree']]['motion_id']and cur['state_id']==n['root_state_id']and exact(cur['q12'],n['root_q12']))
+    mpaths=[];dense=[];complete=False;attempts.sort(key=lambda x:x['trace_id']);milestoneids=[]
+    if response['exact']:
+        for side in ['start','goal']:
+            bridge=response['trees']['connection_'+side];n=byid[bridge['motion_id']];ck('tree','actualbridge '+side,n['tree']==side and n['state_id']==bridge['state_id']and exact(n['q12'],bridge['q12']))
+        ck('mpaths','oneoriginalsave oneobservedmpaths preserved',len(observations)==len(saves)==1 and exact(observations[0]['args']['source_mpaths'],saves[0]['result']['source_mpaths'])and saves[0]['result']['return_does_not_certify_complete_reconstruction']is True)
+        mpaths=observations[0]['args']['source_mpaths'];ck('mpaths','bothnativeactualchains nonempty',len(mpaths)==2 and all(mpaths))
+        for side,seq in enumerate(mpaths):
+            for i,n in enumerate(seq):
+                orig=byid[n['motion_id']];ck('mpaths',str(n['motion_id'])+' actualnode parent state q withoutmerge',set(n)=={'motion_id','parent_id','state_id','q12'}and n['parent_id']==orig['parent_motion_id']and n['state_id']==orig['state_id']and exact(n['q12'],orig['q12'])and orig['tree']==['start','goal'][side]and(i==len(seq)-1 or n['parent_id']==seq[i+1]['motion_id']))
+            ck('mpaths','actualside'+str(side)+' rootbridge',seq[0]['motion_id']==response['trees']['connection_'+['start','goal'][side]]['motion_id']and seq[-1]['parent_id']==0)
+        ordered=list(reversed(mpaths[0]))+mpaths[1];milestoneids=[n['motion_id']for n in ordered];milestones=[n['q12']for n in ordered];ck('mpaths','allhighprecision milestoneorder nativechainsroot-to-goal',exact(milestones,response['milestones_q12'])and exact(milestones[0],p['request']['start_q12'])and exact(milestones[-1],p['request']['goal_q12']))
+        for i,a in enumerate(attempts):
+            ar=a['input'];qs=a['path_q12'];ck('reconstruction',str(a['trace_id'])+' exact originalMedge endpoints finite no repair',i+1<len(milestones)and exact(ar['qa12'],milestones[i])and exact(ar['qb12'],milestones[i+1])and len(qs)>=2 and exact(qs[0],ar['qa12'])and exact(qs[-1],ar['qb12'])and all(len(q)==12 and all(math.isfinite(v)for v in q)for q in qs))
+        complete=len(attempts)==len(milestones)-1 and all(a['returned']is True for a in attempts)
+        if complete:
+            dense=[milestones[0]]
+            for a in attempts:ck('reconstruction',str(a['trace_id'])+' exact fullMseam',exact(dense[-1],a['path_q12'][0]));dense.extend(a['path_q12'][1:])
+            ck('reconstruction','completecandidate endpoints only pending independentphysical',exact(dense[0],p['request']['start_q12'])and exact(dense[-1],p['request']['goal_q12']))
+        ck('reconstruction','stopafterfirstfalse no additional hidden edge attempts',all(a['returned']is True for a in attempts[:-1]))
+    ck('native','allactual native output bytes fsync preserved',set(e['original_native_output_sha256'])==set(e['original_native_output_fsync_completed'])and all(sha(n)==h for n,h in e['original_native_output_sha256'].items()))
+    registry=e['source_process_registry'];life=e['source_lifecycle'];start=next(x for x in rows if x['event']=='source_process_started');sg=next(x for x in rows if x['event']=='source_start_group');close=next(x for x in rows if x['event']=='source_close_group');after=next(x for x in rows if x['event']=='source_after_reap_group')
+    ck('process','oneactualsource PID/startticks registered reap0groupempty',len(registry)==1 and start['pid']==registry[0]['pid']==sg['members'][0]['pid']==sg['members'][0]['pgrp']and len(sg['members'])==1 and start['start_ticks']==sg['actual_start_ticks']==registry[0]['actual_start_ticks']==life['actual_start_ticks']>0 and registry[0]['reaped']is True and registry[0]['returncode']==0 and registry[0]['actual_after_reap_group']==life['actual_after_reap_group']==after['members']==[]and after['returncode']==0)
+    ids=[r['pid']for r in close['members']];poll=close['actual_poll_result'];postgroup=close['actual_postpoll_group'];normalclose=(ids==[registry[0]['pid']]and poll is None)or(ids in([],[registry[0]['pid']])and poll==0 and postgroup==[])
+    ck('process','actualreviewedclosebranch sourceexit0andEOF',normalclose and close['members']==life['actual_preclose_group']and poll==life['actual_preclose_poll_result']and close['actual_poll_observations']==life['actual_preclose_poll_observations']and postgroup==life['actual_postpoll_group']and life['actual_pipe_EOF_observed']==after['actual_pipe_EOF_observed']==dict(stdout=True,stderr=True)and life['stdin_closed_after_unique_request']is snap['EOF']is e['complete_source_raw_evidence_gate']is True)
+    ck('process','exact oneattemptprocessdispatchresponse allcounts',e['counts']==dict(source_process_start_attempted=1,source_process_started=1,solve_dispatch_attempted=1,solve_dispatched=1,stdout_complete_lines_observed=1,raw_response_lines_observed=1))
+    ck('runtime','20frozen originalmeshes samebytes',len(e['runtime_mesh_sha256'])==20 and all(sha(n)==h for n,h in e['runtime_mesh_sha256'].items()))
+    tb=raw(ext['sibling_path']);fields=tb.decode().split();elapsed,user,system=map(Decimal,fields[:3]);uw=float(elapsed+Decimal('.01'));uc=float(user+system+Decimal('.02'));meta=raw(ext['metadata_path']);planned,started,reaped=[json.loads(x)for x in meta.splitlines()];proof=e['supervisor_launch_proof'];inode=path(ext['sibling_path']).stat();receiptlines=raw(folder/'cost_receipt.jsonl').splitlines();receipt=json.loads(receiptlines[0])
+    ck('external','truefinite4timefields exit0 single30/60andR2cap',len(fields)==4 and len(tb.splitlines())==1 and all(x.is_finite()and x>=0 for x in(elapsed,user,system))and fields[3]=='0'and uw<=min(30.,3600.-pw)and uc<=min(60.,7200.-pc))
+    argv=['/usr/bin/time','--quiet','-f','%e %U %S %x','-o','/proc/self/fd/'+str(planned['time_fd']),'/usr/bin/python3',str(ROOT/'scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py'),'--protocol',str(path(e['protocol']))]
+    ck('external','actualGNUtime planned started reaped0 PID and heldFD inodechain',planned['event']=='planned_launch'and started['event']=='time_process_started'and reaped['event']=='time_process_reaped'and started['pid']==reaped['pid']==proof['actual_time_pid']==charge['time_process_pid']and reaped['returncode']==0 and reaped['failure']is None and planned['supervisor_pid']==proof['supervisor_pid']and argv==planned['argv']==started['argv']==proof['actual_argv']and inode.st_ino==planned['time_inode']==proof['time_inode']and inode.st_dev==planned['time_device']==proof['time_device']and planned['time_fd']in proof['actual_time_output_fds']and proof['actual_time_start_ticks']>0 and hashlib.sha256(meta.splitlines(keepends=True)[0]).hexdigest()==proof['planned_launch_line_sha256'])
+    ck('external','actualplannedsourceprotocoltimepython SHA exact',planned['protocol_sha256']==args.protocol_sha256 and planned['runner_sha256']==p['own_source_sha256']['scripts/qualify_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py']and planned['supervisor_source_sha256']==p['own_source_sha256']['scripts/supervise_p4_full_r2_abb_cbirrt_nr_solve_v3_draft.py']and planned['time_binary_sha256']==ext['time_binary_sha256']==sha('/usr/bin/time')and planned['python_binary_sha256']==ext['python_binary_sha256']==sha('/usr/bin/python3'))
+    ck('external','allactualcharge original paths SHAs valid cap exit0',charge['source_execution']==ex and charge['execution_sha256']==sha(ex)and charge['receipt']==str((folder/'cost_receipt.jsonl').relative_to(ROOT))and charge['receipt_sha256']==sha(folder/'cost_receipt.jsonl')and charge['time_file']==ext['sibling_path']and charge['time_sha256']==sha(ext['sibling_path'])and charge['metadata_sha256']==sha(ext['metadata_path'])and charge['stderr_sha256']==sha(ext['stderr_path'])and charge['time_fields']==fields and exact([charge['wall_s'],charge['cpu_s']],[uw,uc])and charge['timing_valid']is charge['time_inode_unchanged']is charge['wall_CPU_caps_pass']is charge['completed_process_exit0']is True and charge['time_returncode']==charge['measured_child_exit']==0 and charge['failure']is None)
+    ck('external','externalcovers internalreceipt persistence exit no falseclaim',len(receiptlines)==1 and receipt['execution_sha256']==sha(ex)and receipt['status']==e['status']and e['wall_s']<=receipt['wall_s_through_execution_persistence']<=uw and e['cpu_s']<=receipt['cpu_s_through_execution_persistence']<=uc and receipt['last_receipt_persistence_tail']=='UNMEASURED_NONZERO_EXTERNAL_SUPERVISION_REQUIRED'and receipt['external_supervision_qualified']is e['external_supervision_qualified']is charge['external_supervision_qualified']is False)
+    ck('scope','noindependentmodel/fullpath/formalVIcalls or evidenceerror',all(v==0 for v in e['zero_calls'].values())and e['formal_table_I_calls']==e['new_VI_candidate_constructions']==0 and e['independent_path_qualified']is False and e['diagnostics']==[]and ledger['vi_B_candidate_cap']==974 and ledger['vi_B_remaining']['candidate_constructions']==0 and ledger['formal_table_I_calls']==0 and ledger['formal_table_I_required_calls']==22500)
+    for n,h in list(retained.items()):ck('unchanged','savedactualbytes remain '+n,hashlib.sha256(Path(n).read_bytes()).hexdigest()==h)
+    failed=[x for x in checks if not x['passed']];ok=not failed
+    report=dict(schema='P4_CBIRRT_NR_SOLVE01_SAVED_INDEPENDENT_POST_V1',status='PASS_CBIRRT_NR_SOLVE01_TRANSPORT_EVIDENCE_INDEPENDENT_POST'if ok else'FAIL_CBIRRT_NR_SOLVE01_TRANSPORT_EVIDENCE_INDEPENDENT_POST',generated_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),reviewer='nr_entry_review; independent of original CBiRRT_NR runner driver observer and supervisor',personnel_independent=True,checks=checks,checks_total=len(checks),checks_passed=len(checks)-len(failed),checks_failed=len(failed),failures=failed,groups=dict(groups),external_supervision_qualified=ok,external_timing_qualified=ok,external_cost_qualified=ok,successful_transport_qualified=ok,completed_process_exit0=charge['completed_process_exit0'],execution=ex,execution_sha256=sha(ex),protocol=e['protocol'],protocol_sha256=sha(e['protocol']),claim=e['claim'],claim_sha256=sha(e['claim']),receipt=ext['charge_path'],receipt_sha256=sha(ext['charge_path']),internal_receipt=str((folder/'cost_receipt.jsonl').relative_to(ROOT)),internal_receipt_sha256=sha(folder/'cost_receipt.jsonl'),external_time=ext['sibling_path'],external_time_sha256=sha(ext['sibling_path']),external_charge_sha256=sha(ext['charge_path']),external_time_fields=fields,upper_wall_s=uw,upper_cpu_s=uc,cumulative_charged_wall_s=pw+uw,cumulative_charged_cpu_s=pc+uc,source_status=response['status'],source_exact=response['exact'],source_has_solution=response['has_solution'],source_approximate=response['approximate'],source_tree_motion_count=len(nodes),source_tree_state_count=len(stateids),source_tree_roots={k:v['motion_id']for k,v in roots.items()},source_bridge_motion_ids=[response['trees']['connection_'+side]['motion_id']for side in ['start','goal']]if response['exact']else None,source_mpaths_motion_ids=[[n['motion_id']for n in seq]for seq in mpaths],source_milestone_motion_ids=milestoneids,state_reconstruction_attempts=[dict(trace_id=a['trace_id'],returned=a['returned'],node_count=len(a['path_q12']),full_M_sha256=hashlib.sha256(json.dumps(a['path_q12'],allow_nan=False,separators=(',',':')).encode()).hexdigest())for a in attempts],false_state_reconstruct_ids=[a['trace_id']for a in attempts if not a['returned']],actual_false_returns_by_kind=dict(false),source_complete_reconstruction_observed=complete,selected_complete_dense_node_count=len(dense)if complete else None,independent_path_qualified=False,actual_raw_trace_started=dict(total_start),actual_raw_trace_completed=dict(total_end),retained_sha256=retained,audit_script_sha256=sha(__file__),new_runner_model_import_describe_compile_binary_query_solve_protocol_prior_claim_calls=0,limitations=['Saved transport, tree, full source reconstruction and costs only. Source exact remains pending separate all-node physical/discrete path qualification.','Preserves all raw source failures and false reconstructions. No sourcepath alteration, rerun, endpoint/seed change or replacement.','No continuous collision, global statistical planning, RSS/PCS advantage or complete paper claim.211 obligationsVI974/974remaining0formal0/22500 persist.','Whole-child GNUtime covers import/preflight/source/reap/nativefiles/finalhash/journal/execution/receipt persistence/exit. Supervisor own log/fsync cost excluded. Current upper replaces only current internal once. Historical unmeasured tails remain UNKNOWN.'])
+    with OUT.open('x')as f:json.dump(report,f,ensure_ascii=False,indent=2,allow_nan=False);f.write('\n')
+    with OUT.with_suffix('.md').open('x')as f:f.write('# CBiRRT_NR SOLVE01 保存证据独立后审\n\n'+report['status']+'：'+str(report['checks_passed'])+'/'+str(len(checks))+'，失败'+str(len(failed))+'。单次write+stdinEOF、严格唯一stdout JSON、双pipe真实EOF、reap0/空组、全trace/实际双树/全部M与原生失败/文件逐项保存。\n\n原source状态 '+response['status']+'；完整回溯观察 '+str(complete)+'，候选节点 '+str(report['selected_complete_dense_node_count'])+'。不代表独立路径或连续无碰撞资格。\n\n外层上界 '+str(uw)+'wall / '+str(uc)+'CPU，只替换本次内部一次；累计 '+str(pw+uw)+'wall / '+str(pc+uc)+'CPU。211项、VI974余0、formal0/22500与旧STOP/UNKNOWN不变。\n')
+    print(json.dumps({k:report[k]for k in ['status','checks_total','checks_failed','failures','upper_wall_s','upper_cpu_s','source_exact','source_complete_reconstruction_observed','selected_complete_dense_node_count']},ensure_ascii=False))
+    if failed:raise SystemExit(2)
+if __name__=='__main__':main()

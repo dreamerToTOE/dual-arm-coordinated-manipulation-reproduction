@@ -1,0 +1,512 @@
+{
+  "schema": "P4_R2_QUALIFICATION_SOLVE_ACCOUNTING_V22_ADDENDUM_V1",
+  "status": "PASS_SAVED_ONLY_ACTUAL_SOURCE_DISPATCH_ACCOUNTING",
+  "created_at_utc": "2026-10-16T13:25:47.330349+00:00",
+  "reviewer_task": "/root/nr_path_prepare/nr_solve_transport_static",
+  "saved_only": true,
+  "new_scientific_calls_by_this_audit": 0,
+  "new_planner_solves_by_this_audit": 0,
+  "new_VI_candidate_constructions_by_this_audit": 0,
+  "new_resource_charge_by_this_audit": {
+    "wall_s": 0,
+    "cpu_s": 0
+  },
+  "ledger_original_bytes_preserved": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V22.json",
+    "bytes": 56953,
+    "sha256": "e0432dc0a92852db3a67f9c62535d80b4d4ab8a90f6430832320247420d0ff1e"
+  },
+  "previous_snapshot": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V21.json",
+    "bytes": 55164,
+    "sha256": "44bca63413c2e4aebdc52f360784a049d60f5c4d001ebd3f3d6abd692c84766b"
+  },
+  "scope": "Count actual dispatched source invocations through V22, including failed transport, independently of success, POST, path certificates, ledger rows, formal statistics, or this saved-only audit.",
+  "legacy_fields_retained_verbatim": {
+    "new_scientific_calls": 0,
+    "new_qualification_planner_solves_in_this_snapshot": 0,
+    "previous_snapshot_qualification_planner_solves": 0,
+    "total_qualification_planner_solves": 2
+  },
+  "legacy_fields_semantics": {
+    "new_scientific_calls": "Historical ledger-generator scope: zero scientific calls while generating the saved-only ledger; not the count of science newly recorded between V21 and V22.",
+    "new_qualification_planner_solves_in_this_snapshot": "Copied historical narrow-scope field; not authoritative for current V21 to V22 source dispatch delta.",
+    "previous_snapshot_qualification_planner_solves": "Copied historical narrow-scope field; not authoritative for complete pre-V22 source dispatch total.",
+    "total_qualification_planner_solves": "Copied historical narrow-scope field; retained 2 must not be cited as the current complete source dispatch total."
+  },
+  "authoritative_counters": {
+    "previous_snapshot_actual_source_solve_dispatches": 4,
+    "new_actual_source_solve_dispatches_recorded_in_V22": 1,
+    "total_actual_source_solve_dispatches_through_V22": 5,
+    "failed_source_dispatches_retained_in_total": 1,
+    "source_exact_candidates_in_total": 4,
+    "formal_table_I_calls": 0,
+    "formal_table_I_required_calls_preserved": 22500,
+    "new_VI_candidate_constructions": 0
+  },
+  "actual_execution_inventory": {
+    "glob": "results/p4_full/*_R2_*/execution.json",
+    "execution_files": 40,
+    "unique_execution_directory_ids": 40,
+    "files_with_explicit_run_id": 37,
+    "directory_ids_for_legacy_executions_without_run_id": [
+      "20261015_R2_ABB_PCS_BUILD01",
+      "20261015_R2_COLLISION_CONTROLS01",
+      "20261015_R2_RSS_CONSTRUCTION01"
+    ],
+    "with_nonzero_source_solve_dispatched": 5,
+    "run_ids_with_one_actual_dispatch": [
+      "20261015_R2_ABB_RRT_PCS_E2E01",
+      "20261015_R2_ABB_RRT_NR_E2E01",
+      "20261015_R2_ABB_CBIRRT_D_SOLVE01",
+      "20261015_R2_ABB_CBIRRT_D_SOLVE02",
+      "20261016_R2_ABB_CBIRRT_NR_SOLVE01"
+    ]
+  },
+  "actual_source_solve_dispatches": [
+    {
+      "run_id": "20261015_R2_ABB_RRT_PCS_E2E01",
+      "execution": {
+        "path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+        "bytes": 65546,
+        "sha256": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3"
+      },
+      "new_since_V21": false,
+      "planner_family": "RRT",
+      "constraint_method": "PCS/D",
+      "actual_source_solve_dispatches": 1,
+      "execution_status_retained": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT",
+      "source_commit": "1a5b811b61be61dea80f8183f123379d167fd3f0",
+      "formal_table_I_calls": 0,
+      "new_VI_candidate_constructions": 0,
+      "source_execution_independent_path_qualified": false,
+      "dispatch_evidence": {
+        "dispatch_file": {
+          "path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/dispatch.json",
+          "bytes": 431,
+          "sha256": "cdf5860f12cd3e03870c9367e580a20b9973530c5749eb8bdb34a9701d427df4"
+        },
+        "driver_request_file": {
+          "path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/driver_request.json",
+          "bytes": 609,
+          "sha256": "a6c361393fbd2c4d5f9aa4b3c1788705655224e62b5f450ee490c8ba689c5a00"
+        },
+        "dispatch_child_pid": 137409,
+        "dispatched_at_utc": "2026-10-15T11:55:58.506845+00:00",
+        "dispatch_internal_solve_started": "UNOBSERVED_UNTIL_DRIVER_RESULT",
+        "no_retry": true,
+        "saved_driver_result": {
+          "path": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/runtime/result.json",
+          "bytes": 78656,
+          "sha256": "eefb6673101fe7a4a47f319bac5e8a20498ae1cee88930ec7bca710ce8de45b4"
+        },
+        "saved_result_solve_calls": 1,
+        "execution_solve_calls_from_result": 1,
+        "source_exact": true,
+        "source_approximate": false,
+        "source_has_solution": true
+      }
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_NR_E2E01",
+      "execution": {
+        "path": "results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+        "bytes": 423939,
+        "sha256": "573a1e0bb11a345811ff380a838eb4818000963e98adb90664dfaace755a58b7"
+      },
+      "new_since_V21": false,
+      "planner_family": "RRT",
+      "constraint_method": "NR",
+      "actual_source_solve_dispatches": 1,
+      "execution_status_retained": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT",
+      "source_commit": "91901bb6440bfdb108aa6b1554ef0d0fba805eaf",
+      "formal_table_I_calls": 0,
+      "new_VI_candidate_constructions": 0,
+      "source_execution_independent_path_qualified": false,
+      "dispatch_evidence": {
+        "dispatch_file": {
+          "path": "results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/dispatch.json",
+          "bytes": 419,
+          "sha256": "7f1f2dd04d5fc77ce1e302f62082e2f995f1e4814fb859e8041b3172f0060069"
+        },
+        "driver_request_file": {
+          "path": "results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/driver_request.json",
+          "bytes": 609,
+          "sha256": "a6c361393fbd2c4d5f9aa4b3c1788705655224e62b5f450ee490c8ba689c5a00"
+        },
+        "dispatch_child_pid": 11614,
+        "dispatched_at_utc": "2026-10-16T01:33:28.352714+00:00",
+        "dispatch_internal_solve_started": "UNOBSERVED_UNTIL_DRIVER_RESULT",
+        "no_retry": true,
+        "saved_driver_result": {
+          "path": "results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/runtime/result.json",
+          "bytes": 192016,
+          "sha256": "b36049d6c2b62b61d9514ffb4a4b8f1a5222d869c90a72eecbed8e7b2ff689fe"
+        },
+        "saved_result_solve_calls": 1,
+        "execution_solve_calls_from_result": 1,
+        "source_exact": true,
+        "source_approximate": false,
+        "source_has_solution": true
+      }
+    },
+    {
+      "run_id": "20261015_R2_ABB_CBIRRT_D_SOLVE01",
+      "execution": {
+        "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/execution.json",
+        "bytes": 924809,
+        "sha256": "99c5cc5e980bf52489b154d5a678df903a1897a1e9e966c341ea6b5229533fdd"
+      },
+      "new_since_V21": false,
+      "planner_family": "CBiRRT",
+      "constraint_method": "PCS/D",
+      "actual_source_solve_dispatches": 1,
+      "execution_status_retained": "STOP_PREFIX_RETAINED",
+      "source_commit": "6ac452b4f6edf0c4b396307c385c64a71073a8d0",
+      "formal_table_I_calls": 0,
+      "new_VI_candidate_constructions": 0,
+      "source_execution_independent_path_qualified": false,
+      "failed_run_retained": {
+        "termination_reason": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+        "source_process_registry": [
+          {
+            "pid": 78833,
+            "reaped": true,
+            "returncode": -9
+          }
+        ],
+        "interpretation": "Count the one dispatched source invocation. The 55-byte Debug setup preamble is not solver JSON. Retain failed transport and UNKNOWN boundary; infer no qualified path."
+      },
+      "dispatch_evidence": {
+        "journal": {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/evidence.jsonl",
+          "bytes": 473785,
+          "sha256": "943670b6fc1a36678df3e6271374d67f59e001590c5a2cef21e30c5e87b2215d"
+        },
+        "selected_events": [
+          {
+            "line_1based": 3,
+            "event": "source_process_started",
+            "at_utc": "2026-10-16T09:10:08.037700+00:00",
+            "pid": 78833
+          },
+          {
+            "line_1based": 5,
+            "event": "solve_request",
+            "at_utc": "2026-10-16T09:10:08.050297+00:00",
+            "operation": "solve",
+            "environment": "II",
+            "seed": 7
+          },
+          {
+            "line_1based": 14,
+            "event": "final_counts",
+            "at_utc": "2026-10-16T09:10:08.472909+00:00",
+            "counts": {
+              "source_process_start_attempted": 1,
+              "source_process_started": 1,
+              "solve_dispatch_attempted": 1,
+              "solve_dispatched": 1,
+              "raw_response_lines_observed": 1
+            }
+          }
+        ],
+        "selected_event_counts": {
+          "source_process_start_attempted": 1,
+          "source_process_started": 1,
+          "solve_request": 1,
+          "solve_request_exact_bytes": 0,
+          "single_request_write_and_stdin_close": 0,
+          "raw_response_line": 1,
+          "recognized_exact_setup_preamble": 0,
+          "final_counts": 1
+        },
+        "journal_blank_lines": 1,
+        "journal_nonblank_json_parse_errors": 0,
+        "source_stdout": {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/source_stdout.bin",
+          "bytes": 55,
+          "sha256": "daa344847b00a40924a64df3aebb4f859fa26327791294bb30f793a0edaba532"
+        },
+        "source_stderr": {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/source_stderr.bin",
+          "bytes": 8669,
+          "sha256": "884ad123208c452b47dc4e8477ae1ce9bf34c80aff42e6e9c74d446d45d0749c"
+        },
+        "complete_source_raw_evidence_gate": false,
+        "saved_json_responses": [],
+        "source_process_registry": [
+          {
+            "pid": 78833,
+            "reaped": true,
+            "returncode": -9
+          }
+        ]
+      }
+    },
+    {
+      "run_id": "20261015_R2_ABB_CBIRRT_D_SOLVE02",
+      "execution": {
+        "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/execution.json",
+        "bytes": 1400796,
+        "sha256": "c7cbd868da1cd9feb149bc057c4a63ff3e722b81123998e1a8cc5e8e1bab5906"
+      },
+      "new_since_V21": false,
+      "planner_family": "CBiRRT",
+      "constraint_method": "PCS/D",
+      "actual_source_solve_dispatches": 1,
+      "execution_status_retained": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT",
+      "source_commit": "4065ac6d00c2ae73a5147e193fa249b7d69cf148",
+      "formal_table_I_calls": 0,
+      "new_VI_candidate_constructions": 0,
+      "source_execution_independent_path_qualified": false,
+      "dispatch_evidence": {
+        "journal": {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/evidence.jsonl",
+          "bytes": 132278298,
+          "sha256": "c297a6a8c9f3107bf756e70381eedca7b3799d5ef78b283eaeca35b84aa885df"
+        },
+        "selected_events": [
+          {
+            "line_1based": 3,
+            "event": "source_process_started",
+            "at_utc": "2026-10-16T10:40:00.046539+00:00",
+            "pid": 85119
+          },
+          {
+            "line_1based": 5,
+            "event": "solve_request",
+            "at_utc": "2026-10-16T10:40:00.058777+00:00",
+            "operation": "solve",
+            "environment": "II",
+            "seed": 7
+          },
+          {
+            "line_1based": 3132,
+            "event": "final_counts",
+            "at_utc": "2026-10-16T10:40:07.041249+00:00",
+            "counts": {
+              "source_process_start_attempted": 1,
+              "source_process_started": 1,
+              "solve_dispatch_attempted": 1,
+              "solve_dispatched": 1,
+              "stdout_complete_lines_observed": 2,
+              "setup_preamble_lines_observed": 1,
+              "raw_response_lines_observed": 1
+            }
+          }
+        ],
+        "selected_event_counts": {
+          "source_process_start_attempted": 1,
+          "source_process_started": 1,
+          "solve_request": 1,
+          "solve_request_exact_bytes": 0,
+          "single_request_write_and_stdin_close": 0,
+          "raw_response_line": 1,
+          "recognized_exact_setup_preamble": 1,
+          "final_counts": 1
+        },
+        "journal_blank_lines": 1,
+        "journal_nonblank_json_parse_errors": 0,
+        "source_stdout": {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/source_stdout.bin",
+          "bytes": 14050348,
+          "sha256": "594e6614121bf7955f3fcd77dc1133d05849b9a75414569ccabdc95ab30755d5"
+        },
+        "source_stderr": {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/source_stderr.bin",
+          "bytes": 15761808,
+          "sha256": "973c6250a9a55e9d9e5dad9bceaca5b5418d3be58271d92f9d34286d2ab98d39"
+        },
+        "complete_source_raw_evidence_gate": true,
+        "saved_json_responses": [
+          {
+            "line_1based": 2,
+            "solve_calls": 1,
+            "source_dispatch_started": 1,
+            "source_dispatch_completed": 1,
+            "exact": true,
+            "approximate": false,
+            "has_solution": true,
+            "independent_path_qualified": false
+          }
+        ],
+        "source_process_registry": [
+          {
+            "pid": 85119,
+            "reaped": true,
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    {
+      "run_id": "20261016_R2_ABB_CBIRRT_NR_SOLVE01",
+      "execution": {
+        "path": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/execution.json",
+        "bytes": 2353561,
+        "sha256": "bc30019b1e5282817adee945fbb4b86a7bb9f30e6f419a6def0e559815a7b1b6"
+      },
+      "new_since_V21": true,
+      "planner_family": "CBiRRT",
+      "constraint_method": "NR",
+      "actual_source_solve_dispatches": 1,
+      "execution_status_retained": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT",
+      "source_commit": "119a1b36d918ddd83fe23f49c09bc10b684f02ea",
+      "formal_table_I_calls": 0,
+      "new_VI_candidate_constructions": 0,
+      "source_execution_independent_path_qualified": false,
+      "dispatch_evidence": {
+        "journal": {
+          "path": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/evidence.jsonl",
+          "bytes": 61792942,
+          "sha256": "1e43edf19fc8756de4289bfc85e83ed1f8683e9752071952285e597d07d8b867"
+        },
+        "selected_events": [
+          {
+            "line_1based": 3,
+            "event": "source_process_started",
+            "at_utc": "2026-10-16T13:00:39.841158+00:00",
+            "pid": 102796
+          },
+          {
+            "line_1based": 5,
+            "event": "solve_request_exact_bytes",
+            "at_utc": "2026-10-16T13:00:39.853687+00:00",
+            "bytes": 612,
+            "sha256": "b3195f5126d6f914e48f6908848b35095c9551665a5bbf3237ec70a078b38644",
+            "operation": "solve",
+            "environment": "II",
+            "seed": 7
+          },
+          {
+            "line_1based": 6,
+            "event": "single_request_write_and_stdin_close",
+            "at_utc": "2026-10-16T13:00:39.853755+00:00",
+            "actual_sent": 612,
+            "sent_sha256": "b3195f5126d6f914e48f6908848b35095c9551665a5bbf3237ec70a078b38644",
+            "exact_full_request_written": true,
+            "stdin_closed": true
+          },
+          {
+            "line_1based": 1721,
+            "event": "final_counts",
+            "at_utc": "2026-10-16T13:00:44.505692+00:00",
+            "counts": {
+              "source_process_start_attempted": 1,
+              "source_process_started": 1,
+              "solve_dispatch_attempted": 1,
+              "solve_dispatched": 1,
+              "stdout_complete_lines_observed": 1,
+              "raw_response_lines_observed": 1
+            }
+          }
+        ],
+        "selected_event_counts": {
+          "source_process_start_attempted": 1,
+          "source_process_started": 1,
+          "solve_request": 0,
+          "solve_request_exact_bytes": 1,
+          "single_request_write_and_stdin_close": 1,
+          "raw_response_line": 1,
+          "recognized_exact_setup_preamble": 0,
+          "final_counts": 1
+        },
+        "journal_blank_lines": 1,
+        "journal_nonblank_json_parse_errors": 0,
+        "source_stdout": {
+          "path": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/source_stdout.bin",
+          "bytes": 7615248,
+          "sha256": "39e3430fda60c1201b343f23b72e111501515e002e6a9d0ea038167682928c33"
+        },
+        "source_stderr": {
+          "path": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/source_stderr.bin",
+          "bytes": 8394803,
+          "sha256": "a801ae03466e932bf8cbb2655b78f4373ccefe67b8f044a09df26c55360c8ad8"
+        },
+        "complete_source_raw_evidence_gate": true,
+        "saved_json_responses": [
+          {
+            "line_1based": 1,
+            "solve_calls": 1,
+            "source_dispatch_started": 1,
+            "source_dispatch_completed": 1,
+            "exact": true,
+            "approximate": false,
+            "has_solution": true,
+            "independent_path_qualified": false
+          }
+        ],
+        "source_process_registry": [
+          {
+            "pid": 102796,
+            "reaped": true,
+            "returncode": 0,
+            "actual_start_ticks": 4345760,
+            "actual_after_reap_group": []
+          }
+        ],
+        "source_lifecycle": {
+          "actual_start_ticks": 4345760,
+          "actual_pipe_EOF_observed": {
+            "stdout": true,
+            "stderr": true
+          },
+          "actual_preclose_group": [
+            {
+              "pid": 102796,
+              "ppid": 101966,
+              "pgrp": 102796
+            }
+          ],
+          "actual_preclose_poll_result": 0,
+          "actual_preclose_poll_observations": [
+            0
+          ],
+          "actual_postpoll_group": [],
+          "actual_after_reap_group": [],
+          "stdin_closed_after_unique_request": true,
+          "request_bytes": 612,
+          "actual_request_sent": 612,
+          "request_sha256": "b3195f5126d6f914e48f6908848b35095c9551665a5bbf3237ec70a078b38644"
+        }
+      }
+    }
+  ],
+  "resource_accounting_unchanged": {
+    "conservative_r2_sum_wall_s": 795.885705375994,
+    "conservative_r2_sum_cpu_s": 716.458923,
+    "r2_caps": {
+      "wall_s": 3600,
+      "cpu_s": 7200
+    },
+    "r2_remaining": {
+      "wall_s": 2804.114294624006,
+      "cpu_s": 6483.541077
+    },
+    "new_NR_solve_charge_wall_s": 9.06,
+    "new_NR_solve_charge_cpu_s": 8.71,
+    "rule": "This addendum is not an execution. Preserve V22 rows; charge replaces internal cost once."
+  },
+  "VI_preserved": {
+    "candidate_cap": 974,
+    "consumed": {
+      "candidate_constructions": 974,
+      "wall_s": 68.71200215399949,
+      "cpu_s": 24.203841999999998
+    },
+    "remaining": {
+      "candidate_constructions": 0,
+      "wall_s": 111.28799784600051,
+      "cpu_s": 335.796158
+    }
+  },
+  "limits": [
+    "Counted dispatch does not imply successful return or path qualification.",
+    "Retain PCS/D SOLVE01 failure and raw streams.",
+    "PCS/D SOLVE02 has one preamble plus one JSON response, not two solves.",
+    "RRT internal start is unobserved until saved result solve_calls=1.",
+    "No project imports, model, FK, IK, Jacobian, collision, sampling, RBS, solve or compiler executed by this audit.",
+    "No approval, scientific threshold, formal scale or pending NR physical path qualification changed."
+  ]
+}

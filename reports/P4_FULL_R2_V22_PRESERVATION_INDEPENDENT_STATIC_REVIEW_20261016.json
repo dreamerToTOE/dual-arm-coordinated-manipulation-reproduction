@@ -1,0 +1,55 @@
+{
+  "schema": "P4_R2_V22_PRESERVATION_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "PASS_NO_BLOCKER_FOR_S_SAVED_EVIDENCE_DELIVERY",
+  "created_at_utc": "2026-10-17T06:22:18.139728+00:00",
+  "reviewer_task": "/root/nr_path_prepare/nr_solve_transport_static",
+  "scope": "Independent static source review and read-only verification of saved actual V22 preservation outcome; root executed preservation audit, reviewer did not execute/import it.",
+  "source": {
+    "path": "reports/p4_full_audit/recovery_tools/audit_preservation_v22.py",
+    "sha256": "2ab2454c72c7181381b72e0070469f730eb8294da91733d83c9b19e6b4dad781",
+    "bytes": 14577
+  },
+  "actual_saved_preservation": {
+    "path": "results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V22.json",
+    "sha256": "e6e209f000b2f57d06a77952e88f3abd9fcf40792f7b20985ce1c54b61d3ab5f",
+    "bytes": 5122
+  },
+  "actual_count_addendum": {
+    "path": "results/p4_full/20261016_RECOVERY_QUALIFICATION_SOLVE_ACCOUNTING_V22_ADDENDUM.json",
+    "sha256": "316024926cbd63e1f6ca53db0be6d7cc4419b9cb3b029450f642e3529f87bcb9",
+    "bytes": 19974
+  },
+  "unchanged_ledger": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V22.json",
+    "sha256": "e0432dc0a92852db3a67f9c62535d80b4d4ab8a90f6430832320247420d0ff1e",
+    "bytes": 56953
+  },
+  "checks": {
+    "python_AST_parse": true,
+    "only_standard_library_imports": true,
+    "fixed_baseline_SHA_and_1028_57_8482891_gate": true,
+    "fixed_addendum_SHA_and_4_plus_1_equals_5_gate": true,
+    "read_only_git_commands_and_tar_member_read_no_extract": true,
+    "only_output_is_exclusive_new_V22_JSON": true,
+    "actual_preservation_PASS": true,
+    "actual_report_binds_reviewed_source": true,
+    "actual_report_all_seven_mismatch_groups_empty": true,
+    "actual_report_fixed_counts": true,
+    "actual_report_complete_coverage_and_formal_scale": true,
+    "actual_report_ledger40_science30_engineering10": true,
+    "actual_addendum_current_actual_counts": true,
+    "failed_PCS_D_SOLVE01_retained": true,
+    "ledger_original_bytes_preserved": true,
+    "VI974_exhausted_formal0_preserved": true,
+    "no_new_scientific_calls_in_saved_audit": true
+  },
+  "checks_passed": 17,
+  "checks_failed": 0,
+  "blockers": [],
+  "limitations": [
+    "PASS applies to saved evidence preservation and the S delivery only; it is not NR full path qualification.",
+    "This review ran no scientific code, FK, IK, Jacobian, collision, sampling, RBS, planner, or compiler and changed no budget/approval.",
+    "V22 inherited narrow-scope counters remain byte-preserved; current actual solve dispatch count is addendum previous4/new1/total5 including the failed PCS/D attempt.",
+    "Actual preservation output already exists; this review only reads it and does not rerun or replace it."
+  ]
+}
