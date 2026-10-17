@@ -1,0 +1,641 @@
+{
+  "schema": "P4_SBL_PCS_SETUP01_INDEPENDENT_STATIC_REVIEW_V1",
+  "status": "FAIL_SBL_PCS_SETUP01_INDEPENDENT_STATIC_REVIEW",
+  "generated_at_utc": "2026-10-17T08:02:25.632992+00:00",
+  "reviewer": "nr_entry_review; independent of setup runner/supervisor/PRE",
+  "personnel_independent": true,
+  "independent_static_review_passed": false,
+  "setup_qualified": false,
+  "checks": [
+    {
+      "group": "frozen drafts",
+      "check": "reviewed exact stable bytes scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "group": "frozen drafts",
+      "check": "reviewed exact stable bytes scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "group": "frozen drafts",
+      "check": "reviewed exact stable bytes reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "runner standard-library AST parsed",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "runner no project import",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "supervisor standard-library AST parsed",
+      "passed": true
+    },
+    {
+      "group": "AST",
+      "check": "supervisor no project import",
+      "passed": true
+    },
+    {
+      "group": "contract",
+      "check": "runner every spec literal top key exists",
+      "passed": true
+    },
+    {
+      "group": "contract",
+      "check": "supervisor every spec literal top key exists",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "WAIT_REAL_BUILD_AND_PERSONNEL_INDEPENDENT_POST_NO_PLACEHOLDER_PROTOCOL",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "REAL_INDEPENDENT_BUILD_POST_MUST_PASS",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "ACTUAL_COMPLETE_FIVE_TU_SOURCE_DEPENDENCY_AND_ASSET_GATE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "EXACT_BUILD_POST_LINK_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "BOUND_BUILD_OR_POST_ASSET_CHANGED",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "ORIGINAL_FROZEN_A01_ENDPOINT_CHANGED",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "EXACT_REVIEWED_LIBRARY_EVIDENCE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "LATEST_LEDGER_MUST_COVER_ALL_ACTUAL_EXECUTIONS",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "PRIOR_ONE_EXTERNAL_REPLACEMENT_CERTIFICATE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "ORPHAN_SUPERVISED_ATTEMPT_REQUIRES_ACCOUNTING",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "UNCOMMITTED_SETUP_SOURCE_OR_PROTOCOL",
+      "passed": true
+    },
+    {
+      "group": "freeze",
+      "check": "SETUP_INDEPENDENT_REVIEW_ROOT_COMMIT_FREEZE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "fixed scope",
+      "check": "operation='setup',environment='II',seed=7",
+      "passed": true
+    },
+    {
+      "group": "fixed scope",
+      "check": "maxima=dict(new_source_processes=1,source_requests=1,setup_calls=1,public_project_calls=13,solve_calls=0,seed=7)",
+      "passed": true
+    },
+    {
+      "group": "fixed scope",
+      "check": "budget=dict(wall_s=10.,cpu_s=20.,child_cpu_limit_s=20,r2_total_wall_s=3600.,r2_total_cpu_s=7200.)",
+      "passed": true
+    },
+    {
+      "group": "fixed scope",
+      "check": "zero_calls=dict(compile=0,solve=0,independent_model_queries=0,old_component_requery=0,VI_constructions=0,formal_table_I=0,independent_path_qualification=0)",
+      "passed": true
+    },
+    {
+      "group": "fixed scope",
+      "check": "setup_calls=None,public_project_calls=None",
+      "passed": true
+    },
+    {
+      "group": "fixed scope",
+      "check": "no_retry_reset_resume=True",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "self.command=[target['binary'],'II',str(work),'setup']",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "start_new_session=True",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "ACTUAL_REGISTERED_SOURCE_STAT_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "UNEXPECTED_SOURCE_START_GROUP",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "SOURCE_PID_IDENTITY_CHANGED_AT_START",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "self.loaded_scope=loaded_scope",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "os.write(self.proc.stdin.fileno(),raw)",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "INCOMPLETE_REQUEST_NO_RETRY",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "STDIN_MUST_CLOSE_AFTER_UNIQUE_WRITE",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "SOURCE_ACTUAL_DUAL_EOF_TAIL_OR_EXIT_FAILED",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "ACTUAL_SOURCE_GROUP_MUST_BE_EMPTY_AFTER_REAP",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "EXACT_ONE_COMPLETE_SOURCE_STDOUT_NO_PREAMBLE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "RAW_BODY_TRACE_MUST_MATCH_FULL_SOURCE_RESPONSE",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "ACTUAL_FULL_SINGLE_REQUEST_MUST_MATCH_RESPONSE_AND_STDIN_CLOSE",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "EXACT_ONE_SETUP_DISPATCH_RETURN_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "single request os.write only once",
+      "passed": true
+    },
+    {
+      "group": "transport",
+      "check": "exactly one source Popen only",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "struct.unpack_from('<16sHHIQQQIHHHHHH',raw)",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "h[2]==62 and h[11]==64 and 0<h[12]<65535",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "h[6]+h[11]*h[12]<=len(raw)",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "struct.unpack_from('<IIQQQQIIQQ',raw,h[6]+i*h[11])",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "section[1]!=11",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "section[9]==24",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "names[1]==3",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "struct.unpack_from('<IBBHQQ',raw,off)",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "ndx!=0 and info>>4 in(1,2)and other&3 in(0,3)",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "UNIQUE_ACTUAL_LOADED_OMPL_PROJECT_SYMBOL_PROVIDER_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "STATIC_AND_PRE_REQUEST_LOADED_SYMBOL_SCOPE_NOT_RUNTIME_GOT_ADDRESS_READ",
+      "passed": true
+    },
+    {
+      "group": "ELF",
+      "check": "ELF64 header layout64 and symbols24",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "'LD_BIND_NOW':'1'",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "SYSTEM_PRELOAD_MUST_BE_ABSENT_OR_EMPTY",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "'/etc/ld.so.cache':sha('/etc/ld.so.cache')",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "DELETED_LOADED_ELF_REFUSED",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "actual_loaded_scope_raw_before_gates",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "env==SOURCE_ENV",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "actual_loaded_symbol_candidates_before_gates",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "ACTUAL_MAPPED_ELF_CHANGED",
+      "passed": true
+    },
+    {
+      "group": "loaded scope",
+      "check": "scope explicitly no LD_PRELOAD LD_AUDIT or LD_LIBRARY_PATH in environment",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "expected={'mesh_load':1,'freeGridMotions':2}",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "len(trace)==6",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "COMPLETE_SETUP_TRACE_PAIRS_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "EXACT_REVIEWED_DYNAMIC_PROJECTION_TYPE_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "ACTUAL_EMPTY_SBL_GRID_DIMENSIONS_MUST_MATCH",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "FINITE_POSITIVE_ACTUAL_GRID_CELLS_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "FINITE_ORDERED_PROJECTION_BOUNDS_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "m['original_solve_Range']==.8",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "m['sampler']is None",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "PUBLIC_ACTION_SCOPE_AND_UNOBSERVED_INTERNAL_RNG_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "EXACT_FIXED13_PUBLIC_OBSERVATIONS_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "EXACT_PUBLIC_INPUT_AND_BINARY64_OBSERVATION_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "LINEAR_ORIGIN_MUST_BE_ZERO",
+      "passed": true
+    },
+    {
+      "group": "observations",
+      "check": "ACTUAL_PUBLIC_ACTION_COLUMN_MUST_MATCH_OBSERVATION",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "runtime_mesh_after_sha256",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "RUNTIME_MESH_CHANGED_AFTER_SOURCE",
+      "passed": false
+    },
+    {
+      "group": "evidence",
+      "check": "BOUND_ASSET_CHANGED",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "PRIOR_OR_AUTHORITATIVE_LEDGER_CHANGED",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "final_complete_raw_streams",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "final_counts",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "SETUP_MUST_NOT_PRODUCE_NATIVE_PLANNING_FILES",
+      "passed": true
+    },
+    {
+      "group": "evidence",
+      "check": "INCOMPLETE_RAW_SBL_TRACE_LINE",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "begun=time.monotonic();cpu_start=own_reaped_cpu();commit=validate",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "signal.setitimer(signal.ITIMER_REAL,.02,.02)",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "SBL_SETUP_AGGREGATE_HARD_WALL_CAP",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "SBL_SETUP_SELF_REAPED_AND_REGISTERED_LIVE_CPU_CAP",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "STOP_FINAL_WALL_OR_CPU_BUDGET",
+      "passed": true
+    },
+    {
+      "group": "budget",
+      "check": "UNMEASURED_NONZERO_EXTERNAL_SUPERVISION_REQUIRED",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "os.O_WRONLY|os.O_CREAT|os.O_EXCL",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "pass_fds=(fd,)",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "proc.wait()",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "Decimal('.01')",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "Decimal('.02')",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "wall<=min(10.,3600.-spec",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "cpu<=min(20.,7200.-spec",
+      "passed": true
+    },
+    {
+      "group": "external",
+      "check": "independent_POST_required=True",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "public two_robots, public collisionDetection",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "setQ();",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "setP();",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "collision ctor one load_models only",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "two_robots ctor no FK IK collision query",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "original setup no robot query/solve",
+      "passed": true
+    },
+    {
+      "group": "constructor chain",
+      "check": "SBL destructor calls freeMemory once",
+      "passed": true
+    },
+    {
+      "group": "library",
+      "check": "bound prior independent static library evidence exact SHA",
+      "passed": true
+    },
+    {
+      "group": "library",
+      "check": "bound actual OMPL exact bytes",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.h",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_ACTUAL_LIB_LINEAR_PROJECT_STATIC_EVIDENCE_20261017.md",
+      "passed": true
+    },
+    {
+      "group": "unchanged",
+      "check": "all read files remain /opt/ros/humble/lib/x86_64-linux-gnu/libompl.so.1.7.0",
+      "passed": true
+    }
+  ],
+  "checks_total": 119,
+  "checks_passed": 118,
+  "checks_failed": 1,
+  "failures": [
+    {
+      "group": "evidence",
+      "check": "RUNTIME_MESH_CHANGED_AFTER_SOURCE",
+      "passed": false
+    }
+  ],
+  "reviewed_source_sha256": {
+    "scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py": "c177eb8299e43eaa8fe7bc80db4aea1a0c445aa1f0655f3e339048a5532a1eca",
+    "scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py": "26c8027abdc6c1bd7affa3dd825319a644a62aadcf2af5131b9d15402b26da24",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md": "5dfb55d58f003c0b4c1043d0c9c69ba98e3dc6a4dcc00b50daa5e1575210c348"
+  },
+  "retained_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py": "c177eb8299e43eaa8fe7bc80db4aea1a0c445aa1f0655f3e339048a5532a1eca",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/supervise_p4_full_r2_abb_sbl_pcs_setup_draft.py": "26c8027abdc6c1bd7affa3dd825319a644a62aadcf2af5131b9d15402b26da24",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_SETUP_INTERFACE_PRE_DRAFT_20261017.md": "5dfb55d58f003c0b4c1043d0c9c69ba98e3dc6a4dcc00b50daa5e1575210c348",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.h": "e9f2f8af3bc8768fcd05cf9c9d36f5940a9dcd66893ac4f18715bcaa3f6ef6b5",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/proj_classes/apc_class.cpp": "aec7ea77728b32f1c0aacc8f5040d0085de2e54704b916e778541edc4c654e54",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_ACTUAL_LIB_LINEAR_PROJECT_STATIC_EVIDENCE_20261017.md": "788dad1f7eda728078699f271b949204e3689d8714c4765a40355f9f87a9d535",
+    "/opt/ros/humble/lib/x86_64-linux-gnu/libompl.so.1.7.0": "25e9cbdc7c1c3b1e7c56221e954e72c4f5cb96e6c45253631773655cac71499e"
+  },
+  "new_runner_import_describe_setup_model_compile_solve_protocol_claim_prior_calls": 0,
+  "limitations": [
+    "Static only; no implementation/runner module import/describe, setup, model, compile, solve, protocol,claim or ledger execution. Actual saved POST remains required.",
+    "Exact original constructor chain supports mesh_load1 and empty freeGrid2, no wrapped robot FK/IK/collision query. Library setup RNG remains UNOBSERVED. Public13 is observed linear action, not protected storage bytes.",
+    "ELF dynsym uniqueness plus sanitized environment/LD_BIND_NOW is only static and pre-request loaded scope, not GOT address read or complete provenance of generic DSO. Actual scope/raw/errors must remain.",
+    "Full-child external GNUtime includes preflight and final durable evidence; preflight has no installed hard watchdog. Actual 10wall/20CPU must pass. Supervisor own persistence excluded.",
+    "Journal writer creates one bLF blank physical line before final records. POST must retain and count exactly that one blank line and parse every other complete nonempty line, without ignoring unknown bytes.",
+    "Original failure/UNKNOWN historical connect a_chain risk remains. Zero solve/VI/formal; full211 obligations and0/22500 remain."
+  ]
+}
