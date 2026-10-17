@@ -262,3 +262,12 @@ GNUtime33.73 44.96 9.87 0，上界33.74wall/54.85CPU只替换内部样本一次�
 GNUtime9.05 7.51 1.18 0，上界9.06wall/8.71CPU替换内部样本一次。V22真实40execution=30科学账+10工程，charged795.885705375994/716.458923，余额仅上界2804.114294624006/6483.541077，历史未测尾UNKNOWN保持。完整211×174保前170。旧账遗留solve累计字段未覆盖所有新入口，原字节保留；V22_ADDENDUM按真实dispatch逐run修正为此前4+本次1=5（含PCS CBi S01失败），正式仍0/22500，不将5调用当5合格路径。
 
 下一完整689节点P先独立静审/真实证书及V22账绑定、源码协议commit冻结，再唯一120wall/240CPU/max2048；不重solve/RBS、补点或截尾。旧413逐文件fsync耗104.88wall已识别工程成本风险，P拟沿NR393原即时close写法与科学AST，最终逐字单tar/fsync耐久证据及全预算核验；实际资格尚未执行。RSS新静态契约保留SBL .05/冻结γ=.2差异、RRT禁exact、CBi serial导出与SBL -2风险，仅源码证据，0新RSS/VI。VI974/974余0、全部211义务及原45×500/1000s/投影/可见性/图表/消融不缩；端到端后先可重复成本pilot再申请正式预算，不P2/Isaac/提前结题。
+
+
+## 2026-10-17 CBiRRT_NR完整689节点离散起终路径独立通过，V23
+
+742fff2冻结唯一P，II/A01/RECONSTRUCTED physical NR的11原M、699引用、689唯一节点/688叶完整资格通过。实际source-policy math/原限位/aligned collision689/689全true，独立POST41787/41787、失败0、path/external true，SHAb3a2443cb790df547597fe5a72b4eeb78341d2f93a4b4beca8252eba692c40c8；原execution false、S原候选及全部旧GD/project/RBS false/STOP/UNKNOWN不回写。闭链max9.8002665254171e-6mm/4.6722628137957356e-8、原限位余.08726666666666683rad、叶max.04951897373867186<.05。mathFK1378/collision689/adapterFKJ2756/PQP159848（两variant各79924）；native collision0但TCP0/689、aligned collision0且TCP689/689，不能称native几何资格全过。主POST见reports/P4_FULL_R2_ABB_CBIRRT_NR_PATH01_POST_TASK_20261017.md。
+
+NR393 counted/科学loop/即时close writer逐AST不变，完整散文件与3447成员tar逐字核验/fsync，真双worker EOF/exit0/reaped/空组/diag0。GNUtime19.58 15.94 1.87 0，费用上界19.59wall/17.83CPU替换内部样本一次；P无新solve/RBS/IK/投影/采样。V23真实41execution=31科学账+10工程，charged815.475705375994/734.288923，余额仅上界2784.524294624006/6465.711077，历史未测尾UNKNOWN保持。v3账保留旧费用/历史并逐execution明确source累计5、本P新增0；211×178保前174，V23七组保全实际PASS空mismatch，1028旧科学、57崩溃文件8482891B/tar、五其他工作树13未提交及V22完整保持。
+
+离散证书不证明CCD、实体rod/省略pair安全、nativeKDL等价、全局成功率、RSS或PCS复杂障碍优势；全部211义务、原45×500/1000s与投影/点对/Fig3–5/TableI–II/消融不缩。VI974/974余0、正式0/22500。下一SBL专属默认projection公有线性作用观察、lazy删树代际/未初始化a_chain不读、原bridge/M契约，先工程版本化静审与冻结；RSS独立继续原RBS/分布/入口诊断，不增VI。端到端后可重复cost pilot和正式预算另审，不P2/Isaac/提前结题Word/PDF。

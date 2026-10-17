@@ -1,0 +1,145 @@
+{
+  "schema": "P4_RECOVERY_IMMUTABLE_VERIFICATION_V23",
+  "created_at_utc": "2026-10-17T06:48:32.105382+00:00",
+  "head_at_verification": "742fff283e26c806b3296d5504be522f1a892253",
+  "analysis_source": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/p4_full_audit/recovery_tools/audit_preservation_v23.py",
+  "analysis_source_sha256": "ce26b86e618bcef88434b95651fc72750f08b1e570afc0e662652f54aa3ce324",
+  "baseline_manifest": "results/p4_full/20261015_RECOVERY_BASELINE_MANIFEST.json",
+  "baseline_manifest_sha256": "ed334ff481e304037acdbf3897c386cf8246e64b9439d841ec18c14e0fb60235",
+  "old_scientific_files": 1028,
+  "old_scientific_mismatches": [],
+  "crash_uncommitted_files": 57,
+  "crash_uncommitted_bytes": 8482891,
+  "crash_uncommitted_mismatches": [],
+  "external_archive": {
+    "path": "/home/ubuntu2004/Documents/Codex/2026-10-15/codex-p4-https-github-com-dreamertotoe/work/recovery_20261015/preexisting_uncommitted.tar.gz",
+    "expected_sha256": "2a0dff95fd040b98124358289b61a6dc24daa9d94f747315f15deeb31f06618c",
+    "actual_sha256": "2a0dff95fd040b98124358289b61a6dc24daa9d94f747315f15deeb31f06618c",
+    "sha_matches": true,
+    "file_members": 57,
+    "archive_member_mismatches": [],
+    "read_policy": "Stream file member bytes only; no extraction or overwrite."
+  },
+  "other_worktrees": 5,
+  "other_uncommitted_files": 13,
+  "other_worktree_results": [
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-reproduction",
+      "expected_head": "fe7d3dbe996652ffba7c43de6fcae054ca5cf956",
+      "actual_head": "fe7d3dbe996652ffba7c43de6fcae054ca5cf956",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 5,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2",
+      "expected_head": "c0012b3d4a5cec4cf0ec84342c386f8eb1ba7ca3",
+      "actual_head": "c0012b3d4a5cec4cf0ec84342c386f8eb1ba7ca3",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 8,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2-audit",
+      "expected_head": "f4f9d3b97e80481dbc74ca419ac9b390447e4eef",
+      "actual_head": "f4f9d3b97e80481dbc74ca419ac9b390447e4eef",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 0,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-report",
+      "expected_head": "02f93464b3362a5b52c6c68ed624d67a091ef541",
+      "actual_head": "02f93464b3362a5b52c6c68ed624d67a091ef541",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 0,
+      "uncommitted_mismatches": []
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-three-methods",
+      "expected_head": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+      "actual_head": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+      "head_matches": true,
+      "status_matches": true,
+      "preserved_uncommitted_files": 0,
+      "uncommitted_mismatches": []
+    }
+  ],
+  "other_worktree_mismatches": [],
+  "coverage": {
+    "old_csv": "reports/P4_FULL_R2_CBIRRT_NR_SOLVE_ORIGINAL_VS_REPRODUCED_COVERAGE_20261016.csv",
+    "new_csv": "reports/P4_FULL_R2_CBIRRT_NR_PATH_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+    "old_sha256": "302c1594807bfdee6a4284dc9347faf35ad46307310454befb978a55d4b13956",
+    "new_sha256": "cd0c5d21c8ff4333863d88f580e9d86f9e34842e2be621ce23da8bbd87380aad",
+    "rows": 211,
+    "previous_columns_preserved": 174,
+    "new_column_count": 178,
+    "tableI_cells": 45,
+    "formal_trials": 0,
+    "formal_required": 22500,
+    "mismatches": []
+  },
+  "ledger": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V23.json",
+    "sha256": "a8435b0c6321062e9bb4627012c5288c120af176b048a6195ea46db795df0ca7",
+    "count": 41,
+    "science_count": 31,
+    "engineering_count": 10,
+    "r2_remaining": {
+      "wall_s": 2784.524294624006,
+      "cpu_s": 6465.711077
+    },
+    "charge_rule": "External upper replaces internal sample once; historical unsupervised tail UNKNOWN retained.",
+    "mismatches": []
+  },
+  "path01": {
+    "execution": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/execution.json",
+    "execution_sha256": "ee8691a2e6ca2318e2ef4a8a2c8a2b3cc2f5a18c4d6e319a3d1857112a3ab025",
+    "external_post": "reports/P4_FULL_R2_ABB_CBIRRT_NR_PATH01_SAVED_INDEPENDENT_POST_20261017.json",
+    "external_post_sha256": "b3a2443cb790df547597fe5a72b4eeb78341d2f93a4b4beca8252eba692c40c8",
+    "complete_nodes": 689,
+    "complete_leaves": 688,
+    "durable_tar_members": 3447,
+    "durable_tar_mismatches": [],
+    "source_raw_qualification_flags_preserved_false": true
+  },
+  "authoritative_source_solve_accounting": {
+    "previous": 5,
+    "new": 0,
+    "total": 5,
+    "executions_enumerated": 41
+  },
+  "historical_snapshots": [
+    {
+      "path": "results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V22.json",
+      "sha256": "e6e209f000b2f57d06a77952e88f3abd9fcf40792f7b20985ce1c54b61d3ab5f",
+      "matches742fff2": true
+    },
+    {
+      "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V22.json",
+      "sha256": "e0432dc0a92852db3a67f9c62535d80b4d4ab8a90f6430832320247420d0ff1e",
+      "matches742fff2": true
+    },
+    {
+      "path": "reports/P4_FULL_R2_CBIRRT_NR_SOLVE_ORIGINAL_VS_REPRODUCED_COVERAGE_20261016.csv",
+      "sha256": "302c1594807bfdee6a4284dc9347faf35ad46307310454befb978a55d4b13956",
+      "matches742fff2": true
+    },
+    {
+      "path": "results/p4_full/20261016_RECOVERY_QUALIFICATION_SOLVE_ACCOUNTING_V22_ADDENDUM.json",
+      "sha256": "316024926cbd63e1f6ca53db0be6d7cc4419b9cb3b029450f642e3529f87bcb9",
+      "matches742fff2": true
+    }
+  ],
+  "historical_mismatches": [],
+  "new_scientific_calls": 0,
+  "analysis_cost": {
+    "wall_s": 5.1837357280001015,
+    "cpu_s": 5.140566268
+  },
+  "passed": true
+}

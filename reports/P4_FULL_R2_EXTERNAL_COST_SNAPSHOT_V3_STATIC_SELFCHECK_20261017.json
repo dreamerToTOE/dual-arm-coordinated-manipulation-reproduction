@@ -1,0 +1,80 @@
+{
+  "schema": "P4_EXTERNAL_COST_SNAPSHOT_V3_STATIC_SELFCHECK_V1",
+  "status": "PASS_STATIC_SELF_CHECK_ONLY_PENDING_ROOT_REVIEW_AND_REAL_P_POST",
+  "created_at_utc": "2026-10-17T06:33:16.717515+00:00",
+  "v2_source": {
+    "path": "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_v2_20261016.py",
+    "sha256": "31be17ef58dc2319845a62dbb0fc27222855b501b37b5aaf933c257b7ddc460c"
+  },
+  "v3_source": {
+    "path": "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_v3_20261016.py",
+    "sha256": "dff638047bbf66768d85df8967ddcbfd1f263759466484c950f03b8f9ca410f0"
+  },
+  "checks": {
+    "AST_parse_without_import_or_execution": true,
+    "all_v2_helpers_AST_unchanged": true,
+    "same_standard_library_imports": true,
+    "fee_arithmetic_and_external_POST_gate_section_unchanged": true,
+    "VI_formal_coverage_exclusive_output_preservation_section_unchanged": true,
+    "fixed_addendum_SHA": true,
+    "V22_original_SHA_unchanged": true,
+    "v23_old40_new41_PATH01_zero_gate": true,
+    "current_saved_dispatch_total5": true,
+    "current_saved_positive_rows_match_addendum": true,
+    "current_PATH01_explicit_zero_source_solve": true,
+    "current_PATH01_formal_and_VI_zero": true,
+    "legacy_fields_verbatim_snapshot_history_and_current_authority_added": true,
+    "no_tool_execution_no_V23_ledger_created_by_selfcheck": true
+  },
+  "checks_passed": 14,
+  "checks_failed": 0,
+  "saved_actual_source_solve_dispatches": [
+    {
+      "run_id": "20261015_R2_ABB_CBIRRT_D_SOLVE01",
+      "execution": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE01/execution.json",
+      "sha256": "99c5cc5e980bf52489b154d5a678df903a1897a1e9e966c341ea6b5229533fdd",
+      "actual_source_solve_dispatches": 1,
+      "status": "STOP_PREFIX_RETAINED"
+    },
+    {
+      "run_id": "20261015_R2_ABB_CBIRRT_D_SOLVE02",
+      "execution": "results/p4_full/20261015_R2_ABB_CBIRRT_D_SOLVE02/execution.json",
+      "sha256": "c7cbd868da1cd9feb149bc057c4a63ff3e722b81123998e1a8cc5e8e1bab5906",
+      "actual_source_solve_dispatches": 1,
+      "status": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT"
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_NR_E2E01",
+      "execution": "results/p4_full/20261015_R2_ABB_RRT_NR_E2E01/execution.json",
+      "sha256": "573a1e0bb11a345811ff380a838eb4818000963e98adb90664dfaace755a58b7",
+      "actual_source_solve_dispatches": 1,
+      "status": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT"
+    },
+    {
+      "run_id": "20261015_R2_ABB_RRT_PCS_E2E01",
+      "execution": "results/p4_full/20261015_R2_ABB_RRT_PCS_E2E01/execution.json",
+      "sha256": "b64ce8eef7a6456ea7f082ed1ef94f63d3abaebac06baa068de37b13c79fb7d3",
+      "actual_source_solve_dispatches": 1,
+      "status": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT"
+    },
+    {
+      "run_id": "20261016_R2_ABB_CBIRRT_NR_SOLVE01",
+      "execution": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_SOLVE01/execution.json",
+      "sha256": "bc30019b1e5282817adee945fbb4b86a7bb9f30e6f419a6def0e559815a7b1b6",
+      "actual_source_solve_dispatches": 1,
+      "status": "SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT"
+    }
+  ],
+  "saved_PATH01_fields": {
+    "execution": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/execution.json",
+    "zero_calls_solve": 0,
+    "formal_table_I_calls": 0,
+    "new_VI_candidate_constructions": 0
+  },
+  "limits": [
+    "Static self-check only; v3 not imported or invoked, no V23 snapshot produced.",
+    "Real personnel-independent P POST/external time SHA and root review are required by inherited v2 gates before use.",
+    "No science, model, FK, IK, Jacobian, collision, sampling, RBS, solve, compiler, governance or P source changed.",
+    "Explicit old count values are retained in legacy_source_solve_accounting_history; corrected current counters and authoritative per-execution counts are appended to the new snapshot only."
+  ]
+}

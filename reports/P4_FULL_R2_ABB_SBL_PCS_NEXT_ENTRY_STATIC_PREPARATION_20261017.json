@@ -1,0 +1,181 @@
+{
+  "schema": "P4_ABB_SBL_PCS_NEXT_ENTRY_SAVED_STATIC_PREPARATION_V1",
+  "date": "2026-10-17",
+  "status": "STATIC_PREPARATION_ONLY_NOT_ENGINEERING_OR_SCIENCE_QUALIFIED",
+  "repository": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full",
+  "branch": "p4-full-reproduction-pcs-study",
+  "head_observed_before_write": "b20ebcd2aa227965bf3ecbffe093a4f83d949cfb",
+  "author_commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+  "prior_diagnosis_reused": {
+    "md": "reports/P4_FULL_R2_ABB_SBL_PCS_CBIRRT_NR_ENTRY_STATIC_DIAGNOSIS_20261016.md",
+    "json": "reports/P4_FULL_R2_ABB_SBL_PCS_CBIRRT_NR_ENTRY_STATIC_DIAGNOSIS_20261016.json",
+    "equivalent_existing_scope_reused": true
+  },
+  "new_execution_counts": {
+    "project_import": 0,
+    "compile": 0,
+    "describe": 0,
+    "binary_query": 0,
+    "setup": 0,
+    "model": 0,
+    "fk": 0,
+    "ik": 0,
+    "collision": 0,
+    "rbs": 0,
+    "solve": 0,
+    "VI_construction": 0,
+    "formal_table_I": 0,
+    "scientific_protocol": 0,
+    "claim": 0
+  },
+  "algorithm_source_ledger_governance_changed": false,
+  "source_identity": {
+    "author_SBL_cpp_equals_prior_and_template": true,
+    "author_SBL_h_equals_prior_and_template": true
+  },
+  "scope": {
+    "full_paper_obligations": 211,
+    "formal_TableI_required": 22500,
+    "formal_TableI_executed": 0,
+    "VI_constructed": 974,
+    "VI_remaining": 0,
+    "CBiNR_P_not_repeated": true,
+    "P2": false,
+    "Isaac": false
+  },
+  "contracts": [
+    {
+      "id": "DEFAULT_PROJECTION_SAMPLER",
+      "source": "planners/SBL_PCS.cpp:63-71,139-140; run/plan_PCS.cpp:79-153",
+      "required": "Keep default evaluator and setup order. Bind actual type/dimension/cell sizes/bounds/userConfigured/grid dimensions and existing sampler metadata; seed before first relevant construction. Do not preconstruct or replace evaluator.",
+      "actual_projection_type_dimension_matrix_values": "UNKNOWN_NOT_EXECUTED",
+      "actual_library_RNG_counts": "UNOBSERVED"
+    },
+    {
+      "id": "MATRIX_ACCESS",
+      "source": "/opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateProjections.h:52-80",
+      "required": "projection_ is protected with no public matrix getter. Legitimate read-only binding of actual existing object matrix needs reviewed implementation; ordinary dimension/cell-size/settings output is insufficient. No invalid derived downcast or replacement.",
+      "implemented": false
+    },
+    {
+      "id": "LAZY_LIFETIMES",
+      "source": "planners/SBL_PCS.cpp:367-402,410-484,74-85,486-502",
+      "required": "Monotonic lifetime IDs with address generations, active/retired registry, pre-delete q/branch/parent/root snapshots and original child links before parent=null. Cover removeMotion/freeGridMotions/clear. Never dereference freed pointers.",
+      "CBiD_pointer_only_map_is_sufficient": false
+    },
+    {
+      "id": "A_CHAIN",
+      "source": "planners/SBL_PCS.h:164-190; cpp:115-122,169-176,247-256,310-318",
+      "required": "Track author assignment origins. connect a_chain=null/UNINITIALIZED_NOT_READ. Do not read whole-tree a_chain indiscriminately or add initialization.",
+      "connect_is_in_original_mpaths": false
+    },
+    {
+      "id": "MPATH_BRIDGE",
+      "source": "planners/SBL_PCS.cpp:294-365,504-531",
+      "required": "Retain checkSolution arguments, extra connect creation and separate connectOther identity despite equal q; actual bridge motion/connectOther, original mpath1/mpath2, start-based swap and connectionPoint. Full tree includes extra connect; no q-based identity merge or inference solely from PlannerData."
+    },
+    {
+      "id": "FALSE_RECONSTRUCTION",
+      "source": "planners/SBL_PCS.cpp:385-398,534-641",
+      "required": "Retain every RBS/reconstruct return and M, role0 then role1 fallback and clear. source EXACT/void save return is not dense path qualification. No failed M promoted, missing M repaired, second solve or seed change."
+    },
+    {
+      "id": "RANDOM_HELPER",
+      "source": "planners/SBL_PCS.cpp:193-232; validity_checkers/StateValidityCheckerPCS.cpp:165-194",
+      "required": "Keep rand()%2 active selection and existing fixed analytic branches/fallback. Random three-argument IKproject is outside this grow call chain. Do not import H patch; retain original helper failures and H STOP/UNKNOWN."
+    }
+  ],
+  "source_main_conditions_to_freeze_later": {
+    "dimension": 12,
+    "sampler_q6_bounds_rad": [
+      -3.1416,
+      3.1416
+    ],
+    "callback": "AUTHOR_ALWAYS_TRUE",
+    "state_validity_resolution": 0.02,
+    "II_range_rad": 2.6,
+    "paths": [
+      "../paths/path_milestones.txt",
+      "../paths/ik_path.txt",
+      "./paths/path.txt",
+      "./paths/temp.txt"
+    ]
+  },
+  "next_engineering_boundary": {
+    "target": "Single SBL_PCS target, existing R2 PCS numerics, unchanged scientific bodies",
+    "observer": "SBL-specific lifecycle registry and complete-body reversible wrappers",
+    "not_reuse_as_is": [
+      "CBiD NN tree traversal",
+      "pointer-only identity map",
+      "whole-tree a_chain reads",
+      "CBiD D patch",
+      "H patch",
+      "NR seam"
+    ],
+    "proposed_not_frozen_budget": {
+      "wall_s": 45,
+      "cpu_s": 90
+    },
+    "execution_authorization_by_this_report": false,
+    "required_before_future_run": [
+      "Independent static review",
+      "Latest complete charged ledger",
+      "Versioned PRE/source/protocol commit",
+      "Unique engineering claim",
+      "Builder does not query binary",
+      "Separate solve and full-P freezes"
+    ]
+  },
+  "inputs_sha256_before": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_CBIRRT_NR_ENTRY_STATIC_DIAGNOSIS_20261016.md": "29e22760bea1c76d026dd1074085f84c620e5ecc0025799545fb7e5998c9087b",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_CBIRRT_NR_ENTRY_STATIC_DIAGNOSIS_20261016.json": "0086e2fbe7bad5d2e09f7af8ac664f24e6f3d9e9207edca6393992cd3d64761f",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/run/plan_PCS.cpp": "af868b6ed9bb1253fc2283f6d4d2fe8f3437a91ab349414bc44521892c4b3f69",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp": "93e7a32a8e5cd55ad4447f587b798e082c23649e5f8844eccb7d29ac7f35ad0a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": "45111720edc6773690846949ebd97e6ccc308dea30921bbb3bee771333801b94",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py": "bc4786bc562d0925b177b02bb60d34573b4798092ca0802252f1455561cbf9de",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/docs/REPRODUCTION_FULL_PAPER_COVERAGE_AND_ROOT_CAUSE_PROTOCOL.md": "8c74ebfecea1581bce5fc8bd61957eee81bb63c52f8aead7b01f2857358c583d",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ProjectionEvaluator.h": "e6d38f478826365f110fee87e0bca58ab20686a354d91f98a1c391ada0c7ea4d",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateSpace.h": "1114ba009306336111d6d2798b9f6c1f0a5e754c96f5fe4110b5b05afc26c370",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateProjections.h": "34fc567e726e8cafef27e1169c60b90d21e0f2091c1461919220120535ed9ead",
+    "/opt/ros/humble/include/ompl-1.7/ompl/tools/config/SelfConfig.h": "1168a1053700b7c1d43b0b2ec933581be0f89b9fc042f656891a571164df8606",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/SpaceInformation.h": "6723bea2ad71ce710c0e2869484c197022783dbd3103c09b4c94e025c3cac229",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ValidStateSampler.h": "81934f16ec2dbf42672472aaef58757c1e86fc2aa296639ae137ca778a64f96d"
+  },
+  "inputs_sha256_after": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_CBIRRT_NR_ENTRY_STATIC_DIAGNOSIS_20261016.md": "29e22760bea1c76d026dd1074085f84c620e5ecc0025799545fb7e5998c9087b",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_FULL_R2_ABB_SBL_PCS_CBIRRT_NR_ENTRY_STATIC_DIAGNOSIS_20261016.json": "0086e2fbe7bad5d2e09f7af8ac664f24e6f3d9e9207edca6393992cd3d64761f",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/run/plan_PCS.cpp": "af868b6ed9bb1253fc2283f6d4d2fe8f3437a91ab349414bc44521892c4b3f69",
+    "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.cpp": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/SBL_PCS.h": "76d0ba8df05cae6d79575d5b9d63d875f4c56bbd5a6240065d4c0dcf9d396cfc",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_observation_draft.hpp": "93e7a32a8e5cd55ad4447f587b798e082c23649e5f8844eccb7d29ac7f35ad0a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_instrumentation_draft.py": "45111720edc6773690846949ebd97e6ccc308dea30921bbb3bee771333801b94",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/baselines/p4_full/geometry_consistent/abb_cbirrt_d_driver_draft.cpp": "2103407f816045ea3e38b638f7c3b5630740dd1f1fabf387cfd6ea0624f64dfd",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_nr_v3_draft.py": "bc4786bc562d0925b177b02bb60d34573b4798092ca0802252f1455561cbf9de",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/docs/REPRODUCTION_FULL_PAPER_COVERAGE_AND_ROOT_CAUSE_PROTOCOL.md": "8c74ebfecea1581bce5fc8bd61957eee81bb63c52f8aead7b01f2857358c583d",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ProjectionEvaluator.h": "e6d38f478826365f110fee87e0bca58ab20686a354d91f98a1c391ada0c7ea4d",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateSpace.h": "1114ba009306336111d6d2798b9f6c1f0a5e754c96f5fe4110b5b05afc26c370",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/spaces/RealVectorStateProjections.h": "34fc567e726e8cafef27e1169c60b90d21e0f2091c1461919220120535ed9ead",
+    "/opt/ros/humble/include/ompl-1.7/ompl/tools/config/SelfConfig.h": "1168a1053700b7c1d43b0b2ec933581be0f89b9fc042f656891a571164df8606",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/SpaceInformation.h": "6723bea2ad71ce710c0e2869484c197022783dbd3103c09b4c94e025c3cac229",
+    "/opt/ros/humble/include/ompl-1.7/ompl/base/ValidStateSampler.h": "81934f16ec2dbf42672472aaef58757c1e86fc2aa296639ae137ca778a64f96d"
+  },
+  "validation": {
+    "standalone_stdlib_only": true,
+    "project_modules_imported": false,
+    "all_inputs_preserved": true,
+    "new_files_only": [
+      "reports/P4_FULL_R2_ABB_SBL_PCS_NEXT_ENTRY_STATIC_PREPARATION_20261017.md",
+      "reports/P4_FULL_R2_ABB_SBL_PCS_NEXT_ENTRY_STATIC_PREPARATION_20261017.json"
+    ]
+  },
+  "report_md_sha256": "21a048916278ccf6862144cd6e03d62385615aa8cc3244703bdf40318abdb514"
+}
