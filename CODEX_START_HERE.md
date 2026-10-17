@@ -1,5 +1,8 @@
 # CODEX_START_HERE.md
 
+> **D080 — 2026-10-17 用户批准P4双臂重点环境复现提速（当前最高优先级的P4范围决策）**：保留原论文环境I（平面20R方法学基准）及II–V（四个双臂空间环境）的RSS/PCS/NR×RRT/CBiRRT/SBL算法、RBS及Fig3–5/TableII/投影/可见性/消融等原关键实验；原TableI中II–V为**36组合×500=18,000次**、原1000s上限。原环境VI三臂多闭环**不再追加科研运行/修补/大规模统计**，仅归档历史实验；VI原4500次作为D080 OUT_OF_SCOPE披露，原22500的论文事实和旧211义务行不得删改。D079其他科学质量/保全/三次根因规则继续有效。完整批准范围见 [D080决策](docs/decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md)，后续工作见 [D080 Codex任务书](docs/tasks/P4_D080_FAST_TRACK_IMPLEMENTATION_20261017.md)。沿用现有分支与最新已验结果，不重做四条环境II成功路径；首次动作是新211行范围映射和最新实际状态。**正式18k须成本pilot和用户计算预算批准后才能执行**；不自动P2/Isaac。
+>
+
 > **D079 — 2026-10-14 最新复现授权，优先于 D078 / D077 及更早阶段计划。**
 > **不新开分支。** 当前直接在已存在且Codex目前停止的 `p4-full-reproduction-pcs-study` 分支接续。先读 [全论文覆盖与失败根因规程](docs/REPRODUCTION_FULL_PAPER_COVERAGE_AND_ROOT_CAUSE_PROTOCOL.md)、[P4逐项29项完整义务表](docs/tasks/P4_ORIGINAL_FULL_COVERAGE_AND_RECOVERY_20261014.md)、[P2逐项33项完整义务表](docs/tasks/P2_ORIGINAL_FULL_COVERAGE_AND_RECOVERY_20261014.md) 及 [最终原文/实际范围对照表模板](reports/PAPER_ORIGINAL_VS_REPRODUCED_MATRIX_TEMPLATE.md)。旧 [P4 D078阶段任务书](docs/tasks/P4_FULL_ENVIRONMENTS_PCS_VALIDATION_20261014.md) 仍作步骤参考，但不能以“代表环境/小样本”代替全文实验。
 > **必须阅读全文后逐个核对原始公式、图、表、附录、算法对照及所有场景，先冻结逐项义务表，再编程和运行**；不得根据时间主动省掉实验。相同失败机制三次有证据修正仍失败后强制做独立根因复核；若是我方实现/建模问题，应提出新修复与预算方案继续攻克；若是论文资料不可得或原文疑似矛盾，必须逐项有证据归因，不能默认说论文错。**每篇结题更新完整原文与实测对照表、真实Word/PDF，先发给用户审核。**
