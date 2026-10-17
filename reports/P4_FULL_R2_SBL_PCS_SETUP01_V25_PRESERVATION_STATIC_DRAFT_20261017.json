@@ -1,0 +1,149 @@
+{
+  "schema": "P4_SBL_PCS_SETUP01_V25_PRESERVATION_DRAFT_STATIC_AUDIT_V1",
+  "status": "DRAFT_STATIC_ONLY_NOT_EXECUTED",
+  "created_at_utc": "2026-10-17T08:01:08.685025+00:00",
+  "draft": "reports/p4_full_audit/recovery_tools/audit_preservation_v25.py",
+  "draft_sha256": "b4016a57689d8996dd41b443f5ae267a22de1aaafe7db887ac932c7748774685",
+  "checks": [
+    {
+      "name": "syntax_ast_only",
+      "passed": true,
+      "detail": "ast.parse only; the draft was not imported or executed."
+    },
+    {
+      "name": "stdlib_imports_only",
+      "passed": true,
+      "detail": [
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "decimal",
+        "hashlib",
+        "itertools",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "tarfile",
+        "time"
+      ]
+    },
+    {
+      "name": "guarded_main",
+      "passed": true,
+      "detail": "No top-level main() call outside the __main__ guard."
+    },
+    {
+      "name": "actual_parameter_interface",
+      "passed": true,
+      "detail": "Actual independent POST path/SHA and successor CSV are required, without placeholder values."
+    },
+    {
+      "name": "exclusive_result",
+      "passed": true,
+      "detail": "Future V25 result is exclusive; no current result was written by this audit."
+    },
+    {
+      "name": "fixed_v24_head",
+      "passed": true,
+      "detail": "Exact historical Git binding."
+    },
+    {
+      "name": "three_real_v24_history_bindings",
+      "passed": true,
+      "detail": [
+        {
+          "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V24.json",
+          "fixed_sha256": "adee31c9150354e4b145718b91f70a4451eaf9bf0f300e067905d6776b48d81e",
+          "actual_sha256": "adee31c9150354e4b145718b91f70a4451eaf9bf0f300e067905d6776b48d81e",
+          "committed_sha256": "adee31c9150354e4b145718b91f70a4451eaf9bf0f300e067905d6776b48d81e",
+          "passed": true
+        },
+        {
+          "path": "reports/P4_FULL_R2_SBL_PCS_BUILD01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv",
+          "fixed_sha256": "8536a239e117d4008363b86b4e7e331ac3b25a96d97fc4ba5a77950ab001a3bd",
+          "actual_sha256": "8536a239e117d4008363b86b4e7e331ac3b25a96d97fc4ba5a77950ab001a3bd",
+          "committed_sha256": "8536a239e117d4008363b86b4e7e331ac3b25a96d97fc4ba5a77950ab001a3bd",
+          "passed": true
+        },
+        {
+          "path": "results/p4_full/20261016_RECOVERY_IMMUTABLE_VERIFICATION_V24.json",
+          "fixed_sha256": "b5e513181859674caa3ebc31f636f820a28a7a71ab832dab7a6f6c03825735a9",
+          "actual_sha256": "b5e513181859674caa3ebc31f636f820a28a7a71ab832dab7a6f6c03825735a9",
+          "committed_sha256": "b5e513181859674caa3ebc31f636f820a28a7a71ab832dab7a6f6c03825735a9",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "science_setup_classification",
+      "passed": true,
+      "detail": "Successor target is 43=32 science+11 engineering; old42 rows must remain exactly equal."
+    },
+    {
+      "name": "coverage_full_scope_retained",
+      "passed": true,
+      "detail": "211 obligations and old182 columns retained; 45 Table-I cells, original500×1000s and22500 calls remain."
+    },
+    {
+      "name": "no_future_post_count_or_hash",
+      "passed": true,
+      "detail": "The actual complete positive POST check count is read at future use; no predicted count or future SHA."
+    },
+    {
+      "name": "setup_post_interface",
+      "passed": true,
+      "detail": "Interface supplied by independent reviewer; not a present qualification claim."
+    },
+    {
+      "name": "raw_scope_and_gates",
+      "passed": true,
+      "detail": "Successful raw status, one actual setup, public13, source registry and EOF/reap evidence are read only from future saved execution."
+    },
+    {
+      "name": "build_ancestor_retention",
+      "passed": true,
+      "detail": "No new setup manifest invented; real build manifest and its personnel-independent POST must be retained by actual certificate."
+    },
+    {
+      "name": "scope_not_solve_or_path",
+      "passed": true,
+      "detail": "Setup is science; zero solve/model requery/VI/formal/path qualification, setup library internal RNG remains UNOBSERVED."
+    },
+    {
+      "name": "immutable_vi_and_source_counts",
+      "passed": true,
+      "detail": "VI974/remaining0 and actual source solves previous5/new0/total5 are unchanged."
+    },
+    {
+      "name": "cost_recipe_saved_only",
+      "passed": true,
+      "detail": "Actual saved GNU-time decimal upper replaces own sample once; no future cost or remainder predicted."
+    },
+    {
+      "name": "base_tar_worktree_block_retained",
+      "passed": true,
+      "detail": "V24 base preservation:1028 oldfiles,57 crashfiles/8482891 bytes,external archive,5 otherworktrees/13 uncommitted files."
+    }
+  ],
+  "static_checks_total": 17,
+  "static_checks_passed": 17,
+  "static_checks_failed": 0,
+  "source_imported": false,
+  "draft_executed": false,
+  "protocol_described": false,
+  "project_scientific_calls": 0,
+  "ledger_generated": false,
+  "coverage_generated": false,
+  "preservation_result_generated": false,
+  "actual_independent_setup_POST_predicted": false,
+  "actual_independent_setup_POST_count_predicted": false,
+  "limitations": [
+    "Static recipe audit only; actual setup evidence, independent POST, V25 ledger and CSV remain future inputs.",
+    "No SETUP qualification, success, actual costs or matrix observations are inferred by this static audit.",
+    "If actual SETUP fails, retain its failure and charge it; do not rerun to satisfy this positive-certificate recipe."
+  ]
+}

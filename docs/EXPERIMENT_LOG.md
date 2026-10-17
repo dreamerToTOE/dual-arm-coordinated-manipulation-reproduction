@@ -1100,3 +1100,14 @@ NR393 counted/科学loop/即时close writer逐AST不变，完整散文件与3447
 GNUtime21.89/29.17/6.43/0，上界21.90wall/35.62CPU在45/90内，只替换内部样本一次。V24实际42execution=31科学账+11工程，累计837.375705375994/769.908923，剩额仅上界2762.624294624006/6430.091077，历史未测尾UNKNOWN。真实source solve累计5/本项新增0；完整211×182保前178、相关T02/T05/T08/T11/T17/T25仅工程证据。V24七组保全实际PASS，旧1028科学/57崩溃8482891B及tar/另5树13未提交/V23全保持。主POST reports/P4_FULL_R2_ABB_SBL_PCS_BUILD01_POST_TASK_20261017.md；最新表 P4_FULL_R2_SBL_PCS_BUILD01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv/.md，原短stem表及逐字别名补记均保留。
 
 下一首次setup公有13/默认projection/实际库绑定须独立静审与另冻10/20；未运行，不把公有映射冒称protected存储。ABB RSS固定32数学草案已准备但监督/收尾未齐，不执行或当完整RSS。原失败/UNKNOWN保持；VI974/974余0、正式0/22500、211全部义务与原统计规模不缩。端到端后可重复cost pilot/正式预算另审，不P2/Isaac/提前结题Word/PDF。
+
+
+## 2026-10-17 SBL_PCS 首次 setup 公有13点独立通过与 V25
+
+ff25dc60冻结唯一SETUP01，II/native1、A01 RECONSTRUCTED端点、seed7，实际setup1/public project13/source1/solve0。真实默认RealVectorRandomLinearProjectionEvaluator、维数3、两grid[3,3]/空树[0,0]、sampler null/userConfigured false；13点输入输出binary64完整。setup自动range3.4158286519086403与原solveRange .8分别保留。mesh_load1/freeGridMotions2的六entry/exit事件完成，1请求/双EOF/exit0/reaped/空组、20mesh及9映射文件前后SHA保持，diag空。独立POST9534/9534、失败0，setup/personnel/external/timing/cost true，SHA1c3ac4aef9f08917d33af7302f0b003f1d7960a557ddef4c1fad28f6caec8415；原execution external=false等字段不回写。
+
+GNUtime1.94/1.46/.20/0，上界1.95wall/1.68CPU，在原10/20内，只替换内部样本一次。V25实际43execution=32科学账+11工程，charged839.3257053759941wall/771.588923CPU，余额仅上界2760.674294624006/6428.411077；历史未测尾UNKNOWN。source solve累计5、本项新增0。完整表211×186保前182，相关T02/T05/T08/T11/T17/T25仅setup观察证据。V25保全实际PASS、七组mismatch全空，1028旧科学/57崩溃8482891B及tar/另5工作树13未提交/V24全保持。作者20mesh留本地，仅提交hash与精确ignore。
+
+执行前POST审查器prefix错误比较及journal空行位置断言已保全旧稿后纠正，仅保存证据复核，没有重跑setup或修改raw。主报告reports/P4_FULL_R2_ABB_SBL_PCS_SETUP01_POST_TASK_20261017.md；最新表reports/P4_FULL_R2_SBL_PCS_SETUP01_ORIGINAL_VS_REPRODUCED_COVERAGE_20261017.csv/.md。该证书限公有13点线性作用及元数据，不证明protected矩阵字节、GOT实际读数、库内部setup RNG（仍UNOBSERVED）、机器人或SBL完整路径。原connect a_chain未初始化输出风险仍TASK-BLOCKING，下一步先版本化最小writer/shadow修复静审与工程冻结；RSS固定32数学资格独立推进，监督v2待审未运行。
+
+VI974/974余额0，不新增VI构造/中点/RBS/solve。正式TableI0/22500，全部211原文义务、45×500/1000s、投影/局部可见性/复杂障碍/固定链消融/Fig3–5/TableI–II规模保持。端到端资格后先可重复cost pilot，再申请正式预算。不P2、Isaac或提前结题Word/PDF。
