@@ -1,0 +1,118 @@
+{
+  "schema": "P4_SBL_SHADOW_V2_LOCAL_PREFLIGHT_STATIC_ADDENDUM_V1",
+  "personnel_independent": false,
+  "status": "PASS_STATIC_TEXT_ONLY",
+  "checks_total": 22,
+  "checks_passed": 22,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "driver_expected_SHA",
+      "passed": true
+    },
+    {
+      "name": "PRE_final_engineering_SHA",
+      "passed": true
+    },
+    {
+      "name": "builder_unchanged_and_AST_only",
+      "passed": true
+    },
+    {
+      "name": "supervisor_unchanged_and_AST_only",
+      "passed": true
+    },
+    {
+      "name": "preflight_strings_no_escaped_source_quotes",
+      "passed": true
+    },
+    {
+      "name": "FROZEN_LOCAL_FIXTURE_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "EXACT_LOCAL_FIXTURE_KIND_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "SAVED_LOCAL_INPUT_PROVENANCE_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "BOUNDED_LOCAL_CHAIN_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "INTEGER_LOCAL_BRANCH_ID_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "LOCAL_BRANCH_RANGE_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "INTEGER_LOCAL_ROLE_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "LOCAL_ROOT_ZERO_OR_GROW_ROLE_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "NONROOT_LOCAL_LAZY_CHAIN_REQUIRED_BEFORE_MODEL",
+      "passed": true
+    },
+    {
+      "name": "finite12_checked_in_pure_JSON_preflight",
+      "passed": true
+    },
+    {
+      "name": "no_model_RNG_IO_inside_preflight",
+      "passed": true
+    },
+    {
+      "name": "preflight_after_parse_and_exact_endpoints",
+      "passed": true
+    },
+    {
+      "name": "preflight_before_directory_seed_and_model",
+      "passed": true
+    },
+    {
+      "name": "internal_guard_retained",
+      "passed": true
+    },
+    {
+      "name": "CXX_lexical_delimiters_balanced_no_compiler",
+      "passed": true
+    },
+    {
+      "name": "old_driver_exactly_retained",
+      "passed": true
+    },
+    {
+      "name": "only_pure_JSON_function_and_pre_model_call_added",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "baselines/p4_full/geometry_consistent/abb_sbl_pcs_driver_shadow_v2_draft.cpp": "5e6a78ac051d9f2a32b4abad3bb41c466e82bfc8f56b3a08c624b387de9a7cda",
+    "reports/P4_FULL_R2_ABB_SBL_PCS_SHADOW_V2_ENGINEERING_PRE_DRAFT_20261017.md": "c229fa7dc56fcafdc7c69434742b7a14b052e7ea15348fe89cd7cbe7ca994c08",
+    "scripts/build_p4_full_r2_abb_sbl_pcs_shadow_v2_draft.py": "fac6cde1ca4cd03cdc8f14d131af9f3ff1c6d9323f4c52717f7f771f7c6ae94f",
+    "scripts/supervise_p4_full_r2_abb_sbl_pcs_build_shadow_v2_draft.py": "32ba34ea2e800204b0f3372ed62102b0b30ae80bb51b940d43a757de03d36078",
+    "reports/p4_full_audit/draft_archive/sbl_shadow_v2_driver_before_local_preflight_20261017.cpp.txt": "4cc75e933dedd503f4c3e1668567958a2dd5c9f50912abdd23989eca7787b620",
+    "reports/p4_full_audit/recovery_tools/selfcheck_sbl_shadow_v2_preflight_addendum_20261017.py": "a00df06ab9a1053e3aaca61ab23d6ceef848d9755656283575896919b02e7585"
+  },
+  "project_imports": 0,
+  "text_transform_calls": 0,
+  "compile_calls": 0,
+  "binary_calls": 0,
+  "model_calls": 0,
+  "setup_calls": 0,
+  "local_calls": 0,
+  "solve_calls": 0,
+  "limitations": [
+    "Pure text/AST self-check; no C++ compiler, JSON runtime rejection test or numerical validation.",
+    "Prior failed checker and prior independent certificate are retained; this addendum binds only the new preflight SHA."
+  ]
+}

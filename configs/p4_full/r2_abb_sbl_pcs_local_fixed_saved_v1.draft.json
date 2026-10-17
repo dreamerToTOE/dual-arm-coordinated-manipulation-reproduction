@@ -1,0 +1,838 @@
+{
+  "schema": "P4_R2_ABB_SBL_PCS_LOCAL_FIXED_SAVED_INPUT_DRAFT_V1",
+  "frozen": false,
+  "classification": "RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES",
+  "draft_not_runtime_protocol": true,
+  "budget": {
+    "wall_s": 15.0,
+    "cpu_s": 30.0,
+    "r2_total_wall_s": 3600.0,
+    "r2_total_cpu_s": 7200.0
+  },
+  "source_model_queries": 0,
+  "new_sampling": 0,
+  "read_existing_saved_path_only": true,
+  "fixture_count": 2,
+  "maximum_source_processes": 4,
+  "maximum_original_lazy_calls": 4,
+  "maximum_solve_calls": 0,
+  "maximum_connect_fixture_calls": 0,
+  "project_public13_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "fixtures": {
+    "positive": {
+      "kind": "lazy_chain",
+      "fixture_id": "CBI_SAVED_EDGE0_NODE0_TO108_POSITIVE_NONTRIVIAL_RBS",
+      "separately_frozen_local_fixture": false,
+      "saved_input_references": [
+        {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+          "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+          "json_pointer": "/"
+        },
+        {
+          "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+          "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+          "json_pointer": "/"
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+          "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+          "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+          "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+          "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+        }
+      ],
+      "start_chain": [
+        {
+          "q12": [
+            0.5236,
+            1.7453,
+            -1.8326,
+            -1.4835,
+            1.5708,
+            0.0,
+            1.0042713284452618,
+            0.2729059574498862,
+            0.9485892867539307,
+            -1.1501189067527977,
+            1.8100179182011582,
+            -1.977396290726386
+          ],
+          "ik": [
+            3,
+            0
+          ],
+          "assigned_active_role": 0,
+          "saved_node_id": 0,
+          "saved_edge_index": 0,
+          "source_provenance": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/nodes/0"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00000.json",
+              "sha256": "d65853b350e14e4e19517d1c9330d21c0f5290559387fb54180b7c5c179b384f",
+              "json_pointer": "/"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00000_math.json",
+              "sha256": "e973fa8ddcd031a24e9016be0e529eaace858a2fec6d29c0b06fd89124560693",
+              "json_pointer": "/"
+            }
+          ],
+          "saved_node_qualified": true
+        },
+        {
+          "q12": [
+            0.605528926542522,
+            0.797906336886254,
+            -1.525062947508575,
+            -0.9564326180083933,
+            1.390332830412768,
+            -1.0360566568953615,
+            -0.032830592910687795,
+            -0.826941074157139,
+            0.7699246173850509,
+            -2.2093379682224024,
+            0.4386716235965997,
+            -2.4101241442496115
+          ],
+          "ik": [
+            3,
+            0
+          ],
+          "assigned_active_role": 0,
+          "saved_node_id": 108,
+          "saved_edge_index": 0,
+          "source_provenance": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/nodes/108"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00108.json",
+              "sha256": "a8c0eecb3e640fe7373e19ac401b3186dc4e8ba29470ebcc6fcc4242a613c0e4",
+              "json_pointer": "/"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00108_math.json",
+              "sha256": "76304c64093f3240093ff2865398dcc1d0194b289955bbbb4e3b869282b0fc26",
+              "json_pointer": "/"
+            }
+          ],
+          "saved_node_qualified": true
+        }
+      ],
+      "expected_observations": {
+        "source_isPathValid_returned": true,
+        "native_tree_sizes_before": [
+          2,
+          0
+        ],
+        "native_tree_sizes_after": [
+          2,
+          0
+        ],
+        "nonroot_valid_after": true,
+        "minimum_checkMotionRBS_dispatches": 2,
+        "removeMotion_dispatches": 0,
+        "source_save_dispatches": 0,
+        "observer_rng_draws": 0
+      },
+      "classification": "RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES",
+      "scientific_claim": "Saved edge endpoints only; actual SBL recursive calls and pass remain to be observed. Existing CBi path certificate is not a new SBL certificate."
+    },
+    "negative": {
+      "kind": "lazy_chain",
+      "fixture_id": "CBI_SAVED_NODE0_359_360_NATURAL_BRANCH_MISMATCH_RECURSIVE_REMOVAL",
+      "separately_frozen_local_fixture": false,
+      "saved_input_references": [
+        {
+          "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+          "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+          "json_pointer": "/"
+        },
+        {
+          "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+          "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+          "json_pointer": "/"
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+          "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+          "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+          "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+          "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+        }
+      ],
+      "start_chain": [
+        {
+          "q12": [
+            0.5236,
+            1.7453,
+            -1.8326,
+            -1.4835,
+            1.5708,
+            0.0,
+            1.0042713284452618,
+            0.2729059574498862,
+            0.9485892867539307,
+            -1.1501189067527977,
+            1.8100179182011582,
+            -1.977396290726386
+          ],
+          "ik": [
+            3,
+            0
+          ],
+          "assigned_active_role": 0,
+          "saved_node_id": 0,
+          "saved_edge_index": 0,
+          "source_provenance": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/nodes/0"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00000.json",
+              "sha256": "d65853b350e14e4e19517d1c9330d21c0f5290559387fb54180b7c5c179b384f",
+              "json_pointer": "/"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00000_math.json",
+              "sha256": "e973fa8ddcd031a24e9016be0e529eaace858a2fec6d29c0b06fd89124560693",
+              "json_pointer": "/"
+            }
+          ],
+          "saved_node_qualified": true
+        },
+        {
+          "q12": [
+            0.40885199981991366,
+            0.01849238795162944,
+            0.6459138299902185,
+            -1.7768245551413935,
+            1.6154608473930387,
+            -1.3588914646405181,
+            0.786271429949172,
+            1.1378404567787406,
+            -1.3493685849416543,
+            -1.4375901677622904,
+            1.8852759521248772,
+            -1.277221972579762
+          ],
+          "ik": [
+            0,
+            3
+          ],
+          "assigned_active_role": 1,
+          "saved_node_id": 359,
+          "saved_edge_index": 3,
+          "source_provenance": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/nodes/359"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00359.json",
+              "sha256": "ba66b0aaad0724d43d298aea8c3190aab5f7093d4a34ca152fe52c425a917390",
+              "json_pointer": "/"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00359_math.json",
+              "sha256": "f6dadc39924e7120cc1b047c40e295f5dab95c2ea7722faaf11bc279fe64257e",
+              "json_pointer": "/"
+            }
+          ],
+          "saved_node_qualified": true
+        },
+        {
+          "q12": [
+            0.4109855242063004,
+            0.02064905149456231,
+            0.6507950763574779,
+            -1.7691212338242281,
+            1.6182197835971526,
+            -1.334011372227266,
+            0.784824929451981,
+            1.1503971658360794,
+            -1.3561052963563307,
+            -1.4411955398994873,
+            1.8858227679142503,
+            -1.2911558648490153
+          ],
+          "ik": [
+            0,
+            3
+          ],
+          "assigned_active_role": 1,
+          "saved_node_id": 360,
+          "saved_edge_index": 3,
+          "source_provenance": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/nodes/360"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00360.json",
+              "sha256": "a85f1a47905a78a5d45fd88dd291ce701f6a652b558233cbc4f7fa9c35c3151c",
+              "json_pointer": "/"
+            },
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00360_math.json",
+              "sha256": "934d78a80068ca2f23b2967dbbabafc6fcc2cabac6568d4234d9ddba642f0853",
+              "json_pointer": "/"
+            }
+          ],
+          "saved_node_qualified": true
+        }
+      ],
+      "expected_observations": {
+        "source_isPathValid_returned": false,
+        "native_tree_sizes_before": [
+          3,
+          0
+        ],
+        "native_tree_sizes_after": [
+          1,
+          0
+        ],
+        "checkMotionRBS_dispatches": 0,
+        "removeMotion_dispatches": 2,
+        "source_save_dispatches": 0,
+        "observer_rng_draws": 0
+      },
+      "classification": "RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES",
+      "scientific_claim": "Deliberately synthetic ancestry using individually saved qualified states and their true branches; no CBi edge or SBL growth claim for node0 to359. Original branch equality guards must reject naturally before RBS, then delete child and grandchild."
+    }
+  },
+  "schedule": [
+    {
+      "schedule_index": 0,
+      "fixture_name": "positive",
+      "mode": "trace",
+      "request": {
+        "operation": "local",
+        "environment": "II",
+        "seed": 7,
+        "range_rad": 0.8,
+        "separately_frozen_runtime_qualification": false,
+        "start_q12": [
+          0.5236,
+          1.7453,
+          -1.8326,
+          -1.4835,
+          1.5708,
+          0.0,
+          1.0042713284452618,
+          0.2729059574498862,
+          0.9485892867539307,
+          -1.1501189067527977,
+          1.8100179182011582,
+          -1.977396290726386
+        ],
+        "goal_q12": [
+          0.5236,
+          0.34907,
+          0.69813,
+          -1.3963,
+          1.5708,
+          0.0,
+          0.7096069035980488,
+          1.8033460368176983,
+          -1.7064142899195036,
+          -1.6286748910337208,
+          1.914257188961649,
+          -2.015718262850188
+        ],
+        "fixture": {
+          "kind": "lazy_chain",
+          "fixture_id": "CBI_SAVED_EDGE0_NODE0_TO108_POSITIVE_NONTRIVIAL_RBS",
+          "separately_frozen_local_fixture": false,
+          "saved_input_references": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/"
+            },
+            {
+              "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+              "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+              "json_pointer": "/"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+              "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+              "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+              "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+              "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+            }
+          ],
+          "start_chain": [
+            {
+              "q12": [
+                0.5236,
+                1.7453,
+                -1.8326,
+                -1.4835,
+                1.5708,
+                0.0,
+                1.0042713284452618,
+                0.2729059574498862,
+                0.9485892867539307,
+                -1.1501189067527977,
+                1.8100179182011582,
+                -1.977396290726386
+              ],
+              "ik": [
+                3,
+                0
+              ],
+              "assigned_active_role": 0,
+              "saved_node_id": 0,
+              "saved_edge_index": 0
+            },
+            {
+              "q12": [
+                0.605528926542522,
+                0.797906336886254,
+                -1.525062947508575,
+                -0.9564326180083933,
+                1.390332830412768,
+                -1.0360566568953615,
+                -0.032830592910687795,
+                -0.826941074157139,
+                0.7699246173850509,
+                -2.2093379682224024,
+                0.4386716235965997,
+                -2.4101241442496115
+              ],
+              "ik": [
+                3,
+                0
+              ],
+              "assigned_active_role": 0,
+              "saved_node_id": 108,
+              "saved_edge_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schedule_index": 1,
+      "fixture_name": "positive",
+      "mode": "plain",
+      "request": {
+        "operation": "local",
+        "environment": "II",
+        "seed": 7,
+        "range_rad": 0.8,
+        "separately_frozen_runtime_qualification": false,
+        "start_q12": [
+          0.5236,
+          1.7453,
+          -1.8326,
+          -1.4835,
+          1.5708,
+          0.0,
+          1.0042713284452618,
+          0.2729059574498862,
+          0.9485892867539307,
+          -1.1501189067527977,
+          1.8100179182011582,
+          -1.977396290726386
+        ],
+        "goal_q12": [
+          0.5236,
+          0.34907,
+          0.69813,
+          -1.3963,
+          1.5708,
+          0.0,
+          0.7096069035980488,
+          1.8033460368176983,
+          -1.7064142899195036,
+          -1.6286748910337208,
+          1.914257188961649,
+          -2.015718262850188
+        ],
+        "fixture": {
+          "kind": "lazy_chain",
+          "fixture_id": "CBI_SAVED_EDGE0_NODE0_TO108_POSITIVE_NONTRIVIAL_RBS",
+          "separately_frozen_local_fixture": false,
+          "saved_input_references": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/"
+            },
+            {
+              "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+              "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+              "json_pointer": "/"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+              "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+              "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+              "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+              "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+            }
+          ],
+          "start_chain": [
+            {
+              "q12": [
+                0.5236,
+                1.7453,
+                -1.8326,
+                -1.4835,
+                1.5708,
+                0.0,
+                1.0042713284452618,
+                0.2729059574498862,
+                0.9485892867539307,
+                -1.1501189067527977,
+                1.8100179182011582,
+                -1.977396290726386
+              ],
+              "ik": [
+                3,
+                0
+              ],
+              "assigned_active_role": 0,
+              "saved_node_id": 0,
+              "saved_edge_index": 0
+            },
+            {
+              "q12": [
+                0.605528926542522,
+                0.797906336886254,
+                -1.525062947508575,
+                -0.9564326180083933,
+                1.390332830412768,
+                -1.0360566568953615,
+                -0.032830592910687795,
+                -0.826941074157139,
+                0.7699246173850509,
+                -2.2093379682224024,
+                0.4386716235965997,
+                -2.4101241442496115
+              ],
+              "ik": [
+                3,
+                0
+              ],
+              "assigned_active_role": 0,
+              "saved_node_id": 108,
+              "saved_edge_index": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schedule_index": 2,
+      "fixture_name": "negative",
+      "mode": "trace",
+      "request": {
+        "operation": "local",
+        "environment": "II",
+        "seed": 7,
+        "range_rad": 0.8,
+        "separately_frozen_runtime_qualification": false,
+        "start_q12": [
+          0.5236,
+          1.7453,
+          -1.8326,
+          -1.4835,
+          1.5708,
+          0.0,
+          1.0042713284452618,
+          0.2729059574498862,
+          0.9485892867539307,
+          -1.1501189067527977,
+          1.8100179182011582,
+          -1.977396290726386
+        ],
+        "goal_q12": [
+          0.5236,
+          0.34907,
+          0.69813,
+          -1.3963,
+          1.5708,
+          0.0,
+          0.7096069035980488,
+          1.8033460368176983,
+          -1.7064142899195036,
+          -1.6286748910337208,
+          1.914257188961649,
+          -2.015718262850188
+        ],
+        "fixture": {
+          "kind": "lazy_chain",
+          "fixture_id": "CBI_SAVED_NODE0_359_360_NATURAL_BRANCH_MISMATCH_RECURSIVE_REMOVAL",
+          "separately_frozen_local_fixture": false,
+          "saved_input_references": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/"
+            },
+            {
+              "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+              "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+              "json_pointer": "/"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+              "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+              "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+              "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+              "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+            }
+          ],
+          "start_chain": [
+            {
+              "q12": [
+                0.5236,
+                1.7453,
+                -1.8326,
+                -1.4835,
+                1.5708,
+                0.0,
+                1.0042713284452618,
+                0.2729059574498862,
+                0.9485892867539307,
+                -1.1501189067527977,
+                1.8100179182011582,
+                -1.977396290726386
+              ],
+              "ik": [
+                3,
+                0
+              ],
+              "assigned_active_role": 0,
+              "saved_node_id": 0,
+              "saved_edge_index": 0
+            },
+            {
+              "q12": [
+                0.40885199981991366,
+                0.01849238795162944,
+                0.6459138299902185,
+                -1.7768245551413935,
+                1.6154608473930387,
+                -1.3588914646405181,
+                0.786271429949172,
+                1.1378404567787406,
+                -1.3493685849416543,
+                -1.4375901677622904,
+                1.8852759521248772,
+                -1.277221972579762
+              ],
+              "ik": [
+                0,
+                3
+              ],
+              "assigned_active_role": 1,
+              "saved_node_id": 359,
+              "saved_edge_index": 3
+            },
+            {
+              "q12": [
+                0.4109855242063004,
+                0.02064905149456231,
+                0.6507950763574779,
+                -1.7691212338242281,
+                1.6182197835971526,
+                -1.334011372227266,
+                0.784824929451981,
+                1.1503971658360794,
+                -1.3561052963563307,
+                -1.4411955398994873,
+                1.8858227679142503,
+                -1.2911558648490153
+              ],
+              "ik": [
+                0,
+                3
+              ],
+              "assigned_active_role": 1,
+              "saved_node_id": 360,
+              "saved_edge_index": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "schedule_index": 3,
+      "fixture_name": "negative",
+      "mode": "plain",
+      "request": {
+        "operation": "local",
+        "environment": "II",
+        "seed": 7,
+        "range_rad": 0.8,
+        "separately_frozen_runtime_qualification": false,
+        "start_q12": [
+          0.5236,
+          1.7453,
+          -1.8326,
+          -1.4835,
+          1.5708,
+          0.0,
+          1.0042713284452618,
+          0.2729059574498862,
+          0.9485892867539307,
+          -1.1501189067527977,
+          1.8100179182011582,
+          -1.977396290726386
+        ],
+        "goal_q12": [
+          0.5236,
+          0.34907,
+          0.69813,
+          -1.3963,
+          1.5708,
+          0.0,
+          0.7096069035980488,
+          1.8033460368176983,
+          -1.7064142899195036,
+          -1.6286748910337208,
+          1.914257188961649,
+          -2.015718262850188
+        ],
+        "fixture": {
+          "kind": "lazy_chain",
+          "fixture_id": "CBI_SAVED_NODE0_359_360_NATURAL_BRANCH_MISMATCH_RECURSIVE_REMOVAL",
+          "separately_frozen_local_fixture": false,
+          "saved_input_references": [
+            {
+              "path": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/complete_original_saved_queue.json",
+              "sha256": "38ce4780897186fadff49f15cec239008df237b519deb9d16ddbac73eedb852f",
+              "json_pointer": "/"
+            },
+            {
+              "path": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+              "sha256": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+              "json_pointer": "/"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/validity_checkers/StateValidityCheckerPCS.cpp",
+              "sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+              "source_lines": "275-321; ik[0]=arm2 branch, ik[1]=arm1 branch"
+            },
+            {
+              "path": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit/CKCplanning/planners/SBL_PCS.cpp",
+              "sha256": "a8ebe8a01ad57347096b03621099f5fdf61f78ebcfb6b1635745cfbf4a8cb407",
+              "source_lines": "367-405 and 410-464; original lazy and recursive removal"
+            }
+          ],
+          "start_chain": [
+            {
+              "q12": [
+                0.5236,
+                1.7453,
+                -1.8326,
+                -1.4835,
+                1.5708,
+                0.0,
+                1.0042713284452618,
+                0.2729059574498862,
+                0.9485892867539307,
+                -1.1501189067527977,
+                1.8100179182011582,
+                -1.977396290726386
+              ],
+              "ik": [
+                3,
+                0
+              ],
+              "assigned_active_role": 0,
+              "saved_node_id": 0,
+              "saved_edge_index": 0
+            },
+            {
+              "q12": [
+                0.40885199981991366,
+                0.01849238795162944,
+                0.6459138299902185,
+                -1.7768245551413935,
+                1.6154608473930387,
+                -1.3588914646405181,
+                0.786271429949172,
+                1.1378404567787406,
+                -1.3493685849416543,
+                -1.4375901677622904,
+                1.8852759521248772,
+                -1.277221972579762
+              ],
+              "ik": [
+                0,
+                3
+              ],
+              "assigned_active_role": 1,
+              "saved_node_id": 359,
+              "saved_edge_index": 3
+            },
+            {
+              "q12": [
+                0.4109855242063004,
+                0.02064905149456231,
+                0.6507950763574779,
+                -1.7691212338242281,
+                1.6182197835971526,
+                -1.334011372227266,
+                0.784824929451981,
+                1.1503971658360794,
+                -1.3561052963563307,
+                -1.4411955398994873,
+                1.8858227679142503,
+                -1.2911558648490153
+              ],
+              "ik": [
+                0,
+                3
+              ],
+              "assigned_active_role": 1,
+              "saved_node_id": 360,
+              "saved_edge_index": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "freeze_policy": "Root creates separately reviewed runtime protocol with these exact four requests, changing only declared frozen booleans. No retry, node/branch/role replacement or extra dispatch.",
+  "plain_trace_comparison": "Compare semantic local return, exact q12 binary64/IK/roles/valid ancestry and final tree content, setup metadata, no native save, remaining lifetimes, and output evidence; ignore trace-only serial counters and timing. Trace requires source entered/completed balanced and raw stderr trace equality.",
+  "connect_policy": "No connect fixture. The separately frozen single seed7 original ten-second trace solve may naturally observe connect; if absent retain qualification gap.",
+  "limitations": [
+    "Input selection uses saved independent discrete source-policy checks, not new model or collision computations.",
+    "SBL artificial ancestry is explicitly reconstructed. Negative parent-child edge is intentionally not asserted a valid physical edge.",
+    "No continuous collision, global planner or paper performance claim. Build and local protocol review/commit plus successful BUILD02 independent POST remain required."
+  ]
+}

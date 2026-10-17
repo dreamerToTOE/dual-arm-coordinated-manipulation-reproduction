@@ -53,7 +53,10 @@ start=q['nodes'][0];goal=q['nodes'][412]
 schedule=[]
 for fixture_name,fixture in [('positive',positive),('negative',negative)]:
  for mode in ('trace','plain'):
-  schedule.append(dict(schedule_index=len(schedule),fixture_name=fixture_name,mode=mode,request=dict(operation='local',environment='II',seed=7,range_rad=.8,separately_frozen_runtime_qualification=False,start_q12=start,goal_q12=goal,fixture=copy.deepcopy(fixture))))
+  compact={k:copy.deepcopy(fixture[k])for k in ('kind','fixture_id','separately_frozen_local_fixture','saved_input_references')}
+  compact['start_chain']=[{k:node[k]for k in ('q12','ik','assigned_active_role','saved_node_id','saved_edge_index')}for node in fixture['start_chain']]
+  schedule.append(dict(schedule_index=len(schedule),fixture_name=fixture_name,mode=mode,request=dict(operation='local',environment='II',seed=7,range_rad=.8,separately_frozen_runtime_qualification=False,start_q12=start,goal_q12=goal,fixture=compact)))
+  ck(f'schedule_{len(schedule)-1}_single_atomic_request_under4096',len(json.dumps(schedule[-1]['request'],separators=(',',':')).encode())+1<4096)
 config=dict(schema='P4_R2_ABB_SBL_PCS_LOCAL_FIXED_SAVED_INPUT_DRAFT_V1',frozen=False,classification='RECONSTRUCTED_TREE_FIXTURE_ORIGINAL_SBL_METHOD_BODIES',draft_not_runtime_protocol=True,budget=dict(wall_s=15.,cpu_s=30.,r2_total_wall_s=3600.,r2_total_cpu_s=7200.),source_model_queries=0,new_sampling=0,read_existing_saved_path_only=True,fixture_count=2,maximum_source_processes=4,maximum_original_lazy_calls=4,maximum_solve_calls=0,maximum_connect_fixture_calls=0,project_public13_calls=0,new_VI_candidate_constructions=0,fixtures=dict(positive=positive,negative=negative),schedule=schedule,freeze_policy='Root creates separately reviewed runtime protocol with these exact four requests, changing only declared frozen booleans. No retry, node/branch/role replacement or extra dispatch.',plain_trace_comparison='Compare semantic local return, exact q12 binary64/IK/roles/valid ancestry and final tree content, setup metadata, no native save, remaining lifetimes, and output evidence; ignore trace-only serial counters and timing. Trace requires source entered/completed balanced and raw stderr trace equality.',connect_policy='No connect fixture. The separately frozen single seed7 original ten-second trace solve may naturally observe connect; if absent retain qualification gap.',limitations=['Input selection uses saved independent discrete source-policy checks, not new model or collision computations.','SBL artificial ancestry is explicitly reconstructed. Negative parent-child edge is intentionally not asserted a valid physical edge.','No continuous collision, global planner or paper performance claim. Build and local protocol review/commit plus successful BUILD02 independent POST remain required.'])
 with CONFIG.open('x')as f:json.dump(config,f,ensure_ascii=False,allow_nan=False,indent=2);f.write('\n')
 pre='''# D080 SBL_PCS 固定保存节点 local 资格 PRE-TASK 草案
@@ -68,7 +71,7 @@ root 已批准正、负两项 lazy fixture，各 trace/plain，严格四进程�
 
 负例固定 root node0→child359→grandchild360。node359/360 原 edge3 role1，真实 SBL ik=[0,3]；根仍原 root role0、ik=[3,0]。原 identify_state_ik 的静态映射明确 ik[0] 是被动 arm2 分支、ik[1] 是被动 arm1 分支，没有新增 identify。三节点各有已保存闭链、分支、限位和 aligned 源策略碰撞资格。root→359 是有意重建的 ancestry，不声称它是旧 CBi 原边或可行 SBL 边；双方两个真实分支自然不同，原 lazy guard 应不调 RBS，真实返回 false，原 removeMotion 递归退役 child+grandchild，根保留。不得改分支制造失败。
 
-四条 schedule 顺序固定 positive trace、positive plain、negative trace、negative plain。每个进程一次必要原 setup，不重做13点 projection 观察；原 seed7、Range=.8、II、A01 完整 start/goal 保持。无 connect fixture，不保存路径、不 solve、不 retry。所有输入来源 SHA 与 JSON 指针保存在单独 draft JSON；最终协议只允许改显式冻结布尔，不更换节点、关节角、branch、role、顺序或阈值。
+四条 schedule 顺序固定 positive trace、positive plain、negative trace、negative plain。每个进程一次必要原 setup，不重做13点 projection 观察；原 seed7、Range=.8、II、A01 完整 start/goal 保持。无 connect fixture，不保存路径、不 solve、不 retry。所有输入来源 SHA 与 JSON 指针保存在单独 draft JSON；request只裁去不参与执行的重复provenance/预期文字，完整证据保留于fixtures，用于单次原子write的紧凑request严格小于4096 bytes；最终协议只允许改显式冻结布尔，不更换节点、关节角、branch、role、顺序或阈值。
 
 ## 待独立判据
 
