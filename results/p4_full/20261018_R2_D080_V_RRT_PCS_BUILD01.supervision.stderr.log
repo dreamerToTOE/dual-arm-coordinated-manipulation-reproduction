@@ -1,0 +1,11 @@
+fatal: 路径 'scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py' 在磁盘上，但是不在 'c6a6a4b17752dc349af54128210661c649589d99' 中
+Traceback (most recent call last):
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py", line 266, in <module>
+    if __name__=='__main__':sys.exit(main())
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py", line 122, in main
+    require(subprocess.check_output(['git','show',commit+':'+relative],cwd=ROOT)==filename.read_bytes(),
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'show', 'c6a6a4b17752dc349af54128210661c649589d99:scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py']' returned non-zero exit status 128.

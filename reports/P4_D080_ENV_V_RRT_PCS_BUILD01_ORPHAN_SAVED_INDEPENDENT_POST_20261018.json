@@ -1,0 +1,106 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_BUILD01_ORPHAN_SAVED_INDEPENDENT_POST_V1",
+  "personnel_independent": true,
+  "status": "PASS_FAILED_PREFLIGHT_ORPHAN_COST_OBSERVATION_ONLY",
+  "checks_total": 9,
+  "checks_passed": 9,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "exact_failed_preflight_sources_match_independent15_PRE",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "raw_stderr_identifies_commit_gate_before_mkdir_and_any_invoke",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "source_control_order_proves_admission_precedes_run_claim_transform_compile",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "actual_failed_commit_lacks_runner_object",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "no_original_execution_receipt_claim_stage_or_compiler_artifacts",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "three_actual_outer_launch_started_reaped_exit1_records",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exclusive_original_inode_and_all_four_raw_log_hashes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "independent_two_observation_conservative_max_exact_finite_within_caps",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_incomplete_three_observation_and_failure_flags_permanently_retained",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "external_cost_qualified": true,
+  "orphan_preflight_cost_observation_qualified": true,
+  "external_supervision_qualified": false,
+  "engineering_build_qualified": false,
+  "independent_path_qualified": false,
+  "run_id": "20261018_R2_D080_V_RRT_PCS_BUILD01",
+  "source_protocol": "configs/p4_d080/v_rrt_pcs_e2e_build_v1.json",
+  "protocol_sha256": "6767581f00a9f5697125baee76618e1bd1b70e05af813f6ed8244c4ada9af84e",
+  "failed_source_commit": "c6a6a4b17752dc349af54128210661c649589d99",
+  "failure_reason": "Uncommitted runner missing from actual Git HEAD; preflight commit gate rejected before claim/run/stage/transform/compiler.",
+  "original_execution_exists": false,
+  "execution_sha256": null,
+  "internal_receipt_sha256": null,
+  "external_time": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD01.supervision.time.txt",
+  "external_time_sha256": "c8ad42b5726c63bd680400335bb4fb088dc349c8f5a5440fe8461384bc4b329f",
+  "external_charge": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD01.supervision.charge.json",
+  "external_charge_sha256": "a928bd149ec0084f040f460c0ac771eefdbe2f4fb98514c318a52324ddd0f756",
+  "external_metadata_sha256": "158a3e3527db8871b2f024fd0d5d8bf906ccee0ed76b8673c1474bb523598e6d",
+  "external_stderr_sha256": "6f6ccafe40576c7ff809a94ad3bfb18bda686220e39baba072d4bdf521031191",
+  "upper_wall_s": 0.098610285998584,
+  "upper_cpu_s": 0.092844,
+  "charge_basis": "INDEPENDENT_TWO_OBSERVATION_PREFLIGHT_ORPHAN_ONCE",
+  "original_charge_basis_retained": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "two_observation_components": {
+    "wall_decimal_s": [
+      "0.09",
+      "0.098610285998584"
+    ],
+    "cpu_decimal_s": [
+      "0.08",
+      "0.092844"
+    ],
+    "order": [
+      "raw_GNUtime_plus_padding",
+      "actual_outer_monotonic_or_reaped_plus_padding"
+    ]
+  },
+  "original_three_observation_completeness": false,
+  "new_compile_calls": 0,
+  "new_model_calls": 0,
+  "new_binary_execution_calls": 0,
+  "new_scientific_calls": 0,
+  "new_review_compile_model_binary_calls": 0,
+  "auditor_sha256": "267680e85f12eea443cb00f72698cdb7892b1a91f4afaa84ed016c0a2e984703",
+  "limits": [
+    "Independent conservative cost for one actually reaped failed preflight only; not complete successful three-observation execution.",
+    "No original execution or internal receipt exists; none is fabricated or backfilled.",
+    "Original four supervision files and error flags remain immutable.",
+    "This cost must be charged exactly once as a separately labelled orphan attempt before later execution; old prior validator needs an explicit versioned orphan-aware route.",
+    "No scientific algorithm, geometry, collision threshold, seed, node or budget changed."
+  ]
+}
