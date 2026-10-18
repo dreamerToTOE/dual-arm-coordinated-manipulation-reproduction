@@ -1,0 +1,9 @@
+# V31专用BUILD01停止费用工具增量独审
+
+FAIL_EXACT_BUILD_STOP_ACCOUNTING_STATIC：9/10，失败1。只AST/文本差异/保存SHA读取，未运行工具、未入账或执行科学。
+
+仅审root新增v7相对已审v6的差异：精确绑定原BUILD01 execution `0027c3c1c64d72cf02903b383ea7bbf3fb417b2b0107c6a673398cb8db825a2a`、工作40/80帽STOP、exit2、engineering=false资格；只准V31/旧216列/engineering entry。保留原45/90最终帽，不将停止改判构建或路径通过。三观测Decimal费用、source_solve_accounting、所有helper、旧行/实际execution/去重/211历史列与D080门均原样复用。
+
+人员独立性仅覆盖root编写v7增量；审查者是v6作者，v6沿用root已有6/6独审。本项没有消费或生成科学POST，实际运行前仍需原工具要求的人员独立费用证书。
+
+工具SHA `ba79b6e1bcedbaf48922f66c3a1ebab6684d571e44b8e4161c4a70bb5c96313d`；本JSON SHA `3cb520aed5800c6e4b4a8328c4c8d3173947627f51605b3bd5e92de34719c9ae`。

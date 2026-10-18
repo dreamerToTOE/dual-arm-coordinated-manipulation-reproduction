@@ -1,0 +1,9 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/plain/comau_v_pcs_local_driver_v1_draft.cpp:4:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/plain/validity_checkers/StateValidityCheckerPCS.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/plain/validity_checkers/StateValidityCheckerPCS.h:30:69: warning: unused parameter ‘env’ [-Wunused-parameter]
+   30 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) : mysi_(si.get())
+      |                                                                 ~~~~^~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/plain/validity_checkers/StateValidityCheckerPCS.h: In constructor ‘StateValidityChecker::StateValidityChecker(int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/plain/validity_checkers/StateValidityCheckerPCS.h:34:34: warning: unused parameter ‘env’ [-Wunused-parameter]
+   34 |         StateValidityChecker(int env = 1) {
+      |                              ~~~~^~~~~~~

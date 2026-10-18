@@ -1,0 +1,499 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL_ENGINEERING_DRAFT_STATIC_V1",
+  "status": "DRAFT_NOT_BUILT_NOT_QUERIED_NOT_QUALIFIED",
+  "scope": "V fixed-local PCS; RRT source linked only in future build, not instantiated",
+  "files_sha256": {
+    "baselines/p4_full/geometry_consistent/comau_v_pcs_instrumentation_v1_draft.py": "003aefe6cef37f02f8b13c819c0298601379b0adf67aefbbab24506ae3f06557",
+    "baselines/p4_full/geometry_consistent/comau_v_pcs_local_driver_v1_draft.cpp": "028c72e9a09802d7bd0cdbfc25f6115d6bb62ad3d1887667dd0ac6d67b175109",
+    "baselines/p4_full/geometry_consistent/comau_v_pcs_observation_v1_draft.hpp": "ba401a7b0a97b0a34ede6fb129d59f42be2dd7ff67f51454d6c334a3c9b6cc02",
+    "scripts/p4_d080/build_v_pcs_local_v1_draft.py": "4ad1411e68c67b1fb384c4919e345d1dba8dcf68683dd8067ca98e754b2209e2",
+    "configs/p4_d080/v_pcs_local_v1.DRAFT.json": "30f61a8b400af4dfb580a38ed4d491103085848e4865a48e03e6ebabb1516179"
+  },
+  "static_checks": {
+    "Python_AST_parse": true,
+    "JSON_parse": true,
+    "pure_text_transform": true,
+    "whole_input_files_byte_reversible": true,
+    "wrappers": 12,
+    "active_pair_count": 87,
+    "RRT_search_source_byte_unchanged": true,
+    "new_stage_created": false,
+    "new_run_created": false
+  },
+  "source_proof": {
+    "classification": "CORRECTED_COMAU_V_APC_WITH_ALIGNED_V3_COLLISION_AND_OBSERVATION_ONLY_PCS",
+    "status": "DRAFT_NOT_BUILT_NOT_QUERIED",
+    "whole_input_files_byte_reversible": true,
+    "input_sha256": {
+      "proj_classes/apc_class.cpp": "825465213d855f623948c9ee7e263053f67baed7e6907eae4f1549473f516d12",
+      "validity_checkers/StateValidityCheckerPCS.cpp": "beae1a631a7112179bde95b94d518014b6d8ea5cbb7903384189e8fa34ee177e",
+      "validity_checkers/collisionDetection.cpp": "49e5d675f7d2402ad46cb898287a0dcd08094ca9767ac6cdee3738245b2032ab",
+      "planners/RRT_PCS.cpp": "4ea1a052a5e9f2668fd62918c39f5a3820fc0300158f9cef0d51def3cb226b0f",
+      "planners/RRT_PCS.h": "93ae661e0af0b7e38bd2f3742e60bf24d1084d1b1f73d87fc0246bcc9a0d6fab"
+    },
+    "staged_sha256": {
+      "proj_classes/apc_class.cpp": "5c6b928a7a959454e8dc44d48cacd63d0a6e0cb12294e32cef353e8fce26ff31",
+      "validity_checkers/StateValidityCheckerPCS.cpp": "bdbe5b29125a32c4890f4af5ca77f28bd8830f463d195327f223eab3b6b20509",
+      "validity_checkers/collisionDetection.cpp": "d2bb75a8223cecc5085f5c0c8d9e12e7ceaef5b5bfaa1925840da20de71ec181",
+      "planners/RRT_PCS.cpp": "4ea1a052a5e9f2668fd62918c39f5a3820fc0300158f9cef0d51def3cb226b0f",
+      "planners/RRT_PCS.h": "93ae661e0af0b7e38bd2f3742e60bf24d1084d1b1f73d87fc0246bcc9a0d6fab"
+    },
+    "wrappers": [
+      {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain, int ik_sol)",
+        "observation_kind": "project_fixed",
+        "input_body_sha256": "1e94460814bfae000e8decc2ca6690c6fbfb9e710630d2977461852b78628637",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "State StateValidityChecker::identify_state_ik(State q1, State q2, State ik)",
+        "observation_kind": "identify",
+        "input_body_sha256": "d2a0e1793b0a2dd71d9353504f77e21d2661e3767c750efbf46ea52f42fde32b",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "bool StateValidityChecker::isValidRBS(State &q1, State &q2, int active_chain, int IK_sol)",
+        "observation_kind": "is_valid_rbs",
+        "input_body_sha256": "c72eb729e1f4361f800f1c546c945036dd39d1794b9b512e0de74d784d75b337",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "bool StateValidityChecker::checkMotionRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, int recursion_depth, int non_decrease_count)",
+        "observation_kind": "rbs",
+        "input_body_sha256": "0faac5d358617dd8b5b9a477c8af3b686500e309f4d0ed410cb57344c3b32646",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "validity_checkers/StateValidityCheckerPCS.cpp",
+        "signature": "bool StateValidityChecker::reconstructRBS(State qa1, State qa2, State qb1, State qb2, int active_chain, int ik_sol, Matrix &M, int iteration, int last_index, int firstORsecond)",
+        "observation_kind": "reconstruct",
+        "input_body_sha256": "8cbc58f9c0561073b94059f5030a9e20f77bb0b8fdca95bcfad2835bbff57b37",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "proj_classes/apc_class.cpp",
+        "signature": "void two_robots::FKsolve_rob(State q, int robot_num)",
+        "observation_kind": "native_fk",
+        "input_body_sha256": "1a924860388a6346391a9010adc5afe05ae260b7fae3225c8041e20122c0962a",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "proj_classes/apc_class.cpp",
+        "signature": "bool two_robots::IKsolve_rob(Matrix T, int robot_num, int solution_num)",
+        "observation_kind": "native_ik",
+        "input_body_sha256": "cae630b18397d93bed1d5a75befd4fdec6ad32d3d0f26c5dcf3118e8185421c1",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "proj_classes/apc_class.cpp",
+        "signature": "bool two_robots::calc_specific_IK_solution_R1(State q1, int IKsol)",
+        "observation_kind": "specific_ik",
+        "input_body_sha256": "f7bac7de59323e0ed3648b441b1e21364eb1067cab3f4cb0a5717567b526557e",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "proj_classes/apc_class.cpp",
+        "signature": "bool two_robots::calc_specific_IK_solution_R2(State q2, int IKsol)",
+        "observation_kind": "specific_ik",
+        "input_body_sha256": "83bb19525aa73251cedf8063b7716c2e42797cda42d45c395325d6eac8a2e7cd",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "proj_classes/apc_class.cpp",
+        "signature": "bool two_robots::check_angle_limits(State q)",
+        "observation_kind": "limits",
+        "input_body_sha256": "6e50366c770acca93c5fa5e5524a824751320b4c870b0274bdbdf5055f2abe7d",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "validity_checkers/collisionDetection.cpp",
+        "signature": "int collisionDetection::collision_state(State q1, State q2)",
+        "observation_kind": "collision",
+        "input_body_sha256": "2e5ed98522c4d832f4cbdc565aa09b6762fae2b009802be55de38b8219224f4d",
+        "full_input_body_unchanged_once": true
+      },
+      {
+        "file": "validity_checkers/collisionDetection.cpp",
+        "signature": "void collisionDetection::load_models()",
+        "observation_kind": "mesh_load",
+        "input_body_sha256": "2c2674a6ab4f97ae32ef19b785f33f3f809179e811a1eef982901f528a7e3077",
+        "full_input_body_unchanged_once": true
+      }
+    ],
+    "active_pair_identities": [
+      [
+        "base",
+        "link4"
+      ],
+      [
+        "link1",
+        "link4"
+      ],
+      [
+        "link2",
+        "link4"
+      ],
+      [
+        "base",
+        "link5"
+      ],
+      [
+        "link1",
+        "link5"
+      ],
+      [
+        "link2",
+        "link5"
+      ],
+      [
+        "base",
+        "link6"
+      ],
+      [
+        "link1",
+        "link6"
+      ],
+      [
+        "link2",
+        "link6"
+      ],
+      [
+        "base",
+        "link3"
+      ],
+      [
+        "base",
+        "EE"
+      ],
+      [
+        "link1",
+        "EE"
+      ],
+      [
+        "link2",
+        "EE"
+      ],
+      [
+        "base",
+        "link2"
+      ],
+      [
+        "base2",
+        "link42"
+      ],
+      [
+        "link12",
+        "link42"
+      ],
+      [
+        "link22",
+        "link42"
+      ],
+      [
+        "base2",
+        "link52"
+      ],
+      [
+        "link12",
+        "link52"
+      ],
+      [
+        "link22",
+        "link52"
+      ],
+      [
+        "base2",
+        "link62"
+      ],
+      [
+        "link12",
+        "link62"
+      ],
+      [
+        "link22",
+        "link62"
+      ],
+      [
+        "base2",
+        "link32"
+      ],
+      [
+        "base2",
+        "EE2"
+      ],
+      [
+        "link12",
+        "EE2"
+      ],
+      [
+        "link22",
+        "EE2"
+      ],
+      [
+        "base2",
+        "link22"
+      ],
+      [
+        "link3",
+        "link32"
+      ],
+      [
+        "link3",
+        "link42"
+      ],
+      [
+        "link3",
+        "link52"
+      ],
+      [
+        "link3",
+        "link62"
+      ],
+      [
+        "link4",
+        "link32"
+      ],
+      [
+        "link4",
+        "link42"
+      ],
+      [
+        "link4",
+        "link52"
+      ],
+      [
+        "link4",
+        "link62"
+      ],
+      [
+        "link5",
+        "link32"
+      ],
+      [
+        "link5",
+        "link42"
+      ],
+      [
+        "link5",
+        "link52"
+      ],
+      [
+        "link5",
+        "link62"
+      ],
+      [
+        "link6",
+        "link32"
+      ],
+      [
+        "link6",
+        "link42"
+      ],
+      [
+        "link6",
+        "link52"
+      ],
+      [
+        "link6",
+        "link62"
+      ],
+      [
+        "link3",
+        "EE2"
+      ],
+      [
+        "link4",
+        "EE2"
+      ],
+      [
+        "link5",
+        "EE2"
+      ],
+      [
+        "link6",
+        "EE2"
+      ],
+      [
+        "EE",
+        "link32"
+      ],
+      [
+        "EE",
+        "link42"
+      ],
+      [
+        "EE",
+        "link52"
+      ],
+      [
+        "EE",
+        "link62"
+      ],
+      [
+        "box",
+        "link1"
+      ],
+      [
+        "box",
+        "link2"
+      ],
+      [
+        "box",
+        "link3"
+      ],
+      [
+        "box",
+        "link4"
+      ],
+      [
+        "box",
+        "base2"
+      ],
+      [
+        "box",
+        "link12"
+      ],
+      [
+        "box",
+        "link22"
+      ],
+      [
+        "box",
+        "link32"
+      ],
+      [
+        "box",
+        "link42"
+      ],
+      [
+        "chassis",
+        "link2"
+      ],
+      [
+        "chassis",
+        "link3"
+      ],
+      [
+        "chassis",
+        "link4"
+      ],
+      [
+        "chassis",
+        "link5"
+      ],
+      [
+        "chassis",
+        "link6"
+      ],
+      [
+        "chassis",
+        "EE"
+      ],
+      [
+        "chassis",
+        "link22"
+      ],
+      [
+        "chassis",
+        "link32"
+      ],
+      [
+        "chassis",
+        "link42"
+      ],
+      [
+        "chassis",
+        "link52"
+      ],
+      [
+        "chassis",
+        "link62"
+      ],
+      [
+        "chassis",
+        "EE2"
+      ],
+      [
+        "chassis",
+        "box"
+      ],
+      [
+        "conveyor",
+        "link2"
+      ],
+      [
+        "conveyor",
+        "link3"
+      ],
+      [
+        "conveyor",
+        "link4"
+      ],
+      [
+        "conveyor",
+        "link5"
+      ],
+      [
+        "conveyor",
+        "link6"
+      ],
+      [
+        "conveyor",
+        "EE"
+      ],
+      [
+        "conveyor",
+        "link22"
+      ],
+      [
+        "conveyor",
+        "link32"
+      ],
+      [
+        "conveyor",
+        "link42"
+      ],
+      [
+        "conveyor",
+        "link52"
+      ],
+      [
+        "conveyor",
+        "link62"
+      ],
+      [
+        "conveyor",
+        "EE2"
+      ],
+      [
+        "conveyor",
+        "box"
+      ]
+    ],
+    "active_pair_count": 87,
+    "collision_argument_or_pair_changes": 0,
+    "additional_model_calls": 0,
+    "additional_rng_calls": 0,
+    "H_random_helper_correction": false,
+    "D_CBiRRT_correction": false,
+    "five_argument_project_correction": false,
+    "RRT_search_source_byte_unchanged": true,
+    "planner_instantiation_permitted": false,
+    "author_original_vs_input_stage": "APC corrections and collision alignment reuse existing separate certificates; not raw author numerical qualification."
+  },
+  "scientific_calls": 0,
+  "compile_calls": 0,
+  "binary_execution_calls": 0,
+  "new_charged_scientific_or_engineering_budget": 0,
+  "pending": [
+    "Personnel-independent merged source review",
+    "Fresh build freeze including latest shared ledger/dependency pool/library hashes and live external supervisor",
+    "Separate local fixed requests/caps/aggregate budget freeze and supervisor",
+    "Independent plain/trace and source-policy POST; no continuous-collision or path qualification claim"
+  ],
+  "counter_note": "All caps apply in each process including plain. Future freeze must divide/aggregate both binaries within shared 512-project proposal; 36 public requests is not the internal science-call total."
+}

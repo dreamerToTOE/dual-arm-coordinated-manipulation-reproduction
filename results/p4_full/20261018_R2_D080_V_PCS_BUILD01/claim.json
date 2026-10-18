@@ -1,0 +1,54 @@
+{
+  "source_commit": "515ec9f45249acb6fee115a73cb6733cd77f02ea",
+  "schema": "P4_D080_V_PCS_BUILD_EXECUTION_V1",
+  "run_name": "20261018_R2_D080_V_PCS_BUILD01",
+  "run_id": "20261018_R2_D080_V_PCS_BUILD01",
+  "classification": "ENGINEERING_BUILD_ONLY_V_PCS_ORIGINAL_SCIENTIFIC_CONTROL",
+  "engineering_only": true,
+  "status": "STARTED",
+  "execution_type": "engineering",
+  "environment": "V",
+  "scientific_calls": 0,
+  "query_calls": 0,
+  "solve_calls": 0,
+  "budget": {
+    "wall_s": 45,
+    "cpu_s": 90
+  },
+  "working_budget": {
+    "wall_s": 40,
+    "cpu_s": 80
+  },
+  "rng_calls": 0,
+  "binary_execution_calls": 0,
+  "protocol_sha256": "a1334a4efd1d7c2fbf525ec5cf17ff44a5642202c2a3f02431df5b06e58a51ea",
+  "supervisor_contract": {
+    "actual_time_pid": 31091,
+    "actual_time_start_ticks": 339895,
+    "supervisor_pid": 31089,
+    "actual_argv": [
+      "/usr/bin/time",
+      "--quiet",
+      "-f",
+      "%e %U %S %x",
+      "-o",
+      "/proc/self/fd/3",
+      "/usr/bin/python3",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_v_pcs_local_v1_draft.py",
+      "--build",
+      "--protocol",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_pcs_build01_frozen_v1.json"
+    ],
+    "planned_launch_line_sha256": "0e82432d09f2ebbd85bc09560d77307bf1c513c9d60b0d53db0ba8da8445425e",
+    "time_inode": 40239613,
+    "time_device": 2067,
+    "actual_time_output_fds": [
+      3,
+      4
+    ],
+    "external_POST_required": true
+  },
+  "targets": [],
+  "author_original_planning_qualified": false,
+  "external_supervision_and_independent_post_required": true
+}

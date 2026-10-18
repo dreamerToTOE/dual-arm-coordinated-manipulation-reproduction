@@ -1,0 +1,378 @@
+{
+  "schema": "P4_D080_V_PCS_FIXED_LOCAL_FIXTURE_DRAFT_V1",
+  "status": "DRAFT_NOT_FROZEN_NOT_EXECUTABLE",
+  "frozen": false,
+  "environment": "V",
+  "method": "PCS",
+  "source_centers": {
+    "start": {
+      "path": "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/V_start.json",
+      "sha256": "f906a6b61999c71efe15c8d86188edbded704d66dcba18f9833d940ccfa6c405",
+      "field": "selected_q_rad",
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    "goal": {
+      "path": "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/V_goal.json",
+      "sha256": "feae5fd78837327db9c83d66621e2aa4fc9eec72a46c0d0dfc1e98cbc9d88737",
+      "field": "selected_q_rad",
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    }
+  },
+  "source_policy": "A02 reconstructed saved centers; original named identify branch; active first joint +/-0.05; no replacement",
+  "schedule_modes": [
+    "trace",
+    "plain"
+  ],
+  "requests": [
+    {
+      "id": "start_identify",
+      "op": "identify",
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role0_minus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        -0.08,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role0_plus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        0.020000000000000004,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role0_rbs",
+      "op": "rbs",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role0_minus",
+      "qb_from_project": "start_role0_plus"
+    },
+    {
+      "id": "start_role0_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role0_minus",
+      "qb_from_project": "start_role0_plus"
+    },
+    {
+      "id": "start_role1_minus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        -0.03168616667994671,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role1_plus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.0683138333200533,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role1_rbs",
+      "op": "rbs",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role1_minus",
+      "qb_from_project": "start_role1_plus"
+    },
+    {
+      "id": "start_role1_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role1_minus",
+      "qb_from_project": "start_role1_plus"
+    },
+    {
+      "id": "goal_identify",
+      "op": "identify",
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role0_minus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.52,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role0_plus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.62,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role0_rbs",
+      "op": "rbs",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role0_minus",
+      "qb_from_project": "goal_role0_plus"
+    },
+    {
+      "id": "goal_role0_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role0_minus",
+      "qb_from_project": "goal_role0_plus"
+    },
+    {
+      "id": "goal_role1_minus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.171709922943673,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role1_plus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.0717099229436728,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role1_rbs",
+      "op": "rbs",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role1_minus",
+      "qb_from_project": "goal_role1_plus"
+    },
+    {
+      "id": "goal_role1_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role1_minus",
+      "qb_from_project": "goal_role1_plus"
+    }
+  ],
+  "caps_per_binary_proposal": {
+    "public_request": 18,
+    "project_fixed": 256,
+    "identify": 2,
+    "is_valid_rbs": 248,
+    "rbs": 500,
+    "reconstruct": 500,
+    "native_fk": 260,
+    "native_ik": 288,
+    "specific_ik": 256,
+    "limits": 1,
+    "collision": 248,
+    "pqp": 21576,
+    "mesh_load": 1,
+    "records": 25000
+  },
+  "global_maxima_proposal": {
+    "public_requests": 36,
+    "project_fixed": 512,
+    "independent_unique_nodes": 256,
+    "source_processes": 2,
+    "setup_calls": 2,
+    "solve_calls": 0,
+    "formal_calls": 0
+  },
+  "budget_proposal_only": {
+    "wall_s": 30,
+    "cpu_s": 60
+  },
+  "semantic_result_predictions": null,
+  "failure_policy": "Retain every false/UNKNOWN/dependency failure. Stop transport/cap failures without changing inputs or adding samples.",
+  "caps_derivation": "Per binary project256=8 public+at most248 internal midpoint calls; RBS/reconstruct each forest has4 roots and at most248 internal nodes, at most500 entries; identify2 gives4FK+32IK, fixedproject gives256FK/IK/specific; collision<=248 and87pair =>21576 PQP. records25000 covers ceiling24154. Limits minimum1 mandatory cap but no public limits request; independent limits qualification is separate."
+}

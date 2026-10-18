@@ -1059,3 +1059,8 @@ V29实际47execution=35科学账+12工程，累计999.0159693489941wall/826.6376
 ## 2026-10-18 D080：SBL第五条完整离散路径，接续V工程
 
 SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员独立通过（21861/21861），不重solve；原PATH01 STOP/261 final/第262保存点与帽越界保持。新tail38.701351803wall/8.925315CPU，V30实际48=36科学+12工程，charged1037.7173211519942wall/835.562961CPU；余额仅上界2562.282678848006/6364.437039，历史未测尾UNKNOWN。211×216表保前212列；正式0/18000，原22500历史、VI974只读均保持。II四旧路径未重跑。仅离散aligned source-policy，不CCD/正式成功率。详见reports/P4_D080_SBL_COMPLETE_AND_V_BUILD_PRE_STAGE_20261018.md。下一V唯一两目标45/90工程已冻最新V30，随后固定local与独立Comau物理资格；RSS解耦，III/IV续后，不P2/Isaac。
+
+
+## 2026-10-18 D080：V BUILD01工程工作帽停止，V31保全
+
+原45/90首次构建在40wall工作帽停止，plain全完成、trace3TU完成/第4组清理−9；模型/局部/solve全0。原源不改，工程成本估计不足不归因论文。独立failure/cost78/78仅保全通过，build资格false；外41.415730890wall/61.545897CPU帽内。V31=49execution(36science13eng)，charged1079.1330520419942/897.1088579999999；余量仅上界2520.866947958006/6302.891142。211×220保前216列，正式0/18000、VI974只读。下一只复用8完成对象与plainELF、20/40新stage补2traceTU/link，先独审冻结，不重8TU或覆盖原STOP。详见reports/P4_D080_ENV_V_BUILD01_WORK_CAP_POST_20261018.md。SBL387完整离散证书保持；不P2/Isaac。

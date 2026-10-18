@@ -1,0 +1,63 @@
+{
+  "schema": "P4_D080_V_PCS_BUILD_EXTERNAL_COST_CHARGE_V1",
+  "run_id": "20261018_R2_D080_V_PCS_BUILD01",
+  "source_execution": "results/p4_full/20261018_R2_D080_V_PCS_BUILD01/execution.json",
+  "execution_sha256": "0027c3c1c64d72cf02903b383ea7bbf3fb417b2b0107c6a673398cb8db825a2a",
+  "receipt": "results/p4_full/20261018_R2_D080_V_PCS_BUILD01/cost_receipt.json",
+  "receipt_sha256": "fe95bd2e41137e29cbabd9300d58c3bfee13e259dc1f7ee2cfe5e6165b1f0587",
+  "time_file": "results/p4_full/20261018_R2_D080_V_PCS_BUILD01.supervision.time.txt",
+  "time_sha256": "9365c8fd2aed1ad9476ef14ff6b28158eb8f9cdab1a4f10eae062e3d406f5f29",
+  "time_fields": [
+    "41.40",
+    "50.10",
+    "11.41",
+    "2"
+  ],
+  "metadata": "results/p4_full/20261018_R2_D080_V_PCS_BUILD01.supervision.jsonl",
+  "metadata_sha256": "e232978f6ac811dbe87adeb1b9b34659fc564d79ee5f31e4b5f992c1020f34db",
+  "stderr": "results/p4_full/20261018_R2_D080_V_PCS_BUILD01.supervision.stderr.log",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "time_process_pid": 31091,
+  "time_returncode": 2,
+  "measured_child_exit": 2,
+  "started_attempt": true,
+  "wall_s": 41.415730890000084,
+  "cpu_s": 61.545897,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "raw_GNUtime_upper_wall_s": 41.41,
+  "raw_GNUtime_upper_cpu_s": 61.53,
+  "monotonic_envelope_valid": true,
+  "monotonic_envelope_components": {
+    "wall_decimal_s": [
+      "41.41",
+      "41.415730890000086",
+      "41.29580616399995"
+    ],
+    "cpu_decimal_s": [
+      "61.53",
+      "61.545897",
+      "61.478156"
+    ],
+    "order": [
+      "raw_GNUtime_plus_padding",
+      "outer_monotonic_or_reaped_plus_padding",
+      "internal_receipt_plus_padding"
+    ]
+  },
+  "monotonic_envelope_error": null,
+  "timing_valid": true,
+  "time_inode_unchanged": true,
+  "fallback_observed_outer_wait_wall_s": 41.405730890000086,
+  "fallback_reaped_children_CPU_s": 61.525897,
+  "fallback_cost_completeness": "UNQUALIFIED_FINITE_OBSERVATION_ONLY_IF_TIME_INVALID",
+  "cost_boundary": "Effective prior charge replaces this execution pre-save cost, or charges orphan preflight attempt. Supervisor own journal/fsync cost excluded.",
+  "failure": null,
+  "external_supervision_qualified": false,
+  "independent_POST_required": true,
+  "wall_CPU_caps_pass": true,
+  "execution_cap_breach": {
+    "wall": false,
+    "cpu": false
+  },
+  "completed_process_exit0": false
+}
