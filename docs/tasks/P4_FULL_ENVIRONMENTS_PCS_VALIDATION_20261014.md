@@ -348,3 +348,10 @@ V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923
 7bf8afb7冻结唯一36public/38stdout，双source exit0/reaped/空组/双EOF，plain-trace全部binary64语义一致。每mode2identify、8project(7true1false)、4RBS(3false1依赖未执行)、4回溯(3false1未执行)，RBS深度最高4；固定84project总、24唯一保存节点。独立保存194/194只证source/transport/费用，Comau物理局部/路径仍false，原返回不改判。start role0 minus原IKfalse具体内因UNKNOWN；另三RBS/对应回溯原碰撞pair86 conveyor-box、73 chassis-box、72 chassis-EE2分别拒绝，独立物理待验，不归因论文。
 
 费用12.661639838999472wall/8.950921CPU入V33一次；51execution(37科学账14工程)，累计1103.9938663219941wall/923.983153CPU，余额仅上界2496.006133678006/6276.016847，原3600/7200及历史尾UNKNOWN不变。211×228保前224列，source solve仍6/新增0，正式0/18000、VI974只读，II五路径不重跑。下一原24节点独立Comau资格拟60/120先独审冻结，无新节点/采样/门限；V端到端仍待，随后III/IV，RSS解耦。详见reports/P4_D080_ENV_V_PCS_LOCAL01_STAGE_POST_20261018.md。
+
+
+## 2026-10-18 D080：V固定24节点独立诊断完成 / V34
+
+原24保存节点唯一执行，闭链/branch/原限位24全过，aligned source-policy15clear/9collision拒绝，最大闭链位置1.4779288903810084e-12mm。native24TCP mismatch保留；人员独立保存430/430只证固定诊断/费用，local/path/CCD仍false，原三公有RBS/回溯false不改判。原17 source TCP/box/pair保存交叉核单列待验，不冒称adapter未保存的逐pair独立closer重算。见reports/P4_D080_ENV_V_PCS_PHYSICAL01_STAGE_POST_20261018.md。
+
+费用9.466394254997576wall/3.7087890000000003CPU一次入V34，52execution=38science14engineering，charged1113.4602605769917wall/927.6919419999999CPU，原总3600/7200保持，历史尾UNKNOWN。211×232保前228列；source solve6/本次0，正式0/18000、VI974永久只读、II五路径复用。下一V保存对照/原RRT薄工程及III .8工程，RSS解耦；不新假设/放宽判据/正式大统计/P2/Isaac/FR3。

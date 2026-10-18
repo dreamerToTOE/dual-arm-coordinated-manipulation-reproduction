@@ -52,3 +52,10 @@
 - **M4**：授权后完成正式实验与Fig3–5/TableII/消融、同条件统计/不确定性和完整的教师报告；最终只在用户接受后关闭P4、转P2。
 
 **预计目标**14–21天完成本篇 *D080重点环境复现*，以真实pilot/失败为准调整，不为赶工删II–V或RSS。每天末尾或每个科学里程碑给一个中文简短进度（本日新增可复核科研结果 / 尚未通过 / 今日耗时与剩余 / 下一步）；普通已批工程任务可连续进行，不必每个静态审查停机；涉及新科学假设、正式预算或范围改变必须暂停取得明确批准。
+
+
+## 2026-10-18 D080：V固定24节点独立诊断完成 / V34
+
+原24保存节点唯一执行，闭链/branch/原限位24全过，aligned source-policy15clear/9collision拒绝，最大闭链位置1.4779288903810084e-12mm。native24TCP mismatch保留；人员独立保存430/430只证固定诊断/费用，local/path/CCD仍false，原三公有RBS/回溯false不改判。原17 source TCP/box/pair保存交叉核单列待验，不冒称adapter未保存的逐pair独立closer重算。见reports/P4_D080_ENV_V_PCS_PHYSICAL01_STAGE_POST_20261018.md。
+
+费用9.466394254997576wall/3.7087890000000003CPU一次入V34，52execution=38science14engineering，charged1113.4602605769917wall/927.6919419999999CPU，原总3600/7200保持，历史尾UNKNOWN。211×232保前228列；source solve6/本次0，正式0/18000、VI974永久只读、II五路径复用。下一V保存对照/原RRT薄工程及III .8工程，RSS解耦；不新假设/放宽判据/正式大统计/P2/Isaac/FR3。
