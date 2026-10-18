@@ -1,0 +1,127 @@
+{
+  "kind": "READ_ONLY_PRESERVATION_AND_READINESS_AUDIT_NOT_SCIENTIFIC_GATE_PASS",
+  "source_commit_at_audit": "ee97134368d5fc0bcdf04721269ec5ff11e76c6d",
+  "checks": {
+    "protected_P4_files_exact": true,
+    "old_P2_eight_files_exact": true,
+    "eb2600a_P2_science_reports_data_retained": true,
+    "P4_HEAD_unchanged": true,
+    "P4_clean": true,
+    "v1_exact": true,
+    "canonical_geometry_exact": true,
+    "canonical_mechanics_exact": true,
+    "v2_physics_controls_observations_seeds_budget_criteria_exact": true,
+    "v2_diff_only_authorized_numerics_metadata": true,
+    "all_new_artifact_SHA_exact": true,
+    "scientific_source_commit_bytes_exact": true,
+    "actual_gate_FAIL_STOP_not_promoted": true,
+    "diagnostic_not_promoted": true,
+    "no_implicit_trajectory_artifacts": true,
+    "remaining_correction_budget_one": true
+  },
+  "all_checks_pass": true,
+  "protected_count": 1023,
+  "protected_mismatches": [],
+  "old_P2_count": 8,
+  "old_P2_mismatches": [],
+  "prior_P2_file_count": 112,
+  "prior_P2_mismatches": [],
+  "artifact_mismatches": [],
+  "source_mismatches": [],
+  "P4_HEAD": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+  "P4_status": "",
+  "v2_diff": [
+    {
+      "path": "/decisions/numerical_user_approval",
+      "change": "ADDED"
+    },
+    {
+      "path": "/execution_authorized_this_round",
+      "before": false,
+      "after": true
+    },
+    {
+      "path": "/implicit_solver",
+      "change": "ADDED"
+    },
+    {
+      "path": "/native_evaluation",
+      "change": "ADDED"
+    },
+    {
+      "path": "/numerical_qualification/plant_integration",
+      "before": "Lie exponential midpoint, state/velocity coupled predictor-corrector; no Euler angle integration",
+      "after": "Implicit coupled Lie midpoint: delta=dt*f(X_old retract(delta/2), held U); X_new=X_old retract(delta). Known E1/E2 increments=dt*U, C increment=0; coupled unknown O/V/G1/G2 Newton; no substeps, line search or projection."
+    },
+    {
+      "path": "/parent_protocol",
+      "change": "ADDED"
+    },
+    {
+      "path": "/qualification_source_commit_scope",
+      "change": "ADDED"
+    },
+    {
+      "path": "/readiness/execution_authorized_this_round",
+      "before": false,
+      "after": true
+    },
+    {
+      "path": "/readiness/implicit_solver",
+      "change": "ADDED"
+    },
+    {
+      "path": "/readiness/native_equivalence",
+      "change": "ADDED"
+    },
+    {
+      "path": "/readiness/pending_implementation_gates",
+      "before": [
+        "Eq16 independent object dynamics and unchanged Eq9/10/11 mechanics implemented",
+        "fresh timestamped Eq17 simulated observations and 42-state right-SE3 IESEKF qualified",
+        "Eq20/21/25 controllers and causal multirate input queues qualified",
+        "fixed gravity settling and full-dynamics half-step gates pass",
+        "source/config hashes frozen before control experiment; no GT leakage"
+      ],
+      "after": [
+        "Native field/contact/geometric primitives and right-trivialized rate Jacobian qualified against canonical references",
+        "Implicit coupled Lie midpoint residual/Newton transport/domain and fixed gravity settling/step gates qualified",
+        "Fresh timestamped Eq17 observations and 42-state right-SE3 IESEKF qualified with unchanged observer prediction design",
+        "Eq20/21/25 controllers and causal multirate input queues qualified",
+        "Original full controlled exp3/seed7 half-step and no-GT-leakage gates pass",
+        "Runtime readiness/artifact manifest recorded separately from this frozen parameter snapshot"
+      ]
+    },
+    {
+      "path": "/readiness/protocol_snapshot_only",
+      "change": "ADDED"
+    },
+    {
+      "path": "/revision_input_commit",
+      "change": "ADDED"
+    },
+    {
+      "path": "/schema_version",
+      "before": "p2.closed_loop_protocol.frozen.v1",
+      "after": "p2.closed_loop_protocol.frozen.v2"
+    },
+    {
+      "path": "/status",
+      "before": "FROZEN_CONTACT_GEOMETRY_QUALIFIED",
+      "after": "FROZEN_IMPLICIT_NUMERICS_PENDING_QUALIFICATION"
+    }
+  ],
+  "unapproved_diff": [],
+  "artifact_index_SHA": {
+    "20261014_P2_implicit_qualification01": "d118eae17439da51ccd3a3236ff9feea2394ab55b5fc0c2f55681c90ec30846b",
+    "20261014_P2_implicit_FD_diagnosis01": "b8dc376a0e3abc7decbe8d95557560c7ece9563bcc1e3c64cf8317c6b2b61d99"
+  },
+  "gate_status": "FAIL_STOP",
+  "implicit_plant_qualified": false,
+  "estimator_qualified": false,
+  "controller_qualified": false,
+  "closed_loop_runs": 0,
+  "implicit_plant_trajectories": 0,
+  "corrections_used": 2,
+  "remaining_corrections": 1
+}

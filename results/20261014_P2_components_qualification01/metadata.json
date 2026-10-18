@@ -1,0 +1,35 @@
+{
+  "kind": "PREDECLARED_E_C_COMPONENT_QUALIFICATION_NO_CONTROL",
+  "date": "2026-10-14",
+  "source_commit": "5bfcafdede8399447a03e4cab4630a3950b17ab2",
+  "source_sha256": {
+    "scripts/qualify_p2_components.py": "e71893e58fb0080b3099a01c3e9b6222c32e6af98fb2b71dc48cb546512b3787",
+    "baselines/p2_pose_force/estimator.py": "5c045a79b21038b64f8a97628923c654c784c30ba43ae9f09ea0733de3b96798",
+    "baselines/p2_pose_force/observations.py": "cc902ea092396c9164e27b33010e7639deae0b185798df34488b61f08e5d6665",
+    "baselines/p2_pose_force/control.py": "12b32337ec8e7284e00b4e0822b03644ceeb4f0231c8a6875eb7ea28c1023aec",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "tests/test_p2_estimator.py": "bbec6bcf794e90a291a57d13640a50e0cd1e51d87e50f815729060122dc2927a",
+    "tests/test_p2_observations_qualification.py": "c395c61725f095b8337031257df4a21636ba1dfbb8d1693cc4cbefb522cb488f",
+    "tests/test_p2_control_qualification.py": "cd6a692817263b287a50ddde1f82869e71091588b124e6eaeb98dcc42915b11f"
+  },
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_p2_estimator.py",
+    "tests/test_p2_observations_qualification.py",
+    "tests/test_p2_control_qualification.py",
+    "--junitxml=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2-audit/results/20261014_P2_components_qualification01/pytest.xml"
+  ],
+  "python": "3.10.12",
+  "config_path": "configs/p2_closed_loop_protocol_v3.json",
+  "protocol_sha256": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+  "test_fixture_protocol": "v1 original physical/estimator/control values; all unchanged in v3",
+  "required_prior_N_D_index_sha256": "4ec4fca54a503e83695cdd64c62f662a0c7c5bcfd75d0ff5532e80e2bfd43402",
+  "wall_limit_s": 120,
+  "corrections_used": 2,
+  "remaining_corrections": 1,
+  "closed_loop_runs": 0
+}

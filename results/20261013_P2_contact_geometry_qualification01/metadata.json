@@ -1,0 +1,36 @@
+{
+  "kind": "MATHEMATICAL_CONTACT_GEOMETRY_QUALIFICATION",
+  "model_id": "p2.spatial_free_log_constraint.v1",
+  "expected_cases": 66,
+  "closed_loop_runs": 0,
+  "git_commit": "ac9e35d097c89aac17994fe7f52d9724ead0a9a4",
+  "command": [
+    "scripts/qualify_p2_contact_geometry.py",
+    "--output-dir",
+    "results/20261013_P2_contact_geometry_qualification01"
+  ],
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "scipy": "1.8.0"
+  },
+  "source_sha256": {
+    "scripts/qualify_p2_contact_geometry.py": "3fb3d247836837c4c90a9a53489c2ff9f77a4ac8f4f2df9ee7e4382480853003",
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "reports/P2_CONTACT_GEOMETRY_PRE_TASK.md": "991918f20bd51f332ebb98a381c82fa4aca9316205340bc8cf48e0ce68b2dd04",
+    "configs/p2_closed_loop_protocol_v1_draft.json": "6439179a3d3144f43c9be5ef4fd59968af62f7ba89119745b16dafd17a2f2891"
+  },
+  "tolerances": {
+    "algebra": 1e-10,
+    "FD": 1e-07,
+    "FD_step_s": 1e-06,
+    "integration_free_drift": 1e-07,
+    "convergence_floor": 1e-12
+  },
+  "status": "PASS",
+  "actual_cases": 66,
+  "failed_cases": [],
+  "artifacts": {
+    "cases.jsonl": "b29f0f68ff9df8fddb2e556f7685c8dea4b9e4e7b21c3898ca8e0814c018caf9"
+  }
+}

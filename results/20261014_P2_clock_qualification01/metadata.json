@@ -1,0 +1,23 @@
+{
+  "kind": "DETERMINISTIC_CAUSAL_CLOCK_QUALIFICATION_NO_ODE",
+  "source_commit": "d90f32f3c0a1beadcfd35e2f560986eb965f8842",
+  "source_sha256": {
+    "baselines/p2_pose_force/clocking.py": "64c1ab04c4cec016c96cde5d4997650b3cb7ac5458f26f3ff5f723cdf5d20947",
+    "tests/test_p2_clocking.py": "90bcc4452b3b88afdeaa6c5a24eb9cb002e3b3b526a6770037c259ce0827b9c3",
+    "scripts/qualify_p2_clocking.py": "f3e746dcec9a585218a0dc046e945992461ac7c67ef747333f68df05d4bb5753",
+    "scripts/run_p2_closed_loop.py": "d9c5bddeace5c0bf76f931e84b8e9083f2c88bbf14877df62573a4e9229d3adb",
+    "reports/P2_CLOSED_LOOP_RUNTIME_SPEC.md": "6153f7805c802f3f87e0ea5a8b786494401f31a19016b722a0f41a16085b4beb"
+  },
+  "protocol_sha256": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_p2_clocking.py",
+    "--junitxml=/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2-audit/results/20261014_P2_clock_qualification01/pytest.xml"
+  ],
+  "corrections_used": 2,
+  "remaining_corrections": 1,
+  "closed_loop_runs": 0
+}

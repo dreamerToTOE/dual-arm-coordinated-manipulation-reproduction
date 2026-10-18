@@ -1,0 +1,80 @@
+{
+  "kind": "LOCAL_NUMERICAL_RISK_DIAGNOSIS_NO_TRAJECTORY",
+  "date": "2026-10-14",
+  "command": [
+    "scripts/audit_p2_stage2_numerics.py",
+    "--output-dir",
+    "results/20261014_P2_stage2_numerical_audit01"
+  ],
+  "source_commit": "385d08d38d1b26a1efb81e86cedae265b104b3b3",
+  "source_sha256": {
+    "scripts/audit_p2_stage2_numerics.py": "f2dcef0453259a4793eaa0c923dde251ac8a94d7ced5069139b1b564295f5e98",
+    "reports/P2_STAGE2_NUMERICAL_DIAGNOSIS.md": "1337c668181275db54b79b5d125b4dd9e2af1ded362a8f689592ee5eb5864488",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "configs/p2_closed_loop_protocol_v1.json": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3"
+  },
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "scipy": "1.8.0"
+  },
+  "protocol_sha256": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+  "fd_step": 1e-06,
+  "fd_step_units": "per coordinate: m,rad,m/s,rad/s following 42-state order",
+  "frozen_reference_Jacobian_atol": 1e-07,
+  "method": "central FD42 at fixed points; fixed-prior right output local for one-step map",
+  "state_order": [
+    "O",
+    "V",
+    "E1",
+    "E2",
+    "C",
+    "G1",
+    "G2"
+  ],
+  "modes": [
+    "pivot",
+    "pivot"
+  ],
+  "U_EE_body": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "fixtures": [
+    "A_nominal",
+    "A_analytic_equilibrium",
+    "C_nominal",
+    "C_analytic_equilibrium"
+  ],
+  "midpoint_steps_s": [
+    0.0003333333333333333,
+    0.00016666666666666666
+  ],
+  "observer_Euler_risk_delta_s": 0.004,
+  "no_new_acceptance_rule": true,
+  "closed_loop_runs": 0,
+  "new_ODE_trajectories": 0,
+  "actual_C_dynamics_gate_run": false,
+  "plant_reset": false,
+  "controller_or_estimator_run": false,
+  "corrections_used_before": 1,
+  "correction_consumed_by_this_audit": false,
+  "status": "COMPLETE_DIAGNOSIS",
+  "wall_s": 11.486919397999372,
+  "completed_fixtures": 4
+}

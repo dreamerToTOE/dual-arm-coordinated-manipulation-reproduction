@@ -1,0 +1,1086 @@
+{
+  "schema_version": "p2.closed_loop_protocol.frozen.v3",
+  "date": "2026-10-14",
+  "status": "FROZEN_APPROVED_FIVE_POINT_NUMERICAL_QUALIFICATION_PENDING",
+  "executable": false,
+  "base_commit": "79cc87173e5fad778927d0b4f8b3b0db6e41de7b",
+  "branch": "reproduce-p2-paper-audit",
+  "paper": {
+    "doi": "10.1109/LRA.2026.3665445",
+    "private_pdf_sha256": "0188b6be5f9029b40c99b377bcd1e2885ec6e6b56acc49276d6fe1fc72cc0346"
+  },
+  "decisions": {
+    "contact_kinematics_variant": "p2.spatial_free_log_constraint.v1",
+    "printed_eq15_preserved": true,
+    "eq22_used_to_generate_force_curves": false,
+    "controller_equations": [
+      19,
+      20,
+      21,
+      25
+    ],
+    "needs_user_decision": [],
+    "user_approval": {
+      "recorded_date": "2026-10-14",
+      "statement": "允许重新推导几何一致的接触模型：保持原位姿/内力控制器，记录模型差异，先通过有限形变检查再冻结协议",
+      "scope": "contact derivation, finite-deformation qualification and protocol freeze; no controller experiment in this round"
+    },
+    "numerical_user_approval": {
+      "recorded_date": "2026-10-14",
+      "statement_summary": "User explicitly approved an implicit coupled Lie midpoint plant, versioned numerical protocol, equivalent fast calculation and solver/step qualification before continuing the original closed-loop suite.",
+      "scope": "Plant numerical integration and equation-preserving native evaluation only; physical parameters, contact geometry, controller, noise, timing and scientific criteria remain fixed.",
+      "observer_prediction_approval": false
+    },
+    "native_Jacobian_oracle_user_approval": {
+      "date": "2026-10-14",
+      "approved": "Only native continuous-field qualification oracle changed to high-precision five-point fourth-order central difference. Epsilon1e-6, absolute component tolerance1e-7, all physical/control/observer/noise/time/seed/budget conditions unchanged. Prior failure retained.",
+      "scientific_corrections_used_at_approval": 2,
+      "remaining_corrections": 1,
+      "approval_is_not_observer_Eq18_change": true
+    }
+  },
+  "conventions": {
+    "transform": "T^a_b maps b into a",
+    "perturbation": "right: X Exp(delta)",
+    "state_order": [
+      "O",
+      "V_o",
+      "E1",
+      "E2",
+      "C_b1_to_b2",
+      "G1",
+      "G2"
+    ],
+    "tangent_dof": 42,
+    "twist_order": [
+      "vx",
+      "vy",
+      "vz",
+      "wx",
+      "wy",
+      "wz"
+    ],
+    "wrench_order": [
+      "fx",
+      "fy",
+      "fz",
+      "mx",
+      "my",
+      "mz"
+    ],
+    "length": "m",
+    "angle": "rad",
+    "common_base": "b1"
+  },
+  "original_parameters": {
+    "K_nominal": [
+      5641,
+      5641,
+      4400,
+      1.28,
+      1.28,
+      1.28
+    ],
+    "B_nominal": [
+      50,
+      50,
+      50,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "B_air": [
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "KF1": [
+      0.001,
+      0.001,
+      0.001,
+      0.02,
+      0.02,
+      0.02
+    ],
+    "KF2": [
+      0.0005,
+      0.0005,
+      0.0005,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "KP": [
+      0.3,
+      0.3,
+      0.3,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "exp4_model_K1": [
+      1641,
+      1641,
+      1400,
+      0.7,
+      0.7,
+      0.7
+    ],
+    "exp4_model_K2": [
+      7641,
+      7641,
+      6400,
+      1.8,
+      1.8,
+      1.8
+    ],
+    "Q": {
+      "V": [
+        1e-06,
+        1e-06,
+        1e-06,
+        1e-05,
+        1e-05,
+        1e-05
+      ],
+      "O": [
+        1e-08,
+        1e-08,
+        1e-08,
+        1e-07,
+        1e-07,
+        1e-07
+      ],
+      "E1": [
+        1e-08,
+        1e-08,
+        1e-08,
+        1e-07,
+        1e-07,
+        1e-07
+      ],
+      "E2": [
+        1e-08,
+        1e-08,
+        1e-08,
+        1e-07,
+        1e-07,
+        1e-07
+      ],
+      "C_pregrasp": [
+        1e-07,
+        1e-07,
+        1e-07,
+        1e-06,
+        1e-06,
+        1e-06
+      ],
+      "C_transport": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "G1": [
+        1e-09,
+        1e-09,
+        1e-09,
+        1e-08,
+        1e-08,
+        1e-08
+      ],
+      "G2": [
+        1e-09,
+        1e-09,
+        1e-09,
+        1e-08,
+        1e-08,
+        1e-08
+      ]
+    },
+    "R": {
+      "EE": [
+        2e-09,
+        2e-09,
+        2e-09,
+        5e-08,
+        5e-08,
+        5e-08
+      ],
+      "hK": [
+        0.025,
+        0.025,
+        0.00225,
+        1e-06,
+        1e-06,
+        1e-08
+      ],
+      "visual_object": [
+        1e-10,
+        1e-10,
+        1e-10,
+        1e-09,
+        1e-09,
+        1e-09
+      ]
+    }
+  },
+  "model": {
+    "kind": "independent SE3 compliant-contact rigid-object plant + ideal Cartesian velocity endpoints",
+    "objects": {
+      "A": {
+        "mass_kg": 0.684,
+        "dimensions_m": [
+          0.28,
+          0.09,
+          0.04
+        ]
+      },
+      "C": {
+        "mass_kg": 0.418,
+        "dimensions_m": [
+          0.37,
+          0.04,
+          0.04
+        ]
+      }
+    },
+    "inertia": "uniform cuboid COM inertia diag(m*(dy^2+dz^2)/12,m*(dx^2+dz^2)/12,m*(dx^2+dy^2)/12); adaptation, not measured author inertia",
+    "gravity_m_s2": [
+      0,
+      0,
+      -9.81
+    ],
+    "plant_K": "nominal in all experiments including exp4",
+    "plant_B": "nominal",
+    "process_noise_in_true_plant": false,
+    "initial_nominal_O_A": {
+      "translation_m": [
+        0,
+        0,
+        0.4
+      ],
+      "rotation": "I3"
+    },
+    "A_grasps": [
+      {
+        "translation_in_object_m": [
+          -0.09,
+          -0.045,
+          0
+        ],
+        "R_columns_in_object": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "translation_in_object_m": [
+          0.09,
+          0.045,
+          0
+        ],
+        "R_columns_in_object": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            0
+          ]
+        ]
+      }
+    ],
+    "true_C_b1_to_b2": {
+      "translation_m": [
+        0,
+        0.6,
+        0
+      ],
+      "rotation": "Rz(pi)"
+    },
+    "mode_transport": [
+      "pivot",
+      "pivot"
+    ],
+    "applied_cartesian_velocity": "H_r.T H_r U_r; J=I6 and qdot0=0 ideal reduction of Eq26",
+    "normal_actuator_delays_s": [
+      0,
+      0
+    ],
+    "delay_stress_s": [
+      0,
+      0.3
+    ],
+    "delay_stress_filter_input": "latest published held command, no delay compensation, no GT velocity",
+    "initial_settling": {
+      "duration_s": 5,
+      "EE_velocity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "controller_active": false,
+      "gravity_enabled": true,
+      "save_trace": true,
+      "required_terminal_force_balance_N": 1e-06,
+      "required_terminal_moment_balance_Nm": 1e-06,
+      "required_linear_speed_m_s": 1e-07,
+      "required_angular_speed_rad_s": 1e-07
+    }
+  },
+  "clocks": {
+    "plant_tick_s": 0.0003333333333333333,
+    "plant_tick_rational": "1/3000",
+    "controller_period_ticks": 12,
+    "filter_heartbeat_ticks": 12,
+    "EE_command_period_ticks": [
+      15,
+      60
+    ],
+    "EE_sensor_period_ticks": [
+      15,
+      60
+    ],
+    "tactile_period_ticks": 30,
+    "visual_period_ticks": 200,
+    "stress_delay_ticks": [
+      0,
+      900
+    ],
+    "log_period_ticks": 12,
+    "observer": "predict to exact fresh measurement timestamps plus 250Hz heartbeat; simultaneous fresh measurements grouped",
+    "observer_Q_discretization": "Q_cont = 0.004*Q_table; propagation for interval delta uses G Q_cont G.T * delta, matching 0.004^2 Q_table at delta=0.004 before state-Jacobian transport; declared asynchronous engineering approximation"
+  },
+  "estimator": {
+    "framework_candidate": "IKFoM or independently verified right-SE3 IESEKF",
+    "framework_commit": "59cfc095ca74425f9b330c7c04a5d74f68c6dd62",
+    "license": "GPL-2.0",
+    "full_state_dof": 42,
+    "maximum_update_iterations": 5,
+    "convergence": {
+      "pose_translation_component_m": 1e-06,
+      "pose_rotation_component_rad": 1e-06,
+      "velocity_linear_component_m_s": 1e-05,
+      "velocity_angular_component_rad_s": 1e-05
+    },
+    "P0_blocks": {
+      "O": [
+        1e-06,
+        1e-06,
+        1e-06,
+        0.0001,
+        0.0001,
+        0.0001
+      ],
+      "V": [
+        0.0001,
+        0.0001,
+        0.0001,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "E1": [
+        1e-06,
+        1e-06,
+        1e-06,
+        0.0001,
+        0.0001,
+        0.0001
+      ],
+      "E2": [
+        1e-06,
+        1e-06,
+        1e-06,
+        0.0001,
+        0.0001,
+        0.0001
+      ],
+      "C": [
+        1e-06,
+        1e-06,
+        1e-06,
+        0.0001,
+        0.0001,
+        0.0001
+      ],
+      "G1": [
+        1e-06,
+        1e-06,
+        1e-06,
+        0.0001,
+        0.0001,
+        0.0001
+      ],
+      "G2": [
+        1e-06,
+        1e-06,
+        1e-06,
+        0.0001,
+        0.0001,
+        0.0001
+      ]
+    },
+    "C_transport_freeze": "Schmidt considered-state: mean fixed, Kalman gain C rows zero, Joseph covariance preserves P_CC and propagates cross-covariance; declared engineering choice",
+    "initial_calibration": "75 paired noisy visual poses of stationary object over 5s; estimate C via right-SE3 mean of Z2*inv(Z1); not full pre-grasp IESEKF reproduction",
+    "measurement_input": "fresh EE poses, full elastic hK from independent plant + R noise, one object view per camera at 15Hz; no reused stale samples",
+    "visual_bias_body_cam1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "visual_bias_body_cam2": [
+      0.001,
+      -0.0005,
+      0.0005,
+      0,
+      0,
+      0.005
+    ],
+    "noise": "independent Gaussian in right tangent or Euclidean wrench with table R",
+    "model_K_by_condition": {
+      "exp1": "nominal",
+      "exp2": "nominal",
+      "exp3": "nominal",
+      "exp4": "altered observer K only"
+    },
+    "input": "previous published H-selected held Cartesian command; causal, no same-step new-command hB recomputation and no GT velocity",
+    "reset_covariance": "right-retraction Jacobian after each posterior injection; C frozen; no silent diagonalization or clipping",
+    "stop_after_consecutive_nonconverged_updates": 3,
+    "initial_calibration_mean": {
+      "iteration_max": 20,
+      "tangent_component_tolerance": 1e-09,
+      "init": "first C_i",
+      "update": "C_mean <- C_mean Exp(mean(Log(inv(C_mean)*C_i)))",
+      "failure": "stop calibration qualification, no GT substitution"
+    },
+    "initial_poses": {
+      "O": "latest cam1 visual object pose",
+      "E1": "latest noisy EE1 pose",
+      "E2": "latest noisy EE2 pose",
+      "G1_G2": "declared undeformed grasp geometry",
+      "V_o": "zero"
+    },
+    "initialization_timeline": [
+      "precalibration: stationary object fixture, 5s, 75 paired visual samples, measurement generator only",
+      "gravity settling: locked EE dynamic plant, 5s, no controller, full traces",
+      "t=0: fresh transport observations initialize O/E1/E2; V=0; declared G geometry; C from pre-calibration"
+    ],
+    "iterated_update": "reuse one fixed prior and one measurement packet across all inner iterations; relinearize, then inject posterior and update/reset covariance once, never count packet as repeated independent data"
+  },
+  "reference": {
+    "kind": "piecewise SE3 quintic geodesic, segment start from own estimated current O",
+    "quintic": "10*s^3 - 15*s^4 + 6*s^5",
+    "desired_body_twist": "xi * ds/dt for T_d=T_start Exp(s xi); transform to current object by Ad(inv(O_hat) T_d)",
+    "manual_lift": {
+      "start_s": 0,
+      "end_s": 3,
+      "EE_world_translation_m": [
+        0,
+        0,
+        0.01
+      ],
+      "object_not_teleported": true
+    },
+    "force_feedback_on_s": 7,
+    "pose_feedback_on_s": 13,
+    "robot2_visual_off_s": 76,
+    "end_s": 95,
+    "waypoints": [
+      {
+        "start_s": 13,
+        "end_s": 23,
+        "position_m": [
+          0,
+          0,
+          0.5
+        ],
+        "rotation": "I3"
+      },
+      {
+        "start_s": 23,
+        "end_s": 55,
+        "position_m": [
+          0.15,
+          0.08,
+          0.5
+        ],
+        "rotation": "Rz(pi/2)"
+      },
+      {
+        "start_s": 55,
+        "end_s": 76,
+        "position_m": [
+          0.15,
+          0.08,
+          0.35
+        ],
+        "rotation": "Rz(pi/2)"
+      }
+    ],
+    "after_76": "fixed final desired pose and zero feedforward; feedback flags retained to end; no plate contact",
+    "own_coordinates_not_paper_values": true,
+    "originally_unknown_segment_times": [
+      23,
+      55
+    ],
+    "same_world_waypoints_for_all_conditions": true,
+    "cross_condition_pose_metric": "GT final/world waypoint errors, not tracking-AUC against condition-dependent reference"
+  },
+  "conditions": {
+    "exp1": {
+      "force_feedback": false,
+      "pose_feedback": true,
+      "feedforward": true
+    },
+    "exp2": {
+      "force_feedback": true,
+      "pose_feedback": false,
+      "feedforward": true
+    },
+    "exp3": {
+      "force_feedback": true,
+      "pose_feedback": true,
+      "feedforward": true
+    },
+    "exp4": {
+      "force_feedback": true,
+      "pose_feedback": true,
+      "feedforward": true,
+      "stiffness_mismatch": "observer only"
+    }
+  },
+  "suite": {
+    "RNG": "numpy PCG64 + SeedSequence([seed,stream_id]); same exogenous sample noise and bias for paired conditions",
+    "main_seeds": [
+      7,
+      23,
+      41,
+      101,
+      20261013
+    ],
+    "primary_transport": {
+      "conditions": [
+        "exp1",
+        "exp2",
+        "exp3",
+        "exp4"
+      ],
+      "cases": 20,
+      "duration_s": 95,
+      "actuation": "200/50Hz ZOH, delays zero"
+    },
+    "representative_high_moment": {
+      "conditions": [
+        "exp1",
+        "exp3"
+      ],
+      "seeds": [
+        7
+      ],
+      "cases": 2,
+      "duration_s": 95,
+      "initial_rotation": "Rz(3*pi/4)",
+      "claim": "mechanism case only, not reliability statistics"
+    },
+    "representative_delay": {
+      "conditions": [
+        "exp1",
+        "exp3"
+      ],
+      "seeds": [
+        7
+      ],
+      "cases": 2,
+      "duration_s": 95,
+      "delays_s": [
+        0,
+        0.3
+      ],
+      "claim": "explicit unmodeled delay pressure case, not original position servo dynamics"
+    },
+    "conditional_sliding": {
+      "seeds": [
+        7
+      ],
+      "cases": 1,
+      "duration_s": 30,
+      "object": "C",
+      "sliding_on_s": 5,
+      "sliding_off_s": 25,
+      "desired_world_drop_m": 0.2,
+      "claim": "ideal contact kinematics only, no friction/grasp-force/assembly claim",
+      "requires_approved_contact_kinematics": true,
+      "initial_pose": {
+        "position_m": [
+          0,
+          0,
+          0.6
+        ],
+        "rotation": "Ry(-pi/2), object x -> world +z"
+      },
+      "grasps": [
+        {
+          "translation_in_object_m": [
+            0.12,
+            -0.02,
+            0
+          ],
+          "R_columns_in_object": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "translation_in_object_m": [
+            -0.12,
+            0.02,
+            0
+          ],
+          "R_columns_in_object": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ]
+        }
+      ],
+      "controller": {
+        "condition": "exp3",
+        "force_feedback_on_s": 0,
+        "pose_feedback_on_s": 0,
+        "feedforward": "zero 0-5; quintic world-z drop 5-25; zero 25-30",
+        "KF": "nominal KF1/KF2",
+        "KP": "nominal",
+        "delays_s": [
+          0,
+          0
+        ],
+        "robot2_visual_off_s": null
+      },
+      "mode_schedule": [
+        {
+          "time_s": 0,
+          "H1": "pivot",
+          "H2": "pivot"
+        },
+        {
+          "time_s": 5,
+          "H1": "pivot",
+          "H2": "sliding",
+          "newly_transmitted_EE_indices": [
+            5
+          ],
+          "newly_released_EE_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "time_s": 25,
+          "H1": "pivot",
+          "H2": "pivot",
+          "newly_transmitted_EE_indices": [
+            0,
+            1
+          ],
+          "newly_released_EE_indices": [
+            5
+          ]
+        }
+      ],
+      "switch_gate": {
+        "source": "pre-switch raw true h=hK+hB, both restored and released directions, all new free Log components unloaded; no reanchoring/waiting",
+        "new_force_component_abs_max_N": 0.006,
+        "new_moment_component_abs_max_Nm": 2e-06,
+        "new_force_tau_component_abs_max_m": 1e-06,
+        "new_moment_tau_component_abs_max_rad": 1e-06,
+        "failure_status": "MODE_SWITCH_PRELOAD_INVALID",
+        "also_requires_newly_released_components_unloaded": true,
+        "all_new_free_Log_components_unloaded": true,
+        "no_wait_or_reschedule": true,
+        "guard_function": "baselines.p2_pose_force.contact_geometry.mode_switch_guard"
+      }
+    },
+    "diagnostic_GT": {
+      "conditions": [
+        "exp1",
+        "exp2",
+        "exp3",
+        "exp4"
+      ],
+      "seeds": [
+        7
+      ],
+      "cases": 4,
+      "claim": "GT-controller diagnostic only; never merged with estimated primary cases",
+      "exp4": "replace kinematic state input with true state; retain exp4 altered model K to reconstruct controller h, never substitute true force as well"
+    },
+    "step_refinement": {
+      "condition": "exp3",
+      "seed": 7,
+      "tick_s": [
+        0.0003333333333333333,
+        0.00016666666666666666
+      ],
+      "maximum_additional_cases": 1,
+      "claim": "integration qualification, not extra independent seed"
+    },
+    "total_first_round_cases": 30,
+    "correction_limit": 3,
+    "correction_targeted_cases_per_round_max": 7,
+    "maximum_same_final_source_full_suite_reruns": 1,
+    "maximum_total_cases": 81,
+    "wall_time_per_case_s": 120,
+    "wall_time_all_cases_s": 7200,
+    "stop_at_budget": true,
+    "maximum_final_suite_cases": 30,
+    "correction_rounds_already_used": 1,
+    "remaining_correction_rounds": 2,
+    "budget_accounting_note": "Original 81 control-run ceiling retained. One total P2 correction was spent on qualification-log sign/coverage; at most two future correction rounds, hence at most 30+2*7+30=74 future control runs. Never reset to three."
+  },
+  "metrics": {
+    "final_window_s": [
+      85,
+      95
+    ],
+    "force_transport_window_s": [
+      13,
+      76
+    ],
+    "high_moment_terminal_window_s": [
+      90,
+      95
+    ],
+    "force_output": "each arm 3D force + stack 6D force norm in N",
+    "moment_output": "each arm 3D moment and norm in Nm separately",
+    "pose_outputs": [
+      "Log rho and theta GT and estimated",
+      "Euclidean world position distance to final and active waypoint",
+      "GT orientation geodesic distance",
+      "estimated-vs-GT pose error"
+    ],
+    "control_outputs": [
+      "U_F",
+      "U_P",
+      "u_cmd",
+      "u_model",
+      "u_applied"
+    ],
+    "statistics": "all five paired seed values, mean/SD/median/min/max; representative cases separate; no pooling corrections or repeats",
+    "hypotheses": [
+      "for all five paired seeds, exp3 final-window GT Euclidean goal-distance RMS < exp2",
+      "for all five paired seeds, exp3 final-window GT SO3 geodesic goal-angle RMS < exp2",
+      "for all five paired seeds, exp3 true internal stack force RMS[13,76] < exp1"
+    ],
+    "paper_values_comparison": "descriptive only; original 0.1mm is censored caliper resolution; no assertion of exact numeric reproduction"
+  },
+  "numerical_qualification": {
+    "svd_rcond": 1e-12,
+    "algebra_atol": 1e-10,
+    "finite_difference_step": 1e-06,
+    "Jacobian_atol": 1e-07,
+    "force_projection_residual_N_Nm_component": 1e-09,
+    "plant_integration": "Implicit coupled Lie midpoint: delta=dt*f(X_old retract(delta/2), held U); X_new=X_old retract(delta). Known E1/E2 increments=dt*U, C increment=0; coupled unknown O/V/G1/G2 Newton; no substeps, line search or projection.",
+    "half_step_max_difference": {
+      "position_m": 5e-05,
+      "orientation_rad": 0.0005,
+      "force_component_N": 0.05,
+      "moment_component_Nm": 0.002
+    },
+    "reject_or_stop": [
+      "nonfinite state",
+      "SE3 invalid",
+      "missing or repeated measurement sample identity",
+      "failed settling/step-refinement/contact-kinematics gate",
+      "covariance negative eigenvalue below -1e-10 or asymmetric beyond 1e-10",
+      "tangent rotation >= pi",
+      "pad translation component > .005m or rotation component > .15rad",
+      "translational command component > .15m/s or angular component > .5rad/s",
+      "wall budget exceeded"
+    ],
+    "no_silent_saturation": true,
+    "no_posthoc_threshold_changes": true,
+    "selection_rank_gate": {
+      "all_nine_H_pairs": "check dimensions, projection, virtual work; do not require rank6 for all",
+      "initial_fixture_expected_rank": {
+        "tight_tight": 6,
+        "tight_pivot": 6,
+        "tight_sliding": 6,
+        "pivot_tight": 6,
+        "pivot_pivot": 6,
+        "pivot_sliding": 6,
+        "sliding_tight": 6,
+        "sliding_pivot": 6,
+        "sliding_sliding": 4
+      },
+      "transport_and_mixed_sliding": "require rank6; store singular values"
+    }
+  },
+  "outputs": {
+    "directory_pattern": "results/<new_unique_run_id>/",
+    "files": [
+      "metadata.json",
+      "config_snapshot.json",
+      "plant.jsonl.gz",
+      "sensors.jsonl.gz",
+      "estimator.jsonl.gz",
+      "commands.jsonl.gz",
+      "events.jsonl",
+      "summary.json",
+      "termination.json if incomplete",
+      "artifact_sha256.json"
+    ],
+    "curves_generated_from_saved_logs_only": true,
+    "failures_in_denominator": true,
+    "private_source_full_text_not_committed": true
+  },
+  "frozen": true,
+  "execution_authorized_this_round": true,
+  "audit_delivery_commit": "59260fa4e2d1dbf6b253fab1d7f354222bd16367",
+  "qualification_source_commit": "51696a8b6ada556af3ce2f0acb4ebdf9cecca099",
+  "original_draft_sha256": "6439179a3d3144f43c9be5ef4fd59968af62f7ba89119745b16dafd17a2f2891",
+  "contact_geometry": {
+    "model_id": "p2.spatial_free_log_constraint.v1",
+    "classification": "DEVIATION_USER_APPROVED",
+    "source": "baselines/p2_pose_force/contact_geometry.py",
+    "source_sha256": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "derivation": "reports/P2_CONTACT_GEOMETRY_DERIVATION.md",
+    "equations": {
+      "D": "inverse(E_common) O G",
+      "tau": "Log(D)",
+      "a": "Ad(inverse(G)) V_o - Ad(inverse(D)) U_EE",
+      "N": "orthonormal null(H), EE origin/axes",
+      "Ng": "Ad(inverse(D)) N",
+      "A": "N.T solve(Jr(tau),Ng)",
+      "VG": "-Ng solve(A,N.T solve(Jr(tau),a))",
+      "tau_dot": "solve(Jr(tau),a+VG)",
+      "tight": "VG=0"
+    },
+    "base_adapter": {
+      "E1_common": "B1 E1_native",
+      "E2_common": "B1 inverse(C_b1_to_b2) E2_native",
+      "body_twist": "unchanged under fixed left base transform"
+    },
+    "invariant": "N.T tau_dot=0: free Log components retain initial values, not automatically relaxed to zero",
+    "free_lift": "Ad(D) VG lies in null(H), giving zero power against transmitted EE wrench",
+    "accepted_qualification": "results/20261014_P2_contact_geometry_qualification02",
+    "qualified": true,
+    "qualified_cases": 68,
+    "controller_estimator_qualified": false,
+    "closed_loop_runs": 0,
+    "guard": {
+      "principal_Log_rotation_norm_lt_rad": "pi - 1e-6",
+      "constraint_matrix_svd_rcond": 1e-12,
+      "no_pseudoinverse_fallback": true,
+      "no_state_projection_or_reanchoring": true
+    },
+    "unchanged_paper_formulas": [
+      9,
+      10,
+      11,
+      12,
+      20,
+      21,
+      25
+    ],
+    "limitations": [
+      "original Rbar damping retained and is not fully objective at finite deformation",
+      "free Log initial value invariant does not model physical preload release",
+      "no proof of full elastic/viscous passivity, hybrid stability, friction or hardware executability"
+    ],
+    "rejected_first_qualification": {
+      "directory": "results/20261013_P2_contact_geometry_qualification01",
+      "raw_program_status": "PASS_66_CASES",
+      "delivery_status": "INCOMPLETE_SIGN_AND_COVERAGE"
+    },
+    "mathematical_audit_only": true
+  },
+  "readiness": {
+    "contact_geometry": true,
+    "full_controller": false,
+    "full_IESEKF": false,
+    "independent_rigid_body_dynamics": false,
+    "closed_loop": false,
+    "execution_authorized_this_round": true,
+    "pending_implementation_gates": [
+      "Native field/contact/geometric primitives and right-trivialized rate Jacobian qualified against canonical references",
+      "Implicit coupled Lie midpoint residual/Newton transport/domain and fixed gravity settling/step gates qualified",
+      "Fresh timestamped Eq17 observations and 42-state right-SE3 IESEKF qualified with unchanged observer prediction design",
+      "Eq20/21/25 controllers and causal multirate input queues qualified",
+      "Original full controlled exp3/seed7 half-step and no-GT-leakage gates pass",
+      "Runtime readiness/artifact manifest recorded separately from this frozen parameter snapshot"
+    ],
+    "native_equivalence": false,
+    "implicit_solver": false,
+    "protocol_snapshot_only": true
+  },
+  "parent_protocol": {
+    "path": "configs/p2_closed_loop_protocol_v2.json",
+    "sha256": "b6eaf1ac942d9fac7d46d416f7204f4df2c30a70b482179e56286437dd045c71",
+    "prior_two_point_failure": "results/20261014_P2_implicit_qualification01",
+    "original_v1_path": "configs/p2_closed_loop_protocol_v1.json",
+    "original_v1_sha256": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3"
+  },
+  "revision_input_commit": "4276ce5cba1a6ac4a44df6a75df7e5054cf637a1",
+  "implicit_solver": {
+    "method_id": "p2.implicit_coupled_lie_midpoint.v1",
+    "classification": "USER_APPROVED_NUMERICAL_ADAPTATION",
+    "residual": "r(delta)=delta-dt*f(X_old retract(delta/2),held U)",
+    "unknown_state_blocks": [
+      "O",
+      "V_o",
+      "G1",
+      "G2"
+    ],
+    "unknown_state_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41
+    ],
+    "known_delta": {
+      "E1": "dt*U1_body",
+      "E2": "dt*U2_body",
+      "C": "zero6"
+    },
+    "initial_guess": "delta0=dt*f(X_old,held U), with known E1/E2/C blocks assigned exactly",
+    "maximum_newton_corrections": 12,
+    "convergence_check": "Componentwise residual at initialization and after each Newton correction, at most 12 corrections; residual checks do not add Newton corrections.",
+    "residual_abs_component_tolerances": {
+      "pose_translation_m": 1e-12,
+      "pose_rotation_rad": 1e-12,
+      "velocity_linear_m_s": 1e-12,
+      "velocity_angular_rad_s": 1e-12
+    },
+    "residual_is_not_divided_by_dt": true,
+    "newton_step": "Full Newton correction in the 24 unknown coordinates; direct linear solve",
+    "newton_residual_jacobian": "I-dt*A_rate(X_mid)*B_right(delta), restricted to unknown rows/columns; B_right pose blocks=0.5*Jr(delta_pose/2), V block=0.5*I6",
+    "line_search": false,
+    "substeps_per_outer_tick": 1,
+    "state_projection_or_reanchoring": false,
+    "explicit_fallback": false,
+    "nonconvergence_action": "IMPLICIT_SOLVER_NONCONVERGENCE: save old accepted state, candidate delta, residual and iteration diagnostics; stop run without committing the failed step",
+    "accepted_state_gate": "Original finite/SE3/pad and physics validity gates remain required after solver convergence.",
+    "qualified": false
+  },
+  "native_evaluation": {
+    "backend_candidate": "Eigen/C++ shared continuous field and right-trivialized rate Jacobian",
+    "classification": "EQUATION_PRESERVING_ENGINEERING_OPTIMIZATION",
+    "canonical_sources": {
+      "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+      "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61"
+    },
+    "equivalence_qualified": false,
+    "qualification_reference": "reports/P2_IMPLICIT_V3_QUALIFICATION_SPEC.md",
+    "value_tolerances": {
+      "contact_and_geometric_primitives_abs_component": 1e-10,
+      "continuous_rate_abs_component": 1e-07,
+      "rate_Jacobian_vs_fixed_FD_abs_component": 1e-07
+    },
+    "record_build_provenance": [
+      "source commit/SHA",
+      "binary SHA",
+      "compiler version",
+      "Eigen version",
+      "compile flags",
+      "ABI/environment"
+    ],
+    "forbidden_changes": [
+      "new physical constants",
+      "changing Rbar damping",
+      "switching contact closure",
+      "hidden normalization or projection",
+      "changing clock or controller/noise/scientific thresholds"
+    ],
+    "FD_qualification_oracle": {
+      "scope": "native continuous-field Jacobian only",
+      "method": "five-point fourth-order central difference",
+      "formula": "(-f(X retract(2h e_j))+8f(X retract(h e_j))-8f(X retract(-h e_j))+f(X retract(-2h e_j)))/(12h)",
+      "h": 1e-06,
+      "precision_decimal_digits": 50,
+      "absolute_component_tolerance": 1e-07,
+      "normalization_by_K_or_state_scale": false,
+      "previous_two_point_function_retained": true,
+      "original_measurement_H_and_discrete_prediction_F_qualification_unchanged": true
+    }
+  },
+  "qualification_source_commit_scope": "Inherited commit 51696a8 identifies canonical contact-geometry qualification only; v2 native/implicit source hashes are recorded in their own qualification metadata."
+}
