@@ -31,7 +31,13 @@ LABEL = 'CORRECTED_COMAU_APC_ALIGNED_V3_ORIGINAL_FIXED_PCS_RBS_CONTROL_RECONSTRU
 FIXTURE = ROOT / 'configs/p4_d080/v_pcs_local_fixed_saved_v1.DRAFT.json'
 SUPERVISOR = ROOT / 'scripts/p4_d080/supervise_v_pcs_local_v1_draft.py'
 STAGE = Path('/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1')
-BUILD_RUN = '20261018_R2_D080_V_PCS_BUILD01'
+BUILD_RUN = '20261018_R2_D080_V_PCS_BUILD02_TAIL'
+BUILD_COMPOSITE_POST = ROOT / 'reports/P4_D080_ENV_V_PCS_BUILD02_TAIL_COMPOSITE_SAVED_INDEPENDENT_POST_ADDENDUM_20261018.json'
+# Actual saved-only ADDENDUM reuses64 passed checks; first65-check FAIL preserved.
+BUILD_COMPOSITE_POST_SHA = '3a04f69aedc861166de04e147046a19ea35500b13e73270acb4e742ec7e9f7f8'
+BUILD01_FAILURE_POST = ROOT / 'reports/P4_D080_ENV_V_PCS_BUILD01_FAILURE_SAVED_INDEPENDENT_POST_20261018.json'
+BUILD01_FAILURE_POST_SHA = '3dca76842b2f50751bd9c0455b592dff89dd4dbf7c09fbf7dfcf72c487d9576a'
+BUILD01_EXEC_SHA = '0027c3c1c64d72cf02903b383ea7bbf3fb417b2b0107c6a673398cb8db825a2a'
 MARKER = b'P4_V_PCS_TRACE '
 COMPAT_PRE = ROOT / 'reports/P4_D080_ENV_V_PCS_MONOTONIC_COMPAT_INDEPENDENT_PRE_20261018.json'
 COMPAT_PRE_SHA = '3f357584a3413b43eb2d2bc20465121a3a494579a824ce4a4eaa0dee27c58a7d'
@@ -155,15 +161,32 @@ def preflight(spec, protocol):
         require(sha(center['path']) == center['sha256']
                 and load(center['path'])['selected_q_rad'] == center['q12'], 'SAVED_A02_CENTER_BYTES_CHANGED')
     require(spec['maxima'] == fixture['global_maxima_proposal'], 'GLOBAL_512_PROJECT_256_NODE_MAXIMA_REQUIRED')
+    require(isinstance(BUILD_COMPOSITE_POST_SHA, str) and len(BUILD_COMPOSITE_POST_SHA) == 64,
+            'WAIT_ACTUAL_TAIL_AND_INDEPENDENT_COMPOSITE_POST_EXACT_SHA_BINDING')
     build_path = path(spec['build_assets']['execution']); build = load(build_path)
     post_path = path(spec['build_assets']['personnel_independent_POST']); post = load(post_path)
-    require(sha(build_path) == spec['build_assets']['execution_sha256'] == post['execution_sha256']
-            and sha(post_path) == spec['build_assets']['post_sha256'] and build['status'] == 'BUILT_NOT_QUERIED'
+    require(post_path.resolve() == BUILD_COMPOSITE_POST.resolve()
+            and sha(post_path) == spec['build_assets']['post_sha256'] == BUILD_COMPOSITE_POST_SHA
+            and post['schema'] == 'P4_D080_V_PCS_BUILD02_TAIL_COMPOSITE_SAVED_INDEPENDENT_POST_V1'
+            and post['status'] == 'PASS_SAME_SOURCE_COMPOSITE_BUILD02_TAIL_SAVED_POST'
+            and sha(build_path) == spec['build_assets']['execution_sha256'] == post['execution_sha256']
+            and build['schema'] == 'P4_D080_V_PCS_BUILD02_TAIL_EXECUTION_V1'
+            and build['status'] == 'BUILT_TAIL_NOT_QUERIED_PENDING_COMPOSITE_INDEPENDENT_POST'
             and build['run_id'] == BUILD_RUN and post['personnel_independent'] is True
             and post['external_supervision_qualified'] is True and post['engineering_build_qualified'] is True
+            and post['composite_build_qualified'] is True and post['original_BUILD01_engineering_build_qualified'] is False
             and post['charge_basis'] == COST_BASIS and post['monotonic_envelope_qualified'] is True
-            and post['checks_failed'] == 0
-            and post['checks_total'] == post['checks_passed'] > 0, 'ACTUAL_INDEPENDENT_V_BUILD_AND_COST_PASS_REQUIRED')
+            and post['checks_failed'] == 0 and post['checks_total'] == post['checks_passed'] > 0,
+            'ACTUAL_INDEPENDENT_SAME_SOURCE_COMPOSITE_V_BUILD_AND_COST_PASS_REQUIRED')
+    old_failure = load(BUILD01_FAILURE_POST)
+    require(sha(BUILD01_FAILURE_POST) == BUILD01_FAILURE_POST_SHA
+            and post['source_failure_POST'] == str(BUILD01_FAILURE_POST.relative_to(ROOT))
+            and post['source_failure_POST_sha256'] == BUILD01_FAILURE_POST_SHA
+            and old_failure['engineering_build_qualified'] is False
+            and old_failure['original_execution_status'] == build['original_BUILD01_status_retained'] == 'STOP_ENGINEERING_FAILURE_RETAINED_PREFIX'
+            and old_failure['execution_sha256'] == build['original_BUILD01_execution_sha256'] == BUILD01_EXEC_SHA
+            and old_failure['original_STOP_object_sha256_status'] == build['original_STOP_object_sha256_status'] == 'UNKNOWN_NOT_RECORDED_AT_STOP',
+            'ORIGINAL_BUILD01_STOP_FALSE_AND_OBJECT_HASH_UNKNOWN_MUST_REMAIN')
     build_charge = load(post['receipt']); build_receipt = load(post['internal_receipt'])
     require(sha(post['receipt']) == post['external_charge_sha256'] == post['receipt_sha256']
             and sha(post['internal_receipt']) == post['internal_receipt_sha256'] == build_charge['receipt_sha256']
@@ -171,11 +194,25 @@ def preflight(spec, protocol):
             and build_charge['charge_basis'] == COST_BASIS and build_charge['monotonic_envelope_valid'] is True
             and build_charge['wall_s'] == post['upper_wall_s'] and build_charge['cpu_s'] == post['upper_cpu_s'],
             'EXACT_SUCCESSFUL_BUILD_MAX_ENVELOPE_CHARGE_RECEIPT_REQUIRED')
-    for target in build['targets']:
+    targets = post['build_targets']
+    require(len(targets) == 2 and [t['mode'] for t in targets] == ['plain', 'trace']
+            and [t['status'] for t in targets] == ['REUSED_BUILT_NOT_QUERIED', 'BUILT_NOT_QUERIED']
+            and [t['new_compile_calls'] for t in targets] == [0, 2]
+            and [t['new_link_calls'] for t in targets] == [0, 1]
+            and targets[0]['source_execution_sha256'] == BUILD01_EXEC_SHA
+            and targets[1]['source_execution_sha256'] == sha(build_path), 'EXACT_REUSED_PLAIN_AND_NEW_TRACE_COMPOSITE_REQUIRED')
+    require(len(build['targets']) == 2 and {t['mode'] for t in build['targets']} == {'plain', 'trace'},
+            'TWO_ACTUAL_COMPOSITE_TARGETS_REQUIRED')
+    for target in targets:
         mode = target['mode']; frozen = spec['build_assets']['targets'][mode]
-        require(mode in ('trace', 'plain') and frozen['binary'] == target['binary']
-                and sha(frozen['binary']) == target['binary_sha256'] == frozen['binary_sha256'], 'EXACT_BUILT_V_TARGET_BYTES_REQUIRED')
+        observed, = [t for t in build['targets'] if t['mode'] == mode]
+        require(frozen['binary'] == target['binary'] == observed['binary']
+                and sha(frozen['binary']) == target['binary_sha256'] == frozen['binary_sha256'] == observed['binary_sha256']
+                and target['status'] == observed['status'], 'EXACT_COMPOSITE_PLAIN_TRACE_BINARY_BYTES_REQUIRED')
     require(set(spec['build_assets']['targets']) == {'trace', 'plain'}, 'TWO_BUILT_TARGETS_REQUIRED')
+    for filename in [BUILD_COMPOSITE_POST, BUILD01_FAILURE_POST, build_path, path(post['receipt']), path(post['internal_receipt'])]:
+        require(spec['bound_files_sha256'].get(str(filename.resolve())) == sha(filename),
+                'COMPOSITE_BUILD_AND_ORIGINAL_FAILURE_EVIDENCE_MUST_BE_PREBOUND')
     collision = load(B.COL_ROOT / 'manifest.json')
     model, = [row for row in collision['entries'] if row['model'] == 'V' and row['variant'] == 'aligned']
     expected_meshes = {str(B.COL_STAGE / 'simulator' / name): digest for name, digest in model['mesh_sha256'].items()}

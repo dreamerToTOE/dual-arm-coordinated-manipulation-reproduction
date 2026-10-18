@@ -1,0 +1,29 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL_COMPOSITE_ACTUAL_ADDENDUM_GATE_SELF_STATIC_V1",
+  "status": "PASS_ACTUAL_SAVED_CERTIFICATE_GATE_STATIC_ONLY",
+  "personnel_independent": false,
+  "unchanged_AST_bodies": {
+    "Budget": true,
+    "Session": true,
+    "supervisor_proof": true,
+    "collect_semantics": true,
+    "independent_nodes": true,
+    "execute": true,
+    "main": true
+  },
+  "actual_composite_POST": "reports/P4_D080_ENV_V_PCS_BUILD02_TAIL_COMPOSITE_SAVED_INDEPENDENT_POST_ADDENDUM_20261018.json",
+  "actual_composite_POST_sha256": "3a04f69aedc861166de04e147046a19ea35500b13e73270acb4e742ec7e9f7f8",
+  "actual_execution_sha256": "493286682200e4eee003b7c1eae70ed91d35fbd56953bb44d4671343dd58e0a6",
+  "original_failure_POST_sha256": "3dca76842b2f50751bd9c0455b592dff89dd4dbf7c09fbf7dfcf72c487d9576a",
+  "source_sha256": {
+    "scripts/p4_d080/qualify_v_pcs_local_v1_draft.py": "aafb13d2bfb1932c478e110206677280ce0e476eead8959715818d8d3ecd3b7f",
+    "scripts/p4_d080/supervise_v_pcs_local_v1_draft.py": "2a0920c0eb6dfe2684366f1acf541a0c69c2797ef3bbc89d0a5c82578cfed4d1",
+    "reports/P4_D080_ENV_V_PCS_LOCAL_FIXED_PRE_DRAFT_20261018.md": "c0756b74b9c619ed2840f4d0da5fadadfd6405d358f00850002942a62381ea27"
+  },
+  "new_runner_import_model_query_freeze_compile_calls": 0,
+  "limits": [
+    "Saved actual certificates and source AST only.",
+    "Independent final local gate review/root freeze/latest ledger still required.",
+    "No local, robot or oracle execution."
+  ]
+}

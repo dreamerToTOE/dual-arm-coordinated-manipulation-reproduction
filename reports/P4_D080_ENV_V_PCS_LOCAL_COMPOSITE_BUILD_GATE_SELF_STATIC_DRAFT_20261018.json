@@ -1,0 +1,62 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL_COMPOSITE_BUILD_GATE_SELF_STATIC_DRAFT_V1",
+  "status": "PASS_GATE_DRAFT_STATIC_ONLY_NOT_FROZEN",
+  "personnel_independent": false,
+  "checks_total": 10,
+  "checks_passed": 10,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "Budget entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "Session entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "supervisor_proof entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "collect_semantics entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "independent_nodes entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "execute entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "main entire AST unchanged",
+      "passed": true
+    },
+    {
+      "check": "unbound real composite SHA hard gate",
+      "passed": true
+    },
+    {
+      "check": "fixed original failure and historical object UNKNOWN retained",
+      "passed": true
+    },
+    {
+      "check": "exact composite new calls and original two statuses",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "scripts/p4_d080/qualify_v_pcs_local_v1_draft.py": "e6744d80971b31bcda93c86cc340ffdea6985a519c10c64f14c4210bb5146ad2"
+  },
+  "prior_runner_sha256": "6e10abec76e505318ecc9f83b0c027699491c6634130d64e9fd1994d819e4544",
+  "PRE_sha256": "fea823c48bb14e86a2e5ea9086761193a70693636a7167e19399e6375f6fe1ed",
+  "composite_POST_actual_SHA": null,
+  "new_import_describe_freeze_compile_model_query_solve_VI_formal_calls": 0,
+  "limitations": [
+    "Only future build asset gate adapted.",
+    "Actual tail success/composite independent POST/precise SHA still required.",
+    "Every scientific and transport body remains identical; independent Comau physical qualification separate."
+  ]
+}
