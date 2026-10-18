@@ -301,3 +301,10 @@ V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923
 唯一 BUILD02_TAIL 只补2 trace TU/link，旧8对象/plainELF未动；原BUILD01 STOP与STOP对象历史SHA UNKNOWN保持。保存组合独审ADDENDUM3a04f69a通过，首版metadata引用FAIL保留。费用12.199174441wall/17.923374CPU；V32共50execution（36科学账14工程），累计1091.3322264829947wall/915.032232CPU，余额仅上界2508.6677735170053/6284.967768，历史持久化尾UNKNOWN不变。211×224表保前220列；source solve仍6，正式0/18000，VI974只读。
 
 下一固定LOCAL01为原A02双中心/双角色/主动首角±.05，trace→plain共36public/38stdout，总30wall/60CPU、project512/待独立节点256，仍扣原R2总3600/7200。先最终独审/提交冻结再唯一执行；本阶段只source/transport/plain-trace，不宣称Comau物理或完整路径合格。后续独立闭链/branch/限位/87pair/叶距另冻，V→III→IV PCS/NR，RSS解耦；不P2/Isaac/FR3，不启动正式统计或结题。详见reports/P4_D080_ENV_V_COMPOSITE_BUILD_AND_LOCAL01_PRE_STAGE_20261018.md。
+
+
+## 2026-10-18 D080：V LOCAL01固定请求完成，source一致而公有局部连接均拒绝 / V33
+
+7bf8afb7冻结唯一36public/38stdout，双source exit0/reaped/空组/双EOF，plain-trace全部binary64语义一致。每mode2identify、8project(7true1false)、4RBS(3false1依赖未执行)、4回溯(3false1未执行)，RBS深度最高4；固定84project总、24唯一保存节点。独立保存194/194只证source/transport/费用，Comau物理局部/路径仍false，原返回不改判。start role0 minus原IKfalse具体内因UNKNOWN；另三RBS/对应回溯原碰撞pair86 conveyor-box、73 chassis-box、72 chassis-EE2分别拒绝，独立物理待验，不归因论文。
+
+费用12.661639838999472wall/8.950921CPU入V33一次；51execution(37科学账14工程)，累计1103.9938663219941wall/923.983153CPU，余额仅上界2496.006133678006/6276.016847，原3600/7200及历史尾UNKNOWN不变。211×228保前224列，source solve仍6/新增0，正式0/18000、VI974只读，II五路径不重跑。下一原24节点独立Comau资格拟60/120先独审冻结，无新节点/采样/门限；V端到端仍待，随后III/IV，RSS解耦。详见reports/P4_D080_ENV_V_PCS_LOCAL01_STAGE_POST_20261018.md。

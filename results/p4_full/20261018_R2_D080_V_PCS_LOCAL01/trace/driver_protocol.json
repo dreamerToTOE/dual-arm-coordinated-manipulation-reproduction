@@ -1,0 +1,319 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL_FROZEN_V1",
+  "environment": "V",
+  "method": "PCS",
+  "frozen": true,
+  "api_local_only": true,
+  "scientific_execution_authorized": true,
+  "independent_review_passed": true,
+  "requests": [
+    {
+      "id": "start_identify",
+      "op": "identify",
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role0_minus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        -0.08,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role0_plus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        0.020000000000000004,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.018313833320053288,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role0_rbs",
+      "op": "rbs",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role0_minus",
+      "qb_from_project": "start_role0_plus"
+    },
+    {
+      "id": "start_role0_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role0_minus",
+      "qb_from_project": "start_role0_plus"
+    },
+    {
+      "id": "start_role1_minus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        -0.03168616667994671,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role1_plus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "q12": [
+        -0.03,
+        0.33,
+        -0.05,
+        0.0,
+        1.2908,
+        -1.5808,
+        0.0683138333200533,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ]
+    },
+    {
+      "id": "start_role1_rbs",
+      "op": "rbs",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role1_minus",
+      "qb_from_project": "start_role1_plus"
+    },
+    {
+      "id": "start_role1_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "start_identify"
+      },
+      "qa_from_project": "start_role1_minus",
+      "qb_from_project": "start_role1_plus"
+    },
+    {
+      "id": "goal_identify",
+      "op": "identify",
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role0_minus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.52,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role0_plus",
+      "op": "project",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.62,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1217099229436729,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role0_rbs",
+      "op": "rbs",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role0_minus",
+      "qb_from_project": "goal_role0_plus"
+    },
+    {
+      "id": "goal_role0_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 0,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role0_minus",
+      "qb_from_project": "goal_role0_plus"
+    },
+    {
+      "id": "goal_role1_minus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.171709922943673,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role1_plus",
+      "op": "project",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "q12": [
+        1.57,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.0717099229436728,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ]
+    },
+    {
+      "id": "goal_role1_rbs",
+      "op": "rbs",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role1_minus",
+      "qb_from_project": "goal_role1_plus"
+    },
+    {
+      "id": "goal_role1_reconstruct",
+      "op": "reconstruct",
+      "active_chain": 1,
+      "branch": {
+        "from_identify": "goal_identify"
+      },
+      "qa_from_project": "goal_role1_minus",
+      "qb_from_project": "goal_role1_plus"
+    }
+  ],
+  "caps": {
+    "public_request": 18,
+    "project_fixed": 256,
+    "identify": 2,
+    "is_valid_rbs": 248,
+    "rbs": 500,
+    "reconstruct": 500,
+    "native_fk": 260,
+    "native_ik": 288,
+    "specific_ik": 256,
+    "limits": 1,
+    "collision": 248,
+    "pqp": 21576,
+    "mesh_load": 1,
+    "records": 25000
+  }
+}
