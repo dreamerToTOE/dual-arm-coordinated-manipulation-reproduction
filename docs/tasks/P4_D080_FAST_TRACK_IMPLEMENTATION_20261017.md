@@ -59,3 +59,8 @@
 原24保存节点唯一执行，闭链/branch/原限位24全过，aligned source-policy15clear/9collision拒绝，最大闭链位置1.4779288903810084e-12mm。native24TCP mismatch保留；人员独立保存430/430只证固定诊断/费用，local/path/CCD仍false，原三公有RBS/回溯false不改判。原17 source TCP/box/pair保存交叉核单列待验，不冒称adapter未保存的逐pair独立closer重算。见reports/P4_D080_ENV_V_PCS_PHYSICAL01_STAGE_POST_20261018.md。
 
 费用9.466394254997576wall/3.7087890000000003CPU一次入V34，52execution=38science14engineering，charged1113.4602605769917wall/927.6919419999999CPU，原总3600/7200保持，历史尾UNKNOWN。211×232保前228列；source solve6/本次0，正式0/18000、VI974永久只读、II五路径复用。下一V保存对照/原RRT薄工程及III .8工程，RSS解耦；不新假设/放宽判据/正式大统计/P2/Isaac/FR3。
+
+
+### V PHYSICAL01后续保存补证
+
+原source17点的TCP/箱体/87pair/API/8mm聚合保存核对634项及独立薄审8项通过：17点14clear3reject，另7project-only点1clear6reject；独立逐pair closer未保存，UNKNOWN保持。无新模型/入账，原主POST PENDING不回写。见reports/P4_D080_ENV_V_PCS_PHYSICAL01_SOURCE_SAVED_ADDENDUM_20261018.md。V下一最早门为原RRT薄工程/有限入口，III .8工程并行。
