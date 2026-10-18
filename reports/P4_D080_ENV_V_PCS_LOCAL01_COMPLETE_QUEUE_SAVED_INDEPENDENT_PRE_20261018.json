@@ -1,0 +1,142 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL01_COMPLETE_QUEUE_SAVED_PERSONNEL_INDEPENDENT_PRE_V1",
+  "status": "FAIL_SAVED_QUEUE_STATIC_RETAINED",
+  "personnel_independent": true,
+  "reviewer": "/root/sbl_independent_resume independent of materializer author",
+  "checks_total": 15,
+  "checks_passed": 14,
+  "checks_failed": 1,
+  "checks": [
+    {
+      "check": "exact reviewed inputs and personnel independent source transport194 reused",
+      "passed": false
+    },
+    {
+      "check": "materializer imports stdlib only no dynamic/model/process execution",
+      "passed": true
+    },
+    {
+      "check": "draft only no physical/planning/formal authorization",
+      "passed": true
+    },
+    {
+      "check": "source identity and exact hashes bound to existing approved transport",
+      "passed": true
+    },
+    {
+      "check": "complete3309 temporal parent tree exact original saved194 lifetimes",
+      "passed": true
+    },
+    {
+      "check": "24 finite unique exact binary64 nodes IDs and no truncation",
+      "passed": true
+    },
+    {
+      "check": "complete original union and both-mode occurrence provenance role branch exact",
+      "passed": true
+    },
+    {
+      "check": "requested roles branches match actual public fixed resolved identities",
+      "passed": true
+    },
+    {
+      "check": "all29 recursive M including false partial ordered nodes retained without acceptance",
+      "passed": true
+    },
+    {
+      "check": "24 true recursive leaf source identities and exact endpoints all strict gate",
+      "passed": true
+    },
+    {
+      "check": "independent full12 fsum arithmetic agrees within4ULP; scientific strict05 predicates unchanged",
+      "passed": true
+    },
+    {
+      "check": "all34 collision occurrences87pairs and six rejects three unique retained",
+      "passed": true
+    },
+    {
+      "check": "all62 original failure identities args results preserved",
+      "passed": true
+    },
+    {
+      "check": "all18 public identities preserve7true7false2identify2dependency",
+      "passed": true
+    },
+    {
+      "check": "pending24 and all output summary counts recomputed exactly",
+      "passed": true
+    }
+  ],
+  "failures": [
+    {
+      "check": "exact reviewed inputs and personnel independent source transport194 reused",
+      "passed": false
+    }
+  ],
+  "materializer": "scripts/p4_d080/materialize_v_pcs_local01_saved_queue_v1_draft.py",
+  "materializer_sha256": "c8d9e38b0354d64276fbfc15f47748ec58aa9be12bf862557325acab3a4e44c7",
+  "queue": "configs/p4_d080/v_pcs_local01_complete_saved_queue_v1.DRAFT.json",
+  "queue_sha256": "6fa6da08e32e92068bad12346e14cf4d68440c6c205147937ea8c912daec8e35",
+  "PRE": "reports/P4_D080_ENV_V_PCS_LOCAL01_SAVED_QUEUE_PRE_DRAFT_20261018.md",
+  "PRE_sha256": "03cdcbf00ed143ad8f8e0b61dbd830cfec862205546347987e3c3dc5f2c24c34",
+  "reused_source_transport194": "reports/P4_D080_ENV_V_PCS_LOCAL01_SAVED_INDEPENDENT_POST_20261018.json",
+  "reused_source_transport194_sha256": "06c1a4c82db1accd7900b26e78c7bc84ebed33948e0b7d1d734aef877e00ac49",
+  "independent_local_qualified": false,
+  "independent_path_qualified": false,
+  "continuous_collision_certificate": false,
+  "new_model_compile_binary_FK_J_IK_NR_PQP_RBS_RNG_solve_VI_formal_calls": 0,
+  "scientific_budget_charge": 0,
+  "execution_authorized": false,
+  "retained_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_pcs_local01_complete_saved_queue_v1.DRAFT.json": "6fa6da08e32e92068bad12346e14cf4d68440c6c205147937ea8c912daec8e35",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_D080_ENV_V_PCS_LOCAL01_SAVED_INDEPENDENT_POST_20261018.json": "06c1a4c82db1accd7900b26e78c7bc84ebed33948e0b7d1d734aef877e00ac49",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/execution.json": "a0549cd8207b0a4c16e5adb71aab0f063859458a803916ba72db287e419d7985",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/materialize_v_pcs_local01_saved_queue_v1_draft.py": "c8d9e38b0354d64276fbfc15f47748ec58aa9be12bf862557325acab3a4e44c7",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_D080_ENV_V_PCS_LOCAL01_SAVED_QUEUE_PRE_DRAFT_20261018.md": "74108769809ee43948789edf19fdb86db3fc6ee258fdff056b2265d0c8d0a597",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/trace/parsed_rows.json": "ae753b4d081d325cdef40eb3e9c98947aaa7ede1e64cfea44b6df6804a90ca7c",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/plain/parsed_rows.json": "22f02b0559ac315dd8c3a76cd60515718f830340a6606a7ab0a8319e5d9726a4",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/process0_stderr.bin": "a36d763017711f9e2f51b361595f693c1695d6cfda0ca4d943f8877b5eb05838",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/process1_stderr.bin": "ee452f6c3b0281c9a0b2866db592e9241d14854bc2ef2be5fa63ff8167604fd5",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/independent_nodes_PENDING.json": "930c1a4537305274773affce4ced2e90d6cd3af5ff9f267ead55cd305c3d6168"
+  },
+  "stats": {
+    "unique_nodes": 24,
+    "original_pending_success_nodes": 24,
+    "all_reconstruct_records": 29,
+    "all_reconstruct_unique_nodes": 20,
+    "true_recursive_leaves": 24,
+    "all_true_leaf_distances_strict_lt05": true,
+    "collision_records_per_mode": 34,
+    "collision_unique_nodes": 17,
+    "rejected_collision_records_per_mode": 6,
+    "rejected_collision_unique_nodes": 3,
+    "source_failure_identities_per_mode": 62,
+    "public_requests_per_mode": 18,
+    "public_outcomes": {
+      "SOURCE_CALL_COMPLETED": 2,
+      "SOURCE_FALSE": 7,
+      "SOURCE_TRUE": 7,
+      "NOT_EXECUTED_DEPENDENCY_FAILED": 2
+    },
+    "source_lifetimes_per_mode": 3309,
+    "physical_node_limit": 256,
+    "complete_union_under_limit": true
+  },
+  "maximum_independent_fsum_vs_saved_distance_difference_rad": 2.7755575615628914e-17,
+  "maximum_independent_fsum_vs_saved_distance_difference_ULP": 1.0,
+  "source_projection_true": 7,
+  "source_projection_false": 1,
+  "source_public_RBS_true": 0,
+  "source_public_RBS_false": 3,
+  "source_public_RBS_dependency_not_executed": 1,
+  "source_public_reconstruct_true": 0,
+  "source_public_reconstruct_false": 3,
+  "source_public_reconstruct_dependency_not_executed": 1,
+  "limits": [
+    "Complete saved queue only; no independent Comau physical node or collision query run.",
+    "Three false root connections and reconstructions, one dependency pair and all old failures remain false/not executed.",
+    "True recursive subleaves are not successful public connections or global paths.",
+    "Separate frozen physical protocol and resource supervision required before physical qualification."
+  ]
+}

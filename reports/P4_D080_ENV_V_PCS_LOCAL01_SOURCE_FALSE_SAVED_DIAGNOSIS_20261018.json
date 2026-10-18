@@ -1,0 +1,520 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL01_SOURCE_FALSE_SAVED_DIAGNOSIS_V1",
+  "status": "SAVED_SOURCE_CAUSES_LOCATED_NOT_PHYSICAL_QUALIFICATION",
+  "scope": "Saved raw source observations only; not an independent POST or new science.",
+  "source_commit": "7bf8afb784de429e87e2a4bef9abbcd0361d6409",
+  "bound_raw_sha256": {
+    "results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/execution.json": "a0549cd8207b0a4c16e5adb71aab0f063859458a803916ba72db287e419d7985",
+    "results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/trace/parsed_rows.json": "ae753b4d081d325cdef40eb3e9c98947aaa7ede1e64cfea44b6df6804a90ca7c",
+    "results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/plain/parsed_rows.json": "22f02b0559ac315dd8c3a76cd60515718f830340a6606a7ab0a8319e5d9726a4",
+    "results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/process0_stderr.bin": "a36d763017711f9e2f51b361595f693c1695d6cfda0ca4d943f8877b5eb05838",
+    "results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/process0_stdout.bin": "961be1d9975ab5de2ae46221adb754ff2b39f585fa7fb85bf864952e2f429e5a",
+    "results/p4_full/20261018_R2_D080_V_PCS_LOCAL01/independent_nodes_PENDING.json": "930c1a4537305274773affce4ced2e90d6cd3af5ff9f267ead55cd305c3d6168"
+  },
+  "first_false": {
+    "request": "start_role0_minus",
+    "active_chain": 0,
+    "passive_arm": 2,
+    "branch": 3,
+    "public_id": 22,
+    "project_id": 23,
+    "specific_id": 24,
+    "native_IK_id": 26,
+    "native_IK_entry_line": 49,
+    "native_IK_return_false_line": 50,
+    "collision_calls": 0,
+    "full12_check_angle_limits_calls": 0,
+    "exact_internal_IK_reject_predicate": "UNKNOWN_NOT_INSTRUMENTED",
+    "raw_argv_input_preserved": true,
+    "dependent_RBS_and_reconstruct": "NOT_EXECUTED_DEPENDENCY_FAILED"
+  },
+  "actual_RBS_and_reconstruct_failures": [
+    {
+      "request": "start_role1_rbs",
+      "parsed_rows_zero_based_index": 8,
+      "active_chain": 1,
+      "branch": 3,
+      "recursion_args": {
+        "active_chain": 1,
+        "branch": 3,
+        "non_decrease_count": 0,
+        "recursion_depth": 2
+      },
+      "invalid_event_id": 1186,
+      "collision_event_id": 1191,
+      "pqp_true_ids": [
+        1278
+      ],
+      "failing_projected_q12": [
+        -0.026485708725500812,
+        0.4625151656046158,
+        -0.2268057593298658,
+        -1.2836167794051353e-07,
+        1.335090591604128,
+        -1.6147856787490633,
+        0.0558138333200533,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ],
+      "collision_returned": 1,
+      "true_pairs": [
+        {
+          "api_code": 0,
+          "closer_than_tolerance": true,
+          "first": "conveyor",
+          "pair_index": 86,
+          "queue_size": 2,
+          "second": "box",
+          "tolerance_mm": 8.0
+        }
+      ],
+      "all_internal_project_true": true,
+      "limits_calls": 0,
+      "raw_stderr_event_lines": [
+        {
+          "id": 1186,
+          "event": "entered",
+          "line": 2368
+        },
+        {
+          "id": 1191,
+          "event": "entered",
+          "line": 2377
+        },
+        {
+          "id": 1278,
+          "event": "entered",
+          "line": 2550
+        },
+        {
+          "id": 1278,
+          "event": "completed",
+          "line": 2551
+        },
+        {
+          "id": 1191,
+          "event": "completed",
+          "line": 2552
+        },
+        {
+          "id": 1186,
+          "event": "completed",
+          "line": 2553
+        }
+      ]
+    },
+    {
+      "request": "start_role1_reconstruct",
+      "parsed_rows_zero_based_index": 9,
+      "active_chain": 1,
+      "branch": 3,
+      "recursion_args": {
+        "active_chain": 1,
+        "branch": 3,
+        "first_or_second": 2,
+        "iteration": 2,
+        "last_index": 12
+      },
+      "invalid_event_id": 2421,
+      "collision_event_id": 2426,
+      "pqp_true_ids": [
+        2513
+      ],
+      "failing_projected_q12": [
+        -0.026485708725500812,
+        0.4625151656046158,
+        -0.2268057593298658,
+        -1.2836167794051353e-07,
+        1.335090591604128,
+        -1.6147856787490633,
+        0.0558138333200533,
+        1.0601510585161265,
+        -1.2572698956314121,
+        -0.19324969990306567,
+        0.20075901125293477,
+        0.1894578311983732
+      ],
+      "collision_returned": 1,
+      "true_pairs": [
+        {
+          "api_code": 0,
+          "closer_than_tolerance": true,
+          "first": "conveyor",
+          "pair_index": 86,
+          "queue_size": 2,
+          "second": "box",
+          "tolerance_mm": 8.0
+        }
+      ],
+      "all_internal_project_true": true,
+      "limits_calls": 0,
+      "raw_stderr_event_lines": [
+        {
+          "id": 2421,
+          "event": "entered",
+          "line": 4838
+        },
+        {
+          "id": 2426,
+          "event": "entered",
+          "line": 4847
+        },
+        {
+          "id": 2513,
+          "event": "entered",
+          "line": 5020
+        },
+        {
+          "id": 2513,
+          "event": "completed",
+          "line": 5021
+        },
+        {
+          "id": 2426,
+          "event": "completed",
+          "line": 5022
+        },
+        {
+          "id": 2421,
+          "event": "completed",
+          "line": 5023
+        }
+      ]
+    },
+    {
+      "request": "goal_role0_rbs",
+      "parsed_rows_zero_based_index": 13,
+      "active_chain": 0,
+      "branch": 1,
+      "recursion_args": {
+        "active_chain": 0,
+        "branch": 1,
+        "non_decrease_count": 0,
+        "recursion_depth": 1
+      },
+      "invalid_event_id": 2640,
+      "collision_event_id": 2645,
+      "pqp_true_ids": [
+        2719
+      ],
+      "failing_projected_q12": [
+        1.545,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1079258829356697,
+        0.8276640552219123,
+        0.06345026050895464,
+        -1.1708362034065023,
+        -1.2659373942877041,
+        0.6174265274223566
+      ],
+      "collision_returned": 1,
+      "true_pairs": [
+        {
+          "api_code": 0,
+          "closer_than_tolerance": true,
+          "first": "chassis",
+          "pair_index": 73,
+          "queue_size": 2,
+          "second": "box",
+          "tolerance_mm": 8.0
+        }
+      ],
+      "all_internal_project_true": true,
+      "limits_calls": 0,
+      "raw_stderr_event_lines": [
+        {
+          "id": 2640,
+          "event": "entered",
+          "line": 5277
+        },
+        {
+          "id": 2645,
+          "event": "entered",
+          "line": 5286
+        },
+        {
+          "id": 2719,
+          "event": "entered",
+          "line": 5433
+        },
+        {
+          "id": 2719,
+          "event": "completed",
+          "line": 5434
+        },
+        {
+          "id": 2645,
+          "event": "completed",
+          "line": 5461
+        },
+        {
+          "id": 2640,
+          "event": "completed",
+          "line": 5462
+        }
+      ]
+    },
+    {
+      "request": "goal_role0_reconstruct",
+      "parsed_rows_zero_based_index": 14,
+      "active_chain": 0,
+      "branch": 1,
+      "recursion_args": {
+        "active_chain": 0,
+        "branch": 1,
+        "first_or_second": 1,
+        "iteration": 1,
+        "last_index": 1
+      },
+      "invalid_event_id": 2829,
+      "collision_event_id": 2834,
+      "pqp_true_ids": [
+        2908
+      ],
+      "failing_projected_q12": [
+        1.545,
+        0.55,
+        0.73,
+        0.0,
+        0.2908,
+        0.0092,
+        -1.1079258829356697,
+        0.8276640552219123,
+        0.06345026050895464,
+        -1.1708362034065023,
+        -1.2659373942877041,
+        0.6174265274223566
+      ],
+      "collision_returned": 1,
+      "true_pairs": [
+        {
+          "api_code": 0,
+          "closer_than_tolerance": true,
+          "first": "chassis",
+          "pair_index": 73,
+          "queue_size": 2,
+          "second": "box",
+          "tolerance_mm": 8.0
+        }
+      ],
+      "all_internal_project_true": true,
+      "limits_calls": 0,
+      "raw_stderr_event_lines": [
+        {
+          "id": 2829,
+          "event": "entered",
+          "line": 5655
+        },
+        {
+          "id": 2834,
+          "event": "entered",
+          "line": 5664
+        },
+        {
+          "id": 2908,
+          "event": "entered",
+          "line": 5811
+        },
+        {
+          "id": 2908,
+          "event": "completed",
+          "line": 5812
+        },
+        {
+          "id": 2834,
+          "event": "completed",
+          "line": 5839
+        },
+        {
+          "id": 2829,
+          "event": "completed",
+          "line": 5840
+        }
+      ]
+    },
+    {
+      "request": "goal_role1_rbs",
+      "parsed_rows_zero_based_index": 17,
+      "active_chain": 1,
+      "branch": 3,
+      "recursion_args": {
+        "active_chain": 1,
+        "branch": 3,
+        "non_decrease_count": 0,
+        "recursion_depth": 1
+      },
+      "invalid_event_id": 3028,
+      "collision_event_id": 3033,
+      "pqp_true_ids": [
+        3106
+      ],
+      "failing_projected_q12": [
+        1.6021710491470942,
+        0.5746148855095374,
+        0.6793522268580701,
+        6.736664552532628e-07,
+        0.31683288163110623,
+        0.06637040901070537,
+        -1.146709922943673,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ],
+      "collision_returned": 1,
+      "true_pairs": [
+        {
+          "api_code": 0,
+          "closer_than_tolerance": true,
+          "first": "chassis",
+          "pair_index": 72,
+          "queue_size": 2,
+          "second": "EE2",
+          "tolerance_mm": 8.0
+        }
+      ],
+      "all_internal_project_true": true,
+      "limits_calls": 0,
+      "raw_stderr_event_lines": [
+        {
+          "id": 3028,
+          "event": "entered",
+          "line": 6053
+        },
+        {
+          "id": 3033,
+          "event": "entered",
+          "line": 6062
+        },
+        {
+          "id": 3106,
+          "event": "entered",
+          "line": 6207
+        },
+        {
+          "id": 3106,
+          "event": "completed",
+          "line": 6208
+        },
+        {
+          "id": 3033,
+          "event": "completed",
+          "line": 6237
+        },
+        {
+          "id": 3028,
+          "event": "completed",
+          "line": 6238
+        }
+      ]
+    },
+    {
+      "request": "goal_role1_reconstruct",
+      "parsed_rows_zero_based_index": 18,
+      "active_chain": 1,
+      "branch": 3,
+      "recursion_args": {
+        "active_chain": 1,
+        "branch": 3,
+        "first_or_second": 1,
+        "iteration": 1,
+        "last_index": 1
+      },
+      "invalid_event_id": 3217,
+      "collision_event_id": 3222,
+      "pqp_true_ids": [
+        3295
+      ],
+      "failing_projected_q12": [
+        1.6021710491470942,
+        0.5746148855095374,
+        0.6793522268580701,
+        6.736664552532628e-07,
+        0.31683288163110623,
+        0.06637040901070537,
+        -1.146709922943673,
+        0.8688943093850107,
+        -0.01345601912468819,
+        -1.2136652828852899,
+        -1.2759048939317288,
+        0.6617566151800156
+      ],
+      "collision_returned": 1,
+      "true_pairs": [
+        {
+          "api_code": 0,
+          "closer_than_tolerance": true,
+          "first": "chassis",
+          "pair_index": 72,
+          "queue_size": 2,
+          "second": "EE2",
+          "tolerance_mm": 8.0
+        }
+      ],
+      "all_internal_project_true": true,
+      "limits_calls": 0,
+      "raw_stderr_event_lines": [
+        {
+          "id": 3217,
+          "event": "entered",
+          "line": 6431
+        },
+        {
+          "id": 3222,
+          "event": "entered",
+          "line": 6440
+        },
+        {
+          "id": 3295,
+          "event": "entered",
+          "line": 6585
+        },
+        {
+          "id": 3295,
+          "event": "completed",
+          "line": 6586
+        },
+        {
+          "id": 3222,
+          "event": "completed",
+          "line": 6615
+        },
+        {
+          "id": 3217,
+          "event": "completed",
+          "line": 6616
+        }
+      ]
+    }
+  ],
+  "source_only_counts": {
+    "trace_collision_calls": 34,
+    "trace_collision_return_counts": {
+      "0": 28,
+      "1": 6
+    },
+    "unique_collision_queried_nodes": 17,
+    "unique_collision_return_counts": {
+      "0": 14,
+      "1": 3
+    },
+    "queued_unique_nodes": 24,
+    "public_project_outputs_not_collision_queried": 7,
+    "limits_events": 0
+  },
+  "limits": [
+    "Four-argument fixed project only closes selected passive arm; it performs no collision_state or full12 check_angle_limits. Passive IK internally uses include_joint_limits=true, so project success is not free of every limit check.",
+    "All actual RBS midpoint projects succeeded. isValidRBS rejected three unique projected nodes by original87pair8mm collision policy.",
+    "PQP api_code0 is API success; CloserThanTolerance=true signals8mm safety-band violation, not proof of mesh interpenetration.",
+    "Saved branch arguments are source requested identities, not independent branch certificates. No independent closure, full12 limits, collision or path claim from this diagnosis.",
+    "No depth150 failure, threshold adjustment, new node, seed, retry, model evaluation, compile or scientific execution."
+  ]
+}

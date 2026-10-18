@@ -1,0 +1,89 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL01_COMPLETE_QUEUE_SAVED_PERSONNEL_INDEPENDENT_PRE_V1",
+  "status": "PASS_SAVED_QUEUE_ONLY_PENDING_PHYSICAL_PROTOCOL",
+  "personnel_independent": true,
+  "reviewer": "/root/sbl_independent_resume independent of saved queue/materializer author",
+  "checks_total": 4,
+  "checks_passed": 4,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "original15-check FAIL preserved with sole PRE identity mismatch and14 passes",
+      "passed": true
+    },
+    {
+      "check": "original1936byte PRE prefix exact03cd hash; actual appendedPRE exact7410 hash",
+      "passed": true
+    },
+    {
+      "check": "suffix is only one actual materialization outcome paragraph no condition edits",
+      "passed": true
+    },
+    {
+      "check": "all prior byte inputs including source/queue/PRE unchanged since14 completed checks",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "reused_prior14_checks_without_rerun": {
+    "path": "reports/P4_D080_ENV_V_PCS_LOCAL01_COMPLETE_QUEUE_SAVED_INDEPENDENT_PRE_20261018.json",
+    "sha256": "0f2d2677718d62b3830043826e8c0ee057045a66aef1403b428ed013f62d97df",
+    "checks": 14,
+    "original_FAIL_retained": true
+  },
+  "materializer": "scripts/p4_d080/materialize_v_pcs_local01_saved_queue_v1_draft.py",
+  "materializer_sha256": "c8d9e38b0354d64276fbfc15f47748ec58aa9be12bf862557325acab3a4e44c7",
+  "queue": "configs/p4_d080/v_pcs_local01_complete_saved_queue_v1.DRAFT.json",
+  "queue_sha256": "6fa6da08e32e92068bad12346e14cf4d68440c6c205147937ea8c912daec8e35",
+  "PRE": "reports/P4_D080_ENV_V_PCS_LOCAL01_SAVED_QUEUE_PRE_DRAFT_20261018.md",
+  "PRE_sha256": "74108769809ee43948789edf19fdb86db3fc6ee258fdff056b2265d0c8d0a597",
+  "original_PRE_prefix_length": 1936,
+  "original_PRE_prefix_sha256": "03cdcbf00ed143ad8f8e0b61dbd830cfec862205546347987e3c3dc5f2c24c34",
+  "reused_source_transport194": "reports/P4_D080_ENV_V_PCS_LOCAL01_SAVED_INDEPENDENT_POST_20261018.json",
+  "reused_source_transport194_sha256": "06c1a4c82db1accd7900b26e78c7bc84ebed33948e0b7d1d734aef877e00ac49",
+  "independent_local_qualified": false,
+  "independent_path_qualified": false,
+  "continuous_collision_certificate": false,
+  "new_model_compile_binary_FK_J_IK_NR_PQP_RBS_RNG_solve_VI_formal_calls": 0,
+  "scientific_budget_charge": 0,
+  "execution_authorized": false,
+  "limits": [
+    "Complete saved queue only; no independent Comau physical node or collision query run.",
+    "Three false root connections and reconstructions, one dependency pair and all old failures remain false/not executed.",
+    "True recursive subleaves are not successful public connections or global paths.",
+    "Separate frozen physical protocol and resource supervision required before physical qualification."
+  ],
+  "stats": {
+    "unique_nodes": 24,
+    "original_pending_success_nodes": 24,
+    "all_reconstruct_records": 29,
+    "all_reconstruct_unique_nodes": 20,
+    "true_recursive_leaves": 24,
+    "all_true_leaf_distances_strict_lt05": true,
+    "collision_records_per_mode": 34,
+    "collision_unique_nodes": 17,
+    "rejected_collision_records_per_mode": 6,
+    "rejected_collision_unique_nodes": 3,
+    "source_failure_identities_per_mode": 62,
+    "public_requests_per_mode": 18,
+    "public_outcomes": {
+      "SOURCE_CALL_COMPLETED": 2,
+      "SOURCE_FALSE": 7,
+      "SOURCE_TRUE": 7,
+      "NOT_EXECUTED_DEPENDENCY_FAILED": 2
+    },
+    "source_lifetimes_per_mode": 3309,
+    "physical_node_limit": 256,
+    "complete_union_under_limit": true
+  },
+  "maximum_independent_fsum_vs_saved_distance_difference_rad": 2.7755575615628914e-17,
+  "maximum_independent_fsum_vs_saved_distance_difference_ULP": 1.0,
+  "source_projection_true": 7,
+  "source_projection_false": 1,
+  "source_public_RBS_true": 0,
+  "source_public_RBS_false": 3,
+  "source_public_RBS_dependency_not_executed": 1,
+  "source_public_reconstruct_true": 0,
+  "source_public_reconstruct_false": 3,
+  "source_public_reconstruct_dependency_not_executed": 1
+}
