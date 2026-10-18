@@ -170,6 +170,34 @@ def supervisor_proof(spec, protocol):
             'actual_argv': argv, 'held_time_fds': held, 'launch_line_sha256': hashlib.sha256(raw).hexdigest()}
 
 
+def active_d080(supervisor):
+    # Thin copy of III BUILD01 active_d080; launch-proof key adapted only.
+    allowed = {os.getpid(), supervisor['time_pid'], supervisor['supervisor_pid']}
+    active = []
+    directory = str(ROOT / 'scripts/p4_d080') + '/'
+    for entry in Path('/proc').glob('[0-9]*/cmdline'):
+        pid = int(entry.parent.name)
+        if pid in allowed:
+            continue
+        try:
+            parts = entry.read_bytes().split(b'\0')
+        except OSError:
+            continue
+        exe = parts[0].decode(errors='replace') if parts else ''
+        scripts = [p.decode(errors='replace') for p in parts[1:3]] if 'python' in exe else []
+        resolved = []
+        for script in scripts:
+            if script.startswith('-'):
+                continue
+            try:
+                resolved.append(str((Path('/proc', str(pid), 'cwd') / script).resolve(strict=True)))
+            except OSError:
+                continue
+        if any(s.startswith(directory) and Path(s).name.startswith(('build_', 'qualify_', 'supervise_')) for s in resolved):
+            active.append({'pid': pid, 'command': b' '.join(parts).decode(errors='replace')})
+    return active
+
+
 def preflight(spec, protocol):
     require(spec['schema'] == 'P4_D080_III_RRT_PCS_SOURCE01_FROZEN_V1' and spec['frozen'] is True
             and spec['scientific_execution_authorized'] is True and spec['independent_review_passed'] is True
@@ -231,7 +259,7 @@ def preflight(spec, protocol):
     return commit, prior
 
 
-def result_contract(result, spec):
+def result_contract(result, spec, work):
     require(result['schema'] == 'P4_ABB_III_RRT_PCS_END_TO_END_DRAFT_V1'
             and result['status'] == 'SOURCE_SOLVE_RETURNED_PENDING_INDEPENDENT_PATH_AUDIT'
             and result['environment'] == 'III' and L.exact(result['request'], spec['request'])
@@ -244,6 +272,21 @@ def result_contract(result, spec):
             'EXACT_APPROXIMATE_AND_NO_SOLUTION_MUST_REMAIN_SEPARATE')
     require(all(len(q) == 12 and all(type(v) in (int, float) and math.isfinite(v) for v in q)
                 for q in result['milestones_q12']), 'FINITE_COMPLETE_ORIGINAL_MILESTONES_REQUIRED')
+    require(load(work / 'request_observed.json') == spec['request'], 'DRIVER_OBSERVED_FULL_REQUEST_REQUIRED')
+    reconstruction = [json.loads(line) for line in (work / 'reconstruction_attempts.jsonl').read_bytes().splitlines()]
+    identify = [json.loads(line) for line in (work / 'identify_observations.jsonl').read_bytes().splitlines()]
+    require(L.exact(reconstruction, result['reconstruction_attempts'])
+            and len(reconstruction) == result['reconstruction_calls_completed_observed']
+            and len(identify) == result['identify_observation_count'] == result['identify_calls_completed_observed']
+            and [row['attempt_index'] for row in reconstruction] == list(range(len(reconstruction)))
+            and [row['call_index'] for row in identify] == list(range(len(identify))),
+            'COMPLETE_ORIGINAL_POSTRETURN_LOGS_MUST_MATCH_RESULT_NO_TRUNCATION')
+    require(all(row['schema'] == 'P4_ABB_RRT_PCS_RECONSTRUCTION_V1'
+                and row['observation'] == 'ORIGINAL_STATE_LEVEL_CALL_COMPLETED_POST_RETURN'
+                and type(row['returned']) is bool for row in reconstruction)
+            and all(row['schema'] == 'P4_ABB_RRT_PCS_IDENTIFY_V1'
+                and row['observation'] == 'ORIGINAL_VECTOR_IDENTIFY_CALL_COMPLETED_POST_RETURN' for row in identify),
+            'TRUE_FALSE_AND_POSTRETURN_OBSERVATION_PROVENANCE_REQUIRED')
     return 'SOURCE_EXACT_PENDING_INDEPENDENT_PATH_AUDIT' if result['exact'] else 'SOURCE_NONEXACT_RETAINED'
 
 
@@ -254,7 +297,8 @@ def execute(spec, protocol):
     proof = supervisor_proof(spec, protocol)
     folder = ROOT / 'results/p4_full' / RUN
     claim = ROOT / 'results/p4_full' / (CLAIM + '.claim.json')
-    require(not folder.exists() and not claim.exists() and not L.active_p4(), 'FRESH_SINGLE_III_SOURCE_NO_OTHER_P4')
+    require(not folder.exists() and not claim.exists() and not L.active_p4() and not active_d080(proof),
+            'FRESH_SINGLE_III_SOURCE_NO_OTHER_P4_OR_D080')
     budget = None
     journal = None
     sessions = []
@@ -270,7 +314,8 @@ def execute(spec, protocol):
               'new_external_charge_basis': COST_BASIS, 'independent_path_qualified': False,
               'continuous_collision_certificate': False, 'formal_table_I_calls': 0,
               'new_VI_candidate_constructions': 0, 'new_independent_model_calls': 0,
-              'source_reported_solve_calls': None, 'source_actual_internal_call_starts': 'UNOBSERVED',
+              'source_reported_solve_calls': None, 'solve_calls_from_result': None,
+              'source_actual_internal_call_starts': 'UNOBSERVED',
               'source_FK_IK_PQP_started': 'UNOBSERVED_NO_START_HOOK',
               'pre_model_loaded_symbol_observation': 'UNOBSERVED_NOT_CLAIMED',
               'source_implementation': 'RECONSTRUCTED_ENDPOINTS_AND_CORRECTED_KINEMATICS_ORIGINAL_RRT_PCS_CONTROL',
@@ -305,7 +350,8 @@ def execute(spec, protocol):
         record['source_solution_difference'] = result.get('solution_difference')
         record['source_result_sha256'] = sha(work / 'result.json')
         L.durable_new(folder / 'parsed_source_result.json', result)
-        record['status'] = result_contract(result, spec)
+        record['status'] = result_contract(result, spec, work)
+        record['solve_calls_from_result'] = result['solve_calls']
         record['source_reconstruction_calls_completed_observed'] = result['reconstruction_calls_completed_observed']
         record['source_reconstruction_true_started'] = result['reconstruction_true_started']
         record['source_identify_calls_completed_observed'] = result['identify_calls_completed_observed']
