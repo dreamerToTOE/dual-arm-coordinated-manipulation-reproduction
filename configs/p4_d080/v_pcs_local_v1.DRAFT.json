@@ -1,0 +1,92 @@
+{
+  "schema": "P4_D080_V_PCS_LOCAL_ENGINEERING_DRAFT_V1",
+  "status": "DRAFT_NOT_EXECUTABLE_NOT_BUILT_NOT_QUERIED",
+  "environment": "V",
+  "method": "PCS",
+  "frozen": false,
+  "independent_review_passed": false,
+  "engineering_execution_authorized": false,
+  "scientific_execution_authorized": false,
+  "formal_execution_authorized": false,
+  "stage_root": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1",
+  "proposed_build_run_name": "20261018_R2_D080_V_PCS_BUILD01",
+  "engineering_budget_proposal_only": {
+    "wall_s": 45,
+    "cpu_s": 90
+  },
+  "local_budget_proposal_only": {
+    "wall_s": 30,
+    "cpu_s": 60
+  },
+  "source_layers": {
+    "author": "avishais/ckcComau industrialScene@ef6e9c4df34d2ca1605b34c86f6fe9a689c757ca",
+    "apc": "existing geometry-consistent comau_v stage; separately qualified, not raw author",
+    "collision": "existing V_aligned collision_adapter_v3; 87 source pairs at original 8mm",
+    "svc_and_rrt": "author-original body/control flow; observation wrappers only",
+    "H_random_helper": "UNCHANGED_UNQUALIFIED_SEPARATE_FACTOR",
+    "D_CBiRRT_role1": "NOT_IN_TARGET_UNCHANGED_UNQUALIFIED",
+    "five_argument_project_role1": "UNCHANGED_NOT_CALLED_UNQUALIFIED"
+  },
+  "scope_guards": {
+    "D080_original_formal_denominator": 22500,
+    "D080_approved_formal_denominator": 18000,
+    "VI_future_execution_authorized": false,
+    "formal_statistics_authorized": false,
+    "cost_pilot": false,
+    "reuse_II_four_paths_without_rerun": true,
+    "RSS_not_required_for_PCS_local": true
+  },
+  "proposed_fixed_fixture": {
+    "status": "NOT_CONSTRUCTED_NOT_FROZEN",
+    "centers": [
+      "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/V_start.json",
+      "results/p4_full/20261015_R2_ENDPOINT_COLLISION_REPLAY01/V_goal.json"
+    ],
+    "center_field": "selected_q_rad",
+    "roles": [
+      0,
+      1
+    ],
+    "active_first_joint_offsets_rad": [
+      -0.05,
+      0.05
+    ],
+    "branch_policy": "Only prior named center identify[active_chain]; original branch, no replacement",
+    "rbs_endpoints_policy": "Only prior named fixed project outputs for the same center/role/branch; no replacement",
+    "dependency_failure_policy": "NOT_EXECUTED_DEPENDENCY_FAILED; keep all other fixed rows, do not add rows",
+    "per_binary_public_requests_without_extra_limits": 18,
+    "both_binaries_public_calls_maximum": 36,
+    "public_breakdown_both": {
+      "identify": 4,
+      "project": 16,
+      "rbs": 8,
+      "reconstruct": 8
+    },
+    "internal_fixed_project_budget_proposal_both": 512,
+    "independent_unique_node_budget_proposal": 256,
+    "requests": []
+  },
+  "driver_local_frozen_schema_required": "P4_D080_V_PCS_LOCAL_FROZEN_V1",
+  "builder_frozen_schema_required": "P4_D080_V_PCS_BUILD_FROZEN_V1",
+  "caps": null,
+  "prior": null,
+  "bound_files_sha256": {},
+  "pending_before_build": [
+    "Independent merged source review, exact source/header/library/OS and dependency-pool hash freeze",
+    "Latest actual ledger covering every concurrent execution and orphan supervision attempt",
+    "Merged independent review of real GNUtime FD/parent and SBL BUILD02 group watchdog/kill/reap, receipt/charge, latest ledger and success/failure final hashes",
+    "Fresh stage/run checks and separately frozen build protocol; no source or binary queries"
+  ],
+  "pending_before_local_science": [
+    "Independent review of fixed ordered request list, deterministic forward dependencies and all counters/caps",
+    "Exact local protocol/input hashes, root-approved budget and live external group supervisor",
+    "Plain/trace comparison and independent source-policy mathematical/branch/limits/collision/leaf-distance POST",
+    "No threshold, geometry, branch selection, fixture replacement, source helper fallback or formal planning change"
+  ],
+  "new_scientific_calls": 0,
+  "new_compile_calls": 0,
+  "new_cost_charged": 0,
+  "qualified_local_or_path_result": false,
+  "engineering_supervisor_candidate": "scripts/p4_d080/supervise_v_pcs_build_v1_draft.py",
+  "engineering_contract_revision": "20261018_REAL_GNUTIME_PARENT_GROUP_WATCHDOG_FINAL_HASHES"
+}

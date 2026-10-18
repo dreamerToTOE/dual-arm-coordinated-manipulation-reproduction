@@ -1,0 +1,826 @@
+{
+  "schema": "P4_D080_RSS_II_V_INCREMENTAL_STATIC_20261018",
+  "status": "STATIC_PROVENANCE_REUSED_RUNTIME_QUALIFICATION_PENDING",
+  "created_at_utc": "2026-10-18T07:08:34.666809+00:00",
+  "base_commit_at_read": "f6ac8f786e835c04877e2664932a5516a3699395",
+  "scope": {
+    "environments": [
+      "II",
+      "III",
+      "IV",
+      "V"
+    ],
+    "VI": "ARCHIVED_OUT_OF_APPROVED_SCOPE_NO_NEW_READ_OF_AUTHOR_VI_SOURCE_OR_RUNTIME",
+    "I": "NOT_REVIEWED_IN_THIS_INCREMENT_REMAINS_IN_D080",
+    "original_table_I_denominator": 22500,
+    "d080_table_I_denominator": 18000,
+    "formal_new_calls": 0
+  },
+  "new_calls": {
+    "project_import": 0,
+    "describe_or_protocol_generation": 0,
+    "build": 0,
+    "source_binary": 0,
+    "FK": 0,
+    "IK": 0,
+    "Jacobian": 0,
+    "SVD": 0,
+    "collision": 0,
+    "RBS": 0,
+    "reconstruct": 0,
+    "RNG_or_sampling": 0,
+    "solve": 0,
+    "candidate_construction": 0,
+    "claim": 0,
+    "ledger_write": 0,
+    "coverage_write": 0
+  },
+  "readonly_reuse": {
+    "unique_II_V_author_source_files": 28,
+    "source_sha256_matches_prior": true,
+    "old_contract_bound_inputs": 38,
+    "bound_input_sha256_matches_prior": true,
+    "saved_clear_counts": {
+      "II": 10,
+      "III": 16
+    },
+    "saved_clear_fixture_records": [
+      {
+        "case_id": "II_obs0681",
+        "environment": "II",
+        "source_index": 28,
+        "mode": 1,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "7e60418abd9d15d8d89ab8ddb87781ba3235867777b18d26875d3749be117a40"
+      },
+      {
+        "case_id": "II_obs0683",
+        "environment": "II",
+        "source_index": 28,
+        "mode": 1,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "e8b4c2f23eb5efb0664acc8d16dc4283663901ae500c06ebf1cdd7f50df90c39"
+      },
+      {
+        "case_id": "II_obs0685",
+        "environment": "II",
+        "source_index": 28,
+        "mode": 1,
+        "active_branch": 5,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "f8d266026b575f74c63b8a7fdbaa8963b7b5141e1588abf3574c8ca536974bd9"
+      },
+      {
+        "case_id": "II_obs0687",
+        "environment": "II",
+        "source_index": 28,
+        "mode": 1,
+        "active_branch": 7,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "a1639d769b31334455399b0abf443c26ca707873fb69675689b32efe5fc3186c"
+      },
+      {
+        "case_id": "II_obs0689",
+        "environment": "II",
+        "source_index": 28,
+        "mode": 2,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "1964e1e5716987f53735ee873761dea9d7400760af4e0287a140ee24e1235dec"
+      },
+      {
+        "case_id": "II_obs0691",
+        "environment": "II",
+        "source_index": 28,
+        "mode": 2,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "9f8963ad1b15c3c6043fdaacbfe4599d5433528784826e0885c387efdcdb1dc4"
+      },
+      {
+        "case_id": "II_obs2097",
+        "environment": "II",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "79b8e329fc64dc0135042eef0853d81c08fa9bb874962a57db7bdce12818efd2"
+      },
+      {
+        "case_id": "II_obs2099",
+        "environment": "II",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "0e9e8129396be47660d6edddd35d4a80a3e671419e459857bbf5de2f4d6c1ab1"
+      },
+      {
+        "case_id": "II_obs2101",
+        "environment": "II",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 5,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "a67483fb030c9a12647b3435b122fe73232a3072031cd138f17a1ff2138a9a1c"
+      },
+      {
+        "case_id": "II_obs2103",
+        "environment": "II",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 7,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "9680e6f40129a1b64ef3cbc48f09d8c88be62bbf0f4518106c64dd25949736e3"
+      },
+      {
+        "case_id": "III_obs1065",
+        "environment": "III",
+        "source_index": 44,
+        "mode": 1,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "6fd19619d1b4781a5367f496de0a3176d0c250c6558c0f5f7eb60f5c63f8a670"
+      },
+      {
+        "case_id": "III_obs1067",
+        "environment": "III",
+        "source_index": 44,
+        "mode": 1,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "4fe931d42ad6a492e89dbfb1a0ab38b6b957beae8dcad157fc079d2dfd2fc0be"
+      },
+      {
+        "case_id": "III_obs1073",
+        "environment": "III",
+        "source_index": 44,
+        "mode": 2,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "d173020bd06ee258822e10479dc9c90ad31ded254a3f8a4f745dd71567cdfb04"
+      },
+      {
+        "case_id": "III_obs1075",
+        "environment": "III",
+        "source_index": 44,
+        "mode": 2,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "a69db38bb22b8c36f937da92d0d1b9668f9d28bb31c33c1679ed14414d1c19de"
+      },
+      {
+        "case_id": "III_obs2009",
+        "environment": "III",
+        "source_index": 83,
+        "mode": 2,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "9f1656f7839dc8acf65a77c131b8ff2c51310918559d2e46d9ab9d2b5ef7af03"
+      },
+      {
+        "case_id": "III_obs2011",
+        "environment": "III",
+        "source_index": 83,
+        "mode": 2,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "03fbdd749723ab79583e85b6601f7ab4388c5a3e90dc1c9fc5f42fd10b20cddf"
+      },
+      {
+        "case_id": "III_obs2096",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 0,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "2494885f7f736100b609be286d4d8f98a31242f3d18e9c267831ac8e40bfd4c8"
+      },
+      {
+        "case_id": "III_obs2097",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "0f099d06db093dcdbce8c449ddc33f9615670fcad420c46fbc944bdf76aa836b"
+      },
+      {
+        "case_id": "III_obs2098",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 2,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "d41b14ae2d220ac5061f64776833b77b4a6f22688a4bc37d7b8a40a5bfffdcc8"
+      },
+      {
+        "case_id": "III_obs2099",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "0a6a2146913ad26b9af91d8a099c4fd2d7b9618c46f306ebbfb265e0f00e19b3"
+      },
+      {
+        "case_id": "III_obs2100",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 4,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "2f1910d9a9d24da7ac97d8e4a35a676d4482df63b7d3b094bf60d51d2a86d6d1"
+      },
+      {
+        "case_id": "III_obs2101",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 5,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "789a11f705d6cc982ac22db221af71717788eed5cdf74f62d6dceee49522e753"
+      },
+      {
+        "case_id": "III_obs2102",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 6,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "beb7ac8283b5d3fdaa31a63df27133a0ad3829b23031378f3f5c90510e05f728"
+      },
+      {
+        "case_id": "III_obs2103",
+        "environment": "III",
+        "source_index": 87,
+        "mode": 1,
+        "active_branch": 7,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "0e53e9142d4cc07029332901c7a5fe711a8ac470a933ad2dc86d3f3e2cba0bf9"
+      },
+      {
+        "case_id": "III_obs2201",
+        "environment": "III",
+        "source_index": 91,
+        "mode": 2,
+        "active_branch": 1,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "90e7699fdf190eb2bf48f30766d930a467eb7f9c14b8029740586b4f117ceeb3"
+      },
+      {
+        "case_id": "III_obs2203",
+        "environment": "III",
+        "source_index": 91,
+        "mode": 2,
+        "active_branch": 3,
+        "saved_passive_rank": 5,
+        "original_record_sha256_canonical_json": "ee91cc168863a7adc743a8509cf9959faea3ff31b7850b39cd72f85d11e8696e"
+      }
+    ],
+    "four_regular_endpoint_branch_metadata": [
+      {
+        "id": "II_0",
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json",
+        "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+        "selected_candidate_index": 2,
+        "passive_arm2_branch": [
+          3
+        ],
+        "source_regular_eligible": true,
+        "independent_branch_verified": true,
+        "all_qualifications_passed": true
+      },
+      {
+        "id": "II_1",
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json",
+        "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+        "selected_candidate_index": 0,
+        "passive_arm2_branch": [
+          0
+        ],
+        "source_regular_eligible": true,
+        "independent_branch_verified": true,
+        "all_qualifications_passed": true
+      },
+      {
+        "id": "III_0",
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json",
+        "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+        "selected_candidate_index": 1,
+        "passive_arm2_branch": [
+          1
+        ],
+        "source_regular_eligible": true,
+        "independent_branch_verified": true,
+        "all_qualifications_passed": true
+      },
+      {
+        "id": "III_1",
+        "path": "results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json",
+        "status": "RECONSTRUCTED_SOURCE_POLICY_QUALIFIED",
+        "selected_candidate_index": 3,
+        "passive_arm2_branch": [
+          3
+        ],
+        "source_regular_eligible": true,
+        "independent_branch_verified": true,
+        "all_qualifications_passed": true
+      }
+    ],
+    "fixed_four_full_inputs": [
+      {
+        "case_id": "II_obs0681",
+        "environment": "II",
+        "original_mode": 1,
+        "original_arm1_construction_branch": 1,
+        "q12_rad": [
+          -1.3094511774530355,
+          0.707053183290809,
+          -0.49931789902515167,
+          -1.4823070775652503,
+          -1.8755996340757108,
+          0.49344084760598406,
+          0.5442907463355877,
+          0.1427472839834243,
+          0.002142112726260692,
+          -0.6192175017876738,
+          0.0,
+          1.5231094074957179
+        ],
+        "path": "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0681.json",
+        "sha256": "a0b77906214eaed667dcfd47f09c20f895409ed22ebaf4b72a33ef2aced9b9db",
+        "saved_passive_rank": 5,
+        "saved_metrics": {
+          "translation_max_abs": 5.684341886080802e-14,
+          "rotation_matrix_max_abs": 1.1102230246251565e-16,
+          "rotation_angle_max_rad": 1.0466078783815643e-16,
+          "position_unit": "mm"
+        },
+        "native_predicate": 0,
+        "native_pose_status": "COLLISION_PHYSICAL_TCP_MISMATCH",
+        "aligned_predicate": 0,
+        "aligned_pose_status": "PASS",
+        "pair_query_count": {
+          "native": 116,
+          "aligned": 116
+        }
+      },
+      {
+        "case_id": "II_obs0689",
+        "environment": "II",
+        "original_mode": 2,
+        "original_arm1_construction_branch": 1,
+        "q12_rad": [
+          0.08436400573225276,
+          0.06659875161334039,
+          -0.10879316136184514,
+          0.511225097533939,
+          -0.41979796319791735,
+          -1.8531136689756493,
+          0.5442907463355877,
+          0.1427472839834243,
+          -1.3430303610541368,
+          -0.6192175017876738,
+          1.6788475997003585,
+          1.5231094074957179
+        ],
+        "path": "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/II_obs0689.json",
+        "sha256": "f140e08885863a448a3a0e85d039008cbb9f11b57643c1a32977e5f05f92e1e4",
+        "saved_passive_rank": 5,
+        "saved_metrics": {
+          "translation_max_abs": 1.1368683772161603e-13,
+          "rotation_matrix_max_abs": 1.1102230246251565e-16,
+          "rotation_angle_max_rad": 8.767285960002103e-17,
+          "position_unit": "mm"
+        },
+        "native_predicate": 0,
+        "native_pose_status": "COLLISION_PHYSICAL_TCP_MISMATCH",
+        "aligned_predicate": 0,
+        "aligned_pose_status": "PASS",
+        "pair_query_count": {
+          "native": 116,
+          "aligned": 116
+        }
+      },
+      {
+        "case_id": "III_obs1065",
+        "environment": "III",
+        "original_mode": 1,
+        "original_arm1_construction_branch": 1,
+        "q12_rad": [
+          -1.4130619644804918,
+          0.900693593170039,
+          -0.24687540422382703,
+          -1.5389685017665258,
+          -1.9064765000673454,
+          -1.8426308334784482,
+          0.4099470466082321,
+          0.6775893779059999,
+          -0.4514622367609898,
+          -0.04392698050285901,
+          0.0,
+          2.837718954222819
+        ],
+        "path": "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1065.json",
+        "sha256": "5b86a929975f78e0bd5e7a431b7cece7db8334f94583448cd9ee3049e64d428a",
+        "saved_passive_rank": 5,
+        "saved_metrics": {
+          "translation_max_abs": 7.815970093361102e-14,
+          "rotation_matrix_max_abs": 1.6653345369377348e-16,
+          "rotation_angle_max_rad": 1.2068992275485222e-16,
+          "position_unit": "mm"
+        },
+        "native_predicate": 0,
+        "native_pose_status": "COLLISION_PHYSICAL_TCP_MISMATCH",
+        "aligned_predicate": 0,
+        "aligned_pose_status": "PASS",
+        "pair_query_count": {
+          "native": 103,
+          "aligned": 103
+        }
+      },
+      {
+        "case_id": "III_obs1073",
+        "environment": "III",
+        "original_mode": 2,
+        "original_arm1_construction_branch": 1,
+        "q12_rad": [
+          -0.6280140314156843,
+          1.426911975311742,
+          -0.5615300996030679,
+          -0.5838329604770924,
+          -1.9460129241799142,
+          -2.1711146376859567,
+          0.4099470466082321,
+          0.6775893779059999,
+          -1.3430303610541368,
+          -0.04392698050285901,
+          1.5650604759147844,
+          2.837718954222819
+        ],
+        "path": "results/p4_full/20261015_R2_SAVED_RSS_COLLISION01/III_obs1073.json",
+        "sha256": "258eca5e2c3086833d18a7591b87864e05e65abfb2b6270542e83b60ce1c9607",
+        "saved_passive_rank": 5,
+        "saved_metrics": {
+          "translation_max_abs": 1.7053025658242404e-13,
+          "rotation_matrix_max_abs": 3.0531133177191805e-16,
+          "rotation_angle_max_rad": 3.4492109417519203e-16,
+          "position_unit": "mm"
+        },
+        "native_predicate": 0,
+        "native_pose_status": "COLLISION_PHYSICAL_TCP_MISMATCH",
+        "aligned_predicate": 0,
+        "aligned_pose_status": "PASS",
+        "pair_query_count": {
+          "native": 103,
+          "aligned": 103
+        }
+      }
+    ]
+  },
+  "source_root": "/home/ubuntu2004/lmy/.p4_d079_author_asset_audit",
+  "source_sha256": {
+    "CKCplanning/validity_checkers/StateValidityCheckerRSS.cpp": "133e1f7036583b3e6a5ae9d9df978a679df9af88c5103d195e727546934fd8c6",
+    "CKCplanning/run/plan_RSS.cpp": "3ec456d9a74d08e7a26a6c78104a503f6f5040c6dd18fdaaa8ce760be554ef1b",
+    "CKCplanning/validity_checkers/StateValidityCheckerRSS.h": "c7bcf881fb451eab6ff20b03a4ecc0c279c639ef85ba4a3a1b6b6cda8c6cdd11",
+    "CKCplanning/run/plan_RSS.h": "a6ceb577339467cd1d8af103e5f3409abc8d902e2a8f9a6e971290389f0f7d08",
+    "CKCplanning/planners/RRT_RSS.cpp": "3c86eeb3f9fcc1a4e984bcbbda89cef90f493f70b92b32874bf9c6e1afe15486",
+    "CKCplanning/planners/CBiRRT_RSS.cpp": "3d5a84a999637beef574c22fe436963c85376acc96727c0da0ea86762f94912a",
+    "CKCplanning/planners/SBL_RSS.cpp": "1a52d9fae20d0aa98f7c22c28139c581ac6e20451f8a4ab17f6e242826a9c2fc",
+    "ckcComau2/validity_checkers/StateValidityCheckerRSS.cpp": "a8d4d705419b47657f95b0ed4cbf7c00e147f15f927e7c2a6d6b9b6057c0eaf1",
+    "ckcComau2/run/plan_SG.cpp": "91305027176af22e8b3b56c7e3bc2d26be392f443628976b889463a05161ec71",
+    "ckcComau2/validity_checkers/StateValidityCheckerRSS.h": "b7b9830619fb81c254bace9ea95a46c4931f8bff01bd10b71735f8d732d1e864",
+    "ckcComau2/run/plan_SG.h": "570a6683bc629c5555f7e0cd9d7b6f82ffe43954ff561a56808405a35c6aa9a5",
+    "ckcComau2/planners/RRT_SG.cpp": "899f2117b6254dc5565b3c721962237ba7c0eaf0526b52dbcdd01a9046e3f8d6",
+    "ckcComau2/planners/CBiRRT_SG.cpp": "e158a28282046826c980d2a03f1bb6dade959bea5a133ca0afdc85095f551ad1",
+    "ckcComau2/planners/SBL_SG.cpp": "b41fdaedd48f2461059614b65df7c31547539ccf32c586ab6ab6f7f45c27ad95",
+    "ckcComau_industrialScene/validity_checkers/StateValidityCheckerRSS.cpp": "50223b4723583984e4b994eaa0bfb577aacbe7ce76a72e9da50a55075f28745f",
+    "ckcComau_industrialScene/run/plan_SG.cpp": "e95883d2cdecec95ec79920eda20fbccacc41cc8b819edc69d62ed5304908bc8",
+    "ckcComau_industrialScene/validity_checkers/StateValidityCheckerRSS.h": "b7b9830619fb81c254bace9ea95a46c4931f8bff01bd10b71735f8d732d1e864",
+    "ckcComau_industrialScene/run/plan_SG.h": "570a6683bc629c5555f7e0cd9d7b6f82ffe43954ff561a56808405a35c6aa9a5",
+    "ckcComau_industrialScene/planners/RRT_SG.cpp": "899f2117b6254dc5565b3c721962237ba7c0eaf0526b52dbcdd01a9046e3f8d6",
+    "ckcComau_industrialScene/planners/CBiRRT_SG.cpp": "1cae1891572dbf05f0ac993bd56ecf3ee9ae509d7c101d9fd84c745d228f062b",
+    "ckcComau_industrialScene/planners/SBL_SG.cpp": "b41fdaedd48f2461059614b65df7c31547539ccf32c586ab6ab6f7f45c27ad95",
+    "CKCplanning/planners/RRT_RSS.h": "cb033afa2163e4e5a0757112632b34441aff6f4d25d80e061eccd76a5580c13a",
+    "CKCplanning/planners/CBiRRT_RSS.h": "343413dcd016aa762d3f979680baf3fd030928b8dc1f32f075b39b069bcbc8b8",
+    "CKCplanning/planners/SBL_RSS.h": "ffc33c566a5d0af38475644f29e20dd162088e7974c94c67693eb16fcbc2aef2",
+    "CKCplanning/proj_classes/apc_class.cpp": "c74ea9ade8bb7d80b0b980139c58b659e6911ab3d3cb61b853be980654ede22c",
+    "CKCplanning/proj_classes/apc_class.h": "d65480bdbc0d62772a3732bff4a7c5d06cc9f9f0b41927a9012a4d0d111e28cf",
+    "CKCplanning/validity_checkers/collisionDetection.cpp": "9d8e59304a2af3a22ade7aa8dcc5481157f94af981bb95c9b54dbe0ed8eef0c3",
+    "CKCplanning/validity_checkers/collisionDetection.h": "a7616c3b7a526f5c7125a4e101cd98cf88ee3c902a4ac82b5830d38c504899e5"
+  },
+  "source_locations": {
+    "CKCplanning/validity_checkers/StateValidityCheckerRSS.cpp": {
+      "sampler": [
+        255,
+        305
+      ],
+      "regular_RBS": [
+        419,
+        444
+      ],
+      "singular_RBS": [
+        449,
+        496
+      ],
+      "regular_trace": [
+        531,
+        564
+      ],
+      "singular_trace": [
+        570,
+        624
+      ]
+    },
+    "CKCplanning/planners/RRT_RSS.cpp": {
+      "non_goal_gamma": [
+        158,
+        170
+      ],
+      "local_arguments": [
+        231,
+        240
+      ],
+      "exact_assignment_disabled": [
+        255,
+        275
+      ],
+      "trace": [
+        393,
+        407
+      ]
+    },
+    "CKCplanning/planners/CBiRRT_RSS.cpp": {
+      "local_arguments": [
+        204,
+        232
+      ],
+      "gamma": [
+        350,
+        357
+      ],
+      "serial_export": [
+        627,
+        661
+      ]
+    },
+    "CKCplanning/planners/SBL_RSS.cpp": {
+      "gamma_and_parent_cell": [
+        192,
+        213
+      ],
+      "regular_branch": [
+        220,
+        224
+      ],
+      "lazy": [
+        380,
+        411
+      ],
+      "trace": [
+        611,
+        624
+      ]
+    },
+    "ckcComau2/validity_checkers/StateValidityCheckerRSS.cpp": {
+      "sampler": [
+        259,
+        306
+      ],
+      "local_predicate": [
+        519,
+        529
+      ],
+      "singular_RBS": [
+        599,
+        624
+      ],
+      "singular_trace": [
+        719,
+        755
+      ]
+    },
+    "ckcComau_industrialScene/validity_checkers/StateValidityCheckerRSS.cpp": {
+      "sampler": [
+        259,
+        306
+      ],
+      "local_predicate": [
+        519,
+        529
+      ],
+      "singular_RBS": [
+        599,
+        624
+      ],
+      "singular_trace": [
+        719,
+        755
+      ]
+    },
+    "ckcComau2/planners/RRT_SG.cpp": {
+      "non_goal_gamma": [
+        158,
+        170
+      ],
+      "exact_assignment_disabled": [
+        255,
+        275
+      ]
+    },
+    "ckcComau2/planners/CBiRRT_SG.cpp": {
+      "gamma": [
+        413,
+        420
+      ],
+      "serial_export": [
+        696,
+        730
+      ]
+    },
+    "ckcComau2/planners/SBL_SG.cpp": {
+      "gamma": [
+        192,
+        213
+      ],
+      "lazy": [
+        380,
+        411
+      ],
+      "trace": [
+        613,
+        627
+      ]
+    },
+    "ckcComau_industrialScene/planners/RRT_SG.cpp": {
+      "non_goal_gamma": [
+        158,
+        170
+      ],
+      "exact_assignment_disabled": [
+        255,
+        275
+      ]
+    },
+    "ckcComau_industrialScene/planners/CBiRRT_SG.cpp": {
+      "gamma": [
+        413,
+        420
+      ],
+      "serial_export": [
+        696,
+        730
+      ]
+    },
+    "ckcComau_industrialScene/planners/SBL_SG.cpp": {
+      "gamma": [
+        192,
+        213
+      ],
+      "lazy": [
+        380,
+        411
+      ],
+      "trace": [
+        613,
+        627
+      ]
+    }
+  },
+  "paper_gamma_source": {
+    "local_private_path": "references/private_sources/P4_original.pdf",
+    "sha256": "193710e5a9d4284cf62b30ff189a1df038a9d5c5ce3f1545525dc2f78bea08c6",
+    "page_1_based": 5,
+    "section": "IV-A final paragraph continuing to page6",
+    "statement_paraphrase": "RSS uses one passive chain; profiled singular-request probability chosen .2.",
+    "method": "pdftotext stdout textual reading only; PDF is not copied or published"
+  },
+  "gamma_contract": {
+    "ABB_RRT_non_goal": 0.2,
+    "ABB_CBiRRT": 0.2,
+    "ABB_SBL_literal": 0.05,
+    "IV_V_RRT_non_goal": 0.2,
+    "IV_V_CBiRRT": 0.2,
+    "IV_V_SBL_literal": 0.05,
+    "SBL_comment": 0.2,
+    "paper_and_frozen_obligation": 0.2,
+    "accepted_sample_frequency": "UNOBSERVED_NOT_INFERRED_FROM_SOURCE_REQUEST_THRESHOLD",
+    "change_policy": "Keep author .05 and paper-condition .2 separate version labels. Resolve existing authorization/parameter provenance before any stochastic execution; this static report neither changes source nor asks to reapprove an already authorized condition."
+  },
+  "native_RBS_vs_independent_gate": {
+    "ordinary_leaf_strict_rad": 0.05,
+    "max_depth": 150,
+    "ABB_singular_shortcut_rad": 0.75,
+    "IV_V_singular_shortcut_rad": 0.35,
+    "shortcut": "After projected midpoint, distance to selected singular endpoint. trace returns before midpoint insertion; subsequent children use ordinary overload.",
+    "independent_leaf_gate": "Every exported adjacent raw-q12 Euclidean distance must independently be <.05. Source true and strict leaf pass are separate fields; no automatic densification, threshold change or connector replacement.",
+    "CCD": "NOT_PROVED_BY_EITHER_DISCRETE_RESULT"
+  },
+  "earliest_unpassed_gate": {
+    "II_III": "Fixed same-input passive-arm2 branch identity/roundtrip; then exact-output collision as needed; only then separately frozen original singular checker and trace.",
+    "IV": "Saved exact six roots collision and source checkEE; do not rerun fixed100/800.",
+    "V": "Exact old eight roots pair-level source-policy collision diagnosis; existing aggregate collision failures and UNKNOWN preserved."
+  },
+  "fixed32_existing_draft": {
+    "frozen": false,
+    "reviews": {
+      "independent_static_review_passed": false,
+      "root_freeze_approved": false,
+      "latest_actual_charged_prior_confirmed": false
+    },
+    "runner_sha256": "4839efdf5b6bb921e1ec82a06074d20dda007365b1d8744f9e72abd343a49862",
+    "supervisor_sha256": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "template_sha256": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "science_unchanged_proposal": "Original four complete q12 in original order, passive branch0..7; max32K+4F,40 independent armFK/J,36 rankSVD; math only, no candidate sampling.",
+    "budget_existing_draft": {
+      "wall_s": 10,
+      "cpu_s": 20,
+      "r2_total_wall_s": 3600,
+      "r2_total_cpu_s": 7200,
+      "max_fixed_case_branch_rows": 32,
+      "max_IK_calls": 32,
+      "max_explicit_source_F_calls": 4,
+      "max_IK_internal_source_FK_calls": 32,
+      "max_independent_arm_FK_J_calls": 40,
+      "max_rank_SVD_calls": 36
+    },
+    "execution_or_claim_path_discovered": false,
+    "blocking_engineering_before_any_freeze": [
+      "runner hardcodes latest V25 and its SHA; current saved snapshot is V29 or later",
+      "old guard only asserts formal historical0/22500, lacks D080 approved0/18000 gate",
+      "old supervisor is not reviewed against new conservative monotonic-envelope accounting and receipt policy",
+      "current matrix-evidence runner SHA needs applicable independent addendum; do not reuse a certificate for old SHA"
+    ],
+    "action": "Preserve old files. Root may commission versioned engineering-only refresh retaining all original fixed scientific fields and 10/20 total cap; independent review and actual latest prior required. This is not a new frozen protocol or execution authorization."
+  },
+  "next_bridge_proposal_reused_not_frozen": {
+    "prior_source": "reports/P4_FULL_R2_ABB_RSS_SOURCE_CONTRACT_STATIC_V1_20261016.md section5",
+    "fixed_pairs": [
+      [
+        "II_0",
+        "II_obs0681"
+      ],
+      [
+        "III_1",
+        "III_obs1065"
+      ]
+    ],
+    "active_chain": 0,
+    "proposed_passive_arm2_branch": 3,
+    "directions": "regular->singular sg2 and reversed singular->regular sg1",
+    "max_public_calls": {
+      "checker": 4,
+      "trace": 4
+    },
+    "max_midpoint_projections_prior_proposal": 128,
+    "preconditions": [
+      "fixed branch3 is validated for that exact singular input; if not retain rejection and do not change pair/branch",
+      "original exact regular endpoint certificate and singular point qualified under their clearly labeled corrected/aligned versions",
+      "all changed output q12 need collision qualification before eligibility",
+      "a finite full cost and max-call protocol, root review and independent review must be frozen before running"
+    ],
+    "reporting": [
+      "literal source return",
+      "original exported trace including omitted midpoint if shortcut",
+      "independent closure/rank/branch/full limits/collision per exact node",
+      "strict leaf distances",
+      "all failures and UNKNOWN_BUDGET_STOP"
+    ],
+    "scientific_design": "No new connector, center perturbation, substituted nodes, NR fallback or probability change proposed. Existing deterministic diagnostic only.",
+    "budget_authorization": "NONE_CREATED_BY_THIS_REPORT; bridge wall/CPU still to freeze; no solve or formal calls"
+  },
+  "saved_budget_snapshot_not_runtime_prior": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V29.json",
+    "sha256": "8b00cc927468bbe10475b0fc90443efe58560df4ec58b3f23942d4ab346d17ea",
+    "executions": 47,
+    "science_count": 35,
+    "engineering_count": 12,
+    "r2_upper_charged_wall_s": 999.0159693489941,
+    "r2_upper_charged_cpu_s": 826.637646,
+    "r2_remaining_upper_bound": {
+      "wall_s": 2600.984030651006,
+      "cpu_s": 6373.362354
+    },
+    "d080_calls": 0,
+    "d080_denominator": 18000,
+    "note": "Read-only historical snapshot; must not freeze any future protocol using this report as current prior."
+  },
+  "bound_files_sha256": {
+    "docs/decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md": "bf719599f65b9e20ae458ae94661902290c226a081abfd1513674380920399cf",
+    "docs/tasks/P4_D080_FAST_TRACK_IMPLEMENTATION_20261017.md": "12abf60931bb96ca4729dff701b2f66beb8ef7ab84150401a6f4fe6090cb2c76",
+    "reports/P4_D080_PROGRESS_SCOPE_HANDOFF_20261017.md": "156ee30407fdf7c0ee13436e47fee0ac5e943a59d7c137bba8cf91d25918da0e",
+    "reports/P4_FULL_R2_ABB_RSS_SOURCE_CONTRACT_STATIC_V1_20261016.json": "bd81f6f3d89a3e7648d35147fa19af79ce9827fb89bf81cfe2fa255b79f87177",
+    "reports/P4_FULL_R2_RSS_NEXT_GATE_STATIC_REVIEW_20261016.json": "1b5fdb2a4379a5dc3e7c52b8fe337816e342903592f45a30d2107e47ef906ac2",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_INDEPENDENT_STATIC_REVIEW_ADDENDUM_20261017.json": "5f97952d130c939591cc470e44b8f388132583fc56b8c4dd5bd38e49d58b1b10",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_MATRIX_EVIDENCE_STATIC_ADDENDUM_20261017.json": "f8fea0a45e447e65a65b15eefb7043fc19a102101939914a9db93363daf8b1a6",
+    "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "4839efdf5b6bb921e1ec82a06074d20dda007365b1d8744f9e72abd343a49862",
+    "scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V29.json": "8b00cc927468bbe10475b0fc90443efe58560df4ec58b3f23942d4ab346d17ea"
+  },
+  "companion_markdown": "reports/P4_D080_RSS_II_V_NEXT_QUALIFICATION_INCREMENTAL_STATIC_20261018.md",
+  "inputs_unchanged_after_static_read": true
+}

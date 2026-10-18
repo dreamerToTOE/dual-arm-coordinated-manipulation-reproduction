@@ -1,0 +1,45 @@
+{
+  "schema": "P4_D080_ACCOUNTING_V6_INCREMENTAL_INDEPENDENT_STATIC_V1",
+  "status": "PASS_SAVED_ONLY_SUCCESS_ACCOUNTING_STATIC",
+  "personnel_independent": true,
+  "reviewer": "/root",
+  "implementation_author": "/root/v_engineering_resume",
+  "checks_total": 6,
+  "checks_passed": 6,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "source_solve_accounting_unchanged",
+      "passed": true
+    },
+    {
+      "name": "new_success_only_and_no_old_STOP_reinsert",
+      "passed": true
+    },
+    {
+      "name": "unknown_basis_and_raw_downgrade_rejected",
+      "passed": true
+    },
+    {
+      "name": "cost_chain_separate_original_raw_and_decimal_envelope",
+      "passed": true
+    },
+    {
+      "name": "single_entry_caps_history_actual_and_211",
+      "passed": true
+    },
+    {
+      "name": "D080_denominators_and_formal_gate_preserved",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_d080_v6_20261018.py": "e4dfcffdd1fd68ab23a577abc389de0d9b03a4a288b73eb2ed0c6a87c12aa7c8"
+  },
+  "reused_v4_sha256": "b9c8d6759a3be055e0d3651e7a571f2107ad09e9c93e6fb796818eeb9ed1379b",
+  "new_appender_execution_or_scientific_calls": 0,
+  "limits": [
+    "Only successful new execution with independent POST and unchanged actual local/global caps. Failed runs keep their separate evidence-based accounting.",
+    "No data or historical rows modified by this static review."
+  ]
+}

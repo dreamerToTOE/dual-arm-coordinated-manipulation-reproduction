@@ -1,0 +1,80 @@
+{
+  "schema": "P4_D080_V_PCS_INDEPENDENT_ENGINEERING_GATE_REVIEW_V1",
+  "personnel_independent": true,
+  "status": "SOURCE_STATIC_PASS_ENGINEERING_FREEZE_PENDING",
+  "findings": [
+    {
+      "id": "ENGINEERING_SUPERVISOR_UNFINISHED",
+      "scope": "BLOCKER_BEFORE_BUILD_FREEZE_NOT_A_SCIENTIFIC_FAILURE",
+      "file": "scripts/p4_d080/build_v_pcs_local_v1_draft.py",
+      "line": 111,
+      "evidence": "validate_supervision currently trusts ACTIVE JSON fields and process IDs. No supervisor implementation is present among the five files; no actual executable/argv/source hash/start-ticks/GNUtime FD/inode proof or real group watchdog/reap evidence exists yet.",
+      "remedy": "Implement a versioned thin port of the already reviewed engineering supervision/lifecycle and review it together with the build protocol before freezing."
+    },
+    {
+      "id": "CHARGED_PRIOR_CERTIFICATES_UNFINISHED",
+      "scope": "BLOCKER_BEFORE_BUILD_FREEZE",
+      "file": "scripts/p4_d080/build_v_pcs_local_v1_draft.py",
+      "line": 87,
+      "evidence": "validate_prior checks execution set, ledger SHA and scalar charged totals but does not validate each external replacement POST/timing/receipt SHA or select/assert the latest authoritative ledger. This is weaker than the reviewed SBL current_prior gate.",
+      "remedy": "Reuse the existing latest-ledger plus independently qualified external-cost validation, retaining every actual execution and orphan attempt once."
+    },
+    {
+      "id": "BUILD_FAILURE_POST_HASH_AND_PROCESS_EVIDENCE_UNFINISHED",
+      "scope": "BLOCKER_BEFORE_BUILD_FREEZE",
+      "file": "scripts/p4_d080/build_v_pcs_local_v1_draft.py",
+      "line": 238,
+      "evidence": "The finally branch saves provisional wall/CPU only. Source/staged/dependency/protocol/prior after-hashes and compiler group empty/reap proof are absent on failure, while invoke subprocess.run alone cannot account for live child CPU or prove all compiler grandchildren ended.",
+      "remedy": "Keep current failure logs and add reviewed all-exit source/hash preservation and group reaping under real external 45W/90CPU supervision; no retry."
+    },
+    {
+      "id": "LOCAL_TOTAL_CAPS_NOT_YET_FROZEN",
+      "scope": "KNOWN_DRAFT_GATE_BEFORE_SCIENCE_NOT_BLOCKER_FOR_SOURCE_ENGINEERING",
+      "file": "configs/p4_d080/v_pcs_local_v1.DRAFT.json",
+      "line": 1,
+      "evidence": "Requests are empty and caps/prior null, honestly not executable. Header caps are per process, while the 512 project proposal applies to both plain and trace together; aggregate accounting and the complete endpoint/role/branch dependency schedule remain future work.",
+      "remedy": "Freeze exact ordered requests with total public18 per binary and 36 together, 512 aggregate internal project cap, all source entries counted, unchanged thresholds and no failed fixture replacement."
+    },
+    {
+      "id": "FORWARD_DEPENDENCIES_REQUIRE_FINAL_PROTOCOL_IDENTITY_REVIEW",
+      "scope": "KNOWN_DRAFT_GATE_BEFORE_SCIENCE",
+      "file": "baselines/p4_full/geometry_consistent/comau_v_pcs_local_driver_v1_draft.cpp",
+      "line": 39,
+      "evidence": "Driver rejects forward/missing/type/role/branch mismatched references before constructing the model. It intentionally does not infer a center identity from q12 or require two endpoints distinct; the eventual frozen source schedule must prove these exact fixture properties.",
+      "remedy": "Bind both A02 center inputs and explicit identify/project reference IDs, exact active first-joint ±.05 changes, same-center/role/branch references, finite returned q12 and independent post checks without adding new queries."
+    }
+  ],
+  "source_body_pair_report": "reports/P4_D080_ENV_V_PCS_INDEPENDENT_BODY_PAIR_STATIC_20261017.json",
+  "source_body_pair_report_sha256": "ec7e0fce89e98a052efbd0c34eb32ac41f1da43519cfac33cdb5537c59af9a75",
+  "source_body_pair_checks": 219,
+  "source_body_pair_failures": 0,
+  "files_sha256": {
+    "baselines/p4_full/geometry_consistent/comau_v_pcs_instrumentation_v1_draft.py": "003aefe6cef37f02f8b13c819c0298601379b0adf67aefbbab24506ae3f06557",
+    "baselines/p4_full/geometry_consistent/comau_v_pcs_local_driver_v1_draft.cpp": "028c72e9a09802d7bd0cdbfc25f6115d6bb62ad3d1887667dd0ac6d67b175109",
+    "baselines/p4_full/geometry_consistent/comau_v_pcs_observation_v1_draft.hpp": "ba401a7b0a97b0a34ede6fb129d59f42be2dd7ff67f51454d6c334a3c9b6cc02",
+    "scripts/p4_d080/build_v_pcs_local_v1_draft.py": "4ad1411e68c67b1fb384c4919e345d1dba8dcf68683dd8067ca98e754b2209e2",
+    "configs/p4_d080/v_pcs_local_v1.DRAFT.json": "30f61a8b400af4dfb580a38ed4d491103085848e4865a48e03e6ebabb1516179"
+  },
+  "model_geometry_changes_detected_in_instrumentation": 0,
+  "active_pair_argument_changes_detected": 0,
+  "original_RRT_bytes_changed": 0,
+  "compile_blocker_detected_by_text_review": false,
+  "compile_success_claimed": false,
+  "pure_text_transform_calls_cumulative": 1,
+  "new_compile_model_describe_calls": 0,
+  "body_pair_does_not_authorize_build_or_science": true,
+  "d080": {
+    "allowed_V": true,
+    "VI_future": false,
+    "original22500_preserved": true,
+    "current_formal_target": 18000,
+    "formal_execution_authorized": false,
+    "current_II_path_reuse": true
+  },
+  "limitations": [
+    "This is an independent static review, not an executable freeze certificate.",
+    "No C++ compiler/typechecker, model, collision, projection, RBS, solve or formal trial was run.",
+    "The first independent checker missed int in its regex; failure retained separately, closeout used the same already saved five outputs without re-transform.",
+    "All necessary candidate changes are assigned to the V implementation agent; SBL local/solve sources were not edited."
+  ]
+}

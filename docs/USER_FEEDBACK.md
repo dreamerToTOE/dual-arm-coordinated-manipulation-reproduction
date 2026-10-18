@@ -826,3 +826,8 @@ D080新表reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv/.
 V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923CPU，R2余额仅上界2760.674294624006/6428.411077，旧账原字节不改、历史未测尾UNKNOWN。VI974/974余额0且D080禁止后续VI研究。新scope/budget overlay独立保存；旧RSS/V26草稿未科学执行，不能直接执行其过期六环境/22500-current-scope guard。独立范围后审通过并核旧43execution/94文件与tar成员，原审查器嵌套字段误用失败留存、补记纠正，科学数据未改。
 
 接续优先SBL PCS：setup复用，writer-only shadow两输出的纯文本逆恢复通过，实际新工程/sidecar/local/lazy/solve/路径仍待；并行V→III→IV的PCS/NR资产与资格，RSS解耦。目标14–21天取决于真实成本；pilot草案108调用尚不可执行、资源待冻结，不以pilot替正式。新增科学假设、扩大预算、正式18k、再删范围和结题请示；普通已授权工程连续推进。不P2/Isaac/FR3新实验。
+
+
+## 2026-10-18 D080：SBL第五条完整离散路径，接续V工程
+
+SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员独立通过（21861/21861），不重solve；原PATH01 STOP/261 final/第262保存点与帽越界保持。新tail38.701351803wall/8.925315CPU，V30实际48=36科学+12工程，charged1037.7173211519942wall/835.562961CPU；余额仅上界2562.282678848006/6364.437039，历史未测尾UNKNOWN。211×216表保前212列；正式0/18000，原22500历史、VI974只读均保持。II四旧路径未重跑。仅离散aligned source-policy，不CCD/正式成功率。详见reports/P4_D080_SBL_COMPLETE_AND_V_BUILD_PRE_STAGE_20261018.md。下一V唯一两目标45/90工程已冻最新V30，随后固定local与独立Comau物理资格；RSS解耦，III/IV续后，不P2/Isaac。
