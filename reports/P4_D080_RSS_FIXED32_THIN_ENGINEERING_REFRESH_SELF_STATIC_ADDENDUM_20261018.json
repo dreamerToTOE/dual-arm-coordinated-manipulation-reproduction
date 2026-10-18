@@ -1,0 +1,212 @@
+{
+  "schema": "P4_D080_RSS_FIXED32_THIN_REFRESH_SELF_STATIC_V1",
+  "personnel_independent": false,
+  "status": "PASS_SELF_STATIC_ONLY_NOT_EXECUTABLE_OR_SCIENTIFIC_QUALIFICATION",
+  "checks_total": 30,
+  "checks_passed": 30,
+  "checks_failed": 0,
+  "inputs_sha256": {
+    "scripts/p4_d080/qualify_rss_fixed32_refresh_v1_draft.py": "3029562b030e1ba22686a6a60da9a5109457eac07d2b7929f7b70790068e8c8d",
+    "scripts/p4_d080/supervise_rss_fixed32_refresh_v1_draft.py": "a6695bfa256bb1d2ddc5e74b985036ce100763788a352591aec88c7d2e61e8a0",
+    "configs/p4_d080/rss_fixed32_refresh_v1.DRAFT.json": "bd4942acc4ea2d38afc119ac693fb63ba2331f0ffd7d1596ea20e2e243e3eeb2",
+    "reports/P4_D080_RSS_FIXED32_THIN_ENGINEERING_REFRESH_PRE_DRAFT_20261018.md": "9bb3f381a8c3bf30d66a57b8267d18d0ebe3d2c3cb6350f1c85b2a24b4e9ff11",
+    "scripts/qualify_p4_full_r2_abb_rss_branch_fixed32_supervised_v2_draft.py": "4839efdf5b6bb921e1ec82a06074d20dda007365b1d8744f9e72abd343a49862",
+    "scripts/supervise_p4_full_r2_abb_rss_branch_fixed32_v2_draft.py": "fada7f5aaf9e94d06aeb7572c062ba2dff7b843286ebaa571bf3af293a590619",
+    "configs/p4_full/r2_abb_rss_branch_fixed32_math_supervised_v2.draft.json": "da3431b145d1100c26b5dd5593edcbc74e012da08c451bcd800f7d00a204d691",
+    "reports/P4_FULL_R2_ABB_RSS_BRANCH_FIXED32_SUPERVISED_V2_PRE_DRAFT_20261017.md": "d182443483d429014e1d7cc0016ae3482daf12bcd5cd1e8d08c083d7fec11b02",
+    "scripts/p4_d080/build_v_pcs_local_v1_draft.py": "1f79c14d02368959fce03c88c4c2f39b99cbdb0bbb5ffd149330a4ef91170578",
+    "scripts/p4_d080/supervise_v_pcs_build_v1_draft.py": "7b50c7cd39a00958605f04a6fe997915dcd1f93aada4ed3f36276e2260f8e2ad",
+    "configs/p4_d080/execution_scope_v1.json": "edbf914187f449d0ce145987cbf38bc7d668c69b536f806a86b28b6da1bded41",
+    "results/p4_d080/20261017_SCOPE_RECOVERY/budget_scope_overlay.json": "7fe6eb5eaaf9002c7e1f62192acb472788225bd6207dc181a5d41baca4f52ac7"
+  },
+  "self_auditor_sha256": "6152fd6acbd92ca4857a5c63137d5d8e9eb69eb72e8406efdb495b12109671df",
+  "checks": [
+    {
+      "name": "both_new_sources_parse_AST_without_import",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_four_V2_originals_preserved_and_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact_V2_runner_and_supervisor_bytes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact_reviewed_V_infrastructure_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_twenty_original_scientific_fields_exact",
+      "passed": true,
+      "evidence": [
+        "classification",
+        "runtime_layer",
+        "literal_native_scope",
+        "active_arm",
+        "passive_arm",
+        "passive_branches_in_order",
+        "fixed_cases",
+        "ik_binary",
+        "ik_binary_sha256",
+        "budget",
+        "gates",
+        "target_policy",
+        "branch_policy",
+        "collision_scope",
+        "positive_coverage_gate",
+        "stop_policy",
+        "new_VI_candidate_constructions",
+        "formal_table_I_calls",
+        "zero_calls",
+        "RSS_gamma_preserved"
+      ]
+    },
+    {
+      "name": "fixed4_same_complete_q12_and_order",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_branch0_7_and10wall20CPU_all_call_caps",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_original_working_watchdog_stops_and_source_env_exact",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_classification_targets_gates_gamma_zero_calls_exact",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "reuse_exact_execute_Budget_NativeOnce_function_objects_no_math_copy",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "only_engineering_hooks_and_identity_globals_mutated",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "complete_reviewed_prior_validator_direct_call",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_five_prior_fields_remain_null",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_execution_authority_flags_and_reviews_false",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "D080_original_scope_and_overlay_SHA_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "D080_scope_I_V_18k_no_VI_or_formal_and_runtime_gate",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_science_bound_subset_preserved_current",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_pre_prior_binding_bytes_current",
+      "passed": true,
+      "evidence": 41
+    },
+    {
+      "name": "source_record_canonical_identities_retained",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "no_describe_or_implicit_prior_interface",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_supervisor_actual_parent_argv_proof_reused",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "old_activity_guard_retained_plus_D080_real_script_guard",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_supervisor_lifecycle_tools_direct_alias_no_copy",
+      "passed": true,
+      "evidence": [
+        "proc_table",
+        "exact_source_processes",
+        "stop_children",
+        "kill_source_identity",
+        "source_groups_after",
+        "watch"
+      ]
+    },
+    {
+      "name": "Decimal_three_observation_envelope_exact_reviewed_V_AST_except_explicit_OSError",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "raw_and_complete_envelope_separately_recorded",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_ten_twenty_caps_and_explicit_breach_retained",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "new_protocol_flags_required_before_launch",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "new_run_claim_all_sidecars_absent",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "no_stale_old_path_reused",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "nonempty_exact_review_binding_committed_protocol_REQUIRED",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "scope": "Saved bytes/AST only, no adapter/module import, describe, compile, FK/IK/J/SVD, collision, sampler, RBS, solve, claim or new prior/ledger execution.",
+  "new_scientific_calls": 0,
+  "new_compile_calls": 0,
+  "prior_bound": false,
+  "original_model_and_all_scientific_function_bodies_unchanged": true,
+  "independent_incremental_review_required": true,
+  "prior_self_report": "reports/P4_D080_RSS_FIXED32_THIN_ENGINEERING_REFRESH_SELF_STATIC_20261018.json",
+  "prior_self_report_sha256": "47c936a70ad920d8b692c7258f727387e60a4115a732baae22123d0f0854b342",
+  "self_auditor_correction": "First self report incorrectly required22 scientific field names; actual original immutable recipe has20. Only auditor cardinality assertion/label corrected; runner, supervisor, template, PRE and scientific content unchanged."
+}
