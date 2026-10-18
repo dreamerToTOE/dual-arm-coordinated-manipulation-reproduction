@@ -1,0 +1,65 @@
+{
+  "source_commit": "c15617f52079a20e5e885be193278bc471fe1927",
+  "schema": "P4_D080_V_PCS_BUILD02_TAIL_EXECUTION_V1",
+  "run_name": "20261018_R2_D080_V_PCS_BUILD02_TAIL",
+  "run_id": "20261018_R2_D080_V_PCS_BUILD02_TAIL",
+  "classification": "ENGINEERING_BUILD_ONLY_V_PCS_TAIL_REUSE8TU_BUILD2TU_ORIGINAL_CONTROL",
+  "engineering_only": true,
+  "status": "STARTED",
+  "execution_type": "engineering",
+  "environment": "V",
+  "scientific_calls": 0,
+  "query_calls": 0,
+  "solve_calls": 0,
+  "rng_calls": 0,
+  "binary_execution_calls": 0,
+  "scientific_execution_authorized": false,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "protocol": "configs/p4_d080/v_pcs_build02_tail_v1.json",
+  "claim": "results/p4_full/20261018_R2_D080_V_PCS_BUILD02_TAIL/claim.json",
+  "budget": {
+    "wall_s": 20,
+    "cpu_s": 40
+  },
+  "working_budget": {
+    "wall_s": 15,
+    "cpu_s": 30
+  },
+  "protocol_sha256": "e3f69537d5abea505f06eeb48dc5909412faf30c3bd8539c081c7bbbecff12c7",
+  "supervisor_contract": {
+    "actual_time_pid": 33457,
+    "actual_time_start_ticks": 445197,
+    "supervisor_pid": 33455,
+    "actual_argv": [
+      "/usr/bin/time",
+      "--quiet",
+      "-f",
+      "%e %U %S %x",
+      "-o",
+      "/proc/self/fd/3",
+      "/usr/bin/python3",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_v_pcs_build02_tail_v1_draft.py",
+      "--build",
+      "--protocol",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_pcs_build02_tail_v1.json"
+    ],
+    "planned_launch_line_sha256": "00ea496707a213171b4156190f661615eb74c191182b49d200ebf64f79541eb5",
+    "time_inode": 40239648,
+    "time_device": 2067,
+    "actual_time_output_fds": [
+      3,
+      4
+    ],
+    "external_POST_required": true
+  },
+  "targets": [],
+  "author_original_planning_qualified": false,
+  "source_failure_POST": "reports/P4_D080_ENV_V_PCS_BUILD01_FAILURE_SAVED_INDEPENDENT_POST_20261018.json",
+  "source_failure_POST_sha256": "3dca76842b2f50751bd9c0455b592dff89dd4dbf7c09fbf7dfcf72c487d9576a",
+  "original_STOP_object_sha256_status": "UNKNOWN_NOT_RECORDED_AT_STOP",
+  "source_transform_calls": 0,
+  "new_translation_units_expected": 2,
+  "reused_translation_units_expected": 8,
+  "external_supervision_and_independent_post_required": true
+}

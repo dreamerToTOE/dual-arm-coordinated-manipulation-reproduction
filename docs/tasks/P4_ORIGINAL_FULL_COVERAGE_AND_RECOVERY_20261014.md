@@ -294,3 +294,10 @@ D080新表reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv/.
 V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923CPU，R2余额仅上界2760.674294624006/6428.411077，旧账原字节不改、历史未测尾UNKNOWN。VI974/974余额0且D080禁止后续VI研究。新scope/budget overlay独立保存；旧RSS/V26草稿未科学执行，不能直接执行其过期六环境/22500-current-scope guard。独立范围后审通过并核旧43execution/94文件与tar成员，原审查器嵌套字段误用失败留存、补记纠正，科学数据未改。
 
 接续优先SBL PCS：setup复用，writer-only shadow两输出的纯文本逆恢复通过，实际新工程/sidecar/local/lazy/solve/路径仍待；并行V→III→IV的PCS/NR资产与资格，RSS解耦。目标14–21天取决于真实成本；pilot草案108调用尚不可执行、资源待冻结，不以pilot替正式。新增科学假设、扩大预算、正式18k、再删范围和结题请示；普通已授权工程连续推进。不P2/Isaac/FR3新实验。
+
+
+## 2026-10-18 D080：V 同源组合工程完成，V32 与 LOCAL01 冻结接缝
+
+唯一 BUILD02_TAIL 只补2 trace TU/link，旧8对象/plainELF未动；原BUILD01 STOP与STOP对象历史SHA UNKNOWN保持。保存组合独审ADDENDUM3a04f69a通过，首版metadata引用FAIL保留。费用12.199174441wall/17.923374CPU；V32共50execution（36科学账14工程），累计1091.3322264829947wall/915.032232CPU，余额仅上界2508.6677735170053/6284.967768，历史持久化尾UNKNOWN不变。211×224表保前220列；source solve仍6，正式0/18000，VI974只读。
+
+下一固定LOCAL01为原A02双中心/双角色/主动首角±.05，trace→plain共36public/38stdout，总30wall/60CPU、project512/待独立节点256，仍扣原R2总3600/7200。先最终独审/提交冻结再唯一执行；本阶段只source/transport/plain-trace，不宣称Comau物理或完整路径合格。后续独立闭链/branch/限位/87pair/叶距另冻，V→III→IV PCS/NR，RSS解耦；不P2/Isaac/FR3，不启动正式统计或结题。详见reports/P4_D080_ENV_V_COMPOSITE_BUILD_AND_LOCAL01_PRE_STAGE_20261018.md。

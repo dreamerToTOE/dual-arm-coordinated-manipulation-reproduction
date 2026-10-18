@@ -1,0 +1,26 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.h:43,
+                 from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp:42:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/../validity_checkers/StateValidityCheckerPCS.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/../validity_checkers/StateValidityCheckerPCS.h:30:69: warning: unused parameter ‘env’ [-Wunused-parameter]
+   30 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) : mysi_(si.get())
+      |                                                                 ~~~~^~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/../validity_checkers/StateValidityCheckerPCS.h: In constructor ‘StateValidityChecker::StateValidityChecker(int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/../validity_checkers/StateValidityCheckerPCS.h:34:34: warning: unused parameter ‘env’ [-Wunused-parameter]
+   34 |         StateValidityChecker(int env = 1) {
+      |                              ~~~~^~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp: In member function ‘void ompl::geometric::RRT::save2file(std::vector<ompl::geometric::RRT::Motion*>)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp:390:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<ompl::geometric::RRT::Motion*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  390 |                 for (int i = 1; i < path.size(); i++) {
+      |                                 ~~^~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp:406:43: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  406 |                         for (int k = 1; k < M.size(); k++) {
+      |                                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp:407:50: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  407 |                                 for (int j = 0; j<M[k].size(); j++) {
+      |                                                 ~^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp:349:13: warning: unused variable ‘active_chain’ [-Wunused-variable]
+  349 |         int active_chain, ik_sol;
+      |             ^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_pcs_local_v1/trace/planners/RRT_PCS.cpp:349:27: warning: unused variable ‘ik_sol’ [-Wunused-variable]
+  349 |         int active_chain, ik_sol;
+      |                           ^~~~~~

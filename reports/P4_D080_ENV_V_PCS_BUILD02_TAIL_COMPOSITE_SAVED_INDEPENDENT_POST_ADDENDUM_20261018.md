@@ -1,0 +1,5 @@
+# V BUILD02同源组合工程后审元数据补记
+
+PASS5/5，直接复用首审64项。原首审唯一失败为checker未预期root冻结协议新增tail_incremental_independent_pre引用；实际引用路径/SHA与独审f9db证书完全一致，仅此一个额外元数据键，其余只三授权flag和同证书binding。旧FAIL永久保留，不改protocol/run，不重TU/依赖审。
+
+同源组合工程资格通过：旧plain与新trace两个ELF，新两TU+link；原BUILD01工程仍false，旧八对象STOP哈希UNKNOWN。局部/规划/路径资格仍false。外费12.199174441000432wall/17.923374CPU三观测Decimal费用链合格，供本execution替换内部样本一次。
