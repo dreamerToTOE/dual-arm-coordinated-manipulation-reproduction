@@ -1,0 +1,240 @@
+{
+  "schema": "P4_D080_III_RRT_PCS_EXECUTOR_DRAFT_SELF_STATIC_V1",
+  "personnel_independent": false,
+  "status": "PASS_SELF_STATIC_ONLY_NOT_EXECUTION_OR_QUALIFICATION",
+  "review_scope": "Saved bytes and AST only; no candidate import, compiler, preprocessor, binary, model, describe or scientific query.",
+  "checks_total": 33,
+  "checks_passed": 33,
+  "checks_failed": 0,
+  "inputs_sha256": {
+    "scripts/p4_d080/build_iii_rrt_pcs_e2e_v1_draft.py": "a3035ab09ade161811026eb08fc0523ab07f7adde3da86cd431cabcfddc3eabe",
+    "scripts/p4_d080/supervise_iii_rrt_pcs_e2e_build_v1_draft.py": "661dbc63efadbfa1031b4ce248d9f7aebde6b5484e5582826ed3383627db132a",
+    "configs/p4_d080/iii_rrt_pcs_e2e_build_v1.DRAFT.json": "fb2bb596f5137cff04bec34ed45f15f2e0316d06a9fb3441531f635d3b52f8d5",
+    "configs/p4_d080/iii_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "cb5f028e38339a36306d791dda2b41f9de04cc922e5fc70a8876046a1485258e",
+    "configs/p4_d080/iii_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "28c48db9dfb8bbca8b50856a9a0d09b130422981d28f7f8a8523f56e8f3cfc8b",
+    "reports/P4_D080_ENV_III_RRT_PCS_EXECUTOR_PRE_DRAFT_20261018.md": "4dba883a7de3665d583855ca944a0c4a7882d57f2bf7d360110776d2d1626727",
+    "scripts/p4_d080/build_v_pcs_local_v1_draft.py": "1f79c14d02368959fce03c88c4c2f39b99cbdb0bbb5ffd149330a4ef91170578",
+    "scripts/p4_d080/supervise_v_pcs_build_v1_draft.py": "7b50c7cd39a00958605f04a6fe997915dcd1f93aada4ed3f36276e2260f8e2ad",
+    "baselines/p4_full/geometry_consistent/abb_iii_rrt_pcs_e2e_driver_draft.cpp": "1ca2cf62944649a2a59d1e52280ec016cd878386a3fdd66b3b700ab0ada170e5",
+    "baselines/p4_full/geometry_consistent/abb_rrt_pcs_e2e_observation.hpp": "b597b56199279bd02a7030375e0dd055d650c9a0bb4bee80aef6d4242755381c"
+  },
+  "self_auditor_sha256": "0ed6a0e0894dcfb9eda60a9984f05b3a2004d4d77cef766141c8b5192d283b6e",
+  "checks": [
+    {
+      "name": "stdlib_AST_parse_runner_and_supervisor_only",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base_V_builder_frozen_bytes_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "base_V_supervisor_frozen_bytes_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_III_plan_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_III_driver_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_II_observer_unchanged",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "supervisor_exact_inverse_seven_identity_replacements",
+      "passed": true,
+      "evidence": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "validate_supervision_exact_base_AST",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "prior_CPU_invoke_group_helpers_direct_aliases",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "finalization_fifteen_of_seventeen_statements_exact_base_AST",
+      "passed": true,
+      "evidence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16
+      ]
+    },
+    {
+      "name": "receipt_AST_only_schema_identity_change",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "remaining_finalization_change_only_stage_logs_and_first_receipt_hashes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_plan_32_copies_and_five_TU_one_link_commands_exact",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_copy_source_bytes_and_unique_fresh_destinations",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_III_environment_geometry_range_frozen_plan",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "draft_unexecutable_all_five_flags_false",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "latest_prior_unbound_no_stale_V_binding",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_fixed_engineering_caps_and_zero_science_calls",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_747_pre_prior_binding_bytes_current",
+      "passed": true,
+      "evidence": {
+        "count": 747
+      }
+    },
+    {
+      "name": "current_OWN_runner_supervisor_PRE_plan_union_bound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "saved_MD_union_original_bytes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "six_saved_actual_MD_rules_reconstruct_exact_684_union",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "managed320_system364_disjoint_and_complete",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_MD_union_and_five_PQP_headers_current_prebound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact_five_PQP_header_names",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "new_actual_MD_protected_dependency_gate_retained",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "first_object_SHA_receipt_after_compile_before_dependency_gate",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "live_start_ticks_true_observation_or_explicit_UNKNOWN",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "legacy_activity_guard_plus_small_D080_actual_script_guard",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "fresh_stage_run_and_all_external_sidecars_absent",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "D080_scope_I_V_VI_archive_and_no_formal",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "no_new_dependency_preprocessing_or_model_by_preparation",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "pre_guard_three_draft_versions_preserved_exact",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "latest_prior_bound": false,
+  "new_compile_calls": 0,
+  "new_model_calls": 0,
+  "independent_review_and_root_V34_latest_prior_binding_required": true
+}
