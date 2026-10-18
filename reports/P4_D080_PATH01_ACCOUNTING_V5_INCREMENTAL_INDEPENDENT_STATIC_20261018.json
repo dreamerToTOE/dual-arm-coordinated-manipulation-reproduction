@@ -1,0 +1,85 @@
+{
+  "schema": "P4_D080_PATH01_ACCOUNTING_V5_INCREMENTAL_STATIC_REVIEW_V1",
+  "status": "PASS_ONE_STOP_MONOTONIC_ACCOUNTING_STATIC_REVIEW",
+  "generated_at_utc": "2026-10-18T06:55:28.622858+00:00",
+  "personnel_independent": true,
+  "reviewer": "sbl_independent_resume",
+  "checks_total": 16,
+  "checks_passed": 16,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "AST parses, no scientific or subprocess imports",
+      "passed": true
+    },
+    {
+      "check": "only V29 PATH01 STOP exact immutable old208 permitted",
+      "passed": true
+    },
+    {
+      "check": "preserves actual STOP261/387 unqualified original semantics",
+      "passed": true
+    },
+    {
+      "check": "independent combined cost POST mandatory complete and exact hash",
+      "passed": true
+    },
+    {
+      "check": "all original raw charge receipt time metadata stderr hashes retained",
+      "passed": true
+    },
+    {
+      "check": "Decimal exact three-observation envelope and certificate agreement",
+      "passed": true
+    },
+    {
+      "check": "real120wall cap breach persists without R2 budget expansion",
+      "passed": true
+    },
+    {
+      "check": "new costs replace one original sample and never double charge",
+      "passed": true
+    },
+    {
+      "check": "all actual executions and orphan attempts accounted",
+      "passed": true
+    },
+    {
+      "check": "old rows and raw samples preserved verbatim before append",
+      "passed": true
+    },
+    {
+      "check": "source dispatches include failed solve calls once",
+      "passed": true
+    },
+    {
+      "check": "new outputs exclusive and immutable inputs before/after append",
+      "passed": true
+    },
+    {
+      "check": "211 rows and every208 historical column remain unchanged",
+      "passed": true
+    },
+    {
+      "check": "D080 I-V18000 and historical22500/VI974 all retained",
+      "passed": true
+    },
+    {
+      "check": "no writer target points at original raw scientific source",
+      "passed": true
+    },
+    {
+      "check": "actual addendum exposes exact mandatory complete certificate fields",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "reviewed_source": "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_d080_v5_stop_path01_20261018.py",
+  "reviewed_source_sha256": "9998d90eee62f87c819853990f33a9d3f28917e822ad628c241c6112a67efeba",
+  "independent_POST": "reports/P4_FULL_R2_ABB_SBL_PCS_PATH01_PREFIX_SAVED_INDEPENDENT_POST_ADDENDUM_20261018.json",
+  "independent_POST_sha256": "e2fb37a5d63e5219395baedef7630c386893ea13aa07e9bcc0777aa8316b75b4",
+  "new_appender_execution_model_scientific_calls": 0,
+  "limits": [
+    "Static read/AST only; root performs sole append after this review. Original STOP/fail/raw charge/time/receipt immutable."
+  ]
+}

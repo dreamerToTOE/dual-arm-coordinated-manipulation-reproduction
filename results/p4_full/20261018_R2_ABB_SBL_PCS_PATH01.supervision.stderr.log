@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_path_draft.py", line 433, in <module>
+    if __name__=='__main__':main()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_path_draft.py", line 431, in main
+    execute(spec,protocol)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_path_draft.py", line 421, in execute
+    if error is not None:raise error
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_path_draft.py", line 306, in execute
+    durable_new(folder/f'node_{i:05d}_collision_response.json',collision);event('collision_response_retained',node_id=i,response=collision)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py", line 43, in durable_new
+    json.dump(value,f,ensure_ascii=False,indent=2,allow_nan=False);f.write('\n');f.flush();os.fsync(f.fileno())
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py", line 198, in alarm
+    if not self.closing:self.check()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_cbirrt_d_distance_draft.py", line 200, in check
+    if time.monotonic()-self.started>=self.wall_cap:raise TimeoutError('D64_AGGREGATE_HARD_WALL_CAP')
+TimeoutError: D64_AGGREGATE_HARD_WALL_CAP

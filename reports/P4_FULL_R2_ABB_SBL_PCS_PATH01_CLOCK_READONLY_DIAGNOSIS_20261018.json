@@ -1,0 +1,263 @@
+{
+  "schema": "P4_SBL_PATH01_CLOCK_READONLY_DIAGNOSIS_V1",
+  "date": "2026-10-18",
+  "reviewer": "/root/sbl_path_resume",
+  "status": "REALTIME_MINUS_MONOTONIC_BACKWARD_CHANGE_OBSERVED_DURING_RUN",
+  "scientific_qualification_claim": false,
+  "scope": "Read-only kernel journal/current configuration/local GNUtime ELF and saved execution timing; no benchmark or service/time modification.",
+  "saved_input_sha256": {
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01/execution.json": "cee39aae1538742e1ab54e19d28ff42a8de2c4165cf2511bb1477d69847bc1e0",
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01/cost_receipt.jsonl": "99c657abd6daedf1d975036fbdeccf651380e497272c9c2fb5d3505bdee57d2b",
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01.supervision.charge.json": "110293de768c992b99cd75da371de7c68a189271fcfc4687da785ea4fff16a27",
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01.supervision.time.txt": "4e161a40fbddc6066531816b97da0d3772deaf07cc97ea8f2efea8d8dbec7a5c"
+  },
+  "timings": {
+    "gnu_time_elapsed_text_s": "119.80",
+    "gnu_time_padded_wall_s": 119.81,
+    "outer_monotonic_wait_s": 122.07026397300001,
+    "inner_monotonic_execution_s": 121.4681868900002,
+    "inner_monotonic_receipt_s": 121.89707410200003,
+    "outer_monotonic_minus_gnu_text_s": 2.270263973000013,
+    "receipt_monotonic_minus_gnu_text_s": 2.097074102000036
+  },
+  "journal_timesync_rows": [
+    {
+      "message": "Timed out waiting for reply from 198.18.0.10:123 (ntp.ubuntu.com).",
+      "realtime_us": 1792305271942458,
+      "monotonic_us": 1146013689,
+      "source_realtime_us": 1792305271942420
+    },
+    {
+      "message": "Stopping Network Time Synchronization...",
+      "realtime_us": 1792305642444086,
+      "monotonic_us": 1516515317,
+      "source_realtime_us": 1792305642444076
+    },
+    {
+      "message": "systemd-timesyncd.service: Deactivated successfully.",
+      "realtime_us": 1792305642444859,
+      "monotonic_us": 1516516091,
+      "source_realtime_us": 1792305642444855
+    },
+    {
+      "message": "Stopped Network Time Synchronization.",
+      "realtime_us": 1792305642445043,
+      "monotonic_us": 1516516274,
+      "source_realtime_us": 1792305642445040
+    },
+    {
+      "message": "Starting Network Time Synchronization...",
+      "realtime_us": 1792305642461169,
+      "monotonic_us": 1516532401,
+      "source_realtime_us": 1792305642461133
+    },
+    {
+      "message": "Started Network Time Synchronization.",
+      "realtime_us": 1792305642505981,
+      "monotonic_us": 1516577212,
+      "source_realtime_us": 1792305642505942
+    },
+    {
+      "message": "Initial synchronization to time server 198.18.0.10:123 (ntp.ubuntu.com).",
+      "realtime_us": 1792305643171269,
+      "monotonic_us": 1519502410,
+      "source_realtime_us": 1792305642179150
+    }
+  ],
+  "journal_offset_change": {
+    "before": {
+      "message": "Started Network Time Synchronization.",
+      "realtime_us": 1792305642505981,
+      "monotonic_us": 1516577212,
+      "source_realtime_us": 1792305642505942
+    },
+    "after": {
+      "message": "Initial synchronization to time server 198.18.0.10:123 (ntp.ubuntu.com).",
+      "realtime_us": 1792305643171269,
+      "monotonic_us": 1519502410,
+      "source_realtime_us": 1792305642179150
+    },
+    "monotonic_delta_s": 2.925198,
+    "realtime_delta_s": 0.665288,
+    "realtime_minus_monotonic_change_s": -2.25991
+  },
+  "later_resolved_clock_change_rows": [
+    {
+      "message": "Clock change detected. Flushing caches.",
+      "realtime_us": 1792305642179123,
+      "monotonic_us": 1518510264,
+      "source_realtime_us": 1792305642179080
+    },
+    {
+      "message": "Clock change detected. Flushing caches.",
+      "realtime_us": 1792305674447304,
+      "monotonic_us": 1551598029,
+      "source_realtime_us": 1792305674447291
+    }
+  ],
+  "gnu_time_binary_sha256": "7310b9b4c51a8f4d26c1af0da250f03a49ec8a8141033123e79196ad18f6c81b",
+  "gnu_time_gettimeofday_undefined_symbol_present": true,
+  "gnu_time_clock_gettime_symbol_present": false,
+  "gnu_time_gettimeofday_call_sites": [
+    [
+      "    2637:\txor    %esi,%esi",
+      "    2639:\tlea    (%rbx,%rax,8),%rax",
+      "    263d:\tmov    %rax,0x10(%rsp)",
+      "    2642:\tcall   22a0 <gettimeofday@plt>",
+      "    2647:\tcall   2390 <fork@plt>",
+      "    264c:\tmov    %eax,%ebx",
+      "    264e:\ttest   %eax,%eax"
+    ],
+    [
+      "    26a8:\tjne    2690 <fork@plt+0x300>",
+      "    26aa:\tlea    0xe8(%rsp),%rdi",
+      "    26b2:\txor    %esi,%esi",
+      "    26b4:\tcall   22a0 <gettimeofday@plt>",
+      "    26b9:\tmov    0xf0(%rsp),%rdx",
+      "    26c1:\tmov    0xe0(%rsp),%rcx",
+      "    26c9:\tmov    0xe8(%rsp),%rax"
+    ]
+  ],
+  "file_realtime_stat_rows": {
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01/execution.json": {
+      "ctime_ns": 1792305668620045924,
+      "mtime_ns": 1792305668620045924
+    },
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01/cost_receipt.jsonl": {
+      "ctime_ns": 1792305669033045908,
+      "mtime_ns": 1792305669033045908
+    },
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01.supervision.charge.json": {
+      "ctime_ns": 1792305669368045894,
+      "mtime_ns": 1792305669368045894
+    },
+    "results/p4_full/20261018_R2_ABB_SBL_PCS_PATH01.supervision.time.txt": {
+      "ctime_ns": 1792305669167045902,
+      "mtime_ns": 1792305669167045902
+    }
+  },
+  "raw_readonly_evidence_directory": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/p4_sbl_path_clock_readonly_evidence_20261018",
+  "raw_command_evidence": {
+    "timesync_journal": {
+      "argv": [
+        "journalctl",
+        "-b",
+        "-u",
+        "systemd-timesyncd",
+        "--since",
+        "2026-10-18 14:34:00",
+        "--until",
+        "2026-10-18 14:42:00",
+        "--no-pager",
+        "-o",
+        "json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "812db1658e704d86c0e110457771210a2e3750836ce4832287b946a6989247b8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "resolved_journal": {
+      "argv": [
+        "journalctl",
+        "-b",
+        "-u",
+        "systemd-resolved",
+        "--since",
+        "2026-10-18 14:39:00",
+        "--until",
+        "2026-10-18 14:42:00",
+        "--no-pager",
+        "-g",
+        "Clock change",
+        "-o",
+        "json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "7a0a759a8a7a70312ec3b19a4eaa1769c763c11ae7ca0ddb68056ab100ec8cc6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "current_sync": {
+      "argv": [
+        "timedatectl",
+        "show",
+        "--all"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "43ffef5391f2fa1eb86405a3be3d03a2eceb7c1c48ab936a67885dda7db4f04a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "current_timesync_status": {
+      "argv": [
+        "timedatectl",
+        "timesync-status",
+        "--no-pager"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "6d009cd80eea831b7b768a8def643a377a6f8d31c196d6a1ee66edd9f0eeb0d1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "current_service": {
+      "argv": [
+        "systemctl",
+        "show",
+        "systemd-timesyncd",
+        "--property=ActiveState,SubState,MainPID,ExecMainStartTimestamp,ExecMainStartTimestampMonotonic,StatusText,StateChangeTimestamp,StateChangeTimestampMonotonic"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "70f8c6e1a1385ca19255bb8907e507d49e43fd68d4da24f20d13c7acc71dcc0a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "gnu_time_symbols": {
+      "argv": [
+        "readelf",
+        "--dyn-syms",
+        "--wide",
+        "/usr/bin/time"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "37988d949bad59131625fc5b75e9c7c73389d11dc5ab7cbc806c232e3b40612b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "gnu_time_disassembly": {
+      "argv": [
+        "objdump",
+        "-d",
+        "--no-show-raw-insn",
+        "/usr/bin/time"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "981dfe93f3f701a35b40bf17201d8c46558880649ae5d5b3845eaa6cdef96615",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "current_clocksource": {
+      "argv": [
+        "cat",
+        "/sys/devices/system/clocksource/clocksource0/current_clocksource"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "53038def32a9c25e6d962a247d9b3dfe213ce648d291ced6939d60ed92f1d6d8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "current_timesync_config": {
+      "argv": [
+        "cat",
+        "/etc/systemd/timesyncd.conf"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "ce491ba1455290e24322976a0f575b06df58e8d19305e3bfc01e7299e39a11d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "interpretation": [
+    "Same boot journal monotonic/realtime timestamp pairs establish a backward realtime-minus-monotonic change of2.259910 seconds surrounding timesync restart/initial synchronization, inside saved PATH file interval14:39:09–14:41:09 CST.",
+    "GNUtime binary imports/calls gettimeofday and has no clock_gettime dynamic import. Local evidence strongly supports realtime-clock adjustment as cause of most external GNUtime versus outer monotonic discrepancy; exact syscall event attribution to NTP versus another actor is not fully logged.",
+    "The2.259910-second observed clock-offset change is close to outer monotonic122.070263973 minus GNUtime119.80=2.270263973, with differing start/end boundaries and centisecond truncation; equality is not asserted.",
+    "Current NTP configuration/status describes observation time only. It cannot establish exact historic adjustment amount by itself.",
+    "No measured I/O latency attribution. Runtime STOP/budget breach remains; clock evidence cannot upgrade partial261/387 to a qualified path or alter original119.80 log."
+  ],
+  "unknown": [
+    "Exact actor/syscall/step schedule and all timing-boundary overheads remain unknown.",
+    "I/O, scheduler, logging and hash costs have no per-stage independent profiling evidence."
+  ],
+  "new_scientific_model_compile_binary_benchmark_clock_or_service_mutation_calls": 0
+}
