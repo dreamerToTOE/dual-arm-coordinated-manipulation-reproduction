@@ -355,3 +355,10 @@ V25实际43execution=32科学+11工程，charged839.3257053759941wall/771.588923
 原24保存节点唯一执行，闭链/branch/原限位24全过，aligned source-policy15clear/9collision拒绝，最大闭链位置1.4779288903810084e-12mm。native24TCP mismatch保留；人员独立保存430/430只证固定诊断/费用，local/path/CCD仍false，原三公有RBS/回溯false不改判。原17 source TCP/box/pair保存交叉核单列待验，不冒称adapter未保存的逐pair独立closer重算。见reports/P4_D080_ENV_V_PCS_PHYSICAL01_STAGE_POST_20261018.md。
 
 费用9.466394254997576wall/3.7087890000000003CPU一次入V34，52execution=38science14engineering，charged1113.4602605769917wall/927.6919419999999CPU，原总3600/7200保持，历史尾UNKNOWN。211×232保前228列；source solve6/本次0，正式0/18000、VI974永久只读、II五路径复用。下一V保存对照/原RRT薄工程及III .8工程，RSS解耦；不新假设/放宽判据/正式大统计/P2/Isaac/FR3。
+
+
+## 2026-10-18 D080：III原RRT_PCS薄工程独立通过 / V35
+
+freeze77d37499唯一32copy/5TU1link完成，6compiler exit0/reap/空组、5原MD/672实际依赖、17原log/dependency逐字归档。独立保存49/49，ELF81dac2e2、execution16696c0d，仅BUILT_NOT_QUERIED，binary/setup/source solve/路径均未执行。费用22.0565060610004wall/34.199148CPU一次入V35；53execution=38science15eng，charged1135.516766637992wall/961.89109CPU，原3600/7200及历史尾UNKNOWN保持。211×236保前232列，source solve6/新增0、正式0/18000、VI974只读、II五路径复用。见reports/P4_D080_ENV_III_RRT_PCS_BUILD01_STAGE_POST_20261018.md。
+
+下一V原RRT薄2TU/link未冻结；III单次10秒source入口30/60草案准备，须独审冻结后唯一运行并另作全路径门；RSS fixed4×8工程刷新不改原科学或γ、不采新样本。无P2/Isaac/FR3/正式统计/结题。

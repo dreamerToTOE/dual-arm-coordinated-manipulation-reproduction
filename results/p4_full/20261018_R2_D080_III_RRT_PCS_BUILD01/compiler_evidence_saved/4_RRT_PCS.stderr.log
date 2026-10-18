@@ -1,0 +1,30 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.h:43,
+                 from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:42:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/../validity_checkers/StateValidityCheckerPCS.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/../validity_checkers/StateValidityCheckerPCS.h:199:34: warning: ‘StateValidityChecker::mysi_’ will be initialized after [-Wreorder]
+  199 |         ob::SpaceInformation    *mysi_;
+      |                                  ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/../validity_checkers/StateValidityCheckerPCS.h:38:101: warning:   base ‘two_robots’ [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.h:43,
+                 from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:42:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/../validity_checkers/StateValidityCheckerPCS.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp: In member function ‘void ompl::geometric::RRT::save2file(std::vector<ompl::geometric::RRT::Motion*>)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:387:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<ompl::geometric::RRT::Motion*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  387 |                 for (int i = 1; i < path.size(); i++) {
+      |                                 ~~^~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:403:43: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  403 |                         for (int k = 1; k < M.size(); k++) {
+      |                                         ~~^~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:404:50: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  404 |                                 for (int j = 0; j<M[k].size(); j++) {
+      |                                                 ~^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:346:13: warning: unused variable ‘active_chain’ [-Wunused-variable]
+  346 |         int active_chain, ik_sol;
+      |             ^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/planners/RRT_PCS.cpp:346:27: warning: unused variable ‘ik_sol’ [-Wunused-variable]
+  346 |         int active_chain, ik_sol;
+      |                           ^~~~~~

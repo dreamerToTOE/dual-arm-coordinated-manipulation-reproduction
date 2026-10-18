@@ -565,3 +565,10 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 ### V PHYSICAL01后续保存补证
 
 原source17点的TCP/箱体/87pair/API/8mm聚合保存核对634项及独立薄审8项通过：17点14clear3reject，另7project-only点1clear6reject；独立逐pair closer未保存，UNKNOWN保持。无新模型/入账，原主POST PENDING不回写。见reports/P4_D080_ENV_V_PCS_PHYSICAL01_SOURCE_SAVED_ADDENDUM_20261018.md。V下一最早门为原RRT薄工程/有限入口，III .8工程并行。
+
+
+## 2026-10-18 D080：III原RRT_PCS薄工程独立通过 / V35
+
+freeze77d37499唯一32copy/5TU1link完成，6compiler exit0/reap/空组、5原MD/672实际依赖、17原log/dependency逐字归档。独立保存49/49，ELF81dac2e2、execution16696c0d，仅BUILT_NOT_QUERIED，binary/setup/source solve/路径均未执行。费用22.0565060610004wall/34.199148CPU一次入V35；53execution=38science15eng，charged1135.516766637992wall/961.89109CPU，原3600/7200及历史尾UNKNOWN保持。211×236保前232列，source solve6/新增0、正式0/18000、VI974只读、II五路径复用。见reports/P4_D080_ENV_III_RRT_PCS_BUILD01_STAGE_POST_20261018.md。
+
+下一V原RRT薄2TU/link未冻结；III单次10秒source入口30/60草案准备，须独审冻结后唯一运行并另作全路径门；RSS fixed4×8工程刷新不改原科学或γ、不采新样本。无P2/Isaac/FR3/正式统计/结题。

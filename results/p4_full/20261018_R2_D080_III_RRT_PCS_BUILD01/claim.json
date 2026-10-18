@@ -1,0 +1,56 @@
+{
+  "source_commit": "77d37499d8d6029a0095cef763027863cf5fe961",
+  "schema": "P4_D080_III_RRT_PCS_BUILD_EXECUTION_V1",
+  "run_name": "20261018_R2_D080_III_RRT_PCS_BUILD01",
+  "run_id": "20261018_R2_D080_III_RRT_PCS_BUILD01",
+  "classification": "ENGINEERING_BUILD_ONLY_III_RRT_PCS_UNCHANGED_QUALIFIED_COMPONENTS",
+  "engineering_only": true,
+  "execution_type": "engineering",
+  "environment": "III",
+  "status": "STARTED",
+  "scientific_calls": 0,
+  "query_calls": 0,
+  "solve_calls": 0,
+  "rng_calls": 0,
+  "binary_execution_calls": 0,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "budget": {
+    "wall_s": 45,
+    "cpu_s": 90
+  },
+  "working_budget": {
+    "wall_s": 40,
+    "cpu_s": 80
+  },
+  "protocol_sha256": "4c6fa136d7a9097c8386bc094a6379501caf9df91efbd9bf90a4d3991a21b50e",
+  "supervisor_contract": {
+    "actual_time_pid": 49548,
+    "actual_time_start_ticks": 2165175,
+    "supervisor_pid": 49546,
+    "actual_argv": [
+      "/usr/bin/time",
+      "--quiet",
+      "-f",
+      "%e %U %S %x",
+      "-o",
+      "/proc/self/fd/3",
+      "/usr/bin/python3",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_iii_rrt_pcs_e2e_v1_draft.py",
+      "--build",
+      "--protocol",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/iii_rrt_pcs_e2e_build_v1.json"
+    ],
+    "planned_launch_line_sha256": "f96ea29a2afce67393e2c904ac6be44e621959cbdfa541c2c0e44ab475fc1f25",
+    "time_inode": 40239743,
+    "time_device": 2067,
+    "actual_time_output_fds": [
+      3,
+      4
+    ],
+    "external_POST_required": true
+  },
+  "targets": [],
+  "author_original_planning_qualified": false,
+  "external_supervision_and_independent_post_required": true
+}

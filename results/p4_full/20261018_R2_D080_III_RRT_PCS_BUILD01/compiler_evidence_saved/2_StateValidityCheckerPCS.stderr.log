@@ -1,0 +1,36 @@
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:13:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.h: In constructor ‘StateValidityChecker::StateValidityChecker(const SpaceInformationPtr&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.h:199:34: warning: ‘StateValidityChecker::mysi_’ will be initialized after [-Wreorder]
+  199 |         ob::SpaceInformation    *mysi_;
+      |                                  ^~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.h:38:101: warning:   base ‘two_robots’ [-Wreorder]
+   38 |                 collisionDetection(env==1 ? ROBOTS_DISTANCE_ENV_I : ROBOTS_DISTANCE_ENV_II,0,0,0,env)
+      |                                                                                                     ^
+In file included from /home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:13:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.h:35:9: warning:   when initialized here [-Wreorder]
+   35 |         StateValidityChecker(const ob::SpaceInformationPtr &si, int env = 1) :
+      |         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp: In member function ‘bool StateValidityChecker::IKproject(State&, State&, int)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:172:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  172 |         for (i = 0; i < IKsol.size(); i++) {
+      |                     ~~^~~~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp: In member function ‘double StateValidityChecker::normDistance(State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:328:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  328 |         for (int i=0; i < a1.size(); i++)
+      |                       ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp: In member function ‘double StateValidityChecker::stateDistance(const ompl::base::State*, const ompl::base::State*)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:339:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  339 |         for (int i=0; i < qa1.size(); i++)
+      |                       ~~^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp: In member function ‘double StateValidityChecker::normDistanceDuo(State, State, State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:407:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  407 |         for (int i=0; i < qa1.size(); i++)
+      |                       ~~^~~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp: In member function ‘State StateValidityChecker::join_Vectors(State, State)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:482:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  482 |         for (int i = 0; i < q1.size(); i++) {
+      |                         ~~^~~~~~~~~~~
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp: In member function ‘void StateValidityChecker::seperate_Vector(State, State&, State&)’:
+/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_iii_rrt_pcs_e2e_v1/geometry_consistent_observed/validity_checkers/StateValidityCheckerPCS.cpp:492:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  492 |         for (int i = 0; i < q.size()/2; i++) {
+      |                         ~~^~~~~~~~~~~~
