@@ -60,16 +60,35 @@ class FilterState:
         """Explicit copied GT/math diagnostic; never primary initialization."""
         return cls(*(getattr(state,name) for name in STATE_NAMES),origin='diagnostic_GT')
 
+    @classmethod
+    def _from_validated(cls, values, origin):
+        """Build from blocks already known to be valid SE(3)/finite.
+
+        Used by copy() and retract(), where the blocks come from a validated state
+        and a finite increment. A single vectorised finiteness check replaces the
+        seven per-block SE(3) re-validations (O1-c); the public constructor still
+        runs the full validation.
+        """
+        state = object.__new__(cls)
+        for name, value in zip(STATE_NAMES, values):
+            if not np.all(np.isfinite(value)):
+                raise ObservationDomainError('INVALID_FINITE_VECTOR')
+            object.__setattr__(state, name, value)
+        object.__setattr__(state, 'origin', origin)
+        return state
+
     def copy(self):
-        return type(self)(*(getattr(self,name) for name in STATE_NAMES),origin=self.origin)
+        return type(self)._from_validated([getattr(self, n).copy() for n in STATE_NAMES],
+                                          self.origin)
 
     def retract(self,delta):
         delta=_vector(delta,42)
-        # The new state is re-validated by __post_init__; the per-block Exp does
-        # not need to validate its own output again (O1-a).
-        return type(self)(*(getattr(self,name)+delta[6*i:6*i+6] if name=='V'
-                            else getattr(self,name)@_exp6(delta[6*i:6*i+6])
-                            for i,name in enumerate(STATE_NAMES)),origin=self.origin)
+        values=[]
+        for i,name in enumerate(STATE_NAMES):
+            current=getattr(self,name)
+            values.append(current+delta[6*i:6*i+6] if name=='V'
+                          else current@_exp6(delta[6*i:6*i+6]))
+        return type(self)._from_validated(values,self.origin)
 
     def local(self,reference):
         return np.concatenate([self.V-np.asarray(reference.V) if name=='V'
