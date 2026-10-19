@@ -1,0 +1,30 @@
+{
+  "kind": "T02_UNIT_ERRATA",
+  "date": "2026-10-19",
+  "scope": "documentation and unit labels only; no numeric value, no array and no historical evidence is changed",
+  "why_not_edit_the_audit": "p2/reviews/T02_MATH_AUDIT.json is the frozen evidence of the reviewed run at d8efdb8c. Editing its unit strings would alter that artifact, so the correction is recorded here and applied only in narrative text.",
+  "items": [
+    {
+      "check_id": "eq15_printed_vs_adapted_counterexample",
+      "wrong_label": "1/s",
+      "correct_label": "m/s",
+      "explanation": "The free Lie coordinate in this counterexample is a translation along x, so tau_dot's free component is a linear velocity in m/s. The recorded magnitude 0.02 is 0.02 m/s, and 0.02 m/s x 4e-3 s = 8e-5 m = 80 um. It is not an angular rate and must not be reported in rad/s.",
+      "unchanged_values": {
+        "adapted_free_component": 0.0,
+        "printed_free_component": 0.02,
+        "printed_deformation_over_4ms_m": 8e-05
+      }
+    },
+    {
+      "check_id": "eq15_adapted_free_log_invariant",
+      "wrong_label": "1/s",
+      "correct_label": "m/s or rad/s depending on the free component",
+      "explanation": "N^T tau_dot mixes translational (m/s) and rotational (rad/s) components depending on which directions H leaves free; the scalar maximum in the check is therefore unit-mixed and kept only as a zero test.",
+      "unchanged_values": {"max_abs_error": 7.916e-18}
+    }
+  ],
+  "narrative_fix": [
+    "T02_POST.md section 2 now states 0.02 m/s -> 80 um and keeps the original numbers.",
+    "T02_REPORT.md displays the corrected unit with a footnote; the audit JSON is untouched."
+  ]
+}

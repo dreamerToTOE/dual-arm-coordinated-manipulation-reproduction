@@ -1,0 +1,2062 @@
+{
+  "kind": "T01E_PRE_OPTIMISATION_EQUIVALENCE_ORACLE",
+  "date": "2026-10-19",
+  "frozen_before_optimisation": true,
+  "source_sha256": {
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/estimator.py": "5c045a79b21038b64f8a97628923c654c784c30ba43ae9f09ea0733de3b96798",
+    "baselines/p2_pose_force/observations.py": "cc902ea092396c9164e27b33010e7639deae0b185798df34488b61f08e5d6665",
+    "configs/p2_closed_loop_protocol_v3.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c"
+  },
+  "git_commit": "d8efdb8c700af0f09037ac67f548f9d943fcad74",
+  "tool_sha256": {
+    "p2/tools/t01e_baseline.py": "92224a52b7205625a0d3d053d72b0fd600be7e73fe5ae25779e89025aaabb737",
+    "p2/tools/t01e_compare.py": "c34f7b9ba164a6cb064e38a23726c71d07b44385a07184e09b7de828fe43d3d5"
+  },
+  "seed": 20261019,
+  "h_s": 0.004,
+  "command": "/usr/bin/python3.10 p2/tools/t01e_baseline.py",
+  "environment": {
+    "python": "3.10.12",
+    "numpy": "1.24.4"
+  },
+  "arrays_npz": "arrays.npz",
+  "arrays_npz_sha256": "bacbc46fab377f4119b284daa28b96407a0aa111109cd2ef9ebf88a9b5164864",
+  "case_count": 20,
+  "numeric_cases": [
+    "C01_nominal_pivot",
+    "C02_moving_pivot",
+    "C03_elastic_tight",
+    "C04_elastic_sliding",
+    "C05_rank_collinear_sliding",
+    "C06_rank_boundary_sliding",
+    "C07_small_angle",
+    "C08_near_pi",
+    "C09_residual_update",
+    "C10_mixed_pivot_sliding",
+    "C11_force_dominated"
+  ],
+  "invalid_input_cases": [
+    "E01_non_se3",
+    "E02_nan_velocity",
+    "E02b_nan_velocity_validate_state",
+    "E03_unknown_mode",
+    "E04_nonorthonormal_H",
+    "E05_bad_covariance",
+    "E06_stale_timestamp",
+    "E07_nonpositive_dt",
+    "E08_non_se3_log"
+  ],
+  "array_keys": [
+    "C01_nominal_pivot__A",
+    "C01_nominal_pivot__D",
+    "C01_nominal_pivot__F",
+    "C01_nominal_pivot__H_EE1",
+    "C01_nominal_pivot__H_EE2",
+    "C01_nominal_pivot__H_hK1",
+    "C01_nominal_pivot__H_hK2",
+    "C01_nominal_pivot__H_visual1",
+    "C01_nominal_pivot__H_visual2",
+    "C01_nominal_pivot__Lw",
+    "C01_nominal_pivot__P0",
+    "C01_nominal_pivot__P_pred",
+    "C01_nominal_pivot__Qd",
+    "C01_nominal_pivot__U",
+    "C01_nominal_pivot__W",
+    "C01_nominal_pivot__X",
+    "C01_nominal_pivot__X_pred",
+    "C01_nominal_pivot__f",
+    "C01_nominal_pivot__grasp_body_0",
+    "C01_nominal_pivot__grasp_body_1",
+    "C01_nominal_pivot__h",
+    "C01_nominal_pivot__hB",
+    "C01_nominal_pivot__hK",
+    "C01_nominal_pivot__internal",
+    "C01_nominal_pivot__residual_EE1",
+    "C01_nominal_pivot__residual_EE2",
+    "C01_nominal_pivot__residual_hK1",
+    "C01_nominal_pivot__residual_hK2",
+    "C01_nominal_pivot__residual_visual1",
+    "C01_nominal_pivot__residual_visual2",
+    "C01_nominal_pivot__singular_values",
+    "C01_nominal_pivot__tau",
+    "C01_nominal_pivot__tau_rate_0",
+    "C01_nominal_pivot__tau_rate_1",
+    "C01_nominal_pivot__z_EE1",
+    "C01_nominal_pivot__z_EE2",
+    "C01_nominal_pivot__z_hK1",
+    "C01_nominal_pivot__z_hK2",
+    "C01_nominal_pivot__z_visual1",
+    "C01_nominal_pivot__z_visual2",
+    "C02_moving_pivot__A",
+    "C02_moving_pivot__D",
+    "C02_moving_pivot__F",
+    "C02_moving_pivot__H_EE1",
+    "C02_moving_pivot__H_EE2",
+    "C02_moving_pivot__H_hK1",
+    "C02_moving_pivot__H_hK2",
+    "C02_moving_pivot__H_visual1",
+    "C02_moving_pivot__H_visual2",
+    "C02_moving_pivot__Lw",
+    "C02_moving_pivot__P0",
+    "C02_moving_pivot__P_pred",
+    "C02_moving_pivot__Qd",
+    "C02_moving_pivot__U",
+    "C02_moving_pivot__W",
+    "C02_moving_pivot__X",
+    "C02_moving_pivot__X_pred",
+    "C02_moving_pivot__f",
+    "C02_moving_pivot__grasp_body_0",
+    "C02_moving_pivot__grasp_body_1",
+    "C02_moving_pivot__h",
+    "C02_moving_pivot__hB",
+    "C02_moving_pivot__hK",
+    "C02_moving_pivot__internal",
+    "C02_moving_pivot__residual_EE1",
+    "C02_moving_pivot__residual_EE2",
+    "C02_moving_pivot__residual_hK1",
+    "C02_moving_pivot__residual_hK2",
+    "C02_moving_pivot__residual_visual1",
+    "C02_moving_pivot__residual_visual2",
+    "C02_moving_pivot__singular_values",
+    "C02_moving_pivot__tau",
+    "C02_moving_pivot__tau_rate_0",
+    "C02_moving_pivot__tau_rate_1",
+    "C02_moving_pivot__z_EE1",
+    "C02_moving_pivot__z_EE2",
+    "C02_moving_pivot__z_hK1",
+    "C02_moving_pivot__z_hK2",
+    "C02_moving_pivot__z_visual1",
+    "C02_moving_pivot__z_visual2",
+    "C03_elastic_tight__A",
+    "C03_elastic_tight__D",
+    "C03_elastic_tight__F",
+    "C03_elastic_tight__H_EE1",
+    "C03_elastic_tight__H_EE2",
+    "C03_elastic_tight__H_hK1",
+    "C03_elastic_tight__H_hK2",
+    "C03_elastic_tight__H_visual1",
+    "C03_elastic_tight__H_visual2",
+    "C03_elastic_tight__Lw",
+    "C03_elastic_tight__P0",
+    "C03_elastic_tight__P_pred",
+    "C03_elastic_tight__Qd",
+    "C03_elastic_tight__U",
+    "C03_elastic_tight__W",
+    "C03_elastic_tight__X",
+    "C03_elastic_tight__X_pred",
+    "C03_elastic_tight__f",
+    "C03_elastic_tight__grasp_body_0",
+    "C03_elastic_tight__grasp_body_1",
+    "C03_elastic_tight__h",
+    "C03_elastic_tight__hB",
+    "C03_elastic_tight__hK",
+    "C03_elastic_tight__internal",
+    "C03_elastic_tight__residual_EE1",
+    "C03_elastic_tight__residual_EE2",
+    "C03_elastic_tight__residual_hK1",
+    "C03_elastic_tight__residual_hK2",
+    "C03_elastic_tight__residual_visual1",
+    "C03_elastic_tight__residual_visual2",
+    "C03_elastic_tight__singular_values",
+    "C03_elastic_tight__tau",
+    "C03_elastic_tight__tau_rate_0",
+    "C03_elastic_tight__tau_rate_1",
+    "C03_elastic_tight__z_EE1",
+    "C03_elastic_tight__z_EE2",
+    "C03_elastic_tight__z_hK1",
+    "C03_elastic_tight__z_hK2",
+    "C03_elastic_tight__z_visual1",
+    "C03_elastic_tight__z_visual2",
+    "C04_elastic_sliding__A",
+    "C04_elastic_sliding__D",
+    "C04_elastic_sliding__F",
+    "C04_elastic_sliding__H_EE1",
+    "C04_elastic_sliding__H_EE2",
+    "C04_elastic_sliding__H_hK1",
+    "C04_elastic_sliding__H_hK2",
+    "C04_elastic_sliding__H_visual1",
+    "C04_elastic_sliding__H_visual2",
+    "C04_elastic_sliding__Lw",
+    "C04_elastic_sliding__P0",
+    "C04_elastic_sliding__P_pred",
+    "C04_elastic_sliding__Qd",
+    "C04_elastic_sliding__U",
+    "C04_elastic_sliding__W",
+    "C04_elastic_sliding__X",
+    "C04_elastic_sliding__X_pred",
+    "C04_elastic_sliding__f",
+    "C04_elastic_sliding__grasp_body_0",
+    "C04_elastic_sliding__grasp_body_1",
+    "C04_elastic_sliding__h",
+    "C04_elastic_sliding__hB",
+    "C04_elastic_sliding__hK",
+    "C04_elastic_sliding__internal",
+    "C04_elastic_sliding__residual_EE1",
+    "C04_elastic_sliding__residual_EE2",
+    "C04_elastic_sliding__residual_hK1",
+    "C04_elastic_sliding__residual_hK2",
+    "C04_elastic_sliding__residual_visual1",
+    "C04_elastic_sliding__residual_visual2",
+    "C04_elastic_sliding__singular_values",
+    "C04_elastic_sliding__tau",
+    "C04_elastic_sliding__tau_rate_0",
+    "C04_elastic_sliding__tau_rate_1",
+    "C04_elastic_sliding__z_EE1",
+    "C04_elastic_sliding__z_EE2",
+    "C04_elastic_sliding__z_hK1",
+    "C04_elastic_sliding__z_hK2",
+    "C04_elastic_sliding__z_visual1",
+    "C04_elastic_sliding__z_visual2",
+    "C05_rank_collinear_sliding__A",
+    "C05_rank_collinear_sliding__D",
+    "C05_rank_collinear_sliding__F",
+    "C05_rank_collinear_sliding__H_EE1",
+    "C05_rank_collinear_sliding__H_EE2",
+    "C05_rank_collinear_sliding__H_hK1",
+    "C05_rank_collinear_sliding__H_hK2",
+    "C05_rank_collinear_sliding__H_visual1",
+    "C05_rank_collinear_sliding__H_visual2",
+    "C05_rank_collinear_sliding__Lw",
+    "C05_rank_collinear_sliding__P0",
+    "C05_rank_collinear_sliding__P_pred",
+    "C05_rank_collinear_sliding__Qd",
+    "C05_rank_collinear_sliding__U",
+    "C05_rank_collinear_sliding__W",
+    "C05_rank_collinear_sliding__X",
+    "C05_rank_collinear_sliding__X_pred",
+    "C05_rank_collinear_sliding__f",
+    "C05_rank_collinear_sliding__grasp_body_0",
+    "C05_rank_collinear_sliding__grasp_body_1",
+    "C05_rank_collinear_sliding__h",
+    "C05_rank_collinear_sliding__hB",
+    "C05_rank_collinear_sliding__hK",
+    "C05_rank_collinear_sliding__internal",
+    "C05_rank_collinear_sliding__residual_EE1",
+    "C05_rank_collinear_sliding__residual_EE2",
+    "C05_rank_collinear_sliding__residual_hK1",
+    "C05_rank_collinear_sliding__residual_hK2",
+    "C05_rank_collinear_sliding__residual_visual1",
+    "C05_rank_collinear_sliding__residual_visual2",
+    "C05_rank_collinear_sliding__singular_values",
+    "C05_rank_collinear_sliding__tau",
+    "C05_rank_collinear_sliding__tau_rate_0",
+    "C05_rank_collinear_sliding__tau_rate_1",
+    "C05_rank_collinear_sliding__z_EE1",
+    "C05_rank_collinear_sliding__z_EE2",
+    "C05_rank_collinear_sliding__z_hK1",
+    "C05_rank_collinear_sliding__z_hK2",
+    "C05_rank_collinear_sliding__z_visual1",
+    "C05_rank_collinear_sliding__z_visual2",
+    "C06_rank_boundary_sliding__A",
+    "C06_rank_boundary_sliding__D",
+    "C06_rank_boundary_sliding__F",
+    "C06_rank_boundary_sliding__H_EE1",
+    "C06_rank_boundary_sliding__H_EE2",
+    "C06_rank_boundary_sliding__H_hK1",
+    "C06_rank_boundary_sliding__H_hK2",
+    "C06_rank_boundary_sliding__H_visual1",
+    "C06_rank_boundary_sliding__H_visual2",
+    "C06_rank_boundary_sliding__Lw",
+    "C06_rank_boundary_sliding__P0",
+    "C06_rank_boundary_sliding__P_pred",
+    "C06_rank_boundary_sliding__Qd",
+    "C06_rank_boundary_sliding__U",
+    "C06_rank_boundary_sliding__W",
+    "C06_rank_boundary_sliding__X",
+    "C06_rank_boundary_sliding__X_pred",
+    "C06_rank_boundary_sliding__f",
+    "C06_rank_boundary_sliding__grasp_body_0",
+    "C06_rank_boundary_sliding__grasp_body_1",
+    "C06_rank_boundary_sliding__h",
+    "C06_rank_boundary_sliding__hB",
+    "C06_rank_boundary_sliding__hK",
+    "C06_rank_boundary_sliding__internal",
+    "C06_rank_boundary_sliding__residual_EE1",
+    "C06_rank_boundary_sliding__residual_EE2",
+    "C06_rank_boundary_sliding__residual_hK1",
+    "C06_rank_boundary_sliding__residual_hK2",
+    "C06_rank_boundary_sliding__residual_visual1",
+    "C06_rank_boundary_sliding__residual_visual2",
+    "C06_rank_boundary_sliding__singular_values",
+    "C06_rank_boundary_sliding__tau",
+    "C06_rank_boundary_sliding__tau_rate_0",
+    "C06_rank_boundary_sliding__tau_rate_1",
+    "C06_rank_boundary_sliding__z_EE1",
+    "C06_rank_boundary_sliding__z_EE2",
+    "C06_rank_boundary_sliding__z_hK1",
+    "C06_rank_boundary_sliding__z_hK2",
+    "C06_rank_boundary_sliding__z_visual1",
+    "C06_rank_boundary_sliding__z_visual2",
+    "C07_small_angle__A",
+    "C07_small_angle__D",
+    "C07_small_angle__F",
+    "C07_small_angle__H_EE1",
+    "C07_small_angle__H_EE2",
+    "C07_small_angle__H_hK1",
+    "C07_small_angle__H_hK2",
+    "C07_small_angle__H_visual1",
+    "C07_small_angle__H_visual2",
+    "C07_small_angle__Lw",
+    "C07_small_angle__P0",
+    "C07_small_angle__P_pred",
+    "C07_small_angle__Qd",
+    "C07_small_angle__U",
+    "C07_small_angle__W",
+    "C07_small_angle__X",
+    "C07_small_angle__X_pred",
+    "C07_small_angle__f",
+    "C07_small_angle__grasp_body_0",
+    "C07_small_angle__grasp_body_1",
+    "C07_small_angle__h",
+    "C07_small_angle__hB",
+    "C07_small_angle__hK",
+    "C07_small_angle__internal",
+    "C07_small_angle__residual_EE1",
+    "C07_small_angle__residual_EE2",
+    "C07_small_angle__residual_hK1",
+    "C07_small_angle__residual_hK2",
+    "C07_small_angle__residual_visual1",
+    "C07_small_angle__residual_visual2",
+    "C07_small_angle__singular_values",
+    "C07_small_angle__tau",
+    "C07_small_angle__tau_rate_0",
+    "C07_small_angle__tau_rate_1",
+    "C07_small_angle__z_EE1",
+    "C07_small_angle__z_EE2",
+    "C07_small_angle__z_hK1",
+    "C07_small_angle__z_hK2",
+    "C07_small_angle__z_visual1",
+    "C07_small_angle__z_visual2",
+    "C08_near_pi__A",
+    "C08_near_pi__D",
+    "C08_near_pi__F",
+    "C08_near_pi__H_EE1",
+    "C08_near_pi__H_EE2",
+    "C08_near_pi__H_hK1",
+    "C08_near_pi__H_hK2",
+    "C08_near_pi__H_visual1",
+    "C08_near_pi__H_visual2",
+    "C08_near_pi__Lw",
+    "C08_near_pi__P0",
+    "C08_near_pi__P_pred",
+    "C08_near_pi__Qd",
+    "C08_near_pi__U",
+    "C08_near_pi__W",
+    "C08_near_pi__X",
+    "C08_near_pi__X_pred",
+    "C08_near_pi__f",
+    "C08_near_pi__grasp_body_0",
+    "C08_near_pi__grasp_body_1",
+    "C08_near_pi__h",
+    "C08_near_pi__hB",
+    "C08_near_pi__hK",
+    "C08_near_pi__internal",
+    "C08_near_pi__residual_EE1",
+    "C08_near_pi__residual_EE2",
+    "C08_near_pi__residual_hK1",
+    "C08_near_pi__residual_hK2",
+    "C08_near_pi__residual_visual1",
+    "C08_near_pi__residual_visual2",
+    "C08_near_pi__singular_values",
+    "C08_near_pi__tau",
+    "C08_near_pi__tau_rate_0",
+    "C08_near_pi__tau_rate_1",
+    "C08_near_pi__z_EE1",
+    "C08_near_pi__z_EE2",
+    "C08_near_pi__z_hK1",
+    "C08_near_pi__z_hK2",
+    "C08_near_pi__z_visual1",
+    "C08_near_pi__z_visual2",
+    "C09_residual_update__A",
+    "C09_residual_update__D",
+    "C09_residual_update__F",
+    "C09_residual_update__H_EE1",
+    "C09_residual_update__H_EE2",
+    "C09_residual_update__H_hK1",
+    "C09_residual_update__H_hK2",
+    "C09_residual_update__H_visual1",
+    "C09_residual_update__H_visual2",
+    "C09_residual_update__Lw",
+    "C09_residual_update__P0",
+    "C09_residual_update__P_post",
+    "C09_residual_update__P_pred",
+    "C09_residual_update__Qd",
+    "C09_residual_update__U",
+    "C09_residual_update__V_post",
+    "C09_residual_update__W",
+    "C09_residual_update__X",
+    "C09_residual_update__X_pred",
+    "C09_residual_update__f",
+    "C09_residual_update__grasp_body_0",
+    "C09_residual_update__grasp_body_1",
+    "C09_residual_update__h",
+    "C09_residual_update__hB",
+    "C09_residual_update__hK",
+    "C09_residual_update__innovation_after",
+    "C09_residual_update__innovation_before",
+    "C09_residual_update__internal",
+    "C09_residual_update__residual_EE1",
+    "C09_residual_update__residual_EE2",
+    "C09_residual_update__residual_hK1",
+    "C09_residual_update__residual_hK2",
+    "C09_residual_update__residual_visual1",
+    "C09_residual_update__residual_visual2",
+    "C09_residual_update__singular_values",
+    "C09_residual_update__tau",
+    "C09_residual_update__tau_rate_0",
+    "C09_residual_update__tau_rate_1",
+    "C09_residual_update__z_EE1",
+    "C09_residual_update__z_EE2",
+    "C09_residual_update__z_hK1",
+    "C09_residual_update__z_hK2",
+    "C09_residual_update__z_visual1",
+    "C09_residual_update__z_visual2",
+    "C10_mixed_pivot_sliding__A",
+    "C10_mixed_pivot_sliding__D",
+    "C10_mixed_pivot_sliding__F",
+    "C10_mixed_pivot_sliding__H_EE1",
+    "C10_mixed_pivot_sliding__H_EE2",
+    "C10_mixed_pivot_sliding__H_hK1",
+    "C10_mixed_pivot_sliding__H_hK2",
+    "C10_mixed_pivot_sliding__H_visual1",
+    "C10_mixed_pivot_sliding__H_visual2",
+    "C10_mixed_pivot_sliding__Lw",
+    "C10_mixed_pivot_sliding__P0",
+    "C10_mixed_pivot_sliding__P_pred",
+    "C10_mixed_pivot_sliding__Qd",
+    "C10_mixed_pivot_sliding__U",
+    "C10_mixed_pivot_sliding__W",
+    "C10_mixed_pivot_sliding__X",
+    "C10_mixed_pivot_sliding__X_pred",
+    "C10_mixed_pivot_sliding__f",
+    "C10_mixed_pivot_sliding__grasp_body_0",
+    "C10_mixed_pivot_sliding__grasp_body_1",
+    "C10_mixed_pivot_sliding__h",
+    "C10_mixed_pivot_sliding__hB",
+    "C10_mixed_pivot_sliding__hK",
+    "C10_mixed_pivot_sliding__internal",
+    "C10_mixed_pivot_sliding__residual_EE1",
+    "C10_mixed_pivot_sliding__residual_EE2",
+    "C10_mixed_pivot_sliding__residual_hK1",
+    "C10_mixed_pivot_sliding__residual_hK2",
+    "C10_mixed_pivot_sliding__residual_visual1",
+    "C10_mixed_pivot_sliding__residual_visual2",
+    "C10_mixed_pivot_sliding__singular_values",
+    "C10_mixed_pivot_sliding__tau",
+    "C10_mixed_pivot_sliding__tau_rate_0",
+    "C10_mixed_pivot_sliding__tau_rate_1",
+    "C10_mixed_pivot_sliding__z_EE1",
+    "C10_mixed_pivot_sliding__z_EE2",
+    "C10_mixed_pivot_sliding__z_hK1",
+    "C10_mixed_pivot_sliding__z_hK2",
+    "C10_mixed_pivot_sliding__z_visual1",
+    "C10_mixed_pivot_sliding__z_visual2",
+    "C11_force_dominated__A",
+    "C11_force_dominated__D",
+    "C11_force_dominated__F",
+    "C11_force_dominated__H_EE1",
+    "C11_force_dominated__H_EE2",
+    "C11_force_dominated__H_hK1",
+    "C11_force_dominated__H_hK2",
+    "C11_force_dominated__H_visual1",
+    "C11_force_dominated__H_visual2",
+    "C11_force_dominated__Lw",
+    "C11_force_dominated__P0",
+    "C11_force_dominated__P_pred",
+    "C11_force_dominated__Qd",
+    "C11_force_dominated__U",
+    "C11_force_dominated__W",
+    "C11_force_dominated__X",
+    "C11_force_dominated__X_pred",
+    "C11_force_dominated__f",
+    "C11_force_dominated__grasp_body_0",
+    "C11_force_dominated__grasp_body_1",
+    "C11_force_dominated__h",
+    "C11_force_dominated__hB",
+    "C11_force_dominated__hK",
+    "C11_force_dominated__internal",
+    "C11_force_dominated__residual_EE1",
+    "C11_force_dominated__residual_EE2",
+    "C11_force_dominated__residual_hK1",
+    "C11_force_dominated__residual_hK2",
+    "C11_force_dominated__residual_visual1",
+    "C11_force_dominated__residual_visual2",
+    "C11_force_dominated__singular_values",
+    "C11_force_dominated__tau",
+    "C11_force_dominated__tau_rate_0",
+    "C11_force_dominated__tau_rate_1",
+    "C11_force_dominated__z_EE1",
+    "C11_force_dominated__z_EE2",
+    "C11_force_dominated__z_hK1",
+    "C11_force_dominated__z_hK2",
+    "C11_force_dominated__z_visual1",
+    "C11_force_dominated__z_visual2"
+  ],
+  "array_shapes": {
+    "C01_nominal_pivot__A": [
+      42,
+      42
+    ],
+    "C01_nominal_pivot__D": [
+      2,
+      4,
+      4
+    ],
+    "C01_nominal_pivot__F": [
+      42,
+      42
+    ],
+    "C01_nominal_pivot__H_EE1": [
+      6,
+      42
+    ],
+    "C01_nominal_pivot__H_EE2": [
+      6,
+      42
+    ],
+    "C01_nominal_pivot__H_hK1": [
+      6,
+      42
+    ],
+    "C01_nominal_pivot__H_hK2": [
+      6,
+      42
+    ],
+    "C01_nominal_pivot__H_visual1": [
+      6,
+      42
+    ],
+    "C01_nominal_pivot__H_visual2": [
+      6,
+      42
+    ],
+    "C01_nominal_pivot__Lw": [
+      42,
+      42
+    ],
+    "C01_nominal_pivot__P0": [
+      42,
+      42
+    ],
+    "C01_nominal_pivot__P_pred": [
+      42,
+      42
+    ],
+    "C01_nominal_pivot__Qd": [
+      42,
+      42
+    ],
+    "C01_nominal_pivot__U": [
+      12
+    ],
+    "C01_nominal_pivot__W": [
+      6,
+      10
+    ],
+    "C01_nominal_pivot__X": [
+      102
+    ],
+    "C01_nominal_pivot__X_pred": [
+      102
+    ],
+    "C01_nominal_pivot__f": [
+      42
+    ],
+    "C01_nominal_pivot__grasp_body_0": [
+      6
+    ],
+    "C01_nominal_pivot__grasp_body_1": [
+      6
+    ],
+    "C01_nominal_pivot__h": [
+      2,
+      6
+    ],
+    "C01_nominal_pivot__hB": [
+      2,
+      6
+    ],
+    "C01_nominal_pivot__hK": [
+      2,
+      6
+    ],
+    "C01_nominal_pivot__internal": [
+      2,
+      6
+    ],
+    "C01_nominal_pivot__residual_EE1": [
+      6
+    ],
+    "C01_nominal_pivot__residual_EE2": [
+      6
+    ],
+    "C01_nominal_pivot__residual_hK1": [
+      6
+    ],
+    "C01_nominal_pivot__residual_hK2": [
+      6
+    ],
+    "C01_nominal_pivot__residual_visual1": [
+      6
+    ],
+    "C01_nominal_pivot__residual_visual2": [
+      6
+    ],
+    "C01_nominal_pivot__singular_values": [
+      6
+    ],
+    "C01_nominal_pivot__tau": [
+      2,
+      6
+    ],
+    "C01_nominal_pivot__tau_rate_0": [
+      6
+    ],
+    "C01_nominal_pivot__tau_rate_1": [
+      6
+    ],
+    "C01_nominal_pivot__z_EE1": [
+      16
+    ],
+    "C01_nominal_pivot__z_EE2": [
+      16
+    ],
+    "C01_nominal_pivot__z_hK1": [
+      6
+    ],
+    "C01_nominal_pivot__z_hK2": [
+      6
+    ],
+    "C01_nominal_pivot__z_visual1": [
+      16
+    ],
+    "C01_nominal_pivot__z_visual2": [
+      16
+    ],
+    "C02_moving_pivot__A": [
+      42,
+      42
+    ],
+    "C02_moving_pivot__D": [
+      2,
+      4,
+      4
+    ],
+    "C02_moving_pivot__F": [
+      42,
+      42
+    ],
+    "C02_moving_pivot__H_EE1": [
+      6,
+      42
+    ],
+    "C02_moving_pivot__H_EE2": [
+      6,
+      42
+    ],
+    "C02_moving_pivot__H_hK1": [
+      6,
+      42
+    ],
+    "C02_moving_pivot__H_hK2": [
+      6,
+      42
+    ],
+    "C02_moving_pivot__H_visual1": [
+      6,
+      42
+    ],
+    "C02_moving_pivot__H_visual2": [
+      6,
+      42
+    ],
+    "C02_moving_pivot__Lw": [
+      42,
+      42
+    ],
+    "C02_moving_pivot__P0": [
+      42,
+      42
+    ],
+    "C02_moving_pivot__P_pred": [
+      42,
+      42
+    ],
+    "C02_moving_pivot__Qd": [
+      42,
+      42
+    ],
+    "C02_moving_pivot__U": [
+      12
+    ],
+    "C02_moving_pivot__W": [
+      6,
+      10
+    ],
+    "C02_moving_pivot__X": [
+      102
+    ],
+    "C02_moving_pivot__X_pred": [
+      102
+    ],
+    "C02_moving_pivot__f": [
+      42
+    ],
+    "C02_moving_pivot__grasp_body_0": [
+      6
+    ],
+    "C02_moving_pivot__grasp_body_1": [
+      6
+    ],
+    "C02_moving_pivot__h": [
+      2,
+      6
+    ],
+    "C02_moving_pivot__hB": [
+      2,
+      6
+    ],
+    "C02_moving_pivot__hK": [
+      2,
+      6
+    ],
+    "C02_moving_pivot__internal": [
+      2,
+      6
+    ],
+    "C02_moving_pivot__residual_EE1": [
+      6
+    ],
+    "C02_moving_pivot__residual_EE2": [
+      6
+    ],
+    "C02_moving_pivot__residual_hK1": [
+      6
+    ],
+    "C02_moving_pivot__residual_hK2": [
+      6
+    ],
+    "C02_moving_pivot__residual_visual1": [
+      6
+    ],
+    "C02_moving_pivot__residual_visual2": [
+      6
+    ],
+    "C02_moving_pivot__singular_values": [
+      6
+    ],
+    "C02_moving_pivot__tau": [
+      2,
+      6
+    ],
+    "C02_moving_pivot__tau_rate_0": [
+      6
+    ],
+    "C02_moving_pivot__tau_rate_1": [
+      6
+    ],
+    "C02_moving_pivot__z_EE1": [
+      16
+    ],
+    "C02_moving_pivot__z_EE2": [
+      16
+    ],
+    "C02_moving_pivot__z_hK1": [
+      6
+    ],
+    "C02_moving_pivot__z_hK2": [
+      6
+    ],
+    "C02_moving_pivot__z_visual1": [
+      16
+    ],
+    "C02_moving_pivot__z_visual2": [
+      16
+    ],
+    "C03_elastic_tight__A": [
+      42,
+      42
+    ],
+    "C03_elastic_tight__D": [
+      2,
+      4,
+      4
+    ],
+    "C03_elastic_tight__F": [
+      42,
+      42
+    ],
+    "C03_elastic_tight__H_EE1": [
+      6,
+      42
+    ],
+    "C03_elastic_tight__H_EE2": [
+      6,
+      42
+    ],
+    "C03_elastic_tight__H_hK1": [
+      6,
+      42
+    ],
+    "C03_elastic_tight__H_hK2": [
+      6,
+      42
+    ],
+    "C03_elastic_tight__H_visual1": [
+      6,
+      42
+    ],
+    "C03_elastic_tight__H_visual2": [
+      6,
+      42
+    ],
+    "C03_elastic_tight__Lw": [
+      42,
+      42
+    ],
+    "C03_elastic_tight__P0": [
+      42,
+      42
+    ],
+    "C03_elastic_tight__P_pred": [
+      42,
+      42
+    ],
+    "C03_elastic_tight__Qd": [
+      42,
+      42
+    ],
+    "C03_elastic_tight__U": [
+      12
+    ],
+    "C03_elastic_tight__W": [
+      6,
+      12
+    ],
+    "C03_elastic_tight__X": [
+      102
+    ],
+    "C03_elastic_tight__X_pred": [
+      102
+    ],
+    "C03_elastic_tight__f": [
+      42
+    ],
+    "C03_elastic_tight__grasp_body_0": [
+      6
+    ],
+    "C03_elastic_tight__grasp_body_1": [
+      6
+    ],
+    "C03_elastic_tight__h": [
+      2,
+      6
+    ],
+    "C03_elastic_tight__hB": [
+      2,
+      6
+    ],
+    "C03_elastic_tight__hK": [
+      2,
+      6
+    ],
+    "C03_elastic_tight__internal": [
+      2,
+      6
+    ],
+    "C03_elastic_tight__residual_EE1": [
+      6
+    ],
+    "C03_elastic_tight__residual_EE2": [
+      6
+    ],
+    "C03_elastic_tight__residual_hK1": [
+      6
+    ],
+    "C03_elastic_tight__residual_hK2": [
+      6
+    ],
+    "C03_elastic_tight__residual_visual1": [
+      6
+    ],
+    "C03_elastic_tight__residual_visual2": [
+      6
+    ],
+    "C03_elastic_tight__singular_values": [
+      6
+    ],
+    "C03_elastic_tight__tau": [
+      2,
+      6
+    ],
+    "C03_elastic_tight__tau_rate_0": [
+      6
+    ],
+    "C03_elastic_tight__tau_rate_1": [
+      6
+    ],
+    "C03_elastic_tight__z_EE1": [
+      16
+    ],
+    "C03_elastic_tight__z_EE2": [
+      16
+    ],
+    "C03_elastic_tight__z_hK1": [
+      6
+    ],
+    "C03_elastic_tight__z_hK2": [
+      6
+    ],
+    "C03_elastic_tight__z_visual1": [
+      16
+    ],
+    "C03_elastic_tight__z_visual2": [
+      16
+    ],
+    "C04_elastic_sliding__A": [
+      42,
+      42
+    ],
+    "C04_elastic_sliding__D": [
+      2,
+      4,
+      4
+    ],
+    "C04_elastic_sliding__F": [
+      42,
+      42
+    ],
+    "C04_elastic_sliding__H_EE1": [
+      6,
+      42
+    ],
+    "C04_elastic_sliding__H_EE2": [
+      6,
+      42
+    ],
+    "C04_elastic_sliding__H_hK1": [
+      6,
+      42
+    ],
+    "C04_elastic_sliding__H_hK2": [
+      6,
+      42
+    ],
+    "C04_elastic_sliding__H_visual1": [
+      6,
+      42
+    ],
+    "C04_elastic_sliding__H_visual2": [
+      6,
+      42
+    ],
+    "C04_elastic_sliding__Lw": [
+      42,
+      42
+    ],
+    "C04_elastic_sliding__P0": [
+      42,
+      42
+    ],
+    "C04_elastic_sliding__P_pred": [
+      42,
+      42
+    ],
+    "C04_elastic_sliding__Qd": [
+      42,
+      42
+    ],
+    "C04_elastic_sliding__U": [
+      12
+    ],
+    "C04_elastic_sliding__W": [
+      6,
+      8
+    ],
+    "C04_elastic_sliding__X": [
+      102
+    ],
+    "C04_elastic_sliding__X_pred": [
+      102
+    ],
+    "C04_elastic_sliding__f": [
+      42
+    ],
+    "C04_elastic_sliding__grasp_body_0": [
+      6
+    ],
+    "C04_elastic_sliding__grasp_body_1": [
+      6
+    ],
+    "C04_elastic_sliding__h": [
+      2,
+      6
+    ],
+    "C04_elastic_sliding__hB": [
+      2,
+      6
+    ],
+    "C04_elastic_sliding__hK": [
+      2,
+      6
+    ],
+    "C04_elastic_sliding__internal": [
+      2,
+      6
+    ],
+    "C04_elastic_sliding__residual_EE1": [
+      6
+    ],
+    "C04_elastic_sliding__residual_EE2": [
+      6
+    ],
+    "C04_elastic_sliding__residual_hK1": [
+      6
+    ],
+    "C04_elastic_sliding__residual_hK2": [
+      6
+    ],
+    "C04_elastic_sliding__residual_visual1": [
+      6
+    ],
+    "C04_elastic_sliding__residual_visual2": [
+      6
+    ],
+    "C04_elastic_sliding__singular_values": [
+      6
+    ],
+    "C04_elastic_sliding__tau": [
+      2,
+      6
+    ],
+    "C04_elastic_sliding__tau_rate_0": [
+      6
+    ],
+    "C04_elastic_sliding__tau_rate_1": [
+      6
+    ],
+    "C04_elastic_sliding__z_EE1": [
+      16
+    ],
+    "C04_elastic_sliding__z_EE2": [
+      16
+    ],
+    "C04_elastic_sliding__z_hK1": [
+      6
+    ],
+    "C04_elastic_sliding__z_hK2": [
+      6
+    ],
+    "C04_elastic_sliding__z_visual1": [
+      16
+    ],
+    "C04_elastic_sliding__z_visual2": [
+      16
+    ],
+    "C05_rank_collinear_sliding__A": [
+      42,
+      42
+    ],
+    "C05_rank_collinear_sliding__D": [
+      2,
+      4,
+      4
+    ],
+    "C05_rank_collinear_sliding__F": [
+      42,
+      42
+    ],
+    "C05_rank_collinear_sliding__H_EE1": [
+      6,
+      42
+    ],
+    "C05_rank_collinear_sliding__H_EE2": [
+      6,
+      42
+    ],
+    "C05_rank_collinear_sliding__H_hK1": [
+      6,
+      42
+    ],
+    "C05_rank_collinear_sliding__H_hK2": [
+      6,
+      42
+    ],
+    "C05_rank_collinear_sliding__H_visual1": [
+      6,
+      42
+    ],
+    "C05_rank_collinear_sliding__H_visual2": [
+      6,
+      42
+    ],
+    "C05_rank_collinear_sliding__Lw": [
+      42,
+      42
+    ],
+    "C05_rank_collinear_sliding__P0": [
+      42,
+      42
+    ],
+    "C05_rank_collinear_sliding__P_pred": [
+      42,
+      42
+    ],
+    "C05_rank_collinear_sliding__Qd": [
+      42,
+      42
+    ],
+    "C05_rank_collinear_sliding__U": [
+      12
+    ],
+    "C05_rank_collinear_sliding__W": [
+      6,
+      8
+    ],
+    "C05_rank_collinear_sliding__X": [
+      102
+    ],
+    "C05_rank_collinear_sliding__X_pred": [
+      102
+    ],
+    "C05_rank_collinear_sliding__f": [
+      42
+    ],
+    "C05_rank_collinear_sliding__grasp_body_0": [
+      6
+    ],
+    "C05_rank_collinear_sliding__grasp_body_1": [
+      6
+    ],
+    "C05_rank_collinear_sliding__h": [
+      2,
+      6
+    ],
+    "C05_rank_collinear_sliding__hB": [
+      2,
+      6
+    ],
+    "C05_rank_collinear_sliding__hK": [
+      2,
+      6
+    ],
+    "C05_rank_collinear_sliding__internal": [
+      2,
+      6
+    ],
+    "C05_rank_collinear_sliding__residual_EE1": [
+      6
+    ],
+    "C05_rank_collinear_sliding__residual_EE2": [
+      6
+    ],
+    "C05_rank_collinear_sliding__residual_hK1": [
+      6
+    ],
+    "C05_rank_collinear_sliding__residual_hK2": [
+      6
+    ],
+    "C05_rank_collinear_sliding__residual_visual1": [
+      6
+    ],
+    "C05_rank_collinear_sliding__residual_visual2": [
+      6
+    ],
+    "C05_rank_collinear_sliding__singular_values": [
+      6
+    ],
+    "C05_rank_collinear_sliding__tau": [
+      2,
+      6
+    ],
+    "C05_rank_collinear_sliding__tau_rate_0": [
+      6
+    ],
+    "C05_rank_collinear_sliding__tau_rate_1": [
+      6
+    ],
+    "C05_rank_collinear_sliding__z_EE1": [
+      16
+    ],
+    "C05_rank_collinear_sliding__z_EE2": [
+      16
+    ],
+    "C05_rank_collinear_sliding__z_hK1": [
+      6
+    ],
+    "C05_rank_collinear_sliding__z_hK2": [
+      6
+    ],
+    "C05_rank_collinear_sliding__z_visual1": [
+      16
+    ],
+    "C05_rank_collinear_sliding__z_visual2": [
+      16
+    ],
+    "C06_rank_boundary_sliding__A": [
+      42,
+      42
+    ],
+    "C06_rank_boundary_sliding__D": [
+      2,
+      4,
+      4
+    ],
+    "C06_rank_boundary_sliding__F": [
+      42,
+      42
+    ],
+    "C06_rank_boundary_sliding__H_EE1": [
+      6,
+      42
+    ],
+    "C06_rank_boundary_sliding__H_EE2": [
+      6,
+      42
+    ],
+    "C06_rank_boundary_sliding__H_hK1": [
+      6,
+      42
+    ],
+    "C06_rank_boundary_sliding__H_hK2": [
+      6,
+      42
+    ],
+    "C06_rank_boundary_sliding__H_visual1": [
+      6,
+      42
+    ],
+    "C06_rank_boundary_sliding__H_visual2": [
+      6,
+      42
+    ],
+    "C06_rank_boundary_sliding__Lw": [
+      42,
+      42
+    ],
+    "C06_rank_boundary_sliding__P0": [
+      42,
+      42
+    ],
+    "C06_rank_boundary_sliding__P_pred": [
+      42,
+      42
+    ],
+    "C06_rank_boundary_sliding__Qd": [
+      42,
+      42
+    ],
+    "C06_rank_boundary_sliding__U": [
+      12
+    ],
+    "C06_rank_boundary_sliding__W": [
+      6,
+      8
+    ],
+    "C06_rank_boundary_sliding__X": [
+      102
+    ],
+    "C06_rank_boundary_sliding__X_pred": [
+      102
+    ],
+    "C06_rank_boundary_sliding__f": [
+      42
+    ],
+    "C06_rank_boundary_sliding__grasp_body_0": [
+      6
+    ],
+    "C06_rank_boundary_sliding__grasp_body_1": [
+      6
+    ],
+    "C06_rank_boundary_sliding__h": [
+      2,
+      6
+    ],
+    "C06_rank_boundary_sliding__hB": [
+      2,
+      6
+    ],
+    "C06_rank_boundary_sliding__hK": [
+      2,
+      6
+    ],
+    "C06_rank_boundary_sliding__internal": [
+      2,
+      6
+    ],
+    "C06_rank_boundary_sliding__residual_EE1": [
+      6
+    ],
+    "C06_rank_boundary_sliding__residual_EE2": [
+      6
+    ],
+    "C06_rank_boundary_sliding__residual_hK1": [
+      6
+    ],
+    "C06_rank_boundary_sliding__residual_hK2": [
+      6
+    ],
+    "C06_rank_boundary_sliding__residual_visual1": [
+      6
+    ],
+    "C06_rank_boundary_sliding__residual_visual2": [
+      6
+    ],
+    "C06_rank_boundary_sliding__singular_values": [
+      6
+    ],
+    "C06_rank_boundary_sliding__tau": [
+      2,
+      6
+    ],
+    "C06_rank_boundary_sliding__tau_rate_0": [
+      6
+    ],
+    "C06_rank_boundary_sliding__tau_rate_1": [
+      6
+    ],
+    "C06_rank_boundary_sliding__z_EE1": [
+      16
+    ],
+    "C06_rank_boundary_sliding__z_EE2": [
+      16
+    ],
+    "C06_rank_boundary_sliding__z_hK1": [
+      6
+    ],
+    "C06_rank_boundary_sliding__z_hK2": [
+      6
+    ],
+    "C06_rank_boundary_sliding__z_visual1": [
+      16
+    ],
+    "C06_rank_boundary_sliding__z_visual2": [
+      16
+    ],
+    "C07_small_angle__A": [
+      42,
+      42
+    ],
+    "C07_small_angle__D": [
+      2,
+      4,
+      4
+    ],
+    "C07_small_angle__F": [
+      42,
+      42
+    ],
+    "C07_small_angle__H_EE1": [
+      6,
+      42
+    ],
+    "C07_small_angle__H_EE2": [
+      6,
+      42
+    ],
+    "C07_small_angle__H_hK1": [
+      6,
+      42
+    ],
+    "C07_small_angle__H_hK2": [
+      6,
+      42
+    ],
+    "C07_small_angle__H_visual1": [
+      6,
+      42
+    ],
+    "C07_small_angle__H_visual2": [
+      6,
+      42
+    ],
+    "C07_small_angle__Lw": [
+      42,
+      42
+    ],
+    "C07_small_angle__P0": [
+      42,
+      42
+    ],
+    "C07_small_angle__P_pred": [
+      42,
+      42
+    ],
+    "C07_small_angle__Qd": [
+      42,
+      42
+    ],
+    "C07_small_angle__U": [
+      12
+    ],
+    "C07_small_angle__W": [
+      6,
+      10
+    ],
+    "C07_small_angle__X": [
+      102
+    ],
+    "C07_small_angle__X_pred": [
+      102
+    ],
+    "C07_small_angle__f": [
+      42
+    ],
+    "C07_small_angle__grasp_body_0": [
+      6
+    ],
+    "C07_small_angle__grasp_body_1": [
+      6
+    ],
+    "C07_small_angle__h": [
+      2,
+      6
+    ],
+    "C07_small_angle__hB": [
+      2,
+      6
+    ],
+    "C07_small_angle__hK": [
+      2,
+      6
+    ],
+    "C07_small_angle__internal": [
+      2,
+      6
+    ],
+    "C07_small_angle__residual_EE1": [
+      6
+    ],
+    "C07_small_angle__residual_EE2": [
+      6
+    ],
+    "C07_small_angle__residual_hK1": [
+      6
+    ],
+    "C07_small_angle__residual_hK2": [
+      6
+    ],
+    "C07_small_angle__residual_visual1": [
+      6
+    ],
+    "C07_small_angle__residual_visual2": [
+      6
+    ],
+    "C07_small_angle__singular_values": [
+      6
+    ],
+    "C07_small_angle__tau": [
+      2,
+      6
+    ],
+    "C07_small_angle__tau_rate_0": [
+      6
+    ],
+    "C07_small_angle__tau_rate_1": [
+      6
+    ],
+    "C07_small_angle__z_EE1": [
+      16
+    ],
+    "C07_small_angle__z_EE2": [
+      16
+    ],
+    "C07_small_angle__z_hK1": [
+      6
+    ],
+    "C07_small_angle__z_hK2": [
+      6
+    ],
+    "C07_small_angle__z_visual1": [
+      16
+    ],
+    "C07_small_angle__z_visual2": [
+      16
+    ],
+    "C08_near_pi__A": [
+      42,
+      42
+    ],
+    "C08_near_pi__D": [
+      2,
+      4,
+      4
+    ],
+    "C08_near_pi__F": [
+      42,
+      42
+    ],
+    "C08_near_pi__H_EE1": [
+      6,
+      42
+    ],
+    "C08_near_pi__H_EE2": [
+      6,
+      42
+    ],
+    "C08_near_pi__H_hK1": [
+      6,
+      42
+    ],
+    "C08_near_pi__H_hK2": [
+      6,
+      42
+    ],
+    "C08_near_pi__H_visual1": [
+      6,
+      42
+    ],
+    "C08_near_pi__H_visual2": [
+      6,
+      42
+    ],
+    "C08_near_pi__Lw": [
+      42,
+      42
+    ],
+    "C08_near_pi__P0": [
+      42,
+      42
+    ],
+    "C08_near_pi__P_pred": [
+      42,
+      42
+    ],
+    "C08_near_pi__Qd": [
+      42,
+      42
+    ],
+    "C08_near_pi__U": [
+      12
+    ],
+    "C08_near_pi__W": [
+      6,
+      10
+    ],
+    "C08_near_pi__X": [
+      102
+    ],
+    "C08_near_pi__X_pred": [
+      102
+    ],
+    "C08_near_pi__f": [
+      42
+    ],
+    "C08_near_pi__grasp_body_0": [
+      6
+    ],
+    "C08_near_pi__grasp_body_1": [
+      6
+    ],
+    "C08_near_pi__h": [
+      2,
+      6
+    ],
+    "C08_near_pi__hB": [
+      2,
+      6
+    ],
+    "C08_near_pi__hK": [
+      2,
+      6
+    ],
+    "C08_near_pi__internal": [
+      2,
+      6
+    ],
+    "C08_near_pi__residual_EE1": [
+      6
+    ],
+    "C08_near_pi__residual_EE2": [
+      6
+    ],
+    "C08_near_pi__residual_hK1": [
+      6
+    ],
+    "C08_near_pi__residual_hK2": [
+      6
+    ],
+    "C08_near_pi__residual_visual1": [
+      6
+    ],
+    "C08_near_pi__residual_visual2": [
+      6
+    ],
+    "C08_near_pi__singular_values": [
+      6
+    ],
+    "C08_near_pi__tau": [
+      2,
+      6
+    ],
+    "C08_near_pi__tau_rate_0": [
+      6
+    ],
+    "C08_near_pi__tau_rate_1": [
+      6
+    ],
+    "C08_near_pi__z_EE1": [
+      16
+    ],
+    "C08_near_pi__z_EE2": [
+      16
+    ],
+    "C08_near_pi__z_hK1": [
+      6
+    ],
+    "C08_near_pi__z_hK2": [
+      6
+    ],
+    "C08_near_pi__z_visual1": [
+      16
+    ],
+    "C08_near_pi__z_visual2": [
+      16
+    ],
+    "C09_residual_update__A": [
+      42,
+      42
+    ],
+    "C09_residual_update__D": [
+      2,
+      4,
+      4
+    ],
+    "C09_residual_update__F": [
+      42,
+      42
+    ],
+    "C09_residual_update__H_EE1": [
+      6,
+      42
+    ],
+    "C09_residual_update__H_EE2": [
+      6,
+      42
+    ],
+    "C09_residual_update__H_hK1": [
+      6,
+      42
+    ],
+    "C09_residual_update__H_hK2": [
+      6,
+      42
+    ],
+    "C09_residual_update__H_visual1": [
+      6,
+      42
+    ],
+    "C09_residual_update__H_visual2": [
+      6,
+      42
+    ],
+    "C09_residual_update__Lw": [
+      42,
+      42
+    ],
+    "C09_residual_update__P0": [
+      42,
+      42
+    ],
+    "C09_residual_update__P_post": [
+      42,
+      42
+    ],
+    "C09_residual_update__P_pred": [
+      42,
+      42
+    ],
+    "C09_residual_update__Qd": [
+      42,
+      42
+    ],
+    "C09_residual_update__U": [
+      12
+    ],
+    "C09_residual_update__V_post": [
+      6
+    ],
+    "C09_residual_update__W": [
+      6,
+      10
+    ],
+    "C09_residual_update__X": [
+      102
+    ],
+    "C09_residual_update__X_pred": [
+      102
+    ],
+    "C09_residual_update__f": [
+      42
+    ],
+    "C09_residual_update__grasp_body_0": [
+      6
+    ],
+    "C09_residual_update__grasp_body_1": [
+      6
+    ],
+    "C09_residual_update__h": [
+      2,
+      6
+    ],
+    "C09_residual_update__hB": [
+      2,
+      6
+    ],
+    "C09_residual_update__hK": [
+      2,
+      6
+    ],
+    "C09_residual_update__innovation_after": [
+      6
+    ],
+    "C09_residual_update__innovation_before": [
+      6
+    ],
+    "C09_residual_update__internal": [
+      2,
+      6
+    ],
+    "C09_residual_update__residual_EE1": [
+      6
+    ],
+    "C09_residual_update__residual_EE2": [
+      6
+    ],
+    "C09_residual_update__residual_hK1": [
+      6
+    ],
+    "C09_residual_update__residual_hK2": [
+      6
+    ],
+    "C09_residual_update__residual_visual1": [
+      6
+    ],
+    "C09_residual_update__residual_visual2": [
+      6
+    ],
+    "C09_residual_update__singular_values": [
+      6
+    ],
+    "C09_residual_update__tau": [
+      2,
+      6
+    ],
+    "C09_residual_update__tau_rate_0": [
+      6
+    ],
+    "C09_residual_update__tau_rate_1": [
+      6
+    ],
+    "C09_residual_update__z_EE1": [
+      16
+    ],
+    "C09_residual_update__z_EE2": [
+      16
+    ],
+    "C09_residual_update__z_hK1": [
+      6
+    ],
+    "C09_residual_update__z_hK2": [
+      6
+    ],
+    "C09_residual_update__z_visual1": [
+      16
+    ],
+    "C09_residual_update__z_visual2": [
+      16
+    ],
+    "C10_mixed_pivot_sliding__A": [
+      42,
+      42
+    ],
+    "C10_mixed_pivot_sliding__D": [
+      2,
+      4,
+      4
+    ],
+    "C10_mixed_pivot_sliding__F": [
+      42,
+      42
+    ],
+    "C10_mixed_pivot_sliding__H_EE1": [
+      6,
+      42
+    ],
+    "C10_mixed_pivot_sliding__H_EE2": [
+      6,
+      42
+    ],
+    "C10_mixed_pivot_sliding__H_hK1": [
+      6,
+      42
+    ],
+    "C10_mixed_pivot_sliding__H_hK2": [
+      6,
+      42
+    ],
+    "C10_mixed_pivot_sliding__H_visual1": [
+      6,
+      42
+    ],
+    "C10_mixed_pivot_sliding__H_visual2": [
+      6,
+      42
+    ],
+    "C10_mixed_pivot_sliding__Lw": [
+      42,
+      42
+    ],
+    "C10_mixed_pivot_sliding__P0": [
+      42,
+      42
+    ],
+    "C10_mixed_pivot_sliding__P_pred": [
+      42,
+      42
+    ],
+    "C10_mixed_pivot_sliding__Qd": [
+      42,
+      42
+    ],
+    "C10_mixed_pivot_sliding__U": [
+      12
+    ],
+    "C10_mixed_pivot_sliding__W": [
+      6,
+      9
+    ],
+    "C10_mixed_pivot_sliding__X": [
+      102
+    ],
+    "C10_mixed_pivot_sliding__X_pred": [
+      102
+    ],
+    "C10_mixed_pivot_sliding__f": [
+      42
+    ],
+    "C10_mixed_pivot_sliding__grasp_body_0": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__grasp_body_1": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__h": [
+      2,
+      6
+    ],
+    "C10_mixed_pivot_sliding__hB": [
+      2,
+      6
+    ],
+    "C10_mixed_pivot_sliding__hK": [
+      2,
+      6
+    ],
+    "C10_mixed_pivot_sliding__internal": [
+      2,
+      6
+    ],
+    "C10_mixed_pivot_sliding__residual_EE1": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__residual_EE2": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__residual_hK1": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__residual_hK2": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__residual_visual1": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__residual_visual2": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__singular_values": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__tau": [
+      2,
+      6
+    ],
+    "C10_mixed_pivot_sliding__tau_rate_0": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__tau_rate_1": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__z_EE1": [
+      16
+    ],
+    "C10_mixed_pivot_sliding__z_EE2": [
+      16
+    ],
+    "C10_mixed_pivot_sliding__z_hK1": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__z_hK2": [
+      6
+    ],
+    "C10_mixed_pivot_sliding__z_visual1": [
+      16
+    ],
+    "C10_mixed_pivot_sliding__z_visual2": [
+      16
+    ],
+    "C11_force_dominated__A": [
+      42,
+      42
+    ],
+    "C11_force_dominated__D": [
+      2,
+      4,
+      4
+    ],
+    "C11_force_dominated__F": [
+      42,
+      42
+    ],
+    "C11_force_dominated__H_EE1": [
+      6,
+      42
+    ],
+    "C11_force_dominated__H_EE2": [
+      6,
+      42
+    ],
+    "C11_force_dominated__H_hK1": [
+      6,
+      42
+    ],
+    "C11_force_dominated__H_hK2": [
+      6,
+      42
+    ],
+    "C11_force_dominated__H_visual1": [
+      6,
+      42
+    ],
+    "C11_force_dominated__H_visual2": [
+      6,
+      42
+    ],
+    "C11_force_dominated__Lw": [
+      42,
+      42
+    ],
+    "C11_force_dominated__P0": [
+      42,
+      42
+    ],
+    "C11_force_dominated__P_pred": [
+      42,
+      42
+    ],
+    "C11_force_dominated__Qd": [
+      42,
+      42
+    ],
+    "C11_force_dominated__U": [
+      12
+    ],
+    "C11_force_dominated__W": [
+      6,
+      12
+    ],
+    "C11_force_dominated__X": [
+      102
+    ],
+    "C11_force_dominated__X_pred": [
+      102
+    ],
+    "C11_force_dominated__f": [
+      42
+    ],
+    "C11_force_dominated__grasp_body_0": [
+      6
+    ],
+    "C11_force_dominated__grasp_body_1": [
+      6
+    ],
+    "C11_force_dominated__h": [
+      2,
+      6
+    ],
+    "C11_force_dominated__hB": [
+      2,
+      6
+    ],
+    "C11_force_dominated__hK": [
+      2,
+      6
+    ],
+    "C11_force_dominated__internal": [
+      2,
+      6
+    ],
+    "C11_force_dominated__residual_EE1": [
+      6
+    ],
+    "C11_force_dominated__residual_EE2": [
+      6
+    ],
+    "C11_force_dominated__residual_hK1": [
+      6
+    ],
+    "C11_force_dominated__residual_hK2": [
+      6
+    ],
+    "C11_force_dominated__residual_visual1": [
+      6
+    ],
+    "C11_force_dominated__residual_visual2": [
+      6
+    ],
+    "C11_force_dominated__singular_values": [
+      6
+    ],
+    "C11_force_dominated__tau": [
+      2,
+      6
+    ],
+    "C11_force_dominated__tau_rate_0": [
+      6
+    ],
+    "C11_force_dominated__tau_rate_1": [
+      6
+    ],
+    "C11_force_dominated__z_EE1": [
+      16
+    ],
+    "C11_force_dominated__z_EE2": [
+      16
+    ],
+    "C11_force_dominated__z_hK1": [
+      6
+    ],
+    "C11_force_dominated__z_hK2": [
+      6
+    ],
+    "C11_force_dominated__z_visual1": [
+      16
+    ],
+    "C11_force_dominated__z_visual2": [
+      16
+    ]
+  },
+  "tolerances_proposed": {
+    "strict_no_reorder": "bitwise identical",
+    "reordered_float_paths": {
+      "abs": 1e-12,
+      "rel": 1e-12,
+      "note": "per element, report argmax location"
+    },
+    "invalid_inputs": "same exception type and message"
+  },
+  "wall_s": 0.39655003799998667
+}

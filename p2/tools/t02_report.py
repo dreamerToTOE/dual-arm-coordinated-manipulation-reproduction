@@ -21,6 +21,15 @@ def short(s, n=12):
     return s[:n]
 
 
+# The audit JSON keeps the labels produced by the reviewed run. Two Eq.(15)
+# checks used "1/s" where the free coordinate is a translation; the correction
+# is documented in reviews/T02_UNIT_ERRATA.json and applied only to display.
+UNIT_OVERRIDE = {
+    "eq15_adapted_free_log_invariant": "m/s or rad/s (mixed)",
+    "eq15_printed_vs_adapted_counterexample": "m/s",
+}
+
+
 def main() -> int:
     audit = json.loads((REVIEWS / "T02_MATH_AUDIT.json").read_text())
     base = json.loads((REVIEWS / "T02_MATH_BASELINE.json").read_text())
@@ -49,7 +58,8 @@ def main() -> int:
     for c in audit["checks"]:
         rows.append([c["id"], c["status"], f"{c['max_abs_error']:.2e}",
                      f"{c['max_rel_error']:.2e}",
-                     f"{c['tolerance']:.0e}" if c["tolerance"] else "-", c["unit"]])
+                     f"{c['tolerance']:.0e}" if c["tolerance"] else "-",
+                     UNIT_OVERRIDE.get(c["id"], c["unit"])])
 
     spec = {
         "title": "P2-T02 数学复核报告（原版回归基线）",
@@ -85,6 +95,11 @@ def main() -> int:
             },
             {
                 "heading": "2. 逐项结果",
+                "paragraphs": [
+                    "单位说明：式(15) 反例的自由 Lie 坐标是沿 x 的平移，速率单位为 **m/s**；"
+                    "`0.02 m/s × 4 ms = 80 µm`。审计 JSON 中该检查的 `unit` 仍保留原始标注 `1/s`，"
+                    "更正见 `T02_UNIT_ERRATA.json`，数值未改动。",
+                ],
                 "table": {
                     "columns": ["检查", "状态", "最大绝对误差", "最大相对误差", "容差", "单位"],
                     "rows": rows,

@@ -2,7 +2,7 @@
 
 - **日期**：2026-10-19
 - **分支**：reproduce-p2-numerical-simulation-20261018
-- **提交**：ca01bdb1
+- **提交**：d8efdb8c
 - **命令**：`/usr/bin/python3.10 p2/tools/t02_math_audit.py`
 - **随机种子**：20261019
 - **总墙钟**：2.03 s
@@ -19,6 +19,8 @@ SE(3) Exp/Log 往返、Adjoint 同态与逆、`Ad(Exp(τ)) = expm(ad(τ))`、wre
 两项偏离：式 (10) 用 `R̄` 替代 `Ad(D)`，丢掉杠杆臂块；式 (15) 印刷式在反例中把自由方向形变速率翻倍。
 
 ## 2. 逐项结果
+
+单位说明：式(15) 反例的自由 Lie 坐标是沿 x 的平移，速率单位为 **m/s**；`0.02 m/s × 4 ms = 80 µm`。审计 JSON 中该检查的 `unit` 仍保留原始标注 `1/s`，更正见 `T02_UNIT_ERRATA.json`，数值未改动。
 
 | 检查 | 状态 | 最大绝对误差 | 最大相对误差 | 容差 | 单位 |
 |---|---|---|---|---|---|
@@ -39,8 +41,8 @@ SE(3) Exp/Log 往返、Adjoint 同态与逆、`Ad(Exp(τ)) = expm(ad(τ))`、wre
 | damping_Rbar_lever_arm | DEVIATION_CONFIRMED | 1.43e-03 | 1.43e-03 | - | relative |
 | selection_matrices | PASS | 0.00e+00 | 0.00e+00 | - | dimensionless |
 | right_jacobian_inverse_fd | PASS | 2.55e-10 | 2.55e-10 | 1e-07 | dimensionless |
-| eq15_adapted_free_log_invariant | PASS | 7.92e-18 | 7.92e-18 | 1e-10 | 1/s |
-| eq15_printed_vs_adapted_counterexample | DEVIATION_CONFIRMED | 2.00e-02 | 2.00e-02 | - | 1/s |
+| eq15_adapted_free_log_invariant | PASS | 7.92e-18 | 7.92e-18 | 1e-10 | m/s or rad/s (mixed) |
+| eq15_printed_vs_adapted_counterexample | DEVIATION_CONFIRMED | 2.00e-02 | 2.00e-02 | - | m/s |
 | measurement_jacobian_fd | PASS | 5.94e-11 | 5.94e-11 | 1e-06 | relative |
 | prediction_F_right_error_fd | PASS | 2.65e-11 | 2.65e-11 | 1e-05 | relative |
 | pad_domain_gate | PASS | 0.00e+00 | 0.00e+00 | - | m/rad |
