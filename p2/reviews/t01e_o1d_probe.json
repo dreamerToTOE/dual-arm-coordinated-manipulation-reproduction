@@ -1,0 +1,55 @@
+{
+  "kind": "T01E_O1D_PROBE",
+  "cases": [
+    {
+      "case": "random_3000",
+      "n": 3000,
+      "max_abs": 1.1594991633501195e-10,
+      "max_rel_meaningful": 5.233739577312079e-11,
+      "max_matrix_error": 1.1598264015866278e-10,
+      "pass": false
+    },
+    {
+      "case": "small_angle",
+      "n": 7,
+      "max_abs": 1.6940658945086007e-21,
+      "max_rel_meaningful": 1.7612075404953466e-15,
+      "max_matrix_error": 1.6940658945086007e-21,
+      "pass": true
+    },
+    {
+      "case": "near_pi",
+      "n": 4,
+      "max_abs": 2.795717410464249e-06,
+      "max_rel_meaningful": 1.1516183377949288e-06,
+      "max_matrix_error": 2.7957196366557024e-06,
+      "pass": false
+    },
+    {
+      "case": "exact_pi_axes",
+      "n": 3,
+      "max_abs": 0.0,
+      "max_rel_meaningful": 0.0,
+      "max_matrix_error": 0.0,
+      "pass": true
+    },
+    {
+      "case": "identity",
+      "n": 1,
+      "max_abs": 0.0,
+      "max_rel_meaningful": 0.0,
+      "max_matrix_error": 0.0,
+      "pass": true
+    },
+    {
+      "case": "se3_log_full_pose",
+      "n": 1,
+      "max_abs": 2.7755575615628914e-17,
+      "max_rel_meaningful": 1.734723475976807e-16,
+      "max_matrix_error": 0.0,
+      "pass": true
+    }
+  ],
+  "adopt": false,
+  "criterion": "abs <= 1e-12 and meaningful rel <= 1e-12"
+}
