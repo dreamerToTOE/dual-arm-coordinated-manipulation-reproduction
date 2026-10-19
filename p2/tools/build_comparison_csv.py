@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+"""Build ORIGINAL_VS_APPROVED_VS_ACTUAL.csv (UTF-8 BOM for Excel)."""
+import csv
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "p2" / "reports" / "final" / "ORIGINAL_VS_APPROVED_VS_ACTUAL.csv"
+
+ROWS = [
+    ("1", "式(1)-(6) SE(3)", "右扰动、Exp/Log、Adjoint", "LITERAL", "VERIFIED (4.4e-16)", "T02"),
+    ("2", "式(7)-(9) 接触弹性", "D=E^-1*O*G, tau=Log D, hK=-K*tau", "LITERAL", "VERIFIED (0)", "T02"),
+    ("3", "式(10) 相对速度", "R-bar 近似", "保留论文 APPROX", "VERIFIED (APPROX 1.4e-3)", "T02"),
+    ("4", "式(11) 接触阻尼", "hB=-B*V_rel", "LITERAL", "VERIFIED (0)", "T02"),
+    ("5", "式(12) 抓取矩阵", "W + H^T 结构", "LITERAL", "VERIFIED (虚功 5.9e-16)", "T02"),
+    ("6", "式(13)-(14) 状态/输入", "42 维状态、U in R^12", "LITERAL", "VERIFIED", "T02/T03"),
+    ("7", "式(15) 抓握运动学", "印刷式", "批准偏离 p2.spatial_free_log_constraint.v1", "ADAPTED_VERIFIED (反例 80um/4ms; 不变量 7.9e-18; 68/68)", "T02/T01"),
+    ("8", "式(16) 物体动力学", "论文式", "M 为 ADAPTATION (均质长方体)", "VERIFIED (ADAPTATION 惯量)", "T02/T03"),
+    ("9", "式(17) 观测模型", "6 类观测、多率", "LITERAL", "VERIFIED (Jacobian 5.9e-11)", "T02"),
+    ("10", "式(18) IESEKF 预测", "4 ms 右 Euler", "PAPER_LITERAL_EULER 基线保留", "REPRODUCED_FAILURE (逐位复现 3.948s; rho=7.73)", "T04-R1"),
+    ("11", "式(18) IESEKF 稳定传播", "论文无此项", "ADAPTATION: exp(hA) + Van Loan (Q_d=S*Phi^T)", "ADAPTED_QUALIFIED (48/48; 前缀存活; 7.5s/65.8s 闭环稳定)", "T04"),
+    ("12", "式(18) Q_d", "论文未详述", "scaling-and-squaring, |lambda|h<=0.5", "ADAPTED_VERIFIED (naive 在 C@4ms 失效已记录)", "T04-A"),
+    ("13", "式(19)-(21) 内力控制", "U_F=-K_F*h_I", "LITERAL", "VERIFIED (V4_02-05, 单位分离)", "V4"),
+    ("14", "式(20) 内力投影", "W*h_I,t=0 印刷记号", "更正为 well-posed 记号", "VERIFIED (3.2e-13)", "T02"),
+    ("15", "式(22)-(24) 局部稳定性", "内力闭环线性化", "故意 NOT_IMPL (印刷式 Jr 不一致)", "NOT_IMPL (声明性)", "T00/协议"),
+    ("16", "式(25) 位姿控制", "Ad^-1(V_d+K_P*tau)", "LITERAL + ff 显式化 EXTRA", "VERIFIED (V4_01/06/08)", "V4"),
+    ("17", "式(26) 关节级逆解", "J^dagger + 零空间", "理想 Cartesian 约化 ADAPTATION", "NOT_IMPL (关节级)", "T00"),
+    ("18", "内力 oracle 描述", "无(复现侧自检)", "C4: 同接触重算, 非独立模型", "DESCRIPTION_CORRECTED (V4_04)", "V4"),
+    ("19", "单位报告", "无(复现侧自检)", "C3: N/N*m 与 m/s/rad/s 分离", "UNITS_SEPARATED", "V4"),
+    ("20", "不动点验证", "无(复现侧自检)", "C1: 位姿反馈激活时段 (t>=13s)", "REVALIDATED (0 m/s, 0 rad/s)", "V4"),
+    ("21", "诊断计数", "无(复现侧自检)", "C2: 信息项不入正式计数", "14/14 FORMAL + 1 DIAG", "V4"),
+    ("22", "Fig.6 exp1-4 (95s x 30案 x 5seed)", "全部", "OUT_OF_SCOPE_D082", "OUT_OF_SCOPE (单案 65.8s 预算截断)", "T04-B-95"),
+    ("23", "Fig.6 卡尺对标 (<0.1mm/0.42deg)", "全部", "OUT_OF_SCOPE_D082", "NOT_EXECUTED", "-"),
+    ("24", "Fig.7 高内力矩", "全部", "OUT_OF_SCOPE_D082", "OUT_OF_SCOPE", "-"),
+    ("25", "Fig.8 四物块装配", "全部", "OUT_OF_SCOPE_D082", "OUT_OF_SCOPE (B1/B2 未入协议)", "-"),
+    ("26", "Fig.9 pivot/sliding", "全部", "OUT_OF_SCOPE_D082", "OUT_OF_SCOPE", "-"),
+    ("27", "附加视频 1 (流形 IESEKF vs 标准 EKF)", "全部", "视频未取得", "NOT_EXECUTED", "-"),
+    ("28", "附加视频 2 (放置段)", "全部", "视频未取得", "NOT_EXECUTED", "-"),
+    ("29", "真实视觉/触觉硬件", "全部", "OUT_OF_SCOPE_D082", "OUT_OF_SCOPE", "-"),
+    ("30", "时序参数 (force 7s / pose 13s)", "协议冻结", "C5 对齐", "ALIGNED (V4_12 三时段断言)", "V4"),
+]
+
+with open(OUT, "w", newline="", encoding="utf-8-sig") as f:
+    w = csv.writer(f)
+    w.writerow(["编号", "条目", "原文要求_ORIGINAL", "批准口径_APPROVED", "实际状态_ACTUAL", "证据"])
+    w.writerows(ROWS)
+print(f"wrote {OUT} ({len(ROWS)} rows)")
