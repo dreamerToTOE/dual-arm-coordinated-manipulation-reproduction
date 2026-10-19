@@ -1,0 +1,74 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_BUILD02_RECOVERY_NAMEERROR_INDEPENDENT_POST_V1",
+  "personnel_independent": true,
+  "status": "FAIL_ENGINEERING_NAMEERROR_NO_COMPILE",
+  "checks_total": 8,
+  "checks_passed": 8,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "execution_exists_and_exact_status",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "nameerror_failure_reason_preserved",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "compile_link_model_query_solve_calls_zero",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "external_supervision_boundary_false",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "external_cost_only_boundary_true",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "time_charge_receipt_hashes_bind",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "failure_run_is_not_retried_or_relabelled",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "no_scientific_or_formal_claim",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "execution": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY/execution.json",
+  "execution_sha256": "eff935b8c6e9f401da94a5fcdca91a5341e36797afec75becfbc14d52f972bb5",
+  "external_post": "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_RECOVERY_NAMEERROR_SAVED_INDEPENDENT_POST_20261019.json",
+  "external_supervision_qualified": false,
+  "external_timing_qualified": false,
+  "external_cost_qualified": true,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "external_charge": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.charge.json",
+  "external_charge_sha256": "8203f0fb4b56c49eed572ac164cdf834e855342b3ac46d946e324569b79c4c8c",
+  "external_time": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.time.txt",
+  "external_time_sha256": "5963a001ce68b877689bb07b5263f6600e6828cc594f33d87de13229dc919aca",
+  "internal_receipt": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY/cost_receipt.json",
+  "internal_receipt_sha256": "60408c159307ca510a89e6cf77f6b881b1212fdfe3ac1580b8b1c7e913f55e5f",
+  "upper_wall_s": 1.9806256019999273,
+  "upper_cpu_s": 1.846125,
+  "scientific_calls": 0,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "failure_identity": "NameError: name 'plan_local' is not defined",
+  "limits": [
+    "Engineering failure accounting only; no compile, link, model, query, solve, path, or scientific qualification.",
+    "The original V3 recovery run, stage identity, protocol and all sidecars remain immutable and separately reported.",
+    "This explicit cost-only exception is distinct from the existing V BUILD02 prebind exception and does not qualify external supervision."
+  ]
+}

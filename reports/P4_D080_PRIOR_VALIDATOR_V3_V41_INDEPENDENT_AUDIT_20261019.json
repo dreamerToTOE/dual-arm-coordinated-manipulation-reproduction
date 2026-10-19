@@ -1,0 +1,89 @@
+{
+  "schema": "P4_D080_PRIOR_VALIDATOR_V3_V41_INDEPENDENT_AUDIT_V1",
+  "status": "PASS",
+  "checks_total": 11,
+  "checks_passed": 11,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "v1_hash_preserved",
+      "passed": true,
+      "details": {
+        "actual": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+        "expected": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e"
+      }
+    },
+    {
+      "name": "v2_hash_and_source_preserved",
+      "passed": true,
+      "details": {
+        "sha256": "5b6b8531a351e3798198b11deca31141a986edfd2d25b62de4a6faa054106237"
+      }
+    },
+    {
+      "name": "v3_parses_and_imports_v1",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_single_explicit_nameerror_exception",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_exception_combined_with_prior_only",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_post_digest_and_zero_call_gates",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v41_ledger_identity",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_artifact_hash_bundle",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_failure_boundary",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_post_charge_receipt_binding",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "dynamic_v41_validation",
+      "passed": true,
+      "details": {
+        "status": "PASS",
+        "wall_s": 1157.5309649199733,
+        "cpu_s": 981.858415,
+        "evidence_count": 220
+      }
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "scripts/p4_d080/validate_prior_preflight_recovery_v1.py": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v2.py": "5b6b8531a351e3798198b11deca31141a986edfd2d25b62de4a6faa054106237",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v3.py": "622373ec4ec441a37306a52a46c61097a117e446b16aebfcb939dd236603e1ac",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V41.json": "ca08ec3c719ec201ca1ce4710652e2ad6a1e1bf0e3f641f0030c8f8c46d0b88a",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_RECOVERY_NAMEERROR_SAVED_INDEPENDENT_POST_20261019.json": "4ae2a6370d5dbbfd4fdf7a5f7ea50a74152532b7e06835fec2c6024a78e0bdcf",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY/execution.json": "eff935b8c6e9f401da94a5fcdca91a5341e36797afec75becfbc14d52f972bb5",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.time.txt": "5963a001ce68b877689bb07b5263f6600e6828cc594f33d87de13229dc919aca",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.charge.json": "8203f0fb4b56c49eed572ac164cdf834e855342b3ac46d946e324569b79c4c8c",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY/cost_receipt.json": "60408c159307ca510a89e6cf77f6b881b1212fdfe3ac1580b8b1c7e913f55e5f"
+  },
+  "ledger": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V41.json",
+  "ledger_sha256": "ca08ec3c719ec201ca1ce4710652e2ad6a1e1bf0e3f641f0030c8f8c46d0b88a",
+  "interpretation": "PASS binds V1/V2 historical validators plus one explicit V3 NameError cost-only exception; it does not qualify external supervision, build, planning, or scientific execution."
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_BUILD_EXTERNAL_COST_CHARGE_V1",
+  "run_id": "20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY",
+  "source_execution": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY/execution.json",
+  "execution_sha256": "eff935b8c6e9f401da94a5fcdca91a5341e36797afec75becfbc14d52f972bb5",
+  "receipt": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY/cost_receipt.json",
+  "receipt_sha256": "60408c159307ca510a89e6cf77f6b881b1212fdfe3ac1580b8b1c7e913f55e5f",
+  "time_file": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.time.txt",
+  "time_sha256": "5963a001ce68b877689bb07b5263f6600e6828cc594f33d87de13229dc919aca",
+  "time_fields": [
+    "1.96",
+    "1.62",
+    "0.20",
+    "2"
+  ],
+  "metadata": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.jsonl",
+  "metadata_sha256": "c0fee9330f53af98ebb3ec89ec02a4728c0bca783f4c8f0b0d6e9e0f57abf742",
+  "stderr": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY.supervision.stderr.log",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "time_process_pid": 155885,
+  "time_returncode": 2,
+  "measured_child_exit": 2,
+  "started_attempt": true,
+  "wall_s": 1.9806256019999273,
+  "cpu_s": 1.846125,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "raw_GNUtime_upper_wall_s": 1.97,
+  "raw_GNUtime_upper_cpu_s": 1.84,
+  "monotonic_envelope_valid": true,
+  "monotonic_envelope_components": {
+    "wall_decimal_s": [
+      "1.97",
+      "1.9806256019999273",
+      "1.8554903050005669"
+    ],
+    "cpu_decimal_s": [
+      "1.84",
+      "1.846125",
+      "1.7531219999999998"
+    ],
+    "order": [
+      "raw_GNUtime_plus_padding",
+      "outer_monotonic_or_reaped_plus_padding",
+      "internal_receipt_plus_padding"
+    ]
+  },
+  "monotonic_envelope_error": null,
+  "timing_valid": true,
+  "time_inode_unchanged": true,
+  "fallback_observed_outer_wait_wall_s": 1.9706256019999273,
+  "fallback_reaped_children_CPU_s": 1.826125,
+  "fallback_cost_completeness": "UNQUALIFIED_FINITE_OBSERVATION_ONLY_IF_TIME_INVALID",
+  "cost_boundary": "Effective prior charge replaces this execution pre-save cost, or charges orphan preflight attempt. Supervisor own journal/fsync cost excluded.",
+  "failure": null,
+  "external_supervision_qualified": false,
+  "independent_POST_required": true,
+  "wall_CPU_caps_pass": true,
+  "execution_cap_breach": {
+    "wall": false,
+    "cpu": false
+  },
+  "completed_process_exit0": false
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "P4_D080_ENV_V_RRT_PCS_BUILD02_RECOVERY_THIN_INCREMENTAL_INDEPENDENT_PRE_V4",
+  "personnel_independent": true,
+  "status": "PASS_BUILD02_RECOVERY_IDENTITY_V41_SEAM",
+  "checks_total": 10,
+  "checks_passed": 10,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "v4_runner_fix_is_exact_rebased_plan_return",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v4_supervisor_identity",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "fresh_stage_and_run",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "exact_two_tu_one_link_caps",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "draft_flags_closed",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v41_prior_frozen",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v41_prior_audit_pass",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_failure_retained",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_helper_bound",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v41_dynamic_prior_evidence",
+      "passed": true,
+      "details": {
+        "status": "PASS",
+        "evidence_count": 220,
+        "wall_s": 1157.5309649199733,
+        "cpu_s": 981.858415
+      }
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_v_rrt_pcs_e2e_v4_draft.py": "94f4e87dcb43869dfa7d11195a13c232e3a6b93ab0c9af39f20602b40d6caffb",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v4_draft.py": "3312d8705fc27e7809d759aeda090f2f33e9da1e9b2af690110871049234975f",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_rrt_pcs_e2e_build_v4.DRAFT.json": "0cdb3d8809b6d5c57e0a3c8af98700242ba8e9a7669e1bb7297f35fcea023cac",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/validate_prior_preflight_recovery_v3.py": "622373ec4ec441a37306a52a46c61097a117e446b16aebfcb939dd236603e1ac",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "1c320aa3d55a638124b86b1235445c0aac80857dd4313dcb4d8c060f802d55fe",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "ec9359321fb0cf072302bf6a361d9237ad4c5d9d25e4e0d5a75ea0b064214ea5",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_D080_PRIOR_VALIDATOR_V3_V41_INDEPENDENT_AUDIT_20261019.json": "a5f5a8ee1185851309700ec0f69781a74e392c0145627f81fcb1683cfc3f7efd"
+  },
+  "v41_prior_validator_audit": "reports/P4_D080_PRIOR_VALIDATOR_V3_V41_INDEPENDENT_AUDIT_20261019.json",
+  "v41_prior_validator_audit_sha256": "a5f5a8ee1185851309700ec0f69781a74e392c0145627f81fcb1683cfc3f7efd",
+  "required_runner_gate_inputs_sha256": {
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/build_v_rrt_pcs_e2e_v4_draft.py": "94f4e87dcb43869dfa7d11195a13c232e3a6b93ab0c9af39f20602b40d6caffb",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v4_draft.py": "3312d8705fc27e7809d759aeda090f2f33e9da1e9b2af690110871049234975f",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "1c320aa3d55a638124b86b1235445c0aac80857dd4313dcb4d8c060f802d55fe",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/configs/p4_d080/v_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "ec9359321fb0cf072302bf6a361d9237ad4c5d9d25e4e0d5a75ea0b064214ea5",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/validate_prior_preflight_recovery_v3.py": "622373ec4ec441a37306a52a46c61097a117e446b16aebfcb939dd236603e1ac"
+  },
+  "limits": [
+    "Engineering build only; no model/query/solve/path qualification.",
+    "V3 NameError failure remains a separate digest-bound cost-only exception; it is never upgraded to supervision or build qualification.",
+    "Fresh V4 run/stage may not overwrite V3 or any earlier stage.",
+    "No formal 18,000 statistics, VI work, or scientific planning is authorized by this certificate."
+  ]
+}
