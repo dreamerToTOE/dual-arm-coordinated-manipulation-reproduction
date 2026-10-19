@@ -142,3 +142,15 @@ events 若干；全部可 `json.loads` 读回。
 ## 12. 提交
 
 见本轮 commit（smoke 入口与修复、运行产物、本报告）。未修改 `results/`、未触碰 P4。
+
+---
+
+## 附录 A — 溯源口径更正（2026-10-19，T03 审查要求；原日志未改）
+
+| 项 | 原文写法 | 更正 |
+|---|---|---|
+| 传感器行数 | "sensors 1 897 条观测" | `sensors.jsonl.gz` 实际 **2 048 行 = 150 预标定 + 1 898 运输**（1 892 `fresh_filter_packet` + 6 `initialization_only`） |
+| metadata 墙钟 | `metadata.json` 记录 `wall_limit_s=120` | 诊断入口实际为 **60 s**（见 `smoke_manifest.json`）；已在 `run_case` 改为记录真实传入值，旧运行保持原样 |
+| 环形缓冲 | "200 个完整行" | ring 存的是 200 条**已发出的行**；1 Hz 降频期间 bulk（W/D/奇异值/estimated_state/solver）本就不在行内，不能称为"200 份完整原始矩阵" |
+
+原始运行目录 `p2/runs/20261019_103729_T01E_SMOKE_case11_exp3_seed7/` 未做任何修改。
