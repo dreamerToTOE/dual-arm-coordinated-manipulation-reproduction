@@ -1,0 +1,63 @@
+{
+  "schema": "P4_D080_III_RRT_PCS_PHYSICAL01_EXTERNAL_COST_CHARGE_V1",
+  "run_id": "20261018_R2_D080_III_RRT_PCS_PHYSICAL01",
+  "source_execution": "results/p4_full/20261018_R2_D080_III_RRT_PCS_PHYSICAL01/execution.json",
+  "execution_sha256": "2ac3e464d54afa59ad7ae3d01dd900cf3cca645132ba4c73e9a35b95ac506737",
+  "receipt": "results/p4_full/20261018_R2_D080_III_RRT_PCS_PHYSICAL01/cost_receipt.jsonl",
+  "receipt_sha256": "3b99bd30a8f57d65e76ec04f8a7d6f0ffb020ec2277afc79f9bd4fd52b6e40ae",
+  "time_file": "results/p4_full/20261018_R2_D080_III_RRT_PCS_PHYSICAL01.supervision.time.txt",
+  "time_sha256": "7046ba75582a4a0e34347b04627fb7ca30c01c145aa17f646ad49b9fca643802",
+  "time_fields": [
+    "8.52",
+    "6.45",
+    "0.73",
+    "0"
+  ],
+  "metadata": "results/p4_full/20261018_R2_D080_III_RRT_PCS_PHYSICAL01.supervision.jsonl",
+  "metadata_sha256": "aa09c74e76be8ad6f5492d54e44d8adf840701c3c378ab5276490a3a28db6e3c",
+  "stderr": "results/p4_full/20261018_R2_D080_III_RRT_PCS_PHYSICAL01.supervision.stderr.log",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "time_process_pid": 81106,
+  "time_returncode": 0,
+  "measured_child_exit": 0,
+  "started_attempt": true,
+  "wall_s": 8.531047851987532,
+  "cpu_s": 7.210078,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "raw_GNUtime_upper_wall_s": 8.53,
+  "raw_GNUtime_upper_cpu_s": 7.2,
+  "monotonic_envelope_valid": true,
+  "monotonic_envelope_components": {
+    "wall_decimal_s": [
+      "8.53",
+      "8.531047851987532",
+      "8.331787139997468"
+    ],
+    "cpu_decimal_s": [
+      "7.20",
+      "7.210078",
+      "7.147933"
+    ],
+    "order": [
+      "raw_GNUtime_plus_padding",
+      "outer_monotonic_or_reaped_plus_padding",
+      "internal_receipt_plus_padding"
+    ]
+  },
+  "monotonic_envelope_error": null,
+  "timing_valid": true,
+  "time_inode_unchanged": true,
+  "fallback_observed_outer_wait_wall_s": 8.521047851987532,
+  "fallback_reaped_children_CPU_s": 7.190078,
+  "fallback_cost_completeness": "UNQUALIFIED_FINITE_OBSERVATION_ONLY_IF_TIME_INVALID",
+  "cost_boundary": "Conservative maximum of GNUtime whole-child, outer monotonic Popen/wait and internal receipt, with .01 wall/.02 CPU padding. Outer wait includes limited supervisor work after start; final supervisor own journal/fsync tail excluded. Replace current own cost once.",
+  "failure": null,
+  "external_supervision_qualified": false,
+  "independent_POST_required": true,
+  "wall_CPU_caps_pass": true,
+  "execution_cap_breach": {
+    "wall": false,
+    "cpu": false
+  },
+  "completed_process_exit0": true
+}

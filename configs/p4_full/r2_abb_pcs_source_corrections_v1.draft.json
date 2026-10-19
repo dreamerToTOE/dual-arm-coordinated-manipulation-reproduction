@@ -1,0 +1,183 @@
+{
+  "schema": "P4_R2_ABB_PCS_SOURCE_CORRECTION_CANDIDATES_DRAFT_V1",
+  "frozen": false,
+  "reviews": {
+    "independent_static_review_passed": false,
+    "root_freeze_approved": false
+  },
+  "classification": "PURE_SAVED_SOURCE_AND_ARRAY_ANALYSIS / UNBUILT_UNEXECUTED_CANDIDATES",
+  "source_author_commit": "909bd72fff778aca8682c96f9eb86ae4eb75557b",
+  "candidate_module": "baselines/p4_full/geometry_consistent/abb_pcs_source_corrections_draft.py",
+  "candidate_module_sha256": "bba287c06f3c9b88366a08496d13d95e6b2e11fd023109f8f1218396d97f47bf",
+  "bound_saved_assets_sha256": {
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/manifest.json": "b05d53d3ff65e9122179f785836eff6162eca1c4221ecd0513fd901854e657aa",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/author_native_plain/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/author_native_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+    "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_0.json": "b39d945cd5d49e4649aba22e57aae9f302694e4d8e0880389542f1ad828b112f",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/II_1.json": "991c2efe8e68add65c17375d89c89bbb637711d7125b15a34c84a19a2dc15430",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_0.json": "85550cbc3ffbf80c80519b5e592e85401dcf1e96ce747f0df5f3d97c97065c6a",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261015_R2_ENDPOINT_RECONSTRUCTED01/III_1.json": "50db8b75e8c29c9dfc42646e5165c22f31dd8e2853858686572405c3cd91cc12"
+  },
+  "independent_factor_edits": [
+    {
+      "factor": "HELPER_FIRST_IDENTIFIED_SUCCESS_BREAK",
+      "relative_file": "validity_checkers/StateValidityCheckerPCS.cpp",
+      "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain)",
+      "original_sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+      "candidate_sha256": "c8e302ccbe786590d62e9f2d803e3ee058fc115d2059d8f5cbb97e4aba6d34cb",
+      "original_body_sha256": "98d2efcdb94077221b2054ce5296aa761bf62aa29180d18d2010cd22cfda58c1",
+      "candidate_body_sha256": "bb7a051f2cd133e92447d0947b4d1be37ddfeac0fba0de0f47438313c2063f7b",
+      "whole_file_reversible": true,
+      "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+      "combined_factors": false,
+      "files_changed": 1,
+      "scientific_calls": 0,
+      "compile_calls": 0,
+      "base_variant": "author_native",
+      "original_file": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/author_native_plain/validity_checkers/StateValidityCheckerPCS.cpp",
+      "proposed_fresh_stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_source_corrections_v1/helper_first_identified_success_break/author_native_candidate"
+    },
+    {
+      "factor": "CBIRRT_ROLE1_FIRST_STATE_DESTINATION",
+      "relative_file": "planners/CBiRRT_PCS.cpp",
+      "signature": "double ompl::geometric::CBiRRT::activeDistance(const Motion *a, const Motion *b)",
+      "original_sha256": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+      "candidate_sha256": "5b87ed08d674251594efc899ad922398f9c29a0a42f74494cafa7fa2424ae5c2",
+      "original_body_sha256": "5b578c42649f5a4e6b215141ff4f7fdc03ccea58b26ab1ac25c5386b3801d7c4",
+      "candidate_body_sha256": "227320c939a98f23459473dcdd14462f9c849258a4895eff0c256252c79c1b73",
+      "whole_file_reversible": true,
+      "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+      "combined_factors": false,
+      "files_changed": 1,
+      "scientific_calls": 0,
+      "compile_calls": 0,
+      "base_variant": "author_native",
+      "original_file": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/author_native_plain/planners/CBiRRT_PCS.cpp",
+      "proposed_fresh_stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_source_corrections_v1/cbirrt_role1_first_state_destination/author_native_candidate"
+    },
+    {
+      "factor": "HELPER_FIRST_IDENTIFIED_SUCCESS_BREAK",
+      "relative_file": "validity_checkers/StateValidityCheckerPCS.cpp",
+      "signature": "bool StateValidityChecker::IKproject(State &q1, State &q2, int active_chain)",
+      "original_sha256": "7b6013282f698e47d1f55c2ed31cf0edf52ca6ccf369035016a18e38e42a527f",
+      "candidate_sha256": "c8e302ccbe786590d62e9f2d803e3ee058fc115d2059d8f5cbb97e4aba6d34cb",
+      "original_body_sha256": "98d2efcdb94077221b2054ce5296aa761bf62aa29180d18d2010cd22cfda58c1",
+      "candidate_body_sha256": "bb7a051f2cd133e92447d0947b4d1be37ddfeac0fba0de0f47438313c2063f7b",
+      "whole_file_reversible": true,
+      "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+      "combined_factors": false,
+      "files_changed": 1,
+      "scientific_calls": 0,
+      "compile_calls": 0,
+      "base_variant": "geometry_consistent",
+      "original_file": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/validity_checkers/StateValidityCheckerPCS.cpp",
+      "proposed_fresh_stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_source_corrections_v1/helper_first_identified_success_break/geometry_consistent_candidate"
+    },
+    {
+      "factor": "CBIRRT_ROLE1_FIRST_STATE_DESTINATION",
+      "relative_file": "planners/CBiRRT_PCS.cpp",
+      "signature": "double ompl::geometric::CBiRRT::activeDistance(const Motion *a, const Motion *b)",
+      "original_sha256": "60f6a483c533f61749bc7e741acc72bfc8cc2e137d719b25392e73831e458d93",
+      "candidate_sha256": "5b87ed08d674251594efc899ad922398f9c29a0a42f74494cafa7fa2424ae5c2",
+      "original_body_sha256": "5b578c42649f5a4e6b215141ff4f7fdc03ccea58b26ab1ac25c5386b3801d7c4",
+      "candidate_body_sha256": "227320c939a98f23459473dcdd14462f9c849258a4895eff0c256252c79c1b73",
+      "whole_file_reversible": true,
+      "classification": "SOURCE_CONTROL_FLOW_CORRECTION_DRAFT_UNBUILT_UNEXECUTED",
+      "combined_factors": false,
+      "files_changed": 1,
+      "scientific_calls": 0,
+      "compile_calls": 0,
+      "base_variant": "geometry_consistent",
+      "original_file": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_qualification_v1/geometry_consistent_plain/planners/CBiRRT_PCS.cpp",
+      "proposed_fresh_stage": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/abb_pcs_source_corrections_v1/cbirrt_role1_first_state_destination/geometry_consistent_candidate"
+    }
+  ],
+  "never_patch_old_stage": true,
+  "never_combine_factors_in_qualification": true,
+  "helper_actual_planner_reachability": "RRT_PCS/CBiRRT_PCS/SBL_PCS real grow paths do not call random-three-argument IKproject; helper qualification is not their prerequisite.",
+  "source_policy_preserved": [
+    "Original 0..7 vector and std::random_shuffle call/order, before one success break.",
+    "Original calc_specific_IK_solution_R1/R2 and identify_state_ik checks.",
+    "Original loop-end i==8 return and false-output mutation.",
+    "No collision/limit gate added to helper; existing policy remains separately audited.",
+    "CBiRRT role1 first destination qb becomes qa only; original norm, interpolation, role RNG and other planner code unchanged."
+  ],
+  "draft_future_budget_not_authorization": {
+    "helper_engineering": {
+      "targets": 4,
+      "wall_s": 120.0,
+      "cpu_s": 180.0,
+      "per_target_wall_s": 45.0,
+      "per_target_cpu_s": 90.0
+    },
+    "helper_science": {
+      "wall_s": 90.0,
+      "cpu_s": 180.0,
+      "saved_centers": 4,
+      "roles": 2,
+      "seeds": [
+        7,
+        17
+      ],
+      "base_requests": 16,
+      "numerical_variants": 2,
+      "source_control_variants": 2,
+      "runtime_observation_modes": 2,
+      "top_helper_call_cap": 128,
+      "maximum_direct_analytic_IK_attempts": 1024,
+      "maximum_identify_analytic_IK_attempts": 16384,
+      "maximum_total_analytic_IK_attempts": 17408,
+      "maximum_source_arm_FK": 3072,
+      "rand_draws_from_bound_libstdcpp_shuffle_structural_prediction": 896,
+      "collision_checks_after_source_return_cap": 128,
+      "external_math_arm_FK_cap": 256,
+      "collision_adapter_arm_FK_J_cap": 512
+    },
+    "distance_engineering": {
+      "targets": 2,
+      "wall_s": 60.0,
+      "cpu_s": 120.0,
+      "per_target_wall_s": 45.0,
+      "per_target_cpu_s": 90.0
+    },
+    "distance_science": {
+      "wall_s": 15.0,
+      "cpu_s": 30.0,
+      "fixed_array_cases": 16,
+      "source_control_variants": 2,
+      "runtime_observation_modes": 2,
+      "top_activeDistance_call_cap": 64,
+      "FK_IK_NR_RNG_collision_solve_calls": 0
+    }
+  },
+  "historical_build_cost_evidence": [
+    {
+      "variant": "author_native",
+      "mode": "plain",
+      "wall_s": 23.702375222001137,
+      "cpu_s": 31.334107000000003
+    },
+    {
+      "variant": "geometry_consistent",
+      "mode": "plain",
+      "wall_s": 21.934770444000605,
+      "cpu_s": 30.527862
+    }
+  ],
+  "historical_one_RRT_target": {
+    "wall_s": 17.12737691100483,
+    "cpu_s": 23.727903,
+    "two_target_linear_reference_wall_s": 34.25475382200966,
+    "two_target_linear_reference_cpu_s": 47.455806,
+    "four_target_linear_reference_wall_s": 68.50950764401932,
+    "four_target_linear_reference_cpu_s": 94.911612,
+    "is_new_target_cost_measurement": false
+  },
+  "scientific_calls": 0,
+  "compile_calls": 0,
+  "new_stage_writes": 0,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0
+}

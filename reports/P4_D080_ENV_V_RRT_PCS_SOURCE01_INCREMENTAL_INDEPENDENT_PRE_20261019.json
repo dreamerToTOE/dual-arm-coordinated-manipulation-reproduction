@@ -1,0 +1,133 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_SOURCE01_INCREMENTAL_INDEPENDENT_PRE_V1",
+  "personnel_independent": true,
+  "status": "PASS_THIN_SOURCE_ENTRY_PRE_ONLY",
+  "checks_total": 20,
+  "checks_passed": 20,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "new runner/supervisor/config/PRE exact reviewed identities",
+      "passed": true
+    },
+    {
+      "name": "candidate runner and supervisor parse with no import-time process call",
+      "passed": true
+    },
+    {
+      "name": "DRAFT remains unfreezed and all three review approvals are false",
+      "passed": true
+    },
+    {
+      "name": "V/A02 identity and source-only boundary are exact",
+      "passed": true
+    },
+    {
+      "name": "A02 seed/range/goal bias/solve and all fourteen caps are frozen",
+      "passed": true
+    },
+    {
+      "name": "original restricted V sampler bounds are retained",
+      "passed": true
+    },
+    {
+      "name": "saved A02 RECONSTRUCTED endpoints and aligned collision gates are exact",
+      "passed": true
+    },
+    {
+      "name": "outer/work budgets and no new model/path claim are retained",
+      "passed": true
+    },
+    {
+      "name": "D080 VI and formal statistics remain out of this draft",
+      "passed": true
+    },
+    {
+      "name": "all currently bound source/evidence/dependency bytes match their hashes",
+      "passed": true,
+      "evidence": {
+        "bound_count": 43
+      }
+    },
+    {
+      "name": "BUILD02/ELF/independent POST/latest prior are explicit pending bindings",
+      "passed": true
+    },
+    {
+      "name": "new entry calls the reviewed prior helper with run-local identity",
+      "passed": true
+    },
+    {
+      "name": "prior helper certificate is reused without re-audit",
+      "passed": true
+    },
+    {
+      "name": "V driver/observer independent 20/20 seam certificate is reused",
+      "passed": true
+    },
+    {
+      "name": "executor self-review remains provenance only, not independent evidence",
+      "passed": true
+    },
+    {
+      "name": "source result remains exact/approximate/path/CCD/trace qualified false",
+      "passed": true
+    },
+    {
+      "name": "single compact request, EOF, raw stdout/result equality and post-return logs are guarded",
+      "passed": true
+    },
+    {
+      "name": "real worker cleanup, dual EOF, no retry and raw evidence persistence are guarded",
+      "passed": true
+    },
+    {
+      "name": "supervisor uses exclusive timing inode and one child with no retry",
+      "passed": true
+    },
+    {
+      "name": "no run directory or claim has been created by this static review",
+      "passed": true
+    }
+  ],
+  "input_sha256": {
+    "scripts/p4_d080/qualify_v_rrt_pcs_source01_v1_draft.py": "b0391ce045ddb98e85755c12acc1b14a1729a22efa1fed82f63546b0fdd15544",
+    "scripts/p4_d080/supervise_v_rrt_pcs_source01_v1_draft.py": "b6dfca4b0475e6635bb6d383a40b3d82ebd5c01084a62bd18cedb5fe488b0279",
+    "configs/p4_d080/v_rrt_pcs_source01_v1.DRAFT.json": "d7a28dc43da59e90c53f38bac97d72df4398d60c65322120efc3a4e3eb4f6d4d",
+    "reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_PRE_DRAFT_20261018.md": "4302a8c40e8bf6399bfd0c4887b5789899a0ff76a67bceced66384dad084ec2e",
+    "reports/P4_D080_ENV_V_RRT_PCS_THIN_DRAFT_INCREMENTAL_INDEPENDENT_PRE_20261018.json": "d5f05c246a2a7cfafc5183e3166bde9bd2ce47ab42d3da9dd43b3df72ac1f858",
+    "reports/P4_D080_PREFLIGHT_RECOVERY_CHAIN_THIN_INDEPENDENT_PRE_ADDENDUM_20261018.json": "17e47992e46e1b9ae0eee6242c71edda90e3e0ce559332e867ce1ceed728cba3",
+    "reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_EXECUTOR_SELF_STATIC_ADDENDUM_20261018.json": "83a478df10c10a8059bbbe2b7304c846ebd680b7991f8a5e65a06010a20cdb06"
+  },
+  "reused_independent_evidence": {
+    "V_driver_observer": "reports/P4_D080_ENV_V_RRT_PCS_THIN_DRAFT_INCREMENTAL_INDEPENDENT_PRE_20261018.json",
+    "V_driver_observer_sha256": "d5f05c246a2a7cfafc5183e3166bde9bd2ce47ab42d3da9dd43b3df72ac1f858",
+    "preflight_recovery_helper": "reports/P4_D080_PREFLIGHT_RECOVERY_CHAIN_THIN_INDEPENDENT_PRE_ADDENDUM_20261018.json",
+    "preflight_recovery_helper_sha256": "17e47992e46e1b9ae0eee6242c71edda90e3e0ce559332e867ce1ceed728cba3"
+  },
+  "scope": {
+    "new_incremental_review": [
+      "V SOURCE runner",
+      "V SOURCE supervisor",
+      "V SOURCE DRAFT/PRE seams"
+    ],
+    "reused_without_reaudit": [
+      "V driver/observer",
+      "preflight recovery helper",
+      "III audited transport"
+    ],
+    "excluded": [
+      "BUILD02",
+      "ELF",
+      "actual source execution",
+      "independent path qualification",
+      "formal statistics"
+    ]
+  },
+  "limits": [
+    "Static PRE only; all three freeze/review flags remain false.",
+    "Actual BUILD02 execution, ELF and independent POST must be bound by root before freeze.",
+    "Latest charged prior must be independently validated and bound by root before freeze.",
+    "A source exact result would remain only a candidate until separate full path audit."
+  ]
+}

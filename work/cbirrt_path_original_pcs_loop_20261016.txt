@@ -1,0 +1,40 @@
+for i,q in enumerate(spec['fixed_queue']['nodes']):
+    budget.remaining()
+    if i>=spec['max_nodes_per_execution']:raise common.StopQualification('FIXED_2048_NODE_RESOURCE_STOP_FULL_TAIL_UNCHECKED')
+    current={'node_id':i,'q12':q,'poses':[],'branches':[],'stage':'STARTED'};event('math_node_started',node_id=i,q12=q)
+    for a in range(2):
+        budget.remaining();require(counts['math_arm_FK_started']<spec['max_math_arm_FK'],'MATH_FK_CAP')
+        counts['math_arm_FK_started']+=1;event('math_arm_FK_started',node_id=i,arm=a+1)
+        pose=oracle.arm_fk(q[6*a:6*a+6],'II',a+1);counts['math_arm_FK_completed']+=1
+        current['poses'].append(pose.tolist());durable_new(folder/f'node_{i:05d}_arm{a+1}.json',current)
+        event('math_arm_FK_completed',node_id=i,arm=a+1,pose=pose.tolist())
+    import numpy as np
+    poses=[np.asarray(p) for p in current['poses']]
+    metric=oracle.matrix_error(poses[1],poses[0]@oracle.grasps_for('II')[0]@oracle.FLIP);limits=oracle.limit_score(q,'II')
+    for a in range(2):
+        counts['branch_identity_started']+=1
+        current['branches'].append(oracle.branch_identity(q[6*a:6*a+6],'II',GATES['branch_zero_relative_epsilon']))
+        counts['branch_identity_completed']+=1
+    assignments=[{'edge':k,'role':e['active_chain'],'requested_branch':e['branch'],
+        'branch_pass':e['branch'] in current['branches'][1-e['active_chain']]['branch_set']}
+        for k,e in enumerate(spec['fixed_queue']['edges']) if i in e['node_ids']]
+    mathok=(metric['position_max_abs']<=GATES['position_maxabs_mm'] and
+        metric['rotation_matrix_max_abs']<=GATES['rotation_matrix_maxabs'] and limits['legal'] and
+        bool(assignments) and all(a['branch_pass'] for a in assignments))
+    current.update(stage='MATH_COMPLETED',closure=metric,limits=limits,edge_assignments=assignments,math_qualified=bool(mathok))
+    durable_new(folder/f'node_{i:05d}_math.json',current);event('math_node_completed',node_id=i,math_qualified=bool(mathok))
+    budget.remaining();require(counts['collision_calls_started']<spec['max_collision_calls'],'COLLISION_CALL_CAP')
+    counts['collision_calls_started']+=1;current['stage']='COLLISION_STARTED';event('collision_started',node_id=i)
+    collision=adapter.check_collision('II',q,timeout_s=min(10.,budget.remaining()),manifest_path=COLLISION)
+    counts['collision_calls_completed']+=1;current.update(stage='COLLISION_RESPONSE_RETAINED',collision=collision)
+    durable_new(folder/f'node_{i:05d}_collision_response.json',collision);event('collision_response_retained',node_id=i,response=collision)
+    require(collision.get('status')=='CHECKED' and collision.get('selected_variant')=='aligned' and
+        collision.get('manifest_sha256')==spec['bound_files_sha256'][COLLISION] and
+        type(collision.get('collision')) is bool and set(collision.get('variants',{}))=={'native','aligned'},
+        'COLLISION_UNQUALIFIED_RUNTIME')
+    for variant,response in collision['variants'].items():
+        codes=response.get('query_codes',[]);counts['PQP_queries']+=len(codes)
+        require(bool(codes) and all(type(v) is int and v==0 for v in codes),'COLLISION_QUERY_ERROR '+variant)
+    current.update(stage='COMPLETED',qualified=bool(mathok and not collision['collision']))
+    durable_new(folder/f'node_{i:05d}.json',current);results.append(current)
+    event('node_completed',node_id=i,qualified=current['qualified']);current=None;budget.remaining()

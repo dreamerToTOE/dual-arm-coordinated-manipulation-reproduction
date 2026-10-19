@@ -1,0 +1,64 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_BUILD02_THIN_INCREMENTAL_INDEPENDENT_PRE_V2",
+  "personnel_independent": true,
+  "status": "PASS_BUILD02_IDENTITY_PRIOR_V2_SEAM",
+  "checks_total": 9,
+  "checks_passed": 9,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "reuse_prior_independent_seams",
+      "passed": true
+    },
+    {
+      "name": "v2_builder_supervisor_and_helper_current",
+      "passed": true
+    },
+    {
+      "name": "v1_assets_preserved",
+      "passed": true
+    },
+    {
+      "name": "build02_reverse_identity_restores_v1",
+      "passed": true
+    },
+    {
+      "name": "supervisor_identity_only",
+      "passed": true
+    },
+    {
+      "name": "reviewed_helper_v2_independent_audit_bound",
+      "passed": true
+    },
+    {
+      "name": "exact_two_tu_one_link_and_caps",
+      "passed": true
+    },
+    {
+      "name": "draft_execution_flags_remain_closed",
+      "passed": true
+    },
+    {
+      "name": "no_new_science_or_vi_calls",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py": "9dbca564ff6d8975ffbca71b3d1e163b9d7a488f1f7f907888075fd05e566958",
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v2_draft.py": "ef99d36c8d2447d62598deab0f6cd03fe5b294b674ba5b16ea2c83e24277c2a8",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v1_draft.py": "c2ff4dc64b983524c09781d75bad99e99200c4cbd9c9ddb0ca8923a7d21063ae",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v2_draft.py": "8bb22cbfa98e21da20ca5cc8a93134e5a5d668fea8b7f1c879064ee16e0b3cb9",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_EXECUTOR_PRE_DRAFT_20261018.md": "bd91259fa6290ad4e50216b267b91f196f7916a808d36f297a33ba2c176b3142",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v2.py": "ff30d8e4da6ce2698f49324e9bb7a9bbc509db4793ade199a78a211f65b60b54",
+    "configs/p4_d080/v_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "1c320aa3d55a638124b86b1235445c0aac80857dd4313dcb4d8c060f802d55fe",
+    "configs/p4_d080/v_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "ec9359321fb0cf072302bf6a361d9237ad4c5d9d25e4e0d5a75ea0b064214ea5"
+  },
+  "v2_prior_validator_audit": "reports/P4_D080_PRIOR_VALIDATOR_V2_INDEPENDENT_AUDIT_20261019.json",
+  "v2_prior_validator_audit_sha256": "4a6d4ee0e8bb1575ae89c8855b7a0345abc6d67192d561e2dc977458e232e031",
+  "limits": [
+    "Engineering build only; no model/query/solve/path qualification.",
+    "V1 helper and all prior failed/orphan evidence remain preserved.",
+    "V2 helper admits only the digest-bound III cost-only POST and does not qualify external supervision."
+  ]
+}

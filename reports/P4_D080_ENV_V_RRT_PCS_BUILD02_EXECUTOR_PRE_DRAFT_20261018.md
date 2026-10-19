@@ -1,0 +1,13 @@
+# 环境 V RRT+PCS BUILD02 身份与 prior 接缝草案（未执行）
+
+BUILD01 的监督进程实际到达已提交字节门即被拒绝，0次compiler、没有新stage或run目录；原四个supervision文件以及BUILD01 runner/supervisor/DRAFT/PRE的全部原字节永久保留。不能将该orphan补造成运行时execution、内部receipt或工程通过。root将以独立saved-only recovery记录核算其实际观测费用；旧charge自身的未资格状态不改。
+
+本文件只准备新唯一身份20261018_R2_D080_V_RRT_PCS_BUILD02。新builder为build_v_rrt_pcs_e2e_v2_draft.py，新supervisor为supervise_v_rrt_pcs_e2e_build_v2_draft.py，新DRAFT为v_rrt_pcs_e2e_build_v2.DRAFT.json；旧v1四文件不改。原工程stage v_rrt_pcs_e2e_v1尚未创建，继续使用该fresh目标，不因版本号重新复制模型或编译已存在trace对象。
+
+2个TU、1次link、3个原trace1对象复用、同一20/20审过的source plan与transform、663旧MD依赖/681新联合依赖、全部几何/碰撞/作者RRT控制体/observer路径与SHA均不变。单项外30秒wall/60秒CPU、work25/50及原R2总3600/7200不变；binary/model/query/solve/VI/formal仍为0。仅新claim身份和最新prior验证接缝改变，不构成新的科学假设。
+
+新helper scripts/p4_d080/validate_prior_preflight_recovery_v1.py 接口为validate_prior(spec,run_name,run_dir)。它对正常旧项保留原严格prior核验，对唯一orphan仅允许确证的saved-only recovery证书；不伪造内部receipt或已运行模型。新OWN精确绑定helper本身，原B与lifecycle依赖继续绑定不减少。helper import只有定义无科学调用；本代理不导入候选或helper，只做stdlib源码/AST自核。helper源码与独立证书须稳定后才能冻结。
+
+新DRAFT所有执行/冻结/独审门均false、prior与review certificate均null。root须绑定最新独立已核账、全部原始charge/独立POST/recovery文件、当前builder/supervisor/helper和DRAFT字节，然后独立增量静审并提交冻结。不得再次运行BUILD01身份，不能通过替换原四supervision文件绕门。SOURCE01也只把目标工程证据路径机械切到BUILD02并用同helper，实际ELF SHA、POST、通过计数仍须等待真实构建后填写。
+
+此前V LOCAL01、PHYSICAL01及所有失败/UNKNOWN保持；本项只工程资格，建成二进制不等于source或物理路径通过。正式18,000未授权，VI只读归档，不进入P2/Isaac/FR3。

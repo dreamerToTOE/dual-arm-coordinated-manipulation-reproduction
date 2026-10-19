@@ -1,0 +1,39 @@
+{
+  "schema": "P4_D081_SCOPE_MAPPING_MINIMAL_ADDENDUM_V1",
+  "status": "APPEND_ONLY_NO_HISTORICAL_ROW_MUTATION",
+  "decision": "D081_CANCEL_18000_FORMAL_PLANNING_NOT_EXECUTED",
+  "d080_211_csv": "reports/P4_D080_ORIGINAL_VS_APPROVED_VS_ACTUAL_COVERAGE_20261017.csv",
+  "d080_211_csv_sha256": "c9599003f3a2369e1f9ce106884ac2ebc5453d1774b185899eb6a397191bd3b7",
+  "d081_decision": "docs/decisions/D081_P4_CANCEL_18000_NUMERICAL_REPRODUCTION_20261018.md",
+  "formal_table_I_original": 22500,
+  "formal_table_I_d080_target": 18000,
+  "formal_table_I_d081_completed": 0,
+  "formal_status": "CANCELLED_BY_USER_D081_NOT_EXECUTED",
+  "qualification_III_649": {
+    "status": "QUALIFICATION_COMPLETED_NOT_FORMAL_STATISTICS",
+    "post": "reports/P4_D080_ENV_III_RRT_PCS_PHYSICAL01_SAVED_INDEPENDENT_POST_COST_ONLY_V2_CORRECTED_20261018.json",
+    "post_sha256": "7e243fe04e936b9b4ef6670f99aa1f4b95be09c082b1f91bafdeb1c0e0f02d06"
+  },
+  "V_BUILD01_orphan": {
+    "status": "ENGINEERING_PREFLIGHT_FAILED_COST_ONLY_RECOVERED",
+    "original_post": "reports/P4_D080_ENV_V_RRT_PCS_BUILD01_ORPHAN_SAVED_INDEPENDENT_POST_20261018.json",
+    "recovery_post": "reports/P4_D080_ENV_V_RRT_PCS_BUILD01_RECOVERY_COST_INDEPENDENT_POST_20261018.json"
+  },
+  "V_BUILD02_SOURCE01": {
+    "status": "PENDING_VERSIONED_ENTRY_NOT_RUN",
+    "build02_pre": "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_THIN_INCREMENTAL_INDEPENDENT_PRE_20261018.json",
+    "build02_pre_sha256": "ccf6d902a1520284505b9f3d85705ce5b836b73b2657b35cf1d9b1dcfa8cdea7",
+    "source01_requires_separate_actual_call": true
+  },
+  "recommended_new_columns": [
+    "d081_status",
+    "d081_scope_decision",
+    "d081_formal_trials_target",
+    "d081_formal_trials_completed",
+    "d081_cancel_reason",
+    "d081_qualification_evidence",
+    "d081_next_numerical_scope"
+  ],
+  "historical_vi_archived": true,
+  "isaac_p2_forbidden": true
+}

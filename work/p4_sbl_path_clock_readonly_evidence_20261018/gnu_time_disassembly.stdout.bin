@@ -1,0 +1,1443 @@
+
+/usr/bin/time：     文件格式 elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000002000 <.init>:
+    2000:	endbr64 
+    2004:	sub    $0x8,%rsp
+    2008:	mov    0x4fb9(%rip),%rax        # 6fc8 <fork@plt+0x4c38>
+    200f:	test   %rax,%rax
+    2012:	je     2016 <__cxa_finalize@plt-0x1ca>
+    2014:	call   *%rax
+    2016:	add    $0x8,%rsp
+    201a:	ret    
+
+Disassembly of section .plt:
+
+0000000000002020 <.plt>:
+    2020:	push   0x4e92(%rip)        # 6eb8 <fork@plt+0x4b28>
+    2026:	bnd jmp *0x4e93(%rip)        # 6ec0 <fork@plt+0x4b30>
+    202d:	nopl   (%rax)
+    2030:	endbr64 
+    2034:	push   $0x0
+    2039:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    203f:	nop
+    2040:	endbr64 
+    2044:	push   $0x1
+    2049:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    204f:	nop
+    2050:	endbr64 
+    2054:	push   $0x2
+    2059:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    205f:	nop
+    2060:	endbr64 
+    2064:	push   $0x3
+    2069:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    206f:	nop
+    2070:	endbr64 
+    2074:	push   $0x4
+    2079:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    207f:	nop
+    2080:	endbr64 
+    2084:	push   $0x5
+    2089:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    208f:	nop
+    2090:	endbr64 
+    2094:	push   $0x6
+    2099:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    209f:	nop
+    20a0:	endbr64 
+    20a4:	push   $0x7
+    20a9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    20af:	nop
+    20b0:	endbr64 
+    20b4:	push   $0x8
+    20b9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    20bf:	nop
+    20c0:	endbr64 
+    20c4:	push   $0x9
+    20c9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    20cf:	nop
+    20d0:	endbr64 
+    20d4:	push   $0xa
+    20d9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    20df:	nop
+    20e0:	endbr64 
+    20e4:	push   $0xb
+    20e9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    20ef:	nop
+    20f0:	endbr64 
+    20f4:	push   $0xc
+    20f9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    20ff:	nop
+    2100:	endbr64 
+    2104:	push   $0xd
+    2109:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    210f:	nop
+    2110:	endbr64 
+    2114:	push   $0xe
+    2119:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    211f:	nop
+    2120:	endbr64 
+    2124:	push   $0xf
+    2129:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    212f:	nop
+    2130:	endbr64 
+    2134:	push   $0x10
+    2139:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    213f:	nop
+    2140:	endbr64 
+    2144:	push   $0x11
+    2149:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    214f:	nop
+    2150:	endbr64 
+    2154:	push   $0x12
+    2159:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    215f:	nop
+    2160:	endbr64 
+    2164:	push   $0x13
+    2169:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    216f:	nop
+    2170:	endbr64 
+    2174:	push   $0x14
+    2179:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    217f:	nop
+    2180:	endbr64 
+    2184:	push   $0x15
+    2189:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    218f:	nop
+    2190:	endbr64 
+    2194:	push   $0x16
+    2199:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    219f:	nop
+    21a0:	endbr64 
+    21a4:	push   $0x17
+    21a9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    21af:	nop
+    21b0:	endbr64 
+    21b4:	push   $0x18
+    21b9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    21bf:	nop
+    21c0:	endbr64 
+    21c4:	push   $0x19
+    21c9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    21cf:	nop
+    21d0:	endbr64 
+    21d4:	push   $0x1a
+    21d9:	bnd jmp 2020 <__cxa_finalize@plt-0x1c0>
+    21df:	nop
+
+Disassembly of section .plt.got:
+
+00000000000021e0 <__cxa_finalize@plt>:
+    21e0:	endbr64 
+    21e4:	bnd jmp *0x4dfd(%rip)        # 6fe8 <fork@plt+0x4c58>
+    21eb:	nopl   0x0(%rax,%rax,1)
+
+Disassembly of section .plt.sec:
+
+00000000000021f0 <getenv@plt>:
+    21f0:	endbr64 
+    21f4:	bnd jmp *0x4ccd(%rip)        # 6ec8 <fork@plt+0x4b38>
+    21fb:	nopl   0x0(%rax,%rax,1)
+
+0000000000002200 <abort@plt>:
+    2200:	endbr64 
+    2204:	bnd jmp *0x4cc5(%rip)        # 6ed0 <fork@plt+0x4b40>
+    220b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002210 <__errno_location@plt>:
+    2210:	endbr64 
+    2214:	bnd jmp *0x4cbd(%rip)        # 6ed8 <fork@plt+0x4b48>
+    221b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002220 <strncmp@plt>:
+    2220:	endbr64 
+    2224:	bnd jmp *0x4cb5(%rip)        # 6ee0 <fork@plt+0x4b50>
+    222b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002230 <_exit@plt>:
+    2230:	endbr64 
+    2234:	bnd jmp *0x4cad(%rip)        # 6ee8 <fork@plt+0x4b58>
+    223b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002240 <ferror@plt>:
+    2240:	endbr64 
+    2244:	bnd jmp *0x4ca5(%rip)        # 6ef0 <fork@plt+0x4b60>
+    224b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002250 <wait3@plt>:
+    2250:	endbr64 
+    2254:	bnd jmp *0x4c9d(%rip)        # 6ef8 <fork@plt+0x4b68>
+    225b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002260 <strlen@plt>:
+    2260:	endbr64 
+    2264:	bnd jmp *0x4c95(%rip)        # 6f00 <fork@plt+0x4b70>
+    226b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002270 <__stack_chk_fail@plt>:
+    2270:	endbr64 
+    2274:	bnd jmp *0x4c8d(%rip)        # 6f08 <fork@plt+0x4b78>
+    227b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002280 <getopt_long@plt>:
+    2280:	endbr64 
+    2284:	bnd jmp *0x4c85(%rip)        # 6f10 <fork@plt+0x4b80>
+    228b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002290 <strrchr@plt>:
+    2290:	endbr64 
+    2294:	bnd jmp *0x4c7d(%rip)        # 6f18 <fork@plt+0x4b88>
+    229b:	nopl   0x0(%rax,%rax,1)
+
+00000000000022a0 <gettimeofday@plt>:
+    22a0:	endbr64 
+    22a4:	bnd jmp *0x4c75(%rip)        # 6f20 <fork@plt+0x4b90>
+    22ab:	nopl   0x0(%rax,%rax,1)
+
+00000000000022b0 <fputs@plt>:
+    22b0:	endbr64 
+    22b4:	bnd jmp *0x4c6d(%rip)        # 6f28 <fork@plt+0x4b98>
+    22bb:	nopl   0x0(%rax,%rax,1)
+
+00000000000022c0 <fputc@plt>:
+    22c0:	endbr64 
+    22c4:	bnd jmp *0x4c65(%rip)        # 6f30 <fork@plt+0x4ba0>
+    22cb:	nopl   0x0(%rax,%rax,1)
+
+00000000000022d0 <putc@plt>:
+    22d0:	endbr64 
+    22d4:	bnd jmp *0x4c5d(%rip)        # 6f38 <fork@plt+0x4ba8>
+    22db:	nopl   0x0(%rax,%rax,1)
+
+00000000000022e0 <signal@plt>:
+    22e0:	endbr64 
+    22e4:	bnd jmp *0x4c55(%rip)        # 6f40 <fork@plt+0x4bb0>
+    22eb:	nopl   0x0(%rax,%rax,1)
+
+00000000000022f0 <malloc@plt>:
+    22f0:	endbr64 
+    22f4:	bnd jmp *0x4c4d(%rip)        # 6f48 <fork@plt+0x4bb8>
+    22fb:	nopl   0x0(%rax,%rax,1)
+
+0000000000002300 <fflush@plt>:
+    2300:	endbr64 
+    2304:	bnd jmp *0x4c45(%rip)        # 6f50 <fork@plt+0x4bc0>
+    230b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002310 <__printf_chk@plt>:
+    2310:	endbr64 
+    2314:	bnd jmp *0x4c3d(%rip)        # 6f58 <fork@plt+0x4bc8>
+    231b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002320 <error@plt>:
+    2320:	endbr64 
+    2324:	bnd jmp *0x4c35(%rip)        # 6f60 <fork@plt+0x4bd0>
+    232b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002330 <fopen@plt>:
+    2330:	endbr64 
+    2334:	bnd jmp *0x4c2d(%rip)        # 6f68 <fork@plt+0x4bd8>
+    233b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002340 <execvp@plt>:
+    2340:	endbr64 
+    2344:	bnd jmp *0x4c25(%rip)        # 6f70 <fork@plt+0x4be0>
+    234b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002350 <getpagesize@plt>:
+    2350:	endbr64 
+    2354:	bnd jmp *0x4c1d(%rip)        # 6f78 <fork@plt+0x4be8>
+    235b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002360 <exit@plt>:
+    2360:	endbr64 
+    2364:	bnd jmp *0x4c15(%rip)        # 6f80 <fork@plt+0x4bf0>
+    236b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002370 <fwrite@plt>:
+    2370:	endbr64 
+    2374:	bnd jmp *0x4c0d(%rip)        # 6f88 <fork@plt+0x4bf8>
+    237b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002380 <__fprintf_chk@plt>:
+    2380:	endbr64 
+    2384:	bnd jmp *0x4c05(%rip)        # 6f90 <fork@plt+0x4c00>
+    238b:	nopl   0x0(%rax,%rax,1)
+
+0000000000002390 <fork@plt>:
+    2390:	endbr64 
+    2394:	bnd jmp *0x4bfd(%rip)        # 6f98 <fork@plt+0x4c08>
+    239b:	nopl   0x0(%rax,%rax,1)
+
+Disassembly of section .text:
+
+00000000000023a0 <.text>:
+    23a0:	call   2200 <abort@plt>
+    23a5:	cs nopw 0x0(%rax,%rax,1)
+    23af:	nop
+    23b0:	endbr64 
+    23b4:	push   %r15
+    23b6:	push   %r14
+    23b8:	push   %r13
+    23ba:	push   %r12
+    23bc:	push   %rbp
+    23bd:	push   %rbx
+    23be:	sub    $0x108,%rsp
+    23c5:	mov    (%rsi),%r12
+    23c8:	mov    %fs:0x28,%rax
+    23d1:	mov    %rax,0xf8(%rsp)
+    23d9:	xor    %eax,%eax
+    23db:	mov    0x4c0e(%rip),%rax        # 6ff0 <fork@plt+0x4c60>
+    23e2:	mov    (%rax),%r14
+    23e5:	test   %r12,%r12
+    23e8:	je     327a <fork@plt+0xeea>
+    23ee:	mov    %edi,%ebp
+    23f0:	mov    %rsi,%rbx
+    23f3:	mov    %r12,%rdi
+    23f6:	mov    $0x2f,%esi
+    23fb:	call   2290 <strrchr@plt>
+    2400:	mov    %rax,%r13
+    2403:	test   %rax,%rax
+    2406:	je     2450 <fork@plt+0xc0>
+    2408:	lea    0x1(%rax),%r15
+    240c:	mov    %r15,%rax
+    240f:	sub    %r12,%rax
+    2412:	cmp    $0x6,%rax
+    2416:	jle    2450 <fork@plt+0xc0>
+    2418:	lea    -0x6(%r13),%rdi
+    241c:	mov    $0x7,%edx
+    2421:	lea    0x1c61(%rip),%rsi        # 4089 <fork@plt+0x1cf9>
+    2428:	call   2220 <strncmp@plt>
+    242d:	test   %eax,%eax
+    242f:	jne    2450 <fork@plt+0xc0>
+    2431:	mov    $0x3,%edx
+    2436:	lea    0x1c54(%rip),%rsi        # 4091 <fork@plt+0x1d01>
+    243d:	mov    %r15,%rdi
+    2440:	mov    %r15,%r12
+    2443:	call   2220 <strncmp@plt>
+    2448:	test   %eax,%eax
+    244a:	je     25c5 <fork@plt+0x235>
+    2450:	mov    0x4b79(%rip),%rax        # 6fd0 <fork@plt+0x4c40>
+    2457:	lea    0x216a(%rip),%r15        # 45c8 <fork@plt+0x2238>
+    245e:	lea    0x1c30(%rip),%rdi        # 4095 <fork@plt+0x1d05>
+    2465:	mov    %r12,0x4cdc(%rip)        # 7148 <fork@plt+0x4db8>
+    246c:	movb   $0x0,0x4ced(%rip)        # 7160 <fork@plt+0x4dd0>
+    2473:	mov    %r12,(%rax)
+    2476:	movq   $0x0,0x4cd7(%rip)        # 7158 <fork@plt+0x4dc8>
+    2481:	mov    %r14,0x4ce0(%rip)        # 7168 <fork@plt+0x4dd8>
+    2488:	movb   $0x0,0x4cc1(%rip)        # 7150 <fork@plt+0x4dc0>
+    248f:	mov    %r15,0x4cda(%rip)        # 7170 <fork@plt+0x4de0>
+    2496:	call   21f0 <getenv@plt>
+    249b:	test   %rax,%rax
+    249e:	je     24a7 <fork@plt+0x117>
+    24a0:	mov    %rax,0x4cc9(%rip)        # 7170 <fork@plt+0x4de0>
+    24a7:	lea    0x4b72(%rip),%r14        # 7020 <fork@plt+0x4c90>
+    24ae:	lea    0x1ce5(%rip),%r13        # 419a <fork@plt+0x1e0a>
+    24b5:	lea    0x2b4c(%rip),%r12        # 5008 <fork@plt+0x2c78>
+    24bc:	nopl   0x0(%rax)
+    24c0:	xor    %r8d,%r8d
+    24c3:	mov    %r14,%rcx
+    24c6:	mov    %r13,%rdx
+    24c9:	mov    %rbx,%rsi
+    24cc:	mov    %ebp,%edi
+    24ce:	call   2280 <getopt_long@plt>
+    24d3:	cmp    $0xffffffff,%eax
+    24d6:	je     25d8 <fork@plt+0x248>
+    24dc:	sub    $0x56,%eax
+    24df:	cmp    $0x20,%eax
+    24e2:	ja     2a82 <fork@plt+0x6f2>
+    24e8:	movslq (%r12,%rax,4),%rax
+    24ec:	add    %r12,%rax
+    24ef:	notrack jmp *%rax
+    24f2:	nopw   0x0(%rax,%rax,1)
+    24f8:	movb   $0x1,0x4c61(%rip)        # 7160 <fork@plt+0x4dd0>
+    24ff:	jmp    24c0 <fork@plt+0x130>
+    2501:	nopl   0x0(%rax)
+    2508:	movb   $0x1,0x4c52(%rip)        # 7161 <fork@plt+0x4dd1>
+    250f:	jmp    24c0 <fork@plt+0x130>
+    2511:	nopl   0x0(%rax)
+    2518:	lea    0x1c3a(%rip),%rax        # 4159 <fork@plt+0x1dc9>
+    251f:	mov    %rax,0x4c4a(%rip)        # 7170 <fork@plt+0x4de0>
+    2526:	jmp    24c0 <fork@plt+0x130>
+    2528:	nopl   0x0(%rax,%rax,1)
+    2530:	mov    0x4a89(%rip),%rax        # 6fc0 <fork@plt+0x4c30>
+    2537:	mov    (%rax),%rax
+    253a:	mov    %rax,0x4c17(%rip)        # 7158 <fork@plt+0x4dc8>
+    2541:	jmp    24c0 <fork@plt+0x130>
+    2546:	cs nopw 0x0(%rax,%rax,1)
+    2550:	mov    0x4a69(%rip),%rax        # 6fc0 <fork@plt+0x4c30>
+    2557:	mov    (%rax),%rax
+    255a:	mov    %rax,0x4c0f(%rip)        # 7170 <fork@plt+0x4de0>
+    2561:	jmp    24c0 <fork@plt+0x130>
+    2566:	cs nopw 0x0(%rax,%rax,1)
+    2570:	movb   $0x1,0x4bd9(%rip)        # 7150 <fork@plt+0x4dc0>
+    2577:	jmp    24c0 <fork@plt+0x130>
+    257c:	nopl   0x0(%rax)
+    2580:	lea    0x1c06(%rip),%rax        # 418d <fork@plt+0x1dfd>
+    2587:	push   $0x0
+    2589:	lea    0x1be0(%rip),%r9        # 4170 <fork@plt+0x1de0>
+    2590:	push   %rax
+    2591:	mov    0x4a18(%rip),%rax        # 6fb0 <fork@plt+0x4c20>
+    2598:	lea    0x1be1(%rip),%r8        # 4180 <fork@plt+0x1df0>
+    259f:	lea    0x1a5e(%rip),%rcx        # 4004 <fork@plt+0x1c74>
+    25a6:	lea    0x1a5f(%rip),%rdx        # 400c <fork@plt+0x1c7c>
+    25ad:	lea    0x1a61(%rip),%rsi        # 4015 <fork@plt+0x1c85>
+    25b4:	mov    (%rax),%rdi
+    25b7:	xor    %eax,%eax
+    25b9:	call   3410 <fork@plt+0x1080>
+    25be:	xor    %edi,%edi
+    25c0:	call   2360 <exit@plt>
+    25c5:	mov    0x4a14(%rip),%rax        # 6fe0 <fork@plt+0x4c50>
+    25cc:	lea    0x4(%r13),%r12
+    25d0:	mov    %r12,(%rax)
+    25d3:	jmp    2450 <fork@plt+0xc0>
+    25d8:	mov    0x49d9(%rip),%r12        # 6fb8 <fork@plt+0x4c28>
+    25df:	cmp    (%r12),%ebp
+    25e3:	je     2a70 <fork@plt+0x6e0>
+    25e9:	mov    0x4b68(%rip),%rdi        # 7158 <fork@plt+0x4dc8>
+    25f0:	test   %rdi,%rdi
+    25f3:	je     261e <fork@plt+0x28e>
+    25f5:	cmpb   $0x0,0x4b54(%rip)        # 7150 <fork@plt+0x4dc0>
+    25fc:	je     29be <fork@plt+0x62e>
+    2602:	lea    0x1bb3(%rip),%rsi        # 41bc <fork@plt+0x1e2c>
+    2609:	call   2330 <fopen@plt>
+    260e:	mov    %rax,0x4b53(%rip)        # 7168 <fork@plt+0x4dd8>
+    2615:	test   %rax,%rax
+    2618:	je     31be <fork@plt+0xe2e>
+    261e:	cmpb   $0x0,0x4b3b(%rip)        # 7160 <fork@plt+0x4dd0>
+    2625:	jne    29dd <fork@plt+0x64d>
+    262b:	movslq (%r12),%rax
+    262f:	lea    0xd8(%rsp),%rdi
+    2637:	xor    %esi,%esi
+    2639:	lea    (%rbx,%rax,8),%rax
+    263d:	mov    %rax,0x10(%rsp)
+    2642:	call   22a0 <gettimeofday@plt>
+    2647:	call   2390 <fork@plt>
+    264c:	mov    %eax,%ebx
+    264e:	test   %eax,%eax
+    2650:	js     319f <fork@plt+0xe0f>
+    2656:	je     32d1 <fork@plt+0xf41>
+    265c:	mov    $0x1,%esi
+    2661:	mov    $0x2,%edi
+    2666:	lea    0x48(%rsp),%r12
+    266b:	call   22e0 <signal@plt>
+    2670:	mov    $0x1,%esi
+    2675:	mov    $0x3,%edi
+    267a:	lea    0x3c(%rsp),%rbp
+    267f:	mov    %rax,%r14
+    2682:	call   22e0 <signal@plt>
+    2687:	mov    %rax,%r13
+    268a:	jmp    2699 <fork@plt+0x309>
+    268c:	nopl   0x0(%rax)
+    2690:	cmp    $0xffffffff,%eax
+    2693:	je     299f <fork@plt+0x60f>
+    2699:	xor    %esi,%esi
+    269b:	mov    %r12,%rdx
+    269e:	mov    %rbp,%rdi
+    26a1:	call   2250 <wait3@plt>
+    26a6:	cmp    %eax,%ebx
+    26a8:	jne    2690 <fork@plt+0x300>
+    26aa:	lea    0xe8(%rsp),%rdi
+    26b2:	xor    %esi,%esi
+    26b4:	call   22a0 <gettimeofday@plt>
+    26b9:	mov    0xf0(%rsp),%rdx
+    26c1:	mov    0xe0(%rsp),%rcx
+    26c9:	mov    0xe8(%rsp),%rax
+    26d1:	sub    0xd8(%rsp),%rax
+    26d9:	mov    %rax,0xe8(%rsp)
+    26e1:	cmp    %rcx,%rdx
+    26e4:	jl     2df7 <fork@plt+0xa67>
+    26ea:	mov    0x3c(%rsp),%eax
+    26ee:	sub    %rcx,0xf0(%rsp)
+    26f6:	mov    %eax,0x40(%rsp)
+    26fa:	mov    %r14,%rsi
+    26fd:	mov    $0x2,%edi
+    2702:	call   22e0 <signal@plt>
+    2707:	mov    %r13,%rsi
+    270a:	mov    $0x3,%edi
+    270f:	call   22e0 <signal@plt>
+    2714:	cmpb   $0x1,0x4a46(%rip)        # 7161 <fork@plt+0x4dd1>
+    271b:	mov    0x4a4e(%rip),%rbx        # 7170 <fork@plt+0x4de0>
+    2722:	mov    0x4a3f(%rip),%rbp        # 7168 <fork@plt+0x4dd8>
+    2729:	je     2776 <fork@plt+0x3e6>
+    272b:	lea    0x1a27(%rip),%rax        # 4159 <fork@plt+0x1dc9>
+    2732:	cmp    %rax,%rbx
+    2735:	je     2776 <fork@plt+0x3e6>
+    2737:	mov    0x40(%rsp),%eax
+    273b:	cmp    $0x7f,%al
+    273d:	je     2e17 <fork@plt+0xa87>
+    2743:	mov    %eax,%ecx
+    2745:	and    $0x7f,%ecx
+    2748:	lea    0x1(%rcx),%edx
+    274b:	sub    $0x1,%dl
+    274e:	jg     31e4 <fork@plt+0xe54>
+    2754:	test   %ecx,%ecx
+    2756:	jne    2776 <fork@plt+0x3e6>
+    2758:	movzbl %ah,%ecx
+    275b:	test   $0xff,%ah
+    275e:	je     2776 <fork@plt+0x3e6>
+    2760:	lea    0x25e1(%rip),%rdx        # 4d48 <fork@plt+0x29b8>
+    2767:	mov    $0x1,%esi
+    276c:	mov    %rbp,%rdi
+    276f:	xor    %eax,%eax
+    2771:	call   2380 <__fprintf_chk@plt>
+    2776:	mov    0xf0(%rsp),%rax
+    277e:	mov    $0x3e8,%ecx
+    2783:	imul   $0x3e8,0xe8(%rsp),%rsi
+    278f:	imul   $0x3e8,0x48(%rsp),%r12
+    2798:	mov    0x60(%rsp),%rdi
+    279d:	cqto   
+    279f:	mov    %rax,0x18(%rsp)
+    27a4:	idiv   %rcx
+    27a7:	add    %rsi,%rax
+    27aa:	mov    0x50(%rsp),%rsi
+    27af:	mov    %rax,0x8(%rsp)
+    27b4:	mov    %rsi,%rax
+    27b7:	add    %rdi,%rsi
+    27ba:	cqto   
+    27bc:	idiv   %rcx
+    27bf:	add    %rax,%r12
+    27c2:	imul   $0x3e8,0x58(%rsp),%rax
+    27cb:	add    %rax,%r12
+    27ce:	mov    %rdi,%rax
+    27d1:	cqto   
+    27d3:	idiv   %rcx
+    27d6:	movzbl (%rbx),%ecx
+    27d9:	add    %rax,%r12
+    27dc:	test   %cl,%cl
+    27de:	je     28d5 <fork@plt+0x545>
+    27e4:	mov    $0xa,%edi
+    27e9:	mov    %r12,%rax
+    27ec:	xor    %edx,%edx
+    27ee:	lea    0x2897(%rip),%r13        # 508c <fork@plt+0x2cfc>
+    27f5:	lea    0x1a4a(%rip),%r14        # 4246 <fork@plt+0x1eb6>
+    27fc:	div    %rdi
+    27ff:	mov    %rax,(%rsp)
+    2803:	imul   $0x64,%rsi,%rax
+    2807:	mov    %rax,0x28(%rsp)
+    280c:	imul   $0x64,%r12,%rax
+    2810:	mov    %rax,0x20(%rsp)
+    2815:	jmp    2846 <fork@plt+0x4b6>
+    2817:	nopw   0x0(%rax,%rax,1)
+    2820:	movsbl %cl,%edi
+    2823:	mov    %rbp,%rsi
+    2826:	add    $0x1,%rbx
+    282a:	call   22d0 <putc@plt>
+    282f:	mov    %rbp,%rdi
+    2832:	call   2240 <ferror@plt>
+    2837:	test   %eax,%eax
+    2839:	jne    28b0 <fork@plt+0x520>
+    283b:	movzbl (%rbx),%ecx
+    283e:	test   %cl,%cl
+    2840:	je     28d5 <fork@plt+0x545>
+    2846:	cmp    $0x25,%cl
+    2849:	je     2950 <fork@plt+0x5c0>
+    284f:	cmp    $0x5c,%cl
+    2852:	jne    2820 <fork@plt+0x490>
+    2854:	movzbl 0x1(%rbx),%eax
+    2858:	cmp    $0x6e,%al
+    285a:	je     298d <fork@plt+0x5fd>
+    2860:	cmp    $0x74,%al
+    2862:	je     297b <fork@plt+0x5eb>
+    2868:	cmp    $0x5c,%al
+    286a:	je     2969 <fork@plt+0x5d9>
+    2870:	mov    %rbp,%rsi
+    2873:	mov    $0x3f,%edi
+    2878:	call   22d0 <putc@plt>
+    287d:	mov    %rbp,%rsi
+    2880:	mov    $0x5c,%edi
+    2885:	call   22d0 <putc@plt>
+    288a:	movsbl 0x1(%rbx),%edi
+    288e:	mov    %rbp,%rsi
+    2891:	call   22d0 <putc@plt>
+    2896:	cs nopw 0x0(%rax,%rax,1)
+    28a0:	mov    %rbp,%rdi
+    28a3:	add    $0x2,%rbx
+    28a7:	call   2240 <ferror@plt>
+    28ac:	test   %eax,%eax
+    28ae:	je     283b <fork@plt+0x4ab>
+    28b0:	call   2210 <__errno_location@plt>
+    28b5:	lea    0x195a(%rip),%rdx        # 4216 <fork@plt+0x1e86>
+    28bc:	mov    $0x1,%edi
+    28c1:	mov    (%rax),%esi
+    28c3:	xor    %eax,%eax
+    28c5:	call   2320 <error@plt>
+    28ca:	movzbl (%rbx),%ecx
+    28cd:	test   %cl,%cl
+    28cf:	jne    2846 <fork@plt+0x4b6>
+    28d5:	mov    $0xa,%edi
+    28da:	mov    %rbp,%rsi
+    28dd:	call   22d0 <putc@plt>
+    28e2:	mov    %rbp,%rdi
+    28e5:	call   2240 <ferror@plt>
+    28ea:	test   %eax,%eax
+    28ec:	jne    3174 <fork@plt+0xde4>
+    28f2:	mov    0x486f(%rip),%rdi        # 7168 <fork@plt+0x4dd8>
+    28f9:	call   2300 <fflush@plt>
+    28fe:	mov    0x40(%rsp),%ecx
+    2902:	cmp    $0x7f,%cl
+    2905:	je     29cf <fork@plt+0x63f>
+    290b:	mov    %ecx,%eax
+    290d:	and    $0x7f,%eax
+    2910:	lea    0x1(%rax),%edx
+    2913:	sub    $0x1,%dl
+    2916:	jle    3193 <fork@plt+0xe03>
+    291c:	sub    $0xffffff80,%eax
+    291f:	mov    0xf8(%rsp),%rdx
+    2927:	sub    %fs:0x28,%rdx
+    2930:	jne    330e <fork@plt+0xf7e>
+    2936:	add    $0x108,%rsp
+    293d:	pop    %rbx
+    293e:	pop    %rbp
+    293f:	pop    %r12
+    2941:	pop    %r13
+    2943:	pop    %r14
+    2945:	pop    %r15
+    2947:	ret    
+    2948:	nopl   0x0(%rax,%rax,1)
+    2950:	cmpb   $0x78,0x1(%rbx)
+    2954:	ja     2ab0 <fork@plt+0x720>
+    295a:	movzbl 0x1(%rbx),%eax
+    295e:	movslq 0x0(%r13,%rax,4),%rax
+    2963:	add    %r13,%rax
+    2966:	notrack jmp *%rax
+    2969:	mov    %rbp,%rsi
+    296c:	mov    $0x5c,%edi
+    2971:	call   22d0 <putc@plt>
+    2976:	jmp    28a0 <fork@plt+0x510>
+    297b:	mov    %rbp,%rsi
+    297e:	mov    $0x9,%edi
+    2983:	call   22d0 <putc@plt>
+    2988:	jmp    28a0 <fork@plt+0x510>
+    298d:	mov    %rbp,%rsi
+    2990:	mov    $0xa,%edi
+    2995:	call   22d0 <putc@plt>
+    299a:	jmp    28a0 <fork@plt+0x510>
+    299f:	call   2210 <__errno_location@plt>
+    29a4:	lea    0x2355(%rip),%rdx        # 4d00 <fork@plt+0x2970>
+    29ab:	mov    $0x1,%edi
+    29b0:	mov    (%rax),%esi
+    29b2:	xor    %eax,%eax
+    29b4:	call   2320 <error@plt>
+    29b9:	jmp    26fa <fork@plt+0x36a>
+    29be:	lea    0x17f9(%rip),%rsi        # 41be <fork@plt+0x1e2e>
+    29c5:	call   2330 <fopen@plt>
+    29ca:	jmp    260e <fork@plt+0x27e>
+    29cf:	movzbl %ch,%ecx
+    29d2:	lea    0x80(%rcx),%eax
+    29d8:	jmp    291f <fork@plt+0x58f>
+    29dd:	lea    0x421c(%rip),%rbp        # 6c00 <fork@plt+0x4870>
+    29e4:	mov    $0x1,%r13d
+    29ea:	lea    0x167c(%rip),%rdi        # 406d <fork@plt+0x1cdd>
+    29f1:	call   2260 <strlen@plt>
+    29f6:	mov    0x8(%rbp),%rdi
+    29fa:	add    $0x8,%rbp
+    29fe:	add    %eax,%r13d
+    2a01:	test   %rdi,%rdi
+    2a04:	jne    29f1 <fork@plt+0x661>
+    2a06:	movslq %r13d,%rdi
+    2a09:	call   22f0 <malloc@plt>
+    2a0e:	test   %rax,%rax
+    2a11:	je     3298 <fork@plt+0xf08>
+    2a17:	mov    0x41ea(%rip),%r8        # 6c08 <fork@plt+0x4878>
+    2a1e:	mov    %rax,%rdx
+    2a21:	lea    0x41d8(%rip),%r9        # 6c00 <fork@plt+0x4870>
+    2a28:	lea    0x163e(%rip),%rcx        # 406d <fork@plt+0x1cdd>
+    2a2f:	jmp    2a3e <fork@plt+0x6ae>
+    2a31:	nopl   0x0(%rax)
+    2a38:	mov    %rdi,%rcx
+    2a3b:	mov    %rsi,%rdx
+    2a3e:	lea    0x1(%rcx),%rdi
+    2a42:	movzbl (%rcx),%ecx
+    2a45:	lea    0x1(%rdx),%rsi
+    2a49:	mov    %cl,(%rdx)
+    2a4b:	test   %cl,%cl
+    2a4d:	jne    2a38 <fork@plt+0x6a8>
+    2a4f:	test   %r8,%r8
+    2a52:	je     2a64 <fork@plt+0x6d4>
+    2a54:	add    $0x8,%r9
+    2a58:	mov    %r8,%rdi
+    2a5b:	mov    %rdx,%rsi
+    2a5e:	mov    0x8(%r9),%r8
+    2a62:	jmp    2a38 <fork@plt+0x6a8>
+    2a64:	mov    %rax,0x4705(%rip)        # 7170 <fork@plt+0x4de0>
+    2a6b:	jmp    262b <fork@plt+0x29b>
+    2a70:	lea    0x172e(%rip),%rdx        # 41a5 <fork@plt+0x1e15>
+    2a77:	xor    %esi,%esi
+    2a79:	xor    %edi,%edi
+    2a7b:	xor    %eax,%eax
+    2a7d:	call   2320 <error@plt>
+    2a82:	mov    0x4567(%rip),%rax        # 6ff0 <fork@plt+0x4c60>
+    2a89:	mov    0x46b8(%rip),%rcx        # 7148 <fork@plt+0x4db8>
+    2a90:	mov    $0x1,%esi
+    2a95:	lea    0x223c(%rip),%rdx        # 4cd8 <fork@plt+0x2948>
+    2a9c:	mov    (%rax),%rdi
+    2a9f:	xor    %eax,%eax
+    2aa1:	call   2380 <__fprintf_chk@plt>
+    2aa6:	mov    $0x7d,%edi
+    2aab:	call   2360 <exit@plt>
+    2ab0:	mov    %rbp,%rsi
+    2ab3:	mov    $0x3f,%edi
+    2ab8:	call   22d0 <putc@plt>
+    2abd:	movsbl 0x1(%rbx),%edi
+    2ac1:	mov    %rbp,%rsi
+    2ac4:	call   22d0 <putc@plt>
+    2ac9:	jmp    28a0 <fork@plt+0x510>
+    2ace:	mov    0x4673(%rip),%rdx        # 7148 <fork@plt+0x4db8>
+    2ad5:	lea    0x1b6c(%rip),%rsi        # 4648 <fork@plt+0x22b8>
+    2adc:	mov    $0x1,%edi
+    2ae1:	xor    %eax,%eax
+    2ae3:	lea    0x219e(%rip),%r12        # 4c88 <fork@plt+0x28f8>
+    2aea:	call   2310 <__printf_chk@plt>
+    2aef:	mov    $0x30,%edx
+    2af4:	mov    0x44b5(%rip),%rbx        # 6fb0 <fork@plt+0x4c20>
+    2afb:	mov    $0x1,%esi
+    2b00:	lea    0x1b69(%rip),%rdi        # 4670 <fork@plt+0x22e0>
+    2b07:	mov    (%rbx),%rcx
+    2b0a:	call   2370 <fwrite@plt>
+    2b0f:	mov    (%rbx),%rcx
+    2b12:	mov    $0x48,%edx
+    2b17:	mov    $0x1,%esi
+    2b1c:	lea    0x1b85(%rip),%rdi        # 46a8 <fork@plt+0x2318>
+    2b23:	call   2370 <fwrite@plt>
+    2b28:	mov    (%rbx),%rcx
+    2b2b:	mov    $0x4c,%edx
+    2b30:	mov    $0x1,%esi
+    2b35:	lea    0x1bbc(%rip),%rdi        # 46f8 <fork@plt+0x2368>
+    2b3c:	call   2370 <fwrite@plt>
+    2b41:	mov    (%rbx),%rcx
+    2b44:	mov    $0x3c,%edx
+    2b49:	mov    $0x1,%esi
+    2b4e:	lea    0x1bf3(%rip),%rdi        # 4748 <fork@plt+0x23b8>
+    2b55:	call   2370 <fwrite@plt>
+    2b5a:	mov    (%rbx),%rcx
+    2b5d:	mov    $0xbf,%edx
+    2b62:	mov    $0x1,%esi
+    2b67:	lea    0x1c1a(%rip),%rdi        # 4788 <fork@plt+0x23f8>
+    2b6e:	call   2370 <fwrite@plt>
+    2b73:	mov    (%rbx),%rcx
+    2b76:	mov    $0x95,%edx
+    2b7b:	mov    $0x1,%esi
+    2b80:	lea    0x1cc1(%rip),%rdi        # 4848 <fork@plt+0x24b8>
+    2b87:	call   2370 <fwrite@plt>
+    2b8c:	mov    (%rbx),%rcx
+    2b8f:	mov    $0x7b,%edx
+    2b94:	mov    $0x1,%esi
+    2b99:	lea    0x1d40(%rip),%rdi        # 48e0 <fork@plt+0x2550>
+    2ba0:	call   2370 <fwrite@plt>
+    2ba5:	mov    (%rbx),%rcx
+    2ba8:	mov    $0x37,%edx
+    2bad:	mov    $0x1,%esi
+    2bb2:	lea    0x1da7(%rip),%rdi        # 4960 <fork@plt+0x25d0>
+    2bb9:	call   2370 <fwrite@plt>
+    2bbe:	mov    (%rbx),%rcx
+    2bc1:	mov    $0x40,%edx
+    2bc6:	mov    $0x1,%esi
+    2bcb:	lea    0x1dc6(%rip),%rdi        # 4998 <fork@plt+0x2608>
+    2bd2:	call   2370 <fwrite@plt>
+    2bd7:	mov    (%rbx),%rcx
+    2bda:	mov    $0x33,%edx
+    2bdf:	mov    $0x1,%esi
+    2be4:	lea    0x1df5(%rip),%rdi        # 49e0 <fork@plt+0x2650>
+    2beb:	call   2370 <fwrite@plt>
+    2bf0:	mov    (%rbx),%rcx
+    2bf3:	mov    $0x22,%edx
+    2bf8:	mov    $0x1,%esi
+    2bfd:	lea    0x1e14(%rip),%rdi        # 4a18 <fork@plt+0x2688>
+    2c04:	call   2370 <fwrite@plt>
+    2c09:	mov    (%rbx),%rcx
+    2c0c:	mov    $0x15,%edx
+    2c11:	mov    $0x1,%esi
+    2c16:	lea    0x147d(%rip),%rdi        # 409a <fork@plt+0x1d0a>
+    2c1d:	call   2370 <fwrite@plt>
+    2c22:	mov    (%rbx),%rcx
+    2c25:	mov    $0x22,%edx
+    2c2a:	mov    $0x1,%esi
+    2c2f:	lea    0x1e0a(%rip),%rdi        # 4a40 <fork@plt+0x26b0>
+    2c36:	call   2370 <fwrite@plt>
+    2c3b:	mov    (%rbx),%rcx
+    2c3e:	mov    $0x24,%edx
+    2c43:	mov    $0x1,%esi
+    2c48:	lea    0x1e19(%rip),%rdi        # 4a68 <fork@plt+0x26d8>
+    2c4f:	call   2370 <fwrite@plt>
+    2c54:	mov    (%rbx),%rcx
+    2c57:	mov    $0x38,%edx
+    2c5c:	mov    $0x1,%esi
+    2c61:	lea    0x1e28(%rip),%rdi        # 4a90 <fork@plt+0x2700>
+    2c68:	call   2370 <fwrite@plt>
+    2c6d:	mov    (%rbx),%rcx
+    2c70:	mov    $0x31,%edx
+    2c75:	mov    $0x1,%esi
+    2c7a:	lea    0x1e4f(%rip),%rdi        # 4ad0 <fork@plt+0x2740>
+    2c81:	call   2370 <fwrite@plt>
+    2c86:	mov    (%rbx),%rcx
+    2c89:	mov    $0x19,%edx
+    2c8e:	mov    $0x1,%esi
+    2c93:	lea    0x1416(%rip),%rdi        # 40b0 <fork@plt+0x1d20>
+    2c9a:	call   2370 <fwrite@plt>
+    2c9f:	mov    (%rbx),%rcx
+    2ca2:	mov    $0x27,%edx
+    2ca7:	mov    $0x1,%esi
+    2cac:	lea    0x1e55(%rip),%rdi        # 4b08 <fork@plt+0x2778>
+    2cb3:	call   2370 <fwrite@plt>
+    2cb8:	mov    (%rbx),%rcx
+    2cbb:	mov    $0x23,%edx
+    2cc0:	mov    $0x1,%esi
+    2cc5:	lea    0x1e64(%rip),%rdi        # 4b30 <fork@plt+0x27a0>
+    2ccc:	call   2370 <fwrite@plt>
+    2cd1:	mov    (%rbx),%rcx
+    2cd4:	mov    $0x19,%edx
+    2cd9:	mov    $0x1,%esi
+    2cde:	lea    0x13e5(%rip),%rdi        # 40ca <fork@plt+0x1d3a>
+    2ce5:	call   2370 <fwrite@plt>
+    2cea:	mov    (%rbx),%rcx
+    2ced:	mov    $0x27,%edx
+    2cf2:	mov    $0x1,%esi
+    2cf7:	lea    0x1e5a(%rip),%rdi        # 4b58 <fork@plt+0x27c8>
+    2cfe:	call   2370 <fwrite@plt>
+    2d03:	mov    (%rbx),%rcx
+    2d06:	mov    $0x1c,%edx
+    2d0b:	mov    $0x1,%esi
+    2d10:	lea    0x13cd(%rip),%rdi        # 40e4 <fork@plt+0x1d54>
+    2d17:	call   2370 <fwrite@plt>
+    2d1c:	mov    (%rbx),%rcx
+    2d1f:	mov    $0x22,%edx
+    2d24:	mov    $0x1,%esi
+    2d29:	lea    0x1e50(%rip),%rdi        # 4b80 <fork@plt+0x27f0>
+    2d30:	call   2370 <fwrite@plt>
+    2d35:	mov    (%rbx),%rcx
+    2d38:	mov    $0x1e,%edx
+    2d3d:	mov    $0x1,%esi
+    2d42:	lea    0x1e5f(%rip),%rdi        # 4ba8 <fork@plt+0x2818>
+    2d49:	call   2370 <fwrite@plt>
+    2d4e:	mov    (%rbx),%rcx
+    2d51:	mov    $0x18,%edx
+    2d56:	mov    $0x1,%esi
+    2d5b:	lea    0x139f(%rip),%rdi        # 4101 <fork@plt+0x1d71>
+    2d62:	call   2370 <fwrite@plt>
+    2d67:	mov    (%rbx),%rcx
+    2d6a:	mov    $0x7b,%edx
+    2d6f:	mov    %r15,%rdi
+    2d72:	mov    $0x1,%esi
+    2d77:	call   2370 <fwrite@plt>
+    2d7c:	mov    (%rbx),%rsi
+    2d7f:	mov    $0xa,%edi
+    2d84:	call   22c0 <fputc@plt>
+    2d89:	lea    0x1285(%rip),%rdx        # 4015 <fork@plt+0x1c85>
+    2d90:	lea    0x1e31(%rip),%rsi        # 4bc8 <fork@plt+0x2838>
+    2d97:	xor    %eax,%eax
+    2d99:	mov    $0x1,%edi
+    2d9e:	call   2310 <__printf_chk@plt>
+    2da3:	mov    %r12,%rcx
+    2da6:	mov    $0x1,%edi
+    2dab:	xor    %eax,%eax
+    2dad:	lea    0x1258(%rip),%rdx        # 400c <fork@plt+0x1c7c>
+    2db4:	lea    0x135f(%rip),%rsi        # 411a <fork@plt+0x1d8a>
+    2dbb:	call   2310 <__printf_chk@plt>
+    2dc0:	mov    %r12,%rdx
+    2dc3:	mov    $0x1,%edi
+    2dc8:	xor    %eax,%eax
+    2dca:	lea    0x1edf(%rip),%rsi        # 4cb0 <fork@plt+0x2920>
+    2dd1:	call   2310 <__printf_chk@plt>
+    2dd6:	mov    $0x1,%edi
+    2ddb:	lea    0x134b(%rip),%rdx        # 412d <fork@plt+0x1d9d>
+    2de2:	xor    %eax,%eax
+    2de4:	lea    0x1353(%rip),%rsi        # 413e <fork@plt+0x1dae>
+    2deb:	call   2310 <__printf_chk@plt>
+    2df0:	xor    %edi,%edi
+    2df2:	call   2360 <exit@plt>
+    2df7:	add    $0xf4240,%rdx
+    2dfe:	sub    $0x1,%rax
+    2e02:	mov    %rdx,0xf0(%rsp)
+    2e0a:	mov    %rax,0xe8(%rsp)
+    2e12:	jmp    26ea <fork@plt+0x35a>
+    2e17:	movzbl %ah,%ecx
+    2e1a:	lea    0x13d7(%rip),%rdx        # 41f8 <fork@plt+0x1e68>
+    2e21:	mov    %rbp,%rdi
+    2e24:	xor    %eax,%eax
+    2e26:	mov    $0x1,%esi
+    2e2b:	call   2380 <__fprintf_chk@plt>
+    2e30:	jmp    2776 <fork@plt+0x3e6>
+    2e35:	xor    %ecx,%ecx
+    2e37:	cmp    $0x9,%r12
+    2e3b:	jbe    2e4b <fork@plt+0xabb>
+    2e3d:	mov    0x78(%rsp),%rax
+    2e42:	xor    %edx,%edx
+    2e44:	divq   (%rsp)
+    2e48:	mov    %rax,%rcx
+    2e4b:	lea    0x13d0(%rip),%rdx        # 4222 <fork@plt+0x1e92>
+    2e52:	mov    $0x1,%esi
+    2e57:	mov    %rbp,%rdi
+    2e5a:	xor    %eax,%eax
+    2e5c:	call   2380 <__fprintf_chk@plt>
+    2e61:	jmp    28a0 <fork@plt+0x510>
+    2e66:	mov    0xb0(%rsp),%rcx
+    2e6e:	mov    %r14,%rdx
+    2e71:	mov    $0x1,%esi
+    2e76:	mov    %rbp,%rdi
+    2e79:	xor    %eax,%eax
+    2e7b:	call   2380 <__fprintf_chk@plt>
+    2e80:	jmp    28a0 <fork@plt+0x510>
+    2e85:	mov    0xb8(%rsp),%rcx
+    2e8d:	jmp    2e6e <fork@plt+0xade>
+    2e8f:	xor    %ecx,%ecx
+    2e91:	cmp    $0x9,%r12
+    2e95:	jbe    2e4b <fork@plt+0xabb>
+    2e97:	mov    0x80(%rsp),%rax
+    2e9f:	xor    %edx,%edx
+    2ea1:	divq   (%rsp)
+    2ea5:	mov    %rax,%rcx
+    2ea8:	jmp    2e4b <fork@plt+0xabb>
+    2eaa:	mov    0xc0(%rsp),%rcx
+    2eb2:	jmp    2e6e <fork@plt+0xade>
+    2eb4:	mov    0xf0(%rsp),%rax
+    2ebc:	mov    $0x2710,%ecx
+    2ec1:	cqto   
+    2ec3:	idiv   %rcx
+    2ec6:	mov    0xe8(%rsp),%rcx
+    2ece:	mov    %rax,%r8
+    2ed1:	lea    0x137c(%rip),%rdx        # 4254 <fork@plt+0x1ec4>
+    2ed8:	mov    $0x1,%esi
+    2edd:	mov    %rbp,%rdi
+    2ee0:	xor    %eax,%eax
+    2ee2:	call   2380 <__fprintf_chk@plt>
+    2ee7:	jmp    28a0 <fork@plt+0x510>
+    2eec:	mov    0xd0(%rsp),%rcx
+    2ef4:	jmp    2e6e <fork@plt+0xade>
+    2ef9:	call   2350 <getpagesize@plt>
+    2efe:	mov    %eax,%ecx
+    2f00:	lea    0x1357(%rip),%rdx        # 425e <fork@plt+0x1ece>
+    2f07:	mov    $0x1,%esi
+    2f0c:	mov    %rbp,%rdi
+    2f0f:	xor    %eax,%eax
+    2f11:	call   2380 <__fprintf_chk@plt>
+    2f16:	jmp    28a0 <fork@plt+0x510>
+    2f1b:	xor    %ecx,%ecx
+    2f1d:	cmp    $0x9,%r12
+    2f21:	jbe    2e4b <fork@plt+0xabb>
+    2f27:	mov    0x70(%rsp),%rax
+    2f2c:	xor    %edx,%edx
+    2f2e:	divq   (%rsp)
+    2f32:	mov    %rax,%rcx
+    2f35:	jmp    2e4b <fork@plt+0xabb>
+    2f3a:	mov    0x98(%rsp),%rcx
+    2f42:	jmp    2e6e <fork@plt+0xade>
+    2f47:	mov    0x50(%rsp),%rax
+    2f4c:	mov    $0x2710,%ecx
+    2f51:	cqto   
+    2f53:	idiv   %rcx
+    2f56:	mov    0x48(%rsp),%rcx
+    2f5b:	mov    %rax,%r8
+    2f5e:	jmp    2ed1 <fork@plt+0xb41>
+    2f63:	mov    0x60(%rsp),%rax
+    2f68:	mov    $0x2710,%ecx
+    2f6d:	cqto   
+    2f6f:	idiv   %rcx
+    2f72:	mov    0x58(%rsp),%rcx
+    2f77:	mov    %rax,%r8
+    2f7a:	jmp    2ed1 <fork@plt+0xb41>
+    2f7f:	mov    0x88(%rsp),%rcx
+    2f87:	jmp    2e6e <fork@plt+0xade>
+    2f8c:	cmpq   $0x0,0x8(%rsp)
+    2f92:	jne    3269 <fork@plt+0xed9>
+    2f98:	mov    0x18(%rsp),%rdx
+    2f9d:	test   %rdx,%rdx
+    2fa0:	je     324e <fork@plt+0xebe>
+    2fa6:	mov    0x28(%rsp),%rax
+    2fab:	mov    %rdx,%rsi
+    2fae:	xor    %edx,%edx
+    2fb0:	div    %rsi
+    2fb3:	mov    %rax,%rcx
+    2fb6:	lea    0x128d(%rip),%rdx        # 424a <fork@plt+0x1eba>
+    2fbd:	mov    %rbp,%rdi
+    2fc0:	xor    %eax,%eax
+    2fc2:	mov    $0x1,%esi
+    2fc7:	call   2380 <__fprintf_chk@plt>
+    2fcc:	jmp    28a0 <fork@plt+0x510>
+    2fd1:	mov    0xa8(%rsp),%rcx
+    2fd9:	jmp    2e6e <fork@plt+0xade>
+    2fde:	mov    0x68(%rsp),%rcx
+    2fe3:	jmp    2e4b <fork@plt+0xabb>
+    2fe8:	xor    %ecx,%ecx
+    2fea:	cmp    $0x9,%r12
+    2fee:	jbe    2e4b <fork@plt+0xabb>
+    2ff4:	mov    (%rsp),%rsi
+    2ff8:	mov    0x78(%rsp),%rax
+    2ffd:	xor    %edx,%edx
+    2fff:	div    %rsi
+    3002:	xor    %edx,%edx
+    3004:	mov    %rax,%rcx
+    3007:	mov    0x80(%rsp),%rax
+    300f:	div    %rsi
+    3012:	xor    %edx,%edx
+    3014:	add    %rax,%rcx
+    3017:	mov    0x70(%rsp),%rax
+    301c:	div    %rsi
+    301f:	add    %rax,%rcx
+    3022:	jmp    2e4b <fork@plt+0xabb>
+    3027:	mov    0xa0(%rsp),%rcx
+    302f:	jmp    2e6e <fork@plt+0xade>
+    3034:	mov    0x90(%rsp),%rcx
+    303c:	jmp    2e6e <fork@plt+0xade>
+    3041:	mov    0xe8(%rsp),%rcx
+    3049:	mov    $0x3c,%esi
+    304e:	mov    %rcx,%rax
+    3051:	cqto   
+    3053:	idiv   %rsi
+    3056:	mov    %rdx,%r8
+    3059:	mov    %rax,%r10
+    305c:	cmp    $0xe0f,%rcx
+    3063:	jle    321b <fork@plt+0xe8b>
+    3069:	mov    %rcx,%rax
+    306c:	mov    $0xe10,%edi
+    3071:	mov    %r8,%r9
+    3074:	cqto   
+    3076:	idiv   %rdi
+    3079:	mov    %rbp,%rdi
+    307c:	mov    %rax,%rcx
+    307f:	mov    %rdx,%rax
+    3082:	cqto   
+    3084:	idiv   %rsi
+    3087:	lea    0x1198(%rip),%rdx        # 4226 <fork@plt+0x1e96>
+    308e:	mov    $0x1,%esi
+    3093:	mov    %rax,%r8
+    3096:	xor    %eax,%eax
+    3098:	call   2380 <__fprintf_chk@plt>
+    309d:	jmp    28a0 <fork@plt+0x510>
+    30a2:	xor    %ecx,%ecx
+    30a4:	cmp    $0x9,%r12
+    30a8:	jbe    2e4b <fork@plt+0xabb>
+    30ae:	mov    (%rsp),%rsi
+    30b2:	mov    0x78(%rsp),%rax
+    30b7:	xor    %edx,%edx
+    30b9:	div    %rsi
+    30bc:	xor    %edx,%edx
+    30be:	mov    %rax,%rcx
+    30c1:	mov    0x80(%rsp),%rax
+    30c9:	div    %rsi
+    30cc:	add    %rax,%rcx
+    30cf:	jmp    2e4b <fork@plt+0xabb>
+    30d4:	mov    0x40(%rsp),%eax
+    30d8:	movzbl %ah,%ecx
+    30db:	jmp    2f00 <fork@plt+0xb70>
+    30e0:	mov    0xc8(%rsp),%rcx
+    30e8:	jmp    2e6e <fork@plt+0xade>
+    30ed:	mov    %rbp,%rsi
+    30f0:	mov    $0x25,%edi
+    30f5:	call   22d0 <putc@plt>
+    30fa:	jmp    28a0 <fork@plt+0x510>
+    30ff:	mov    %rbp,%rsi
+    3102:	mov    $0x3f,%edi
+    3107:	call   22d0 <putc@plt>
+    310c:	jmp    28f2 <fork@plt+0x562>
+    3111:	mov    0x10(%rsp),%r15
+    3116:	mov    %rbp,%rsi
+    3119:	mov    (%r15),%rdi
+    311c:	call   22b0 <fputs@plt>
+    3121:	jmp    313b <fork@plt+0xdab>
+    3123:	mov    %rbp,%rsi
+    3126:	mov    $0x20,%edi
+    312b:	call   22c0 <fputc@plt>
+    3130:	mov    (%r15),%rdi
+    3133:	mov    %rbp,%rsi
+    3136:	call   22b0 <fputs@plt>
+    313b:	add    $0x8,%r15
+    313f:	cmpq   $0x0,(%r15)
+    3143:	jne    3123 <fork@plt+0xd93>
+    3145:	mov    %rbp,%rdi
+    3148:	call   2240 <ferror@plt>
+    314d:	test   %eax,%eax
+    314f:	je     28a0 <fork@plt+0x510>
+    3155:	call   2210 <__errno_location@plt>
+    315a:	lea    0x10b5(%rip),%rdx        # 4216 <fork@plt+0x1e86>
+    3161:	mov    $0x1,%edi
+    3166:	mov    (%rax),%esi
+    3168:	xor    %eax,%eax
+    316a:	call   2320 <error@plt>
+    316f:	jmp    28a0 <fork@plt+0x510>
+    3174:	call   2210 <__errno_location@plt>
+    3179:	lea    0x1096(%rip),%rdx        # 4216 <fork@plt+0x1e86>
+    3180:	mov    $0x1,%edi
+    3185:	mov    (%rax),%esi
+    3187:	xor    %eax,%eax
+    3189:	call   2320 <error@plt>
+    318e:	jmp    28f2 <fork@plt+0x562>
+    3193:	test   %eax,%eax
+    3195:	jne    31ff <fork@plt+0xe6f>
+    3197:	movzbl %ch,%eax
+    319a:	jmp    291f <fork@plt+0x58f>
+    319f:	call   2210 <__errno_location@plt>
+    31a4:	lea    0x1033(%rip),%rdx        # 41de <fork@plt+0x1e4e>
+    31ab:	mov    $0x7d,%edi
+    31b0:	mov    (%rax),%esi
+    31b2:	xor    %eax,%eax
+    31b4:	call   2320 <error@plt>
+    31b9:	jmp    265c <fork@plt+0x2cc>
+    31be:	call   2210 <__errno_location@plt>
+    31c3:	mov    0x3f8e(%rip),%rcx        # 7158 <fork@plt+0x4dc8>
+    31ca:	mov    $0x7d,%edi
+    31cf:	lea    0x101f(%rip),%rdx        # 41f5 <fork@plt+0x1e65>
+    31d6:	mov    (%rax),%esi
+    31d8:	xor    %eax,%eax
+    31da:	call   2320 <error@plt>
+    31df:	jmp    261e <fork@plt+0x28e>
+    31e4:	lea    0x1b35(%rip),%rdx        # 4d20 <fork@plt+0x2990>
+    31eb:	mov    $0x1,%esi
+    31f0:	mov    %rbp,%rdi
+    31f3:	xor    %eax,%eax
+    31f5:	call   2380 <__fprintf_chk@plt>
+    31fa:	jmp    2776 <fork@plt+0x3e6>
+    31ff:	xor    %eax,%eax
+    3201:	lea    0x1b68(%rip),%rdx        # 4d70 <fork@plt+0x29e0>
+    3208:	xor    %esi,%esi
+    320a:	xor    %edi,%edi
+    320c:	call   2320 <error@plt>
+    3211:	mov    $0x1,%eax
+    3216:	jmp    291f <fork@plt+0x58f>
+    321b:	mov    0xf0(%rsp),%rax
+    3223:	mov    $0x2710,%ecx
+    3228:	mov    $0x1,%esi
+    322d:	mov    %rbp,%rdi
+    3230:	cqto   
+    3232:	idiv   %rcx
+    3235:	mov    %r10,%rcx
+    3238:	lea    0xff7(%rip),%rdx        # 4236 <fork@plt+0x1ea6>
+    323f:	mov    %rax,%r9
+    3242:	xor    %eax,%eax
+    3244:	call   2380 <__fprintf_chk@plt>
+    3249:	jmp    28a0 <fork@plt+0x510>
+    324e:	lea    0xffb(%rip),%rdx        # 4250 <fork@plt+0x1ec0>
+    3255:	mov    $0x1,%esi
+    325a:	mov    %rbp,%rdi
+    325d:	xor    %eax,%eax
+    325f:	call   2380 <__fprintf_chk@plt>
+    3264:	jmp    28a0 <fork@plt+0x510>
+    3269:	mov    0x20(%rsp),%rax
+    326e:	xor    %edx,%edx
+    3270:	divq   0x8(%rsp)
+    3275:	jmp    2fb3 <fork@plt+0xc23>
+    327a:	mov    %r14,%rcx
+    327d:	mov    $0x37,%edx
+    3282:	mov    $0x1,%esi
+    3287:	lea    0x1302(%rip),%rdi        # 4590 <fork@plt+0x2200>
+    328e:	call   2370 <fwrite@plt>
+    3293:	call   2200 <abort@plt>
+    3298:	mov    0x3d51(%rip),%rax        # 6ff0 <fork@plt+0x4c60>
+    329f:	mov    0x3ea2(%rip),%rcx        # 7148 <fork@plt+0x4db8>
+    32a6:	mov    $0x1,%esi
+    32ab:	lea    0xf0e(%rip),%rdx        # 41c0 <fork@plt+0x1e30>
+    32b2:	mov    (%rax),%rdi
+    32b5:	xor    %eax,%eax
+    32b7:	call   2380 <__fprintf_chk@plt>
+    32bc:	mov    $0x7d,%edi
+    32c1:	movq   $0x0,0x3ea4(%rip)        # 7170 <fork@plt+0x4de0>
+    32cc:	call   2360 <exit@plt>
+    32d1:	mov    0x10(%rsp),%r15
+    32d6:	mov    (%r15),%rdi
+    32d9:	mov    %r15,%rsi
+    32dc:	call   2340 <execvp@plt>
+    32e1:	call   2210 <__errno_location@plt>
+    32e6:	mov    (%r15),%rcx
+    32e9:	xor    %edi,%edi
+    32eb:	lea    0xef8(%rip),%rdx        # 41ea <fork@plt+0x1e5a>
+    32f2:	mov    (%rax),%ebx
+    32f4:	xor    %eax,%eax
+    32f6:	mov    %ebx,%esi
+    32f8:	call   2320 <error@plt>
+    32fd:	xor    %edi,%edi
+    32ff:	cmp    $0x2,%ebx
+    3302:	sete   %dil
+    3306:	add    $0x7e,%edi
+    3309:	call   2230 <_exit@plt>
+    330e:	call   2270 <__stack_chk_fail@plt>
+    3313:	cs nopw 0x0(%rax,%rax,1)
+    331d:	nopl   (%rax)
+    3320:	endbr64 
+    3324:	xor    %ebp,%ebp
+    3326:	mov    %rdx,%r9
+    3329:	pop    %rsi
+    332a:	mov    %rsp,%rdx
+    332d:	and    $0xfffffffffffffff0,%rsp
+    3331:	push   %rax
+    3332:	push   %rsp
+    3333:	xor    %r8d,%r8d
+    3336:	xor    %ecx,%ecx
+    3338:	lea    -0xf8f(%rip),%rdi        # 23b0 <fork@plt+0x20>
+    333f:	call   *0x3c5b(%rip)        # 6fa0 <fork@plt+0x4c10>
+    3345:	hlt    
+    3346:	cs nopw 0x0(%rax,%rax,1)
+    3350:	lea    0x3de9(%rip),%rdi        # 7140 <fork@plt+0x4db0>
+    3357:	lea    0x3de2(%rip),%rax        # 7140 <fork@plt+0x4db0>
+    335e:	cmp    %rdi,%rax
+    3361:	je     3378 <fork@plt+0xfe8>
+    3363:	mov    0x3c3e(%rip),%rax        # 6fa8 <fork@plt+0x4c18>
+    336a:	test   %rax,%rax
+    336d:	je     3378 <fork@plt+0xfe8>
+    336f:	jmp    *%rax
+    3371:	nopl   0x0(%rax)
+    3378:	ret    
+    3379:	nopl   0x0(%rax)
+    3380:	lea    0x3db9(%rip),%rdi        # 7140 <fork@plt+0x4db0>
+    3387:	lea    0x3db2(%rip),%rsi        # 7140 <fork@plt+0x4db0>
+    338e:	sub    %rdi,%rsi
+    3391:	mov    %rsi,%rax
+    3394:	shr    $0x3f,%rsi
+    3398:	sar    $0x3,%rax
+    339c:	add    %rax,%rsi
+    339f:	sar    %rsi
+    33a2:	je     33b8 <fork@plt+0x1028>
+    33a4:	mov    0x3c2d(%rip),%rax        # 6fd8 <fork@plt+0x4c48>
+    33ab:	test   %rax,%rax
+    33ae:	je     33b8 <fork@plt+0x1028>
+    33b0:	jmp    *%rax
+    33b2:	nopw   0x0(%rax,%rax,1)
+    33b8:	ret    
+    33b9:	nopl   0x0(%rax)
+    33c0:	endbr64 
+    33c4:	cmpb   $0x0,0x3d75(%rip)        # 7140 <fork@plt+0x4db0>
+    33cb:	jne    33f8 <fork@plt+0x1068>
+    33cd:	push   %rbp
+    33ce:	cmpq   $0x0,0x3c12(%rip)        # 6fe8 <fork@plt+0x4c58>
+    33d6:	mov    %rsp,%rbp
+    33d9:	je     33e7 <fork@plt+0x1057>
+    33db:	mov    0x3c26(%rip),%rdi        # 7008 <fork@plt+0x4c78>
+    33e2:	call   21e0 <__cxa_finalize@plt>
+    33e7:	call   3350 <fork@plt+0xfc0>
+    33ec:	movb   $0x1,0x3d4d(%rip)        # 7140 <fork@plt+0x4db0>
+    33f3:	pop    %rbp
+    33f4:	ret    
+    33f5:	nopl   (%rax)
+    33f8:	ret    
+    33f9:	nopl   0x0(%rax)
+    3400:	endbr64 
+    3404:	jmp    3380 <fork@plt+0xff0>
+    3409:	nopl   0x0(%rax)
+    3410:	push   %rbp
+    3411:	mov    %rdi,%rbp
+    3414:	push   %rbx
+    3415:	sub    $0x138,%rsp
+    341c:	mov    %r8,0xa0(%rsp)
+    3424:	mov    %r9,0xa8(%rsp)
+    342c:	test   %al,%al
+    342e:	je     3470 <fork@plt+0x10e0>
+    3430:	movaps %xmm0,0xb0(%rsp)
+    3438:	movaps %xmm1,0xc0(%rsp)
+    3440:	movaps %xmm2,0xd0(%rsp)
+    3448:	movaps %xmm3,0xe0(%rsp)
+    3450:	movaps %xmm4,0xf0(%rsp)
+    3458:	movaps %xmm5,0x100(%rsp)
+    3460:	movaps %xmm6,0x110(%rsp)
+    3468:	movaps %xmm7,0x120(%rsp)
+    3470:	mov    %fs:0x28,%rax
+    3479:	mov    %rax,0x78(%rsp)
+    347e:	xor    %eax,%eax
+    3480:	lea    0x80(%rsp),%r9
+    3488:	xor    %edi,%edi
+    348a:	xor    %r8d,%r8d
+    348d:	lea    0x150(%rsp),%rax
+    3495:	movl   $0x20,(%rsp)
+    349c:	mov    $0x20,%edx
+    34a1:	lea    0x150(%rsp),%rcx
+    34a9:	movl   $0x30,0x4(%rsp)
+    34b1:	xor    %ebx,%ebx
+    34b3:	lea    0x20(%rsp),%rsi
+    34b8:	mov    %rax,0x8(%rsp)
+    34bd:	mov    %r9,0x10(%rsp)
+    34c2:	jmp    34f0 <fork@plt+0x1160>
+    34c4:	nopl   0x0(%rax)
+    34c8:	mov    %edx,%eax
+    34ca:	mov    $0x1,%r8d
+    34d0:	add    $0x8,%edx
+    34d3:	add    %r9,%rax
+    34d6:	mov    (%rax),%rax
+    34d9:	mov    %rax,(%rsi,%rbx,8)
+    34dd:	test   %rax,%rax
+    34e0:	je     350d <fork@plt+0x117d>
+    34e2:	add    $0x1,%rbx
+    34e6:	cmp    $0xa,%rbx
+    34ea:	je     374d <fork@plt+0x13bd>
+    34f0:	cmp    $0x2f,%edx
+    34f3:	jbe    34c8 <fork@plt+0x1138>
+    34f5:	mov    %rcx,%rax
+    34f8:	mov    $0x1,%edi
+    34fd:	add    $0x8,%rcx
+    3501:	mov    (%rax),%rax
+    3504:	mov    %rax,(%rsi,%rbx,8)
+    3508:	test   %rax,%rax
+    350b:	jne    34e2 <fork@plt+0x1152>
+    350d:	test   %dil,%dil
+    3510:	je     3517 <fork@plt+0x1187>
+    3512:	mov    %rcx,0x8(%rsp)
+    3517:	test   %r8b,%r8b
+    351a:	je     351f <fork@plt+0x118f>
+    351c:	mov    %edx,(%rsp)
+    351f:	lea    0xade(%rip),%r9        # 4004 <fork@plt+0x1c74>
+    3526:	lea    0xadf(%rip),%r8        # 400c <fork@plt+0x1c7c>
+    352d:	mov    %rbp,%rdi
+    3530:	xor    %eax,%eax
+    3532:	lea    0xadc(%rip),%rcx        # 4015 <fork@plt+0x1c85>
+    3539:	lea    0xada(%rip),%rdx        # 401a <fork@plt+0x1c8a>
+    3540:	mov    $0x1,%esi
+    3545:	call   2380 <__fprintf_chk@plt>
+    354a:	mov    $0x1,%esi
+    354f:	mov    %rbp,%rdi
+    3552:	xor    %eax,%eax
+    3554:	lea    0xacb(%rip),%rcx        # 4026 <fork@plt+0x1c96>
+    355b:	lea    0x1d1e(%rip),%rdx        # 5280 <fork@plt+0x2ef0>
+    3562:	mov    $0x7e2,%r8d
+    3568:	call   2380 <__fprintf_chk@plt>
+    356d:	mov    %rbp,%rcx
+    3570:	mov    $0xcb,%edx
+    3575:	mov    $0x1,%esi
+    357a:	lea    0xdf7(%rip),%rdi        # 4378 <fork@plt+0x1fe8>
+    3581:	call   2370 <fwrite@plt>
+    3586:	cmp    $0x9,%rbx
+    358a:	ja     23a0 <fork@plt+0x10>
+    3590:	lea    0x1a49(%rip),%rdx        # 4fe0 <fork@plt+0x2c50>
+    3597:	movslq (%rdx,%rbx,4),%rax
+    359b:	add    %rdx,%rax
+    359e:	notrack jmp *%rax
+    35a1:	push   %rax
+    35a2:	lea    0xf3f(%rip),%rdx        # 44e8 <fork@plt+0x2158>
+    35a9:	push   0x60(%rsp)
+    35ad:	push   0x60(%rsp)
+    35b1:	push   0x60(%rsp)
+    35b5:	push   0x60(%rsp)
+    35b9:	push   0x60(%rsp)
+    35bd:	mov    0x60(%rsp),%r9
+    35c2:	mov    0x58(%rsp),%r8
+    35c7:	mov    0x50(%rsp),%rcx
+    35cc:	mov    $0x1,%esi
+    35d1:	mov    %rbp,%rdi
+    35d4:	xor    %eax,%eax
+    35d6:	call   2380 <__fprintf_chk@plt>
+    35db:	add    $0x30,%rsp
+    35df:	mov    0x78(%rsp),%rax
+    35e4:	sub    %fs:0x28,%rax
+    35ed:	jne    37e7 <fork@plt+0x1457>
+    35f3:	add    $0x138,%rsp
+    35fa:	pop    %rbx
+    35fb:	pop    %rbp
+    35fc:	ret    
+    35fd:	push   0x60(%rsp)
+    3601:	lea    0xf10(%rip),%rdx        # 4518 <fork@plt+0x2188>
+    3608:	push   0x60(%rsp)
+    360c:	push   0x60(%rsp)
+    3610:	push   0x60(%rsp)
+    3614:	push   0x60(%rsp)
+    3618:	push   0x60(%rsp)
+    361c:	mov    0x60(%rsp),%r9
+    3621:	mov    0x58(%rsp),%r8
+    3626:	mov    0x50(%rsp),%rcx
+    362b:	jmp    35cc <fork@plt+0x123c>
+    362d:	mov    0x20(%rsp),%rcx
+    3632:	mov    $0x1,%esi
+    3637:	mov    %rbp,%rdi
+    363a:	xor    %eax,%eax
+    363c:	lea    0x9e7(%rip),%rdx        # 402a <fork@plt+0x1c9a>
+    3643:	call   2380 <__fprintf_chk@plt>
+    3648:	jmp    35df <fork@plt+0x124f>
+    364a:	mov    0x28(%rsp),%r8
+    364f:	mov    0x20(%rsp),%rcx
+    3654:	mov    %rbp,%rdi
+    3657:	xor    %eax,%eax
+    3659:	lea    0x9da(%rip),%rdx        # 403a <fork@plt+0x1caa>
+    3660:	mov    $0x1,%esi
+    3665:	call   2380 <__fprintf_chk@plt>
+    366a:	jmp    35df <fork@plt+0x124f>
+    366f:	mov    0x30(%rsp),%r9
+    3674:	mov    0x28(%rsp),%r8
+    3679:	mov    %rbp,%rdi
+    367c:	xor    %eax,%eax
+    367e:	mov    0x20(%rsp),%rcx
+    3683:	lea    0x9c7(%rip),%rdx        # 4051 <fork@plt+0x1cc1>
+    368a:	mov    $0x1,%esi
+    368f:	call   2380 <__fprintf_chk@plt>
+    3694:	jmp    35df <fork@plt+0x124f>
+    3699:	push   %rdi
+    369a:	lea    0xda7(%rip),%rdx        # 4448 <fork@plt+0x20b8>
+    36a1:	push   0x40(%rsp)
+    36a5:	mov    0x40(%rsp),%r9
+    36aa:	mov    0x38(%rsp),%r8
+    36af:	mov    0x30(%rsp),%rcx
+    36b4:	mov    $0x1,%esi
+    36b9:	mov    %rbp,%rdi
+    36bc:	xor    %eax,%eax
+    36be:	call   2380 <__fprintf_chk@plt>
+    36c3:	pop    %rcx
+    36c4:	pop    %rsi
+    36c5:	jmp    35df <fork@plt+0x124f>
+    36ca:	push   0x40(%rsp)
+    36ce:	lea    0xd93(%rip),%rdx        # 4468 <fork@plt+0x20d8>
+    36d5:	push   0x40(%rsp)
+    36d9:	mov    0x40(%rsp),%r9
+    36de:	mov    0x38(%rsp),%r8
+    36e3:	mov    0x30(%rsp),%rcx
+    36e8:	jmp    36b4 <fork@plt+0x1324>
+    36ea:	push   %rdx
+    36eb:	lea    0xd9e(%rip),%rdx        # 4490 <fork@plt+0x2100>
+    36f2:	push   0x50(%rsp)
+    36f6:	push   0x50(%rsp)
+    36fa:	push   0x50(%rsp)
+    36fe:	mov    0x50(%rsp),%r9
+    3703:	mov    0x48(%rsp),%r8
+    3708:	mov    0x40(%rsp),%rcx
+    370d:	mov    $0x1,%esi
+    3712:	mov    %rbp,%rdi
+    3715:	xor    %eax,%eax
+    3717:	call   2380 <__fprintf_chk@plt>
+    371c:	add    $0x20,%rsp
+    3720:	jmp    35df <fork@plt+0x124f>
+    3725:	push   0x50(%rsp)
+    3729:	lea    0xd88(%rip),%rdx        # 44b8 <fork@plt+0x2128>
+    3730:	push   0x50(%rsp)
+    3734:	push   0x50(%rsp)
+    3738:	push   0x50(%rsp)
+    373c:	mov    0x50(%rsp),%r9
+    3741:	mov    0x48(%rsp),%r8
+    3746:	mov    0x40(%rsp),%rcx
+    374b:	jmp    370d <fork@plt+0x137d>
+    374d:	lea    0x8b0(%rip),%r9        # 4004 <fork@plt+0x1c74>
+    3754:	lea    0x8b1(%rip),%r8        # 400c <fork@plt+0x1c7c>
+    375b:	mov    %rbp,%rdi
+    375e:	xor    %eax,%eax
+    3760:	lea    0x8ae(%rip),%rcx        # 4015 <fork@plt+0x1c85>
+    3767:	lea    0x8ac(%rip),%rdx        # 401a <fork@plt+0x1c8a>
+    376e:	mov    $0x1,%esi
+    3773:	call   2380 <__fprintf_chk@plt>
+    3778:	mov    $0x7e2,%r8d
+    377e:	mov    %rbp,%rdi
+    3781:	xor    %eax,%eax
+    3783:	lea    0x89c(%rip),%rcx        # 4026 <fork@plt+0x1c96>
+    378a:	lea    0x1aef(%rip),%rdx        # 5280 <fork@plt+0x2ef0>
+    3791:	mov    $0x1,%esi
+    3796:	call   2380 <__fprintf_chk@plt>
+    379b:	mov    %rbp,%rcx
+    379e:	mov    $0xcb,%edx
+    37a3:	mov    $0x1,%esi
+    37a8:	lea    0xbc9(%rip),%rdi        # 4378 <fork@plt+0x1fe8>
+    37af:	call   2370 <fwrite@plt>
+    37b4:	push   0x60(%rsp)
+    37b8:	lea    0xd91(%rip),%rdx        # 4550 <fork@plt+0x21c0>
+    37bf:	push   0x60(%rsp)
+    37c3:	push   0x60(%rsp)
+    37c7:	push   0x60(%rsp)
+    37cb:	push   0x60(%rsp)
+    37cf:	push   0x60(%rsp)
+    37d3:	mov    0x60(%rsp),%r9
+    37d8:	mov    0x58(%rsp),%r8
+    37dd:	mov    0x50(%rsp),%rcx
+    37e2:	jmp    35cc <fork@plt+0x123c>
+    37e7:	call   2270 <__stack_chk_fail@plt>
+
+Disassembly of section .fini:
+
+00000000000037ec <.fini>:
+    37ec:	endbr64 
+    37f0:	sub    $0x8,%rsp
+    37f4:	add    $0x8,%rsp
+    37f8:	ret    

@@ -1,0 +1,90 @@
+{
+  "schema": "P4_D080_PRIOR_VALIDATOR_V2_INDEPENDENT_REVIEW_V1",
+  "personnel_independent": true,
+  "status": "PASS_UNIQUE_COST_ONLY_EXCEPTION",
+  "checks_total": 12,
+  "checks_passed": 12,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "immutable_v1_helper_preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v2_ast_parses_without_import_execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v2_imports_v1_as_ordinary_predicate_source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "exception_is_exact_single_run_and_basis",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cost_only_never_upgrades_supervision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ordinary_branch_still_requires_supervision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all_hash_and_receipt_predicates_retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v2_builder_binds_v2_helper",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "corrected_post_saved_16_of_16_cost_only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v39_only_repoints_post_and_preserves_cost",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "v38_and_old_post_remain_preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_top_level_process_execution",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "scripts/p4_d080/validate_prior_preflight_recovery_v1.py": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v2.py": "2ad81f805f9cd376d7ee06c128c247b3ce6ebfc5cdf193fc9bd76b3dd172c31f",
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v2_draft.py": "ef99d36c8d2447d62598deab0f6cd03fe5b294b674ba5b16ea2c83e24277c2a8",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V39.json": "1ca5692d6bd12eafc076e2e49b7777b892f053ae11ed6cd1699252bea255842b",
+    "reports/P4_D080_ENV_III_RRT_PCS_PHYSICAL01_SAVED_INDEPENDENT_POST_COST_ONLY_V2_CORRECTED_20261018.json": "7e243fe04e936b9b4ef6670f99aa1f4b95be09c082b1f91bafdeb1c0e0f02d06"
+  },
+  "baseline_v1_sha256": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+  "allowed_exception": {
+    "run_id": "20261018_R2_D080_III_RRT_PCS_PHYSICAL01",
+    "post_sha256": "7e243fe04e936b9b4ef6670f99aa1f4b95be09c082b1f91bafdeb1c0e0f02d06",
+    "ledger_sha256": "1ca5692d6bd12eafc076e2e49b7777b892f053ae11ed6cd1699252bea255842b",
+    "supervision_qualified": false,
+    "cost_qualified": true
+  },
+  "limits": [
+    "v1 remains preserved; no ordinary external supervision predicate is relaxed.",
+    "Cost-only is not planning/path/scientific qualification."
+  ]
+}

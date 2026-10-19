@@ -1,0 +1,139 @@
+{
+  "schema": "P4_D080_V_BUILD02_SOURCE01_PRIOR_SEAMS_SELF_STATIC_V1",
+  "personnel_independent": false,
+  "candidate_imports": 0,
+  "compile_calls": 0,
+  "binary_execution_calls": 0,
+  "model_calls": 0,
+  "solve_calls": 0,
+  "checks_total": 27,
+  "checks_passed": 27,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "All8 pre-adaptation assets preserved by exact SHA",
+      "passed": true
+    },
+    {
+      "name": "Original BUILD01 runner supervisor DRAFT PRE remain current byte-identical",
+      "passed": true
+    },
+    {
+      "name": "AST parse only build_v_rrt_pcs_e2e_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "AST parse only supervise_v_rrt_pcs_e2e_build_v2_draft.py",
+      "passed": true
+    },
+    {
+      "name": "AST parse only qualify_v_rrt_pcs_source01_v1_draft.py",
+      "passed": true
+    },
+    {
+      "name": "AST parse only supervise_v_rrt_pcs_source01_v1_draft.py",
+      "passed": true
+    },
+    {
+      "name": "AST parse only validate_prior_preflight_recovery_v1.py",
+      "passed": true
+    },
+    {
+      "name": "Entire BUILD02 runner exact4 identity and helper-only substitutions",
+      "passed": true
+    },
+    {
+      "name": "Entire BUILD02 supervisor exact2 identity-only substitutions",
+      "passed": true
+    },
+    {
+      "name": "Entire SOURCE01 runner exact BUILD02 and helper-only substitutions",
+      "passed": true
+    },
+    {
+      "name": "SOURCE01 supervisor unchanged byte-identical",
+      "passed": true
+    },
+    {
+      "name": "BUILD02 exact original2TU link objects stage budgets",
+      "passed": true
+    },
+    {
+      "name": "BUILD02 all execution gates false and no science counters",
+      "passed": true
+    },
+    {
+      "name": "Both priors remain unbound without new accounting",
+      "passed": true
+    },
+    {
+      "name": "SOURCE01 scientific request meshes caps exactly unchanged",
+      "passed": true
+    },
+    {
+      "name": "SOURCE01 actual BUILD02 POST binary unknown no anticipated pass",
+      "passed": true
+    },
+    {
+      "name": "Both OWN bind exact current helper and metadata",
+      "passed": true
+    },
+    {
+      "name": "Both complete bound dictionaries current bytes",
+      "passed": true
+    },
+    {
+      "name": "Original B and lifecycle retained in both bindings",
+      "passed": true
+    },
+    {
+      "name": "BUILD02 own runner supervisor PRE bound",
+      "passed": true
+    },
+    {
+      "name": "SOURCE01 own runner supervisor PRE bound",
+      "passed": true
+    },
+    {
+      "name": "No direct binary or model call added by helper seam",
+      "passed": true
+    },
+    {
+      "name": "Helper exact three-argument interface",
+      "passed": true
+    },
+    {
+      "name": "Helper no imported non-stdlib model modules",
+      "passed": true
+    },
+    {
+      "name": "New BUILD02 stage run sidecars all fresh",
+      "passed": true
+    },
+    {
+      "name": "Old orphan time charge metadata stderr remain present",
+      "passed": true
+    },
+    {
+      "name": "Only saved recovery exists and no false runtime receipt created",
+      "passed": true
+    }
+  ],
+  "inputs_sha256": {
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v2_draft.py": "85cbaffb82010ca066913888907415e13a3fc32a910f55a61c80981167cc9f46",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v2_draft.py": "8bb22cbfa98e21da20ca5cc8a93134e5a5d668fea8b7f1c879064ee16e0b3cb9",
+    "configs/p4_d080/v_rrt_pcs_e2e_build_v2.DRAFT.json": "0ebb9caa107e75c5468eff889fd082871c64dc3988d3378b463e08de7f2039e1",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_EXECUTOR_PRE_DRAFT_20261018.md": "bd91259fa6290ad4e50216b267b91f196f7916a808d36f297a33ba2c176b3142",
+    "scripts/p4_d080/qualify_v_rrt_pcs_source01_v1_draft.py": "b0391ce045ddb98e85755c12acc1b14a1729a22efa1fed82f63546b0fdd15544",
+    "scripts/p4_d080/supervise_v_rrt_pcs_source01_v1_draft.py": "b6dfca4b0475e6635bb6d383a40b3d82ebd5c01084a62bd18cedb5fe488b0279",
+    "configs/p4_d080/v_rrt_pcs_source01_v1.DRAFT.json": "d7a28dc43da59e90c53f38bac97d72df4398d60c65322120efc3a4e3eb4f6d4d",
+    "reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_PRE_DRAFT_20261018.md": "4302a8c40e8bf6399bfd0c4887b5789899a0ff76a67bceced66384dad084ec2e",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v1.py": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+    "reports/p4_full_audit/recovery_tools/audit_v_build02_source01_prior_seams_self_20261018.py": "4c8e2b916d6a677adac691ec31a252556b006ae4207f998005e8b6cd837ca955",
+    "work/preserved_v_build01_and_source01_before_build02_prior_helper_20261018/manifest.json": "f9347217016e4df6727d1d034ebcbb8318a1169415470eff00b44527f72c793b"
+  },
+  "status": "PASS_SELF_ONLY_NOT_INDEPENDENT_NOT_FROZEN",
+  "original_self_FAIL_preserved": "reports/P4_D080_ENV_V_BUILD02_SOURCE01_PRIOR_SEAMS_SELF_STATIC_20261018.json",
+  "auditor_only_correction": "ALLOW_EXPLICIT_SAVED_ONLY_RECOVERY_RECORD_WHILE_REQUIRING_NO_ORIGINAL_RUNTIME_OR_INTERNAL_RECEIPT_CANDIDATES_UNCHANGED",
+  "scope": "Identity and helper integration only; underlying prior-helper semantics require separate personnel-independent review; all old evidence retained."
+}

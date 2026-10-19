@@ -1,0 +1,83 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_BUILD02_THIN_INCREMENTAL_INDEPENDENT_PRE_V1",
+  "personnel_independent": true,
+  "status": "PASS_BUILD02_IDENTITY_AND_PRIOR_SEAM",
+  "checks_total": 8,
+  "checks_passed": 8,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "reuse_independent15_executor_and20_source_seams_exact_no_old_rerun",
+      "passed": true
+    },
+    {
+      "name": "stable_BUILD02_executor_supervisor_plan_union_and_helper",
+      "passed": true
+    },
+    {
+      "name": "BUILD02_reverse_identity_and_reviewed_helper_seam_restores_v1_byte_exact",
+      "passed": true
+    },
+    {
+      "name": "supervisor_changes_only_new_RUN_and_runner_filename",
+      "passed": true
+    },
+    {
+      "name": "new_prior_helper_independent11_exact_and_single_exception_no_budget_relaxation",
+      "passed": true
+    },
+    {
+      "name": "same_exact_twoTU_oneLINK_three_reused_objects_transform_and_resource_caps",
+      "passed": true
+    },
+    {
+      "name": "engineering_only_unfrozen_DRAFT_and_unique_new_RUN",
+      "passed": true
+    },
+    {
+      "name": "old_v1_source_preserved_and_old_original_attempt_not_relabelled",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py": "9dbca564ff6d8975ffbca71b3d1e163b9d7a488f1f7f907888075fd05e566958",
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v2_draft.py": "85cbaffb82010ca066913888907415e13a3fc32a910f55a61c80981167cc9f46",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v1_draft.py": "c2ff4dc64b983524c09781d75bad99e99200c4cbd9c9ddb0ca8923a7d21063ae",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v2_draft.py": "8bb22cbfa98e21da20ca5cc8a93134e5a5d668fea8b7f1c879064ee16e0b3cb9",
+    "configs/p4_d080/v_rrt_pcs_e2e_build_v1.DRAFT.json": "f2b3120cfa9ee950ddc1d596f51980804752975763577ecd80487f99061a0a7a",
+    "configs/p4_d080/v_rrt_pcs_e2e_build_v2.DRAFT.json": "0ebb9caa107e75c5468eff889fd082871c64dc3988d3378b463e08de7f2039e1",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_EXECUTOR_PRE_DRAFT_20261018.md": "bd91259fa6290ad4e50216b267b91f196f7916a808d36f297a33ba2c176b3142",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v1.py": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+    "configs/p4_d080/v_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "1c320aa3d55a638124b86b1235445c0aac80857dd4313dcb4d8c060f802d55fe",
+    "configs/p4_d080/v_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "ec9359321fb0cf072302bf6a361d9237ad4c5d9d25e4e0d5a75ea0b064214ea5",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD_EXECUTOR_INCREMENTAL_INDEPENDENT_PRE_20261018.json": "7180af339dbff9f9360208f444d49e4b25e790d55e47e19789183c69fd7f7112",
+    "reports/P4_D080_ENV_V_RRT_PCS_THIN_DRAFT_INCREMENTAL_INDEPENDENT_PRE_20261018.json": "d5f05c246a2a7cfafc5183e3166bde9bd2ce47ab42d3da9dd43b3df72ac1f858",
+    "reports/P4_D080_PREFLIGHT_RECOVERY_CHAIN_THIN_INDEPENDENT_PRE_ADDENDUM_20261018.json": "17e47992e46e1b9ae0eee6242c71edda90e3e0ce559332e867ce1ceed728cba3"
+  },
+  "source_seams20_reused_without_rerun": true,
+  "old_executor15_reused_without_rerun": true,
+  "full_bound_union_hash_repeated": false,
+  "new_transform_compile_binary_model_scientific_calls": 0,
+  "allowed_root_freeze_transform": {
+    "preserve_DRAFT": true,
+    "new_formal_config_required": true,
+    "flags_to_true": [
+      "frozen",
+      "independent_review_passed",
+      "engineering_execution_authorized"
+    ],
+    "flags_stay_false": [
+      "scientific_execution_authorized",
+      "formal_execution_authorized"
+    ],
+    "latest_prior": "Bind latest actual charged ledger, complete evidence, this certificate and auditor, reviewed helper-chain certificate; no conflicting overwrite.",
+    "independent_review_certificate": "Exact path/SHA of this new report.",
+    "conditions_unchanged": "2newTU+1link/3same objects/TRACE1/30wall60CPU/work25wall50CPU/0modelbinaryscience. Commit runner/supervisor/template/PRE/helper and formal config before unique launch."
+  },
+  "limits": [
+    "Engineering build only; no model/query/solve/path qualification.",
+    "Original BUILD01 rejected preflight and saved-only recovery cost retain their identity and failure.",
+    "Only new BUILD02 identity and independently reviewed helper seam; no repeated union or old science review."
+  ]
+}

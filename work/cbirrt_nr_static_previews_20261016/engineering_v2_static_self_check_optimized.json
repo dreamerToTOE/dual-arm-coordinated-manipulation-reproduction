@@ -1,0 +1,26 @@
+{
+  "schema": "P4_CBIRRT_NR_V2_AST_AND_BYTE_ONLY_SELF_CHECK_V2",
+  "status": "AST_AND_BYTE_ONLY_STATIC_CHECK_PASSED_NOT_INDEPENDENT_REVIEW",
+  "source_sha256": "82dd80816ff695fcc03aa12359d8146159196d7ea8325f02a6c011f8840bf2ed",
+  "selected_ast_helpers_only": true,
+  "builder_module_imports": 0,
+  "concrete_protocol_prior_claim_calls": 0,
+  "compile_binary_model_science_calls": 0,
+  "sample_header_inventory_counts": {
+    "OMPL_HEADERS": 309,
+    "KDL_HEADERS": 93,
+    "BOOST_HEADERS": 3093
+  },
+  "sample_total_header_bytes": 29060051,
+  "sample_helper_elapsed_s_not_scientific_budget": 0.6095440380013315,
+  "sample_inventory_sha256": "58a917023a80026698c7ad68f027ece1103d63a28e8bdaed12ba0736e54e0167",
+  "unchanged_non_builder_source_sha256": {
+    "scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_draft.py": "a979515b29cfcca934d28a6b83723a62424b9684d1190c29d20a95d8a4ba9b33",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py": "07f5632ca92843b0be96ebece15cc8a64060768cdf4dc466242e176505a04c3e",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp": "74917caa8fab59821776617b44c119f57762153135e0c773bbc22dd180b190e4",
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp": "65c95cdb2fe09e916a9f564baf01906901d80e136ccb48014c8ce9633b1bf0e7"
+  },
+  "actual_MD_qualification": "NOT_RUN; all 6 actual-TU files required by future unique compile; any protected missing freeze causes STOP",
+  "lexical_normalization_matches_original_inventory": true,
+  "previous_static_check_retained_sha256": "eb49ece26b418f05d82af802d305d1394d5b32f64b0ef0a916aafbb7641ce55c"
+}

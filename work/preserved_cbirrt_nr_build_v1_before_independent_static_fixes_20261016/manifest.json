@@ -1,0 +1,35 @@
+{
+  "schema": "P4_CBIRRT_NR_BUILD_V1_STATIC_REVIEW_PREFIX_PRESERVATION_V1",
+  "status": "PRESERVED_DRAFT_NO_BUILD_OR_SCIENCE",
+  "source_files": {
+    "scripts/build_p4_full_r2_abb_cbirrt_nr_draft.py": {
+      "bytes": 21459,
+      "sha256": "f4b0f1a47306ac447d98cc086f3531972d386b48dbe8d5550d3a2f9c3deecd47"
+    },
+    "scripts/supervise_p4_full_r2_abb_cbirrt_nr_build_draft.py": {
+      "bytes": 8012,
+      "sha256": "a979515b29cfcca934d28a6b83723a62424b9684d1190c29d20a95d8a4ba9b33"
+    },
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_instrumentation_draft.py": {
+      "bytes": 7752,
+      "sha256": "07f5632ca92843b0be96ebece15cc8a64060768cdf4dc466242e176505a04c3e"
+    },
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_observation_draft.hpp": {
+      "bytes": 2101,
+      "sha256": "74917caa8fab59821776617b44c119f57762153135e0c773bbc22dd180b190e4"
+    },
+    "baselines/p4_full/geometry_consistent/abb_cbirrt_nr_driver_draft.cpp": {
+      "bytes": 9256,
+      "sha256": "65c95cdb2fe09e916a9f564baf01906901d80e136ccb48014c8ce9633b1bf0e7"
+    },
+    "reports/P4_FULL_R2_ABB_CBIRRT_NR_ENGINEERING_PRE_DRAFT_20261016.md": {
+      "bytes": 6071,
+      "sha256": "abc5acdd961300587f9b66d55d49c0e19b3c974c5bd218004c1b47fa73b46f6e"
+    }
+  },
+  "independent_findings": [
+    "Missing explicit 4 linked Boost shared-library hashes and complete OMPL/KDL header namespace/transitive inclusion inventory.",
+    "Compiler cleanup lacked an actual post-kill/reap empty process-group snapshot and hard gate."
+  ],
+  "new_compile_model_protocol_prior_or_claim_calls": 0
+}
