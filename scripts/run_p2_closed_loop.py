@@ -11,6 +11,7 @@ from baselines.p2_pose_force.observations import ObservationGenerator,calibrate_
 from baselines.p2_pose_force.estimator import RightIESEKF
 from baselines.p2_pose_force.control import PoseForceController,QuinticReference,SlidingReference
 from baselines.p2_pose_force.clocking import EndpointClock
+from p2_event_log import EventLog
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def clean(x):
@@ -51,6 +52,7 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
  sensor=ObservationGenerator(cfg,case['seed'],variant=variant,tick_scale=scale,contact_provider=native.contact)
  clock=EndpointClock(cfg,scale,delayed=variant=='delay');target=np.eye(4);target[:3,3]=[.15,.08,.35];target[:3,:3]=Rotation.from_rotvec([0,0,np.pi/2]).as_matrix()
  handles={name:gzip.open(out/(name+'.jsonl.gz'),'wt',compresslevel=1) for name in ('plant','sensors','estimator','commands','settling')};events=(out/'events.jsonl').open('w')
+ plant_log=EventLog(handles['plant'],snapshot_period_s=1.0,ring_size=200);est_log=EventLog(handles['estimator'],snapshot_period_s=1.0,ring_size=200)
  def budget():
   if time.perf_counter()-start>120:raise RuntimeError('CASE_WALL_LIMIT')
   if time.perf_counter()-suite_started+prior_wall>7200:raise RuntimeError('SUITE_WALL_LIMIT')
@@ -97,20 +99,23 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
     if switched:filt.modes=modes
     update=filt.update(packet) if tick>0 and packet else None;est_updates+=update is not None
     row={'tick':tick,'time_s':t,'global_case_time_s':10+t,'state':filt.state.as_dict(),'P_diagonal':np.diag(filt.P),'P_full_at_1Hz':filt.P if tick%(3000*scale)==0 else None,'old_published_model_input':old_published,'prediction_interval_s':None if predict is None else predict.end_stamp-predict.start_stamp,'observations_consumed':[] if update is None else update.sample_keys,'iterations':None if update is None else update.iterations,'converged':None if update is None else update.converged,'consecutive_nonconverged':filt.consecutive_nonconverged,'iteration_increments':None if update is None else update.iteration_increments,'innovation_before':None if update is None else update.innovation_before,'innovation_after':None if update is None else update.innovation_after,'stop_requested':filt.stopped}
-    log(handles['estimator'],row)
+    est_log.event(t,row)
     if update is not None and update.stop_requested:raise RuntimeError(update.stop_reason)
     modeled=native.contact(filt.state,old_published,modes,controller.physics)
     if np.any(np.abs(modeled.tau[:,:3])>.005) or np.any(np.abs(modeled.tau[:,3:])>.15):raise RuntimeError('ESTIMATOR_MODEL_PAD_DOMAIN_INVALID')
    if heartbeat:
     estimate=FilterState.from_mechanics(state) if case['GT'] else filt.state
     primary_GT_reads+=bool(case['GT']);ref=reference.sample(t,estimate.O);control=controller.evaluate(estimate,old_published,ref,modes,t,diagnostic_GT=case['GT']);clock.receive(tick,control.U_cmd)
-    row=plant_row(t,contact,'transport',None if diag is None else solver_log(diag),ref);log(handles['plant'],row);trace_rows.append(clean(row))
+    row=plant_row(t,contact,'transport',None if diag is None else solver_log(diag),ref);plant_log.event(t,row);trace_rows.append(clean(row))
     commandrow=control.as_dict();commandrow.update(tick=tick,source='explicit_GT_state_diagnostic' if case['GT'] else 'observation_initialized_IESEKF',estimated_model_K=[k.tolist() for k in controller.physics.K],old_actual_applied=clock.applied.copy());log(handles['commands'],commandrow)
    for event in clock.publish_and_deliver(tick,modes):event.update(time_s=t,global_case_time_s=10+t);log(events,event)
    if tick==end_tick:break
    nexttick=clock.next_tick(tick,end_tick,event_ticks);state,diag=native.advance(state,clock.applied,modes,physics,dt,nexttick-tick);max_Newton=max(max_Newton,diag['max_newton_iterations']);tick=nexttick
  except Exception as exc:
   failure=str(exc);write(out/'termination.json',{'reason':failure,'traceback':traceback.format_exc(),'phase':phase,'tick':tick,'time_s':None if tick is None else tick*dt,'last_accepted_plant_state':state.as_dict(),'last_estimate_state':None if filt is None else filt.state.as_dict(),'last_published_U':clock.published,'last_actual_U':clock.applied,'last_control':None if control is None else control.as_dict(),'native_evidence':getattr(exc,'evidence',None),'no_reset_or_reanchoring':True})
+  for name,lg in (('plant',plant_log),('estimator',est_log)):
+   try:lg.dump_context(out/('failure_context_'+name+'.jsonl'),reason=failure)
+   except Exception:pass
   if filt is not None:
    matrices={'P':filt.P}
    if filt.last_prediction is not None:matrices.update(F=filt.last_prediction.transition,Qd=filt.last_prediction.process_covariance)
