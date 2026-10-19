@@ -1,0 +1,94 @@
+{
+  "kind": "D082_CONTROL_VERIFICATION",
+  "checks": [
+    {
+      "id": "zero_err_UP",
+      "desc": "zero pose error → U_P = 0",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "zero_err_cmd",
+      "desc": "zero error → U_cmd = U_F only",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "hI_zero_net",
+      "desc": "internal wrench: W @ (H^T hI) ≈ 0",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "KF_scaling",
+      "desc": "U_F proportional to hI",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "pose_err_nonzero_UP",
+      "desc": "nonzero pose error → nonzero U_P",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "pose_err_sign",
+      "desc": "U_P direction consistent with error",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "selection_pivot",
+      "desc": "selection matrix properly filters arm 0",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "selection_pivot",
+      "desc": "selection matrix properly filters arm 1",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "cmd_domain",
+      "desc": "command within |lin|<0.15, |ang|<0.5",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "force_timing",
+      "desc": "force_active flag correct at t=5 and t=20",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "hybrid_U_sum",
+      "desc": "hybrid: U_cmd = U_F + U_P",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "invalid_held",
+      "desc": "NaN held input rejected",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "invalid_estimate",
+      "desc": "non-FilterState rejected",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "id": "hI_decoupling",
+      "desc": "internal wrench produces zero object wrench",
+      "pass": true,
+      "detail": {}
+    }
+  ],
+  "summary": {
+    "pass": 14,
+    "total": 14,
+    "verdict": "PASS"
+  }
+}
