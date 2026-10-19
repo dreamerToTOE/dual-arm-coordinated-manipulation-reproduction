@@ -1,5 +1,7 @@
 # P2 全文原文复现义务与后续恢复任务（D079，不得缩小范围）
 
+> **D082（2026-10-19）最新批准范围**：下文33项原文义务是**原论文事实与历史未完成列表**，不再强制当前P2进行95s运输/exp1–4任务级全套或四物块装配。P2后续只要求物体/接触/内部wrench/位姿反馈/IESEKF核心算法的真实数学数值资格及透明失败根因，不能用旧闭环失败写成PASS。P4交付前不自动启动P2；见[最新四篇算法要求](P1_P2_P3_P5_D082_ALGORITHM_ONLY_20261019.md)。保留全部原原始失败和差距。
+
 日期：2026-10-14。目标论文：De Simone, Costanzo, De Maria & Natale, *Cooperative Object Transport and Assembly: Pose/Force Control by Visual-Tactile Feedback*, IEEE RA-L 2026，DOI 10.1109/LRA.2026.3665445。原可得作者accepted Feb 2026版8页；执行前重查最终发表版、附录、视频与作者公开资产并记录差别。
 
 本任务与 P4 后续任务使用**同一个已有项目执行分支** `p4-full-reproduction-pcs-study` 作为计划和规范载体；但P2新科研执行前需隔离新结果目录，不覆盖 `reproduce-p2-paper-audit` 已接受冻结提交 f4f9d3b 和所有日志。这里是**任务书，不代表已经重新执行P2**。按照用户的当前顺序，P4完结并审查之后再调度P2运行；若用户另行授权并行另议。
