@@ -1132,3 +1132,9 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 ## 2026-10-18 D080：V BUILD01工程工作帽停止，V31保全
 
 原45/90首次构建在40wall工作帽停止，plain全完成、trace3TU完成/第4组清理−9；模型/局部/solve全0。原源不改，工程成本估计不足不归因论文。独立failure/cost78/78仅保全通过，build资格false；外41.415730890wall/61.545897CPU帽内。V31=49execution(36science13eng)，charged1079.1330520419942/897.1088579999999；余量仅上界2520.866947958006/6302.891142。211×220保前216列，正式0/18000、VI974只读。下一只复用8完成对象与plainELF、20/40新stage补2traceTU/link，先独审冻结，不重8TU或覆盖原STOP。详见reports/P4_D080_ENV_V_BUILD01_WORK_CAP_POST_20261018.md。SBL387完整离散证书保持；不P2/Isaac。
+\n
+## 2026-10-19 D080 V5：未执行 source 的监督器静态回归
+
+运行类型：工程静态/监督器回归；source process=0，request=0，solve=0，model=0，collision=0，path=0，formal Table I=0，VI constructions=0。结果：13/13 checks 通过；没有创建 V5 execution、claim、supervision 或路径结果文件，没有新增 wall/CPU 账目。
+
+V5 候选固定 V4 的 seed=7、range=0.2、goal bias=0.05、solve=10 s、30/60 wall/CPU 和 25/50 working cap，只增加 SIGALRM 非重入 guard。personnel_independent=false，因此该结果只能作为工程自检，不能作为独立科研审查或 source/path 资格。V4 原始 -9 终止、Solved 前缀和 transport 不完整证据继续保留。

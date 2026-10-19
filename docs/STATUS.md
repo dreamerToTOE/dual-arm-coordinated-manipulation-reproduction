@@ -1064,3 +1064,11 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 ## 2026-10-18 D080：V BUILD01工程工作帽停止，V31保全
 
 原45/90首次构建在40wall工作帽停止，plain全完成、trace3TU完成/第4组清理−9；模型/局部/solve全0。原源不改，工程成本估计不足不归因论文。独立failure/cost78/78仅保全通过，build资格false；外41.415730890wall/61.545897CPU帽内。V31=49execution(36science13eng)，charged1079.1330520419942/897.1088579999999；余量仅上界2520.866947958006/6302.891142。211×220保前216列，正式0/18000、VI974只读。下一只复用8完成对象与plainELF、20/40新stage补2traceTU/link，先独审冻结，不重8TU或覆盖原STOP。详见reports/P4_D080_ENV_V_BUILD01_WORK_CAP_POST_20261018.md。SBL387完整离散证书保持；不P2/Isaac。
+\n
+## 2026-10-19 D080：环境 V RRT+PCS SOURCE01 V5 监督器修复候选保全
+
+V4 的 source 失败、前缀、原始日志、V43/V44 账本和报告保持原字节。V5 只在监督器层增加不可重入的 SIGALRM guard：处理器登记 pending alarm，/proc live-group CPU 扫描期间屏蔽 SIGALRM，扫描后恢复原 signal mask；V4 的 seed=7、range=0.2、goal bias=0.05、solve=10 s、30/60 wall/CPU、25/50 working cap 和科学验收门未改。
+
+V5 supervisor-only 静态回归 13/13 通过，source process/request/solve/model/collision/path/formal/VI 新调用均为 0，未创建 V5 execution、claim 或 supervision 产物；因此没有新增 R2 wall/CPU 计费。证据为 reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_20261019.json，其中 personnel_independent=false，只代表工程自检。
+
+V5 仍为 ENGINEERING_CANDIDATE_NOT_AUTHORIZED。运行前仍需独立静态审查、root freeze、最新 prior 绑定和新的单次 source process/solve 预算；V4 的 Solved 前缀不能升级为 exact/path。D080 211 项范围表、D081 正式统计取消状态、VI 974/974 只读归档、P2/Isaac 禁止项均不变。

@@ -1,0 +1,77 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_V1",
+  "status": "PASS_ENGINEERING_STATIC_GUARD_SELF_CHECK",
+  "personnel_independent": false,
+  "checks_total": 13,
+  "checks_passed": 13,
+  "checks_failed": 0,
+  "scientific_calls": {
+    "source_process": 0,
+    "source_request": 0,
+    "source_solve": 0,
+    "model": 0,
+    "collision": 0,
+    "path": 0,
+    "formal_table_I": 0,
+    "VI_constructions": 0
+  },
+  "v4_source_sha256": "e9ee78b46a5aecaee944293acabc305cb7be022da7f9ccee8a5ae47caf54e516",
+  "v5_runner_sha256": "2008179723fa5fd88b349bb1ab4f9f5412ec7569425772b1550b34d3f6b11a66",
+  "v5_supervisor_sha256": "3b3c2ba3c0a97acdd175e4fac93107e8517755569aff8c58beddcec16e81a034",
+  "v5_protocol_sha256": "eed18ce152389e631196f2278a82c4fe44dd8ea490f954edc8e549cfa4eafc25",
+  "checks": [
+    {
+      "check": "all candidate Python sources parse",
+      "passed": true
+    },
+    {
+      "check": "V4 source remains byte-identical to the saved source",
+      "passed": true
+    },
+    {
+      "check": "V5 defines a versioned Budget subclass",
+      "passed": true
+    },
+    {
+      "check": "V5 Budget subclasses the inherited audited Budget",
+      "passed": true
+    },
+    {
+      "check": "alarm records and returns on an active check",
+      "passed": true
+    },
+    {
+      "check": "check blocks SIGALRM during live CPU scan",
+      "passed": true
+    },
+    {
+      "check": "V5 leaves scientific source request parameters unchanged",
+      "passed": true
+    },
+    {
+      "check": "V5 keeps 30/60 and 25/50 caps",
+      "passed": true
+    },
+    {
+      "check": "V5 draft is explicitly unfrozen and unauthorized",
+      "passed": true
+    },
+    {
+      "check": "V5 supervisor points to V5 runner and run",
+      "passed": true
+    },
+    {
+      "check": "no V5 execution/claim/supervision artifacts exist",
+      "passed": true
+    },
+    {
+      "check": "nested alarm does not re-enter live CPU scan",
+      "passed": true
+    },
+    {
+      "check": "SIGALRM mask is restored after check",
+      "passed": true
+    }
+  ],
+  "scope": "STATIC_CANDIDATE_ONLY; V4 failure and all raw evidence remain immutable; new source budget still required."
+}

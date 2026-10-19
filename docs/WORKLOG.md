@@ -1027,3 +1027,9 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 ## 2026-10-18 D080：V BUILD01工程工作帽停止，V31保全
 
 原45/90首次构建在40wall工作帽停止，plain全完成、trace3TU完成/第4组清理−9；模型/局部/solve全0。原源不改，工程成本估计不足不归因论文。独立failure/cost78/78仅保全通过，build资格false；外41.415730890wall/61.545897CPU帽内。V31=49execution(36science13eng)，charged1079.1330520419942/897.1088579999999；余量仅上界2520.866947958006/6302.891142。211×220保前216列，正式0/18000、VI974只读。下一只复用8完成对象与plainELF、20/40新stage补2traceTU/link，先独审冻结，不重8TU或覆盖原STOP。详见reports/P4_D080_ENV_V_BUILD01_WORK_CAP_POST_20261018.md。SBL387完整离散证书保持；不P2/Isaac。
+\n
+## 2026-10-19 D080 V5 工程候选继续记录
+
+修正 V5 阶段后审中错误的静态证据文件名，统一指向 reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_20261019.json。执行 py_compile 和 scripts/p4_d080/check_v_rrt_pcs_source01_v5_guard.py 前，保留 V4 原失败和所有历史产物；本轮只做静态工程验证，没有启动 source 或规划器。V5 guard 回归保持 13/13，通过项覆盖源码解析、V4 字节保全、预算/请求参数、不可重入 alarm、signal mask 恢复和无运行产物。
+
+本轮没有科学调用和新增费用。下一步是提交并推送候选及持久记录，等待新的 source 预算与人员独立审查；不得复用 V4 配额或把 V5 候选写成路径成功。

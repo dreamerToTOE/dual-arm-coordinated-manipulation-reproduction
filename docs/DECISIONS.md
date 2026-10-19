@@ -1157,3 +1157,9 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 ## 2026-10-18 D080：V BUILD01工程工作帽停止，V31保全
 
 原45/90首次构建在40wall工作帽停止，plain全完成、trace3TU完成/第4组清理−9；模型/局部/solve全0。原源不改，工程成本估计不足不归因论文。独立failure/cost78/78仅保全通过，build资格false；外41.415730890wall/61.545897CPU帽内。V31=49execution(36science13eng)，charged1079.1330520419942/897.1088579999999；余量仅上界2520.866947958006/6302.891142。211×220保前216列，正式0/18000、VI974只读。下一只复用8完成对象与plainELF、20/40新stage补2traceTU/link，先独审冻结，不重8TU或覆盖原STOP。详见reports/P4_D080_ENV_V_BUILD01_WORK_CAP_POST_20261018.md。SBL387完整离散证书保持；不P2/Isaac。
+\n
+## 2026-10-19 D080 V5 监督器修复候选决策
+
+接受 V5 作为版本化工程候选继续审查：在 V4 supervisor 上增加不可重入 SIGALRM 处理和扫描期间 signal mask，保持原 RRT+PCS 科学输入、几何、限位、碰撞、预算与验收条件。该决策不批准 source 运行，也不改变 D081 已取消的 18,000 次统计或 VI 归档范围。
+
+V5 静态证据 P4_D080_ENV_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_20261019.json 为 13/13 engineering self-check，personnel_independent=false。只有完成独立审查、root freeze、prior 绑定并获得新的单次 source 预算后，才可评估一次 V5 source 入口；V4 配额不可复用。

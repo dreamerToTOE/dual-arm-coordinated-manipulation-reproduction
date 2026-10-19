@@ -1086,3 +1086,9 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 ## 2026-10-18 D080：V BUILD01工程工作帽停止，V31保全
 
 原45/90首次构建在40wall工作帽停止，plain全完成、trace3TU完成/第4组清理−9；模型/局部/solve全0。原源不改，工程成本估计不足不归因论文。独立failure/cost78/78仅保全通过，build资格false；外41.415730890wall/61.545897CPU帽内。V31=49execution(36science13eng)，charged1079.1330520419942/897.1088579999999；余量仅上界2520.866947958006/6302.891142。211×220保前216列，正式0/18000、VI974只读。下一只复用8完成对象与plainELF、20/40新stage补2traceTU/link，先独审冻结，不重8TU或覆盖原STOP。详见reports/P4_D080_ENV_V_BUILD01_WORK_CAP_POST_20261018.md。SBL387完整离散证书保持；不P2/Isaac。
+\n
+## 2026-10-19 D080 V5 未决问题与边界
+
+V4 的 III_SOURCE_SELF_REAPED_LIVE_GROUP_WORK_CAP 仍是历史事实；V5 guard 只针对我方监督器在 live CPU /proc 扫描期间重新进入 SIGALRM 的竞争解释。静态回归通过不能排除 source 自身输出尚未写完、transport 仍不完整或后续路径失败。V5 未获得 source 预算，未运行，不能把 V4 的 Solved stdout 或 V5 静态证据升级为 exact、完整路径、连续无碰撞或 PCS 优势。
+
+V5 的 personnel_independent=false 是当前未决审查边界。必须等待人员独立静态审查、root freeze、最新 prior 绑定和新的一次 source 预算；失败时保留 V5 全部原始证据并按 D079 根因规则处理。
