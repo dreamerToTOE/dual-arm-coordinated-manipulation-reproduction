@@ -11,6 +11,7 @@ from baselines.p2_pose_force.observations import ObservationGenerator,calibrate_
 from baselines.p2_pose_force.estimator import RightIESEKF
 from baselines.p2_pose_force.control import PoseForceController,QuinticReference,SlidingReference
 from baselines.p2_pose_force.clocking import EndpointClock
+from baselines.p2_pose_force.stable_propagation import StableRightIESEKF
 from p2_event_log import EventLog
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -44,11 +45,11 @@ def require_contact(state,contact):
 
 def solver_log(e):return {k:v for k,v in e.items() if k!='last_accepted_state'}
 
-def run_case(cfg,case,out,native,suite_started,prior_wall,transport_limit_s=None,wall_limit_s=120):
+def run_case(cfg,case,out,native,suite_started,prior_wall,transport_limit_s=None,wall_limit_s=120,*,propagation_mode='A'):
  out.mkdir(exist_ok=False);start=time.perf_counter();physics=mech.physics_from_protocol(cfg,'C' if case['variant']=='sliding' else 'A');variant=case['variant'];scale=case['scale'];dt=1/(3000*scale)
  state=mech.initial_state(cfg,variant if variant in ('sliding','high_moment') else 'transport');modes=('pivot','pivot');Uzero=np.zeros((2,6));filt=None;tick=None;ref=None;control=None;failure=None;trace_rows=[];max_Newton=0;phase='precalibration';est_updates=0;est_predictions=0;primary_GT_reads=0
  end_s=(30 if variant=='sliding' else 95) if transport_limit_s is None else min(30 if variant=='sliding' else 95,float(transport_limit_s))
- t_precal=0.0;t_settle=0.0
+ t_precal=0.0;t_settle=0.0;timing_s={'precalibration':0.0,'settle':0.0,'transport':0.0,'total':0.0}
  cfgpath=ROOT/'configs/p2_closed_loop_protocol_v3.json';sources=['scripts/run_p2_closed_loop.py','baselines/p2_pose_force/clocking.py','baselines/p2_pose_force/native_kernel.cpp','baselines/p2_pose_force/native_model.py','baselines/p2_pose_force/estimator.py','baselines/p2_pose_force/observations.py','baselines/p2_pose_force/control.py','baselines/p2_pose_force/mechanics.py','baselines/p2_pose_force/contact_geometry.py','reports/P2_CLOSED_LOOP_RUNTIME_SPEC.md']
  write(out/'metadata.json',{'kind':'FROZEN_P2_INDEPENDENT_PLANT_ESTIMATED_CONTROL' if not case['GT'] else 'FROZEN_P2_EXPLICIT_GT_STATE_CONTROL_DIAGNOSTIC','date':'2026-10-14','case':case,'seed':case['seed'],'task':'P2_STAGE2_ORIGINAL_CONTROLLER','baseline':'original Eq9-12/16/19-21/25, approved spatial-free Log geometry','platform':'independent rigid COM ODE, ideal Cartesian endpoints; not robot joint control','source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'source_sha256':{p:sha(ROOT/p) for p in sources},'command':sys.argv,'config_path':str(cfgpath.relative_to(ROOT)),'protocol_sha256':sha(cfgpath),'build':json.loads(native.binary.with_name('build.json').read_text()),'true_K':[k.tolist() for k in physics.K],'wall_limit_s':wall_limit_s,'suite_wall_limit_s':7200,'corrections_used':3,'remaining_corrections':0,'observer_mean_integration':'original Eq18 right Euler at fresh observation/heartbeat events; no internal substeps','causal_phase_clocks':'global_case_s=precalibration time;settle5+t;transport10+t','covariance_log':'diag each event, full at1Hz/failure; complete covariance propagation/checking every prediction/update','no_gt_primary_controller':not case['GT']});(out/'config_snapshot.json').write_bytes(cfgpath.read_bytes())
  sensor=ObservationGenerator(cfg,case['seed'],variant=variant,tick_scale=scale,contact_provider=native.contact)
@@ -78,7 +79,7 @@ def run_case(cfg,case,out,native,suite_started,prior_wall,transport_limit_s=None
   balance=mech.equilibrium_residual(state,c,physics)
   if np.max(np.abs(balance[:3]))>1e-6 or np.max(np.abs(balance[3:]))>1e-6 or np.max(np.abs(state.V[:3]))>1e-7 or np.max(np.abs(state.V[3:]))>1e-7:raise RuntimeError('FIXED_FIVE_SECOND_SETTLE_INVALID')
   log(events,{'type':'true_integrated_settle_pass','global_case_time_s':10,'balance_N_Nm':balance,'V_m_s_rad_s':state.V});t_settle=time.perf_counter()-start-t_precal;phase='transport';tick=0;packet=sensor.sample_packet(state,0,c,modes=modes);init=initialize_from_fresh(packet,calibration,*declared_grasps(cfg,variant),time_s=0.)
-  filt=RightIESEKF.from_protocol(init.state,cfg,condition=case['condition'],object_id='C' if variant=='sliding' else 'A',modes=modes,rate_provider=native.continuous_linearization)
+  filt=(StableRightIESEKF if propagation_mode=='B' else RightIESEKF).from_protocol(init.state,cfg,condition=case['condition'],object_id='C' if variant=='sliding' else 'A',modes=modes,rate_provider=native.continuous_linearization)
   filt.seen_samples.update((o.kind,o.sample_id) for o in init.consumed_observations)
   for n in mech.STATE_NAMES:
    if np.shares_memory(getattr(state,n),getattr(filt.state,n)):raise RuntimeError('PLANT_ESTIMATE_ARRAY_ALIAS')

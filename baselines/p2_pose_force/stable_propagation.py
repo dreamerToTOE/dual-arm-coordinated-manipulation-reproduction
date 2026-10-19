@@ -16,7 +16,11 @@ No clipping, no noise rescaling, no stiffness change, no gate bypass.
 """
 import numpy as np
 from scipy.linalg import expm
-
+from baselines.p2_pose_force.estimator import (
+    RightIESEKF as _BaseFilter,
+    continuous_linearization as _cont_lin,
+    _checked_covariance as _check_cov,
+    PredictionReport as _PredReport)
 MODE_A = "PAPER_LITERAL_EULER"
 MODE_B = "ADAPTED_STABLE_PROPAGATION_V1"
 
@@ -92,3 +96,20 @@ def van_loan_stable(A, G, h, max_exponent=0.5):
         Qd = Phi @ Qd @ Phi.T + Qd
         Phi = Phi @ Phi
     return Phi, Qd
+
+
+
+class StableRightIESEKF(_BaseFilter):
+    """Mode B filter: identical to RightIESEKF except predict uses stable propagation."""
+    def predict(self, dt, published_command):
+        if self.stopped:
+            from baselines.p2_pose_force.estimator import EstimatorDomainError
+            raise EstimatorDomainError('FILTER_ALREADY_STOPPED')
+        f, A = (self.rate_provider or _cont_lin)(
+            self.state, published_command, self.modes, self.physics)
+        pred, Phi, Qd, _ = propagate(self.state, f, A, dt, self.Qc_diag)
+        P = _check_cov(Phi @ self.P @ Phi.T + Qd)
+        rep = _PredReport(self.time, self.time + dt, Phi, Qd)
+        self.state, self.P, self.time = pred, P, self.time + dt
+        self.last_prediction = rep
+        return rep
