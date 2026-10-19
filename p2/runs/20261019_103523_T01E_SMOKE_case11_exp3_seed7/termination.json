@@ -1,0 +1,213 @@
+{
+  "reason": "name 'inverse' is not defined",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu2004/lmy/p2-num-sim-20261018/scripts/run_p2_closed_loop.py\", line 70, in run_case\n    calibration=calibrate_paired_visuals(pairs,cfg);write(out/'calibration.json',{'C_estimated':calibration.C,'iterations':calibration.iterations,'max_mean_component':calibration.maximum_mean_component,'pair_count':75,'sample_ids':calibration.sample_ids,'input':'only paired simulated visual observations; trueC not substituted'})\n  File \"/home/ubuntu2004/lmy/p2-num-sim-20261018/baselines/p2_pose_force/observations.py\", line 247, in calibrate_paired_visuals\n    values.append(second.value@inverse(first.value)); identities.extend([first.sample_id,second.sample_id])\nNameError: name 'inverse' is not defined\n",
+  "phase": "precalibration",
+  "tick": null,
+  "time_s": null,
+  "last_accepted_plant_state": {
+    "O": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.4
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "V": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "E1": [
+      [
+        0.0,
+        1.0,
+        0.0,
+        -0.09
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -0.045
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.4
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "E2": [
+      [
+        0.0,
+        1.0,
+        1.2246467991473532e-16,
+        -0.09
+      ],
+      [
+        0.0,
+        -1.2246467991473532e-16,
+        1.0,
+        0.5549999999999999
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.4
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "C": [
+      [
+        -1.0,
+        -1.2246467991473532e-16,
+        0.0,
+        0.0
+      ],
+      [
+        1.2246467991473532e-16,
+        -1.0,
+        0.0,
+        0.6
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "G1": [
+      [
+        0.0,
+        1.0,
+        0.0,
+        -0.09
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -0.045
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "G2": [
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.09
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.045
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "last_estimate_state": null,
+  "last_published_U": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "last_actual_U": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "last_control": null,
+  "native_evidence": null,
+  "no_reset_or_reanchoring": true
+}
