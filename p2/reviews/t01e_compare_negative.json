@@ -1,0 +1,150 @@
+{
+  "kind": "T01E_COMPARATOR_ADVERSARIAL_TESTS",
+  "baseline": "/home/ubuntu2004/lmy/p2-num-sim-20261018/p2/reviews/t01e_baseline",
+  "comparator": "/home/ubuntu2004/lmy/p2-num-sim-20261018/p2/tools/t01e_compare.py",
+  "positive_control": {
+    "case": "P0_positive_control",
+    "mutation": "none",
+    "expected_reason": null,
+    "exit_code": 0,
+    "verdict": "PASS",
+    "reasons": [],
+    "pass": true
+  },
+  "negative_cases": [
+    {
+      "case": "N01_drop_key",
+      "mutation": "drop_key",
+      "expected_reason": "MISSING_IN_CANDIDATE",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "MISSING_IN_CANDIDATE"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N02_add_key",
+      "mutation": "add_key",
+      "expected_reason": "EXTRA_IN_CANDIDATE",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "EXTRA_IN_CANDIDATE"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N03_change_element",
+      "mutation": "change_element",
+      "expected_reason": "BITWISE_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "BITWISE_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N04_one_ulp",
+      "mutation": "one_ulp",
+      "expected_reason": "BITWISE_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "BITWISE_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N05_dtype_change",
+      "mutation": "dtype_change",
+      "expected_reason": "DTYPE_OR_SHAPE_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "DTYPE_OR_SHAPE_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N06_signed_zero",
+      "mutation": "signed_zero",
+      "expected_reason": "BITWISE_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "BITWISE_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N07_nonfinite",
+      "mutation": "nonfinite",
+      "expected_reason": "NONFINITE_VALUES",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "NONFINITE_VALUES"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N08_shape_change",
+      "mutation": "shape_change",
+      "expected_reason": "DTYPE_OR_SHAPE_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "DTYPE_OR_SHAPE_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N09_meta_iterations",
+      "mutation": "meta_iterations",
+      "expected_reason": "METADATA_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "METADATA_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N10_meta_message",
+      "mutation": "meta_message",
+      "expected_reason": "METADATA_MISMATCH",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "METADATA_MISMATCH"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    },
+    {
+      "case": "N11_meta_extra_case",
+      "mutation": "meta_extra_case",
+      "expected_reason": "MISSING_CASE",
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "reasons": [
+        "MISSING_CASE"
+      ],
+      "pass": true,
+      "stderr_tail": ""
+    }
+  ],
+  "all_passed": true,
+  "note": "every negative case must yield verdict FAIL and a non-zero exit code"
+}
