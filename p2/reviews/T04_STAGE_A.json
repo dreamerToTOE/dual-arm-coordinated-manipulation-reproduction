@@ -1,0 +1,3631 @@
+{
+  "kind": "T04_STAGE_A",
+  "mode_a": "PAPER_LITERAL_EULER",
+  "mode_b": "ADAPTED_STABLE_PROPAGATION_V1",
+  "eps": 1e-06,
+  "thresholds": {
+    "abs": 1e-12,
+    "rel": 1e-12
+  },
+  "cases": [
+    {
+      "object": "A",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.0000000000000009,
+        "rho_b": 1.0000000000000007,
+        "rho_trap": 1.0000000000000004,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 1.0000000000000009,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000009
+        },
+        "class_b": {
+          "rho": 1.0000000000000007,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000007
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.0897987219068455e-09,
+        "Phi_b_vs_J_b": 2.8216788905410795e-09,
+        "Phi_trap_vs_J_native": 3.178672436376928e-09,
+        "Phi_b_vs_J_native": 3.767001534350726,
+        "F_a_vs_J_native": 43.96275995350338,
+        "scale": 109.07576419484012
+      },
+      "qd": {
+        "symmetry_rel": 4.248564621980351e-17,
+        "min_over_max_eig": -9.021063918949083e-20,
+        "vanloan_ms": 25.966602988773957,
+        "lyapunov_rel": 2.117582368135751e-14,
+        "simpson_rel": 2.793500636685274e-09,
+        "trace": 2.1874963759571592e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.710505431213761e-20,
+          "min_eig": 5.544750359361323e-10,
+          "max_eig": 0.25524101209022737
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 3.589306303538796e-09,
+          "max_eig": 0.12640120285104078
+        },
+        "trace_ratio_b_over_a": 0.53762042327799
+      },
+      "nonnormal_amplification": [
+        80.69679482016674,
+        147.56238334919504,
+        248.94645430287443
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015357009979197755,
+        "predict_b": 0.021105521998833865
+      }
+    },
+    {
+      "object": "A",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.1830685176033762,
+        "rho_b": 1.0000000000000009,
+        "rho_trap": 1.0000000000000004,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 1.1830685176033762,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0000000000000009,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000009
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2269310900592245e-08,
+        "Phi_b_vs_J_b": 4.528232011580258e-09,
+        "Phi_trap_vs_J_native": 5.864112750941786e-09,
+        "Phi_b_vs_J_native": 35.55161484817734,
+        "F_a_vs_J_native": 257.5560775403545,
+        "scale": 201.5594949013568
+      },
+      "qd": {
+        "symmetry_rel": 3.7151967093098167e-16,
+        "min_over_max_eig": -2.351681058412983e-20,
+        "vanloan_ms": 25.935475990991108,
+        "lyapunov_rel": 6.246867986000465e-13,
+        "simpson_rel": 2.626667162547723e-08,
+        "trace": 2.310944827886092e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.204170427930421e-18,
+          "min_eig": 9.078803614213985e-10,
+          "max_eig": 2.2977649157244517
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 6.395218947973608e-11,
+          "max_eig": 0.36895259407840447
+        },
+        "trace_ratio_b_over_a": 0.21050108095302272
+      },
+      "nonnormal_amplification": [
+        202.98721168902674,
+        318.79197658736723,
+        426.1683242887987
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014881520037306473,
+        "predict_b": 0.002198100002715364
+      }
+    },
+    {
+      "object": "A",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 5.549205552810129,
+        "rho_b": 1.000000000000001,
+        "rho_trap": 1.0000000000000002,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 5.549205552810129,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000002
+        },
+        "class_b": {
+          "rho": 1.000000000000001,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000001
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.6807932701776735e-08,
+        "Phi_b_vs_J_b": 6.159211807243992e-09,
+        "Phi_trap_vs_J_native": 7.286379499760187e-09,
+        "Phi_b_vs_J_native": 121.27404993108723,
+        "F_a_vs_J_native": 1128.0997722975624,
+        "scale": 249.24694501803899
+      },
+      "qd": {
+        "symmetry_rel": 2.4841393735338375e-16,
+        "min_over_max_eig": -1.4249049850139434e-20,
+        "vanloan_ms": 5.40150300366804,
+        "lyapunov_rel": 1.1434944787933055e-12,
+        "simpson_rel": null,
+        "trace": 1.6618058705421673e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 5.476588002049222e-12,
+          "max_eig": 20.698501391423946
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 1.2654190289981196e-14,
+          "max_eig": 0.6866102958834522
+        },
+        "trace_ratio_b_over_a": 0.05868145171692298
+      },
+      "nonnormal_amplification": [
+        385.7956984429781,
+        472.148449254029,
+        567.082617344305
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014971320051699877,
+        "predict_b": 0.002994212001794949
+      }
+    },
+    {
+      "object": "A",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.732274070413504,
+        "rho_b": 1.0000000000000004,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 7.732274070413504,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000007
+        },
+        "class_b": {
+          "rho": 1.0000000000000004,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000004
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.907724360236898e-08,
+        "Phi_b_vs_J_b": 7.719506811554311e-09,
+        "Phi_trap_vs_J_native": 8.072333912423346e-09,
+        "Phi_b_vs_J_native": 142.50084946260455,
+        "F_a_vs_J_native": 1593.3053104657156,
+        "scale": 273.3623524663328
+      },
+      "qd": {
+        "symmetry_rel": 2.7627748375191006e-16,
+        "min_over_max_eig": -1.8056210283533216e-20,
+        "vanloan_ms": 6.367082009091973,
+        "lyapunov_rel": 2.346281263894412e-11,
+        "simpson_rel": null,
+        "trace": 2.7415091243218116e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.326672684688674e-17,
+          "min_eig": 1.340102611868413e-10,
+          "max_eig": 36.802524801031176
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 4.892770887075008e-15,
+          "max_eig": 0.8535161046271001
+        },
+        "trace_ratio_b_over_a": 0.040876202034105455
+      },
+      "nonnormal_amplification": [
+        426.1683242887987,
+        504.2257778488812,
+        629.6061519656753
+      ],
+      "cost_ms": {
+        "predict_a": 0.001495067001087591,
+        "predict_b": 0.004275298007996753
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 1140.4380286231992,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.000000142371529,
+        "rho_b": 1.0000015443737797,
+        "rho_trap": 1.0000015443738117,
+        "rho_native_fd": 1.0000000840331562,
+        "class_a": {
+          "rho": 1.000000142371529,
+          "neutral_count": 23,
+          "unstable_count": 6,
+          "max_real": 1.0000001423353528
+        },
+        "class_b": {
+          "rho": 1.0000015443737797,
+          "neutral_count": 22,
+          "unstable_count": 4,
+          "max_real": 1.0000015443737797
+        },
+        "class_native": {
+          "rho": 1.0000000840331562,
+          "neutral_count": 22,
+          "unstable_count": 6,
+          "max_real": 1.000000084029052
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.127969077671878e-09,
+        "Phi_b_vs_J_b": 0.2636537958171945,
+        "Phi_trap_vs_J_native": 0.23186508802983408,
+        "Phi_b_vs_J_native": 3.8022490548299857,
+        "F_a_vs_J_native": 44.339040714033715,
+        "scale": 110.20711610831846
+      },
+      "qd": {
+        "symmetry_rel": 3.5561047216851013e-16,
+        "min_over_max_eig": -1.1861827767855844e-19,
+        "vanloan_ms": 6.964759988477454,
+        "lyapunov_rel": 1.0587911840678754e-14,
+        "simpson_rel": 2.7877464915958964e-09,
+        "trace": 2.1830673550443188e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 5.608893114500961e-10,
+          "max_eig": 0.25778580025730774
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 3.613844704929497e-09,
+          "max_eig": 0.1277258012755193
+        },
+        "trace_ratio_b_over_a": 0.5376104793524453
+      },
+      "nonnormal_amplification": [
+        80.45759535845363,
+        147.13560317658536,
+        248.25859242101413
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015427479956997558,
+        "predict_b": 0.0021569520031334832
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 1140.4380286231992,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.1807388769994467,
+        "rho_b": 1.0000046331285366,
+        "rho_trap": 1.0000046331285186,
+        "rho_native_fd": 1.0000004192244594,
+        "class_a": {
+          "rho": 1.1807388769994467,
+          "neutral_count": 23,
+          "unstable_count": 7,
+          "max_real": 1.0000004264862403
+        },
+        "class_b": {
+          "rho": 1.0000046331285366,
+          "neutral_count": 22,
+          "unstable_count": 4,
+          "max_real": 1.0000046331285366
+        },
+        "class_native": {
+          "rho": 1.0000004192244594,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000004192244594
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2383964076434495e-08,
+        "Phi_b_vs_J_b": 1.218874424538265,
+        "Phi_trap_vs_J_native": 1.0409118880860575,
+        "Phi_b_vs_J_native": 35.88519447793999,
+        "F_a_vs_J_native": 259.84885025610856,
+        "scale": 203.78962021094793
+      },
+      "qd": {
+        "symmetry_rel": 2.4820884414328143e-16,
+        "min_over_max_eig": -2.1943114205007686e-20,
+        "vanloan_ms": 2.5511069979984313,
+        "lyapunov_rel": 1.2281977735187355e-12,
+        "simpson_rel": 2.6209542835997713e-08,
+        "trace": 2.3069093299719676e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.734723475976807e-18,
+          "min_eig": 9.091978130846116e-10,
+          "max_eig": 2.3206530244413335
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 6.452309873276867e-11,
+          "max_eig": 0.37287985484610814
+        },
+        "trace_ratio_b_over_a": 0.2103742758441968
+      },
+      "nonnormal_amplification": [
+        202.41374332763175,
+        317.94635523958095,
+        425.1479807400177
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015345910069299862,
+        "predict_b": 0.003724013004102744
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 1140.4380286231992,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 5.542214240641902,
+        "rho_b": 1.0000138994499896,
+        "rho_trap": 1.0000138994500642,
+        "rho_native_fd": 1.0000019525054986,
+        "class_a": {
+          "rho": 5.542214240641902,
+          "neutral_count": 23,
+          "unstable_count": 7,
+          "max_real": 1.0000012747803333
+        },
+        "class_b": {
+          "rho": 1.0000138994499896,
+          "neutral_count": 22,
+          "unstable_count": 4,
+          "max_real": 1.0000138994499896
+        },
+        "class_native": {
+          "rho": 1.0000019525054986,
+          "neutral_count": 22,
+          "unstable_count": 4,
+          "max_real": 1.0000019525054986
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.692980499181431e-08,
+        "Phi_b_vs_J_b": 3.1164702757671328,
+        "Phi_trap_vs_J_native": 3.0436185294607636,
+        "Phi_b_vs_J_native": 122.4852444665803,
+        "F_a_vs_J_native": 1138.6027767496946,
+        "scale": 252.3126346514748
+      },
+      "qd": {
+        "symmetry_rel": 4.976009347212345e-16,
+        "min_over_max_eig": -1.8918844762570734e-21,
+        "vanloan_ms": 12.226694001583382,
+        "lyapunov_rel": 9.423241538204091e-13,
+        "simpson_rel": null,
+        "trace": 1.6591886390641802e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 9.020562075079397e-17,
+          "min_eig": 5.4605431725162536e-12,
+          "max_eig": 20.904461799780776
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 1.2808581896332609e-14,
+          "max_eig": 0.6889534922573092
+        },
+        "trace_ratio_b_over_a": 0.05856945066942587
+      },
+      "nonnormal_amplification": [
+        384.82591360391837,
+        471.12942083468965,
+        566.4363611208897
+      ],
+      "cost_ms": {
+        "predict_a": 0.001566078994073905,
+        "predict_b": 0.02265825700305868
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 1140.4380286231992,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.722950727029249,
+        "rho_b": 1.0000185326429414,
+        "rho_trap": 1.0000185326429374,
+        "rho_native_fd": 1.000002634066867,
+        "class_a": {
+          "rho": 7.722950727029249,
+          "neutral_count": 23,
+          "unstable_count": 7,
+          "max_real": 1.0000016965881846
+        },
+        "class_b": {
+          "rho": 1.0000185326429414,
+          "neutral_count": 22,
+          "unstable_count": 4,
+          "max_real": 1.0000185326429414
+        },
+        "class_native": {
+          "rho": 1.000002634066867,
+          "neutral_count": 22,
+          "unstable_count": 4,
+          "max_real": 1.000002634066867
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.953585630573798e-08,
+        "Phi_b_vs_J_b": 3.731861589923236,
+        "Phi_trap_vs_J_native": 3.787269461735634,
+        "Phi_b_vs_J_native": 143.91584844437605,
+        "F_a_vs_J_native": 1608.3099005268496,
+        "scale": 277.37482948470006
+      },
+      "qd": {
+        "symmetry_rel": 3.8699243860731154e-17,
+        "min_over_max_eig": -4.256713076351418e-21,
+        "vanloan_ms": 22.70570299879182,
+        "lyapunov_rel": 3.239901023247699e-11,
+        "simpson_rel": null,
+        "trace": 2.7369074293297194e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.3382903364506392e-10,
+          "max_eig": 37.168670174771734
+        },
+        "P_b": {
+          "symmetry": 1.3877787807814457e-17,
+          "min_eig": 4.911085336835505e-15,
+          "max_eig": 0.8595502408293374
+        },
+        "trace_ratio_b_over_a": 0.04081314625171062
+      },
+      "nonnormal_amplification": [
+        425.1479807400177,
+        503.2823861901388,
+        629.3774536222728
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015852670039748773,
+        "predict_b": 0.002453063993016258
+      }
+    },
+    {
+      "object": "A",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 0.004843516603138578,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.0000000000000202,
+        "rho_b": 1.0000000000001559,
+        "rho_trap": 1.0000000000002882,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 1.0000000000000202,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000202
+        },
+        "class_b": {
+          "rho": 1.0000000000001559,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000001559
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.096960992683307e-09,
+        "Phi_b_vs_J_b": 1.3024095823155335e-05,
+        "Phi_trap_vs_J_native": 1.19318116976741e-05,
+        "Phi_b_vs_J_native": 3.7670092441107528,
+        "F_a_vs_J_native": 43.962851044696194,
+        "scale": 109.07598249953689
+      },
+      "qd": {
+        "symmetry_rel": 3.9406980286078556e-17,
+        "min_over_max_eig": -6.829900272202789e-20,
+        "vanloan_ms": 2.8851639945060015,
+        "lyapunov_rel": 2.117582368135751e-14,
+        "simpson_rel": 2.793501714206028e-09,
+        "trace": 2.1874962038126534e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.168404344971009e-19,
+          "min_eig": 5.544753569741925e-10,
+          "max_eig": 0.25524092731387205
+        },
+        "P_b": {
+          "symmetry": 7.589415207398531e-19,
+          "min_eig": 3.5893078772554966e-09,
+          "max_eig": 0.12640116787844258
+        },
+        "trace_ratio_b_over_a": 0.5376204608989034
+      },
+      "nonnormal_amplification": [
+        80.69677920118225,
+        147.56235560203933,
+        248.94641035801482
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015188390098046511,
+        "predict_b": 0.0023265130002982914
+      }
+    },
+    {
+      "object": "A",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 0.004843516603138578,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.1830684616642317,
+        "rho_b": 1.000000000000477,
+        "rho_trap": 1.0000000000004818,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 1.1830684616642317,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000001763
+        },
+        "class_b": {
+          "rho": 1.000000000000477,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000477
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2290911399759352e-08,
+        "Phi_b_vs_J_b": 7.765398868153639e-05,
+        "Phi_trap_vs_J_native": 6.736758874614779e-05,
+        "Phi_b_vs_J_native": 35.55168774400781,
+        "F_a_vs_J_native": 257.5566118703935,
+        "scale": 201.55988876230577
+      },
+      "qd": {
+        "symmetry_rel": 2.476798046441563e-16,
+        "min_over_max_eig": -6.651323898311963e-20,
+        "vanloan_ms": 2.304327004821971,
+        "lyapunov_rel": 1.9058241313221758e-13,
+        "simpson_rel": 2.6266666123598696e-08,
+        "trace": 2.3109446525718713e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.220446049250313e-16,
+          "min_eig": 9.078807321048651e-10,
+          "max_eig": 2.29776415245484
+        },
+        "P_b": {
+          "symmetry": 5.204170427930421e-18,
+          "min_eig": 6.395222252045814e-11,
+          "max_eig": 0.3689525296573375
+        },
+        "trace_ratio_b_over_a": 0.21050112425178333
+      },
+      "nonnormal_amplification": [
+        202.98717467356332,
+        318.79192417040935,
+        426.16827098637253
+      ],
+      "cost_ms": {
+        "predict_a": 0.001112954007112421,
+        "predict_b": 0.003348262995132245
+      }
+    },
+    {
+      "object": "A",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 0.004843516603138578,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 5.549205384991525,
+        "rho_b": 1.0000000000018738,
+        "rho_trap": 1.000000000001826,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 5.549205384991525,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000002605
+        },
+        "class_b": {
+          "rho": 1.0000000000018738,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000018738
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.6872506825602613e-08,
+        "Phi_b_vs_J_b": 0.0002971263092619303,
+        "Phi_trap_vs_J_native": 0.0002631745468750779,
+        "Phi_b_vs_J_native": 121.27429094212773,
+        "F_a_vs_J_native": 1128.1021071057887,
+        "scale": 249.24739479230922
+      },
+      "qd": {
+        "symmetry_rel": 1.242069820354217e-16,
+        "min_over_max_eig": -1.2882615884440704e-20,
+        "vanloan_ms": 4.8944419977488,
+        "lyapunov_rel": 3.0493186101154812e-12,
+        "simpson_rel": null,
+        "trace": 1.6618057569267658e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 4.163336342344337e-17,
+          "min_eig": 5.476590212028123e-12,
+          "max_eig": 20.698494521205284
+        },
+        "P_b": {
+          "symmetry": 3.469446951953614e-18,
+          "min_eig": 1.2653541332049063e-14,
+          "max_eig": 0.6866103381585971
+        },
+        "trace_ratio_b_over_a": 0.05868148117901513
+      },
+      "nonnormal_amplification": [
+        385.7956424114346,
+        472.1484095771096,
+        567.0826233087257
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014802270015934482,
+        "predict_b": 0.0025185559934470803
+      }
+    },
+    {
+      "object": "A",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 0.004843516603138578,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.732273846654589,
+        "rho_b": 1.0000000000027254,
+        "rho_trap": 1.0000000000029248,
+        "rho_native_fd": 1.0000000003232439,
+        "class_a": {
+          "rho": 7.732273846654589,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000537
+        },
+        "class_b": {
+          "rho": 1.0000000000027254,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000027254
+        },
+        "class_native": {
+          "rho": 1.0000000003232439,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000003232439
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.916364559903741e-08,
+        "Phi_b_vs_J_b": 0.0003886735101064076,
+        "Phi_trap_vs_J_native": 0.00035011007795571203,
+        "Phi_b_vs_J_native": 142.50112432410947,
+        "F_a_vs_J_native": 1593.3086020730093,
+        "scale": 273.3625460640671
+      },
+      "qd": {
+        "symmetry_rel": 1.3813875222751415e-16,
+        "min_over_max_eig": -9.693749271835433e-21,
+        "vanloan_ms": 2.6101090043084696,
+        "lyapunov_rel": 1.742770288975723e-11,
+        "simpson_rel": null,
+        "trace": 2.7415089333039537e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 3.552713678800501e-15,
+          "min_eig": 1.3401034156091745e-10,
+          "max_eig": 36.8025125871366
+        },
+        "P_b": {
+          "symmetry": 1.3877787807814457e-17,
+          "min_eig": 4.892533148232527e-15,
+          "max_eig": 0.8535164175416309
+        },
+        "trace_ratio_b_over_a": 0.0408762268454046
+      },
+      "nonnormal_amplification": [
+        426.16827098637253,
+        504.22575457752544,
+        629.6061804872495
+      ],
+      "cost_ms": {
+        "predict_a": 0.001479936996474862,
+        "predict_b": 0.00242604200320784
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 255.9595150763322,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.0000000151295194,
+        "rho_b": 1.0000013109684134,
+        "rho_trap": 1.0000013109684198,
+        "rho_native_fd": 1.0000000274542662,
+        "class_a": {
+          "rho": 1.0000000151295194,
+          "neutral_count": 24,
+          "unstable_count": 5,
+          "max_real": 1.0000000150930473
+        },
+        "class_b": {
+          "rho": 1.0000013109684134,
+          "neutral_count": 23,
+          "unstable_count": 1,
+          "max_real": 1.0000013109684134
+        },
+        "class_native": {
+          "rho": 1.0000000274542662,
+          "neutral_count": 24,
+          "unstable_count": 5,
+          "max_real": 1.0000000274542662
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.087667093699565e-09,
+        "Phi_b_vs_J_b": 0.041279646705320285,
+        "Phi_trap_vs_J_native": 0.035688752786425,
+        "Phi_b_vs_J_native": 3.770059966383485,
+        "F_a_vs_J_native": 44.0595703653172,
+        "scale": 109.33465402727938
+      },
+      "qd": {
+        "symmetry_rel": 1.5752638994075347e-16,
+        "min_over_max_eig": -1.0514905319498662e-19,
+        "vanloan_ms": 2.5728629989316687,
+        "lyapunov_rel": 6.88214269644119e-14,
+        "simpson_rel": 2.7933932537953534e-09,
+        "trace": 2.1885257188051767e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 5.546269877621656e-10,
+          "max_eig": 0.2554616833879105
+        },
+        "P_b": {
+          "symmetry": 8.673617379884035e-19,
+          "min_eig": 3.5903231488613295e-09,
+          "max_eig": 0.1265102700924294
+        },
+        "trace_ratio_b_over_a": 0.5376518679781357
+      },
+      "nonnormal_amplification": [
+        80.68550877922954,
+        147.54193941317638,
+        248.9129952438327
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015633790026186034,
+        "predict_b": 0.0023344549990724772
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 255.9595150763322,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.1830681332305775,
+        "rho_b": 1.0000039329104304,
+        "rho_trap": 1.0000039329104526,
+        "rho_native_fd": 1.000000032444998,
+        "class_a": {
+          "rho": 1.1830681332305775,
+          "neutral_count": 24,
+          "unstable_count": 6,
+          "max_real": 1.0000000447531985
+        },
+        "class_b": {
+          "rho": 1.0000039329104304,
+          "neutral_count": 23,
+          "unstable_count": 1,
+          "max_real": 1.0000039329104304
+        },
+        "class_native": {
+          "rho": 1.000000032444998,
+          "neutral_count": 23,
+          "unstable_count": 6,
+          "max_real": 1.0000000321891778
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2258169590495527e-08,
+        "Phi_b_vs_J_b": 0.17153191895426728,
+        "Phi_trap_vs_J_native": 0.1443247777607728,
+        "Phi_b_vs_J_native": 35.57092303065548,
+        "F_a_vs_J_native": 258.1246392016643,
+        "scale": 202.0580339761255
+      },
+      "qd": {
+        "symmetry_rel": 2.707061648898881e-17,
+        "min_over_max_eig": -2.2274970552413692e-20,
+        "vanloan_ms": 2.650052003446035,
+        "lyapunov_rel": 9.529120656610879e-13,
+        "simpson_rel": 2.6263990628709106e-08,
+        "trace": 2.3120575311088074e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.204170427930421e-18,
+          "min_eig": 9.08016920196652e-10,
+          "max_eig": 2.2997505756956773
+        },
+        "P_b": {
+          "symmetry": 1.3010426069826053e-18,
+          "min_eig": 6.396971721762553e-11,
+          "max_eig": 0.3692735821514519
+        },
+        "trace_ratio_b_over_a": 0.21055509007977405
+      },
+      "nonnormal_amplification": [
+        202.95945553486985,
+        318.75118963797973,
+        426.129204051914
+      ],
+      "cost_ms": {
+        "predict_a": 0.0016421559994341806,
+        "predict_b": 0.002332215997739695
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 255.9595150763322,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 5.549201985787149,
+        "rho_b": 1.0000117987776582,
+        "rho_trap": 1.0000117987776667,
+        "rho_native_fd": 1.0000000672542295,
+        "class_a": {
+          "rho": 5.549201985787149,
+          "neutral_count": 24,
+          "unstable_count": 6,
+          "max_real": 1.000000129526109
+        },
+        "class_b": {
+          "rho": 1.0000117987776582,
+          "neutral_count": 23,
+          "unstable_count": 1,
+          "max_real": 1.0000117987776582
+        },
+        "class_native": {
+          "rho": 1.0000000672542295,
+          "neutral_count": 23,
+          "unstable_count": 5,
+          "max_real": 1.0000000656391
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.676132109831087e-08,
+        "Phi_b_vs_J_b": 0.3954825299979079,
+        "Phi_trap_vs_J_native": 0.3489528847683985,
+        "Phi_b_vs_J_native": 121.34713999167947,
+        "F_a_vs_J_native": 1130.6114585137575,
+        "scale": 249.93656101961193
+      },
+      "qd": {
+        "symmetry_rel": 3.722977608779133e-16,
+        "min_over_max_eig": -1.4367626161769527e-20,
+        "vanloan_ms": 4.455717993550934,
+        "lyapunov_rel": 1.5352472168984194e-12,
+        "simpson_rel": null,
+        "trace": 1.6621915579417094e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 5.473877009129158e-12,
+          "max_eig": 20.716372076506364
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 1.2659539191063532e-14,
+          "max_eig": 0.6876814982483191
+        },
+        "trace_ratio_b_over_a": 0.05871746437479293
+      },
+      "nonnormal_amplification": [
+        385.7520389763116,
+        472.1337368867096,
+        567.1881540438083
+      ],
+      "cost_ms": {
+        "predict_a": 0.001430516000255011,
+        "predict_b": 0.0018409220065223053
+      }
+    },
+    {
+      "object": "A",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 255.9595150763322,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.732267704865363,
+        "rho_b": 1.000015731734476,
+        "rho_trap": 1.0000157317344773,
+        "rho_native_fd": 1.0000000771029063,
+        "class_a": {
+          "rho": 7.732267704865363,
+          "neutral_count": 24,
+          "unstable_count": 6,
+          "max_real": 1.000000169545825
+        },
+        "class_b": {
+          "rho": 1.000015731734476,
+          "neutral_count": 23,
+          "unstable_count": 1,
+          "max_real": 1.000015731734476
+        },
+        "class_native": {
+          "rho": 1.0000000771029063,
+          "neutral_count": 23,
+          "unstable_count": 5,
+          "max_real": 1.0000000746625677
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.903267836198211e-08,
+        "Phi_b_vs_J_b": 0.5643104929356224,
+        "Phi_trap_vs_J_native": 0.42280245448724196,
+        "Phi_b_vs_J_native": 142.5937947120633,
+        "F_a_vs_J_native": 1596.867653283798,
+        "scale": 273.8814014468724
+      },
+      "qd": {
+        "symmetry_rel": 2.7637707278800143e-16,
+        "min_over_max_eig": -2.5495090932623536e-21,
+        "vanloan_ms": 1.6855870053404942,
+        "lyapunov_rel": 1.8592373192231892e-11,
+        "simpson_rel": null,
+        "trace": 2.7418631289326633e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.326672684688674e-17,
+          "min_eig": 1.3395710107042677e-10,
+          "max_eig": 36.834294906924924
+        },
+        "P_b": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 4.896806429192931e-15,
+          "max_eig": 0.8552602184800466
+        },
+        "trace_ratio_b_over_a": 0.04090338725831874
+      },
+      "nonnormal_amplification": [
+        426.129204051914,
+        504.2477081737131,
+        629.7879911425263
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015862870059208944,
+        "predict_b": 0.0026681400049710646
+      }
+    },
+    {
+      "object": "A",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 472.57568733831306,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.0000000000000016,
+        "rho_b": 1.0000000000000009,
+        "rho_trap": 1.0000000000000007,
+        "rho_native_fd": 1.0000000071445643,
+        "class_a": {
+          "rho": 1.0000000000000016,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000016
+        },
+        "class_b": {
+          "rho": 1.0000000000000009,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000009
+        },
+        "class_native": {
+          "rho": 1.0000000071445643,
+          "neutral_count": 21,
+          "unstable_count": 3,
+          "max_real": 1.0000000071445643
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.399993258630275e-09,
+        "Phi_b_vs_J_b": 0.14096691756894952,
+        "Phi_trap_vs_J_native": 0.12512079039369062,
+        "Phi_b_vs_J_native": 3.77574601884686,
+        "F_a_vs_J_native": 43.89976978211233,
+        "scale": 109.17125248351839
+      },
+      "qd": {
+        "symmetry_rel": 1.181059253194692e-16,
+        "min_over_max_eig": -1.2237109849111333e-19,
+        "vanloan_ms": 5.092614999739453,
+        "lyapunov_rel": 2.117582368135751e-14,
+        "simpson_rel": 2.782938256709963e-09,
+        "trace": 2.1889062836044207e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 5.580359356159096e-10,
+          "max_eig": 0.25514225678439645
+        },
+        "P_b": {
+          "symmetry": 1.1926223897340549e-18,
+          "min_eig": 3.5945234480182154e-09,
+          "max_eig": 0.1265551753294052
+        },
+        "trace_ratio_b_over_a": 0.5383070751688058
+      },
+      "nonnormal_amplification": [
+        80.71893453033847,
+        147.63425783383065,
+        249.17610049022207
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015268030110746622,
+        "predict_b": 0.0023059619998093694
+      }
+    },
+    {
+      "object": "A",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 472.57568733831306,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.1812170691613515,
+        "rho_b": 1.0000000000000018,
+        "rho_trap": 1.000000000000001,
+        "rho_native_fd": 1.000000033667213,
+        "class_a": {
+          "rho": 1.1812170691613515,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000002
+        },
+        "class_b": {
+          "rho": 1.0000000000000018,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000018
+        },
+        "class_native": {
+          "rho": 1.000000033667213,
+          "neutral_count": 20,
+          "unstable_count": 4,
+          "max_real": 1.0000000325538694
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.3213877991802292e-08,
+        "Phi_b_vs_J_b": 0.6920155348227639,
+        "Phi_trap_vs_J_native": 0.5939188586693844,
+        "Phi_b_vs_J_native": 35.58679437312617,
+        "F_a_vs_J_native": 257.25040839453874,
+        "scale": 202.0432734810007
+      },
+      "qd": {
+        "symmetry_rel": 2.468674204957951e-16,
+        "min_over_max_eig": -2.4430711594073703e-20,
+        "vanloan_ms": 12.716273005935363,
+        "lyapunov_rel": 1.3023131564034868e-12,
+        "simpson_rel": 2.6122852840255642e-08,
+        "trace": 2.3167375542598015e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.1102230246251565e-16,
+          "min_eig": 9.090057799103822e-10,
+          "max_eig": 2.296856882149453
+        },
+        "P_b": {
+          "symmetry": 4.336808689942018e-18,
+          "min_eig": 6.422727450310005e-11,
+          "max_eig": 0.3706128937602692
+        },
+        "trace_ratio_b_over_a": 0.21118328664718009
+      },
+      "nonnormal_amplification": [
+        203.12996826006196,
+        319.22781858528504,
+        427.3111881115121
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015316950011765584,
+        "predict_b": 0.0024605829967185855
+      }
+    },
+    {
+      "object": "A",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 472.57568733831306,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 5.543651207484055,
+        "rho_b": 1.000000000000002,
+        "rho_trap": 1.0000000000000004,
+        "rho_native_fd": 1.0000004102727527,
+        "class_a": {
+          "rho": 5.543651207484055,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000004
+        },
+        "class_b": {
+          "rho": 1.000000000000002,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000002
+        },
+        "class_native": {
+          "rho": 1.0000004102727527,
+          "neutral_count": 19,
+          "unstable_count": 5,
+          "max_real": 1.0000003523895424
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.961372385674622e-08,
+        "Phi_b_vs_J_b": 1.9863518534095679,
+        "Phi_trap_vs_J_native": 1.888251067199433,
+        "Phi_b_vs_J_native": 121.5194243866328,
+        "F_a_vs_J_native": 1127.08713486822,
+        "scale": 250.9017932179336
+      },
+      "qd": {
+        "symmetry_rel": 3.6898312172553187e-16,
+        "min_over_max_eig": -2.561643060759484e-21,
+        "vanloan_ms": 6.417012991732918,
+        "lyapunov_rel": 4.881027358552906e-12,
+        "simpson_rel": null,
+        "trace": 1.6699410478547865e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 5.558968778199995e-12,
+          "max_eig": 20.69027099893367
+        },
+        "P_b": {
+          "symmetry": 1.0408340855860843e-17,
+          "min_eig": 1.27471581741983e-14,
+          "max_eig": 0.686349711803822
+        },
+        "trace_ratio_b_over_a": 0.05890938745165542
+      },
+      "nonnormal_amplification": [
+        386.58137086801526,
+        473.92987550344156,
+        569.7156159437518
+      ],
+      "cost_ms": {
+        "predict_a": 0.001482574996771291,
+        "predict_b": 0.002547757001593709
+      }
+    },
+    {
+      "object": "A",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 472.57568733831306,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.724868276645406,
+        "rho_b": 1.0000000000000024,
+        "rho_trap": 1.0000000000000013,
+        "rho_native_fd": 1.0000007668067918,
+        "class_a": {
+          "rho": 7.724868276645406,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0000000000000024,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000024
+        },
+        "class_native": {
+          "rho": 1.0000007668067918,
+          "neutral_count": 21,
+          "unstable_count": 4,
+          "max_real": 1.0000006154217083
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 5.285551196720917e-08,
+        "Phi_b_vs_J_b": 2.4434112129486985,
+        "Phi_trap_vs_J_native": 2.401454063186578,
+        "Phi_b_vs_J_native": 142.86010245632653,
+        "F_a_vs_J_native": 1591.9994140077881,
+        "scale": 273.85278514963085
+      },
+      "qd": {
+        "symmetry_rel": 1.3748369441420835e-16,
+        "min_over_max_eig": -2.7012788957028084e-20,
+        "vanloan_ms": 6.961785999010317,
+        "lyapunov_rel": 2.0413494028828638e-11,
+        "simpson_rel": null,
+        "trace": 2.7549199981454976e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.1102230246251565e-16,
+          "min_eig": 1.349264206768245e-10,
+          "max_eig": 36.787880059820885
+        },
+        "P_b": {
+          "symmetry": 1.3877787807814457e-17,
+          "min_eig": 4.89654434484821e-15,
+          "max_eig": 0.8528832277758802
+        },
+        "trace_ratio_b_over_a": 0.04100348446698732
+      },
+      "nonnormal_amplification": [
+        427.3111881115121,
+        506.4740291365339,
+        632.0619010476136
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014768620021641254,
+        "predict_b": 0.0025765080063138157
+      }
+    },
+    {
+      "object": "A",
+      "state": "S5_mode_boundary",
+      "note": "pivot, tau_z moment near zero",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.0000000000000009,
+        "rho_b": 1.0000000000000007,
+        "rho_trap": 1.0000000000000004,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 1.0000000000000009,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000009
+        },
+        "class_b": {
+          "rho": 1.0000000000000007,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000007
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.0897987219068455e-09,
+        "Phi_b_vs_J_b": 2.8216788905410795e-09,
+        "Phi_trap_vs_J_native": 3.178672436376928e-09,
+        "Phi_b_vs_J_native": 3.767001534350726,
+        "F_a_vs_J_native": 43.96275995350338,
+        "scale": 109.07576419484012
+      },
+      "qd": {
+        "symmetry_rel": 4.248564621980351e-17,
+        "min_over_max_eig": -9.021063918949083e-20,
+        "vanloan_ms": 3.8076799974078313,
+        "lyapunov_rel": 2.117582368135751e-14,
+        "simpson_rel": 2.793500636685274e-09,
+        "trace": 2.1874963759571592e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.710505431213761e-20,
+          "min_eig": 5.544750359361323e-10,
+          "max_eig": 0.25524101209022737
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 3.589306303538796e-09,
+          "max_eig": 0.12640120285104078
+        },
+        "trace_ratio_b_over_a": 0.53762042327799
+      },
+      "nonnormal_amplification": [
+        80.69679482016674,
+        147.56238334919504,
+        248.94645430287443
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015011159994173795,
+        "predict_b": 0.002024004003033042
+      }
+    },
+    {
+      "object": "A",
+      "state": "S5_mode_boundary",
+      "note": "pivot, tau_z moment near zero",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.1830685176033762,
+        "rho_b": 1.0000000000000009,
+        "rho_trap": 1.0000000000000004,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 1.1830685176033762,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0000000000000009,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000009
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2269310900592245e-08,
+        "Phi_b_vs_J_b": 4.528232011580258e-09,
+        "Phi_trap_vs_J_native": 5.864112750941786e-09,
+        "Phi_b_vs_J_native": 35.55161484817734,
+        "F_a_vs_J_native": 257.5560775403545,
+        "scale": 201.5594949013568
+      },
+      "qd": {
+        "symmetry_rel": 3.7151967093098167e-16,
+        "min_over_max_eig": -2.351681058412983e-20,
+        "vanloan_ms": 6.2209750030888245,
+        "lyapunov_rel": 6.246867986000465e-13,
+        "simpson_rel": 2.626667162547723e-08,
+        "trace": 2.310944827886092e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.204170427930421e-18,
+          "min_eig": 9.078803614213985e-10,
+          "max_eig": 2.2977649157244517
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 6.395218947973608e-11,
+          "max_eig": 0.36895259407840447
+        },
+        "trace_ratio_b_over_a": 0.21050108095302272
+      },
+      "nonnormal_amplification": [
+        202.98721168902674,
+        318.79197658736723,
+        426.1683242887987
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014855729968985543,
+        "predict_b": 0.003933959000278264
+      }
+    },
+    {
+      "object": "A",
+      "state": "S5_mode_boundary",
+      "note": "pivot, tau_z moment near zero",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 5.549205552810129,
+        "rho_b": 1.000000000000001,
+        "rho_trap": 1.0000000000000002,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 5.549205552810129,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000002
+        },
+        "class_b": {
+          "rho": 1.000000000000001,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000001
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.6807932701776735e-08,
+        "Phi_b_vs_J_b": 6.159211807243992e-09,
+        "Phi_trap_vs_J_native": 7.286379499760187e-09,
+        "Phi_b_vs_J_native": 121.27404993108723,
+        "F_a_vs_J_native": 1128.0997722975624,
+        "scale": 249.24694501803899
+      },
+      "qd": {
+        "symmetry_rel": 2.4841393735338375e-16,
+        "min_over_max_eig": -1.4249049850139434e-20,
+        "vanloan_ms": 8.402681996813044,
+        "lyapunov_rel": 1.1434944787933055e-12,
+        "simpson_rel": null,
+        "trace": 1.6618058705421673e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 5.476588002049222e-12,
+          "max_eig": 20.698501391423946
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 1.2654190289981196e-14,
+          "max_eig": 0.6866102958834522
+        },
+        "trace_ratio_b_over_a": 0.05868145171692298
+      },
+      "nonnormal_amplification": [
+        385.7956984429781,
+        472.148449254029,
+        567.082617344305
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014923799899406731,
+        "predict_b": 0.002442783006699756
+      }
+    },
+    {
+      "object": "A",
+      "state": "S5_mode_boundary",
+      "note": "pivot, tau_z moment near zero",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 2.5619954808223567e-09,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.732274070413504,
+        "rho_b": 1.0000000000000004,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 7.732274070413504,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000007
+        },
+        "class_b": {
+          "rho": 1.0000000000000004,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000004
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.907724360236898e-08,
+        "Phi_b_vs_J_b": 7.719506811554311e-09,
+        "Phi_trap_vs_J_native": 8.072333912423346e-09,
+        "Phi_b_vs_J_native": 142.50084946260455,
+        "F_a_vs_J_native": 1593.3053104657156,
+        "scale": 273.3623524663328
+      },
+      "qd": {
+        "symmetry_rel": 2.7627748375191006e-16,
+        "min_over_max_eig": -1.8056210283533216e-20,
+        "vanloan_ms": 2.395396993961185,
+        "lyapunov_rel": 2.346281263894412e-11,
+        "simpson_rel": null,
+        "trace": 2.7415091243218116e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.326672684688674e-17,
+          "min_eig": 1.340102611868413e-10,
+          "max_eig": 36.802524801031176
+        },
+        "P_b": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 4.892770887075008e-15,
+          "max_eig": 0.8535161046271001
+        },
+        "trace_ratio_b_over_a": 0.040876202034105455
+      },
+      "nonnormal_amplification": [
+        426.1683242887987,
+        504.2257778488812,
+        629.6061519656753
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014921379915904254,
+        "predict_b": 0.004286276991479099
+      }
+    },
+    {
+      "object": "C",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 9.81,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 2.1119355811436433,
+        "rho_b": 1.0,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 2.1119355811436433,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.1840146779684702e-09,
+        "Phi_b_vs_J_b": 0.010644380664613763,
+        "Phi_trap_vs_J_native": 0.010343922693464968,
+        "Phi_b_vs_J_native": 29.318257129354464,
+        "F_a_vs_J_native": 211.65424742231252,
+        "scale": 125.72761436155275
+      },
+      "qd": {
+        "symmetry_rel": 5.770278349797624e-17,
+        "min_over_max_eig": -8.818720612019986e-20,
+        "vanloan_ms": 3.4544689988251776,
+        "lyapunov_rel": 1.5352472168984194e-13,
+        "simpson_rel": 5.2467139226677455e-08,
+        "trace": 2.932202258117931e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 5.613035112911463e-09,
+          "max_eig": 3.9883654638104296
+        },
+        "P_b": {
+          "symmetry": 1.734723475976807e-18,
+          "min_eig": 3.303601413442151e-11,
+          "max_eig": 0.38355588530536344
+        },
+        "trace_ratio_b_over_a": 0.10557164246134451
+      },
+      "nonnormal_amplification": [
+        135.58081269712667,
+        197.68280282384643,
+        243.1814931320878
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015157410089159384,
+        "predict_b": 0.0036214680003467947
+      }
+    },
+    {
+      "object": "C",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 9.81,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 8.335806743430933,
+        "rho_b": 1.0,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000000527653,
+        "class_a": {
+          "rho": 8.335806743430933,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0
+        },
+        "class_native": {
+          "rho": 1.0000000000527653,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000527653
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.5520440477831983e-09,
+        "Phi_b_vs_J_b": 0.08497786945110929,
+        "Phi_trap_vs_J_native": 0.07832638644000714,
+        "Phi_b_vs_J_native": 72.37443610908917,
+        "F_a_vs_J_native": 857.5578822679992,
+        "scale": 154.59894521514468
+      },
+      "qd": {
+        "symmetry_rel": 9.431004489804396e-17,
+        "min_over_max_eig": -7.027125855304215e-20,
+        "vanloan_ms": 2.6241209998261184,
+        "lyapunov_rel": 5.029258124322408e-13,
+        "simpson_rel": 1.1012577660057256e-06,
+        "trace": 1.8229329221402903e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 3.145554638889411e-09,
+          "max_eig": 35.92444556068876
+        },
+        "P_b": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 1.291020380930709e-15,
+          "max_eig": 0.6985908317680225
+        },
+        "trace_ratio_b_over_a": 0.026286864597020378
+      },
+      "nonnormal_amplification": [
+        227.28729991209298,
+        263.09062997344193,
+        328.58413089837154
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014905639982316643,
+        "predict_b": 0.00231494200124871
+      }
+    },
+    {
+      "object": "C",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 9.81,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 27.00742023029281,
+        "rho_b": 1.0,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 27.00742023029281,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.0656132198860746e-08,
+        "Phi_b_vs_J_b": 0.5252298643926661,
+        "Phi_trap_vs_J_native": 0.4292164736080234,
+        "Phi_b_vs_J_native": 95.74592649897205,
+        "F_a_vs_J_native": 2902.9192768382304,
+        "scale": 268.8560677637531
+      },
+      "qd": {
+        "symmetry_rel": 8.672830936142771e-17,
+        "min_over_max_eig": -4.8957388976880873e-20,
+        "vanloan_ms": 3.8384630024665967,
+        "lyapunov_rel": 6.6280328122649e-12,
+        "simpson_rel": null,
+        "trace": 1.6330898389294827e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 7.105427357601002e-15,
+          "min_eig": 1.4373622962557485e-10,
+          "max_eig": 323.42484650916197
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.1043908858563336e-15,
+          "max_eig": 2.3110122388149246
+        },
+        "trace_ratio_b_over_a": 0.009864696171565483
+      },
+      "nonnormal_amplification": [
+        292.9704806822507,
+        405.9783606316835,
+        598.0592497336617
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014890470047248527,
+        "predict_b": 0.0027063210000051185
+      }
+    },
+    {
+      "object": "C",
+      "state": "S1_static",
+      "note": "static reference",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 9.81,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 36.343226973723745,
+        "rho_b": 1.0,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 36.343226973723745,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0
+        },
+        "class_b": {
+          "rho": 1.0,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.4208176191132793e-08,
+        "Phi_b_vs_J_b": 0.7656857570231842,
+        "Phi_trap_vs_J_native": 0.6033933799474143,
+        "Phi_b_vs_J_native": 97.77463108460269,
+        "F_a_vs_J_native": 3929.0181748775344,
+        "scale": 315.97775445821384
+      },
+      "qd": {
+        "symmetry_rel": 9.149061383646144e-17,
+        "min_over_max_eig": -1.1363602583846172e-20,
+        "vanloan_ms": 6.848842007457279,
+        "lyapunov_rel": 3.3193103620527895e-12,
+        "simpson_rel": null,
+        "trace": 2.8899803432448754e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 7.75088533838461e-11,
+          "max_eig": 575.0018872593495
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.173271598201629e-15,
+          "max_eig": 2.9420154037764297
+        },
+        "trace_ratio_b_over_a": 0.006895802022149475
+      },
+      "nonnormal_amplification": [
+        328.58413089837154,
+        479.6783113628404,
+        674.7625582531277
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014772850117878988,
+        "predict_b": 0.01801253401208669
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 240.20345753727725,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 2.114675485323679,
+        "rho_b": 1.0000021622474082,
+        "rho_trap": 1.0000021622474098,
+        "rho_native_fd": 1.0000001272862633,
+        "class_a": {
+          "rho": 2.114675485323679,
+          "neutral_count": 23,
+          "unstable_count": 4,
+          "max_real": 1.0000001884586753
+        },
+        "class_b": {
+          "rho": 1.0000021622474082,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000021622452595
+        },
+        "class_native": {
+          "rho": 1.0000001272862633,
+          "neutral_count": 22,
+          "unstable_count": 3,
+          "max_real": 1.0000001272847998
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2902710011530871e-09,
+        "Phi_b_vs_J_b": 0.41324307885778905,
+        "Phi_trap_vs_J_native": 0.35819779579851696,
+        "Phi_b_vs_J_native": 31.19593159145782,
+        "F_a_vs_J_native": 225.17494040211687,
+        "scale": 133.82330136101768
+      },
+      "qd": {
+        "symmetry_rel": 2.0984263462993507e-17,
+        "min_over_max_eig": -2.4917555598326142e-20,
+        "vanloan_ms": 8.52695900539402,
+        "lyapunov_rel": 2.2234614865425384e-13,
+        "simpson_rel": 5.25762207147112e-08,
+        "trace": 2.9540952495926567e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 4.336808689942018e-19,
+          "min_eig": 5.48964705163134e-09,
+          "max_eig": 4.04880019961363
+        },
+        "P_b": {
+          "symmetry": 8.673617379884035e-19,
+          "min_eig": 3.2057197308693356e-11,
+          "max_eig": 0.38677147197821715
+        },
+        "trace_ratio_b_over_a": 0.10474758274429642
+      },
+      "nonnormal_amplification": [
+        137.240679372831,
+        199.9733686977121,
+        245.6057117929829
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015189190016826615,
+        "predict_b": 0.004557399995974265
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 240.20345753727725,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 8.344026635548076,
+        "rho_b": 1.0000064867562566,
+        "rho_trap": 1.0000064867562515,
+        "rho_native_fd": 1.000000003754902,
+        "class_a": {
+          "rho": 8.344026635548076,
+          "neutral_count": 23,
+          "unstable_count": 4,
+          "max_real": 1.000000564942781
+        },
+        "class_b": {
+          "rho": 1.0000064867562566,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000064867369172
+        },
+        "class_native": {
+          "rho": 1.000000003754902,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000000037405226
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.829185857284756e-09,
+        "Phi_b_vs_J_b": 1.4248637749428983,
+        "Phi_trap_vs_J_native": 1.2917147480947853,
+        "Phi_b_vs_J_native": 76.91062287557048,
+        "F_a_vs_J_native": 912.2017189177263,
+        "scale": 164.7930063716774
+      },
+      "qd": {
+        "symmetry_rel": 1.2085957451564836e-16,
+        "min_over_max_eig": -2.8195205789843546e-20,
+        "vanloan_ms": 2.449367006192915,
+        "lyapunov_rel": 4.571330937213052e-12,
+        "simpson_rel": 1.1044175333571145e-06,
+        "trace": 1.8310131231374015e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 3.105676122377732e-09,
+          "max_eig": 36.46840508846253
+        },
+        "P_b": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 1.268014847374706e-15,
+          "max_eig": 0.6968783100157584
+        },
+        "trace_ratio_b_over_a": 0.025806112453360078
+      },
+      "nonnormal_amplification": [
+        229.7487836037865,
+        265.21099859033876,
+        329.68057080448466
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015292060124920681,
+        "predict_b": 0.002519500005291775
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 240.20345753727725,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 27.03208152324409,
+        "rho_b": 1.000019460394986,
+        "rho_trap": 1.000019460394985,
+        "rho_native_fd": 1.000000380904039,
+        "class_a": {
+          "rho": 27.03208152324409,
+          "neutral_count": 23,
+          "unstable_count": 4,
+          "max_real": 1.00000169092904
+        },
+        "class_b": {
+          "rho": 1.000019460394986,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000194602209294
+        },
+        "class_native": {
+          "rho": 1.000000380904039,
+          "neutral_count": 22,
+          "unstable_count": 3,
+          "max_real": 1.000000318852041
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.1529209587024525e-08,
+        "Phi_b_vs_J_b": 3.311970836583147,
+        "Phi_trap_vs_J_native": 3.2804164878233273,
+        "Phi_b_vs_J_native": 101.30317989606229,
+        "F_a_vs_J_native": 3087.8882878682534,
+        "scale": 269.68630381038474
+      },
+      "qd": {
+        "symmetry_rel": 8.665128453269937e-17,
+        "min_over_max_eig": -1.0503175747056333e-20,
+        "vanloan_ms": 6.683097002678551,
+        "lyapunov_rel": 2.72109334305444e-11,
+        "simpson_rel": null,
+        "trace": 1.6354609784301466e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 1.4255679247157678e-10,
+          "max_eig": 328.32062038001027
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.1542192222305273e-15,
+          "max_eig": 2.295115066373021
+        },
+        "trace_ratio_b_over_a": 0.009646446463155111
+      },
+      "nonnormal_amplification": [
+        294.538727205177,
+        406.41973098839907,
+        597.6126306393846
+      ],
+      "cost_ms": {
+        "predict_a": 0.0011196359992027283,
+        "predict_b": 0.003276172006735578
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2_moving_deformed",
+      "note": "1 mm/10 mrad + velocity",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 240.20345753727725,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 36.376109775696946,
+        "rho_b": 1.0000259472774697,
+        "rho_trap": 1.0000259472774709,
+        "rho_native_fd": 1.0000008033649774,
+        "class_a": {
+          "rho": 36.376109775696946,
+          "neutral_count": 23,
+          "unstable_count": 4,
+          "max_real": 1.0000022519725105
+        },
+        "class_b": {
+          "rho": 1.0000259472774697,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000259469680337
+        },
+        "class_native": {
+          "rho": 1.0000008033649774,
+          "neutral_count": 22,
+          "unstable_count": 2,
+          "max_real": 1.0000006285538485
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.5372279449366033e-08,
+        "Phi_b_vs_J_b": 3.9250026133343496,
+        "Phi_trap_vs_J_native": 4.015349849167851,
+        "Phi_b_vs_J_native": 103.1462733738836,
+        "F_a_vs_J_native": 4179.470658694642,
+        "scale": 316.7066985850231
+      },
+      "qd": {
+        "symmetry_rel": 1.1069044219258601e-17,
+        "min_over_max_eig": -6.970415370503272e-21,
+        "vanloan_ms": 2.9629670025315136,
+        "lyapunov_rel": 8.364450354136216e-11,
+        "simpson_rel": null,
+        "trace": 2.8933929837837713e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.4210854715202004e-14,
+          "min_eig": 7.650078963971285e-11,
+          "max_eig": 583.7055157846027
+        },
+        "P_b": {
+          "symmetry": 1.3877787807814457e-17,
+          "min_eig": 1.1557553956163383e-15,
+          "max_eig": 2.920605193163484
+        },
+        "trace_ratio_b_over_a": 0.006739974168547053
+      },
+      "nonnormal_amplification": [
+        329.68057080448466,
+        479.7116646208932,
+        674.0396612022828
+      ],
+      "cost_ms": {
+        "predict_a": 0.0013624029961647466,
+        "predict_b": 0.003281316996435635
+      }
+    },
+    {
+      "object": "C",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 9.812751399071796,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 2.111935650559473,
+        "rho_b": 1.000000000000072,
+        "rho_trap": 1.0000000000000804,
+        "rho_native_fd": 1.0000000000642901,
+        "class_a": {
+          "rho": 2.111935650559473,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000001128
+        },
+        "class_b": {
+          "rho": 1.000000000000072,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000072
+        },
+        "class_native": {
+          "rho": 1.0000000000642901,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000642901
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.4612644705369604e-09,
+        "Phi_b_vs_J_b": 0.010647609617419649,
+        "Phi_trap_vs_J_native": 0.010347087549694227,
+        "Phi_b_vs_J_native": 29.31831889555771,
+        "F_a_vs_J_native": 211.65469502714575,
+        "scale": 125.727770682736
+      },
+      "qd": {
+        "symmetry_rel": 5.770276676724328e-17,
+        "min_over_max_eig": -2.8173912474765885e-20,
+        "vanloan_ms": 3.2744199997978285,
+        "lyapunov_rel": 2.8587361969832636e-13,
+        "simpson_rel": 5.2467143517536295e-08,
+        "trace": 2.9322029100538245e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.776263578034403e-21,
+          "min_eig": 5.613035949085233e-09,
+          "max_eig": 3.988360125596638
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 3.303600707627358e-11,
+          "max_eig": 0.38355552539498006
+        },
+        "trace_ratio_b_over_a": 0.10557168866754185
+      },
+      "nonnormal_amplification": [
+        135.58081948700524,
+        197.68281385321526,
+        243.1815106174811
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015667590050725266,
+        "predict_b": 0.002412665999145247
+      }
+    },
+    {
+      "object": "C",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 9.812751399071796,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 8.335806951678505,
+        "rho_b": 1.000000000000448,
+        "rho_trap": 1.000000000000225,
+        "rho_native_fd": 1.0000000000298173,
+        "class_a": {
+          "rho": 8.335806951678505,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000127
+        },
+        "class_b": {
+          "rho": 1.000000000000448,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000448
+        },
+        "class_native": {
+          "rho": 1.0000000000298173,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000298173
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 4.383793383855306e-09,
+        "Phi_b_vs_J_b": 0.08500482176810152,
+        "Phi_trap_vs_J_native": 0.07835128580919504,
+        "Phi_b_vs_J_native": 72.37461658423953,
+        "F_a_vs_J_native": 857.5570535774688,
+        "scale": 154.59914453256715
+      },
+      "qd": {
+        "symmetry_rel": 2.0005155551568896e-17,
+        "min_over_max_eig": -7.399369606206816e-20,
+        "vanloan_ms": 3.8342409970937297,
+        "lyapunov_rel": 2.8852059765849605e-13,
+        "simpson_rel": 1.1012578416888311e-06,
+        "trace": 1.822933163212143e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.938893903907228e-18,
+          "min_eig": 3.145554957668913e-09,
+          "max_eig": 35.924397517559136
+        },
+        "P_b": {
+          "symmetry": 3.469446951953614e-18,
+          "min_eig": 1.2914015720978385e-15,
+          "max_eig": 0.6985906999346694
+        },
+        "trace_ratio_b_over_a": 0.026286891670264788
+      },
+      "nonnormal_amplification": [
+        227.2873143703345,
+        263.09065224474426,
+        328.5841561322086
+      ],
+      "cost_ms": {
+        "predict_a": 0.001182273990707472,
+        "predict_b": 0.002419297001324594
+      }
+    },
+    {
+      "object": "C",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 9.812751399071796,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 27.007420855036344,
+        "rho_b": 1.0000000000006395,
+        "rho_trap": 1.0000000000007576,
+        "rho_native_fd": 1.0000000000287557,
+        "class_a": {
+          "rho": 27.007420855036344,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000001414
+        },
+        "class_b": {
+          "rho": 1.0000000000006395,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000006395
+        },
+        "class_native": {
+          "rho": 1.0000000000287557,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000287557
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.3151380540143975e-08,
+        "Phi_b_vs_J_b": 0.5254015362090543,
+        "Phi_trap_vs_J_native": 0.4293570564328441,
+        "Phi_b_vs_J_native": 95.74628243791068,
+        "F_a_vs_J_native": 2902.916467391462,
+        "scale": 268.85607693331195
+      },
+      "qd": {
+        "symmetry_rel": 4.3364153978792633e-17,
+        "min_over_max_eig": -1.873619283812937e-20,
+        "vanloan_ms": 2.867823000997305,
+        "lyapunov_rel": 1.147729643529577e-11,
+        "simpson_rel": null,
+        "trace": 1.6330898970250486e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 4.440892098500626e-16,
+          "min_eig": 1.4373613114866254e-10,
+          "max_eig": 323.4244141230261
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.1766648828715868e-15,
+          "max_eig": 2.3110113163750077
+        },
+        "trace_ratio_b_over_a": 0.009864704045111567
+      },
+      "nonnormal_amplification": [
+        292.9705063839022,
+        405.9783779022583,
+        598.0592240313749
+      ],
+      "cost_ms": {
+        "predict_a": 0.0011678959999699146,
+        "predict_b": 0.0036447809980018064
+      }
+    },
+    {
+      "object": "C",
+      "state": "S3_small_angle",
+      "note": "1e-7 m/rad",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 9.812751399071796,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 36.343227806715646,
+        "rho_b": 1.0000000000002496,
+        "rho_trap": 1.0000000000009002,
+        "rho_native_fd": 1.000000000065407,
+        "class_a": {
+          "rho": 36.343227806715646,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000003146
+        },
+        "class_b": {
+          "rho": 1.0000000000002496,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000002496
+        },
+        "class_native": {
+          "rho": 1.000000000065407,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000065407
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.7535173535421222e-08,
+        "Phi_b_vs_J_b": 0.7659382571823603,
+        "Phi_trap_vs_J_native": 0.6035927966568058,
+        "Phi_b_vs_J_native": 97.77503704878816,
+        "F_a_vs_J_native": 3929.0143725559724,
+        "scale": 315.97776428699495
+      },
+      "qd": {
+        "symmetry_rel": 1.4172557016514186e-17,
+        "min_over_max_eig": -1.0769060068753216e-20,
+        "vanloan_ms": 2.8508159884950146,
+        "lyapunov_rel": 3.5998900258307764e-12,
+        "simpson_rel": null,
+        "trace": 2.8899804169867668e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 7.750864491241354e-11,
+          "max_eig": 575.0011185733143
+        },
+        "P_b": {
+          "symmetry": 1.3877787807814457e-17,
+          "min_eig": 1.1758445124888938e-15,
+          "max_eig": 2.9420136287487653
+        },
+        "trace_ratio_b_over_a": 0.0068958063573435905
+      },
+      "nonnormal_amplification": [
+        328.5841561322086,
+        479.67831596275136,
+        674.7625018004571
+      ],
+      "cost_ms": {
+        "predict_a": 0.0014912619953975081,
+        "predict_b": 0.0026199449930572882
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 825.7058599391185,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 2.111935610267036,
+        "rho_b": 1.0000004106795066,
+        "rho_trap": 1.000000410679494,
+        "rho_native_fd": 1.00000002780025,
+        "class_a": {
+          "rho": 2.111935610267036,
+          "neutral_count": 25,
+          "unstable_count": 5,
+          "max_real": 1.0000000088338084
+        },
+        "class_b": {
+          "rho": 1.0000004106795066,
+          "neutral_count": 24,
+          "unstable_count": 3,
+          "max_real": 1.0000004106794578
+        },
+        "class_native": {
+          "rho": 1.00000002780025,
+          "neutral_count": 24,
+          "unstable_count": 5,
+          "max_real": 1.00000002780025
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.1804137112214619e-09,
+        "Phi_b_vs_J_b": 0.07601677832060413,
+        "Phi_trap_vs_J_native": 0.0684939479654155,
+        "Phi_b_vs_J_native": 29.402587701717223,
+        "F_a_vs_J_native": 212.366762606759,
+        "scale": 126.1499838047242
+      },
+      "qd": {
+        "symmetry_rel": 6.323700983715207e-17,
+        "min_over_max_eig": -5.656550504476606e-20,
+        "vanloan_ms": 6.078438993426971,
+        "lyapunov_rel": 2.3822801641527197e-14,
+        "simpson_rel": 5.247582471160848e-08,
+        "trace": 2.9278208929477916e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.734723475976807e-18,
+          "min_eig": 5.6293027015866425e-09,
+          "max_eig": 3.9562191810797236
+        },
+        "P_b": {
+          "symmetry": 4.336808689942018e-19,
+          "min_eig": 3.3144475582904594e-11,
+          "max_eig": 0.38067730156727864
+        },
+        "trace_ratio_b_over_a": 0.10567968278706456
+      },
+      "nonnormal_amplification": [
+        135.3581441874633,
+        197.36224343795558,
+        242.81041769652765
+      ],
+      "cost_ms": {
+        "predict_a": 0.001567190993227996,
+        "predict_b": 0.008573913990403526
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 825.7058599391185,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 8.335807005365174,
+        "rho_b": 1.000001232039037,
+        "rho_trap": 1.000001232039073,
+        "rho_native_fd": 1.0000000240687492,
+        "class_a": {
+          "rho": 8.335807005365174,
+          "neutral_count": 25,
+          "unstable_count": 5,
+          "max_real": 1.0000000260627555
+        },
+        "class_b": {
+          "rho": 1.000001232039037,
+          "neutral_count": 24,
+          "unstable_count": 3,
+          "max_real": 1.0000012320385983
+        },
+        "class_native": {
+          "rho": 1.0000000240687492,
+          "neutral_count": 23,
+          "unstable_count": 6,
+          "max_real": 1.0000000240180453
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.5412411336643856e-09,
+        "Phi_b_vs_J_b": 0.18609335568373553,
+        "Phi_trap_vs_J_native": 0.1606632531744041,
+        "Phi_b_vs_J_native": 72.56687129005981,
+        "F_a_vs_J_native": 860.4356548131905,
+        "scale": 155.11458442125925
+      },
+      "qd": {
+        "symmetry_rel": 2.444034458214273e-16,
+        "min_over_max_eig": -1.958196492116805e-20,
+        "vanloan_ms": 2.750045998254791,
+        "lyapunov_rel": 1.6808310047077522e-12,
+        "simpson_rel": 1.1016642182619667e-06,
+        "trace": 1.8211777532430563e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 3.469446951953614e-18,
+          "min_eig": 3.150146905718678e-09,
+          "max_eig": 35.63512906769994
+        },
+        "P_b": {
+          "symmetry": 5.551115123125783e-17,
+          "min_eig": 1.293470200728327e-15,
+          "max_eig": 0.6954277683108578
+        },
+        "trace_ratio_b_over_a": 0.02639381139083514
+      },
+      "nonnormal_amplification": [
+        226.9274723423615,
+        262.73083571818484,
+        328.29788755712843
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015349850000347942,
+        "predict_b": 0.014476135009317659
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 825.7058599391185,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 27.00742258758723,
+        "rho_b": 1.0000036961217125,
+        "rho_trap": 1.0000036961216967,
+        "rho_native_fd": 1.000000047593114,
+        "class_a": {
+          "rho": 27.00742258758723,
+          "neutral_count": 25,
+          "unstable_count": 5,
+          "max_real": 1.0000000742403086
+        },
+        "class_b": {
+          "rho": 1.0000036961217125,
+          "neutral_count": 24,
+          "unstable_count": 3,
+          "max_real": 1.0000036961177636
+        },
+        "class_native": {
+          "rho": 1.000000047593114,
+          "neutral_count": 23,
+          "unstable_count": 6,
+          "max_real": 1.0000000473232307
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.0623723456504308e-08,
+        "Phi_b_vs_J_b": 0.7771833694356348,
+        "Phi_trap_vs_J_native": 0.6105347946566035,
+        "Phi_b_vs_J_native": 95.94599281304758,
+        "F_a_vs_J_native": 2912.605224386254,
+        "scale": 268.6953278850067
+      },
+      "qd": {
+        "symmetry_rel": 4.335698465759877e-17,
+        "min_over_max_eig": -1.8516109456700243e-20,
+        "vanloan_ms": 2.4482050066580996,
+        "lyapunov_rel": 4.838675711190191e-12,
+        "simpson_rel": null,
+        "trace": 1.6327984220420456e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.438084818581687e-10,
+          "max_eig": 320.8209970333068
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.2344674942820129e-15,
+          "max_eig": 2.3064081272887216
+        },
+        "trace_ratio_b_over_a": 0.009923400134153638
+      },
+      "nonnormal_amplification": [
+        292.64876934493486,
+        405.7394034737475,
+        597.8662358785365
+      ],
+      "cost_ms": {
+        "predict_a": 0.00110525700438302,
+        "predict_b": 0.008492713997839019
+      }
+    },
+    {
+      "object": "C",
+      "state": "S2b_near_eq_moving",
+      "note": "velocity only, no pose offset (near equilibrium)",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 825.7058599391185,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 36.343231164755515,
+        "rho_b": 1.000004928165359,
+        "rho_trap": 1.0000049281653338,
+        "rho_native_fd": 1.0000000518901753,
+        "class_a": {
+          "rho": 36.343231164755515,
+          "neutral_count": 25,
+          "unstable_count": 5,
+          "max_real": 1.0000000963550961
+        },
+        "class_b": {
+          "rho": 1.000004928165359,
+          "neutral_count": 24,
+          "unstable_count": 3,
+          "max_real": 1.000004928158339
+        },
+        "class_native": {
+          "rho": 1.0000000518901753,
+          "neutral_count": 23,
+          "unstable_count": 6,
+          "max_real": 1.000000051514975
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.4164964534657543e-08,
+        "Phi_b_vs_J_b": 1.14759978648136,
+        "Phi_trap_vs_J_native": 0.8561123951906041,
+        "Phi_b_vs_J_native": 97.96462495821098,
+        "F_a_vs_J_native": 3942.1102423556245,
+        "scale": 315.7220275937338
+      },
+      "qd": {
+        "symmetry_rel": 9.147565664172667e-17,
+        "min_over_max_eig": -2.500709216261277e-20,
+        "vanloan_ms": 2.5778220006031916,
+        "lyapunov_rel": 2.100641709190665e-11,
+        "simpson_rel": null,
+        "trace": 2.8897652376850206e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.4210854715202004e-14,
+          "min_eig": 7.750754318811112e-11,
+          "max_eig": 570.3728212183279
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 1.2875362201549752e-15,
+          "max_eig": 2.936972217659709
+        },
+        "trace_ratio_b_over_a": 0.006938465215127503
+      },
+      "nonnormal_amplification": [
+        328.29788755712843,
+        479.46409899747135,
+        674.5807512431905
+      ],
+      "cost_ms": {
+        "predict_a": 0.0011582949955482036,
+        "predict_b": 0.002508869001758285
+      }
+    },
+    {
+      "object": "C",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 230.96306274308452,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 2.111952030840894,
+        "rho_b": 1.0000000000000009,
+        "rho_trap": 1.0000000000000004,
+        "rho_native_fd": 1.0000000349772307,
+        "class_a": {
+          "rho": 2.111952030840894,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000007
+        },
+        "class_b": {
+          "rho": 1.0000000000000009,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000009
+        },
+        "class_native": {
+          "rho": 1.0000000349772307,
+          "neutral_count": 26,
+          "unstable_count": 3,
+          "max_real": 1.0000000349772307
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 7.1054348269490565e-09,
+        "Phi_b_vs_J_b": 0.09721708250698802,
+        "Phi_trap_vs_J_native": 0.08455721341989961,
+        "Phi_b_vs_J_native": 29.32316723894236,
+        "F_a_vs_J_native": 211.72098040415807,
+        "scale": 125.72808688401591
+      },
+      "qd": {
+        "symmetry_rel": 6.745411878109334e-18,
+        "min_over_max_eig": -3.7846569175553805e-20,
+        "vanloan_ms": 5.628191996947862,
+        "lyapunov_rel": 2.488159282559507e-13,
+        "simpson_rel": 5.2464974879164783e-08,
+        "trace": 2.938498973455093e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 5.5294310796760726e-18,
+          "min_eig": 5.609815793995782e-09,
+          "max_eig": 3.9967111307440666
+        },
+        "P_b": {
+          "symmetry": 2.7755575615628914e-17,
+          "min_eig": 3.302948279894376e-11,
+          "max_eig": 0.3843508964702182
+        },
+        "trace_ratio_b_over_a": 0.10557094511937667
+      },
+      "nonnormal_amplification": [
+        135.59207917778733,
+        197.7027737760799,
+        243.22530663866607
+      ],
+      "cost_ms": {
+        "predict_a": 0.0010496370086912066,
+        "predict_b": 0.0022968770063016564
+      }
+    },
+    {
+      "object": "C",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.001,
+      "f_norm": 230.96306274308452,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 8.335856092522684,
+        "rho_b": 1.0000000000000004,
+        "rho_trap": 1.0000000000000002,
+        "rho_native_fd": 1.0000001812017458,
+        "class_a": {
+          "rho": 8.335856092522684,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000002
+        },
+        "class_b": {
+          "rho": 1.0000000000000004,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000004
+        },
+        "class_native": {
+          "rho": 1.0000001812017458,
+          "neutral_count": 25,
+          "unstable_count": 4,
+          "max_real": 1.0000001812017458
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 2.1316304480847172e-08,
+        "Phi_b_vs_J_b": 0.339484410264782,
+        "Phi_trap_vs_J_native": 0.31005197184005023,
+        "Phi_b_vs_J_native": 72.40424253120018,
+        "F_a_vs_J_native": 857.7960175587594,
+        "scale": 154.61535406634252
+      },
+      "qd": {
+        "symmetry_rel": 2.4327097940079154e-16,
+        "min_over_max_eig": -3.1976006314767535e-20,
+        "vanloan_ms": 5.396590000600554,
+        "lyapunov_rel": 1.5246593050577406e-12,
+        "simpson_rel": 1.101203712967143e-06,
+        "trace": 1.8263469472359146e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 3.1360089791241843e-09,
+          "max_eig": 35.999556498054126
+        },
+        "P_b": {
+          "symmetry": 3.469446951953614e-18,
+          "min_eig": 1.2950447666830974e-15,
+          "max_eig": 0.6998352862385671
+        },
+        "trace_ratio_b_over_a": 0.026281208810113456
+      },
+      "nonnormal_amplification": [
+        227.3176670738648,
+        263.1691150284574,
+        328.7653938433157
+      ],
+      "cost_ms": {
+        "predict_a": 0.0011418630019761622,
+        "predict_b": 0.00267528100812342
+      }
+    },
+    {
+      "object": "C",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.003,
+      "f_norm": 230.96306274308452,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 27.00756827756802,
+        "rho_b": 1.0000000000000004,
+        "rho_trap": 1.0000000000000018,
+        "rho_native_fd": 1.00000092931426,
+        "class_a": {
+          "rho": 27.00756827756802,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000002
+        },
+        "class_b": {
+          "rho": 1.0000000000000004,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000004
+        },
+        "class_native": {
+          "rho": 1.00000092931426,
+          "neutral_count": 21,
+          "unstable_count": 7,
+          "max_real": 1.00000092931426
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 6.394891344254151e-08,
+        "Phi_b_vs_J_b": 0.793196051246755,
+        "Phi_trap_vs_J_native": 0.792627355764394,
+        "Phi_b_vs_J_native": 95.83355552930963,
+        "F_a_vs_J_native": 2903.492007838212,
+        "scale": 270.1701356178203
+      },
+      "qd": {
+        "symmetry_rel": 4.3362171035172826e-17,
+        "min_over_max_eig": -7.049998016392349e-21,
+        "vanloan_ms": 3.702332003740594,
+        "lyapunov_rel": 1.8211208365967457e-11,
+        "simpson_rel": null,
+        "trace": 1.6333620234285615e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 7.632783294297951e-17,
+          "min_eig": 1.4597754236566347e-10,
+          "max_eig": 324.1008452385541
+        },
+        "P_b": {
+          "symmetry": 8.673617379884035e-18,
+          "min_eig": 1.1784640635210237e-15,
+          "max_eig": 2.311717436914226
+        },
+        "trace_ratio_b_over_a": 0.00985016928836241
+      },
+      "nonnormal_amplification": [
+        293.1060019281895,
+        406.1930011672662,
+        597.9751902759181
+      ],
+      "cost_ms": {
+        "predict_a": 0.0015018490084912628,
+        "predict_b": 0.0024913999950513244
+      }
+    },
+    {
+      "object": "C",
+      "state": "S4_large_attitude",
+      "note": "0.56 rad world attitude with arms following; 1 mm/20 mrad differential",
+      "modes": [
+        "pivot",
+        "pivot"
+      ],
+      "dt": 0.004,
+      "f_norm": 230.96306274308452,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 36.3434243700907,
+        "rho_b": 1.000000000000002,
+        "rho_trap": 1.0000000000000002,
+        "rho_native_fd": 1.0000014045450347,
+        "class_a": {
+          "rho": 36.3434243700907,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000009
+        },
+        "class_b": {
+          "rho": 1.000000000000002,
+          "neutral_count": 30,
+          "unstable_count": 0,
+          "max_real": 1.000000000000002
+        },
+        "class_native": {
+          "rho": 1.0000014045450347,
+          "neutral_count": 23,
+          "unstable_count": 6,
+          "max_real": 1.0000014045450347
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 8.526521792338869e-08,
+        "Phi_b_vs_J_b": 0.9002772078837918,
+        "Phi_trap_vs_J_native": 0.9419326947411011,
+        "Phi_b_vs_J_native": 97.8888322646284,
+        "F_a_vs_J_native": 3929.681269726566,
+        "scale": 317.2601532862164
+      },
+      "qd": {
+        "symmetry_rel": 4.578456351353115e-17,
+        "min_over_max_eig": -5.055916276180989e-21,
+        "vanloan_ms": 3.0781820096308365,
+        "lyapunov_rel": 3.307663659028043e-11,
+        "simpson_rel": null,
+        "trace": 2.8881093507861744e-08
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.881784197001252e-16,
+          "min_eig": 7.738020954539489e-11,
+          "max_eig": 576.2036628740791
+        },
+        "P_b": {
+          "symmetry": 1.3877787807814457e-17,
+          "min_eig": 1.178281444385645e-15,
+          "max_eig": 2.94034721292337
+        },
+        "trace_ratio_b_over_a": 0.00688049164015609
+      },
+      "nonnormal_amplification": [
+        328.7653938433157,
+        479.8510555570063,
+        674.2685725228599
+      ],
+      "cost_ms": {
+        "predict_a": 0.0011209950025659055,
+        "predict_b": 0.002128296997398138
+      }
+    },
+    {
+      "object": "C",
+      "state": "S5_mode_boundary",
+      "note": "sliding axes tilted 1 mrad (rank 5)",
+      "modes": [
+        "sliding",
+        "sliding"
+      ],
+      "dt": 0.0003333333333333333,
+      "f_norm": 15.103019995291758,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 1.9898762345707477,
+        "rho_b": 1.0,
+        "rho_trap": 1.0000000000004232,
+        "rho_native_fd": 1.0000000000491591,
+        "class_a": {
+          "rho": 1.9898762345707477,
+          "neutral_count": 31,
+          "unstable_count": 1,
+          "max_real": 1.0000000000002607
+        },
+        "class_b": {
+          "rho": 1.0,
+          "neutral_count": 31,
+          "unstable_count": 0,
+          "max_real": 1.0
+        },
+        "class_native": {
+          "rho": 1.0000000000491591,
+          "neutral_count": 31,
+          "unstable_count": 0,
+          "max_real": 1.0000000000491591
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.0758378493624932e-09,
+        "Phi_b_vs_J_b": 0.0006728891449618857,
+        "Phi_trap_vs_J_native": 0.0006690269713764962,
+        "Phi_b_vs_J_native": 0.6368967197826358,
+        "F_a_vs_J_native": 4.5883991673889195,
+        "scale": 33.621903726807595
+      },
+      "qd": {
+        "symmetry_rel": 5.874609981157534e-17,
+        "min_over_max_eig": -5.2183489168447e-19,
+        "vanloan_ms": 6.1229730054037645,
+        "lyapunov_rel": 3.3087224502121107e-16,
+        "simpson_rel": 1.6030013513322198e-08,
+        "trace": 4.694305423552732e-11
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 6.776263578034403e-21,
+          "min_eig": 9.003305638677458e-08,
+          "max_eig": 0.04597286085605894
+        },
+        "P_b": {
+          "symmetry": 8.470329472543003e-22,
+          "min_eig": 1.0703343267026269e-07,
+          "max_eig": 0.03904831168549611
+        },
+        "trace_ratio_b_over_a": 0.6563176921405096
+      },
+      "nonnormal_amplification": [
+        20.588263353321363,
+        40.25487500568431,
+        77.19475378261335
+      ],
+      "cost_ms": {
+        "predict_a": 0.0012138610036345199,
+        "predict_b": 0.002704141996218823
+      }
+    },
+    {
+      "object": "C",
+      "state": "S5_mode_boundary",
+      "note": "sliding axes tilted 1 mrad (rank 5)",
+      "modes": [
+        "sliding",
+        "sliding"
+      ],
+      "dt": 0.001,
+      "f_norm": 15.103019995291758,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 7.969628703712243,
+        "rho_b": 1.0000000000000224,
+        "rho_trap": 1.000000000000516,
+        "rho_native_fd": 1.000000000587154,
+        "class_a": {
+          "rho": 7.969628703712243,
+          "neutral_count": 31,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000488
+        },
+        "class_b": {
+          "rho": 1.0000000000000224,
+          "neutral_count": 31,
+          "unstable_count": 0,
+          "max_real": 1.0000000000000224
+        },
+        "class_native": {
+          "rho": 1.000000000587154,
+          "neutral_count": 31,
+          "unstable_count": 0,
+          "max_real": 1.000000000587154
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 3.2275134786985404e-09,
+        "Phi_b_vs_J_b": 0.00596960827910209,
+        "Phi_trap_vs_J_native": 0.005813771852174909,
+        "Phi_b_vs_J_native": 1.6276060078582946,
+        "F_a_vs_J_native": 22.55683496316655,
+        "scale": 86.88955403579088
+      },
+      "qd": {
+        "symmetry_rel": 4.827780438195814e-18,
+        "min_over_max_eig": -4.952690907285528e-20,
+        "vanloan_ms": 11.868108995258808,
+        "lyapunov_rel": 6.352747104407253e-14,
+        "simpson_rel": 1.0016909624646419e-07,
+        "trace": 3.9607031769723395e-10
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.3552527156068805e-20,
+          "min_eig": 4.2582836462384386e-09,
+          "max_eig": 0.40713091386649014
+        },
+        "P_b": {
+          "symmetry": 3.469446951953614e-18,
+          "min_eig": 1.1812283112547059e-12,
+          "max_eig": 0.249133957818655
+        },
+        "trace_ratio_b_over_a": 0.4288479538805461
+      },
+      "nonnormal_amplification": [
+        59.11751785752757,
+        111.10115003380159,
+        196.7180252404748
+      ],
+      "cost_ms": {
+        "predict_a": 0.0010418330057291314,
+        "predict_b": 0.005397429995355196
+      }
+    },
+    {
+      "object": "C",
+      "state": "S5_mode_boundary",
+      "note": "sliding axes tilted 1 mrad (rank 5)",
+      "modes": [
+        "sliding",
+        "sliding"
+      ],
+      "dt": 0.003,
+      "f_norm": 15.103019995291758,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 25.908886111136724,
+        "rho_b": 1.0000000000003924,
+        "rho_trap": 1.0000000000002622,
+        "rho_native_fd": 1.0000000041509483,
+        "class_a": {
+          "rho": 25.908886111136724,
+          "neutral_count": 31,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000704
+        },
+        "class_b": {
+          "rho": 1.0000000000003924,
+          "neutral_count": 31,
+          "unstable_count": 0,
+          "max_real": 1.0000000000003924
+        },
+        "class_native": {
+          "rho": 1.0000000041509483,
+          "neutral_count": 30,
+          "unstable_count": 1,
+          "max_real": 1.0000000041509483
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 9.682540547117924e-09,
+        "Phi_b_vs_J_b": 0.05672595929584938,
+        "Phi_trap_vs_J_native": 0.04722108834873639,
+        "Phi_b_vs_J_native": 18.060491771928042,
+        "F_a_vs_J_native": 147.84983143488262,
+        "scale": 180.52713455042516
+      },
+      "qd": {
+        "symmetry_rel": 1.7778409976319405e-17,
+        "min_over_max_eig": -1.3836985647508568e-20,
+        "vanloan_ms": 2.323491993593052,
+        "lyapunov_rel": 1.5775988642611344e-12,
+        "simpson_rel": null,
+        "trace": 4.6007738724600894e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 8.673617379884035e-19,
+          "min_eig": 1.3357886648155252e-10,
+          "max_eig": 3.661571470990368
+        },
+        "P_b": {
+          "symmetry": 2.710505431213761e-20,
+          "min_eig": 1.5569681034207603e-13,
+          "max_eig": 0.9005584125112092
+        },
+        "trace_ratio_b_over_a": 0.168239269260976
+      },
+      "nonnormal_amplification": [
+        156.74190819812878,
+        262.04949555546546,
+        373.79442399563135
+      ],
+      "cost_ms": {
+        "predict_a": 0.0010410210088593885,
+        "predict_b": 0.002573395991930738
+      }
+    },
+    {
+      "object": "C",
+      "state": "S5_mode_boundary",
+      "note": "sliding axes tilted 1 mrad (rank 5)",
+      "modes": [
+        "sliding",
+        "sliding"
+      ],
+      "dt": 0.004,
+      "f_norm": 15.103019995291758,
+      "pad_domain_ok": true,
+      "phi": {
+        "rho_a": 34.87851481484898,
+        "rho_b": 1.0,
+        "rho_trap": 1.0,
+        "rho_native_fd": 1.0000000043069672,
+        "class_a": {
+          "rho": 34.87851481484898,
+          "neutral_count": 31,
+          "unstable_count": 1,
+          "max_real": 1.0000000000000746
+        },
+        "class_b": {
+          "rho": 1.0,
+          "neutral_count": 31,
+          "unstable_count": 0,
+          "max_real": 1.0
+        },
+        "class_native": {
+          "rho": 1.0000000043069672,
+          "neutral_count": 29,
+          "unstable_count": 1,
+          "max_real": 1.0000000043069672
+        }
+      },
+      "phi_vs_fd": {
+        "F_a_vs_J_a": 1.2910053914794162e-08,
+        "Phi_b_vs_J_b": 0.12104999974345299,
+        "Phi_trap_vs_J_native": 0.08647279877777067,
+        "Phi_b_vs_J_native": 31.215953812564294,
+        "F_a_vs_J_native": 231.19787287939357,
+        "scale": 206.6616155108373
+      },
+      "qd": {
+        "symmetry_rel": 8.676310252739638e-19,
+        "min_over_max_eig": -1.1365942756816408e-20,
+        "vanloan_ms": 2.7446320018498227,
+        "lyapunov_rel": 4.870439446712227e-13,
+        "simpson_rel": null,
+        "trace": 8.003187320897528e-09
+      },
+      "cov": {
+        "P_a": {
+          "symmetry": 1.0842021724855044e-19,
+          "min_eig": 3.416414844634931e-10,
+          "max_eig": 6.5099622712790906
+        },
+        "P_b": {
+          "symmetry": 2.168404344971009e-19,
+          "min_eig": 1.5562010609640023e-13,
+          "max_eig": 1.0518825075883345
+        },
+        "trace_ratio_b_over_a": 0.11037235652554607
+      },
+      "nonnormal_amplification": [
+        196.7180252404748,
+        311.24014374611755,
+        403.69425372119775
+      ],
+      "cost_ms": {
+        "predict_a": 0.0013872160052414984,
+        "predict_b": 0.0023478560033254325
+      }
+    }
+  ],
+  "phi_consistency_refinement": {
+    "A": [
+      {
+        "h": 0.004,
+        "abs": 3.731861589923236,
+        "scale": 265.308200393416
+      },
+      {
+        "h": 0.002,
+        "abs": 2.3316328723700064,
+        "scale": 163.97835375292493,
+        "ratio_to_prev": 1.6005356735813885
+      },
+      {
+        "h": 0.001,
+        "abs": 1.218874424538265,
+        "scale": 167.93374476326008,
+        "ratio_to_prev": 1.912939368838818
+      },
+      {
+        "h": 0.0005,
+        "abs": 0.4948238954558133,
+        "scale": 134.243075900764,
+        "ratio_to_prev": 2.4632489169009983
+      },
+      {
+        "h": 0.00025,
+        "abs": 0.16299949351742327,
+        "scale": 87.31457625227313,
+        "ratio_to_prev": 3.035738852789262
+      }
+    ],
+    "C": [
+      {
+        "h": 0.004,
+        "abs": 3.9250026133343496,
+        "scale": 293.15577196245556
+      },
+      {
+        "h": 0.002,
+        "abs": 2.5203604044243733,
+        "scale": 201.2002734262941,
+        "ratio_to_prev": 1.5573179956502228
+      },
+      {
+        "h": 0.001,
+        "abs": 1.4248637749428983,
+        "scale": 117.40324764039634,
+        "ratio_to_prev": 1.7688430632783665
+      },
+      {
+        "h": 0.0005,
+        "abs": 0.6856587387493163,
+        "scale": 101.56003800312203,
+        "ratio_to_prev": 2.0780946765761894
+      },
+      {
+        "h": 0.00025,
+        "abs": 0.277796324668951,
+        "scale": 99.09908213926595,
+        "ratio_to_prev": 2.4682066602803823
+      }
+    ]
+  },
+  "wall_s": 35.11059048300376,
+  "cap_s": 180.0,
+  "count": 48
+}
