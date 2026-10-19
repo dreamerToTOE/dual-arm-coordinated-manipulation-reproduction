@@ -1,5 +1,7 @@
 # Dual-Arm Coordinated Manipulation Reproduction
 
+> **2026-10-19 D082 当前批准的五篇论文复现路线**：**P4完成核心算法与一套完整的虚拟数值规划仿真实验；P1/P2/P3/P5只实现原论文核心算法并做可运行的数学/数值正确性验证**，不开展四篇的完整机器人任务仿真、硬件实验或Isaac迁移。P4后续18,000次正式规划已取消，VI归档；旧实验范围和失败数据只读保留，不冒称全部原文FULL。见[D082决策](docs/decisions/D082_FIVE_PAPERS_ONE_VIRTUAL_SIM_FOUR_ALGORITHMS_20261019.md)、[P4当前任务](docs/tasks/P4_D082_VIRTUAL_SIMULATION_EXECUTION_20261019.md)和[另四篇算法任务](docs/tasks/P1_P2_P3_P5_D082_ALGORITHM_ONLY_20261019.md)。
+
 > **2026-10-14 D077：用户已接受P2本轮部分完成，交付冻结。**
 > 科研快照7787c75：动力学70/70、组件35/35、时序2/2，原ID11在3.948s估计接触域越界；联合反馈/四组结果仍未完成，修正3/3已耗尽。
 > [接受与冻结记录](reports/P2_DELIVERY_ACCEPTANCE_FREEZE.md) · [冻结SHA清单](reports/P2_ACCEPTED_DELIVERY_FREEZE_MANIFEST.json)。全部源码/数据/失败/Word及P4保留，新增实验0；等待新的明确任务，不自动开启后续阶段。下列状态为历史。
