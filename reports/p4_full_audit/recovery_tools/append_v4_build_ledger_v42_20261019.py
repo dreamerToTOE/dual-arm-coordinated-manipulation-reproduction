@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""Append the independently reviewed V4 engineering build to the charged ledger."""
+from pathlib import Path
+import copy, hashlib, json, math
+R=Path(__file__).resolve().parents[3]
+OLD=R/'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V41.json'; NEW=R/'results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V42.json'
+RUN='20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4'; EXEC=R/'results/p4_full'/RUN/'execution.json'; CHARGE=R/'results/p4_full'/f'{RUN}.supervision.charge.json'; POST=R/'reports/P4_D080_ENV_V_RRT_PCS_BUILD02_RECOVERY_V4_SAVED_INDEPENDENT_POST_20261019.json'; TIME=R/'results/p4_full'/f'{RUN}.supervision.time.txt'; RECEIPT=R/'results/p4_full'/RUN/'cost_receipt.json'; META=R/'results/p4_full'/f'{RUN}.supervision.jsonl'; STDERR=R/'results/p4_full'/f'{RUN}.supervision.stderr.log'
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def load(p): return json.loads(Path(p).read_bytes())
+def req(v,m):
+ if not v: raise RuntimeError(m)
+# V42 may be regenerated before commit if the independent POST is amended; V41 remains immutable.
+old=load(OLD); e=load(EXEC); c=load(CHARGE); p=load(POST); rc=load(RECEIPT)
+req(e['run_id']==RUN and e['status']=='BUILT_NOT_QUERIED' and e['engineering_only'] is True,'V4_BUILD_STATUS_REQUIRED')
+req(c['execution_sha256']==sha(EXEC) and c['receipt_sha256']==sha(RECEIPT) and c['wall_s']==13.76742633700429 and c['cpu_s']==22.629003,'V4_CHARGE_REQUIRED')
+req(p['execution_sha256']==sha(EXEC) and p['checks_total']==p['checks_passed'] and p['checks_failed']==0 and p['engineering_build_qualified'] is True,'V4_POST_REQUIRED')
+t=e['targets'][0]; req(t['new_compile_calls']==2 and t['new_link_calls']==1 and t['binary_sha256']==sha(t['binary']),'V4_TARGET_HASHES_REQUIRED')
+row={'run_id':RUN,'execution':str(EXEC.relative_to(R)),'execution_sha256':sha(EXEC),'source_commit':e['source_commit'],'status':e['status'],'classification':e['classification'],'engineering_only':True,'wall_s':e['wall_s'],'cpu_s':e['cpu_s'],'counts':{'compile':2,'link':1,'model':0,'query':0,'solve':0},'authorization_budget_id':None,'formal_planning_calls':0,'formal_table_I_calls':0,'new_VI_candidate_constructions':0,'charged_wall_s':c['wall_s'],'charged_cpu_s':c['cpu_s'],'charge_basis':c['charge_basis'],'monotonic_envelope':c['monotonic_envelope_components'],'external_charge':str(CHARGE.relative_to(R)),'external_charge_sha256':sha(CHARGE),'internal_receipt':str(RECEIPT.relative_to(R)),'internal_receipt_sha256':sha(RECEIPT),'external_post':str(POST.relative_to(R)),'external_post_sha256':sha(POST),'external_time':str(TIME.relative_to(R)),'external_time_sha256':sha(TIME),'execution_cap_breach':c['execution_cap_breach'],'compile_calls':2,'link_calls':1,'model_calls':0,'query_calls':0,'solve_calls':0,'scientific_calls':0,'v4_engineering_build_cost_once':True}
+rows=old['executions']+[row]; req(len(rows)==59 and row['execution'] not in {x['execution'] for x in old['executions']},'V4_ROW_REQUIRED')
+actual={str(q.relative_to(R)):sha(q) for q in (R/'results/p4_full').glob('*_R2_*/execution.json')}; req(actual=={x['execution']:x['execution_sha256'] for x in rows},'ALL_EXECUTIONS_COVERED')
+wall=math.fsum(x.get('charged_wall_s',x['wall_s']) for x in rows); cpu=math.fsum(x.get('charged_cpu_s',x['cpu_s']) for x in rows); sci=[x for x in rows if not x['engineering_only']]; eng=[x for x in rows if x['engineering_only']]
+new=copy.deepcopy(old); new.update({'schema':'P4_R2_RECOVERY_ACTUAL_LEDGER_V42','previous_snapshot':str(OLD.relative_to(R)),'previous_snapshot_sha256':sha(OLD),'executions':rows,'count':59,'science_count':len(sci),'engineering_count':len(eng),'science_wall_s':math.fsum(x.get('charged_wall_s',x['wall_s']) for x in sci),'science_cpu_s':math.fsum(x.get('charged_cpu_s',x['cpu_s']) for x in sci),'engineering_wall_s':math.fsum(x.get('charged_wall_s',x['wall_s']) for x in eng),'engineering_cpu_s':math.fsum(x.get('charged_cpu_s',x['cpu_s']) for x in eng),'conservative_r2_sum_wall_s':wall,'conservative_r2_sum_cpu_s':cpu,'r2_remaining':{'wall_s':old['r2_caps']['wall_s']-wall,'cpu_s':old['r2_caps']['cpu_s']-cpu},'last_actual_execution':row,'ledger_correction':{'kind':'APPEND_INDEPENDENTLY_REVIEWED_V4_ENGINEERING_BUILD','previous_snapshot':str(OLD.relative_to(R)),'execution_sha256':sha(EXEC),'post_sha256':sha(POST),'compile_calls':2,'link_calls':1,'model_calls':0,'query_calls':0,'solve_calls':0,'scientific_calls':0,'formal_table_I_calls':0,'new_VI_candidate_constructions':0,'status':'BUILT_NOT_QUERIED'}})
+new['new_scientific_calls']=0; new['saved_only_analysis']=True; new['scope']='D080 I-V retained; V4 engineering build appended once. No formal statistics, VI work, or path qualification.'
+NEW.write_text(json.dumps(new,ensure_ascii=False,indent=2)+'\n'); print(json.dumps({'ledger':str(NEW.relative_to(R)),'sha256':sha(NEW),'count':len(rows),'wall_s':wall,'cpu_s':cpu},ensure_ascii=False))

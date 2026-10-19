@@ -1,0 +1,202 @@
+{
+  "schema": "P4_D080_ENV_V_RRT_PCS_BUILD02_RECOVERY_V4_SAVED_INDEPENDENT_POST_V1",
+  "personnel_independent": true,
+  "status": "PASS_BUILT_NOT_QUERIED_SAVED_ENGINEERING_POST",
+  "checks_total": 18,
+  "checks_passed": 18,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "execution_exists_and_BUILT_NOT_QUERIED",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "claim_execution_run_identity_bound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "claim_and_protocol_hashes_unchanged_after_run",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "V4_pre_review_and_prior_audit_bind",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "external_sidecar_file_hashes_exact",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "GNUtime_four_fields_exit_zero_and_caps_pass",
+      "passed": true,
+      "evidence": {
+        "time_fields": [
+          "13.75",
+          "18.14",
+          "4.46",
+          "0"
+        ],
+        "charged_wall_s": 13.76742633700429,
+        "charged_cpu_s": 22.629003
+      }
+    },
+    {
+      "name": "external_metadata_launch_start_reap_complete",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "external_stderr_empty_and_supervisor_identity_bound",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact_two_compile_one_link_successful",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "compiler_logs_match_saved_execution_hashes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "two_new_objects_hash_and_relocatable_ELF",
+      "passed": true,
+      "evidence": [
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/0_comau_v_rrt_pcs_e2e_driver.o",
+          "sha256": "3eb78749e6fa28c37fd1083da3d12f4d54e8cb7d5201aeb4a5261ec105be98b2",
+          "size_bytes": 535688
+        },
+        {
+          "path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/1_StateValidityCheckerPCS_e2e.o",
+          "sha256": "428f0f3cf6e2e55d5cfb45b8a56917cb05376e0e4015884acba2fcaf884247a2",
+          "size_bytes": 350024
+        }
+      ]
+    },
+    {
+      "name": "linked_ELF_hash_and_type_exact",
+      "passed": true,
+      "evidence": {
+        "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/v_rrt_pcs_e2e",
+        "sha256": "9242a8e6c76e7683b89e7e42ddc9617d8360891f48cfb68f3106f151cd841504",
+        "file": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/v_rrt_pcs_e2e: ELF 64-bit LSB pie executable, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=e1a5ca631fa5a34c0770934d7adfd078f625af11, for GNU/Linux 3.2.0, not stripped"
+      }
+    },
+    {
+      "name": "staged_after_map_contains_sources_objects_and_binary",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bound_file_map_unchanged_and_dependency_union_complete",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "zero_model_query_solve_rng_binary_and_formal_calls",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "target_status_and_engineering_classification_exact",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "V41_prior_hash_and_totals_frozen",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "internal_receipt_BUILT_NOT_QUERIED_and_no_auto_supervision_claim",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "engineering_build_qualified": true,
+  "external_supervision_qualified": true,
+  "external_timing_qualified": true,
+  "external_cost_qualified": true,
+  "source_planning_qualified": false,
+  "independent_path_qualified": false,
+  "run_id": "20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4",
+  "environment": "V",
+  "execution": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4/execution.json",
+  "execution_sha256": "8c4f096408b663a5d91bdc281fdfa0ae89cc2a16a2b7ce50bc74a778435ba180",
+  "claim": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4/claim.json",
+  "claim_sha256": "8a172e5186e28278269f5c99d94017a75eeecc5813c198ee1e17d8520e91b5bf",
+  "protocol": "configs/p4_d080/v_rrt_pcs_e2e_build_v4.json",
+  "protocol_sha256": "e37a4724405fc64ed6b0b5beb720d06755341fc2aa8e53fff90d3356554dd506",
+  "external_charge": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4.supervision.charge.json",
+  "external_charge_sha256": "05fec5b96225f3f6dffca2221333a0fbba306f2d646302752dc0df9a71b9e694",
+  "external_time": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4.supervision.time.txt",
+  "external_time_sha256": "0ca662ed5c001175ab8b9452db3128c25f2b74f750e259329d53af66679bf8de",
+  "external_metadata": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4.supervision.jsonl",
+  "external_metadata_sha256": "d3aa911d567c58042115491c2cdd9ddb03d5011c1fc64953dba858b0278f9273",
+  "external_stderr": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4.supervision.stderr.log",
+  "external_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "internal_receipt": "results/p4_full/20261019_R2_D080_V_RRT_PCS_BUILD02_RECOVERY_V4/cost_receipt.json",
+  "internal_receipt_sha256": "a9c72c5554d18c0144a213309cbe14be223bbfb7a14d5ded9f42b4706aa43df8",
+  "new_compile_calls": 2,
+  "new_link_calls": 1,
+  "upper_wall_s": 13.76742633700429,
+  "upper_cpu_s": 22.629003,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "prior": {
+    "path": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V41.json",
+    "sha256": "ca08ec3c719ec201ca1ce4710652e2ad6a1e1bf0e3f641f0030c8f8c46d0b88a",
+    "wall_s": 1157.5309649199733,
+    "cpu_s": 981.858415
+  },
+  "post_charge_totals": {
+    "wall_s": 1171.2983912569775,
+    "cpu_s": 1004.487418
+  },
+  "binary": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/v_rrt_pcs_e2e",
+  "binary_sha256": "9242a8e6c76e7683b89e7e42ddc9617d8360891f48cfb68f3106f151cd841504",
+  "objects": [
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/0_comau_v_rrt_pcs_e2e_driver.o",
+      "sha256": "3eb78749e6fa28c37fd1083da3d12f4d54e8cb7d5201aeb4a5261ec105be98b2",
+      "size_bytes": 535688
+    },
+    {
+      "path": "/home/ubuntu2004/lmy/.p4_d079_dependency_audit/v_rrt_pcs_e2e_v4/1_StateValidityCheckerPCS_e2e.o",
+      "sha256": "428f0f3cf6e2e55d5cfb45b8a56917cb05376e0e4015884acba2fcaf884247a2",
+      "size_bytes": 350024
+    }
+  ],
+  "retained_sha256": {
+    "execution": "8c4f096408b663a5d91bdc281fdfa0ae89cc2a16a2b7ce50bc74a778435ba180",
+    "claim": "8a172e5186e28278269f5c99d94017a75eeecc5813c198ee1e17d8520e91b5bf",
+    "receipt": "a9c72c5554d18c0144a213309cbe14be223bbfb7a14d5ded9f42b4706aa43df8",
+    "charge": "05fec5b96225f3f6dffca2221333a0fbba306f2d646302752dc0df9a71b9e694",
+    "time": "0ca662ed5c001175ab8b9452db3128c25f2b74f750e259329d53af66679bf8de",
+    "metadata": "d3aa911d567c58042115491c2cdd9ddb03d5011c1fc64953dba858b0278f9273",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "protocol": "e37a4724405fc64ed6b0b5beb720d06755341fc2aa8e53fff90d3356554dd506",
+    "prior": "ca08ec3c719ec201ca1ce4710652e2ad6a1e1bf0e3f641f0030c8f8c46d0b88a",
+    "prior_audit": "a5f5a8ee1185851309700ec0f69781a74e392c0145627f81fcb1683cfc3f7efd",
+    "pre_review": "fd8ab420d4c506f7cc4cc5ff3f9a203fe01d54d41e0ffb97c2f1c72039597ff2",
+    "runner": "94f4e87dcb43869dfa7d11195a13c232e3a6b93ab0c9af39f20602b40d6caffb",
+    "supervisor": "3312d8705fc27e7809d759aeda090f2f33e9da1e9b2af690110871049234975f",
+    "object_0": "3eb78749e6fa28c37fd1083da3d12f4d54e8cb7d5201aeb4a5261ec105be98b2",
+    "object_1": "428f0f3cf6e2e55d5cfb45b8a56917cb05376e0e4015884acba2fcaf884247a2",
+    "binary": "9242a8e6c76e7683b89e7e42ddc9617d8360891f48cfb68f3106f151cd841504"
+  },
+  "limitations": [
+    "This POST independently upgrades the saved external supervision evidence boundary only; the raw sidecar remains marked external_supervision_qualified=false until POST.",
+    "The run compiled two new translation units and linked one ELF, but did not execute the binary: BUILT_NOT_QUERIED.",
+    "No source query, projection, local connection, planning, path reconstruction, collision replay, or formal Table-I call occurred.",
+    "Source planning and independent path qualification remain false; SOURCE01 must use the frozen V4 ELF in a separate authorized run.",
+    "V41 prior, V3 NameError failure, V2 prebind failure, and all old sidecars remain immutable and separately reported."
+  ]
+}
