@@ -111,14 +111,29 @@ def right_jacobian(x):
     return expm(a)[:6, 6:]
 
 
+_SELECTION_CACHE = {}
+
+
 def selection(mode):
+    """Selection matrix for a contact modality (cached, immutable).
+
+    The three standard modalities are invariant, so one read-only array per mode
+    is reused. Callers never mutate the result; unknown modes are still rejected.
+    """
+    cached = _SELECTION_CACHE.get(mode)
+    if cached is not None:
+        return cached
     if mode == "tight":
-        return np.eye(6)
-    if mode == "pivot":
-        return np.eye(6)[:5]
-    if mode == "sliding":
-        return np.eye(6)[2:]
-    raise GeometryDomainError("unknown contact mode")
+        out = np.eye(6)
+    elif mode == "pivot":
+        out = np.eye(6)[:5].copy()
+    elif mode == "sliding":
+        out = np.eye(6)[2:].copy()
+    else:
+        raise GeometryDomainError("unknown contact mode")
+    out.setflags(write=False)
+    _SELECTION_CACHE[mode] = out
+    return out
 
 
 def _selection_and_null(H, N):
