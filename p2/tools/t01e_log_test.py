@@ -12,7 +12,9 @@ copied from the preserved plant log) to both writers, then checks:
 import gzip
 import io
 import json
+import statistics
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -70,6 +72,17 @@ def main() -> int:
     legacy = write_legacy(rows)
     policy, log = write_policy(rows)
 
+    def timeit(fn, n=5):
+        samples = []
+        for _ in range(n):
+            t0 = time.perf_counter()
+            fn()
+            samples.append(time.perf_counter() - t0)
+        return statistics.median(samples) * 1e3
+
+    t_legacy = timeit(lambda: write_legacy(rows))
+    t_policy = timeit(lambda: write_policy(rows))
+
     legacy_lines = [json.loads(l) for l in
                     gzip.decompress(legacy).decode().splitlines() if l]
     policy_lines = [json.loads(l) for l in
@@ -113,6 +126,9 @@ def main() -> int:
         "payload_bytes_legacy": len(legacy),
         "payload_bytes_policy": len(policy),
         "payload_ratio": len(policy) / len(legacy),
+        "write_ms_legacy": t_legacy,
+        "write_ms_policy": t_policy,
+        "write_ratio": t_policy / t_legacy,
         "verdict": "PASS" if all([same_count, same_time, same_summary, bulk_ok,
                                   exceptional_has_bulk, counters_ok, ring_ok,
                                   dump_ok]) else "FAIL",
