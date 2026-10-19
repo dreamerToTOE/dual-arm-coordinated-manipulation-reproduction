@@ -6,7 +6,7 @@
 |---|---|---|
 | T00 frozen evidence/provenance | `COMPLETE` (static audit) | 198/198 in-scope blobs identical; 181/181 located files SHA256-identical, 0 mismatch. Verdict `PROVENANCE_PASS_WITH_RECORDED_DEVIATIONS`. See `reviews/T00_POST.md`. |
 | T01 reproducible environment | `PREPARATION_COMPLETE` / `PENDING_REVIEW` | Env + parameter freeze + Eq.(18) design + budget done; no control case run. See `reviews/T01_POST.md`. |
-| T02 SE(3), grasp/contact math | NOT_EXECUTED | Historical qualifying evidence available; Eq.(15) remains `ADAPTED_GEOMETRY`, not the printed form |
+| T02 SE(3), grasp/contact math | `MATH_PASS` | 21/23 properties pass, 2 recorded deviations (Eq.10 R̄ lever arm 1.4e-3; Eq.15 printed form 80 µm vs 0). Euler `F` verified against right-error FD (2.6e-11) → the 3.948 s stop is not a Jacobian bug. See `reviews/T02_POST.md`. |
 | T03 independent dynamic plant | NOT_EXECUTED | Historical 70/70 PASS is *legacy* only; note its 5 s integrations end at rest |
 | T04 IESEKF & estimated-state closure | NOT_EXECUTED | 3.948 s stop now traced to Eq.(18) 4 ms Euler instability of the −2183 s⁻¹ mode (pre-computed Euler factor −7.732; saved F −5.547) |
 | T05 controller / joint inversion | NOT_EXECUTED | Eq.(26) still needs joint-level evidence |
@@ -23,6 +23,7 @@
 3. `reports/P2_DELIVERY_ACCEPTANCE_FREEZE.md` and `reports/P2_ACCEPTED_DELIVERY_FREEZE_MANIFEST.json` live in `f4f9d3b9`, not in the frozen tree; referenced read-only, not imported.
 4. `common/README.md` differs from the frozen commit (main version) and `common/metrics/README.md` was not imported — documentation only, no algorithm change. All 111 unimplemented report-rendering assets are listed in `LEGACY_BLOB_CHECK.json::…::missing_paths`; do not claim "zero omissions of all assets".
 5. Protocol object set lacks B1/B2; Fig.9 time base (paper 0–250 s vs legacy 30 s surrogate) and Fig.5(b) assembly layout are unresolved.
-6. Report path unusable on this branch: no `python-docx`, and three `build_p2_*_review.py` scripts import the P4 module `build_p4_paper_report`.
+6. Report path: the three `build_p2_*_review.py` scripts are registered `LEGACY_REPORT_PATH_UNUSABLE` (bytes preserved) in `reviews/LEGACY_REPORT_PATH.md`; the P2-native Markdown/PNG path is `tools/p2_md_report.py` + `tools/t02_report.py`. `python-docx` is still absent and PDF/Word export stays a T10 decision.
+7. T01-E is **not started**. It needs its own `T01-E_PRE` and an equivalence oracle from `reviews/T02_MATH_BASELINE.json` (proposed tolerance 1e-12 relative, bitwise for pure reordering). Seed count stays 5; 400 s per case is provisional until an end-to-end benchmark proves the margin.
 
 No stage is automatically unlocked by legacy tests. After each accepted task update this table without rewriting historical acceptance or manipulating failed results.
