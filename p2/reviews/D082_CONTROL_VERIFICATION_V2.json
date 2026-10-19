@@ -1,0 +1,123 @@
+{
+  "kind": "D082_CONTROL_VERIFICATION_V2",
+  "checks": [
+    {
+      "id": "V2_01_zero_err_fixed_point",
+      "desc": "zero error → U_P = 0 exactly",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_02_hI_nullspace_oracle",
+      "desc": "independent null-space oracle: W @ hI_N = 0",
+      "pass": true,
+      "residual": 2.571896463345041e-29,
+      "unit": "N"
+    },
+    {
+      "id": "V2_03_hI_code_matches_nullspace",
+      "desc": "code hI matches null-space oracle",
+      "pass": true,
+      "residual": 3.971133583729201e-15,
+      "unit": "N"
+    },
+    {
+      "id": "V2_04_UF_equals_minus_KF_hI",
+      "desc": "U_F = -KF * hI exactly (independent hI)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_05_UF_nonzero",
+      "desc": "deformed fixture produces non-zero U_F",
+      "pass": false,
+      "residual": 2.1084694972485761e-16,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_06_pose_err_direction",
+      "desc": "U_P direction (V2_07 oracle proves formula; here report projection)",
+      "pass": true,
+      "residual": -0.0012201359766229507,
+      "unit": "N·m/s (report only; exact formula verified in V2_07)"
+    },
+    {
+      "id": "V2_07_UP_indep_oracle",
+      "desc": "U_P matches independent Eq.25 Adjoint formula",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_08_selection_pivot",
+      "desc": "selection pivot: filtering correct",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_08b_selection_sliding",
+      "desc": "selection sliding: filtering correct",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_09_hybrid_both_nonzero",
+      "desc": "hybrid mode: both U_F and U_P non-zero",
+      "pass": false,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V2_10_hybrid_sum",
+      "desc": "hybrid: U_cmd = U_F + U_P (numerical residual)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_11_cmd_domain",
+      "desc": "command within |lin|<0.15, |ang|<0.5",
+      "pass": true,
+      "residual": 0.002,
+      "unit": "N/Nm"
+    },
+    {
+      "id": "V2_12_activation_timing",
+      "desc": "force_off@5s, force_on@10s, pose_off@10s(exp3:pose_on=13)",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V2_13_NaN_held",
+      "desc": "NaN_held rejected",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V2_13_non_FilterState",
+      "desc": "non_FilterState rejected",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V2_13_negative_time",
+      "desc": "negative_time rejected",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    }
+  ],
+  "summary": {
+    "pass": 14,
+    "total": 16,
+    "verdict": "FAIL",
+    "note": "V2: independent oracles, numerical residuals, deduplicated"
+  }
+}

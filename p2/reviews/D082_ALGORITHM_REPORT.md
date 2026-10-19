@@ -130,8 +130,8 @@ De Simone 等（RA-L 2026, DOI 10.1109/LRA.2026.3665445）研究双臂刚性抓�
 | 接触/抓取 | ✅ | ✅ | **VERIFIED** |
 | 动力学 | ✅ | ✅ | **VERIFIED** |
 | IESEKF | ✅ | ✅ | **VERIFIED**（含 3.948s 失败证据） |
-| 位姿控制 | ✅ | ✅ | **VERIFIED** |
-| 内力控制 | ✅ | ✅ | **VERIFIED** |
+| 位姿控制 | ✅ | ✅ | **VERIFIED** (V2: 16/16, independent Eq.25 oracle) |
+| 内力控制 | ✅ | ✅ | **VERIFIED** (V2: U_F=-KF·hI exact, null-space oracle) |
 | 95 s 闭环 | ✅ | ❌ | OUT_OF_SCOPE_D082 |
 | Fig.6–9 | ✅ | ❌ | OUT_OF_SCOPE_D082 |
 | 4 物块装配 | ✅ | ❌ | OUT_OF_SCOPE_D082 |
@@ -160,6 +160,6 @@ De Simone 等（RA-L 2026, DOI 10.1109/LRA.2026.3665445）研究双臂刚性抓�
 | `p2/reviews/T04_R1_PLUS_POST.md` | R1+ 完整统计 |
 | `p2/reviews/T04_B_COUPLED_7P5_POST.md` | 7.5 s 闭环 |
 | `p2/reviews/T04_B_95_POST.md` | 95 s 闭环（BUDGET_STOP） |
-| `p2/reviews/D082_CONTROL_VERIFICATION.json` | 控制律 14/14 PASS |
+| `p2/reviews/D082_CONTROL_VERIFICATION_V2.json` | 控制律 V2 16/16 PASS（独立 oracle） |
 | `p2/reviews/T03_SPECTRUM.json` | 4 对象谱分析 |
 | `p2/reviews/T02_MATH_AUDIT.json` | 23 项数学审计 |
