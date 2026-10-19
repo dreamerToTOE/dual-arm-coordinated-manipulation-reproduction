@@ -1,0 +1,85 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_SOURCE01_PREFIX_AUDIT_SAVED_INDEPENDENT_POST_V1",
+  "personnel_independent": true,
+  "status": "PASS_PREFIX_AUDIT_REJECTS_COMPLETE_PATH",
+  "checks_total": 11,
+  "checks_passed": 11,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "saved_audit_schema_and_failure_boundary",
+      "passed": true
+    },
+    {
+      "name": "source_failure_is_unchanged_and_not_relaunched",
+      "passed": true
+    },
+    {
+      "name": "fixed_six_milestones_and_complete_node_audit",
+      "passed": true
+    },
+    {
+      "name": "endpoint_and_backtracking_failure_recorded",
+      "passed": true
+    },
+    {
+      "name": "each_node_strict_closure_gate_rejected_rounding_prefix",
+      "passed": true
+    },
+    {
+      "name": "each_node_limits_and_branch_invariants_recorded",
+      "passed": true
+    },
+    {
+      "name": "native_and_aligned_collision_queries_are_retained",
+      "passed": true
+    },
+    {
+      "name": "no_continuous_or_path_promotion",
+      "passed": true
+    },
+    {
+      "name": "audit_cost_receipt_and_gnu_time_exit0",
+      "passed": true
+    },
+    {
+      "name": "all_saved_input_and_script_hashes_bind",
+      "passed": true
+    },
+    {
+      "name": "zero_formal_vi_and_source_relaunch_calls",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "external_supervision_qualified": false,
+  "external_timing_qualified": true,
+  "external_cost_qualified": true,
+  "independent_path_qualified": false,
+  "continuous_collision_certificate": false,
+  "source_run": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/execution.json",
+  "source_run_sha256": "88b8b0a3ad9d13c09e9ac7934ddb4b1c71d994520765c722fca25e0190825bf7",
+  "source_failure_post": "reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_V4_FAILURE_SAVED_INDEPENDENT_POST_20261019.json",
+  "source_failure_post_sha256": "36bbf0a8f2d52d5d10527a6622f3453c72951643dcd1c78a20c72af1b8f699a2",
+  "audit": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_PREFIX_AUDIT/audit.json",
+  "audit_sha256": "ba69f88391c9fa29411b41e75c63a659ada1b3f53e0ab32745a7851d39a3141b",
+  "cost_receipt": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_PREFIX_AUDIT/cost_receipt.json",
+  "cost_receipt_sha256": "164036e72ab1ffdc79ebe86fd20778c320fa52e786624e5ffa61b9442d1a00c9",
+  "external_charge": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_PREFIX_AUDIT/external_charge.json",
+  "external_charge_sha256": "5d0fbc6e9e92327dd7520b5f12b3c2188a153d1af58f74baadbbc255c968b492",
+  "external_time": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_PREFIX_AUDIT.supervision.time.txt",
+  "external_time_sha256": "b36b2206b058fe4ae3c9d5554a893621c8093abc6b1c99f6c8c0f57c0f0680a6",
+  "audit_script": "scripts/p4_d080/audit_v_rrt_pcs_source01_prefix_v1.py",
+  "audit_script_sha256": "2e064322f65bdf157cfa0d0225fcf3df3863b3da2d702911bf263a2ec5391ab3",
+  "charged_wall_s": 1.81,
+  "charged_cpu_s": 1.8900000000000001,
+  "source_process_calls": 0,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "limitations": [
+    "The six configurations are a saved prefix from a failed source run, not a source result or complete path.",
+    "Rounded path text fails the strict closure gate; branch and discrete collision observations do not repair the missing endpoint/trace.",
+    "Native/aligned endpoint queries do not establish continuous collision-free interpolation or planner success.",
+    "The audit used direct GNU time without a separate supervisor; its measured cost is recorded separately from the SOURCE01 charge."
+  ]
+}

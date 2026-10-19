@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_v_rrt_pcs_source01_v4_draft.py", line 334, in <module>
+    main()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_v_rrt_pcs_source01_v4_draft.py", line 330, in main
+    execute(load(protocol), protocol)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_v_rrt_pcs_source01_v4_draft.py", line 322, in execute
+    raise error
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_v_rrt_pcs_source01_v4_draft.py", line 231, in execute
+    result = session.run_once(spec['request'])
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_iii_rrt_pcs_source01_v1_draft.py", line 124, in run_once
+    self.pump()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py", line 168, in pump
+    if enforce:self.budget.check()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_iii_rrt_pcs_source01_v1_draft.py", line 65, in check
+    live = sum(B.lifecycle.live_group_cpu(p.pid) for p in self.processes if p.returncode is None)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_iii_rrt_pcs_source01_v1_draft.py", line 65, in <genexpr>
+    live = sum(B.lifecycle.live_group_cpu(p.pid) for p in self.processes if p.returncode is None)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/build_p4_full_r2_abb_cbirrt_d_draft.py", line 109, in live_group_cpu
+    row=stat.read_text().rsplit(')',1)[1].split()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py", line 101, in alarm
+    if not self.closing:self.check()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/p4_d080/qualify_iii_rrt_pcs_source01_v1_draft.py", line 66, in check
+    require(time.monotonic() - self.started < self.wall_cap
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/scripts/qualify_p4_full_r2_abb_sbl_pcs_setup_draft.py", line 53, in require
+    if not ok:raise RuntimeError(reason)
+RuntimeError: III_SOURCE_SELF_REAPED_LIVE_GROUP_WORK_CAP

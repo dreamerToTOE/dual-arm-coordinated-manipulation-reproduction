@@ -1,0 +1,103 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_SOURCE01_V4_FAILURE_SAVED_INDEPENDENT_POST_V1",
+  "personnel_independent": true,
+  "status": "FAIL_SOURCE_TRACE_RECONSTRUCTION_PREFIX_RETAINED",
+  "checks_total": 8,
+  "checks_passed": 8,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "immutable_execution_protocol_claim_identity",
+      "passed": true
+    },
+    {
+      "name": "frozen_source_boundary_and_zero_formal_or_vi_calls",
+      "passed": true
+    },
+    {
+      "name": "one_real_source_process_and_request_no_retry",
+      "passed": true
+    },
+    {
+      "name": "termination_is_trace_reconstruction_budget_failure",
+      "passed": true
+    },
+    {
+      "name": "stdout_retains_real_solved_observation_without_source_result",
+      "passed": true,
+      "evidence": {
+        "stdout": "Robots initialized.\nDebug:   RRT: Planner range detected to be 3.518361\nInfo:    RRT: Starting planning with 1 states already in datastructure\nSolved in 0.249101s.\nLogging path to files...\n",
+        "source_solve_observed": true
+      }
+    },
+    {
+      "name": "external_charge_receipt_time_and_cap_boundary",
+      "passed": true
+    },
+    {
+      "name": "source_prefix_files_are_retained_and_have_six_declared_milestones",
+      "passed": true,
+      "evidence": {
+        "path_milestones": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/runtime/paths/path_milestones.txt",
+        "temp": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/runtime/paths/temp.txt"
+      }
+    },
+    {
+      "name": "candidate_prefix_never_promoted_to_complete_path",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "external_supervision_qualified": false,
+  "external_timing_qualified": true,
+  "external_cost_qualified": true,
+  "source_transport_qualified": false,
+  "source_solved_stdout_observed": true,
+  "source_exact": null,
+  "source_approximate": null,
+  "independent_path_qualified": false,
+  "continuous_collision_certificate": false,
+  "termination_reason": "RuntimeError('III_SOURCE_SELF_REAPED_LIVE_GROUP_WORK_CAP')",
+  "execution": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/execution.json",
+  "execution_sha256": "88b8b0a3ad9d13c09e9ac7934ddb4b1c71d994520765c722fca25e0190825bf7",
+  "protocol": "configs/p4_d080/v_rrt_pcs_source01_v4.json",
+  "protocol_sha256": "bd03a5d5b2916da8f28517e56aaeba17c713c939b152aa741fd5598a557567b4",
+  "claim": "results/p4_full/P4_D080_V_RRT_PCS_SOURCE01_V4_A02_SEED7_30W60CPU_20261019.claim.json",
+  "claim_sha256": "718ee704c9d83cf040b5e02f3fc232b174290498df06134e2ad2e83a780c4d72",
+  "external_charge": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.charge.json",
+  "external_charge_sha256": "3175005f659d158b2c68509ddfe65232a7b106be5cea35a486d8646c5a6842d5",
+  "internal_receipt": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/cost_receipt.json",
+  "internal_receipt_sha256": "e9713a769b9a283392be4daaa5e20ffdeded5330a42ebb09f1f3442cffa2d480",
+  "external_time": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.time.txt",
+  "external_time_sha256": "897af2d5ece675a9c73fbefdf00eed52b45be11779f8d9675babe82eb6f513d5",
+  "external_metadata": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.jsonl",
+  "external_metadata_sha256": "52e722feb1fe8a4a998b117f60963a4a4c27b967ab0bd4393f722e03a3ce76f7",
+  "external_stderr": "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.stderr.log",
+  "external_stderr_sha256": "55bd752e10d2b4fd97163b89d204f5c79795d099771baf213148378958efe8ea",
+  "charged_wall_s": 26.42207942299661,
+  "charged_cpu_s": 25.113139,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "source_process_started": 1,
+  "source_request_dispatched": 1,
+  "source_result_json_present": false,
+  "source_prefix_path_milestones": 6,
+  "retained_sha256": {
+    "configs/p4_d080/v_rrt_pcs_source01_v4.json": "bd03a5d5b2916da8f28517e56aaeba17c713c939b152aa741fd5598a557567b4",
+    "results/p4_full/P4_D080_V_RRT_PCS_SOURCE01_V4_A02_SEED7_30W60CPU_20261019.claim.json": "718ee704c9d83cf040b5e02f3fc232b174290498df06134e2ad2e83a780c4d72",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/execution.json": "88b8b0a3ad9d13c09e9ac7934ddb4b1c71d994520765c722fca25e0190825bf7",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/cost_receipt.json": "e9713a769b9a283392be4daaa5e20ffdeded5330a42ebb09f1f3442cffa2d480",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.time.txt": "897af2d5ece675a9c73fbefdf00eed52b45be11779f8d9675babe82eb6f513d5",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.jsonl": "52e722feb1fe8a4a998b117f60963a4a4c27b967ab0bd4393f722e03a3ce76f7",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.stderr.log": "55bd752e10d2b4fd97163b89d204f5c79795d099771baf213148378958efe8ea",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4.supervision.charge.json": "3175005f659d158b2c68509ddfe65232a7b106be5cea35a486d8646c5a6842d5",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/process0_stdout.bin": "70fc3fa68ae2b5c60dd868b049edb0e57c23a12b6429942b176ff7b603a33a11",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/runtime/paths/path_milestones.txt": "fe09862e45556a4b38b58db814dbefdee4a665802dcc52b1e03ee06455164ac1",
+    "results/p4_full/20261019_R2_D080_V_RRT_PCS_SOURCE01_V4/runtime/paths/temp.txt": "fe3b7a7703f3cebf96b56ddef7da1715d1da10f411ff2adfc4b11c7c963b3c78"
+  },
+  "limits": [
+    "The stdout Solved line is an observation only; no source result JSON or complete trace was transported.",
+    "The six milestone file is a source-failure prefix candidate and was not independently path-qualified here.",
+    "The exact source solve and process budget are consumed; no retry, changed seed, or resume is permitted.",
+    "Independent physical candidate review is a separate saved-input audit and cannot alter this failure POST."
+  ]
+}
