@@ -25,6 +25,11 @@ COST_ONLY_EXECUTION_SHA='2ac3e464d54afa59ad7ae3d01dd900cf3cca645132ba4c73e9a35b9
 COST_ONLY_TIME_SHA='7046ba75582a4a0e34347b04627fb7ca30c01c145aa17f646ad49b9fca643802'
 COST_ONLY_CHARGE_SHA='37141bb8b583eca540e83054cb8f9c6fbca5ca01bbc260c5cae9c63d77feab81'
 COST_ONLY_RECEIPT_SHA='3b99bd30a8f57d65e76ec04f8a7d6f0ffb020ec2277afc79f9bd4fd52b6e40ae'
+PREBIND_RUN='20261018_R2_D080_V_RRT_PCS_BUILD02'
+PREBIND_POST='reports/P4_D080_ENV_V_RRT_PCS_BUILD02_FAILURE_SAVED_INDEPENDENT_POST_20261019.json'
+PREBIND_EXECUTION='results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/execution.json'
+PREBIND_EXECUTION_SHA='adaef230b2c94f8afdca1d52565910ccecceafb0238c24f8a6cb02330bb2e74e'
+PREBIND_POST_SHA='21142d5023cb01b362a78c21fac2d73f0c0bb40523069174ec5fe319eb50c837'
 
 def require(ok,reason):
     if not ok: raise RuntimeError(reason)
@@ -52,8 +57,28 @@ def validate_prior(spec,run_name,run_dir):
         time_path=path(row['external_time']); charge_path=path(row['execution']).parent.parent/(row['run_id']+'.supervision.charge.json'); charge=load(charge_path)
         if row.get('charge_basis')==V1.RECOVERED_BASIS:
             V1.validate_recovered_preflight(row,post_path,post,time_path,charge_path,charge,evidence); continue
-        exception=(row['run_id']==COST_ONLY_RUN and row['charge_basis']=='EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE')
-        if exception:
+        iii_exception=(row['run_id']==COST_ONLY_RUN and row['charge_basis']=='EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE')
+        prebind_exception=(row['run_id']==PREBIND_RUN and row['charge_basis']=='EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE')
+        exception=iii_exception or prebind_exception
+        if prebind_exception:
+            require(str(post_path.relative_to(ROOT))==PREBIND_POST
+                    and str(path(row['execution']).relative_to(ROOT))==PREBIND_EXECUTION
+                    and row['execution_sha256']==PREBIND_EXECUTION_SHA
+                    and row['external_post_sha256']==sha(post_path)==PREBIND_POST_SHA
+                    and row['external_time_sha256']==sha(time_path)
+                    and post['personnel_independent'] is True and post['external_supervision_qualified'] is False
+                    and post['external_timing_qualified'] is False and post['external_cost_qualified'] is True
+                    and post['checks_total']==post['checks_passed'] and post['checks_failed']==0
+                    and post['execution_sha256']==row['execution_sha256']
+                    and post['upper_wall_s']<=row['charged_wall_s'] and post['upper_cpu_s']<=row['charged_cpu_s'],
+                    'ONLY_DECLARED_BUILD02_PREBIND_FAILURE_COST_EXCEPTION')
+            execution=load(path(row['execution']))
+            require(execution['status']=='STOP_ENGINEERING_FAILURE_RETAINED_PREFIX'
+                    and 'ALL_REQUIRED_INPUTS_AND_REUSED_OBJECTS_PREBOUND' in execution.get('error','')
+                    and execution.get('compile_calls',0)==0 and execution.get('binary_execution_calls',0)==0
+                    and execution.get('query_calls',0)==0 and execution.get('solve_calls',0)==0,
+                    'BUILD02_PREBIND_FAILURE_IDENTITY_AND_ZERO_CALLS_REQUIRED')
+        elif iii_exception:
             require(str(post_path.relative_to(ROOT))==COST_ONLY_POST and str(path(row['execution']).relative_to(ROOT))==COST_ONLY_EXECUTION
                     and row['execution_sha256']==COST_ONLY_EXECUTION_SHA and row['external_time']==COST_ONLY_TIME
                     and row['external_time_sha256']==COST_ONLY_TIME_SHA

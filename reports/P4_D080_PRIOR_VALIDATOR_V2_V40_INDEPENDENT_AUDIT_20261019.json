@@ -1,0 +1,253 @@
+{
+  "schema": "P4_D080_PRIOR_VALIDATOR_V2_V40_INDEPENDENT_AUDIT_V2",
+  "status": "PASS",
+  "v1_sha256": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+  "v2_sha256": "5b6b8531a351e3798198b11deca31141a986edfd2d25b62de4a6faa054106237",
+  "ledger": "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V40.json",
+  "ledger_sha256": "41403b13d1f1152a4d1e079677ba527b74753c293751b400cf69abe217d3bf04",
+  "checks": [
+    {
+      "name": "v1_frozen_hash",
+      "passed": true,
+      "details": {
+        "expected": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+        "actual": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e"
+      }
+    },
+    {
+      "name": "v2_exists_and_parses",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v2_ast_parse",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v1_ordinary_predicate_messages_retained",
+      "passed": true,
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "v1_recovered_preflight_delegation_retained",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v1_helper_import_is_explicit",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "single_explicit_iii_exception",
+      "passed": true,
+      "details": {
+        "run": "20261018_R2_D080_III_RRT_PCS_PHYSICAL01",
+        "basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE"
+      }
+    },
+    {
+      "name": "single_explicit_v_prebind_exception",
+      "passed": true,
+      "details": {
+        "run": "20261018_R2_D080_V_RRT_PCS_BUILD02",
+        "basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE"
+      }
+    },
+    {
+      "name": "exceptions_are_explicitly_combined",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "cost_only_no_supervision_upgrade",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "no_generic_cost_only_escape_hatch",
+      "passed": true,
+      "details": {
+        "suspicious_lines": []
+      }
+    },
+    {
+      "name": "iii_exception_binds_post_path_constant",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v_prebind_exception_binds_post_path_constant",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "exceptions_bind_post_digest_to_ledger",
+      "passed": true,
+      "details": {
+        "required_one_of": [
+          "sha(post_path)==row['external_post_sha256']",
+          "row['external_post_sha256']==sha(post_path)"
+        ]
+      }
+    },
+    {
+      "name": "v_prebind_exception_binds_literal_post_digest",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v_prebind_exception_requires_zero_calls",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "exception_forces_external_timing_false",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "exception_binds_exact_corrected_post_sha",
+      "passed": true,
+      "details": {
+        "actual": "7e243fe04e936b9b4ef6670f99aa1f4b95be09c082b1f91bafdeb1c0e0f02d06",
+        "ledger": "7e243fe04e936b9b4ef6670f99aa1f4b95be09c082b1f91bafdeb1c0e0f02d06"
+      }
+    },
+    {
+      "name": "v40_prebind_artifact_bundle_present",
+      "passed": true,
+      "details": {
+        "post": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_D080_ENV_V_RRT_PCS_BUILD02_FAILURE_SAVED_INDEPENDENT_POST_20261019.json",
+        "execution": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/execution.json",
+        "time": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02.supervision.time.txt",
+        "charge": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02.supervision.charge.json",
+        "receipt": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/cost_receipt.json"
+      }
+    },
+    {
+      "name": "v40_prebind_artifact_hashes_match_frozen_identity",
+      "passed": true,
+      "details": {
+        "expected": {
+          "post": "21142d5023cb01b362a78c21fac2d73f0c0bb40523069174ec5fe319eb50c837",
+          "execution": "adaef230b2c94f8afdca1d52565910ccecceafb0238c24f8a6cb02330bb2e74e",
+          "time": "980c2a7b2ee104846ee4f62ad6bc4395458fbb4a81cfab0ebbd02c3a83ab422b",
+          "charge": "1761f1beaa78cac882ce2a1ac9bda9c342240a3cc27d5673326a3ecd75a1d271",
+          "receipt": "9261284104078611fb7e9a49cc40bc01e747d9b7cce998ec85de8a53399babc7"
+        },
+        "actual": {
+          "post": "21142d5023cb01b362a78c21fac2d73f0c0bb40523069174ec5fe319eb50c837",
+          "execution": "adaef230b2c94f8afdca1d52565910ccecceafb0238c24f8a6cb02330bb2e74e",
+          "time": "980c2a7b2ee104846ee4f62ad6bc4395458fbb4a81cfab0ebbd02c3a83ab422b",
+          "charge": "1761f1beaa78cac882ce2a1ac9bda9c342240a3cc27d5673326a3ecd75a1d271",
+          "receipt": "9261284104078611fb7e9a49cc40bc01e747d9b7cce998ec85de8a53399babc7"
+        }
+      }
+    },
+    {
+      "name": "v40_prebind_ledger_row_identity_and_sha_binding",
+      "passed": true,
+      "details": {
+        "row": {
+          "run_id": "20261018_R2_D080_V_RRT_PCS_BUILD02",
+          "execution": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/execution.json",
+          "execution_sha256": "adaef230b2c94f8afdca1d52565910ccecceafb0238c24f8a6cb02330bb2e74e",
+          "source_commit": "1761b0a28914d2816e952f2e092202d170f5342d",
+          "status": "STOP_ENGINEERING_FAILURE_RETAINED_PREFIX",
+          "classification": "ENGINEERING_BUILD_ONLY_V_RRT_PCS_2TU1LINK_ORIGINAL_RRT_CONTROL",
+          "engineering_only": true,
+          "wall_s": 1.340176394005539,
+          "cpu_s": 1.2933309999999998,
+          "counts": {},
+          "authorization_budget_id": null,
+          "formal_planning_calls": 0,
+          "formal_table_I_calls": 0,
+          "new_VI_candidate_constructions": 0,
+          "charged_wall_s": 1.5041103659948567,
+          "charged_cpu_s": 1.402299,
+          "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+          "monotonic_envelope": {
+            "wall_decimal_s": [
+              "1.50",
+              "1.5041103659948567",
+              "1.3853065320051974"
+            ],
+            "cpu_decimal_s": [
+              "1.39",
+              "1.402299",
+              "1.315837"
+            ],
+            "order": [
+              "raw_GNUtime_plus_padding",
+              "outer_monotonic_or_reaped_plus_padding",
+              "internal_receipt_plus_padding"
+            ]
+          },
+          "external_charge": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02.supervision.charge.json",
+          "external_charge_sha256": "1761f1beaa78cac882ce2a1ac9bda9c342240a3cc27d5673326a3ecd75a1d271",
+          "internal_receipt": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/cost_receipt.json",
+          "internal_receipt_sha256": "9261284104078611fb7e9a49cc40bc01e747d9b7cce998ec85de8a53399babc7",
+          "external_post": "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_FAILURE_SAVED_INDEPENDENT_POST_20261019.json",
+          "external_post_sha256": "21142d5023cb01b362a78c21fac2d73f0c0bb40523069174ec5fe319eb50c837",
+          "external_time": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02.supervision.time.txt",
+          "external_time_sha256": "980c2a7b2ee104846ee4f62ad6bc4395458fbb4a81cfab0ebbd02c3a83ab422b",
+          "execution_cap_breach": {
+            "wall": false,
+            "cpu": false
+          },
+          "prebind_failure_cost_only": true
+        }
+      }
+    },
+    {
+      "name": "v40_prebind_post_charge_receipt_sha_binding",
+      "passed": true,
+      "details": {
+        "post_external_charge_sha256": "1761f1beaa78cac882ce2a1ac9bda9c342240a3cc27d5673326a3ecd75a1d271",
+        "post_internal_receipt_sha256": "9261284104078611fb7e9a49cc40bc01e747d9b7cce998ec85de8a53399babc7",
+        "charge_receipt_sha256": "9261284104078611fb7e9a49cc40bc01e747d9b7cce998ec85de8a53399babc7"
+      }
+    },
+    {
+      "name": "v40_prebind_compile_model_query_solve_zero",
+      "passed": true,
+      "details": {
+        "counts": {
+          "compile_calls": 0,
+          "model_calls": 0,
+          "query_calls": 0,
+          "solve_calls": 0
+        },
+        "present_fields": [
+          "query_calls",
+          "solve_calls"
+        ]
+      }
+    },
+    {
+      "name": "v40_prebind_status_and_failure_boundary",
+      "passed": true,
+      "details": {
+        "execution_status": "STOP_ENGINEERING_FAILURE_RETAINED_PREFIX",
+        "failure": "RuntimeError: ALL_REQUIRED_INPUTS_AND_REUSED_OBJECTS_PREBOUND",
+        "post_status": "FAIL_ENGINEERING_PREBIND_NO_COMPILE"
+      }
+    },
+    {
+      "name": "dynamic_v40_saved_only_validation",
+      "passed": true,
+      "details": {
+        "status": "PASS",
+        "wall_s": 1155.5503393179733,
+        "cpu_s": 980.01229,
+        "evidence_count": 213
+      }
+    }
+  ],
+  "errors": [],
+  "interpretation": "PASS requires ordinary v1 predicates plus the two explicitly digest-bound III and V BUILD02 prebind cost-only exceptions, including V zero compile/model/query/solve calls; it does not qualify scientific planning or continuous collision."
+}

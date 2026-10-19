@@ -1,0 +1,124 @@
+{
+  "schema": "P4_D080_ENV_V_RRT_PCS_BUILD02_RECOVERY_THIN_INCREMENTAL_INDEPENDENT_PRE_V3",
+  "personnel_independent": true,
+  "status": "PASS_BUILD02_RECOVERY_IDENTITY_V40_SEAM",
+  "checks_total": 15,
+  "checks_passed": 15,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "prior_independent_seams_retained",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v1_v2_assets_preserved",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_builder_uses_versioned_helper_and_rebase",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v3_supervisor_identity",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "exact_two_tu_one_link_and_caps",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "draft_flags_closed",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "draft_no_science_calls",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "frozen_identity_and_scope_closed",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "frozen_prior_v40",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v40_prior_audit_pass",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v40_bound_map_contains_new_audit",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "new_supervision_sidecars",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "v40_dynamic_prior_evidence_prebound",
+      "passed": true,
+      "details": {
+        "evidence_count": 213,
+        "missing": {}
+      }
+    },
+    {
+      "name": "all_frozen_bound_files_exist_and_match",
+      "passed": true,
+      "details": {
+        "bound_count": 942,
+        "self_binding_deferred": true
+      }
+    },
+    {
+      "name": "certificate_required_inputs_exist",
+      "passed": true,
+      "details": {}
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v1_draft.py": "9dbca564ff6d8975ffbca71b3d1e163b9d7a488f1f7f907888075fd05e566958",
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v2_draft.py": "ef99d36c8d2447d62598deab0f6cd03fe5b294b674ba5b16ea2c83e24277c2a8",
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v3_draft.py": "f02e24960986f0ac5c169ea220d8bd9b8c8e122144dd48e58790f1153ae56802",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v1_draft.py": "c2ff4dc64b983524c09781d75bad99e99200c4cbd9c9ddb0ca8923a7d21063ae",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v2_draft.py": "8bb22cbfa98e21da20ca5cc8a93134e5a5d668fea8b7f1c879064ee16e0b3cb9",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v3_draft.py": "0a62ac2f78a5c3b601c85c56cd0de0495f28db417dd0e75b1d271e07ed575fe7",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_EXECUTOR_PRE_DRAFT_20261018.md": "bd91259fa6290ad4e50216b267b91f196f7916a808d36f297a33ba2c176b3142",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v2.py": "5b6b8531a351e3798198b11deca31141a986edfd2d25b62de4a6faa054106237",
+    "configs/p4_d080/v_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "1c320aa3d55a638124b86b1235445c0aac80857dd4313dcb4d8c060f802d55fe",
+    "configs/p4_d080/v_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "ec9359321fb0cf072302bf6a361d9237ad4c5d9d25e4e0d5a75ea0b064214ea5",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD_EXECUTOR_INCREMENTAL_INDEPENDENT_PRE_20261018.json": "7180af339dbff9f9360208f444d49e4b25e790d55e47e19789183c69fd7f7112",
+    "reports/P4_D080_ENV_V_RRT_PCS_THIN_DRAFT_INCREMENTAL_INDEPENDENT_PRE_20261018.json": "d5f05c246a2a7cfafc5183e3166bde9bd2ce47ab42d3da9dd43b3df72ac1f858",
+    "reports/P4_D080_PREFLIGHT_RECOVERY_CHAIN_THIN_INDEPENDENT_PRE_ADDENDUM_20261018.json": "17e47992e46e1b9ae0eee6242c71edda90e3e0ce559332e867ce1ceed728cba3",
+    "reports/P4_D080_PRIOR_VALIDATOR_V2_V40_INDEPENDENT_AUDIT_20261019.json": "054811331d83062b7db16279c690ab7e9de0ebf4792332a0946161cbee0171a0",
+    "results/p4_full/20261016_RECOVERY_ACTUAL_LEDGER_V40.json": "41403b13d1f1152a4d1e079677ba527b74753c293751b400cf69abe217d3bf04"
+  },
+  "v40_prior_validator_audit": "reports/P4_D080_PRIOR_VALIDATOR_V2_V40_INDEPENDENT_AUDIT_20261019.json",
+  "v40_prior_validator_audit_sha256": "054811331d83062b7db16279c690ab7e9de0ebf4792332a0946161cbee0171a0",
+  "limits": [
+    "Engineering build only; no model/query/solve/path qualification.",
+    "The V40 prebind failure remains a digest-bound cost-only exception with external_supervision_qualified=false and zero compile/model/query/solve calls.",
+    "The fresh v3 stage/run identity may not overwrite the retained v2 failure run or any old stage.",
+    "No formal 18,000 statistics, VI work, or scientific planning is authorized by this certificate."
+  ],
+  "required_runner_gate_inputs_sha256": {
+    "scripts/p4_d080/build_v_rrt_pcs_e2e_v3_draft.py": "f02e24960986f0ac5c169ea220d8bd9b8c8e122144dd48e58790f1153ae56802",
+    "scripts/p4_d080/supervise_v_rrt_pcs_e2e_build_v3_draft.py": "0a62ac2f78a5c3b601c85c56cd0de0495f28db417dd0e75b1d271e07ed575fe7",
+    "configs/p4_d080/v_rrt_pcs_e2e_engineering_plan_v1.DRAFT.json": "1c320aa3d55a638124b86b1235445c0aac80857dd4313dcb4d8c060f802d55fe",
+    "configs/p4_d080/v_rrt_pcs_saved_dependency_union_v1.DRAFT.json": "ec9359321fb0cf072302bf6a361d9237ad4c5d9d25e4e0d5a75ea0b064214ea5",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v2.py": "5b6b8531a351e3798198b11deca31141a986edfd2d25b62de4a6faa054106237"
+  }
+}

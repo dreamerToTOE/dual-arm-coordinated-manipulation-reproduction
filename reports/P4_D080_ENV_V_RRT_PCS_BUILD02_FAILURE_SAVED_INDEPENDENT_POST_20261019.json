@@ -1,0 +1,40 @@
+{
+  "schema": "P4_D080_V_RRT_PCS_BUILD02_FAILURE_INDEPENDENT_POST_V1",
+  "personnel_independent": true,
+  "status": "FAIL_ENGINEERING_PREBIND_NO_COMPILE",
+  "checks_total": 8,
+  "checks_passed": 8,
+  "checks_failed": 0,
+  "checks": [
+    {"name": "execution_exists_and_exact_status", "passed": true},
+    {"name": "prebind_failure_reason_preserved", "passed": true},
+    {"name": "compile_link_model_query_solve_calls_zero", "passed": true},
+    {"name": "external_supervision_boundary_false", "passed": true},
+    {"name": "external_cost_only_boundary_true", "passed": true},
+    {"name": "time_charge_receipt_hashes_bind", "passed": true},
+    {"name": "failure_run_is_not_retried_or_relabelled", "passed": true},
+    {"name": "no_scientific_or_formal_claim", "passed": true}
+  ],
+  "execution": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/execution.json",
+  "execution_sha256": "adaef230b2c94f8afdca1d52565910ccecceafb0238c24f8a6cb02330bb2e74e",
+  "external_post": "reports/P4_D080_ENV_V_RRT_PCS_BUILD02_FAILURE_SAVED_INDEPENDENT_POST_20261019.json",
+  "external_supervision_qualified": false,
+  "external_timing_qualified": false,
+  "external_cost_qualified": true,
+  "charge_basis": "EXTERNAL_MONOTONIC_ENVELOPE_REPLACES_INTERNAL_SAMPLE_ONCE",
+  "external_charge": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02.supervision.charge.json",
+  "external_charge_sha256": "1761f1beaa78cac882ce2a1ac9bda9c342240a3cc27d5673326a3ecd75a1d271",
+  "external_time": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02.supervision.time.txt",
+  "external_time_sha256": "980c2a7b2ee104846ee4f62ad6bc4395458fbb4a81cfab0ebbd02c3a83ab422b",
+  "internal_receipt": "results/p4_full/20261018_R2_D080_V_RRT_PCS_BUILD02/cost_receipt.json",
+  "internal_receipt_sha256": "9261284104078611fb7e9a49cc40bc01e747d9b7cce998ec85de8a53399babc7",
+  "upper_wall_s": 1.5041103659948567,
+  "upper_cpu_s": 1.402299,
+  "scientific_calls": 0,
+  "formal_table_I_calls": 0,
+  "new_VI_candidate_constructions": 0,
+  "limits": [
+    "Engineering failure accounting only; no build, model, query, solve, path, or scientific qualification.",
+    "Original failed execution and all sidecars remain immutable and separately reported."
+  ]
+}
