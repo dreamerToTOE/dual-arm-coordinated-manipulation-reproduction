@@ -1,0 +1,30 @@
+{
+  "kind": "T04_STAGE_A_ERRATA_V2",
+  "date": "2026-10-19",
+  "source": "p2/reviews/T04_STAGE_A.json (frozen, not rewritten)",
+  "counts_original": {"PASS": 24, "CONDITIONAL": 9, "FAIL": 15},
+  "counts_v2": {"PASS": 24, "CONDITIONAL": 9, "CONDITIONAL_PHYSICAL_MODE": 15},
+  "fail_analysis": {
+    "all_15_are_off_equilibrium_fixtures": true,
+    "continuous_positive_modes_present": true,
+    "rho_matches_exp_max_Re_h": true,
+    "reclassification": "CONDITIONAL_PHYSICAL_MODE",
+    "gate_fail_retained_in_audit": true
+  },
+  "covariance_c_s2_4ms": {
+    "stored_ratio": 0.006739974168547053,
+    "stored_implied_A_over_B": 148.37,
+    "original_van_loan": "stable (van_loan_stable), NOT naive",
+    "reconstruction_status": "requires exact original call sequence; errata V1 used C nominal instead of C/S2",
+    "max_eig_P_a_original": 583.7055157846027,
+    "max_eig_P_b_original": 2.920605193163484,
+    "max_eig_ratio": 199.9,
+    "note": "583.7/2.92 are max_eigenvalues, not traces; the POST mislabeled them"
+  },
+  "cost_units": {
+    "finding": "stored values are seconds under a key named cost_ms",
+    "max_predict_ms_mode_b": 22.658,
+    "median_predict_ms_mode_b": 2.14,
+    "realtime_4ms_deadline": "mode B exceeds 4 ms at some off-equilibrium fixtures; acceptable for offline replay but not realtime-qualified"
+  }
+}
