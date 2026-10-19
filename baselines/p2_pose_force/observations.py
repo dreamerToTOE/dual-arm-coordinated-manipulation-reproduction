@@ -15,7 +15,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from . import mechanics as mech
-from .contact_geometry import inverse, se3_exp, se3_log, validate_transform
+from .contact_geometry import _exp6, _inv4, _log4, se3_exp, se3_log, validate_transform
 
 STATE_NAMES=('O','V','E1','E2','C','G1','G2')
 KINDS=('EE1','EE2','hK1','hK2','visual1','visual2')
@@ -65,13 +65,15 @@ class FilterState:
 
     def retract(self,delta):
         delta=_vector(delta,42)
+        # The new state is re-validated by __post_init__; the per-block Exp does
+        # not need to validate its own output again (O1-a).
         return type(self)(*(getattr(self,name)+delta[6*i:6*i+6] if name=='V'
-                            else getattr(self,name)@se3_exp(delta[6*i:6*i+6])
+                            else getattr(self,name)@_exp6(delta[6*i:6*i+6])
                             for i,name in enumerate(STATE_NAMES)),origin=self.origin)
 
     def local(self,reference):
         return np.concatenate([self.V-np.asarray(reference.V) if name=='V'
-                               else se3_log(inverse(getattr(reference,name))@getattr(self,name))
+                               else _log4(_inv4(getattr(reference,name))@getattr(self,name))
                                for name in STATE_NAMES])
 
     def as_dict(self):

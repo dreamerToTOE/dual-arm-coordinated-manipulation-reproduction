@@ -41,18 +41,26 @@ def validate_transform(T):
     return T
 
 
-def inverse(T):
-    T = validate_transform(T)
+def _inv4(T):
+    """Inverse of an already validated SE(3) matrix (no re-validation)."""
     out = np.eye(4)
     out[:3, :3] = T[:3, :3].T
     out[:3, 3] = -out[:3, :3] @ T[:3, 3]
     return out
 
 
-def adjoint(T):
-    T = validate_transform(T)
+def _adj4(T):
+    """Adjoint of an already validated SE(3) matrix (no re-validation)."""
     R = T[:3, :3]
     return np.block([[R, skew(T[:3, 3]) @ R], [np.zeros((3, 3)), R]])
+
+
+def inverse(T):
+    return _inv4(validate_transform(T))
+
+
+def adjoint(T):
+    return _adj4(validate_transform(T))
 
 
 def _V(theta):
@@ -67,18 +75,30 @@ def _V(theta):
     return np.eye(3) + a*s + b*s@s
 
 
-def se3_exp(x):
-    x = vector(x, (6,))
+def _exp6(x):
+    """Exp of a finite 6-vector; the caller guarantees the input domain.
+
+    The public se3_exp still validates both input and output; this variant is for
+    internal call chains whose result is validated at the enclosing entry point.
+    """
     out = np.eye(4)
     out[:3, :3] = Rotation.from_rotvec(x[3:]).as_matrix()
     out[:3, 3] = _V(x[3:]) @ x[:3]
-    return validate_transform(out)
+    return out
+
+
+def _log4(T):
+    """Log of an already validated SE(3) matrix (no re-validation)."""
+    theta = Rotation.from_matrix(T[:3, :3]).as_rotvec()
+    return np.r_[np.linalg.solve(_V(theta), T[:3, 3]), theta]
+
+
+def se3_exp(x):
+    return validate_transform(_exp6(vector(x, (6,))))
 
 
 def se3_log(T):
-    T = validate_transform(T)
-    theta = Rotation.from_matrix(T[:3, :3]).as_rotvec()
-    return np.r_[np.linalg.solve(_V(theta), T[:3, 3]), theta]
+    return _log4(validate_transform(T))
 
 
 def right_jacobian(x):
@@ -142,16 +162,16 @@ def grasp_rate(O, E, G, V_o, U_EE, H, *, null_basis=None, rcond=1e-12):
     if not np.isfinite(rcond) or not 0 < rcond < 1:
         raise GeometryDomainError("invalid rcond")
     H, N = _selection_and_null(H, null_basis)
-    D = inverse(E) @ O @ G
-    tau = se3_log(D)
+    D = _inv4(E) @ O @ G
+    tau = _log4(D)
     if np.linalg.norm(tau[3:]) >= np.pi - 1e-6:
         raise GeometryDomainError("principal Log chart boundary")
-    a = adjoint(inverse(G)) @ V_o - adjoint(inverse(D)) @ U_EE
+    a = _adj4(_inv4(G)) @ V_o - _adj4(_inv4(D)) @ U_EE
     J = right_jacobian(tau)
     if not N.shape[1]:
         VG, A, sigma = np.zeros(6), np.empty((0, 0)), np.empty(0)
     else:
-        Ng = adjoint(inverse(D)) @ N
+        Ng = _adj4(_inv4(D)) @ N
         A = N.T @ np.linalg.solve(J, Ng)
         sigma = np.linalg.svd(A, compute_uv=False)
         if sigma[-1] <= rcond * sigma[0]:

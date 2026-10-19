@@ -142,7 +142,9 @@ def _null(H, supplied=None):
 
 
 def _geometry_from_D(D, G, V, U, H, N, rcond=1e-12):
-    tau = geo.se3_log(D)
+    # D is a product of validated SE(3) states; the enclosing entry point already
+    # validated the state, so the internal Log does not re-validate (O1-a).
+    tau = geo._log4(D)
     if np.linalg.norm(tau[3:]) >= np.pi-1e-6:
         raise EstimatorDomainError('PRINCIPAL_LOG_CHART_BOUNDARY')
     AdGi, AdDi = _adjoint(_inverse(G)), _adjoint(_inverse(D))
@@ -209,7 +211,7 @@ def _measurement(state, kind, physics, jacobian=True):
     elif kind == 'hK1' or kind == 'hK2':
         arm = int(kind[-1])-1
         _, D, _, JD = _contact_pose_and_jacobian(state, arm)
-        tau = geo.se3_log(D)
+        tau = geo._log4(D)
         K = np.asarray(physics.K[arm], float)
         value = -K*tau
         if jacobian:
@@ -303,7 +305,7 @@ def prediction_linearization(state, U, modes, physics, dt, *, rate_provider=None
         sl = slice(6*block, 6*block+6)
         J = right_jacobian(increment[sl])
         F[sl] = dt*J@A[sl]
-        F[sl, sl] += _adjoint(geo.se3_exp(-increment[sl]))
+        F[sl, sl] += _adjoint(geo._exp6(-increment[sl]))
         Lw[sl, sl] = J
     return predicted, F, Lw
 
@@ -474,7 +476,7 @@ class RightIESEKF:
             if obs.kind.startswith('hK'):
                 residual = np.asarray(obs.value)-expected
             else:
-                residual = geo.se3_log(_inverse(expected)@obs.value)
+                residual = geo._log4(_inverse(expected)@obs.value)
                 H = _left_inverse_jacobian(residual)@H
             H = H@anchor_map
             R = np.asarray(obs.covariance)
