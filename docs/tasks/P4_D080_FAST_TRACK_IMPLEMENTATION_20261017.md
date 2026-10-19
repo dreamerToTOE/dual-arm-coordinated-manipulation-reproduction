@@ -1,5 +1,7 @@
 # P4 D080：Codex 下一阶段执行任务书（2026-10-17）
 
+> **D082（2026-10-19）最新执行覆盖**：本文件D080全环境×全部规划器方法组合、正式18,000和原论文全部数值图表规模**仅作历史要求，不是当前交付条件**。现在P4只需实现核心算法与一套完整可信虚拟规划任务；结果必须有RSS/PCS/NR真实算法实现或有证据的失败、独立合格路径/避障、PCS fixed消融及数值曲线。优先执行[全新任务书](P4_D082_VIRTUAL_SIMULATION_EXECUTION_20261019.md)，实验范围见[决策](../decisions/D082_FIVE_PAPERS_ONE_VIRTUAL_SIM_FOUR_ALGORITHMS_20261019.md)。不得删除旧科学数据。
+
 > **D081执行覆盖（2026-10-18）**：本任务书中所有“正式18,000次运行、36×500、为其专设cost pilot和正式规模预算审批”的未来执行指令已经由用户取消。保留原论文原分母、D080批准历史和已有失败/结果，不再执行18k。继续真实数值仿真实验、可重复的代表性算法对照、Fig.3–5/Table I–II趋势与PCS消融；详情[最新决策](../decisions/D081_P4_CANCEL_18000_NUMERICAL_REPRODUCTION_20261018.md)。旧段落仅供历史溯源，和本条矛盾时以上述新决策为准。
 
 **先读** `docs/decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md`，其D080范围高于旧D079“全部六环境”要求；其他证据/质量门沿用D079。工作分支 `p4-full-reproduction-pcs-study`，不新建分支。不得自动进入P2、Isaac/FR3应用。
