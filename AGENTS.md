@@ -1,5 +1,13 @@
 # AGENTS.md — Mandatory rules for Codex / coding agents
 
+## D082（2026-10-19）：当前最高优先级，五篇两级复现【覆盖D080/D079中相冲突的交付范围】
+
+用户确认**P4核心算法+完整虚拟仿真实验；P1/P2/P3/P5只做核心算法的数值复现与可复核单元/小型示例**。不需要真实机器人、Isaac Sim/ROS任务迁移和四篇论文级任务场景仿真，不能把“算法数值复现”偷换为仅有公式/编译，也不能声称原论文全部实验FULL。详见[最终范围决策](docs/decisions/D082_FIVE_PAPERS_ONE_VIRTUAL_SIM_FOUR_ALGORITHMS_20261019.md)、[P4最新执行任务](docs/tasks/P4_D082_VIRTUAL_SIMULATION_EXECUTION_20261019.md)和[四篇算法任务](docs/tasks/P1_P2_P3_P5_D082_ALGORITHM_ONLY_20261019.md)。
+
+P4必须产生至少一个**真实完整规划任务**的轨迹、闭链/限位/碰撞/分支独立资格，RSS/PCS/NR算法或透明失败、full/fixed PCS公平对照和真实数值图表；不强求恢复所有作者软件栈/六环境/所有方法×规划器/500重复。D081取消18,000次正式规划及其pilot/预算申报仍有效，VI只读归档。旧原论文任务行及全部历史数据不删除、未覆盖部分按原论文对照表明确列出。执行前先安全恢复最新Git工作区和当前V日志，不能重做已存II/III路径；注意今日V5监督器仅静态资格，未获准新source运行。
+
+D079独立数学证据、不能挑seed/放宽碰撞、保留失败、同根因三次失败后的OUR/PAPER_RESOURCE/METHOD_SUSPECTED/UNKNOWN审查与每篇结题最终范围表、双FR3应用思想章节继续有效。P2历史冻结数据不能因D082重写成功结论。此刻只允许继续P4，不自动开始P1/P2/P3/P5、Isaac或实物实验。
+
 ## D080（2026-10-17）：用户批准的P4最新范围与推进方式【高于旧D079六环境范围】
 
 在现有 `p4-full-reproduction-pcs-study` 分支续研，不创建新分支。P4新批准范围为原环境 **I–V**：环境I保留Fig.3等20R理论基准；环境II–V保留RSS、PCS、NR及RBS、RRT/CBiRRT/SBL与原文对应Fig.4/5、TableII、50万投影、约5万局部可见性、分划/障碍消融和各环境的可检验失败。TableI D080执行目标为II–V **36组×500=18,000** 次（1000s上限）；原论文VI的4500次不再执行。环境VI全部数学、失败、974/974预算和三臂源码分析仅只读保全，不再扩展生产算法/规划/采样。原六环境/22500义务仍以历史原文事实保留；禁止修改历史211行或宣称完成了六环境完整复现。详细范围 [D080决策](docs/decisions/D080_P4_RELEVANCE_SCOPE_ACCELERATION_20261017.md)；下一阶段 [Codex执行任务书](docs/tasks/P4_D080_FAST_TRACK_IMPLEMENTATION_20261017.md)。D079的数学判据、来源标记、实验保全、三次失败根因等继续有效。请先进行211项原文对照表D080范围附列，不重复已完成的II四条合格离散路径。不准未经预算批准启动正式18k、改研究假设/几何/阈值、删其他环境或进入P2/Isaac。
