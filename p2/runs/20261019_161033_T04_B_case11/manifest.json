@@ -1,0 +1,91 @@
+{
+  "kind": "T04_B_COUPLED_SIMULATION",
+  "run_id": "20261019_161033_T04_B_case11",
+  "case": {
+    "id": 11,
+    "condition": "exp3",
+    "seed": 7,
+    "variant": "transport",
+    "GT": false,
+    "scale": 1
+  },
+  "transport_limit_s": 95.0,
+  "wall_cap_s": 600.0,
+  "propagation_mode": "B",
+  "git_commit": "8c5fcfbbf1e5d72bfec0001476bf07717b5b5b1d",
+  "command": [
+    "p2/tools/t04_b_coupled.py",
+    "--confirm",
+    "case11-exp3-seed7-A-modeB",
+    "--transport-limit-s",
+    "95",
+    "--wall-cap-s",
+    "600"
+  ],
+  "source_sha256": {
+    "scripts/run_p2_closed_loop.py": "ba1215f0f6a36d98710464449fd2eb8d39ad74bc3910fa0f22a1da1410060d69",
+    "scripts/p2_event_log.py": "b69401481fbe9c82a7ffe3c30301896ead28384811b7f9613e0fb639bfebe065",
+    "baselines/p2_pose_force/stable_propagation.py": "c06811afb2acf11e902bf7dba9a8328c2fbb4a104c6bb56a3199cf722cc952a1",
+    "baselines/p2_pose_force/estimator.py": "e953c383ba25109687c849d2e25b78e934a81db3e9824b0b6a0735bda2ab1e69",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/contact_geometry.py": "31eb0895482ab0b846fe2a34d4e3336cf4f5c94f2e062fc78caa16e4bf1a7332",
+    "baselines/p2_pose_force/native_kernel.cpp": "5954502884798f76191da966e611a73d29f8a97641e5f77734b9770a29b3d66c",
+    "configs/p2_closed_loop_protocol_v3.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c"
+  },
+  "wall_s": 600.6059340320007,
+  "summary": {
+    "status": "FAIL_STOP",
+    "case": {
+      "id": 11,
+      "condition": "exp3",
+      "seed": 7,
+      "variant": "transport",
+      "GT": false,
+      "scale": 1
+    },
+    "reason": "CASE_WALL_LIMIT",
+    "wall_s": 600.1340562400001,
+    "phase": "transport",
+    "last_event_time_s": 65.765,
+    "last_transport_log_time_s": 65.764,
+    "transport_samples": 16442,
+    "estimator_predictions": 26963,
+    "estimator_updates": 13810,
+    "GT_control_state_reads": 0,
+    "metrics": {
+      "GT_final_position_RMS_m": null,
+      "GT_final_angle_RMS_rad": null,
+      "true_internal_stack_force_RMS_N": null,
+      "true_internal_each_moment_RMS_Nm": null
+    },
+    "max_Newton_corrections": 1,
+    "no_reset": true,
+    "control_gain_or_condition_changes": false,
+    "corrections_used": 3,
+    "remaining_corrections": 0,
+    "timing_s": {
+      "precalibration": 0.0,
+      "settle": 0.0,
+      "transport": 0.0,
+      "total": 0.0
+    }
+  },
+  "files": {
+    "artifact_sha256.json": "0c6768f91ba6013985d6b7c2aeb0a24019124688494d9ffcde3dfb68cc905c46",
+    "calibration.json": "0e0ab6bc6a1f42c697e02a32b81f3bcc9302952ad81f2c8608c3d60467ea34cc",
+    "commands.jsonl.gz": "ed31ed97bb13bd72713056f4de9bea67500abae805f9ef454a464a4d054f67f5",
+    "config_snapshot.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+    "estimator.jsonl.gz": "e65ca0abe6fdac40a37cf1dc6c63e7fa69b7b66cf09976e0b2b41061ffdb4a01",
+    "events.jsonl": "ba34be2f31970ee4adc430e24a651c293ce67c0021d30c5038a0bcee6f6f4d6e",
+    "failure_context_estimator.jsonl": "ce561d5e6690fd671a845fff33e71085b753fbe37f931bab3405c4dd24cc7b46",
+    "failure_context_plant.jsonl": "b4e6753fb75658c611a782d4f882e81b2f5f2eca3be8f536ca8929a18d9cc5cf",
+    "failure_filter_matrices.npz": "55ca1b71c98207440367891d835c9c0bdd6c56f94e614ce590482f745a372a18",
+    "initialization.json": "26da52a43e9c27b3260526270f9e4e22eb6608a3a255372b6d163bdf9582a2fa",
+    "metadata.json": "64e3515eb1aafe365a4c99c388ad91d230ec68b4c41ca179c38ca0dd5c7e7ac6",
+    "plant.jsonl.gz": "8538ca700d5fa523a9e20c512f21986e2a6dfa7c72bdf86d3000c33fcfe56f64",
+    "sensors.jsonl.gz": "ea12d3753cd0532afff2e52aef3aa690ee8c9a4a4a674ef066c6de0987f8f577",
+    "settling.jsonl.gz": "caf6c010ba66a71f299794e922b2f80631c7a75244fe60159bcfc6803ca612b8",
+    "summary.json": "40e8dd1a0ba61618e9f793bf6d50e9e9652457268e80d3eb5eb5aca9c4727a7c",
+    "termination.json": "2da8adcc3f87da289e9e73309d72052992287d0b58f2f71a0bda85d3adea14a7"
+  }
+}

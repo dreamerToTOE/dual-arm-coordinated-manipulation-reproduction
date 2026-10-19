@@ -14,8 +14,8 @@ from run_p2_closed_loop import run_case
 from baselines.p2_pose_force.native_model import NativeModel, build_native
 
 CONFIRM = "case11-exp3-seed7-A-modeB"
-MAX_TRANSPORT = 7.5
-MAX_WALL = 120.0
+MAX_TRANSPORT = 95.0
+MAX_WALL = 600.0
 CASE = {"id": 11, "condition": "exp3", "seed": 7, "variant": "transport",
         "GT": False, "scale": 1}
 SOURCES = ["scripts/run_p2_closed_loop.py", "scripts/p2_event_log.py",
@@ -42,7 +42,7 @@ def main():
 
     cfg_path = ROOT / "configs" / "p2_closed_loop_protocol_v3.json"
     cfg = json.loads(cfg_path.read_text())
-    run_id = time.strftime("%Y%m%d_%H%M%S") + "_T04_B_COUPLED_7P5_case11"
+    run_id = time.strftime("%Y%m%d_%H%M%S") + "_T04_B_case11"
     out = ROOT / "p2" / "runs" / run_id
     commit = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"],
                             capture_output=True, text=True).stdout.strip()
