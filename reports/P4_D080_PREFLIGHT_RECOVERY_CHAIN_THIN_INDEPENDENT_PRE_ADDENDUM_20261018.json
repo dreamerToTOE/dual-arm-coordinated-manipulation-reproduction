@@ -1,0 +1,71 @@
+{
+  "schema": "P4_D080_PREFLIGHT_RECOVERY_CHAIN_THIN_INDEPENDENT_PRE_V1",
+  "personnel_independent": true,
+  "status": "PASS_THIN_RECOVERY_BOOKKEEPING",
+  "checks_total": 11,
+  "checks_passed": 11,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "old_B_unchanged_and_helper_stable",
+      "passed": true
+    },
+    {
+      "name": "only_run_identity_localization_at_prior_entry",
+      "passed": true
+    },
+    {
+      "name": "only_new_early_dispatch_is_single_fixed_basis_and_continues",
+      "passed": true
+    },
+    {
+      "name": "all_normal_prior_predicates_and_receipt_parser_identical_AST",
+      "passed": true
+    },
+    {
+      "name": "helper_imports_only_stdlib_and_no_top_level_calls",
+      "passed": true
+    },
+    {
+      "name": "special_run_path_and_basis_exact_singleton",
+      "passed": true
+    },
+    {
+      "name": "special_requires_immutable_raw_four_null_receipt_exit1_false_supervision",
+      "passed": true
+    },
+    {
+      "name": "special_two_observation_Decimal_and_independent_recovery_certificate_required",
+      "passed": true
+    },
+    {
+      "name": "V37_exact_saved_singleton_no_new_runtime_and_old54_rows_retained",
+      "passed": true
+    },
+    {
+      "name": "v7_reverses_byte_exact_to_v6_after_only_measurement_filter_and_count_metadata",
+      "passed": true
+    },
+    {
+      "name": "saved_recovery_POST8_complete_with_explicit_false_supervision",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "inputs_sha256": {
+    "scripts/p4_d080/build_v_pcs_local_v1_draft.py": "1f79c14d02368959fce03c88c4c2f39b99cbdb0bbb5ffd149330a4ef91170578",
+    "scripts/p4_d080/validate_prior_preflight_recovery_v1.py": "b315972ce22569684c4fe21dc487fc0456b7db63b8224906020d6fc41911f65e",
+    "reports/p4_full_audit/recovery_tools/append_preflight_recovery_v37_saved_only_20261018.py": "9aca69186f4c4b1b0a9473a2b96a39f1bde7a54d0ba584cf9796b8778ec0cc4b",
+    "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_d080_v6_20261018.py": "e4dfcffdd1fd68ab23a577abc389de0d9b03a4a288b73eb2ed0c6a87c12aa7c8",
+    "reports/p4_full_audit/recovery_tools/append_external_cost_snapshot_d080_v7_20261018.py": "a735f738a4f0efda96c2064d11b053b49e57b4ee10ad7b839601e8d24cab7e73",
+    "reports/P4_D080_ENV_V_RRT_PCS_BUILD01_RECOVERY_COST_INDEPENDENT_POST_20261018.json": "8017f6d6986048ed94eaa2f776d73c48256c11d09b957e48a9583e0b3f321953"
+  },
+  "new_scientific_compile_binary_model_calls": 0,
+  "historical_full_ledger_rehash_repeated": false,
+  "original_auditor_predicate_failure_retained": "Original PRE false only because ImportFrom checked imported symbol rather than stdlib module; source helper unchanged. Original failed PRE and auditor preserved.",
+  "limits": [
+    "Only the fixed failed preflight is accepted with a saved-only two-observation cost index; no old successful path or budget standard is relaxed.",
+    "V37 bookkeeping and v7 are statically reviewed, not executed by this auditor.",
+    "All ordinary prior validation remains identical AST; root must bind and freeze the latest actual ledger before authorized execution."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "P4_D080_III_RRT_PCS_COMPLETE_QUEUE_SAVED_INDEPENDENT_PRE_V1",
+  "personnel_independent": true,
+  "status": "PASS_COMPLETE_SAVED649_QUEUE_ONLY",
+  "checks_total": 7,
+  "checks_passed": 7,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "name": "three_pure_functions_exact_original_source_segments_no_model_import",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact_actual_source_POST25_and_execution_links",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "independent_first_true_full_original_M_all14edges16attempts_preserved",
+      "passed": true,
+      "evidence": {
+        "selected_attempt_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "false_attempts": [
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "name": "exact649binary64_unique_nodes_all_refs_no_missing_tail_or_invented_nodes",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "all_original_full12_leaves_strict_point05_independent_hypot",
+      "passed": true,
+      "evidence": {
+        "leaves": 648,
+        "max_full12_L2_rad": 0.04995648687917435,
+        "role_branch_assignments": 653
+      }
+    },
+    {
+      "name": "complete15milestone_source_PlannerData_chain_identity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "bound_saved_source_bytes_and_draft_only_no_scientific_qualification",
+      "passed": true,
+      "evidence": null
+    }
+  ],
+  "queue": "configs/p4_d080/iii_rrt_pcs_source01_complete_saved_queue_v1.DRAFT.json",
+  "queue_sha256": "037b754847718d5bc2a929c7600d354c61b785d249eeacd31548c52f84fdf1d9",
+  "source_execution_sha256": "f9229c0c2b768f76f540e4667545b09d2b1c425957817cb0a284f696760f39b0",
+  "source_POST_sha256": "be8a4f2d3ec4b095f34c409d980e6c7d511a5f417594b3d29893e6607e941418",
+  "materializer_sha256": "534d1a6571a2e1c8ca13afee7e90316a3f66734bb21666de499e11c9949106bb",
+  "auditor_sha256": "2ce67116a62a948b3b59c866d9f7baf7226a524bc3e3d18d1c29c044fa106bd2",
+  "new_model_binary_scientific_calls": 0,
+  "saved_materializer_execution_count": 1,
+  "full_queue_nodes": 649,
+  "full_path_edges": 14,
+  "full_leaves": 648,
+  "all_node_role_branch_assignments": 653,
+  "independent_path_qualified": false,
+  "continuous_collision_certificate": false,
+  "limits": [
+    "Complete saved original M and fallback bookkeeping only; no FK/branch/limit/PQP or continuous collision evidence yet.",
+    "Original14true/2false preserved; no new interpolation, point, seed or solve.",
+    "Full649 queue under2048 resource cap does not itself authorize physical execution."
+  ]
+}
