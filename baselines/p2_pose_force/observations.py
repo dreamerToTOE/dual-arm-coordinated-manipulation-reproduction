@@ -244,11 +244,11 @@ def calibrate_paired_visuals(pairs,protocol):
         stamp=(i+1)/15
         if abs(first.sample_stamp-stamp)>1e-12 or abs(second.sample_stamp-stamp)>1e-12:
             raise ObservationDomainError('INVALID_CALIBRATION_SAMPLE_CLOCK')
-        values.append(second.value@inverse(first.value)); identities.extend([first.sample_id,second.sample_id])
+        values.append(second.value@_inv4(first.value)); identities.extend([first.sample_id,second.sample_id])
     if len(set(identities))!=150: raise ObservationDomainError('REPEATED_CALIBRATION_SAMPLE_ID')
     settings=protocol['estimator']['initial_calibration_mean']; mean=values[0].copy()
     for iteration in range(1,settings['iteration_max']+1):
-        delta=np.mean([se3_log(inverse(mean)@value) for value in values],axis=0)
+        delta=np.mean([_log4(_inv4(mean)@value) for value in values],axis=0)
         largest=float(np.max(np.abs(delta)))
         if largest<=settings['tangent_component_tolerance']:
             return CalibrationResult(mean,75,iteration,largest,tuple(identities))

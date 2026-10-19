@@ -44,9 +44,11 @@ def require_contact(state,contact):
 
 def solver_log(e):return {k:v for k,v in e.items() if k!='last_accepted_state'}
 
-def run_case(cfg,case,out,native,suite_started,prior_wall):
+def run_case(cfg,case,out,native,suite_started,prior_wall,transport_limit_s=None,wall_limit_s=120):
  out.mkdir(exist_ok=False);start=time.perf_counter();physics=mech.physics_from_protocol(cfg,'C' if case['variant']=='sliding' else 'A');variant=case['variant'];scale=case['scale'];dt=1/(3000*scale)
  state=mech.initial_state(cfg,variant if variant in ('sliding','high_moment') else 'transport');modes=('pivot','pivot');Uzero=np.zeros((2,6));filt=None;tick=None;ref=None;control=None;failure=None;trace_rows=[];max_Newton=0;phase='precalibration';est_updates=0;est_predictions=0;primary_GT_reads=0
+ end_s=(30 if variant=='sliding' else 95) if transport_limit_s is None else min(30 if variant=='sliding' else 95,float(transport_limit_s))
+ t_precal=0.0;t_settle=0.0
  cfgpath=ROOT/'configs/p2_closed_loop_protocol_v3.json';sources=['scripts/run_p2_closed_loop.py','baselines/p2_pose_force/clocking.py','baselines/p2_pose_force/native_kernel.cpp','baselines/p2_pose_force/native_model.py','baselines/p2_pose_force/estimator.py','baselines/p2_pose_force/observations.py','baselines/p2_pose_force/control.py','baselines/p2_pose_force/mechanics.py','baselines/p2_pose_force/contact_geometry.py','reports/P2_CLOSED_LOOP_RUNTIME_SPEC.md']
  write(out/'metadata.json',{'kind':'FROZEN_P2_INDEPENDENT_PLANT_ESTIMATED_CONTROL' if not case['GT'] else 'FROZEN_P2_EXPLICIT_GT_STATE_CONTROL_DIAGNOSTIC','date':'2026-10-14','case':case,'seed':case['seed'],'task':'P2_STAGE2_ORIGINAL_CONTROLLER','baseline':'original Eq9-12/16/19-21/25, approved spatial-free Log geometry','platform':'independent rigid COM ODE, ideal Cartesian endpoints; not robot joint control','source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'source_sha256':{p:sha(ROOT/p) for p in sources},'command':sys.argv,'config_path':str(cfgpath.relative_to(ROOT)),'protocol_sha256':sha(cfgpath),'build':json.loads(native.binary.with_name('build.json').read_text()),'true_K':[k.tolist() for k in physics.K],'wall_limit_s':120,'suite_wall_limit_s':7200,'corrections_used':3,'remaining_corrections':0,'observer_mean_integration':'original Eq18 right Euler at fresh observation/heartbeat events; no internal substeps','causal_phase_clocks':'global_case_s=precalibration time;settle5+t;transport10+t','covariance_log':'diag each event, full at1Hz/failure; complete covariance propagation/checking every prediction/update','no_gt_primary_controller':not case['GT']});(out/'config_snapshot.json').write_bytes(cfgpath.read_bytes())
  sensor=ObservationGenerator(cfg,case['seed'],variant=variant,tick_scale=scale,contact_provider=native.contact)
@@ -54,7 +56,7 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
  handles={name:gzip.open(out/(name+'.jsonl.gz'),'wt',compresslevel=1) for name in ('plant','sensors','estimator','commands','settling')};events=(out/'events.jsonl').open('w')
  plant_log=EventLog(handles['plant'],snapshot_period_s=1.0,ring_size=200);est_log=EventLog(handles['estimator'],snapshot_period_s=1.0,ring_size=200)
  def budget():
-  if time.perf_counter()-start>120:raise RuntimeError('CASE_WALL_LIMIT')
+  if time.perf_counter()-start>wall_limit_s:raise RuntimeError('CASE_WALL_LIMIT')
   if time.perf_counter()-suite_started+prior_wall>7200:raise RuntimeError('SUITE_WALL_LIMIT')
  def plant_row(t,c,phase,solver=None,reference=None):
   row={'phase':phase,'time_s':t,'global_case_time_s':5+t if phase=='settle' else 10+t,'tick':tick,'state':state.as_dict(),'D':c.D,'tau':c.tau,'hK_N_Nm':c.hK,'hB_N_Nm':c.hB,'h_N_Nm':c.h,'internal_N_Nm':c.internal,'external_N_Nm':c.external,'W':c.W,'W_singular_values':c.singular_values,'solver':solver}
@@ -68,13 +70,14 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
    budget()
    for obs in (a,b):log(handles['sensors'],{'phase':'precalibration','global_case_time_s':obs.delivery_stamp,'observation':obs.as_dict()})
   calibration=calibrate_paired_visuals(pairs,cfg);write(out/'calibration.json',{'C_estimated':calibration.C,'iterations':calibration.iterations,'max_mean_component':calibration.maximum_mean_component,'pair_count':75,'sample_ids':calibration.sample_ids,'input':'only paired simulated visual observations; trueC not substituted'})
+  t_precal=time.perf_counter()-start
   log(events,{'type':'calibration_complete_before_settle','global_case_time_s':5,'available_before_transport':True});phase='settle';diag=None
   for tick in range(0,15000*scale+1,12*scale):
    budget();c=native.contact(state,Uzero,modes,physics);require_contact(state,c);log(handles['settling'],plant_row(tick*dt,c,'settle',None if diag is None else solver_log(diag)))
    if tick<15000*scale:state,diag=native.advance(state,Uzero,modes,physics,dt,12*scale);max_Newton=max(max_Newton,diag['max_newton_iterations'])
   balance=mech.equilibrium_residual(state,c,physics)
   if np.max(np.abs(balance[:3]))>1e-6 or np.max(np.abs(balance[3:]))>1e-6 or np.max(np.abs(state.V[:3]))>1e-7 or np.max(np.abs(state.V[3:]))>1e-7:raise RuntimeError('FIXED_FIVE_SECOND_SETTLE_INVALID')
-  log(events,{'type':'true_integrated_settle_pass','global_case_time_s':10,'balance_N_Nm':balance,'V_m_s_rad_s':state.V});phase='transport';tick=0;packet=sensor.sample_packet(state,0,c,modes=modes);init=initialize_from_fresh(packet,calibration,*declared_grasps(cfg,variant),time_s=0.)
+  log(events,{'type':'true_integrated_settle_pass','global_case_time_s':10,'balance_N_Nm':balance,'V_m_s_rad_s':state.V});t_settle=time.perf_counter()-start-t_precal;phase='transport';tick=0;packet=sensor.sample_packet(state,0,c,modes=modes);init=initialize_from_fresh(packet,calibration,*declared_grasps(cfg,variant),time_s=0.)
   filt=RightIESEKF.from_protocol(init.state,cfg,condition=case['condition'],object_id='C' if variant=='sliding' else 'A',modes=modes,rate_provider=native.continuous_linearization)
   filt.seen_samples.update((o.kind,o.sample_id) for o in init.consumed_observations)
   for n in mech.STATE_NAMES:
@@ -82,8 +85,9 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
   assert filt.state.origin=='observations'
   write(out/'initialization.json',{'source':'fresh noisy EE1/EE2/visual1, zeroV, declaredG, observedC','estimate':filt.state.as_dict(),'consumed_samples':[(o.kind,o.sample_id) for o in packet],'P0':filt.P,'no_true_state_input':True})
   controller=PoseForceController.from_protocol(cfg,case['condition'],object_id='C' if variant=='sliding' else 'A',variant=variant,contact_provider=native.contact)
-  reference=SlidingReference(cfg) if variant=='sliding' else QuinticReference(cfg);end_tick=(30 if variant=='sliding' else 95)*3000*scale
-  event_ticks=[s*3000*scale for s in ((5,25,30) if variant=='sliding' else (3,7,13,23,55,76,95))]
+  reference=SlidingReference(cfg) if variant=='sliding' else QuinticReference(cfg)
+  end_tick=int(round(end_s*3000*scale))
+  event_ticks=[int(round(s*3000*scale)) for s in ((5,25,30) if variant=='sliding' else (3,7,13,23,55,76,95)) if s<=end_s]
   while True:
    budget();t=tick*dt;old_published=clock.published.copy();contact=native.contact(state,clock.applied,modes,physics);require_contact(state,contact);old_modes=modes;switched=False
    if variant=='sliding' and tick in (5*3000*scale,25*3000*scale):
@@ -109,7 +113,7 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
     row=plant_row(t,contact,'transport',None if diag is None else solver_log(diag),ref);plant_log.event(t,row);trace_rows.append(clean(row))
     commandrow=control.as_dict();commandrow.update(tick=tick,source='explicit_GT_state_diagnostic' if case['GT'] else 'observation_initialized_IESEKF',estimated_model_K=[k.tolist() for k in controller.physics.K],old_actual_applied=clock.applied.copy());log(handles['commands'],commandrow)
    for event in clock.publish_and_deliver(tick,modes):event.update(time_s=t,global_case_time_s=10+t);log(events,event)
-   if tick==end_tick:break
+   if tick>=end_tick:break
    nexttick=clock.next_tick(tick,end_tick,event_ticks);state,diag=native.advance(state,clock.applied,modes,physics,dt,nexttick-tick);max_Newton=max(max_Newton,diag['max_newton_iterations']);tick=nexttick
  except Exception as exc:
   failure=str(exc);write(out/'termination.json',{'reason':failure,'traceback':traceback.format_exc(),'phase':phase,'tick':tick,'time_s':None if tick is None else tick*dt,'last_accepted_plant_state':state.as_dict(),'last_estimate_state':None if filt is None else filt.state.as_dict(),'last_published_U':clock.published,'last_actual_U':clock.applied,'last_control':None if control is None else control.as_dict(),'native_evidence':getattr(exc,'evidence',None),'no_reset_or_reanchoring':True})
@@ -125,9 +129,10 @@ def run_case(cfg,case,out,native,suite_started,prior_wall):
   for handle in handles.values():handle.close()
   events.close()
  metrics={'GT_final_position_RMS_m':None,'GT_final_angle_RMS_rad':None,'true_internal_stack_force_RMS_N':None,'true_internal_each_moment_RMS_Nm':None}
- if failure is None and variant!='sliding':
+ if failure is None and variant!='sliding' and end_s>=95:
   final=[r for r in trace_rows if 85<=r['time_s']<=95];transport=[r for r in trace_rows if 13<=r['time_s']<=76];h=np.array([r['internal_N_Nm'] for r in transport]);metrics.update(GT_final_position_RMS_m=float(np.sqrt(np.mean([r['GT_goal_distance_m']**2 for r in final]))),GT_final_angle_RMS_rad=float(np.sqrt(np.mean([r['GT_goal_angle_rad']**2 for r in final]))),true_internal_stack_force_RMS_N=float(np.sqrt(np.mean(np.sum(h[:,:,:3]**2,axis=(1,2))))),true_internal_each_moment_RMS_Nm=np.sqrt(np.mean(np.sum(h[:,:,3:]**2,axis=2),axis=0)).tolist())
- summary={'status':'COMPLETE' if failure is None else 'FAIL_STOP','case':case,'reason':failure,'wall_s':time.perf_counter()-start,'phase':phase,'last_event_time_s':None if tick is None else tick*dt,'last_transport_log_time_s':trace_rows[-1]['time_s'] if trace_rows else None,'transport_samples':len(trace_rows),'estimator_predictions':est_predictions,'estimator_updates':est_updates,'GT_control_state_reads':primary_GT_reads,'metrics':metrics,'max_Newton_corrections':max_Newton,'no_reset':True,'control_gain_or_condition_changes':False,'corrections_used':3,'remaining_corrections':0};write(out/'summary.json',summary);write(out/'artifact_sha256.json',{p.name:sha(p) for p in sorted(out.iterdir()) if p.is_file()});print(json.dumps(summary),flush=True);return summary
+ truncated=transport_limit_s is not None and end_s<(30 if variant=='sliding' else 95)
+ summary={'status':('FAIL_STOP' if failure is not None else ('SMOKE_TRUNCATED' if truncated else 'COMPLETE')),'case':case,'reason':failure,'wall_s':time.perf_counter()-start,'phase':phase,'last_event_time_s':None if tick is None else tick*dt,'last_transport_log_time_s':trace_rows[-1]['time_s'] if trace_rows else None,'transport_samples':len(trace_rows),'estimator_predictions':est_predictions,'estimator_updates':est_updates,'GT_control_state_reads':primary_GT_reads,'metrics':metrics,'max_Newton_corrections':max_Newton,'no_reset':True,'control_gain_or_condition_changes':False,'corrections_used':3,'remaining_corrections':0,'timing_s':timing_s};write(out/'summary.json',summary);write(out/'artifact_sha256.json',{p.name:sha(p) for p in sorted(out.iterdir()) if p.is_file()});print(json.dumps(summary),flush=True);return summary
 
 def half_step_gate(coarse,fine):
  def read(p):
