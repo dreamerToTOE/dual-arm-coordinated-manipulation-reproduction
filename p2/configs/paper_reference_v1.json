@@ -1,0 +1,100 @@
+{
+  "schema": "p2.paper_reference.v1",
+  "date": "2026-10-19",
+  "purpose": "Independent, provenance-tagged transcription of the paper's own parameters. Read-only with respect to configs/p2_closed_loop_protocol_v3.json; this file does not change any historical protocol.",
+  "paper": {
+    "title": "Cooperative Object Transport and Assembly: Pose/Force Control by Visual-Tactile Feedback",
+    "authors": ["Marco De Simone", "Marco Costanzo", "Giuseppe De Maria", "Ciro Natale"],
+    "venue": "IEEE Robotics and Automation Letters, accepted February 2026",
+    "doi": "10.1109/LRA.2026.3665445",
+    "private_pdf_sha256": "0188b6be5f9029b40c99b377bcd1e2885ec6e6b56acc49276d6fe1fc72cc0346",
+    "pages": 8,
+    "note": "PDF is private source and is not committed. Values below were read from pages 5-8 (Table I, Table II, Fig.5(d), Section IV) and cross-checked against the rendered page images."
+  },
+  "status_legend": {
+    "PAPER": "value printed in the paper",
+    "UNKNOWN": "not given by the paper; must not be silently guessed",
+    "ADAPTATION": "chosen in the simulation because the paper is silent; recorded, not claimed as the author's value"
+  },
+  "table_I_covariances": {
+    "state_noise": {
+      "QV_o": {"diag": [1e-06, 1e-06, 1e-06, 1e-05, 1e-05, 1e-05], "unit": "SI^2", "status": "PAPER"},
+      "QT_ob": {"diag": [1e-08, 1e-08, 1e-08, 1e-07, 1e-07, 1e-07], "unit": "SI^2", "status": "PAPER"},
+      "QT_e1b1": {"diag": [1e-08, 1e-08, 1e-08, 1e-07, 1e-07, 1e-07], "unit": "SI^2", "status": "PAPER"},
+      "QT_e2b2": {"diag": [1e-08, 1e-08, 1e-08, 1e-07, 1e-07, 1e-07], "unit": "SI^2", "status": "PAPER"},
+      "QT_b2b1": {"diag": [1e-07, 1e-07, 1e-07, 1e-06, 1e-06, 1e-06], "unit": "SI^2", "status": "PAPER", "note": "set to zero during transport (paper: calibration estimated before grasping, then constant)"},
+      "QT_og1": {"diag": [1e-09, 1e-09, 1e-09, 1e-08, 1e-08, 1e-08], "unit": "SI^2", "status": "PAPER"},
+      "QT_og2": {"diag": [1e-09, 1e-09, 1e-09, 1e-08, 1e-08, 1e-08], "unit": "SI^2", "status": "PAPER"}
+    },
+    "measurement_noise": {
+      "RT_e1b1_RT_e2b2": {"diag": [2e-09, 2e-09, 2e-09, 5e-08, 5e-08, 5e-08], "status": "PAPER", "printed_as": "diag(2,2,2,50,50,50)*1e-9"},
+      "RhK1_RhK2": {"diag": [0.025, 0.025, 0.00225, 1e-06, 1e-06, 1e-08], "status": "PAPER", "printed_as": "diag(25,25,2.25,1e-3,1e-3,1e-5)*1e-3"},
+      "RT_ob1_RT_ob2": {"diag": [1e-10, 1e-10, 1e-10, 1e-09, 1e-09, 1e-09], "status": "PAPER", "printed_as": "diag(1,1,1,10,10,10)*1e-10"}
+    }
+  },
+  "table_II_model_and_control": {
+    "K1_K2": {"diag": [5641, 5641, 4400, 1.28, 1.28, 1.28], "unit": ["N/m", "N/m", "N/m", "Nm/rad", "Nm/rad", "Nm/rad"], "status": "PAPER"},
+    "B1_B2": {"diag": [50, 50, 50, 0.5, 0.5, 0.5], "unit": ["Ns/m", "Ns/m", "Ns/m", "Nms/rad", "Nms/rad", "Nms/rad"], "status": "PAPER"},
+    "Ba": {"diag": [1e-04, 1e-04, 1e-04, 1e-04, 1e-04, 1e-04], "status": "PAPER", "printed_as": "I6*1e-4"},
+    "KF1": {"diag": [0.001, 0.001, 0.001, 0.02, 0.02, 0.02], "status": "PAPER"},
+    "KF2": {"diag": [0.0005, 0.0005, 0.0005, 0.01, 0.01, 0.01], "status": "PAPER"},
+    "KP1_KP2": {"diag": [0.3, 0.3, 0.3, 0.2, 0.2, 0.2], "status": "PAPER"},
+    "exp4_model_K1": {"diag": [1641, 1641, 1400, 0.7, 0.7, 0.7], "status": "PAPER", "note": "model stiffness used by exp4 (plant intentionally mismatched)"},
+    "exp4_model_K2": {"diag": [7641, 7641, 6400, 1.8, 1.8, 1.8], "status": "PAPER"}
+  },
+  "objects": {
+    "A": {"mass_kg": 0.684, "dimensions_mm": [280, 90, 40], "status": "PAPER"},
+    "B1": {"mass_kg": 0.280, "dimensions_mm": [75, 140, 40], "status": "PAPER", "note": "Fig.5(d) lists 'B1-B2' as one row, so B1 and B2 share mass and dimensions"},
+    "B2": {"mass_kg": 0.280, "dimensions_mm": [75, 140, 40], "status": "PAPER"},
+    "C": {"mass_kg": 0.418, "dimensions_mm": [370, 40, 40], "status": "PAPER"},
+    "inertia_tensor": {"value": null, "status": "UNKNOWN", "simulation_choice": "uniform cuboid diag(m(dy^2+dz^2)/12, m(dx^2+dz^2)/12, m(dx^2+dy^2)/12)", "classification": "ADAPTATION"}
+  },
+  "hardware_and_timing": {
+    "robots": {"value": "Kuka LBR iiwa 7 and Yaskawa Motoman SIA5F", "status": "PAPER"},
+    "command_rates_hz": {"value": [200, 50], "status": "PAPER"},
+    "sia5f_dead_time_s": {"value": 0.3, "status": "PAPER", "printed_as": "~300 ms"},
+    "tactile_rate_hz": {"value": 100, "status": "PAPER", "note": "two SUN-Touch sensors on a WSG gripper"},
+    "camera": {"value": "RealSense D345i, eye-in-hand", "status": "PAPER", "note": "model string kept verbatim from the paper"},
+    "aruco_fps": {"value": 15, "status": "PAPER", "note": "4 ArUco markers per object, marker-to-COM offsets measured with a caliper"},
+    "filter_period_s": {"value": 0.004, "status": "PAPER", "printed_as": "sample time of 4 ms"},
+    "multi_rate_policy": {"value": "fixed-rate prediction with measurement updates only when fresh data arrive", "status": "PAPER"},
+    "hosts": {"value": "two Ubuntu 22.04 / ROS2 machines (control and perception)", "status": "PAPER"}
+  },
+  "experiment_timeline": {
+    "lift_without_control_mm": {"value": 10, "status": "PAPER"},
+    "internal_wrench_on_s": {"value": 7, "status": "PAPER"},
+    "pose_control_on_s": {"value": 13, "status": "PAPER"},
+    "last_waypoint_s": {"value": 76, "status": "PAPER"},
+    "robot2_visual_removed_after_s": {"value": 76, "status": "PAPER"},
+    "final_target_above_plate_mm": {"value": 10, "status": "PAPER"},
+    "waypoint_absolute_poses": {"value": null, "status": "UNKNOWN", "simulation_choice": "own world coordinates (0,0,0.5) -> (0.15,0.08,0.5) -> (0.15,0.08,0.35)", "classification": "ADAPTATION"},
+    "segment_start_times_s": {"value": [13, 23, 55], "status": "UNKNOWN", "note": "13 s is printed; 23 s and 55 s are simulation choices", "classification": "ADAPTATION"},
+    "experiment_duration_s": {"value": 95, "status": "PAPER", "note": "internal wrench controllers deactivated at 95 s in the high-moment maneuver"}
+  },
+  "reported_results": {
+    "exp2_position_error_mm": {"value": 10, "status": "PAPER", "printed_as": "approximately 10 mm"},
+    "exp2_orientation_error_deg": {"value": 4.5, "status": "PAPER"},
+    "exp1_unnecessary_internal_force_N": {"value": 1.5, "status": "PAPER", "printed_as": "about 1.5 N throughout most of the motion"},
+    "final_translation_error_mm": {"value": 0.1, "status": "PAPER", "note": "below caliper resolution; censored measurement, not an exact zero"},
+    "final_orientation_error_deg": {"value": 0.42, "status": "PAPER", "note": "except exp2"},
+    "high_moment_reduction_percent": {"value": 80, "status": "PAPER", "note": "approximately 80 percent at the end of the maneuver"},
+    "assembly_angular_errors_deg": {"mean": {"A": 0.43, "B1": 0.78, "B2": 0.13, "C": 1.5}, "std": {"A": 0.06, "B1": 0.05, "B2": 0.04, "C": 0.2}, "status": "PAPER", "note": "5 repetitions; translation below 0.1 mm caliper resolution"},
+    "assembly_cycle_time_min_per_block": {"value": 6, "status": "PAPER", "note": "decided at planning level, not an algorithmic speed"},
+    "sliding_grasp_force_N": {"value": 0.3, "status": "PAPER", "note": "SIA5F grasp force reduced at t = 130 s to enable sliding"},
+    "sliding_tangential_force_max_N": {"value": 0.3, "status": "PAPER"},
+    "sliding_object_drop_mm": {"value": 200, "status": "PAPER"}
+  },
+  "unknown_or_unreported": [
+    "object inertia tensors (the paper only states the object is assumed rigid)",
+    "grasp/finger contact coordinates on each object",
+    "robot-to-robot base transform T_b2_b1",
+    "absolute waypoint poses and the 23 s / 55 s segment boundaries",
+    "exact discrete propagation used for Eq.(18) (Euler vs exponential vs implicit is not stated)",
+    "grasp-force controller of [23] and friction coefficients needed for Fig.9",
+    "soft-pad geometry, preload and deformation limits",
+    "marker-to-COM offsets and ArUco dictionary id",
+    "calibration sample count and estimator initialization procedure",
+    "supplementary video contents and any numeric comparison between IESEKF and a standard EKF"
+  ],
+  "consistency_note": "All PAPER values above match configs/p2_closed_loop_protocol_v3.json::original_parameters exactly; the protocol already stores them multiplied out (e.g. 1e-6 instead of diag(1,1,1,10,10,10)*1e-6). No protocol value was changed by this file."
+}

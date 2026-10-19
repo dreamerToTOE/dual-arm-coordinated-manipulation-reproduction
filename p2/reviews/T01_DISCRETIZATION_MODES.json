@@ -1,0 +1,423 @@
+{
+  "A_nominal": {
+    "fastest_mode_per_s": {
+      "real": -2183.06990210081,
+      "imag": 0.0
+    },
+    "fastest_mode_modulus_per_s": 2183.06990210081,
+    "euler_critical_step_s": 0.0009161410718343749,
+    "euler_critical_rate_hz": 1091.534951050405,
+    "spectrum_modulus_range": [
+      73.09948830425131,
+      2183.06990210081
+    ],
+    "by_step": {
+      "1/3000": {
+        "h_s": 0.0003333333333333333,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 0.9762682476439918,
+            "fast_mode_abs_amplification": 0.2723100326330634,
+            "stable_all_modes": true
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.9756373014896086,
+            "fast_mode_abs_amplification": 0.5788075516373097,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.9759341592502785,
+            "fast_mode_abs_amplification": 0.46644231853858215,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.9759279704104561,
+            "fast_mode_abs_amplification": 0.4830235023677333,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 0.40469320478468673,
+              "stable": true
+            },
+            "4": {
+              "fast_mode_abs_amplification": 0.44789664582156963,
+              "stable": true
+            },
+            "5": {
+              "fast_mode_abs_amplification": 0.4554742017317116,
+              "stable": true
+            },
+            "8": {
+              "fast_mode_abs_amplification": 0.4662933130558362,
+              "stable": true
+            },
+            "16": {
+              "fast_mode_abs_amplification": 0.4748495011674437,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.5267959780554505
+        }
+      },
+      "1/1000": {
+        "h_s": 0.001,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 1.1830699021008102,
+            "fast_mode_abs_amplification": 1.1830699021008102,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.9274007591664223,
+            "fast_mode_abs_amplification": 0.3141621235964705,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.9296674719078196,
+            "fast_mode_abs_amplification": 0.04376448550593652,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.9295083502159888,
+            "fast_mode_abs_amplification": 0.11269503633198281,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 0.008378647263800058,
+              "stable": true
+            },
+            "4": {
+              "fast_mode_abs_amplification": 0.042570907802656814,
+              "stable": true
+            },
+            "5": {
+              "fast_mode_abs_amplification": 0.056758424112554245,
+              "stable": true
+            },
+            "8": {
+              "fast_mode_abs_amplification": 0.07813234576893666,
+              "stable": true
+            },
+            "16": {
+              "fast_mode_abs_amplification": 0.09564565472393664,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.2261264808415057
+        }
+      },
+      "3ms_observed_last_prediction": {
+        "h_s": 0.003,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 5.54920970630243,
+            "fast_mode_abs_amplification": 5.54920970630243,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.7937897294515274,
+            "fast_mode_abs_amplification": 0.1324641967708426,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.8067915850768029,
+            "fast_mode_abs_amplification": 0.5321204956463728,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.8030819905840182,
+            "fast_mode_abs_amplification": 0.0014312462563691364,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 5.173827237979061,
+              "stable": false
+            },
+            "4": {
+              "fast_mode_abs_amplification": 0.16496138276444172,
+              "stable": true
+            },
+            "5": {
+              "fast_mode_abs_amplification": 0.0028556240105035,
+              "stable": true
+            },
+            "8": {
+              "fast_mode_abs_amplification": 1.1698151317520028e-06,
+              "stable": true
+            },
+            "16": {
+              "fast_mode_abs_amplification": 0.00021956863546296657,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.07634493292922323
+        }
+      },
+      "4ms_paper_filter": {
+        "h_s": 0.004,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 7.732279608403241,
+            "fast_mode_abs_amplification": 7.732279608403241,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.7354726116658387,
+            "fast_mode_abs_amplification": 0.10275084977383508,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.7546446005715105,
+            "fast_mode_abs_amplification": 0.6272926026947667,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.746471416155923,
+            "fast_mode_abs_amplification": 0.00016129434886153412,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 11.330897181430524,
+              "stable": false
+            },
+            "4": {
+              "fast_mode_abs_amplification": 1.9590324205631187,
+              "stable": false
+            },
+            "5": {
+              "fast_mode_abs_amplification": 0.23175058461044706,
+              "stable": true
+            },
+            "8": {
+              "fast_mode_abs_amplification": 4.928282890947061e-09,
+              "stable": true
+            },
+            "16": {
+              "fast_mode_abs_amplification": 3.2843667403315604e-06,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.05725881550001066
+        }
+      }
+    }
+  },
+  "C_nominal": {
+    "fastest_mode_per_s": {
+      "real": -9335.806743430947,
+      "imag": 0.0
+    },
+    "fastest_mode_modulus_per_s": 9335.806743430947,
+    "euler_critical_step_s": 0.00021422894185414468,
+    "euler_critical_rate_hz": 4667.903371715473,
+    "spectrum_modulus_range": [
+      145.5874945027786,
+      9335.806743430947
+    ],
+    "by_step": {
+      "1/3000": {
+        "h_s": 0.0003333333333333333,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 2.1119355811436487,
+            "fast_mode_abs_amplification": 2.1119355811436487,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.9531801513722763,
+            "fast_mode_abs_amplification": 0.24319447137882227,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.9526348067338472,
+            "fast_mode_abs_amplification": 0.2175175260903591,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.9526295556175832,
+            "fast_mode_abs_amplification": 0.0445147100664184,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 0.3091001841533159,
+              "stable": true
+            },
+            "4": {
+              "fast_mode_abs_amplification": 0.0024296175424974808,
+              "stable": true
+            },
+            "5": {
+              "fast_mode_abs_amplification": 0.007677750904567672,
+              "stable": true
+            },
+            "8": {
+              "fast_mode_abs_amplification": 0.019425645996746736,
+              "stable": true
+            },
+            "16": {
+              "fast_mode_abs_amplification": 0.03141112189543065,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.16035332585852033
+        }
+      },
+      "1/1000": {
+        "h_s": 0.001,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 8.335806743430947,
+            "fast_mode_abs_amplification": 8.335806743430947,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.8692307835532963,
+            "fast_mode_abs_amplification": 0.09675103500126515,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.8646447325715585,
+            "fast_mode_abs_amplification": 0.6471358333346691,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.8645142465206599,
+            "fast_mode_abs_amplification": 8.820854271779627e-05,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 13.453515144241738,
+              "stable": false
+            },
+            "4": {
+              "fast_mode_abs_amplification": 3.166360804935782,
+              "stable": false
+            },
+            "5": {
+              "fast_mode_abs_amplification": 0.4903425268698855,
+              "stable": true
+            },
+            "8": {
+              "fast_mode_abs_amplification": 6.042673882504214e-07,
+              "stable": true
+            },
+            "16": {
+              "fast_mode_abs_amplification": 8.204301316981051e-07,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.05355723504682087
+        }
+      },
+      "3ms_observed_last_prediction": {
+        "h_s": 0.003,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 27.00742023029284,
+            "fast_mode_abs_amplification": 27.00742023029284,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.6796887736554439,
+            "fast_mode_abs_amplification": 0.034473937773883336,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.8666996373129753,
+            "fast_mode_abs_amplification": 0.8666996373129753,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.6461248785011143,
+            "fast_mode_abs_amplification": 6.863283548665778e-13,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 169.09647675876133,
+              "stable": false
+            },
+            "4": {
+              "fast_mode_abs_amplification": 1297.6035132040117,
+              "stable": false
+            },
+            "5": {
+              "fast_mode_abs_amplification": 2062.9542798772836,
+              "stable": false
+            },
+            "8": {
+              "fast_mode_abs_amplification": 1530.4137407922217,
+              "stable": false
+            },
+            "16": {
+              "fast_mode_abs_amplification": 0.010122216914090201,
+              "stable": true
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.01785241182117872
+        }
+      },
+      "4ms_paper_filter": {
+        "h_s": 0.004,
+        "schemes": {
+          "euler": {
+            "max_abs_amplification": 36.34322697372379,
+            "fast_mode_abs_amplification": 36.34322697372379,
+            "stable_all_modes": false
+          },
+          "implicit_euler": {
+            "max_abs_amplification": 0.6105982768740648,
+            "fast_mode_abs_amplification": 0.026080225346846512,
+            "stable_all_modes": true
+          },
+          "trapezoid": {
+            "max_abs_amplification": 0.8983306579637841,
+            "fast_mode_abs_amplification": 0.8983306579637841,
+            "stable_all_modes": true
+          },
+          "matrix_exp": {
+            "max_abs_amplification": 0.5585841624956437,
+            "fast_mode_abs_amplification": 6.054002400868337e-17,
+            "stable_all_modes": true
+          },
+          "euler_substeps": {
+            "2": {
+              "fast_mode_abs_amplification": 312.28592322903916,
+              "stable": false
+            },
+            "4": {
+              "fast_mode_abs_amplification": 4828.258900104658,
+              "stable": false
+            },
+            "5": {
+              "fast_mode_abs_amplification": 11325.743476900901,
+              "stable": false
+            },
+            "8": {
+              "fast_mode_abs_amplification": 32759.939253142173,
+              "stable": false
+            },
+            "16": {
+              "fast_mode_abs_amplification": 100.51748268487871,
+              "stable": false
+            }
+          },
+          "exact_Qd_over_naive_hQc_fast_mode": 0.013389308865884042
+        }
+      }
+    }
+  },
+  "meta": {
+    "kind": "T01_ANALYTIC_DISCRETIZATION_TABLE",
+    "source_spectrum": "results/20261014_P2_stage2_numerical_audit01/summary.json (continuous_eigenvalues_per_s), not re-integrated",
+    "units": "lambda in 1/s, h in s, amplification dimensionless",
+    "criterion": "|R(h*lambda)| <= 1 for every eigen-mode",
+    "not_a_simulation": true
+  }
+}

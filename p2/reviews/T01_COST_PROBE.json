@@ -1,0 +1,156 @@
+{
+  "kind": "T01_COST_PROBE",
+  "wall_cap_s": 60.0,
+  "python": "3.10.12",
+  "executable": "/usr/bin/python3.10",
+  "env": {
+    "numpy": "1.24.4",
+    "scipy": "1.8.0"
+  },
+  "sections": {
+    "import_numpy": {
+      "status": "OK",
+      "per_call_ms": 72.19866800005548
+    },
+    "import_scipy": {
+      "status": "OK",
+      "per_call_ms": 33.338465000269935
+    },
+    "import_p2_modules": {
+      "status": "OK",
+      "per_call_ms": 32.74328599218279
+    },
+    "load_protocol_json": {
+      "status": "OK",
+      "per_call_ms": 0.29483099933713675
+    },
+    "native_cache_check_and_load": {
+      "status": "OK",
+      "per_call_ms": 2.7183510101167485,
+      "binary": "/home/ubuntu2004/lmy/.p2_native_build_v3/p2_native.so",
+      "binary_sha256": "a3ff7b1bf26413f08e2fbc5e5021f34cf1512e2ca76591590ca403c21ab94949"
+    },
+    "native_contact": {
+      "status": "OK",
+      "repeats_done": 200,
+      "per_call_ms": 0.06079849845264107,
+      "min_ms": 0.04873800207860768,
+      "max_ms": 0.3437929990468547
+    },
+    "native_advance_1_step_equilibrium_fixture": {
+      "status": "OK",
+      "repeats_done": 200,
+      "per_call_ms": 0.12220150529174134,
+      "min_ms": 0.1153539924416691,
+      "max_ms": 0.4036489990539849
+    },
+    "native_continuous_linearization": {
+      "status": "OK",
+      "repeats_done": 50,
+      "per_call_ms": 0.15000600251369178,
+      "min_ms": 0.1487099943915382,
+      "max_ms": 0.21312899480108172
+    },
+    "plant_only_0p5s_transient": {
+      "status": "OK",
+      "steps": 1500,
+      "sim_s": 0.5,
+      "wall_s": 0.12393371100188233,
+      "per_step_ms": 0.08262247400125489,
+      "realtime_factor": 0.24786742200376466,
+      "note": "batches of 12 like the controller-period batching of the runner"
+    },
+    "filter_predict_4ms_euler_bounded_prior": {
+      "status": "OK",
+      "repeats_done": 100,
+      "per_call_ms": 3.367526500369422,
+      "min_ms": 3.286526000010781,
+      "max_ms": 4.016243998194113
+    },
+    "filter_predict_4ms_euler_unbounded": {
+      "status": "REJECTED_BY_FROZEN_CHECK",
+      "steps_completed": 4,
+      "failure": {
+        "step": 4,
+        "error": "EstimatorDomainError('COVARIANCE_ASYMMETRY')",
+        "p_max_before": 6803410.0805507535
+      },
+      "p_max_trace": [
+        0.001,
+        34.8470570923935,
+        1910.02363909719,
+        113589.10690271381,
+        6803410.0805507535
+      ],
+      "p_max_last": 6803410.0805507535
+    },
+    "filter_update_3obs_packet_bounded_prior": {
+      "status": "OK",
+      "repeats_done": 50,
+      "per_call_ms": 32.10132650565356,
+      "min_ms": 21.59993200621102,
+      "max_ms": 44.59918300563004,
+      "observations_in_packet": [
+        "EE1",
+        "hK1",
+        "hK2"
+      ]
+    },
+    "expm_42x42": {
+      "status": "OK",
+      "repeats_done": 20,
+      "per_call_ms": 0.28855349955847487,
+      "min_ms": 0.2775739994831383,
+      "max_ms": 9.562873994582333
+    },
+    "expm_84x84_vanloan": {
+      "status": "OK",
+      "repeats_done": 10,
+      "per_call_ms": 0.6817625035182573,
+      "min_ms": 0.6625889946008101,
+      "max_ms": 0.7617539959028363
+    },
+    "covariance_42_matmul_triplet": {
+      "status": "OK",
+      "repeats_done": 200,
+      "per_call_ms": 0.036086996260564774,
+      "min_ms": 0.03184399974998087,
+      "max_ms": 0.09926799975801259
+    },
+    "logging_plant_rows": {
+      "row_bytes": 8027,
+      "serialize_1000_rows": {
+        "status": "OK",
+        "repeats_done": 5,
+        "per_call_ms": 223.82270399248227,
+        "min_ms": 220.90154999750666,
+        "max_ms": 254.6121039922582
+      },
+      "gzip1_1000_rows": {
+        "status": "OK",
+        "repeats_done": 5,
+        "per_call_ms": 250.77840901212767,
+        "min_ms": 249.96796699997503,
+        "max_ms": 255.63195899303537
+      }
+    },
+    "logging_estimator_rows": {
+      "row_bytes": 9256,
+      "serialize_1000_rows": {
+        "status": "OK",
+        "repeats_done": 5,
+        "per_call_ms": 179.3158200016478,
+        "min_ms": 173.87090300326236,
+        "max_ms": 184.36922300315928
+      },
+      "gzip1_1000_rows": {
+        "status": "OK",
+        "repeats_done": 5,
+        "per_call_ms": 199.90517100086436,
+        "min_ms": 197.32681500317995,
+        "max_ms": 222.06658699724358
+      }
+    }
+  },
+  "budget_used_s": 6.616281194990734
+}

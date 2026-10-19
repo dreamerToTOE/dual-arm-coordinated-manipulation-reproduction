@@ -102,6 +102,7 @@ def sha256_manifest_crosscheck() -> dict:
         "mismatch_paths": mismatch,
         "missing_by_suffix": missing_suffix,
         "missing_non_image_paths": [p for p in missing if Path(p).suffix != ".png"],
+        "missing_paths": missing,
         "missing_are_report_rendering_assets_only": all(
             "/review_assets" in p or "_review_assets" in p or "layout_review" in p
             or "report_assets" in p or "font_preview" in p
