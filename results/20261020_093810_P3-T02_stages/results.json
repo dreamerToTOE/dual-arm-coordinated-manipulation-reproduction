@@ -1,0 +1,322 @@
+{
+  "task": "P3-T02",
+  "kind": "stage_composition",
+  "paper_equations": [
+    "23",
+    "24",
+    "25",
+    "26"
+  ],
+  "run_id": "20261020_093810_P3-T02_stages",
+  "checks": [
+    {
+      "id": "T02_01",
+      "desc": "approach: composition vs independent oracle (push)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N / N*m",
+      "note": ""
+    },
+    {
+      "id": "T02_02",
+      "desc": "search: composition vs independent oracle (push+spiral)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N / N*m",
+      "note": ""
+    },
+    {
+      "id": "T02_03",
+      "desc": "align: composition vs independent oracle (push+wiggle+rub)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N / N*m",
+      "note": ""
+    },
+    {
+      "id": "T02_04",
+      "desc": "insert: composition vs independent oracle (push)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N / N*m",
+      "note": ""
+    },
+    {
+      "id": "T02_05",
+      "desc": "structural check: approach/insert = push only; search adds spiral x; align adds wiggle mx and rub mz",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_06",
+      "desc": "four documented case sequences: stage attribution + wrench equality",
+      "pass": true,
+      "residual": "seq_ok=True stage_errors=0 maxdiff=0.00e+00",
+      "unit": "",
+      "note": "cases 2-4 boundaries are illustrative [ADAPTATION]"
+    },
+    {
+      "id": "T02_07",
+      "desc": "boundary discontinuities reported (approach|search jump equals spiral fx)",
+      "pass": true,
+      "residual": "jumps=[1.824429, 5.015227, 0.390512] N",
+      "unit": "",
+      "note": "manual switching => jumps legitimate, only reported"
+    },
+    {
+      "id": "T02_N1",
+      "desc": "unknown stage rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_N2",
+      "desc": "non-contiguous schedule rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_N3",
+      "desc": "backwards segment rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_N4",
+      "desc": "wrong boundary count rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_N5",
+      "desc": "unknown case rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_N6",
+      "desc": "time outside schedule rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T02_M1",
+      "desc": "mut: aligning without rub is detected",
+      "pass": true,
+      "residual": 0.13619714992186546,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T02_M2",
+      "desc": "mut: searching without push is detected",
+      "pass": true,
+      "residual": 10.0,
+      "unit": "N",
+      "note": ""
+    },
+    {
+      "id": "T02_08",
+      "desc": "approach and insert are identical by Eq.(23)/(26) (documented equivalence)",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": "not a defect; matters for stage attribution only"
+    }
+  ],
+  "schedules": {
+    "case1_approach_search_align_insert": {
+      "sequence": [
+        "approach",
+        "search",
+        "align",
+        "insert"
+      ],
+      "segments": [
+        [
+          "approach",
+          0.0,
+          3.2
+        ],
+        [
+          "search",
+          3.2,
+          10.5
+        ],
+        [
+          "align",
+          10.5,
+          16.5
+        ],
+        [
+          "insert",
+          16.5,
+          17.5
+        ]
+      ]
+    },
+    "case2_approach_search_insert": {
+      "sequence": [
+        "approach",
+        "search",
+        "insert"
+      ],
+      "segments": [
+        [
+          "approach",
+          0.0,
+          3.5
+        ],
+        [
+          "search",
+          3.5,
+          9.0
+        ],
+        [
+          "insert",
+          9.0,
+          14.0
+        ]
+      ]
+    },
+    "case3_approach_align_insert": {
+      "sequence": [
+        "approach",
+        "align",
+        "insert"
+      ],
+      "segments": [
+        [
+          "approach",
+          0.0,
+          3.0
+        ],
+        [
+          "align",
+          3.0,
+          12.0
+        ],
+        [
+          "insert",
+          12.0,
+          16.5
+        ]
+      ]
+    },
+    "case4_approach_insert": {
+      "sequence": [
+        "approach",
+        "insert"
+      ],
+      "segments": [
+        [
+          "approach",
+          0.0,
+          4.0
+        ],
+        [
+          "insert",
+          4.0,
+          8.0
+        ]
+      ]
+    }
+  },
+  "boundary_jumps": {
+    "case1_approach_search_align_insert": [
+      {
+        "t_boundary_s": 3.2,
+        "from_stage": "approach",
+        "to_stage": "search",
+        "jump_l2": 1.8244294954150544,
+        "jump_force_N": 1.8244294954150544,
+        "jump_moment_Nm": 0.0
+      },
+      {
+        "t_boundary_s": 10.5,
+        "from_stage": "search",
+        "to_stage": "align",
+        "jump_l2": 5.015226814412285,
+        "jump_force_N": 5.0,
+        "jump_moment_Nm": 0.3905124837953327
+      },
+      {
+        "t_boundary_s": 16.5,
+        "from_stage": "align",
+        "to_stage": "insert",
+        "jump_l2": 0.3905124837953327,
+        "jump_force_N": 0.0,
+        "jump_moment_Nm": 0.3905124837953327
+      }
+    ],
+    "case2_approach_search_insert": [
+      {
+        "t_boundary_s": 3.5,
+        "from_stage": "approach",
+        "to_stage": "search",
+        "jump_l2": 1.0,
+        "jump_force_N": 1.0,
+        "jump_moment_Nm": 0.0
+      },
+      {
+        "t_boundary_s": 9.0,
+        "from_stage": "search",
+        "to_stage": "insert",
+        "jump_l2": 3.000000000000002,
+        "jump_force_N": 3.000000000000002,
+        "jump_moment_Nm": 0.0
+      }
+    ],
+    "case3_approach_align_insert": [
+      {
+        "t_boundary_s": 3.0,
+        "from_stage": "approach",
+        "to_stage": "align",
+        "jump_l2": 0.25,
+        "jump_force_N": 0.0,
+        "jump_moment_Nm": 0.25
+      },
+      {
+        "t_boundary_s": 12.0,
+        "from_stage": "align",
+        "to_stage": "insert",
+        "jump_l2": 0.25,
+        "jump_force_N": 0.0,
+        "jump_moment_Nm": 0.25
+      }
+    ],
+    "case4_approach_insert": [
+      {
+        "t_boundary_s": 4.0,
+        "from_stage": "approach",
+        "to_stage": "insert",
+        "jump_l2": 0.0,
+        "jump_force_N": 0.0,
+        "jump_moment_Nm": 0.0
+      }
+    ]
+  },
+  "summary": {
+    "pass": 16,
+    "total": 16,
+    "verdict": "PASS"
+  },
+  "figures": [
+    "p3/evidence/figures/p3_t02_case1_wrench.png",
+    "p3/evidence/figures/p3_t02_boundary_jumps.png"
+  ]
+}
