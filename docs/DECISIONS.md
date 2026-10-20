@@ -38,3 +38,42 @@ Append-only architectural and scientific decisions.
   jumps are reported separately (`jump_force_N`, `jump_moment_Nm`); the concatenated norm survives
   only as `jump_mixed_l2_unphysical`. Maxima are labelled either `max_{t,k}|x_k|` (component) or
   `max_t‖x‖₂` (vector norm), never conflated.
+
+## D006 — P5 Eq.(21b) sign: `+log(Γ−1)`
+- Date: 2026-10-20 (G0, review Q3)
+- Context: the paper prints `b = [0; −ξ̇^R; −log(Γ−1)]`, which contradicts its own (17d).
+- Derivation: with `h(q̇) = −∇Γᵀq̇ − log(Γ−1) ≤ 0` and `ν ≥ 0`, the complementary row of the LCP is
+  `∇Γᵀq̇ + b₃ = 0`; on the active set `∇Γᵀq̇ = −log(Γ−1)`, hence `b₃ = +log(Γ−1)`. The paper's own
+  prose agrees ("the value of `log(Γ−1)` is positive which relaxes the inequality").
+- Decision: primary implementation uses `+log(Γ−1)` with `λ = 1`. The printed `−log(Γ−1)` is kept as a
+  separately labelled negative control. Any `λ ≠ 1` is described as a *modified* constraint.
+- Impact: `T05`/`T08`/`T10`; see `P5_IMPLEMENTATION_PLAN.md` §11 row 4.
+
+## D007 — P5 SCA calibration uses `κ ≡ 1` (identity), not a data statistic
+- Date: 2026-10-20 (G0, review Q4)
+- Context: the shipped CPSP models have `bias = 0`, so their decision boundary is `Γ_raw = 0`, whereas
+  (17d) needs `log(Γ−1)`, i.e. `Γ > 1`.
+- Key fact: the map `Γ_cal = 1 + Γ_raw/κ` satisfies `Γ_raw = 0 ⟺ Γ_cal = 1` for **every** `κ > 0`, and
+  preserves ordering for every `κ > 0`. The boundary condition therefore places **no constraint** on `κ`.
+- Decision: freeze `κ ≡ 1`. It is the unique choice that adds no scale and needs no data statistic, so it
+  cannot be tuned toward a preferred outcome. Implementations must still support arbitrary `κ > 0` (a
+  `κ = 2` scaling test verifies the `1/κ` factor of the gradient).
+- Rejected: `κ = median|Γ_raw|` over near-boundary samples. It was justified by "median calibrated value
+  equals 1", which is circular and was never required.
+- Label: **[ADAPTATION]** — the paper never defines this map.
+
+## D008 — P5 T07 metrics are in-sample independent evaluations, not the paper's FPR/TPR
+- Date: 2026-10-20 (G0, review T07)
+- Context: the 36-D model ships `X_train(24892×36)`, `y_train`, `y_est`; the paper's own held-out set and
+  its data split are not published.
+- Decision: label every metric `IN_SAMPLE_INDEPENDENT_EVALUATION`, report bootstrap 95% intervals, and do
+  **not** compare against the paper's `FPR ≈ 1.45% / TPR ≈ 97.4%`, nor claim a "within 1 pp" acceptance.
+- Positive use: `y_est` is a genuine external reference for the decision function — our implementation
+  reproduces its sign on 100 % of the 24 892 points, which validates the kernel path end to end.
+
+## D009 — P5 control-side energy bookkeeping, not `Σ½‖q̇‖²`
+- Date: 2026-10-20 (G0, review T10)
+- Decision: `Σ½‖q̇‖²` is not treated as physical energy or as a passivity measure. T10 reports
+  `P_in = ξ̇^{Rᵀ} f` with `f = Wq̇` (**stated assumption**), a tracking-error storage `S = ½‖ξ̃‖²`, the
+  Theorem-3 dissipation `ψ = uᵀ(I+Mᵀ)u`, and the residual of the numerical ledger `∫P_in − ΔS − ∫ψ`.
+- Impact: the residual is an implementation-consistency indicator, never a physical claim.
