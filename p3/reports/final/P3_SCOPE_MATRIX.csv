@@ -1,0 +1,25 @@
+﻿id,paper_item,paper_requirement,actual_reproduction,evidence,label
+1,Eq.16-18 general perturbation form,reproduce,implemented + validated,21 checks (T01),ORIGINAL
+2,Eq.19 push pattern,reproduce,implemented + validated,T01_01/06/13,ORIGINAL
+3,Eq.20 rub pattern,reproduce,implemented + validated,T01_02/07/13,ORIGINAL
+4,Eq.21 wiggle pattern,reproduce,implemented + validated,T01_03/08/13,ORIGINAL
+5,Eq.22 spiral pattern,reproduce,implemented + validated,T01_04/09/10,ORIGINAL
+6,Eq.23-26 stage compositions,reproduce,implemented + validated,T02_01..05,ORIGINAL
+7,four documented stage sequences,reproduce sequences,all four traced,"T02_06, T06_01",ORIGINAL
+8,stage boundary timing,manual switching,externally prescribed schedule,"T02_06, T06_02",ADAPTATION
+9,Eq.28 Omega selection,reproduce,implemented + validated,T03_01..08,ORIGINAL
+10,Eq.27 position/force blocks,reproduce,implemented + validated,"T03_07/08, T04_02..05",ORIGINAL
+11,Eq.27 wrench frame rotation,reproduce,implemented + validated,"T03_09/10, T04_M2",ORIGINAL
+12,Eq.27 damping/gravity/friction,reproduce,implemented + validated,"T04_09/10, T04_M4/M5",ORIGINAL
+13,no force feedback,preserve absence,verified structurally + behaviourally,T04_12/13,ORIGINAL
+14,joint torques (complete law),reproduce,implemented + validated,"T04_01..11, T06_04",ORIGINAL
+15,Eq.27 task->hole axis naming,not stated,explicit e_z->e_x relabelling,"T03_12, T06_09",ADAPTATION
+16,numeric parameter values,not published,TEST_FIXTURE only,fixtures.py,TEST_FIXTURE
+17,Eq.1-15 dexterous hand,full,not reproduced,-,OUT_OF_SCOPE_D082
+18,50-DOF robot / KITECH hand,full,not reproduced,-,OUT_OF_SCOPE_D082
+19,87% success / 13.86 s mean,hardware statistics,not reproduced,-,OUT_OF_SCOPE_D082
+20,Fig.8/9/11 trajectories,full,not reproduced (no calibrated dynamics),-,OUT_OF_SCOPE_D082
+21,automatic stage recognition,future work in the paper,not implemented,-,OUT_OF_SCOPE_D082
+22,quasi-static contact/jam surrogate,optional,not executed,-,NOT_EXECUTED_OPTIONAL
+23,MuJoCo / Isaac deployment,separate task (TASK15),not started,-,OUT_OF_SCOPE_D082
+24,peg motion / insertion outcome,not a numerical claim,explicitly not claimed,report §9,OUT_OF_SCOPE_D082

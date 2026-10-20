@@ -1,0 +1,17 @@
+﻿equation,original_paper,implementation,status,evidence
+16,"w=[w1 w2 w3 w4 w5 w6]^T; [w1..w3] translation force, [w4..w6] moment (x,y,z)",patterns.WRENCH_ORDER / COMPONENT_UNITS,LITERAL,T01
+17,"w_i = a_i sin(b_i t + c_i) + d_i, i=1..6",GeneralPattern.wrench(),LITERAL,T01_01..05
+18,w = diag(a) vsin(t b + c) + d,GeneralPattern.wrench() with time-varying amplitude a(t),LITERAL (notation loose: Eq.22 makes a time-varying),T01_05
+19,push: a=b=c=0; d=[0 0 f_push 0 0 0]^T (along +z),patterns.Push,LITERAL,T01_01
+20,"rub: a=[0 0 0 0 0 f_rub]^T, b=[0 0 0 0 0 v_rub]^T, c=d=0 (about z)",patterns.Rub (f_rub in N*m),LITERAL,T01_02
+21,"wiggle: a=[0 0 0 f f 0]^T, b=[0 0 0 v v 0]^T, c=[0 0 0 0 pi/2 0]^T, d=0",patterns.Wiggle (my is cosine),LITERAL,T01_03
+22,"spiral: a=[f_s(t) f_s(t) 0 0 0 0]^T, b=[v v 0 0 0 0]^T, c=[0 pi/2 0 0 0 0]^T, f_s=alpha sin(vt)+beta",patterns.Spiral.amplitude(),LITERAL,T01_04
+23,w_approach = w_push,stages.COMPOSITION['approach'],LITERAL,T02_01
+24,w_search = w_push + w_spiral,stages.COMPOSITION['search'],LITERAL,T02_02
+25,w_align = w_push + w_wiggle + w_rub,stages.COMPOSITION['align'],LITERAL,T02_03
+26,w_insert = w_push,stages.COMPOSITION['insert'],LITERAL,T02_04
+27,"tau = J^T[[Omega,0],[0,I]]K_p dx + J^T[[R_h,0],[0,R_h]]w - D qdot + tau_g + tau_f",control.torque_terms(),"LITERAL (+ A1 frame relabelling, ADAPTATION)","T04_01..14, T06"
+28,"Omega = R_h Sigma R_h^T, Sigma = diag([0 1 1])",control.omega(),LITERAL,T03_01..12
+stage switching,manual in the paper (p.8572); no criterion given,stages.StageSchedule (externally prescribed),ADAPTATION,T02_06
+task frame vs hole frame,push along z (Eq.19) vs Sigma zeroes x (Sec.IV-D),explicit R_task_to_hole (e_z -> e_x),ADAPTATION (frame naming only),"T03_12, T06_09"
+numeric parameters,none published (only 500 <= k_p <= 1000 for the hole arm),fixtures.TEST_FIXTURE,TEST_FIXTURE,T04_14
