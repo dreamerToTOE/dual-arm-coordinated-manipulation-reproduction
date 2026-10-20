@@ -115,3 +115,29 @@ Append-only architectural and scientific decisions.
 - Impact: the geometry changes for every downstream task (T08/T10). Any figure produced before this fix
   would have described a different arm, which is why the fix was made at G1 and not later.
 - Label: **[ENGINEERING]**.
+
+## D013 — The two published sigmas are numerically interchangeable; the pairing is a provenance rule
+- Date: 2026-10-20 (G2, T07)
+- Context: the sparse CPSP model carries `-g 3.3` (⇒ `σ = 1/√(2g) = 0.38925`) while the full libsvm
+  model stores `σ = 0.38815`. N7.3 originally asserted that swapping them destroys the decision
+  function. Measured: swapping them still reproduces `y_est` at **0.9992** (they differ by 0.28 %).
+- Decision: the swap becomes a *reported metric* (`agree_sigma_swapped`), not a defect claim. N7.3
+  injects the defect that is actually harmful — reading `-g` as the RBF width (`σ = 3.3`) — which
+  drops the agreement to 0.5670. The code still refuses to cross-wire the two models, but the reason
+  recorded is **provenance** (each model keeps the hyper-parameters it was shipped with), not accuracy.
+- Alternative rejected: relaxing N7.3's threshold to `< 0.9993` would have produced a ledger that
+  claims a sensitivity the model does not have.
+- Label: **[ORIGINAL]** (parameters), **[ENGINEERING]** (test redesign).
+
+## D014 — `(11) → (36)` is conditional on the shared-velocity premise, not an algebraic identity
+- Date: 2026-10-20 (G2, T03)
+- Context: the review (Q2) asked whether the paper's two-segment cancellation is an identity. T03
+  separates the two segments: `U_i = τ_i ẋ_i^V` kills `τ̇` unconditionally (residual 1.2e-15, and
+  `∂U_i/∂τ̇ ≡ 0` to 1.9e-16), but the collapse of the *aggregate* `(11)` onto `(36)` happens only under
+  the paper's App. D premise `ẋ_i^V = ẋ^V` for all `i` (5.6e-17 under the premise; a ±50 % change in
+  `τ` moves `x^V` by 5.0e-2 when per-arm offsets are present).
+- Decision: T08 and T10 may implement `(36)` directly, but they must state that this presumes the
+  synchronisation layer of Eq.(8) is working. The T10 end-to-end check therefore exercises the
+  asynchronous→synchronous switch (where `τ` is *not* shared) rather than only the synchronous regime,
+  so that a broken `τ` coupling cannot hide behind `(36)`.
+- Label: **[ORIGINAL]** (equations), **[ENGINEERING]** (test design).

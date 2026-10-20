@@ -183,73 +183,100 @@ class QP:
         xir = U[:, :r].T @ self.xidot
         J = Jr
         d_eq = r
+        # SCA rows (17d): -g^T qdot <= rhs, i.e. g^T qdot >= -rhs.  They are linear,
+        # so the same enumeration applies: an active row joins the equality system
+        # with multiplier nu >= 0, an inactive row must satisfy the inequality.
+        G_all = np.array([np.asarray(g, float).ravel() for g, _ in self.sca_rows]) \
+            if self.sca_rows else np.zeros((0, n))
+        r_all = np.array([float(rhs) for _, rhs in self.sca_rows]) if self.sca_rows else np.zeros(0)
+        d_c = len(self.sca_rows)
         best = None
         best_f = np.inf
+        best_mask = None
         visited = 0
-        for code in np.ndindex(*([3] * n)):
-            # code[i]: 0 = free, 1 = at lower bound, 2 = at upper bound
-            x = np.zeros(n)
-            pinned = []
-            for i, c in enumerate(code):
-                if c == 1:
-                    x[i] = lb[i]
-                    pinned.append(i)
-                elif c == 2:
-                    x[i] = ub[i]
-                    pinned.append(i)
-            free = [i for i in range(n) if i not in pinned]
-            nf = len(free)
-            if nf:
-                if nf < d_eq:
-                    visited += 1
+        for mask in range(2 ** d_c):
+            act = [i for i in range(d_c) if (mask >> i) & 1]
+            A_eq = np.vstack([J, G_all[act]]) if act else J
+            c_eq = np.concatenate([xir, -r_all[act]]) if act else xir
+            deq = d_eq + len(act)
+            for code in np.ndindex(*([3] * n)):
+                # code[i]: 0 = free, 1 = at lower bound, 2 = at upper bound
+                x = np.zeros(n)
+                pinned = []
+                for i, c in enumerate(code):
+                    if c == 1:
+                        x[i] = lb[i]
+                        pinned.append(i)
+                    elif c == 2:
+                        x[i] = ub[i]
+                        pinned.append(i)
+                free = [i for i in range(n) if i not in pinned]
+                nf = len(free)
+                if nf:
+                    if nf < deq:
+                        visited += 1
+                        continue
+                    Wff = W[np.ix_(free, free)]
+                    Wfp = W[np.ix_(free, pinned)] if pinned else np.zeros((nf, 0))
+                    Af = A_eq[:, free]
+                    rhs = c_eq - (A_eq[:, pinned] @ x[pinned] if pinned else 0.0)
+                    K = np.zeros((nf + deq, nf + deq))
+                    K[:nf, :nf] = Wff
+                    # stationarity is Wff x_f - Af^T eta = -Wfp x_p, hence the minus sign
+                    K[:nf, nf:] = -Af.T
+                    K[nf:, :nf] = Af
+                    b = np.concatenate([-(Wfp @ x[pinned]) if pinned else np.zeros(nf), rhs])
+                    try:
+                        sol = np.linalg.solve(K, b)
+                    except np.linalg.LinAlgError:
+                        visited += 1
+                        continue
+                    x[free] = sol[:nf]
+                    eta = sol[nf:]
+                else:
+                    eta = np.linalg.lstsq(A_eq.T, W @ x, rcond=None)[0]
+                visited += 1
+                if not np.all(np.isfinite(x)):
                     continue
-                Wff = W[np.ix_(free, free)]
-                Wfp = W[np.ix_(free, pinned)] if pinned else np.zeros((nf, 0))
-                Jf = J[:, free]
-                rhs = xir - (J[:, pinned] @ x[pinned] if pinned else 0.0)
-                K = np.zeros((nf + d_eq, nf + d_eq))
-                K[:nf, :nf] = Wff
-                # stationarity is Wff x_f - Jf^T nu = -Wfp x_p, hence the minus sign
-                K[:nf, nf:] = -Jf.T
-                K[nf:, :nf] = Jf
-                b = np.concatenate([-(Wfp @ x[pinned]) if pinned else np.zeros(nf), rhs])
-                try:
-                    sol = np.linalg.solve(K, b)
-                except np.linalg.LinAlgError:
-                    visited += 1
+                if np.any(x < lb - 1e-9) or np.any(x > ub + 1e-9):
                     continue
-                x[free] = sol[:nf]
-                nu = sol[nf:]
-            else:
-                nu = np.linalg.lstsq(J.T, W @ x, rcond=None)[0]
-            visited += 1
-            if not np.all(np.isfinite(x)):
-                continue
-            if np.any(x < lb - 1e-9) or np.any(x > ub + 1e-9):
-                continue
-            if np.linalg.norm(J @ x - xir) > tol * max(1.0, np.linalg.norm(xir)):
-                continue
-            g = W @ x - J.T @ nu
-            ok = True
-            for i, c in enumerate(code):
-                if c == 1 and g[i] < -1e-7:
-                    ok = False
-                    break
-                if c == 2 and g[i] > 1e-7:
-                    ok = False
-                    break
-                if c == 0 and x[i] > lb[i] + 1e-9 and x[i] < ub[i] - 1e-9 and abs(g[i]) > 1e-7:
-                    # a free coordinate strictly inside the box must be stationary
-                    ok = False
-                    break
-            if not ok:
-                continue
-            f = 0.5 * float(x @ W @ x)
-            if f < best_f - 1e-15:
-                best_f = f
-                best = x.copy()
+                if np.linalg.norm(A_eq @ x - c_eq) > tol * max(1.0, np.linalg.norm(c_eq)):
+                    continue
+                grad = W @ x - A_eq.T @ eta
+                ok = True
+                for i, c in enumerate(code):
+                    if c == 1 and grad[i] < -1e-7:
+                        ok = False
+                        break
+                    if c == 2 and grad[i] > 1e-7:
+                        ok = False
+                        break
+                    if c == 0 and x[i] > lb[i] + 1e-9 and x[i] < ub[i] - 1e-9 \
+                            and abs(grad[i]) > 1e-7:
+                        # a free coordinate strictly inside the box must be stationary
+                        ok = False
+                        break
+                if not ok:
+                    continue
+                if len(act):
+                    nu = eta[d_eq:]
+                    if np.any(nu < -1e-7):           # dual feasibility of (17d)
+                        continue
+                    if np.any(G_all @ x < -r_all - 1e-7):
+                        continue
+                if d_c:
+                    inact = [i for i in range(d_c) if i not in act]
+                    if inact and np.any(G_all[inact] @ x < -r_all[inact] - 1e-7):
+                        continue
+                f = 0.5 * float(x @ W @ x)
+                if f < best_f - 1e-15:
+                    best_f = f
+                    best = x.copy()
+                    best_mask = mask
         return best, {"objective": best_f if best is not None else None,
-                      "active_sets_visited": visited}
+                      "active_sets_visited": visited,
+                      "sca_active_rows": (None if best is None else
+                                          [i for i in range(d_c) if (best_mask >> i) & 1])}
 
     def solve_slsqp(self, x0=None, maxiter=300):
         d_q = self.d_q

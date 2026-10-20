@@ -1,0 +1,193 @@
+{
+  "task": "T05",
+  "status": "PASS",
+  "n_checks": 14,
+  "n_positive": 7,
+  "n_negative": 7,
+  "n_failed": 0,
+  "checks": [
+    {
+      "id": "P5.1",
+      "kind": "positive",
+      "ok": true,
+      "detail": "LVI fixed point vs the exact active-set solution (SCA row active = [0]): gap 3.88e-09 in 1133 iterations (residual 9.9e-10); SLSQP differs by 3.2e-02, which is recorded rather than used as a referee",
+      "info": {
+        "gap": 3.877501569826691e-09,
+        "gap_slsqp": 0.03205553905053016,
+        "iters": 1133
+      }
+    },
+    {
+      "id": "P5.2",
+      "kind": "positive",
+      "ok": true,
+      "detail": "fixed-point residual ||P(u - Mu - b) - u|| = 9.86e-10, nu = [4.83e-02] all >= 0",
+      "info": {
+        "residual": 9.858121086368477e-10,
+        "nu_min": 0.048333165785198307,
+        "nu": [
+          0.048333165785198307
+        ],
+        "value": 9.858121086368477e-10,
+        "tol": 1e-08
+      }
+    },
+    {
+      "id": "P5.2b",
+      "kind": "positive",
+      "ok": true,
+      "detail": "KLT multiplier of the SCA row stays non-negative (min 4.83e-02)",
+      "info": {
+        "nu_min": 0.048333165785198307
+      }
+    },
+    {
+      "id": "P5.3",
+      "kind": "positive",
+      "ok": true,
+      "detail": "convergence: 1133 iterations (< 1e5), residual 1.8e-01 -> 9.9e-10 (8.3 decades), step 0.445",
+      "info": {
+        "iters": 1133,
+        "r0": 0.18036882186034547,
+        "r_end": 9.858121086368477e-10,
+        "decades": 8.255438587954652
+      }
+    },
+    {
+      "id": "P5.4",
+      "kind": "positive",
+      "ok": true,
+      "detail": "redundant equality row (M singular, cond 1.7e+17): still converges, residual 1.0e-09",
+      "info": {
+        "cond": 1.7232680329489894e+17,
+        "residual": 9.95603652699166e-10
+      }
+    },
+    {
+      "id": "P5.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "writing (I + M) instead of (I + M^T) changes the trajectory by 4.801e-02 in the unconstrained case: the transpose position is observable",
+      "info": {
+        "deviation": 0.04801472622844547
+      }
+    },
+    {
+      "id": "P5.6",
+      "kind": "positive",
+      "ok": true,
+      "detail": "Vdot + psi - Y^T U = 0 to 8.3e-17 along 3000 steps; min psi = 0.0e+00 (dissipation non-negative)",
+      "info": {
+        "identity": 8.326672684688674e-17,
+        "psi_min": 0.0
+      }
+    },
+    {
+      "id": "P5.7",
+      "kind": "positive",
+      "ok": true,
+      "detail": "Vdot is positive on 2999 of 3000 steps (max 2.435e-02) and negative elsewhere: it is an energy *rate* with sign changes, not a Lyapunov decrement",
+      "info": {
+        "positive_steps": 2999
+      }
+    },
+    {
+      "id": "N5.1",
+      "kind": "negative",
+      "ok": true,
+      "detail": "ill-conditioned W (cond 1.0e+12): status OPTIMAL, convergence flag False, residual 1.80e-01 -- the defect is visible instead of hanging",
+      "info": {
+        "cond": 1000000000000.0,
+        "status": "OPTIMAL"
+      }
+    },
+    {
+      "id": "N5.2",
+      "kind": "negative",
+      "ok": true,
+      "detail": "lambda = 0 leaves the half-space g.qdot >= 0 (boundary reached to 0.0e+00, active row [0]): the solution sits 0.100 away from the lambda=1 answer, which sits on g.qdot = -log(Gamma-1) to 0.0e+00 -- a cone without margin, not a frozen gradient",
+      "info": {
+        "slack0": 0.0,
+        "move": 0.1,
+        "slack1": 0.0
+      }
+    },
+    {
+      "id": "N5.3",
+      "kind": "negative",
+      "ok": true,
+      "detail": "the upstream Omega_projector() computes the projection and returns its input: bounds [[ 1. -1.]] vs [[ 5. -5.]] -- pinned as a reproducible failure",
+      "info": {
+        "good": [
+          1.0,
+          -1.0
+        ],
+        "bad": [
+          5.0,
+          -5.0
+        ]
+      }
+    },
+    {
+      "id": "N5.4",
+      "kind": "negative",
+      "ok": true,
+      "detail": "b3 = -log(Gamma-1) (printed form) drives the row to g.qdot = +rhs instead of -rhs (residual 1.4e-17, active row [0]), moving qdot by 0.200 -- the opposite of (17d)",
+      "info": {
+        "residual": 1.3877787807814457e-17,
+        "shift": 0.2
+      }
+    },
+    {
+      "id": "N5.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "reversed box order is caught before any iteration: Omega ordering violation detected = True, status BOUND_INFEASIBLE",
+      "info": {
+        "status": "BOUND_INFEASIBLE"
+      }
+    },
+    {
+      "id": "N5.6",
+      "kind": "negative",
+      "ok": true,
+      "detail": "dropping the I in (I + M^T) makes the passivity identity residual 2.48e-04, i.e. 3.0e+12 times the correct 8.3e-17: the identity is not vacuous",
+      "info": {
+        "residual": 0.00024847699314730406,
+        "ratio": 2984109049995.5728
+      }
+    }
+  ],
+  "metrics": {
+    "lvi_vs_exact_gap": 3.877501569826691e-09,
+    "slsqp_vs_exact_gap": 0.03205553905053016,
+    "lvi_iters": 1133,
+    "lvi_residual": 9.858121086368477e-10,
+    "passivity_identity_max": 8.326672684688674e-17,
+    "psi_min": 0.0,
+    "vdot_positive_steps": 2999,
+    "vdot_max": 0.02435196977304497,
+    "lambda0_slack": 0.0,
+    "lambda1_slack": 0.0
+  },
+  "figures": [
+    {
+      "name": "t05_convergence.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t05_convergence.png"
+    },
+    {
+      "name": "t05_vdot_sign.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t05_vdot_sign.png"
+    },
+    {
+      "name": "t05_solver_agreement.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t05_solver_agreement.png"
+    }
+  ],
+  "metadata": {
+    "role": "LVI projection solver, Eq.(19)-(23)",
+    "module": "tasks.t05_lvi"
+  },
+  "wall_time_s": 0.551,
+  "python": "3.10.12"
+}

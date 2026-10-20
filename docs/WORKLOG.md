@@ -63,3 +63,19 @@ Append-only project work log.
   QP state, and the reversed `μ` direction of N4.5 — all recorded in the plan and in DECISIONS D010–D012.
 - Official `SCA-Boundary-Learning` re-fetched read-only to `/home/ubuntu2004/lmy/p5-official-ref`
   (no licence → not vendored, only sha256 recorded).
+
+## 2026-10-20 — P5 numerical reproduction, G2 (solve layer)
+- T03 two-segment cancellation: P3.1–P3.6 / N3.1–N3.5. The `τ̇` segment cancels identically
+  (1.2e-15, and scaling `τ̇` by 0.1×/10× is inert), the aggregate collapse to (36) needs the paper's
+  shared-velocity premise (5.6e-17 with it, 5.0e-2 deviation without). Upstream `U_paper` kept only as
+  `DEVIATION_REFERENCE` (differs by 0.360). 11 checks.
+- T05 LVI: exact active-set referee agreement 3.9e-09 in 1133 iterations; `(I+Mᵀ)` vs `(I+M)` differs
+  by 4.8e-2 so the transpose is observable; passivity residual 8.3e-17 and non-vacuous (dropping `I`
+  gives 2.5e-4 = 3e12×). `V̇` positive on 2999/3000 steps → recorded as an energy rate, not a
+  Lyapunov decrement. Upstream `Omega_projector()` pinned as a reproducible failure (N5.3). 14 checks.
+- T07 36-D: `y_est` sign reproduced 24892/24892 (1.0000), `y_train` 0.9874, sparse model ACC 0.9313,
+  constant columns `{0–5, 18–23}`, Eq.(26) 9.2e-08 at κ=1 and κ=2, 389 µs/point single evaluation.
+  12 checks.
+- Fixed during implementation: `solve_active_set` now enumerates SCA rows as inequalities (this was why
+  the T05 fixture looked solvable-but-divergent), and N7.3/P5.3 were redesigned as described in D013 and
+  the gate log. Decisions D013 (σ provenance) and D014 ((11)→(36) is conditional) added.

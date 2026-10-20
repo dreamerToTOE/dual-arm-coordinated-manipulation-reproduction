@@ -75,3 +75,23 @@ Appended by the P5 paper study. The roadmap table above is **not** rewritten, an
   relative joint conventions.
 - Next: G2 (T03 two-segment cancellation, T05 LVI passivity, T07 36-D model + calibration).
 - Scope unchanged: T09 `NOT_AUTHORIZED_THIS_CYCLE`, T10 mandatory at G4.
+
+## 2026-10-20 — P5 numerical reproduction: G2 green
+
+- **G2 (solve layer) PASS**: T03 11, T05 14, T07 12 checks — **37 total (19 positive / 18 negative),
+  0 failed, 106.0 s**. Cumulative G1+G2: **90 checks (50 pos / 40 neg), 0 failed, 117.4 s**.
+- T03: the `τ̇` cancellation is split into the part that is an identity (`U_i = τ_i ẋ_i^V`, 1.2e-15,
+  `∂U_i/∂τ̇ ≡ 0`) and the part that is a *premise* (`ẋ_i^V = ẋ^V` ⇒ (11) collapses onto (36), 5.6e-17;
+  per-arm offsets make `τ` visible again at 5.0e-2). Recorded as D014.
+- T05: LVI fixed point vs an exact active-set referee 3.9e-09 in 1133 iterations, passivity identity
+  `V̇ + ψ = YᵀU` at 8.3e-17, and `V̇ > 0` on 2999/3000 steps — Theorem 3 is an energy balance, **not**
+  a Lyapunov decrease.
+- T07: the 36-D decision function reproduces the official `y_est` sign on **24892/24892** points
+  (agreement with `y_train` 0.9874); calibration invariants I1–I6 hold; Eq.(26) chain rule 9.2e-08 at
+  κ = 1 and κ = 2. The sparse CPSP model scores ACC 0.9313 on the same points
+  (`IN_SAMPLE_INDEPENDENT_EVALUATION`, D008 — no comparison with the paper's FPR/TPR).
+- N7.3 had to be redesigned: the two published σ differ by 0.28 % and swapping them costs only 0.0008
+  agreement, so the swap is reported as a metric and the negative control injects the harmful defect
+  instead (`-g` read as width → 0.5670). Recorded as D013.
+- Next: G3 (T08 — SCA inside the closed-loop QP), then G4 (T10, mandatory).
+- Scope unchanged: T09 `NOT_AUTHORIZED_THIS_CYCLE`.

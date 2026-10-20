@@ -1,0 +1,242 @@
+{
+  "task": "T07",
+  "status": "PASS",
+  "n_checks": 12,
+  "n_positive": 6,
+  "n_negative": 6,
+  "n_failed": 0,
+  "checks": [
+    {
+      "id": "P7.1",
+      "kind": "positive",
+      "ok": true,
+      "detail": "dimensions: D=36 both models, 3000 BVs (sparse) / 7262 SVs (full), bias_sparse=0, sigma_sparse=0.38925, sigma_full=0.38815; constant triples at columns 0-5 and 18-23 exactly as measured",
+      "info": {
+        "const_cols": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "sigma_sparse": 0.3892494720807615,
+        "sigma_full": 0.3881533447356428
+      }
+    },
+    {
+      "id": "P7.2",
+      "kind": "positive",
+      "ok": true,
+      "detail": "decision function reproduces the official y_est sign on 24892/24892 points (1.0000); agreement with y_train is 0.9874 -- y_est is the independent reference, y_train is the noisy label",
+      "info": {
+        "agree_est": 1.0,
+        "agree_train": 0.9873855053832556
+      }
+    },
+    {
+      "id": "P7.3",
+      "kind": "positive",
+      "ok": true,
+      "detail": "calibration invariants: I1 |Gamma_cal(0)-1| = 0.0e+00; I2 order preserved on 1.0000; I3 1/kappa gradient = 0.0e+00; I4 FD agreement 6.5e-08; I5 11085 non-positive Gamma_raw all flagged (paper fallback applied); I6 kappa=2 changes Gamma by up to 4.044",
+      "info": {
+        "I1": 0.0,
+        "I2": 1.0,
+        "I3": 0.0,
+        "I4": 6.464734569597844e-08,
+        "I5": 11085,
+        "I6": 4.044115545430941
+      }
+    },
+    {
+      "id": "P7.4",
+      "kind": "positive",
+      "ok": true,
+      "detail": "Eq.(26) on an explicit map f = Aq + b: relative error 9.2e-08 (kappa=1) and 9.2e-08 (kappa=2, including the 1/kappa factor)",
+      "info": {
+        "rel": {
+          "1.0": 9.172153304870162e-08,
+          "2.0": 9.172153304870162e-08
+        }
+      }
+    },
+    {
+      "id": "P7.5",
+      "kind": "positive",
+      "ok": true,
+      "detail": "sparse CPSP model on the full model's training set [IN_SAMPLE_INDEPENDENT_EVALUATION]: ACC 0.9313 (95% CI 0.927-0.934), TPR 0.9262, FPR 0.0620 -- reported, never compared to the paper's FPR/TPR",
+      "info": {
+        "acc": 0.9313434035031335,
+        "ci": {
+          "acc": [
+            0.9269223043548127,
+            0.9344076410091596
+          ],
+          "tpr": [
+            0.9216288643044848,
+            0.9309774166648073
+          ],
+          "fpr": [
+            0.05756940276902853,
+            0.06682411831909225
+          ]
+        }
+      }
+    },
+    {
+      "id": "P7.6",
+      "kind": "positive",
+      "ok": true,
+      "detail": "single-point evaluation 389 us (3000-BV sparse model would be ~5x less); batched evaluation 799 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
+      "info": {
+        "us_single": 388.90890005859546,
+        "us_batched": 799.3375850472514
+      }
+    },
+    {
+      "id": "N7.1",
+      "kind": "negative",
+      "ok": true,
+      "detail": "feeding Gamma_raw into log(Gamma-1) without calibration: 11085 points lie outside the domain and become NaN unless the paper's large-negative fallback (-1000) is applied -- counted, never silently propagated",
+      "info": {
+        "n_domain": 11085,
+        "n_nan": 11085
+      }
+    },
+    {
+      "id": "N7.2",
+      "kind": "negative",
+      "ok": true,
+      "detail": "permuting the 36 unnamed columns moves the constant triples (detected by P7.1's column check) and drops the y_est agreement from 1.0000 to 0.5547",
+      "info": {
+        "agree_perm": 0.5546762011891371,
+        "const_perm": [
+          0,
+          1,
+          8,
+          9,
+          10,
+          15,
+          16,
+          26,
+          28,
+          29,
+          31,
+          33
+        ]
+      }
+    },
+    {
+      "id": "N7.3",
+      "kind": "negative",
+      "ok": true,
+      "detail": "reading the CPSP penalty '-g 3.3' as the RBF width (sigma = 3.3) instead of converting it (sigma = 1/sqrt(2g) = 0.38925) drops the y_est agreement from 1.0000 to 0.5670.  Note the measured caveat: the two *published* sigmas differ by only 0.28% and score 0.9992 when swapped, so they are numerically interchangeable -- the model/sigma pairing is enforced for provenance, not for accuracy",
+      "info": {
+        "agree_unit": 0.5669693074080026,
+        "agree_swapped": 0.999156355455568
+      }
+    },
+    {
+      "id": "N7.4",
+      "kind": "negative",
+      "ok": true,
+      "detail": "kappa=2 with the 1/kappa factor omitted leaves a gradient error of 13.717, i.e. I3 fails by a factor of two",
+      "info": {
+        "error": 13.717257379220591
+      }
+    },
+    {
+      "id": "N7.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "asserting Gamma_cal == Gamma_raw at kappa=2 is false by up to 4.044: the calibration map is not the identity once kappa != 1",
+      "info": {
+        "max_diff": 4.044115545430941
+      }
+    },
+    {
+      "id": "N7.6",
+      "kind": "negative",
+      "ok": true,
+      "detail": "all-zero feature vector gives a finite Gamma_raw = 3.5749 (no division by zero in the kernel path)",
+      "info": {
+        "gamma_zero": 3.574890699854108
+      }
+    }
+  ],
+  "metrics": {
+    "sha256_sparse36d": "9f217f512b50816d5afc1efeededd474fc0c589da28068c637532b7056134421",
+    "sha256_full36d": "107d77ecb01e8d2c3e1d4b5c2f347e8b487679b0a6571faafb482c5f982c18d6",
+    "sigma_sparse": 0.3892494720807615,
+    "sigma_full": 0.3881533447356428,
+    "nbvs_sparse": 3000,
+    "nsv_full": 7262,
+    "bias_sparse": 0.0,
+    "bias_full": 3.574890699900549,
+    "n_eval": 24892,
+    "agree_y_est": 1.0,
+    "agree_y_train": 0.9873855053832556,
+    "eval_time_us_per_point_full": 799.3375850472514,
+    "n_gamma_raw_nonpositive": 11085,
+    "calibration_kappa": 1.0,
+    "chain_rule_rel_err": {
+      "1.0": 9.172153304870162e-08,
+      "2.0": 9.172153304870162e-08
+    },
+    "sparse_metrics": {
+      "acc": 0.9313434035031335,
+      "tpr": 0.9261749767508406,
+      "fpr": 0.06203610372949693,
+      "tp": 12947,
+      "fp": 677,
+      "tn": 10236,
+      "fn": 1032,
+      "n": 24892
+    },
+    "sparse_ci": {
+      "acc": [
+        0.9269223043548127,
+        0.9344076410091596
+      ],
+      "tpr": [
+        0.9216288643044848,
+        0.9309774166648073
+      ],
+      "fpr": [
+        0.05756940276902853,
+        0.06682411831909225
+      ]
+    },
+    "evaluation_label": "IN_SAMPLE_INDEPENDENT_EVALUATION",
+    "eval_time_us_single": 388.90890005859546,
+    "agree_sigma_swapped": 0.999156355455568,
+    "agree_g_taken_as_width": 0.5669693074080026,
+    "sigma_relative_difference": 0.0028239543983969695
+  },
+  "figures": [
+    {
+      "name": "t07_gamma_hist.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t07_gamma_hist.png"
+    },
+    {
+      "name": "t07_decision_hist.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t07_decision_hist.png"
+    },
+    {
+      "name": "t07_grad_check.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t07_grad_check.png"
+    }
+  ],
+  "metadata": {
+    "role": "36D model, chain rule, calibration",
+    "module": "tasks.t07_sca_36d"
+  },
+  "wall_time_s": 99.908,
+  "python": "3.10.12"
+}

@@ -1,0 +1,149 @@
+{
+  "task": "T03",
+  "status": "PASS",
+  "n_checks": 11,
+  "n_positive": 6,
+  "n_negative": 5,
+  "n_failed": 0,
+  "checks": [
+    {
+      "id": "P3.1",
+      "kind": "positive",
+      "ok": true,
+      "detail": "assertion A on 4000 random states with taudot != 0: max|U_i - tau_i xdot_i^V| = 1.19e-15",
+      "info": {
+        "residual": 1.1934897514720433e-15,
+        "value": 1.1934897514720433e-15,
+        "tol": 1e-10
+      }
+    },
+    {
+      "id": "P3.2",
+      "kind": "positive",
+      "ok": true,
+      "detail": "under xdot_i^V = xdot^V the literal (11) and (36) coincide over 10 s: max|dx^V| = 5.55e-17",
+      "info": {
+        "gap": 5.551115123125783e-17,
+        "value": 5.551115123125783e-17,
+        "tol": 1e-10
+      }
+    },
+    {
+      "id": "P3.3",
+      "kind": "positive",
+      "ok": true,
+      "detail": "scaling taudot by 0.1x and 10x leaves U_i unchanged (1.9e-16), i.e. the Jacobian with respect to taudot is zero",
+      "info": {
+        "dev": 1.942890293094024e-16,
+        "value": 1.942890293094024e-16,
+        "tol": 1e-12
+      }
+    },
+    {
+      "id": "P3.4",
+      "kind": "positive",
+      "ok": true,
+      "detail": "tau = 0 (fully asynchronous): (11) degenerates to the object DS, identical to (36) to 0.0e+00",
+      "info": {
+        "gap": 0.0,
+        "value": 0.0,
+        "tol": 1e-12
+      }
+    },
+    {
+      "id": "P3.5",
+      "kind": "positive",
+      "ok": true,
+      "detail": "tau = 1 (fully synchronous, shared velocity): (11) equals (36) to 0.0e+00",
+      "info": {
+        "gap": 0.0,
+        "value": 0.0,
+        "tol": 1e-12
+      }
+    },
+    {
+      "id": "P3.6",
+      "kind": "positive",
+      "ok": true,
+      "detail": "with the shared-velocity premise, scaling tau by +-50% leaves x^V unchanged (5.6e-17): tau really has dropped out",
+      "info": {
+        "dev": 5.551115123125783e-17,
+        "value": 5.551115123125783e-17,
+        "tol": 1e-12
+      }
+    },
+    {
+      "id": "N3.1",
+      "kind": "negative",
+      "ok": true,
+      "detail": "with per-arm offsets xdot_i^V = xdot^V + delta_i, scaling tau by +-50% moves x^V by 5.035e-02: the collapse is conditional, not an identity",
+      "info": {
+        "shift": 0.05034550663466203
+      }
+    },
+    {
+      "id": "N3.2",
+      "kind": "negative",
+      "ok": true,
+      "detail": "the upstream U_i = -A(.) - taudot e differs from tau_i xdot_i^V by 0.360: the two are not interchangeable (DEVIATION_REFERENCE only)",
+      "info": {
+        "gap": 0.36
+      }
+    },
+    {
+      "id": "N3.3",
+      "kind": "negative",
+      "ok": true,
+      "detail": "dropping -taudot(x^V - x^d) from (10) leaves a residual of 0.060, so P3.1 fails immediately",
+      "info": {
+        "residual": 0.06
+      }
+    },
+    {
+      "id": "N3.4",
+      "kind": "negative",
+      "ok": true,
+      "detail": "writing the denominator as (1 + sum tau^2) moves x^V by 2.145e+00",
+      "info": {
+        "deviation": 2.1452694911786954
+      }
+    },
+    {
+      "id": "N3.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "tau = 0 and gamma = 0: the right-hand side is exactly A^V x^V (residual 0.0e+00), no arm term survives",
+      "info": {
+        "residual": 0.0,
+        "R_norm": 0.4939635614091388
+      }
+    }
+  ],
+  "metrics": {
+    "identity_residual_max": 1.1934897514720433e-15,
+    "traj_gap_max": 5.551115123125783e-17,
+    "tau_dot_jacobian_max": 1.942890293094024e-16,
+    "nonshared_tau_sensitivity": 0.05034550663466203,
+    "dev_official_gap": 0.36
+  },
+  "figures": [
+    {
+      "name": "t03_identity_residual.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t03_identity_residual.png"
+    },
+    {
+      "name": "t03_traj_overlay.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t03_traj_overlay.png"
+    },
+    {
+      "name": "t03_tau_dot_invariance.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t03_tau_dot_invariance.png"
+    }
+  ],
+  "metadata": {
+    "role": "virtual-object DS, Eq.(9)-(11)-(36)",
+    "module": "tasks.t03_virtual_object"
+  },
+  "wall_time_s": 5.521,
+  "python": "3.10.12"
+}
