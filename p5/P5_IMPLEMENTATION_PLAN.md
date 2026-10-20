@@ -1049,18 +1049,31 @@ seed / config / command / status / metrics / artifacts）。
 
 | 任务 | 组件 | 优先级 | 保真度 | 检查数 | 算力 | 依赖 | 风险 |
 |---|---|---|---|---|---|---|---|
-| T01 | A | ESSENTIAL | ORIGINAL + DEV_REF | ACTUAL | < 1 s | — | LOW |
-| T02 | A | ESSENTIAL | ORIGINAL | ACTUAL | < 2 s | — | MED |
-| T03 | A | ESSENTIAL | ORIGINAL + DEV_REF | ACTUAL | < 1 s | T01 | MED |
-| T04 | B | ESSENTIAL | ORIGINAL + ADAPT | ACTUAL | ~10 s | — | LOW |
-| T05 | B | ESSENTIAL | ORIGINAL | ACTUAL | ~5 s | T04 | MED |
-| T06 | C | ESSENTIAL | ORIGINAL | ACTUAL | < 3 s | — | LOW |
-| T07 | C | ESSENTIAL | ORIGINAL + ADAPT | ACTUAL | < 2 min | — | **HIGH** |
-| T08 | C | ESSENTIAL | ORIGINAL + ADAPT | ACTUAL | ~60 s | T04,T06 | **HIGH** |
+| T01 | A | ESSENTIAL | ORIGINAL + DEV_REF | **11** (6/5, 1.4 s) | < 1 s | — | LOW |
+| T02 | A | ESSENTIAL | ORIGINAL | **12** (7/5, 7.1 s) | < 2 s | — | MED |
+| T03 | A | ESSENTIAL | ORIGINAL + DEV_REF | **11** (6/5, 5.7 s) | < 1 s | T01 | MED |
+| T04 | B | ESSENTIAL | ORIGINAL + ADAPT | **20** (12/8, 1.9 s) | ~10 s | — | LOW |
+| T05 | B | ESSENTIAL | ORIGINAL | **14** (7/7, 0.6 s) | ~5 s | T04 | MED |
+| T06 | C | ESSENTIAL | ORIGINAL | **10** (6/4, 0.9 s) | < 3 s | — | LOW |
+| T07 | C | ESSENTIAL | ORIGINAL + ADAPT | **12** (6/6, 99.1 s) | < 2 min | — | **HIGH** |
+| T08 | C | ESSENTIAL | ORIGINAL + ADAPT | **13** (7/6, 85.3 s) | ~60 s | T04,T06 | **HIGH** |
 | T09 | C | **NOT_AUTHORIZED** | ADAPTATION | — | — | — | — |
-| T10 | A+B+C | **ESSENTIAL（强制）** | ADAPTATION | ACTUAL | 30–90 s ×3 | T01–T08 | MED |
+| T10 | A+B+C | **ESSENTIAL（强制）** | ADAPTATION | **12** (7/5, 142.2 s) | 30–90 s ×3 | T01–T08 | MED |
 
 **本轮验收 = T01–T08 + T10 全部通过**；T09 不执行、不计入。
+
+### 6.1 回填结果与验收结论（2026-10-20）
+
+`run_all.py` 全量运行：**115 项检查（64 正 / 51 负），0 失败，344.2 s**，G1–G4 全部 `PASS`。
+检查数按 G1 → G2 → G3 → G4 累计为 53 / 37 / 13 / 12，均为 `ACTUAL`（`p5/evidence/P5_impl_checks.json`）。
+
+授予 **`ALGORITHM_NUMERICAL_VERIFIED (D082 scope)`**，但 T10 的端到端结论按实测收窄为：
+
+- 该结论**只覆盖 `Γ` 判据**（学到的 2-D 边界在本轨迹上没有被穿越），不是几何避撞保证；
+  本运行**不得**用于任何时间/跟踪精度/平滑性陈述（D018：硬 (17d) 行使 46 % 的步冻结）。
+- Theorem 3 在本实现中是"每个 QP 解处的恒等式"，**不是**闭环单调性（D017）。
+
+`FULL_PAPER_REPRODUCED` 未授予且已明确放弃（真机 + 未发布训练集 + CVXGEN）。
 
 ---
 
