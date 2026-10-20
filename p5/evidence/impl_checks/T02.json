@@ -1,0 +1,176 @@
+{
+  "task": "T02",
+  "status": "PASS",
+  "n_checks": 12,
+  "n_positive": 7,
+  "n_negative": 5,
+  "n_failed": 0,
+  "checks": [
+    {
+      "id": "P2.1",
+      "kind": "positive",
+      "ok": true,
+      "detail": "common P found: J*=-3.411e-01, status=CERTIFIED, direction cos=0.9955",
+      "info": {
+        "J": -0.3410862837319204,
+        "cos": 0.9954978828867574
+      }
+    },
+    {
+      "id": "P2.2",
+      "kind": "positive",
+      "ok": true,
+      "detail": "trace(P)=1.000000000000, lambda_min(P)=3.511e-01",
+      "info": {
+        "trace": 1.0,
+        "lam_min": 0.3511216644397297
+      }
+    },
+    {
+      "id": "N2.2",
+      "kind": "negative",
+      "ok": true,
+      "detail": "unnormalised search is scaling-degenerate (|P|_F=inf, J=-6.26e+307); trace(P)=1 is what makes the margin meaningful",
+      "info": {
+        "fro": Infinity,
+        "J": -6.259144557525409e+307
+      }
+    },
+    {
+      "id": "P2.3",
+      "kind": "positive",
+      "ok": true,
+      "detail": "theta on the simplex for 4 probe points",
+      "info": {
+        "thetas": [
+          [
+            0.613873344906898,
+            0.204808412029873,
+            0.18131824306322894
+          ],
+          [
+            0.27446164309394644,
+            0.6857817266703149,
+            0.039756630235738624
+          ],
+          [
+            0.22223105844137536,
+            0.029684332088043934,
+            0.7480846094705806
+          ],
+          [
+            0.6516406177157836,
+            0.2829417616010837,
+            0.06541762068313264
+          ]
+        ]
+      }
+    },
+    {
+      "id": "P2.3b",
+      "kind": "positive",
+      "ok": true,
+      "detail": "A(theta) lies in the componentwise hull of {A_ik}",
+      "info": {}
+    },
+    {
+      "id": "P2.4",
+      "kind": "positive",
+      "ok": true,
+      "detail": "||x(T)|| = 1.692e-09 at T=56.4 s (decay rate 0.35) for a stable mix",
+      "info": {
+        "term": 1.6917398762894052e-09,
+        "decay": 0.35474991905768405
+      }
+    },
+    {
+      "id": "P2.5",
+      "kind": "positive",
+      "ok": true,
+      "detail": "tau=1 tracking: ||x^R - x^V|| = 4.072e-15",
+      "info": {
+        "err": 4.071658748137585e-15
+      }
+    },
+    {
+      "id": "P2.6",
+      "kind": "positive",
+      "ok": true,
+      "detail": "degenerate prior falls back to the uniform distribution",
+      "info": {
+        "theta": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ]
+      }
+    },
+    {
+      "id": "N2.1",
+      "kind": "negative",
+      "ok": true,
+      "detail": "unstable A_ik -> NOT_CERTIFIED and ||x|| grows to 1.10e+01",
+      "info": {
+        "status": "NOT_CERTIFIED",
+        "J": 0.07573823518929906
+      }
+    },
+    {
+      "id": "N2.3",
+      "kind": "negative",
+      "ok": true,
+      "detail": "unnormalised theta (sum=1.50) is rejected",
+      "info": {
+        "sum": 1.4999999999999998
+      }
+    },
+    {
+      "id": "N2.4",
+      "kind": "negative",
+      "ok": true,
+      "detail": "a zero eigenvalue gives J=0 and is reported MARGINAL, not CERTIFIED",
+      "info": {
+        "status": "MARGINAL",
+        "J": 0.0
+      }
+    },
+    {
+      "id": "N2.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "inconsistent A_ik dimensions are rejected",
+      "info": {}
+    }
+  ],
+  "metrics": {
+    "J_star": -0.3410862837319204,
+    "lam_min_P": 0.3511216644397297,
+    "trace_P": 1.0,
+    "certification_status": "CERTIFIED",
+    "unnormalized_J": -6.259144557525409e+307,
+    "unnormalized_fro": Infinity,
+    "terminal_norm": 1.6917398762894052e-09,
+    "mix_decay_rate": 0.35474991905768405,
+    "integration_horizon": 56.37774365988764
+  },
+  "figures": [
+    {
+      "name": "t02_convergence.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t02_convergence.png"
+    },
+    {
+      "name": "t02_lyap_eig.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t02_lyap_eig.png"
+    },
+    {
+      "name": "t02_theta_simplex.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t02_theta_simplex.png"
+    }
+  ],
+  "metadata": {
+    "role": "LPV scheduler + common Lyapunov matrix",
+    "module": "tasks.t02_lpv"
+  },
+  "wall_time_s": 7.006,
+  "python": "3.10.12"
+}

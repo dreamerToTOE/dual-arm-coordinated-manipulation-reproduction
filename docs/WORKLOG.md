@@ -47,3 +47,19 @@ Append-only project work log.
 - Deliverables under `p5/`: study report, equation audit, code audit, 3 CSV + consistency JSON,
   5 redrawn schematic figures, and the 10-task implementation plan.
 - **No numerical implementation was started.** Work stops at the reproduction-matrix review gate.
+
+## 2026-10-20 — P5 numerical reproduction, G1 (foundation layer)
+- Created the clean-room package `p5/impl/p5core` and the single-command ledger runner
+  `p5/impl/run_all.py` (per-task JSON, gate evaluation, `P5_impl_checks.json` + `.md`).
+- T01 Eq.(8): closed-form reference, RK4 order 3.99, endpoint invariance, upstream-variant deviation
+  8.3e-03. 11 checks.
+- T02 LPV: common `P` under `trace(P)=1` (J\* = −0.341, CERTIFIED), scaling-degeneracy control shows
+  why the normalisation is required. 12 checks.
+- T04 QP IK: exact box-active-set reference + SLSQP + LVI agree to 1.7e-16 / 9.3e-11; brake semantics
+  of Eq.(18) verified against the Euler prediction (22.314 rad/s). 20 checks.
+- T06 2-D SCA: official `.mat` read in place (sha256 recorded), label agreement 0.9930 at σ=0.1 and
+  0.5562 at the σ=50 misreading; bias-drop test moved to the libsvm fixture. 10 checks.
+- Fixed during implementation: `PlanarArm` joint convention (absolute vs relative), the missing sixth
+  QP state, and the reversed `μ` direction of N4.5 — all recorded in the plan and in DECISIONS D010–D012.
+- Official `SCA-Boundary-Learning` re-fetched read-only to `/home/ubuntu2004/lmy/p5-official-ref`
+  (no licence → not vendored, only sha256 recorded).

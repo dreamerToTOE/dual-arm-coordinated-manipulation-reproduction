@@ -61,3 +61,17 @@ Appended by the P5 paper study. The roadmap table above is **not** rewritten, an
   its SCA path is dead code; Eq.(26) has no implementation upstream. Nothing was vendored.
 - **No numerical implementation was started.** The next gate is review of
   `p5/P5_PROPOSED_REPRODUCTION_MATRIX.csv` and `p5/P5_IMPLEMENTATION_PLAN.md` §9 (Q1–Q6).
+
+## 2026-10-20 — P5 numerical reproduction: G1 green
+
+- Branch: `reproduce-p5-numerical-20261020` (base `42f8b857` = approved study commit). P2/P3/P4 untouched.
+- **G1 (foundation layer) PASS**: T01 11, T02 12, T04 20, T06 10 checks — **53 total (31 positive /
+  22 negative), 0 failed, 11.4 s**. Ledger: `p5/evidence/P5_impl_checks.json`.
+- Code: clean-room package `p5/impl/p5core` (results, kinematics, tau, lpv, qp_ik, lvi, svm_sca,
+  plotting) + per-task modules + single-command runner `p5/impl/run_all.py`.
+- Three plan defects were found and fixed while implementing T04 (see `p5/P5_GATE_LOG.md` and
+  `docs/DECISIONS.md` D010–D012): the QP classifier needed a sixth state `INFEASIBLE` (empty
+  equality∩box intersection), N4.5's `μ` direction was reversed, and `PlanarArm` mixed absolute and
+  relative joint conventions.
+- Next: G2 (T03 two-segment cancellation, T05 LVI passivity, T07 36-D model + calibration).
+- Scope unchanged: T09 `NOT_AUTHORIZED_THIS_CYCLE`, T10 mandatory at G4.

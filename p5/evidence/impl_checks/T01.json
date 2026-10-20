@@ -1,0 +1,160 @@
+{
+  "task": "T01",
+  "status": "PASS",
+  "n_checks": 11,
+  "n_positive": 6,
+  "n_negative": 5,
+  "n_failed": 0,
+  "checks": [
+    {
+      "id": "P1.1",
+      "kind": "positive",
+      "ok": true,
+      "detail": "G>0: monotone rise to 1, closed-form error 6.550e-14",
+      "info": {
+        "err": 6.550315845288424e-14,
+        "monotone": true
+      }
+    },
+    {
+      "id": "P1.2",
+      "kind": "positive",
+      "ok": true,
+      "detail": "G<0: monotone decay to 0, closed-form error 2.000e-17",
+      "info": {
+        "err": 2.0003530082357557e-17
+      }
+    },
+    {
+      "id": "P1.3",
+      "kind": "positive",
+      "ok": true,
+      "detail": "G=0: tau stays at tau0",
+      "info": {
+        "drift": 0.0
+      }
+    },
+    {
+      "id": "P1.4",
+      "kind": "positive",
+      "ok": true,
+      "detail": "RK4 observed order [3.991219613406401, 3.995221567037587] on dt in [0.01, 0.005, 0.0025]",
+      "info": {
+        "orders": [
+          3.991219613406401,
+          3.995221567037587
+        ]
+      }
+    },
+    {
+      "id": "P1.6",
+      "kind": "positive",
+      "ok": true,
+      "detail": "tau0 in {0,1} are equilibria: max drift 0.000e+00",
+      "info": {
+        "drift": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "N1.1",
+      "kind": "negative",
+      "ok": true,
+      "detail": "endpoint is invariant (0.00e+00) yet a 1e-3 perturbation escapes (1.00e-03)",
+      "info": {
+        "stuck": 0.0,
+        "moves": 0.0010000000000000009
+      }
+    },
+    {
+      "id": "N1.2",
+      "kind": "negative",
+      "ok": true,
+      "detail": "k->0 with a fixed step breaks the (0,1) invariant, as it must",
+      "info": {
+        "tau_min": -Infinity,
+        "tau_max": 0.001
+      }
+    },
+    {
+      "id": "N1.3",
+      "kind": "negative",
+      "ok": true,
+      "detail": "|G| ~ 1e4 with dt=1e-2 is resolved badly (dev inf)",
+      "info": {
+        "dev": Infinity
+      }
+    },
+    {
+      "id": "N1.4",
+      "kind": "negative",
+      "ok": true,
+      "detail": "k in the numerator changes the transient (dev 9.743e-01)",
+      "info": {
+        "dev": 0.9743135578509353
+      }
+    },
+    {
+      "id": "N1.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "flipping the sign of G is detected (dev 9.999e-01)",
+      "info": {
+        "dev": 0.9998875898852367
+      }
+    },
+    {
+      "id": "P1.5",
+      "kind": "positive",
+      "ok": true,
+      "detail": "paper Eq.(8) vs upstream variant: RMS deviation 0.0083",
+      "info": {
+        "rms": 0.008262362561881908
+      }
+    }
+  ],
+  "metrics": {
+    "rel_err_Ggt0": 6.550315845288424e-14,
+    "rel_err_Glt0": 2.0003530082357557e-17,
+    "rel_err_G=0": 0.0,
+    "rk4_orders": [
+      3.991219613406401,
+      3.995221567037587
+    ],
+    "rms_dev_official": 0.008262362561881908,
+    "tau_paper_final": 0.00039912404499186266,
+    "tau_official_final": 0.001,
+    "official_sign_conflict_on_approach": true,
+    "tau0": 0.001,
+    "convergence_orders": [
+      3.991219613406401,
+      3.995221567037587
+    ]
+  },
+  "figures": [
+    {
+      "name": "t01_tau_three_cases.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t01_tau_three_cases.png"
+    },
+    {
+      "name": "t01_tau_vs_G.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t01_tau_vs_G.png"
+    },
+    {
+      "name": "t01_deviation.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t01_deviation.png"
+    },
+    {
+      "name": "t01_convergence.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t01_convergence.png"
+    }
+  ],
+  "metadata": {
+    "role": "synchronisation allocation tau, Eq.(8)",
+    "module": "tasks.t01_tau"
+  },
+  "wall_time_s": 1.354,
+  "python": "3.10.12"
+}

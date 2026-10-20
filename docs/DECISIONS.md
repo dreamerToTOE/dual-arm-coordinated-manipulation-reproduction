@@ -77,3 +77,41 @@ Append-only architectural and scientific decisions.
   `P_in = ξ̇^{Rᵀ} f` with `f = Wq̇` (**stated assumption**), a tracking-error storage `S = ½‖ξ̃‖²`, the
   Theorem-3 dissipation `ψ = uᵀ(I+Mᵀ)u`, and the residual of the numerical ledger `∫P_in − ΔS − ∫ψ`.
 - Impact: the residual is an implementation-consistency indicator, never a physical claim.
+
+## D010 — P5 uses the exact box-active-set solver downstream; LVI stays the dynamics object
+- Date: 2026-10-20 (G1, T04)
+- Context: solving `P_Ω(u − (Mu + b)) − u = 0` by the scaled projection iteration needs 7 414 steps on
+  the T04 fixture and ~1.8e5 when `W` is stiff (`W = 20 I`), i.e. 60–1800 ms in pure Python. The KKT
+  matrix of (21a) has a zero (2,2) block, so the map has directions with contraction factor ~1.
+- Decision: the **exact** `3^d` box-active-set enumeration (`QP.solve_active_set`) is the solver used by
+  T04/T08/T10 (p50 0.99 ms at 3 DOF, 3.00 ms at 4 DOF). The LVI formulation is kept for what the paper
+  actually claims — the projected *dynamics* (20) and the passivity inequality of Theorem 3 (T05).
+- Rationale: for a strictly convex QP the minimiser is unique, so using an exact solver changes the
+  numerical path only. Pretending the slow fixed point is a real-time solver would be the dishonest option.
+- Label: **[ADAPTATION]** (solver), **[ORIGINAL]** (dynamics and passivity identity).
+- Consequence: the paper's μs real-time budget is explicitly *not* reproduced; Python times are reported
+  as absolute numbers with an order-of-magnitude guard, never as a comparison.
+
+## D011 — Eq.(18): `μ → 0` freezes the joint; the look-ahead brake is removed by `μ → ∞`
+- Date: 2026-10-20 (G1, T04)
+- Context: the plan's N4.5 asked for `μ = 0` as the "brake removed" control. With
+  `θ̇⁻ = max(μ(q⁻−q), q̇⁻)` and `θ̇⁺ = min(μ(q⁺−q), q̇⁺)`, `μ = 0` gives `θ̇⁻ = 0` and `θ̇⁺ = 0`,
+  so the joint is **frozen** — a stronger brake, and a degenerate control.
+- Decision: N4.5 tests both directions. `μ → ∞` (pure velocity clamp) must produce a limit crossing;
+  `μ → 0` must freeze. Reporting only one of them would leave "frozen" indistinguishable from "unprotected".
+- Second finding, same equation: Eq.(18) is **infeasible by construction** when a joint sits outside its
+  position limit by more than `q̇_max/μ`, because then `θ̇⁻ > θ̇⁺`. The official `Construct_boundaries_vel()`
+  never checks it; the implementation classifies it as `BOUND_INFEASIBLE` (N4.2b) and never clamps silently.
+- Label: **[ORIGINAL]** (equation), **[ENGINEERING]** (classification).
+
+## D012 — PlanarArm uses relative joint angles
+- Date: 2026-10-20 (G1, T04)
+- Context: `points()` placed link `i` at angle `q_i` (absolute) while `jacobian()` used
+  `dp/dq_i = z × (p − p_i)` for all downstream links, which is the *relative*-joint convention. P4.1a
+  caught the mismatch at 3e-1.
+- Decision: accumulate the angles (`angle_i = Σ_{j≤i} q_j`), i.e. the standard serial-chain convention.
+  Link-point Jacobians were then re-verified against finite differences at 1e-10 for both arms of
+  `DualPlanarArm`.
+- Impact: the geometry changes for every downstream task (T08/T10). Any figure produced before this fix
+  would have described a different arm, which is why the fix was made at G1 and not later.
+- Label: **[ENGINEERING]**.

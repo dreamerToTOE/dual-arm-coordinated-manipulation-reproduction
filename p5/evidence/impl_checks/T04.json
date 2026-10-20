@@ -1,0 +1,285 @@
+{
+  "task": "T04",
+  "status": "PASS",
+  "n_checks": 20,
+  "n_positive": 12,
+  "n_negative": 8,
+  "n_failed": 0,
+  "checks": [
+    {
+      "id": "P4.1a",
+      "kind": "positive",
+      "ok": true,
+      "detail": "analytic Jacobian vs central differences",
+      "info": {
+        "value": 3.803601877905294e-11,
+        "tol": 1e-08
+      }
+    },
+    {
+      "id": "P4.1b",
+      "kind": "positive",
+      "ok": true,
+      "detail": "W=I analytic solution equals the least-squares minimum-norm solution",
+      "info": {
+        "value": 8.881784197001252e-16,
+        "tol": 1e-12
+      }
+    },
+    {
+      "id": "P4.1c",
+      "kind": "positive",
+      "ok": true,
+      "detail": "equality residual of the analytic solution",
+      "info": {
+        "value": 2.482534153247273e-16,
+        "tol": 1e-09
+      }
+    },
+    {
+      "id": "P4.2",
+      "kind": "positive",
+      "ok": true,
+      "detail": "weighted objective is minimal along the null-space line (min 2.492900 vs 2.492900)",
+      "info": {
+        "f_star": 2.4928998059077836,
+        "f_min": 2.4928998059077836
+      }
+    },
+    {
+      "id": "P4.3",
+      "kind": "positive",
+      "ok": true,
+      "detail": "3-link tracking: 1.510e-01 -> 8.386e-07, monotone, min sigma 0.200, 600 steps",
+      "info": {
+        "final": 8.385589135030217e-07,
+        "min_sigma": 0.2003881779108437
+      }
+    },
+    {
+      "id": "P4.4a",
+      "kind": "positive",
+      "ok": true,
+      "detail": "binding brake: qdot_2 equals mu(q+ - q_2) to 0.0e+00 while qdot_1 + qdot_2 = 0.3 to 0.0e+00",
+      "info": {
+        "brake_err": 0.0,
+        "qdot1": 0.1999999999999999,
+        "qdot2": 0.10000000000000009,
+        "value": 0.0,
+        "tol": 1e-12
+      }
+    },
+    {
+      "id": "P4.4b",
+      "kind": "positive",
+      "ok": true,
+      "detail": "limit respected over 300 steps: max q_2 = 1.000000000000 (limit 1.00), final gap 2.2e-16",
+      "info": {
+        "maxq": 0.9999999999999998,
+        "final_gap": 2.220446049250313e-16
+      }
+    },
+    {
+      "id": "P4.4c",
+      "kind": "positive",
+      "ok": true,
+      "detail": "approach rate fitted 22.314 rad/s vs Euler prediction 22.314 rad/s",
+      "info": {
+        "fitted": 22.314358165464466,
+        "predicted": 22.31435513142097,
+        "value": 1.3596823555043856e-07,
+        "tol": 0.02
+      }
+    },
+    {
+      "id": "P4.4d",
+      "kind": "positive",
+      "ok": true,
+      "detail": "arm at the limit: max|q| = 1.000000000 (limit 1.00), QP ended as INFEASIBLE at step 29",
+      "info": {
+        "fail_step": 29,
+        "max_abs": 1.0
+      }
+    },
+    {
+      "id": "P4.5",
+      "kind": "positive",
+      "ok": true,
+      "detail": "three solvers on an active-box fixture: |AS-SLSQP| 1.67e-16, |AS-LVI| 9.33e-11 (7414 iters), active coords [0]",
+      "info": {
+        "gap_slsqp": 1.6653345369377348e-16,
+        "gap_lvi": 9.334864131682608e-11,
+        "active": [
+          0
+        ],
+        "status": "OPTIMAL"
+      }
+    },
+    {
+      "id": "P4.6",
+      "kind": "positive",
+      "ok": true,
+      "detail": "rank-deficient but consistent -> RANK_DEFICIENT_CONSISTENT, residual 3.89e-16",
+      "info": {
+        "status": "RANK_DEFICIENT_CONSISTENT",
+        "info": {
+          "rank": 2,
+          "d_n": 3,
+          "eq_residual_ls": 5.551115123125783e-17,
+          "sigma_min": 2.33562694729803e-17,
+          "sigma_max": 0.8801414418654466,
+          "box_intersection_feasible": true,
+          "active_sets_visited": 27
+        }
+      }
+    },
+    {
+      "id": "P4.7",
+      "kind": "positive",
+      "ok": true,
+      "detail": "exact active-set solve: 3 DOF p50 0.98 ms / p99 1.06 ms (27 sets), 4 DOF p50 2.99 ms (81 sets); SLSQP reference 0.3 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
+      "info": {
+        "3dof": {
+          "p50_ms": 0.977608500761562,
+          "p99_ms": 1.0574709582579087,
+          "max_ms": 1.1366010003257543,
+          "reps": 200,
+          "active_sets": 27
+        },
+        "4dof": {
+          "p50_ms": 2.98657799976354,
+          "p99_ms": 3.0528686598336208,
+          "max_ms": 3.0562009997083806,
+          "reps": 100,
+          "active_sets": 81
+        }
+      }
+    },
+    {
+      "id": "N4.1",
+      "kind": "negative",
+      "ok": true,
+      "detail": "inconsistent equality -> EQUALITY_INFEASIBLE; the pinv point has residual 0.354 and no qdot is returned",
+      "info": {
+        "status": "EQUALITY_INFEASIBLE",
+        "pinv_residual": 0.3535533905932738,
+        "returned_none": true
+      }
+    },
+    {
+      "id": "N4.2",
+      "kind": "negative",
+      "ok": true,
+      "detail": "contradictory bounds -> BOUND_INFEASIBLE",
+      "info": {
+        "status": "BOUND_INFEASIBLE"
+      }
+    },
+    {
+      "id": "N4.2b",
+      "kind": "negative",
+      "ok": true,
+      "detail": "q outside the position limit by more than qdot_max/mu makes Eq.(18) itself infeasible (theta^- -0.500 > theta^+ -1.000) -> BOUND_INFEASIBLE",
+      "info": {
+        "status": "BOUND_INFEASIBLE",
+        "lb0": -0.5,
+        "ub0": -1.0000000000000009
+      }
+    },
+    {
+      "id": "N4.3",
+      "kind": "negative",
+      "ok": true,
+      "detail": "singular W -> ILL_CONDITIONED",
+      "info": {
+        "status": "ILL_CONDITIONED"
+      }
+    },
+    {
+      "id": "N4.4",
+      "kind": "negative",
+      "ok": true,
+      "detail": "dimension mismatch raises ValueError",
+      "info": {
+        "exc": "ValueError"
+      }
+    },
+    {
+      "id": "N4.5",
+      "kind": "negative",
+      "ok": true,
+      "detail": "mu -> inf removes the brake (crossing by 1.00e-03, the paper setting gives -2.2e-16) while mu -> 0 freezes the joint (drift 0.0e+00): mu is demonstrably load bearing",
+      "info": {
+        "crossing": 0.0009999999999998899,
+        "drift_mu0": 0.0
+      }
+    },
+    {
+      "id": "N4.6",
+      "kind": "negative",
+      "ok": true,
+      "detail": "soft-task substitute leaves an equality residual of 1.12e-02, so the ADAPTATION is detectable and is never used for acceptance",
+      "info": {
+        "residual": 0.01120013009630159
+      }
+    },
+    {
+      "id": "N4.7",
+      "kind": "negative",
+      "ok": true,
+      "detail": "singular slice: status INFEASIBLE, no qdot returned, while the pinv point violates the box by 61.507 (sigma_min 0.0028)",
+      "info": {
+        "status": "INFEASIBLE",
+        "pinv_box_violation": 61.50654200150171
+      }
+    }
+  ],
+  "metrics": {
+    "track_err_final": 8.385589135030217e-07,
+    "brake_overshoot": -2.220446049250313e-16,
+    "limit_arm_maxabs": 1.0,
+    "limit_arm_fail_step": 29,
+    "solver_gap_active_set_vs_slsqp": 1.6653345369377348e-16,
+    "solver_gap_active_set_vs_lvi": 9.334864131682608e-11,
+    "lvi_iters": 7414,
+    "timing_3dof": {
+      "p50_ms": 0.977608500761562,
+      "p99_ms": 1.0574709582579087,
+      "max_ms": 1.1366010003257543,
+      "reps": 200,
+      "active_sets": 27
+    },
+    "timing_4dof": {
+      "p50_ms": 2.98657799976354,
+      "p99_ms": 3.0528686598336208,
+      "max_ms": 3.0562009997083806,
+      "reps": 100,
+      "active_sets": 81
+    },
+    "slsqp_ms_per_solve_3dof": 0.3431354998610914
+  },
+  "figures": [
+    {
+      "name": "t04_tracking.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t04_tracking.png"
+    },
+    {
+      "name": "t04_saturation.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t04_saturation.png"
+    },
+    {
+      "name": "t04_solver_agreement.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t04_solver_agreement.png"
+    },
+    {
+      "name": "t04_timing_hist.png",
+      "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t04_timing_hist.png"
+    }
+  ],
+  "metadata": {
+    "role": "centralised QP IK, Eq.(17)-(18)",
+    "module": "tasks.t04_qp_core"
+  },
+  "wall_time_s": 1.88,
+  "python": "3.10.12"
+}
