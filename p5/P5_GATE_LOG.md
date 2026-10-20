@@ -85,10 +85,37 @@ the chain rule pass. All met, 0 failed.
 
 ---
 
-## G3 — integration layer (pending)
+## G3 — integration layer (2026-10-20)
 
-T08 SCA inside the QP: zero boundary crossings with SCA on, crossings present in the matched
-SCA-off control.
+| Task | Status | Checks | pos / neg | Wall | Report |
+|---|---|---|---|---|---|
+| T08 learnt SCA boundary inside the QP | PASS | 13 | 7 / 6 | 85.9 s | `p5/reviews/P5_T08_POST.md` |
+| **G3 total** | **PASS** | **13** | **7 / 6** | **85.9 s** | `p5/evidence/P5_impl_checks.json` |
+| **G1 + G2 + G3 cumulative** | **PASS** | **103** | **57 / 46** | **201.4 s** | same ledger |
+
+Gate condition (plan §3.2): zero boundary crossings with SCA on **and** crossings present in the
+matched SCA-off control. Measured: `min_t Γ_raw = +2.1813` with 0 crossings on, `−2.3942` with 656
+crossings off, same task and same initial state. Met.
+
+### What G3 added beyond the plan
+
+| # | Item | Why the plan was not enough | Disposition |
+|---|---|---|---|
+| 9 | task coordinate ≠ SCA feature | if the SCA feature were the task coordinate, `Γ̇` would be *implied* by the equality row and (17d) could never bind; the boundary would behave like a switch | task drives one tip, SCA constrains the tip pair, second arm supplies the slack (D015) |
+| 10 | `λ = 0` expectation | plan predicted λ = 0 to be the looser setting with crossings; measured it is a strict no-decrease cone that blocks the approach at step 1 | N8.2 rewritten to report the falsification (D016) |
+| 11 | printed `−log(Γ−1)` expectation | plan predicted "attracted to the boundary"; measured the request is *inverted* far away and *vacuous* near the wall | N8.3 reports both halves, with the rhs table at Γ_raw ∈ {1.01, 1.2, 2.0, 6.38} |
+| 12 | `PAPER_FALLBACK` | plan assumed it "pushes outward"; as a hard row with rhs = −1000 it is unsatisfiable (demands Γ̇ ≥ 1000 against a best effort of 28.2) | P8.6 reports it as a soft-formulation device (D016) |
+
+### G3 deviations with a label
+
+| Item | Label | Note |
+|---|---|---|
+| learned boundary = official 2-D CPSP model, native coordinates | `ADAPTATION` | no rescaling or rotation; the model is used where it was trained |
+| 4-DOF planar dual arm, `d_n = 2`, `d_c = 1` | `ADAPTATION` | the paper's 12-DOF dual arm is not reproduced |
+| `dt` ladder `{5e-3, 2.5e-3, 1.25e-3}` | `ENGINEERING` | plan said `{2e-3, 1e-3, 5e-4}`; same 2× refinement, coarse end chosen for runtime |
+| `λ = 1`, `μ = 20`, `q̇_max = 1.5 rad/s` | `ENGINEERING` | no numerical value is published for any of them |
+
+---
 
 ## G4 — end-to-end (pending, mandatory)
 

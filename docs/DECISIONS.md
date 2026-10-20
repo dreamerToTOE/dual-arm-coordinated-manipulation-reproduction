@@ -141,3 +141,30 @@ Append-only architectural and scientific decisions.
   asynchronous→synchronous switch (where `τ` is *not* shared) rather than only the synchronous regime,
   so that a broken `τ` coupling cannot hide behind `(36)`.
 - Label: **[ORIGINAL]** (equations), **[ENGINEERING]** (test design).
+
+## D015 — In T08 the SCA feature must not be the task coordinate
+- Date: 2026-10-20 (G3, T08)
+- Context: the plan specified the SCA feature as the relative position of the two tips, and the
+  natural task for that fixture is "move the relative position to a goal". With that pairing
+  `Γ̇ = ∇_fΓ·ḟ` is **implied by the task equality row**, so (17d) can neither bind nor be satisfied by
+  the redundant joints: the QP would either accept the task velocity or report infeasibility. The
+  learned boundary would act as a switch, and P8.2 ("activation rate > 0") would be measuring nothing.
+- Decision: the task drives **one** arm's tip (`d_n = 2`) while (17d) constrains the **pair**
+  (`d_c = 1`) over both arms, leaving two joints of slack. Measured activation 50.1 %.
+- Consequence: this is a fixture property, not a claim about the paper — the paper's task is the
+  object pose and its constraints are over all body-point pairs, so its rows are never implied.
+- Label: **[ENGINEERING]** (test design).
+
+## D016 — Two structural limits of (17d) found in closed loop
+- Date: 2026-10-20 (G3, T08)
+- Context: two plan expectations were falsified by measurement.
+- Decision 1 (`PAPER_FALLBACK`): with `Γ_raw < 1` the paper replaces `log(Γ−1)` by a large negative
+  number. As a **hard** row with rhs = −1000 this demands `Γ̇ ≥ 1000`; the best achievable rate in the
+  fixture is 28.2 s⁻¹, so the exact solver reports `INFEASIBLE` and the robot freezes. The fallback is
+  therefore a *soft-formulation* device; it is implemented and labelled as such, and P8.6 reports the
+  infeasibility instead of pretending the push happens.
+- Decision 2 (`λ = 0`): `λ` scales `log(Γ−1)`, which is positive for `Γ > 2`. So `λ = 1` *grants* a
+  decrease budget far from the boundary while `λ = 0` turns the row into the strict cone `Γ̇ ≥ 0`.
+  λ = 0 is thus stricter, not looser, away from the wall; the plan's prediction is recorded as
+  falsified rather than engineered into a crossing.
+- Label: **[ORIGINAL]** (equations) / **[ENGINEERING]** (findings about their use).

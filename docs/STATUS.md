@@ -95,3 +95,20 @@ Appended by the P5 paper study. The roadmap table above is **not** rewritten, an
   instead (`-g` read as width → 0.5670). Recorded as D013.
 - Next: G3 (T08 — SCA inside the closed-loop QP), then G4 (T10, mandatory).
 - Scope unchanged: T09 `NOT_AUTHORIZED_THIS_CYCLE`.
+
+## 2026-10-20 — P5 numerical reproduction: G3 green
+
+- **G3 (integration layer) PASS**: T08 13 checks (7 positive / 6 negative), 0 failed, 85.9 s.
+  Cumulative G1+G2+G3: **103 checks (57 pos / 46 neg), 0 failed, 201.4 s**.
+- T08 wires (17d) with the Q3 sign, (26) and (21a/b) around the official 2-D CPSP model used as the
+  learned boundary oracle in its native coordinates. `min_t Γ_raw = +2.1813` with SCA on and **0**
+  crossings, against `−2.3942` and **656** crossings in the matched SCA-off control.
+- The SCA row is active on 50.1 % of the steps with a positive dual multiplier, the Eq.(26) chain rule
+  matches central differences at 1.2e-09, and `min_t Γ_raw` converges over
+  `dt ∈ {5e-3, 2.5e-3, 1.25e-3}` to 1.4e-03.
+- Three findings contradict the plan and are reported as measured (D015, D016): the SCA feature must
+  not be the task coordinate or (17d) can never bind; `λ = 0` is *stricter* away from the wall, not
+  looser; and `PAPER_FALLBACK` as a hard row is unsatisfiable (demands Γ̇ ≥ 1000 against 28.2), i.e. it
+  is a soft-formulation device.
+- Next: G4 (T10, mandatory — asynchronous→synchronous switch plus SCA on/off).
+- Scope unchanged: T09 `NOT_AUTHORIZED_THIS_CYCLE`.

@@ -53,7 +53,7 @@ def velocity_bounds(q, q_min, q_max, qdot_min, qdot_max, mu=20.0, eta=None):
 class QP:
     """A box-constrained QP with equality and (optional) linear inequality rows."""
 
-    def __init__(self, W, J, xidot, lb, ub, sca_rows=None):
+    def __init__(self, W, J, xidot, lb, ub, sca_rows=None, lam=1.0):
         self.W = np.asarray(W, float)
         self.J = np.asarray(J, float)
         self.xidot = np.asarray(xidot, float).ravel()
@@ -63,10 +63,15 @@ class QP:
         self.d_q = self.W.shape[0]
         self.d_n = self.J.shape[0]
         self.d_c = len(self.sca_rows)
+        #: Eq.(17d) weight lambda.  It scales every SCA right-hand side, so both
+        #: paths (the LVI assembly in `M_b` and the exact active-set enumeration)
+        #: must read the same value -- see the note in `_enumerate`.
+        self.lam = float(lam)
 
     # ------------------------------------------------------------ assembly
-    def M_b(self, lam=1.0):
+    def M_b(self, lam=None):
         """Eq.(21a)/(21b) with the KKT-consistent sign b3 = +lam*log(Gamma-1)."""
+        lam = self.lam if lam is None else lam
         d_q, d_n, d_c = self.d_q, self.d_n, self.d_c
         M = np.zeros((d_q + d_n + d_c, d_q + d_n + d_c))
         M[:d_q, :d_q] = self.W
@@ -188,11 +193,17 @@ class QP:
         # with multiplier nu >= 0, an inactive row must satisfy the inequality.
         G_all = np.array([np.asarray(g, float).ravel() for g, _ in self.sca_rows]) \
             if self.sca_rows else np.zeros((0, n))
-        r_all = np.array([float(rhs) for _, rhs in self.sca_rows]) if self.sca_rows else np.zeros(0)
+        # The lambda factor must be applied HERE too, not only in `M_b`: the exact
+        # solver never builds M, so a lam-unaware enumeration would solve a
+        # different QP than the one the LVI path describes (T08/N8.2 depends on
+        # lam = 0 actually relaxing the row).
+        r_all = np.array([self.lam * float(rhs) for _, rhs in self.sca_rows]) \
+            if self.sca_rows else np.zeros(0)
         d_c = len(self.sca_rows)
         best = None
         best_f = np.inf
         best_mask = None
+        best_nu = None
         visited = 0
         for mask in range(2 ** d_c):
             act = [i for i in range(d_c) if (mask >> i) & 1]
@@ -273,10 +284,16 @@ class QP:
                     best_f = f
                     best = x.copy()
                     best_mask = mask
+                    # dual multipliers of (17d) for the winning active set: T08
+                    # reports nu to show the constraint was genuinely binding
+                    # (nu > 0) rather than merely satisfied.
+                    best_nu = (eta[d_eq:].copy() if len(act) else np.zeros(d_c))
         return best, {"objective": best_f if best is not None else None,
                       "active_sets_visited": visited,
                       "sca_active_rows": (None if best is None else
-                                          [i for i in range(d_c) if (best_mask >> i) & 1])}
+                                          [i for i in range(d_c) if (best_mask >> i) & 1]),
+                      "sca_multipliers": (None if best is None else
+                                          [float(v) for v in np.atleast_1d(best_nu)])}
 
     def solve_slsqp(self, x0=None, maxiter=300):
         d_q = self.d_q
@@ -289,7 +306,7 @@ class QP:
         for g, rhs in self.sca_rows:
             gv = np.asarray(g, float).ravel()
             cons.append({"type": "ineq",
-                         "fun": _make_ineq(gv, rhs),
+                         "fun": _make_ineq(gv, self.lam * rhs),
                          "jac": _make_ineq_jac(gv)})
         fun = lambda x: 0.5 * float(x @ self.W @ x)
         jac = lambda x: self.W @ x

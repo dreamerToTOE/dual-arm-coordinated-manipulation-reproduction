@@ -79,3 +79,15 @@ Append-only project work log.
 - Fixed during implementation: `solve_active_set` now enumerates SCA rows as inequalities (this was why
   the T05 fixture looked solvable-but-divergent), and N7.3/P5.3 were redesigned as described in D013 and
   the gate log. Decisions D013 (σ provenance) and D014 ((11)→(36) is conditional) added.
+
+## 2026-10-20 — P5 numerical reproduction, G3 (integration layer)
+- T08 closed loop: 4-DOF planar dual arm, task on one tip, (17d) on the tip pair, official 2-D CPSP
+  model as the learned oracle, exact box-active-set QP. 13 checks (7 pos / 6 neg).
+- Measured: min Γ_raw +2.1813 (SCA on, 0 crossings) vs −2.3942 (SCA off, 656 crossings); activation
+  50.1 %, nu_max 1.1e-3, KKT primal residual 8.3e-16, chain rule 1.2e-09, dt convergence 1.4e-03.
+- `qp_ik.QP` gained a `lam` member that both the LVI assembly and the exact enumerator honour (they
+  previously disagreed, which would have made N8.2 test the wrong QP), and `solve_active_set` now
+  returns the (17d) multipliers so the POST can show the row binds rather than being satisfied.
+- Findings that contradict the plan: (i) the SCA feature must differ from the task coordinate, else the
+  row is implied by the equality (D015); (ii) λ = 0 is stricter far from the boundary (D016);
+  (iii) PAPER_FALLBACK as a hard row is unsatisfiable — 1000 demanded against 28.2 achievable (D016).
