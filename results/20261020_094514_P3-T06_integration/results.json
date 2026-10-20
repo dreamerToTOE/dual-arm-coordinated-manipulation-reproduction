@@ -1,0 +1,208 @@
+{
+  "task": "P3-T06",
+  "kind": "deterministic_integration",
+  "paper_equations": [
+    "16-22",
+    "23-26",
+    "27",
+    "28"
+  ],
+  "run_id": "20261020_094514_P3-T06_integration",
+  "dt_s": 0.01,
+  "scope_note": "command consistency only: no object motion, no contact, no insertion success",
+  "checks": [
+    {
+      "id": "T06_01",
+      "desc": "every documented stage of every case is exercised (no dead branch)",
+      "pass": true,
+      "residual": "{}",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_02",
+      "desc": "clock monotone, uniform dt, stage attribution consistent with schedule",
+      "pass": true,
+      "residual": 1.9897278269453977e-15,
+      "unit": "s",
+      "note": "dt = 0.01 s"
+    },
+    {
+      "id": "T06_03",
+      "desc": "per-sample wrench equals composition oracle",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N / N*m",
+      "note": ""
+    },
+    {
+      "id": "T06_04",
+      "desc": "per-sample torque equals independent oracle (A1 mapping applied explicitly)",
+      "pass": true,
+      "residual": 1.7763568394002505e-15,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T06_05",
+      "desc": "all command/torque samples finite",
+      "pass": true,
+      "residual": "max|tau|=10.152 N*m, max|F|=10.00 N",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_06",
+      "desc": "position command never acts along the push axis (all samples)",
+      "pass": true,
+      "residual": 2.0816681711721685e-17,
+      "unit": "N",
+      "note": ""
+    },
+    {
+      "id": "T06_07",
+      "desc": "deterministic: second full pass is bitwise identical",
+      "pass": true,
+      "residual": "sha256 match",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_08",
+      "desc": "per-stage sample counts and magnitudes recorded",
+      "pass": true,
+      "residual": "12 stage blocks",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_N1",
+      "desc": "missing stage command is detected (case1 without search/align)",
+      "pass": true,
+      "residual": "missing=['align', 'search']",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_N2",
+      "desc": "overlapping/backwards stage clocks rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_N3",
+      "desc": "out-of-range sampling rejected instead of silently clamped",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T06_09",
+      "desc": "A1 mapping composes as R_h*R_task_to_hole in the perturbation term",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N / N*m",
+      "note": ""
+    }
+  ],
+  "per_stage_stats": {
+    "case1_approach_search_align_insert": {
+      "approach": {
+        "samples": 320,
+        "duration_s": 3.2,
+        "max_abs_tau_Nm": 8.63270335285654,
+        "mean_abs_force_N": 3.3333333333333335
+      },
+      "search": {
+        "samples": 730,
+        "duration_s": 7.3,
+        "max_abs_tau_Nm": 10.152039162352853,
+        "mean_abs_force_N": 4.576716168587487
+      },
+      "align": {
+        "samples": 600,
+        "duration_s": 6.0,
+        "max_abs_tau_Nm": 8.63483970262641,
+        "mean_abs_force_N": 3.3333333333333335
+      },
+      "insert": {
+        "samples": 100,
+        "duration_s": 1.0,
+        "max_abs_tau_Nm": 8.632570527461514,
+        "mean_abs_force_N": 3.3333333333333335
+      }
+    },
+    "case2_approach_search_insert": {
+      "approach": {
+        "samples": 350,
+        "duration_s": 3.5,
+        "max_abs_tau_Nm": 8.63270335285654,
+        "mean_abs_force_N": 3.3333333333333335
+      },
+      "search": {
+        "samples": 550,
+        "duration_s": 5.5,
+        "max_abs_tau_Nm": 10.152039162352853,
+        "mean_abs_force_N": 4.65545028747184
+      },
+      "insert": {
+        "samples": 500,
+        "duration_s": 5.0,
+        "max_abs_tau_Nm": 8.63483970262641,
+        "mean_abs_force_N": 3.3333333333333335
+      }
+    },
+    "case3_approach_align_insert": {
+      "approach": {
+        "samples": 300,
+        "duration_s": 3.0,
+        "max_abs_tau_Nm": 8.63270335285654,
+        "mean_abs_force_N": 3.3333333333333335
+      },
+      "align": {
+        "samples": 900,
+        "duration_s": 9.0,
+        "max_abs_tau_Nm": 8.63483970262641,
+        "mean_abs_force_N": 3.3333333333333335
+      },
+      "insert": {
+        "samples": 450,
+        "duration_s": 4.5,
+        "max_abs_tau_Nm": 8.630374758397052,
+        "mean_abs_force_N": 3.3333333333333335
+      }
+    },
+    "case4_approach_insert": {
+      "approach": {
+        "samples": 400,
+        "duration_s": 4.0,
+        "max_abs_tau_Nm": 8.63270335285654,
+        "mean_abs_force_N": 3.3333333333333335
+      },
+      "insert": {
+        "samples": 400,
+        "duration_s": 4.0,
+        "max_abs_tau_Nm": 8.634619001974325,
+        "mean_abs_force_N": 3.3333333333333335
+      }
+    }
+  },
+  "traces": [
+    "case1_approach_search_align_insert_trace.csv",
+    "case2_approach_search_insert_trace.csv",
+    "case3_approach_align_insert_trace.csv",
+    "case4_approach_insert_trace.csv"
+  ],
+  "summary": {
+    "pass": 12,
+    "total": 12,
+    "verdict": "PASS"
+  },
+  "figures": [
+    "p3/evidence/figures/p3_t06_case1_trace.png",
+    "p3/evidence/figures/p3_t06_case_sequences.png"
+  ]
+}
