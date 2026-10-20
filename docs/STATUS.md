@@ -139,3 +139,26 @@ Appended by the P5 paper study. The roadmap table above is **not** rewritten, an
   every total above.
 - Reports: `p5/reviews/P5_T10_POST.md`, `p5/P5_GATE_LOG.md`, `p5/evidence/P5_impl_checks.{json,md}`,
   figures `t10_e2e_triptych.png` / `t10_phase.png` / `t10_sca_ablation.png`.
+
+## 2026-10-20 — P5 post-delivery audit (D019): closed-loop rhs contradicted D007, fixed and regenerated
+
+- Adversarial re-audit of the accepted G4 delivery found that T08/T10 computed the (17d) rhs as
+  `log(Γ_raw − 1)` with domain `Γ_raw > 1`, while D007 (review Q4) fixes `Γ_cal = 1 + Γ_raw/κ`,
+  `κ ≡ 1` ⇒ rhs `= log(Γ_raw)` with domain `Γ_raw > 0`. The shipped models have `bias = 0`
+  (boundary `Γ_raw = 0`), so the pre-audit barrier sat **one unit above the boundary the paper
+  protects**; neither the G3 review nor the first G4 acceptance had caught it.
+- Fixed in `T08/Fixture.rhs()` and the `T10` inline row; new check **P10.8** asserts the in-loop rhs
+  is bit-identical to `S.log_barrier` on the whole recorded `Γ` history (max diff `0.0`). T08's N8.3
+  demand table was re-derived under the calibration (grid `{0.01, 0.2, 1.0, 6.38}`).
+- Regenerated closed-loop numbers, old → new: T08 `min_t Γ_raw` 2.1813 → **1.3347** (0 crossings),
+  activation 50.1 → 47.0 %, dt ladder Δ ≤ 1.4e-3 → 2.0e-3, **N8.1 now produces an actual crossing**
+  (min −0.021, was +0.986) — a sharper negative control. T10 `min_t Γ_raw` 2.0700 → **1.0043**
+  (0 crossings), **QP_INFEASIBLE 370/800 → 0/800**, activation 53.1 → 96.9 %, Theorem-3 identity
+  9.1e-13 → 3.3e-16. SCA-off controls and `t_switch` unchanged.
+- Consequences recorded in D019: D018's "46 % infeasible" is superseded as an artifact of the offset —
+  under D007 the e2e claim **upgrades** to "the row alone, with no freeze and no drop, prevents all
+  crossings on both fixtures"; D016's "with `Γ_raw < 1`" phrasing corrected to `Γ_cal < 1 ⟺ Γ_raw ≤ 0`;
+  D017 structurally unchanged. The acceptance criterion (crossings) never moved and the corrected row
+  is *weaker* away from the boundary — an implementation fix against an approved decision, not a retune.
+- Full suite after the fix: **116 checks (65 pos / 51 neg), 0 failed, 296.1 s**, G1–G4 all `PASS`.
+  The D082 verdict of §6.1 is unchanged in level; its quantitative basis is the regenerated ledger.

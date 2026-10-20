@@ -89,13 +89,13 @@ the chain rule pass. All met, 0 failed.
 
 | Task | Status | Checks | pos / neg | Wall | Report |
 |---|---|---|---|---|---|
-| T08 learnt SCA boundary inside the QP | PASS | 13 | 7 / 6 | 85.9 s | `p5/reviews/P5_T08_POST.md` |
-| **G3 total** | **PASS** | **13** | **7 / 6** | **85.9 s** | `p5/evidence/P5_impl_checks.json` |
-| **G1 + G2 + G3 cumulative** | **PASS** | **103** | **57 / 46** | **201.4 s** | same ledger |
+| T08 learnt SCA boundary inside the QP | PASS | 13 | 7 / 6 | 84.5 s | `p5/reviews/P5_T08_POST.md` |
+| **G3 total** | **PASS** | **13** | **7 / 6** | **84.5 s** | `p5/evidence/P5_impl_checks.json` |
+| **G1 + G2 + G3 cumulative** | **PASS** | **103** | **57 / 46** | **196.4 s** | same ledger |
 
 Gate condition (plan §3.2): zero boundary crossings with SCA on **and** crossings present in the
-matched SCA-off control. Measured: `min_t Γ_raw = +2.1813` with 0 crossings on, `−2.3942` with 656
-crossings off, same task and same initial state. Met.
+matched SCA-off control. Measured (after the D019 audit regeneration): `min_t Γ_raw = +1.3347` with
+0 crossings on, `−2.3942` with 656 crossings off, same task and same initial state. Met.
 
 ### What G3 added beyond the plan
 
@@ -103,7 +103,7 @@ crossings off, same task and same initial state. Met.
 |---|---|---|---|
 | 9 | task coordinate ≠ SCA feature | if the SCA feature were the task coordinate, `Γ̇` would be *implied* by the equality row and (17d) could never bind; the boundary would behave like a switch | task drives one tip, SCA constrains the tip pair, second arm supplies the slack (D015) |
 | 10 | `λ = 0` expectation | plan predicted λ = 0 to be the looser setting with crossings; measured it is a strict no-decrease cone that blocks the approach at step 1 | N8.2 rewritten to report the falsification (D016) |
-| 11 | printed `−log(Γ−1)` expectation | plan predicted "attracted to the boundary"; measured the request is *inverted* far away and *vacuous* near the wall | N8.3 reports both halves, with the rhs table at Γ_raw ∈ {1.01, 1.2, 2.0, 6.38} |
+| 11 | printed `−log(Γ−1)` expectation | plan predicted "attracted to the boundary"; measured the request is *inverted* far away and *vacuous* near the wall | N8.3 reports both halves, with the demand table at Γ_raw ∈ {0.01, 0.2, 1.0, 6.38} under the D007 calibration (D019) |
 | 12 | `PAPER_FALLBACK` | plan assumed it "pushes outward"; as a hard row with rhs = −1000 it is unsatisfiable (demands Γ̇ ≥ 1000 against a best effort of 28.2) | P8.6 reports it as a soft-formulation device (D016) |
 
 ### G3 deviations with a label
@@ -121,23 +121,25 @@ crossings off, same task and same initial state. Met.
 
 | Task | Status | Checks | pos / neg | Wall | Report |
 |---|---|---|---|---|---|
-| T10 end-to-end chain (tau → LPV DS → virtual object → QP → LVI) | PASS | 12 | 7 / 5 | 142.2 s | `p5/reviews/P5_T10_POST.md` |
-| **G4 total** | **PASS** | **12** | **7 / 5** | **142.2 s** | `p5/evidence/P5_impl_checks.json` |
-| **G1 + G2 + G3 + G4 cumulative** | **PASS** | **115** | **64 / 51** | **344.2 s** | same ledger |
+| T10 end-to-end chain (tau → LPV DS → virtual object → QP → LVI) | PASS | 13 | 8 / 5 | 98.2 s | `p5/reviews/P5_T10_POST.md` |
+| **G4 total** | **PASS** | **13** | **8 / 5** | **98.2 s** | `p5/evidence/P5_impl_checks.json` |
+| **G1 + G2 + G3 + G4 cumulative** | **PASS** | **116** | **65 / 51** | **296.1 s** | same ledger |
 
 Gate condition (plan §3.2): the asynchronous→synchronous switch is observable **and** the matched SCA
-on/off control holds. Measured: `τ` integrates from `ε = (0.02, 0.03)` to `(0.982, 0.988)`
-monotonically with `t_switch = 2.800 s` inside the pre-declared `[1, 5] s` window; `min_t Γ_raw =
-+2.0700` with 0 crossings on against `−2.3147` with 534 crossings off. Met.
+on/off control holds. Measured (after the D019 audit regeneration): `τ` integrates from
+`ε = (0.02, 0.03)` to `(0.982, 0.988)` monotonically with `t_switch = 2.800 s` inside the pre-declared
+`[1, 5] s` window; `min_t Γ_raw = +1.0043` with 0 crossings on against `−2.3147` with 534 crossings
+off, and the calibrated row is feasible on **all 800 steps** (no freeze, no drop). Met.
 
 ### What G4 added beyond the plan
 
 | # | Item | Why the plan was not enough | Disposition |
 |---|---|---|---|
-| 13 | Theorem-3 ledger | review #14 asked for a numerical energy ledger; the ledger does **not** close (−328.4 against 328.7) because every step's `u` is a fixed point of a *different* LVI, so `YᵀU = ψ` instantaneously and the non-closure is exactly `−ΔV` | P10.5 gates the per-step identity (`9.1e-13`), P10.6 gates `residual + ΔV = 2.8e-14`; the ledger is a reported metric, never a pass criterion (D017) |
-| 14 | hard (17d) infeasible on 46 % of steps | plan assumed infeasibility was an edge case; measured `370/800`, all attributed to the row (row removed → `OPTIMAL` 370/370, reference velocity `≤ 0.0279`) | two labelled fallbacks were run: freeze (`min Γ 2.0700`) and row-dropped on those steps (`min Γ 1.2400`, 0 crossings) → the row, not the freeze, carries the guarantee (D018) |
+| 13 | Theorem-3 ledger | review #14 asked for a numerical energy ledger; the ledger does **not** close because every step's `u` is a fixed point of a *different* LVI, so `YᵀU = ψ` instantaneously and the non-closure is exactly `−ΔV` | P10.5 gates the per-step identity (`3.3e-16`), P10.6 gates `residual + ΔV = 4.9e-17`; the ledger is a reported metric, never a pass criterion (D017) |
+| 14 | hard (17d) feasibility | the pre-audit uncalibrated rhs made 370/800 steps infeasible (D018); after the D019 fix the calibrated row is feasible on **all 800** steps with `min Γ = 1.0043` and 0 crossings — the fallbacks (`freeze` / `drop_row`) stay in the code and are exercised only by the negative controls (N10.4: 594; T08/N8.1: 647) | P10.7 gates the fallback attribution; the "46 % infeasible" is recorded as an artifact of the offset (D019) |
 | 15 | the pair selection rule | the plan named the SCA feature but not how *which* pair is chosen; picking on the constrained outcome would leak the result | rule fixed on the uncontrolled trajectory only (Γ(0) > 1.5, `min Γ < −0.5`, null share ≥ 0.10) → `L3–R2`, `Γ_raw(0) = 4.2255`, share 0.21; full candidate table in the evidence |
 | 16 | `τ` must be integrated, not scheduled | Eq.(8) has equilibria at 0 and 1, so a "switch" is only meaningful if it emerges | N10.2 pins `τ ≡ 1` / `τ ≡ 0` and gets `t_switch = None` in both |
+| 17 | closed-loop rhs drift (post-delivery audit) | T08/T10 bypassed the calibrated `S.log_barrier` and used `log(Γ_raw − 1)`, placing the barrier one unit above the learned boundary `Γ_raw = 0`, contradicting D007 | fix + new drift guard P10.8 (bit-identical rhs, max diff 0.0); all closed-loop numbers regenerated (D019) |
 
 ### G4 deviations with a label
 

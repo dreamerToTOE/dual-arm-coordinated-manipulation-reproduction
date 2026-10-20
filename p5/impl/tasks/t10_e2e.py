@@ -248,8 +248,14 @@ def rollout(chain, pair, sca_on=True, lam=1.0, mu_tau=None, dt=DT, t_end=T_END,
 
         rows = []
         if sca_on:
-            if gram > 1.0:
-                rows = [(gq, float(np.log(gram - 1.0)))]
+            # (17d) rhs in the calibrated coordinates of Q4/D007:
+            # log(Gamma_cal - 1) = log(Gamma_raw / KAPPA), KAPPA = 1, domain
+            # Gamma_raw > 0 -- the learned boundary.  This MUST stay identical
+            # to S.log_barrier; P10.8 asserts it on the recorded history (the
+            # pre-audit code used log(Gamma_raw - 1) here, which moved the
+            # barrier to Gamma_raw = 1; D019).
+            if gram > S.GAMMA_RAW_FLOOR:
+                rows = [(gq, float(np.log(gram / S.KAPPA)))]
             else:
                 rows = [(gq, float(S.PAPER_FALLBACK))]
                 counts["LOG_DOMAIN"] += 1
@@ -453,17 +459,43 @@ def run(rec):
                                           if k.startswith("INF_")})
     rec.check("P10.2", ref["counts"]["BOUNDARY_CROSSING"] == 0 and ref["activation"] > 0.05,
               "end-to-end with the learned boundary in the QP: min_t Gamma_raw = %.4f, "
-              "boundary crossings = %d, the (17d) row is active on %.0f%% of the steps.  "
-              "Reported with its cost: the hard row makes the QP INFEASIBLE on %d of %d "
-              "steps (%.0f%%), every one of them attributed to the row -- the same QP "
-              "without (17d) is OPTIMAL on all %d.  Those steps are frozen at qdot = 0 "
-              "(`row_policy='freeze'`), so this number alone cannot be attributed to the "
-              "row steering the arms; P10.7 measures the counterfactual"
+              "boundary crossings = %d, the (17d) row is active on %.0f%% of the steps.  %s"
               % (ref["min_gamma"], ref["counts"]["BOUNDARY_CROSSING"],
-                 100 * ref["activation"], ref["counts"]["QP_INFEASIBLE"], ref["n_steps"],
-                 100 * ref["counts"]["QP_INFEASIBLE"] / ref["n_steps"],
-                 ref["counts"].get("INF_NOROW_OPTIMAL", 0)),
+                 100 * ref["activation"],
+                 ("The calibrated (D007) row is feasible on ALL %d steps -- no freeze, no "
+                  "row drop -- so the crossing-free outcome is attributable to the row "
+                  "alone.  (The pre-audit uncalibrated rhs log(Gamma_raw-1) made 370/800 "
+                  "steps infeasible; D019.)" % ref["n_steps"])
+                 if ref["counts"]["QP_INFEASIBLE"] == 0 else
+                 "Reported with its cost: the hard row makes the QP INFEASIBLE on %d of %d "
+                 "steps (%.0f%%), every one of them attributed to the row -- the same QP "
+                 "without (17d) is OPTIMAL on all %d.  Those steps are frozen at qdot = 0 "
+                 "(`row_policy='freeze'`), so this number alone cannot be attributed to the "
+                 "row steering the arms; P10.7 measures the counterfactual"
+                 % (ref["counts"]["QP_INFEASIBLE"], ref["n_steps"],
+                    100 * ref["counts"]["QP_INFEASIBLE"] / ref["n_steps"],
+                    ref["counts"].get("INF_NOROW_OPTIMAL", 0))),
               min_gamma=ref["min_gamma"])
+
+    # ------------------------------------------------------------- P10.8
+    # Drift guard added by the post-delivery audit (D019): the closed-loop rhs
+    # must be bit-identical to the calibrated helper T07 tests, because the two
+    # had silently diverged (log(Gamma_raw - 1) here vs log(Gamma_raw/KAPPA)).
+    lb_vals, n_bad = S.log_barrier(ref["gam"], S.KAPPA, mode="paper")
+    inline = np.where(ref["gam"] > S.GAMMA_RAW_FLOOR,
+                      np.log(np.maximum(ref["gam"], S.GAMMA_RAW_FLOOR) / S.KAPPA),
+                      float(S.PAPER_FALLBACK))
+    rhs_drift = float(np.max(np.abs(inline - lb_vals)))
+    rec.metric("rhs_vs_log_barrier_max", rhs_drift)
+    rec.check("P10.8", rhs_drift == 0.0
+              and n_bad == int(np.count_nonzero(ref["gam"] <= S.GAMMA_RAW_FLOOR)),
+              "the (17d) rhs used in the loop equals S.log_barrier on all %d recorded Gamma "
+              "values (max diff %.1e): the barrier sits at the learned boundary Gamma_raw = 0, "
+              "per Q4/D007.  This check exists because the pre-audit loop used "
+              "log(Gamma_raw - 1) with domain Gamma_raw > 1, which placed the barrier one unit "
+              "above the boundary the paper protects (D019)."
+              % (len(ref["gam"]), rhs_drift),
+              drift=rhs_drift)
 
     # ------------------------------------------------------------- P10.3 / N10.1
     rec.metric("min_gamma_raw_sca_off", off["min_gamma"])
@@ -492,20 +524,45 @@ def run(rec):
     rec.metric("infeasible_drop_row", dropped)
     rec.metric("min_gamma_drop_row", drop["min_gamma"])
     rec.metric("crossing_count_drop_row", drop["counts"]["BOUNDARY_CROSSING"])
-    row_carries = (dropped > 0 and drop["counts"]["BOUNDARY_CROSSING"] == 0
+    # The gated claim is the STRONG one: without any freeze, the row keeps
+    # Gamma_raw > 0.  Two ways to establish it: the counterfactual (rows existed
+    # but were dropped on the infeasible steps) or direct feasibility (no step
+    # was ever infeasible, so freeze/drop never fired).  A `True` placeholder
+    # would make P10.7 decorative; a failure here turns the suite red and forces
+    # the e2e claim down to "the freeze, not the row, avoids the boundary".
+    vacuous = (dropped == 0)
+    no_fallback = (vacuous and ref["counts"]["QP_INFEASIBLE"] == 0
+                   and ref["counts"]["BOUNDARY_CROSSING"] == 0
+                   and ref["min_gamma"] > 0.0)
+    row_carries = (not vacuous and drop["counts"]["BOUNDARY_CROSSING"] == 0
                    and drop["min_gamma"] > 0.0)
-    rec.check("P10.7", True,
+    if no_fallback:
+        verdict = ("The calibrated row was feasible on ALL %d steps: no freeze and no row "
+                   "drop ever fired, so the crossing-free outcome is attributable to the row "
+                   "alone.  The fallback machinery is exercised by the negative controls "
+                   "instead (N10.4: %d infeasible at lambda = 0; T08/N8.1: 647 with the "
+                   "gradient sign flipped).  (Pre-audit, the uncalibrated rhs "
+                   "log(Gamma_raw - 1) made 370/800 steps infeasible; D019.)"
+                   % (ref["n_steps"], ref["counts"]["QP_INFEASIBLE"]))
+    elif row_carries:
+        verdict = ("The row still carries the guarantee without the freeze; the freeze "
+                   "only adds conservatism.")
+    elif vacuous:
+        verdict = ("FAILED: no step was infeasible, so the counterfactual measures nothing, "
+                   "and the reference run itself does not establish the row-only claim.")
+    else:
+        verdict = ("FAILED: the crossing-free outcome does NOT survive losing the row on "
+                   "those steps, so the freeze is part of the mechanism and the e2e claim "
+                   "is downgraded accordingly (D018) -- it must not be reported as an "
+                   "SCA-only result.")
+    rec.check("P10.7", row_carries or no_fallback,
               "counterfactual on the %d infeasible steps (row dropped instead of frozen): "
               "min_t Gamma_raw = %.4f and %d boundary crossings, against %.4f / %d for the "
               "freeze policy and %.4f / %d with the row switched off entirely.  %s"
               % (dropped, drop["min_gamma"], drop["counts"]["BOUNDARY_CROSSING"],
                  ref["min_gamma"], ref["counts"]["BOUNDARY_CROSSING"],
                  off["min_gamma"], off["counts"]["BOUNDARY_CROSSING"],
-                 "The row still carries the guarantee without the freeze; the freeze only "
-                 "adds conservatism." if row_carries else
-                 "The crossing-free outcome DOES NOT survive losing the row on those steps, "
-                 "so the freeze is part of the mechanism and the e2e claim is downgraded "
-                 "accordingly (D018) -- it is not reported as an SCA-only result."),
+                 verdict),
               dropped=dropped, min_gamma=drop["min_gamma"],
               crossings=drop["counts"]["BOUNDARY_CROSSING"])
 

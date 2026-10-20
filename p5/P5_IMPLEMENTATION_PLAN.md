@@ -1058,20 +1058,24 @@ seed / config / command / status / metrics / artifacts）。
 | T07 | C | ESSENTIAL | ORIGINAL + ADAPT | **12** (6/6, 99.1 s) | < 2 min | — | **HIGH** |
 | T08 | C | ESSENTIAL | ORIGINAL + ADAPT | **13** (7/6, 85.3 s) | ~60 s | T04,T06 | **HIGH** |
 | T09 | C | **NOT_AUTHORIZED** | ADAPTATION | — | — | — | — |
-| T10 | A+B+C | **ESSENTIAL（强制）** | ADAPTATION | **12** (7/5, 142.2 s) | 30–90 s ×3 | T01–T08 | MED |
+| T10 | A+B+C | **ESSENTIAL（强制）** | ADAPTATION | **13** (8/5, 98.2 s) | 30–90 s ×3 | T01–T08 | MED |
 
 **本轮验收 = T01–T08 + T10 全部通过**；T09 不执行、不计入。
 
 ### 6.1 回填结果与验收结论（2026-10-20）
 
-`run_all.py` 全量运行：**115 项检查（64 正 / 51 负），0 失败，344.2 s**，G1–G4 全部 `PASS`。
-检查数按 G1 → G2 → G3 → G4 累计为 53 / 37 / 13 / 12，均为 `ACTUAL`（`p5/evidence/P5_impl_checks.json`）。
+`run_all.py` 全量运行（D019 审计修正后重生成）：**116 项检查（65 正 / 51 负），0 失败，296.1 s**，
+G1–G4 全部 `PASS`。检查数按 G1 → G2 → G3 → G4 为 53 / 37 / 13 / 13，均为 `ACTUAL`
+（`p5/evidence/P5_impl_checks.json`）。
 
-授予 **`ALGORITHM_NUMERICAL_VERIFIED (D082 scope)`**，但 T10 的端到端结论按实测收窄为：
+授予 **`ALGORITHM_NUMERICAL_VERIFIED (D082 scope)`**，但 T10 的端到端结论按实测限定为：
 
 - 该结论**只覆盖 `Γ` 判据**（学到的 2-D 边界在本轨迹上没有被穿越），不是几何避撞保证；
-  本运行**不得**用于任何时间/跟踪精度/平滑性陈述（D018：硬 (17d) 行使 46 % 的步冻结）。
-- Theorem 3 在本实现中是"每个 QP 解处的恒等式"，**不是**闭环单调性（D017）。
+  本运行**不得**用于任何时间/跟踪精度/平滑性陈述（速度级数值夹具，非跟踪实验；D018/D019）。
+- 闭环 (17d) 行使用 D007 校准 `log(Γ_raw/κ)`、屏障位于学到的真实边界 `Γ_raw = 0`，且在两个夹具上
+  **全部步可行**（无冻结、无弃行）；"46 % 步不可行"是审计前的未校准偏移伪象，已由 D019 记录并修正
+  （漂移守卫 P10.8 保证闭环右端与 `S.log_barrier` 逐位一致）。
+- Theorem 3 在本实现中是"每个 QP 解处的恒等式"（`3.3e-16`），**不是**闭环单调性（D017）。
 
 `FULL_PAPER_REPRODUCED` 未授予且已明确放弃（真机 + 未发布训练集 + CVXGEN）。
 

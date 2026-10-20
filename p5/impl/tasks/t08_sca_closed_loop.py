@@ -120,17 +120,26 @@ class Fixture:
         `g = +grad Gamma` with `rhs = log(Gamma_cal - 1)` encodes
         `-grad Gamma . qdot <= log(Gamma_cal - 1)`, i.e. (17d) with the
         KKT-consistent sign (Q3, docs/DECISIONS.md D006).
+
+        `Gamma_cal = 1 + Gamma_raw / KAPPA` with `KAPPA = 1` (Q4, D007), so the
+        closed-loop rhs is `log(Gamma_raw / KAPPA)` and its domain is
+        `Gamma_raw > 0` -- the *learned* boundary, where the paper's barrier
+        also sits.  The pre-audit version of this method used `log(Gamma_raw-1)`
+        with domain `Gamma_raw > 1`, which silently moved the barrier one unit
+        above the boundary and made every row stricter than the approved form;
+        that drift is recorded as D019 and all closed-loop numbers were
+        regenerated after the fix.
         """
-        if mode == "paper":                 # b3 = +log(Gamma-1)
-            if gamma_raw > 1.0:
-                return float(np.log(gamma_raw - 1.0)), None
+        if mode == "paper":                 # b3 = +log(Gamma_cal-1) = log(Gamma_raw/KAPPA)
+            if gamma_raw > S.GAMMA_RAW_FLOOR:
+                return float(np.log(gamma_raw / S.KAPPA)), None
             return float(S.PAPER_FALLBACK), "LOG_DOMAIN"
         if mode == "printed":               # the paper's printed b3 = -log(Gamma-1)
-            if gamma_raw > 1.0:
-                return -float(np.log(gamma_raw - 1.0)), None
+            if gamma_raw > S.GAMMA_RAW_FLOOR:
+                return -float(np.log(gamma_raw / S.KAPPA)), None
             return -float(S.PAPER_FALLBACK), "LOG_DOMAIN"
         if mode == "cone":                  # lambda = 0
-            return 0.0, (None if gamma_raw > 1.0 else "LOG_DOMAIN")
+            return 0.0, (None if gamma_raw > S.GAMMA_RAW_FLOOR else "LOG_DOMAIN")
         raise ValueError(mode)
 
 
@@ -425,20 +434,26 @@ def run(rec):
               min_gamma=cone["min_gamma"], activation=cone["activation_ratio"])
 
     # ------------------------------------------------------------- N8.3
-    grid = [1.01, 1.2, 2.0, 6.38]
-    # demanded Gamma_dot of each form, +log(g-1) for the printed b3 = -log(g-1)
-    # and -log(g-1) for the KKT-consistent b3 = +log(g-1)
-    tbl = {g: (float(np.log(g - 1.0)), float(-np.log(g - 1.0))) for g in grid}
+    # Demanded Gamma_dot of each form, under the D007 calibration
+    # (rhs = log(Gamma_raw/KAPPA), KAPPA = 1): the KKT-consistent b3 = +log
+    # demands Gamma_dot >= -log(g); the printed b3 = -log demands Gamma_dot >= +log(g).
+    grid = [0.01, 0.2, 1.0, 6.38]
+    tbl = {g: (-float(np.log(g / S.KAPPA)), float(np.log(g / S.KAPPA)))
+           for g in grid}                    # (KKT demand, printed demand)
     rec.metric("printed_vs_kkt_rhs", {str(g): v for g, v in tbl.items()})
     rec.metric("min_gamma_printed", printed["min_gamma"])
     rec.defect("N8.3", printed["counts"]["QP_INFEASIBLE"] > 0
-              and tbl[6.38][0] > 0 > tbl[1.01][0],
-              "the printed b3 = -log(Gamma-1) inverts the requested rate: at Gamma_raw = 6.38 it "
-              "demands Gamma_dot >= %+.2f (a retreat) where the KKT form allows %+.2f, and at "
-              "Gamma_raw = 1.01 it demands %+.2f where the KKT form demands %+.2f -- i.e. the "
-              "protection vanishes exactly where it is needed.  Closed loop: saturated from "
-              "t = %s s, min_t Gamma_raw held at %.3f by the velocity box, not by the boundary"
-              % (tbl[6.38][0], tbl[6.38][1], tbl[1.01][0], tbl[1.01][1],
+              and tbl[0.01][0] > 0 > tbl[0.01][1]
+              and tbl[6.38][1] > 0 > tbl[6.38][0],
+              "the printed b3 = -log(Gamma-1) inverts the requested rate under the D007 "
+              "calibration: at Gamma_raw = 0.01 -- right at the learned boundary -- the KKT "
+              "form demands Gamma_dot >= %+.2f (a retreat, i.e. the barrier) while the printed "
+              "form allows Gamma_dot >= %+.2f (an approach), so the protection vanishes exactly "
+              "where it is needed; far away at Gamma_raw = 6.38 the printed form demands a "
+              "retreat (%+.2f) where the KKT form allows an approach (%+.2f).  Closed loop: "
+              "saturated from t = %s s, min_t Gamma_raw held at %.3f by the velocity box, not "
+              "by the boundary"
+              % (tbl[0.01][0], tbl[0.01][1], tbl[6.38][1], tbl[6.38][0],
                  _fmt(printed["first"]["freeze_t"]), printed["min_gamma"]),
               infeasible=printed["counts"]["QP_INFEASIBLE"], table=rec.metrics["printed_vs_kkt_rhs"])
 

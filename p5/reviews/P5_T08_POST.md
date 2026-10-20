@@ -1,6 +1,9 @@
 # P5-T08 POST — The learned SCA boundary inside the closed-loop QP
 
-**Status**: `PASS` — 13 checks (7 positive / 6 negative), 0 failed, 88 s.
+**Status**: `PASS` — 13 checks (7 positive / 6 negative), 0 failed, 85 s.
+*(Numbers regenerated after the post-delivery audit D019 — see §8; the closed-loop rhs now
+implements the D007 calibration `log(Γ_raw/κ)` with its barrier at the learned boundary
+`Γ_raw = 0`, not the pre-audit `log(Γ_raw − 1)` with its barrier at `Γ_raw = 1`.)*
 **Run**: `p5/evidence/impl_checks/T08.json` (regenerate: `PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T08`)
 **Code**: `p5/impl/tasks/t08_sca_closed_loop.py` **[ORIGINAL]** structure + **[ADAPTATION]** scale · reuses
 `p5core/qp_ik.py`, `p5core/svm_sca.py`, `p5core/kinematics.py`
@@ -36,24 +39,23 @@ constraint. The learned boundary would behave like a switch, not like a constrai
 
 So the fixture is built the way the paper builds it: the **task** drives one arm's tip, while the
 **SCA** constrains the tip *pair* — which involves both arms. The second arm's two joints are then
-genuine slack for (17d). Measured activation ratio **0.50** (the row is active on half the steps) and
-`nu_max = 1.1e-3 > 0`: the constraint is used, not merely satisfied.
+genuine slack for (17d). Measured activation ratio **0.47** and `nu_max = 1.0e-3 > 0`: the constraint is used, not merely satisfied.
 
 ## 3. Positive evidence
 
 | Check | Content | Result |
 |---|---|---|
-| P8.1 | SCA on, λ = 1, literal `+log` form, 8 s | `min_t Γ_raw = **2.1813**`, crossings **0** |
-| P8.2 | is the constraint actually binding? | active on **50.1 %** of steps, `nu_max = 1.1e-3 > 0` |
+| P8.1 | SCA on, λ = 1, literal `+log` form, 8 s | `min_t Γ_raw = **1.3347**`, crossings **0** |
+| P8.2 | is the constraint actually binding? | active on **47.0 %** of steps, `nu_max = 1.0e-3 > 0` |
 | P8.3 | Eq.(26) vs central difference of `Γ(f(q))`, 400 configs | max rel err **1.2e-09**; `+∇_qΓ` raises `Γ` on **400/400** |
 | P8.4 | four event classes, each with evidence for and against | see §5 |
 | P8.5 | matched control, SCA **off**, same task and state | `min_t Γ_raw = **−2.3942**`, **656** crossings |
 | P8.6 | `PAPER_FALLBACK` on its own (starts at `Γ_raw = −3.015`) | fires; direction right; hard row **infeasible** — see §4 |
-| P8.7 | step-size convergence, `dt ∈ {5e-3, 2.5e-3, 1.25e-3}` | `min Γ_raw = 2.18127 / 2.18267 / 2.18316`, successive Δ ≤ **1.4e-03** |
+| P8.7 | step-size convergence, `dt ∈ {5e-3, 2.5e-3, 1.25e-3}` | `min Γ_raw = 1.33474 / 1.33677 / 1.33743`, successive Δ ≤ **2.0e-03** |
 
 The pair P8.1/P8.5 is the whole result: the same task, the same initial state, the same solver, and
 the only difference is whether the learned boundary is in the QP. It is the difference between
-`Γ_raw` staying positive and falling to −2.39 with 656 crossings.
+`Γ_raw` staying positive at 1.3347 and falling to −2.39 with 656 crossings.
 
 ## 4. Three findings that contradict the plan, reported as measured
 
@@ -72,12 +74,14 @@ activity 75 %). The reason is that `λ` multiplies `log(Γ−1)`, which is **pos
 `λ = 1` row *grants a budget* to approach, while `λ = 0` grants nothing. The predicted direction of
 the effect was wrong and the POST says so.
 
-**(c) The printed `−log(Γ−1)` inverts the request.** At `Γ_raw = 6.38` the printed form demands
-`Γ̇ ≥ +1.68` (a retreat) where the KKT form allows `−1.68`; at `Γ_raw = 1.01` it demands `−4.61`
-where the KKT form demands `+4.61`. I.e. **the protection vanishes exactly where it is needed** and
-is over-tight far away. In closed loop it saturates the velocity box from `t = 0.635 s` and the run
-never gets near the boundary — held by the box, not by the boundary. This is the closed-loop
-consequence of the sign error already recorded as D006.
+**(c) The printed `−log(Γ−1)` inverts the request.** Under the D007 calibration the KKT form demands
+`Γ̇ ≥ −log(Γ_raw)` and the printed form demands `Γ̇ ≥ +log(Γ_raw)`. At `Γ_raw = 0.01` — right at the
+learned boundary — the KKT form demands `Γ̇ ≥ +4.61` (a retreat: the barrier) while the printed form
+allows `Γ̇ ≥ −4.61` (an approach); at `Γ_raw = 6.38` the printed form demands a retreat `+1.85` where
+the KKT form allows an approach `−1.85`. **The protection vanishes exactly where it is needed** and is
+over-tight far away. In closed loop the printed form saturates the velocity box immediately and the
+run never gets near the boundary — `min Γ_raw` held at 6.380 by the box, not by the boundary. This is
+the closed-loop consequence of the sign error already recorded as D006.
 
 ## 5. The four event classes (P8.4)
 
@@ -95,12 +99,12 @@ demonstrated live in another run.
 
 | Check | Mutation | Result |
 |---|---|---|
-| N8.1 | flip the sign of `∇_qΓ` (one character) | `min Γ_raw` 2.181 → **0.986**, and the run freezes at `t = 4.495 s` |
+| N8.1 | flip the sign of `∇_qΓ` (one character) | `min Γ_raw` 1.335 → **−0.021** — an actual boundary crossing — and the run freezes at `t = 4.765 s` |
 | N8.2 | `λ = 0` | `min Γ_raw` 6.380, activity 75 % — the cone blocks the approach (§4b) |
-| N8.3 | printed `−log(Γ−1)` | demanded rate inverted; saturates from `t = 0.635 s` (§4c) |
+| N8.3 | printed `−log(Γ−1)` | demanded rate inverted (rhs table at `Γ_raw ∈ {0.01, 0.2, 1.0, 6.38}`); saturates immediately (§4c) |
 | N8.4 | zero-padding defects | length-3 gradient into 2 columns → `ValueError`; arm-2 block written into arm-1 columns → `Γ̇` prediction off by rel **1.03** (P8.3 rejects it) |
 | N8.5 | silent clamping | `np.clip` replaced by a tripwire: **0** calls in 60 closed-loop steps (the only `clip` in the package is in the unused SLSQP backend) |
-| N8.6 | `dt × 10` | `min Γ_raw` 2.1813 → **2.1645**, crossings 0 → 0: discretisation error is real but small *at this hold point*; no "any step size is perfect" claim is made |
+| N8.6 | `dt × 10` | `min Γ_raw` 1.3347 → **1.3126**, crossings 0 → 0: discretisation error is real but small *at this hold point*; no "any step size is perfect" claim is made |
 
 ## 7. Fidelity and limits (restated from the plan, all of them load-bearing)
 
@@ -118,3 +122,25 @@ demonstrated live in another run.
   numerical value, so `λ` is a `ENGINEERING` choice and the λ = 0 comparison is reported as such.
 - T09 (FCL/distance constraints) is **not authorised this cycle** and is not part of this result; its
   numbers may never be merged with T08 into a single "SCA reproduction" claim.
+
+## 8. Post-delivery audit (D019) — what changed and why
+
+The first accepted G3 delivery implemented the (17d) rhs as `log(Γ_raw − 1)` with domain `Γ_raw > 1`,
+contradicting the G0-approved calibration D007 (`Γ_cal = 1 + Γ_raw/κ`, `κ ≡ 1` ⇒ rhs `= log(Γ_raw)`,
+domain `Γ_raw > 0`). The pre-audit barrier therefore sat one unit **above** the learned boundary
+`Γ_raw = 0`, and every row was stricter than the approved form. Old → new:
+
+| Quantity | Pre-audit (`log(Γ_raw−1)`) | Calibrated (`log(Γ_raw/κ)`) |
+|---|---|---|
+| `min_t Γ_raw` SCA on | 2.1813 | **1.3347** (crossings still 0) |
+| Row activation / `nu_max` | 50.1 % / 1.1e-3 | **47.0 % / 1.0e-3** |
+| dt ladder (`5e-3 → 1.25e-3`) | 2.18127 / 2.18267 / 2.18316, Δ ≤ 1.4e-3 | **1.33474 / 1.33677 / 1.33743, Δ ≤ 2.0e-3** |
+| N8.1 (gradient sign flipped) | min 0.986, no crossing, 701 infeasible | **min −0.021 (crossing), 647 infeasible** — a sharper control |
+| N8.3 (printed form) infeasible steps | 1473 | 1479 |
+| N8.6 (`dt × 10`) | 2.1645 | **1.3126** |
+| SCA-off control | −2.3942 / 656 crossings | unchanged |
+
+The acceptance criterion (crossings) never moved and the corrected row is *weaker* away from the
+boundary, so this is an implementation fix against an approved decision, not a retune. T10 was
+regenerated with the same fix (see `P5_T10_POST.md` §8); the drift guard that keeps the closed loop
+bit-identical to `S.log_barrier` is T10/P10.8.

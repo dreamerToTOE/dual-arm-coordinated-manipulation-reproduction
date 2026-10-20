@@ -1,6 +1,7 @@
 # P5-T10 POST — The end-to-end numeric chain `τ → LPV DS → virtual object → QP → LVI`
 
-**Status**: `PASS` — 12 checks (7 positive / 5 negative), 0 failed, 142 s.
+**Status**: `PASS` — 13 checks (8 positive / 5 negative), 0 failed, 103 s.
+*(Numbers regenerated after the post-delivery audit D019 — see §8.)*
 **Run**: `p5/evidence/impl_checks/T10.json` (regenerate: `PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T10`)
 **Code**: `p5/impl/tasks/t10_e2e.py` **[ORIGINAL]** equations + **[ADAPTATION]** fixture and scales ·
 reuses `p5core/{tau,lpv,multiarm_ds,kinematics,qp_ik,lvi,svm_sca}.py`
@@ -46,30 +47,30 @@ switch disappears in both cases (see §4), which is what makes P10.1 a measureme
 | Check | Content | Result |
 |---|---|---|
 | P10.1 | switch observable, not hand-placed | `τ: (0.02,0.03) → (0.982,0.988)`, monotone (min increment `7.6e-06`), `t_switch = **2.800 s**` inside the pre-declared window `[1,5] s`; the pair starts approaching the boundary at `0.02 s`, i.e. *before* the switch (reported side by side, not forced to coincide) |
-| P10.2 | end-to-end, learned boundary in the QP | `min_t Γ_raw = **2.0700**`, **0** crossings, row active on **53.1 %** of steps — with its cost disclosed: the hard row makes the QP `INFEASIBLE` on **370/800** steps (§4a) |
+| P10.2 | end-to-end, learned boundary in the QP | `min_t Γ_raw = **1.0043**`, **0** crossings, row active on **96.9 %** of the steps, and the calibrated row is feasible on **all 800** steps — no freeze, no drop ever fired |
 | P10.3 | matched SCA-off control | `min_t Γ_raw = **−2.3147**`, **534** crossings (same state, object motion, `dt`, solver) |
-| P10.4 | sub-task consistency | `τ` vs an independent RK4 of Eq.(8) driven by the recorded `G`: `8.5e-04`; `Γ` recomputed from the recorded joints: `0.0`; per-step KKT residual `1.6e-14` |
-| P10.5 | Theorem-3 identity *at every QP solution* | `max abs(ψ − YᵀU) = 9.1e-13` (relative `3.7e-17`): the active-set solution is the LVI fixed point, so `YᵀU` collapses onto `ψ` and `V̇` onto 0 instantaneously |
-| P10.6 | the plan's ledger, fully accounted | `∫YᵀU dt − ΔV − ∫ψ dt = **−328.4**` while `ΔV = −0.0466`; `residual + ΔV = **2.8e-14**`, i.e. the whole non-closure *is* the quasi-static jump of the multiplier vector (D017) |
-| P10.7 | counterfactual on the infeasible steps | row **dropped** instead of frozen on 368 steps: `min_t Γ_raw = **1.2400**`, **0** crossings — the guarantee survives without the freeze (§4a) |
+| P10.4 | sub-task consistency | `τ` vs an independent RK4 of Eq.(8) driven by the recorded `G`: `8.5e-04`; `Γ` recomputed from the recorded joints: `0.0`; per-step KKT residual `3.2e-16` |
+| P10.5 | Theorem-3 identity *at every QP solution* | `max abs(ψ − YᵀU) = 3.3e-16` (relative `6.5e-16`): the active-set solution is the LVI fixed point, so `YᵀU` collapses onto `ψ` and `V̇` onto 0 instantaneously |
+| P10.6 | the plan's ledger, fully accounted | `∫YᵀU dt − ΔV − ∫ψ dt = +0.0153` while `ΔV = −0.0153`; `residual + ΔV = **4.9e-17**`, i.e. the whole non-closure *is* the quasi-static jump of the multiplier vector (D017) |
+| P10.7 | fallback attribution | **no step was ever infeasible**, so freeze/drop never fires and the crossing-free outcome is attributable to the row alone; the fallback machinery is exercised by the negative controls instead (N10.4: 594 steps; T08/N8.1: 647) |
+| P10.8 | rhs drift guard (added by the audit) | the in-loop (17d) rhs is **bit-identical** to the calibrated `S.log_barrier` on all 800 recorded `Γ` values (max diff `0.0`) — the barrier sits at the learned boundary `Γ_raw = 0` |
 
-P10.2 / P10.3 / P10.7 is the result. The same task, the same initial state, the same solver, and the
-only difference is what the QP is allowed to know: `Γ` stays positive at 2.07 (freeze policy) or 1.24
-(row-dropped, no freeze at all) against `−2.31` with 534 crossings when the row is removed.
+P10.2 / P10.3 is the result. The same task, the same initial state, the same solver, and the only
+difference is what the QP is allowed to know: `Γ` stays positive at 1.0043 against `−2.31` with 534
+crossings when the row is removed.
 
 ## 4. Three findings that the plan did not predict, reported as measured
 
-**(a) The hard (17d) row makes the QP infeasible on 46 % of the steps — and the counterfactual says the
-row still carries the guarantee.** `370/800` steps are `INFEASIBLE`, and the attribution is
-unambiguous: the same QP **without** the row is `OPTIMAL` on all 370, and the reference velocity on
-those steps is at most `0.0279` (so it is not the velocity box). The mechanism is the one already
-recorded for T08 (D016): `log(Γ_raw − 1)` *shrinks* as `Γ` approaches 1, so the row demands
-`Γ̇ ≥ −log(Γ−1)` from a hard equality `J q̇ = ẋ^R` that has only a 2-dimensional null space to spend.
-A hard row with no slack is therefore routinely unsatisfiable — the paper's formulation is only usable
-soft. Because a freeze policy (`q̇ = 0`) would make "0 crossings" look like an artefact, the same run
-is repeated with the row *dropped* on exactly those steps: `min Γ = 1.2400`, still 0 crossings. So the
-freeze is conservative, **not** the mechanism (D018). It does, however, invalidate any timing or
-tracking-quality claim from this run: on 46 % of the steps the arms do not move.
+**(a) The hard (17d) row is feasible on every step once the calibration of D007 is honoured.** The
+first accepted version of this task used the uncalibrated rhs `log(Γ_raw − 1)` (domain `Γ_raw > 1`),
+which silently moved the barrier one unit above the learned boundary `Γ_raw = 0` and made the QP
+infeasible on 370/800 steps. After the audit fix (`log(Γ_raw/KAPPA)`, D019) the row is feasible on
+**all 800** steps and the freeze/drop fallback never fires. The earlier "46 % infeasible" was an
+artifact of the offset, not a property of the paper's mechanism. What remains true is the structural
+lesson: a hard barrier row whose demand `Γ̇ ≥ −log(Γ_raw/κ)` grows without bound as `Γ_raw → 0⁺` has
+no slack, so feasibility near the boundary is a property of the fixture's null space (2 dims here),
+not a guarantee; the fallback policies stay in the code and are exercised by the negative controls.
+The standing rule survives the fix: **no timing or tracking-quality claim is drawn from these runs**.
 
 **(b) `λ = 0` does not produce crossings; it blocks the approach.** `min Γ_raw = 4.2235` (vs 2.0700)
 with 0 crossings and `594` infeasible steps (vs 370). `λ` multiplies `log(Γ−1)`, which is positive for
@@ -91,7 +92,7 @@ integrate the projected dynamical system (20); it re-solves the QP from the new 
 | N10.2 | pin `τ ≡ 1` / `τ ≡ 0` | **no** switch in either run (`t_switch = None`), against 2.800 s with Eq.(8) |
 | N10.3 | doctor `T08` to `FAIL` on disk | `run_all.evaluate_gates` returns `BLOCKED_BY_UPSTREAM` for G4; with the real disk state T01–T08 are 8/8 `PASS` |
 | N10.4 | `λ = 0` | `min Γ 4.2235`, 0 crossings, 594 infeasible — direction falsified (§4b) |
-| N10.5 | `dt` doubled | `min Γ 2.0700 → 2.0600`, `t_switch 2.800 → 2.820 s`: the step size is really in the loop, and no "step-size independent" claim is made |
+| N10.5 | `dt` doubled | `min Γ 1.0043 → 1.0042`, `t_switch 2.800 → 2.820 s`: the step size is really in the loop, and no "step-size independent" claim is made |
 
 ## 6. Fidelity, labels and limits
 
@@ -114,6 +115,27 @@ integrate the projected dynamical system (20); it re-solves the QP from the new 
 ## 7. Reproduce
 
 ```bash
-cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T10     # ~142 s, 12 checks
-cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py                # ~344 s, 115 checks, G1-G4
+cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T10     # ~103 s, 13 checks
+cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py                # ~296 s, 116 checks, G1-G4
 ```
+
+## 8. Post-delivery audit (D019) — what changed and why
+
+The first accepted G4 delivery (`8a64c38c`) passed 12 checks with the uncalibrated rhs
+`log(Γ_raw − 1)`. The post-delivery adversarial audit found that this contradicted D007 (the G0-approved
+calibration `Γ_cal = 1 + Γ_raw/κ`, `κ ≡ 1`), silently moving the barrier to `Γ_raw = 1`, one unit above
+the learned boundary. Effects of the fix, old → new:
+
+| Quantity | Pre-audit (`log(Γ_raw−1)`) | Calibrated (`log(Γ_raw/κ)`) |
+|---|---|---|
+| `min_t Γ_raw` SCA on | 2.0700 | **1.0043** |
+| QP infeasible steps (SCA on) | 370/800 (46 %) | **0/800** |
+| Row activation | 53.1 % | **96.9 %** |
+| Theorem-3 identity residual | 9.1e-13 | **3.3e-16** |
+| Theorem-3 ledger non-closure | −328.4 (ΔV = −0.0466) | **+0.0153** (ΔV = −0.0153, unexplained 4.9e-17) |
+| Boundary crossings (SCA on / off) | 0 / 534 | **0 / 534** (unchanged) |
+| `t_switch`, `τ` checks, λ = 0 direction | — | unchanged |
+
+The acceptance criterion (crossings) never moved, the corrected row is *weaker* away from the boundary,
+and the negative controls got sharper — this is an implementation fix against an approved decision, not
+a retune. T08 was regenerated with the same fix; its audit numbers are in `P5_T08_POST.md` §8.

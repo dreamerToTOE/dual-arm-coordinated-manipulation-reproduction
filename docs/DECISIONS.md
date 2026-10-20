@@ -214,3 +214,47 @@ Append-only architectural and scientific decisions.
   smoothness claim is drawn from this run**; only the `Γ` criterion is. Activation 53.1 % is reported
   against the same 800 steps, not only the solvable ones.
 - Label: **[ORIGINAL]** (equations) / **[ENGINEERING]** (fallback policy, fixture).
+
+## D019 — Post-delivery audit: the closed-loop rhs contradicted D007 (barrier one unit above the boundary)
+- Date: 2026-10-20 (post-G4 adversarial audit, after `8a64c38c` / `13f4bf8a`)
+- Context: re-auditing G4 with fresh eyes found that both closed-loop tasks computed the (17d)
+  right-hand side as `log(Γ_raw − 1)` with domain `Γ_raw > 1`, while D007 (review Q4) fixes
+  `Γ_cal = 1 + Γ_raw/κ` with `κ ≡ 1`, i.e. rhs `= log(Γ_raw)` with domain `Γ_raw > 0`. The shipped
+  models have `bias = 0`, so their decision boundary is `Γ_raw = 0`; `log(Γ_raw − 1)` silently placed
+  the barrier at `Γ_raw = 1`, **one unit above the boundary the paper protects**, and made every row
+  stricter than the approved form. T07 tests `S.log_barrier` (the calibrated form), so the drift was
+  between the calibrated helper and the closed loops that bypassed it. Neither the G3 review nor the
+  first G4 acceptance caught it; the T08 POST even carried the contradiction internally ((16) quoted
+  with a `Γ = 1` boundary next to a `Γ_raw < 0` crossing criterion).
+- Why this is a fix and not a retune: D007 is the G0-approved calibration rule; the code simply did
+  not implement it. The corrected row is *weaker* away from the boundary (at `Γ_raw = 2.07` it demands
+  `Γ̇ ≥ −0.73` instead of `Γ̇ ≥ −0.068`), so this cannot be read as loosening a test to make it pass —
+  the acceptance criterion (crossings) is unchanged and the negative controls got sharper.
+- Fix: `T08/Fixture.rhs()` and the `T10` inline row now use `log(Γ_raw / KAPPA)` with
+  `PAPER_FALLBACK` for `Γ_raw ≤ 0`. New check **P10.8** asserts the in-loop rhs is bit-identical to
+  `S.log_barrier` on the whole recorded `Γ` history (max diff `0.0`); it exists because this drift
+  already happened once.
+- Regenerated closed-loop numbers (old → new):
+  - T08: `min_t Γ_raw` SCA on **2.1813 → 1.3347** (0 crossings, unchanged); activation
+    **50.1 % → 47.0 %**; `nu_max 1.1e-3 → 1.0e-3`; dt ladder `2.18127/2.18267/2.18316` (Δ ≤ 1.4e-3)
+    → **1.33474/1.33677/1.33743** (Δ ≤ 2.0e-3); **N8.1 is now a stronger control**: flipping the
+    gradient sign produces an actual crossing (`min Γ_raw = −0.0209`, was `+0.9859`) plus 647
+    infeasible steps (was 701); N8.3 infeasible 1473 → 1479. SCA-off control unchanged
+    (−2.3942 / 656).
+  - T10: `min_t Γ_raw` **2.0700 → 1.0043** (0 crossings, unchanged); **QP_INFEASIBLE 370/800 → 0/800**
+    — the calibrated hard row is feasible on every step; activation **53.1 % → 96.9 %**; KKT
+    `1.6e-14 → 3.2e-16`; Theorem-3 identity `9.1e-13 → 3.3e-16` (relative `6.5e-16`), ledger
+    `residual + ΔV = 4.9e-17`; `λ = 0` control unchanged in direction (4.2235 / 0 crossings) with 594
+    infeasible steps; dt-doubled `1.0042` / `t_switch 2.820 s`.
+- Consequences for earlier decisions:
+  - **D018 is superseded in its quantitative part**: the "hard row infeasible on 46 % of steps" was
+    an artifact of the uncalibrated offset. Under D007 the e2e claim *upgrades*: with **no freeze and
+    no row drop**, the row alone prevents all crossings on both fixtures. The `row_policy` machinery
+    stays in the code as a measured fallback; on these fixtures it is exercised only by the negative
+    controls (T10/N10.4: 594 steps; T08/N8.1: 647 steps). The prohibition on timing/tracking claims
+    from these runs is kept as a standing rule (velocity-level fixtures, not tracking experiments).
+  - **D016, Decision 1, phrasing correction**: "with `Γ_raw < 1` the paper replaces `log(Γ−1)`" must
+    read "with `Γ_cal < 1` (⟺ `Γ_raw ≤ 0`)". The measured content of D016 (fallback as a hard row
+    demands `Γ̇ ≥ 1000` against a best effort of 28.2 s⁻¹) is unchanged.
+  - **D017 is unaffected structurally** (the identity is rhs-independent) and its numbers improve.
+- Label: **[ORIGINAL]** (equations) / **[ENGINEERING]** (drift fix, drift guard).

@@ -1,8 +1,8 @@
 {
   "task": "T10",
   "status": "PASS",
-  "n_checks": 12,
-  "n_positive": 7,
+  "n_checks": 13,
+  "n_positive": 8,
   "n_negative": 5,
   "n_failed": 0,
   "checks": [
@@ -20,16 +20,25 @@
       "id": "P10.2",
       "kind": "positive",
       "ok": true,
-      "detail": "end-to-end with the learned boundary in the QP: min_t Gamma_raw = 2.0700, boundary crossings = 0, the (17d) row is active on 53% of the steps.  Reported with its cost: the hard row makes the QP INFEASIBLE on 370 of 800 steps (46%), every one of them attributed to the row -- the same QP without (17d) is OPTIMAL on all 370.  Those steps are frozen at qdot = 0 (`row_policy='freeze'`), so this number alone cannot be attributed to the row steering the arms; P10.7 measures the counterfactual",
+      "detail": "end-to-end with the learned boundary in the QP: min_t Gamma_raw = 1.0043, boundary crossings = 0, the (17d) row is active on 97% of the steps.  The calibrated (D007) row is feasible on ALL 800 steps -- no freeze, no row drop -- so the crossing-free outcome is attributable to the row alone.  (The pre-audit uncalibrated rhs log(Gamma_raw-1) made 370/800 steps infeasible; D019.)",
       "info": {
-        "min_gamma": 2.0700284860816245
+        "min_gamma": 1.0043147770316547
+      }
+    },
+    {
+      "id": "P10.8",
+      "kind": "positive",
+      "ok": true,
+      "detail": "the (17d) rhs used in the loop equals S.log_barrier on all 800 recorded Gamma values (max diff 0.0e+00): the barrier sits at the learned boundary Gamma_raw = 0, per Q4/D007.  This check exists because the pre-audit loop used log(Gamma_raw - 1) with domain Gamma_raw > 1, which placed the barrier one unit above the boundary the paper protects (D019).",
+      "info": {
+        "drift": 0.0
       }
     },
     {
       "id": "P10.3",
       "kind": "positive",
       "ok": true,
-      "detail": "matched SCA-off control (same initial state, same object motion, same dt, same solver): min_t Gamma_raw = -2.3147 and 534 boundary crossings, versus 2.0700 and 0 with SCA on",
+      "detail": "matched SCA-off control (same initial state, same object motion, same dt, same solver): min_t Gamma_raw = -2.3147 and 534 boundary crossings, versus 1.0043 and 0 with SCA on",
       "info": {
         "min_gamma": -2.314704885057382
       }
@@ -38,7 +47,7 @@
       "id": "N10.1",
       "kind": "negative",
       "ok": true,
-      "detail": "removing the SCA row is detected as a defect: the crossing counter goes from 0 to 534 and min_t Gamma_raw from 2.0700 to -2.3147",
+      "detail": "removing the SCA row is detected as a defect: the crossing counter goes from 0 to 534 and min_t Gamma_raw from 1.0043 to -2.3147",
       "info": {
         "n": 534
       }
@@ -47,10 +56,10 @@
       "id": "P10.7",
       "kind": "positive",
       "ok": true,
-      "detail": "counterfactual on the 368 infeasible steps (row dropped instead of frozen): min_t Gamma_raw = 1.2400 and 0 boundary crossings, against 2.0700 / 0 for the freeze policy and -2.3147 / 534 with the row switched off entirely.  The row still carries the guarantee without the freeze; the freeze only adds conservatism.",
+      "detail": "counterfactual on the 0 infeasible steps (row dropped instead of frozen): min_t Gamma_raw = 1.0043 and 0 boundary crossings, against 1.0043 / 0 for the freeze policy and -2.3147 / 534 with the row switched off entirely.  The calibrated row was feasible on ALL 800 steps: no freeze and no row drop ever fired, so the crossing-free outcome is attributable to the row alone.  The fallback machinery is exercised by the negative controls instead (N10.4: 0 infeasible at lambda = 0; T08/N8.1: 647 with the gradient sign flipped).  (Pre-audit, the uncalibrated rhs log(Gamma_raw - 1) made 370/800 steps infeasible; D019.)",
       "info": {
-        "dropped": 368,
-        "min_gamma": 1.240013958447794,
+        "dropped": 0,
+        "min_gamma": 1.0043147770316547,
         "crossings": 0
       }
     },
@@ -58,7 +67,7 @@
       "id": "P10.4",
       "kind": "positive",
       "ok": true,
-      "detail": "sub-task consistency: the e2e tau agrees with an independent RK4 integration of Eq.(8) (driven by the recorded G) to 8.5e-04, the Gamma history is reproduced from the recorded joints to 0.0e+00, and the per-step KKT residual stays at 1.6e-14 (T08 reported 8.3e-16 on its own fixture).  A pointwise Gamma(t) comparison against T08 is NOT meaningful -- different arms, task and horizon -- so only the criterion (crossings 0 on / > 0 off) is compared, and T08's numbers are reported for the record: min 2.181 / 0 / 656",
+      "detail": "sub-task consistency: the e2e tau agrees with an independent RK4 integration of Eq.(8) (driven by the recorded G) to 8.5e-04, the Gamma history is reproduced from the recorded joints to 0.0e+00, and the per-step KKT residual stays at 3.2e-16 (T08 reported 8.3e-16 on its own fixture).  A pointwise Gamma(t) comparison against T08 is NOT meaningful -- different arms, task and horizon -- so only the criterion (crossings 0 on / > 0 off) is compared, and T08's numbers are reported for the record: min 1.335 / 0 / 656",
       "info": {
         "tau_err": 0.0008521045385031512,
         "gam_err": 0.0
@@ -68,21 +77,21 @@
       "id": "P10.5",
       "kind": "positive",
       "ok": true,
-      "detail": "Theorem-3 identity at every QP solution: max |psi - Y^T U| = 9.095e-13 against max psi = 2.446e+04 (relative 3.7e-17).  The active-set solution satisfies P(u - Mu - b) = u, so Y^T U must collapse onto psi and Vdot onto 0 instantaneously; this is the (21a) assembly check, not a trajectory claim.",
+      "detail": "Theorem-3 identity at every QP solution: max |psi - Y^T U| = 3.331e-16 against max psi = 5.140e-01 (relative 6.5e-16).  The active-set solution satisfies P(u - Mu - b) = u, so Y^T U must collapse onto psi and Vdot onto 0 instantaneously; this is the (21a) assembly check, not a trajectory claim.",
       "info": {
-        "idres_max": 9.094947017729282e-13,
-        "idres_scale": 24462.98444480784
+        "idres_max": 3.3306690738754696e-16,
+        "idres_scale": 0.5139955203887848
       }
     },
     {
       "id": "P10.6",
       "kind": "positive",
       "ok": true,
-      "detail": "the plan's Theorem-3 ledger does NOT close and the reason is fully accounted for: int Y^T U dt - Delta V - int psi dt = 4.661e-02 with Delta V = -4.661e-02, so residual + Delta V = 2.764e-14 (0.00% of int|Y^T U| dt = 3.287e+02).  Delta V is the quasi-static jump of the multiplier vector when the QP is re-solved, not a missing term: Theorem 3 governs the flow (20), and this loop replaces that flow by a sequence of fixed points of a time-varying LVI.  The other variant (P_in = xdot^R . f, S = 0.5||separation||^2) is reported and NOT gated: residual = -3.284e+02 (215161% of its scale).  Neither number is an energy balance.",
+      "detail": "the plan's Theorem-3 ledger does NOT close and the reason is fully accounted for: int Y^T U dt - Delta V - int psi dt = 1.530e-02 with Delta V = -1.530e-02, so residual + Delta V = 4.857e-17 (0.00% of int|Y^T U| dt = 2.162e+00).  Delta V is the quasi-static jump of the multiplier vector when the QP is re-solved, not a missing term: Theorem 3 governs the flow (20), and this loop replaces that flow by a sequence of fixed points of a time-varying LVI.  The other variant (P_in = xdot^R . f, S = 0.5||separation||^2) is reported and NOT gated: residual = -1.937e+00 (2599% of its scale).  Neither number is an energy balance.",
       "info": {
-        "residual": 0.0466139050843708,
-        "dV": -0.046613905084343155,
-        "unexplained": 2.7644553313166398e-14
+        "residual": 0.015300259037430042,
+        "dV": -0.015300259037429993,
+        "unexplained": 4.85722573273506e-17
       }
     },
     {
@@ -118,7 +127,7 @@
       "id": "N10.4",
       "kind": "negative",
       "ok": true,
-      "detail": "lambda = 0 changes the outcome: min_t Gamma_raw 4.2235 vs 2.0700, crossings 0 vs 0, infeasible steps 594 vs 370.  The direction is NOT 'crossings rise' -- on this fixture the lambda = 0 cone stops the approach earlier, which is the same finding as T08/N8.2 (docs/DECISIONS.md D016)",
+      "detail": "lambda = 0 changes the outcome: min_t Gamma_raw 4.2235 vs 1.0043, crossings 0 vs 0, infeasible steps 594 vs 0.  The direction is NOT 'crossings rise' -- on this fixture the lambda = 0 cone stops the approach earlier, which is the same finding as T08/N8.2 (docs/DECISIONS.md D016)",
       "info": {
         "min_gamma": 4.223506699980102
       }
@@ -127,9 +136,9 @@
       "id": "N10.5",
       "kind": "negative",
       "ok": true,
-      "detail": "dt doubled: min_t Gamma_raw 2.0700 -> 2.0600 and t_switch 2.800 -> 2.820 s, so the integration step is really in the loop and the reported numbers are not step-size independent",
+      "detail": "dt doubled: min_t Gamma_raw 1.0043 -> 1.0042 and t_switch 2.800 -> 2.820 s, so the integration step is really in the loop and the reported numbers are not step-size independent",
       "info": {
-        "min_gamma": 2.0599956707988802,
+        "min_gamma": 1.004190706372825,
         "t_switch": 2.82
       }
     }
@@ -206,7 +215,7 @@
     "d_c": 1,
     "t_end": 8.0,
     "dt": 0.01,
-    "wall_dt_doubled_s": 10.953549837002356,
+    "wall_dt_doubled_s": 6.205840777998674,
     "t_switch": 2.8000000000000003,
     "t_approach": 0.02,
     "tau_final": [
@@ -214,42 +223,39 @@
       0.9882389853719299
     ],
     "tau_monotonicity_min_diff": 7.601675340085379e-06,
-    "approach_rate_pre": 0.006691063219824711,
-    "approach_rate_post": 0.0,
-    "approach_rate_ratio": 0.0,
-    "min_gamma_raw_sca_on": 2.0700284860816245,
+    "approach_rate_pre": 0.009528209053118575,
+    "approach_rate_post": 0.0005598242906053041,
+    "approach_rate_ratio": 0.058754408880446855,
+    "min_gamma_raw_sca_on": 1.0043147770316547,
     "crossing_count_sca_on": 0,
-    "activation_ratio": 0.53125,
-    "infeasible_sca_on": 370,
-    "infeasible_attribution": {
-      "INF_INFEASIBLE": 370,
-      "INF_NOROW_OPTIMAL": 370,
-      "INF_REFNORM_MAX": 0.027903239592488496
-    },
+    "activation_ratio": 0.96875,
+    "infeasible_sca_on": 0,
+    "infeasible_attribution": {},
+    "rhs_vs_log_barrier_max": 0.0,
     "min_gamma_raw_sca_off": -2.314704885057382,
     "crossing_count_sca_off": 534,
-    "infeasible_drop_row": 368,
-    "min_gamma_drop_row": 1.240013958447794,
+    "infeasible_drop_row": 0,
+    "min_gamma_drop_row": 1.0043147770316547,
     "crossing_count_drop_row": 0,
     "tau_vs_independent_rk4": 0.0008521045385031512,
     "gamma_history_recompute_err": 0.0,
-    "kkt_max_e2e": 1.5618377980061265e-14,
+    "kkt_max_e2e": 3.212097106867567e-16,
     "t08_reference": {
-      "min_gamma": 2.181265599379978,
+      "min_gamma": 1.334735901269724,
       "crossings": 0,
       "crossings_off": 656
     },
-    "thm3_ledger_residual": 0.0466139050843708,
-    "thm3_ledger_scale": 328.6876659511493,
-    "thm3_dV": -0.046613905084343155,
-    "thm3_unexplained": 2.7644553313166398e-14,
-    "thm3_idres_max": 9.094947017729282e-13,
-    "thm3_idres_rel": 3.717840330663189e-17,
-    "plan_ledger_residual": -328.4058074305331,
-    "plan_ledger_scale": 0.15263285902635243,
-    "plan_ledger_relative": -2151.6062106510963,
-    "psi_integral": 328.6876659511493,
-    "V_final": 0.0,
+    "thm3_ledger_residual": 0.015300259037430042,
+    "thm3_ledger_scale": 2.161873865178195,
+    "thm3_dV": -0.015300259037429993,
+    "thm3_unexplained": 4.85722573273506e-17,
+    "thm3_idres_max": 3.3306690738754696e-16,
+    "thm3_idres_rel": 6.479957396041429e-16,
+    "plan_ledger_residual": -1.9373535790755767,
+    "plan_ledger_scale": 0.07455207417682119,
+    "plan_ledger_relative": -25.986581868676094,
+    "psi_integral": 2.161873865178195,
+    "V_final": 0.03131364604691316,
     "t_switch_tau1": null,
     "t_switch_tau0": null,
     "subtask_status": {
@@ -265,20 +271,17 @@
     "min_gamma_lambda0": 4.223506699980102,
     "crossing_count_lambda0": 0,
     "infeasible_lambda0": 594,
-    "min_gamma_dt_doubled": 2.0599956707988802,
+    "min_gamma_dt_doubled": 1.004190706372825,
     "t_switch_dt_doubled": 2.82,
-    "solve_time_p50_ms": 14.908351502526784,
-    "solve_time_p99_ms": 15.746834398596546,
-    "qdot_sum_max": 1.4927233832359565,
+    "solve_time_p50_ms": 14.618617999076378,
+    "solve_time_p99_ms": 15.110532124745076,
+    "qdot_sum_max": 0.017323364007083966,
     "counts_sca_on": {
       "LOG_DOMAIN": 0,
-      "QP_INFEASIBLE": 370,
+      "QP_INFEASIBLE": 0,
       "SOLVER_FAILURE": 0,
       "BOUNDARY_CROSSING": 0,
-      "ROW_DROPPED": 0,
-      "INF_INFEASIBLE": 370,
-      "INF_NOROW_OPTIMAL": 370,
-      "INF_REFNORM_MAX": 0.027903239592488496
+      "ROW_DROPPED": 0
     },
     "counts_sca_off": {
       "LOG_DOMAIN": 0,
@@ -307,6 +310,6 @@
     "role": "end-to-end mechanism chain",
     "module": "tasks.t10_e2e"
   },
-  "wall_time_s": 142.233,
+  "wall_time_s": 98.24,
   "python": "3.10.12"
 }

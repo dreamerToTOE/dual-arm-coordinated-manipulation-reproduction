@@ -111,3 +111,18 @@ Append-only project work log.
 - Findings that contradict the plan: (i) the Theorem-3 ledger cannot close in a re-solved loop (D017);
   (ii) the hard (17d) row is infeasible on 46 % of steps (D018); (iii) `λ = 0` is stricter, again
   (D016 confirmed at a second operating point).
+
+## 2026-10-20 — P5 post-delivery audit (D019)
+- Found: T08 `Fixture.rhs()` and the T10 inline row used `log(Γ_raw − 1)` (domain `Γ_raw > 1`) while
+  D007 requires `log(Γ_raw/κ)` (domain `Γ_raw > 0`); the barrier sat at `Γ_raw = 1`, one unit above the
+  learned boundary `Γ_raw = 0`. Root cause: the closed loops bypassed `S.log_barrier`, which T07 tests.
+- Fixed both call sites; added T10/P10.8 (rhs ≡ S.log_barrier, bit-identical on the recorded history)
+  so this class of drift can never pass silently again; re-derived T08/N8.3's demand table under the
+  calibration with grid `{0.01, 0.2, 1.0, 6.38}`.
+- Also in this pass: P10.7 had been left as a hardcoded-`True` check — rewritten to gate the strong
+  claim ("the row alone prevents crossings without any fallback"); with the calibrated row the
+  counterfactual is vacuous in the good sense (0 infeasible steps), and the fallback machinery is
+  exercised only by the negative controls.
+- Regenerated: T08 min Γ 2.1813 → 1.3347, N8.1 now crosses (−0.021); T10 min Γ 2.0700 → 1.0043,
+  infeasible 370/800 → 0, activation 96.9 %, Theorem-3 identity 3.3e-16. Full suite 116 checks
+  (65/51), 0 failed, 296 s, G1–G4 PASS. D018 quantitatively superseded (D019); D016 phrasing corrected.

@@ -10,19 +10,19 @@
       "id": "P8.1",
       "kind": "positive",
       "ok": true,
-      "detail": "SCA on (lambda=1, literal +log form): min_t Gamma_raw = 2.1813 over 8.0 s, boundary crossings = 0",
+      "detail": "SCA on (lambda=1, literal +log form): min_t Gamma_raw = 1.3347 over 8.0 s, boundary crossings = 0",
       "info": {
-        "min_gamma": 2.181265599379978
+        "min_gamma": 1.334735901269724
       }
     },
     {
       "id": "P8.2",
       "kind": "positive",
       "ok": true,
-      "detail": "the constraint is genuinely binding: active on 50% of the steps and the dual multiplier reaches nu_max = 0.001 > 0 (a constraint that never binds would make the safety claim vacuous)",
+      "detail": "the constraint is genuinely binding: active on 47% of the steps and the dual multiplier reaches nu_max = 0.001 > 0 (a constraint that never binds would make the safety claim vacuous)",
       "info": {
-        "activation": 0.50125,
-        "nu_max": 0.001097977301709262
+        "activation": 0.47,
+        "nu_max": 0.0010178269924080185
       }
     },
     {
@@ -39,7 +39,7 @@
       "id": "P8.4",
       "kind": "positive",
       "ok": true,
-      "detail": "four event classes counted separately on the SCA-on run: LOG_DOMAIN 0, QP_INFEASIBLE 0, SOLVER_FAILURE 0, BOUNDARY_CROSSING 0.  Why each zero is zero, with the run that exercises the class: LOG_DOMAIN -- the log budget binds while Gamma_raw is still ~2.18, so the trajectory is deflected before the domain ends (exercised by construction in P8.6, which starts inside the domain); QP_INFEASIBLE -- the barrier is satisfied inside the velocity box instead of saturating it (exercised by N8.1: 701 steps, N8.3: 1473 steps, so the counter is wired to a live code path and is not dead); SOLVER_FAILURE -- every solve returns a KKT-verified point, max primal residual 8.3e-16 (never exercised anywhere: the exact enumerator either finds the optimum or proves infeasibility); BOUNDARY_CROSSING -- 0 with SCA on against 656 with SCA off (P8.5), i.e. the counter is proven live by the matched control",
+      "detail": "four event classes counted separately on the SCA-on run: LOG_DOMAIN 0, QP_INFEASIBLE 0, SOLVER_FAILURE 0, BOUNDARY_CROSSING 0.  Why each zero is zero, with the run that exercises the class: LOG_DOMAIN -- the log budget binds while Gamma_raw is still ~1.33, so the trajectory is deflected before the domain ends (exercised by construction in P8.6, which starts inside the domain); QP_INFEASIBLE -- the barrier is satisfied inside the velocity box instead of saturating it (exercised by N8.1: 647 steps, N8.3: 1479 steps, so the counter is wired to a live code path and is not dead); SOLVER_FAILURE -- every solve returns a KKT-verified point, max primal residual 8.9e-16 (never exercised anywhere: the exact enumerator either finds the optimum or proves infeasibility); BOUNDARY_CROSSING -- 0 with SCA on against 656 with SCA off (P8.5), i.e. the counter is proven live by the matched control",
       "info": {
         "counts": {
           "LOG_DOMAIN": 0,
@@ -47,7 +47,7 @@
           "SOLVER_FAILURE": 0,
           "BOUNDARY_CROSSING": 0
         },
-        "kkt_max": 8.326672684688674e-16
+        "kkt_max": 8.881784197001252e-16
       }
     },
     {
@@ -75,9 +75,9 @@
       "id": "N8.1",
       "kind": "negative",
       "ok": true,
-      "detail": "flipping the sign of grad_q Gamma (a one-character defect) drops min_t Gamma_raw from 2.181 to 0.986 and freezes the run at t = 4.495 s instead of completing it: the row's sign is observable in the closed loop",
+      "detail": "flipping the sign of grad_q Gamma (a one-character defect) drops min_t Gamma_raw from 1.335 to -0.021 and freezes the run at t = 4.765 s instead of completing it: the row's sign is observable in the closed loop",
       "info": {
-        "min_gamma_flipped": 0.985852950421256
+        "min_gamma_flipped": -0.02087823191700866
       }
     },
     {
@@ -94,25 +94,25 @@
       "id": "N8.3",
       "kind": "negative",
       "ok": true,
-      "detail": "the printed b3 = -log(Gamma-1) inverts the requested rate: at Gamma_raw = 6.38 it demands Gamma_dot >= +1.68 (a retreat) where the KKT form allows -1.68, and at Gamma_raw = 1.01 it demands -4.61 where the KKT form demands +4.61 -- i.e. the protection vanishes exactly where it is needed.  Closed loop: saturated from t = 0.635 s, min_t Gamma_raw held at 6.380 by the velocity box, not by the boundary",
+      "detail": "the printed b3 = -log(Gamma-1) inverts the requested rate under the D007 calibration: at Gamma_raw = 0.01 -- right at the learned boundary -- the KKT form demands Gamma_dot >= +4.61 (a retreat, i.e. the barrier) while the printed form allows Gamma_dot >= -4.61 (an approach), so the protection vanishes exactly where it is needed; far away at Gamma_raw = 6.38 the printed form demands a retreat (+1.85) where the KKT form allows an approach (-1.85).  Closed loop: saturated from t = 0.605 s, min_t Gamma_raw held at 6.380 by the velocity box, not by the boundary",
       "info": {
-        "infeasible": 1473,
+        "infeasible": 1479,
         "table": {
-          "1.01": [
-            -4.605170185988091,
-            4.605170185988091
+          "0.01": [
+            4.605170185988091,
+            -4.605170185988091
           ],
-          "1.2": [
-            -1.6094379124341005,
-            1.6094379124341005
+          "0.2": [
+            1.6094379124341003,
+            -1.6094379124341003
           ],
-          "2.0": [
-            0.0,
-            -0.0
+          "1.0": [
+            -0.0,
+            0.0
           ],
           "6.38": [
-            1.682688374173693,
-            -1.682688374173693
+            -1.8531680973566984,
+            1.8531680973566984
           ]
         }
       }
@@ -140,18 +140,18 @@
       "id": "N8.6",
       "kind": "negative",
       "ok": true,
-      "detail": "step size multiplied by 10: min_t Gamma_raw moves from 2.1813 to 2.1645 and the crossing count goes from 0 to 0.  Discretisation error is real -- the hold point is not step-size invariant, so no 'any step size is perfect' claim is made",
+      "detail": "step size multiplied by 10: min_t Gamma_raw moves from 1.3347 to 1.3126 and the crossing count goes from 0 to 0.  Discretisation error is real -- the hold point is not step-size invariant, so no 'any step size is perfect' claim is made",
       "info": {
-        "min_gamma": 2.164515028596781
+        "min_gamma": 1.3126329749687256
       }
     },
     {
       "id": "P8.7",
       "kind": "positive",
       "ok": true,
-      "detail": "step-size convergence over dt = ['0.005', '0.0025', '0.00125']: min_t Gamma_raw = ['2.18127', '2.18267', '2.18316'], successive differences <= 1.4e-03 -- the reported minimum is a property of the mechanism, not of dt",
+      "detail": "step-size convergence over dt = ['0.005', '0.0025', '0.00125']: min_t Gamma_raw = ['1.33474', '1.33677', '1.33743'], successive differences <= 2.0e-03 -- the reported minimum is a property of the mechanism, not of dt",
       "info": {
-        "delta": 0.0014023570845851374
+        "delta": 0.0020362468785071197
       }
     }
   ],
@@ -178,22 +178,22 @@
       -0.14670539426871643
     ],
     "d_q": 4,
-    "min_gamma_raw_sca_on": 2.181265599379978,
+    "min_gamma_raw_sca_on": 1.334735901269724,
     "crossing_count_sca_on": 0,
-    "activation_ratio": 0.50125,
-    "nu_max": 0.001097977301709262,
+    "activation_ratio": 0.47,
+    "nu_max": 0.0010178269924080185,
     "chain_rule_rel_err_max": 1.166736621821779e-09,
     "direction_check": [
       400,
       400
     ],
-    "kkt_max_sca_on": 8.326672684688674e-16,
+    "kkt_max_sca_on": 8.881784197001252e-16,
     "log_domain_count": 0,
     "qp_infeasible_count": 0,
     "solver_failure_count": 0,
     "fallback_count": 0,
-    "qp_infeasible_count_n8_1": 701,
-    "qp_infeasible_count_n8_3": 1473,
+    "qp_infeasible_count_n8_1": 647,
+    "qp_infeasible_count_n8_3": 1479,
     "min_gamma_raw_sca_off": -2.394184519593131,
     "crossing_count_sca_off": 656,
     "inside_gamma_raw": -3.015406115700401,
@@ -201,32 +201,32 @@
     "fallback_demanded_rate": 1000.0,
     "fallback_best_effort_rate": 28.201075908754962,
     "fallback_gamma_step": 2.8201932269489305e-05,
-    "min_gamma_sign_flipped": 0.985852950421256,
+    "min_gamma_sign_flipped": -0.02087823191700866,
     "min_gamma_lambda0": 6.3802425471186925,
     "activation_ratio_lambda0": 0.7475,
     "printed_vs_kkt_rhs": {
-      "1.01": [
-        -4.605170185988091,
-        4.605170185988091
+      "0.01": [
+        4.605170185988091,
+        -4.605170185988091
       ],
-      "1.2": [
-        -1.6094379124341005,
-        1.6094379124341005
+      "0.2": [
+        1.6094379124341003,
+        -1.6094379124341003
       ],
-      "2.0": [
-        0.0,
-        -0.0
+      "1.0": [
+        -0.0,
+        0.0
       ],
       "6.38": [
-        1.682688374173693,
-        -1.682688374173693
+        -1.8531680973566984,
+        1.8531680973566984
       ]
     },
     "min_gamma_printed": 6.3802425471186925,
     "embedding_error_rel": 1.0306743194778665,
     "np_clip_calls_on_path": 0,
     "clip_occurrences_in_sca_path": 1,
-    "min_gamma_dt10x": 2.164515028596781,
+    "min_gamma_dt10x": 1.3126329749687256,
     "crossing_count_dt10x": 0,
     "dt_ladder": [
       0.005,
@@ -234,11 +234,11 @@
       0.00125
     ],
     "dt_ladder_min_gamma": [
-      2.181265599379978,
-      2.182667956464563,
-      2.183160401314287
+      1.334735901269724,
+      1.336772148148231,
+      1.3374285015634548
     ],
-    "step_convergence_delta": 0.0014023570845851374
+    "step_convergence_delta": 0.0020362468785071197
   },
   "figures": [
     {
@@ -262,6 +262,6 @@
     "role": "SCA inside the QP, Eq.(26)-(27)",
     "module": "tasks.t08_sca_closed_loop"
   },
-  "wall_time_s": 85.276,
+  "wall_time_s": 84.461,
   "python": "3.10.12"
 }
