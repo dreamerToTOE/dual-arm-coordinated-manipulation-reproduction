@@ -1,0 +1,233 @@
+{
+  "task": "P3-T03",
+  "kind": "selection_and_frames",
+  "paper_equations": [
+    "27",
+    "28"
+  ],
+  "run_id": "20261020_094115_P3-T03_selection",
+  "fixture_rotations": {
+    "R_h": [
+      [
+        0.8365163037378079,
+        -0.49999999999999994,
+        0.2241438680420134
+      ],
+      [
+        0.4829629131445341,
+        0.8660254037844387,
+        0.12940952255126034
+      ],
+      [
+        -0.25881904510252074,
+        0.0,
+        0.9659258262890683
+      ]
+    ],
+    "R_task_to_hole": [
+      [
+        6.123233995736766e-17,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        6.123233995736766e-17
+      ]
+    ],
+    "note": "TEST_FIXTURE rotations; A1 relabelling is ADAPTATION"
+  },
+  "checks": [
+    {
+      "id": "T03_01",
+      "desc": "Omega = R_h diag([0,1,1]) R_h^T vs complementary-projector oracle",
+      "pass": true,
+      "residual": 1.1102230246251565e-16,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_02",
+      "desc": "Omega symmetric (Omega^T = Omega)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_03",
+      "desc": "Omega idempotent (Omega^2 = Omega)",
+      "pass": true,
+      "residual": 1.1102230246251565e-16,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_04",
+      "desc": "rank(Omega) = 2 (one annihilated direction)",
+      "pass": true,
+      "residual": "singvals=[1.0, 1.0, 0.0]",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_05",
+      "desc": "annihilation: Omega (R_h e_x)=0; Omega (R_h e_y)=R_h e_y; Omega (R_h e_z)=R_h e_z",
+      "pass": true,
+      "residual": "|Om n|=5.7e-17 |Om ey-ey|=1.1e-16 |Om ez-ez|=1.1e-16",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_06",
+      "desc": "frame covariance Omega(R2 R1) = R2 Omega(R1) R2^T",
+      "pass": true,
+      "residual": 1.1102230246251565e-16,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_07",
+      "desc": "selector block [[Omega,0],[0,I3]]: exact block structure, dims 6x6",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_08",
+      "desc": "selector symmetric and idempotent (rank 5)",
+      "pass": true,
+      "residual": "rank=5",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_09",
+      "desc": "wrench rotation blockdiag(R_h,R_h) vs oracle",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_10",
+      "desc": "paired wrench/twist power invariance (W_R w)^T (W_R V) = w^T V",
+      "pass": true,
+      "residual": 2.220446049250313e-16,
+      "unit": "",
+      "note": "both sides rotated by the same blockdiag(R_h,R_h)"
+    },
+    {
+      "id": "T03_11",
+      "desc": "dimension correctness: F in R^6, tau in R^n (n=7)",
+      "pass": true,
+      "residual": "shapes: F(6,), tau(7,)",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_12",
+      "desc": "A1 relabelling: with e_z->e_x map, the annihilated axis is the push axis R_h e_z",
+      "pass": true,
+      "residual": 1.539712633195844e-17,
+      "unit": "",
+      "note": "both LITERAL and CONSISTENT variants keep every projector property"
+    },
+    {
+      "id": "T03_13",
+      "desc": "rank-deficient J accepted: J^T F finite (singularity is not a rejection reason)",
+      "pass": true,
+      "residual": "rank=5 |tau|=11.029",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_14",
+      "desc": "no norm-preservation claim: ||J^T F|| / ||F|| != 1 is expected and reported",
+      "pass": true,
+      "residual": 1.0010083424337706,
+      "unit": "ratio",
+      "note": "the paper makes no such claim; the check prevents it being implied"
+    },
+    {
+      "id": "T03_N1",
+      "desc": "non-orthonormal R_h rejected (scale 1.02)",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_N2",
+      "desc": "improper rotation (det = -1) rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_N3",
+      "desc": "NaN R_h rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_N4",
+      "desc": "wrong-shape R_h rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_M1",
+      "desc": "mut: transposed R_h is detected (Omega differs)",
+      "pass": true,
+      "residual": 0.8222645028150136,
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T03_M2",
+      "desc": "mut: rotating force but not moment is detected vs frame-consistent oracle",
+      "pass": true,
+      "residual": 0.26574194251382255,
+      "unit": "N / N*m",
+      "note": "power invariance alone cannot detect it (block-orthonormal either way)"
+    },
+    {
+      "id": "T03_M4",
+      "desc": "mut: non-orthonormal force block breaks power invariance",
+      "pass": true,
+      "residual": 0.1325303167833114,
+      "unit": "W^2",
+      "note": ""
+    },
+    {
+      "id": "T03_M3",
+      "desc": "mut: Sigma = diag([1,0,1]) detected (different annihilated axis)",
+      "pass": true,
+      "residual": 0.837019052838329,
+      "unit": "",
+      "note": ""
+    }
+  ],
+  "summary": {
+    "pass": 22,
+    "total": 22,
+    "verdict": "PASS"
+  },
+  "figures": [
+    "p3/evidence/figures/p3_t03_selection.png",
+    "p3/evidence/figures/p3_t03_mutations.png"
+  ]
+}
