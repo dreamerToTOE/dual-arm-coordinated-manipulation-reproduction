@@ -1,0 +1,201 @@
+{
+  "task": "P3-T04",
+  "kind": "torque_law",
+  "paper_equations": [
+    "27"
+  ],
+  "run_id": "20261020_094329_P3-T04_torque",
+  "state_fixture": {
+    "note": "TEST_FIXTURE state and gains; no paper numeric values exist",
+    "J_shape": [
+      6,
+      7
+    ],
+    "dx": [
+      6.240434629281188e-05,
+      -0.0010797510361881988,
+      0.00041619885559605294,
+      0.0006535660602843927,
+      -0.00046282606070930315,
+      -0.000864798496190741
+    ],
+    "w": [
+      2.0,
+      -1.0,
+      10.0,
+      0.1,
+      -0.2,
+      0.3
+    ]
+  },
+  "checks": [
+    {
+      "id": "T04_01",
+      "desc": "Eq.(27) vs independent index-loop oracle (random state)",
+      "pass": true,
+      "residual": 8.881784197001252e-16,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_02",
+      "desc": "term-by-term decomposition: position, perturbation, damping, gravity, friction",
+      "pass": true,
+      "residual": 2.7755575615628914e-17,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_03",
+      "desc": "two-J^T printed form == combined J^T(F_pos+F_pert) form",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_04",
+      "desc": "position term has no component along the push axis R_h e_x",
+      "pass": true,
+      "residual": 1.734723475976807e-18,
+      "unit": "N",
+      "note": ""
+    },
+    {
+      "id": "T04_05",
+      "desc": "dx shifted along the push axis does not change tau (axis excluded)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_06",
+      "desc": "virtual work: (J^T F)^T qdot = F^T (J qdot)",
+      "pass": true,
+      "residual": 1.734723475976807e-17,
+      "unit": "W",
+      "note": "lhs=0.017619 rhs=0.017619"
+    },
+    {
+      "id": "T04_07",
+      "desc": "affine response to the feedforward wrench for fixed state",
+      "pass": true,
+      "residual": 1.7763568394002505e-15,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_08",
+      "desc": "homogeneous scaling in w (tau(cw)-tau(0) = c(tau(w)-tau(0)))",
+      "pass": true,
+      "residual": 4.884981308350689e-15,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_09",
+      "desc": "gravity compensation enters additively and independently",
+      "pass": true,
+      "residual": 2.7755575615628914e-16,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_10",
+      "desc": "friction compensation enters additively and independently",
+      "pass": true,
+      "residual": 2.0816681711721685e-16,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_11",
+      "desc": "rank-deficient J: tau finite and virtual work still exact",
+      "pass": true,
+      "residual": 2.0816681711721685e-17,
+      "unit": "W",
+      "note": "rank=5 |tau|=16.859 N*m"
+    },
+    {
+      "id": "T04_12",
+      "desc": "API carries no measured-force input (paper: no force feedback term)",
+      "pass": true,
+      "residual": "params=['J', 'R_h', 'Kp', 'dx', 'w', 'D', 'qdot', 'tau_g', 'tau_f', 'R_task_to_hole']",
+      "unit": "",
+      "note": ""
+    },
+    {
+      "id": "T04_13",
+      "desc": "mut: injected force feedback is detected as a source-law deviation",
+      "pass": true,
+      "residual": 0.05999999999999961,
+      "unit": "N*m",
+      "note": "the implemented law contains no such term (T04_12)"
+    },
+    {
+      "id": "T04_M1",
+      "desc": "mut: sign flip on the perturbation term detected",
+      "pass": true,
+      "residual": 18.283240345371283,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_M2",
+      "desc": "mut: transposed wrench frame detected",
+      "pass": true,
+      "residual": 5.812592044589876,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_M3",
+      "desc": "mut: missing selector (position control on all 6 axes) detected",
+      "pass": true,
+      "residual": 0.05792015228944436,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_M4",
+      "desc": "mut: dropped gravity compensation detected",
+      "pass": true,
+      "residual": 7.999999999999999,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_M5",
+      "desc": "mut: dropped damping term detected",
+      "pass": true,
+      "residual": 0.176981865655149,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_M6",
+      "desc": "mut: force/moment blocks swapped in the position command detected",
+      "pass": true,
+      "residual": 0.09242730034109484,
+      "unit": "N*m",
+      "note": ""
+    },
+    {
+      "id": "T04_14",
+      "desc": "hole-arm translation gain inside the paper's stated 500 <= k_p <= 1000",
+      "pass": true,
+      "residual": 600.0,
+      "unit": "N/m",
+      "note": "only paper-provided numeric anchor; peg-arm gains are TEST_FIXTURE"
+    }
+  ],
+  "summary": {
+    "pass": 20,
+    "total": 20,
+    "verdict": "PASS"
+  },
+  "figures": [
+    "p3/evidence/figures/p3_t04_terms.png"
+  ]
+}
