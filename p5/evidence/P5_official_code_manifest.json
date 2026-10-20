@@ -1,0 +1,464 @@
+{
+  "manifest_version": "1.0",
+  "manifest_kind": "official_code_audit",
+  "generated_for": "P5 paper study (pre-implementation gate)",
+  "generated_by": "p5/tools/p5_manifest.py",
+  "generated_at_utc": "2026-10-20T03:41:00Z",
+  "paper": {
+    "title": "A Unified Framework for Coordinated Multi-Arm Motion Planning",
+    "authors": [
+      "Sina Mirrazavi Salehian",
+      "Nadia Figueroa",
+      "Aude Billard"
+    ],
+    "venue": "The International Journal of Robotics Research (IJRR)",
+    "year": 2018,
+    "volume": 37,
+    "issue": 6,
+    "pages": "583-603",
+    "doi": "10.1177/0278364918765952",
+    "pdf_sha256": "6f367be45e0c925df64ec5e4ab3046e1de8aa96627c65ddb2fd71720d9eedc02",
+    "pdf_pages": 28
+  },
+  "provenance_notes": [
+    "Repository identity, default branch, SPDX license and HEAD commit come from the GitHub REST API as captured in .work/p5/api/. `SinaMirrazavi/*` and `sinamr66/*` resolve to the same repositories (the account was renamed; GitHub 301s the old paths).",
+    "Source snapshots are codeload tarballs of the default branch at the recorded HEAD; sha256 is over the tarball bytes as downloaded during this session.",
+    "Two repositories (ML_toolbox, kuka-rviz-simulation) were deliberately not snapshotted because they are out of scope for the numerical reproduction; they are recorded as METADATA_ONLY rather than silently omitted.",
+    "No file in this manifest is vendored into the reproduction repository. See license_policy."
+  ],
+  "repositories": [
+    {
+      "key": "Multiarm_ds",
+      "canonical_url": "https://github.com/SinaMirrazavi/Multiarm_ds",
+      "alias_urls": [
+        "https://github.com/sinamr66/Multiarm_ds"
+      ],
+      "default_branch": "master",
+      "head_commit": "c6ccbf48639b0c9abad67b91eb7a233ff9c775d1",
+      "head_commit_date": "2019-04-16T16:35:13Z",
+      "head_commit_message": "Merge pull request #1 from salmanfaraji/patch-1\n\nUpdate README.md",
+      "license_spdx": "LGPL-3.0",
+      "api_size_kb": 24,
+      "role_in_paper": "Single-DS multi-arm behaviour generator; coordination allocation tau and virtual-object dynamics.",
+      "equations_covered": [
+        "(2)",
+        "(3)",
+        "(4)",
+        "(5)",
+        "(6)",
+        "(7)",
+        "(8)",
+        "(9)",
+        "(10)",
+        "(11)",
+        "(12)",
+        "(13)",
+        "(36)"
+      ],
+      "key_files": [
+        "src/multiarm_ds.cpp",
+        "src/LPV.cpp",
+        "include/multiarm_ds.h",
+        "include/LPV.h"
+      ],
+      "executability": "BUILDABLE_AFTER_PATCH",
+      "blockers": [
+        "ROS package (catkin) with a hard dependency on SESODS_lib and ML_toolbox; not a standalone library.",
+        "calculate_coordination_allocation() implements a variant of (8) (DIVERGENT from the printed equation); see P5_EQUATION_AUDIT.md O2.",
+        "calculate_u() uses U = -A^T X instead of the paper's U_i = tau * dot{x}^V (DIVERGENT); see O1."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_Multiarm_ds.tar.gz",
+        "tarball_sha256": "4f4a8578adb70a9fa219145ea4c1a9ff16c95e576049b3df629bf890881d9462",
+        "tarball_bytes": 18242,
+        "file_count": 10,
+        "uncompressed_bytes": 78510,
+        "top_extensions": {
+          ".h": 2,
+          ".cpp": 2,
+          ".yml": 1,
+          ".txt": 1,
+          "(noext)": 1,
+          ".md": 1
+        }
+      }
+    },
+    {
+      "key": "LPV",
+      "canonical_url": "https://github.com/SinaMirrazavi/LPV",
+      "alias_urls": [
+        "https://github.com/sinamr66/LPV"
+      ],
+      "default_branch": "master",
+      "head_commit": "27772473ee0de0b936a23401a07312f00d1e6a54",
+      "head_commit_date": "2017-11-03T09:25:45Z",
+      "head_commit_message": "Update README.md",
+      "license_spdx": "LGPL-3.0",
+      "api_size_kb": 19,
+      "role_in_paper": "Standalone LPV/GMR DS solver: builds A_ik and theta_k, integrates the DS.",
+      "equations_covered": [
+        "(3)",
+        "(4)",
+        "(5)"
+      ],
+      "key_files": [
+        "src/LPV.cpp",
+        "include/LPV.h"
+      ],
+      "executability": "BUILDABLE_AFTER_PATCH",
+      "blockers": [
+        "Depends on ML_toolbox (GMR) and Eigen; CMakeLists assumes a ROS/catkin context.",
+        "No test target and no golden data; correctness must be re-established numerically (P5-T02)."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_LPV.tar.gz",
+        "tarball_sha256": "1fff61c25c95d358e614174f4f1cbd0620c562b9ca03d39f91be6f2aee2b2d79",
+        "tarball_bytes": 10782,
+        "file_count": 7,
+        "uncompressed_bytes": 36689,
+        "top_extensions": {
+          ".yml": 1,
+          ".txt": 1,
+          "(noext)": 1,
+          ".md": 1,
+          ".h": 1,
+          ".xml": 1
+        }
+      }
+    },
+    {
+      "key": "QP_IK_solver",
+      "canonical_url": "https://github.com/SinaMirrazavi/QP_IK_solver",
+      "alias_urls": [
+        "https://github.com/sinamr66/QP_IK_solver"
+      ],
+      "default_branch": "master",
+      "head_commit": "f1c28fc17da5a5def53336ec52105825dc32e67e",
+      "head_commit_date": "2019-05-14T08:37:52Z",
+      "head_commit_message": "Update README.md",
+      "license_spdx": "LGPL-3.0",
+      "api_size_kb": 245,
+      "role_in_paper": "Centralised velocity-level QP inverse kinematics with LVI projection dynamics.",
+      "equations_covered": [
+        "(16)",
+        "(17a)",
+        "(17b)",
+        "(17c)",
+        "(17d)",
+        "(18)",
+        "(19)",
+        "(20)",
+        "(21a)",
+        "(21b)",
+        "(22)",
+        "(23)",
+        "(25)",
+        "(26)"
+      ],
+      "key_files": [
+        "src/qp_ik_solver.cpp",
+        "include/qp_ik_solver.h"
+      ],
+      "executability": "NOT_EXECUTABLE",
+      "blockers": [
+        "CVXGEN-generated solver sources are absent from the repository; the QP backend does not exist in the snapshot.",
+        "get_gamma() is declared/called but never defined.",
+        "Gamma_ / DGamma_ are never updated: the SCA path is dead code, so (17d) is structurally present but numerically inert.",
+        "Omega_projector() has a return-value defect (returns its input); (21b) therefore cannot produce the projected iterate as published."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_QP_IK_solver.tar.gz",
+        "tarball_sha256": "977d5e52a9123f566e57ab70c5522932e86636263456a5427e1a15c39a093613",
+        "tarball_bytes": 14881,
+        "file_count": 8,
+        "uncompressed_bytes": 52290,
+        "top_extensions": {
+          ".yml": 1,
+          ".txt": 1,
+          "(noext)": 1,
+          ".md": 1,
+          ".rosinstall": 1,
+          ".h": 1
+        }
+      }
+    },
+    {
+      "key": "SCA_data_construction",
+      "canonical_url": "https://github.com/SinaMirrazavi/SCA_data_construction",
+      "alias_urls": [
+        "https://github.com/sinamr66/SCA_data_construction"
+      ],
+      "default_branch": "master",
+      "head_commit": "ed3c3cda576e3207e9e08c2a019541ee6a8fe778",
+      "head_commit_date": "2018-08-08T13:38:28Z",
+      "head_commit_message": "Update .travis.yml",
+      "license_spdx": "LGPL-3.0",
+      "api_size_kb": 22292,
+      "role_in_paper": "Generates the labelled 36-D SCA dataset (free vs collision) used to train the boundary.",
+      "equations_covered": [
+        "(27)"
+      ],
+      "key_files": [
+        "src/",
+        "matlab/"
+      ],
+      "executability": "PARTIALLY_REPRODUCIBLE",
+      "blockers": [
+        "Requires a robot model (KUKA LWR via kuka-rviz-simulation / ROS) to evaluate distances.",
+        "Random sampling configuration does not reproduce the paper's stated sampling count; see P5_PAPER_STUDY.md section 8.4."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_SCA_data_construction.tar.gz",
+        "tarball_sha256": "b3ee2e126ef3b7fec856b494b086a0d91c925e57423aa1fcd59e5a1ca8ba2fed",
+        "tarball_bytes": 11416368,
+        "file_count": 37,
+        "uncompressed_bytes": 11564510,
+        "top_extensions": {
+          ".m": 12,
+          ".h": 6,
+          ".txt": 5,
+          ".cpp": 5,
+          "(noext)": 2,
+          ".yml": 1
+        }
+      }
+    },
+    {
+      "key": "SCA-Boundary-Learning",
+      "canonical_url": "https://github.com/nbfigueroa/SCA-Boundary-Learning",
+      "alias_urls": [],
+      "default_branch": "master",
+      "head_commit": "147afdb10b74421015cb52807492d1dca0015e17",
+      "head_commit_date": "2018-03-21T18:50:55Z",
+      "head_commit_message": "Update README.md",
+      "license_spdx": null,
+      "api_size_kb": 34405,
+      "role_in_paper": "Trains the RBF-SVM SCA boundary and performs CPSP support-vector pruning.",
+      "equations_covered": [
+        "(24)",
+        "(25)",
+        "(28)"
+      ],
+      "key_files": [
+        "models/cpsp_models/2d_example.mat",
+        "models/cpsp_models/2d_example2.mat",
+        "models/cpsp_models/36D-24k_sparse_exact.mat",
+        "libsvm/"
+      ],
+      "executability": "MODEL_ONLY",
+      "blockers": [
+        "Trained models ship with the repository, but the training sets do not; retraining is not reproducible from this repo alone.",
+        "MATLAB + mex libsvm toolchain required.",
+        "No license file: redistribution of models is legally unclear (see license_policy)."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_SCA-Boundary-Learning.tar.gz",
+        "tarball_sha256": "3f72156b17381698d54344ae85ba8d1c794040dfa308f52b8e917225cddd271c",
+        "tarball_bytes": 39317631,
+        "file_count": 111,
+        "uncompressed_bytes": 125321194,
+        "top_extensions": {
+          ".c": 24,
+          ".m": 23,
+          ".h": 15,
+          ".dat": 10,
+          ".o": 10,
+          ".mat": 9
+        }
+      }
+    },
+    {
+      "key": "SVMGrad",
+      "canonical_url": "https://github.com/nbfigueroa/SVMGrad",
+      "alias_urls": [],
+      "default_branch": "master",
+      "head_commit": "4f79d2de53666165ad174f6e0ef68e0c39a4a8e2",
+      "head_commit_date": "2019-09-04T13:20:36Z",
+      "head_commit_message": "Revert \"Clean the branch to only have a c++ library\"",
+      "license_spdx": null,
+      "api_size_kb": 92893,
+      "role_in_paper": "Analytical gradient of the RBF-SVM decision function w.r.t. the query point: implements (25).",
+      "equations_covered": [
+        "(24)",
+        "(25)"
+      ],
+      "key_files": [
+        "include/",
+        "src/",
+        "matlab/"
+      ],
+      "executability": "BUILDABLE_AFTER_PATCH",
+      "blockers": [
+        "README gradient formula is missing a factor of 2 relative to a direct differentiation of the RBF kernel; the code is the authority, the README is wrong.",
+        "Bundled training data is large (170 MB) and partially duplicated.",
+        "No license file."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_SVMGrad.tar.gz",
+        "tarball_sha256": "10a79a13d8ddebc6a1a8b29499ecc0f21eaa3386818c806586040b773c19c198",
+        "tarball_bytes": 107796251,
+        "file_count": 212,
+        "uncompressed_bytes": 176583039,
+        "top_extensions": {
+          ".txt": 57,
+          ".mat": 37,
+          ".m": 29,
+          ".c": 20,
+          ".h": 12,
+          ".eps": 8
+        }
+      }
+    },
+    {
+      "key": "SESODS_lib",
+      "canonical_url": "https://github.com/SinaMirrazavi/SESODS_lib",
+      "alias_urls": [
+        "https://github.com/sinamr66/SESOSDS_lib"
+      ],
+      "default_branch": "master",
+      "head_commit": "7503728c99c2d7f44875e5d6f5b7a9a2c61a9e5d",
+      "head_commit_date": "2019-02-12T09:48:19Z",
+      "head_commit_message": ".",
+      "license_spdx": "LGPL-3.0",
+      "api_size_kb": 49023,
+      "role_in_paper": "Second-order DS library used by Multiarm_ds for the underlying single-arm dynamics.",
+      "equations_covered": [
+        "(1)",
+        "(2)"
+      ],
+      "key_files": [
+        "matlab/",
+        "models/"
+      ],
+      "executability": "NOT_EXECUTABLE_AS_IS",
+      "blockers": [
+        "Repository name in the paper's project page is misspelled `SESOSDS_lib`; the live repository is `SESODS_lib` (the misspelling 404s).",
+        "MATLAB-only, no automated tests, large binary model set."
+      ],
+      "snapshot": {
+        "available": true,
+        "codeload_tarball": "tgz_SESODS_lib.tar.gz",
+        "tarball_sha256": "ef2b1e50785fc8951694e61730383b40aac0d56ba6942a56b9b147443aa6a72d",
+        "tarball_bytes": 54499348,
+        "file_count": 276,
+        "uncompressed_bytes": 67325049,
+        "top_extensions": {
+          ".m": 107,
+          ".mat": 57,
+          ".eps": 51,
+          ".fig": 50,
+          ".m~": 4,
+          ".txt": 3
+        }
+      }
+    },
+    {
+      "key": "ML_toolbox",
+      "canonical_url": "https://github.com/epfl-lasa/ML_toolbox",
+      "alias_urls": [],
+      "default_branch": "master",
+      "head_commit": "61cc1245a2abe0c86a737d7b48bd645b28ffebee",
+      "head_commit_date": "2020-05-03T12:28:43Z",
+      "head_commit_message": "Merge pull request #2 from tmpethick/master\n\nAdds libsvm .mexmaci64 for mac",
+      "license_spdx": null,
+      "api_size_kb": 26854,
+      "role_in_paper": "Gaussian mixture regression / LPV machinery shared by LPV and Multiarm_ds.",
+      "equations_covered": [
+        "(3)",
+        "(4)"
+      ],
+      "key_files": [
+        "(metadata only, not snapshotted)"
+      ],
+      "executability": "METADATA_ONLY",
+      "blockers": [
+        "Not snapshotted in this session (size-driven decision); only GitHub metadata captured.",
+        "MATLAB toolbox; Python equivalents (sklearn GaussianMixture) are an ADAPTATION for any reimplementation."
+      ],
+      "snapshot": {
+        "available": false,
+        "unavailable_reason": "Not snapshotted in the P5 study session (only GitHub REST metadata captured); treated as METADATA_ONLY."
+      }
+    },
+    {
+      "key": "kuka-rviz-simulation",
+      "canonical_url": "https://github.com/epfl-lasa/kuka-rviz-simulation",
+      "alias_urls": [],
+      "default_branch": "master",
+      "head_commit": "66448f9e8995b557335b6b51c9ab6ed6c5afd99d",
+      "head_commit_date": "2018-03-29T13:47:49Z",
+      "head_commit_message": "Update README.md",
+      "license_spdx": null,
+      "api_size_kb": 1290,
+      "role_in_paper": "KUKA LWR URDF/RViz environment used for the paper's experiments and for distance queries during data construction.",
+      "equations_covered": [],
+      "key_files": [
+        "(metadata only, not snapshotted)"
+      ],
+      "executability": "METADATA_ONLY",
+      "blockers": [
+        "Not snapshotted in this session; only GitHub metadata captured.",
+        "ROS1 / RViz dependent, which conflicts with the Python-only scope of the proposed D082 reproduction."
+      ],
+      "snapshot": {
+        "available": false,
+        "unavailable_reason": "Not snapshotted in the P5 study session (only GitHub REST metadata captured); treated as METADATA_ONLY."
+      }
+    }
+  ],
+  "executability_summary": {
+    "BUILDABLE_AFTER_PATCH": [
+      "Multiarm_ds",
+      "LPV",
+      "SVMGrad"
+    ],
+    "PARTIALLY_REPRODUCIBLE": [
+      "SCA_data_construction"
+    ],
+    "MODEL_ONLY": [
+      "SCA-Boundary-Learning"
+    ],
+    "NOT_EXECUTABLE": [
+      "QP_IK_solver"
+    ],
+    "NOT_EXECUTABLE_AS_IS": [
+      "SESODS_lib"
+    ],
+    "METADATA_ONLY": [
+      "ML_toolbox",
+      "kuka-rviz-simulation"
+    ],
+    "headline": "0 of 9 repositories run out of the box. 3 build after patching, 1 is model-only, 1 is partial, 1 (the QP backend, i.e. the paper's core solver) cannot execute at all because the CVXGEN sources are missing and the SCA path is dead code."
+  },
+  "license_policy": {
+    "principle": "read for understanding, never vendor, never copy code into this repository",
+    "lgpl_repos": [
+      "Multiarm_ds",
+      "LPV",
+      "QP_IK_solver",
+      "SCA_data_construction",
+      "SESODS_lib"
+    ],
+    "unlicensed_repos": [
+      "SCA-Boundary-Learning",
+      "SVMGrad",
+      "ML_toolbox",
+      "kuka-rviz-simulation"
+    ],
+    "consequence": "The four repositories that matter most for the numerical reproduction (QP_IK_solver, Multiarm_ds, SCA-Boundary-Learning, SVMGrad) are either LGPL-3.0 or carry no license at all. Any P5 implementation must therefore be a clean-room re-derivation from the paper's equations, not a port. Only numeric constants, file-format facts, and behavioural observations may be carried over.",
+    "model_artifacts": "Trained .mat models are treated as opaque binary reference data for comparison only; they are not committed to this repository."
+  },
+  "counts": {
+    "repositories": 9,
+    "snapshotted": 7,
+    "metadata_only": 2,
+    "lgpl3": 5,
+    "unlicensed": 4
+  }
+}

@@ -39,3 +39,25 @@ approved algorithm-level numerical study on its own branch.
 - Evidence: `p3/reviews/P3_T0*_{PRE,POST}.md`, `p3/reviews/P3_CORRECTION_POST_20261020.md`,
   `results/20261020_*_P3-T0*`, `p3/reports/final/`.
 - T05 quasi-static contact surrogate: `NOT_EXECUTED_OPTIONAL` (not an acceptance dependency).
+
+## 2026-10-20 — P5 paper-first study (pre-implementation gate)
+
+Appended by the P5 paper study. The roadmap table above is **not** rewritten, and the P5 tasks
+(TASK16–19) remain TODO — this entry describes a separate, explicitly scoped study on its own branch.
+
+- Branch: `reproduce-p5-paper-study-20261020` (base `c39ef42c` = P3 acceptance commit).
+- Paper: Mirrazavi Salehian, Figueroa, Billard, *A Unified Framework for Coordinated Multi-Arm
+  Motion Planning*, IJRR 37(6):583–603, 2018, DOI `10.1177/0278364918765952`.
+- Scope: full-text study + equation audit + official-code audit + proposed reproduction matrix.
+  **Status `PAPER_STUDIED / AWAITING_REPRODUCTION_MATRIX_REVIEW`.**
+- Deliverables: `p5/P5_PAPER_STUDY.md`, `p5/P5_EQUATION_AUDIT.md`, `p5/P5_OFFICIAL_CODE_AUDIT.md`,
+  `p5/P5_IMPLEMENTATION_PLAN.md`, `p5/P5_ORIGINAL_EXPERIMENT_MATRIX.csv`,
+  `p5/P5_PROPOSED_REPRODUCTION_MATRIX.csv`, `p5/P5_EQUATION_REGISTRY.csv`,
+  `p5/evidence/P5_official_code_manifest.json`, 5 redrawn schematic figures, 2 generator scripts.
+- Proposed scope: A (sync/async DS + τ allocation) + B (centralised QP IK + LVI) + C (learned SCA
+  boundary + ∇Γ chain rule) as `MINIMUM_ESSENTIAL` (T01–T08); FCL distance constraints (T09) and the
+  end-to-end replay (T10) as `OPTIONAL_EXTENSION` and explicitly `ADAPTATION`.
+- Official code: 0 of 9 repositories run out of the box. `QP_IK_solver` has no CVXGEN backend and
+  its SCA path is dead code; Eq.(26) has no implementation upstream. Nothing was vendored.
+- **No numerical implementation was started.** The next gate is review of
+  `p5/P5_PROPOSED_REPRODUCTION_MATRIX.csv` and `p5/P5_IMPLEMENTATION_PLAN.md` §9 (Q1–Q6).
