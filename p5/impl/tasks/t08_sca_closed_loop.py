@@ -80,16 +80,9 @@ def _sha256(path):
     return h.hexdigest()
 
 
-def embed(pair_grad, cols, d_q):
-    """Zero-fill a pair-space gradient into the full joint space (Eq.26)."""
-    pair_grad = np.asarray(pair_grad, float).ravel()
-    cols = list(cols)
-    if len(cols) != pair_grad.size:
-        raise ValueError("pair gradient of length %d cannot be embedded in %d columns"
-                         % (pair_grad.size, len(cols)))
-    out = np.zeros(d_q)
-    out[cols] = pair_grad
-    return out
+#: zero-padding (Eq.26) and the KKT measure live in p5core so that T10 uses
+#: exactly the same code path and the two tasks cannot drift apart.
+embed = QP.embed_pair_gradient
 
 
 class Fixture:
@@ -248,7 +241,7 @@ def rollout(fx, sca_on=True, lam=1.0, mode="paper", sign=1.0, dt=DT, t_end=T_END
         hist["active"].append(act)
         hist["qdot_max"].append(float(np.max(np.abs(x))))
         hist["slack"].append(slack)
-        hist["kkt"].append(_kkt_feasible(qp, x, info, rows))
+        hist["kkt"].append(QP.kkt_feasible(qp, x, info, rows))
         hist["pl"].append(fx.tips(q)[0].copy())
 
         if g2 < 0.0:
@@ -580,30 +573,6 @@ def run(rec):
 # ---------------------------------------------------------------- helpers
 def _fmt(v):
     return "n/a" if v is None else "%.3f" % v
-
-
-def _kkt_feasible(qp, x, info, rows):
-    """Primal + complementary + dual feasibility of one closed-loop solve.
-
-    `kkt_residual` in p5core needs the equality multipliers, which the
-    enumerator does not return; the quantities that matter for a *reported*
-    residual are the ones that can be checked without them: primal equality,
-    the box, the (17d) rows, and the complementarity product `nu * slack`.  Dual
-    feasibility (`nu >= 0`) is enforced inside the enumerator and is surfaced
-    through `sca_multipliers`.
-    """
-    r_eq = float(np.linalg.norm(qp.J @ x - qp.xidot))
-    r_box = float(max(0.0, np.max(qp.lb - x), np.max(x - qp.ub), 0.0))
-    r_row = 0.0
-    r_comp = 0.0
-    nu = info.get("sca_multipliers") or []
-    for i, (g, rhs) in enumerate(rows):
-        g = np.asarray(g, float).ravel()
-        slack = qp.lam * rhs + float(g @ x)      # >= 0
-        r_row = max(r_row, max(0.0, -slack))
-        if i < len(nu):
-            r_comp = max(r_comp, abs(float(nu[i]) * slack))
-    return max(r_eq, r_box, r_row, r_comp)
 
 
 def _inside_configuration(fx, rng):

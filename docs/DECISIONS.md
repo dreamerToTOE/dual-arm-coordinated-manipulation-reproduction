@@ -168,3 +168,49 @@ Append-only architectural and scientific decisions.
   λ = 0 is thus stricter, not looser, away from the wall; the plan's prediction is recorded as
   falsified rather than engineered into a crossing.
 - Label: **[ORIGINAL]** (equations) / **[ENGINEERING]** (findings about their use).
+
+## D017 — Theorem 3 is an identity *at each QP solution*, not a closed-loop ledger
+- Date: 2026-10-20 (G4, T10)
+- Context: the review correction #14 asked T10 to replace "`Σ ½‖q̇‖²` as energy" by a numerical
+  energy ledger: control input power + tracking-error storage + the Theorem-3 dissipation `ψ` +
+  residual. T10 records the Theorem-3 quantities of every step (`V = ½‖u‖²`,
+  `ψ = uᵀ(I+Mᵀ)u`, `YᵀU = uᵀ(I+Mᵀ)P(u − Mu − b)`) and the measurement refuses the ledger:
+  `∫YᵀU dt − ΔV − ∫ψ dt = −328.4` against `∫|YᵀU| dt = 328.7` (2152 %).
+- Diagnosis (measured, not argued): at every step the active-set solution *is* the LVI fixed point, so
+  `P(u − Mu − b) = u` and therefore `YᵀU = ψ` to `9.1e-13` (relative `3.7e-17`), i.e. `V̇ ≡ 0`
+  instantaneously. What changes `V` is the **jump of `u` between two fixed points of different LVIs**,
+  not a flow. The residual of the ledger is then exactly `−ΔV`: `residual + ΔV = 2.8e-14`.
+- Decision: P10.5 gates the per-step identity (it is the (21a) assembly check); P10.6 gates the
+  statement that the ledger's non-closure is *entirely* `−ΔV`, i.e. that no term is unmodelled. The
+  telescoping ledger itself is reported as a metric and never used as a pass criterion, and the
+  `P_in = ẋ^R·f`, `S = ½‖separation‖²` variant is reported without gating (its residual −328.4 is
+  dominated by `S` not being a storage function at all).
+- Consequence: a re-solved QP loop is a sequence of fixed points, not a trajectory of (20). Any future
+  "`V̇ ≤ 0` in closed loop" claim is out of scope for this implementation; it would require integrating
+  (20), which neither this code nor the official one does (the official code calls a QP solver per
+  cycle and has `Gamma_/DGamma_` never updated).
+- Label: **[ORIGINAL]** (equations) / **[ENGINEERING]** (accounting choice).
+
+## D018 — The hard (17d) row is infeasible on 46 % of the end-to-end steps
+- Date: 2026-10-20 (G4, T10)
+- Context: the T10 run reports `370/800` `QP_INFEASIBLE` steps with the row on and `0` with it off.
+  The attribution is unambiguous: the same QP without the row is `OPTIMAL` on all 370, and the
+  reference velocity on those steps is `≤ 0.0279`, so the velocity box is not the cause. The cause is
+  the D016 mechanism at a different operating point: `log(Γ_raw − 1)` shrinks as `Γ → 1`, so the row
+  demands `Γ̇ ≥ −log(Γ−1)` while the hard equality `J q̇ = ẋ^R` has only a 2-dimensional null space in
+  which to satisfy it. A hard row with no slack is therefore routinely unsatisfiable; the paper's
+  formulation is only coherent in its soft form.
+- Decision: the fallback is an explicit, labelled parameter with two documented modes instead of an
+  implicit one — `row_policy="freeze"` (hold `q̇ = 0`, the only box-safe value when the solver returns
+  nothing) and `row_policy="drop_row"` (re-solve without (17d)). **Neither is presented as the paper's
+  controller.** Both are run and P10.7 reports them side by side: freeze gives `min Γ = 2.0700`, 0
+  crossings; drop-row gives `min Γ = 1.2400`, 0 crossings (368 drops); row off gives `−2.3147`, 534
+  crossings.
+- Why this is not a dodge: the counterfactual was fixed *before* the number was known and it can come
+  out either way. It came out as "the row carries the guarantee on the steps where it is feasible",
+  which is a claim about the row; had it produced crossings, the e2e claim would have been downgraded
+  to "the freeze, not the row, avoids the boundary" and reported that way.
+- Consequence: the freeze makes `q̇ = 0` on 46 % of the steps, so **no timing, tracking-accuracy or
+  smoothness claim is drawn from this run**; only the `Γ` criterion is. Activation 53.1 % is reported
+  against the same 800 steps, not only the solvable ones.
+- Label: **[ORIGINAL]** (equations) / **[ENGINEERING]** (fallback policy, fixture).

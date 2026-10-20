@@ -112,3 +112,30 @@ Appended by the P5 paper study. The roadmap table above is **not** rewritten, an
   is a soft-formulation device.
 - Next: G4 (T10, mandatory — asynchronous→synchronous switch plus SCA on/off).
 - Scope unchanged: T09 `NOT_AUTHORIZED_THIS_CYCLE`.
+
+## 2026-10-20 — P5 numerical reproduction: G4 green, D082 ceiling reached
+
+- **G4 (end-to-end) PASS**: T10 12 checks (7 positive / 5 negative), 0 failed, 142.2 s.
+  Cumulative G1+G2+G3+G4: **115 checks (64 pos / 51 neg), 0 failed, 344.2 s**, all four gates `PASS`.
+- The chain `τ → LPV DS → virtual object → QP → LVI` runs end to end on a 6-DOF planar dual arm with
+  both tips as the task: `τ` integrates from `ε = (0.02, 0.03)` to `(0.982, 0.988)` and the
+  asynchronous→synchronous switch lands at `t_switch = 2.800 s` (window `[1, 5] s` declared before the
+  run). `min_t Γ_raw = +2.0700` with 0 boundary crossings against `−2.3147` and 534 crossings in the
+  matched SCA-off control.
+- The e2e claim is deliberately narrowed: the hard (17d) row makes the QP **infeasible on 370/800
+  steps (46 %)**, all attributed to the row (same QP without it: `OPTIMAL` 370/370; reference velocity
+  there `≤ 0.0279`). A second run drops the row on exactly those steps instead of freezing and still
+  gets `min Γ = 1.2400` with 0 crossings, so the row — not the freeze — carries the guarantee. No
+  timing or tracking-accuracy claim is drawn from this run (D018).
+- Theorem 3 is reported as measured: the identity `V̇ + ψ = YᵀU` holds at every QP solution
+  (`9.1e-13`, relative `3.7e-17`), while the plan's telescoping ledger does **not** close
+  (`−328.4` against a scale of `328.7`) because every step re-solves a different LVI; the entire
+  non-closure is `−ΔV` to `2.8e-14`. The ledger is reported, never a pass criterion (D017).
+- `λ = 0` again behaves opposite to the plan's prediction (`min Γ` 4.2235, 0 crossings, 594 infeasible
+  steps): it is a strict no-decrease cone, not a looser row. `dt` doubled moves `min Γ` 2.0700 → 2.0600
+  and `t_switch` 2.800 → 2.820 s, so the step size is really in the loop.
+- Ceiling: `ALGORITHM_NUMERICAL_VERIFIED (D082)`. `FULL_PAPER_REPRODUCED` stays abandoned (hardware +
+  unpublished training set + CVXGEN). T09 remains `NOT_AUTHORIZED_THIS_CYCLE` and is excluded from
+  every total above.
+- Reports: `p5/reviews/P5_T10_POST.md`, `p5/P5_GATE_LOG.md`, `p5/evidence/P5_impl_checks.{json,md}`,
+  figures `t10_e2e_triptych.png` / `t10_phase.png` / `t10_sca_ablation.png`.

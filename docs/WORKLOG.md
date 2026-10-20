@@ -91,3 +91,23 @@ Append-only project work log.
 - Findings that contradict the plan: (i) the SCA feature must differ from the task coordinate, else the
   row is implied by the equality (D015); (ii) λ = 0 is stricter far from the boundary (D016);
   (iii) PAPER_FALLBACK as a hard row is unsatisfiable — 1000 demanded against 28.2 achievable (D016).
+
+## 2026-10-20 — P5 numerical reproduction, G4 (end-to-end, mandatory)
+- T10 chain: 6-DOF planar dual arm, `d_n = 4` (both tips), `d_c = 1`, official 2-D CPSP model as the
+  learned oracle on the `L3–R2` body-point pair (pair chosen on the *uncontrolled* trajectory only:
+  `Γ_raw(0) = 4.2255`, null share 0.21). 12 checks (7 pos / 5 neg), 142 s.
+- Measured: `t_switch 2.800 s`; `min Γ_raw` +2.0700 (0 crossings) vs −2.3147 (534 crossings) with the
+  row off; row active 53.1 %; KKT 1.6e-14; `τ` vs an independent RK4 8.5e-04; `Γ` recomputed from the
+  recorded joints 0.0.
+- Fixed during the task: the Theorem-3 block referenced undefined `LV`/`b` (it had never run), so the
+  first real execution of the ledger is this one; the ledger was then split into a gated per-step
+  identity (`9.1e-13`) and a gated "non-closure = −ΔV" statement (`2.8e-14`), with the telescoping
+  ledger demoted to a reported metric (D017).
+- Investigated instead of accepted: `370/800` infeasible steps. Attribution added to the rollout
+  (`INF_*`, `INF_NOROW_*`) proved every one of them comes from the row, and a `row_policy="drop_row"`
+  counterfactual was run *before* the answer was known: `min Γ 1.2400`, 0 crossings, 368 drops. The
+  freeze is therefore conservative, not the mechanism — but it does forbid any timing/tracking claim
+  from this run (D018). The ablation figure now carries all three traces.
+- Findings that contradict the plan: (i) the Theorem-3 ledger cannot close in a re-solved loop (D017);
+  (ii) the hard (17d) row is infeasible on 46 % of steps (D018); (iii) `λ = 0` is stricter, again
+  (D016 confirmed at a second operating point).

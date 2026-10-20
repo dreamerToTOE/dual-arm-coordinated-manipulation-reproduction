@@ -117,7 +117,41 @@ crossings off, same task and same initial state. Met.
 
 ---
 
-## G4 — end-to-end (pending, mandatory)
+## G4 — end-to-end (2026-10-20)
 
-T10: asynchronous→synchronous switch observable + matched SCA on/off control. T09 is
-`NOT_AUTHORIZED_THIS_CYCLE` and is not executed.
+| Task | Status | Checks | pos / neg | Wall | Report |
+|---|---|---|---|---|---|
+| T10 end-to-end chain (tau → LPV DS → virtual object → QP → LVI) | PASS | 12 | 7 / 5 | 142.2 s | `p5/reviews/P5_T10_POST.md` |
+| **G4 total** | **PASS** | **12** | **7 / 5** | **142.2 s** | `p5/evidence/P5_impl_checks.json` |
+| **G1 + G2 + G3 + G4 cumulative** | **PASS** | **115** | **64 / 51** | **344.2 s** | same ledger |
+
+Gate condition (plan §3.2): the asynchronous→synchronous switch is observable **and** the matched SCA
+on/off control holds. Measured: `τ` integrates from `ε = (0.02, 0.03)` to `(0.982, 0.988)`
+monotonically with `t_switch = 2.800 s` inside the pre-declared `[1, 5] s` window; `min_t Γ_raw =
++2.0700` with 0 crossings on against `−2.3147` with 534 crossings off. Met.
+
+### What G4 added beyond the plan
+
+| # | Item | Why the plan was not enough | Disposition |
+|---|---|---|---|
+| 13 | Theorem-3 ledger | review #14 asked for a numerical energy ledger; the ledger does **not** close (−328.4 against 328.7) because every step's `u` is a fixed point of a *different* LVI, so `YᵀU = ψ` instantaneously and the non-closure is exactly `−ΔV` | P10.5 gates the per-step identity (`9.1e-13`), P10.6 gates `residual + ΔV = 2.8e-14`; the ledger is a reported metric, never a pass criterion (D017) |
+| 14 | hard (17d) infeasible on 46 % of steps | plan assumed infeasibility was an edge case; measured `370/800`, all attributed to the row (row removed → `OPTIMAL` 370/370, reference velocity `≤ 0.0279`) | two labelled fallbacks were run: freeze (`min Γ 2.0700`) and row-dropped on those steps (`min Γ 1.2400`, 0 crossings) → the row, not the freeze, carries the guarantee (D018) |
+| 15 | the pair selection rule | the plan named the SCA feature but not how *which* pair is chosen; picking on the constrained outcome would leak the result | rule fixed on the uncontrolled trajectory only (Γ(0) > 1.5, `min Γ < −0.5`, null share ≥ 0.10) → `L3–R2`, `Γ_raw(0) = 4.2255`, share 0.21; full candidate table in the evidence |
+| 16 | `τ` must be integrated, not scheduled | Eq.(8) has equilibria at 0 and 1, so a "switch" is only meaningful if it emerges | N10.2 pins `τ ≡ 1` / `τ ≡ 0` and gets `t_switch = None` in both |
+
+### G4 deviations with a label
+
+| Item | Label | Note |
+|---|---|---|
+| two 3R planar arms, `d_Q = 6`, `d_n = 4`, `d_c = 1` | `ADAPTATION` | the paper's 12-DOF dual arm is not reproduced |
+| learned boundary = official 2-D CPSP model, native coordinates | `ADAPTATION` | used where it was trained; no rescaling |
+| `A_ARM = −0.35 I`, `A_V = −1.5 I`, `k = 0.8`, `V_MAX_TIP = 0.15 m/s` | `ENGINEERING` | no published value for any of them |
+| `row_policy ∈ {freeze, drop_row}` | `ENGINEERING` | both are reported; neither is the paper's controller (D018) |
+| `t_switch` window `[1, 5] s` | `ENGINEERING` | declared before the run, chosen from the `τ` time constant `k/G`, not from the outcome |
+
+---
+
+## T09 — not executed
+
+T09 (FCL/distance constraints) is `NOT_AUTHORIZED_THIS_CYCLE` and is not part of any G1–G4 total. Its
+numbers may never be merged with T08/T10 into a single "SCA reproduction" claim.

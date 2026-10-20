@@ -137,19 +137,19 @@
       "id": "P4.7",
       "kind": "positive",
       "ok": true,
-      "detail": "exact active-set solve: 3 DOF p50 1.04 ms / p99 1.60 ms (27 sets), 4 DOF p50 3.18 ms (81 sets); SLSQP reference 0.4 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
+      "detail": "exact active-set solve: 3 DOF p50 1.00 ms / p99 1.10 ms (27 sets), 4 DOF p50 3.01 ms (81 sets); SLSQP reference 0.3 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
       "info": {
         "3dof": {
-          "p50_ms": 1.0403375054011121,
-          "p99_ms": 1.6030487274838374,
-          "max_ms": 1.6699429979780689,
+          "p50_ms": 1.0021460002462845,
+          "p99_ms": 1.1004625530767953,
+          "max_ms": 1.2064420006936416,
           "reps": 200,
           "active_sets": 27
         },
         "4dof": {
-          "p50_ms": 3.181338499416597,
-          "p99_ms": 3.416179084742908,
-          "max_ms": 3.423018002649769,
+          "p50_ms": 3.0138770016492344,
+          "p99_ms": 3.3484902600321242,
+          "max_ms": 3.7574849993688986,
           "reps": 100,
           "active_sets": 81
         }
@@ -243,20 +243,20 @@
     "solver_gap_active_set_vs_lvi": 9.334864131682608e-11,
     "lvi_iters": 7414,
     "timing_3dof": {
-      "p50_ms": 1.0403375054011121,
-      "p99_ms": 1.6030487274838374,
-      "max_ms": 1.6699429979780689,
+      "p50_ms": 1.0021460002462845,
+      "p99_ms": 1.1004625530767953,
+      "max_ms": 1.2064420006936416,
       "reps": 200,
       "active_sets": 27
     },
     "timing_4dof": {
-      "p50_ms": 3.181338499416597,
-      "p99_ms": 3.416179084742908,
-      "max_ms": 3.423018002649769,
+      "p50_ms": 3.0138770016492344,
+      "p99_ms": 3.3484902600321242,
+      "max_ms": 3.7574849993688986,
       "reps": 100,
       "active_sets": 81
     },
-    "slsqp_ms_per_solve_3dof": 0.3515726995829027
+    "slsqp_ms_per_solve_3dof": 0.343111899564974
   },
   "figures": [
     {
@@ -280,6 +280,6 @@
     "role": "centralised QP IK, Eq.(17)-(18)",
     "module": "tasks.t04_qp_core"
   },
-  "wall_time_s": 2.042,
+  "wall_time_s": 1.91,
   "python": "3.10.12"
 }

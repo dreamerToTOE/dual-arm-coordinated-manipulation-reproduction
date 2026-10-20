@@ -93,10 +93,10 @@
       "id": "P7.6",
       "kind": "positive",
       "ok": true,
-      "detail": "single-point evaluation 400 us (3000-BV sparse model would be ~5x less); batched evaluation 811 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
+      "detail": "single-point evaluation 407 us (3000-BV sparse model would be ~5x less); batched evaluation 803 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
       "info": {
-        "us_single": 399.71257996512577,
-        "us_batched": 810.8636224488763
+        "us_single": 407.1733000455424,
+        "us_batched": 803.4565301702296
       }
     },
     {
@@ -182,7 +182,7 @@
     "n_eval": 24892,
     "agree_y_est": 1.0,
     "agree_y_train": 0.9873855053832556,
-    "eval_time_us_per_point_full": 810.8636224488763,
+    "eval_time_us_per_point_full": 803.4565301702296,
     "n_gamma_raw_nonpositive": 11085,
     "calibration_kappa": 1.0,
     "chain_rule_rel_err": {
@@ -214,7 +214,7 @@
       ]
     },
     "evaluation_label": "IN_SAMPLE_INDEPENDENT_EVALUATION",
-    "eval_time_us_single": 399.71257996512577,
+    "eval_time_us_single": 407.1733000455424,
     "agree_sigma_swapped": 0.999156355455568,
     "agree_g_taken_as_width": 0.5669693074080026,
     "sigma_relative_difference": 0.0028239543983969695
@@ -237,6 +237,6 @@
     "role": "36D model, chain rule, calibration",
     "module": "tasks.t07_sca_36d"
   },
-  "wall_time_s": 99.884,
+  "wall_time_s": 99.143,
   "python": "3.10.12"
 }

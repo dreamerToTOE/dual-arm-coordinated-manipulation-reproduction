@@ -343,3 +343,44 @@ def kkt_residual(qp, qdot, nu=None, mu=None):
         r_comp += abs(nu[i] * slack)
     return {"eq": r_eq, "bound": r_bnd, "stationarity": r_stat, "complementarity": r_comp,
             "total": max(r_eq, r_bnd, r_stat, r_comp)}
+
+
+def embed_pair_gradient(pair_grad, cols, d_q):
+    """Zero-pad a body-point-pair gradient into the full joint space, Eq.(26).
+
+    The paper's (17d) involves only the joints q^{ij} of the pair (i, j), so the
+    row is embedded into d_Q with zeros everywhere else.  Getting the column
+    *positions* wrong is a silent error -- the dimension is still right -- which
+    is why T08/N8.4 tests this function instead of trusting it.
+    """
+    pair_grad = np.asarray(pair_grad, float).ravel()
+    cols = list(cols)
+    if len(cols) != pair_grad.size:
+        raise ValueError("pair gradient of length %d cannot be embedded in %d columns"
+                         % (pair_grad.size, len(cols)))
+    out = np.zeros(d_q)
+    out[cols] = pair_grad
+    return out
+
+
+def kkt_feasible(qp, x, info, rows):
+    """Primal + complementary + dual feasibility of one solve.
+
+    `kkt_residual` needs the equality multipliers, which the enumerator does not
+    return; the quantities that can be checked without them are the primal
+    equality, the box, the (17d) rows and the complementarity product
+    `nu * slack`.  Dual feasibility (`nu >= 0`) is enforced inside the enumerator
+    and surfaced through `sca_multipliers`.
+    """
+    r_eq = float(np.linalg.norm(qp.J @ x - qp.xidot))
+    r_box = float(max(0.0, np.max(qp.lb - x), np.max(x - qp.ub), 0.0))
+    r_row = 0.0
+    r_comp = 0.0
+    nu = info.get("sca_multipliers") or []
+    for i, (g, rhs) in enumerate(rows):
+        g = np.asarray(g, float).ravel()
+        slack = qp.lam * rhs + float(g @ x)      # >= 0
+        r_row = max(r_row, max(0.0, -slack))
+        if i < len(nu):
+            r_comp = max(r_comp, abs(float(nu[i]) * slack))
+    return max(r_eq, r_box, r_row, r_comp)

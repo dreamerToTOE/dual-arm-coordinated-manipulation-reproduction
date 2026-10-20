@@ -2,7 +2,7 @@
   "paper": "Mirrazavi Salehian, Figueroa, Billard, IJRR 37(6):583-603, 2018",
   "doi": "10.1177/0278364918765952",
   "branch": "reproduce-p5-numerical-20261020",
-  "commit": "3122ffdb1fd817627ebf690a38e61ed02f2e838f",
+  "commit": "5d997e6005a5a98a7175e717cecd0aa5f131cae4",
   "runner": "p5/impl/run_all.py",
   "tasks": {
     "T01": {
@@ -162,7 +162,7 @@
         "role": "synchronisation allocation tau, Eq.(8)",
         "module": "tasks.t01_tau"
       },
-      "wall_time_s": 1.435,
+      "wall_time_s": 1.383,
       "python": "3.10.12"
     },
     "T02": {
@@ -338,7 +338,7 @@
         "role": "LPV scheduler + common Lyapunov matrix",
         "module": "tasks.t02_lpv"
       },
-      "wall_time_s": 7.269,
+      "wall_time_s": 7.101,
       "python": "3.10.12"
     },
     "T04": {
@@ -480,19 +480,19 @@
           "id": "P4.7",
           "kind": "positive",
           "ok": true,
-          "detail": "exact active-set solve: 3 DOF p50 1.04 ms / p99 1.60 ms (27 sets), 4 DOF p50 3.18 ms (81 sets); SLSQP reference 0.4 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
+          "detail": "exact active-set solve: 3 DOF p50 1.00 ms / p99 1.10 ms (27 sets), 4 DOF p50 3.01 ms (81 sets); SLSQP reference 0.3 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
           "info": {
             "3dof": {
-              "p50_ms": 1.0403375054011121,
-              "p99_ms": 1.6030487274838374,
-              "max_ms": 1.6699429979780689,
+              "p50_ms": 1.0021460002462845,
+              "p99_ms": 1.1004625530767953,
+              "max_ms": 1.2064420006936416,
               "reps": 200,
               "active_sets": 27
             },
             "4dof": {
-              "p50_ms": 3.181338499416597,
-              "p99_ms": 3.416179084742908,
-              "max_ms": 3.423018002649769,
+              "p50_ms": 3.0138770016492344,
+              "p99_ms": 3.3484902600321242,
+              "max_ms": 3.7574849993688986,
               "reps": 100,
               "active_sets": 81
             }
@@ -586,20 +586,20 @@
         "solver_gap_active_set_vs_lvi": 9.334864131682608e-11,
         "lvi_iters": 7414,
         "timing_3dof": {
-          "p50_ms": 1.0403375054011121,
-          "p99_ms": 1.6030487274838374,
-          "max_ms": 1.6699429979780689,
+          "p50_ms": 1.0021460002462845,
+          "p99_ms": 1.1004625530767953,
+          "max_ms": 1.2064420006936416,
           "reps": 200,
           "active_sets": 27
         },
         "timing_4dof": {
-          "p50_ms": 3.181338499416597,
-          "p99_ms": 3.416179084742908,
-          "max_ms": 3.423018002649769,
+          "p50_ms": 3.0138770016492344,
+          "p99_ms": 3.3484902600321242,
+          "max_ms": 3.7574849993688986,
           "reps": 100,
           "active_sets": 81
         },
-        "slsqp_ms_per_solve_3dof": 0.3515726995829027
+        "slsqp_ms_per_solve_3dof": 0.343111899564974
       },
       "figures": [
         {
@@ -623,7 +623,7 @@
         "role": "centralised QP IK, Eq.(17)-(18)",
         "module": "tasks.t04_qp_core"
       },
-      "wall_time_s": 2.042,
+      "wall_time_s": 1.91,
       "python": "3.10.12"
     },
     "T06": {
@@ -768,7 +768,7 @@
         "role": "2D SCA boundary, Eq.(24)-(25)",
         "module": "tasks.t06_sca_2d"
       },
-      "wall_time_s": 0.869,
+      "wall_time_s": 0.868,
       "python": "3.10.12"
     },
     "T03": {
@@ -917,7 +917,7 @@
         "role": "virtual-object DS, Eq.(9)-(11)-(36)",
         "module": "tasks.t03_virtual_object"
       },
-      "wall_time_s": 5.642,
+      "wall_time_s": 5.683,
       "python": "3.10.12"
     },
     "T05": {
@@ -1110,7 +1110,7 @@
         "role": "LVI projection solver, Eq.(19)-(23)",
         "module": "tasks.t05_lvi"
       },
-      "wall_time_s": 0.546,
+      "wall_time_s": 0.562,
       "python": "3.10.12"
     },
     "T07": {
@@ -1208,10 +1208,10 @@
           "id": "P7.6",
           "kind": "positive",
           "ok": true,
-          "detail": "single-point evaluation 400 us (3000-BV sparse model would be ~5x less); batched evaluation 811 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
+          "detail": "single-point evaluation 407 us (3000-BV sparse model would be ~5x less); batched evaluation 803 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
           "info": {
-            "us_single": 399.71257996512577,
-            "us_batched": 810.8636224488763
+            "us_single": 407.1733000455424,
+            "us_batched": 803.4565301702296
           }
         },
         {
@@ -1297,7 +1297,7 @@
         "n_eval": 24892,
         "agree_y_est": 1.0,
         "agree_y_train": 0.9873855053832556,
-        "eval_time_us_per_point_full": 810.8636224488763,
+        "eval_time_us_per_point_full": 803.4565301702296,
         "n_gamma_raw_nonpositive": 11085,
         "calibration_kappa": 1.0,
         "chain_rule_rel_err": {
@@ -1329,7 +1329,7 @@
           ]
         },
         "evaluation_label": "IN_SAMPLE_INDEPENDENT_EVALUATION",
-        "eval_time_us_single": 399.71257996512577,
+        "eval_time_us_single": 407.1733000455424,
         "agree_sigma_swapped": 0.999156355455568,
         "agree_g_taken_as_width": 0.5669693074080026,
         "sigma_relative_difference": 0.0028239543983969695
@@ -1352,7 +1352,7 @@
         "role": "36D model, chain rule, calibration",
         "module": "tasks.t07_sca_36d"
       },
-      "wall_time_s": 99.884,
+      "wall_time_s": 99.143,
       "python": "3.10.12"
     },
     "T08": {
@@ -1619,34 +1619,319 @@
         "role": "SCA inside the QP, Eq.(26)-(27)",
         "module": "tasks.t08_sca_closed_loop"
       },
-      "wall_time_s": 85.857,
+      "wall_time_s": 85.276,
       "python": "3.10.12"
     },
     "T10": {
       "task": "T10",
-      "status": "NOT_IMPLEMENTED",
-      "n_checks": 1,
-      "n_positive": 1,
-      "n_negative": 0,
-      "n_failed": 1,
+      "status": "PASS",
+      "n_checks": 12,
+      "n_positive": 7,
+      "n_negative": 5,
+      "n_failed": 0,
       "checks": [
         {
-          "id": "T10.module",
+          "id": "P10.1",
           "kind": "positive",
-          "ok": false,
-          "detail": "NOT_IMPLEMENTED: No module named 'tasks.t10_e2e'",
-          "info": {}
+          "ok": true,
+          "detail": "asynchronous -> synchronous switch is observable and was not hand-placed: tau starts at eps = [0.02, 0.03], rises monotonically (min increment 7.6e-06) to [0.982 0.988], and t_switch (max_i tau_i >= 0.5) = 2.800 s lands inside the pre-declared window [1, 5] s.  The pair starts approaching the learned boundary at t_approach = 0.020 s, i.e. well before the switch; the two are reported side by side, not forced to coincide",
+          "info": {
+            "t_switch": 2.8000000000000003,
+            "t_approach": 0.02
+          }
+        },
+        {
+          "id": "P10.2",
+          "kind": "positive",
+          "ok": true,
+          "detail": "end-to-end with the learned boundary in the QP: min_t Gamma_raw = 2.0700, boundary crossings = 0, the (17d) row is active on 53% of the steps.  Reported with its cost: the hard row makes the QP INFEASIBLE on 370 of 800 steps (46%), every one of them attributed to the row -- the same QP without (17d) is OPTIMAL on all 370.  Those steps are frozen at qdot = 0 (`row_policy='freeze'`), so this number alone cannot be attributed to the row steering the arms; P10.7 measures the counterfactual",
+          "info": {
+            "min_gamma": 2.0700284860816245
+          }
+        },
+        {
+          "id": "P10.3",
+          "kind": "positive",
+          "ok": true,
+          "detail": "matched SCA-off control (same initial state, same object motion, same dt, same solver): min_t Gamma_raw = -2.3147 and 534 boundary crossings, versus 2.0700 and 0 with SCA on",
+          "info": {
+            "min_gamma": -2.314704885057382
+          }
+        },
+        {
+          "id": "N10.1",
+          "kind": "negative",
+          "ok": true,
+          "detail": "removing the SCA row is detected as a defect: the crossing counter goes from 0 to 534 and min_t Gamma_raw from 2.0700 to -2.3147",
+          "info": {
+            "n": 534
+          }
+        },
+        {
+          "id": "P10.7",
+          "kind": "positive",
+          "ok": true,
+          "detail": "counterfactual on the 368 infeasible steps (row dropped instead of frozen): min_t Gamma_raw = 1.2400 and 0 boundary crossings, against 2.0700 / 0 for the freeze policy and -2.3147 / 534 with the row switched off entirely.  The row still carries the guarantee without the freeze; the freeze only adds conservatism.",
+          "info": {
+            "dropped": 368,
+            "min_gamma": 1.240013958447794,
+            "crossings": 0
+          }
+        },
+        {
+          "id": "P10.4",
+          "kind": "positive",
+          "ok": true,
+          "detail": "sub-task consistency: the e2e tau agrees with an independent RK4 integration of Eq.(8) (driven by the recorded G) to 8.5e-04, the Gamma history is reproduced from the recorded joints to 0.0e+00, and the per-step KKT residual stays at 1.6e-14 (T08 reported 8.3e-16 on its own fixture).  A pointwise Gamma(t) comparison against T08 is NOT meaningful -- different arms, task and horizon -- so only the criterion (crossings 0 on / > 0 off) is compared, and T08's numbers are reported for the record: min 2.181 / 0 / 656",
+          "info": {
+            "tau_err": 0.0008521045385031512,
+            "gam_err": 0.0
+          }
+        },
+        {
+          "id": "P10.5",
+          "kind": "positive",
+          "ok": true,
+          "detail": "Theorem-3 identity at every QP solution: max |psi - Y^T U| = 9.095e-13 against max psi = 2.446e+04 (relative 3.7e-17).  The active-set solution satisfies P(u - Mu - b) = u, so Y^T U must collapse onto psi and Vdot onto 0 instantaneously; this is the (21a) assembly check, not a trajectory claim.",
+          "info": {
+            "idres_max": 9.094947017729282e-13,
+            "idres_scale": 24462.98444480784
+          }
+        },
+        {
+          "id": "P10.6",
+          "kind": "positive",
+          "ok": true,
+          "detail": "the plan's Theorem-3 ledger does NOT close and the reason is fully accounted for: int Y^T U dt - Delta V - int psi dt = 4.661e-02 with Delta V = -4.661e-02, so residual + Delta V = 2.764e-14 (0.00% of int|Y^T U| dt = 3.287e+02).  Delta V is the quasi-static jump of the multiplier vector when the QP is re-solved, not a missing term: Theorem 3 governs the flow (20), and this loop replaces that flow by a sequence of fixed points of a time-varying LVI.  The other variant (P_in = xdot^R . f, S = 0.5||separation||^2) is reported and NOT gated: residual = -3.284e+02 (215161% of its scale).  Neither number is an energy balance.",
+          "info": {
+            "residual": 0.0466139050843708,
+            "dV": -0.046613905084343155,
+            "unexplained": 2.7644553313166398e-14
+          }
+        },
+        {
+          "id": "N10.2",
+          "kind": "negative",
+          "ok": true,
+          "detail": "pinning tau == 1 or tau == 0 removes the switch entirely (t_switch is None in both runs, against 2.800 s with Eq.(8)): the asynchronous->synchronous transition is produced by the logistic field, not by a schedule",
+          "info": {
+            "tau1": null,
+            "tau0": null
+          }
+        },
+        {
+          "id": "N10.3",
+          "kind": "negative",
+          "ok": true,
+          "detail": "the end-to-end result is gated by the sub-tasks: on disk T01-T08 are 8/8 PASS, and run_all.evaluate_gates returns BLOCKED_BY_UPSTREAM for G4 when T08 is doctored to FAIL, so an e2e number can never paper over a failing sub-task",
+          "info": {
+            "subtasks": {
+              "T01": "PASS",
+              "T02": "PASS",
+              "T03": "PASS",
+              "T04": "PASS",
+              "T05": "PASS",
+              "T06": "PASS",
+              "T07": "PASS",
+              "T08": "PASS"
+            },
+            "gated": true
+          }
+        },
+        {
+          "id": "N10.4",
+          "kind": "negative",
+          "ok": true,
+          "detail": "lambda = 0 changes the outcome: min_t Gamma_raw 4.2235 vs 2.0700, crossings 0 vs 0, infeasible steps 594 vs 370.  The direction is NOT 'crossings rise' -- on this fixture the lambda = 0 cone stops the approach earlier, which is the same finding as T08/N8.2 (docs/DECISIONS.md D016)",
+          "info": {
+            "min_gamma": 4.223506699980102
+          }
+        },
+        {
+          "id": "N10.5",
+          "kind": "negative",
+          "ok": true,
+          "detail": "dt doubled: min_t Gamma_raw 2.0700 -> 2.0600 and t_switch 2.800 -> 2.820 s, so the integration step is really in the loop and the reported numbers are not step-size independent",
+          "info": {
+            "min_gamma": 2.0599956707988802,
+            "t_switch": 2.82
+          }
         }
       ],
       "metrics": {
-        "load_error": "NOT_IMPLEMENTED: No module named 'tasks.t10_e2e'"
+        "sha256_model2d": "4e9efd5f85a345231ed9a4a2ce25c46fe4455405e945699af71f3345398e021a",
+        "sca_pair": "L3-R2",
+        "sca_pair_indices": [
+          2,
+          4
+        ],
+        "sca_pair_gamma0": 4.225481650980398,
+        "sca_pair_gamma_min": -2.3079914359607647,
+        "sca_pair_null_share_min": 0.17468287757309503,
+        "sca_pair_null_share_mean": 0.19513526079045843,
+        "candidate_table": [
+          {
+            "pair": "L1-R1",
+            "gamma0": -0.0,
+            "gamma_min": -0.0001,
+            "share_min": 0.137
+          },
+          {
+            "pair": "L1-R2",
+            "gamma0": -0.0075,
+            "gamma_min": -0.3273,
+            "share_min": 0.2649
+          },
+          {
+            "pair": "L1-R3",
+            "gamma0": -0.1967,
+            "gamma_min": -2.7408,
+            "share_min": 0.0193
+          },
+          {
+            "pair": "L2-R1",
+            "gamma0": -5.1602,
+            "gamma_min": -5.2911,
+            "share_min": 0.0703
+          },
+          {
+            "pair": "L2-R2",
+            "gamma0": -2.6955,
+            "gamma_min": -2.7428,
+            "share_min": 0.2058
+          },
+          {
+            "pair": "L2-R3",
+            "gamma0": -1.7263,
+            "gamma_min": -3.6399,
+            "share_min": 0.0004
+          },
+          {
+            "pair": "L3-R1",
+            "gamma0": -0.8686,
+            "gamma_min": -1.5385,
+            "share_min": 0.0589
+          },
+          {
+            "pair": "L3-R2",
+            "gamma0": 4.2255,
+            "gamma_min": -2.308,
+            "share_min": 0.1747
+          },
+          {
+            "pair": "L3-R3",
+            "gamma0": 6.8989,
+            "gamma_min": -0.0559,
+            "share_min": 0.0
+          }
+        ],
+        "d_q": 6,
+        "d_n": 4,
+        "d_c": 1,
+        "t_end": 8.0,
+        "dt": 0.01,
+        "wall_dt_doubled_s": 10.953549837002356,
+        "t_switch": 2.8000000000000003,
+        "t_approach": 0.02,
+        "tau_final": [
+          0.982198131935384,
+          0.9882389853719299
+        ],
+        "tau_monotonicity_min_diff": 7.601675340085379e-06,
+        "approach_rate_pre": 0.006691063219824711,
+        "approach_rate_post": 0.0,
+        "approach_rate_ratio": 0.0,
+        "min_gamma_raw_sca_on": 2.0700284860816245,
+        "crossing_count_sca_on": 0,
+        "activation_ratio": 0.53125,
+        "infeasible_sca_on": 370,
+        "infeasible_attribution": {
+          "INF_INFEASIBLE": 370,
+          "INF_NOROW_OPTIMAL": 370,
+          "INF_REFNORM_MAX": 0.027903239592488496
+        },
+        "min_gamma_raw_sca_off": -2.314704885057382,
+        "crossing_count_sca_off": 534,
+        "infeasible_drop_row": 368,
+        "min_gamma_drop_row": 1.240013958447794,
+        "crossing_count_drop_row": 0,
+        "tau_vs_independent_rk4": 0.0008521045385031512,
+        "gamma_history_recompute_err": 0.0,
+        "kkt_max_e2e": 1.5618377980061265e-14,
+        "t08_reference": {
+          "min_gamma": 2.181265599379978,
+          "crossings": 0,
+          "crossings_off": 656
+        },
+        "thm3_ledger_residual": 0.0466139050843708,
+        "thm3_ledger_scale": 328.6876659511493,
+        "thm3_dV": -0.046613905084343155,
+        "thm3_unexplained": 2.7644553313166398e-14,
+        "thm3_idres_max": 9.094947017729282e-13,
+        "thm3_idres_rel": 3.717840330663189e-17,
+        "plan_ledger_residual": -328.4058074305331,
+        "plan_ledger_scale": 0.15263285902635243,
+        "plan_ledger_relative": -2151.6062106510963,
+        "psi_integral": 328.6876659511493,
+        "V_final": 0.0,
+        "t_switch_tau1": null,
+        "t_switch_tau0": null,
+        "subtask_status": {
+          "T01": "PASS",
+          "T02": "PASS",
+          "T03": "PASS",
+          "T04": "PASS",
+          "T05": "PASS",
+          "T06": "PASS",
+          "T07": "PASS",
+          "T08": "PASS"
+        },
+        "min_gamma_lambda0": 4.223506699980102,
+        "crossing_count_lambda0": 0,
+        "infeasible_lambda0": 594,
+        "min_gamma_dt_doubled": 2.0599956707988802,
+        "t_switch_dt_doubled": 2.82,
+        "solve_time_p50_ms": 14.908351502526784,
+        "solve_time_p99_ms": 15.746834398596546,
+        "qdot_sum_max": 1.4927233832359565,
+        "counts_sca_on": {
+          "LOG_DOMAIN": 0,
+          "QP_INFEASIBLE": 370,
+          "SOLVER_FAILURE": 0,
+          "BOUNDARY_CROSSING": 0,
+          "ROW_DROPPED": 0,
+          "INF_INFEASIBLE": 370,
+          "INF_NOROW_OPTIMAL": 370,
+          "INF_REFNORM_MAX": 0.027903239592488496
+        },
+        "counts_sca_off": {
+          "LOG_DOMAIN": 0,
+          "QP_INFEASIBLE": 0,
+          "SOLVER_FAILURE": 0,
+          "BOUNDARY_CROSSING": 534,
+          "ROW_DROPPED": 0
+        },
+        "n_steps": 800
       },
-      "figures": [],
+      "figures": [
+        {
+          "name": "t10_e2e_triptych.png",
+          "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t10_e2e_triptych.png"
+        },
+        {
+          "name": "t10_phase.png",
+          "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t10_phase.png"
+        },
+        {
+          "name": "t10_sca_ablation.png",
+          "path": "/home/ubuntu2004/lmy/p5-numerical-20261020/p5/evidence/figures/impl/t10_sca_ablation.png"
+        }
+      ],
       "metadata": {
         "role": "end-to-end mechanism chain",
         "module": "tasks.t10_e2e"
       },
-      "wall_time_s": 0.0,
+      "wall_time_s": 142.233,
       "python": "3.10.12"
     }
   },
@@ -1698,22 +1983,22 @@
       "detail": "all members PASS"
     },
     "G4": {
-      "status": "FAIL",
+      "status": "PASS",
       "blocked_by": [],
       "members": [
         "T10"
       ],
       "member_status": {
-        "T10": "NOT_IMPLEMENTED"
+        "T10": "PASS"
       },
-      "detail": "not PASS: T10=NOT_IMPLEMENTED"
+      "detail": "all members PASS"
     }
   },
   "totals": {
-    "n_checks": 104,
-    "n_positive": 58,
-    "n_negative": 46,
-    "n_failed": 1,
-    "wall_s": 203.544
+    "n_checks": 115,
+    "n_positive": 64,
+    "n_negative": 51,
+    "n_failed": 0,
+    "wall_s": 344.159
   }
 }
