@@ -13,5 +13,5 @@
 27,"tau = J^T[[Omega,0],[0,I]]K_p dx + J^T[[R_h,0],[0,R_h]]w - D qdot + tau_g + tau_f",control.torque_terms(),"LITERAL (+ A1 frame relabelling, ADAPTATION)","T04_01..14, T06"
 28,"Omega = R_h Sigma R_h^T, Sigma = diag([0 1 1])",control.omega(),LITERAL,T03_01..12
 stage switching,manual in the paper (p.8572); no criterion given,stages.StageSchedule (externally prescribed),ADAPTATION,T02_06
-task frame vs hole frame,push along z (Eq.19) vs Sigma zeroes x (Sec.IV-D),explicit R_task_to_hole (e_z -> e_x),ADAPTATION (frame naming only),"T03_12, T06_09"
+task frame vs hole frame,push along z (Eq.19) vs Sigma zeroes x (Sec.IV-D),explicit R_task_to_hole (e_z -> e_x); literal reading kept for audit,ADAPTATION (frame naming; source ambiguity retained),"T03_12, T03_15, T06_09"
 numeric parameters,none published (only 500 <= k_p <= 1000 for the hole arm),fixtures.TEST_FIXTURE,TEST_FIXTURE,T04_14

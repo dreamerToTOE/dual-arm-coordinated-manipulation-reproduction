@@ -1,7 +1,8 @@
 # P3-T02 POST — Assembly-stage composition (Eq.23–26)
 
-**Status**: `PASS` — 16/16 checks.
-**Run**: `results/20261020_093810_P3-T02_stages/results.json`
+**Status**: `PASS` — 16/16 checks (metrics corrected 2026-10-20, review R3).
+**Run**: `results/20261020_104220_P3-T02_stages/results.json`
+**Superseded run (preserved)**: `results/20261020_093810_P3-T02_stages/results.json` (mixed jump norm)
 **Command**: `/usr/bin/python3.10 p3/tools/run_t02_stages.py`
 **Code**: `baselines/p3_peg_in_hole/stages.py` **[ORIGINAL composition / ADAPTATION schedule]**
 **Figures**: `p3_t02_case1_wrench.png`, `p3_t02_boundary_jumps.png`
@@ -32,11 +33,15 @@ recognition is implemented.
 
 ## 3. Boundary discontinuities (reported, not errors)
 
-| Boundary | Case 1 jump ‖Δw‖ |
-|---|---|
-| approach→search | 1.824 (equals the spiral force magnitude at t = 3.2 s) |
-| search→align | 5.015 (spiral + wiggle + rub enter together) |
-| align→insert | 0.391 (residual phase of the wiggle/rub at 16.5 s) |
+| Boundary | Force jump ‖Δf‖₂ [N] | Moment jump ‖Δm‖₂ [N·m] |
+|---|---:|---:|
+| approach→search | 1.824 (equals the spiral force magnitude at t = 3.2 s) | 0.000 |
+| search→align | 5.000 | 0.391 |
+| align→insert | 0.000 | 0.391 (residual wiggle/rub phase at 16.5 s) |
+
+Force and moment jumps are now reported separately (review R3). The concatenated 6-vector norm is
+retained in the JSON only as `jump_mixed_l2_unphysical` — a dimensionless, unnormalized diagnostic
+that must not be quoted as a physical quantity (it adds newtons to newton-metres).
 
 The jumps are legitimate command changes; the driver reports them (JSON
 `boundary_jumps`) instead of smoothing or rejecting them.

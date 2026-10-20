@@ -117,18 +117,26 @@ class StageSchedule:
 
         A command jump is legitimate (different stage = different command); the
         reviewer requires it be *reported*, not silently smoothed.
+
+        Primary metrics are dimensionally meaningful: ``jump_force_N`` (norm of
+        the force-part difference, N) and ``jump_moment_Nm`` (norm of the
+        moment-part difference, N*m). ``jump_mixed_l2_unphysical`` concatenates
+        newtons and newton-metres; it is kept only as a labelled, unnormalized
+        numerical diagnostic and must not be quoted as a physical quantity
+        (review R3).
         """
         rows = []
         for left, right in zip(self.segments[:-1], self.segments[1:]):
             w_before = stage_wrench(left.stage, patterns, left.t_end)
             w_after = stage_wrench(right.stage, patterns, right.t_start)
+            delta = w_after - w_before
             rows.append({
                 "t_boundary_s": right.t_start,
                 "from_stage": left.stage,
                 "to_stage": right.stage,
-                "jump_l2": float(np.linalg.norm(w_after - w_before)),
-                "jump_force_N": float(np.linalg.norm((w_after - w_before)[:3])),
-                "jump_moment_Nm": float(np.linalg.norm((w_after - w_before)[3:])),
+                "jump_force_N": float(np.linalg.norm(delta[:3])),
+                "jump_moment_Nm": float(np.linalg.norm(delta[3:])),
+                "jump_mixed_l2_unphysical": float(np.linalg.norm(delta)),
             })
         return tuple(rows)
 

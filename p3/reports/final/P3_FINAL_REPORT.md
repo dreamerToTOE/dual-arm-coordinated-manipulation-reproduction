@@ -15,7 +15,7 @@
 | 项 | 结论 |
 |---|---|
 | 验收等级 | **`ALGORITHM_NUMERICAL_VERIFIED`**（核心算法数值层，D082 范围） |
-| 检查总数 | **91 项全部通过**（T01 21、T02 16、T03 22、T04 20、T06 12） |
+| 检查总数 | **92 项全部通过**（T01 21、T02 16、T03 23、T04 20、T06 12；交付后复审 R1–R4 修正） |
 | 声明 | **不声称 `FULL_PAPER_REPRODUCED`**；硬件实验、灵巧手、完整装配环境均未复现 |
 | T05 接触代理 | **未实施**（评审定为可选、非验收依赖；避免无真值支撑的"成功"结论） |
 
@@ -61,28 +61,39 @@ approach-align-insert 5 次、approach-insert 8 次（3.37 s）。
 
 | 式 | 原文（页面图像核实） | 实现 | 状态 |
 |---|---|---|---|
-| (16) | `w=[w1…w6]ᵀ`；前三维平移力、后三维力矩 | `WRENCH_ORDER`，`COMPONENT_UNITS` | LITERAL |
-| (17) | `w_i=a_i sin(b_i t+c_i)+d_i` | `GeneralPattern.wrench` | LITERAL |
-| (18) | `w=diag(a) vsin(tb+c)+d` | 同上（`a(t)` 允许时变） | LITERAL（注：式22 使 `a` 时变，见 §3.2） |
-| (19) | push：`a=b=c=0`，`d=[0 0 f_push 0 0 0]ᵀ` | `Push` | LITERAL |
-| (20) | rub：`a=[0…0 f_rub]ᵀ`，`b=[0…0 v_rub]ᵀ`（绕 z 力矩） | `Rub` | LITERAL；`f_rub` 单位 **N·m** |
-| (21) | wiggle：`a=[0 0 0 f f 0]ᵀ`，`b=[0 0 0 v v 0]ᵀ`，`c=[0 0 0 0 π/2 0]ᵀ` | `Wiggle` | LITERAL；π/2 在**第 5 分量**（my 为余弦） |
-| (22) | spiral：`a=[f_s(t) f_s(t) 0 0 0 0]ᵀ`，`c=[0 π/2 0 0 0 0]ᵀ`，`f_s=α sin(vt)+β` | `Spiral.amplitude` | LITERAL |
-| (23) | `w_approach=w_push` | `COMPOSITION["approach"]` | LITERAL |
-| (24) | `w_search=w_push+w_spiral` | 同上 | LITERAL |
-| (25) | `w_align=w_push+w_wiggle+w_rub` | 同上 | LITERAL |
-| (26) | `w_insert=w_push` | 同上 | LITERAL |
-| (27) | `τ=Jᵀ[[Ω,0],[0,I]]K_pΔx+Jᵀ[[R_h,0],[0,R_h]]w−Dq̇+τ_g+τ_f` | `control.torque_terms` | LITERAL |
-| (28) | `Ω=R_hΣR_hᵀ`，`Σ=diag([0 1 1])` | `control.omega` | LITERAL |
+| 16 | `w=[w1…w6]ᵀ`；前三维平移力、后三维力矩 | `WRENCH_ORDER`，`COMPONENT_UNITS` | LITERAL |
+| 17 | `w_i=a_i sin(b_i t+c_i)+d_i` | `GeneralPattern.wrench` | LITERAL |
+| 18 | `w=diag(a) vsin(tb+c)+d` | 同上（`a(t)` 允许时变） | LITERAL（注：式22 使 `a` 时变，见 §3.2） |
+| 19 | push：`a=b=c=0`，`d=[0 0 f_push 0 0 0]ᵀ` | `Push` | LITERAL |
+| 20 | rub：`a=[0…0 f_rub]ᵀ`，`b=[0…0 v_rub]ᵀ`（绕 z 力矩） | `Rub` | LITERAL；`f_rub` 单位 **N·m** |
+| 21 | wiggle：`a=[0 0 0 f f 0]ᵀ`，`b=[0 0 0 v v 0]ᵀ`，`c=[0 0 0 0 π/2 0]ᵀ` | `Wiggle` | LITERAL；π/2 在**第 5 分量**（my 为余弦） |
+| 22 | spiral：`a=[f_s(t) f_s(t) 0 0 0 0]ᵀ`，`c=[0 π/2 0 0 0 0]ᵀ`，`f_s=α sin(vt)+β` | `Spiral.amplitude` | LITERAL |
+| 23 | `w_approach=w_push` | `COMPOSITION["approach"]` | LITERAL |
+| 24 | `w_search=w_push+w_spiral` | 同上 | LITERAL |
+| 25 | `w_align=w_push+w_wiggle+w_rub` | 同上 | LITERAL |
+| 26 | `w_insert=w_push` | 同上 | LITERAL |
+| 27 | `τ=Jᵀ[[Ω,0],[0,I]]K_pΔx+Jᵀ[[R_h,0],[0,R_h]]w−Dq̇+τ_g+τ_f` | `control.torque_terms` | LITERAL |
+| 28 | `Ω=R_hΣR_hᵀ`，`Σ=diag([0 1 1])` | `control.omega` | LITERAL |
 
 ### 3.1 帧约定的唯一实质歧义（A1）与处理
 
 式(19)/Fig.5 把 push 定在 **z** 轴，而 §IV-D 声明"把施加推力的轴设为 **x**"并取
-`Σ=diag([0 1 1])`（即屏蔽 x）。二者是任务/peg 坐标系与孔坐标系之间的轴命名差异。
-处理方式：显式引入 `R_task→hole`（`e_z→e_x`，绕 y 转 +90°），并保留 LITERAL 变体；
-证明该重标定**不改变任何验收性质**——`Ω` 只通过 `R_h e_x` 依赖 `R_h`，两种变体下
-被屏蔽轴始终跟随推力轴（T03_12 实测 1.5e-17），T06_09 验证复合关系为 `R_h·R_task→hole`。
-标签：**[ADAPTATION: frame naming]**，不是算法改动。
+`Σ=diag([0 1 1])`（即屏蔽 x）。二者是任务/peg 坐标系与孔坐标系之间的轴命名差异，
+**论文没有给出这两个坐标系之间的旋转**，因此这是一个**未解决的原文歧义**，不是可以
+在代数上"两边都成立"的问题。
+
+处理方式：显式引入 `R_task→hole`（`e_z→e_x`，绕 y 转 +90°），保留 LITERAL 变体用于审计，
+并把选择标注为 **[ADAPTATION: frame naming]**——**不声称论文证明了哪一种约定**。
+
+两种读法的区别是可判定的（交付后复审 R1 更正了此前一个同义反复的检验）：
+
+| 读法 | 被屏蔽方向 | 检验 | 结果 |
+|---|---|---|---|
+| CONSISTENT（重标定，采用） | 真实推力轴 `p_ref=R_h(R_task→hole e_z)` | `‖Ω(R_h)·p_ref‖` | **8.5e-17**（T03_12） |
+| LITERAL（不重标定） | `R_h e_x`（并非推力轴） | `‖Ω(I)·e_z‖`（`R_h=I`） | **1.0**（T03_15 负对照） |
+
+即：两种读法的投影算子代数性质都成立，但只有重标定读法真正排除推力方向；LITERAL 读法
+把推力方向留在位置控制子空间内。T06_09 另验证复合关系为 `R_h·R_task→hole`。
 
 ### 3.2 其他记录项
 
@@ -134,17 +145,20 @@ approach-align-insert 5 次、approach-insert 8 次（3.37 s）。
 
 ![T02 跳变](figures/p3_t02_boundary_jumps.png)
 
-| 边界 | case1 跳变 ‖Δw‖ |
-|---|---|
-| approach→search | 1.824（= t=3.2 s 处螺旋力幅值） |
-| search→align | 5.015 |
-| align→insert | 0.391 |
+| 边界 | 力跳变 ‖Δf‖₂ [N] | 力矩跳变 ‖Δm‖₂ [N·m] |
+|---|---:|---:|
+| approach→search | 1.824（= t=3.2 s 处螺旋力幅值） | 0.000 |
+| search→align | 5.000 | 0.391 |
+| align→insert | 0.000 | 0.391（16.5 s 处 wiggle/rub 残余相位） |
 
-### 5.3 T03 选择矩阵与坐标变换（22/22）
+力与力矩跳变**分开报告**（复审 R3）：把牛顿与牛顿·米拼进同一个 6 维向量再取范数没有物理
+单位，JSON 中的合成值仅以 `jump_mixed_l2_unphysical` 形式保留为无量纲诊断，不作任何物理解释。
+
+### 5.3 T03 选择矩阵与坐标变换（23/23）
 
 ![T03 选择算子](figures/p3_t03_selection.png)
 
-`Ω` 对称（0）、幂等（1.1e-16）、秩 2、`Ω(R_h e_x)=0`、`Ω(R_h e_y)=R_h e_y`；
+`Ω` 对称（0）、幂等（1.1e-16）、秩 2、`Ω(R_h e_x)=0`、`Ω(R_h e_y)=R_h e_y`；修正后的 T03_12 验证 `Ω(R_h)` 湮灭真实推力方向（8.5e-17），T03_15 负对照给出 LITERAL 读法的 1.0；
 6×6 选择块秩 5；帧协变 `Ω(R₂R₁)=R₂Ω(R₁)R₂ᵀ`（1.1e-16）；配对功率不变 2.2e-16。
 **不把奇异 Jacobian 当作失败**（秩 5 时 `JᵀF` 有限，T03_13）；
 **不声称** `‖Jᵀw‖=‖w‖`（实测比值 1.001，显式报告）。
@@ -183,7 +197,7 @@ oracle 逐元素比较（T03_M2，检出 0.266）。
 
 四个案例全流程：每 0.01 s 通过"模式→组合→A1 重标定→选择/旋转→力矩"同一管线；
 逐样本与 oracle 一致（w 残差 0，τ <1e-12 N·m）；无死分支（12 个阶段块全部被激励）；
-时钟单调、边界对齐；两次运行**逐位相同**（sha256）；`\|τ\|≤10.15 N·m`。
+时钟单调、边界对齐；两次运行**逐位相同**（sha256）。幅值按复审 R2 分列：`max_{t,k}|τ_k| = 10.152 N·m` 与 `max_t‖τ‖₂ = 12.590 N·m`；力 `max_{t,i}|F_i| = 10.00 N`、`max_t‖F‖₂ = 11.18 N`；力矩 `max_t‖m‖₂ = 0.391 N·m`。（此前报告写的 `‖τ‖≤10.15` 是最大分量的误标，已更正。）
 每案例 CSV 轨迹（含表头与单位）在 `results/20261020_094514_P3-T06_integration/`。
 
 ## 6. 负证据汇总
@@ -256,10 +270,16 @@ oracle 逐元素比较（T03_M2，检出 0.266）。
 |---|---|---|
 | T01（含 T00 审计） | `54306928` | 模式实现 + 审计 + 21 项验证 |
 | T02 | `6aa406e5` | 阶段组合 + 调度 + 16 项验证 |
-| T03 | `bf3fdec7` | 选择矩阵/帧 + 22 项验证 |
+| T03 | `bf3fdec7` | 选择矩阵/帧 + 22 项验证（原版） |
 | T04 | `f01e36f2` | 力矩律 + 20 项验证 |
-| T06 | `dedd8e90` | 确定性集成 + 12 项验证 |
-| 报告（本文件） | 见 `git log -1` | 报告 + CSV + Word/PDF |
+| T06 | `dedd8e90` | 确定性集成 + 12 项验证（原版） |
+| 报告（首版） | `e1f7d874` | 首版报告 + CSV + Word/PDF |
+| **交付后复审** | `11542aee` | 独立复审 R1–R4（条件接受） |
+| **修正轮（本版）** | 见 `git log -1` | T03 23 项、T02/T06 指标修正、记录追加、报告重生成 |
+
+历史运行 `20261020_093347/093810/094115/094514_*` 与 `20261020_094329_*` 全部保留，未覆盖；
+修正轮新增运行 `20261020_104153_P3-T03_selection`、`20261020_104220_P3-T02_stages`、
+`20261020_104237_P3-T06_integration`。
 
 ### 11.2 复现命令
 

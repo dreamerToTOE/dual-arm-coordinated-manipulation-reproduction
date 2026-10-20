@@ -1,7 +1,8 @@
 # P3-T03 POST — Force/position selection and frames (Eq.27–28)
 
-**Status**: `PASS` — 22/22 checks.
-**Run**: `results/20261020_094115_P3-T03_selection/results.json`
+**Status**: `PASS` — 23/23 checks (corrected 2026-10-20, review R1).
+**Run**: `results/20261020_104153_P3-T03_selection/results.json`
+**Superseded run (preserved)**: `results/20261020_094115_P3-T03_selection/results.json` (22 checks, T03_12 tautological)
 **Command**: `/usr/bin/python3.10 p3/tools/run_t03_selection.py`
 **Code**: `baselines/p3_peg_in_hole/control.py` **[ORIGINAL Eq.(27)-(28)]** · Oracle: `p3/oracles/oracle_control.py` (`Ω = I − n nᵀ`, a different derivation)
 **Figures**: `p3_t03_selection.png`, `p3_t03_mutations.png`
@@ -26,16 +27,20 @@
 | T03_09 | `blkdiag(R_h,R_h)` vs oracle, orthonormal | 0 |
 | T03_10 | paired wrench/twist power `(W_R w)ᵀ(W_R V) = wᵀV` | 2.2e-16 |
 | T03_11 | dimensions: `F ∈ R⁶`, `τ ∈ R⁷` | shapes |
-| T03_12 | **A1**: with the explicit `e_z→e_x` relabelling the annihilated axis is the *push* axis `R_h e_z` | 1.5e-17 |
+| T03_12 | **A1 (corrected)**: `Ω(R_h)` annihilates the *physical* push direction `p_ref = R_h(R_task→hole e_z)` | 8.5e-17 |
+| T03_15 | **negative control**: literal frame (`R_h=I`, no relabelling) leaves `e_z` un-annihilated (`‖Ω(I)e_z‖=1`) | 1.0 (dimensionless) |
 | T03_13 | rank-deficient `J` (rank 5) accepted; `JᵀF` finite | \|τ\| = 11.03 N·m |
 | T03_14 | no norm-preservation claim: `‖JᵀF‖/‖F‖ ≠ 1` reported | 1.001 |
 
-**A1 resolution (recorded)**: the paper builds `w` with push along z (Eq.19/Fig.5) but fixes
-`Σ = diag([0 1 1])` in a frame whose insertion axis is x. Both readings are exercised: the LITERAL
-variant (`R_h` applied directly) and the CONSISTENT variant (`R_h·R_task→hole`, `e_z→e_x`). Because
-`Ω` depends on `R_h` only through `R_h e_x`, every projector property is invariant under this
-relabelling (T03_12 proves the annihilated axis tracks the push axis). Label: **[ADAPTATION: frame
-naming]**, no algorithm change.
+**A1 resolution (recorded, corrected)**: the paper builds `w` with push along z (Eq.19/Fig.5) but fixes
+`Σ = diag([0 1 1])` in a frame whose insertion axis is x. This is a **real source ambiguity**, not a
+tautology: the two readings are both valid projectors but exclude *different physical directions*.
+The relabelled (CONSISTENT) variant excludes the task push axis — `Ω(R_h)·p_ref = 0` at 8.5e-17 with
+`p_ref = R_h(R_task→hole e_z)` (T03_12). The literal reading excludes `R_h e_x`; with `R_h = I` the
+push direction stays fully inside the position-controlled subspace (`‖Ω(I)e_z‖ = 1`, T03_15). We adopt
+the relabelled convention as **[ADAPTATION: frame naming]** and retain the literal variant for audit
+only. The paper does not state which convention was intended, so this is **not** claimed as
+paper-established.
 
 ## 3. Negative and mutation evidence
 

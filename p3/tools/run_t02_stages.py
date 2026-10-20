@@ -118,7 +118,8 @@ case1 = jumps["case1_approach_search_align_insert"]
 analytic = float(np.linalg.norm(P["spiral"].wrench(3.2)[:3]))
 check("T02_07", "boundary discontinuities reported (approach|search force jump = |spiral force| at t=3.2 s)",
       len(case1) == 3 and abs(case1[0]["jump_force_N"] - analytic) < 1e-12,
-      f"jumps={[round(r['jump_l2'], 6) for r in case1]} N",
+      f"force_N={[round(r['jump_force_N'], 6) for r in case1]} N; "
+      f"moment_Nm={[round(r['jump_moment_Nm'], 6) for r in case1]} N*m",
       note="manual switching => jumps legitimate, only reported")
 
 # ---------------------------------------------------------------- negatives
@@ -202,15 +203,21 @@ fig.tight_layout()
 fig.savefig(FIG / "p3_t02_case1_wrench.png", dpi=160)
 plt.close(fig)
 
-fig, ax = plt.subplots(figsize=(8, 3.6))
+fig, ax = plt.subplots(1, 2, figsize=(11, 3.8), sharey=False)
 names = list(schedules)
 width = 0.2
 for j, case in enumerate(names):
-    js = [r["jump_l2"] for r in jumps[case]]
-    ax.bar(np.arange(len(js)) + j * width, js, width=width, label=case)
-ax.set_xlabel("boundary index"); ax.set_ylabel("wrench jump $\\|\\Delta w\\|$ [N or N$\\cdot$m]")
-ax.set_title("P3-T02 stage-boundary command jumps (reported, not errors)")
-ax.legend(fontsize=7); ax.grid(alpha=0.3, axis="y")
+    jf = [r["jump_force_N"] for r in jumps[case]]
+    jm = [r["jump_moment_Nm"] for r in jumps[case]]
+    ax[0].bar(np.arange(len(jf)) + j * width, jf, width=width, label=case)
+    ax[1].bar(np.arange(len(jm)) + j * width, jm, width=width, label=case)
+ax[0].set_xlabel("boundary index"); ax[0].set_ylabel("force jump $\\|\\Delta f\\|_2$ [N]")
+ax[0].set_title("force-part jump (N)")
+ax[1].set_xlabel("boundary index"); ax[1].set_ylabel("moment jump $\\|\\Delta m\\|_2$ [N$\\cdot$m]")
+ax[1].set_title("moment-part jump (N$\\cdot$m)")
+for a in ax:
+    a.legend(fontsize=7); a.grid(alpha=0.3, axis="y")
+fig.suptitle("P3-T02 stage-boundary command jumps, force and moment reported separately")
 fig.tight_layout()
 fig.savefig(FIG / "p3_t02_boundary_jumps.png", dpi=160)
 plt.close(fig)

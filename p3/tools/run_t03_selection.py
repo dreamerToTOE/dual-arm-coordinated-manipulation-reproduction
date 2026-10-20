@@ -123,14 +123,26 @@ dims_ok = (terms["F_pos"].shape == (6,) and terms["F_pert"].shape == (6,)
 check("T03_11", "dimension correctness: F in R^6, tau in R^n (n=7)",
       dims_ok, "shapes: F(6,), tau(7,)")
 
-# A1: task->hole relabelling. With R_task_to_hole mapping e_z -> e_x, the
-# annihilated direction must equal the *push* direction R_h e_z.
-Sel_task = ctl.position_selector(R_H @ R_TASK_TO_HOLE)
-push_dir = (R_H @ R_TASK_TO_HOLE) @ np.array([1.0, 0.0, 0.0])   # = R_h e_z
-res_push = float(np.linalg.norm(Sel_task[:3, :3] @ push_dir))
-check("T03_12", "A1 relabelling: with e_z->e_x map, the annihilated axis is the push axis R_h e_z",
-      res_push < 1e-15, res_push,
-      note="both LITERAL and CONSISTENT variants keep every projector property")
+# A1: task->hole relabelling. Eq.(28) is applied with R_h (hole -> reference),
+# so its annihilated direction is R_h e_x. The physical push direction is the
+# task e_z mapped through task->hole and then hole->reference:
+#     p_ref = R_h (R_task_to_hole e_z) = R_h e_x
+# (R03 review R1: the previous version tested R_h R_task_to_hole e_x, which was
+# tautological and used the wrong basis vector for R_y(+90 deg): e_x -> -e_z.)
+p_ref = R_H @ (R_TASK_TO_HOLE @ np.array([0.0, 0.0, 1.0]))
+res_push = float(np.linalg.norm(ctl.omega(R_H) @ p_ref))
+check("T03_12", "A1: Eq.(28) projector (built from R_h) annihilates the physical push "
+                "direction p_ref = R_h(R_task_to_hole e_z)", res_push < 1e-15, res_push,
+      note="uses the actual push axis e_z, not the projector's own e_x")
+
+# Negative control: the LITERAL (unrelabelled) reading is NOT push-axis
+# consistent. With R_h = I and no relabelling, Omega(I) e_z = e_z != 0, i.e.
+# the pushing direction would be inside the position-controlled subspace.
+res_literal = float(np.linalg.norm(ctl.omega(np.eye(3)) @ np.array([0.0, 0.0, 1.0])))
+check("T03_15", "negative control: literal frame (R_h=I, no relabelling) leaves the push "
+                "axis e_z un-annihilated", abs(res_literal - 1.0) < 1e-15, res_literal,
+      "dimensionless",
+      note="shows A1 is a real convention choice, not a tautology; source ambiguity retained")
 
 # singular J must NOT be rejected, and J^T w need not be norm-preserving
 Js = fx.singular_jacobian()

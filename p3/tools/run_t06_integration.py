@@ -174,8 +174,23 @@ check("T06_04", "per-sample torque equals independent oracle (A1 mapping applied
 all_tau = np.vstack([r["tau"] for r in runs.values()])
 all_w = np.vstack([r["w"] for r in runs.values()])
 finite = np.isfinite(all_tau).all() and np.isfinite(all_w).all()
-check("T06_05", "all command/torque samples finite",
-      bool(finite), f"max|tau|={np.max(np.abs(all_tau)):.3f} N*m, max|F|={np.max(np.abs(all_w[:, :3])):.2f} N")
+METRICS = {
+    # review R2: max absolute component and max vector norm are different
+    # quantities; both are reported and neither is called "||tau||".
+    "max_abs_tau_component_Nm": float(np.max(np.abs(all_tau))),
+    "max_tau_vector_norm_Nm": float(np.max(np.linalg.norm(all_tau, axis=1))),
+    "max_abs_force_component_N": float(np.max(np.abs(all_w[:, :3]))),
+    "max_force_vector_norm_N": float(np.max(np.linalg.norm(all_w[:, :3], axis=1))),
+    "max_abs_moment_component_Nm": float(np.max(np.abs(all_w[:, 3:]))),
+    "max_moment_vector_norm_Nm": float(np.max(np.linalg.norm(all_w[:, 3:], axis=1))),
+}
+check("T06_05", "all samples finite; max component and max vector norm reported separately",
+      bool(finite),
+      f"max_t,k|tau_k|={METRICS['max_abs_tau_component_Nm']:.3f} N*m; "
+      f"max_t||tau||2={METRICS['max_tau_vector_norm_Nm']:.3f} N*m; "
+      f"max_t,i|F_i|={METRICS['max_abs_force_component_N']:.2f} N; "
+      f"max_t||F||2={METRICS['max_force_vector_norm_N']:.2f} N; "
+      f"max_t||m||2={METRICS['max_moment_vector_norm_Nm']:.3f} N*m")
 
 # ---------------------------------------------------------------- T06_06 push axis
 # The position term must stay inside the controlled subspace for every sample.
@@ -201,8 +216,10 @@ for case, r in runs.items():
         stats.setdefault(case, {})[stage] = {
             "samples": int(mask.sum()),
             "duration_s": float(mask.sum() * DT),
-            "max_abs_tau_Nm": float(np.max(np.abs(r["tau"][mask]))) if mask.any() else None,
-            "mean_abs_force_N": float(np.mean(np.abs(r["w"][mask][:, :3]))) if mask.any() else None,
+            "max_abs_tau_component_Nm": float(np.max(np.abs(r["tau"][mask]))) if mask.any() else None,
+            "max_tau_vector_norm_Nm": float(np.max(np.linalg.norm(r["tau"][mask], axis=1))) if mask.any() else None,
+            "mean_abs_force_component_N": float(np.mean(np.abs(r["w"][mask][:, :3]))) if mask.any() else None,
+            "mean_force_vector_norm_N": float(np.mean(np.linalg.norm(r["w"][mask][:, :3], axis=1))) if mask.any() else None,
         }
 stage_ok = all(v["samples"] > 0 for c in stats.values() for v in c.values())
 check("T06_08", "per-stage sample counts and magnitudes recorded", stage_ok,
@@ -296,6 +313,7 @@ result = {
     "scope_note": "command consistency only: no object motion, no contact, no insertion success",
     "checks": CHECKS,
     "per_stage_stats": stats,
+    "magnitude_metrics": METRICS,
     "traces": [f"{c}_trace.csv" for c in st.CASES],
     "summary": {"pass": passes, "total": total,
                 "verdict": "PASS" if passes == total else "FAIL"},

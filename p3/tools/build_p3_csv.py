@@ -33,7 +33,7 @@ EQ_ROWS = [
     ("stage switching", "manual in the paper (p.8572); no criterion given",
      "stages.StageSchedule (externally prescribed)", "ADAPTATION", "T02_06"),
     ("task frame vs hole frame", "push along z (Eq.19) vs Sigma zeroes x (Sec.IV-D)",
-     "explicit R_task_to_hole (e_z -> e_x)", "ADAPTATION (frame naming only)", "T03_12, T06_09"),
+     "explicit R_task_to_hole (e_z -> e_x); literal reading kept for audit", "ADAPTATION (frame naming; source ambiguity retained)", "T03_12, T03_15, T06_09"),
     ("numeric parameters", "none published (only 500 <= k_p <= 1000 for the hole arm)",
      "fixtures.TEST_FIXTURE", "TEST_FIXTURE", "T04_14"),
 ]
@@ -53,7 +53,7 @@ SCOPE_ROWS = [
     ("12", "Eq.27 damping/gravity/friction", "reproduce", "implemented + validated", "T04_09/10, T04_M4/M5", "ORIGINAL"),
     ("13", "no force feedback", "preserve absence", "verified structurally + behaviourally", "T04_12/13", "ORIGINAL"),
     ("14", "joint torques (complete law)", "reproduce", "implemented + validated", "T04_01..11, T06_04", "ORIGINAL"),
-    ("15", "Eq.27 task->hole axis naming", "not stated", "explicit e_z->e_x relabelling", "T03_12, T06_09", "ADAPTATION"),
+    ("15", "Eq.27 task->hole axis naming", "not stated (source ambiguity)", "explicit e_z->e_x relabelling; literal variant tested and rejected for push-axis alignment", "T03_12 (8.5e-17), T03_15 (1.0)", "ADAPTATION"),
     ("16", "numeric parameter values", "not published", "TEST_FIXTURE only", "fixtures.py", "TEST_FIXTURE"),
     ("17", "Eq.1-15 dexterous hand", "full", "not reproduced", "-", "OUT_OF_SCOPE_D082"),
     ("18", "50-DOF robot / KITECH hand", "full", "not reproduced", "-", "OUT_OF_SCOPE_D082"),
