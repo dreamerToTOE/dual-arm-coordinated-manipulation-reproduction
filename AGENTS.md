@@ -266,3 +266,14 @@ Stop and ask the user if:
 - Keep historical headless scripts/logs as evidence, but do not silently reuse them for new acceptance runs.
 - Playback rate, physics rate, controller rate, and MoveIt joint limits are distinct quantities and must not be conflated.
 - GUI visibility is an engineering/user-inspection requirement, not by itself scientific evidence of correctness.
+
+## 18. Audience-facing paper-reproduction report writing (user instruction, 2026-10-21)
+When drafting or revising **Word/PDF papers, reproduction summaries, weekly research presentations, or advisor-facing reports**:
+- **Omit sections whose purpose is to explain why we are doing only numerical/algorithmic reproduction.** In particular, do not recreate the deleted P5 report section “3.2 为什么只做算法数值复现” or a differently numbered equivalent.
+- **Do not describe the supervisor/advisor's instructions, comments, or assignment history** in the report narrative (e.g., “导师要求……”, “导师说……”, “按照导师要求……”); do not justify scientific choices by appealing to authority.
+- Write the actual scientific work instead: paper problem and contribution, core method and equations, derivations, evidence from the original paper where useful, our implementation, experimental/numerical plots and results, interpretation, and specific technical caveats. Prefer natural academic prose over boilerplate task-management statements.
+- **Keep truthfulness about scope:** technical limitations, missing experiments, adaptations, and unverified claims must remain documented where scientifically relevant. State these factually, briefly, without citing who requested the scope. This preference changes presentation, **not** experiment requirements or scientific fidelity labels.
+- The instruction concerns the deleted **content** of that specific P5 §3.2, not all future headings numbered 3.2; use normal heading numbering and never insert a filler section.
+- The user's P5 Word copy was already edited manually; **do not regenerate or modify it solely to apply this rule**.
+
+See `docs/USER_FEEDBACK.md` (2026-10-21) for the original request.
