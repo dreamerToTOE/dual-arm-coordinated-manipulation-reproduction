@@ -1,0 +1,73 @@
+{
+  "C1": {
+    "lqr_cost": 150.5251970118237,
+    "median_ratio": 1.0300015438728036,
+    "max_ratio": 1.0422865877702536,
+    "within_10pct": 50,
+    "seeds": 50,
+    "mean_first_cost": 783.8207364688898,
+    "mean_last_cost": 155.0410424664431
+  },
+  "C2": {
+    "M": 200,
+    "effective_samples": 13.96037824372116,
+    "mc_variance": 0.07123573400631683,
+    "predicted_variance": 0.07163129698507714,
+    "ratio": 0.9944777911972931,
+    "weights_sum": 1.0
+  },
+  "E2_units": {
+    "decay_rate_fit": 2.0202707317519457,
+    "true_gain": 2.0,
+    "L_slope": 0.09999999999999998,
+    "expected_slope": 0.1,
+    "L_max_reached": 0.4,
+    "L_min_reached": -0.05,
+    "dwell_down": 4001,
+    "dwell_up": 500,
+    "dwell_ratio": 8.002
+  },
+  "E2_projection_forms": {
+    "task_residual_eq45": 0.011468924471316458,
+    "task_residual_priority": 3.807593805800986e-05,
+    "error_norm": 0.012820111468802398,
+    "equality_residual_eq45": 3.471957496308266e-17,
+    "equality_residual_priority": 3.2592495070968174e-17,
+    "step_norm_eq45": 0.03532143911475594,
+    "step_norm_priority": 0.4156728116364737
+  },
+  "E1": {
+    "runs": [
+      {
+        "seed": 0,
+        "min_pos_error": 0.02113808210318642,
+        "final_pos_error": 0.02290479331491203,
+        "max_drift": 1.4416444228678739e-06,
+        "min_clearance": 0.18714788152803719,
+        "max_tilt_deg": 0.8552120853235117,
+        "wall_seconds": 19.024606943130493,
+        "pass": true
+      },
+      {
+        "seed": 1,
+        "min_pos_error": 0.023150695117117925,
+        "final_pos_error": 0.04861475979992116,
+        "max_drift": 3.394780095634292e-06,
+        "min_clearance": 0.18505790486168922,
+        "max_tilt_deg": 1.1016613308752126,
+        "wall_seconds": 19.173768758773804,
+        "pass": true
+      },
+      {
+        "seed": 2,
+        "min_pos_error": 0.020360953726424495,
+        "final_pos_error": 0.07850884262430807,
+        "max_drift": 2.0199054893717867e-06,
+        "min_clearance": 0.19036300534893458,
+        "max_tilt_deg": 0.869868927704141,
+        "wall_seconds": 19.01127600669861,
+        "pass": true
+      }
+    ]
+  }
+}

@@ -27,3 +27,11 @@ Append-only project work log.
 - Wrote the 16-module proposed reproduction matrix (A–G) with independent oracles, positive/negative controls, quantitative acceptance criteria, dependencies, compute cost, and expected fidelity.
 - Wrote the implementation plan as DRAFT only. No dependency was installed, no CUDA extension compiled, no GPU context initialized, and no paper algorithm was executed.
 - Open scientific decisions Q1–Q10 are recorded in `p1/P1_IMPLEMENTATION_PLAN.md` §5; G1 must not start before they are resolved.
+
+## 2026-10-21 — P1 G1–G3 numerical reproduction
+- Implemented a pure-NumPy package `p1/src/p1_repro/`: DQ algebra, independent SE(3) oracle, DH/MDH chains, relative/absolute pose, analytic relative Jacobian, null-space projection, cost terms, three samplers, single-stage MPPI, k-means + mode selection + two-stage refinement, dual-arm and two-corridor tasks, auxiliary/L switching.
+- G1: FK 4e-16 m, Jacobian vs central differences 2e-10, rank 6, projector idempotent 3e-15, projected drift slope 2.000 vs unprojected 1.001, drift ratio 1.0e4 at Th=0.005.
+- G2: single-stage MPPI within 3% of the finite-horizon LQR cost (50/50 seeds), estimator variance ratio 0.994, L-indicator slope/saturation/dwell ratio exact (8.00), dual-arm task reaches 2.0–2.3 cm with equality drift ~1e-6, no collisions, tilt <1.1 deg.
+- G3: clustering recovers the two corridor modes at 0.872; two-stage 0.43 success vs single-stage 0.00 at equal budget (0.057 vs 0.152 m); ablation shows the second re-weighting pass, not clustering, drives the gain in this task (no-cluster 0.90). Negative result kept and explained.
+- New findings: official 1e-16 damping gives |N^2-N|=0.247 in float64; Eq. (45) leaves an absolute-task residual of 0.0115 vs 3.8e-5 for the priority-consistent form.
+- 31 tests pass (`cd p1 && python -m pytest tests -q`). No CUDA install, no GPU context, no ROS/cuRobo.
