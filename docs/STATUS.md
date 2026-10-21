@@ -162,3 +162,31 @@ Appended by the P5 paper study. The roadmap table above is **not** rewritten, an
   is *weaker* away from the boundary — an implementation fix against an approved decision, not a retune.
 - Full suite after the fix: **116 checks (65 pos / 51 neg), 0 failed, 296.1 s**, G1–G4 all `PASS`.
   The D082 verdict of §6.1 is unchanged in level; its quantitative basis is the regenerated ledger.
+
+## 2026-10-21 — P5 independent review round 2 (D020): R1–R4 implemented, suite at 118 checks
+
+- **R1 (confirmed, fixed).** P10.8 audited two derived values, not the solver's input, and used the
+  post-integration Γ. The rollout now records the pre-solve `Γ_raw`, the calibrated `Γ_cal = 1 +
+  Γ_raw/κ`, the embedded gradient, the applied `q̇`, `qp.lam`, and the rhs **read back from the `QP`
+  object**. Reconstructed from `q_pre = q0 if k == 0 else q[k−1]` over 800/800 steps: `Γ 0.0`,
+  `Γ_cal 0.0`, gradient `0.0`, rhs-vs-applied `0.0`, rhs-vs-`S.log_barrier` `0.0`, assembled
+  inequality `2.2e-16`. New **N10.6** mutation control assembles `log(Γ_raw − 1)` and the audit
+  catches it at `0.483`.
+- **R2 (confirmed, documented + instrumented).** Three distinct levels: SVM boundary `Γ_raw = 0`,
+  log-domain boundary `Γ_raw = 0`, continuous-time forward-invariant threshold `Γ_raw = 1`
+  (`V = Γ log Γ − Γ + 1`, `V̇ = log Γ·Γ̇ ≥ −(log Γ)² ≤ 0`; the pre-audit form's threshold was `2`).
+  Measured: T10 0/800 steps below `Γ_raw = 1` (margin `+0.0043`), 0 below `0`; T08 `min 1.3347`.
+  Acceptance criterion unchanged: empirical `Γ_raw < 0` crossings. No finite-step claim from the
+  continuous-time argument.
+- **R3 (confirmed, documented + measured).** T10 solves each QP with `solve_active_set()`, not with
+  Eq.(20). New **P10.9** re-solves 16 of the loop's own instances: the active-set answer is the LVI
+  fixed point to `2.8e-16`, but the Eq.(20) flow reaches only `7.0e-10` at best and `0/16` hit `1e-10`
+  within 2e4–6e4 RK4 steps (`63.7 s` for 16 instances). Recorded as a **limitation** — no
+  "LVI controller" claim anywhere; the closed loop keeps the exact fixed-point solve.
+- **R4 (confirmed, fixed).** Stale `log(Γ_raw − 1)` in `P5_T10_POST.md` §1; P10.7 printing the
+  reference's `0` instead of N10.4's `594`; P10.7 gate tightened (`ref_ok` with crossings, `min Γ`,
+  and `INF_NOROW_*` attribution required on every branch; strong branch still needs
+  `QP_INFEASIBLE == 0` **and** `ROW_DROPPED == 0`); N10.3 reconfirmed in-memory/read-only.
+- Suite: **118 checks (66 pos / 52 neg), 0 failed, 375.0 s**, G1–G4 `PASS`. G4 grew 13 → 15 for
+  P10.8's rewrite + N10.6 + P10.9. `ALGORITHM_NUMERICAL_VERIFIED (D082 scope)` retained; **not** an
+  unconditional acceptance — see `p5/reviews/P5_D020_POST.md` §5 for the explicit not-claimed list.

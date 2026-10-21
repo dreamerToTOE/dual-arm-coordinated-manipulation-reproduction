@@ -144,3 +144,20 @@ The acceptance criterion (crossings) never moved and the corrected row is *weake
 boundary, so this is an implementation fix against an approved decision, not a retune. T10 was
 regenerated with the same fix (see `P5_T10_POST.md` §8); the drift guard that keeps the closed loop
 bit-identical to `S.log_barrier` is T10/P10.8.
+
+## 9. Boundary vocabulary (D020/R2)
+
+Three levels that were being conflated, now named explicitly and used consistently in this report:
+
+| level | value | what it is |
+|---|---|---|
+| SVM classification boundary | `Γ_raw = 0` | the learned decision function is `Γ_raw(q)` with `bias = 0`; "positive class" ⟺ `Γ_raw > 0` |
+| log-domain boundary | `Γ_raw = 0` | `log(Γ_raw/κ)` diverges there (D007 calibration, `κ = 1`) |
+| continuous-time forward-invariant threshold | `Γ_raw = 1` | for `Γ̇ ≥ −log(Γ_raw)`, `V(Γ) = Γ log Γ − Γ + 1` gives `[1, ∞)` forward invariant; the pre-audit `−log(Γ_raw − 1)` had its threshold at `Γ_raw = 2` |
+
+Consequence for this task's numbers: `min_t Γ_raw = 1.3347` here is **above 1**, i.e. this trajectory
+never even approaches the invariance threshold (margin `+0.3347`), let alone the `Γ_raw = 0` boundary.
+The acceptance criterion remains the empirical per-step `Γ_raw < 0` crossing count — the invariance
+lemma is a continuous-time statement and this fixture integrates forward Euler at `dt = 5e-3`, so no
+finite-step guarantee is derived from it. N8.1 (`min Γ_raw = −0.021`, an actual crossing) is the
+control that keeps the crossing counter honest.

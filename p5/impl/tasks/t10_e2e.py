@@ -189,8 +189,19 @@ def _reference_velocity(chain, q, xv, xstar, xdotv, taus, taudots, g):
 
 
 def rollout(chain, pair, sca_on=True, lam=1.0, mu_tau=None, dt=DT, t_end=T_END,
-            row_policy="freeze"):
+            row_policy="freeze", rhs_mode="calibrated", capture=None):
     """One end-to-end run.  `mu_tau` = 1 or 0 pins tau, used by N10.2.
+
+    `rhs_mode` selects the (17d) right-hand side actually assembled into the QP:
+
+    * ``"calibrated"``          -- log(Gamma_raw/KAPPA), domain Gamma_raw > 0 (D007).
+    * ``"mutation_log_minus1"`` -- the pre-audit log(Gamma_raw - 1), domain
+      Gamma_raw > 1.  NOT an implementation option: it exists only as the R1
+      mutation that the applied-rhs audit (P10.8) must detect.
+
+    `capture`, when given a dict, collects one snapshot per step of the *actual*
+    LVI data seen by the solver (M, b, box, recomposed u, multipliers) so that
+    R3 can re-solve the very same instances with Eq.(20).
 
     `row_policy` decides what happens on a step where (17d) makes the QP
     infeasible (which is not rare -- see D018):
@@ -214,7 +225,9 @@ def rollout(chain, pair, sca_on=True, lam=1.0, mu_tau=None, dt=DT, t_end=T_END,
 
     n = int(round(t_end / dt))
     hist = {k: [] for k in ("t", "tau", "gamma", "gam", "G", "sep", "q", "xv", "xo",
-                            "pin", "psi", "V", "ytu", "active", "cross", "idres")}
+                            "pin", "psi", "V", "ytu", "active", "cross", "idres",
+                            "gam_pre", "gam_cal_pre", "rhs_applied", "g_row",
+                            "qdot")}
     counts = {"LOG_DOMAIN": 0, "QP_INFEASIBLE": 0, "SOLVER_FAILURE": 0,
               "BOUNDARY_CROSSING": 0, "ROW_DROPPED": 0}
     solve_s = []
@@ -251,19 +264,36 @@ def rollout(chain, pair, sca_on=True, lam=1.0, mu_tau=None, dt=DT, t_end=T_END,
             # (17d) rhs in the calibrated coordinates of Q4/D007:
             # log(Gamma_cal - 1) = log(Gamma_raw / KAPPA), KAPPA = 1, domain
             # Gamma_raw > 0 -- the learned boundary.  This MUST stay identical
-            # to S.log_barrier; P10.8 asserts it on the recorded history (the
+            # to S.log_barrier; P10.8 audits the value ACTUALLY assembled into
+            # the QP against an independent reconstruction (D020/R1).  The
             # pre-audit code used log(Gamma_raw - 1) here, which moved the
-            # barrier to Gamma_raw = 1; D019).
-            if gram > S.GAMMA_RAW_FLOOR:
-                rows = [(gq, float(np.log(gram / S.KAPPA)))]
+            # barrier to Gamma_raw = 1; D019.
+            if rhs_mode == "calibrated":
+                if gram > S.GAMMA_RAW_FLOOR:
+                    rhs_val = float(np.log(gram / S.KAPPA))
+                else:
+                    rhs_val = float(S.PAPER_FALLBACK)
+                    counts["LOG_DOMAIN"] += 1
+            elif rhs_mode == "mutation_log_minus1":
+                rhs_val = float(np.log(gram - 1.0)) if gram > 1.0 \
+                    else float(S.PAPER_FALLBACK)
+                if gram <= 1.0:
+                    counts["LOG_DOMAIN"] += 1
             else:
-                rows = [(gq, float(S.PAPER_FALLBACK))]
-                counts["LOG_DOMAIN"] += 1
+                raise ValueError("unknown rhs_mode: %r" % (rhs_mode,))
+            rows = [(gq, rhs_val)]
 
         lb, ub = QP.velocity_bounds(q, np.full(chain.d_q, -Q_LIM), np.full(chain.d_q, Q_LIM),
                                     np.full(chain.d_q, -QD_LIM), np.full(chain.d_q, QD_LIM),
                                     mu=20.0)
         qp = QP.QP(np.eye(chain.d_q), J, xr, lb, ub, sca_rows=rows, lam=lam)
+        # D020/R1: record what the solver ACTUALLY receives -- read back from the
+        # QP object itself, not from the local variable that built it.
+        rhs_applied = float(qp.sca_rows[0][1]) if qp.sca_rows else float("nan")
+        hist["gam_pre"].append(gram)
+        hist["gam_cal_pre"].append(1.0 + gram / S.KAPPA)
+        hist["rhs_applied"].append(rhs_applied)
+        hist["g_row"].append(gq.copy())
         t0 = time.perf_counter()
         x, info = qp.solve_active_set()
         solve_s.append(time.perf_counter() - t0)
@@ -318,8 +348,16 @@ def rollout(chain, pair, sca_on=True, lam=1.0, mu_tau=None, dt=DT, t_end=T_END,
         Pproj = LV.project(uvec - (M @ uvec + b), lo, hi)
         Vval = 0.5 * float(uvec @ uvec)
         ytu = float(uvec @ (I_M @ Pproj))
+        if capture is not None:
+            #: D020/R3: the exact LVI instance (M, b, box) this step's QP defines,
+            #: plus the active-set answer, for the same-instance LVI comparison.
+            capture["items"].append({"k": k, "gram": gram, "M": M.copy(),
+                                     "b": b.copy(), "lo": lo.copy(), "hi": hi.copy(),
+                                     "u": uvec.copy(), "x": np.asarray(x, float).copy(),
+                                     "active": bool(info.get("sca_active_rows"))})
 
         q = q + dt * x
+        hist["qdot"].append(np.asarray(x, float).copy())
         xv, xo, gamma, taus = nxv, nxo, ngamma, ntaus
         nsep = float(np.linalg.norm(chain.tips(q)[1] - chain.tips(q)[0]))
 
@@ -367,6 +405,7 @@ def rollout(chain, pair, sca_on=True, lam=1.0, mu_tau=None, dt=DT, t_end=T_END,
     out["dt"] = dt
     out["q0"] = Q0.copy()
     out["n_steps"] = int(n)
+    out["lam"] = float(lam)
     return out
 
 
@@ -397,7 +436,8 @@ def run(rec):
     rec.metric("t_end", T_END)
     rec.metric("dt", DT)
 
-    ref = rollout(chain, pair)
+    caps = {"items": []}
+    ref = rollout(chain, pair, capture=caps)
     off = rollout(chain, pair, sca_on=False)
     #: counterfactual for the infeasible steps: drop (17d) instead of freezing.
     #: Without this the "0 crossings" number cannot be attributed to the row
@@ -477,25 +517,174 @@ def run(rec):
                     ref["counts"].get("INF_NOROW_OPTIMAL", 0))),
               min_gamma=ref["min_gamma"])
 
-    # ------------------------------------------------------------- P10.8
-    # Drift guard added by the post-delivery audit (D019): the closed-loop rhs
-    # must be bit-identical to the calibrated helper T07 tests, because the two
-    # had silently diverged (log(Gamma_raw - 1) here vs log(Gamma_raw/KAPPA)).
-    lb_vals, n_bad = S.log_barrier(ref["gam"], S.KAPPA, mode="paper")
-    inline = np.where(ref["gam"] > S.GAMMA_RAW_FLOOR,
-                      np.log(np.maximum(ref["gam"], S.GAMMA_RAW_FLOOR) / S.KAPPA),
-                      float(S.PAPER_FALLBACK))
-    rhs_drift = float(np.max(np.abs(inline - lb_vals)))
-    rec.metric("rhs_vs_log_barrier_max", rhs_drift)
-    rec.check("P10.8", rhs_drift == 0.0
-              and n_bad == int(np.count_nonzero(ref["gam"] <= S.GAMMA_RAW_FLOOR)),
-              "the (17d) rhs used in the loop equals S.log_barrier on all %d recorded Gamma "
-              "values (max diff %.1e): the barrier sits at the learned boundary Gamma_raw = 0, "
-              "per Q4/D007.  This check exists because the pre-audit loop used "
-              "log(Gamma_raw - 1) with domain Gamma_raw > 1, which placed the barrier one unit "
-              "above the boundary the paper protects (D019)."
-              % (len(ref["gam"]), rhs_drift),
-              drift=rhs_drift)
+    # ------------------------------------------------------------- P10.8 / N10.6
+    # D020/R1: audit the rhs ACTUALLY supplied to the solver, not a re-derivation.
+    # Four comparisons per step with a row: (a) Gamma_raw re-computed from the
+    # pre-solve joints, (b) the joint-space gradient re-computed the same way,
+    # (c) (17d) reconstructed from (a) and compared with the value carried by the
+    # QP object, (d) the same against S.log_barrier, and (e) the assembled
+    # inequality -g.qdot <= lam*rhs checked against the applied joint velocity
+    # (sign and scaling of the real numerical constraint).
+    def _rhs_audit(run_out):
+        gam_pre = run_out["gam_pre"]
+        rhs_app = run_out["rhs_applied"]
+        g_rec = run_out["g_row"]
+        qd = run_out["qdot"]
+        q_hist = run_out["q"]
+        d_gram = d_grad = d_recon = d_helper = d_row = d_gal = 0.0
+        for k in range(len(gam_pre)):
+            r = rhs_app[k]
+            if not np.isfinite(r):
+                continue
+            q_pre = Q0 if k == 0 else q_hist[k - 1]
+            f, gq_re, _ = chain.pair_grad(q_pre, i, j)
+            gq_emb = QP.embed_pair_gradient(gq_re, range(chain.d_q), chain.d_q)
+            gram_re = float(chain.model.gamma(f[None, :])[0])
+            d_gram = max(d_gram, abs(gram_re - gam_pre[k]))
+            d_gal = max(d_gal, abs((1.0 + gram_re / S.KAPPA) - run_out["gam_cal_pre"][k]))
+            d_grad = max(d_grad, float(np.max(np.abs(gq_emb - g_rec[k]))))
+            rhs_re = float(np.log(gram_re / S.KAPPA)) \
+                if gram_re > S.GAMMA_RAW_FLOOR else float(S.PAPER_FALLBACK)
+            d_recon = max(d_recon, abs(rhs_re - r))
+            lb_val, _ = S.log_barrier(np.array([gam_pre[k]]), S.KAPPA, mode="paper")
+            d_helper = max(d_helper, abs(float(lb_val[0]) - r))
+            #: the assembled inequality is  -g.qdot <= lam*rhs  (sign and scaling
+            #: exactly as the exact enumerator enforces it)
+            viol = max(0.0, -run_out["lam"] * r - float(g_rec[k] @ qd[k]))
+            d_row = max(d_row, viol)
+        return {"d_gram": d_gram, "d_grad": d_grad, "d_recon": d_recon,
+                "d_helper": d_helper, "d_row": d_row, "d_gam_cal": d_gal}
+
+    audit = _rhs_audit(ref)
+    for kk, vv in audit.items():
+        rec.metric("rhs_audit_" + kk, vv)
+    audit_ok = (audit["d_gram"] == 0.0 and audit["d_grad"] == 0.0
+                and audit["d_gam_cal"] == 0.0
+                and audit["d_recon"] <= 1e-12 and audit["d_helper"] == 0.0
+                and audit["d_row"] <= 1e-9 and ref["lam"] == 1.0)
+    rec.check("P10.8", audit_ok,
+              "the (17d) rhs is audited where it matters -- inside the QP the solver saw.  "
+              "Over all %d row-bearing steps: Gamma_raw recomputed from the pre-solve joints "
+              "matches the recorded pre-solve value EXACTLY (max diff %.1e); the embedded "
+              "joint-space gradient matches EXACTLY (%.1e); (17d) reconstructed from the "
+              "re-computed Gamma (and the calibrated Gamma_cal = 1 + Gamma_raw/kappa, max diff "
+              "%.1e) matches the rhs carried by the QP object to %.1e and matches "
+              "S.log_barrier EXACTLY (%.1e); and the assembled inequality -g.qdot <= lam*rhs "
+              "holds with the applied joint velocity to %.1e (lam = %.0f).  The barrier sits at "
+              "the learned boundary Gamma_raw = 0 per Q4/D007.  The pre-audit loop used "
+              "log(Gamma_raw - 1) with domain Gamma_raw > 1, i.e. a barrier one unit above "
+              "the boundary (D019); N10.6 proves this audit detects that mutation."
+              % (int(np.count_nonzero(np.isfinite(ref["rhs_applied"]))),
+                 audit["d_gram"], audit["d_grad"], audit["d_gam_cal"],
+                 audit["d_recon"], audit["d_helper"],
+                 audit["d_row"], ref["lam"]),
+              **audit)
+
+    # --- N10.6 (D020/R1): the mutation that caused the D019 drift must be caught.
+    mut = rollout(chain, pair, rhs_mode="mutation_log_minus1", t_end=2.0)
+    mut_audit = _rhs_audit(mut)
+    rec.metric("mutation_rhs_audit", mut_audit)
+    mutation_detected = (mut_audit["d_recon"] > 0.1 and mut_audit["d_helper"] > 0.1
+                         and mut_audit["d_gram"] == 0.0)
+    rec.defect("N10.6", mutation_detected,
+               "replacing the applied rhs with the pre-audit log(Gamma_raw - 1) is DETECTED by "
+               "the P10.8 audit: over %d mutated steps the reconstructed (17d) diverges from "
+               "the applied rhs by max %.3f and S.log_barrier by max %.3f, while the Gamma "
+               "reconstruction stays exact (%.1e) -- i.e. the audit reads the solver's actual "
+               "input, so this exact drift can never pass silently again (D019/D020)."
+               % (int(np.count_nonzero(np.isfinite(mut["rhs_applied"]))),
+                  mut_audit["d_recon"], mut_audit["d_helper"], mut_audit["d_gram"]),
+               **mut_audit)
+
+    # ------------------------------------------------- R2: three Gamma levels
+    n_below_1 = int(np.count_nonzero(ref["gam"] < 1.0))
+    n_below_0 = int(np.count_nonzero(ref["gam"] < 0.0))
+    rec.metric("n_steps_below_invariance_threshold", n_below_1)
+    rec.metric("n_steps_below_svm_boundary", n_below_0)
+    rec.metric("min_gamma_margin_to_1", float(ref["min_gamma"] - 1.0))
+
+    # ------------------------------------------------------------- P10.9
+    # D020/R3: the closed loop solves each QP with the exact active set; the LVI
+    # (Eq. 19/20) is the paper's *formulation* of the same QP.  Re-solve the very
+    # instances the loop encountered with the Eq.(20) dynamics and compare.
+    items = caps["items"]
+    grams = np.array([it["gram"] for it in items])
+    order = np.argsort(grams)
+    picked = {}
+    for rank, idx in enumerate(order[:4]):          # closest to the boundary
+        picked[idx] = "minGamma#%d" % rank
+    act = [k for k, it in enumerate(items) if it["active"]]
+    for idx in act[:: max(1, len(act) // 6)][:6]:   # active SCA rows
+        picked.setdefault(idx, "activeRow")
+    for idx in range(0, len(items), max(1, len(items) // 6))[:6]:
+        picked.setdefault(idx, "uniform")
+    lvi = []
+    t_lvi = 0.0
+    fp_as_max = 0.0
+    for idx in sorted(picked):
+        it = items[idx]
+        u_as = it["u"]
+        fp_as = float(np.linalg.norm(LV.residual(u_as, it["M"], it["b"],
+                                                 it["lo"], it["hi"])))
+        fp_as_max = max(fp_as_max, fp_as)
+        #: protocol: the T05 settings first (dt = 5e-3, 20000 RK4 steps); on a
+        #: non-converging instance ONE retry at dt = 1e-3 / 60000 steps.  The best
+        #: attempt is reported; nothing is silently substituted.
+        best = None
+        steps_used = 0
+        reason = None
+        for dt_i, ms_i in ((5e-3, 20000), (1e-3, 60000)):
+            t0 = time.perf_counter()
+            res = LV.solve(it["M"], it["b"], it["lo"], it["hi"],
+                           dt=dt_i, max_steps=ms_i, tol=1e-10)
+            t_lvi += time.perf_counter() - t0
+            steps_used += int(res["steps"])
+            reason = res.get("reason")
+            if best is None or res["residual"] < best["fp_residual"]:
+                best = {"fp_residual": float(res["residual"]),
+                        "primal_diff": float(np.linalg.norm(res["u"] - u_as)),
+                        "dt": dt_i, "converged": bool(res["converged"])}
+            if res["converged"]:
+                break
+        lvi.append({"k": int(it["k"]), "tag": picked[idx], "gram": float(it["gram"]),
+                    "fp_residual": best["fp_residual"],
+                    "primal_diff": best["primal_diff"], "dt_best": best["dt"],
+                    "converged": best["converged"], "steps": steps_used,
+                    "reason": reason, "as_fp_residual": fp_as})
+    rec.metric("lvi_instances", len(lvi))
+    rec.metric("lvi_converged_tol1e10", sum(1 for r in lvi if r["converged"]))
+    rec.metric("lvi_below_1e-6", sum(1 for r in lvi if r["fp_residual"] <= 1e-6))
+    rec.metric("lvi_best_fp_residual", min(r["fp_residual"] for r in lvi))
+    rec.metric("lvi_worst_fp_residual", max(r["fp_residual"] for r in lvi))
+    agree = [r for r in lvi if r["fp_residual"] <= 1e-6]
+    lvi_max_diff = max((r["primal_diff"] for r in agree), default=float("nan"))
+    rec.metric("lvi_max_primal_diff_below_1e-6", lvi_max_diff)
+    rec.metric("as_fixed_point_residual_max", fp_as_max)
+    rec.metric("lvi_time_s", t_lvi)
+    rec.metric("lvi_detail", lvi)
+    agreement_ok = (len(agree) > 0 and lvi_max_diff <= 1e-6)
+    as_is_fixed_point = fp_as_max <= 1e-8
+    flow_works = min(r["fp_residual"] for r in lvi) <= 1e-6
+    rec.check("P10.9", agreement_ok and as_is_fixed_point and flow_works,
+              "LVI (Eq.19/20) vs the exact active set on %d of the QP instances the loop "
+              "actually encountered (4 nearest min-Gamma, %d with an active row, rest uniform; "
+              "gram %.3f..%.3f; protocol: dt=5e-3/20000 steps, one retry dt=1e-3/60000).  "
+              "The active-set answer is the LVI fixed point to %.1e on EVERY instance; the "
+              "(20) flow converges (best fixed-point residual %.1e) and every instance that "
+              "reached 1e-6 agrees with the active set to %.1e.  LIMITATION, reported not "
+              "substituted: the (20) RK4 integration did NOT reach the 1e-10 tolerance on "
+              "%d/%d instances within the budget (worst residual %.2f) -- the (I+M^T) "
+              "dynamics are stiff near the log barrier, so the closed loop keeps the exact "
+              "fixed-point solve and NO claim is made that an LVI-dynamics controller ran "
+              "the 800-step rollout; P10.6 already quantifies the quasi-static distinction."
+              % (len(lvi), sum(1 for r in lvi if r["tag"] == "activeRow"),
+                 min(r["gram"] for r in lvi), max(r["gram"] for r in lvi),
+                 fp_as_max, min(r["fp_residual"] for r in lvi), lvi_max_diff,
+                 sum(1 for r in lvi if not r["converged"]), len(lvi),
+                 max(r["fp_residual"] for r in lvi)),
+              n_conv=sum(1 for r in lvi if r["converged"]),
+              max_diff=lvi_max_diff, fp_as_max=fp_as_max,
+              best_fp=min(r["fp_residual"] for r in lvi))
 
     # ------------------------------------------------------------- P10.3 / N10.1
     rec.metric("min_gamma_raw_sca_off", off["min_gamma"])
@@ -530,6 +719,18 @@ def run(rec):
     # was ever infeasible, so freeze/drop never fired).  A `True` placeholder
     # would make P10.7 decorative; a failure here turns the suite red and forces
     # the e2e claim down to "the freeze, not the row, avoids the boundary".
+    # D020/R4: every infeasible step must be *attributed* to the (17d) row --
+    # re-solving with the row removed reproduces the same failure class.  An
+    # unattributed infeasibility means the e2e claim is measuring something else.
+    attributed = sum(v for kk, v in ref["counts"].items() if kk.startswith("INF_NOROW_"))
+    rec.metric("infeasible_sca_on_attributed", attributed)
+    attribution_ok = (ref["counts"]["QP_INFEASIBLE"] == 0
+                      or attributed == ref["counts"]["QP_INFEASIBLE"])
+    # The reference run itself must be crossing-free for ANY branch of the gate;
+    # otherwise "the row prevents crossings" is false before the counterfactual
+    # is even consulted.
+    ref_ok = (ref["counts"]["BOUNDARY_CROSSING"] == 0 and ref["min_gamma"] > 0.0
+              and attribution_ok)
     vacuous = (dropped == 0)
     no_fallback = (vacuous and ref["counts"]["QP_INFEASIBLE"] == 0
                    and ref["counts"]["BOUNDARY_CROSSING"] == 0
@@ -543,7 +744,7 @@ def run(rec):
                    "instead (N10.4: %d infeasible at lambda = 0; T08/N8.1: 647 with the "
                    "gradient sign flipped).  (Pre-audit, the uncalibrated rhs "
                    "log(Gamma_raw - 1) made 370/800 steps infeasible; D019.)"
-                   % (ref["n_steps"], ref["counts"]["QP_INFEASIBLE"]))
+                   % (ref["n_steps"], lam0["counts"]["QP_INFEASIBLE"]))
     elif row_carries:
         verdict = ("The row still carries the guarantee without the freeze; the freeze "
                    "only adds conservatism.")
@@ -555,16 +756,19 @@ def run(rec):
                    "those steps, so the freeze is part of the mechanism and the e2e claim "
                    "is downgraded accordingly (D018) -- it must not be reported as an "
                    "SCA-only result.")
-    rec.check("P10.7", row_carries or no_fallback,
+    rec.check("P10.7", ref_ok and (row_carries or no_fallback),
               "counterfactual on the %d infeasible steps (row dropped instead of frozen): "
               "min_t Gamma_raw = %.4f and %d boundary crossings, against %.4f / %d for the "
-              "freeze policy and %.4f / %d with the row switched off entirely.  %s"
+              "freeze policy and %.4f / %d with the row switched off entirely; "
+              "attribution: %d/%d infeasible steps reproduce with the row removed.  %s"
               % (dropped, drop["min_gamma"], drop["counts"]["BOUNDARY_CROSSING"],
                  ref["min_gamma"], ref["counts"]["BOUNDARY_CROSSING"],
                  off["min_gamma"], off["counts"]["BOUNDARY_CROSSING"],
-                 verdict),
+                 attributed, ref["counts"]["QP_INFEASIBLE"], verdict),
               dropped=dropped, min_gamma=drop["min_gamma"],
-              crossings=drop["counts"]["BOUNDARY_CROSSING"])
+              crossings=drop["counts"]["BOUNDARY_CROSSING"],
+              attributed=attributed, attribution_ok=attribution_ok,
+              ref_crossings=ref["counts"]["BOUNDARY_CROSSING"])
 
     # ------------------------------------------------------------- P10.4
     # (a) the tau curve must match an *independent* RK4 integration of Eq.(8)

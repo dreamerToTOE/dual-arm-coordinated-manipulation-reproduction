@@ -1,6 +1,8 @@
 # P5-T10 POST — The end-to-end numeric chain `τ → LPV DS → virtual object → QP → LVI`
 
-**Status**: `PASS` — 13 checks (8 positive / 5 negative), 0 failed, 103 s.
+**Status**: `PASS` — 15 checks (9 positive / 6 negative), 0 failed, 172 s.
+*(D020/R1/R3 added P10.8's applied-rhs audit rewrite, P10.9 and N10.6 — see §9. The 800-step rollout
+is still solved by the **exact active set**, not by integrating Eq.(20); P10.9 quantifies that gap.)*
 *(Numbers regenerated after the post-delivery audit D019 — see §8.)*
 **Run**: `p5/evidence/impl_checks/T10.json` (regenerate: `PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T10`)
 **Code**: `p5/impl/tasks/t10_e2e.py` **[ORIGINAL]** equations + **[ADAPTATION]** fixture and scales ·
@@ -15,7 +17,7 @@ Eq.(2)    xdot_i^R = taudot_i e + tau_i xdot^V + A (p_i - x*_i - tau_i e)   T02
 Eq.(15)   gammadot = (1 - gamma) / (|x^O - x*| + eps)       T03
 Eq.(36)   xdot^V = R(gamma, gammadot, x^O, xdot^O, x^V)     T03
 Eq.(17)   min ||qdot||^2  s.t. J qdot = xdot^R, box         T04 (exact active set)
-(17d)     -grad_q Gamma . qdot <= log(Gamma_raw - 1)        T08 + Eq.(26) from T07
+(17d)     -grad_q Gamma . qdot <= log(Gamma_raw / kappa)    T08 + Eq.(26) from T07  (kappa = 1, D007)
 (19)-(23) LVI assembly; multipliers read back               T05
 ```
 
@@ -53,7 +55,8 @@ switch disappears in both cases (see §4), which is what makes P10.1 a measureme
 | P10.5 | Theorem-3 identity *at every QP solution* | `max abs(ψ − YᵀU) = 3.3e-16` (relative `6.5e-16`): the active-set solution is the LVI fixed point, so `YᵀU` collapses onto `ψ` and `V̇` onto 0 instantaneously |
 | P10.6 | the plan's ledger, fully accounted | `∫YᵀU dt − ΔV − ∫ψ dt = +0.0153` while `ΔV = −0.0153`; `residual + ΔV = **4.9e-17**`, i.e. the whole non-closure *is* the quasi-static jump of the multiplier vector (D017) |
 | P10.7 | fallback attribution | **no step was ever infeasible**, so freeze/drop never fires and the crossing-free outcome is attributable to the row alone; the fallback machinery is exercised by the negative controls instead (N10.4: 594 steps; T08/N8.1: 647) |
-| P10.8 | rhs drift guard (added by the audit) | the in-loop (17d) rhs is **bit-identical** to the calibrated `S.log_barrier` on all 800 recorded `Γ` values (max diff `0.0`) — the barrier sits at the learned boundary `Γ_raw = 0` |
+| P10.8 | applied-rhs audit (rewritten by D020/R1) | over all **800** row-bearing steps the audit reads the **`QP` object**, not a re-derivation: pre-solve `Γ_raw` recomputed from the joints `0.0`, calibrated `Γ_cal = 1 + Γ_raw/κ` `0.0`, joint-space gradient `0.0`, (17d) reconstructed from that `Γ` vs the **applied** rhs `0.0`, vs `S.log_barrier` `0.0`, assembled inequality `−g·q̇ ≤ λ·rhs` `2.2e-16`, `λ = 1` |
+| P10.9 | LVI (Eq.19/20) vs the active set on **the loop's own instances** | 16 instances re-solved (4 nearest min-`Γ`, 6 with an active row, 6 uniform; `Γ_raw ∈ [1.004, 4.237]`): the active-set answer is the LVI fixed point to **2.8e-16** on every one; the Eq.(20) flow reaches `7.0e-10` at best and agrees to `4.2e-09` where it reaches `1e-6`; **0/16** reached `1e-10` (limitation, §9c) |
 
 P10.2 / P10.3 is the result. The same task, the same initial state, the same solver, and the only
 difference is what the QP is allowed to know: `Γ` stays positive at 1.0043 against `−2.31` with 534
@@ -93,6 +96,7 @@ integrate the projected dynamical system (20); it re-solves the QP from the new 
 | N10.3 | doctor `T08` to `FAIL` on disk | `run_all.evaluate_gates` returns `BLOCKED_BY_UPSTREAM` for G4; with the real disk state T01–T08 are 8/8 `PASS` |
 | N10.4 | `λ = 0` | `min Γ 4.2235`, 0 crossings, 594 infeasible — direction falsified (§4b) |
 | N10.5 | `dt` doubled | `min Γ 1.0043 → 1.0042`, `t_switch 2.800 → 2.820 s`: the step size is really in the loop, and no "step-size independent" claim is made |
+| N10.6 | **replace the applied rhs with `log(Γ_raw − 1)`** (D020/R1) | the P10.8 audit **fails on it**: over 200 mutated steps the reconstructed (17d) diverges from the applied rhs by **0.483** and from `S.log_barrier` by **0.483**, while the `Γ` reconstruction stays exactly `0.0` — i.e. the audit reads the solver's input, so the D019-class drift can never pass silently again |
 
 ## 6. Fidelity, labels and limits
 
@@ -115,7 +119,7 @@ integrate the projected dynamical system (20); it re-solves the QP from the new 
 ## 7. Reproduce
 
 ```bash
-cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T10     # ~103 s, 13 checks
+cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py --only T10     # ~172 s, 15 checks
 cd p5/impl && PYTHONPATH=. /usr/bin/python3.10 run_all.py                # ~296 s, 116 checks, G1-G4
 ```
 
@@ -139,3 +143,87 @@ the learned boundary. Effects of the fix, old → new:
 The acceptance criterion (crossings) never moved, the corrected row is *weaker* away from the boundary,
 and the negative controls got sharper — this is an implementation fix against an approved decision, not
 a retune. T08 was regenerated with the same fix; its audit numbers are in `P5_T08_POST.md` §8.
+
+## 9. Independent review round 2 (D020) — R1, R2, R3
+
+The second review was right on the substantive point: **P10.8 as delivered compared two derived
+values and never touched the number the solver received.** What follows is what changed.
+
+### 9a. R1 — the audit now reads the QP, and is proven to catch the mutation
+
+The rollout records, per step, from the `QP` object itself (`qp.sca_rows[0][1]`, `qp.lam`): the
+pre-solve `Γ_raw`, the calibrated `Γ_cal = 1 + Γ_raw/κ`, the embedded joint-space gradient, the
+applied joint velocity, and the rhs. The audit then independently reconstructs everything from
+`q_pre = q0 if k == 0 else q[k−1]` — note the QP uses **pre**-integration state, the old check used
+the post-integration history — and compares five ways. Measured over 800/800 row-bearing steps:
+
+| comparison | max diff |
+|---|---|
+| `Γ_raw` recomputed from `q_pre` vs recorded pre-solve value | **0.0** |
+| calibrated `Γ_cal = 1 + Γ_raw/κ` vs recorded | **0.0** |
+| embedded gradient `embed_pair_gradient(∇_qΓ)` vs the row's `g` | **0.0** |
+| (17d) reconstructed from the recomputed `Γ` vs the **applied** rhs | **0.0** |
+| applied rhs vs `S.log_barrier` | **0.0** |
+| assembled inequality `−g·q̇ ≤ λ·rhs` at the applied `q̇`, `λ = 1` | **2.2e-16** |
+
+The mutation test **N10.6** re-runs 200 steps with the rhs actually assembled as
+`log(Γ_raw − 1)` and demands that P10.8's audit notice: reconstruction diverges by **0.483**, the
+helper comparison by **0.483**, `Γ` reconstruction stays `0.0`. It fails the audit by construction, so
+a D019-class drift is now a red suite rather than a silently green one.
+
+### 9b. R2 — three different "boundaries", kept apart
+
+- **SVM classification boundary `Γ_raw = 0`** — `Γ_raw(q)` *is* the learned decision function
+  (`bias = 0`); "positive class" means `Γ_raw > 0`. A property of the model, not of the dynamics.
+- **Logarithmic domain boundary `Γ_raw = 0`** — `log(Γ_raw/κ)` has its singularity there.
+- **Continuous-time forward-invariant threshold `Γ_raw = 1`** — for `Γ̇_raw ≥ −log Γ_raw`,
+  `V(Γ) = Γ log Γ − Γ + 1 ≥ 0`, `V(1) = 0`, `V̇ = log(Γ)·Γ̇ ≥ −(log Γ)² ≤ 0`, and at `Γ = 1` the bound
+  reads `Γ̇ ≥ 0`, so `[1, ∞)` is forward invariant. The **pre-audit** form `−log(Γ_raw − 1)` had its
+  analogous threshold at `Γ_raw = 2`.
+
+Measured on this run: `min_t Γ_raw = 1.0043`, **0/800 steps below `Γ_raw = 1`** (margin `+0.0043`),
+**0/800 below `Γ_raw = 0`** — stated as *observations on this trajectory*, with the acceptance
+criterion still the empirical per-step `Γ_raw < 0` crossing count. No finite-step safety claim is
+derived from the continuous-time argument: the fixture integrates forward Euler at `dt = 10 ms`, and
+the invariance lemma says nothing about a discretisation with this step.
+
+### 9c. R3 — the loop does **not** run an LVI controller, and P10.9 says so
+
+The execution path is `qp.solve_active_set()`; the LVI fixed-point conditions are evaluated
+afterwards (that is P10.5's identity). That is not "solving each QP with Eq.(20)", and no claim of an
+LVI-dynamics rollout is made anywhere.
+
+P10.9 re-solves 16 of the **actual** instances captured in this rollout (4 nearest min-`Γ`, 6 with an
+active SCA row, 6 uniform; `Γ_raw ∈ [1.004, 4.237]`) with the Eq.(20) RK4 flow, protocol
+`dt = 5e-3 / 20 000` steps plus one retry at `dt = 1e-3 / 60 000`:
+
+- the active-set answer is the LVI fixed point to **2.8e-16** on every instance — so the *fixed point*
+  is identical;
+- the Eq.(20) **flow** is slow: best fixed-point residual `7.0e-10` (agreeing with the active set to
+  `4.2e-09`), worst **0.76**, and **0/16** reached the `1e-10` tolerance within the budget;
+- a third probe at `dt = 2e-4 / 100 000` steps was *worse* (≥ `1.2e-3`), because the same step budget
+  covers less ODE time — this is stiffness of the `(I + Mᵀ)` dynamics near the log barrier, not a
+  step-size tuning problem;
+- total cost of the 16 re-solves: **63.7 s**, i.e. ≈ 4 s per instance at these settings, against
+  ≈ 2 ms per active-set solve in the loop.
+
+**Limitation, recorded rather than papered over:** the LVI-dynamics route is not viable as this
+fixture's per-step solver (it would be ~2000× slower and still not converge to the stated tolerance),
+so the closed loop keeps the exact fixed-point solve — which is exactly what the official solver does
+(one QP per cycle). "An LVI controller executed the 800-step rollout" must not be written anywhere;
+what is supported is "each step's LVI fixed point is solved exactly, and the fixed point coincides
+with the active-set solution to 2.8e-16."
+
+### 9d. R4 — documentation and test integrity
+
+- §1's equation block printed the stale `log(Gamma_raw − 1)`; corrected to `log(Gamma_raw/κ)` with
+  `κ = 1` (D007).
+- P10.7's verdict printed the **reference** run's infeasibility count (`0`) where the N10.4
+  counterfactual belongs (**594**); fixed.
+- N10.3 confirmed to build an in-memory `fake` result dict and call `run_all.evaluate_gates` on it —
+  the only disk access in that check is a read-only `_load_status` of `T01–T08`.
+- P10.7's gate was tightened from prose to logic: `ref_ok` (0 crossings, `min Γ > 0`, and
+  `sum(INF_NOROW_*) == QP_INFEASIBLE` when the latter is non-zero) is now required on **every**
+  branch, so a crossing or an *unattributed* infeasibility fails the check; the strong branch still
+  needs `QP_INFEASIBLE == 0` **and** `ROW_DROPPED == 0`, so a crossing-free outcome obtained by frozen
+  motion cannot be reported as an SCA-only result.

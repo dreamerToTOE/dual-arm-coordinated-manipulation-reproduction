@@ -121,9 +121,13 @@ matched SCA-off control. Measured (after the D019 audit regeneration): `min_t Γ
 
 | Task | Status | Checks | pos / neg | Wall | Report |
 |---|---|---|---|---|---|
-| T10 end-to-end chain (tau → LPV DS → virtual object → QP → LVI) | PASS | 13 | 8 / 5 | 98.2 s | `p5/reviews/P5_T10_POST.md` |
-| **G4 total** | **PASS** | **13** | **8 / 5** | **98.2 s** | `p5/evidence/P5_impl_checks.json` |
-| **G1 + G2 + G3 + G4 cumulative** | **PASS** | **116** | **65 / 51** | **296.1 s** | same ledger |
+| T10 end-to-end chain (tau → LPV DS → virtual object → QP → LVI) | PASS | 15 | 9 / 6 | 172.2 s | `p5/reviews/P5_T10_POST.md` |
+| **G4 total** | **PASS** | **15** | **9 / 6** | **172.2 s** | `p5/evidence/P5_impl_checks.json` |
+| **G1 + G2 + G3 + G4 cumulative** | **PASS** | **118** | **66 / 52** | **375.0 s** | same ledger |
+
+*G4 count raised by D020/R1+R3: P10.8 rewritten to audit the rhs actually supplied to the QP (with
+N10.6 as its mutation control) and P10.9 added — the LVI (Eq. 19/20) vs active-set comparison on 16
+of the loop's own QP instances. The G4 gate condition itself is unchanged; see `P5_T10_POST.md` §9.*
 
 Gate condition (plan §3.2): the asynchronous→synchronous switch is observable **and** the matched SCA
 on/off control holds. Measured (after the D019 audit regeneration): `τ` integrates from

@@ -2,7 +2,7 @@
   "paper": "Mirrazavi Salehian, Figueroa, Billard, IJRR 37(6):583-603, 2018",
   "doi": "10.1177/0278364918765952",
   "branch": "reproduce-p5-numerical-20261020",
-  "commit": "13f4bf8a25a1f6436bbf888c227ca6d02c293214",
+  "commit": "e6135d3d0c7e937c7ae992d13bd0da4882e166b2",
   "runner": "p5/impl/run_all.py",
   "tasks": {
     "T01": {
@@ -162,7 +162,7 @@
         "role": "synchronisation allocation tau, Eq.(8)",
         "module": "tasks.t01_tau"
       },
-      "wall_time_s": 1.362,
+      "wall_time_s": 1.375,
       "python": "3.10.12"
     },
     "T02": {
@@ -338,7 +338,7 @@
         "role": "LPV scheduler + common Lyapunov matrix",
         "module": "tasks.t02_lpv"
       },
-      "wall_time_s": 7.131,
+      "wall_time_s": 7.317,
       "python": "3.10.12"
     },
     "T04": {
@@ -480,19 +480,19 @@
           "id": "P4.7",
           "kind": "positive",
           "ok": true,
-          "detail": "exact active-set solve: 3 DOF p50 1.02 ms / p99 1.05 ms (27 sets), 4 DOF p50 3.05 ms (81 sets); SLSQP reference 0.3 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
+          "detail": "exact active-set solve: 3 DOF p50 1.03 ms / p99 1.06 ms (27 sets), 4 DOF p50 3.09 ms (81 sets); SLSQP reference 0.3 ms. Python only -- no claim is made about the paper's CVXGEN microsecond budget.",
           "info": {
             "3dof": {
-              "p50_ms": 1.0205464968748856,
-              "p99_ms": 1.0481209294084692,
-              "max_ms": 1.1354969974490814,
+              "p50_ms": 1.0263694998684514,
+              "p99_ms": 1.056682959788304,
+              "max_ms": 1.1318729998492927,
               "reps": 200,
               "active_sets": 27
             },
             "4dof": {
-              "p50_ms": 3.052966498216847,
-              "p99_ms": 3.4338347315497235,
-              "max_ms": 3.511621995130554,
+              "p50_ms": 3.092575499749728,
+              "p99_ms": 3.150923789744411,
+              "max_ms": 3.1590210001013475,
               "reps": 100,
               "active_sets": 81
             }
@@ -586,20 +586,20 @@
         "solver_gap_active_set_vs_lvi": 9.334864131682608e-11,
         "lvi_iters": 7414,
         "timing_3dof": {
-          "p50_ms": 1.0205464968748856,
-          "p99_ms": 1.0481209294084692,
-          "max_ms": 1.1354969974490814,
+          "p50_ms": 1.0263694998684514,
+          "p99_ms": 1.056682959788304,
+          "max_ms": 1.1318729998492927,
           "reps": 200,
           "active_sets": 27
         },
         "timing_4dof": {
-          "p50_ms": 3.052966498216847,
-          "p99_ms": 3.4338347315497235,
-          "max_ms": 3.511621995130554,
+          "p50_ms": 3.092575499749728,
+          "p99_ms": 3.150923789744411,
+          "max_ms": 3.1590210001013475,
           "reps": 100,
           "active_sets": 81
         },
-        "slsqp_ms_per_solve_3dof": 0.3493415002594702
+        "slsqp_ms_per_solve_3dof": 0.3417344999888883
       },
       "figures": [
         {
@@ -623,7 +623,7 @@
         "role": "centralised QP IK, Eq.(17)-(18)",
         "module": "tasks.t04_qp_core"
       },
-      "wall_time_s": 1.91,
+      "wall_time_s": 1.939,
       "python": "3.10.12"
     },
     "T06": {
@@ -768,7 +768,7 @@
         "role": "2D SCA boundary, Eq.(24)-(25)",
         "module": "tasks.t06_sca_2d"
       },
-      "wall_time_s": 0.819,
+      "wall_time_s": 0.84,
       "python": "3.10.12"
     },
     "T03": {
@@ -917,7 +917,7 @@
         "role": "virtual-object DS, Eq.(9)-(11)-(36)",
         "module": "tasks.t03_virtual_object"
       },
-      "wall_time_s": 5.529,
+      "wall_time_s": 5.787,
       "python": "3.10.12"
     },
     "T05": {
@@ -1110,7 +1110,7 @@
         "role": "LVI projection solver, Eq.(19)-(23)",
         "module": "tasks.t05_lvi"
       },
-      "wall_time_s": 0.543,
+      "wall_time_s": 0.54,
       "python": "3.10.12"
     },
     "T07": {
@@ -1208,10 +1208,10 @@
           "id": "P7.6",
           "kind": "positive",
           "ok": true,
-          "detail": "single-point evaluation 403 us (3000-BV sparse model would be ~5x less); batched evaluation 764 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
+          "detail": "single-point evaluation 388 us (3000-BV sparse model would be ~5x less); batched evaluation 774 us/point over 24892 points. Python/NumPy only: the 2 ms real-time budget is met in order of magnitude, but the paper's C implementation is not reproduced",
           "info": {
-            "us_single": 402.8425800788682,
-            "us_batched": 764.4667075767595
+            "us_single": 387.73354000113613,
+            "us_batched": 774.3028490278093
           }
         },
         {
@@ -1297,7 +1297,7 @@
         "n_eval": 24892,
         "agree_y_est": 1.0,
         "agree_y_train": 0.9873855053832556,
-        "eval_time_us_per_point_full": 764.4667075767595,
+        "eval_time_us_per_point_full": 774.3028490278093,
         "n_gamma_raw_nonpositive": 11085,
         "calibration_kappa": 1.0,
         "chain_rule_rel_err": {
@@ -1329,7 +1329,7 @@
           ]
         },
         "evaluation_label": "IN_SAMPLE_INDEPENDENT_EVALUATION",
-        "eval_time_us_single": 402.8425800788682,
+        "eval_time_us_single": 387.73354000113613,
         "agree_sigma_swapped": 0.999156355455568,
         "agree_g_taken_as_width": 0.5669693074080026,
         "sigma_relative_difference": 0.0028239543983969695
@@ -1352,7 +1352,7 @@
         "role": "36D model, chain rule, calibration",
         "module": "tasks.t07_sca_36d"
       },
-      "wall_time_s": 96.129,
+      "wall_time_s": 96.141,
       "python": "3.10.12"
     },
     "T08": {
@@ -1619,15 +1619,15 @@
         "role": "SCA inside the QP, Eq.(26)-(27)",
         "module": "tasks.t08_sca_closed_loop"
       },
-      "wall_time_s": 84.461,
+      "wall_time_s": 88.875,
       "python": "3.10.12"
     },
     "T10": {
       "task": "T10",
       "status": "PASS",
-      "n_checks": 13,
-      "n_positive": 8,
-      "n_negative": 5,
+      "n_checks": 15,
+      "n_positive": 9,
+      "n_negative": 6,
       "n_failed": 0,
       "checks": [
         {
@@ -1653,9 +1653,40 @@
           "id": "P10.8",
           "kind": "positive",
           "ok": true,
-          "detail": "the (17d) rhs used in the loop equals S.log_barrier on all 800 recorded Gamma values (max diff 0.0e+00): the barrier sits at the learned boundary Gamma_raw = 0, per Q4/D007.  This check exists because the pre-audit loop used log(Gamma_raw - 1) with domain Gamma_raw > 1, which placed the barrier one unit above the boundary the paper protects (D019).",
+          "detail": "the (17d) rhs is audited where it matters -- inside the QP the solver saw.  Over all 800 row-bearing steps: Gamma_raw recomputed from the pre-solve joints matches the recorded pre-solve value EXACTLY (max diff 0.0e+00); the embedded joint-space gradient matches EXACTLY (0.0e+00); (17d) reconstructed from the re-computed Gamma (and the calibrated Gamma_cal = 1 + Gamma_raw/kappa, max diff 0.0e+00) matches the rhs carried by the QP object to 0.0e+00 and matches S.log_barrier EXACTLY (0.0e+00); and the assembled inequality -g.qdot <= lam*rhs holds with the applied joint velocity to 2.2e-16 (lam = 1).  The barrier sits at the learned boundary Gamma_raw = 0 per Q4/D007.  The pre-audit loop used log(Gamma_raw - 1) with domain Gamma_raw > 1, i.e. a barrier one unit above the boundary (D019); N10.6 proves this audit detects that mutation.",
           "info": {
-            "drift": 0.0
+            "d_gram": 0.0,
+            "d_grad": 0.0,
+            "d_recon": 0.0,
+            "d_helper": 0.0,
+            "d_row": 2.220446049250313e-16,
+            "d_gam_cal": 0.0
+          }
+        },
+        {
+          "id": "N10.6",
+          "kind": "negative",
+          "ok": true,
+          "detail": "replacing the applied rhs with the pre-audit log(Gamma_raw - 1) is DETECTED by the P10.8 audit: over 200 mutated steps the reconstructed (17d) diverges from the applied rhs by max 0.483 and S.log_barrier by max 0.483, while the Gamma reconstruction stays exact (0.0e+00) -- i.e. the audit reads the solver's actual input, so this exact drift can never pass silently again (D019/D020).",
+          "info": {
+            "d_gram": 0.0,
+            "d_grad": 0.0,
+            "d_recon": 0.48333576005780826,
+            "d_helper": 0.48333576005780826,
+            "d_row": 1.1102230246251565e-16,
+            "d_gam_cal": 0.0
+          }
+        },
+        {
+          "id": "P10.9",
+          "kind": "positive",
+          "ok": true,
+          "detail": "LVI (Eq.19/20) vs the exact active set on 16 of the QP instances the loop actually encountered (4 nearest min-Gamma, 6 with an active row, rest uniform; gram 1.004..4.237; protocol: dt=5e-3/20000 steps, one retry dt=1e-3/60000).  The active-set answer is the LVI fixed point to 2.8e-16 on EVERY instance; the (20) flow converges (best fixed-point residual 7.0e-10) and every instance that reached 1e-6 agrees with the active set to 4.2e-09.  LIMITATION, reported not substituted: the (20) RK4 integration did NOT reach the 1e-10 tolerance on 16/16 instances within the budget (worst residual 0.76) -- the (I+M^T) dynamics are stiff near the log barrier, so the closed loop keeps the exact fixed-point solve and NO claim is made that an LVI-dynamics controller ran the 800-step rollout; P10.6 already quantifies the quasi-static distinction.",
+          "info": {
+            "n_conv": 0,
+            "max_diff": 4.235956939629434e-09,
+            "fp_as_max": 2.7922043542911716e-16,
+            "best_fp": 7.031351202479849e-10
           }
         },
         {
@@ -1680,11 +1711,14 @@
           "id": "P10.7",
           "kind": "positive",
           "ok": true,
-          "detail": "counterfactual on the 0 infeasible steps (row dropped instead of frozen): min_t Gamma_raw = 1.0043 and 0 boundary crossings, against 1.0043 / 0 for the freeze policy and -2.3147 / 534 with the row switched off entirely.  The calibrated row was feasible on ALL 800 steps: no freeze and no row drop ever fired, so the crossing-free outcome is attributable to the row alone.  The fallback machinery is exercised by the negative controls instead (N10.4: 0 infeasible at lambda = 0; T08/N8.1: 647 with the gradient sign flipped).  (Pre-audit, the uncalibrated rhs log(Gamma_raw - 1) made 370/800 steps infeasible; D019.)",
+          "detail": "counterfactual on the 0 infeasible steps (row dropped instead of frozen): min_t Gamma_raw = 1.0043 and 0 boundary crossings, against 1.0043 / 0 for the freeze policy and -2.3147 / 534 with the row switched off entirely; attribution: 0/0 infeasible steps reproduce with the row removed.  The calibrated row was feasible on ALL 800 steps: no freeze and no row drop ever fired, so the crossing-free outcome is attributable to the row alone.  The fallback machinery is exercised by the negative controls instead (N10.4: 594 infeasible at lambda = 0; T08/N8.1: 647 with the gradient sign flipped).  (Pre-audit, the uncalibrated rhs log(Gamma_raw - 1) made 370/800 steps infeasible; D019.)",
           "info": {
             "dropped": 0,
             "min_gamma": 1.0043147770316547,
-            "crossings": 0
+            "crossings": 0,
+            "attributed": 0,
+            "attribution_ok": true,
+            "ref_crossings": 0
           }
         },
         {
@@ -1839,7 +1873,7 @@
         "d_c": 1,
         "t_end": 8.0,
         "dt": 0.01,
-        "wall_dt_doubled_s": 6.205840777998674,
+        "wall_dt_doubled_s": 6.625653220000004,
         "t_switch": 2.8000000000000003,
         "t_approach": 0.02,
         "tau_final": [
@@ -1855,12 +1889,231 @@
         "activation_ratio": 0.96875,
         "infeasible_sca_on": 0,
         "infeasible_attribution": {},
-        "rhs_vs_log_barrier_max": 0.0,
+        "rhs_audit_d_gram": 0.0,
+        "rhs_audit_d_grad": 0.0,
+        "rhs_audit_d_recon": 0.0,
+        "rhs_audit_d_helper": 0.0,
+        "rhs_audit_d_row": 2.220446049250313e-16,
+        "rhs_audit_d_gam_cal": 0.0,
+        "mutation_rhs_audit": {
+          "d_gram": 0.0,
+          "d_grad": 0.0,
+          "d_recon": 0.48333576005780826,
+          "d_helper": 0.48333576005780826,
+          "d_row": 1.1102230246251565e-16,
+          "d_gam_cal": 0.0
+        },
+        "n_steps_below_invariance_threshold": 0,
+        "n_steps_below_svm_boundary": 0,
+        "min_gamma_margin_to_1": 0.004314777031654726,
+        "lvi_instances": 16,
+        "lvi_converged_tol1e10": 0,
+        "lvi_below_1e-6": 1,
+        "lvi_best_fp_residual": 7.031351202479849e-10,
+        "lvi_worst_fp_residual": 0.7614163698673745,
+        "lvi_max_primal_diff_below_1e-6": 4.235956939629434e-09,
+        "as_fixed_point_residual_max": 2.7922043542911716e-16,
+        "lvi_time_s": 63.697718893,
+        "lvi_detail": [
+          {
+            "k": 0,
+            "tag": "uniform",
+            "gram": 4.236607066920548,
+            "fp_residual": 7.031351202479849e-10,
+            "primal_diff": 4.235956939629434e-09,
+            "dt_best": 0.005,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 9.185848120258998e-17
+          },
+          {
+            "k": 25,
+            "tag": "activeRow",
+            "gram": 3.923754870071888,
+            "fp_residual": 2.2529560583764156e-05,
+            "primal_diff": 0.0010450252950098054,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 2.267118333718696e-16
+          },
+          {
+            "k": 133,
+            "tag": "uniform",
+            "gram": 2.651598736931384,
+            "fp_residual": 0.003237228830180383,
+            "primal_diff": 0.16594313948213407,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 2.478470040757776e-16
+          },
+          {
+            "k": 154,
+            "tag": "activeRow",
+            "gram": 2.454224696501513,
+            "fp_residual": 0.0036153129752563703,
+            "primal_diff": 0.1926654447951897,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 2.2504819777703755e-16
+          },
+          {
+            "k": 266,
+            "tag": "uniform",
+            "gram": 1.6682917089377656,
+            "fp_residual": 0.7572028030859626,
+            "primal_diff": 0.1322992274311305,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 2.7922043542911716e-16
+          },
+          {
+            "k": 283,
+            "tag": "activeRow",
+            "gram": 1.5853596198821776,
+            "fp_residual": 0.7614163698673745,
+            "primal_diff": 0.13297557742863375,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 1.7471688418277637e-16
+          },
+          {
+            "k": 399,
+            "tag": "uniform",
+            "gram": 1.2173347829968437,
+            "fp_residual": 0.00327295748631572,
+            "primal_diff": 0.25050850032208616,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 1.5316734030160287e-16
+          },
+          {
+            "k": 412,
+            "tag": "activeRow",
+            "gram": 1.1929987749279756,
+            "fp_residual": 0.0032011226161653738,
+            "primal_diff": 0.24849747401970423,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 2.411951935313947e-16
+          },
+          {
+            "k": 532,
+            "tag": "uniform",
+            "gram": 1.061672767459833,
+            "fp_residual": 0.00274522135432469,
+            "primal_diff": 0.23731765669281527,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 1.3782047771111197e-16
+          },
+          {
+            "k": 541,
+            "tag": "activeRow",
+            "gram": 1.0564873364767873,
+            "fp_residual": 0.002709837280970163,
+            "primal_diff": 0.23577859078515506,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 1.493071971014199e-16
+          },
+          {
+            "k": 665,
+            "tag": "uniform",
+            "gram": 1.01658947843105,
+            "fp_residual": 0.0021095306959982647,
+            "primal_diff": 0.19504486835152945,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 8.190026180932617e-17
+          },
+          {
+            "k": 670,
+            "tag": "activeRow",
+            "gram": 1.0157839555787889,
+            "fp_residual": 0.0020826126876364198,
+            "primal_diff": 0.19278789513777753,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 1.6357071834314371e-16
+          },
+          {
+            "k": 796,
+            "tag": "minGamma#3",
+            "gram": 1.0044904972330695,
+            "fp_residual": 0.0014241134691111365,
+            "primal_diff": 0.13143164561808063,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 1.0336535828333399e-16
+          },
+          {
+            "k": 797,
+            "tag": "minGamma#2",
+            "gram": 1.0044459062380688,
+            "fp_residual": 0.001419295525950632,
+            "primal_diff": 0.13095273068040664,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 7.188644688194644e-17
+          },
+          {
+            "k": 798,
+            "tag": "minGamma#1",
+            "gram": 1.0044017587988965,
+            "fp_residual": 0.0014144868931559725,
+            "primal_diff": 0.1304744898588943,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 5.692959673613669e-17
+          },
+          {
+            "k": 799,
+            "tag": "minGamma#0",
+            "gram": 1.0043580505156575,
+            "fp_residual": 0.0014096876153703098,
+            "primal_diff": 0.12999693308391524,
+            "dt_best": 0.001,
+            "converged": false,
+            "steps": 80000,
+            "reason": "max_steps",
+            "as_fp_residual": 7.907751758990862e-17
+          }
+        ],
         "min_gamma_raw_sca_off": -2.314704885057382,
         "crossing_count_sca_off": 534,
         "infeasible_drop_row": 0,
         "min_gamma_drop_row": 1.0043147770316547,
         "crossing_count_drop_row": 0,
+        "infeasible_sca_on_attributed": 0,
         "tau_vs_independent_rk4": 0.0008521045385031512,
         "gamma_history_recompute_err": 0.0,
         "kkt_max_e2e": 3.212097106867567e-16,
@@ -1897,8 +2150,8 @@
         "infeasible_lambda0": 594,
         "min_gamma_dt_doubled": 1.004190706372825,
         "t_switch_dt_doubled": 2.82,
-        "solve_time_p50_ms": 14.618617999076378,
-        "solve_time_p99_ms": 15.110532124745076,
+        "solve_time_p50_ms": 15.762483499884183,
+        "solve_time_p99_ms": 19.529062090032312,
         "qdot_sum_max": 0.017323364007083966,
         "counts_sca_on": {
           "LOG_DOMAIN": 0,
@@ -1934,7 +2187,7 @@
         "role": "end-to-end mechanism chain",
         "module": "tasks.t10_e2e"
       },
-      "wall_time_s": 98.24,
+      "wall_time_s": 172.22,
       "python": "3.10.12"
     }
   },
@@ -1998,10 +2251,10 @@
     }
   },
   "totals": {
-    "n_checks": 116,
-    "n_positive": 65,
-    "n_negative": 51,
+    "n_checks": 118,
+    "n_positive": 66,
+    "n_negative": 52,
     "n_failed": 0,
-    "wall_s": 296.124
+    "wall_s": 375.034
   }
 }

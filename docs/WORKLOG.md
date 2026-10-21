@@ -126,3 +126,20 @@ Append-only project work log.
 - Regenerated: T08 min Γ 2.1813 → 1.3347, N8.1 now crosses (−0.021); T10 min Γ 2.0700 → 1.0043,
   infeasible 370/800 → 0, activation 96.9 %, Theorem-3 identity 3.3e-16. Full suite 116 checks
   (65/51), 0 failed, 296 s, G1–G4 PASS. D018 quantitatively superseded (D019); D016 phrasing corrected.
+
+## 2026-10-21 — P5 D020 (independent review round 2, R1–R4)
+- Read the review as correct on all four points and fixed code first, prose second. R1: instrumented
+  the actual pre-solve state, calibrated Γ, gradient, `q̇`, `λ` and the rhs read back from the `QP`
+  object; P10.8 rebuilt as a five-way audit against `q_pre` rather than the post-step Γ array.
+- Added the mutation the review asked for (N10.6, `rhs_mode="mutation_log_minus1"`) and verified the
+  audit fails on it (`0.483`), which is the only way to know the guard is real.
+- R3: captured `(M, b, lo, hi, u, x, active)` per step and re-solved the loop's own instances with
+  the Eq.(20) flow (P10.9). Found the flow is simply too slow near the log barrier (best `7.0e-10`,
+  0/16 at `1e-10`, `63.7 s`); documented as a limitation instead of swapping in the active-set answer
+  as if it were the LVI dynamics.
+- R4: fixed the stale equation line and the P10.7 counter, and tightened P10.7's gate to require a
+  crossing-free reference plus `INF_NOROW_*` attribution on every branch.
+- Also noticed and fixed a real gap during the pass: `infeasible_sca_on_attributed` was not being
+  recorded before, so "all infeasible steps are attributable to the row" was a prose claim.
+- Full suite 118 checks (66/52), 0 failed, 375 s, G1–G4 PASS. Wrote `p5/reviews/P5_D020_POST.md`
+  with an explicit not-claimed list (no LVI-controller claim, no finite-step safety claim).

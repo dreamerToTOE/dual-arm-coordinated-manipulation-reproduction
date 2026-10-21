@@ -1064,9 +1064,11 @@ seed / config / command / status / metrics / artifacts）。
 
 ### 6.1 回填结果与验收结论（2026-10-20）
 
-`run_all.py` 全量运行（D019 审计修正后重生成）：**116 项检查（65 正 / 51 负），0 失败，296.1 s**，
-G1–G4 全部 `PASS`。检查数按 G1 → G2 → G3 → G4 为 53 / 37 / 13 / 13，均为 `ACTUAL`
-（`p5/evidence/P5_impl_checks.json`）。
+`run_all.py` 全量运行（D020 独立评审修正后重生成）：**118 项检查（66 正 / 52 负），0 失败，375.0 s**，
+G1–G4 全部 `PASS`。检查数按 G1 → G2 → G3 → G4 为 53 / 37 / 13 / 15，均为 `ACTUAL`
+（`p5/evidence/P5_impl_checks.json`）。G4 多出的两项来自 D020/R1（P10.8 改为审计**实际送入 QP 的**
+右端，并以 N10.6 变异控制证明其可失败）与 D020/R3（P10.9：用回放中真实遇到的 16 个 QP 实例比较
+Eq.(19/20) LVI 与 active-set 解）。
 
 授予 **`ALGORITHM_NUMERICAL_VERIFIED (D082 scope)`**，但 T10 的端到端结论按实测限定为：
 
