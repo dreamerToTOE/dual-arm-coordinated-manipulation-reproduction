@@ -37,7 +37,7 @@
     "step_norm_priority": 0.4156728116364737
   },
   "E1": {
-    "runs": [
+    "baseline": [
       {
         "seed": 0,
         "min_pos_error": 0.02113808210318642,
@@ -45,8 +45,8 @@
         "max_drift": 1.4416444228678739e-06,
         "min_clearance": 0.18714788152803719,
         "max_tilt_deg": 0.8552120853235117,
-        "wall_seconds": 19.024606943130493,
-        "pass": true
+        "aux_fraction": 0.0,
+        "wall_seconds": 19.973729848861694
       },
       {
         "seed": 1,
@@ -55,8 +55,8 @@
         "max_drift": 3.394780095634292e-06,
         "min_clearance": 0.18505790486168922,
         "max_tilt_deg": 1.1016613308752126,
-        "wall_seconds": 19.173768758773804,
-        "pass": true
+        "aux_fraction": 0.0,
+        "wall_seconds": 19.901636123657227
       },
       {
         "seed": 2,
@@ -65,8 +65,54 @@
         "max_drift": 2.0199054893717867e-06,
         "min_clearance": 0.19036300534893458,
         "max_tilt_deg": 0.869868927704141,
-        "wall_seconds": 19.01127600669861,
-        "pass": true
+        "aux_fraction": 0.0,
+        "wall_seconds": 19.72993493080139
+      }
+    ]
+  },
+  "E1_switch": {
+    "eta_0.1": [
+      {
+        "seed": 0,
+        "min_pos_error": 0.019825649198495995,
+        "final_pos_error": 0.019825649198495995,
+        "max_drift": 7.658524840737724e-06,
+        "min_clearance": 0.18538441381089182,
+        "max_tilt_deg": 1.1001242906503033,
+        "aux_fraction": 0.0,
+        "wall_seconds": 24.56329035758972
+      },
+      {
+        "seed": 1,
+        "min_pos_error": 0.02323310262199462,
+        "final_pos_error": 0.04213276177495184,
+        "max_drift": 1.3510666891238386e-06,
+        "min_clearance": 0.17667173619440102,
+        "max_tilt_deg": 1.0271138946639236,
+        "aux_fraction": 0.0,
+        "wall_seconds": 24.184065341949463
+      }
+    ],
+    "eta_1.0": [
+      {
+        "seed": 0,
+        "min_pos_error": 0.009169059284594201,
+        "final_pos_error": 0.009187853411199176,
+        "max_drift": 7.091123492584478e-07,
+        "min_clearance": 0.1924864083946497,
+        "max_tilt_deg": 0.38566996244628743,
+        "aux_fraction": 1.0,
+        "wall_seconds": 24.569655418395996
+      },
+      {
+        "seed": 1,
+        "min_pos_error": 0.009169059284594201,
+        "final_pos_error": 0.009187853411199176,
+        "max_drift": 7.091123492584478e-07,
+        "min_clearance": 0.1924864083946497,
+        "max_tilt_deg": 0.38566996244628743,
+        "aux_fraction": 1.0,
+        "wall_seconds": 24.701249599456787
       }
     ]
   }

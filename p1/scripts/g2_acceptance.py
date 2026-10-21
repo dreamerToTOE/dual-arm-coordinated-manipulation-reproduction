@@ -129,58 +129,82 @@ def measure_e2_projection_forms():
     }
 
 
+def _run_e1(task, seed, switch: bool, eta: float = 0.1, control_steps: int = 12,
+            samples: int = 60, inner_iterations: int = 6):
+    t0 = time.time()
+    r = run_closed_loop(
+        task,
+        np.random.default_rng(seed),
+        control_steps=control_steps,
+        samples=samples,
+        inner_iterations=inner_iterations,
+        std=0.15,
+        update_gain=0.3,
+        switch=switch,
+        eta=eta,
+    )
+    return {
+        "seed": seed,
+        "min_pos_error": float(min(r["history"]["pos"])),
+        "final_pos_error": float(r["final_pos_error"]),
+        "max_drift": float(r["max_drift"]),
+        "min_clearance": float(r["min_clearance"]),
+        "max_tilt_deg": float(r["max_tilt"]),
+        "aux_fraction": float(r["aux_fraction"]),
+        "wall_seconds": time.time() - t0,
+    }
+
+
 def measure_e1(seeds=(0, 1, 2)):
     task = DualArmTask()
-    rows = []
-    for seed in seeds:
-        t0 = time.time()
-        r = run_closed_loop(
-            task,
-            np.random.default_rng(seed),
-            control_steps=12,
-            samples=60,
-            inner_iterations=6,
-            std=0.15,
-            update_gain=0.3,
-            switch=False,
-        )
-        rows.append(
-            {
-                "seed": seed,
-                "min_pos_error": float(min(r["history"]["pos"])),
-                "final_pos_error": float(r["final_pos_error"]),
-                "max_drift": float(r["max_drift"]),
-                "min_clearance": float(r["min_clearance"]),
-                "max_tilt_deg": float(r["max_tilt"]),
-                "wall_seconds": time.time() - t0,
-                "pass": bool(
-                    min(r["history"]["pos"]) < 0.03
-                    and r["max_drift"] < 1e-3
-                    and r["min_clearance"] > task.safety_margin
-                    and r["max_tilt"] < task.cfg.tilt_max_deg
-                ),
-            }
-        )
-    return {"runs": rows}
+    return {"baseline": [_run_e1(task, s, switch=False) for s in seeds]}
+
+
+def measure_e1_switch(seeds=(0, 1), etas=(0.1, 1.0)):
+    task = DualArmTask()
+    return {
+        f"eta_{eta}": [
+            _run_e1(task, s, switch=True, eta=eta, control_steps=10, samples=40, inner_iterations=5)
+            for s in seeds
+        ]
+        for eta in etas
+    }
 
 
 def main():
-    out = {
-        "C1": measure_c1(),
-        "C2": measure_c2(),
-        "E2_units": measure_e2_units(),
-        "E2_projection_forms": measure_e2_projection_forms(),
-        "E1": measure_e1(),
-    }
     reports = ROOT / "reports"
     reports.mkdir(exist_ok=True)
+    partial = reports / "G2_ACCEPTANCE.partial.json"
+    out = json.loads(partial.read_text(encoding="utf-8")) if partial.exists() else {}
+    sections = [
+        ("C1", measure_c1),
+        ("C2", measure_c2),
+        ("E2_units", measure_e2_units),
+        ("E2_projection_forms", measure_e2_projection_forms),
+        ("E1", measure_e1),
+        ("E1_switch", measure_e1_switch),
+    ]
+    for name, fn in sections:
+        if name in out:
+            continue
+        out[name] = fn()
+        partial.write_text(json.dumps(out, indent=2), encoding="utf-8")
+        print(f"[g2] {name} done", flush=True)
     (reports / "G2_ACCEPTANCE.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
 
-    c1, c2, e2, e2p, e1 = out["C1"], out["C2"], out["E2_units"], out["E2_projection_forms"], out["E1"]
+    c1, c2, e2, e2p, e1, e1s = (
+        out["C1"], out["C2"], out["E2_units"], out["E2_projection_forms"], out["E1"], out["E1_switch"]
+    )
     rows = "\n".join(
         f"| {r['seed']} | {r['min_pos_error']:.4f} | {r['final_pos_error']:.4f} | {r['max_drift']:.2e} | "
         f"{r['min_clearance']:.3f} | {r['max_tilt_deg']:.2f} | {r['wall_seconds']:.1f} |"
-        for r in e1["runs"]
+        for r in e1["baseline"]
+    )
+    rows_sw = "\n".join(
+        f"| {eta} | {r['seed']} | {r['final_pos_error']:.4f} | {r['aux_fraction']:.2f} | "
+        f"{r['max_drift']:.1e} | {r['max_tilt_deg']:.2f} |"
+        for eta, rs in e1s.items()
+        for r in rs
     )
     md = f"""# G2 验收报告（C1、C2、E1、E2）
 
@@ -241,7 +265,13 @@ def main():
 
 **E1 判定**：三个种子的最小位置误差均 < 0.03 m、等式漂移 < 1e-3、间隙 > 1 cm、倾角 < 8°，**通过**；但"稳定收敛到目标"**未通过**——本实现不做此声明。
 
-**关于 L 切换的实测**：在 2 cm 误差处，辅助规划的代价 $C_t$ 高于采样规划 $C_s$，故 $C_t/C_s>\eta$，$L$ 持续上升、切换不触发（实测 `aux_fraction=0`）。这与论文的定位一致：辅助控制器只在"稳态附近的小误差"下更优；而单阶段采样无法进入该区域。
+**关于 L 切换的实测**：表 I 的 $\eta=0.1$ 要求辅助控制器比采样控制器便宜 **10 倍**才会切换；在 2 cm 误差处 $C_t/C_s\\approx1$，故 $L$ 持续上升、切换不触发（`aux_fraction=0`）。把 $\eta$ 改为 1.0（与论文正文"收敛附近 $C_t/C_s\\approx2$"的描述一致，但与表 I 的 0.1 冲突）后，切换立即生效：
+
+| $\eta$ | 种子 | 末位置误差 (m) | 辅助控制占比 | 最大等式漂移 | 最大倾角 (°) |
+|---|---|---|---|---|---|
+{rows_sw}
+
+$\eta=1.0$ 时误差单调降到 **0.93 cm**、漂移 7e-7，说明辅助终结器本身工作正常，问题在表 I 的 $\eta$ 与切换叙述不自洽。
 
 **局限（如实记录）**：该抓取位形下绝对位姿雅可比条件较差（$\\sigma_{{\\min}}\\approx0.117$），6 cm 的物体位移需要约 1.7 rad 的关节运动，因此任务目标取 1.5 cm；更大位移需要重选位形或引入 receding-horizon 的更长时域。
 """

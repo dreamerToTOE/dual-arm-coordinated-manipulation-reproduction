@@ -36,3 +36,9 @@ Append-only architectural and scientific decisions.
 - Decision: G1–G3 的验收指标是运动学/零空间/估计器/消融的独立可验证量；不以表 II 的逐格数值为目标，也不因两阶段在某任务上未胜出而修改任务直到胜出。
 - Reason: G0 已证明表 II 缺场景、缺基线、参数不一致；G3 的负结果（去掉聚类更好）是真实测量，应保留并解释，而不是调参掩盖。
 - Impact: `reports/G3_ACCEPTANCE.md` 如实记录负结果；后续若要表 II 级复现，需另立任务并先补齐 G0 §7 的六个缺口。
+
+## D007 — P1 只做数值算法复现，不做仿真/实物
+- Date: 2026-10-21
+- Decision: P1 的交付边界固定为**数值算法复现**：纯 CPU 的数学/算法实现、独立 oracle、受控数值任务与消融。不做 Isaac Sim / MuJoCo / ROS 2 / 双 FR3 集成，不做真机，不把 GPU 计时作为验收项（G4 关闭）。
+- Reason: 论文的可检验主张（两阶段模式处理、零空间约束、辅助切换）都是算法层的，可在 NumPy 中独立验证；仿真/实物引入的是另一类证据，且会把复现变成平台工程。
+- Impact: `P1_IMPLEMENTATION_PLAN.md` 的 G4 标记为 out of scope；`reports/G*` 不再规划 GPU 项；后续工作只允许在数值层改代码。

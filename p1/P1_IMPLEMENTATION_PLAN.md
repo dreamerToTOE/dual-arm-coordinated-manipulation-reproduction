@@ -77,7 +77,7 @@ p1/
 | **G1** | 模块 A1–A3、B1–B2：DQ 代数、相对/绝对位姿、相对雅可比、零空间、残差阶数 | `src/p1_repro/{dq,se3,kinematics,jacobian,nullspace}.py` + 5 个测试 + `reports/G1_ACCEPTANCE.md` | 所有 P0 验收项通过；公式 (8) 的读法被显式记录；无 NaN |
 | **G2** | 模块 C1–C2、E1–E2：单阶段基线、估计器、约束任务、辅助控制与 $L$ | `mpc.py`、`sampler.py`、`cost.py`、`tasks/dual_arm.py`、`aux.py`、`switch.py` + 测试 | 单阶段代价 ≤1.1×LQR；$L$ 斜率/饱和/停留时间与解析一致；等式残差 ≤1e-6 |
 | **G3** | 模块 D1–D3、F1–F2：两阶段、聚类、选模、精化、消融 | `twostage.py`、`tasks/bimodal.py`、`ablation.py` + 测试 + `reports/G3_ABLATION.md` | 两阶段优势在 100 种子上显著（p<0.05，效应量 ≥0.5）；消融可归因 |
-| **G4**（条件） | 模块 G1–G2：GPU 数值一致性、本机计时 | `gpu_parity.py`、`bench_gpu.py` + 环境记录 | 需单独批准；只报告本机分布，不与论文绝对毫秒比较 |
+| ~~**G4**~~（**out of scope**） | ~~模块 G1–G2：GPU 数值一致性、本机计时~~ | — | 用户 2026-10-21 决定：P1 只做数值算法复现，不做 GPU/仿真/实物（见 D007） |
 
 每个门禁后**停止并等待科研审查**，不自动进入下一阶段。
 
@@ -121,7 +121,7 @@ G1 开工前必须补做 `AGENTS.md` §1.1 的 **PRIOR-ASSET CHECK**：可复用
 
 **统计纪律**：所有对比预先登记种子集（100 个）、预算、指标与检验方法；先写 `PREREGISTRATION.md` 再跑，避免事后挑选。
 
-### G4（条件，5 个工作日 + 环境风险 2–5 天）
+### ~~G4~~（out of scope，2026-10-21 关闭）
 
 | 编号 | 工作 | 产出 | 验收 |
 |---|---|---|---|
@@ -140,9 +140,9 @@ G1 开工前必须补做 `AGENTS.md` §1.1 的 **PRIOR-ASSET CHECK**：可复用
 | NumPy 1.24（已装） | 全部数值 | G1–G3 | 不升级；float64 为主 |
 | SciPy 1.8（已装） | `kmeans2`、`linalg`、`optimize` | G2–G3 | 若 `kmeans2` 初始化不可控，自写 Lloyd（~40 行） |
 | Matplotlib 3.5（已装） | 图 | G1–G3 | 只产出矢量/PNG 证据 |
-| `dqrobotics` | **不使用** | — | 避免与上游共享约定；只在 G4 作为第三 oracle（可选） |
-| PyTorch / CUDA / cuRobo | GPU 路径 | G4 | 需批准；上游无许可证，仅本地 |
-| ROS 2 | **不使用** | — | 数值复现不需要 |
+| `dqrobotics` | **不使用** | — | 避免与上游共享约定；G4 已关闭，不再作为第三 oracle |
+| PyTorch / CUDA / cuRobo | — | **不使用** | G4 关闭（D007）：P1 只做数值算法复现 |
+| ROS 2 | **不使用** | — | 数值复现不需要；仿真/实物不在 P1 范围（D007） |
 
 `/tmp` 为 10 MB tmpfs，所有中间产物写入 `~` 下工作目录；仓库只提交源码、配置、报告与小型证据图。
 

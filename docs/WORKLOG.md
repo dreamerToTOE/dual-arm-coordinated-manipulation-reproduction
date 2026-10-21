@@ -35,3 +35,9 @@ Append-only project work log.
 - G3: clustering recovers the two corridor modes at 0.872; two-stage 0.43 success vs single-stage 0.00 at equal budget (0.057 vs 0.152 m); ablation shows the second re-weighting pass, not clustering, drives the gain in this task (no-cluster 0.90). Negative result kept and explained.
 - New findings: official 1e-16 damping gives |N^2-N|=0.247 in float64; Eq. (45) leaves an absolute-task residual of 0.0115 vs 3.8e-5 for the priority-consistent form.
 - 31 tests pass (`cd p1 && python -m pytest tests -q`). No CUDA install, no GPU context, no ROS/cuRobo.
+
+## 2026-10-21 — P1 numerical scope fixed; auxiliary finisher and mode inertia
+- User decision D007: P1 is numerical-algorithm-only; GPU/simulation/hardware are out of scope. G4 closed in the plan and status.
+- Auxiliary finisher: capped per-step Newton motion (0.05 rad) on the priority-consistent projection. With eta=1.0 the L switch engages, error decreases monotonically 1.98 -> 0.92 cm, drift 7.1e-7, aux fraction 1.0; with Table I's eta=0.1 it never engages (Ct/Cs ~ 1).
+- Mode inertia (keep the previous cluster unless beaten by 0.6x): two-stage success 0.35 -> 0.55, still below the no-cluster variant 0.90. The published elite-majority rule is unstable for symmetric modes.
+- Reports regenerated; one f-string escape bug (\\approx) fixed in the G2 renderer.

@@ -86,12 +86,15 @@ class TwoStageConfig:
     iterations: int = 1
     max_abs: float = 0.3
     lam_frac: float | None = None  # fixed lambda = lam_frac * cost range
+    mode_inertia: bool = False      # keep the previous mode unless clearly beaten
+    inertia_ratio: float = 0.6
 
 
 def two_stage(task, rng, cfg: TwoStageConfig, u_mean: np.ndarray | None = None) -> dict:
     """One two-stage optimisation (or ``iterations`` of it)."""
     u = task.nominal_u() if u_mean is None else u_mean.copy()
     out = None
+    mode_prev: int | None = None
     for _ in range(cfg.iterations):
         eps1 = colored(rng, cfg.samples, task.horizon, 2, std=cfg.std1, gamma=cfg.gamma, max_abs=cfg.max_abs)
         d1 = task.rollout(u[None] + eps1)
@@ -99,6 +102,14 @@ def two_stage(task, rng, cfg: TwoStageConfig, u_mean: np.ndarray | None = None) 
         D = descriptors(d1, raw)
         labels, _ = kmeans(D, cfg.clusters, rng)
         mode = select_mode(labels, d1["cost"], cfg.elite)
+        if cfg.mode_inertia and mode_prev is not None:
+            # Temporal consistency: the previous mode is only abandoned when a
+            # different cluster wins the elite vote by a clear margin.
+            elite = np.argsort(d1["cost"].reshape(-1))[: min(cfg.elite, len(d1["cost"]))]
+            counts = np.bincount(labels[elite], minlength=labels.max() + 1)
+            if mode_prev < len(counts) and counts[mode_prev] >= cfg.inertia_ratio * counts.max():
+                mode = int(mode_prev)
+        mode_prev = mode
         idx = np.flatnonzero(labels == mode)
         if cfg.lam_frac is None:
             w1, lam1 = adaptive_weights(d1["cost"][idx], cfg.lam, (15.0, 20.0))

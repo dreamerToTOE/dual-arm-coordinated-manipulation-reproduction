@@ -220,7 +220,11 @@ class DualArmTask:
             # Eq. (45) uses N Ja^+ e, which preserves the equality exactly but
             # only partially realises the absolute task (see E2 report).
             JN = J @ N
-            v = N @ (np.linalg.pinv(JN, rcond=1e-4) @ (self.xa_d - xa[0])) * gain / self.dt
+            step = N @ (np.linalg.pinv(JN, rcond=1e-4) @ (self.xa_d - xa[0])) * gain
+            # Cap the per-step joint motion: the Newton step can be large near
+            # this poorly conditioned grasp and would overshoot the target.
+            step = np.clip(step, -0.05, 0.05)
+            v = step / self.dt
             v = np.clip(v, -self.dq_max, self.dq_max)
             U[k] = v
             q1, q2, _, _ = project_step(
