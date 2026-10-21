@@ -1,0 +1,158 @@
+{
+  "paper": {
+    "title": "Real-Time Dual-Arm Cooperative Manipulation Under Multiple Constraints: A Two-Stage Sampling MPC Approach",
+    "venue": "IEEE Transactions on Robotics, vol. 42, 2026, pp. 1941-1958",
+    "doi": "10.1109/TRO.2026.3686224",
+    "local_pdf_sha256": "8b4589ce07f932bf1294c7a39b30320a8791f630a4bcd2cd71782b3a2a56de3c",
+    "pages": 19
+  },
+  "repositories": [
+    {
+      "repo": "zhutianqi2006/dual_arm_gpu_mpc",
+      "ref": "main",
+      "sha": "fe5b49f7bb49c60911243fa809de311daad078e3",
+      "commit_date": "2026-04-17",
+      "message": "feat: publish new kmeans-adpan mainline",
+      "license_api": null,
+      "license_files": 0,
+      "tarball": {
+        "path": "mpc.tar.gz",
+        "bytes": 68124265,
+        "sha256": "7ed99e5eb56f4b87a896422eea2577593735fe2e96530cdb284bf83d14e1b223"
+      },
+      "python_lines_src": 3228,
+      "examples": 4,
+      "utils_modules": 0
+    },
+    {
+      "repo": "zhutianqi2006/dual_arm_gpu_mpc",
+      "ref": "pre-paper-accept",
+      "sha": "1820a9e8bb8865014fa2a7ffee5bd69ca0773cad",
+      "commit_date": "2026-01-24",
+      "message": "update some example",
+      "license_api": null,
+      "license_files": 0,
+      "tarball": {
+        "path": "mpc_pre.tar.gz",
+        "bytes": 116496027,
+        "sha256": "cea777f016a854ec1d5105d6bc35874c75f2844ed4c2e79fb78a636a0cff8823"
+      },
+      "python_lines_utils": 18351,
+      "examples": 42,
+      "utils_modules": 33
+    },
+    {
+      "repo": "zhutianqi2006/cuda_dq_kernel",
+      "ref": "main",
+      "sha": "231f130e6c770e4c58168c393d393d9c04fbd4d6",
+      "commit_date": "2026-04-17",
+      "message": "feat: publish refactored dq torch package",
+      "license_api": null,
+      "license_files": 0,
+      "tarball": {
+        "path": "kernel.tar.gz",
+        "bytes": 162327,
+        "sha256": "d4363fc97622f54eb3fdb6081dabc857ecd490e176c6c64a48e91446942ed47f"
+      },
+      "native_lines": 2980
+    },
+    {
+      "repo": "zhutianqi2006/cuda_dq_kernel",
+      "ref": "pre-paper-accept",
+      "sha": "c762b7d69c7a3db69c122a27f7dc287c7efc0c32",
+      "commit_date": "2025-09-08",
+      "message": "Update README.md",
+      "license_api": null,
+      "license_files": 0,
+      "tarball": {
+        "path": "kernel_pre.tar.gz",
+        "bytes": 150578,
+        "sha256": "bdc8c30d590ebb510e9bb1ff594dbbf48f9a6e4affaa3c8f6a7c873631781d3e"
+      },
+      "native_lines": 2534,
+      "documented_stack": "Ubuntu 22.04 / CUDA 11.8 / PyTorch 2.0.1",
+      "timing_table_ms": {
+        "ur3_ur3e_cpu": 260,
+        "ur3_ur3e_gpu": 1.1,
+        "franka_cpu": 330,
+        "franka_gpu": 1.6,
+        "instances": 20000
+      }
+    }
+  ],
+  "key_files": {
+    "kmeans_adpan_post": {
+      "path": "kmeans_adpan.py",
+      "bytes": 34709,
+      "sha256": "84ca7e9fe6b962f0b8f4dec6f6e2a5f36161d69c7070ba6b3907c1c6f431f6d2"
+    },
+    "common_ops_post": {
+      "path": "common_ops.py",
+      "bytes": 11695,
+      "sha256": "8ca0360bcc4a026831f4513dd3af52a431df928bf1dfa0bd7641612de5ee57fa"
+    },
+    "base_post": {
+      "path": "base.py",
+      "bytes": 18777,
+      "sha256": "900281cf6fe800a352b82e79a52ed782403ea2c955137c3adc97ef0ccc44eeba"
+    },
+    "relative_low_level_post": {
+      "path": "relative.py",
+      "bytes": 4427,
+      "sha256": "d5059e9d695e1e7b59277fbba1843d57b7d3ca38153696a87a73ce9d4283b67d"
+    },
+    "kmeans_adpan_pre": {
+      "path": "mppi_kmeans_adpan_module.py",
+      "bytes": 65230,
+      "sha256": "a03d8a9bd92eb7602d489693d661af60ef0624d99c333403ea71df25ef51e34b"
+    },
+    "mppi_project_step": {
+      "path": "mppi_project_step.h",
+      "bytes": 3435,
+      "sha256": "cd9664ec76857bd6f7078b4932d2620c2ae15c269af13e08119cd6b0f0a17b7d"
+    },
+    "dq_composite_ops": {
+      "path": "dq_composite_ops.cuh",
+      "bytes": 21890,
+      "sha256": "5d098bba0262f91af5b35ef3316475bb573b7ad61a34925f4132e5cbcb6daa0d"
+    },
+    "dq_primitives": {
+      "path": "dq_primitives.cuh",
+      "bytes": 9001,
+      "sha256": "0b4b4b47fffe6f30e457bf81c7a0a6a2d4831137bd47ca6582339fa6ed6196ea"
+    },
+    "ur3_config": {
+      "path": "ur3_and_ur3e.yaml",
+      "bytes": 2982,
+      "sha256": "88ccbb8eef152e1aefd80904f4d5e1776d1a38cf1c7b856a718e1bbfee5398e5"
+    }
+  },
+  "classification_counts": {
+    "ORIGINAL": 17,
+    "CODE_MODIFIED": 7,
+    "MISSING": 4,
+    "AMBIGUOUS": 1,
+    "EXTERNAL_DEPENDENCY": 6,
+    "total": 35
+  },
+  "environment": {
+    "read_only_inventory": true,
+    "gpu": "NVIDIA RTX 3070 LHR (GA104, 8 GB)",
+    "driver": "580.178.04",
+    "cuda_toolkit": "absent",
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "scipy": "1.8.0",
+    "matplotlib": "3.5.1",
+    "torch": "absent",
+    "ros2": "absent",
+    "curobo": "absent"
+  },
+  "method": {
+    "dependency_install": false,
+    "cuda_build": false,
+    "gpu_context_initialized": false,
+    "paper_algorithms_executed": false,
+    "note": "G0 is read-only study. Only a CPU SE(3) log/exp identity check was performed to disambiguate Eq. (8); it is a mathematical identity check, not an algorithm run."
+  }
+}

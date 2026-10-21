@@ -26,3 +26,9 @@ Real-time reactive dual-arm coordination under high-dimensional nonconvex constr
 
 ## Fidelity warning
 Do not call a generic MPPI controller “P1 reproduction” unless two-stage mode handling and equality-constraint treatment are implemented and documented.
+
+## 2026-10-21 补注（不改写上方历史表述）
+G0 研究已完成，入口为 `p1/P1_PAPER_STUDY.md`。三处需要修正的立项期判断：
+1. "Reproduction target" 把算法复现与双 FR3/Isaac 集成排成一条线；G0 的结论是两者是不同类证据，数值复现应独立完成（见 `p1/P1_IMPLEMENTATION_PLAN.md` §1）。
+2. 论文式 (8) 印为 $x_2^*x_{r/2}$，几何自洽读法与官方内核均为 $x_2\sqrt{x_r}$（SE(3) 螺旋中点），见 `p1/P1_EQUATION_AUDIT.md` §2.1。
+3. 上游 `main` 已删除表 II 的 12 个基线；基线只存在于 `pre-paper-accept` 快照，见 `p1/P1_OFFICIAL_CODE_AUDIT.md` §1.3、§6。
