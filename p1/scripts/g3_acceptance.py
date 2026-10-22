@@ -218,11 +218,13 @@ def main():
 
 ## 5. 结论（按证据强度）
 
-1. **D1 通过**：运动学摘要 + k-means 能以 {d1['mean_accuracy']*100:.0f}% 的一致率恢复"从上/从下"两个模式，远高于二分类随机水平。
-2. **F1 通过（方向一致，强度有限）**：宽温度、等预算、同种子下，两阶段成功率 {f1['two_stage']['success_rate']:.2f} vs 单阶段 {f1['single_stage']['success_rate']:.2f}，终端误差 {f1['two_stage']['median_goal']:.3f} vs {f1['single_stage']['median_goal']:.3f} m。单阶段的失败方式是"均值停在原地"，与 Fig. 4(a) 一致；但两阶段也只成功 {f1['two_stage']['success_rate']*100:.0f}%，**未达到论文表 II 的 6/6**。
-3. **F2 归因（与论文叙述相反）**：去掉聚类后成功率 **{f2['no_cluster']['success_rate']:.2f}**、误差 **{f2['no_cluster']['median_goal']:.3f} m**，优于完整两阶段的 {f2['full']['success_rate']:.2f} / {f2['full']['median_goal']:.3f} m；去掉第二阶段（$\Sigma_2=\Sigma_1$）后降到 {f2['no_stage2']['success_rate']:.2f} / {f2['no_stage2']['median_goal']:.3f} m。也就是说：在本任务中**起主要作用的是"第二遍重加权"，而不是聚类**；簇条件聚合反而降低了有效样本数、放大了"停滞样本"的影响。换回代码的自适应温度后为 {f2['adaptive_lambda']['success_rate']:.2f} / {f2['adaptive_lambda']['median_goal']:.3f} m。这一负结果与 G0 记录的"聚类特征/精英数/温度口径欠定义"一致，不能据此宣称复现了论文的模式选择机制。
-4. **模式惯性只部分缓解**：给选模加"除非明显更优否则保持上一模式"的惯性（0.6）后，完整两阶段从 0.35 提升到 {f2['with_inertia']['success_rate']:.2f}，仍低于去掉聚类的 {f2['no_cluster']['success_rate']:.2f}。这说明**符号对称的双模态下，论文的"精英众数"选模本身不稳定**；惯性是工程补丁，不是论文机制。
-5. **未通过/不支持**：两阶段的控制序列总变差并不更低（甚至更高）。原因是它确实在移动，而单阶段"不动"所以显得平滑。论文"第二阶段抑制抖动"的主张需要稳态工况才能公平检验，本任务不支持该结论。
+1. **D1 通过**：运动学摘要 + k-means 能以 {d1['mean_accuracy']*100:.0f}% 的一致率恢复"从上/从下"两个模式，远高于二分类随机水平——聚类本身在几何上是成立的。
+2. **F1 不支持论文主诉**：等预算、同种子、宽温度下，两阶段成功率 {f1['two_stage']['success_rate']:.2f} ≈ 单阶段 {f1['single_stage']['success_rate']:.2f}，中位误差 {f1['two_stage']['median_goal']:.3f} vs {f1['single_stage']['median_goal']:.3f} m，只有轻微优势；换用高斯噪声的单阶段在变体对照里达到 1.00（见 G3B）。**"两阶段显著优于单阶段"在本任务未复现。**
+3. **F2 归因（负结果）**：去掉聚类后成功率 **{f2['no_cluster']['success_rate']:.2f}**、误差 {f2['no_cluster']['median_goal']:.3f} m，优于完整两阶段的 {f2['full']['success_rate']:.2f} / {f2['full']['median_goal']:.3f} m；去掉第二阶段降到 {f2['no_stage2']['success_rate']:.2f} / {f2['no_stage2']['median_goal']:.3f} m。说明**起作用的是"第二遍重加权"与 i.i.d. 噪声，不是聚类**；簇条件聚合降低了有效样本数并放大停滞样本的权重。
+4. **温度是开关**：代码自适应温度下完整两阶段为 {f2['adaptive_lambda']['success_rate']:.2f}（权重极峰化），宽温度下为 {f2['full']['success_rate']:.2f}——两种口径都不能让聚类反超"去聚类"。
+5. **TV/抖动**：两阶段序列总变差 {f1['two_stage']['median_tv']:.2f} vs 单阶段 {f1['single_stage']['median_tv']:.2f}，不更低；"第二阶段抑制抖动"在本任务无证据（需要稳态工况才公平）。
+
+**总体判定**：论文的"两阶段 + k-means 模式选择"机制，在对称双通道任务上（含冷启动与可行种子两种起点）都**没有**表现出相对单阶段 MPPI 的增益；聚类能恢复几何模式，但把它接入控制反而变差。这是一项稳定的负结果，与 G0 记录的"聚类特征/精英数/温度/采样幅度口径欠定义"一致。已记入 `OPEN_ISSUES.md`，不做进一步调参。
 """
     (reports / "G3_ACCEPTANCE.md").write_text(md, encoding="utf-8")
     print(json.dumps(out, indent=2))

@@ -70,6 +70,13 @@ def colored(
 
     time = np.fft.ifft(spectrum, n=T, norm="forward").real * T
     noise = np.moveaxis(time, 1, 2)  # (batch, T, dim)
+    # The transcribed zeta normalisation inflates the time-domain amplitude by
+    # several orders of magnitude (measured std ~630x the requested std), so
+    # renormalise to the requested standard deviation while keeping the
+    # 1/f^gamma spectral *shape*.  This matches the paper's intent that `std`
+    # is the noise standard deviation, not an arbitrary spectral scale.
+    if std > 0.0:
+        noise = noise * (std / max(float(noise.std()), 1e-12))
     if max_abs is not None:
         noise = np.clip(noise, -max_abs, max_abs)
     return noise

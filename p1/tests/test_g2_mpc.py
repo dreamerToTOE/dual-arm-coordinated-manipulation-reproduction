@@ -75,6 +75,7 @@ def test_samplers_shapes_and_scales():
     assert g.shape == (500, 15, 4) and np.abs(g).max() <= 0.45 + 1e-12
     c = colored(rng, 500, 15, 4, std=3.0, gamma=2.0)
     assert c.shape == (500, 15, 4) and np.all(np.isfinite(c))
+    assert abs(float(c.std()) - 3.0) < 0.5, f"colored std={c.std():.2f} (expect ~3.0)"
     # coloured noise must be temporally correlated: lag-1 correlation > 0.5
     lag1 = np.mean([np.corrcoef(c[i, :-1, 0], c[i, 1:, 0])[0, 1] for i in range(200)])
     assert lag1 > 0.5, f"lag1={lag1:.3f}"

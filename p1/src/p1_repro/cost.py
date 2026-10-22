@@ -72,6 +72,23 @@ def tilt_cost(angle_deg: np.ndarray, cfg: CostConfig) -> np.ndarray:
     return cfg.p_tilt * over.astype(float)
 
 
+def yoshikawa(J: np.ndarray) -> np.ndarray:
+    """Product of the six largest singular values of a rank-6 Jacobian (Eq. 36).
+
+    ``J`` has shape (..., 8, n).  The product is the Yoshikawa manipulability
+    ``sqrt(det(J J^T))`` restricted to the six non-zero singular values.
+    """
+    s = np.linalg.svd(J, compute_uv=False)
+    if s.shape[-1] < 6:
+        return np.zeros(s.shape[:-1] + (1,))
+    return np.prod(s[..., :6], axis=-1, keepdims=True)
+
+
+def singularity_cost(J: np.ndarray, cfg: "CostConfig", zeta: float = 1e-6) -> np.ndarray:
+    """``p_e / max(zeta, w)`` (Eq. 37), ``w`` from Eq. (36)."""
+    return cfg.p_sing / np.maximum(zeta, yoshikawa(J))
+
+
 def collision_cost(min_distance: np.ndarray, threshold: float, weight: float) -> np.ndarray:
     """Indicator penalty when a sphere pair is closer than ``threshold`` (Eq. 33)."""
     return weight * (min_distance < threshold).astype(float)

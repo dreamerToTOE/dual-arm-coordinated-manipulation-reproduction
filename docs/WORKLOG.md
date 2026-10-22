@@ -41,3 +41,10 @@ Append-only project work log.
 - Auxiliary finisher: capped per-step Newton motion (0.05 rad) on the priority-consistent projection. With eta=1.0 the L switch engages, error decreases monotonically 1.98 -> 0.92 cm, drift 7.1e-7, aux fraction 1.0; with Table I's eta=0.1 it never engages (Ct/Cs ~ 1).
 - Mode inertia (keep the previous cluster unless beaten by 0.6x): two-stage success 0.35 -> 0.55, still below the no-cluster variant 0.90. The published elite-majority rule is unstable for symmetric modes.
 - Reports regenerated; one f-string escape bug (\\approx) fixed in the G2 renderer.
+
+## 2026-10-22 — paper-faithful defaults; coloured-noise fix; variant comparison; open issues
+- Kept the paper's eta=0.1 and the elite-majority mode rule as the main configuration; eta=1.0 and mode inertia remain diagnostics/ablations only.
+- Found and fixed the coloured-noise scaling: the transcribed official formula inflates the time-domain std ~630x (0.15 -> 94); renormalised to the requested std while preserving the 1/f^gamma shape (lag-1 ~0.76). [ENGINEERING], recorded in OPEN_ISSUES P4.
+- Implemented the singularity cost (Eq. 36-37): w~0.024 -> C_sing=422 vs C_goal~2.7 (150x); near-constant across samples so the task still reaches ~2.4 cm, but the weighting is not scale-invariant (OPEN_ISSUES N3).
+- Added a controller-variant comparison (G3B): Gaussian/Log/CEM/Biased MPPI reach 1.0; two-stage 0.67; coloured 0.43. With the corrected noise the earlier "mode averaging" results change: two-stage no longer beats single-stage (G3 F1: 0.67 vs 0.67, no-cluster 1.00 vs full 0.60). Stable negative result N1 recorded in OPEN_ISSUES.md.
+- Regenerated G2/G3/G3B reports; added OPEN_ISSUES.md.

@@ -14,7 +14,14 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
-from .cost import CostConfig, collision_cost, stagnation_cost, terminal_goal_cost, tilt_cost
+from .cost import (
+    CostConfig,
+    collision_cost,
+    singularity_cost,
+    stagnation_cost,
+    terminal_goal_cost,
+    tilt_cost,
+)
 from .dq import dq_conj, dq_from_rt, dq_mul, dq_to_rt, q_from_rotmat, q_to_rotmat
 from .kinematics import SerialChain, absolute_pose, relative_jacobian, relative_pose
 from .nullspace import project_step
@@ -42,6 +49,7 @@ class DualArmTask:
     cfg: CostConfig = field(default_factory=CostConfig.paper)
     n_points_per_link: int = 3
     safety_margin: float = 0.01
+    use_singularity: bool = False  # paper Eq. (41) includes C_sing per step
 
     def __post_init__(self):
         self.c1 = SerialChain(UR3_DH, base=BASE1)
@@ -161,6 +169,8 @@ class DualArmTask:
             min_clear = np.minimum(min_clear, clear)
             tilt = self.tilt_angle_deg(xa)[:, None]
             tilt_max = np.maximum(tilt_max, tilt)
+            if self.use_singularity:
+                stage += singularity_cost(J, self.cfg)
             stage += collision_cost(clear, self.safety_margin, self.cfg.p_ec)
             stage += tilt_cost(tilt, self.cfg)
         x1 = self.c1.fk(q1)
