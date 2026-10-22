@@ -160,6 +160,28 @@ def measure_e1(seeds=(0, 1, 2)):
     return {"baseline": [_run_e1(task, s, switch=False) for s in seeds]}
 
 
+def measure_n2_traces(seed: int = 0, control_steps: int = 8, etas=(0.1, 1.0)):
+    """Per-step C_t, C_s, ratio, L and auxiliary activation for N2."""
+    task = DualArmTask()
+    out = {}
+    for eta in etas:
+        r = run_closed_loop(
+            task, np.random.default_rng(seed),
+            control_steps=control_steps, samples=40, inner_iterations=5,
+            std=0.15, update_gain=0.3, switch=True, eta=eta,
+        )
+        h = r["history"]
+        out[f"eta_{eta}"] = {
+            "C_t": h["C_t"],
+            "C_s": h["C_s"],
+            "ratio": h["ratio"],
+            "L": h["L"],
+            "aux": [bool(x) for x in h["used_aux"]],
+            "pos": h["pos"],
+        }
+    return out
+
+
 def measure_e1_switch(seeds=(0, 1), etas=(0.1, 1.0)):
     task = DualArmTask()
     return {
@@ -183,6 +205,7 @@ def main():
         ("E2_projection_forms", measure_e2_projection_forms),
         ("E1", measure_e1),
         ("E1_switch", measure_e1_switch),
+        ("N2_traces", measure_n2_traces),
     ]
     for name, fn in sections:
         if name in out:
@@ -194,6 +217,15 @@ def main():
 
     c1, c2, e2, e2p, e1, e1s = (
         out["C1"], out["C2"], out["E2_units"], out["E2_projection_forms"], out["E1"], out["E1_switch"]
+    )
+    n2 = out["N2_traces"]
+    rows_n2 = "\n".join(
+        f"| {eta} | {i} | {c_t:.2f} | {c_s:.2f} | {ratio:.2f} | {l:.3f} | "
+        f"{'yes' if a else 'no'} | {pos*100:.2f} |"
+        for eta, tr in n2.items()
+        for i, (c_t, c_s, ratio, l, a, pos) in enumerate(
+            zip(tr["C_t"], tr["C_s"], tr["ratio"], tr["L"], tr["aux"], tr["pos"])
+        )
     )
     rows = "\n".join(
         f"| {r['seed']} | {r['min_pos_error']:.4f} | {r['final_pos_error']:.4f} | {r['max_drift']:.2e} | "
@@ -272,6 +304,14 @@ def main():
 {rows_sw}
 
 $\eta=1.0$ 时辅助控制器部分接管（占比 0.40–0.80），末误差降到 **0.79–1.16 cm**、漂移 ~5e-7，说明辅助终结器本身工作正常，问题在表 I 的 $\eta$ 与切换叙述不自洽。
+
+**N2 逐周期数值轨迹**（种子 0，前 8 个控制周期；切换条件是 $C_t/C_s<\eta$）：
+
+| $\eta$ | 周期 | $C_t$ | $C_s$ | $C_t/C_s$ | $L$ | 辅助激活 | 位置误差 (cm) |
+|---|---|---|---|---|---|---|---|
+{rows_n2}
+
+测量：$\eta=0.1$ 时 $C_t/C_s$ 在 0.35–0.60，始终大于 0.1，$L$ 从 0.04 单调升到 0.40，辅助从未激活；$\eta=1.0$ 时前 4 个周期 $C_t/C_s<1$，$L$ 触底 -0.05、辅助接管，随后 $C_t/C_s$ 回升到 >1（采样计划变得便宜），$L$ 上升、辅助退出——切换在两种控制器之间交替。解释：Eq.(47) 的切换门槛是"辅助代价低于 $\eta\times$ 采样代价"，$\eta=0.1$ 实际要求 10 倍优势，这与表 I 的取值直接相关；不据此断言论文全局不自洽，只报告该实现下的行为。
 
 **局限（如实记录）**：该抓取位形下绝对位姿雅可比条件较差（$\\sigma_{{\\min}}\\approx0.117$），6 cm 的物体位移需要约 1.7 rad 的关节运动，因此任务目标取 1.5 cm；更大位移需要重选位形或引入 receding-horizon 的更长时域。
 """

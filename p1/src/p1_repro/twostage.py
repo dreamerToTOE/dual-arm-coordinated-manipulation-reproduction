@@ -74,6 +74,30 @@ def select_mode(labels: np.ndarray, costs: np.ndarray, m: int = 10) -> int:
     return int(np.argmax(counts))
 
 
+def select_mode_inertial(labels: np.ndarray, centroids: np.ndarray, costs: np.ndarray,
+                         prev_centroid: np.ndarray | None, prev_mode: int | None,
+                         m: int = 10, ratio: float = 0.6) -> tuple[int, int | None]:
+    """Elite-majority mode with cluster-identity continuity.
+
+    k-means cluster indices are arbitrary, so the "previous mode" is matched by
+    centroid distance rather than by index.  Returns ``(mode, matched_prev)``
+    where ``matched_prev`` is the index of the cluster that corresponds to the
+    previous mode (or ``None`` on the first iteration).  The rule is
+    permutation-equivariant: relabelling clusters relabels the output.
+    """
+    m = min(m, len(costs))
+    elite = np.argsort(costs.reshape(-1))[:m]
+    counts = np.bincount(labels[elite], minlength=labels.max() + 1)
+    majority = int(np.argmax(counts))
+    if prev_centroid is None or prev_mode is None:
+        return majority, None
+    d = np.linalg.norm(centroids - prev_centroid[prev_mode][None, :], axis=1)
+    matched = int(np.argmin(d))
+    if counts[matched] >= ratio * counts.max():
+        return matched, matched
+    return majority, matched
+
+
 @dataclass
 class TwoStageConfig:
     samples: int = 500
@@ -86,7 +110,8 @@ class TwoStageConfig:
     iterations: int = 1
     max_abs: float = 0.3
     lam_frac: float | None = None  # fixed lambda = lam_frac * cost range
-    mode_inertia: bool = False      # keep the previous mode unless clearly beaten
+    stage2: bool = True             # False = stop after stage 1 (genuine ablation)
+    mode_inertia: bool = False      # engineering diagnostic only
     inertia_ratio: float = 0.6
 
 
@@ -95,21 +120,23 @@ def two_stage(task, rng, cfg: TwoStageConfig, u_mean: np.ndarray | None = None) 
     u = task.nominal_u() if u_mean is None else u_mean.copy()
     out = None
     mode_prev: int | None = None
+    centroid_prev: np.ndarray | None = None
     for _ in range(cfg.iterations):
         eps1 = colored(rng, cfg.samples, task.horizon, 2, std=cfg.std1, gamma=cfg.gamma, max_abs=cfg.max_abs)
         d1 = task.rollout(u[None] + eps1)
         raw = task.descriptor(d1) if hasattr(task, "descriptor") else None
         D = descriptors(d1, raw)
-        labels, _ = kmeans(D, cfg.clusters, rng)
-        mode = select_mode(labels, d1["cost"], cfg.elite)
-        if cfg.mode_inertia and mode_prev is not None:
-            # Temporal consistency: the previous mode is only abandoned when a
-            # different cluster wins the elite vote by a clear margin.
-            elite = np.argsort(d1["cost"].reshape(-1))[: min(cfg.elite, len(d1["cost"]))]
-            counts = np.bincount(labels[elite], minlength=labels.max() + 1)
-            if mode_prev < len(counts) and counts[mode_prev] >= cfg.inertia_ratio * counts.max():
-                mode = int(mode_prev)
+        labels, centroids = kmeans(D, cfg.clusters, rng)
+        if cfg.mode_inertia:
+            mode, matched = select_mode_inertial(
+                labels, centroids, d1["cost"], centroid_prev, mode_prev,
+                m=cfg.elite, ratio=cfg.inertia_ratio,
+            )
+            del matched
+        else:
+            mode = select_mode(labels, d1["cost"], cfg.elite)
         mode_prev = mode
+        centroid_prev = centroids
         idx = np.flatnonzero(labels == mode)
         if cfg.lam_frac is None:
             w1, lam1 = adaptive_weights(d1["cost"][idx], cfg.lam, (15.0, 20.0))
@@ -123,6 +150,21 @@ def two_stage(task, rng, cfg: TwoStageConfig, u_mean: np.ndarray | None = None) 
             w1 = softmax_weights(d1["cost"][idx], max(lam1, 1e-9))
         u1 = np.clip(u + weighted_noise(eps1[idx], w1), -task.u_max, task.u_max)
 
+        if not cfg.stage2:
+            out = {
+                "u": u1,
+                "u_stage1": u1,
+                "mode": mode,
+                "labels": labels,
+                "cluster_size": int(idx.size),
+                "ess_stage2": float("nan"),
+                "lam1": lam1,
+                "lam2": float("nan"),
+                "diag_stage1": d1,
+                "diag_stage2": None,
+            }
+            u = u1
+            continue
         eps2 = log_normal(
             rng, cfg.samples, task.horizon, 2,
             std=cfg.std1 * cfg.std2_ratio, log_std=0.1, max_abs=cfg.max_abs,

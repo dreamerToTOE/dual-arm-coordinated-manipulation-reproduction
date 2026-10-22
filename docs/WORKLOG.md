@@ -48,3 +48,13 @@ Append-only project work log.
 - Implemented the singularity cost (Eq. 36-37): w~0.024 -> C_sing=422 vs C_goal~2.7 (150x); near-constant across samples so the task still reaches ~2.4 cm, but the weighting is not scale-invariant (OPEN_ISSUES N3).
 - Added a controller-variant comparison (G3B): Gaussian/Log/CEM/Biased MPPI reach 1.0; two-stage 0.67; coloured 0.43. With the corrected noise the earlier "mode averaging" results change: two-stage no longer beats single-stage (G3 F1: 0.67 vs 0.67, no-cluster 1.00 vs full 0.60). Stable negative result N1 recorded in OPEN_ISSUES.md.
 - Regenerated G2/G3/G3B reports; added OPEN_ISSUES.md.
+
+## 2026-10-22 — D008 scientific audit
+- Corrected D2: both aggregators now use the same global temperature; the historical cluster-local measurement is preserved and labelled. Result unchanged (3/20, paired CI includes 0).
+- Corrected the stage-2 ablation: renamed the old variant to `no_variance_reduction`, added a genuine `stage2=False` bypass with a monkeypatch regression test, and separated mechanism-isolation (500/iter) from budget-matched (1000/iter) comparisons.
+- Fixed the D2 report discrepancy (3/20 vs 0/20) by generating all report numbers from JSON and adding a regression test.
+- Mode inertia now associates clusters by centroid distance (permutation-equivariant test); it remains a diagnostic and the paper's elite-majority rule stays primary.
+- G3B fairness recorded (effective std, clipping fraction, lag-1, budgets, paired seeds, Wilson CI, McNemar). Two-stage 20/30 vs Gaussian 30/30 (p=0.002).
+- N2 traces added (C_t, C_s, ratio, L, aux, error per cycle); N3 audit added (w ~ L^2.71, p_e/w dimension L^-2.71, ~5% control effect).
+- Regenerated G1/G2/G3/G3B/N3 reports; added D008_AUDIT.md, CHINESE_REPORT_OUTLINE.md and four report figures.
+- Acceptance recommendation: PARTIALLY_VERIFIED (blockers B1-B3 are paper-clarification issues).

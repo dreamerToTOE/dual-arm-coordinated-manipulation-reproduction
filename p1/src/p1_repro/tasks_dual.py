@@ -289,7 +289,8 @@ def run_closed_loop(
     q = task.q_home.copy()
     u_seq = np.zeros((task.horizon, 12))
     ind = UnexploredIndicator(eta=eta, l_min=-0.05, l_max=0.4, dt=task.dt)
-    hist = {"pos": [], "clear": [], "tilt": [], "drift": [], "L": [], "used_aux": []}
+    hist = {"pos": [], "clear": [], "tilt": [], "drift": [], "L": [], "used_aux": [],
+            "C_t": [], "C_s": [], "ratio": []}
     for _ in range(control_steps):
         for _ in range(inner_iterations):
             eps = colored(
@@ -306,7 +307,11 @@ def run_closed_loop(
             c_s = float(task.rollout(u_seq[None], q0=q)["cost"][0, 0])
             u_aux = task.auxiliary_plan(q0=q)
             c_t = float(task.rollout(u_aux[None], q0=q)["cost"][0, 0])
-            ind.update(c_t / max(c_s, 1e-9))
+            ratio = c_t / max(c_s, 1e-9)
+            hist["C_t"].append(c_t)
+            hist["C_s"].append(c_s)
+            hist["ratio"].append(ratio)
+            ind.update(ratio)
             if not ind.use_sampling:
                 u_exec = u_aux
                 used_aux = True

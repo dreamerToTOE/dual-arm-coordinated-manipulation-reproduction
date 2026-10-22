@@ -42,3 +42,15 @@ Append-only architectural and scientific decisions.
 - Decision: P1 的交付边界固定为**数值算法复现**：纯 CPU 的数学/算法实现、独立 oracle、受控数值任务与消融。不做 Isaac Sim / MuJoCo / ROS 2 / 双 FR3 集成，不做真机，不把 GPU 计时作为验收项（G4 关闭）。
 - Reason: 论文的可检验主张（两阶段模式处理、零空间约束、辅助切换）都是算法层的，可在 NumPy 中独立验证；仿真/实物引入的是另一类证据，且会把复现变成平台工程。
 - Impact: `P1_IMPLEMENTATION_PLAN.md` 的 G4 标记为 out of scope；`reports/G*` 不再规划 GPU 项；后续工作只允许在数值层改代码。
+
+## D008 — P1 科学审计的判定口径
+- Date: 2026-10-22
+- Decision: D2 的两种聚合必须使用同一全局温度；阶段二消融必须区分"方差缩减"与"真正的 stage-1 only"，并同时报告机制隔离（预算不等）与等预算两种口径；模式惯性只作为诊断项，且必须按质心关联簇身份（k-means 标签任意）；G3B 只作为算法家族对照，不作为机制归因。
+- Reason: 旧实验把温度、预算与簇身份混在一起，导致"聚类的贡献"不可识别；D2 正文还出现了 3/20 与 0/20 的不一致。
+- Impact: `g3_acceptance.py`、`g3b_variants.py`、`twostage.py`、`baselines.py` 与三份报告；主配置仍为论文口径（η=0.1、精英众数、无惯性）。
+
+## D009 — P1 验收结论：PARTIALLY_VERIFIED
+- Date: 2026-10-22
+- Decision: P1 记为 `PARTIALLY_VERIFIED`，不记为 `ALGORITHM_NUMERICAL_VERIFIED`，也不宣称 `FULL_PAPER_REPRODUCED`。
+- Reason: 运动学/零空间/估计器/切换积分器的数值实现有独立 oracle 与机器精度证据；但论文的两阶段性能优势、η 口径与奇异项标度三项仍无法从现有材料判定，属于"论文澄清类阻塞"而非代码缺陷。
+- Impact: 后续中文复现报告必须按 `p1/D008_AUDIT.md` §9 的范围限定措辞；解除阻塞需要论文作者补充聚类描述子归一化、温度口径、C_s 定义与 w 的归一化。
