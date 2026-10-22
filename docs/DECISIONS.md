@@ -1163,3 +1163,8 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 接受 V5 作为版本化工程候选继续审查：在 V4 supervisor 上增加不可重入 SIGALRM 处理和扫描期间 signal mask，保持原 RRT+PCS 科学输入、几何、限位、碰撞、预算与验收条件。该决策不批准 source 运行，也不改变 D081 已取消的 18,000 次统计或 VI 归档范围。
 
 V5 静态证据 P4_D080_ENV_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_20261019.json 为 13/13 engineering self-check，personnel_independent=false。只有完成独立审查、root freeze、prior 绑定并获得新的单次 source 预算后，才可评估一次 V5 source 入口；V4 配额不可复用。
+
+
+## 2026-10-22 D082：完整虚拟仿真研究交付
+
+依用户D082指令直接复用既有50次主对照及II/III全路径素材，仅补缺少的独立20R几何/中点资格与科学分析；不重复求解、不扩大样本。接受公开负结果：fullPCS低于兼容fixed-0/NR，fixed-16为结构负对照，RSS规划失败及UNKNOWN根因保留。D082完整虚拟任务通过与原论文全范围PARTIAL分开；原22500、取消18000、实际50各自保留，VI归档。全部211行/248历史列原样追加9列。论文精确模型/native几何/CCD/大规模统计均列差距，FR3仅概念应用章。推送现有分支后等待用户审查。

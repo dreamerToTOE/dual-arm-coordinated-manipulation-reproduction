@@ -1138,3 +1138,8 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 运行类型：工程静态/监督器回归；source process=0，request=0，solve=0，model=0，collision=0，path=0，formal Table I=0，VI constructions=0。结果：13/13 checks 通过；没有创建 V5 execution、claim、supervision 或路径结果文件，没有新增 wall/CPU 账目。
 
 V5 候选固定 V4 的 seed=7、range=0.2、goal bias=0.05、solve=10 s、30/60 wall/CPU 和 25/50 working cap，只增加 SIGALRM 非重入 guard。personnel_independent=false，因此该结果只能作为工程自检，不能作为独立科研审查或 source/path 资格。V4 原始 -9 终止、Solved 前缀和 transport 不完整证据继续保留。
+
+
+## 2026-10-22 D082：完整虚拟仿真研究交付
+
+新增独立验证运行一次：scripts/p4_d082/independent_planar_validation.py；结果results/20261022_D082_independent_planar01。原26成功记录全部合格；2142原保存点、2116原叶、6348新增策略中点，共8490离散状态，11正负oracle通过。最大位置残差9.039665918e-9m、角度2.220446049e-15rad、最小净距0.053965014m、最小限位余0.346012241rad。GNUtime3.62wall/4.93CPU、417528KiB，外180秒未超；0新planner/source/VI/formal。独立summary SHA867755cda518eb7abb8776d827733604266e5be8440aed64fd4f7fff5ceffbc1。旧主统计50调用26SUCCESS/24TIME_LIMIT，40.917385秒是旧run elapsed，planner compute合27.551891秒；旧numeric20调用及投影/局部机制90.386425秒另列，历史CPU未记录。跨环境13对q路径相同，重复seed不增加独立分母。核心单元测试19/19通过，不计规划统计。

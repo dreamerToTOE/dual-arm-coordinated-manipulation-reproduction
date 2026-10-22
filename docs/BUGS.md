@@ -1092,3 +1092,8 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 V4 的 III_SOURCE_SELF_REAPED_LIVE_GROUP_WORK_CAP 仍是历史事实；V5 guard 只针对我方监督器在 live CPU /proc 扫描期间重新进入 SIGALRM 的竞争解释。静态回归通过不能排除 source 自身输出尚未写完、transport 仍不完整或后续路径失败。V5 未获得 source 预算，未运行，不能把 V4 的 Solved stdout 或 V5 静态证据升级为 exact、完整路径、连续无碰撞或 PCS 优势。
 
 V5 的 personnel_independent=false 是当前未决审查边界。必须等待人员独立静态审查、root freeze、最新 prior 绑定和新的一次 source 预算；失败时保留 V5 全部原始证据并按 D079 根因规则处理。
+
+
+## 2026-10-22 D082：完整虚拟仿真研究交付
+
+D082复核：fixed-16端点分支相反，connection_choices应为空；原未提交测试误期望非空导致首次回归失败，已保存原文件并纠正断言，19/19通过，科学策略字节未改。NR旧iterations为trace长度8.446615，实际Newton更新7.446615；新报告区分，旧数据不回写。RSS2304构造全在IK闭合拒绝，尚无证据定位新实现bug，根因UNKNOWN而非确定OUR_IMPLEMENTATION；历史3/3不重置。E1未改变13对成功q路径、Fig3各m重新生成总体是科学局限，未通过改障碍/种子补出优势。文档捆绑LibreOffice/Poppler要求新版glibc，隔离Ubuntu24加载器两次有限工程尝试后成功；日志保留，不改主机库/科学数据。

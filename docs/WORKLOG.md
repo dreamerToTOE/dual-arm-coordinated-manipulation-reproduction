@@ -1033,3 +1033,8 @@ SBL原唯一solve完整387节点/386叶由prefix262+TAIL02原125点组合人员�
 修正 V5 阶段后审中错误的静态证据文件名，统一指向 reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_20261019.json。执行 py_compile 和 scripts/p4_d080/check_v_rrt_pcs_source01_v5_guard.py 前，保留 V4 原失败和所有历史产物；本轮只做静态工程验证，没有启动 source 或规划器。V5 guard 回归保持 13/13，通过项覆盖源码解析、V4 字节保全、预算/请求参数、不可重入 alarm、signal mask 恢复和无运行产物。
 
 本轮没有科学调用和新增费用。下一步是提交并推送候选及持久记录，等待新的 source 预算与人员独立审查；不得复用 V4 配额或把 V5 候选写成路径成功。
+
+
+## 2026-10-22 D082：完整虚拟仿真研究交付
+
+在现有p4-full-reproduction-pcs-study@2b2fd1fa恢复，本地/远程一致；保全120个未提交文件33,718,485字节及SHA/tar，没有重开分支、重跑已有source或覆盖历史失败。收录既有D081配置/消融源码/结果，补独立解析几何与中点验证、保存数据分析、原文对照、7图和中文研究报告。报告经过科学交叉复核及逐页渲染，纠正NR trace长度/实际更新数和RSS根因口径。原248历史列逐值保留，完整211行追加9列。交付入口和复现命令见reports/P4_D082_DELIVERY_README_20261022.md。

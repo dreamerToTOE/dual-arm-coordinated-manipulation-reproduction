@@ -1,0 +1,40 @@
+{
+  "schema": "P4_D082_ISOLATED_BUNDLED_RENDER_V1",
+  "timestamp_utc": "20261022T120431Z",
+  "host_libraries_changed": false,
+  "desktop_libreoffice_used": false,
+  "sysroot_image": "ubuntu@sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac",
+  "sysroot_extraction": "/usr/lib/x86_64-linux-gnu from pinned Ubuntu24 OCI image",
+  "canonical_renderer": "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/documents/skills/documents/render_docx.py",
+  "canonical_renderer_sha256": "876d5993324e2faaaa96a68a4f7504642e9a07e6df265b385b2baa03b231369e",
+  "task_local_renderer": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/render_docx_isolated.py",
+  "task_local_renderer_sha256": "5bfb4f7e5a9265126da0588638f97ff7ad749d5cfadb3b8fcf86e2c403b462a1",
+  "bundled_soffice_binary": "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/program/soffice.bin",
+  "bundled_soffice_sha256": "d905a74dc92eaccb22481ba2de1345666a074a5f0d48322aaad1b6dc8a9e1e40",
+  "bundled_poppler_pdfinfo": "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdfinfo",
+  "bundled_poppler_pdftoppm": "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdftoppm",
+  "isolated_loader_sha256": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da",
+  "isolated_libc_sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+  "docx": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_recovery_20261022/report_final.docx",
+  "docx_sha256": "6424a9457d1bf3f2201c1a970bd037faed92ee434ba5ae7be1d2c8411b7dc8fc",
+  "command": [
+    "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/render_docx_isolated.py",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_recovery_20261022/report_final.docx",
+    "--output_dir",
+    "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_recovery_20261022/render_final",
+    "--emit_pdf",
+    "--verbose"
+  ],
+  "returncode": 0,
+  "log": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/logs/render_20261022T120431Z.log",
+  "output_dir": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_recovery_20261022/render_final",
+  "rendered_pages": 14,
+  "pdfs": [
+    {
+      "path": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_recovery_20261022/render_final/report_final.pdf",
+      "sha256": "dcecdab273f8f950d0c1526c5b00ea59471bd7272d1df719c259c50548013fe6"
+    }
+  ],
+  "visual_review": "PENDING_HUMAN_OR_AGENT_INSPECTION_OF_ALL_PAGES"
+}

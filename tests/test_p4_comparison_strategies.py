@@ -88,6 +88,38 @@ class StrategyTests(unittest.TestCase):
                 if point["qualification"]["valid"]:
                     self.assertIn(self.model.branch(point["q"], trial["partition"]), (0, trial["branch"]))
 
+    def test_fixed_pcs_is_restricted_to_declared_partition(self):
+        for method, partition in (("PCS_FIXED_0", 0), ("PCS_FIXED_16", 16)):
+            with self.subTest(method=method):
+                strategy = Strategy(self.model, self.env, method)
+                choices = strategy.connection_choices(self.model.start, self.model.goal)
+                # p16 has opposite elbow branches at the frozen endpoints.
+                # An empty common-chart set is the correct rejection, not a
+                # failed partition restriction. p0 is the compatible control.
+                if partition == 0:
+                    self.assertTrue(choices)
+                else:
+                    self.assertEqual(choices, [])
+                self.assertTrue(all(item[0] == partition for item in choices))
+                result = rbs_connect(self.model, self.env, method,
+                                     self.model.start, self.model.goal,
+                                     strategy=strategy)
+                if partition == 0:
+                    self.assertTrue(result["success"], result["reason"])
+                    self.assertEqual(result["partition"], 0)
+                else:
+                    self.assertFalse(result["success"])
+                    self.assertIn(result["reason"],
+                                  ("NO_COMMON_PASSIVE_BRANCH", "RBS_PROJECTION_LIMIT",
+                                   "RBS_STATE_INVALID", "RBS_NO_VALID_TRIAL"))
+
+    def test_fixed_pcs_rejects_undeclared_partition_model(self):
+        class OnlyZeroModel:
+            partitions = (0,)
+
+        with self.assertRaises(ValueError):
+            Strategy(OnlyZeroModel(), self.env, "PCS_FIXED_16")
+
     def test_registered_singular_fixture_preserves_actual_status(self):
         # This test does not change the fixture or falsely label geometry
         # failure a successful singular bridge. Scientific verdict is logged

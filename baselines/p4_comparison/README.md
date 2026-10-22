@@ -65,3 +65,7 @@ RBS与双向树沿用此前已验证的算法组织思想，但所有策略在�
 
 `tests/test_p4_comparison_strategies.py` 为确定性数学/接口测试，不是规划统计中的独立试验。
 预声明singular fixture的可达、碰撞及桥接结果必须由真实检查保存；测试不在失败后替换fixture来制造成功。
+
+## D082有限虚拟研究（2026-10-22）
+
+新增既有消融接口`PCS_FIXED_0`和`PCS_FIXED_16`：投影、扩展与局部连接都只允许指定分划。原主协议参数由`configs/p4_d081/numeric_stability_pilot_v1.json`覆盖为1秒、120外迭代、300节点、RBS深度12/256投影；不得误用上面的历史默认预算解释D081结果。兼容fixed-0每环境5/5，全PCS3/5，fixed-16和RSS0/5。独立26路径记录/13不同q路径的离散资格与复现说明见[交付入口](../../reports/P4_D082_DELIVERY_README_20261022.md)。

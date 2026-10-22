@@ -1,0 +1,18 @@
+{
+  "schema": "P4_D082_VIRTUAL_SIMULATION_ASSET_MANIFEST_V1",
+  "classification": "PLOTS_FROM_SAVED_D081_REAL_NUMERICAL_RECORDS",
+  "showcase": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz",
+  "figures": [
+    "reports/p4_d082_simulation_assets/algorithm_comparison_paired.png",
+    "reports/p4_d082_simulation_assets/projection_success_and_correction.png",
+    "reports/p4_d082_simulation_assets/trajectory_E1_PCS_seed7.png",
+    "reports/p4_d082_simulation_assets/trajectory_metrics_E1_PCS_seed7.png"
+  ],
+  "source_runs": [
+    "results/20261019_D081_numeric_pilot",
+    "results/20261019_D081_stability_pilot"
+  ],
+  "display_only_fk_reconstruction": "sin(pi/38) for each of the 19 positive-length links; no state is requalified",
+  "continuous_collision_certificate": false,
+  "author_spatial_equivalence": false
+}

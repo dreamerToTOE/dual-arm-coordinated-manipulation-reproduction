@@ -1,0 +1,91 @@
+{
+  "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed41.json.gz",
+  "input_sha256": "0d38cd999bee39a98cc44ddf0a17f07c3595fd4e76c57bce255fa3656a6c79a9",
+  "environment": "E0_sparse",
+  "method": "PCS_FIXED_0",
+  "seed": 41,
+  "independently_qualified": true,
+  "exact_start_goal": true,
+  "tree_edge_and_RBS_provenance": true,
+  "saved_leaf_count": 103,
+  "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+  "saved": {
+    "point_count": 104,
+    "maximum_position_residual_m": 1.0914154436343227e-15,
+    "maximum_angle_residual_rad": 1.3322676295501878e-15,
+    "minimum_joint_margin_rad": 0.45553478316892093,
+    "minimum_self_clearance_m": 0.07376322863965842,
+    "minimum_obstacle_clearance_m": 0.17487879069794188,
+    "minimum_clearance_m": 0.07376322863965842,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "dense": {
+    "point_count": 413,
+    "maximum_position_residual_m": 1.170021796579212e-15,
+    "maximum_angle_residual_rad": 1.7763568394002505e-15,
+    "minimum_joint_margin_rad": 0.45553478316892093,
+    "minimum_self_clearance_m": 0.07376322863965842,
+    "minimum_obstacle_clearance_m": 0.17487879069794188,
+    "minimum_clearance_m": 0.07376322863965842,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "added_midpoints": 309,
+  "saved_path_length_rad": 3.7839911279362455,
+  "dense_path_length_rad": 3.7841175864646104,
+  "maximum_saved_step_rad": 0.04895969829555754,
+  "maximum_dense_step_rad": 0.012596499978037532,
+  "solution_partitions": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "genuine_solution_partition_switches": 0,
+  "dense_branch_mismatches": 0,
+  "independent_NR_updates": 0,
+  "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+  "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_FIXED_0_seed41.npz",
+  "dense_sha256": "fd5dc5c3188b7bb3700602aebc23f57ad9f9750e3966b02c26349e0e1e241e3f",
+  "edges": [
+    {
+      "attempt_index": 6,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 28,
+      "dense_point_count": 109,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 7,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 17,
+      "dense_point_count": 65,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 8,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 9,
+      "dense_point_count": 33,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 5,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 53,
+      "dense_point_count": 209,
+      "reversed": true,
+      "tree": "GOAL"
+    }
+  ]
+}

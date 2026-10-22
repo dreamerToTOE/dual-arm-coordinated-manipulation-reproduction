@@ -1,0 +1,270 @@
+{
+  "schema": "P4_D081_NUMERICAL_PILOT_SUMMARY_V1",
+  "status": "PILOT_COMPLETED_REAL_NUMERICAL_DATA",
+  "elapsed_wall_sec": 90.38642531799997,
+  "math": {
+    "jacobian_fd_max_abs": 1.707702729225602e-10,
+    "analytic_ik_success": 8,
+    "analytic_ik_total": 8,
+    "singular_rank": 2,
+    "collision_negative": true
+  },
+  "spatial": {
+    "II": {
+      "closure_max_abs": 1.1368683772161603e-13,
+      "jacobian_rank": 6,
+      "jacobian_fd_max_abs": 9.057887950802979e-08,
+      "classification": "RECONSTRUCTED_SAVED_ENDPOINT_MATH_ONLY"
+    },
+    "III": {
+      "closure_max_abs": 1.1368683772161603e-13,
+      "jacobian_rank": 6,
+      "jacobian_fd_max_abs": 1.0180622211919399e-07,
+      "classification": "RECONSTRUCTED_SAVED_ENDPOINT_MATH_ONLY"
+    }
+  },
+  "projection_groups": [
+    {
+      "method": "APC",
+      "n": 768,
+      "success": 51,
+      "success_rate": 0.06640625,
+      "mean_wall_sec": 0.00025419544662241833,
+      "mean_iterations": null,
+      "mean_distance_rad": 2.4359612206757384
+    },
+    {
+      "method": "NR",
+      "n": 768,
+      "success": 768,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.0018136739791785317,
+      "mean_iterations": 8.446614583333334,
+      "mean_distance_rad": 3.9157926537769754
+    }
+  ],
+  "fig3_groups": [
+    {
+      "m": 1,
+      "n": 180,
+      "success": 124,
+      "success_rate": 0.6888888888888889
+    },
+    {
+      "m": 2,
+      "n": 180,
+      "success": 92,
+      "success_rate": 0.5111111111111111
+    },
+    {
+      "m": 3,
+      "n": 180,
+      "success": 108,
+      "success_rate": 0.6
+    },
+    {
+      "m": 7,
+      "n": 180,
+      "success": 170,
+      "success_rate": 0.9444444444444444
+    },
+    {
+      "m": 16,
+      "n": 180,
+      "success": 179,
+      "success_rate": 0.9944444444444445
+    }
+  ],
+  "fig4_groups": [
+    {
+      "method": "RSS",
+      "n": 240,
+      "success": 73,
+      "success_rate": 0.30416666666666664,
+      "mean_wall_sec": 0.01983394299591055
+    },
+    {
+      "method": "PCS",
+      "n": 240,
+      "success": 105,
+      "success_rate": 0.4375,
+      "mean_wall_sec": 0.03371013067906763
+    },
+    {
+      "method": "NR",
+      "n": 240,
+      "success": 177,
+      "success_rate": 0.7375,
+      "mean_wall_sec": 0.054100051249982545
+    }
+  ],
+  "planner_groups": [
+    {
+      "environment": "E0_sparse",
+      "method": "NR",
+      "sample_n": 2,
+      "success": 2,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.0374209184992651,
+      "mean_success_wall_sec": 0.0374209184992651,
+      "mean_nodes": 5.0,
+      "mean_samples": 1.0,
+      "mean_projection_calls": 33.0,
+      "mean_local_connection_calls": 3.0,
+      "mean_path_length_rad": 1.2244451113510377,
+      "mean_minimum_clearance_m": 0.077242661874894
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS",
+      "sample_n": 2,
+      "success": 2,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.2502046085000984,
+      "mean_success_wall_sec": 0.2502046085000984,
+      "mean_nodes": 10.0,
+      "mean_samples": 8.5,
+      "mean_projection_calls": 409.0,
+      "mean_local_connection_calls": 10.5,
+      "mean_path_length_rad": 2.990146063185471,
+      "mean_minimum_clearance_m": 0.07606247410011491
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "sample_n": 2,
+      "success": 2,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.21136648249921564,
+      "mean_success_wall_sec": 0.21136648249921564,
+      "mean_nodes": 6.0,
+      "mean_samples": 20.5,
+      "mean_projection_calls": 296.0,
+      "mean_local_connection_calls": 8.0,
+      "mean_path_length_rad": 3.6590539389134835,
+      "mean_minimum_clearance_m": 0.06793825053099478
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_16",
+      "sample_n": 2,
+      "success": 0,
+      "success_rate": 0.0,
+      "mean_wall_sec": 1.0001868495000963,
+      "mean_success_wall_sec": null,
+      "mean_nodes": 45.0,
+      "mean_samples": 44.5,
+      "mean_projection_calls": 1565.5,
+      "mean_local_connection_calls": 49.5,
+      "mean_path_length_rad": null,
+      "mean_minimum_clearance_m": null
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "RSS",
+      "sample_n": 2,
+      "success": 0,
+      "success_rate": 0.0,
+      "mean_wall_sec": 1.000155926500156,
+      "mean_success_wall_sec": null,
+      "mean_nodes": 44.5,
+      "mean_samples": 24.5,
+      "mean_projection_calls": 1660.0,
+      "mean_local_connection_calls": 44.0,
+      "mean_path_length_rad": null,
+      "mean_minimum_clearance_m": null
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "NR",
+      "sample_n": 2,
+      "success": 2,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.04550611150079931,
+      "mean_success_wall_sec": 0.04550611150079931,
+      "mean_nodes": 5.0,
+      "mean_samples": 1.0,
+      "mean_projection_calls": 33.0,
+      "mean_local_connection_calls": 3.0,
+      "mean_path_length_rad": 1.2244451113510377,
+      "mean_minimum_clearance_m": 0.06492568435800715
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS",
+      "sample_n": 2,
+      "success": 2,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.3310449234995758,
+      "mean_success_wall_sec": 0.3310449234995758,
+      "mean_nodes": 10.0,
+      "mean_samples": 8.5,
+      "mean_projection_calls": 409.0,
+      "mean_local_connection_calls": 10.5,
+      "mean_path_length_rad": 2.990146063185471,
+      "mean_minimum_clearance_m": 0.07606247410011491
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "sample_n": 2,
+      "success": 2,
+      "success_rate": 1.0,
+      "mean_wall_sec": 0.26743830400027946,
+      "mean_success_wall_sec": 0.26743830400027946,
+      "mean_nodes": 6.0,
+      "mean_samples": 20.5,
+      "mean_projection_calls": 296.0,
+      "mean_local_connection_calls": 8.0,
+      "mean_path_length_rad": 3.6590539389134835,
+      "mean_minimum_clearance_m": 0.06793825053099478
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_16",
+      "sample_n": 2,
+      "success": 0,
+      "success_rate": 0.0,
+      "mean_wall_sec": 1.000144544500472,
+      "mean_success_wall_sec": null,
+      "mean_nodes": 41.0,
+      "mean_samples": 35.5,
+      "mean_projection_calls": 1346.5,
+      "mean_local_connection_calls": 44.0,
+      "mean_path_length_rad": null,
+      "mean_minimum_clearance_m": null
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "RSS",
+      "sample_n": 2,
+      "success": 0,
+      "success_rate": 0.0,
+      "mean_wall_sec": 1.00018852050016,
+      "mean_success_wall_sec": null,
+      "mean_nodes": 33.5,
+      "mean_samples": 22.5,
+      "mean_projection_calls": 1279.0,
+      "mean_local_connection_calls": 33.5,
+      "mean_path_length_rad": null,
+      "mean_minimum_clearance_m": null
+    }
+  ],
+  "fig3_m20_status": "UNAVAILABLE_IN_RECONSTRUCTED_20R_CONTIGUOUS_3R_PARTITIONS",
+  "formal_table_I_calls": 0,
+  "original_table_I_denominator": 22500,
+  "d080_target_cancelled_by_d081": 18000,
+  "source_labels": {
+    "paper_definitions": "ORIGINAL",
+    "planar_model": "RECONSTRUCTED",
+    "spatial_saved_math": "RECONSTRUCTED",
+    "old_failures": "PRESERVED"
+  },
+  "limitations": [
+    "This is a paired pilot, not the paper's 500,000 projection or 50,000-pair sample.",
+    "Fig.3 uses only the 17 contiguous positive-length 3R partitions available in the reconstructed 20R chain; m=20 is not synthesized.",
+    "Table I/II rows are planar proxy pilot data; original spatial II-V and archived VI obligations remain open.",
+    "RBS and GEOS checks are discrete; no continuous swept collision certificate is claimed.",
+    "Spatial saved endpoint math is read-only and does not rerun the preserved source solve."
+  ]
+}

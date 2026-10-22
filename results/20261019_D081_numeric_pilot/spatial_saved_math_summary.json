@@ -1,0 +1,180 @@
+{
+  "labels": {
+    "ABB_FK_Jacobian": "RECONSTRUCTED",
+    "closure_equations": "ORIGINAL_EQ1_ADAPTED_SE3",
+    "RSS_singular_factors": "CORRECTED_GEOMETRY_CONSISTENT"
+  },
+  "II": {
+    "source_input": "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/node_00000.json",
+    "q12": [
+      0.5236,
+      1.7453,
+      -1.8326,
+      -1.4835,
+      1.5708,
+      0.0,
+      1.0042713284452618,
+      0.2729059574498862,
+      0.9485892867539307,
+      -1.1501189067527977,
+      1.8100179182011582,
+      -1.977396290726386
+    ],
+    "closure_residual": [
+      -1.1368683772161603e-13,
+      -5.684341886080802e-14,
+      0.0,
+      -4.485149739897688e-17,
+      2.2960352087882885e-16,
+      2.786139160570053e-17
+    ],
+    "closure_max_abs": 1.1368683772161603e-13,
+    "jacobian_shape": [
+      6,
+      12
+    ],
+    "jacobian_rank": 6,
+    "jacobian_fd_max_abs": 9.057887950802979e-08,
+    "metrics": {
+      "translation_max_abs": 1.1368683772161603e-13,
+      "rotation_matrix_max_abs": 2.636779683484747e-16,
+      "rotation_angle_max_rad": 2.3559645744597143e-16,
+      "position_unit": "mm"
+    },
+    "new_solver_calls": 0,
+    "classification": "RECONSTRUCTED_SAVED_ENDPOINT_MATH_ONLY"
+  },
+  "III": {
+    "source_input": "results/p4_full/20261018_R2_D080_III_RRT_PCS_SOURCE01/parsed_source_result.json",
+    "q12": [
+      1.1,
+      1.1,
+      0.0,
+      1.24,
+      -1.5708,
+      0.0,
+      -0.7956767394876946,
+      0.6013499919735118,
+      0.43858465895086485,
+      -0.7498567848138379,
+      -1.007402838209791,
+      -0.09229082698089044
+    ],
+    "closure_residual": [
+      -1.1368683772161603e-13,
+      5.684341886080802e-14,
+      1.1368683772161603e-13,
+      -1.0268735767874942e-16,
+      1.5803801815310377e-16,
+      -6.653727214859644e-17
+    ],
+    "closure_max_abs": 1.1368683772161603e-13,
+    "jacobian_shape": [
+      6,
+      12
+    ],
+    "jacobian_rank": 6,
+    "jacobian_fd_max_abs": 1.0180622211919399e-07,
+    "metrics": {
+      "translation_max_abs": 1.1368683772161603e-13,
+      "rotation_matrix_max_abs": 3.3306690738754696e-16,
+      "rotation_angle_max_rad": 1.9986975057216777e-16,
+      "position_unit": "mm"
+    },
+    "new_solver_calls": 0,
+    "classification": "RECONSTRUCTED_SAVED_ENDPOINT_MATH_ONLY"
+  },
+  "rss_singular_modes": [
+    {
+      "mode": 0,
+      "q": [
+        0.5236,
+        1.7453,
+        -1.3430303610541368,
+        -1.4835,
+        0.0,
+        0.0
+      ],
+      "factors": {
+        "family": "ABB_IRB120",
+        "alpha_rad": 1.3430303610541368,
+        "shoulder_radial_factor_mm": 571.1977962099598,
+        "elbow_planar_factor_mm2": -3.836930773104541e-12,
+        "wrist_factor": 0.0,
+        "determinant_factor_product_mm3": -0.0
+      },
+      "jacobian_rank": 5,
+      "jacobian_singular_values": [
+        834.4476165989668,
+        705.0255175285686,
+        9.858905221803088,
+        1.416829310342232,
+        0.788503758380668,
+        2.798928603000379e-16
+      ],
+      "wrist_or_elbow_rank_deficient": true
+    },
+    {
+      "mode": 1,
+      "q": [
+        0.5236,
+        1.7453,
+        -1.8326,
+        -1.4835,
+        0.0,
+        0.0
+      ],
+      "factors": {
+        "family": "ABB_IRB120",
+        "alpha_rad": 1.3430303610541368,
+        "shoulder_radial_factor_mm": 560.6461399214442,
+        "elbow_planar_factor_mm2": -39360.4196167219,
+        "wrist_factor": 0.0,
+        "determinant_factor_product_mm3": -0.0
+      },
+      "jacobian_rank": 5,
+      "jacobian_singular_values": [
+        820.1460713357991,
+        704.5158084568993,
+        59.248843188088344,
+        1.4143504975292198,
+        0.7955971798743754,
+        1.0784259695578448e-15
+      ],
+      "wrist_or_elbow_rank_deficient": true
+    },
+    {
+      "mode": 2,
+      "q": [
+        0.5236,
+        1.7453,
+        -1.3430303610541368,
+        -1.4835,
+        1.5708,
+        0.0
+      ],
+      "factors": {
+        "family": "ABB_IRB120",
+        "alpha_rad": 1.3430303610541368,
+        "shoulder_radial_factor_mm": 571.1977962099598,
+        "elbow_planar_factor_mm2": -3.836930773104541e-12,
+        "wrist_factor": 0.9999999999932537,
+        "determinant_factor_product_mm3": -2.191646401792706e-09
+      },
+      "jacobian_rank": 5,
+      "jacobian_singular_values": [
+        669.1633525641142,
+        580.4898609210868,
+        129.1689944899431,
+        1.186544462096297,
+        0.9002065869958936,
+        2.8644094636650302e-16
+      ],
+      "wrist_or_elbow_rank_deficient": true
+    }
+  ],
+  "cross_branch_evidence": {
+    "planar": "Planar IK computes both analytic labels on every registered partition; see math_summary.",
+    "spatial": "Saved ABB singular factors and rank are verified; a complete spatial closed-form branch bridge remains a gap."
+  }
+}

@@ -1,0 +1,2489 @@
+{
+  "schema": "P4_D082_INDEPENDENT_SAVED_PLANAR_DISCRETE_QUALIFICATION_V1",
+  "status": "PASS_DISCRETE_WITH_STRATEGY_MIDPOINT_REFINEMENT",
+  "scope": "RECONSTRUCTED_20R_PLANAR_D081_STABILITY_PILOT_ONLY",
+  "input_trial_count": 50,
+  "source_success_count": 26,
+  "independent_qualified_count": 26,
+  "source_outcomes": [
+    {
+      "environment": "E0_sparse",
+      "method": "NR",
+      "status": "SUCCESS",
+      "count": 5
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS",
+      "status": "SUCCESS",
+      "count": 3
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS",
+      "status": "TIME_LIMIT",
+      "count": 2
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "status": "SUCCESS",
+      "count": 5
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_16",
+      "status": "TIME_LIMIT",
+      "count": 5
+    },
+    {
+      "environment": "E0_sparse",
+      "method": "RSS",
+      "status": "TIME_LIMIT",
+      "count": 5
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "NR",
+      "status": "SUCCESS",
+      "count": 5
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS",
+      "status": "SUCCESS",
+      "count": 3
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS",
+      "status": "TIME_LIMIT",
+      "count": 2
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "status": "SUCCESS",
+      "count": 5
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_16",
+      "status": "TIME_LIMIT",
+      "count": 5
+    },
+    {
+      "environment": "E1_clutter",
+      "method": "RSS",
+      "status": "TIME_LIMIT",
+      "count": 5
+    }
+  ],
+  "saved_path_points": 2142,
+  "saved_RBS_leaves": 2116,
+  "additional_reconstructed_midpoints": 6348,
+  "dense_path_points": 8490,
+  "refinement_levels_per_saved_leaf": 2,
+  "position_tolerance_m": 1e-08,
+  "angle_tolerance_rad": 1e-08,
+  "joint_limits_rad": [
+    -3.141592653589793,
+    3.141592653589793
+  ],
+  "link_capsule_radius_m": 0.002,
+  "self_collision_pair_count": 170,
+  "obstacle_circles": {
+    "E0_sparse": [
+      [
+        0.45,
+        0.72,
+        0.045
+      ]
+    ],
+    "E1_clutter": [
+      [
+        0.45,
+        0.72,
+        0.045
+      ],
+      [
+        0.5,
+        0.18,
+        0.065
+      ],
+      [
+        0.72,
+        0.6,
+        0.05
+      ]
+    ]
+  },
+  "total_genuine_solution_partition_switches": 0,
+  "all_saved_solution_PCS_partitions": [
+    0
+  ],
+  "oracle_fixtures_passed": true,
+  "original_manifest_all_match": true,
+  "input_files_unchanged": true,
+  "input_hashes": {
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed23.json.gz": "45cb718e3b7d41d1cecee7ce493658201f15dd4ac228ad499765c68c76072182",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed41.json.gz": "c6065cab4278bf26e1fc12768b62e0fa5f13e4a2348e91a9badca6d5a71374fd",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed59.json.gz": "3205e97467d9dec1d7727eb0cf1f17c9ffc4c1aae8bbc0e450ffbb06b973ba9a",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed7.json.gz": "1aef6d70da1f33f8920fcedf901ac4a811b956cb0acdd8a9e386b579ae0bc176",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed73.json.gz": "d60609686a72380ec04dac0ca60c0643489a97525c79214d33aebdd5707ee377",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz": "1b4ca94618ffcea1bec04c578ea63aa54b0434e39e67b05073919b1192c6b50e",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed41.json.gz": "0d38cd999bee39a98cc44ddf0a17f07c3595fd4e76c57bce255fa3656a6c79a9",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed59.json.gz": "e80a48bac2339634703e27cd950b34620bb84ddfa1b1ef758622a4f10f8718d7",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed7.json.gz": "4a0dc00a08ebdfc03e32fb5406af154b8fa3f7d576b238817a95b5ab44f7165a",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed73.json.gz": "95b35411f4d88373f3412755e2d49251a0270d6019ec79ef4c5d36d437ac3a49",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed23.json.gz": "97e802981edcb2b8a5df40c1bed156cfa4d56329d8c962e49f3494a333575511",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed41.json.gz": "1a504f43fb76b7595d018ba7870e727016800d7cc81d6ada780277cd24378b13",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed59.json.gz": "95b89e253644779708859df7bde28948857de98ff481b996e8af69b5c2d3899b",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed7.json.gz": "3c872a4022f6ea9c09d87b426d211549956a55519e9fc8baf79422c4cf41b291",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed73.json.gz": "40d1fa384ef1d29f49bf48904e8f79da1ed1903d849a1e067ee22736094f929d",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed23.json.gz": "b969b25ce54bcd6b2ce8558e11264a75617b0be43c3f1d269061ddaeef8befe8",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed41.json.gz": "7fa1fd59cdb6a3b7c2f31243a485d1e4e90b7ea3ba55ba622fdfc4904835f873",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed59.json.gz": "b10c2b56ce1bd25709dc38f17c662de4edb3e212fe30bae9eec3e586958b85c4",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed7.json.gz": "11469bfef8b72fc69e42020b44f0bdd8446835f54977c56fe47c725bf4a7dd05",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed73.json.gz": "3ee5ea2d11454689b0dc7724d70027ef2187066b578791c23c8c34863be15592",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed23.json.gz": "dd1bcb463171ea2c1a2ff688a09a9d279c9e9f22e8f3bc6b784ca2b36dfffb56",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed41.json.gz": "733f3d76a7774c16486b95a87ea014728e2b2613024d39558ef90fd7ca6a182d",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed59.json.gz": "dba2035f897d0aad79e23667c17f75ca033ff2264ba177be72512712fb9b7b56",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed7.json.gz": "ba3aac1e99843e2d8a49132bc10170b6d2587192738b06965272d01e7d1085d8",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed73.json.gz": "bd29c90f006ad2f23fd6f1062545d94e9c395697ff1ba103109cc13016662682",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed23.json.gz": "ea343d03a14443c39632aef5e4358b69656d9a296ea357b587afba61f637c468",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed41.json.gz": "a0d742c4254faac8a3e8969c63cee93d754a9f3d270ce24748fd6f4d0725d807",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed59.json.gz": "ec61f2a699c63d96c6f8507db8e7aebfc15f4dc6edfe097ff1389e439d32ad49",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed7.json.gz": "af9e957b89672f6a5b85a3b4e8ff07f52a62ce30dd8081ebb8f8db67b0aa721c",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed73.json.gz": "f665cadc6b130baf280161153b628b402f8eef4b9e2119f681a8c378b1b639c8",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed23.json.gz": "d6297757131e64559460caa70e870783eaaac3b86a427638c4bf484335e97672",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed41.json.gz": "60d2f42159594f06859534b63a96be3dea80b805888afba8d8cb8eed0e63d46b",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed59.json.gz": "fc838b7e523b2cab423946640bf35e01ac5b69cb46ac42af70bca14cdc34a4db",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz": "e5a0797b191e65bc2e95046ae278b01b369e877afdf072715f01d77d4c77294d",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed73.json.gz": "e18a0b24e5a4b312fb5074d297ab36476b5b456a31305498b87587a43287ff9e",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed23.json.gz": "dea6831aba625348d0fb823608559febb6d6c75a46fa0f34eaa1e4710cbb0582",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed41.json.gz": "d229c1d7d15b944762194924c8247ed28491ded60a84c3dd8590a2af574facfe",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed59.json.gz": "2a90e582b7aafe4c6737e82bc97c810c8266cc7834d4f3e7528bce94bc67afc5",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed7.json.gz": "a369367257516f4586114d34b62dc203581bc802abd7b64d2fdb8b42e4db294b",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed73.json.gz": "edc08c2f92bce37cd0b78dad8421270c9d6e82265e614474e8e706d3a6be46b7",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed23.json.gz": "f36fb2d3e05ddf0d205ee2574580fb9df280aea6f228aae2560e48d84a6c9084",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed41.json.gz": "339f4b895dea2b8e3789a2b39569c8217e8fb907fde86774b7646564c7b060cd",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed59.json.gz": "d0ccb08eb4ad151a432a8e209b0ab1b3d0e94ca01789eb2bba716dee1f9a8936",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz": "74e6a3374bb3bbbda0c191cf0fdaf800873196d37ed9c1a74a1a54368a4c3ce3",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed73.json.gz": "53ae917a33a92374b6aefd984c791fd8f31f247574e68d3d20ddef0903bf44d8",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed23.json.gz": "8a8dd6aaaff2caf93ae563e9564539e8b80fec763ca417bc2f17ecff1f163c22",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed41.json.gz": "5b4faf93a4723603341ccd39cfeb2554c64af8478863dd3c2004b465abcb0955",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed59.json.gz": "3939f965a35a8c606b6e5f8324e1e6c739477637df1eb43279bdae17e2b8fb27",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed7.json.gz": "f6a3fdcbc9d3900f3da74199ebfca29ee895c77e77678e388dea491cd2c07234",
+    "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed73.json.gz": "805fd64648ddd6e5d7a43d829a5cb23a818b37855562bc72346795cd226929a1",
+    "results/20261019_D081_stability_pilot/artifact_sha256.json": "6030515bfee47133718a38252677396a1f520591171ffcd47706fdde7023ce79",
+    "results/20261019_D081_stability_pilot/config_snapshot.json": "88057dceef61b5012b8ca9fc77ba75e09ebf84e589bd9bf0ebca8e0cbaa1bc98",
+    "results/20261019_D081_stability_pilot/run_metadata.json": "0e7a6f6ae4ea31d8bc8d9c884ed374d333a0d5b9f61e10b00534f712ad013b5a",
+    "results/20261019_D081_stability_pilot/planner_summary.json": "50bc8bea6bcef1560f306e5e0707271adbe2a0239e4fcf9e469c569b903eeb4c",
+    "results/20261019_D081_stability_pilot/planner_trials.csv": "36b98897975e19bc2066975658ae415c70b4f652b8fa25a7b9bd77a630a27dbe"
+  },
+  "production_sources_match_saved_metadata": {
+    "configs/p4_d081/numeric_stability_pilot_v1.json": {
+      "saved_sha256": "04f136b4c6e91597c65b0331d4df8bf195f3ca2f1e7f9806065dc26477ceaffd",
+      "current_sha256": "04f136b4c6e91597c65b0331d4df8bf195f3ca2f1e7f9806065dc26477ceaffd",
+      "matches": true
+    },
+    "scripts/p4_d081_numeric_pilot.py": {
+      "saved_sha256": "7d6d2381abde7e5ca578b6105fdc3fe7d4c09df392b7c301c143ce4be45c82e4",
+      "current_sha256": "7d6d2381abde7e5ca578b6105fdc3fe7d4c09df392b7c301c143ce4be45c82e4",
+      "matches": true
+    },
+    "baselines/p4_comparison/model.py": {
+      "saved_sha256": "917947f042fa835f67af5f5bb15677f35a1867701665e65bdf3acac263add627",
+      "current_sha256": "917947f042fa835f67af5f5bb15677f35a1867701665e65bdf3acac263add627",
+      "matches": true
+    },
+    "baselines/p4_comparison/strategies.py": {
+      "saved_sha256": "e423a7854aa959242a20b0c0cc304b61681832f5b3d274706c76f7af3299fc5b",
+      "current_sha256": "e423a7854aa959242a20b0c0cc304b61681832f5b3d274706c76f7af3299fc5b",
+      "matches": true
+    },
+    "baselines/p4_comparison/planner.py": {
+      "saved_sha256": "2d40fe27c8b738cebc0516ff7d9138bb853e22a8c19e382b9d7e0d39cce3482c",
+      "current_sha256": "2d40fe27c8b738cebc0516ff7d9138bb853e22a8c19e382b9d7e0d39cce3482c",
+      "matches": true
+    }
+  },
+  "verifier_source_hashes": {
+    "scripts/p4_d082/independent_planar_validation.py": "42561f047c278a79e45988bdf75426257982c80443e9d56338129354abf51c77",
+    "baselines/p4_comparison/model.py": "917947f042fa835f67af5f5bb15677f35a1867701665e65bdf3acac263add627",
+    "baselines/p4_comparison/strategies.py": "e423a7854aa959242a20b0c0cc304b61681832f5b3d274706c76f7af3299fc5b",
+    "baselines/p4_comparison/planner.py": "2d40fe27c8b738cebc0516ff7d9138bb853e22a8c19e382b9d7e0d39cce3482c",
+    "configs/p4_d081/numeric_pilot_v1.json": "2098814cea003cae97c590fe80aa4024fd74d017ebe5e2a2027b1d94a62021bc",
+    "configs/p4_d081/numeric_stability_pilot_v1.json": "04f136b4c6e91597c65b0331d4df8bf195f3ca2f1e7f9806065dc26477ceaffd"
+  },
+  "paper_original_sha256": "193710e5a9d4284cf62b30ff189a1df038a9d5c5ce3f1545525dc2f78bea08c6",
+  "paper_reading_basis": "Full local manuscript read in current root session; pp.2-3 equations1-3 and RBS; pp.3-4 passive branches/PCS; pp.5-8 experimental scope.",
+  "git_head_at_execution": "2b2fd1fab52cf8e28ea68cbd82ba3c4aec1e4d49",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "numpy": "1.24.4",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "command": "python3 scripts/p4_d082/independent_planar_validation.py --output results/20261022_D082_independent_planar01",
+  "wall_sec": 3.4473579400000744,
+  "process_cpu_sec": 4.0426370050000004,
+  "new_planner_calls": 0,
+  "source_author_calls": 0,
+  "formal_Table_I_calls": 0,
+  "results": [
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed23.json.gz",
+      "input_sha256": "45cb718e3b7d41d1cecee7ce493658201f15dd4ac228ad499765c68c76072182",
+      "environment": "E0_sparse",
+      "method": "NR",
+      "seed": 23,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 34,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 35,
+        "maximum_position_residual_m": 9.039665918063288e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07793577555572231,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07793577555572231,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 137,
+        "maximum_position_residual_m": 9.039665918063288e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07793577555572231,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07793577555572231,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 102,
+      "saved_path_length_rad": 1.246412437159309,
+      "dense_path_length_rad": 1.2464127717231908,
+      "maximum_saved_step_rad": 0.0375036019771784,
+      "maximum_dense_step_rad": 0.009375902642279436,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 102,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_NR_seed23.npz",
+      "dense_sha256": "757bf84ac9663d3edf6f4df666fe509be2eb76cc9c88b9ea8ce324991bf17f81",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed41.json.gz",
+      "input_sha256": "c6065cab4278bf26e1fc12768b62e0fa5f13e4a2348e91a9badca6d5a71374fd",
+      "environment": "E0_sparse",
+      "method": "NR",
+      "seed": 41,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 40,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 41,
+        "maximum_position_residual_m": 8.804796037108357e-09,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 1.5678527375914237,
+        "minimum_self_clearance_m": 0.0745770282604704,
+        "minimum_obstacle_clearance_m": 0.17028955503443138,
+        "minimum_clearance_m": 0.0745770282604704,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 161,
+        "maximum_position_residual_m": 8.804796037108357e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.5678527375914237,
+        "minimum_self_clearance_m": 0.0745770282604704,
+        "minimum_obstacle_clearance_m": 0.17028955503443138,
+        "minimum_clearance_m": 0.0745770282604704,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 120,
+      "saved_path_length_rad": 1.4156224274857636,
+      "dense_path_length_rad": 1.415622565936494,
+      "maximum_saved_step_rad": 0.03750204480583254,
+      "maximum_dense_step_rad": 0.009375511923630182,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 120,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_NR_seed41.npz",
+      "dense_sha256": "5704d5cce649e22af1cf9f90785ba29d8b08fa43dc488532500c0ae1062ffbae",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed59.json.gz",
+      "input_sha256": "3205e97467d9dec1d7727eb0cf1f17c9ffc4c1aae8bbc0e450ffbb06b973ba9a",
+      "environment": "E0_sparse",
+      "method": "NR",
+      "seed": 59,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 36,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 37,
+        "maximum_position_residual_m": 8.718830848564354e-09,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 1.634207638821481,
+        "minimum_self_clearance_m": 0.077863131621186,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.077863131621186,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 145,
+        "maximum_position_residual_m": 8.718830848564354e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.634207638821481,
+        "minimum_self_clearance_m": 0.077863131621186,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.077863131621186,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 108,
+      "saved_path_length_rad": 1.2739982014634037,
+      "dense_path_length_rad": 1.2739983976968905,
+      "maximum_saved_step_rad": 0.03750244668809901,
+      "maximum_dense_step_rad": 0.00937561285406657,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 108,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_NR_seed59.npz",
+      "dense_sha256": "d05158cd298e4de4ee2638cd38cd8bdf7d28a066512583452a9009b37d281248",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 5,
+          "dense_point_count": 17,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed7.json.gz",
+      "input_sha256": "1aef6d70da1f33f8920fcedf901ac4a811b956cb0acdd8a9e386b579ae0bc176",
+      "environment": "E0_sparse",
+      "method": "NR",
+      "seed": 7,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 34,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 35,
+        "maximum_position_residual_m": 5.5514393967907574e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07654954819406568,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07654954819406568,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 137,
+        "maximum_position_residual_m": 5.5514393967907574e-09,
+        "maximum_angle_residual_rad": 2.220446049250313e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07654954819406568,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07654954819406568,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 102,
+      "saved_path_length_rad": 1.2024777855427664,
+      "dense_path_length_rad": 1.202477955489165,
+      "maximum_saved_step_rad": 0.03750183810087012,
+      "maximum_dense_step_rad": 0.009375460549041679,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 102,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_NR_seed7.npz",
+      "dense_sha256": "283f9cf4971c526c3827628fe1c2e2f78e137b21a86406eaaa7b93ad762f3219",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed73.json.gz",
+      "input_sha256": "d60609686a72380ec04dac0ca60c0643489a97525c79214d33aebdd5707ee377",
+      "environment": "E0_sparse",
+      "method": "NR",
+      "seed": 73,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 36,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 37,
+        "maximum_position_residual_m": 4.415425309953474e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07575662490020066,
+        "minimum_obstacle_clearance_m": 0.17388024058635304,
+        "minimum_clearance_m": 0.07575662490020066,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 145,
+        "maximum_position_residual_m": 4.415425309953474e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07575662490020066,
+        "minimum_obstacle_clearance_m": 0.17388024058635304,
+        "minimum_clearance_m": 0.07575662490020066,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 108,
+      "saved_path_length_rad": 1.3714698057844799,
+      "dense_path_length_rad": 1.371469881985518,
+      "maximum_saved_step_rad": 0.04751707873236332,
+      "maximum_dense_step_rad": 0.011879270313343718,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 108,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_NR_seed73.npz",
+      "dense_sha256": "486936a7bff19606ea6c103941f61d4d8efabe2be3f1f35ad1b9f75271389219",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 5,
+          "dense_point_count": 17,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz",
+      "input_sha256": "1b4ca94618ffcea1bec04c578ea63aa54b0434e39e67b05073919b1192c6b50e",
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "seed": 23,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 54,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 55,
+        "maximum_position_residual_m": 9.020562075079397e-16,
+        "maximum_angle_residual_rad": 8.881784197001252e-16,
+        "minimum_joint_margin_rad": 1.2293668391571249,
+        "minimum_self_clearance_m": 0.07822004249786423,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07822004249786423,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 217,
+        "maximum_position_residual_m": 1.0130785099704553e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.2293668391571249,
+        "minimum_self_clearance_m": 0.07822004249786423,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07822004249786423,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 162,
+      "saved_path_length_rad": 1.84213924569025,
+      "dense_path_length_rad": 1.842189549322324,
+      "maximum_saved_step_rad": 0.04973915933246177,
+      "maximum_dense_step_rad": 0.012568846870097416,
+      "solution_partitions": [
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_FIXED_0_seed23.npz",
+      "dense_sha256": "2af7dcf410b63bb099f8096b47df5fa0084b4cdb9e5aafbceb8068b3e0dc0785",
+      "edges": [
+        {
+          "attempt_index": 14,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 23,
+          "dense_point_count": 89,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 16,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 15,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed41.json.gz",
+      "input_sha256": "0d38cd999bee39a98cc44ddf0a17f07c3595fd4e76c57bce255fa3656a6c79a9",
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "seed": 41,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 103,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 104,
+        "maximum_position_residual_m": 1.0914154436343227e-15,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.45553478316892093,
+        "minimum_self_clearance_m": 0.07376322863965842,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07376322863965842,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 413,
+        "maximum_position_residual_m": 1.170021796579212e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.45553478316892093,
+        "minimum_self_clearance_m": 0.07376322863965842,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07376322863965842,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 309,
+      "saved_path_length_rad": 3.7839911279362455,
+      "dense_path_length_rad": 3.7841175864646104,
+      "maximum_saved_step_rad": 0.04895969829555754,
+      "maximum_dense_step_rad": 0.012596499978037532,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_FIXED_0_seed41.npz",
+      "dense_sha256": "fd5dc5c3188b7bb3700602aebc23f57ad9f9750e3966b02c26349e0e1e241e3f",
+      "edges": [
+        {
+          "attempt_index": 6,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 28,
+          "dense_point_count": 109,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 7,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 8,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 5,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 53,
+          "dense_point_count": 209,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed59.json.gz",
+      "input_sha256": "e80a48bac2339634703e27cd950b34620bb84ddfa1b1ef758622a4f10f8718d7",
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "seed": 59,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 81,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 82,
+        "maximum_position_residual_m": 1.0506869391606444e-15,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.9265849904534393,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 325,
+        "maximum_position_residual_m": 1.1019522811520253e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9265849904534393,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 243,
+      "saved_path_length_rad": 2.864924708391359,
+      "dense_path_length_rad": 2.864975451373303,
+      "maximum_saved_step_rad": 0.048244234277143035,
+      "maximum_dense_step_rad": 0.012539075862718957,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_FIXED_0_seed59.npz",
+      "dense_sha256": "1996e94b0020496f0c2546b4a8a1c53fa21285ffc873fc50538b20db06b97220",
+      "edges": [
+        {
+          "attempt_index": 6,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 42,
+          "dense_point_count": 165,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 9,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 8,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 7,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 23,
+          "dense_point_count": 89,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed7.json.gz",
+      "input_sha256": "4a0dc00a08ebdfc03e32fb5406af154b8fa3f7d576b238817a95b5ab44f7165a",
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "seed": 7,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 154,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 155,
+        "maximum_position_residual_m": 8.465450562766819e-16,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.3460122412440585,
+        "minimum_self_clearance_m": 0.05765645856412535,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.05765645856412535,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 617,
+        "maximum_position_residual_m": 1.0664246959634153e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.3460122412440585,
+        "minimum_self_clearance_m": 0.05765645856412535,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.05765645856412535,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 462,
+      "saved_path_length_rad": 5.475968632136714,
+      "dense_path_length_rad": 5.475979530137155,
+      "maximum_saved_step_rad": 0.04971452643817895,
+      "maximum_dense_step_rad": 0.012757172762528598,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 1.3877787807814457e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_FIXED_0_seed7.npz",
+      "dense_sha256": "e58d45653fec3a6c37f394b135cd55b22891aa129ad04fcef7bc31e7ec99cac1",
+      "edges": [
+        {
+          "attempt_index": 26,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 32,
+          "dense_point_count": 125,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 27,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 18,
+          "dense_point_count": 69,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 28,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 29,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 25,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 83,
+          "dense_point_count": 329,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed73.json.gz",
+      "input_sha256": "95b35411f4d88373f3412755e2d49251a0270d6019ec79ef4c5d36d437ac3a49",
+      "environment": "E0_sparse",
+      "method": "PCS_FIXED_0",
+      "seed": 73,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 153,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 154,
+        "maximum_position_residual_m": 1.0778315928076987e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9044694663392612,
+        "minimum_self_clearance_m": 0.06698395669583636,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.06698395669583636,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 613,
+        "maximum_position_residual_m": 1.3369575839890335e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.904454314387177,
+        "minimum_self_clearance_m": 0.06698395669583636,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.06698395669583636,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 459,
+      "saved_path_length_rad": 5.278419160910392,
+      "dense_path_length_rad": 5.278439487726277,
+      "maximum_saved_step_rad": 0.04966998974130145,
+      "maximum_dense_step_rad": 0.012851351021869139,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 1.3877787807814457e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_FIXED_0_seed73.npz",
+      "dense_sha256": "786be18d18dd8a9d7176cfda31577bd83fdfe8b51d644d10c70922b6663a47df",
+      "edges": [
+        {
+          "attempt_index": 2,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 81,
+          "dense_point_count": 321,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 6,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 5,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 4,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 19,
+          "dense_point_count": 73,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 3,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 32,
+          "dense_point_count": 125,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed23.json.gz",
+      "input_sha256": "b969b25ce54bcd6b2ce8558e11264a75617b0be43c3f1d269061ddaeef8befe8",
+      "environment": "E0_sparse",
+      "method": "PCS",
+      "seed": 23,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 102,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 103,
+        "maximum_position_residual_m": 9.155133597044475e-16,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.9991304530859875,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 409,
+        "maximum_position_residual_m": 1.1322097734007351e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9991304530859875,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 306,
+      "saved_path_length_rad": 3.550547478072826,
+      "dense_path_length_rad": 3.5505745978387777,
+      "maximum_saved_step_rad": 0.049642641505019305,
+      "maximum_dense_step_rad": 0.01271232772380001,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_seed23.npz",
+      "dense_sha256": "d1bd6c36445386fbfba64e99dab3d40647747f242bd76e1b529e09f22442b37b",
+      "edges": [
+        {
+          "attempt_index": 2,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 47,
+          "dense_point_count": 185,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 5,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 4,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 3,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 25,
+          "dense_point_count": 97,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed41.json.gz",
+      "input_sha256": "7fa1fd59cdb6a3b7c2f31243a485d1e4e90b7ea3ba55ba622fdfc4904835f873",
+      "environment": "E0_sparse",
+      "method": "PCS",
+      "seed": 41,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 155,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 156,
+        "maximum_position_residual_m": 1.010032223021582e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.3009838774543088,
+        "minimum_self_clearance_m": 0.053965014267069594,
+        "minimum_obstacle_clearance_m": 0.17486011136664803,
+        "minimum_clearance_m": 0.053965014267069594,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 621,
+        "maximum_position_residual_m": 1.2524655443178481e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.3009838774543088,
+        "minimum_self_clearance_m": 0.053965014267069594,
+        "minimum_obstacle_clearance_m": 0.17486009956495108,
+        "minimum_clearance_m": 0.053965014267069594,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 465,
+      "saved_path_length_rad": 5.208130045855009,
+      "dense_path_length_rad": 5.208299886962368,
+      "maximum_saved_step_rad": 0.049466521558337716,
+      "maximum_dense_step_rad": 0.012511208558246965,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_seed41.npz",
+      "dense_sha256": "ed260835e80b89bb5b300dcb7eb5501aa07f292ddb75b4dd6f987512f21b9a7a",
+      "edges": [
+        {
+          "attempt_index": 16,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 37,
+          "dense_point_count": 145,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 17,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 20,
+          "dense_point_count": 77,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 18,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 19,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 15,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 83,
+          "dense_point_count": 329,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed7.json.gz",
+      "input_sha256": "11469bfef8b72fc69e42020b44f0bdd8446835f54977c56fe47c725bf4a7dd05",
+      "environment": "E0_sparse",
+      "method": "PCS",
+      "seed": 7,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 76,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 77,
+        "maximum_position_residual_m": 8.604228440844963e-16,
+        "maximum_angle_residual_rad": 8.881784197001252e-16,
+        "minimum_joint_margin_rad": 0.9709199663342662,
+        "minimum_self_clearance_m": 0.07382765305986301,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07382765305986301,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 305,
+        "maximum_position_residual_m": 1.1433814963738287e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9709199663342662,
+        "minimum_self_clearance_m": 0.07382765305986301,
+        "minimum_obstacle_clearance_m": 0.17487879069794188,
+        "minimum_clearance_m": 0.07382765305986301,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 228,
+      "saved_path_length_rad": 2.4297446482981147,
+      "dense_path_length_rad": 2.429935514492565,
+      "maximum_saved_step_rad": 0.04902776413700329,
+      "maximum_dense_step_rad": 0.013110508084183946,
+      "solution_partitions": [
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_PCS_seed7.npz",
+      "dense_sha256": "db186a43e1f45d9ece2828a9d7467617c56905c767282534a13112a75ab76d42",
+      "edges": [
+        {
+          "attempt_index": 22,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 23,
+          "dense_point_count": 89,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 23,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 21,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 39,
+          "dense_point_count": 153,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed23.json.gz",
+      "input_sha256": "ea343d03a14443c39632aef5e4358b69656d9a296ea357b587afba61f637c468",
+      "environment": "E1_clutter",
+      "method": "NR",
+      "seed": 23,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 34,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 35,
+        "maximum_position_residual_m": 9.039665918063288e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07793577555572231,
+        "minimum_obstacle_clearance_m": 0.06515664279915369,
+        "minimum_clearance_m": 0.06515664279915369,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 137,
+        "maximum_position_residual_m": 9.039665918063288e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07793577555572231,
+        "minimum_obstacle_clearance_m": 0.06515664279915369,
+        "minimum_clearance_m": 0.06515664279915369,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 102,
+      "saved_path_length_rad": 1.246412437159309,
+      "dense_path_length_rad": 1.2464127717231908,
+      "maximum_saved_step_rad": 0.0375036019771784,
+      "maximum_dense_step_rad": 0.009375902642279436,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 102,
+      "maximum_saved_clearance_difference_from_GEOS_m": 4.163336342344337e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_NR_seed23.npz",
+      "dense_sha256": "fdbdb7c5a3861473589ba7ed1383bc20247e895b3d1cbaecf51df57db5a2dbbe",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed41.json.gz",
+      "input_sha256": "a0d742c4254faac8a3e8969c63cee93d754a9f3d270ce24748fd6f4d0725d807",
+      "environment": "E1_clutter",
+      "method": "NR",
+      "seed": 41,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 40,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 41,
+        "maximum_position_residual_m": 8.804796037108357e-09,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 1.5678527375914237,
+        "minimum_self_clearance_m": 0.0745770282604704,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.0745770282604704,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 161,
+        "maximum_position_residual_m": 8.804796037108357e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.5678527375914237,
+        "minimum_self_clearance_m": 0.0745770282604704,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.0745770282604704,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 120,
+      "saved_path_length_rad": 1.4156224274857636,
+      "dense_path_length_rad": 1.415622565936494,
+      "maximum_saved_step_rad": 0.03750204480583254,
+      "maximum_dense_step_rad": 0.009375511923630182,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 120,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_NR_seed41.npz",
+      "dense_sha256": "394da739dc3a8201da50211056a2a14b4d0c43c7d84f135b4c0d4e6481b2799c",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed59.json.gz",
+      "input_sha256": "ec61f2a699c63d96c6f8507db8e7aebfc15f4dc6edfe097ff1389e439d32ad49",
+      "environment": "E1_clutter",
+      "method": "NR",
+      "seed": 59,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 36,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 37,
+        "maximum_position_residual_m": 8.718830848564354e-09,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 1.634207638821481,
+        "minimum_self_clearance_m": 0.077863131621186,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.077863131621186,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 145,
+        "maximum_position_residual_m": 8.718830848564354e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.634207638821481,
+        "minimum_self_clearance_m": 0.077863131621186,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.077863131621186,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 108,
+      "saved_path_length_rad": 1.2739982014634037,
+      "dense_path_length_rad": 1.2739983976968905,
+      "maximum_saved_step_rad": 0.03750244668809901,
+      "maximum_dense_step_rad": 0.00937561285406657,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 108,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_NR_seed59.npz",
+      "dense_sha256": "e070a2e7890fe36c79b20c5489312d91112a97232debd448394473ab1d31f2e9",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 5,
+          "dense_point_count": 17,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed7.json.gz",
+      "input_sha256": "af9e957b89672f6a5b85a3b4e8ff07f52a62ce30dd8081ebb8f8db67b0aa721c",
+      "environment": "E1_clutter",
+      "method": "NR",
+      "seed": 7,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 34,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 35,
+        "maximum_position_residual_m": 5.5514393967907574e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07654954819406568,
+        "minimum_obstacle_clearance_m": 0.06469472591686062,
+        "minimum_clearance_m": 0.06469472591686062,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 137,
+        "maximum_position_residual_m": 5.5514393967907574e-09,
+        "maximum_angle_residual_rad": 2.220446049250313e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07654954819406568,
+        "minimum_obstacle_clearance_m": 0.06469472591686062,
+        "minimum_clearance_m": 0.06469472591686062,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 102,
+      "saved_path_length_rad": 1.2024777855427664,
+      "dense_path_length_rad": 1.202477955489165,
+      "maximum_saved_step_rad": 0.03750183810087012,
+      "maximum_dense_step_rad": 0.009375460549041679,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 102,
+      "maximum_saved_clearance_difference_from_GEOS_m": 5.551115123125783e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_NR_seed7.npz",
+      "dense_sha256": "b5e1a3ae61db31e399ee6067dacd6b281952e46be337d48a67285bf214b57b77",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed73.json.gz",
+      "input_sha256": "f665cadc6b130baf280161153b628b402f8eef4b9e2119f681a8c378b1b639c8",
+      "environment": "E1_clutter",
+      "method": "NR",
+      "seed": 73,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 36,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 37,
+        "maximum_position_residual_m": 4.415425309953474e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07575662490020066,
+        "minimum_obstacle_clearance_m": 0.07236469802425192,
+        "minimum_clearance_m": 0.07236469802425192,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 145,
+        "maximum_position_residual_m": 4.415425309953474e-09,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.6534698176788385,
+        "minimum_self_clearance_m": 0.07575662490020066,
+        "minimum_obstacle_clearance_m": 0.07236469802425192,
+        "minimum_clearance_m": 0.07236469802425192,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 108,
+      "saved_path_length_rad": 1.3714698057844799,
+      "dense_path_length_rad": 1.371469881985518,
+      "maximum_saved_step_rad": 0.04751707873236332,
+      "maximum_dense_step_rad": 0.011879270313343718,
+      "solution_partitions": [],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 108,
+      "maximum_saved_clearance_difference_from_GEOS_m": 5.551115123125783e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_NR_seed73.npz",
+      "dense_sha256": "61adb670d2de7d7176125d2c4bd9fe23a37a433c47fc83fccba35144b9b574b6",
+      "edges": [
+        {
+          "attempt_index": 0,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 2,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 5,
+          "dense_point_count": 17,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 1,
+          "partition": null,
+          "branch": null,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed23.json.gz",
+      "input_sha256": "d6297757131e64559460caa70e870783eaaac3b86a427638c4bf484335e97672",
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "seed": 23,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 54,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 55,
+        "maximum_position_residual_m": 9.020562075079397e-16,
+        "maximum_angle_residual_rad": 8.881784197001252e-16,
+        "minimum_joint_margin_rad": 1.2293668391571249,
+        "minimum_self_clearance_m": 0.07822004249786423,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.07822004249786423,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 217,
+        "maximum_position_residual_m": 1.0130785099704553e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.2293668391571249,
+        "minimum_self_clearance_m": 0.07822004249786423,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.07822004249786423,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 162,
+      "saved_path_length_rad": 1.84213924569025,
+      "dense_path_length_rad": 1.842189549322324,
+      "maximum_saved_step_rad": 0.04973915933246177,
+      "maximum_dense_step_rad": 0.012568846870097416,
+      "solution_partitions": [
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_FIXED_0_seed23.npz",
+      "dense_sha256": "4e1280b4d63017bb2bd1fbf8249e45a28cbfbea205cf109ca3b2d5b6c6f7068f",
+      "edges": [
+        {
+          "attempt_index": 14,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 23,
+          "dense_point_count": 89,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 16,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 15,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed41.json.gz",
+      "input_sha256": "60d2f42159594f06859534b63a96be3dea80b805888afba8d8cb8eed0e63d46b",
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "seed": 41,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 103,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 104,
+        "maximum_position_residual_m": 1.0914154436343227e-15,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.45553478316892093,
+        "minimum_self_clearance_m": 0.07376322863965842,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.07376322863965842,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 413,
+        "maximum_position_residual_m": 1.170021796579212e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.45553478316892093,
+        "minimum_self_clearance_m": 0.07376322863965842,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.07376322863965842,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 309,
+      "saved_path_length_rad": 3.7839911279362455,
+      "dense_path_length_rad": 3.7841175864646104,
+      "maximum_saved_step_rad": 0.04895969829555754,
+      "maximum_dense_step_rad": 0.012596499978037532,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_FIXED_0_seed41.npz",
+      "dense_sha256": "3b29bce1d3a339c30735fc334ba68d5a3c3d2effb46487edfe10fc4ce16b53d3",
+      "edges": [
+        {
+          "attempt_index": 6,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 28,
+          "dense_point_count": 109,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 7,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 8,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 5,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 53,
+          "dense_point_count": 209,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed59.json.gz",
+      "input_sha256": "fc838b7e523b2cab423946640bf35e01ac5b69cb46ac42af70bca14cdc34a4db",
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "seed": 59,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 81,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 82,
+        "maximum_position_residual_m": 1.0506869391606444e-15,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.9265849904534393,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 325,
+        "maximum_position_residual_m": 1.1019522811520253e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9265849904534393,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 243,
+      "saved_path_length_rad": 2.864924708391359,
+      "dense_path_length_rad": 2.864975451373303,
+      "maximum_saved_step_rad": 0.048244234277143035,
+      "maximum_dense_step_rad": 0.012539075862718957,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_FIXED_0_seed59.npz",
+      "dense_sha256": "cd07020dfd60d8fcbdc29c3d46c70a86d905820e1fd8d2913dc58bce4cd93aae",
+      "edges": [
+        {
+          "attempt_index": 6,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 42,
+          "dense_point_count": 165,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 9,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 8,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 7,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 23,
+          "dense_point_count": 89,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz",
+      "input_sha256": "e5a0797b191e65bc2e95046ae278b01b369e877afdf072715f01d77d4c77294d",
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "seed": 7,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 154,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 155,
+        "maximum_position_residual_m": 8.465450562766819e-16,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.3460122412440585,
+        "minimum_self_clearance_m": 0.05765645856412535,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.05765645856412535,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 617,
+        "maximum_position_residual_m": 1.0664246959634153e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.3460122412440585,
+        "minimum_self_clearance_m": 0.05765645856412535,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.05765645856412535,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 462,
+      "saved_path_length_rad": 5.475968632136714,
+      "dense_path_length_rad": 5.475979530137155,
+      "maximum_saved_step_rad": 0.04971452643817895,
+      "maximum_dense_step_rad": 0.012757172762528598,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 1.3877787807814457e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_FIXED_0_seed7.npz",
+      "dense_sha256": "ef9b400d7f046d250d4a02f28dc51cb8c3b48e70f7a91b83a87be38a908fd77b",
+      "edges": [
+        {
+          "attempt_index": 26,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 32,
+          "dense_point_count": 125,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 27,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 18,
+          "dense_point_count": 69,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 28,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 29,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 25,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 83,
+          "dense_point_count": 329,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed73.json.gz",
+      "input_sha256": "e18a0b24e5a4b312fb5074d297ab36476b5b456a31305498b87587a43287ff9e",
+      "environment": "E1_clutter",
+      "method": "PCS_FIXED_0",
+      "seed": 73,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 153,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 154,
+        "maximum_position_residual_m": 1.0778315928076987e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9044694663392612,
+        "minimum_self_clearance_m": 0.06698395669583636,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.06698395669583636,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 613,
+        "maximum_position_residual_m": 1.3369575839890335e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.904454314387177,
+        "minimum_self_clearance_m": 0.06698395669583636,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.06698395669583636,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 459,
+      "saved_path_length_rad": 5.278419160910392,
+      "dense_path_length_rad": 5.278439487726277,
+      "maximum_saved_step_rad": 0.04966998974130145,
+      "maximum_dense_step_rad": 0.012851351021869139,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 1.3877787807814457e-17,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_FIXED_0_seed73.npz",
+      "dense_sha256": "cb532707ba876a63b7ec493d70d72eef7c33c5a023cc08a96f3872161186a71a",
+      "edges": [
+        {
+          "attempt_index": 2,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 81,
+          "dense_point_count": 321,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 6,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 9,
+          "dense_point_count": 33,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 5,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 4,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 19,
+          "dense_point_count": 73,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 3,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 32,
+          "dense_point_count": 125,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed23.json.gz",
+      "input_sha256": "f36fb2d3e05ddf0d205ee2574580fb9df280aea6f228aae2560e48d84a6c9084",
+      "environment": "E1_clutter",
+      "method": "PCS",
+      "seed": 23,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 102,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 103,
+        "maximum_position_residual_m": 9.155133597044475e-16,
+        "maximum_angle_residual_rad": 1.3322676295501878e-15,
+        "minimum_joint_margin_rad": 0.9991304530859875,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 409,
+        "maximum_position_residual_m": 1.1322097734007351e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9991304530859875,
+        "minimum_self_clearance_m": 0.0782972951403668,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.0782972951403668,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 306,
+      "saved_path_length_rad": 3.550547478072826,
+      "dense_path_length_rad": 3.5505745978387777,
+      "maximum_saved_step_rad": 0.049642641505019305,
+      "maximum_dense_step_rad": 0.01271232772380001,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed23.npz",
+      "dense_sha256": "d23c21c5285f3cbd1baf4dbf8fa44fc029291e73f7520fc93541787d1b2356f9",
+      "edges": [
+        {
+          "attempt_index": 2,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 47,
+          "dense_point_count": 185,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 5,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 4,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": true,
+          "tree": "GOAL"
+        },
+        {
+          "attempt_index": 3,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 25,
+          "dense_point_count": 97,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed41.json.gz",
+      "input_sha256": "339f4b895dea2b8e3789a2b39569c8217e8fb907fde86774b7646564c7b060cd",
+      "environment": "E1_clutter",
+      "method": "PCS",
+      "seed": 41,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 155,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 156,
+        "maximum_position_residual_m": 1.010032223021582e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.3009838774543088,
+        "minimum_self_clearance_m": 0.053965014267069594,
+        "minimum_obstacle_clearance_m": 0.07817629500384636,
+        "minimum_clearance_m": 0.053965014267069594,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 621,
+        "maximum_position_residual_m": 1.2524655443178481e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 1.3009838774543088,
+        "minimum_self_clearance_m": 0.053965014267069594,
+        "minimum_obstacle_clearance_m": 0.07817629500384636,
+        "minimum_clearance_m": 0.053965014267069594,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 465,
+      "saved_path_length_rad": 5.208130045855009,
+      "dense_path_length_rad": 5.208299886962368,
+      "maximum_saved_step_rad": 0.049466521558337716,
+      "maximum_dense_step_rad": 0.012511208558246965,
+      "solution_partitions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed41.npz",
+      "dense_sha256": "d9248e72ce50e8ae2f53c7f4c2e024475bd32aa2829c275e0ba667d46c0a8738",
+      "edges": [
+        {
+          "attempt_index": 16,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 37,
+          "dense_point_count": 145,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 17,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 20,
+          "dense_point_count": 77,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 18,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 19,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 3,
+          "dense_point_count": 9,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 15,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 83,
+          "dense_point_count": 329,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    },
+    {
+      "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz",
+      "input_sha256": "74e6a3374bb3bbbda0c191cf0fdaf800873196d37ed9c1a74a1a54368a4c3ce3",
+      "environment": "E1_clutter",
+      "method": "PCS",
+      "seed": 7,
+      "independently_qualified": true,
+      "exact_start_goal": true,
+      "tree_edge_and_RBS_provenance": true,
+      "saved_leaf_count": 76,
+      "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+      "saved": {
+        "point_count": 77,
+        "maximum_position_residual_m": 8.604228440844963e-16,
+        "maximum_angle_residual_rad": 8.881784197001252e-16,
+        "minimum_joint_margin_rad": 0.9709199663342662,
+        "minimum_self_clearance_m": 0.07382765305986301,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.07382765305986301,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "dense": {
+        "point_count": 305,
+        "maximum_position_residual_m": 1.1433814963738287e-15,
+        "maximum_angle_residual_rad": 1.7763568394002505e-15,
+        "minimum_joint_margin_rad": 0.9709199663342662,
+        "minimum_self_clearance_m": 0.07382765305986301,
+        "minimum_obstacle_clearance_m": 0.08863198174207625,
+        "minimum_clearance_m": 0.07382765305986301,
+        "closure_failures": 0,
+        "joint_limit_failures": 0,
+        "collision_failures": 0
+      },
+      "added_midpoints": 228,
+      "saved_path_length_rad": 2.4297446482981147,
+      "dense_path_length_rad": 2.429935514492565,
+      "maximum_saved_step_rad": 0.04902776413700329,
+      "maximum_dense_step_rad": 0.013110508084183946,
+      "solution_partitions": [
+        0,
+        0,
+        0
+      ],
+      "genuine_solution_partition_switches": 0,
+      "dense_branch_mismatches": 0,
+      "independent_NR_updates": 0,
+      "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+      "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed7.npz",
+      "dense_sha256": "6552d7aa07b561c6b1411523fce80b89005c1a22d9c0e8287f25279c9746996a",
+      "edges": [
+        {
+          "attempt_index": 22,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 23,
+          "dense_point_count": 89,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 23,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 17,
+          "dense_point_count": 65,
+          "reversed": false,
+          "tree": "START"
+        },
+        {
+          "attempt_index": 21,
+          "partition": 0,
+          "branch": -1,
+          "saved_point_count": 39,
+          "dense_point_count": 153,
+          "reversed": true,
+          "tree": "GOAL"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Finite sampled configurations only: no exact/continuous swept-volume collision certificate and no dynamic execution.",
+    "Two added recursive midpoint levels on each saved RBS leaf are independent reconstruction after planning; they are not claims that original planner ran extra points.",
+    "PCS uses the recorded passive partition and branch with active midpoint interpolation and analytical closure; NR uses projected recursive midpoints with the saved NR parameters. Unprojected linear chords are not used as closure tests.",
+    "All 26 saved successful trajectories are checked. The 24 original TIME_LIMIT outcomes are preserved, not rerun or reclassified.",
+    "The 20R geometry and E0/E1 circles are a reconstructed planar proxy, not original spatial environments II-V or the original Table I.",
+    "All successful PCS paths used partition0; zero final-path swaps cannot substantiate a full-PCS swapping advantage over fixed0.",
+    "The self-collision pair exclusions and radii reproduce the frozen model; no omitted-pair physical safety claim is made."
+  ]
+}

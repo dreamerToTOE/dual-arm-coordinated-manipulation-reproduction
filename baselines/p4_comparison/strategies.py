@@ -176,8 +176,12 @@ No damping, row weighting, line search or random restart is used.
 
 class Strategy:
     def __init__(self, model, env, method, config=None, *, rng=None, expired=lambda: False):
-        if method not in ("RSS", "PCS", "NR"):
+        if method not in ("RSS", "PCS", "PCS_FIXED_0", "PCS_FIXED_16", "NR"):
             raise ValueError("unknown P4 strategy")
+        if method == "PCS_FIXED_0" and 0 not in model.partitions:
+            raise ValueError("fixed PCS partition 0 is not declared by this model")
+        if method == "PCS_FIXED_16" and 16 not in model.partitions:
+            raise ValueError("fixed PCS partition 16 is not declared by this model")
         self.model, self.env, self.method = model, env, method
         self.config = configured(config)
         self.rng = rng if rng is not None else np.random.Generator(np.random.PCG64(0))
@@ -213,7 +217,13 @@ class Strategy:
         if self.method == "NR":
             result = nr_project(self.model, q, self.config, expired=self.expired, count=self.count)
         else:
-            if partition not in ((16,) if self.method == "RSS" else self.model.partitions):
+            if self.method == "RSS":
+                allowed = (16,)
+            elif self.method.startswith("PCS_FIXED_"):
+                allowed = (int(self.method.rsplit("_", 1)[1]),)
+            else:
+                allowed = self.model.partitions
+            if partition not in allowed:
                 raise ValueError("method cannot use this passive chain")
             self.count("ik_calls")
             if self.expired():
@@ -263,6 +273,8 @@ class Strategy:
             return projected, identity
         if self.method == "RSS":
             partitions = (16,)
+        elif self.method.startswith("PCS_FIXED_"):
+            partitions = (int(self.method.rsplit("_", 1)[1]),)
         else:
             first_partition = int(self.rng.choice(self.model.partitions))
             self.count("partition_choices")
@@ -329,7 +341,12 @@ class Strategy:
     def connection_choices(self, start, goal):
         if self.method == "NR":
             return [(None, None)]
-        partitions = (16,) if self.method == "RSS" else self.model.partitions
+        if self.method == "RSS":
+            partitions = (16,)
+        elif self.method.startswith("PCS_FIXED_"):
+            partitions = (int(self.method.rsplit("_", 1)[1]),)
+        else:
+            partitions = self.model.partitions
         choices = []
         for partition in partitions:
             a, b = self.model.branch(start, partition), self.model.branch(goal, partition)
@@ -437,7 +454,7 @@ author-specific RSS shortcut, no endpoint-distance threshold skips qualification
                 s.count("local_connections_accepted")
                 if method == "RSS" and (model.branch(start, 16) == 0 or model.branch(goal, 16) == 0):
                     s.count("rss_singular_endpoint_connections")
-                if method == "PCS":
+                if method == "PCS" or method.startswith("PCS_FIXED_"):
                     s.count("pcs_partition_" + str(partition) + "_connections")
                 return {"success": True, "reason": "DISCRETE_RBS_QUALIFIED", "partition": partition,
                         "branch": branch, "trials": trials, "path": path,

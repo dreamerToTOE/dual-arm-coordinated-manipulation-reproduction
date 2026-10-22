@@ -1,0 +1,101 @@
+{
+  "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz",
+  "input_sha256": "e5a0797b191e65bc2e95046ae278b01b369e877afdf072715f01d77d4c77294d",
+  "environment": "E1_clutter",
+  "method": "PCS_FIXED_0",
+  "seed": 7,
+  "independently_qualified": true,
+  "exact_start_goal": true,
+  "tree_edge_and_RBS_provenance": true,
+  "saved_leaf_count": 154,
+  "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+  "saved": {
+    "point_count": 155,
+    "maximum_position_residual_m": 8.465450562766819e-16,
+    "maximum_angle_residual_rad": 1.3322676295501878e-15,
+    "minimum_joint_margin_rad": 0.3460122412440585,
+    "minimum_self_clearance_m": 0.05765645856412535,
+    "minimum_obstacle_clearance_m": 0.08863198174207625,
+    "minimum_clearance_m": 0.05765645856412535,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "dense": {
+    "point_count": 617,
+    "maximum_position_residual_m": 1.0664246959634153e-15,
+    "maximum_angle_residual_rad": 1.7763568394002505e-15,
+    "minimum_joint_margin_rad": 0.3460122412440585,
+    "minimum_self_clearance_m": 0.05765645856412535,
+    "minimum_obstacle_clearance_m": 0.08863198174207625,
+    "minimum_clearance_m": 0.05765645856412535,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "added_midpoints": 462,
+  "saved_path_length_rad": 5.475968632136714,
+  "dense_path_length_rad": 5.475979530137155,
+  "maximum_saved_step_rad": 0.04971452643817895,
+  "maximum_dense_step_rad": 0.012757172762528598,
+  "solution_partitions": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "genuine_solution_partition_switches": 0,
+  "dense_branch_mismatches": 0,
+  "independent_NR_updates": 0,
+  "maximum_saved_clearance_difference_from_GEOS_m": 1.3877787807814457e-17,
+  "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_FIXED_0_seed7.npz",
+  "dense_sha256": "ef9b400d7f046d250d4a02f28dc51cb8c3b48e70f7a91b83a87be38a908fd77b",
+  "edges": [
+    {
+      "attempt_index": 26,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 32,
+      "dense_point_count": 125,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 27,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 18,
+      "dense_point_count": 69,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 28,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 17,
+      "dense_point_count": 65,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 29,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 9,
+      "dense_point_count": 33,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 25,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 83,
+      "dense_point_count": 329,
+      "reversed": true,
+      "tree": "GOAL"
+    }
+  ]
+}

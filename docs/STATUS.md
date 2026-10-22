@@ -1072,3 +1072,8 @@ V4 的 source 失败、前缀、原始日志、V43/V44 账本和报告保持原�
 V5 supervisor-only 静态回归 13/13 通过，source process/request/solve/model/collision/path/formal/VI 新调用均为 0，未创建 V5 execution、claim 或 supervision 产物；因此没有新增 R2 wall/CPU 计费。证据为 reports/P4_D080_ENV_V_RRT_PCS_SOURCE01_V5_SUPERVISOR_GUARD_STATIC_POST_20261019.json，其中 personnel_independent=false，只代表工程自检。
 
 V5 仍为 ENGINEERING_CANDIDATE_NOT_AUTHORIZED。运行前仍需独立静态审查、root freeze、最新 prior 绑定和新的单次 source process/solve 预算；V4 的 Solved 前缀不能升级为 exact/path。D080 211 项范围表、D081 正式统计取消状态、VI 974/974 只读归档、P2/Isaac 禁止项均不变。
+
+
+## 2026-10-22 D082：完整虚拟仿真研究交付
+
+D082研究交付完成，资格为VIRTUAL_SIMULATION_VERIFIED_DISCRETE_RECONSTRUCTED，原论文完整范围仍PARTIAL。复用50次真实规划，26条成功记录对应13条不同q路径×两个环境，独立8490状态全部通过。每环境NR5/5、fixed-0 5/5、fullPCS3/5、fixed-16/RSS0/5；不支持PCS优势。II既有证书复用，III649点保存证据绑定通过、最终角色切换4次，native TCP649/649差异保留。中文Word/PDF、7图、211×257完整矩阵和数据/命令已交付。详见reports/P4_D082_DELIVERY_README_20261022.md及POST_TASK。交付推送后停止等待审核，不开展其他论文/Isaac/FR3适配。

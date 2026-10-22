@@ -1,0 +1,28 @@
+[render_docx] $ /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/bundled_soffice_isolated -env:UserInstallation=file:///tmp/soffice_profile_f6_nfvja --invisible --headless --norestore --convert-to pdf --outdir /tmp/soffice_convert__71ve8wx /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_D082闭链规划算法与完整虚拟仿真研究报告_20261022.docx
+convert /home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/reports/P4_D082闭链规划算法与完整虚拟仿真研究报告_20261022.docx as a Writer document -> /tmp/soffice_convert__71ve8wx/P4_D082闭链规划算法与完整虚拟仿真研究报告_20261022.pdf using filter : writer_pdf_Export
+
+Fontconfig error: Cannot load default config file: File not found
+
+Traceback (most recent call last):
+  File "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pdf2image/pdf2image.py", line 602, in pdfinfo_from_path
+    raise ValueError
+ValueError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/render_docx_isolated.py", line 515, in <module>
+    main()
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/render_docx_isolated.py", line 507, in main
+    rasterize(render_input_path, out_dir, dpi, verbose=args.verbose, emit_pdf=args.emit_pdf)
+  File "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_render_runtime/render_docx_isolated.py", line 406, in rasterize
+    convert_from_path(
+  File "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pdf2image/pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pdf2image/pdf2image.py", line 611, in pdfinfo_from_path
+    raise PDFPageCountError(
+pdf2image.exceptions.PDFPageCountError: Unable to get page count.
+/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdfinfo: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.38' not found (required by /home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdfinfo)
+/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdfinfo: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.38' not found (required by /home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/../lib/libpoppler.so.160)
+

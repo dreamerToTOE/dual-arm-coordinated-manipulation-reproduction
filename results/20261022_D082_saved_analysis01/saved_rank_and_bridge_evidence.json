@@ -1,0 +1,84 @@
+{
+  "d081_saved_fixture": {
+    "success": true,
+    "reason": "SUCCESS",
+    "q": [
+      1.4357239821242214,
+      -0.057296734827227525,
+      -0.22099837492180807,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.24802047265182575,
+      0.0,
+      -0.24802047265182575,
+      1.4881228359109546
+    ],
+    "passive_jacobian_rank": 2,
+    "passive_jacobian_determinant": 4.0647156867484834e-19,
+    "passive_singular_values": [
+      1.7552586633154164,
+      0.11526438986385915,
+      1.1978564752449852e-17
+    ],
+    "branch": 0
+  },
+  "d065_saved_hand_constructed_bridge": {
+    "source": "results/20261013_P4_three_methods_round3/math_evidence.json",
+    "passive_jacobian": [
+      [
+        0.23850723265253734,
+        0.16040226389645215,
+        0.08229729514036696
+      ],
+      [
+        0.060446287582911484,
+        0.0336328179407751,
+        0.006819348298638709
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "determinant": 4.0647156867484834e-19,
+    "singular_values": [
+      1.7552586633154164,
+      0.11526438986385915,
+      1.1978564752449852e-17
+    ],
+    "middle_angle_rad": 0.0,
+    "qualification": {
+      "valid": true,
+      "reason": "SUCCESS",
+      "closure_position": 8.349770295452321e-16,
+      "closure_angle": 1.3322676295501878e-15,
+      "joint_margin": 1.6534698176788385,
+      "collision": {
+        "collision": false,
+        "pair": [
+          "moving_link_02",
+          "ground_link"
+        ],
+        "minimum_clearance": 0.07782717907825573,
+        "geometry_queries": 190,
+        "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+      }
+    },
+    "left_success": true,
+    "right_success": true,
+    "two_branch_bridge_qualified": true
+  },
+  "random_sampler_rank_evidence": "0 accepted closed singular candidates; raw rejected candidates lack closed Jacobian rank evidence. No new rank/IK/qualification calls performed."
+}

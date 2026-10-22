@@ -1,0 +1,82 @@
+{
+  "schema": "P4_D082_III_SAVED_PATH_INDEPENDENT_QUALIFICATION_V1",
+  "status": "PASS_D082_RECONSTRUCTED_ALIGNED_DISCRETE_PATH",
+  "independent_path_qualified": true,
+  "classification": "RECONSTRUCTED_ALIGNED_SOURCE_POLICY_DISCRETE_ONLY",
+  "source_environment": "III",
+  "method": "PCS",
+  "planner": "RRT",
+  "node_count": 649,
+  "edge_count": 648,
+  "max_adjacent_l2_rad": 0.04995648687917435,
+  "max_adjacent_linf_rad": 0.04028994009162701,
+  "max_position_abs_mm": 4.547473508864641e-13,
+  "max_rotation_abs": 4.468647674116255e-15,
+  "native_pose_mismatch_nodes": 649,
+  "minimum_clearance_m": null,
+  "continuous_collision_certificate": false,
+  "native_tcp_equivalence": false,
+  "new_source_or_model_calls": 0,
+  "new_planner_calls": 0,
+  "checks_total": 8,
+  "checks_passed": 8,
+  "checks": [
+    {
+      "name": "saved_post_is_independent_and_complete",
+      "passed": true
+    },
+    {
+      "name": "queue_has_exact_649_nodes",
+      "passed": true,
+      "observed": 649
+    },
+    {
+      "name": "source_exact_endpoint_identity",
+      "passed": true
+    },
+    {
+      "name": "all_saved_math_records_pass",
+      "passed": true,
+      "passed_nodes": 649,
+      "total_nodes": 649,
+      "max_position_abs_mm": 4.547473508864641e-13,
+      "max_rotation_abs": 4.468647674116255e-15
+    },
+    {
+      "name": "all_saved_branch_records_pass",
+      "passed": true,
+      "passed_nodes": 649,
+      "total_nodes": 649
+    },
+    {
+      "name": "all_saved_aligned_collision_records_pass",
+      "passed": true,
+      "passed_nodes": 649,
+      "total_nodes": 649,
+      "aligned_pose_pass": 649,
+      "native_pose_mismatch_nodes": 649
+    },
+    {
+      "name": "saved_nodes_are_finite",
+      "passed": true
+    },
+    {
+      "name": "saved_leaf_distance_is_bounded",
+      "passed": true,
+      "max_adjacent_l2_rad": 0.04995648687917435,
+      "max_adjacent_linf_rad": 0.04028994009162701,
+      "threshold_rad": 0.05
+    }
+  ],
+  "failure_samples": [],
+  "inputs": {
+    "queue": "results/p4_full/20261018_R2_D080_III_RRT_PCS_PHYSICAL01/complete_original_saved_queue.json",
+    "queue_sha256": "90d56184ec03990dfe0feac31e181622080547c71e9424ed2d21cc07a90c8f56",
+    "old_independent_post": "reports/P4_D080_ENV_III_RRT_PCS_PHYSICAL01_SAVED_INDEPENDENT_POST_20261018.json",
+    "old_post_sha256": "8644c3b37151b009cfc8e60d9679bc8ca82d383e0deb068e3a5ff1df2f98603e",
+    "source_result": "results/p4_full/20261018_R2_D080_III_RRT_PCS_SOURCE01/parsed_source_result.json",
+    "source_result_sha256": "33121b9de19a9efdeab1a72e91c63b1bd7f3518b0263ef1c87f609ae682facbb",
+    "node_records_aggregate_sha256": "f79be1c54e575512ce4fe253f4745c31f884e26dd1f7ff84eecc80e6b07de33a"
+  },
+  "scope_statement": "Only the preserved reconstructed/aligned discrete nodes and saved per-node records are requalified; native TCP mismatch and continuous collision remain unproved."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "P4_D082_BUNDLED_RENDER_ENGINEERING_RECOVERY_V1",
+  "engineering_attempts": 2,
+  "host_libraries_changed": false,
+  "user_desktop_libreoffice_used": false,
+  "bundle_unchanged": true,
+  "scientific_calls": 0,
+  "sysroot_image": "ubuntu@sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac",
+  "attempt1": "Bundled soffice succeeds through isolated loader; PDF generated; bundled pdfinfo fails GLIBC_2.38; full error preserved.",
+  "attempt2": "Bundled soffice, pdfinfo and pdftoppm all use isolated loader; exit0,18 page PNGs and PDF.",
+  "input_docx": "reports/P4_D082闭链规划算法与完整虚拟仿真研究报告_20261022.docx",
+  "input_docx_sha256": "956c0b7aec48e47db5c893626ea9d36dc74f1b80f579d2be92b2d61816c1ab38",
+  "output_dir": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/work/d082_recovery_20261022/render2",
+  "pages": 18,
+  "visual_review": "PENDING_ROOT_ALL_PAGES",
+  "files_sha256": {
+    "work/d082_render_runtime/bundled_soffice_isolated": "07167a4199f8ec0a1714f31d0071ed2989b9dfaeaadd58e3ef904354d56ce134",
+    "work/d082_render_runtime/render_docx_isolated.py": "d311a79309c31cb4ba2576b0f03f421caa4d9982e488bdae9db999aa5995dd18",
+    "work/d082_render_runtime/bin/pdfinfo": "39968dcd7be7f7daeada1bd28b15c0e4cc38aee9f2bcb67ce7e259ab30096d73",
+    "work/d082_render_runtime/bin/pdftoppm": "05b730713a9785a9cf99b63ef1a45a9bf1178fe0661999f775d7c98ca8be9789",
+    "work/d082_render_runtime/sysroot/libc.so.6": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf",
+    "work/d082_render_runtime/sysroot/ld-linux-x86-64.so.2": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da"
+  },
+  "pdf_sha256": "3b62e4d838f7f9bebb756a5859280b7ea407e3de3d31a6c53af45c99b670b5e8",
+  "bundled_soffice_binary": "/home/ubuntu2004/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/libreoffice-headless/libreoffice/program/soffice.bin",
+  "bundled_soffice_sha256": "d905a74dc92eaccb22481ba2de1345666a074a5f0d48322aaad1b6dc8a9e1e40",
+  "commit_policy": "Commit recipe,small logs and record only; omit sysroot and binaries."
+}

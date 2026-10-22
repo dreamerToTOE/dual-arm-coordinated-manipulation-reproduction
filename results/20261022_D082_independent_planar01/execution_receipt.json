@@ -1,0 +1,24 @@
+{
+  "schema": "P4_D082_INDEPENDENT_PLANAR01_EXECUTION_RECEIPT_V1",
+  "status": "PROCESS_EXIT_0",
+  "exact_shell_command": "/usr/bin/time -v -o work/d082_independent_planar01/time.txt timeout 180 python3 scripts/p4_d082/independent_planar_validation.py --output results/20261022_D082_independent_planar01 > work/d082_independent_planar01/stdout.log 2> work/d082_independent_planar01/stderr.log",
+  "gnu_time_wall_sec": 3.62,
+  "gnu_time_user_sec": 3.55,
+  "gnu_time_system_sec": 1.38,
+  "gnu_time_cpu_sec": 4.93,
+  "max_rss_kib": 417528,
+  "external_budget_sec": 180,
+  "internal_wall_cpu_guard_sec": 175,
+  "budget_exceeded": false,
+  "summary_sha256": "867755cda518eb7abb8776d827733604266e5be8440aed64fd4f7fff5ceffbc1",
+  "executed_verifier_sha256": "42561f047c278a79e45988bdf75426257982c80443e9d56338129354abf51c77",
+  "verifier_unchanged_after_execution": true,
+  "raw_execution_hashes": {
+    "execution/time.txt": "03404a5af04d453cef9bc7380f53a7201e6f09e68369bb3471d58edc768690cd",
+    "execution/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "execution/stdout.log": "ea7073392324e3f73a016864dc8b2f2ed9074b240f898c55a117ce8ddeac0515"
+  },
+  "new_planner_calls": 0,
+  "new_author_source_runs": 0,
+  "timing_scope": "GNUtime includes Python startup/imports, saved-file loading, independent path checks, refinement and output serialization. Summary internal timer starts after imports and excludes final table/manifest serialization."
+}

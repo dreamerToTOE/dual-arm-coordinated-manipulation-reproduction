@@ -1,0 +1,112 @@
+{
+  "checks": [
+    {
+      "name": "segments_cross",
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "segments_parallel",
+      "actual": 2.0,
+      "expected": 2.0,
+      "passed": true
+    },
+    {
+      "name": "segments_collinear_overlap",
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "segments_collinear_disjoint",
+      "actual": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "segments_degenerate",
+      "actual": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "circle_exact_tangent_collides",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "circle_above_tangent_clear",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "known_exact_start_qualifies",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "terminal_angle_perturbation_rejected",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "joint_bound_violation_rejected",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "saved_closed_collision_rejected",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "saved_collision_fixture": {
+    "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz",
+    "sha256": "1b4ca94618ffcea1bec04c578ea63aa54b0434e39e67b05073919b1192c6b50e",
+    "attempt_index": 2,
+    "trial_partition": 0,
+    "checked_point_index": 1,
+    "q": [
+      -0.8033189608160867,
+      -1.883011573040145,
+      -2.439138877278242,
+      -0.16524235721352512,
+      0.007007794478564089,
+      -0.04077715923001349,
+      -0.015516998793637354,
+      -0.2094768828254125,
+      -0.34254938465574325,
+      -0.17431212182753433,
+      -0.2348397858823561,
+      -0.20197432918054403,
+      0.08783285394006682,
+      -0.2457072770278093,
+      -0.014625124538397788,
+      -0.31533498860769854,
+      -0.10677859117528088,
+      -0.22731678402986505,
+      -0.2782343577429289,
+      1.3201295982670032
+    ],
+    "independent_result": {
+      "point_count": 1,
+      "maximum_position_residual_m": 5.558049685633556e-16,
+      "maximum_angle_residual_rad": 0.0,
+      "minimum_joint_margin_rad": 0.7024537763115513,
+      "minimum_self_clearance_m": -0.004,
+      "minimum_obstacle_clearance_m": 0.31598639515662363,
+      "minimum_clearance_m": -0.004,
+      "closure_failures": 0,
+      "joint_limit_failures": 0,
+      "collision_failures": 1
+    }
+  },
+  "all_passed": true
+}

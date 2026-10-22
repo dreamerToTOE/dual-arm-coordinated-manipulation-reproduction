@@ -1,0 +1,135 @@
+{
+  "jacobian_fd_max_abs": 1.707702729225602e-10,
+  "jacobian_fd_errors": [
+    1.397779669787269e-10,
+    1.397779669787269e-10,
+    1.4032747186476513e-10,
+    1.707702729225602e-10
+  ],
+  "analytic_ik_branch_cases": [
+    {
+      "partition": 0,
+      "base": "start",
+      "branch": -1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 6.938893903907228e-17,
+      "closure_angle_rad": 0.0
+    },
+    {
+      "partition": 0,
+      "base": "start",
+      "branch": 1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 5.117875266520903e-16,
+      "closure_angle_rad": 4.440892098500626e-16
+    },
+    {
+      "partition": 0,
+      "base": "goal",
+      "branch": -1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 6.938893903907228e-17,
+      "closure_angle_rad": 0.0
+    },
+    {
+      "partition": 0,
+      "base": "goal",
+      "branch": 1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 4.910462595695867e-16,
+      "closure_angle_rad": 4.440892098500626e-16
+    },
+    {
+      "partition": 16,
+      "base": "start",
+      "branch": -1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 1.249000902703301e-16,
+      "closure_angle_rad": 0.0
+    },
+    {
+      "partition": 16,
+      "base": "start",
+      "branch": 1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 6.938893903907228e-17,
+      "closure_angle_rad": 0.0
+    },
+    {
+      "partition": 16,
+      "base": "goal",
+      "branch": -1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 1.249000902703301e-16,
+      "closure_angle_rad": 0.0
+    },
+    {
+      "partition": 16,
+      "base": "goal",
+      "branch": 1,
+      "success": true,
+      "reason": "SUCCESS",
+      "closure_position_m": 6.938893903907228e-17,
+      "closure_angle_rad": 0.0
+    }
+  ],
+  "analytic_ik_success_count": 8,
+  "analytic_ik_total": 8,
+  "singular_fixture": {
+    "success": true,
+    "reason": "SUCCESS",
+    "q": [
+      1.4357239821242214,
+      -0.057296734827227525,
+      -0.22099837492180807,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.16534698176788384,
+      -0.24802047265182575,
+      0.0,
+      -0.24802047265182575,
+      1.4881228359109546
+    ],
+    "passive_jacobian_rank": 2,
+    "passive_jacobian_determinant": 4.0647156867484834e-19,
+    "passive_singular_values": [
+      1.7552586633154164,
+      0.11526438986385915,
+      1.1978564752449852e-17
+    ],
+    "branch": 0
+  },
+  "collision_negative": {
+    "collision": true,
+    "pair": [
+      "moving_link_02",
+      "ground_link"
+    ],
+    "minimum_clearance": -0.004,
+    "geometry_queries": 190,
+    "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+  },
+  "labels": {
+    "FK": "RECONSTRUCTED",
+    "IK": "RECONSTRUCTED",
+    "Jacobian": "RECONSTRUCTED",
+    "NR": "ORIGINAL_FORMULA"
+  }
+}

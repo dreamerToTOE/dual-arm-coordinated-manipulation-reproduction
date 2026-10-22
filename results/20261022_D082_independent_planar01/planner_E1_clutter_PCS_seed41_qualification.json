@@ -1,0 +1,101 @@
+{
+  "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed41.json.gz",
+  "input_sha256": "339f4b895dea2b8e3789a2b39569c8217e8fb907fde86774b7646564c7b060cd",
+  "environment": "E1_clutter",
+  "method": "PCS",
+  "seed": 41,
+  "independently_qualified": true,
+  "exact_start_goal": true,
+  "tree_edge_and_RBS_provenance": true,
+  "saved_leaf_count": 155,
+  "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+  "saved": {
+    "point_count": 156,
+    "maximum_position_residual_m": 1.010032223021582e-15,
+    "maximum_angle_residual_rad": 1.7763568394002505e-15,
+    "minimum_joint_margin_rad": 1.3009838774543088,
+    "minimum_self_clearance_m": 0.053965014267069594,
+    "minimum_obstacle_clearance_m": 0.07817629500384636,
+    "minimum_clearance_m": 0.053965014267069594,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "dense": {
+    "point_count": 621,
+    "maximum_position_residual_m": 1.2524655443178481e-15,
+    "maximum_angle_residual_rad": 1.7763568394002505e-15,
+    "minimum_joint_margin_rad": 1.3009838774543088,
+    "minimum_self_clearance_m": 0.053965014267069594,
+    "minimum_obstacle_clearance_m": 0.07817629500384636,
+    "minimum_clearance_m": 0.053965014267069594,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "added_midpoints": 465,
+  "saved_path_length_rad": 5.208130045855009,
+  "dense_path_length_rad": 5.208299886962368,
+  "maximum_saved_step_rad": 0.049466521558337716,
+  "maximum_dense_step_rad": 0.012511208558246965,
+  "solution_partitions": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "genuine_solution_partition_switches": 0,
+  "dense_branch_mismatches": 0,
+  "independent_NR_updates": 0,
+  "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+  "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed41.npz",
+  "dense_sha256": "d9248e72ce50e8ae2f53c7f4c2e024475bd32aa2829c275e0ba667d46c0a8738",
+  "edges": [
+    {
+      "attempt_index": 16,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 37,
+      "dense_point_count": 145,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 17,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 20,
+      "dense_point_count": 77,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 18,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 17,
+      "dense_point_count": 65,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 19,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 3,
+      "dense_point_count": 9,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 15,
+      "partition": 0,
+      "branch": -1,
+      "saved_point_count": 83,
+      "dense_point_count": 329,
+      "reversed": true,
+      "tree": "GOAL"
+    }
+  ]
+}

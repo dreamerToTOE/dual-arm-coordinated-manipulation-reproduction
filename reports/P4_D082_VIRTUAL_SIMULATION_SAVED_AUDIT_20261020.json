@@ -1,0 +1,3626 @@
+{
+  "schema": "P4_D082_VIRTUAL_SIMULATION_SAVED_AUDIT_V1",
+  "status": "PASS_D082_RECONSTRUCTED_VIRTUAL_SIMULATION_DISCRETE_ONLY",
+  "classification": "RECONSTRUCTED_PLANAR_20R_TASK_WITH_REAL_GEOS_DISCRETE_RBS",
+  "scientific_calls_during_audit": {
+    "FK": 0,
+    "IK": 0,
+    "NR": 0,
+    "RSS": 0,
+    "PCS": 0,
+    "RBS": 0,
+    "planner": 0,
+    "author_source": 0
+  },
+  "new_display_reconstruction": "planar vertices are reconstructed only for plotting from saved q; no qualification result is recomputed",
+  "checks_total": 405,
+  "checks_passed": 405,
+  "checks": [
+    {
+      "name": "numeric_pilot_completed",
+      "passed": true
+    },
+    {
+      "name": "numeric_formal_table_calls_zero",
+      "passed": true
+    },
+    {
+      "name": "numeric_planner_row_count",
+      "passed": true,
+      "observed": 20
+    },
+    {
+      "name": "numeric_methods_and_environments",
+      "passed": true
+    },
+    {
+      "name": "stability_pilot_completed",
+      "passed": true
+    },
+    {
+      "name": "stability_formal_table_calls_zero",
+      "passed": true
+    },
+    {
+      "name": "stability_planner_row_count",
+      "passed": true,
+      "observed": 50
+    },
+    {
+      "name": "stability_pre_registered",
+      "passed": true
+    },
+    {
+      "name": "numeric_00_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_RSS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_00_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_RSS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_00_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_00_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_01_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_01_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_01_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_01_path_nonempty",
+      "passed": true,
+      "observed": 77
+    },
+    {
+      "name": "numeric_01_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_01_all_states_qualified",
+      "passed": true,
+      "state_count": 77,
+      "path_count": 77
+    },
+    {
+      "name": "numeric_01_leaf_bound",
+      "passed": true,
+      "observed": 0.04902776413700329
+    },
+    {
+      "name": "numeric_02_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "numeric_02_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "numeric_02_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_02_path_nonempty",
+      "passed": true,
+      "observed": 155
+    },
+    {
+      "name": "numeric_02_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_02_all_states_qualified",
+      "passed": true,
+      "state_count": 155,
+      "path_count": 155
+    },
+    {
+      "name": "numeric_02_leaf_bound",
+      "passed": true,
+      "observed": 0.04971452643817895
+    },
+    {
+      "name": "numeric_03_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "numeric_03_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "numeric_03_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_03_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_04_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_NR_seed7.json.gz"
+    },
+    {
+      "name": "numeric_04_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_NR_seed7.json.gz"
+    },
+    {
+      "name": "numeric_04_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_04_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "numeric_04_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_04_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "numeric_04_leaf_bound",
+      "passed": true,
+      "observed": 0.03750183810087012
+    },
+    {
+      "name": "numeric_05_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_RSS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_05_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_RSS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_05_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_05_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_06_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_06_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_06_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_06_path_nonempty",
+      "passed": true,
+      "observed": 103
+    },
+    {
+      "name": "numeric_06_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_06_all_states_qualified",
+      "passed": true,
+      "state_count": 103,
+      "path_count": 103
+    },
+    {
+      "name": "numeric_06_leaf_bound",
+      "passed": true,
+      "observed": 0.049642641505019305
+    },
+    {
+      "name": "numeric_07_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "numeric_07_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "numeric_07_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_07_path_nonempty",
+      "passed": true,
+      "observed": 55
+    },
+    {
+      "name": "numeric_07_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_07_all_states_qualified",
+      "passed": true,
+      "state_count": 55,
+      "path_count": 55
+    },
+    {
+      "name": "numeric_07_leaf_bound",
+      "passed": true,
+      "observed": 0.04973915933246177
+    },
+    {
+      "name": "numeric_08_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "numeric_08_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "numeric_08_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_08_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_09_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_NR_seed23.json.gz"
+    },
+    {
+      "name": "numeric_09_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E0_sparse_NR_seed23.json.gz"
+    },
+    {
+      "name": "numeric_09_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_09_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "numeric_09_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_09_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "numeric_09_leaf_bound",
+      "passed": true,
+      "observed": 0.0375036019771784
+    },
+    {
+      "name": "numeric_10_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_RSS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_10_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_RSS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_10_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_10_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_11_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_11_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz"
+    },
+    {
+      "name": "numeric_11_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_11_path_nonempty",
+      "passed": true,
+      "observed": 77
+    },
+    {
+      "name": "numeric_11_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_11_all_states_qualified",
+      "passed": true,
+      "state_count": 77,
+      "path_count": 77
+    },
+    {
+      "name": "numeric_11_leaf_bound",
+      "passed": true,
+      "observed": 0.04902776413700329
+    },
+    {
+      "name": "numeric_12_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "numeric_12_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "numeric_12_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_12_path_nonempty",
+      "passed": true,
+      "observed": 155
+    },
+    {
+      "name": "numeric_12_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_12_all_states_qualified",
+      "passed": true,
+      "state_count": 155,
+      "path_count": 155
+    },
+    {
+      "name": "numeric_12_leaf_bound",
+      "passed": true,
+      "observed": 0.04971452643817895
+    },
+    {
+      "name": "numeric_13_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "numeric_13_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "numeric_13_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_13_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_14_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_NR_seed7.json.gz"
+    },
+    {
+      "name": "numeric_14_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_NR_seed7.json.gz"
+    },
+    {
+      "name": "numeric_14_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_14_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "numeric_14_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_14_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "numeric_14_leaf_bound",
+      "passed": true,
+      "observed": 0.03750183810087012
+    },
+    {
+      "name": "numeric_15_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_RSS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_15_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_RSS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_15_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_15_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_16_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_16_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_seed23.json.gz"
+    },
+    {
+      "name": "numeric_16_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_16_path_nonempty",
+      "passed": true,
+      "observed": 103
+    },
+    {
+      "name": "numeric_16_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_16_all_states_qualified",
+      "passed": true,
+      "state_count": 103,
+      "path_count": 103
+    },
+    {
+      "name": "numeric_16_leaf_bound",
+      "passed": true,
+      "observed": 0.049642641505019305
+    },
+    {
+      "name": "numeric_17_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "numeric_17_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "numeric_17_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_17_path_nonempty",
+      "passed": true,
+      "observed": 55
+    },
+    {
+      "name": "numeric_17_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_17_all_states_qualified",
+      "passed": true,
+      "state_count": 55,
+      "path_count": 55
+    },
+    {
+      "name": "numeric_17_leaf_bound",
+      "passed": true,
+      "observed": 0.04973915933246177
+    },
+    {
+      "name": "numeric_18_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "numeric_18_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "numeric_18_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "numeric_18_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "numeric_19_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_NR_seed23.json.gz"
+    },
+    {
+      "name": "numeric_19_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_NR_seed23.json.gz"
+    },
+    {
+      "name": "numeric_19_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "numeric_19_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "numeric_19_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "numeric_19_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "numeric_19_leaf_bound",
+      "passed": true,
+      "observed": 0.0375036019771784
+    },
+    {
+      "name": "stability_00_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed7.json.gz"
+    },
+    {
+      "name": "stability_00_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed7.json.gz"
+    },
+    {
+      "name": "stability_00_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_00_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_01_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed7.json.gz"
+    },
+    {
+      "name": "stability_01_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed7.json.gz"
+    },
+    {
+      "name": "stability_01_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_01_path_nonempty",
+      "passed": true,
+      "observed": 77
+    },
+    {
+      "name": "stability_01_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_01_all_states_qualified",
+      "passed": true,
+      "state_count": 77,
+      "path_count": 77
+    },
+    {
+      "name": "stability_01_leaf_bound",
+      "passed": true,
+      "observed": 0.04902776413700329
+    },
+    {
+      "name": "stability_02_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "stability_02_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "stability_02_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_02_path_nonempty",
+      "passed": true,
+      "observed": 155
+    },
+    {
+      "name": "stability_02_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_02_all_states_qualified",
+      "passed": true,
+      "state_count": 155,
+      "path_count": 155
+    },
+    {
+      "name": "stability_02_leaf_bound",
+      "passed": true,
+      "observed": 0.04971452643817895
+    },
+    {
+      "name": "stability_03_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "stability_03_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "stability_03_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_03_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_04_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed7.json.gz"
+    },
+    {
+      "name": "stability_04_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed7.json.gz"
+    },
+    {
+      "name": "stability_04_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_04_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "stability_04_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_04_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "stability_04_leaf_bound",
+      "passed": true,
+      "observed": 0.03750183810087012
+    },
+    {
+      "name": "stability_05_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed23.json.gz"
+    },
+    {
+      "name": "stability_05_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed23.json.gz"
+    },
+    {
+      "name": "stability_05_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_05_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_06_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed23.json.gz"
+    },
+    {
+      "name": "stability_06_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed23.json.gz"
+    },
+    {
+      "name": "stability_06_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_06_path_nonempty",
+      "passed": true,
+      "observed": 103
+    },
+    {
+      "name": "stability_06_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_06_all_states_qualified",
+      "passed": true,
+      "state_count": 103,
+      "path_count": 103
+    },
+    {
+      "name": "stability_06_leaf_bound",
+      "passed": true,
+      "observed": 0.049642641505019305
+    },
+    {
+      "name": "stability_07_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "stability_07_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "stability_07_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_07_path_nonempty",
+      "passed": true,
+      "observed": 55
+    },
+    {
+      "name": "stability_07_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_07_all_states_qualified",
+      "passed": true,
+      "state_count": 55,
+      "path_count": 55
+    },
+    {
+      "name": "stability_07_leaf_bound",
+      "passed": true,
+      "observed": 0.04973915933246177
+    },
+    {
+      "name": "stability_08_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "stability_08_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "stability_08_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_08_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_09_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed23.json.gz"
+    },
+    {
+      "name": "stability_09_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed23.json.gz"
+    },
+    {
+      "name": "stability_09_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_09_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "stability_09_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_09_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "stability_09_leaf_bound",
+      "passed": true,
+      "observed": 0.0375036019771784
+    },
+    {
+      "name": "stability_10_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed41.json.gz"
+    },
+    {
+      "name": "stability_10_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed41.json.gz"
+    },
+    {
+      "name": "stability_10_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_10_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_11_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed41.json.gz"
+    },
+    {
+      "name": "stability_11_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed41.json.gz"
+    },
+    {
+      "name": "stability_11_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_11_path_nonempty",
+      "passed": true,
+      "observed": 156
+    },
+    {
+      "name": "stability_11_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_11_all_states_qualified",
+      "passed": true,
+      "state_count": 156,
+      "path_count": 156
+    },
+    {
+      "name": "stability_11_leaf_bound",
+      "passed": true,
+      "observed": 0.049466521558337716
+    },
+    {
+      "name": "stability_12_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed41.json.gz"
+    },
+    {
+      "name": "stability_12_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed41.json.gz"
+    },
+    {
+      "name": "stability_12_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_12_path_nonempty",
+      "passed": true,
+      "observed": 104
+    },
+    {
+      "name": "stability_12_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_12_all_states_qualified",
+      "passed": true,
+      "state_count": 104,
+      "path_count": 104
+    },
+    {
+      "name": "stability_12_leaf_bound",
+      "passed": true,
+      "observed": 0.04895969829555754
+    },
+    {
+      "name": "stability_13_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed41.json.gz"
+    },
+    {
+      "name": "stability_13_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed41.json.gz"
+    },
+    {
+      "name": "stability_13_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_13_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_14_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed41.json.gz"
+    },
+    {
+      "name": "stability_14_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed41.json.gz"
+    },
+    {
+      "name": "stability_14_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_14_path_nonempty",
+      "passed": true,
+      "observed": 41
+    },
+    {
+      "name": "stability_14_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_14_all_states_qualified",
+      "passed": true,
+      "state_count": 41,
+      "path_count": 41
+    },
+    {
+      "name": "stability_14_leaf_bound",
+      "passed": true,
+      "observed": 0.03750204480583254
+    },
+    {
+      "name": "stability_15_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed59.json.gz"
+    },
+    {
+      "name": "stability_15_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed59.json.gz"
+    },
+    {
+      "name": "stability_15_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_15_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_16_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed59.json.gz"
+    },
+    {
+      "name": "stability_16_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed59.json.gz"
+    },
+    {
+      "name": "stability_16_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_16_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_17_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed59.json.gz"
+    },
+    {
+      "name": "stability_17_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed59.json.gz"
+    },
+    {
+      "name": "stability_17_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_17_path_nonempty",
+      "passed": true,
+      "observed": 82
+    },
+    {
+      "name": "stability_17_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_17_all_states_qualified",
+      "passed": true,
+      "state_count": 82,
+      "path_count": 82
+    },
+    {
+      "name": "stability_17_leaf_bound",
+      "passed": true,
+      "observed": 0.048244234277143035
+    },
+    {
+      "name": "stability_18_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed59.json.gz"
+    },
+    {
+      "name": "stability_18_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed59.json.gz"
+    },
+    {
+      "name": "stability_18_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_18_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_19_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed59.json.gz"
+    },
+    {
+      "name": "stability_19_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed59.json.gz"
+    },
+    {
+      "name": "stability_19_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_19_path_nonempty",
+      "passed": true,
+      "observed": 37
+    },
+    {
+      "name": "stability_19_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_19_all_states_qualified",
+      "passed": true,
+      "state_count": 37,
+      "path_count": 37
+    },
+    {
+      "name": "stability_19_leaf_bound",
+      "passed": true,
+      "observed": 0.03750244668809901
+    },
+    {
+      "name": "stability_20_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed73.json.gz"
+    },
+    {
+      "name": "stability_20_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_RSS_seed73.json.gz"
+    },
+    {
+      "name": "stability_20_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_20_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_21_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed73.json.gz"
+    },
+    {
+      "name": "stability_21_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_seed73.json.gz"
+    },
+    {
+      "name": "stability_21_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_21_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_22_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed73.json.gz"
+    },
+    {
+      "name": "stability_22_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_0_seed73.json.gz"
+    },
+    {
+      "name": "stability_22_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_22_path_nonempty",
+      "passed": true,
+      "observed": 154
+    },
+    {
+      "name": "stability_22_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_22_all_states_qualified",
+      "passed": true,
+      "state_count": 154,
+      "path_count": 154
+    },
+    {
+      "name": "stability_22_leaf_bound",
+      "passed": true,
+      "observed": 0.04966998974130145
+    },
+    {
+      "name": "stability_23_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed73.json.gz"
+    },
+    {
+      "name": "stability_23_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_PCS_FIXED_16_seed73.json.gz"
+    },
+    {
+      "name": "stability_23_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_23_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_24_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed73.json.gz"
+    },
+    {
+      "name": "stability_24_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed73.json.gz"
+    },
+    {
+      "name": "stability_24_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_24_path_nonempty",
+      "passed": true,
+      "observed": 37
+    },
+    {
+      "name": "stability_24_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_24_all_states_qualified",
+      "passed": true,
+      "state_count": 37,
+      "path_count": 37
+    },
+    {
+      "name": "stability_24_leaf_bound",
+      "passed": true,
+      "observed": 0.04751707873236332
+    },
+    {
+      "name": "stability_25_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed7.json.gz"
+    },
+    {
+      "name": "stability_25_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed7.json.gz"
+    },
+    {
+      "name": "stability_25_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_25_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_26_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz"
+    },
+    {
+      "name": "stability_26_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz"
+    },
+    {
+      "name": "stability_26_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_26_path_nonempty",
+      "passed": true,
+      "observed": 77
+    },
+    {
+      "name": "stability_26_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_26_all_states_qualified",
+      "passed": true,
+      "state_count": 77,
+      "path_count": 77
+    },
+    {
+      "name": "stability_26_leaf_bound",
+      "passed": true,
+      "observed": 0.04902776413700329
+    },
+    {
+      "name": "stability_27_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "stability_27_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed7.json.gz"
+    },
+    {
+      "name": "stability_27_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_27_path_nonempty",
+      "passed": true,
+      "observed": 155
+    },
+    {
+      "name": "stability_27_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_27_all_states_qualified",
+      "passed": true,
+      "state_count": 155,
+      "path_count": 155
+    },
+    {
+      "name": "stability_27_leaf_bound",
+      "passed": true,
+      "observed": 0.04971452643817895
+    },
+    {
+      "name": "stability_28_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "stability_28_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed7.json.gz"
+    },
+    {
+      "name": "stability_28_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_28_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_29_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed7.json.gz"
+    },
+    {
+      "name": "stability_29_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed7.json.gz"
+    },
+    {
+      "name": "stability_29_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_29_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "stability_29_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_29_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "stability_29_leaf_bound",
+      "passed": true,
+      "observed": 0.03750183810087012
+    },
+    {
+      "name": "stability_30_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed23.json.gz"
+    },
+    {
+      "name": "stability_30_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed23.json.gz"
+    },
+    {
+      "name": "stability_30_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_30_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_31_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed23.json.gz"
+    },
+    {
+      "name": "stability_31_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed23.json.gz"
+    },
+    {
+      "name": "stability_31_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_31_path_nonempty",
+      "passed": true,
+      "observed": 103
+    },
+    {
+      "name": "stability_31_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_31_all_states_qualified",
+      "passed": true,
+      "state_count": 103,
+      "path_count": 103
+    },
+    {
+      "name": "stability_31_leaf_bound",
+      "passed": true,
+      "observed": 0.049642641505019305
+    },
+    {
+      "name": "stability_32_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "stability_32_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed23.json.gz"
+    },
+    {
+      "name": "stability_32_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_32_path_nonempty",
+      "passed": true,
+      "observed": 55
+    },
+    {
+      "name": "stability_32_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_32_all_states_qualified",
+      "passed": true,
+      "state_count": 55,
+      "path_count": 55
+    },
+    {
+      "name": "stability_32_leaf_bound",
+      "passed": true,
+      "observed": 0.04973915933246177
+    },
+    {
+      "name": "stability_33_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "stability_33_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed23.json.gz"
+    },
+    {
+      "name": "stability_33_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_33_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_34_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed23.json.gz"
+    },
+    {
+      "name": "stability_34_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed23.json.gz"
+    },
+    {
+      "name": "stability_34_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_34_path_nonempty",
+      "passed": true,
+      "observed": 35
+    },
+    {
+      "name": "stability_34_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_34_all_states_qualified",
+      "passed": true,
+      "state_count": 35,
+      "path_count": 35
+    },
+    {
+      "name": "stability_34_leaf_bound",
+      "passed": true,
+      "observed": 0.0375036019771784
+    },
+    {
+      "name": "stability_35_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed41.json.gz"
+    },
+    {
+      "name": "stability_35_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed41.json.gz"
+    },
+    {
+      "name": "stability_35_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_35_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_36_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed41.json.gz"
+    },
+    {
+      "name": "stability_36_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed41.json.gz"
+    },
+    {
+      "name": "stability_36_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_36_path_nonempty",
+      "passed": true,
+      "observed": 156
+    },
+    {
+      "name": "stability_36_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_36_all_states_qualified",
+      "passed": true,
+      "state_count": 156,
+      "path_count": 156
+    },
+    {
+      "name": "stability_36_leaf_bound",
+      "passed": true,
+      "observed": 0.049466521558337716
+    },
+    {
+      "name": "stability_37_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed41.json.gz"
+    },
+    {
+      "name": "stability_37_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed41.json.gz"
+    },
+    {
+      "name": "stability_37_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_37_path_nonempty",
+      "passed": true,
+      "observed": 104
+    },
+    {
+      "name": "stability_37_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_37_all_states_qualified",
+      "passed": true,
+      "state_count": 104,
+      "path_count": 104
+    },
+    {
+      "name": "stability_37_leaf_bound",
+      "passed": true,
+      "observed": 0.04895969829555754
+    },
+    {
+      "name": "stability_38_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed41.json.gz"
+    },
+    {
+      "name": "stability_38_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed41.json.gz"
+    },
+    {
+      "name": "stability_38_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_38_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_39_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed41.json.gz"
+    },
+    {
+      "name": "stability_39_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed41.json.gz"
+    },
+    {
+      "name": "stability_39_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_39_path_nonempty",
+      "passed": true,
+      "observed": 41
+    },
+    {
+      "name": "stability_39_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_39_all_states_qualified",
+      "passed": true,
+      "state_count": 41,
+      "path_count": 41
+    },
+    {
+      "name": "stability_39_leaf_bound",
+      "passed": true,
+      "observed": 0.03750204480583254
+    },
+    {
+      "name": "stability_40_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed59.json.gz"
+    },
+    {
+      "name": "stability_40_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed59.json.gz"
+    },
+    {
+      "name": "stability_40_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_40_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_41_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed59.json.gz"
+    },
+    {
+      "name": "stability_41_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed59.json.gz"
+    },
+    {
+      "name": "stability_41_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_41_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_42_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed59.json.gz"
+    },
+    {
+      "name": "stability_42_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed59.json.gz"
+    },
+    {
+      "name": "stability_42_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_42_path_nonempty",
+      "passed": true,
+      "observed": 82
+    },
+    {
+      "name": "stability_42_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_42_all_states_qualified",
+      "passed": true,
+      "state_count": 82,
+      "path_count": 82
+    },
+    {
+      "name": "stability_42_leaf_bound",
+      "passed": true,
+      "observed": 0.048244234277143035
+    },
+    {
+      "name": "stability_43_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed59.json.gz"
+    },
+    {
+      "name": "stability_43_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed59.json.gz"
+    },
+    {
+      "name": "stability_43_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_43_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_44_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed59.json.gz"
+    },
+    {
+      "name": "stability_44_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed59.json.gz"
+    },
+    {
+      "name": "stability_44_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_44_path_nonempty",
+      "passed": true,
+      "observed": 37
+    },
+    {
+      "name": "stability_44_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_44_all_states_qualified",
+      "passed": true,
+      "state_count": 37,
+      "path_count": 37
+    },
+    {
+      "name": "stability_44_leaf_bound",
+      "passed": true,
+      "observed": 0.03750244668809901
+    },
+    {
+      "name": "stability_45_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed73.json.gz"
+    },
+    {
+      "name": "stability_45_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_RSS_seed73.json.gz"
+    },
+    {
+      "name": "stability_45_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_45_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_46_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed73.json.gz"
+    },
+    {
+      "name": "stability_46_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_seed73.json.gz"
+    },
+    {
+      "name": "stability_46_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_46_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_47_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed73.json.gz"
+    },
+    {
+      "name": "stability_47_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_0_seed73.json.gz"
+    },
+    {
+      "name": "stability_47_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_47_path_nonempty",
+      "passed": true,
+      "observed": 154
+    },
+    {
+      "name": "stability_47_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_47_all_states_qualified",
+      "passed": true,
+      "state_count": 154,
+      "path_count": 154
+    },
+    {
+      "name": "stability_47_leaf_bound",
+      "passed": true,
+      "observed": 0.04966998974130145
+    },
+    {
+      "name": "stability_48_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed73.json.gz"
+    },
+    {
+      "name": "stability_48_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_PCS_FIXED_16_seed73.json.gz"
+    },
+    {
+      "name": "stability_48_status_matches",
+      "passed": true,
+      "observed": [
+        "TIME_LIMIT",
+        "TIME_LIMIT"
+      ]
+    },
+    {
+      "name": "stability_48_failed_path_empty",
+      "passed": true,
+      "observed": "TIME_LIMIT"
+    },
+    {
+      "name": "stability_49_raw_exists",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed73.json.gz"
+    },
+    {
+      "name": "stability_49_header_matches",
+      "passed": true,
+      "artifact": "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full/results/20261019_D081_stability_pilot/raw_planner/planner_E1_clutter_NR_seed73.json.gz"
+    },
+    {
+      "name": "stability_49_status_matches",
+      "passed": true,
+      "observed": [
+        "SUCCESS",
+        "SUCCESS"
+      ]
+    },
+    {
+      "name": "stability_49_path_nonempty",
+      "passed": true,
+      "observed": 37
+    },
+    {
+      "name": "stability_49_path_endpoints",
+      "passed": true
+    },
+    {
+      "name": "stability_49_all_states_qualified",
+      "passed": true,
+      "state_count": 37,
+      "path_count": 37
+    },
+    {
+      "name": "stability_49_leaf_bound",
+      "passed": true,
+      "observed": 0.04751707873236332
+    },
+    {
+      "name": "stability_artifact_manifest",
+      "passed": true,
+      "entries": 56
+    },
+    {
+      "name": "iii_saved_path_independent_qualification",
+      "passed": true
+    },
+    {
+      "name": "showcase_path_available",
+      "passed": true
+    }
+  ],
+  "planner_calls_reused": {
+    "numeric_pilot": 20,
+    "stability_pilot": 50,
+    "total": 70
+  },
+  "path_states_requalified": 3062,
+  "success_paths_requalified": 38,
+  "failed_or_timeout_calls_requalified": 32,
+  "success_by_method_stability": {
+    "RSS": {
+      "success": 0,
+      "total": 10,
+      "rate": 0.0
+    },
+    "PCS": {
+      "success": 6,
+      "total": 10,
+      "rate": 0.6
+    },
+    "PCS_FIXED_0": {
+      "success": 10,
+      "total": 10,
+      "rate": 1.0
+    },
+    "PCS_FIXED_16": {
+      "success": 0,
+      "total": 10,
+      "rate": 0.0
+    },
+    "NR": {
+      "success": 10,
+      "total": 10,
+      "rate": 1.0
+    }
+  },
+  "mean_success_path_length_rad": 2.773217680611927,
+  "showcase": {
+    "raw": "results/20261019_D081_numeric_pilot/raw_planner/planner_E1_clutter_PCS_seed7.json.gz",
+    "environment": "E1_clutter",
+    "method": "PCS",
+    "seed": 7,
+    "path_points": 77,
+    "path_metrics": {
+      "joint_path_length_rad": 2.429744648298114,
+      "milestone_path_length_rad": 2.239161417249041,
+      "point_count": 77,
+      "edge_count": 3,
+      "maximum_position_residual_m": 8.604228440844963e-16,
+      "maximum_rotation_residual_rad": 8.881784197001252e-16,
+      "minimum_joint_margin_rad": 0.9709199663342662,
+      "minimum_clearance_m": 0.07382765305986301,
+      "maximum_adjacent_l2_rad": 0.04902776413700329,
+      "maximum_adjacent_linf_rad": 0.03903684727468626,
+      "state_qualifications": [
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 1.1102230246251565e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.6534698176788385,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07829729514036683,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.220446049250313e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.6371251911684386,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0782823382230392,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.0014830212433605e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.6223587080443886,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07826699562153126,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.577566798522237e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.5959589416025732,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07823515365544603,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.117875266520903e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.5723857841985076,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0782017698391256,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.85010898289606e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.550769603257888,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07816684479849244,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.914335439641036e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.5306227357669506,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07813037918836689,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.3592239273284576e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.5116387080883715,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07809237369245128,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.847302891456678e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.4936097846298537,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07805282902332264,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.423651445728339e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.4763873281692534,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07801174592241422,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.618455766672135e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.45986056691045,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07796912516000584,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.551115123125783e-17,
+          "closure_angle": 0.0,
+          "joint_margin": 1.4439442813460523,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07792496753520559,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.689893001203927e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.413687160279526,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07783204503892607,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.237726045655905e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.3852156960920397,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0777329854024619,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.3306690738754696e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.3582541286070082,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07762779605496989,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.47545209131181e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.332602712162414,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07751648488531099,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.308824046522781e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.3081111036530872,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07739906024146537,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.389157964038493e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.284662634868866,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07727553092990273,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.1401849173675503e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.2621644670474215,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07714590621492676,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 6.106226635438361e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.2405411373614683,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07701019581797093,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.613190423717512e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.2197301662364923,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07686840991688164,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.220446049250313e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.199678971862964,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07672055914514331,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.11864493316497e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.1803426444008487,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07656665459108883,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.579669976578771e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.1641905768539065,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07642889341078346,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.596460756922437e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.148520372500224,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07628663445922333,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.041272810440265e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.13331210980461,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07613988569186335,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 6.938893903907228e-17,
+          "closure_angle": 0.0,
+          "joint_margin": 1.118547694109493,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0759886553152339,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.0014830212433605e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.104210556888801,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07583295178649185,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.712321323804737e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0902854092664302,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07567278381294194,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.3021142204224816e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.0767580382956456,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07550816035154852,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 7.355227538141662e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0636151372727287,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07533909060844286,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.510833468576701e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0508441633858805,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07516558403839571,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.3422138886441676e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.0384332175001498,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07498765034430083,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.0245584642661925e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0263709420018348,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07480529947662445,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 7.417804156968781e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.014646433476381,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07461854163285317,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.0895734351719815e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.0032491676446575,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07442738725692215,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.908020529499657e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 0.992168934486223,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07423184703862716,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 1.3877787807814457e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 0.9813957818713677,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07403193191303412,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.579669976578771e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 0.9709199663342662,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07382765305986301,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.596460756922437e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 0.980334387820867,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0740478896120246,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.3263411494723067e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 0.9902506998587715,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07426304444150686,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.6638411145107034e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.000674309416155,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07447310353951254,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.498001805406602e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0116113099532296,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07467805322902765,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 9.71445146547012e-17,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0230685244037856,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0748778801657132,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.3422138886441676e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0350535652624995,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07507257133877397,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 8.262821341922353e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.0475749139502781,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07526211407180787,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.7336071744532853e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.0606420223867232,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07544649602362503,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 8.604228440844963e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.0742654406396959,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07562570518905956,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.041272810440265e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.088456975721357,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07579972989974909,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.775166431889533e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.103229888166048,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07596855882488568,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.618455766672135e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.1185991351095534,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07613218097196785,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.8609792490763985e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.1345816714103352,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07629058568750417,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.636779683484747e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.1511968242401247,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07644376265771528,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.6638411145107034e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.1684667620136358,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07659170190919873,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.8609792490763985e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.186417086287661,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07673439380958486,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.2247786310271853e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.2050775865326937,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07687182906815786,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.443059973708341e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.2244832143989948,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07700399873646586,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 1.3877787807814457e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.2446753594630842,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07713089420889856,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.482534153247273e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.2657035479100163,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07725250722325344,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.1748851477261605e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.2876277488148853,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0773688298612682,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 5.224024053540252e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.3105215772758934,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07747985454913887,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.482534153247273e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.3344768633571977,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07758557405801304,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 6.938893903907228e-17,
+          "closure_angle": 0.0,
+          "joint_margin": 1.3596103784641143,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07768598150446059,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.237726045655905e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.386074121074234,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07778107035092138,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.510833468576701e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.4140717928210655,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07787083440612942,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 1.1102230246251565e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.4438867698508577,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07795526782552058,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.775166431889533e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.4595978437114816,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07799548381525151,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.8609792490763985e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.475933289716603,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07803436511160698,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.2887833992611187e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.4929820275733343,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07807191108168929,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.220446049250313e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.5108600847995124,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07810812111433973,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 3.469446951953614e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.5297238282094279,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07814299462014362,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 4.308824046522781e-16,
+          "closure_angle": 4.440892098500626e-16,
+          "joint_margin": 1.5497929253347316,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07817653103144247,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.8609792490763985e-16,
+          "closure_angle": 8.881784197001252e-16,
+          "joint_margin": 1.5713935697122974,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07820872980234227,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.2247786310271853e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.5950494399359636,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07823959040872319,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 1.3092278833360675e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.6217071378571868,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.07826911234824742,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 2.618455766672135e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.6367230157152814,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0782833711669154,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        },
+        {
+          "valid": true,
+          "reason": "SUCCESS",
+          "closure_position": 1.3877787807814457e-16,
+          "closure_angle": 0.0,
+          "joint_margin": 1.6534698176788385,
+          "collision": {
+            "collision": false,
+            "pair": [
+              "moving_link_18",
+              "ground_link"
+            ],
+            "minimum_clearance": 0.0782972951403668,
+            "geometry_queries": 230,
+            "source": "Shapely/GEOS Cartesian distance; analytical capsule/circle radii"
+          }
+        }
+      ],
+      "collision_source": "real GEOS planar capsule/circle query",
+      "safety_scope": "DISCRETE_CONFIGURATIONS_NOT_CONTINUOUS_SWEEP"
+    }
+  },
+  "inputs": {
+    "numeric_summary": "results/20261019_D081_numeric_pilot/summary.json",
+    "numeric_summary_sha256": "ef844b8b01957ccda4920cb9943acb28c20c05155f8c651a29b96f194fa29eb8",
+    "numeric_config": "results/20261019_D081_numeric_pilot/config_snapshot.json",
+    "numeric_config_sha256": "cd1a89b72d64246fb5bfbaf8e6b05cd11ec95c2b8b87a1801dfa4c8b84883f99",
+    "stability_summary": "results/20261019_D081_stability_pilot/planner_summary.json",
+    "stability_summary_sha256": "50bc8bea6bcef1560f306e5e0707271adbe2a0239e4fcf9e469c569b903eeb4c",
+    "iii_saved_audit": "reports/P4_D082_ENV_III_SAVED_PATH_INDEPENDENT_QUALIFICATION_20261019_v2.json",
+    "iii_saved_audit_sha256": "884f69534f02a066ccef365833e1b6fde0492b02c19e94e2d3c75b6b833fd19d"
+  },
+  "scope_statement": "真实运行来自D081已保存的NumPy/GEOS平面重建；本审计确认端到端离散闭链路径与算法对照证据，但不升级为原论文空间II-V/VI完整统计、连续CCD或作者原生实现。"
+}

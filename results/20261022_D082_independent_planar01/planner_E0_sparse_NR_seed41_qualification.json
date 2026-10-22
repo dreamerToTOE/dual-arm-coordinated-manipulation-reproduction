@@ -1,0 +1,77 @@
+{
+  "artifact": "results/20261019_D081_stability_pilot/raw_planner/planner_E0_sparse_NR_seed41.json.gz",
+  "input_sha256": "c6065cab4278bf26e1fc12768b62e0fa5f13e4a2348e91a9badca6d5a71374fd",
+  "environment": "E0_sparse",
+  "method": "NR",
+  "seed": 41,
+  "independently_qualified": true,
+  "exact_start_goal": true,
+  "tree_edge_and_RBS_provenance": true,
+  "saved_leaf_count": 40,
+  "saved_leaf_maximum_metadata_distance_error_rad": 6.938893903907228e-18,
+  "saved": {
+    "point_count": 41,
+    "maximum_position_residual_m": 8.804796037108357e-09,
+    "maximum_angle_residual_rad": 1.3322676295501878e-15,
+    "minimum_joint_margin_rad": 1.5678527375914237,
+    "minimum_self_clearance_m": 0.0745770282604704,
+    "minimum_obstacle_clearance_m": 0.17028955503443138,
+    "minimum_clearance_m": 0.0745770282604704,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "dense": {
+    "point_count": 161,
+    "maximum_position_residual_m": 8.804796037108357e-09,
+    "maximum_angle_residual_rad": 1.7763568394002505e-15,
+    "minimum_joint_margin_rad": 1.5678527375914237,
+    "minimum_self_clearance_m": 0.0745770282604704,
+    "minimum_obstacle_clearance_m": 0.17028955503443138,
+    "minimum_clearance_m": 0.0745770282604704,
+    "closure_failures": 0,
+    "joint_limit_failures": 0,
+    "collision_failures": 0
+  },
+  "added_midpoints": 120,
+  "saved_path_length_rad": 1.4156224274857636,
+  "dense_path_length_rad": 1.415622565936494,
+  "maximum_saved_step_rad": 0.03750204480583254,
+  "maximum_dense_step_rad": 0.009375511923630182,
+  "solution_partitions": [],
+  "genuine_solution_partition_switches": 0,
+  "dense_branch_mismatches": 0,
+  "independent_NR_updates": 120,
+  "maximum_saved_clearance_difference_from_GEOS_m": 0.0,
+  "dense_artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E0_sparse_NR_seed41.npz",
+  "dense_sha256": "5704d5cce649e22af1cf9f90785ba29d8b08fa43dc488532500c0ae1062ffbae",
+  "edges": [
+    {
+      "attempt_index": 0,
+      "partition": null,
+      "branch": null,
+      "saved_point_count": 17,
+      "dense_point_count": 65,
+      "reversed": false,
+      "tree": "START"
+    },
+    {
+      "attempt_index": 2,
+      "partition": null,
+      "branch": null,
+      "saved_point_count": 9,
+      "dense_point_count": 33,
+      "reversed": true,
+      "tree": "GOAL"
+    },
+    {
+      "attempt_index": 1,
+      "partition": null,
+      "branch": null,
+      "saved_point_count": 17,
+      "dense_point_count": 65,
+      "reversed": true,
+      "tree": "GOAL"
+    }
+  ]
+}
