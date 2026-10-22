@@ -1,0 +1,263 @@
+{
+  "schema": "P4_D083_DIFFICULT_DIAGNOSTIC_PREREG_V1",
+  "decision": "D083 Stage C",
+  "environment": "E1_clutter",
+  "label": "DETERMINISTIC_ARCHIVAL_PCS_PATH_ENDPOINT_DIAGNOSTIC_NOT_UNBIASED_HARD_BENCHMARK",
+  "condition_selection": "Exactly three pairs of ordinal halfway q states from saved independently qualified PCS paths seeds7/23/41; no candidate replaced after diagnostics or planning",
+  "paired_seeds": [
+    7,
+    23,
+    41
+  ],
+  "method_order": [
+    "PCS",
+    "COMPATIBLE_FIXED",
+    "NR",
+    "RSS"
+  ],
+  "fixed_compatibility": "actual independent sin(q[p+1]) labels for p in [0,16]; first compatible p by ascending index; none => NOT_COMPARABLE, skip fixed calls",
+  "conditions": [
+    {
+      "id": "C1",
+      "endpoint_sources": [
+        {
+          "artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed7.npz",
+          "sha256": "6552d7aa07b561c6b1411523fce80b89005c1a22d9c0e8287f25279c9746996a",
+          "q_array": "q",
+          "index_rule": "floor((N-1)/2)",
+          "index": 152,
+          "source_point_count": 305,
+          "q": [
+            2.170672687255527,
+            -0.6640328841789076,
+            -0.4954404182699741,
+            -0.20688654294112546,
+            -0.06512264922913112,
+            -0.324590738068817,
+            -0.05817480113888179,
+            -0.03740770341138666,
+            -0.01657954492654881,
+            -0.08062149453032244,
+            -0.20884762476119192,
+            -0.3383635869057323,
+            -0.14629399445091326,
+            -0.04544163465183733,
+            -0.2848595022176241,
+            -0.25300072723501477,
+            -0.29319323983848844,
+            0.259156560130048,
+            -0.14088321461383874,
+            1.2299110539841602
+          ]
+        },
+        {
+          "artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed23.npz",
+          "sha256": "d23c21c5285f3cbd1baf4dbf8fa44fc029291e73f7520fc93541787d1b2356f9",
+          "q_array": "q",
+          "index_rule": "floor((N-1)/2)",
+          "index": 204,
+          "source_point_count": 409,
+          "q": [
+            2.119769391273225,
+            -1.3843583341880878,
+            0.21907782912427365,
+            -0.00949180831685727,
+            -0.052702286208984275,
+            -0.029860292665487717,
+            -0.2052523068971578,
+            -0.3255857163100326,
+            -0.17345388480497542,
+            -0.22818720746242704,
+            -0.1984679761979341,
+            0.06359583065608157,
+            -0.2380143486321631,
+            -0.02905379794701172,
+            -0.30097656703778924,
+            -0.11238537041395577,
+            -0.28378775639657383,
+            -0.1461105682271428,
+            -0.26003339015527427,
+            1.5752785608082744
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "endpoint_sources": [
+        {
+          "artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed23.npz",
+          "sha256": "d23c21c5285f3cbd1baf4dbf8fa44fc029291e73f7520fc93541787d1b2356f9",
+          "q_array": "q",
+          "index_rule": "floor((N-1)/2)",
+          "index": 204,
+          "source_point_count": 409,
+          "q": [
+            2.119769391273225,
+            -1.3843583341880878,
+            0.21907782912427365,
+            -0.00949180831685727,
+            -0.052702286208984275,
+            -0.029860292665487717,
+            -0.2052523068971578,
+            -0.3255857163100326,
+            -0.17345388480497542,
+            -0.22818720746242704,
+            -0.1984679761979341,
+            0.06359583065608157,
+            -0.2380143486321631,
+            -0.02905379794701172,
+            -0.30097656703778924,
+            -0.11238537041395577,
+            -0.28378775639657383,
+            -0.1461105682271428,
+            -0.26003339015527427,
+            1.5752785608082744
+          ]
+        },
+        {
+          "artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed41.npz",
+          "sha256": "d9248e72ce50e8ae2f53c7f4c2e024475bd32aa2829c275e0ba667d46c0a8738",
+          "q_array": "q",
+          "index_rule": "floor((N-1)/2)",
+          "index": 310,
+          "source_point_count": 621,
+          "q": [
+            1.4305969524868463,
+            -1.6390615313799806,
+            1.3653786266629995,
+            -0.08944951831632526,
+            -0.0013634419169768932,
+            -0.02413208037148247,
+            -0.2380229195171163,
+            -0.2990552610046924,
+            -0.023251106432493583,
+            -0.34286094795376265,
+            -0.23154999790145098,
+            -0.22929485368178526,
+            -0.256561459539771,
+            -0.2806778296815361,
+            -0.03155349427898985,
+            -0.12432519544683251,
+            -0.16794557514792263,
+            0.11038804357074344,
+            -0.2693010613317942,
+            1.3420426511823242
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "endpoint_sources": [
+        {
+          "artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed41.npz",
+          "sha256": "d9248e72ce50e8ae2f53c7f4c2e024475bd32aa2829c275e0ba667d46c0a8738",
+          "q_array": "q",
+          "index_rule": "floor((N-1)/2)",
+          "index": 310,
+          "source_point_count": 621,
+          "q": [
+            1.4305969524868463,
+            -1.6390615313799806,
+            1.3653786266629995,
+            -0.08944951831632526,
+            -0.0013634419169768932,
+            -0.02413208037148247,
+            -0.2380229195171163,
+            -0.2990552610046924,
+            -0.023251106432493583,
+            -0.34286094795376265,
+            -0.23154999790145098,
+            -0.22929485368178526,
+            -0.256561459539771,
+            -0.2806778296815361,
+            -0.03155349427898985,
+            -0.12432519544683251,
+            -0.16794557514792263,
+            0.11038804357074344,
+            -0.2693010613317942,
+            1.3420426511823242
+          ]
+        },
+        {
+          "artifact": "results/20261022_D082_independent_planar01/dense_paths/planner_E1_clutter_PCS_seed7.npz",
+          "sha256": "6552d7aa07b561c6b1411523fce80b89005c1a22d9c0e8287f25279c9746996a",
+          "q_array": "q",
+          "index_rule": "floor((N-1)/2)",
+          "index": 152,
+          "source_point_count": 305,
+          "q": [
+            2.170672687255527,
+            -0.6640328841789076,
+            -0.4954404182699741,
+            -0.20688654294112546,
+            -0.06512264922913112,
+            -0.324590738068817,
+            -0.05817480113888179,
+            -0.03740770341138666,
+            -0.01657954492654881,
+            -0.08062149453032244,
+            -0.20884762476119192,
+            -0.3383635869057323,
+            -0.14629399445091326,
+            -0.04544163465183733,
+            -0.2848595022176241,
+            -0.25300072723501477,
+            -0.29319323983848844,
+            0.259156560130048,
+            -0.14088321461383874,
+            1.2299110539841602
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "baselines/p4_comparison/model.py": "917947f042fa835f67af5f5bb15677f35a1867701665e65bdf3acac263add627",
+    "baselines/p4_comparison/planner.py": "2d40fe27c8b738cebc0516ff7d9138bb853e22a8c19e382b9d7e0d39cce3482c",
+    "baselines/p4_comparison/strategies.py": "e423a7854aa959242a20b0c0cc304b61681832f5b3d274706c76f7af3299fc5b",
+    "scripts/p4_d082/independent_planar_validation.py": "42561f047c278a79e45988bdf75426257982c80443e9d56338129354abf51c77",
+    "configs/p4_d081/numeric_stability_pilot_v1.json": "04f136b4c6e91597c65b0331d4df8bf195f3ca2f1e7f9806065dc26477ceaffd"
+  },
+  "source_certificate": "results/20261022_D082_independent_planar01/summary.json",
+  "source_certificate_sha256": "867755cda518eb7abb8776d827733604266e5be8440aed64fd4f7fff5ceffbc1",
+  "budget": {
+    "maximum_planner_calls": 36,
+    "max_compute_wall_sec_per_call": 1.0,
+    "max_iterations_per_call": 120,
+    "stage_wall_sec": 180,
+    "stage_process_cpu_sec": 240,
+    "direct_diagnostic_levels": 8,
+    "successful_path_refinement_levels": 2
+  },
+  "algorithm_config": {
+    "extension_range_rad": 0.6,
+    "rbs_resolution_rad": 0.05,
+    "rbs_max_depth": 12,
+    "rbs_max_projections": 256,
+    "nr_max_iterations": 100,
+    "position_tolerance_m": 1e-08,
+    "rotation_tolerance_rad": 1e-08,
+    "svd_absolute_cutoff": 1e-12,
+    "svd_relative_cutoff": 1e-10,
+    "stagnation_step_rad": 1e-14,
+    "max_nodes": 300,
+    "connect_attempts": 8,
+    "max_compute_wall_sec": 1.0,
+    "singular_attempts": 32,
+    "singular_probability": 0.2,
+    "minimum_progress_rad": 1e-12,
+    "meeting_tolerance_rad": 1e-09
+  },
+  "stop_rule": "One frozen batch only. Preserve failures. No scene/seed/method changes or repeat calls. If no independently closed collision obstruction on a candidate route, hard-scenario status NOT_ESTABLISHED. No PCS-superiority conclusion from a diagnostic witness or incompatible fixed endpoints.",
+  "scientific_restrictions": [
+    "Unchanged model, geometry, collision pairs/radii, thresholds and production algorithms",
+    "Witnesses and route samples are discrete, not continuous CCD",
+    "Ambient chord closure failure is not collision obstruction",
+    "Independent feasible witness is source-A reversed prefix then source-B prefix via exact common START",
+    "Original RSS random-generation failures retained; this paired planner diagnostic does not repair RSS",
+    "Tree switches and final-path switches counted separately",
+    "No new spatial solve, IV/V/VI, 18000 calls, ROS, Isaac, hardware or FR3"
+  ]
+}
