@@ -1,0 +1,98 @@
+{
+  "kind": "FROZEN_P2_INDEPENDENT_PLANT_ESTIMATED_CONTROL",
+  "date": "2026-10-14",
+  "case": {
+    "id": 11,
+    "condition": "exp3",
+    "seed": 7,
+    "variant": "transport",
+    "GT": false,
+    "scale": 1
+  },
+  "seed": 7,
+  "task": "P2_STAGE2_ORIGINAL_CONTROLLER",
+  "baseline": "original Eq9-12/16/19-21/25, approved spatial-free Log geometry",
+  "platform": "independent rigid COM ODE, ideal Cartesian endpoints; not robot joint control",
+  "source_commit": "36d4f84348e29360c7744159e1be2e88d8a70234",
+  "source_sha256": {
+    "scripts/run_p2_closed_loop.py": "28d0bd8b7b965dcec4a32319dbc6db57cda67b2cac815ceb5473b3bbc06caddf",
+    "baselines/p2_pose_force/clocking.py": "64c1ab04c4cec016c96cde5d4997650b3cb7ac5458f26f3ff5f723cdf5d20947",
+    "baselines/p2_pose_force/native_kernel.cpp": "5954502884798f76191da966e611a73d29f8a97641e5f77734b9770a29b3d66c",
+    "baselines/p2_pose_force/native_model.py": "429bcb05a91c9ee1fefc87d32ad3a0f6248d500b24b4b969f3ae3c3c72e817bf",
+    "baselines/p2_pose_force/estimator.py": "e953c383ba25109687c849d2e25b78e934a81db3e9824b0b6a0735bda2ab1e69",
+    "baselines/p2_pose_force/observations.py": "69dc47ae9c58d950f7c6ebf7a4fe656988c790977512f5c6684ce206463e92ff",
+    "baselines/p2_pose_force/control.py": "12b32337ec8e7284e00b4e0822b03644ceeb4f0231c8a6875eb7ea28c1023aec",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/contact_geometry.py": "31eb0895482ab0b846fe2a34d4e3336cf4f5c94f2e062fc78caa16e4bf1a7332",
+    "reports/P2_CLOSED_LOOP_RUNTIME_SPEC.md": "6153f7805c802f3f87e0ea5a8b786494401f31a19016b722a0f41a16085b4beb"
+  },
+  "command": [
+    "p2/tools/run_p2_smoke.py",
+    "--confirm",
+    "case11-exp3-seed7-A",
+    "--transport-limit-s",
+    "4.5",
+    "--wall-cap-s",
+    "60"
+  ],
+  "config_path": "configs/p2_closed_loop_protocol_v3.json",
+  "protocol_sha256": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+  "build": {
+    "build_inputs": {
+      "source_sha256": "5954502884798f76191da966e611a73d29f8a97641e5f77734b9770a29b3d66c",
+      "flags": [
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-DNDEBUG",
+        "-shared",
+        "-fPIC",
+        "-I/usr/include/eigen3"
+      ],
+      "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+      "eigen_version": "3.4.0",
+      "boost_version": "1.74.0",
+      "machine_flags_use_local_CPU": true
+    },
+    "binary_sha256": "a3ff7b1bf26413f08e2fbc5e5021f34cf1512e2ca76591590ca403c21ab94949",
+    "command": [
+      "g++",
+      "-std=c++17",
+      "-O3",
+      "-march=native",
+      "-DNDEBUG",
+      "-shared",
+      "-fPIC",
+      "-I/usr/include/eigen3",
+      "/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p2-audit/baselines/p2_pose_force/native_kernel.cpp",
+      "-o",
+      "/home/ubuntu2004/lmy/.p2_native_build_v3/p2_native.so"
+    ]
+  },
+  "true_K": [
+    [
+      5641.0,
+      5641.0,
+      4400.0,
+      1.28,
+      1.28,
+      1.28
+    ],
+    [
+      5641.0,
+      5641.0,
+      4400.0,
+      1.28,
+      1.28,
+      1.28
+    ]
+  ],
+  "wall_limit_s": 120,
+  "suite_wall_limit_s": 7200,
+  "corrections_used": 3,
+  "remaining_corrections": 0,
+  "observer_mean_integration": "original Eq18 right Euler at fresh observation/heartbeat events; no internal substeps",
+  "causal_phase_clocks": "global_case_s=precalibration time;settle5+t;transport10+t",
+  "covariance_log": "diag each event, full at1Hz/failure; complete covariance propagation/checking every prediction/update",
+  "no_gt_primary_controller": true
+}

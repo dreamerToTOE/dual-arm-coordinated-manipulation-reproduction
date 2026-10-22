@@ -1,0 +1,17 @@
+{
+  "kind": "T04_QD_NAIVE_VS_STABLE",
+  "object": "C",
+  "h_s": 0.004,
+  "naive": {
+    "symmetry_rel": 0.007979545776216993,
+    "min_eig_over_max": -1.316353059569695e-06,
+    "note": "single 84x84 expm; loses symmetry and PSD (negative eigenvalue)"
+  },
+  "stable": {
+    "symmetry_rel": 9.149061383646144e-17,
+    "min_eig_over_max": -1.1363602583846172e-20,
+    "note": "scaling-and-squaring with |lambda|*h <= 0.5"
+  },
+  "max_abs_diff": 0.01012769181130624,
+  "rel_diff": 560088.5263153526
+}

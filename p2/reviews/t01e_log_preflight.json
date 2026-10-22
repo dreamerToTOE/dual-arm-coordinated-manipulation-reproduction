@@ -1,0 +1,80 @@
+{
+  "kind": "T01E_O2_PREFLIGHT",
+  "plant": {
+    "label": "plant",
+    "events": 300,
+    "expected_events": 300,
+    "all_lines_parse": true,
+    "always_present_ok": true,
+    "bulk_only_on_snapshots": true,
+    "snapshots": 2,
+    "exact_roundtrip_ref": true,
+    "ref_key": "W",
+    "exact_roundtrip_h": true,
+    "ring_len": 200,
+    "ring_full_rows": true,
+    "ring_has_bulk_and_state": true,
+    "dump_events": 200,
+    "dump_ok": true,
+    "payload_bytes": 7897,
+    "counters": {
+      "events": 300,
+      "snapshots": 2,
+      "suppressed": 298
+    },
+    "pass": true
+  },
+  "estimator": {
+    "label": "estimator",
+    "events": 300,
+    "expected_events": 300,
+    "all_lines_parse": true,
+    "always_present_ok": true,
+    "bulk_only_on_snapshots": true,
+    "snapshots": 2,
+    "exact_roundtrip_ref": true,
+    "ref_key": "P_diagonal",
+    "exact_roundtrip_h": true,
+    "ring_len": 200,
+    "ring_full_rows": true,
+    "ring_has_bulk_and_state": true,
+    "dump_events": 200,
+    "dump_ok": true,
+    "payload_bytes": 9339,
+    "counters": {
+      "events": 300,
+      "snapshots": 2,
+      "suppressed": 298
+    },
+    "pass": true
+  },
+  "nonfinite": {
+    "serialized_as": "nan",
+    "is_string": true,
+    "detectable": true,
+    "pass": true
+  },
+  "calibration_path": {
+    "pairs": 75,
+    "iterations": 2,
+    "max_mean_component": 2.7473167783700208e-14,
+    "pass": true
+  },
+  "bulk_keys": [
+    "D",
+    "W",
+    "W_singular_values",
+    "estimated_state",
+    "old_applied_input_NA_body_m_s_rad_s",
+    "solver"
+  ],
+  "always_present": [
+    "h_N_Nm",
+    "internal_N_Nm",
+    "phase",
+    "state",
+    "tick",
+    "time_s"
+  ],
+  "verdict": "PASS"
+}

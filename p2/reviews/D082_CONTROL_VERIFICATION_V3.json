@@ -1,0 +1,115 @@
+{
+  "kind": "D082_CONTROL_VERIFICATION_V3",
+  "checks": [
+    {
+      "id": "V3_01_zero_err",
+      "desc": "zero pose error → U_P = 0",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_02_hI_nonzero",
+      "desc": "injected internal wrench → ||h_I|| > 0.01 N/N·m",
+      "pass": true,
+      "residual": 0.5000000000000157,
+      "unit": "N/N·m"
+    },
+    {
+      "id": "V3_03_UF_nonzero",
+      "desc": "||U_F|| > 1e-4 m/s rad/s",
+      "pass": true,
+      "residual": 0.0030280972398307577,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_04_UF_formula",
+      "desc": "U_F = -KF * h_I (independent null-space h_I)",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_05_scaling",
+      "desc": "2× injection → 2× U_F (proportional response)",
+      "pass": true,
+      "residual": 1.9999999999999585,
+      "unit": "ratio"
+    },
+    {
+      "id": "V3_06_hybrid_nonzero",
+      "desc": "hybrid: both U_F and U_P non-zero",
+      "pass": true,
+      "residual": "|U_F|=0.0030 |U_P|=0.0047",
+      "unit": ""
+    },
+    {
+      "id": "V3_07_hybrid_sum",
+      "desc": "U_cmd = U_F + U_P",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_08_UP_oracle",
+      "desc": "U_P matches independent Eq.25 oracle",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_09_sel_pivot",
+      "desc": "selection pivot filtering",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_10_sel_sliding",
+      "desc": "selection sliding filtering",
+      "pass": true,
+      "residual": 0.0,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_11_cmd_domain",
+      "desc": "|lin|<0.15, |ang|<0.5",
+      "pass": true,
+      "residual": 0.0038198385030797795,
+      "unit": "m/s rad/s"
+    },
+    {
+      "id": "V3_12_timing",
+      "desc": "force_off@5s, force_on@10s",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V3_13_NaN_held",
+      "desc": "NaN_held rejected",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V3_13_bad_type",
+      "desc": "bad_type rejected",
+      "pass": true,
+      "residual": null,
+      "unit": ""
+    },
+    {
+      "id": "V3_14_real_near_zero",
+      "desc": "real fixture: h_I near zero (physical, not a bug)",
+      "pass": true,
+      "residual": 1.290122337695715e-13,
+      "unit": "N/N·m (info only)"
+    }
+  ],
+  "summary": {
+    "pass": 15,
+    "total": 15,
+    "verdict": "PASS"
+  }
+}

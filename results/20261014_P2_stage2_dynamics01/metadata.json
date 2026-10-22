@@ -1,0 +1,23 @@
+{
+  "kind": "INDEPENDENT_DYNAMICS_QUALIFICATION_NO_CONTROL",
+  "date": "2026-10-14",
+  "command": [
+    "scripts/qualify_p2_dynamics.py",
+    "--output-dir",
+    "results/20261014_P2_stage2_dynamics01"
+  ],
+  "python": "3.10.12",
+  "numpy": "1.24.4",
+  "source_commit": "9194f9f48ec1e00a3129f7875d8f503964dcc50f",
+  "source_sha256": {
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/contact_geometry.py": "47557da9189d8525e8a1ec343b5a4afc929405071d4e5de7d562091cc04a629a",
+    "scripts/qualify_p2_dynamics.py": "6236fd160ded89832e18c7f3d8ed55357c4218a44ad574d4e3f1e6efb91738a1",
+    "reports/P2_STAGE2_DYNAMICS_QUALIFICATION_SPEC.md": "2f964bd97e68997678ed33e0fb9e135b4471de2e79eaef268ca1585b676b4c50"
+  },
+  "protocol_sha256": "423f58ca7cfe13861586bb486dcfd6d19c5e3d82b69e40c3d403c90d7c871df3",
+  "corrections_used_before_run": 1,
+  "remaining_corrections": 2,
+  "wall_limit_s": 120,
+  "synthetic_gate_scope": "not control trial; not paper performance evidence"
+}

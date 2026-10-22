@@ -1,0 +1,91 @@
+{
+  "kind": "ACTUAL_SAVED_LOG_READ_ONLY_POSTMORTEM_NO_NEW_TRIAL",
+  "failure": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+  "actual_stopping_time_s": 3.948,
+  "last_control_log_time_s": 3.944,
+  "transport_samples": 987,
+  "terminal_estimation_position_error_m": 0.00014691099295611692,
+  "terminal_estimation_angle_error_rad": 0.11848591232765034,
+  "terminal_true_linear_speed_m_s": 3.126131708788075e-11,
+  "terminal_true_angular_speed_rad_s": 8.099010997665023e-08,
+  "terminal_estimated_linear_speed_m_s": 0.025717904976878096,
+  "terminal_estimated_angular_speed_rad_s": 260.02053293050255,
+  "max_prefix_estimation_position_error_m": 0.0011134942265150609,
+  "max_prefix_estimation_angle_error_rad": 0.11848591232765034,
+  "true_internal_force_each_peak_N": [
+    0.002020183196269588,
+    0.002020183196269678
+  ],
+  "true_internal_moment_each_peak_Nm": [
+    2.8928464869245004e-06,
+    2.892846486397949e-06
+  ],
+  "terminal_contact_tau_reconstructed_from_saved_state": {
+    "true": [
+      [
+        -0.000594756249214732,
+        -3.2240158179628344e-07,
+        -1.9988856427936404e-07,
+        2.0973837287396316e-06,
+        -2.8304494547487606e-08,
+        1.9003639475492675e-17
+      ],
+      [
+        -0.0005947562485682294,
+        -3.2240196543545007e-07,
+        -1.998880690480797e-07,
+        2.0973837287396316e-06,
+        2.8304494547487606e-08,
+        -1.899516914602013e-17
+      ]
+    ],
+    "estimated": [
+      [
+        -0.006424506582622415,
+        -0.00025753586810070664,
+        -0.00018442347897802154,
+        -0.019812296618161623,
+        0.11853784050435061,
+        -0.00014470914907028566
+      ],
+      [
+        0.005207063181892389,
+        -0.0007455244478847724,
+        -0.0001861714252935141,
+        -0.014468280064522663,
+        -0.11737900999800777,
+        -0.007930252299859934
+      ]
+    ]
+  },
+  "true_contact_tau_components_inside_frozen_domain": true,
+  "estimated_contact_tau_components_inside_frozen_domain": false,
+  "terminal_covariance_min_eigenvalue": 5.592554006538721e-14,
+  "terminal_covariance_max_asymmetry": 0.0,
+  "terminal_angular_velocity_covariance_diagonal_rad2_s2": [
+    2508.9038238998623,
+    6.347566040843027,
+    0.7337474228165495
+  ],
+  "last_prediction_interval_s": 0.0030000000000001137,
+  "last_prediction_had_no_measurement": true,
+  "last_saved_prediction_F_spectral_radius": 5.547450789760518,
+  "F_spectrum_scope": "one saved uncorrected prediction; not full IESEKF/closed-loop stability theorem",
+  "update_count": 829,
+  "nonconverged_updates": 3,
+  "max_consecutive_nonconverged": 1,
+  "all_logged_UF_zero": true,
+  "all_logged_UP_zero": true,
+  "force_on_7s_and_pose_on_13s_not_reached": true,
+  "GT_control_state_reads": 0,
+  "no_gain_or_condition_tuning": true,
+  "missing_final_and_transport_windows_metrics": {
+    "GT_final_position_RMS_m": null,
+    "GT_final_angle_RMS_rad": null,
+    "true_internal_stack_force_RMS_N": null,
+    "true_internal_each_moment_RMS_Nm": null
+  },
+  "corrections_used": 3,
+  "remaining_corrections": 0,
+  "original_paper_outcome_not_disproved": true
+}

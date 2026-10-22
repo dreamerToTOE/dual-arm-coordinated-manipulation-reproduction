@@ -1,0 +1,189 @@
+{
+  "kind": "T03_CONVERGENCE_ERRATA",
+  "duration_s": 0.3,
+  "scales": [
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001,
+    0.001
+  ],
+  "scale_note": "combined norm divides pos/rot/vel by 1e-3 only to make the blocks commensurate; per-block orders do not depend on it",
+  "objects": {
+    "A": {
+      "meta": {
+        "kind": "P1",
+        "pose_offset_m": 0.0037416573867739417,
+        "pose_offset_rad": 0.01374772708486752,
+        "velocity": [
+          0.02,
+          -0.01,
+          0.005,
+          0.1,
+          -0.05,
+          0.02
+        ]
+      },
+      "samples": 75,
+      "max_over_time": {
+        "pos": {
+          "max_adjacent_h_h2": 2.725819457687878e-07,
+          "max_adjacent_h2_h4": 6.813934214463008e-08,
+          "order_richardson": 2.0001300856115445,
+          "order_old_reference_h4": 2.322032164312286
+        },
+        "rot": {
+          "max_adjacent_h_h2": 9.256364588225281e-07,
+          "max_adjacent_h2_h4": 2.3137689588979094e-07,
+          "order_richardson": 2.000200878699218,
+          "order_old_reference_h4": 2.3220887993448462
+        },
+        "vel_lin": {
+          "max_adjacent_h_h2": 4.2651472384281e-05,
+          "max_adjacent_h2_h4": 1.0662867793578554e-05,
+          "order_richardson": 2.000000040927382,
+          "order_old_reference_h4": 2.321928127615328
+        },
+        "vel_ang": {
+          "max_adjacent_h_h2": 0.00014745876370101947,
+          "max_adjacent_h2_h4": 3.6862797229989585e-05,
+          "order_richardson": 2.0000741114294582,
+          "order_old_reference_h4": 2.321987383750953
+        },
+        "combined_scaled": {
+          "max_adjacent_h_h2": 0.1535050503989055,
+          "max_adjacent_h2_h4": 0.03837444316211129,
+          "order_richardson": 2.000068400507824,
+          "order_old_reference_h4": 2.321982814990725
+        }
+      },
+      "final_time": {
+        "pos": {
+          "h_vs_h2": 8.046497778975717e-12,
+          "h2_vs_h4": 2.0129990911192063e-12,
+          "h_vs_h4": 1.0059495363347864e-11,
+          "order_richardson": 1.9990144690214935
+        },
+        "rot": {
+          "h_vs_h2": 1.747577120900859e-10,
+          "h2_vs_h4": 4.369221797681231e-11,
+          "h_vs_h4": 2.1844992982443663e-10,
+          "order_richardson": 1.9999078741725445
+        },
+        "vel_lin": {
+          "h_vs_h2": 5.968098555585164e-13,
+          "h2_vs_h4": 1.497812241217597e-13,
+          "h_vs_h4": 7.465628675850697e-13,
+          "order_richardson": 1.9944145744857014
+        },
+        "vel_ang": {
+          "h_vs_h2": 4.6380435490086685e-10,
+          "h2_vs_h4": 1.1594814645575155e-10,
+          "h_vs_h4": 5.797525009984333e-10,
+          "order_richardson": 2.000036608982891
+        },
+        "combined_scaled": {
+          "h_vs_h2": 4.957013615761827e-07,
+          "h2_vs_h4": 1.239235941135248e-07,
+          "h_vs_h4": 6.196249551602325e-07,
+          "order_richardson": 2.000020329724253
+        }
+      },
+      "rot_range_rad": [
+        9.131821420132706e-07,
+        0.009554259092867456
+      ]
+    },
+    "C": {
+      "meta": {
+        "kind": "P1",
+        "pose_offset_m": 0.0037416573867739417,
+        "pose_offset_rad": 0.01374772708486752,
+        "velocity": [
+          0.02,
+          -0.01,
+          0.005,
+          0.1,
+          -0.05,
+          0.02
+        ]
+      },
+      "samples": 75,
+      "max_over_time": {
+        "pos": {
+          "max_adjacent_h_h2": 3.845827665069289e-07,
+          "max_adjacent_h2_h4": 9.611911426480086e-08,
+          "order_richardson": 2.0003988564451483,
+          "order_old_reference_h4": 2.32224718878933
+        },
+        "rot": {
+          "max_adjacent_h_h2": 8.593938577027079e-07,
+          "max_adjacent_h2_h4": 2.1469530473996835e-07,
+          "order_richardson": 2.001028825206006,
+          "order_old_reference_h4": 2.3227511916719745
+        },
+        "vel_lin": {
+          "max_adjacent_h_h2": 8.631023539093151e-05,
+          "max_adjacent_h2_h4": 2.1573541770457064e-05,
+          "order_richardson": 2.000268610413102,
+          "order_old_reference_h4": 2.3221429871786246
+        },
+        "vel_ang": {
+          "max_adjacent_h_h2": 0.0002383549693505321,
+          "max_adjacent_h2_h4": 5.95422311274567e-05,
+          "order_richardson": 2.0011265163663956,
+          "order_old_reference_h4": 2.322829326500144
+        },
+        "combined_scaled": {
+          "max_adjacent_h_h2": 0.2482188811326657,
+          "max_adjacent_h2_h4": 0.06201004275664772,
+          "order_richardson": 2.001039071000576,
+          "order_old_reference_h4": 2.322759358695091
+        }
+      },
+      "final_time": {
+        "pos": {
+          "h_vs_h2": 2.712826778746856e-12,
+          "h2_vs_h4": 6.775846829010847e-13,
+          "h_vs_h4": 3.3904107014642837e-12,
+          "order_richardson": 2.001323763222419
+        },
+        "rot": {
+          "h_vs_h2": 1.7271616784083234e-10,
+          "h2_vs_h4": 4.317521117647643e-11,
+          "h_vs_h4": 2.1589137884968975e-10,
+          "order_richardson": 2.000127999548262
+        },
+        "vel_lin": {
+          "h_vs_h2": 4.067470437004654e-14,
+          "h2_vs_h4": 3.483530019480145e-14,
+          "h_vs_h4": 6.457568368556076e-14,
+          "order_richardson": 0.22358186437206362
+        },
+        "vel_ang": {
+          "h_vs_h2": 3.9525064361786245e-10,
+          "h2_vs_h4": 9.88010019427326e-11,
+          "h_vs_h4": 4.940516432407255e-10,
+          "order_richardson": 2.0001702344468626
+        },
+        "combined_scaled": {
+          "h_vs_h2": 4.313482432994484e-07,
+          "h2_vs_h4": 1.078248449084061e-07,
+          "h_vs_h4": 5.391730823262833e-07,
+          "order_richardson": 2.000163439547192
+        }
+      },
+      "rot_range_rad": [
+        0.0036672644123505664,
+        1.57777647021649
+      ]
+    }
+  }
+}

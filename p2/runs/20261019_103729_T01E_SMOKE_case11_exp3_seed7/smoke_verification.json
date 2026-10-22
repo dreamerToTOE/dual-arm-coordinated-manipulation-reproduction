@@ -1,0 +1,110 @@
+{
+  "run": "p2/runs/20261019_103729_T01E_SMOKE_case11_exp3_seed7",
+  "status": "FAIL_STOP",
+  "reason": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+  "wall_s": 26.59231783100404,
+  "phase": "transport",
+  "last_event_time_s": 3.948,
+  "transport_samples": 987,
+  "predictions": 1619,
+  "updates": 829,
+  "gt_control_state_reads": 0,
+  "logs": {
+    "plant_rows": 987,
+    "estimator_rows": 1620,
+    "sensor_rows": 2048,
+    "command_rows": 987,
+    "settling_rows": 1251,
+    "plant_time_span": [
+      0.0,
+      3.944
+    ],
+    "estimator_time_span": [
+      0.0,
+      3.948
+    ],
+    "plant_monotonic": true,
+    "estimator_monotonic": true,
+    "plant_required_keys_all_rows": true,
+    "estimator_required_keys_all_rows": true,
+    "plant_bulk_snapshots": 4,
+    "estimator_bulk_snapshots": 4,
+    "suppressed_rows_have_no_W": true,
+    "observations_by_kind": {
+      "visual1": 135,
+      "visual2": 135,
+      "EE1": 790,
+      "EE2": 198,
+      "hK1": 395,
+      "hK2": 395
+    },
+    "events_by_type": {
+      "calibration_complete_before_settle": 1,
+      "true_integrated_settle_pass": 1,
+      "publish": 988,
+      "apply_for_next_plant_interval": 988
+    },
+    "plant_ticks_subset_of_estimator": true,
+    "tick_time_agreement": true
+  },
+  "failure_context": {
+    "failure_context_plant.jsonl": {
+      "events": 200,
+      "reason": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+      "first_has_state": true,
+      "counters": {
+        "events": 987,
+        "snapshots": 4,
+        "suppressed": 983
+      }
+    },
+    "failure_context_estimator.jsonl": {
+      "events": 200,
+      "reason": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+      "first_has_state": true,
+      "counters": {
+        "events": 1620,
+        "snapshots": 4,
+        "suppressed": 1616
+      }
+    }
+  },
+  "termination_reason": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+  "termination_has_estimate": true,
+  "termination_has_published_u": true,
+  "files_sha256": {
+    "artifact_sha256.json": "07a98a8af8f6f8d0c43d7e81165bc734e99d5d3e8fa8abd17c322be1859c3604",
+    "calibration.json": "0e0ab6bc6a1f42c697e02a32b81f3bcc9302952ad81f2c8608c3d60467ea34cc",
+    "commands.jsonl.gz": "0e09cbba339b98d98dc9fd600ff4c42d0680ccb613986ee75aaa38009ae432f5",
+    "config_snapshot.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+    "estimator.jsonl.gz": "be7dcd8db3d56350260272ed6479fa527a6db7e1784e3fa7f2b7d7b4b5a4179b",
+    "events.jsonl": "3601920bb845677830ca53e123c9bcd1aeef7876ba51f511c85a54b6ca943930",
+    "failure_context_estimator.jsonl": "d7591ebdcff741052646ff7d51a7a57cbf97bc35130cd2f130c91e38ced41d49",
+    "failure_context_plant.jsonl": "d1c81fd11fb3b48b6c60886a098e293ec1683e46ea21e96da22eb6c3f79b7894",
+    "failure_filter_matrices.npz": "adb910ebcbc454327d5f5bdf6f97bbcdf7e20f5752d969ee51c97639853db99d",
+    "initialization.json": "26da52a43e9c27b3260526270f9e4e22eb6608a3a255372b6d163bdf9582a2fa",
+    "metadata.json": "f24b6aaa45d1fdbf8cb088c764521e678eb53d86435fd354870d8fbaca63c16e",
+    "plant.jsonl.gz": "1a2ebb6cf5404da4bf5c5e754bc408a17a3951630d37e687b751cf52f6b1d542",
+    "sensors.jsonl.gz": "3bea0bd7870b75064dd645dffd2d5e7965aa2d84ea670402745da0c4f21ce443",
+    "settling.jsonl.gz": "e6fbcb68368fa53708cdbafb62cbfd5a0c59b1e1bfc1e9fad9cec60e7f26d3e9",
+    "smoke_manifest.json": "8b7ee6f0a43099a8e81bb4c0fc85ec728ed840db1379d087eb62f6232c35dcb7",
+    "smoke_verification.json": "f7f80082582790e2a4d4082fde33906e964171772070bc7f7d0b6c117b6fe282",
+    "summary.json": "7a81b8027366a1dea675b7d679b398f4747be798a16ba25ff1a5fa735267c559",
+    "termination.json": "56f7828a3a0ae1d4a774f3b08587913c5496b29d455a7737389ad36a960c0785"
+  },
+  "checks": {
+    "summary_present": true,
+    "log_rows_consistent_with_summary": true,
+    "plant_monotonic": true,
+    "estimator_monotonic": true,
+    "plant_required_keys": true,
+    "estimator_required_keys": true,
+    "suppressed_rows_clean": true,
+    "plant_ticks_subset_of_estimator": true,
+    "tick_time_agreement": true,
+    "no_gt_feedback": true,
+    "failure_context_200": true,
+    "termination_matches_summary": true
+  },
+  "verdict": "PASS"
+}

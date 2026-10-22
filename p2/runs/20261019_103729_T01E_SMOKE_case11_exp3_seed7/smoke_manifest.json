@@ -1,0 +1,91 @@
+{
+  "kind": "ENGINEERING_SMOKE",
+  "run_id": "20261019_103729_T01E_SMOKE_case11_exp3_seed7",
+  "case": {
+    "id": 11,
+    "condition": "exp3",
+    "seed": 7,
+    "variant": "transport",
+    "GT": false,
+    "scale": 1
+  },
+  "transport_limit_s": 4.5,
+  "wall_cap_s": 60.0,
+  "command": [
+    "p2/tools/run_p2_smoke.py",
+    "--confirm",
+    "case11-exp3-seed7-A",
+    "--transport-limit-s",
+    "4.5",
+    "--wall-cap-s",
+    "60"
+  ],
+  "git_commit": "36d4f84348e29360c7744159e1be2e88d8a70234",
+  "source_sha256": {
+    "scripts/run_p2_closed_loop.py": "478cd97123d069ab5192f27f8b99e97243c482dc65699bb3e4fb083c87947a9a",
+    "scripts/p2_event_log.py": "b69401481fbe9c82a7ffe3c30301896ead28384811b7f9613e0fb639bfebe065",
+    "baselines/p2_pose_force/contact_geometry.py": "31eb0895482ab0b846fe2a34d4e3336cf4f5c94f2e062fc78caa16e4bf1a7332",
+    "baselines/p2_pose_force/mechanics.py": "34831b2cd37183bb597b674af853ac24a72f64b38b19ba1b182fd754f764ad61",
+    "baselines/p2_pose_force/estimator.py": "e953c383ba25109687c849d2e25b78e934a81db3e9824b0b6a0735bda2ab1e69",
+    "baselines/p2_pose_force/observations.py": "435231add77ede99f608c15419263975f8cbde48605d15ca7f2235d813fb5b55",
+    "baselines/p2_pose_force/native_model.py": "429bcb05a91c9ee1fefc87d32ad3a0f6248d500b24b4b969f3ae3c3c72e817bf",
+    "baselines/p2_pose_force/native_kernel.cpp": "5954502884798f76191da966e611a73d29f8a97641e5f77734b9770a29b3d66c",
+    "configs/p2_closed_loop_protocol_v3.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c"
+  },
+  "config_sha256": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+  "started_unix": 1792377449.1809056,
+  "predictor": "PAPER_LITERAL_EULER",
+  "gt_feedback": false,
+  "status": "FAIL_STOP",
+  "reason": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+  "wall_s": 26.632654322995222,
+  "summary": {
+    "status": "FAIL_STOP",
+    "case": {
+      "id": 11,
+      "condition": "exp3",
+      "seed": 7,
+      "variant": "transport",
+      "GT": false,
+      "scale": 1
+    },
+    "reason": "ESTIMATOR_MODEL_PAD_DOMAIN_INVALID",
+    "wall_s": 26.59231783100404,
+    "phase": "transport",
+    "last_event_time_s": 3.948,
+    "last_transport_log_time_s": 3.944,
+    "transport_samples": 987,
+    "estimator_predictions": 1619,
+    "estimator_updates": 829,
+    "GT_control_state_reads": 0,
+    "metrics": {
+      "GT_final_position_RMS_m": null,
+      "GT_final_angle_RMS_rad": null,
+      "true_internal_stack_force_RMS_N": null,
+      "true_internal_each_moment_RMS_Nm": null
+    },
+    "max_Newton_corrections": 1,
+    "no_reset": true,
+    "control_gain_or_condition_changes": false,
+    "corrections_used": 3,
+    "remaining_corrections": 0
+  },
+  "files_sha256": {
+    "artifact_sha256.json": "07a98a8af8f6f8d0c43d7e81165bc734e99d5d3e8fa8abd17c322be1859c3604",
+    "calibration.json": "0e0ab6bc6a1f42c697e02a32b81f3bcc9302952ad81f2c8608c3d60467ea34cc",
+    "commands.jsonl.gz": "0e09cbba339b98d98dc9fd600ff4c42d0680ccb613986ee75aaa38009ae432f5",
+    "config_snapshot.json": "0de8477faaa579c3215271da9a92c257a4bb2f73ed79b05521839305627f794c",
+    "estimator.jsonl.gz": "be7dcd8db3d56350260272ed6479fa527a6db7e1784e3fa7f2b7d7b4b5a4179b",
+    "events.jsonl": "3601920bb845677830ca53e123c9bcd1aeef7876ba51f511c85a54b6ca943930",
+    "failure_context_estimator.jsonl": "d7591ebdcff741052646ff7d51a7a57cbf97bc35130cd2f130c91e38ced41d49",
+    "failure_context_plant.jsonl": "d1c81fd11fb3b48b6c60886a098e293ec1683e46ea21e96da22eb6c3f79b7894",
+    "failure_filter_matrices.npz": "adb910ebcbc454327d5f5bdf6f97bbcdf7e20f5752d969ee51c97639853db99d",
+    "initialization.json": "26da52a43e9c27b3260526270f9e4e22eb6608a3a255372b6d163bdf9582a2fa",
+    "metadata.json": "f24b6aaa45d1fdbf8cb088c764521e678eb53d86435fd354870d8fbaca63c16e",
+    "plant.jsonl.gz": "1a2ebb6cf5404da4bf5c5e754bc408a17a3951630d37e687b751cf52f6b1d542",
+    "sensors.jsonl.gz": "3bea0bd7870b75064dd645dffd2d5e7965aa2d84ea670402745da0c4f21ce443",
+    "settling.jsonl.gz": "e6fbcb68368fa53708cdbafb62cbfd5a0c59b1e1bfc1e9fad9cec60e7f26d3e9",
+    "summary.json": "7a81b8027366a1dea675b7d679b398f4747be798a16ba25ff1a5fa735267c559",
+    "termination.json": "56f7828a3a0ae1d4a774f3b08587913c5496b29d455a7737389ad36a960c0785"
+  }
+}

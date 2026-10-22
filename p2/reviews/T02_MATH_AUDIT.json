@@ -1,0 +1,440 @@
+{
+  "kind": "T02_MATH_AUDIT",
+  "date": "2026-10-19",
+  "seed": 20261019,
+  "scope": "read-only audit of baselines/p2_pose_force; no integration, no control loop",
+  "summary": {
+    "PASS": 21,
+    "DEVIATION_CONFIRMED": 2
+  },
+  "checks": [
+    {
+      "id": "se3_exp_log_roundtrip",
+      "title": "Exp/Log roundtrip, 20 random poses (|theta|<=3)",
+      "status": "PASS",
+      "max_abs_error": 4.440892098500626e-16,
+      "max_rel_error": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "unit": "m/rad",
+      "detail": {
+        "exp_log_exp_max": 4.440892098500626e-16,
+        "log_exp_log_max": 4.440892098500626e-16
+      }
+    },
+    {
+      "id": "se3_exp_log_small_angle",
+      "title": "Exp/Log at 1e-9,1e-7,1e-5,1e-4",
+      "status": "PASS",
+      "max_abs_error": 2.710505431213761e-20,
+      "max_rel_error": 2.710505431213761e-20,
+      "tolerance": 1e-14,
+      "unit": "m/rad",
+      "detail": {
+        "by_magnitude": [
+          0.0,
+          5.293955920339377e-23,
+          3.3881317890172014e-21,
+          2.710505431213761e-20
+        ]
+      }
+    },
+    {
+      "id": "se3_log_near_pi_and_boundary",
+      "title": "Log near pi (1e-3,1e-5) and chart-boundary rejection",
+      "status": "PASS",
+      "max_abs_error": 2.220446049250313e-16,
+      "max_rel_error": 2.220446049250313e-16,
+      "tolerance": 1e-09,
+      "unit": "rad",
+      "detail": {
+        "gaps": {
+          "0.001": 2.220446049250313e-16,
+          "1e-05": 8.673617379884035e-18
+        },
+        "roundtrip_at_pi_minus_1e-7": 4.440892098500626e-16,
+        "grasp_rate_rejects_near_pi": true
+      }
+    },
+    {
+      "id": "se3_inverse_and_negative_twist",
+      "title": "T inv(T)=I and Exp(tau)Exp(-tau)=I",
+      "status": "PASS",
+      "max_abs_error": 4.440892098500626e-16,
+      "max_rel_error": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "detail": {
+        "n": 20
+      }
+    },
+    {
+      "id": "adjoint_homomorphism_and_inverse",
+      "title": "Ad(T1T2)=Ad(T1)Ad(T2), Ad(T^-1)Ad(T)=I",
+      "status": "PASS",
+      "max_abs_error": 4.440892098500626e-16,
+      "max_rel_error": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "detail": {
+        "n": 20
+      }
+    },
+    {
+      "id": "adjoint_equals_exp_of_ad",
+      "title": "Ad(Exp(tau)) = expm(ad(tau))",
+      "status": "PASS",
+      "max_abs_error": 4.440892098500626e-16,
+      "max_rel_error": 4.440892098500626e-16,
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "detail": {
+        "n": 10
+      }
+    },
+    {
+      "id": "wrench_power_invariance",
+      "title": "h_a=Ad(T)^-T h_b preserves h^T V",
+      "status": "PASS",
+      "max_abs_error": 2.220446049250313e-16,
+      "max_rel_error": 2.220446049250313e-16,
+      "tolerance": 1e-12,
+      "unit": "W",
+      "detail": {
+        "n": 10
+      }
+    },
+    {
+      "id": "elastic_constitutive_eq9",
+      "title": "hK = -K tau and tau^T K tau >= 0",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 1e-12,
+      "unit": "N/Nm",
+      "detail": {
+        "tau_energy_min_Nm": 0.08163198825716157
+      }
+    },
+    {
+      "id": "damping_constitutive_eq10_11",
+      "title": "hB = -B (Rbar Ad(G^-1) V_o - U)",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 1e-12,
+      "unit": "N/Nm",
+      "detail": {
+        "n_states": 10
+      }
+    },
+    {
+      "id": "contact_pose_eq8",
+      "title": "D_r = E_r^-1 O G_r with base adapter on robot 2",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "detail": {
+        "n_states": 10
+      }
+    },
+    {
+      "id": "grasp_matrix_eq12_structure",
+      "title": "W = [Ad(T_e1^o)^-T, Ad(T_e2^o)^-T] H^T",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 1e-12,
+      "unit": "dimensionless",
+      "detail": {
+        "shapes": {
+          "tight": [
+            6,
+            12
+          ],
+          "pivot": [
+            6,
+            10
+          ],
+          "sliding": [
+            6,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "grasp_virtual_work",
+      "title": "h_E^T V_o = sum_r (H h)_r^T V_e_r",
+      "status": "PASS",
+      "max_abs_error": 5.886831595595456e-16,
+      "max_rel_error": 5.886831595595456e-16,
+      "tolerance": 1e-10,
+      "unit": "W",
+      "detail": {
+        "n_states": 10
+      }
+    },
+    {
+      "id": "internal_projection_eq20",
+      "title": "P=I-W+W idempotent, W hIt=0, H hI=hIt, completeness",
+      "status": "PASS",
+      "max_abs_error": 3.170796958329447e-13,
+      "max_rel_error": 3.170796958329447e-13,
+      "tolerance": 1e-10,
+      "unit": "N/Nm",
+      "detail": {
+        "idempotent": 4.8391821134978414e-14,
+        "symmetric": 4.994591636091785e-14,
+        "null": 3.170796958329447e-13,
+        "lift": 0.0,
+        "complete": 2.842170943040401e-14
+      }
+    },
+    {
+      "id": "grasp_rank_by_mode",
+      "title": "rank(W) at the nominal fixture (tight 6, pivot 6, sliding 4)",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 0.0,
+      "unit": "rank",
+      "detail": {
+        "nominal": {
+          "tight": {
+            "rank": 6,
+            "expected": 6,
+            "all_singular_values": [
+              1.4213549873272333,
+              1.421354987327233,
+              1.4142135623730951,
+              1.4142135623730951,
+              1.414213562373095,
+              1.414213562373095
+            ]
+          },
+          "pivot": {
+            "rank": 6,
+            "expected": 6,
+            "all_singular_values": [
+              1.421354987327233,
+              1.4156563866138114,
+              1.4142135623730951,
+              1.414213562373095,
+              1.4142135623730947,
+              0.12714949877812673
+            ]
+          },
+          "sliding": {
+            "rank": 4,
+            "expected": 4,
+            "all_singular_values": [
+              1.4199295757184582,
+              1.4142135623730951,
+              1.414213562373095,
+              1.414213562373095,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "perturbed_generic": {
+          "tight": {
+            "rank": 6,
+            "all_singular_values": [
+              1.4228083104160203,
+              1.4220810288253691,
+              1.4167104587745696,
+              1.4142135623730951,
+              1.4134868169774146,
+              1.4117172143923027
+            ]
+          },
+          "pivot": {
+            "rank": 6,
+            "all_singular_values": [
+              1.4227151484859657,
+              1.417266941208574,
+              1.414213562373095,
+              1.413563532838809,
+              1.4123926080639344,
+              0.13739804531412553
+            ]
+          },
+          "sliding": {
+            "rank": 5,
+            "all_singular_values": [
+              1.4207667437780072,
+              1.4148680336660615,
+              1.4142135623730951,
+              1.4133808662099256,
+              0.020610201094461038,
+              1.8626152259720598e-17
+            ]
+          }
+        },
+        "interpretation": "rank(W) is fixture dependent: sliding/sliding gives 4 only when both EE sliding axes are exactly collinear (nominal fixture). A generic perturbed state gives 5 because the common free direction is the single cross product."
+      }
+    },
+    {
+      "id": "damping_Rbar_lever_arm",
+      "title": "Eq.(10) Rbar drops the [p]xR lever-arm block of Ad(D)",
+      "status": "DEVIATION_CONFIRMED",
+      "max_abs_error": 0.0014315588689144396,
+      "max_rel_error": 0.0014315588689144396,
+      "tolerance": 0.0,
+      "unit": "relative",
+      "detail": {
+        "relative_twist_difference_max": 0.0014315588689144396,
+        "sample": {
+          "exact": [
+            0.012015800852942177,
+            0.006138084958506411,
+            0.021453250985551113,
+            0.02532361334105536,
+            0.04774862397294449,
+            0.020108721773101898
+          ],
+          "approx": [
+            0.011590450397270528,
+            0.006249959115161631,
+            0.021723261854303243,
+            0.02532361334105536,
+            0.04774862397294449,
+            0.020108721773101898
+          ],
+          "dropped_block_norm": 0.017539988687815474
+        }
+      }
+    },
+    {
+      "id": "selection_matrices",
+      "title": "H tight=I6, pivot=I6[:5], sliding=I6[2:]; H H^T=I; H N=0",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 0.0,
+      "unit": "dimensionless",
+      "detail": {
+        "tight": {
+          "shape": [
+            6,
+            6
+          ]
+        },
+        "pivot": {
+          "shape": [
+            5,
+            6
+          ]
+        },
+        "sliding": {
+          "shape": [
+            4,
+            6
+          ]
+        },
+        "unknown_mode_rejected": true
+      }
+    },
+    {
+      "id": "right_jacobian_inverse_fd",
+      "title": "d/deps Log(Exp(tau)Exp(eps e_i)) = Jr(tau)^-1 e_i",
+      "status": "PASS",
+      "max_abs_error": 2.5524926616782295e-10,
+      "max_rel_error": 2.5524926616782295e-10,
+      "tolerance": 1e-07,
+      "unit": "dimensionless",
+      "detail": {
+        "eps": 1e-06
+      }
+    },
+    {
+      "id": "eq15_adapted_free_log_invariant",
+      "title": "N^T tau_dot = 0 for the approved geometry",
+      "status": "PASS",
+      "max_abs_error": 7.91644509462318e-18,
+      "max_rel_error": 7.91644509462318e-18,
+      "tolerance": 1e-10,
+      "unit": "1/s",
+      "detail": {
+        "n_states": 5
+      }
+    },
+    {
+      "id": "eq15_printed_vs_adapted_counterexample",
+      "title": "printed +HbarHbar^T Ad(D^-1) V_rel doubles free strain; adapted zeroes it",
+      "status": "DEVIATION_CONFIRMED",
+      "max_abs_error": 0.02,
+      "max_rel_error": 0.02,
+      "tolerance": 0.0,
+      "unit": "1/s",
+      "detail": {
+        "adapted_free_component_1_s": 0.0,
+        "printed_free_component_1_s": 0.02,
+        "adapted_deformation_over_4ms_m": 0.0,
+        "printed_deformation_over_4ms_m": 8e-05,
+        "printed_equals_two_times_a": true
+      }
+    },
+    {
+      "id": "measurement_jacobian_fd",
+      "title": "analytic H vs central FD of the residual, 6 observation kinds",
+      "status": "PASS",
+      "max_abs_error": 5.944101953031184e-11,
+      "max_rel_error": 5.944101953031184e-11,
+      "tolerance": 1e-06,
+      "unit": "relative",
+      "detail": {
+        "EE1": 6.938893903900289e-12,
+        "EE2": 5.551115122966157e-11,
+        "hK1": 4.0892122102641945e-11,
+        "hK2": 5.944101953031184e-11,
+        "visual1": 2.7755575615601154e-11,
+        "visual2": 5.746893239061216e-11
+      }
+    },
+    {
+      "id": "prediction_F_right_error_fd",
+      "title": "F from prediction_linearization vs right-error FD of the Euler map",
+      "status": "PASS",
+      "max_abs_error": 2.6468308790566447e-11,
+      "max_rel_error": 2.6468308790566447e-11,
+      "tolerance": 1e-05,
+      "unit": "relative",
+      "detail": {
+        "relative_max": 2.6468308790566447e-11,
+        "max_abs": 5.680067260982469e-08,
+        "frobenius_code": 4446.6682007686795,
+        "spectral_radius_code": 7.808860027828146
+      }
+    },
+    {
+      "id": "pad_domain_gate",
+      "title": "5 mm / 0.15 rad gates raise PAD_DOMAIN_INVALID",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 0.0,
+      "unit": "m/rad",
+      "detail": {
+        "linear": true,
+        "angular": true
+      }
+    },
+    {
+      "id": "invalid_se3_rejected",
+      "title": "non-orthonormal rotation is rejected without normalisation",
+      "status": "PASS",
+      "max_abs_error": 0.0,
+      "max_rel_error": 0.0,
+      "tolerance": 0.0,
+      "unit": "dimensionless",
+      "detail": {
+        "scaled_rotation_rejected": true
+      }
+    }
+  ],
+  "wall_s": 2.0270931419945555
+}

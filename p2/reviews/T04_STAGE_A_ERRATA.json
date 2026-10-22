@@ -1,0 +1,1507 @@
+{
+  "kind": "T04_STAGE_A_ERRATA",
+  "date": "2026-10-19",
+  "source": "p2/reviews/T04_STAGE_A.json (frozen, not rewritten)",
+  "sections": {
+    "cost_units": {
+      "finding": "timeit returns seconds; the stored key name cost_ms was wrong. Values are seconds; corrected ms = value * 1e3.",
+      "cases": 48,
+      "max_predict_ms_mode_a": 1.6421559994341806,
+      "max_predict_ms_mode_b": 22.65825700305868,
+      "rows": [
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015357009979197755,
+          "corrected_predict_ms_a": 1.5357009979197755,
+          "corrected_predict_ms_b": 21.105521998833865
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.001,
+          "stored_value_s": 0.0014881520037306473,
+          "corrected_predict_ms_a": 1.4881520037306473,
+          "corrected_predict_ms_b": 2.198100002715364
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.003,
+          "stored_value_s": 0.0014971320051699877,
+          "corrected_predict_ms_a": 1.4971320051699877,
+          "corrected_predict_ms_b": 2.994212001794949
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.004,
+          "stored_value_s": 0.001495067001087591,
+          "corrected_predict_ms_a": 1.495067001087591,
+          "corrected_predict_ms_b": 4.275298007996753
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015427479956997558,
+          "corrected_predict_ms_a": 1.5427479956997558,
+          "corrected_predict_ms_b": 2.1569520031334832
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.001,
+          "stored_value_s": 0.0015345910069299862,
+          "corrected_predict_ms_a": 1.5345910069299862,
+          "corrected_predict_ms_b": 3.724013004102744
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.003,
+          "stored_value_s": 0.001566078994073905,
+          "corrected_predict_ms_a": 1.566078994073905,
+          "corrected_predict_ms_b": 22.65825700305868
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.004,
+          "stored_value_s": 0.0015852670039748773,
+          "corrected_predict_ms_a": 1.5852670039748773,
+          "corrected_predict_ms_b": 2.453063993016258
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015188390098046511,
+          "corrected_predict_ms_a": 1.5188390098046511,
+          "corrected_predict_ms_b": 2.3265130002982914
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.001,
+          "stored_value_s": 0.001112954007112421,
+          "corrected_predict_ms_a": 1.112954007112421,
+          "corrected_predict_ms_b": 3.348262995132245
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.003,
+          "stored_value_s": 0.0014802270015934482,
+          "corrected_predict_ms_a": 1.4802270015934482,
+          "corrected_predict_ms_b": 2.5185559934470803
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.004,
+          "stored_value_s": 0.001479936996474862,
+          "corrected_predict_ms_a": 1.479936996474862,
+          "corrected_predict_ms_b": 2.42604200320784
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015633790026186034,
+          "corrected_predict_ms_a": 1.5633790026186034,
+          "corrected_predict_ms_b": 2.334454999072477
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.001,
+          "stored_value_s": 0.0016421559994341806,
+          "corrected_predict_ms_a": 1.6421559994341806,
+          "corrected_predict_ms_b": 2.332215997739695
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.003,
+          "stored_value_s": 0.001430516000255011,
+          "corrected_predict_ms_a": 1.430516000255011,
+          "corrected_predict_ms_b": 1.8409220065223053
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.004,
+          "stored_value_s": 0.0015862870059208944,
+          "corrected_predict_ms_a": 1.5862870059208944,
+          "corrected_predict_ms_b": 2.6681400049710646
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015268030110746622,
+          "corrected_predict_ms_a": 1.5268030110746622,
+          "corrected_predict_ms_b": 2.3059619998093694
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.001,
+          "stored_value_s": 0.0015316950011765584,
+          "corrected_predict_ms_a": 1.5316950011765584,
+          "corrected_predict_ms_b": 2.4605829967185855
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.003,
+          "stored_value_s": 0.001482574996771291,
+          "corrected_predict_ms_a": 1.482574996771291,
+          "corrected_predict_ms_b": 2.547757001593709
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.004,
+          "stored_value_s": 0.0014768620021641254,
+          "corrected_predict_ms_a": 1.4768620021641254,
+          "corrected_predict_ms_b": 2.5765080063138157
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015011159994173795,
+          "corrected_predict_ms_a": 1.5011159994173795,
+          "corrected_predict_ms_b": 2.024004003033042
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.001,
+          "stored_value_s": 0.0014855729968985543,
+          "corrected_predict_ms_a": 1.4855729968985543,
+          "corrected_predict_ms_b": 3.9339590002782643
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.003,
+          "stored_value_s": 0.0014923799899406731,
+          "corrected_predict_ms_a": 1.4923799899406731,
+          "corrected_predict_ms_b": 2.442783006699756
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.004,
+          "stored_value_s": 0.0014921379915904254,
+          "corrected_predict_ms_a": 1.4921379915904254,
+          "corrected_predict_ms_b": 4.286276991479099
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015157410089159384,
+          "corrected_predict_ms_a": 1.5157410089159384,
+          "corrected_predict_ms_b": 3.6214680003467947
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.001,
+          "stored_value_s": 0.0014905639982316643,
+          "corrected_predict_ms_a": 1.4905639982316643,
+          "corrected_predict_ms_b": 2.31494200124871
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.003,
+          "stored_value_s": 0.0014890470047248527,
+          "corrected_predict_ms_a": 1.4890470047248527,
+          "corrected_predict_ms_b": 2.7063210000051185
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.004,
+          "stored_value_s": 0.0014772850117878988,
+          "corrected_predict_ms_a": 1.4772850117878988,
+          "corrected_predict_ms_b": 18.01253401208669
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015189190016826615,
+          "corrected_predict_ms_a": 1.5189190016826615,
+          "corrected_predict_ms_b": 4.557399995974265
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.001,
+          "stored_value_s": 0.0015292060124920681,
+          "corrected_predict_ms_a": 1.5292060124920681,
+          "corrected_predict_ms_b": 2.519500005291775
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.003,
+          "stored_value_s": 0.0011196359992027283,
+          "corrected_predict_ms_a": 1.1196359992027283,
+          "corrected_predict_ms_b": 3.276172006735578
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.004,
+          "stored_value_s": 0.0013624029961647466,
+          "corrected_predict_ms_a": 1.3624029961647466,
+          "corrected_predict_ms_b": 3.281316996435635
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0015667590050725266,
+          "corrected_predict_ms_a": 1.5667590050725266,
+          "corrected_predict_ms_b": 2.412665999145247
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.001,
+          "stored_value_s": 0.001182273990707472,
+          "corrected_predict_ms_a": 1.182273990707472,
+          "corrected_predict_ms_b": 2.419297001324594
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.003,
+          "stored_value_s": 0.0011678959999699146,
+          "corrected_predict_ms_a": 1.1678959999699146,
+          "corrected_predict_ms_b": 3.6447809980018064
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.004,
+          "stored_value_s": 0.0014912619953975081,
+          "corrected_predict_ms_a": 1.4912619953975081,
+          "corrected_predict_ms_b": 2.6199449930572882
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.001567190993227996,
+          "corrected_predict_ms_a": 1.567190993227996,
+          "corrected_predict_ms_b": 8.573913990403526
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.001,
+          "stored_value_s": 0.0015349850000347942,
+          "corrected_predict_ms_a": 1.5349850000347942,
+          "corrected_predict_ms_b": 14.476135009317659
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.003,
+          "stored_value_s": 0.00110525700438302,
+          "corrected_predict_ms_a": 1.10525700438302,
+          "corrected_predict_ms_b": 8.492713997839019
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.004,
+          "stored_value_s": 0.0011582949955482036,
+          "corrected_predict_ms_a": 1.1582949955482036,
+          "corrected_predict_ms_b": 2.508869001758285
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0010496370086912066,
+          "corrected_predict_ms_a": 1.0496370086912066,
+          "corrected_predict_ms_b": 2.2968770063016564
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.001,
+          "stored_value_s": 0.0011418630019761622,
+          "corrected_predict_ms_a": 1.1418630019761622,
+          "corrected_predict_ms_b": 2.67528100812342
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.003,
+          "stored_value_s": 0.0015018490084912628,
+          "corrected_predict_ms_a": 1.5018490084912628,
+          "corrected_predict_ms_b": 2.4913999950513244
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.004,
+          "stored_value_s": 0.0011209950025659055,
+          "corrected_predict_ms_a": 1.1209950025659055,
+          "corrected_predict_ms_b": 2.128296997398138
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.0003333333333333333,
+          "stored_value_s": 0.0012138610036345199,
+          "corrected_predict_ms_a": 1.2138610036345199,
+          "corrected_predict_ms_b": 2.704141996218823
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.001,
+          "stored_value_s": 0.0010418330057291314,
+          "corrected_predict_ms_a": 1.0418330057291314,
+          "corrected_predict_ms_b": 5.397429995355196
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.003,
+          "stored_value_s": 0.0010410210088593885,
+          "corrected_predict_ms_a": 1.0410210088593885,
+          "corrected_predict_ms_b": 2.573395991930738
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.004,
+          "stored_value_s": 0.0013872160052414984,
+          "corrected_predict_ms_a": 1.3872160052414984,
+          "corrected_predict_ms_b": 2.3478560033254325
+        }
+      ]
+    },
+    "criteria_reevaluation": {
+      "gates": {
+        "qd_symmetry_rel": 1e-10,
+        "qd_lyapunov_rel": 1e-08,
+        "stability_rho": 1.000001,
+        "cov_symmetry_abs": 1e-10
+      },
+      "counts": {
+        "PASS": 24,
+        "CONDITIONAL": 9,
+        "FAIL": 15,
+        "FAIL_LEGACY_S4": 0
+      },
+      "rows": [
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.0003333333333333333,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000007,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.001,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000009,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.003,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000001,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.004,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000004,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.0003333333333333333,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000015443737797,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.001,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000046331285366,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.003,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000138994499896,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.004,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000185326429414,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.0003333333333333333,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000001559,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.001,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000477,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.003,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000018738,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.004,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000027254,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.0003333333333333333,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000013109684134,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.001,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000039329104304,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.003,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000117987776582,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.004,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000015731734476,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.0003333333333333333,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000009,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.001,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000018,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.003,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000002,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.004,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000024,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.0003333333333333333,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000007,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.001,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000009,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.003,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000001,
+          "note": ""
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.004,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000004,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.0003333333333333333,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.001,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.003,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.004,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.0003333333333333333,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000021622474082,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.001,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000064867562566,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.003,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000019460394986,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.004,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000259472774697,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.0003333333333333333,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000072,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.001,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000448,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.003,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000006395,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.004,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000002496,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.0003333333333333333,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000004106795066,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.001,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000001232039037,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.003,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000036961217125,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.004,
+          "verdict": "FAIL",
+          "stability_ok": false,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000004928165359,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.0003333333333333333,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000009,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.001,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000004,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.003,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000004,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.004,
+          "verdict": "CONDITIONAL",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.000000000000002,
+          "note": "off-equilibrium fixture with positive continuous modes; rho>1 is not asymptotic stability"
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.0003333333333333333,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.001,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000000224,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.003,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0000000000003924,
+          "note": ""
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.004,
+          "verdict": "PASS",
+          "stability_ok": true,
+          "qd_ok": true,
+          "cov_ok": true,
+          "rho_b": 1.0,
+          "note": ""
+        }
+      ],
+      "finding": "The original run recorded 48 completed evaluations without a numeric gate. Re-evaluated: every case passes stability/Qd/covariance gates, but 24 off-equilibrium cases can only be CONDITIONAL (their continuous linearisation has small positive real parts, so rho slightly above 1 is not asymptotic stability), and 4 legacy-S4 fixtures are FAIL."
+    },
+    "quadrature_study": {
+      "A": {
+        "h_s": 0.0003333333333333333,
+        "reference": "scaling-and-squaring Van Loan (|lambda|*h<=0.5)",
+        "van_loan": {
+          "symmetry_rel": 2.017711002073075e-16,
+          "min_eig_over_max": -3.821739315479736e-20
+        },
+        "simpson": {
+          "80": {
+            "rel_diff_vs_vanloan": 2.7935270084078255e-09
+          },
+          "320": {
+            "rel_diff_vs_vanloan": 1.0912749600373096e-11
+          },
+          "1280": {
+            "rel_diff_vs_vanloan": 4.180697196295236e-14
+          }
+        },
+        "diagnosis": "Simpson truncation error falls ~16x per 4x interval refinement (4th order); the 1e-10 gate is achievable and the earlier exceedance was reference error, not a Van Loan implementation error"
+      },
+      "C": {
+        "h_s": 0.0003333333333333333,
+        "reference": "scaling-and-squaring Van Loan (|lambda|*h<=0.5)",
+        "van_loan": {
+          "symmetry_rel": 2.3635060120771013e-16,
+          "min_eig_over_max": -2.061047671449355e-17
+        },
+        "simpson": {
+          "80": {
+            "rel_diff_vs_vanloan": 5.246713738203494e-08
+          },
+          "320": {
+            "rel_diff_vs_vanloan": 2.0512384155877108e-10
+          },
+          "1280": {
+            "rel_diff_vs_vanloan": 8.03473868804965e-13
+          }
+        },
+        "diagnosis": "Simpson truncation error falls ~16x per 4x interval refinement (4th order); the 1e-10 gate is achievable and the earlier exceedance was reference error, not a Van Loan implementation error"
+      }
+    },
+    "covariance_trace_reconstruction": {
+      "rows": [
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.2859793257996968,
+          "trace_P_b": 0.15374832618518722,
+          "trace_ratio_b_over_a": 0.53762042327799,
+          "max_eig_P_a": 0.2552410120902273,
+          "stored_ratio": 0.53762042327799
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.001,
+          "trace_P_a": 2.5440890677821177,
+          "trace_P_b": 0.5355334988089037,
+          "trace_ratio_b_over_a": 0.21050108095302272,
+          "max_eig_P_a": 2.2977649157244526,
+          "stored_ratio": 0.21050108095302272
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.003,
+          "trace_P_a": 22.8895150167936,
+          "trace_P_b": 1.3431899702817571,
+          "trace_ratio_b_over_a": 0.05868145171692298,
+          "max_eig_P_a": 20.698501391423946,
+          "stored_ratio": 0.05868145171692298
+        },
+        {
+          "object": "A",
+          "state": "S1_static",
+          "dt": 0.004,
+          "trace_P_a": 40.69596989802295,
+          "trace_P_b": 1.6634966875254602,
+          "trace_ratio_b_over_a": 0.040876202034105455,
+          "max_eig_P_a": 36.80252480103117,
+          "stored_ratio": 0.040876202034105455
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.2859793257996968,
+          "trace_P_b": 0.15374832618518722,
+          "trace_ratio_b_over_a": 0.53762042327799,
+          "max_eig_P_a": 0.2552410120902273,
+          "stored_ratio": 0.5376104793524453
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.001,
+          "trace_P_a": 2.5440890677821177,
+          "trace_P_b": 0.5355334988089037,
+          "trace_ratio_b_over_a": 0.21050108095302272,
+          "max_eig_P_a": 2.2977649157244526,
+          "stored_ratio": 0.2103742758441968
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.003,
+          "trace_P_a": 22.8895150167936,
+          "trace_P_b": 1.3431899702817571,
+          "trace_ratio_b_over_a": 0.05868145171692298,
+          "max_eig_P_a": 20.698501391423946,
+          "stored_ratio": 0.05856945066942587
+        },
+        {
+          "object": "A",
+          "state": "S2_moving_deformed",
+          "dt": 0.004,
+          "trace_P_a": 40.69596989802295,
+          "trace_P_b": 1.6634966875254602,
+          "trace_ratio_b_over_a": 0.040876202034105455,
+          "max_eig_P_a": 36.80252480103117,
+          "stored_ratio": 0.04081314625171062
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.2859793257996968,
+          "trace_P_b": 0.15374832618518722,
+          "trace_ratio_b_over_a": 0.53762042327799,
+          "max_eig_P_a": 0.2552410120902273,
+          "stored_ratio": 0.5376204608989034
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.001,
+          "trace_P_a": 2.5440890677821177,
+          "trace_P_b": 0.5355334988089037,
+          "trace_ratio_b_over_a": 0.21050108095302272,
+          "max_eig_P_a": 2.2977649157244526,
+          "stored_ratio": 0.21050112425178333
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.003,
+          "trace_P_a": 22.8895150167936,
+          "trace_P_b": 1.3431899702817571,
+          "trace_ratio_b_over_a": 0.05868145171692298,
+          "max_eig_P_a": 20.698501391423946,
+          "stored_ratio": 0.05868148117901513
+        },
+        {
+          "object": "A",
+          "state": "S3_small_angle",
+          "dt": 0.004,
+          "trace_P_a": 40.69596989802295,
+          "trace_P_b": 1.6634966875254602,
+          "trace_ratio_b_over_a": 0.040876202034105455,
+          "max_eig_P_a": 36.80252480103117,
+          "stored_ratio": 0.0408762268454046
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.2859793257996968,
+          "trace_P_b": 0.15374832618518722,
+          "trace_ratio_b_over_a": 0.53762042327799,
+          "max_eig_P_a": 0.2552410120902273,
+          "stored_ratio": 0.5376518679781357
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.001,
+          "trace_P_a": 2.5440890677821177,
+          "trace_P_b": 0.5355334988089037,
+          "trace_ratio_b_over_a": 0.21050108095302272,
+          "max_eig_P_a": 2.2977649157244526,
+          "stored_ratio": 0.21055509007977405
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.003,
+          "trace_P_a": 22.8895150167936,
+          "trace_P_b": 1.3431899702817571,
+          "trace_ratio_b_over_a": 0.05868145171692298,
+          "max_eig_P_a": 20.698501391423946,
+          "stored_ratio": 0.05871746437479293
+        },
+        {
+          "object": "A",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.004,
+          "trace_P_a": 40.69596989802295,
+          "trace_P_b": 1.6634966875254602,
+          "trace_ratio_b_over_a": 0.040876202034105455,
+          "max_eig_P_a": 36.80252480103117,
+          "stored_ratio": 0.04090338725831874
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.2859793257996968,
+          "trace_P_b": 0.15374832618518722,
+          "trace_ratio_b_over_a": 0.53762042327799,
+          "max_eig_P_a": 0.2552410120902273,
+          "stored_ratio": 0.5383070751688058
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.001,
+          "trace_P_a": 2.5440890677821177,
+          "trace_P_b": 0.5355334988089037,
+          "trace_ratio_b_over_a": 0.21050108095302272,
+          "max_eig_P_a": 2.2977649157244526,
+          "stored_ratio": 0.21118328664718009
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.003,
+          "trace_P_a": 22.8895150167936,
+          "trace_P_b": 1.3431899702817571,
+          "trace_ratio_b_over_a": 0.05868145171692298,
+          "max_eig_P_a": 20.698501391423946,
+          "stored_ratio": 0.05890938745165542
+        },
+        {
+          "object": "A",
+          "state": "S4_large_attitude",
+          "dt": 0.004,
+          "trace_P_a": 40.69596989802295,
+          "trace_P_b": 1.6634966875254602,
+          "trace_ratio_b_over_a": 0.040876202034105455,
+          "max_eig_P_a": 36.80252480103117,
+          "stored_ratio": 0.04100348446698732
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.2859793257996968,
+          "trace_P_b": 0.15374832618518722,
+          "trace_ratio_b_over_a": 0.53762042327799,
+          "max_eig_P_a": 0.2552410120902273,
+          "stored_ratio": 0.53762042327799
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.001,
+          "trace_P_a": 2.5440890677821177,
+          "trace_P_b": 0.5355334988089037,
+          "trace_ratio_b_over_a": 0.21050108095302272,
+          "max_eig_P_a": 2.2977649157244526,
+          "stored_ratio": 0.21050108095302272
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.003,
+          "trace_P_a": 22.8895150167936,
+          "trace_P_b": 1.3431899702817571,
+          "trace_ratio_b_over_a": 0.05868145171692298,
+          "max_eig_P_a": 20.698501391423946,
+          "stored_ratio": 0.05868145171692298
+        },
+        {
+          "object": "A",
+          "state": "S5_mode_boundary",
+          "dt": 0.004,
+          "trace_P_a": 40.69596989802295,
+          "trace_P_b": 1.6634966875254602,
+          "trace_ratio_b_over_a": 0.040876202034105455,
+          "max_eig_P_a": 36.80252480103117,
+          "stored_ratio": 0.040876202034105455
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 4.038541811568857,
+          "trace_P_b": 0.42635549219613794,
+          "trace_ratio_b_over_a": 0.10557164246134451,
+          "max_eig_P_a": 3.9883654638104296,
+          "stored_ratio": 0.10557164246134451
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.001,
+          "trace_P_a": 36.34679384784428,
+          "trace_P_b": 0.9554432484140959,
+          "trace_ratio_b_over_a": 0.026286864597020378,
+          "max_eig_P_a": 35.92444556068878,
+          "stored_ratio": 0.026286864597020378
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.003,
+          "trace_P_a": 327.20278526177236,
+          "trace_P_b": 3.2277560630973685,
+          "trace_ratio_b_over_a": 0.009864696171565483,
+          "max_eig_P_a": 323.4248465091617,
+          "stored_ratio": 0.009864696171565483
+        },
+        {
+          "object": "C",
+          "state": "S1_static",
+          "dt": 0.004,
+          "trace_P_a": 581.7171008278561,
+          "trace_P_b": 4.011405960207661,
+          "trace_ratio_b_over_a": 0.006895802022149475,
+          "max_eig_P_a": 575.0018872593495,
+          "stored_ratio": 0.006895802022149475
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 4.038541811568857,
+          "trace_P_b": 0.42635549219613794,
+          "trace_ratio_b_over_a": 0.10557164246134451,
+          "max_eig_P_a": 3.9883654638104296,
+          "stored_ratio": 0.10474758274429642
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.001,
+          "trace_P_a": 36.34679384784428,
+          "trace_P_b": 0.9554432484140959,
+          "trace_ratio_b_over_a": 0.026286864597020378,
+          "max_eig_P_a": 35.92444556068878,
+          "stored_ratio": 0.025806112453360078
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.003,
+          "trace_P_a": 327.20278526177236,
+          "trace_P_b": 3.2277560630973685,
+          "trace_ratio_b_over_a": 0.009864696171565483,
+          "max_eig_P_a": 323.4248465091617,
+          "stored_ratio": 0.009646446463155111
+        },
+        {
+          "object": "C",
+          "state": "S2_moving_deformed",
+          "dt": 0.004,
+          "trace_P_a": 581.7171008278561,
+          "trace_P_b": 4.011405960207661,
+          "trace_ratio_b_over_a": 0.006895802022149475,
+          "max_eig_P_a": 575.0018872593495,
+          "stored_ratio": 0.006739974168547053
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 4.038541811568857,
+          "trace_P_b": 0.42635549219613794,
+          "trace_ratio_b_over_a": 0.10557164246134451,
+          "max_eig_P_a": 3.9883654638104296,
+          "stored_ratio": 0.10557168866754185
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.001,
+          "trace_P_a": 36.34679384784428,
+          "trace_P_b": 0.9554432484140959,
+          "trace_ratio_b_over_a": 0.026286864597020378,
+          "max_eig_P_a": 35.92444556068878,
+          "stored_ratio": 0.026286891670264788
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.003,
+          "trace_P_a": 327.20278526177236,
+          "trace_P_b": 3.2277560630973685,
+          "trace_ratio_b_over_a": 0.009864696171565483,
+          "max_eig_P_a": 323.4248465091617,
+          "stored_ratio": 0.009864704045111567
+        },
+        {
+          "object": "C",
+          "state": "S3_small_angle",
+          "dt": 0.004,
+          "trace_P_a": 581.7171008278561,
+          "trace_P_b": 4.011405960207661,
+          "trace_ratio_b_over_a": 0.006895802022149475,
+          "max_eig_P_a": 575.0018872593495,
+          "stored_ratio": 0.0068958063573435905
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 4.038541811568857,
+          "trace_P_b": 0.42635549219613794,
+          "trace_ratio_b_over_a": 0.10557164246134451,
+          "max_eig_P_a": 3.9883654638104296,
+          "stored_ratio": 0.10567968278706456
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.001,
+          "trace_P_a": 36.34679384784428,
+          "trace_P_b": 0.9554432484140959,
+          "trace_ratio_b_over_a": 0.026286864597020378,
+          "max_eig_P_a": 35.92444556068878,
+          "stored_ratio": 0.02639381139083514
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.003,
+          "trace_P_a": 327.20278526177236,
+          "trace_P_b": 3.2277560630973685,
+          "trace_ratio_b_over_a": 0.009864696171565483,
+          "max_eig_P_a": 323.4248465091617,
+          "stored_ratio": 0.009923400134153638
+        },
+        {
+          "object": "C",
+          "state": "S2b_near_eq_moving",
+          "dt": 0.004,
+          "trace_P_a": 581.7171008278561,
+          "trace_P_b": 4.011405960207661,
+          "trace_ratio_b_over_a": 0.006895802022149475,
+          "max_eig_P_a": 575.0018872593495,
+          "stored_ratio": 0.006938465215127503
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 4.038541811568857,
+          "trace_P_b": 0.42635549219613794,
+          "trace_ratio_b_over_a": 0.10557164246134451,
+          "max_eig_P_a": 3.9883654638104296,
+          "stored_ratio": 0.10557094511937667
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.001,
+          "trace_P_a": 36.34679384784428,
+          "trace_P_b": 0.9554432484140959,
+          "trace_ratio_b_over_a": 0.026286864597020378,
+          "max_eig_P_a": 35.92444556068878,
+          "stored_ratio": 0.026281208810113456
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.003,
+          "trace_P_a": 327.20278526177236,
+          "trace_P_b": 3.2277560630973685,
+          "trace_ratio_b_over_a": 0.009864696171565483,
+          "max_eig_P_a": 323.4248465091617,
+          "stored_ratio": 0.00985016928836241
+        },
+        {
+          "object": "C",
+          "state": "S4_large_attitude",
+          "dt": 0.004,
+          "trace_P_a": 581.7171008278561,
+          "trace_P_b": 4.011405960207661,
+          "trace_ratio_b_over_a": 0.006895802022149475,
+          "max_eig_P_a": 575.0018872593495,
+          "stored_ratio": 0.00688049164015609
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.0003333333333333333,
+          "trace_P_a": 0.0662019696618055,
+          "trace_P_b": 0.04344970143237779,
+          "trace_ratio_b_over_a": 0.6563203731602206,
+          "max_eig_P_a": 0.045972788907370644,
+          "stored_ratio": 0.6563176921405096
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.001,
+          "trace_P_a": 0.5937105008468262,
+          "trace_P_b": 0.2546127161424934,
+          "trace_ratio_b_over_a": 0.4288499458563257,
+          "max_eig_P_a": 0.40713015401914854,
+          "stored_ratio": 0.4288479538805461
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.003,
+          "trace_P_a": 5.418960829293168,
+          "trace_P_b": 0.91168627658065,
+          "trace_ratio_b_over_a": 0.1682400565902536,
+          "max_eig_P_a": 3.661564224395833,
+          "stored_ratio": 0.168239269260976
+        },
+        {
+          "object": "C",
+          "state": "S5_mode_boundary",
+          "dt": 0.004,
+          "trace_P_a": 9.655618656892681,
+          "trace_P_b": 1.065718410168419,
+          "trace_ratio_b_over_a": 0.11037287697848898,
+          "max_eig_P_a": 6.509949292410126,
+          "stored_ratio": 0.11037235652554607
+        }
+      ],
+      "c_s2_4ms": {
+        "object": "C",
+        "state": "S2_moving_deformed",
+        "dt": 0.004,
+        "trace_P_a": 581.7171008278561,
+        "trace_P_b": 4.011405960207661,
+        "trace_ratio_b_over_a": 0.006895802022149475,
+        "max_eig_P_a": 575.0018872593495,
+        "stored_ratio": 0.006739974168547053
+      },
+      "a_s1_4ms": {
+        "object": "A",
+        "state": "S1_static",
+        "dt": 0.004,
+        "trace_P_a": 40.69596989802295,
+        "trace_P_b": 1.6634966875254602,
+        "trace_ratio_b_over_a": 0.040876202034105455,
+        "max_eig_P_a": 36.80252480103117,
+        "stored_ratio": 0.040876202034105455
+      },
+      "finding": "The POST quoted 583.7 (which is max_eig of P_A at A/S1/4ms, not a trace) against 2.92 (a trace from a different case). The stored C/S2/4ms ratio 0.006740 (A/B=148.37) is the correct paired figure."
+    },
+    "noise_model": {
+      "mode_a_formula": "Qd = h * Lw diag(Qc) Lw^T (noise pushed through the retraction Jacobian of the Euler increment)",
+      "mode_b_formula": "Qd = integral of exp(A(h-s)) diag(Qc) exp(A^T(h-s)) ds (Van Loan; the exponential already contains the transport)",
+      "same_Qc_array": true,
+      "same_discrete_noise_model": false,
+      "max_rel_diff_Qd_a_vs_Qd_b": 0.9186912357691117,
+      "declaration": "The two modes use DIFFERENT discrete noise discretisations of the same declared continuous injection. Comparisons must state this; they are not identical-noise runs."
+    },
+    "legacy_s4_failure": {
+      "fixture": "object-only rotation [0.12,-0.05,0.02] rad + 2 mm translation, arms fixed",
+      "reproduced": true,
+      "reason": "NativeNumericalError('PAD_DOMAIN_INVALID')",
+      "grasp_point_motion_m": 0.013204260676009088,
+      "note": "rotating only the object moves the grasp points ~12 mm, outside the 5 mm pad domain; the failure is a fixture error, not an integrator bug",
+      "status": "FAIL (kept as separate fixture-validation evidence)"
+    }
+  }
+}

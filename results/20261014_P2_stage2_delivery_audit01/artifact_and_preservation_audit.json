@@ -1,0 +1,33 @@
+{
+  "kind": "READ_ONLY_ARTIFACT_AND_PRESERVATION_AUDIT",
+  "checks": {
+    "all_original_run_hashes": true,
+    "science_source_hashes_match": true,
+    "source_commit_bytes_match": true,
+    "protocol_unchanged": true,
+    "accepted_geometry_unchanged": true,
+    "protected_baseline_files": true,
+    "old_P2_untracked_preserved": true,
+    "P4_worktree_HEAD": true,
+    "P4_worktree_clean": true,
+    "prior_P2_science_artifacts_preserved": true,
+    "saved_timestamps_250Hz": true,
+    "finite_logged_state_force": true,
+    "logged_SE3_valid": true,
+    "EE_locked_all_saved_samples": true,
+    "real_failure_not_gate_PASS": true,
+    "no_closed_loop_results": true
+  },
+  "all_checks_pass": true,
+  "protected_file_count": 1023,
+  "protected_failures": [],
+  "old_P2_file_count": 8,
+  "old_P2_failures": [],
+  "prior_P2_artifact_count": 27,
+  "prior_P2_failures": [],
+  "qualification_status": "FAIL_STOP",
+  "control_qualified": false,
+  "source_run": "results/20261014_P2_stage2_dynamics01",
+  "source_metadata_sha256": "eb5e614c81c006980b8492e32de9f37adc27418586bbeae245ebfae4814a73ef",
+  "source_run_index_sha256": "2c93e8be92aa70293b87519e9c54c3b00ec19e82863191bcbd56d8d3d24704bf"
+}

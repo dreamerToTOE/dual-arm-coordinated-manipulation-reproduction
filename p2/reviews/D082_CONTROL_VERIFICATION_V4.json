@@ -1,0 +1,245 @@
+{
+  "kind": "D082_CONTROL_VERIFICATION_V4",
+  "corrections": {
+    "C1": "zero-error fixed point revalidated with pose feedback active (t=20s >= 13s)",
+    "C2": "informational diagnostics excluded from formal PASS count",
+    "C3": "force(N)/moment(N·m) and linear(m/s)/angular(rad/s) units separated",
+    "C4": "internal-wrench oracle description corrected: same-contact re-derivation, not independent model",
+    "C5": "timing gates aligned with frozen protocol (force_on=7s, pose_on=13s)"
+  },
+  "checks": [
+    {
+      "id": "V4_01_zero_err_pose_on",
+      "desc": "zero pose error, pose feedback ON (t=20s>=13s) -> U_P=0 via Eq.25 path",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0,
+          "m/s"
+        ],
+        "angular": [
+          0.0,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_02_hI_nonzero",
+      "desc": "injected internal wrench -> ||h_I|| > 0.01 (N / N·m separated)",
+      "pass": true,
+      "residual": {
+        "force": [
+          0.46833953553308566,
+          "N"
+        ],
+        "moment": [
+          0.17509448722523885,
+          "N·m"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_03_UF_nonzero",
+      "desc": "||U_F|| > 1e-4 (linear m/s / angular rad/s separated)",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0003702549126474779,
+          "m/s"
+        ],
+        "angular": [
+          0.0030053758822368728,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_04_UF_formula",
+      "desc": "U_F = -KF*h_I; oracle = same-contact re-derivation outside controller (C4 desc)",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0,
+          "m/s"
+        ],
+        "angular": [
+          0.0,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_05_scaling",
+      "desc": "2x injection -> 2x U_F (proportional response)",
+      "pass": true,
+      "residual": 1.9999999999999585,
+      "unit": "ratio",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_06_hybrid_nonzero",
+      "desc": "hybrid: both U_F and U_P non-zero",
+      "pass": true,
+      "residual": {
+        "U_F_lin": [
+          0.0003702549126474779,
+          "m/s"
+        ],
+        "U_F_ang": [
+          0.0030053758822368728,
+          "rad/s"
+        ],
+        "U_P_lin": [
+          0.002640030681639891,
+          "m/s"
+        ],
+        "U_P_ang": [
+          0.0038884444190447156,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_07_hybrid_sum",
+      "desc": "U_cmd = U_F + U_P",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0,
+          "m/s"
+        ],
+        "angular": [
+          0.0,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_08_UP_oracle",
+      "desc": "U_P matches independent Eq.25 re-derivation",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0,
+          "m/s"
+        ],
+        "angular": [
+          0.0,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_09_sel_pivot",
+      "desc": "selection pivot filtering",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0,
+          "m/s"
+        ],
+        "angular": [
+          0.0,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_10_sel_sliding",
+      "desc": "selection sliding filtering",
+      "pass": true,
+      "residual": {
+        "linear": [
+          0.0,
+          "m/s"
+        ],
+        "angular": [
+          0.0,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_11_cmd_domain",
+      "desc": "|lin|<0.15 m/s AND |ang|<0.5 rad/s (separate gates)",
+      "pass": true,
+      "residual": {
+        "max_lin": [
+          0.001619193907460385,
+          "m/s"
+        ],
+        "max_ang": [
+          0.0038198385030797795,
+          "rad/s"
+        ]
+      },
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_12_timing",
+      "desc": "t=5s: both off; t=10s: force on (>=7s), pose off; t=20s: both on (>=13s)",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_13_NaN_held",
+      "desc": "NaN_held rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_13_bad_type",
+      "desc": "bad_type rejected",
+      "pass": true,
+      "residual": null,
+      "unit": "",
+      "diagnostic": false
+    },
+    {
+      "id": "V4_D1_real_near_zero",
+      "desc": "real fixture: h_I near zero at zero input (physical symmetry; info only, C2 excluded)",
+      "pass": true,
+      "residual": {
+        "force": [
+          1.2849497991937115e-13,
+          "N"
+        ],
+        "moment": [
+          1.154108303994755e-14,
+          "N·m"
+        ]
+      },
+      "unit": "",
+      "diagnostic": true
+    }
+  ],
+  "summary": {
+    "pass": 14,
+    "formal_total": 14,
+    "diagnostics_excluded": 1,
+    "verdict": "PASS"
+  }
+}
