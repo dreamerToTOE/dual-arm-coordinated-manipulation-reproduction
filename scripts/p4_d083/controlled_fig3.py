@@ -79,7 +79,9 @@ def sha(path):
 
 
 def relative(path):
-    return str(path.resolve().relative_to(ROOT))
+    # A private paper may be a symlink outside this checkout. Preserve its
+    # repository-facing identity; sha() still hashes the referenced bytes.
+    return str(path.absolute().relative_to(ROOT))
 
 
 def check_hashes(values):
@@ -393,6 +395,8 @@ def summarize(cfg, rows, candidates):
             by_distance.append({'m': m, 'bin_id': bin_id, 'bin_left_rad': left, 'bin_right_rad': right,
                 'pair_count': len(g), 'existential_success_count': sum(x['existential_success'] for x in g),
                 'existential_rate': np.mean([x['existential_success'] for x in g]) if g else None,
+                'existential_rate_upper': np.mean([x['existential_upper'] for x in g]) if g else None,
+                'existential_unknown_count': sum(x['existential_status'] == 'UNKNOWN' for x in g),
                 'bounded_executed_count': len(done), 'bounded_success_count': sum(x['bounded_success'] for x in done),
                 'bounded_rate': np.mean([x['bounded_success'] for x in done]) if done else None})
     violations = []
@@ -417,7 +421,10 @@ def plot(output, summary):
         last_bin = max(v['bin_id'] for v in summary['by_distance'] if v['pair_count'])
         g = [x for x in summary['by_distance'] if x['m'] == m and x['bin_id'] <= last_bin]
         x = [(v['bin_left_rad']+v['bin_right_rad'])/2 for v in g]
-        axes[0].plot(x, [v['existential_rate'] for v in g], marker='o', label=f'm={m}')
+        line, = axes[0].plot(x, [v['existential_rate'] for v in g], marker='o', label=f'm={m}')
+        if any(v['existential_unknown_count'] for v in g):
+            axes[0].plot(x, [v['existential_rate_upper'] for v in g], linestyle=':', color=line.get_color(),
+                         label=f'm={m} unknown upper')
         axes[1].plot(x, [v['bounded_rate'] for v in g], marker='o', label=f'm={m}')
     axes[0].set_title('Exhaustive per-chart availability (same cached candidates)')
     axes[1].set_title('Actual bounded PCS strategy (512 midpoints shared)')
@@ -439,7 +446,9 @@ def plot(output, summary):
     g = summary['by_m']
     fig, axes = plt.subplots(1, 3, figsize=(14, 4))
     x = [v['m'] for v in g]
-    axes[0].plot(x, [v['existential_rate_lower'] for v in g], 'o-', label='Exhaustive chart union')
+    axes[0].plot(x, [v['existential_rate_lower'] for v in g], 'o-', label='Exhaustive chart union (lower)')
+    if any(v['existential_unknown_count'] for v in g):
+        axes[0].plot(x, [v['existential_rate_upper'] for v in g], 'o:', label='Unknown upper bound')
     axes[0].plot(x, [v['bounded_rate'] for v in g], 's--', label='Actual bounded PCS')
     axes[0].set_ylabel('Local visibility rate (same 180 pairs)')
     axes[0].set_ylim(-.03, 1.04)
