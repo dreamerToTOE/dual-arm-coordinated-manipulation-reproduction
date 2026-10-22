@@ -1,5 +1,9 @@
 # AGENTS.md — Mandatory rules for Codex / coding agents
 
+## D083（2026-10-22）：新窗口最高优先级 P4 最终补充仿真交接
+
+此前D082成果已交付并锁定历史，下一阶段按[完整英文D083执行任务书](docs/tasks/P4_D083_FINAL_SIMULATION_HANDOFF_20261022.md)：**20R受控Fig3实验 + 有预算界PCS困难对照 + ABB环境II/III真实保存路径3D可视化及III最终路径4次角色切换展示 + 更新中文Word/PDF/覆盖表**。先检查本地/远程HEAD、未提交修改和在跑进程，不能从头开始或重复求解历史II/III合格路径。保持原生/aligned与离散/连续证据界限；RSS随机全局规划FAILED不得改判。不追加IV/V/VI或18k正式规划，不启动P1/P2/P3/P5/Isaac/FR3执行。D082现有文档/报告保留历史版本；D083目标未实际执行前不得标记已完成。
+
 ## D082（2026-10-19）：当前最高优先级，五篇两级复现【覆盖D080/D079中相冲突的交付范围】
 
 用户确认**P4核心算法+完整虚拟仿真实验；P1/P2/P3/P5只做核心算法的数值复现与可复核单元/小型示例**。不需要真实机器人、Isaac Sim/ROS任务迁移和四篇论文级任务场景仿真，不能把“算法数值复现”偷换为仅有公式/编译，也不能声称原论文全部实验FULL。详见[最终范围决策](docs/decisions/D082_FIVE_PAPERS_ONE_VIRTUAL_SIM_FOUR_ALGORITHMS_20261019.md)、[P4最新执行任务](docs/tasks/P4_D082_VIRTUAL_SIMULATION_EXECUTION_20261019.md)和[四篇算法任务](docs/tasks/P1_P2_P3_P5_D082_ALGORITHM_ONLY_20261019.md)。
