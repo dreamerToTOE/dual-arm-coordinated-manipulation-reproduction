@@ -1,7 +1,7 @@
 # P1 公式审计（Equation Audit）
 
 > 配套：`P1_PAPER_STUDY.md`、`P1_OFFICIAL_CODE_AUDIT.md`
-> 论文：Zhu, Mao, Yang, Li, IEEE T-RO 42 (2026) 1941–1958，DOI `10.1109/TRO.2026.3686224`
+> 论文：Zhu, Mao, Yang, Li, IEEE T-RO 42 (2026) 1942–1960，DOI `10.1109/TRO.2026.3686224`
 > PDF SHA256：`8b4589ce07f932bf1294c7a39b30320a8791f630a4bcd2cd71782b3a2a56de3c`
 > 源码快照：`dual_arm_gpu_mpc@fe5b49f7`、`cuda_dq_kernel@231f130e`（另审计接受到前快照 `1820a9e8` / `c762b7d6`）
 

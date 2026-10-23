@@ -33,5 +33,5 @@ Repository initialized. No baseline implementation has started.
 - 可复现边界：算法机理（A/B/D/F）可高保真数值复现；表 II 的逐格数值与 Fig. 8 的绝对时延不可直接复现。
 - G1–G3（2026-10-21）：纯 NumPy 实现 DQ 运动学、零空间、单/两阶段采样与两组任务；31 项测试通过；G1 全部指标达机器精度，G2 的 MPPI 与 LQR 差 3%，G3 两阶段 0.43 vs 单阶段 0.00（等预算），修正官方有色噪声幅度后，两阶段（0.67）不再优于单阶段（0.67），去掉聚类反而 1.00——两阶段/k-means 的收益未复现（负结果 N1）；辅助终结器在 η=1.0 时把 E1 收敛到 0.79–1.16 cm，表 I 的 η=0.1 则永不切换（N2）。
 - D008 审计（2026-10-22）：修正 D2 温度、阶段二消融、惯性簇身份与 G3B 公平性；新增 N2 轨迹与 N3 量纲审计；验收结论 **PARTIALLY_VERIFIED**（阻塞 B1–B3 属论文澄清类）。详见 `p1/D008_AUDIT.md`。
-- D010 交付（2026-10-23）：修正 D2 置信区间、第二阶段归因与量纲表述；生成中文报告 `p1/reports/final/P1_FINAL_REPORT.docx` / `.pdf`（21 页，7 图 7 表），验证记录见 `P1_REPORT_VERIFICATION.md`；验收仍为 **PARTIALLY_VERIFIED**。
+- D010/D011 交付（2026-10-22/23）：D010 修正 D2 置信区间、第二阶段归因与量纲表述；D011 修正报告手抄数值（页码 1942–1960、D1 最小 0.717、高斯 TV 1.61、N3 端点 1.17e-5、测试 47），10 个主要公式排版化，图号重排，去除悬空引用；交付 `p1/reports/final/P1_FINAL_REPORT.docx` / `.pdf`（21 页，7 图 7 表），验证记录见 `P1_REPORT_VERIFICATION.md`；验收仍为 **PARTIALLY_VERIFIED**。
 - 下一步：等待用户审阅报告；解除 B1–B3 需论文作者澄清聚类/温度/η 口径与 w 的缩放约定。

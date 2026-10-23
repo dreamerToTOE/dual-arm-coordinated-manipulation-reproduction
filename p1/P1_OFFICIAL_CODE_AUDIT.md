@@ -1,7 +1,7 @@
 # P1 官方代码审计（Official Code Audit）
 
 > 配套：`P1_PAPER_STUDY.md`、`P1_EQUATION_AUDIT.md`
-> 论文：Zhu, Mao, Yang, Li, IEEE T-RO 42 (2026) 1941–1958，DOI `10.1109/TRO.2026.3686224`
+> 论文：Zhu, Mao, Yang, Li, IEEE T-RO 42 (2026) 1942–1960，DOI `10.1109/TRO.2026.3686224`
 > 官方项目页：`https://dq-gpu-mpc.github.io/`（仅链接代码与视频，无数据/参数）
 > 本文件只读审计，**未安装依赖、未编译扩展、未初始化 GPU 上下文、未运行任何论文算法**。
 

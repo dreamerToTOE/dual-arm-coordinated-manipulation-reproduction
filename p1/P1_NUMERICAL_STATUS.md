@@ -5,7 +5,7 @@
 > 范围：**只做数值算法复现**（D007），不做仿真/实物/GPU
 > 审计：D008 修正了 D2 温度、阶段二消融、惯性统计与 G3B 公平性；结论见 `D008_AUDIT.md`
 > 环境：Python 3.10.12，NumPy 1.24.4，SciPy 1.8.0，纯 CPU；未安装 CUDA/PyTorch/cuRobo/ROS 2
-> 运行：`cd p1 && python -m pytest tests -q`（40 项全部通过）
+> 运行：`cd p1 && python -m pytest tests -q`（47 项全部通过）
 
 ---
 
@@ -118,7 +118,7 @@ D2 受控温度：两种聚合共用 $\lambda=155.41$；簇条件更优 3/20，�
 
 ```bash
 cd p1
-python -m pytest tests -q                 # 40 项
+python -m pytest tests -q                 # 47 项
 python scripts/g1_acceptance.py           # 写 reports/G1_ACCEPTANCE.{md,json}
 python scripts/g2_acceptance.py           # ~90 s
 python scripts/g3_acceptance.py           # ~2–3 min

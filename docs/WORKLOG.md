@@ -65,3 +65,11 @@ Append-only project work log.
 - R3: 2.712 is described as an empirical slope over the tested scaling range, not a physical dimension; the scaling-convention requirement is stated.
 - R4: test count updated to 46; perturbation clip (+/-0.3) distinguished from the control limit (+/-1.0); historical D2 result kept and labelled; added six documentation-consistency tests.
 - Produced the Chinese report (21 pages, 7 figures, 7 tables) as docx + pdf with a page-by-page verification record; acceptance stays PARTIALLY_VERIFIED.
+
+## 2026-10-23 — D011 final report corrections and publication-quality verification
+- Corrected hand-copied errors against acceptance JSON: D1 min accuracy 0.717 (was 0.80), F1 Gaussian MPPI median TV 1.61 (was 1.32; 1.32 is frequency-domain), N3 scaling endpoint 1.17e-5 at s=0.01 (1.9e-4 is s=0.1), page range 1942-1960 (publisher-confirmed), test count 47.
+- Updated the control-smoothness conclusion: two-stage TV 1.49 sits between Gaussian 1.61 and frequency-domain 1.32; verdict stays unsupported.
+- Clarified verification scope (G1/G2/G3/G3B layers); two-stage + k-means is not validated end-to-end on the dual-UR3 task.
+- Typeset 10 major equations via matplotlib mathtext images (pose composition, relative/absolute pose, Jacobian, null space, MPPI weighting, k-means, singularity cost, auxiliary/switching).
+- Renumbered figures by first appearance; removed dangling references [3][35]; keep-with-next headings and targeted page breaks; no stranded captions or near-empty final page.
+- Rebuilt docx+pdf (21 pages, 17 embedded images); rendered and inspected every page at 150 dpi; 47 tests pass.

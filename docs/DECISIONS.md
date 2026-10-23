@@ -66,3 +66,9 @@ Append-only architectural and scientific decisions.
 - Decision: 交付 `p1/reports/final/P1_FINAL_REPORT.docx` 与 `.pdf`（21 页，7 图 7 表），源文件为同名 `.md`，构建脚本与验证记录一并入库。
 - Reason: 报告需要可编辑与可分发两种形态；构建链可复现（无 pandoc，LibreOffice 转换）。
 - Impact: 排版细节问题记录在 `P1_REPORT_VERIFICATION.md` §3，不影响数值与结论。
+
+## D012 — 最终报告修正与出版级校验
+- Date: 2026-10-23
+- Decision: 按出版方核对修正论文页码为 1942–1960；D1 最小一致率 0.717、F1 高斯 MPPI 中位 TV 1.61（1.32 属频域）、N3 缩放端点 1.17×10⁻⁵（s=0.01）等手抄错误逐一对照验收 JSON 修正；10 个主要公式以排版图嵌入；图号按首次出现顺序重排；删除悬空引用 [3][35]；明确 G1/G2/G3/G3B 四层验证范围。
+- Reason: 最终报告存在多处手抄数值错误与未解析引用；公式以纯文本呈现不符合学术报告要求。
+- Impact: `p1/reports/final/P1_FINAL_REPORT.{md,docx,pdf}`、`p1/scripts/make_equation_images.py`、`p1/tools/build_final_docx.py`；验收结论维持 `PARTIALLY_VERIFIED`。

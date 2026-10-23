@@ -3,7 +3,7 @@
 > 阶段：**G0 — 论文研读与复现规划（不实现算法）**
 > 分支：`reproduce-p1-numerical-20261021`
 > 基线：`a596c973`（`main`，2026-10-21，"docs: enforce concise research-report content in agent instructions"）
-> 论文：Tianqi Zhu, Jianliang Mao, Jun Yang, Shihua Li, *Real-Time Dual-Arm Cooperative Manipulation Under Multiple Constraints: A Two-Stage Sampling MPC Approach*, IEEE Transactions on Robotics, vol. 42, 2026, pp. 1941–1958, DOI `10.1109/TRO.2026.3686224`
+> 论文：Tianqi Zhu, Jianliang Mao, Jun Yang, Shihua Li, *Real-Time Dual-Arm Cooperative Manipulation Under Multiple Constraints: A Two-Stage Sampling MPC Approach*, IEEE Transactions on Robotics, vol. 42, 2026, pp. 1942–1960, DOI `10.1109/TRO.2026.3686224`
 > 配套文件：`P1_EQUATION_AUDIT.md`、`P1_OFFICIAL_CODE_AUDIT.md`、`P1_ORIGINAL_EXPERIMENT_MATRIX.csv`、`P1_PROPOSED_REPRODUCTION_MATRIX.csv`、`P1_IMPLEMENTATION_PLAN.md`（草案）、`evidence/`
 
 ---
@@ -28,7 +28,7 @@
 
 阅读与核对方法：
 
-1. 全文 19 页（期刊页 1941–1958）逐页 150 dpi 通读；公式与表格在 250–400 dpi 下逐条裁切核对，避免 `pdftotext` 对上下标、星号与范数符号的错位。
+1. 全文 19 页（期刊页 1942–1960）逐页 150 dpi 通读；公式与表格在 250–400 dpi 下逐条裁切核对，避免 `pdftotext` 对上下标、星号与范数符号的错位。
 2. 每个公式记录：假设、输入、输出、维度、在源码中的落点、是否与源码一致。
 3. 源码审计只读：`codeload` 固定 SHA 快照 + GitHub API 元数据，记录 tar 包与关键文件 SHA256（见 `P1_OFFICIAL_CODE_AUDIT.md` 与 `evidence/P1_official_code_manifest.json`）。
 4. 本阶段未安装任何论文依赖、未编译 CUDA 扩展、未初始化 GPU 上下文、未运行论文算法。唯一的数值核对是一个**纯 CPU 的 SE(3) 对数/指数恒等式检查**（§3.3(b)），用于判定式 (8) 的几何含义，不构成算法实验。
@@ -47,7 +47,7 @@
 | 作者 | Tianqi Zhu, Jianliang Mao, Jun Yang, Shihua Li |
 | 单位 | 东南大学自动化学院；上海电力大学人工智能学院；香港科技大学（广州）机器人与自主系统学域 |
 | 期刊 | IEEE Transactions on Robotics, vol. 42, 2026 |
-| 页码 | 1941–1958（19 页） |
+| 页码 | 1942–1960（19 页） |
 | DOI | `10.1109/TRO.2026.3686224` |
 | 收稿/录用/上线 | 2026-02-08 / 2026-03-27 / 2026-04-21 |
 | 基金 | 江苏省自然科学基金 BK20253020；国家自然科学基金 62203292 |

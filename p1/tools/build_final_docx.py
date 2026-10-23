@@ -67,12 +67,18 @@ while i < len(lines):
         flush()
         p = FINAL / m_img.group(2)
         w, h = png_size(p)
-        hpx = max(40, int(round(620.0 * h / max(w, 1))))
-        cap = inline(m_img.group(1))
-        out.append(
-            f'<p class="img"><img src="{m_img.group(2)}" width="620" height="{hpx}"></p>'
-            f'<p class="cap">{cap}</p>'
-        )
+        alt = m_img.group(1)
+        if alt == "eq":
+            wdisp = min(620, int(round(w * 96.0 / 150.0)))
+            hdisp = int(round(h * wdisp / w))
+            out.append(f'<p class="eqimg"><img src="{m_img.group(2)}" width="{wdisp}" height="{hdisp}"></p>')
+        else:
+            hpx = max(40, int(round(620.0 * h / max(w, 1))))
+            cap = inline(alt)
+            out.append(
+                f'<p class="img"><img src="{m_img.group(2)}" width="620" height="{hpx}"></p>'
+                f'<p class="cap">{cap}</p>'
+            )
         i += 1
         continue
     if ln.startswith("### "):
@@ -160,8 +166,8 @@ body { font-family: 'Noto Serif CJK SC','Noto Sans CJK SC',sans-serif; font-size
 h1 { font-family: 'Noto Sans CJK SC',sans-serif; font-size: 17pt; text-align: center;
      margin: 6px 0 14px 0; }
 h2 { font-family: 'Noto Sans CJK SC',sans-serif; font-size: 13.5pt; margin-top: 18px;
-     border-bottom: 1px solid #999; padding-bottom: 3px; }
-h3 { font-family: 'Noto Sans CJK SC',sans-serif; font-size: 11.5pt; margin-top: 14px; }
+     border-bottom: 1px solid #999; padding-bottom: 3px; page-break-after: avoid; }
+h3 { font-family: 'Noto Sans CJK SC',sans-serif; font-size: 11.5pt; margin-top: 14px; page-break-after: avoid; }
 p { text-align: justify; margin: 4px 0; }
 li { text-align: left; }
 li { text-align: left; }
@@ -176,6 +182,7 @@ pre.code { font-family: 'DejaVu Sans Mono', monospace; font-size: 8.6pt; backgro
            border: 1px solid #ccc; padding: 7px 8px; white-space: pre-wrap; margin: 6px 0; }
 p.img { text-align: center; margin: 10px 0 2px 0; }
 p.cap { text-align: center; font-size: 9pt; color: #333; margin: 0 0 10px 0; }
+p.eqimg { text-align: center; margin: 6px 0; }
 p.gap { margin: 2px 0; font-size: 1pt; line-height: 0.1; }
 """
 (FINAL / "P1_FINAL_REPORT.html").write_text(
