@@ -1,5 +1,7 @@
 # D083 — P4 Final Simulation Supplement and Codex New-Session Handoff
 
+> **D084 2026-10-23执行方法覆盖本文件的长会话入口**：本D083全文仍为科研目标和禁止项依据，但**新模型窗口不要直接一次性执行此全部内容**。改为阅读[六个短窗口任务路由](P4_D084_WINDOW_INDEX_20261023.md)，每个窗口选一个S0–S5，先提交短POST再交接/停止；Stage B/C预算跨窗口不重置。
+
 **Authorized by user 2026-10-22. Highest-priority current P4 execution supplement after D082.**
 **Branch:** `p4-full-reproduction-pcs-study` (reuse; do not create a new branch).
 **Last confirmed remote baseline:** `4a0bc337089c2f4b97bb0f0d33125f65579e1b46` (D082 independently validated virtual simulation study). **Do not assume this SHA remains HEAD:** check local/remote and uncommitted work before doing anything.
