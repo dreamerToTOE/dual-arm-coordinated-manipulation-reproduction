@@ -260,6 +260,10 @@ def measure_f2(seeds=20):
             "mode_inertia": cfg.mode_inertia,
             "total_evaluations_per_iteration": cfg.samples * (2 if cfg.stage2 else 1),
         }
+    ref = np.array(out["full"]["per_seed_success"])
+    for name in out:
+        if name != "full":
+            out[name]["mcnemar_vs_full"] = mcnemar(ref, np.array(out[name]["per_seed_success"]))
     return out
 
 
@@ -282,9 +286,11 @@ def main():
     tw, sg, sf = f1["two_stage"], f1["single_gaussian"], f1["single_coloured"]
 
     def row(name, d):
+        p = d.get("mcnemar_vs_full", {}).get("p", float("nan"))
+        p_txt = "—" if name == "full" else f"{p:.2f}"
         return (f"| {name} | {d['success_count']}/{d['seeds']} "
                 f"[{d['success_ci95'][0]:.2f}, {d['success_ci95'][1]:.2f}] | "
-                f"{d['median_goal']:.3f} | {d['median_tv']:.2f} |")
+                f"{d['median_goal']:.3f} | {d['median_tv']:.2f} | {p_txt} |")
 
     ablation_rows = "\n".join(row(k, v) for k, v in f2.items())
 
@@ -319,7 +325,7 @@ D008 前：全样本用全局温度、簇条件用**簇内**温度（不受控�
 | 簇条件更优的种子数 | — | {d2['cluster_better']}/{d2['seeds']} |
 | 配对误差差（簇−全）均值 [95% CI] | — | {d2['paired_goal_diff_mean']:.3f} [{d2['paired_goal_diff_ci'][0]:.3f}, {d2['paired_goal_diff_ci'][1]:.3f}] |
 
-**测量**：两种聚合在单次更新下都几乎不动（宽权重 + 零均值噪声），差别在噪声水平内。**解释**：该反事实实验**不能**验证或否定论文 Fig. 4(a) 的模式平均，只能说明"这一次更新里没有差别"。
+**测量**：簇条件平均比全样本差 {d2['paired_goal_diff_mean']:.4f} m（95% CI [{d2['paired_goal_diff_ci'][0]:.4f}, {d2['paired_goal_diff_ci'][1]:.4f}]，**排除 0**），即统计上可辨的轻微劣化；但两者终端误差都在 1.5 m（单次更新后均停滞），不构成任务成功差异。**解释**：该反事实实验**不能**验证或否定论文 Fig. 4(a) 的模式平均，也不能外推到闭环控制器；它只说明"在这一批样本上，簇条件聚合的期望略差"。
 
 ### 2b. 历史测量（保留，标签不同）
 
@@ -350,23 +356,23 @@ D008 之前使用"簇内温度"的版本，保留为历史证据，**不可与�
 A. **机制隔离**：stage-1 完全相同；一个停、一个继续；总采样数**不等**。
 B. **等预算**：stage-1 用 1000 次；完整两阶段 500+500；总采样数相等。
 
-| 变体 | 成功 [95% CI] | 终端误差中位数 (m) | TV |
-|---|---|---|---|
+| 变体 | 成功 [95% CI] | 终端误差中位数 (m) | TV | McNemar vs full (p) |
+|---|---|---|---|---|
 {ablation_rows}
 
 - `stage1_only`（500/迭代）vs `full`（500+500）：属于 A，总预算 5000 vs 10000，**不能**把差异全部归因于第二阶段。
 - `stage1_only_budget_matched`（1000/迭代）vs `full`（500+500）：属于 B，总预算相等；剩余差异是采样分布（频域 vs 对数正态）与"一次大 batch vs 两次小 batch"。
 - `no_variance_reduction` 只把 $\Sigma_2$ 设为 $\Sigma_1$，**第二阶段仍然执行**——它检验"方差缩减"，不是"第二阶段存在性"。
 
-**测量**：去掉聚类后成功率最高；真正的 stage-1-only 在两种预算下都低于完整两阶段。**解释**：在本任务中第二遍重加权有正贡献；聚类的贡献为负。该结论只适用于本任务与这套参数。
+**测量**：完整两阶段 12/20；真正 stage-1-only 在 500/迭代下 13/20、在 1000/迭代（等预算）下 12/20；去掉聚类 20/20。**解释**：等预算下第二阶段没有带来成功数提升（12 vs 12），不等预算下 13 vs 12 也在噪声范围内；因此**不能**从这些结果推断第二阶段的正贡献。聚类在本任务中表现为负贡献。该结论只适用于本任务与这套参数。
 
 ## 5. N1 五个命题的独立判定
 
 | 命题 | 判定 | 证据 |
 |---|---|---|
 | 1. k-means 恢复几何模式 | **支持** | D1 一致率 {d1['mean_accuracy']:.2f} |
-| 2. 簇条件聚合优于全样本聚合 | **不支持** | D2 受控温度下 {d2['cluster_better']}/{d2['seeds']}，配对 CI 含 0 |
-| 3. 真正的第二阶段改善优化 | **有条件支持** | `stage1_only` vs `full`：5000 vs 10000 次；等预算见 `stage1_only_budget_matched` |
+| 2. 簇条件聚合优于全样本聚合 | **不支持** | D2 受控温度：{d2['cluster_better']}/{d2['seeds']}，配对差 +{d2['paired_goal_diff_mean']:.3f} m，95% CI [{d2['paired_goal_diff_ci'][0]:.3f}, {d2['paired_goal_diff_ci'][1]:.3f}] 排除 0（轻微劣化，但两者均停滞） |
+| 3. 真正的第二阶段改善优化 | **不支持（本任务）** | 等预算 12/20 vs 12/20；不等预算 13/20 vs 12/20 |
 | 4. 完整两阶段优于等预算单阶段 | **不支持** | F1：两阶段 {tw['success_count']}/{tw['seeds']} vs 高斯 {sg['success_count']}/{sg['seeds']} |
 | 5. 两阶段降低控制变化 | **不支持** | TV：两阶段 {tw['median_tv']:.2f} vs 高斯 {sg['median_tv']:.2f}；且运动幅度不同，TV 不可直接比较 |
 

@@ -54,3 +54,15 @@ Append-only architectural and scientific decisions.
 - Decision: P1 记为 `PARTIALLY_VERIFIED`，不记为 `ALGORITHM_NUMERICAL_VERIFIED`，也不宣称 `FULL_PAPER_REPRODUCED`。
 - Reason: 运动学/零空间/估计器/切换积分器的数值实现有独立 oracle 与机器精度证据；但论文的两阶段性能优势、η 口径与奇异项标度三项仍无法从现有材料判定，属于"论文澄清类阻塞"而非代码缺陷。
 - Impact: 后续中文复现报告必须按 `p1/D008_AUDIT.md` §9 的范围限定措辞；解除阻塞需要论文作者补充聚类描述子归一化、温度口径、C_s 定义与 w 的归一化。
+
+## D010 — 证据一致性修正与中文报告交付
+- Date: 2026-10-23
+- Decision: 修正 D2 置信区间的表述（配对差 +0.01497 m，95% CI [0.00859, 0.02135]，排除 0，属轻微劣化但两者均停滞）；修正第二阶段归因（12/20 vs 13/20 vs 12/20，不能推断正贡献）；把 2.712 表述为经验斜率而非物理量纲；统一测试计数为 47。
+- Reason: D008 遗留的三处解释与文档不一致会误导读者，必须在报告交付前消除。
+- Impact: `G3_ACCEPTANCE.md`、`D008_AUDIT.md`、`OPEN_ISSUES.md`、`P1_NUMERICAL_STATUS.md` 与最终报告同步；验收结论仍为 `PARTIALLY_VERIFIED`。
+
+## D011 — P1 中文报告以 DOCX + PDF 交付
+- Date: 2026-10-23
+- Decision: 交付 `p1/reports/final/P1_FINAL_REPORT.docx` 与 `.pdf`（21 页，7 图 7 表），源文件为同名 `.md`，构建脚本与验证记录一并入库。
+- Reason: 报告需要可编辑与可分发两种形态；构建链可复现（无 pandoc，LibreOffice 转换）。
+- Impact: 排版细节问题记录在 `P1_REPORT_VERIFICATION.md` §3，不影响数值与结论。

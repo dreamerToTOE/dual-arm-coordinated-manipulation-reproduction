@@ -58,3 +58,10 @@ Append-only project work log.
 - N2 traces added (C_t, C_s, ratio, L, aux, error per cycle); N3 audit added (w ~ L^2.71, p_e/w dimension L^-2.71, ~5% control effect).
 - Regenerated G1/G2/G3/G3B/N3 reports; added D008_AUDIT.md, CHINESE_REPORT_OUTLINE.md and four report figures.
 - Acceptance recommendation: PARTIALLY_VERIFIED (blockers B1-B3 are paper-clarification issues).
+
+## 2026-10-23 — D010 evidence corrections and Chinese report
+- R1: D2 now reports the measured paired difference (+0.01497 m, 95% CI [0.00859, 0.02135], excluding zero) as a small deterioration, while noting both methods stall; removed all "CI includes zero" statements.
+- R2: corrected the second-stage attribution (full 12/20, stage-1-only 13/20 at 500/iter and 12/20 at 1000/iter); no positive second-stage effect is inferred.
+- R3: 2.712 is described as an empirical slope over the tested scaling range, not a physical dimension; the scaling-convention requirement is stated.
+- R4: test count updated to 46; perturbation clip (+/-0.3) distinguished from the control limit (+/-1.0); historical D2 result kept and labelled; added six documentation-consistency tests.
+- Produced the Chinese report (21 pages, 7 figures, 7 tables) as docx + pdf with a page-by-page verification record; acceptance stays PARTIALLY_VERIFIED.
