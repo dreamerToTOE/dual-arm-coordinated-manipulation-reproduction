@@ -8,7 +8,7 @@ This checkpoint covers S0 only. I read `docs/tasks/P4_D084_WINDOW_INDEX_20261023
 
 - Worktree: `/home/ubuntu2004/lmy/dual-arm-coordinated-manipulation-p4-full`, branch `p4-full-reproduction-pcs-study`.
 - Initial local HEAD was `0b41236e5c1fed28e43eb0727f98dd1fd1d4d91e`; `origin/p4-full-reproduction-pcs-study` was `df11a5387149c7dae1ed601d161d33b6757ca2cf` (10 documentation commits ahead, no divergence). I fast-forwarded only; no reset, clean, checkout, or deletion was used.
-- Current local and remote HEAD are both `df11a5387149c7dae1ed601d161d33b6757ca2cf` before this S0 rescue commit. The tracked tree was clean before staging recovered assets.
+- Before the rescue, local and remote HEAD were both `df11a5387149c7dae1ed601d161d33b6757ca2cf`; the tracked tree was clean before staging recovered assets. The reviewed rescue payload was committed and pushed as `a660e14189ded7878685d9388c6241b65166ffc7`.
 - Read-only process probes found no `bounded_difficulty`, `controlled_fig3`, `render_spatial`, planner, Isaac, MuJoCo, or other P4/D083 scientific process. A few stale `find` commands from the inspection shell remain; they are unrelated and were left untouched.
 
 ## Recovered and verified
@@ -47,4 +47,4 @@ The nominal unused envelopes are 213.71 wall / 209.29 CPU seconds for Stage B an
 
 No files were deleted. The excluded Fig.3 `raw_pairs/` archive (180 gzip files), difficulty `raw_planner/` archive (35 gzip files), two Chinese DOCX reports, `work/d083_report/`, `work/d083_render_runtime/` (including its sysroot), and prior D081/D082 scratch/runtime directories remain uncommitted and untouched. They are available for later review; private report and runtime files were intentionally not staged.
 
-Rescue commit: `RESCUE_COMMIT_PENDING`
+Rescue payload commit: `a660e14189ded7878685d9388c6241b65166ffc7`
