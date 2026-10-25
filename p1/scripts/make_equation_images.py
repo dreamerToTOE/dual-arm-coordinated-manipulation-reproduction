@@ -41,7 +41,7 @@ EQUATIONS = {
         r"D = \left[\,C_{\mathrm{exp}},\; (\Theta_0-\Theta_N)^{\top}\,\right] \qquad (22)(52)"
     ),
     "eq08_singularity": (
-        r"w = \prod_{i=1}^{6}\sigma_i ,\quad "
+        r"w = \sqrt{\prod_{i=1}^{6}\sigma_i} ,\quad "
         r"C_{\mathrm{sing}} = \frac{p_e}{\max(\zeta,\,w)} \qquad (36)(37)"
     ),
     "eq09_auxiliary": (
