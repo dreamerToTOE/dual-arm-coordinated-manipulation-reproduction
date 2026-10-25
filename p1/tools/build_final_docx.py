@@ -204,6 +204,8 @@ def soffice(*args):
 soffice("--convert-to", "odt", "--outdir", str(FINAL), str(HTML))
 subprocess.run([sys.executable, str(ROOT / "tools" / "embed_odt_images.py"),
                 str(FINAL / "P1_FINAL_REPORT.odt")], check=True)
+subprocess.run([sys.executable, str(ROOT / "tools" / "add_page_numbers.py"),
+                str(FINAL / "P1_FINAL_REPORT.odt")], check=True)
 soffice("--convert-to", "docx:MS Word 2007 XML", "--outdir", str(FINAL),
         str(FINAL / "P1_FINAL_REPORT.odt"))
 soffice("--convert-to", "pdf", "--outdir", str(FINAL), str(FINAL / "P1_FINAL_REPORT.odt"))
