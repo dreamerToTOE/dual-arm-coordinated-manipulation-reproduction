@@ -1,0 +1,75 @@
+{
+  "schema": "P4_D084_S3_CONTROLLED_FIG3_PACKAGE_MANIFEST_V1",
+  "status": "PASS_SAVED_COMPLETE_READ_ONLY_PACKAGE",
+  "source_result": "results/20261022_D083_fig3_controlled02",
+  "failed_prepare": "results/20261022_D083_fig3_controlled01/prepare_failure.json",
+  "source_commit": "9f2028cfdb00e90657ed2e17c7b89d946e182fab",
+  "new_planner_calls": 0,
+  "new_scientific_calls": 0,
+  "frozen_pool_size": 96,
+  "frozen_pair_count": 180,
+  "requested_m": [
+    1,
+    2,
+    3,
+    7,
+    16
+  ],
+  "candidate_calls": 2880,
+  "bounded_calls": 900,
+  "candidate_success_count": 2358,
+  "accepted_paths_independently_qualified": 3254,
+  "saved_result_verification_passed": true,
+  "candidate_monotonicity_and_shared_pair_checks": true,
+  "outer_cost": {
+    "total_wall_sec": 86.29,
+    "total_cpu_sec": 90.71,
+    "rule": "add0.01s wall and0.01s to each user/system CPU field per subprocess, once; no double charge of internal time"
+  },
+  "budget_cap": {
+    "wall_sec": 300,
+    "cpu_sec": 300
+  },
+  "nominal_unused_budget": {
+    "wall_sec": 213.70999999999998,
+    "cpu_sec": 209.29000000000002
+  },
+  "copied_files_sha256": {
+    "artifact_sha256.json": "2a39f998cca45542b26e085ab14a6ba41877ca06c784e58bf8d2f5cb8e23a5a0",
+    "candidate_outcomes.csv": "65155edfdcc951fb6216b291873134751f65099c88d68f4d9a8e0b25cecb6ab1",
+    "execution/execute02_time.txt": "4263c53268461d5d88a1ee3d1547162d22ee18df6e3cb2fd246c208eb2507c29",
+    "execution/prepare02_time.txt": "8027236efdd8ee038e3667295276c8781c42dfa72e7ea8245da0efa3597ad687",
+    "execution/prepare_time.txt": "c3b5e0462fa15af7126566df0491a9697d6b9939cca938340390b3d550e97ab7",
+    "execution/render_v2_time.txt": "09ff94f71593e657d704cdd5222ef48ab563c91421c82f5f8b7db9ca01fdf8a0",
+    "execution_started.json": "e0eabdd41f10f71dbf58d149133964e07ed87294b0493967c6ebedd5c94c7c7b",
+    "execution_total_cost.json": "8165ec09cad6be52d627ec19e46be01b27972261d0913465938bf30dd504aaac",
+    "freeze_manifest.json": "fd34a4a534ac11237f87a1ce8cbf07bea7f6345d899e1d6e45d297db8c32cab2",
+    "frozen_pairs.csv": "ad3b6a12b772eaeefe278abc6f45ddd59c170beb54eaed08c36e72b1fd541178",
+    "frozen_pairs.json": "3c69835cee448f0415da0a51dc26d5952475cc06f7bca6996a24738711368dd6",
+    "frozen_pool.json": "f89e89f428b188152c3d500d477cf382352b57cf28e9331575f23e514f438e89",
+    "input_sha256.json": "25a7eb99b73e83422ce3a1fd005b585da3fab2688f24133970cc2e6839afbd00",
+    "pair_by_m_outcomes.csv": "5d1ca17dca2484ae9a70e003eb4ff2a397d7221ab57c08e8ec444799745d6368",
+    "pair_by_m_outcomes.json": "cfba0709eb9e7111c738baef5a54e992e8979b82a3f43333b47d08aa44b54e04",
+    "plots_v2/fig3_controlled_visibility_and_local_cost_by_m.png": "468fd8f82481402bc344c8d44a016d47836fa82c631f7e99e464ccf6dd582cb1",
+    "plots_v2/fig3_controlled_visibility_by_distance.png": "1446a45c3f2fb19c31884996b3e9d1dc395f591af95ff466595baa09ea3adeb9",
+    "plots_v2/render_metadata.json": "6ab2c22da219b793b170e81aa8e80f3d72c4e9558980eee959ae2cc040890486",
+    "run_metadata.json": "4b2f0e7727c979ffb24ac2b7590b97cef68a0fce776407dac6c8e67fbc1221e7",
+    "saved_result_verification.json": "638228daba8f41a6756516bc1182ff5fbee2a535cf39c562ab747dd43eb7963e",
+    "summary.json": "bfe1f03236e0aea96f9da894e2b3970be5f8b68e382dd70d45472f6dd8ea5207",
+    "summary_by_m.csv": "398760e652398ca999b696c1abeb86252157b43c64708a67ba9e26e19e81093a",
+    "supplementary_artifact_sha256.json": "10b870f893f853cc1efe260445cd33586b10b726973e99e0263b1ae8ca2b6420",
+    "visibility_by_distance.csv": "b8a41090f4e6202a34ba32970d7b74ecdc89552632cf5d66310c449e1ba962d2"
+  },
+  "raw_pairs_local_only": {
+    "path": "results/20261022_D083_fig3_controlled02/raw_pairs",
+    "count": 180,
+    "bytes": 45389043,
+    "artifact_manifest": "artifact_sha256.json"
+  },
+  "limitations": [
+    "This is a reconstructed planar 20R proxy with 96 endpoints and 180 shared pairs from 13 previously successful saved paths, not the original author Fig.3 population.",
+    "Local checks are discrete bounded RBS/geometry checks; no continuous CCD, global planning, original m20, or original Bi-RRT runtime claim.",
+    "Candidate union is existential under the frozen finite rule; bounded costs are fresh shared-budget calls and must not be treated as cached candidate runtime.",
+    "No PCS-over-NR or fixed-PCS global superiority inference is supported by this package."
+  ]
+}
