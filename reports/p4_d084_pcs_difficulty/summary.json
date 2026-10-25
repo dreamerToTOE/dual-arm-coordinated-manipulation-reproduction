@@ -1,0 +1,103 @@
+{
+  "schema": "P4_D083_BOUNDED_DIFFICULT_DIAGNOSTIC_V2_ENGINEERING_RESUME",
+  "status": "COMPLETED_FROZEN_BATCH_WITH_ONE_ARTIFACT_UNKNOWN",
+  "label": "DETERMINISTIC_ARCHIVAL_PCS_PATH_ENDPOINT_DIAGNOSTIC_NOT_UNBIASED_HARD_BENCHMARK",
+  "budget_stop": null,
+  "registered_calls": 36,
+  "executed_calls": 36,
+  "new_resume_calls": 35,
+  "evaluable_complete_artifacts": 35,
+  "artifact_unknown": 1,
+  "first_call_never_rerun": true,
+  "planner_compute_wall_sec": 9.488635046996933,
+  "stage_wall_sec": 15.295925136000733,
+  "stage_process_cpu_sec": 15.408147845000002,
+  "prior_external_wall_sec": 0.94,
+  "prior_external_cpu_sec": 2.23,
+  "method_summary": [
+    {
+      "registered_method": "PCS",
+      "executed": 9,
+      "evaluable_complete_artifacts": 8,
+      "artifact_unknown": 1,
+      "source_success": 8,
+      "independent_success": 8,
+      "mean_wall_sec": 0.12159643588933654,
+      "tree_switches": 0,
+      "solution_switches": 0
+    },
+    {
+      "registered_method": "COMPATIBLE_FIXED",
+      "executed": 9,
+      "evaluable_complete_artifacts": 9,
+      "artifact_unknown": 0,
+      "source_success": 9,
+      "independent_success": 9,
+      "mean_wall_sec": 0.1262560905549132,
+      "tree_switches": 0,
+      "solution_switches": 0
+    },
+    {
+      "registered_method": "NR",
+      "executed": 9,
+      "evaluable_complete_artifacts": 9,
+      "artifact_unknown": 0,
+      "source_success": 9,
+      "independent_success": 9,
+      "mean_wall_sec": 0.07388100466697425,
+      "tree_switches": 0,
+      "solution_switches": 0
+    },
+    {
+      "registered_method": "RSS",
+      "executed": 9,
+      "evaluable_complete_artifacts": 9,
+      "artifact_unknown": 0,
+      "source_success": 3,
+      "independent_success": 3,
+      "mean_wall_sec": 0.7325592518884352,
+      "tree_switches": 0,
+      "solution_switches": 0
+    }
+  ],
+  "all_sources_unchanged": true,
+  "source_unchanged": {
+    "baselines/p4_comparison/model.py": true,
+    "baselines/p4_comparison/planner.py": true,
+    "baselines/p4_comparison/strategies.py": true,
+    "scripts/p4_d082/independent_planar_validation.py": true,
+    "configs/p4_d081/numeric_stability_pilot_v1.json": true,
+    "configs/p4_d083/difficult_v1.json": true,
+    "scripts/p4_d083/bounded_difficulty.py": true,
+    "scripts/p4_d083/bounded_difficulty_resume.py": true
+  },
+  "conditions": [
+    {
+      "id": "C1",
+      "valid_condition": true,
+      "fixed_partition": 0,
+      "candidate_obstruction_demonstrated": false,
+      "hard_scenario_status": "NOT_ESTABLISHED_HARD"
+    },
+    {
+      "id": "C2",
+      "valid_condition": true,
+      "fixed_partition": 0,
+      "candidate_obstruction_demonstrated": false,
+      "hard_scenario_status": "NOT_ESTABLISHED_HARD"
+    },
+    {
+      "id": "C3",
+      "valid_condition": true,
+      "fixed_partition": 0,
+      "candidate_obstruction_demonstrated": false,
+      "hard_scenario_status": "NOT_ESTABLISHED_HARD"
+    }
+  ],
+  "interpretation": "Archival PCS endpoint diagnostic; no unbiased general hard-problem performance estimate. First call is artifact-unknown, not algorithm failure.",
+  "scope": "Saved three witnesses/routes reused. Remaining35 original frozen calls only; independent finite discrete qualification, no continuous CCD, no spatial solve or original TableI.",
+  "total_stage_including_plot_wall_sec": 15.870182899998326,
+  "total_stage_including_plot_process_cpu_sec": 16.269504292,
+  "combined_shared_wall_sec": 16.810182899998328,
+  "combined_shared_cpu_sec": 18.499504292
+}
