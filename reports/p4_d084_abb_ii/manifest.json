@@ -1,0 +1,87 @@
+{
+  "schema": "P4_D084_S1_ABB_II_RECOVERY_MANIFEST_V1",
+  "status": "PASS_SAVED_PATH_RENDER_ONLY",
+  "environment": "II",
+  "qualification_scope": "RECONSTRUCTED_ALIGNED_DISCRETE_SOURCE_COLLISION_POLICY_ONLY",
+  "new_planner_calls": 0,
+  "new_ik_calls": 0,
+  "new_collision_calls": 0,
+  "render_fk_arm_calls": 24,
+  "paths": [
+    {
+      "key": "RRT_PCS",
+      "label": "RRT / PCS",
+      "node_count": 177,
+      "certificate": "reports/P4_FULL_R2_ABB_RRT_PATH_INDEPENDENT_SAVED_POST_REVIEW_20261015.json",
+      "run": "results/p4_full/20261015_R2_ABB_RRT_PATH01"
+    },
+    {
+      "key": "CBIRRT_PCS",
+      "label": "CBiRRT / PCS",
+      "node_count": 413,
+      "certificate": "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json",
+      "run": "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01"
+    },
+    {
+      "key": "RRT_NR",
+      "label": "RRT / NR",
+      "node_count": 393,
+      "certificate": "reports/P4_FULL_R2_ABB_RRT_NR_PATH_ROOT_INDEPENDENT_POST_20261016.json",
+      "run": "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01"
+    },
+    {
+      "key": "CBIRRT_NR",
+      "label": "CBiRRT / NR",
+      "node_count": 689,
+      "certificate": "reports/P4_FULL_R2_ABB_CBIRRT_NR_PATH01_SAVED_INDEPENDENT_POST_20261017.json",
+      "run": "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01"
+    }
+  ],
+  "input_sha256": {
+    "canonical_render_script": "6ca4aba948760cabcc7d425ff9c230fb6d21cb18e10987b0ee6216deb88811ba",
+    "s1_render_script": "0138c7d87d0a4398287843285fed21611a7c828b97b53a78ba0b28ceafb1f134",
+    "configs/p4_full/r2_abb_rrt_path_qualification_v1.json": "2ff16d0958675a5a357a7f253b2357ba393fc48d770bbbe515cd5ad2a46bccf7",
+    "reports/P4_FULL_R2_ABB_RRT_PATH_INDEPENDENT_SAVED_POST_REVIEW_20261015.json": "637d294b65a7baed72e08f326b232e9e7d98b284d81bd6f6790f382941ac2073",
+    "results/p4_full/20261015_R2_ABB_RRT_PATH01/node_00000.json": "8773fe7da1b9f91d97e5997b2d77bb07ae21883a7b03cf7114f25403d7fdeddf",
+    "results/p4_full/20261015_R2_ABB_RRT_PATH01/node_00088.json": "162f5c94b04039925d937db4d7f992f3f299552be72bf756d71f04b1c2c76f39",
+    "results/p4_full/20261015_R2_ABB_RRT_PATH01/node_00176.json": "3b03eef7a8d3ebbd2e19332c19cd12b9b1992cb92a650af0e5f28419e47a94fd",
+    "configs/p4_full/r2_abb_cbirrt_d_complete_path_v1.json": "affe08d5ceafcf374e6adf6256ab45940f177d5acb21a114cf2f98ca9a31d265",
+    "reports/P4_FULL_R2_ABB_CBIRRT_D_PATH01_SAVED_INDEPENDENT_POST_20261016.json": "2c548df054867c7d9545fac3726142f3581b3cdfbe54299233a27bb07bace4d0",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00000.json": "d65853b350e14e4e19517d1c9330d21c0f5290559387fb54180b7c5c179b384f",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00206.json": "b9e23949db7d2a67380ffbc7b5f67c38ea0ac1356ae3c31fbefcbc681a15a969",
+    "results/p4_full/20261015_R2_ABB_CBIRRT_D_PATH01/node_00412.json": "44d5e43ef8739f4173cb7deeea78960701c5840242c7a54e1fc88071e8d1c707",
+    "configs/p4_full/r2_abb_rrt_nr_path_qualification_v1.json": "aea8521ed41edd36aec466e575c8a8076683295b9baf7d04b4da4460df64ba66",
+    "reports/P4_FULL_R2_ABB_RRT_NR_PATH_ROOT_INDEPENDENT_POST_20261016.json": "0558fb854839edadfead071ba0bcfa0c43ea26079281c59cbcafb036720b21b0",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/node_00000.json": "803679384c5c9d5b902a9eee2f657c09ac9847577e2e11b9c79cac885cfd2c9c",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/node_00196.json": "544c60454423d31375d33648b880ca67f3ab108c3689ae86042624ef0b6a3cdf",
+    "results/p4_full/20261015_R2_ABB_RRT_NR_PATH01/node_00392.json": "6ce223fcb1f5703ddf28617e35051b91eacdbce643adfe2532a6d57c9aa3d567",
+    "configs/p4_full/r2_abb_cbirrt_nr_full_path_v1.json": "bac031b7de04580c0de0af2049077bb552a06daf160d0f048a5fc5db97908f36",
+    "reports/P4_FULL_R2_ABB_CBIRRT_NR_PATH01_SAVED_INDEPENDENT_POST_20261017.json": "b3a2443cb790df547597fe5a72b4eeb78341d2f93a4b4beca8252eba692c40c8",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/node_00000.json": "45c6ca93092651a09cb573aa5f0c8535c68aaca39b08f35d67dec23ea98c0c24",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/node_00344.json": "d70f3bff9d10ac4f3cd2d94dfc05ffaf61b2218f463e47f7533f4eeb55689b1e",
+    "results/p4_full/20261016_R2_ABB_CBIRRT_NR_PATH01/node_00688.json": "e97d797b8d6a88d11db6dff99224cac8263909d1f1255b1efd21cff731e0cf15",
+    "mesh_root_sha256": {
+      "Base_r.tris": "eee302c275cf58a88e0a64206f25867202a717261bf04d072d668cf3603d5085",
+      "Link1_r.tris": "f3ec4f811dfc1ef33e4703e82c350d9d99fd01474fbb81125b930d1ee8c7bff8",
+      "Link2_r.tris": "5e9da2c8ddcc4bf549dd675626fdca629146d120be381c7178dd73e4107f1747",
+      "Link3_r.tris": "bee15986ab5fe4064c5b97ab0109d88b2a1981b3a765ecd8c99210c96793b954",
+      "Link4_r.tris": "c0b04b1c8f8dd3234d73d027c1e8f77392d28d7caba1c11c621c03ae185f5859",
+      "Link5_r.tris": "8a734337bc601235fb80062fdc3674b6dc996d3e318ec7ded3474363995577a2",
+      "Link6.tris": "74cf29a9e69615f49324e11ce4c93e436c996210da4851771858f96113f545ec",
+      "EE_r.tris": "b6e2b7af54d6e2d90dde325f3d52b680abff884d6f31e0fbc7b25eec132c87ca",
+      "table.tris": "756597cb4dbf32b731375844be6adf94d1d77e57775f4506cf31442723fc1bce",
+      "obs.tris": "76b04d378e0084c19ff31957f0c9425eae6056622fd88300ac0a8a651fbd93b8"
+    }
+  },
+  "outputs_sha256": {
+    "png": "e6a02829b072c7f166fe060849801df3fa7f40fcc99f6fcb0e2916c5cd45cc0e",
+    "pdf": "9190e6ae0e113146bfb60fa9b8096137280f443c88425fba3be88d73a7dd1ce7",
+    "metrics": "c08a634eb7d586860ed773453f218e59209c0b73014fb855661c800d5e90a08a"
+  },
+  "limitations": [
+    "Snapshots and TCP traces come from saved discrete nodes; the rod is a display glyph.",
+    "Aligned source collision-policy evidence is inherited from the named certificates.",
+    "Native TCP equivalence, continuous CCD, minimum clearance, omitted pairs, and dynamic execution are not certified.",
+    "This package adds no planner, IK, collision, or path qualification call."
+  ]
+}
