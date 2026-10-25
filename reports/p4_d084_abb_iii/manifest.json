@@ -1,0 +1,111 @@
+{
+  "schema": "P4_D084_S2_ABB_III_ROLE_SWITCH_MANIFEST_V1",
+  "status": "PASS_SAVED_PATH_ROLE_RENDER_ONLY",
+  "environment": "III",
+  "qualification_scope": "RECONSTRUCTED_ALIGNED_DISCRETE_SOURCE_COLLISION_POLICY_ONLY",
+  "saved_node_count": 649,
+  "saved_edge_count": 14,
+  "milestone_count": 15,
+  "active_roles": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "switch_count": 4,
+  "switches": [
+    {
+      "number": 1,
+      "previous_edge_zero_based": 2,
+      "next_edge_zero_based": 3,
+      "source_node_id": 179,
+      "traversal_index": 179,
+      "from_active": 0,
+      "to_active": 1
+    },
+    {
+      "number": 2,
+      "previous_edge_zero_based": 3,
+      "next_edge_zero_based": 4,
+      "source_node_id": 248,
+      "traversal_index": 248,
+      "from_active": 1,
+      "to_active": 0
+    },
+    {
+      "number": 3,
+      "previous_edge_zero_based": 6,
+      "next_edge_zero_based": 7,
+      "source_node_id": 392,
+      "traversal_index": 392,
+      "from_active": 0,
+      "to_active": 1
+    },
+    {
+      "number": 4,
+      "previous_edge_zero_based": 8,
+      "next_edge_zero_based": 9,
+      "source_node_id": 492,
+      "traversal_index": 492,
+      "from_active": 1,
+      "to_active": 0
+    }
+  ],
+  "switch_traversal_indices": [
+    179,
+    248,
+    392,
+    492
+  ],
+  "new_planner_calls": 0,
+  "new_ik_calls": 0,
+  "new_collision_calls": 0,
+  "render_only_timeline_rows": 649,
+  "source_sha256": {
+    "saved_csv": "88fbd781bfe0ab63f12df826e1482f4b464799b4ace4cbf6527fb3585a073ca9",
+    "provenance": "2fe1c18748c085f89f3bfb1981978f1dd6491e89169f7cc2a38d67c89b19c6ad",
+    "certificate": "8644c3b37151b009cfc8e60d9679bc8ca82d383e0deb068e3a5ff1df2f98603e",
+    "canonical_renderer": "6ca4aba948760cabcc7d425ff9c230fb6d21cb18e10987b0ee6216deb88811ba",
+    "s2_render_script": "343d6a3d26b90376313b67f517f35a340cd2787548800b1f31aa5b61fadac0f2"
+  },
+  "certificate": "reports/P4_D080_ENV_III_RRT_PCS_PHYSICAL01_SAVED_INDEPENDENT_POST_20261018.json",
+  "certificate_sha256": "8644c3b37151b009cfc8e60d9679bc8ca82d383e0deb068e3a5ff1df2f98603e",
+  "outputs_sha256": {
+    "fig_A2_environment_III_narrow_passage_v2.png": "f25df63190904665c634cbd1c69daee9e24139e3185e82a18fed8667814b57a4",
+    "fig_A2_environment_III_narrow_passage_v2.pdf": "23c866a012c2bfa1508691dc1122863f9c07bff1e835007b121220cd4c4969fd",
+    "fig_A3_environment_III_four_switch_frames.png": "149e30a801881f89d12d73eb5536b8d5b25c96c0dc078506f4ef102681d1e778",
+    "fig_A3_environment_III_four_switch_frames.pdf": "57a8b918057f061bcdf05ae69214fa2c39e76919f029b69f9c7f06a06496859f",
+    "fig_A4_environment_III_roles_and_evidence.png": "9f0aaeb55e95d1d3a9c3a4dd58020b996eb4f4c90c96374e768936d8f4685386",
+    "fig_A4_environment_III_roles_and_evidence.pdf": "eedc6934733a5eb9571b911f45c56a678dcbd875c5f9b7b4ab5d92a28bd8a178",
+    "fig_A5_spatial_saved_trajectories.png": "7c967eaac7ed2b5770e28ef5d4186d84a0178f946cf30d6afd8213ea0fe0d107",
+    "fig_A5_spatial_saved_trajectories.pdf": "92ceb9834cc49f7d68014f9cdbfc8d613716cbc037f0daae28c86bfb21255f0a",
+    "environment_III_saved_states.gif": "44261a397d9298a40d6daac6eea3ab17d7c93daee1900df6dd12157a195df4f7",
+    "role_timeline_csv": "b38cc2abd63369e6690d47a5eddab163fb025609caa3345493e411ffbc987268",
+    "role_timeline_png": "71f533f263ce0412b43cbb982a7eeef229a5816e672eebb75cdb5130234ef655",
+    "role_timeline_pdf": "4e929dcc6b0be478e0edfa9ea27e7b775bc0f52eede377f17df21eaec9ec4ccc"
+  },
+  "metrics_inherited": {
+    "maximum_saved_position_residual_mm": 4.547473508864641e-13,
+    "maximum_saved_rotation_matrix_residual": 4.468647674116255e-15,
+    "aligned_pose_pass_nodes": 649,
+    "native_pose_pass_nodes": 0,
+    "maximum_native_tcp_position_mismatch_mm": 0.003570536971253091,
+    "maximum_native_tcp_rotation_matrix_mismatch": 7.347665530579861e-06
+  },
+  "limitations": [
+    "Role changes describe active/passive ownership of accepted discrete edges, not a continuous physical handoff.",
+    "The source exact flag is not an independent certificate; the named saved certificate is the evidence boundary.",
+    "Native TCP equivalence, continuous CCD, minimum clearance, omitted pairs, solid-rod safety, and dynamic execution are not certified.",
+    "Four switches alone do not establish PCS superiority."
+  ]
+}
