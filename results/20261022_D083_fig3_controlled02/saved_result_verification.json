@@ -1,0 +1,43 @@
+{
+  "schema": "P4_D083_FIG3_SAVED_RESULT_IDENTITY_VERIFICATION_V1",
+  "verification_scope": "read-only saved CSV/JSON/hash/identity audit; no FK, IK, projection, collision or planning calls",
+  "passed": true,
+  "candidate_rows": 2880,
+  "pair_m_rows": 900,
+  "raw_pair_files": 180,
+  "same_exact_180_pairs_for_each_m": true,
+  "all_candidate_single_partition_identity": true,
+  "all_bounded_total_midpoint_calls_at_most512": true,
+  "all_projection_logs_bound": true,
+  "all_existential_unions_equal_exact_cached_candidate_success": true,
+  "all_bounded_success_paths_exactly_match_winning_singleton_candidate": true,
+  "all_bounded_success_partitions_are_first_successful_candidate": true,
+  "bounded_winning_partitions": {
+    "0": 880,
+    "1": 16
+  },
+  "m1_failures": [
+    {
+      "pair_id": 67,
+      "reason": "RBS_PROJECTION:IK_UNREACHABLE"
+    },
+    {
+      "pair_id": 72,
+      "reason": "RBS_PROJECTION:IK_UNREACHABLE"
+    },
+    {
+      "pair_id": 154,
+      "reason": "RBS_PROJECTION:IK_UNREACHABLE"
+    },
+    {
+      "pair_id": 157,
+      "reason": "RBS_PROJECTION:IK_UNREACHABLE"
+    }
+  ],
+  "accepted_paths_independently_qualified": 3254,
+  "accepted_discrete_point_references": 97577,
+  "maximum_accepted_position_residual_m": 3.907782776209828e-09,
+  "maximum_accepted_angle_residual_rad": 1.7763568394002505e-15,
+  "minimum_accepted_joint_margin_rad": 0.42008687906829323,
+  "minimum_accepted_clearance_m": 0.05470552470531202
+}

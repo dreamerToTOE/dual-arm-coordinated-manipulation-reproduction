@@ -1,0 +1,1 @@
+First rendering entry stopped before creating results: the NR unique queue stores node dictionaries whereas PCS stores q12 arrays. The endpoint identity assertion encountered this schema difference; no planner/FK/collision or figure was produced. Fixed only normalization to the existing q12 field, retaining node IDs and source traversal. Historical source data unchanged.

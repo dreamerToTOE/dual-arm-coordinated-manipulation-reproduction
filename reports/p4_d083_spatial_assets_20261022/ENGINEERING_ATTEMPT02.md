@@ -1,0 +1,1 @@
+Second rendering entry stopped before creating results: existing NR qualification names its adapter response _collision_raw.json, whereas PCS uses _collision_response.json. Corrected the input filename mapping only. II PCS 177 source frames had already been compared against saved TCP poses; zero planning/IK/collision. No output data or images created in failed entry.

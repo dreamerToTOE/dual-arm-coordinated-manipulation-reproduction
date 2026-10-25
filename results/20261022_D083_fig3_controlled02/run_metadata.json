@@ -1,0 +1,39 @@
+{
+  "schema": "P4_D083_FIG3_RUN_METADATA_V1",
+  "source_commit": "9f2028cf",
+  "source_commit_full": "9f2028cfdb00e90657ed2e17c7b89d946e182fab",
+  "approved_source_and_protocol": "root independent static review of source/config before prepare; source fixed to9f2028cf",
+  "failed_prepare": "results/20261022_D083_fig3_controlled01/prepare_failure.json",
+  "successful_output": "results/20261022_D083_fig3_controlled02",
+  "commands": [
+    "python3 scripts/p4_d083/controlled_fig3.py prepare --output results/20261022_D083_fig3_controlled02",
+    "python3 scripts/p4_d083/controlled_fig3.py execute --output results/20261022_D083_fig3_controlled02"
+  ],
+  "attempts": {
+    "prepare01_engineering_failure": 1,
+    "prepare02_success": 1,
+    "execute02_success": 1,
+    "new_scientific_retries": 0
+  },
+  "external_resources_reported": {
+    "failed_prepare_wall_sec": 0.4,
+    "failed_prepare_cpu_sec": 1.61,
+    "successful_prepare_wall_sec": 0.23,
+    "successful_prepare_cpu_sec": 1.47,
+    "execute_wall_sec": 85.63,
+    "execute_cpu_sec": 87.57,
+    "total_wall_sec": 86.26,
+    "total_cpu_sec": 90.65
+  },
+  "external_resources_conservative_rounding_upper": {
+    "total_wall_sec": 86.29,
+    "total_cpu_sec": 90.71,
+    "rule": "add0.01s wall and0.01s to each user/system CPU field per subprocess, once; no double charge of internal time"
+  },
+  "authorized_caps": {
+    "wall_sec": 300,
+    "cpu_sec": 300
+  },
+  "within_caps": true,
+  "new_planner_calls": 0
+}

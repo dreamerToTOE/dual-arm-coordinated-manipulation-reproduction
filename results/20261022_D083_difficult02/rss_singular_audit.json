@@ -1,0 +1,273 @@
+{
+  "new_d083_calls": 9,
+  "new_d083_success": 3,
+  "new_d083_time_limit": 6,
+  "singular_requests": 53,
+  "singular_constructions": 1696,
+  "singular_successful_constructions": 0,
+  "singular_reasons": {
+    "IK_UNREACHABLE": 1696
+  },
+  "successes_all_condition_C3": true,
+  "successes_have_only_partition16": true,
+  "successes_solution_branches": [
+    1
+  ],
+  "interpretation": "New C3 RSS successes use ordinary same-branch partition16 edges, zero successful singular construction; not singular-bridge evidence. Historical D081/D082 RSS0/10 retained separately.",
+  "trials": [
+    {
+      "condition": "C1",
+      "seed": 7,
+      "status": "TIME_LIMIT",
+      "singular_requests": 4,
+      "singular_constructions": 128,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 128
+      },
+      "solution_partitions": [],
+      "solution_branches": [],
+      "sample_kinds": {
+        "AMBIENT": 12,
+        "SINGULAR_SAMPLER_BUDGET": 4
+      },
+      "counters": {
+        "singular_sample_requests": 4,
+        "singular_construction_attempts": 128,
+        "singular_sample_failures": 4
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C1_RSS_seed7.json.gz"
+    },
+    {
+      "condition": "C1",
+      "seed": 23,
+      "status": "TIME_LIMIT",
+      "singular_requests": 9,
+      "singular_constructions": 288,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 288
+      },
+      "solution_partitions": [],
+      "solution_branches": [],
+      "sample_kinds": {
+        "AMBIENT": 34,
+        "SINGULAR_SAMPLER_BUDGET": 9
+      },
+      "counters": {
+        "singular_sample_requests": 9,
+        "singular_construction_attempts": 288,
+        "singular_sample_failures": 9
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C1_RSS_seed23.json.gz"
+    },
+    {
+      "condition": "C1",
+      "seed": 41,
+      "status": "TIME_LIMIT",
+      "singular_requests": 14,
+      "singular_constructions": 448,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 448
+      },
+      "solution_partitions": [],
+      "solution_branches": [],
+      "sample_kinds": {
+        "AMBIENT": 65,
+        "SINGULAR_SAMPLER_BUDGET": 14
+      },
+      "counters": {
+        "singular_sample_requests": 14,
+        "singular_construction_attempts": 448,
+        "singular_sample_failures": 14
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C1_RSS_seed41.json.gz"
+    },
+    {
+      "condition": "C2",
+      "seed": 7,
+      "status": "TIME_LIMIT",
+      "singular_requests": 5,
+      "singular_constructions": 160,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 160
+      },
+      "solution_partitions": [],
+      "solution_branches": [],
+      "sample_kinds": {
+        "AMBIENT": 19,
+        "SINGULAR_SAMPLER_BUDGET": 5
+      },
+      "counters": {
+        "singular_sample_requests": 5,
+        "singular_construction_attempts": 160,
+        "singular_sample_failures": 5
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C2_RSS_seed7.json.gz"
+    },
+    {
+      "condition": "C2",
+      "seed": 23,
+      "status": "TIME_LIMIT",
+      "singular_requests": 5,
+      "singular_constructions": 160,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 160
+      },
+      "solution_partitions": [],
+      "solution_branches": [],
+      "sample_kinds": {
+        "AMBIENT": 18,
+        "SINGULAR_SAMPLER_BUDGET": 5
+      },
+      "counters": {
+        "singular_sample_requests": 5,
+        "singular_construction_attempts": 160,
+        "singular_sample_failures": 5
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C2_RSS_seed23.json.gz"
+    },
+    {
+      "condition": "C2",
+      "seed": 41,
+      "status": "TIME_LIMIT",
+      "singular_requests": 10,
+      "singular_constructions": 320,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 320
+      },
+      "solution_partitions": [],
+      "solution_branches": [],
+      "sample_kinds": {
+        "AMBIENT": 52,
+        "SINGULAR_SAMPLER_BUDGET": 10
+      },
+      "counters": {
+        "singular_sample_requests": 10,
+        "singular_construction_attempts": 320,
+        "singular_sample_failures": 10
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C2_RSS_seed41.json.gz"
+    },
+    {
+      "condition": "C3",
+      "seed": 7,
+      "status": "SUCCESS",
+      "singular_requests": 2,
+      "singular_constructions": 64,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 64
+      },
+      "solution_partitions": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "solution_branches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample_kinds": {
+        "AMBIENT": 3,
+        "SINGULAR_SAMPLER_BUDGET": 2
+      },
+      "counters": {
+        "singular_sample_requests": 2,
+        "singular_construction_attempts": 64,
+        "singular_sample_failures": 2
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C3_RSS_seed7.json.gz"
+    },
+    {
+      "condition": "C3",
+      "seed": 23,
+      "status": "SUCCESS",
+      "singular_requests": 0,
+      "singular_constructions": 0,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {},
+      "solution_partitions": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "solution_branches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample_kinds": {
+        "AMBIENT": 5
+      },
+      "counters": {},
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C3_RSS_seed23.json.gz"
+    },
+    {
+      "condition": "C3",
+      "seed": 41,
+      "status": "SUCCESS",
+      "singular_requests": 4,
+      "singular_constructions": 128,
+      "singular_successful_constructions": 0,
+      "singular_reasons": {
+        "IK_UNREACHABLE": 128
+      },
+      "solution_partitions": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "solution_branches": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sample_kinds": {
+        "AMBIENT": 33,
+        "SINGULAR_SAMPLER_BUDGET": 4
+      },
+      "counters": {
+        "singular_sample_requests": 4,
+        "singular_construction_attempts": 128,
+        "singular_sample_failures": 4
+      },
+      "artifact": "results/20261022_D083_difficult02/raw_planner/C3_RSS_seed41.json.gz"
+    }
+  ]
+}

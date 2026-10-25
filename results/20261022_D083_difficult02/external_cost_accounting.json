@@ -1,0 +1,29 @@
+{
+  "status": "EXTERNAL_GNU_TIME_BOUND",
+  "failed_run": {
+    "artifact": "results/20261022_D083_difficult01/engineering_failure_external_time.txt",
+    "sha256": "72eebf0eca6ab7c03392a1f30708ba67917d123a0e6d05fc74f04bc6874c69e7",
+    "wall_sec": 0.94,
+    "user_sec": 0.94,
+    "system_sec": 1.29,
+    "cpu_user_plus_sys_sec": 2.23,
+    "exit_code": 1,
+    "actual_planner_calls": 1
+  },
+  "resume_run": {
+    "artifact": "results/20261022_D083_difficult02/external_time.txt",
+    "sha256": "0f3a92e5c32552739a0fcba391d3dc68d35ef1b0e6ca70d72eea62099456417a",
+    "wall_sec": 16.06,
+    "user_sec": 15.96,
+    "system_sec": 1.65,
+    "cpu_user_plus_sys_sec": 17.61,
+    "exit_code": 0,
+    "actual_planner_calls": 35
+  },
+  "combined_wall_sec": 17.0,
+  "combined_cpu_sec": 19.84,
+  "shared_wall_cap_sec": 180,
+  "shared_cpu_cap_sec": 240,
+  "within_shared_caps": true,
+  "scope": "Includes each Python startup, diagnostics/read reuse, all real planner calls, postchecks, output and figure generation; no failed-budget reset."
+}
