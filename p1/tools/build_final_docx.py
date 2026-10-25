@@ -102,7 +102,7 @@ while i < len(lines):
     if ln.strip() == "<!--pagebreak-->":
         flush(); pending_break = True; i += 1; continue
     if ln.strip() == "---":
-        flush(); out.append('<p class="gap">&#160;</p>'); i += 1; continue
+        flush(); i += 1; continue
     if ln.strip().startswith("|"):
         flush()
         tbl = []
